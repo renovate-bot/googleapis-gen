@@ -1,0 +1,38 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "typescript",
+  "protoPackage": "google.devtools.build.v1",
+  "libraryPackage": "build",
+  "services": {
+    "PublishBuildEvent": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PublishBuildEventClient",
+          "rpcs": {
+            "PublishLifecycleEvent": {
+              "methods": [
+                "publishLifecycleEvent"
+              ]
+            },
+            "PublishBuildToolEventStream": {
+              "methods": [
+                "publishBuildToolEventStream"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "PublishBuildEventClient",
+          "rpcs": {
+            "PublishLifecycleEvent": {
+              "methods": [
+                "publishLifecycleEvent"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

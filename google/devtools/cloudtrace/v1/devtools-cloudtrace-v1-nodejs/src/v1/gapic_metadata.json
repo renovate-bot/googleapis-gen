@@ -1,0 +1,57 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "typescript",
+  "protoPackage": "google.devtools.cloudtrace.v1",
+  "libraryPackage": "cloudtrace",
+  "services": {
+    "TraceService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TraceServiceClient",
+          "rpcs": {
+            "GetTrace": {
+              "methods": [
+                "getTrace"
+              ]
+            },
+            "PatchTraces": {
+              "methods": [
+                "patchTraces"
+              ]
+            },
+            "ListTraces": {
+              "methods": [
+                "listTraces",
+                "listTracesStream",
+                "listTracesAsync"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "TraceServiceClient",
+          "rpcs": {
+            "GetTrace": {
+              "methods": [
+                "getTrace"
+              ]
+            },
+            "PatchTraces": {
+              "methods": [
+                "patchTraces"
+              ]
+            },
+            "ListTraces": {
+              "methods": [
+                "listTraces",
+                "listTracesStream",
+                "listTracesAsync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

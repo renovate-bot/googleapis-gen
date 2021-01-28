@@ -1,0 +1,4 @@
+[
+  "../../protos/google/devtools/cloudtrace/v2/trace.proto",
+  "../../protos/google/devtools/cloudtrace/v2/tracing.proto"
+]

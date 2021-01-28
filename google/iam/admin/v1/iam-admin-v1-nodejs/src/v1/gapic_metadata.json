@@ -1,0 +1,259 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "typescript",
+  "protoPackage": "google.iam.admin.v1",
+  "libraryPackage": "admin",
+  "services": {
+    "IAM": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "IAMClient",
+          "rpcs": {
+            "GetServiceAccount": {
+              "methods": [
+                "getServiceAccount"
+              ]
+            },
+            "CreateServiceAccount": {
+              "methods": [
+                "createServiceAccount"
+              ]
+            },
+            "UpdateServiceAccount": {
+              "methods": [
+                "updateServiceAccount"
+              ]
+            },
+            "DeleteServiceAccount": {
+              "methods": [
+                "deleteServiceAccount"
+              ]
+            },
+            "ListServiceAccountKeys": {
+              "methods": [
+                "listServiceAccountKeys"
+              ]
+            },
+            "GetServiceAccountKey": {
+              "methods": [
+                "getServiceAccountKey"
+              ]
+            },
+            "CreateServiceAccountKey": {
+              "methods": [
+                "createServiceAccountKey"
+              ]
+            },
+            "DeleteServiceAccountKey": {
+              "methods": [
+                "deleteServiceAccountKey"
+              ]
+            },
+            "SignBlob": {
+              "methods": [
+                "signBlob"
+              ]
+            },
+            "SignJwt": {
+              "methods": [
+                "signJwt"
+              ]
+            },
+            "GetIamPolicy": {
+              "methods": [
+                "getIamPolicy"
+              ]
+            },
+            "SetIamPolicy": {
+              "methods": [
+                "setIamPolicy"
+              ]
+            },
+            "TestIamPermissions": {
+              "methods": [
+                "testIamPermissions"
+              ]
+            },
+            "GetRole": {
+              "methods": [
+                "getRole"
+              ]
+            },
+            "CreateRole": {
+              "methods": [
+                "createRole"
+              ]
+            },
+            "UpdateRole": {
+              "methods": [
+                "updateRole"
+              ]
+            },
+            "DeleteRole": {
+              "methods": [
+                "deleteRole"
+              ]
+            },
+            "UndeleteRole": {
+              "methods": [
+                "undeleteRole"
+              ]
+            },
+            "ListServiceAccounts": {
+              "methods": [
+                "listServiceAccounts",
+                "listServiceAccountsStream",
+                "listServiceAccountsAsync"
+              ]
+            },
+            "QueryGrantableRoles": {
+              "methods": [
+                "queryGrantableRoles",
+                "queryGrantableRolesStream",
+                "queryGrantableRolesAsync"
+              ]
+            },
+            "ListRoles": {
+              "methods": [
+                "listRoles",
+                "listRolesStream",
+                "listRolesAsync"
+              ]
+            },
+            "QueryTestablePermissions": {
+              "methods": [
+                "queryTestablePermissions",
+                "queryTestablePermissionsStream",
+                "queryTestablePermissionsAsync"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "IAMClient",
+          "rpcs": {
+            "GetServiceAccount": {
+              "methods": [
+                "getServiceAccount"
+              ]
+            },
+            "CreateServiceAccount": {
+              "methods": [
+                "createServiceAccount"
+              ]
+            },
+            "UpdateServiceAccount": {
+              "methods": [
+                "updateServiceAccount"
+              ]
+            },
+            "DeleteServiceAccount": {
+              "methods": [
+                "deleteServiceAccount"
+              ]
+            },
+            "ListServiceAccountKeys": {
+              "methods": [
+                "listServiceAccountKeys"
+              ]
+            },
+            "GetServiceAccountKey": {
+              "methods": [
+                "getServiceAccountKey"
+              ]
+            },
+            "CreateServiceAccountKey": {
+              "methods": [
+                "createServiceAccountKey"
+              ]
+            },
+            "DeleteServiceAccountKey": {
+              "methods": [
+                "deleteServiceAccountKey"
+              ]
+            },
+            "SignBlob": {
+              "methods": [
+                "signBlob"
+              ]
+            },
+            "SignJwt": {
+              "methods": [
+                "signJwt"
+              ]
+            },
+            "GetIamPolicy": {
+              "methods": [
+                "getIamPolicy"
+              ]
+            },
+            "SetIamPolicy": {
+              "methods": [
+                "setIamPolicy"
+              ]
+            },
+            "TestIamPermissions": {
+              "methods": [
+                "testIamPermissions"
+              ]
+            },
+            "GetRole": {
+              "methods": [
+                "getRole"
+              ]
+            },
+            "CreateRole": {
+              "methods": [
+                "createRole"
+              ]
+            },
+            "UpdateRole": {
+              "methods": [
+                "updateRole"
+              ]
+            },
+            "DeleteRole": {
+              "methods": [
+                "deleteRole"
+              ]
+            },
+            "UndeleteRole": {
+              "methods": [
+                "undeleteRole"
+              ]
+            },
+            "ListServiceAccounts": {
+              "methods": [
+                "listServiceAccounts",
+                "listServiceAccountsStream",
+                "listServiceAccountsAsync"
+              ]
+            },
+            "QueryGrantableRoles": {
+              "methods": [
+                "queryGrantableRoles",
+                "queryGrantableRolesStream",
+                "queryGrantableRolesAsync"
+              ]
+            },
+            "ListRoles": {
+              "methods": [
+                "listRoles",
+                "listRolesStream",
+                "listRolesAsync"
+              ]
+            },
+            "QueryTestablePermissions": {
+              "methods": [
+                "queryTestablePermissions",
+                "queryTestablePermissionsStream",
+                "queryTestablePermissionsAsync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

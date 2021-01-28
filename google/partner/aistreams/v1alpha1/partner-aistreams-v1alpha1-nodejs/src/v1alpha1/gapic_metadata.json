@@ -1,0 +1,131 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "typescript",
+  "protoPackage": "google.partner.aistreams.v1alpha1",
+  "libraryPackage": "aistreams",
+  "services": {
+    "AIStreams": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AIStreamsClient",
+          "rpcs": {
+            "GetCluster": {
+              "methods": [
+                "getCluster"
+              ]
+            },
+            "GetStream": {
+              "methods": [
+                "getStream"
+              ]
+            },
+            "CreateCluster": {
+              "methods": [
+                "createCluster"
+              ]
+            },
+            "UpdateCluster": {
+              "methods": [
+                "updateCluster"
+              ]
+            },
+            "DeleteCluster": {
+              "methods": [
+                "deleteCluster"
+              ]
+            },
+            "CreateStream": {
+              "methods": [
+                "createStream"
+              ]
+            },
+            "UpdateStream": {
+              "methods": [
+                "updateStream"
+              ]
+            },
+            "DeleteStream": {
+              "methods": [
+                "deleteStream"
+              ]
+            },
+            "ListClusters": {
+              "methods": [
+                "listClusters",
+                "listClustersStream",
+                "listClustersAsync"
+              ]
+            },
+            "ListStreams": {
+              "methods": [
+                "listStreams",
+                "listStreamsStream",
+                "listStreamsAsync"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AIStreamsClient",
+          "rpcs": {
+            "GetCluster": {
+              "methods": [
+                "getCluster"
+              ]
+            },
+            "GetStream": {
+              "methods": [
+                "getStream"
+              ]
+            },
+            "CreateCluster": {
+              "methods": [
+                "createCluster"
+              ]
+            },
+            "UpdateCluster": {
+              "methods": [
+                "updateCluster"
+              ]
+            },
+            "DeleteCluster": {
+              "methods": [
+                "deleteCluster"
+              ]
+            },
+            "CreateStream": {
+              "methods": [
+                "createStream"
+              ]
+            },
+            "UpdateStream": {
+              "methods": [
+                "updateStream"
+              ]
+            },
+            "DeleteStream": {
+              "methods": [
+                "deleteStream"
+              ]
+            },
+            "ListClusters": {
+              "methods": [
+                "listClusters",
+                "listClustersStream",
+                "listClustersAsync"
+              ]
+            },
+            "ListStreams": {
+              "methods": [
+                "listStreams",
+                "listStreamsStream",
+                "listStreamsAsync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

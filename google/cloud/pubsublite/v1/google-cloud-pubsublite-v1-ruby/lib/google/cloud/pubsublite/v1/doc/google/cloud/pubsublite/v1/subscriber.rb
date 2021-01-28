@@ -1,0 +1,160 @@
+# Copyright 2020 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+module Google
+  module Cloud
+    module Pubsublite
+      module V1
+        # The first request that must be sent on a newly-opened stream. The client must
+        # wait for the response before sending subsequent requests on the stream.
+        # @!attribute [rw] subscription
+        #   @return [String]
+        #     The subscription from which to receive messages.
+        # @!attribute [rw] partition
+        #   @return [Integer]
+        #     The partition from which to receive messages. Partitions are zero indexed,
+        #     so `partition` must be in the range [0, topic.num_partitions).
+        class InitialSubscribeRequest; end
+
+        # Response to an InitialSubscribeRequest.
+        # @!attribute [rw] cursor
+        #   @return [Google::Cloud::Pubsublite::V1::Cursor]
+        #     The cursor from which the subscriber will start receiving messages once
+        #     flow control tokens become available.
+        class InitialSubscribeResponse; end
+
+        # Request to update the stream's delivery cursor based on the given target.
+        # Resets the server available tokens to 0. SeekRequests may not be sent while
+        # another SeekRequest is outstanding (i.e., has not received a SeekResponse) on
+        # the same stream. SeekRequests past head result in stream breakage.
+        # @!attribute [rw] named_target
+        #   @return [Google::Cloud::Pubsublite::V1::SeekRequest::NamedTarget]
+        #     A named target.
+        # @!attribute [rw] cursor
+        #   @return [Google::Cloud::Pubsublite::V1::Cursor]
+        #     A target corresponding to the cursor, pointing to anywhere in the
+        #     topic partition.
+        class SeekRequest
+          # A special target in the partition that takes no other parameters.
+          module NamedTarget
+            # Default value. This value is unused.
+            NAMED_TARGET_UNSPECIFIED = 0
+
+            # A target corresponding to the most recently published message in the
+            # partition.
+            HEAD = 1
+
+            # A target corresponding to the committed cursor for the given subscription
+            # and topic partition.
+            COMMITTED_CURSOR = 2
+          end
+        end
+
+        # Response to a SeekRequest.
+        # @!attribute [rw] cursor
+        #   @return [Google::Cloud::Pubsublite::V1::Cursor]
+        #     The new delivery cursor for the current stream.
+        class SeekResponse; end
+
+        # Request to grant tokens to the server, requesting delivery of messages when
+        # they become available.
+        # @!attribute [rw] allowed_messages
+        #   @return [Integer]
+        #     The number of message tokens to grant. Must be greater than or equal to 0.
+        # @!attribute [rw] allowed_bytes
+        #   @return [Integer]
+        #     The number of byte tokens to grant. Must be greater than or equal to 0.
+        class FlowControlRequest; end
+
+        # A request sent from the client to the server on a stream.
+        # @!attribute [rw] initial
+        #   @return [Google::Cloud::Pubsublite::V1::InitialSubscribeRequest]
+        #     Initial request on the stream.
+        # @!attribute [rw] seek
+        #   @return [Google::Cloud::Pubsublite::V1::SeekRequest]
+        #     Request to update the stream's delivery cursor.
+        # @!attribute [rw] flow_control
+        #   @return [Google::Cloud::Pubsublite::V1::FlowControlRequest]
+        #     Request to grant tokens to the server,
+        class SubscribeRequest; end
+
+        # Response containing a list of messages. Upon delivering a MessageResponse to
+        # the client, the server:
+        # * Updates the stream's delivery cursor to one greater than the cursor of the
+        #   last message in the list.
+        # * Subtracts the total number of bytes and messages from the tokens available
+        #   to the server.
+        # @!attribute [rw] messages
+        #   @return [Array<Google::Cloud::Pubsublite::V1::SequencedMessage>]
+        #     Messages from the topic partition.
+        class MessageResponse; end
+
+        # Response to SubscribeRequest.
+        # @!attribute [rw] initial
+        #   @return [Google::Cloud::Pubsublite::V1::InitialSubscribeResponse]
+        #     Initial response on the stream.
+        # @!attribute [rw] seek
+        #   @return [Google::Cloud::Pubsublite::V1::SeekResponse]
+        #     Response to a Seek operation.
+        # @!attribute [rw] messages
+        #   @return [Google::Cloud::Pubsublite::V1::MessageResponse]
+        #     Response containing messages from the topic partition.
+        class SubscribeResponse; end
+
+        # The first request that must be sent on a newly-opened stream. The client must
+        # wait for the response before sending subsequent requests on the stream.
+        # @!attribute [rw] subscription
+        #   @return [String]
+        #     The subscription name. Structured like:
+        #     projects/<project number>/locations/<zone name>/subscriptions/<subscription
+        #     id>
+        # @!attribute [rw] client_id
+        #   @return [String]
+        #     An opaque, unique client identifier. This field must be exactly 16 bytes
+        #     long and is interpreted as an unsigned 128 bit integer. Other size values
+        #     will be rejected and the stream will be failed with a non-retryable error.
+        #
+        #     This field is large enough to fit a uuid from standard uuid algorithms like
+        #     uuid1 or uuid4, which should be used to generate this number. The same
+        #     identifier should be reused following disconnections with retryable stream
+        #     errors.
+        class InitialPartitionAssignmentRequest; end
+
+        # PartitionAssignments should not race with acknowledgements. There
+        # should be exactly one unacknowledged PartitionAssignment at a time. If not,
+        # the client must break the stream.
+        # @!attribute [rw] partitions
+        #   @return [Array<Integer>]
+        #     The list of partition numbers this subscriber is assigned to.
+        class PartitionAssignment; end
+
+        # Acknowledge receipt and handling of the previous assignment.
+        # If not sent within a short period after receiving the assignment,
+        # partitions may remain unassigned for a period of time until the
+        # client is known to be inactive, after which time the server will break the
+        # stream.
+        class PartitionAssignmentAck; end
+
+        # A request on the PartitionAssignment stream.
+        # @!attribute [rw] initial
+        #   @return [Google::Cloud::Pubsublite::V1::InitialPartitionAssignmentRequest]
+        #     Initial request on the stream.
+        # @!attribute [rw] ack
+        #   @return [Google::Cloud::Pubsublite::V1::PartitionAssignmentAck]
+        #     Acknowledgement of a partition assignment.
+        class PartitionAssignmentRequest; end
+      end
+    end
+  end
+end

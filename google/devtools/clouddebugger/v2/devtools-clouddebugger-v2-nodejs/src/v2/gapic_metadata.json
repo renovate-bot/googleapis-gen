@@ -1,0 +1,117 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "typescript",
+  "protoPackage": "google.devtools.clouddebugger.v2",
+  "libraryPackage": "clouddebugger",
+  "services": {
+    "Controller2": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "Controller2Client",
+          "rpcs": {
+            "RegisterDebuggee": {
+              "methods": [
+                "registerDebuggee"
+              ]
+            },
+            "ListActiveBreakpoints": {
+              "methods": [
+                "listActiveBreakpoints"
+              ]
+            },
+            "UpdateActiveBreakpoint": {
+              "methods": [
+                "updateActiveBreakpoint"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "Controller2Client",
+          "rpcs": {
+            "RegisterDebuggee": {
+              "methods": [
+                "registerDebuggee"
+              ]
+            },
+            "ListActiveBreakpoints": {
+              "methods": [
+                "listActiveBreakpoints"
+              ]
+            },
+            "UpdateActiveBreakpoint": {
+              "methods": [
+                "updateActiveBreakpoint"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "Debugger2": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "Debugger2Client",
+          "rpcs": {
+            "SetBreakpoint": {
+              "methods": [
+                "setBreakpoint"
+              ]
+            },
+            "GetBreakpoint": {
+              "methods": [
+                "getBreakpoint"
+              ]
+            },
+            "DeleteBreakpoint": {
+              "methods": [
+                "deleteBreakpoint"
+              ]
+            },
+            "ListBreakpoints": {
+              "methods": [
+                "listBreakpoints"
+              ]
+            },
+            "ListDebuggees": {
+              "methods": [
+                "listDebuggees"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "Debugger2Client",
+          "rpcs": {
+            "SetBreakpoint": {
+              "methods": [
+                "setBreakpoint"
+              ]
+            },
+            "GetBreakpoint": {
+              "methods": [
+                "getBreakpoint"
+              ]
+            },
+            "DeleteBreakpoint": {
+              "methods": [
+                "deleteBreakpoint"
+              ]
+            },
+            "ListBreakpoints": {
+              "methods": [
+                "listBreakpoints"
+              ]
+            },
+            "ListDebuggees": {
+              "methods": [
+                "listDebuggees"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

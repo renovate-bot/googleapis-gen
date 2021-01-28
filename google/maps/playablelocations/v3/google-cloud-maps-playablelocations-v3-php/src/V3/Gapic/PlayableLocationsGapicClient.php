@@ -1,0 +1,345 @@
+<?php
+/*
+ * Copyright 2020 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*
+ * GENERATED CODE WARNING
+ * This file was generated from the file
+ * https://github.com/google/googleapis/blob/master/google/maps/playablelocations/v3/playablelocations.proto
+ * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
+ */
+
+namespace Google\Maps\PlayableLocations\V3\Gapic;
+
+use Google\ApiCore\ApiException;
+use Google\ApiCore\CredentialsWrapper;
+use Google\ApiCore\GapicClientTrait;
+use Google\ApiCore\RetrySettings;
+use Google\ApiCore\Transport\TransportInterface;
+use Google\ApiCore\ValidationException;
+use Google\Auth\FetchAuthTokenInterface;
+use Google\Maps\Playablelocations\V3\Impression;
+use Google\Maps\Playablelocations\V3\LogImpressionsRequest;
+use Google\Maps\Playablelocations\V3\LogImpressionsResponse;
+use Google\Maps\Playablelocations\V3\LogPlayerReportsRequest;
+use Google\Maps\Playablelocations\V3\LogPlayerReportsResponse;
+use Google\Maps\Playablelocations\V3\PlayerReport;
+use Google\Maps\Playablelocations\V3\SamplePlayableLocationsRequest;
+use Google\Maps\Playablelocations\V3\SamplePlayableLocationsResponse;
+use Google\Maps\Playablelocations\V3\Sample\AreaFilter;
+use Google\Maps\Playablelocations\V3\Sample\Criterion;
+use Google\Maps\Unity\ClientInfo;
+
+/**
+ * Service Description: The Playable Locations API for v3.
+ *
+ * This class provides the ability to make remote calls to the backing service through method
+ * calls that map to API methods. Sample code to get started:
+ *
+ * ```
+ * $playableLocationsClient = new PlayableLocationsClient();
+ * try {
+ *     $areaFilter = new AreaFilter();
+ *     $criteria = [];
+ *     $response = $playableLocationsClient->samplePlayableLocations($areaFilter, $criteria);
+ * } finally {
+ *     $playableLocationsClient->close();
+ * }
+ * ```
+ *
+ * @experimental
+ */
+class PlayableLocationsGapicClient
+{
+    use GapicClientTrait;
+
+    /**
+     * The name of the service.
+     */
+    const SERVICE_NAME = 'google.maps.playablelocations.v3.PlayableLocations';
+
+    /**
+     * The default address of the service.
+     */
+    const SERVICE_ADDRESS = 'playablelocations.googleapis.com';
+
+    /**
+     * The default port of the service.
+     */
+    const DEFAULT_SERVICE_PORT = 443;
+
+    /**
+     * The name of the code generator, to be included in the agent header.
+     */
+    const CODEGEN_NAME = 'gapic';
+
+    /**
+     * The default scopes required by the service.
+     */
+    public static $serviceScopes = [
+    ];
+
+    private static function getClientDefaults()
+    {
+        return [
+            'serviceName' => self::SERVICE_NAME,
+            'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
+            'clientConfig' => __DIR__.'/../resources/playable_locations_client_config.json',
+            'descriptorsConfigPath' => __DIR__.'/../resources/playable_locations_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__.'/../resources/playable_locations_grpc_config.json',
+            'credentialsConfig' => [
+                'defaultScopes' => self::$serviceScopes,
+            ],
+            'transportConfig' => [
+                'rest' => [
+                    'restClientConfigPath' => __DIR__.'/../resources/playable_locations_rest_client_config.php',
+                ],
+            ],
+        ];
+    }
+
+    /**
+     * Constructor.
+     *
+     * @param array $options {
+     *                       Optional. Options for configuring the service API wrapper.
+     *
+     *     @type string $serviceAddress
+     *           The address of the API remote host. May optionally include the port, formatted
+     *           as "<uri>:<port>". Default 'playablelocations.googleapis.com:443'.
+     *     @type string|array|FetchAuthTokenInterface|CredentialsWrapper $credentials
+     *           The credentials to be used by the client to authorize API calls. This option
+     *           accepts either a path to a credentials file, or a decoded credentials file as a
+     *           PHP array.
+     *           *Advanced usage*: In addition, this option can also accept a pre-constructed
+     *           {@see \Google\Auth\FetchAuthTokenInterface} object or
+     *           {@see \Google\ApiCore\CredentialsWrapper} object. Note that when one of these
+     *           objects are provided, any settings in $credentialsConfig will be ignored.
+     *     @type array $credentialsConfig
+     *           Options used to configure credentials, including auth token caching, for the client.
+     *           For a full list of supporting configuration options, see
+     *           {@see \Google\ApiCore\CredentialsWrapper::build()}.
+     *     @type bool $disableRetries
+     *           Determines whether or not retries defined by the client configuration should be
+     *           disabled. Defaults to `false`.
+     *     @type string|array $clientConfig
+     *           Client method configuration, including retry settings. This option can be either a
+     *           path to a JSON file, or a PHP array containing the decoded JSON data.
+     *           By default this settings points to the default client config file, which is provided
+     *           in the resources folder.
+     *     @type string|TransportInterface $transport
+     *           The transport used for executing network requests. May be either the string `rest`
+     *           or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
+     *           *Advanced usage*: Additionally, it is possible to pass in an already instantiated
+     *           {@see \Google\ApiCore\Transport\TransportInterface} object. Note that when this
+     *           object is provided, any settings in $transportConfig, and any $serviceAddress
+     *           setting, will be ignored.
+     *     @type array $transportConfig
+     *           Configuration options that will be used to construct the transport. Options for
+     *           each supported transport type should be passed in a key for that transport. For
+     *           example:
+     *           $transportConfig = [
+     *               'grpc' => [...],
+     *               'rest' => [...]
+     *           ];
+     *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
+     *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
+     *           supported options.
+     * }
+     *
+     * @throws ValidationException
+     * @experimental
+     */
+    public function __construct(array $options = [])
+    {
+        $clientOptions = $this->buildClientOptions($options);
+        $this->setClientOptions($clientOptions);
+    }
+
+    /**
+     * Returns a set of playable locations that lie within a specified area,
+     * that satisfy optional filter criteria.
+     *
+     * Note: Identical `SamplePlayableLocations` requests can return different
+     * results as the state of the world changes over time.
+     *
+     * Sample code:
+     * ```
+     * $playableLocationsClient = new PlayableLocationsClient();
+     * try {
+     *     $areaFilter = new AreaFilter();
+     *     $criteria = [];
+     *     $response = $playableLocationsClient->samplePlayableLocations($areaFilter, $criteria);
+     * } finally {
+     *     $playableLocationsClient->close();
+     * }
+     * ```
+     *
+     * @param AreaFilter  $areaFilter   Required. Specifies the area to search within for playable locations.
+     * @param Criterion[] $criteria     Required. Specifies one or more (up to 5) criteria for filtering the
+     *                                  returned playable locations.
+     * @param array       $optionalArgs {
+     *                                  Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Maps\Playablelocations\V3\SamplePlayableLocationsResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function samplePlayableLocations($areaFilter, $criteria, array $optionalArgs = [])
+    {
+        $request = new SamplePlayableLocationsRequest();
+        $request->setAreaFilter($areaFilter);
+        $request->setCriteria($criteria);
+
+        return $this->startCall(
+            'SamplePlayableLocations',
+            SamplePlayableLocationsResponse::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Logs bad playable location reports submitted by players.
+     *
+     * Reports are not partially saved; either all reports are saved and this
+     * request succeeds, or no reports are saved, and this request fails.
+     *
+     * Sample code:
+     * ```
+     * $playableLocationsClient = new PlayableLocationsClient();
+     * try {
+     *     $playerReports = [];
+     *     $requestId = '';
+     *     $clientInfo = new ClientInfo();
+     *     $response = $playableLocationsClient->logPlayerReports($playerReports, $requestId, $clientInfo);
+     * } finally {
+     *     $playableLocationsClient->close();
+     * }
+     * ```
+     *
+     * @param PlayerReport[] $playerReports Required. Player reports. The maximum number of player reports that you can log at
+     *                                      once is 50.
+     * @param string         $requestId     Required. A string that uniquely identifies the log player reports request. This
+     *                                      allows you to detect duplicate requests. We recommend that you use UUIDs
+     *                                      for this value. The value must not exceed 50 characters.
+     *
+     * You should reuse the `request_id` only when retrying a request in the case
+     * of a failure. In that case, the request must be identical to the one that
+     * failed.
+     * @param ClientInfo $clientInfo   Required. Information about the client device (for example, device model and
+     *                                 operating system).
+     * @param array      $optionalArgs {
+     *                                 Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Maps\Playablelocations\V3\LogPlayerReportsResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function logPlayerReports($playerReports, $requestId, $clientInfo, array $optionalArgs = [])
+    {
+        $request = new LogPlayerReportsRequest();
+        $request->setPlayerReports($playerReports);
+        $request->setRequestId($requestId);
+        $request->setClientInfo($clientInfo);
+
+        return $this->startCall(
+            'LogPlayerReports',
+            LogPlayerReportsResponse::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Logs new events when playable locations are displayed, and when they are
+     * interacted with.
+     *
+     * Impressions are not partially saved; either all impressions are saved and
+     * this request succeeds, or no impressions are saved, and this request fails.
+     *
+     * Sample code:
+     * ```
+     * $playableLocationsClient = new PlayableLocationsClient();
+     * try {
+     *     $impressions = [];
+     *     $requestId = '';
+     *     $clientInfo = new ClientInfo();
+     *     $response = $playableLocationsClient->logImpressions($impressions, $requestId, $clientInfo);
+     * } finally {
+     *     $playableLocationsClient->close();
+     * }
+     * ```
+     *
+     * @param Impression[] $impressions Required. Impression event details. The maximum number of impression reports that you
+     *                                  can log at once is 50.
+     * @param string       $requestId   Required. A string that uniquely identifies the log impressions request. This allows
+     *                                  you to detect duplicate requests. We recommend that you use UUIDs for this
+     *                                  value. The value must not exceed 50 characters.
+     *
+     * You should reuse the `request_id` only when retrying a request in case of
+     * failure. In this case, the request must be identical to the one that
+     * failed.
+     * @param ClientInfo $clientInfo   Required. Information about the client device. For example, device model and
+     *                                 operating system.
+     * @param array      $optionalArgs {
+     *                                 Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Maps\Playablelocations\V3\LogImpressionsResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function logImpressions($impressions, $requestId, $clientInfo, array $optionalArgs = [])
+    {
+        $request = new LogImpressionsRequest();
+        $request->setImpressions($impressions);
+        $request->setRequestId($requestId);
+        $request->setClientInfo($clientInfo);
+
+        return $this->startCall(
+            'LogImpressions',
+            LogImpressionsResponse::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+}

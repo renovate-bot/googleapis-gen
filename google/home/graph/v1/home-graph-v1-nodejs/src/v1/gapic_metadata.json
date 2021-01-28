@@ -1,0 +1,73 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "typescript",
+  "protoPackage": "google.home.graph.v1",
+  "libraryPackage": "graph",
+  "services": {
+    "HomeGraphApiService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "HomeGraphApiServiceClient",
+          "rpcs": {
+            "RequestSyncDevices": {
+              "methods": [
+                "requestSyncDevices"
+              ]
+            },
+            "ReportStateAndNotification": {
+              "methods": [
+                "reportStateAndNotification"
+              ]
+            },
+            "DeleteAgentUser": {
+              "methods": [
+                "deleteAgentUser"
+              ]
+            },
+            "Query": {
+              "methods": [
+                "query"
+              ]
+            },
+            "Sync": {
+              "methods": [
+                "sync"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "HomeGraphApiServiceClient",
+          "rpcs": {
+            "RequestSyncDevices": {
+              "methods": [
+                "requestSyncDevices"
+              ]
+            },
+            "ReportStateAndNotification": {
+              "methods": [
+                "reportStateAndNotification"
+              ]
+            },
+            "DeleteAgentUser": {
+              "methods": [
+                "deleteAgentUser"
+              ]
+            },
+            "Query": {
+              "methods": [
+                "query"
+              ]
+            },
+            "Sync": {
+              "methods": [
+                "sync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

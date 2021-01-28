@@ -1,0 +1,573 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "typescript",
+  "protoPackage": "google.storage.v1",
+  "libraryPackage": "storage",
+  "services": {
+    "Storage": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "StorageClient",
+          "rpcs": {
+            "DeleteBucketAccessControl": {
+              "methods": [
+                "deleteBucketAccessControl"
+              ]
+            },
+            "GetBucketAccessControl": {
+              "methods": [
+                "getBucketAccessControl"
+              ]
+            },
+            "InsertBucketAccessControl": {
+              "methods": [
+                "insertBucketAccessControl"
+              ]
+            },
+            "ListBucketAccessControls": {
+              "methods": [
+                "listBucketAccessControls"
+              ]
+            },
+            "UpdateBucketAccessControl": {
+              "methods": [
+                "updateBucketAccessControl"
+              ]
+            },
+            "PatchBucketAccessControl": {
+              "methods": [
+                "patchBucketAccessControl"
+              ]
+            },
+            "DeleteBucket": {
+              "methods": [
+                "deleteBucket"
+              ]
+            },
+            "GetBucket": {
+              "methods": [
+                "getBucket"
+              ]
+            },
+            "InsertBucket": {
+              "methods": [
+                "insertBucket"
+              ]
+            },
+            "ListChannels": {
+              "methods": [
+                "listChannels"
+              ]
+            },
+            "ListBuckets": {
+              "methods": [
+                "listBuckets"
+              ]
+            },
+            "LockBucketRetentionPolicy": {
+              "methods": [
+                "lockBucketRetentionPolicy"
+              ]
+            },
+            "GetBucketIamPolicy": {
+              "methods": [
+                "getBucketIamPolicy"
+              ]
+            },
+            "SetBucketIamPolicy": {
+              "methods": [
+                "setBucketIamPolicy"
+              ]
+            },
+            "TestBucketIamPermissions": {
+              "methods": [
+                "testBucketIamPermissions"
+              ]
+            },
+            "PatchBucket": {
+              "methods": [
+                "patchBucket"
+              ]
+            },
+            "UpdateBucket": {
+              "methods": [
+                "updateBucket"
+              ]
+            },
+            "StopChannel": {
+              "methods": [
+                "stopChannel"
+              ]
+            },
+            "DeleteDefaultObjectAccessControl": {
+              "methods": [
+                "deleteDefaultObjectAccessControl"
+              ]
+            },
+            "GetDefaultObjectAccessControl": {
+              "methods": [
+                "getDefaultObjectAccessControl"
+              ]
+            },
+            "InsertDefaultObjectAccessControl": {
+              "methods": [
+                "insertDefaultObjectAccessControl"
+              ]
+            },
+            "ListDefaultObjectAccessControls": {
+              "methods": [
+                "listDefaultObjectAccessControls"
+              ]
+            },
+            "PatchDefaultObjectAccessControl": {
+              "methods": [
+                "patchDefaultObjectAccessControl"
+              ]
+            },
+            "UpdateDefaultObjectAccessControl": {
+              "methods": [
+                "updateDefaultObjectAccessControl"
+              ]
+            },
+            "DeleteNotification": {
+              "methods": [
+                "deleteNotification"
+              ]
+            },
+            "GetNotification": {
+              "methods": [
+                "getNotification"
+              ]
+            },
+            "InsertNotification": {
+              "methods": [
+                "insertNotification"
+              ]
+            },
+            "ListNotifications": {
+              "methods": [
+                "listNotifications"
+              ]
+            },
+            "DeleteObjectAccessControl": {
+              "methods": [
+                "deleteObjectAccessControl"
+              ]
+            },
+            "GetObjectAccessControl": {
+              "methods": [
+                "getObjectAccessControl"
+              ]
+            },
+            "InsertObjectAccessControl": {
+              "methods": [
+                "insertObjectAccessControl"
+              ]
+            },
+            "ListObjectAccessControls": {
+              "methods": [
+                "listObjectAccessControls"
+              ]
+            },
+            "PatchObjectAccessControl": {
+              "methods": [
+                "patchObjectAccessControl"
+              ]
+            },
+            "UpdateObjectAccessControl": {
+              "methods": [
+                "updateObjectAccessControl"
+              ]
+            },
+            "ComposeObject": {
+              "methods": [
+                "composeObject"
+              ]
+            },
+            "CopyObject": {
+              "methods": [
+                "copyObject"
+              ]
+            },
+            "DeleteObject": {
+              "methods": [
+                "deleteObject"
+              ]
+            },
+            "GetObject": {
+              "methods": [
+                "getObject"
+              ]
+            },
+            "ListObjects": {
+              "methods": [
+                "listObjects"
+              ]
+            },
+            "RewriteObject": {
+              "methods": [
+                "rewriteObject"
+              ]
+            },
+            "StartResumableWrite": {
+              "methods": [
+                "startResumableWrite"
+              ]
+            },
+            "QueryWriteStatus": {
+              "methods": [
+                "queryWriteStatus"
+              ]
+            },
+            "PatchObject": {
+              "methods": [
+                "patchObject"
+              ]
+            },
+            "UpdateObject": {
+              "methods": [
+                "updateObject"
+              ]
+            },
+            "GetObjectIamPolicy": {
+              "methods": [
+                "getObjectIamPolicy"
+              ]
+            },
+            "SetObjectIamPolicy": {
+              "methods": [
+                "setObjectIamPolicy"
+              ]
+            },
+            "TestObjectIamPermissions": {
+              "methods": [
+                "testObjectIamPermissions"
+              ]
+            },
+            "WatchAllObjects": {
+              "methods": [
+                "watchAllObjects"
+              ]
+            },
+            "GetServiceAccount": {
+              "methods": [
+                "getServiceAccount"
+              ]
+            },
+            "CreateHmacKey": {
+              "methods": [
+                "createHmacKey"
+              ]
+            },
+            "DeleteHmacKey": {
+              "methods": [
+                "deleteHmacKey"
+              ]
+            },
+            "GetHmacKey": {
+              "methods": [
+                "getHmacKey"
+              ]
+            },
+            "ListHmacKeys": {
+              "methods": [
+                "listHmacKeys"
+              ]
+            },
+            "UpdateHmacKey": {
+              "methods": [
+                "updateHmacKey"
+              ]
+            },
+            "GetObjectMedia": {
+              "methods": [
+                "getObjectMedia"
+              ]
+            },
+            "InsertObject": {
+              "methods": [
+                "insertObject"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "StorageClient",
+          "rpcs": {
+            "DeleteBucketAccessControl": {
+              "methods": [
+                "deleteBucketAccessControl"
+              ]
+            },
+            "GetBucketAccessControl": {
+              "methods": [
+                "getBucketAccessControl"
+              ]
+            },
+            "InsertBucketAccessControl": {
+              "methods": [
+                "insertBucketAccessControl"
+              ]
+            },
+            "ListBucketAccessControls": {
+              "methods": [
+                "listBucketAccessControls"
+              ]
+            },
+            "UpdateBucketAccessControl": {
+              "methods": [
+                "updateBucketAccessControl"
+              ]
+            },
+            "PatchBucketAccessControl": {
+              "methods": [
+                "patchBucketAccessControl"
+              ]
+            },
+            "DeleteBucket": {
+              "methods": [
+                "deleteBucket"
+              ]
+            },
+            "GetBucket": {
+              "methods": [
+                "getBucket"
+              ]
+            },
+            "InsertBucket": {
+              "methods": [
+                "insertBucket"
+              ]
+            },
+            "ListChannels": {
+              "methods": [
+                "listChannels"
+              ]
+            },
+            "ListBuckets": {
+              "methods": [
+                "listBuckets"
+              ]
+            },
+            "LockBucketRetentionPolicy": {
+              "methods": [
+                "lockBucketRetentionPolicy"
+              ]
+            },
+            "GetBucketIamPolicy": {
+              "methods": [
+                "getBucketIamPolicy"
+              ]
+            },
+            "SetBucketIamPolicy": {
+              "methods": [
+                "setBucketIamPolicy"
+              ]
+            },
+            "TestBucketIamPermissions": {
+              "methods": [
+                "testBucketIamPermissions"
+              ]
+            },
+            "PatchBucket": {
+              "methods": [
+                "patchBucket"
+              ]
+            },
+            "UpdateBucket": {
+              "methods": [
+                "updateBucket"
+              ]
+            },
+            "StopChannel": {
+              "methods": [
+                "stopChannel"
+              ]
+            },
+            "DeleteDefaultObjectAccessControl": {
+              "methods": [
+                "deleteDefaultObjectAccessControl"
+              ]
+            },
+            "GetDefaultObjectAccessControl": {
+              "methods": [
+                "getDefaultObjectAccessControl"
+              ]
+            },
+            "InsertDefaultObjectAccessControl": {
+              "methods": [
+                "insertDefaultObjectAccessControl"
+              ]
+            },
+            "ListDefaultObjectAccessControls": {
+              "methods": [
+                "listDefaultObjectAccessControls"
+              ]
+            },
+            "PatchDefaultObjectAccessControl": {
+              "methods": [
+                "patchDefaultObjectAccessControl"
+              ]
+            },
+            "UpdateDefaultObjectAccessControl": {
+              "methods": [
+                "updateDefaultObjectAccessControl"
+              ]
+            },
+            "DeleteNotification": {
+              "methods": [
+                "deleteNotification"
+              ]
+            },
+            "GetNotification": {
+              "methods": [
+                "getNotification"
+              ]
+            },
+            "InsertNotification": {
+              "methods": [
+                "insertNotification"
+              ]
+            },
+            "ListNotifications": {
+              "methods": [
+                "listNotifications"
+              ]
+            },
+            "DeleteObjectAccessControl": {
+              "methods": [
+                "deleteObjectAccessControl"
+              ]
+            },
+            "GetObjectAccessControl": {
+              "methods": [
+                "getObjectAccessControl"
+              ]
+            },
+            "InsertObjectAccessControl": {
+              "methods": [
+                "insertObjectAccessControl"
+              ]
+            },
+            "ListObjectAccessControls": {
+              "methods": [
+                "listObjectAccessControls"
+              ]
+            },
+            "PatchObjectAccessControl": {
+              "methods": [
+                "patchObjectAccessControl"
+              ]
+            },
+            "UpdateObjectAccessControl": {
+              "methods": [
+                "updateObjectAccessControl"
+              ]
+            },
+            "ComposeObject": {
+              "methods": [
+                "composeObject"
+              ]
+            },
+            "CopyObject": {
+              "methods": [
+                "copyObject"
+              ]
+            },
+            "DeleteObject": {
+              "methods": [
+                "deleteObject"
+              ]
+            },
+            "GetObject": {
+              "methods": [
+                "getObject"
+              ]
+            },
+            "ListObjects": {
+              "methods": [
+                "listObjects"
+              ]
+            },
+            "RewriteObject": {
+              "methods": [
+                "rewriteObject"
+              ]
+            },
+            "StartResumableWrite": {
+              "methods": [
+                "startResumableWrite"
+              ]
+            },
+            "QueryWriteStatus": {
+              "methods": [
+                "queryWriteStatus"
+              ]
+            },
+            "PatchObject": {
+              "methods": [
+                "patchObject"
+              ]
+            },
+            "UpdateObject": {
+              "methods": [
+                "updateObject"
+              ]
+            },
+            "GetObjectIamPolicy": {
+              "methods": [
+                "getObjectIamPolicy"
+              ]
+            },
+            "SetObjectIamPolicy": {
+              "methods": [
+                "setObjectIamPolicy"
+              ]
+            },
+            "TestObjectIamPermissions": {
+              "methods": [
+                "testObjectIamPermissions"
+              ]
+            },
+            "WatchAllObjects": {
+              "methods": [
+                "watchAllObjects"
+              ]
+            },
+            "GetServiceAccount": {
+              "methods": [
+                "getServiceAccount"
+              ]
+            },
+            "CreateHmacKey": {
+              "methods": [
+                "createHmacKey"
+              ]
+            },
+            "DeleteHmacKey": {
+              "methods": [
+                "deleteHmacKey"
+              ]
+            },
+            "GetHmacKey": {
+              "methods": [
+                "getHmacKey"
+              ]
+            },
+            "ListHmacKeys": {
+              "methods": [
+                "listHmacKeys"
+              ]
+            },
+            "UpdateHmacKey": {
+              "methods": [
+                "updateHmacKey"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

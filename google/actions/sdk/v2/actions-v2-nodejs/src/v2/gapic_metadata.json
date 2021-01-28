@@ -1,0 +1,140 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "typescript",
+  "protoPackage": "google.actions.sdk.v2",
+  "libraryPackage": "@assistant/actions",
+  "services": {
+    "ActionsSdk": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ActionsSdkClient",
+          "rpcs": {
+            "EncryptSecret": {
+              "methods": [
+                "encryptSecret"
+              ]
+            },
+            "DecryptSecret": {
+              "methods": [
+                "decryptSecret"
+              ]
+            },
+            "WriteDraft": {
+              "methods": [
+                "writeDraft"
+              ]
+            },
+            "WritePreview": {
+              "methods": [
+                "writePreview"
+              ]
+            },
+            "CreateVersion": {
+              "methods": [
+                "createVersion"
+              ]
+            },
+            "ReadDraft": {
+              "methods": [
+                "readDraft"
+              ]
+            },
+            "ReadVersion": {
+              "methods": [
+                "readVersion"
+              ]
+            },
+            "ListReleaseChannels": {
+              "methods": [
+                "listReleaseChannels",
+                "listReleaseChannelsStream",
+                "listReleaseChannelsAsync"
+              ]
+            },
+            "ListVersions": {
+              "methods": [
+                "listVersions",
+                "listVersionsStream",
+                "listVersionsAsync"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "ActionsSdkClient",
+          "rpcs": {
+            "EncryptSecret": {
+              "methods": [
+                "encryptSecret"
+              ]
+            },
+            "DecryptSecret": {
+              "methods": [
+                "decryptSecret"
+              ]
+            },
+            "ListReleaseChannels": {
+              "methods": [
+                "listReleaseChannels",
+                "listReleaseChannelsStream",
+                "listReleaseChannelsAsync"
+              ]
+            },
+            "ListVersions": {
+              "methods": [
+                "listVersions",
+                "listVersionsStream",
+                "listVersionsAsync"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "ActionsTesting": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ActionsTestingClient",
+          "rpcs": {
+            "SendInteraction": {
+              "methods": [
+                "sendInteraction"
+              ]
+            },
+            "MatchIntents": {
+              "methods": [
+                "matchIntents"
+              ]
+            },
+            "SetWebAndAppActivityControl": {
+              "methods": [
+                "setWebAndAppActivityControl"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "ActionsTestingClient",
+          "rpcs": {
+            "SendInteraction": {
+              "methods": [
+                "sendInteraction"
+              ]
+            },
+            "MatchIntents": {
+              "methods": [
+                "matchIntents"
+              ]
+            },
+            "SetWebAndAppActivityControl": {
+              "methods": [
+                "setWebAndAppActivityControl"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

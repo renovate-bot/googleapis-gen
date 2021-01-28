@@ -1,0 +1,503 @@
+# Copyright 2020 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+module Google
+  module Cloud
+    module Documentai
+      module V1beta2
+        # Document represents the canonical document resource in Document Understanding
+        # AI.
+        # It is an interchange format that provides insights into documents and allows
+        # for collaboration between users and Document Understanding AI to iterate and
+        # optimize for quality.
+        # @!attribute [rw] uri
+        #   @return [String]
+        #     Currently supports Google Cloud Storage URI of the form
+        #        `gs://bucket_name/object_name`. Object versioning is not supported.
+        #        See [Google Cloud Storage Request
+        #        URIs](https://cloud.google.com/storage/docs/reference-uris) for more
+        #        info.
+        # @!attribute [rw] content
+        #   @return [String]
+        #     Inline document content, represented as a stream of bytes.
+        #     Note: As with all `bytes` fields, protobuffers use a pure binary
+        #     representation, whereas JSON representations use base64.
+        # @!attribute [rw] mime_type
+        #   @return [String]
+        #     An IANA published MIME type (also referred to as media type). For more
+        #     information, see
+        #     https://www.iana.org/assignments/media-types/media-types.xhtml.
+        # @!attribute [rw] text
+        #   @return [String]
+        #     UTF-8 encoded text in reading order from the document.
+        # @!attribute [rw] text_styles
+        #   @return [Array<Google::Cloud::Documentai::V1beta2::Document::Style>]
+        #     Styles for the {Google::Cloud::Documentai::V1beta2::Document#text Document#text}.
+        # @!attribute [rw] pages
+        #   @return [Array<Google::Cloud::Documentai::V1beta2::Document::Page>]
+        #     Visual page layout for the {Google::Cloud::Documentai::V1beta2::Document Document}.
+        # @!attribute [rw] entities
+        #   @return [Array<Google::Cloud::Documentai::V1beta2::Document::Entity>]
+        #     A list of entities detected on {Google::Cloud::Documentai::V1beta2::Document#text Document#text}. For document shards,
+        #     entities in this list may cross shard boundaries.
+        # @!attribute [rw] entity_relations
+        #   @return [Array<Google::Cloud::Documentai::V1beta2::Document::EntityRelation>]
+        #     Relationship among {Google::Cloud::Documentai::V1beta2::Document#entities Document#entities}.
+        # @!attribute [rw] shard_info
+        #   @return [Google::Cloud::Documentai::V1beta2::Document::ShardInfo]
+        #     Information about the sharding if this document is sharded part of a larger
+        #     document. If the document is not sharded, this message is not specified.
+        # @!attribute [rw] labels
+        #   @return [Array<Google::Cloud::Documentai::V1beta2::Document::Label>]
+        #     {Google::Cloud::Documentai::V1beta2::Document::Label Label}s for this document.
+        # @!attribute [rw] error
+        #   @return [Google::Rpc::Status]
+        #     Any error that occurred while processing this document.
+        class Document
+          # For a large document, sharding may be performed to produce several
+          # document shards. Each document shard contains this field to detail which
+          # shard it is.
+          # @!attribute [rw] shard_index
+          #   @return [Integer]
+          #     The 0-based index of this shard.
+          # @!attribute [rw] shard_count
+          #   @return [Integer]
+          #     Total number of shards.
+          # @!attribute [rw] text_offset
+          #   @return [Integer]
+          #     The index of the first character in {Google::Cloud::Documentai::V1beta2::Document#text Document#text} in the overall
+          #     document global text.
+          class ShardInfo; end
+
+          # Label attaches schema information and/or other metadata to segments within
+          # a {Google::Cloud::Documentai::V1beta2::Document Document}. Multiple {Google::Cloud::Documentai::V1beta2::Document::Label Label}s on a single field can denote either
+          # different labels, different instances of the same label created at
+          # different times, or some combination of both.
+          # @!attribute [rw] automl_model
+          #   @return [String]
+          #     Label is generated AutoML model. This field stores the full resource
+          #     name of the AutoML model.
+          #
+          #     Format:
+          #     `projects/{project-id}/locations/{location-id}/models/{model-id}`
+          # @!attribute [rw] name
+          #   @return [String]
+          #     Name of the label.
+          #
+          #     When the label is generated from AutoML Text Classification model, this
+          #     field represents the name of the category.
+          # @!attribute [rw] confidence
+          #   @return [Float]
+          #     Confidence score between 0 and 1 for label assignment.
+          class Label; end
+
+          # Annotation for common text style attributes. This adheres to CSS
+          # conventions as much as possible.
+          # @!attribute [rw] text_anchor
+          #   @return [Google::Cloud::Documentai::V1beta2::Document::TextAnchor]
+          #     Text anchor indexing into the {Google::Cloud::Documentai::V1beta2::Document#text Document#text}.
+          # @!attribute [rw] color
+          #   @return [Google::Type::Color]
+          #     Text color.
+          # @!attribute [rw] background_color
+          #   @return [Google::Type::Color]
+          #     Text background color.
+          # @!attribute [rw] font_weight
+          #   @return [String]
+          #     Font weight. Possible values are normal, bold, bolder, and lighter.
+          #     https://www.w3schools.com/cssref/pr_font_weight.asp
+          # @!attribute [rw] text_style
+          #   @return [String]
+          #     Text style. Possible values are normal, italic, and oblique.
+          #     https://www.w3schools.com/cssref/pr_font_font-style.asp
+          # @!attribute [rw] text_decoration
+          #   @return [String]
+          #     Text decoration. Follows CSS standard.
+          #     <text-decoration-line> <text-decoration-color> <text-decoration-style>
+          #     https://www.w3schools.com/cssref/pr_text_text-decoration.asp
+          # @!attribute [rw] font_size
+          #   @return [Google::Cloud::Documentai::V1beta2::Document::Style::FontSize]
+          #     Font size.
+          class Style
+            # Font size with unit.
+            # @!attribute [rw] size
+            #   @return [Float]
+            #     Font size for the text.
+            # @!attribute [rw] unit
+            #   @return [String]
+            #     Unit for the font size. Follows CSS naming (in, px, pt, etc.).
+            class FontSize; end
+          end
+
+          # A page in a {Google::Cloud::Documentai::V1beta2::Document Document}.
+          # @!attribute [rw] page_number
+          #   @return [Integer]
+          #     1-based index for current {Google::Cloud::Documentai::V1beta2::Document::Page Page} in a parent {Google::Cloud::Documentai::V1beta2::Document Document}.
+          #     Useful when a page is taken out of a {Google::Cloud::Documentai::V1beta2::Document Document} for individual
+          #     processing.
+          # @!attribute [rw] dimension
+          #   @return [Google::Cloud::Documentai::V1beta2::Document::Page::Dimension]
+          #     Physical dimension of the page.
+          # @!attribute [rw] layout
+          #   @return [Google::Cloud::Documentai::V1beta2::Document::Page::Layout]
+          #     {Google::Cloud::Documentai::V1beta2::Document::Page::Layout Layout} for the page.
+          # @!attribute [rw] detected_languages
+          #   @return [Array<Google::Cloud::Documentai::V1beta2::Document::Page::DetectedLanguage>]
+          #     A list of detected languages together with confidence.
+          # @!attribute [rw] blocks
+          #   @return [Array<Google::Cloud::Documentai::V1beta2::Document::Page::Block>]
+          #     A list of visually detected text blocks on the page.
+          #     A block has a set of lines (collected into paragraphs) that have a common
+          #     line-spacing and orientation.
+          # @!attribute [rw] paragraphs
+          #   @return [Array<Google::Cloud::Documentai::V1beta2::Document::Page::Paragraph>]
+          #     A list of visually detected text paragraphs on the page.
+          #     A collection of lines that a human would perceive as a paragraph.
+          # @!attribute [rw] lines
+          #   @return [Array<Google::Cloud::Documentai::V1beta2::Document::Page::Line>]
+          #     A list of visually detected text lines on the page.
+          #     A collection of tokens that a human would perceive as a line.
+          # @!attribute [rw] tokens
+          #   @return [Array<Google::Cloud::Documentai::V1beta2::Document::Page::Token>]
+          #     A list of visually detected tokens on the page.
+          # @!attribute [rw] visual_elements
+          #   @return [Array<Google::Cloud::Documentai::V1beta2::Document::Page::VisualElement>]
+          #     A list of detected non-text visual elements e.g. checkbox,
+          #     signature etc. on the page.
+          # @!attribute [rw] tables
+          #   @return [Array<Google::Cloud::Documentai::V1beta2::Document::Page::Table>]
+          #     A list of visually detected tables on the page.
+          # @!attribute [rw] form_fields
+          #   @return [Array<Google::Cloud::Documentai::V1beta2::Document::Page::FormField>]
+          #     A list of visually detected form fields on the page.
+          class Page
+            # Dimension for the page.
+            # @!attribute [rw] width
+            #   @return [Float]
+            #     Page width.
+            # @!attribute [rw] height
+            #   @return [Float]
+            #     Page height.
+            # @!attribute [rw] unit
+            #   @return [String]
+            #     Dimension unit.
+            class Dimension; end
+
+            # Visual element describing a layout unit on a page.
+            # @!attribute [rw] text_anchor
+            #   @return [Google::Cloud::Documentai::V1beta2::Document::TextAnchor]
+            #     Text anchor indexing into the {Google::Cloud::Documentai::V1beta2::Document#text Document#text}.
+            # @!attribute [rw] confidence
+            #   @return [Float]
+            #     Confidence of the current {Google::Cloud::Documentai::V1beta2::Document::Page::Layout Layout} within context of the object this
+            #     layout is for. e.g. confidence can be for a single token, a table,
+            #     a visual element, etc. depending on context. Range [0, 1].
+            # @!attribute [rw] bounding_poly
+            #   @return [Google::Cloud::Documentai::V1beta2::BoundingPoly]
+            #     The bounding polygon for the {Google::Cloud::Documentai::V1beta2::Document::Page::Layout Layout}.
+            # @!attribute [rw] orientation
+            #   @return [Google::Cloud::Documentai::V1beta2::Document::Page::Layout::Orientation]
+            #     Detected orientation for the {Google::Cloud::Documentai::V1beta2::Document::Page::Layout Layout}.
+            # @!attribute [rw] id
+            #   @return [String]
+            #     Optional. This is the identifier used by referencing {Google::Cloud::Documentai::V1beta2::Document::PageAnchor PageAnchor}s.
+            class Layout
+              # Detected human reading orientation.
+              module Orientation
+                # Unspecified orientation.
+                ORIENTATION_UNSPECIFIED = 0
+
+                # Orientation is aligned with page up.
+                PAGE_UP = 1
+
+                # Orientation is aligned with page right.
+                # Turn the head 90 degrees clockwise from upright to read.
+                PAGE_RIGHT = 2
+
+                # Orientation is aligned with page down.
+                # Turn the head 180 degrees from upright to read.
+                PAGE_DOWN = 3
+
+                # Orientation is aligned with page left.
+                # Turn the head 90 degrees counterclockwise from upright to read.
+                PAGE_LEFT = 4
+              end
+            end
+
+            # A block has a set of lines (collected into paragraphs) that have a
+            # common line-spacing and orientation.
+            # @!attribute [rw] layout
+            #   @return [Google::Cloud::Documentai::V1beta2::Document::Page::Layout]
+            #     {Google::Cloud::Documentai::V1beta2::Document::Page::Layout Layout} for {Google::Cloud::Documentai::V1beta2::Document::Page::Block Block}.
+            # @!attribute [rw] detected_languages
+            #   @return [Array<Google::Cloud::Documentai::V1beta2::Document::Page::DetectedLanguage>]
+            #     A list of detected languages together with confidence.
+            class Block; end
+
+            # A collection of lines that a human would perceive as a paragraph.
+            # @!attribute [rw] layout
+            #   @return [Google::Cloud::Documentai::V1beta2::Document::Page::Layout]
+            #     {Google::Cloud::Documentai::V1beta2::Document::Page::Layout Layout} for {Google::Cloud::Documentai::V1beta2::Document::Page::Paragraph Paragraph}.
+            # @!attribute [rw] detected_languages
+            #   @return [Array<Google::Cloud::Documentai::V1beta2::Document::Page::DetectedLanguage>]
+            #     A list of detected languages together with confidence.
+            class Paragraph; end
+
+            # A collection of tokens that a human would perceive as a line.
+            # Does not cross column boundaries, can be horizontal, vertical, etc.
+            # @!attribute [rw] layout
+            #   @return [Google::Cloud::Documentai::V1beta2::Document::Page::Layout]
+            #     {Google::Cloud::Documentai::V1beta2::Document::Page::Layout Layout} for {Google::Cloud::Documentai::V1beta2::Document::Page::Line Line}.
+            # @!attribute [rw] detected_languages
+            #   @return [Array<Google::Cloud::Documentai::V1beta2::Document::Page::DetectedLanguage>]
+            #     A list of detected languages together with confidence.
+            class Line; end
+
+            # A detected token.
+            # @!attribute [rw] layout
+            #   @return [Google::Cloud::Documentai::V1beta2::Document::Page::Layout]
+            #     {Google::Cloud::Documentai::V1beta2::Document::Page::Layout Layout} for {Google::Cloud::Documentai::V1beta2::Document::Page::Token Token}.
+            # @!attribute [rw] detected_break
+            #   @return [Google::Cloud::Documentai::V1beta2::Document::Page::Token::DetectedBreak]
+            #     Detected break at the end of a {Google::Cloud::Documentai::V1beta2::Document::Page::Token Token}.
+            # @!attribute [rw] detected_languages
+            #   @return [Array<Google::Cloud::Documentai::V1beta2::Document::Page::DetectedLanguage>]
+            #     A list of detected languages together with confidence.
+            class Token
+              # Detected break at the end of a {Google::Cloud::Documentai::V1beta2::Document::Page::Token Token}.
+              # @!attribute [rw] type
+              #   @return [Google::Cloud::Documentai::V1beta2::Document::Page::Token::DetectedBreak::Type]
+              #     Detected break type.
+              class DetectedBreak
+                # Enum to denote the type of break found.
+                module Type
+                  # Unspecified break type.
+                  TYPE_UNSPECIFIED = 0
+
+                  # A single whitespace.
+                  SPACE = 1
+
+                  # A wider whitespace.
+                  WIDE_SPACE = 2
+
+                  # A hyphen that indicates that a token has been split across lines.
+                  HYPHEN = 3
+                end
+              end
+            end
+
+            # Detected non-text visual elements e.g. checkbox, signature etc. on the
+            # page.
+            # @!attribute [rw] layout
+            #   @return [Google::Cloud::Documentai::V1beta2::Document::Page::Layout]
+            #     {Google::Cloud::Documentai::V1beta2::Document::Page::Layout Layout} for {Google::Cloud::Documentai::V1beta2::Document::Page::VisualElement VisualElement}.
+            # @!attribute [rw] type
+            #   @return [String]
+            #     Type of the {Google::Cloud::Documentai::V1beta2::Document::Page::VisualElement VisualElement}.
+            # @!attribute [rw] detected_languages
+            #   @return [Array<Google::Cloud::Documentai::V1beta2::Document::Page::DetectedLanguage>]
+            #     A list of detected languages together with confidence.
+            class VisualElement; end
+
+            # A table representation similar to HTML table structure.
+            # @!attribute [rw] layout
+            #   @return [Google::Cloud::Documentai::V1beta2::Document::Page::Layout]
+            #     {Google::Cloud::Documentai::V1beta2::Document::Page::Layout Layout} for {Google::Cloud::Documentai::V1beta2::Document::Page::Table Table}.
+            # @!attribute [rw] header_rows
+            #   @return [Array<Google::Cloud::Documentai::V1beta2::Document::Page::Table::TableRow>]
+            #     Header rows of the table.
+            # @!attribute [rw] body_rows
+            #   @return [Array<Google::Cloud::Documentai::V1beta2::Document::Page::Table::TableRow>]
+            #     Body rows of the table.
+            # @!attribute [rw] detected_languages
+            #   @return [Array<Google::Cloud::Documentai::V1beta2::Document::Page::DetectedLanguage>]
+            #     A list of detected languages together with confidence.
+            class Table
+              # A row of table cells.
+              # @!attribute [rw] cells
+              #   @return [Array<Google::Cloud::Documentai::V1beta2::Document::Page::Table::TableCell>]
+              #     Cells that make up this row.
+              class TableRow; end
+
+              # A cell representation inside the table.
+              # @!attribute [rw] layout
+              #   @return [Google::Cloud::Documentai::V1beta2::Document::Page::Layout]
+              #     {Google::Cloud::Documentai::V1beta2::Document::Page::Layout Layout} for {Google::Cloud::Documentai::V1beta2::Document::Page::Table::TableCell TableCell}.
+              # @!attribute [rw] row_span
+              #   @return [Integer]
+              #     How many rows this cell spans.
+              # @!attribute [rw] col_span
+              #   @return [Integer]
+              #     How many columns this cell spans.
+              # @!attribute [rw] detected_languages
+              #   @return [Array<Google::Cloud::Documentai::V1beta2::Document::Page::DetectedLanguage>]
+              #     A list of detected languages together with confidence.
+              class TableCell; end
+            end
+
+            # A form field detected on the page.
+            # @!attribute [rw] field_name
+            #   @return [Google::Cloud::Documentai::V1beta2::Document::Page::Layout]
+            #     {Google::Cloud::Documentai::V1beta2::Document::Page::Layout Layout} for the {Google::Cloud::Documentai::V1beta2::Document::Page::FormField FormField} name. e.g. `Address`, `Email`,
+            #     `Grand total`, `Phone number`, etc.
+            # @!attribute [rw] field_value
+            #   @return [Google::Cloud::Documentai::V1beta2::Document::Page::Layout]
+            #     {Google::Cloud::Documentai::V1beta2::Document::Page::Layout Layout} for the {Google::Cloud::Documentai::V1beta2::Document::Page::FormField FormField} value.
+            # @!attribute [rw] name_detected_languages
+            #   @return [Array<Google::Cloud::Documentai::V1beta2::Document::Page::DetectedLanguage>]
+            #     A list of detected languages for name together with confidence.
+            # @!attribute [rw] value_detected_languages
+            #   @return [Array<Google::Cloud::Documentai::V1beta2::Document::Page::DetectedLanguage>]
+            #     A list of detected languages for value together with confidence.
+            # @!attribute [rw] value_type
+            #   @return [String]
+            #     If the value is non-textual, this field represents the type. Current
+            #     valid values are:
+            #     * blank (this indicates the field_value is normal text)
+            #     * "unfilled_checkbox"
+            #     * "filled_checkbox"
+            # @!attribute [rw] corrected_key_text
+            #   @return [String]
+            #     An internal field, created for Labeling UI to export key text.
+            # @!attribute [rw] corrected_value_text
+            #   @return [String]
+            #     An internal field, created for Labeling UI to export value text.
+            class FormField; end
+
+            # Detected language for a structural component.
+            # @!attribute [rw] language_code
+            #   @return [String]
+            #     The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+            #     information, see
+            #     http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+            # @!attribute [rw] confidence
+            #   @return [Float]
+            #     Confidence of detected language. Range [0, 1].
+            class DetectedLanguage; end
+          end
+
+          # A phrase in the text that is a known entity type, such as a person, an
+          # organization, or location.
+          # @!attribute [rw] text_anchor
+          #   @return [Google::Cloud::Documentai::V1beta2::Document::TextAnchor]
+          #     Provenance of the entity.
+          #     Text anchor indexing into the {Google::Cloud::Documentai::V1beta2::Document#text Document#text}.
+          # @!attribute [rw] type
+          #   @return [String]
+          #     Entity type from a schema e.g. `Address`.
+          # @!attribute [rw] mention_text
+          #   @return [String]
+          #     Text value in the document e.g. `1600 Amphitheatre Pkwy`.
+          # @!attribute [rw] mention_id
+          #   @return [String]
+          #     Deprecated.  Use `id` field instead.
+          # @!attribute [rw] confidence
+          #   @return [Float]
+          #     Optional. Confidence of detected Schema entity. Range [0, 1].
+          # @!attribute [rw] page_anchor
+          #   @return [Google::Cloud::Documentai::V1beta2::Document::PageAnchor]
+          #     Optional. Represents the provenance of this entity wrt. the location on the
+          #     page where it was found.
+          # @!attribute [rw] id
+          #   @return [String]
+          #     Optional. Canonical id. This will be a unique value in the entity list
+          #     for this document.
+          # @!attribute [rw] bounding_poly_for_demo_frontend
+          #   @return [Google::Cloud::Documentai::V1beta2::BoundingPoly]
+          #     Optional. Temporary field to store the bounding poly for short-term POCs. Used by
+          #     the frontend only. Do not use before you talk to ybo@ and lukasr@.
+          class Entity; end
+
+          # Relationship between {Google::Cloud::Documentai::V1beta2::Document::Entity Entities}.
+          # @!attribute [rw] subject_id
+          #   @return [String]
+          #     Subject entity id.
+          # @!attribute [rw] object_id
+          #   @return [String]
+          #     Object entity id.
+          # @!attribute [rw] relation
+          #   @return [String]
+          #     Relationship description.
+          class EntityRelation; end
+
+          # Text reference indexing into the {Google::Cloud::Documentai::V1beta2::Document#text Document#text}.
+          # @!attribute [rw] text_segments
+          #   @return [Array<Google::Cloud::Documentai::V1beta2::Document::TextAnchor::TextSegment>]
+          #     The text segments from the {Google::Cloud::Documentai::V1beta2::Document#text Document#text}.
+          class TextAnchor
+            # A text segment in the {Google::Cloud::Documentai::V1beta2::Document#text Document#text}. The indices may be out of bounds
+            # which indicate that the text extends into another document shard for
+            # large sharded documents. See {Google::Cloud::Documentai::V1beta2::Document::ShardInfo#text_offset ShardInfo#text_offset}
+            # @!attribute [rw] start_index
+            #   @return [Integer]
+            #     {Google::Cloud::Documentai::V1beta2::Document::TextAnchor::TextSegment TextSegment} start UTF-8 char index in the {Google::Cloud::Documentai::V1beta2::Document#text Document#text}.
+            # @!attribute [rw] end_index
+            #   @return [Integer]
+            #     {Google::Cloud::Documentai::V1beta2::Document::TextAnchor::TextSegment TextSegment} half open end UTF-8 char index in the
+            #     {Google::Cloud::Documentai::V1beta2::Document#text Document#text}.
+            class TextSegment; end
+          end
+
+          # Referencing elements in {Google::Cloud::Documentai::V1beta2::Document#pages Document#pages}.
+          # @!attribute [rw] page_refs
+          #   @return [Array<Google::Cloud::Documentai::V1beta2::Document::PageAnchor::PageRef>]
+          #     One or more references to visual page elements
+          class PageAnchor
+            # Represents a weak reference to a page element within a document.
+            # @!attribute [rw] page
+            #   @return [Integer]
+            #     Required. Index into the {Google::Cloud::Documentai::V1beta2::Document#pages Document#pages} element
+            # @!attribute [rw] layout_type
+            #   @return [Google::Cloud::Documentai::V1beta2::Document::PageAnchor::PageRef::LayoutType]
+            #     Optional. The type of the layout element that is being referenced.  If not
+            #     specified the whole page is assumed to be referenced.
+            # @!attribute [rw] layout_id
+            #   @return [String]
+            #     Optional. The {Google::Cloud::Documentai::V1beta2::Document::Page::Layout#id Page::Layout#id} on the page that this element
+            #     references.  If {LayoutRef#type} is specified this id must also be
+            #     specified.
+            class PageRef
+              # The type of layout that is being referenced.
+              module LayoutType
+                # Layout Unspecified.
+                LAYOUT_TYPE_UNSPECIFIED = 0
+
+                # References a {Google::Cloud::Documentai::V1beta2::Document::Page#blocks Page#blocks} element.
+                BLOCK = 1
+
+                # References a {Google::Cloud::Documentai::V1beta2::Document::Page#paragraphs Page#paragraphs} element.
+                PARAGRAPH = 2
+
+                # References a {Google::Cloud::Documentai::V1beta2::Document::Page#lines Page#lines} element.
+                LINE = 3
+
+                # References a {Google::Cloud::Documentai::V1beta2::Document::Page#tokens Page#tokens} element.
+                TOKEN = 4
+
+                # References a {Google::Cloud::Documentai::V1beta2::Document::Page#visual_elements Page#visual_elements} element.
+                VISUAL_ELEMENT = 5
+
+                # Refrrences a {Google::Cloud::Documentai::V1beta2::Document::Page#tables Page#tables} element.
+                TABLE = 6
+
+                # References a {Google::Cloud::Documentai::V1beta2::Document::Page#form_fields Page#form_fields} element.
+                FORM_FIELD = 7
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+end

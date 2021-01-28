@@ -1,0 +1,5 @@
+[
+  "../../protos/google/devtools/build/v1/build_events.proto",
+  "../../protos/google/devtools/build/v1/build_status.proto",
+  "../../protos/google/devtools/build/v1/publish_build_event.proto"
+]

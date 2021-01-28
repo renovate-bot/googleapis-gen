@@ -1,0 +1,57 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "typescript",
+  "protoPackage": "google.chromeos.moblab.v1beta1",
+  "libraryPackage": "moblab",
+  "services": {
+    "BuildService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BuildServiceClient",
+          "rpcs": {
+            "CheckBuildStageStatus": {
+              "methods": [
+                "checkBuildStageStatus"
+              ]
+            },
+            "StageBuild": {
+              "methods": [
+                "stageBuild"
+              ]
+            },
+            "ListBuilds": {
+              "methods": [
+                "listBuilds",
+                "listBuildsStream",
+                "listBuildsAsync"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "BuildServiceClient",
+          "rpcs": {
+            "CheckBuildStageStatus": {
+              "methods": [
+                "checkBuildStageStatus"
+              ]
+            },
+            "StageBuild": {
+              "methods": [
+                "stageBuild"
+              ]
+            },
+            "ListBuilds": {
+              "methods": [
+                "listBuilds",
+                "listBuildsStream",
+                "listBuildsAsync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

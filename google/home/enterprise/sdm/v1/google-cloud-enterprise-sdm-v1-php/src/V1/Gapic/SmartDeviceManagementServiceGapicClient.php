@@ -1,0 +1,663 @@
+<?php
+/*
+ * Copyright 2020 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*
+ * GENERATED CODE WARNING
+ * This file was generated from the file
+ * https://github.com/google/googleapis/blob/master/google/home/enterprise/sdm/v1/smart_device_management_service.proto
+ * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
+ */
+
+namespace Google\Home\Enterprise\Sdm\V1\Gapic;
+
+use Google\ApiCore\ApiException;
+use Google\ApiCore\CredentialsWrapper;
+use Google\ApiCore\GapicClientTrait;
+use Google\ApiCore\RequestParamsHeaderDescriptor;
+use Google\ApiCore\RetrySettings;
+use Google\ApiCore\Transport\TransportInterface;
+use Google\ApiCore\ValidationException;
+use Google\Auth\FetchAuthTokenInterface;
+use Google\Home\Enterprise\Sdm\V1\Device;
+use Google\Home\Enterprise\Sdm\V1\ExecuteDeviceCommandRequest;
+use Google\Home\Enterprise\Sdm\V1\ExecuteDeviceCommandResponse;
+use Google\Home\Enterprise\Sdm\V1\GetDeviceRequest;
+use Google\Home\Enterprise\Sdm\V1\GetRoomRequest;
+use Google\Home\Enterprise\Sdm\V1\GetStructureRequest;
+use Google\Home\Enterprise\Sdm\V1\ListDevicesRequest;
+use Google\Home\Enterprise\Sdm\V1\ListDevicesResponse;
+use Google\Home\Enterprise\Sdm\V1\ListRoomsRequest;
+use Google\Home\Enterprise\Sdm\V1\ListRoomsResponse;
+use Google\Home\Enterprise\Sdm\V1\ListStructuresRequest;
+use Google\Home\Enterprise\Sdm\V1\ListStructuresResponse;
+use Google\Home\Enterprise\Sdm\V1\Room;
+use Google\Home\Enterprise\Sdm\V1\Structure;
+use Google\Protobuf\Struct;
+
+/**
+ * Service Description: A service that allows API consumers to provision and manage Google
+ * Home structures and devices for enterprise use cases.
+ *
+ * This class provides the ability to make remote calls to the backing service through method
+ * calls that map to API methods. Sample code to get started:
+ *
+ * ```
+ * $smartDeviceManagementServiceClient = new SmartDeviceManagementServiceClient();
+ * try {
+ *     $response = $smartDeviceManagementServiceClient->getDevice();
+ * } finally {
+ *     $smartDeviceManagementServiceClient->close();
+ * }
+ * ```
+ *
+ * @experimental
+ */
+class SmartDeviceManagementServiceGapicClient
+{
+    use GapicClientTrait;
+
+    /**
+     * The name of the service.
+     */
+    const SERVICE_NAME = 'google.home.enterprise.sdm.v1.SmartDeviceManagementService';
+
+    /**
+     * The default address of the service.
+     */
+    const SERVICE_ADDRESS = 'smartdevicemanagement.googleapis.com';
+
+    /**
+     * The default port of the service.
+     */
+    const DEFAULT_SERVICE_PORT = 443;
+
+    /**
+     * The name of the code generator, to be included in the agent header.
+     */
+    const CODEGEN_NAME = 'gapic';
+
+    /**
+     * The default scopes required by the service.
+     */
+    public static $serviceScopes = [
+        'https://www.googleapis.com/auth/sdm.service',
+    ];
+
+    private static function getClientDefaults()
+    {
+        return [
+            'serviceName' => self::SERVICE_NAME,
+            'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
+            'clientConfig' => __DIR__.'/../resources/smart_device_management_service_client_config.json',
+            'descriptorsConfigPath' => __DIR__.'/../resources/smart_device_management_service_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__.'/../resources/smart_device_management_service_grpc_config.json',
+            'credentialsConfig' => [
+                'defaultScopes' => self::$serviceScopes,
+            ],
+            'transportConfig' => [
+                'rest' => [
+                    'restClientConfigPath' => __DIR__.'/../resources/smart_device_management_service_rest_client_config.php',
+                ],
+            ],
+        ];
+    }
+
+    /**
+     * Constructor.
+     *
+     * @param array $options {
+     *                       Optional. Options for configuring the service API wrapper.
+     *
+     *     @type string $serviceAddress
+     *           The address of the API remote host. May optionally include the port, formatted
+     *           as "<uri>:<port>". Default 'smartdevicemanagement.googleapis.com:443'.
+     *     @type string|array|FetchAuthTokenInterface|CredentialsWrapper $credentials
+     *           The credentials to be used by the client to authorize API calls. This option
+     *           accepts either a path to a credentials file, or a decoded credentials file as a
+     *           PHP array.
+     *           *Advanced usage*: In addition, this option can also accept a pre-constructed
+     *           {@see \Google\Auth\FetchAuthTokenInterface} object or
+     *           {@see \Google\ApiCore\CredentialsWrapper} object. Note that when one of these
+     *           objects are provided, any settings in $credentialsConfig will be ignored.
+     *     @type array $credentialsConfig
+     *           Options used to configure credentials, including auth token caching, for the client.
+     *           For a full list of supporting configuration options, see
+     *           {@see \Google\ApiCore\CredentialsWrapper::build()}.
+     *     @type bool $disableRetries
+     *           Determines whether or not retries defined by the client configuration should be
+     *           disabled. Defaults to `false`.
+     *     @type string|array $clientConfig
+     *           Client method configuration, including retry settings. This option can be either a
+     *           path to a JSON file, or a PHP array containing the decoded JSON data.
+     *           By default this settings points to the default client config file, which is provided
+     *           in the resources folder.
+     *     @type string|TransportInterface $transport
+     *           The transport used for executing network requests. May be either the string `rest`
+     *           or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
+     *           *Advanced usage*: Additionally, it is possible to pass in an already instantiated
+     *           {@see \Google\ApiCore\Transport\TransportInterface} object. Note that when this
+     *           object is provided, any settings in $transportConfig, and any $serviceAddress
+     *           setting, will be ignored.
+     *     @type array $transportConfig
+     *           Configuration options that will be used to construct the transport. Options for
+     *           each supported transport type should be passed in a key for that transport. For
+     *           example:
+     *           $transportConfig = [
+     *               'grpc' => [...],
+     *               'rest' => [...]
+     *           ];
+     *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
+     *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
+     *           supported options.
+     * }
+     *
+     * @throws ValidationException
+     * @experimental
+     */
+    public function __construct(array $options = [])
+    {
+        $clientOptions = $this->buildClientOptions($options);
+        $this->setClientOptions($clientOptions);
+    }
+
+    /**
+     * Gets a device managed by the enterprise.
+     *
+     * Sample code:
+     * ```
+     * $smartDeviceManagementServiceClient = new SmartDeviceManagementServiceClient();
+     * try {
+     *     $response = $smartDeviceManagementServiceClient->getDevice();
+     * } finally {
+     *     $smartDeviceManagementServiceClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *                            Optional.
+     *
+     *     @type string $name
+     *          The name of the device requested. For example:
+     *          "enterprises/XYZ/devices/123"
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Home\Enterprise\Sdm\V1\Device
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function getDevice(array $optionalArgs = [])
+    {
+        $request = new GetDeviceRequest();
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'name' => $request->getName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'GetDevice',
+            Device::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Lists devices managed by the enterprise.
+     *
+     * Sample code:
+     * ```
+     * $smartDeviceManagementServiceClient = new SmartDeviceManagementServiceClient();
+     * try {
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $smartDeviceManagementServiceClient->listDevices();
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *
+     *
+     *     // Alternatively:
+     *
+     *     // Iterate through all elements
+     *     $pagedResponse = $smartDeviceManagementServiceClient->listDevices();
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $smartDeviceManagementServiceClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *                            Optional.
+     *
+     *     @type string $parent
+     *          The parent enterprise to list devices under. E.g. "enterprises/XYZ".
+     *     @type int $pageSize
+     *          The maximum number of resources contained in the underlying API
+     *          response. The API may return fewer values in a page, even if
+     *          there are additional values to be retrieved.
+     *     @type string $pageToken
+     *          A page token is used to specify a page of values to be returned.
+     *          If no page token is specified (the default), the first page
+     *          of values will be returned. Any page token used here must have
+     *          been generated by a previous call to the API.
+     *     @type string $filter
+     *          Optional filter to list devices.
+     *
+     *          Filters can match the exact parent (could be a structure or a room):
+     *          'parent=enterprises/XYZ/structures/jkl'
+     *          or filter by device custom name (substring match):
+     *          'customName=wing'
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function listDevices(array $optionalArgs = [])
+    {
+        $request = new ListDevicesRequest();
+        if (isset($optionalArgs['parent'])) {
+            $request->setParent($optionalArgs['parent']);
+        }
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+        if (isset($optionalArgs['filter'])) {
+            $request->setFilter($optionalArgs['filter']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'parent' => $request->getParent(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->getPagedListResponse(
+            'ListDevices',
+            $optionalArgs,
+            ListDevicesResponse::class,
+            $request
+        );
+    }
+
+    /**
+     * Executes a command to device managed by the enterprise.
+     *
+     * Sample code:
+     * ```
+     * $smartDeviceManagementServiceClient = new SmartDeviceManagementServiceClient();
+     * try {
+     *     $response = $smartDeviceManagementServiceClient->executeDeviceCommand();
+     * } finally {
+     *     $smartDeviceManagementServiceClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *                            Optional.
+     *
+     *     @type string $name
+     *          The name of the device requested. For example:
+     *          "enterprises/XYZ/devices/123"
+     *     @type string $command
+     *          The command name to execute, represented by the fully qualified protobuf
+     *          message name.
+     *     @type Struct $params
+     *          The command message to execute, represented as a Struct.
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Home\Enterprise\Sdm\V1\ExecuteDeviceCommandResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function executeDeviceCommand(array $optionalArgs = [])
+    {
+        $request = new ExecuteDeviceCommandRequest();
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+        }
+        if (isset($optionalArgs['command'])) {
+            $request->setCommand($optionalArgs['command']);
+        }
+        if (isset($optionalArgs['params'])) {
+            $request->setParams($optionalArgs['params']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'name' => $request->getName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'ExecuteDeviceCommand',
+            ExecuteDeviceCommandResponse::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Gets a structure managed by the enterprise.
+     *
+     * Sample code:
+     * ```
+     * $smartDeviceManagementServiceClient = new SmartDeviceManagementServiceClient();
+     * try {
+     *     $response = $smartDeviceManagementServiceClient->getStructure();
+     * } finally {
+     *     $smartDeviceManagementServiceClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *                            Optional.
+     *
+     *     @type string $name
+     *          The name of the structure requested. For example:
+     *          "enterprises/XYZ/structures/ABC".
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Home\Enterprise\Sdm\V1\Structure
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function getStructure(array $optionalArgs = [])
+    {
+        $request = new GetStructureRequest();
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'name' => $request->getName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'GetStructure',
+            Structure::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Lists structures managed by the enterprise.
+     *
+     * Sample code:
+     * ```
+     * $smartDeviceManagementServiceClient = new SmartDeviceManagementServiceClient();
+     * try {
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $smartDeviceManagementServiceClient->listStructures();
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *
+     *
+     *     // Alternatively:
+     *
+     *     // Iterate through all elements
+     *     $pagedResponse = $smartDeviceManagementServiceClient->listStructures();
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $smartDeviceManagementServiceClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *                            Optional.
+     *
+     *     @type string $parent
+     *          The parent enterprise to list structures under. E.g. "enterprises/XYZ".
+     *     @type int $pageSize
+     *          The maximum number of resources contained in the underlying API
+     *          response. The API may return fewer values in a page, even if
+     *          there are additional values to be retrieved.
+     *     @type string $pageToken
+     *          A page token is used to specify a page of values to be returned.
+     *          If no page token is specified (the default), the first page
+     *          of values will be returned. Any page token used here must have
+     *          been generated by a previous call to the API.
+     *     @type string $filter
+     *          Optional filter to list structures.
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function listStructures(array $optionalArgs = [])
+    {
+        $request = new ListStructuresRequest();
+        if (isset($optionalArgs['parent'])) {
+            $request->setParent($optionalArgs['parent']);
+        }
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+        if (isset($optionalArgs['filter'])) {
+            $request->setFilter($optionalArgs['filter']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'parent' => $request->getParent(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->getPagedListResponse(
+            'ListStructures',
+            $optionalArgs,
+            ListStructuresResponse::class,
+            $request
+        );
+    }
+
+    /**
+     * Gets a room managed by the enterprise.
+     *
+     * Sample code:
+     * ```
+     * $smartDeviceManagementServiceClient = new SmartDeviceManagementServiceClient();
+     * try {
+     *     $response = $smartDeviceManagementServiceClient->getRoom();
+     * } finally {
+     *     $smartDeviceManagementServiceClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *                            Optional.
+     *
+     *     @type string $name
+     *          The name of the room requested. For example:
+     *          "enterprises/XYZ/structures/ABC/rooms/123".
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Home\Enterprise\Sdm\V1\Room
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function getRoom(array $optionalArgs = [])
+    {
+        $request = new GetRoomRequest();
+        if (isset($optionalArgs['name'])) {
+            $request->setName($optionalArgs['name']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'name' => $request->getName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'GetRoom',
+            Room::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Lists rooms managed by the enterprise.
+     *
+     * Sample code:
+     * ```
+     * $smartDeviceManagementServiceClient = new SmartDeviceManagementServiceClient();
+     * try {
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $smartDeviceManagementServiceClient->listRooms();
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *
+     *
+     *     // Alternatively:
+     *
+     *     // Iterate through all elements
+     *     $pagedResponse = $smartDeviceManagementServiceClient->listRooms();
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $smartDeviceManagementServiceClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *                            Optional.
+     *
+     *     @type string $parent
+     *          The parent resource name of the rooms requested. For example:
+     *          "enterprises/XYZ/structures/ABC".
+     *     @type int $pageSize
+     *          The maximum number of resources contained in the underlying API
+     *          response. The API may return fewer values in a page, even if
+     *          there are additional values to be retrieved.
+     *     @type string $pageToken
+     *          A page token is used to specify a page of values to be returned.
+     *          If no page token is specified (the default), the first page
+     *          of values will be returned. Any page token used here must have
+     *          been generated by a previous call to the API.
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function listRooms(array $optionalArgs = [])
+    {
+        $request = new ListRoomsRequest();
+        if (isset($optionalArgs['parent'])) {
+            $request->setParent($optionalArgs['parent']);
+        }
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'parent' => $request->getParent(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->getPagedListResponse(
+            'ListRooms',
+            $optionalArgs,
+            ListRoomsResponse::class,
+            $request
+        );
+    }
+}

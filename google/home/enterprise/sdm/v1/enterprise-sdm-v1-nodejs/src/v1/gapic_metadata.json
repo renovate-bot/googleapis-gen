@@ -1,0 +1,105 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "typescript",
+  "protoPackage": "google.home.enterprise.sdm.v1",
+  "libraryPackage": "sdm",
+  "services": {
+    "SmartDeviceManagementService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SmartDeviceManagementServiceClient",
+          "rpcs": {
+            "GetDevice": {
+              "methods": [
+                "getDevice"
+              ]
+            },
+            "ExecuteDeviceCommand": {
+              "methods": [
+                "executeDeviceCommand"
+              ]
+            },
+            "GetStructure": {
+              "methods": [
+                "getStructure"
+              ]
+            },
+            "GetRoom": {
+              "methods": [
+                "getRoom"
+              ]
+            },
+            "ListDevices": {
+              "methods": [
+                "listDevices",
+                "listDevicesStream",
+                "listDevicesAsync"
+              ]
+            },
+            "ListStructures": {
+              "methods": [
+                "listStructures",
+                "listStructuresStream",
+                "listStructuresAsync"
+              ]
+            },
+            "ListRooms": {
+              "methods": [
+                "listRooms",
+                "listRoomsStream",
+                "listRoomsAsync"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "SmartDeviceManagementServiceClient",
+          "rpcs": {
+            "GetDevice": {
+              "methods": [
+                "getDevice"
+              ]
+            },
+            "ExecuteDeviceCommand": {
+              "methods": [
+                "executeDeviceCommand"
+              ]
+            },
+            "GetStructure": {
+              "methods": [
+                "getStructure"
+              ]
+            },
+            "GetRoom": {
+              "methods": [
+                "getRoom"
+              ]
+            },
+            "ListDevices": {
+              "methods": [
+                "listDevices",
+                "listDevicesStream",
+                "listDevicesAsync"
+              ]
+            },
+            "ListStructures": {
+              "methods": [
+                "listStructures",
+                "listStructuresStream",
+                "listStructuresAsync"
+              ]
+            },
+            "ListRooms": {
+              "methods": [
+                "listRooms",
+                "listRoomsStream",
+                "listRoomsAsync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

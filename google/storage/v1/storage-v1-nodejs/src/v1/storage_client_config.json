@@ -1,0 +1,315 @@
+{
+  "interfaces": {
+    "google.storage.v1.Storage": {
+      "retry_codes": {
+        "non_idempotent": [],
+        "idempotent": [
+          "DEADLINE_EXCEEDED",
+          "UNAVAILABLE"
+        ]
+      },
+      "retry_params": {
+        "default": {
+          "initial_retry_delay_millis": 100,
+          "retry_delay_multiplier": 1.3,
+          "max_retry_delay_millis": 60000,
+          "initial_rpc_timeout_millis": 60000,
+          "rpc_timeout_multiplier": 1,
+          "max_rpc_timeout_millis": 60000,
+          "total_timeout_millis": 600000
+        },
+        "264268458a9e88347dbacbd9398202ff5885a40b": {
+          "initial_retry_delay_millis": 1000,
+          "retry_delay_multiplier": 2,
+          "max_retry_delay_millis": 60000,
+          "initial_rpc_timeout_millis": 60000,
+          "rpc_timeout_multiplier": 1,
+          "max_rpc_timeout_millis": 60000,
+          "total_timeout_millis": 600000
+        }
+      },
+      "methods": {
+        "DeleteBucketAccessControl": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "GetBucketAccessControl": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "InsertBucketAccessControl": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "ListBucketAccessControls": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "UpdateBucketAccessControl": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "PatchBucketAccessControl": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "DeleteBucket": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "GetBucket": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "InsertBucket": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "ListChannels": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "ListBuckets": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "LockBucketRetentionPolicy": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "GetBucketIamPolicy": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "SetBucketIamPolicy": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "TestBucketIamPermissions": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "PatchBucket": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "UpdateBucket": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "StopChannel": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "DeleteDefaultObjectAccessControl": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "GetDefaultObjectAccessControl": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "InsertDefaultObjectAccessControl": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "ListDefaultObjectAccessControls": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "PatchDefaultObjectAccessControl": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "UpdateDefaultObjectAccessControl": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "DeleteNotification": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "GetNotification": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "InsertNotification": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "ListNotifications": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "DeleteObjectAccessControl": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "GetObjectAccessControl": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "InsertObjectAccessControl": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "ListObjectAccessControls": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "PatchObjectAccessControl": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "UpdateObjectAccessControl": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "ComposeObject": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "CopyObject": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "DeleteObject": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "GetObject": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "GetObjectMedia": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "InsertObject": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "ListObjects": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "RewriteObject": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "StartResumableWrite": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "QueryWriteStatus": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "PatchObject": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "UpdateObject": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "GetObjectIamPolicy": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "SetObjectIamPolicy": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "TestObjectIamPermissions": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "WatchAllObjects": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "GetServiceAccount": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "CreateHmacKey": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "DeleteHmacKey": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "GetHmacKey": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "ListHmacKeys": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        },
+        "UpdateHmacKey": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "264268458a9e88347dbacbd9398202ff5885a40b"
+        }
+      }
+    }
+  }
+}

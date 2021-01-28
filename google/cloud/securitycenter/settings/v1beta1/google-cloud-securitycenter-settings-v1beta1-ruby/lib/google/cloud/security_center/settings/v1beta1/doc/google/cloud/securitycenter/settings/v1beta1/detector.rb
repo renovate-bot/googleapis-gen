@@ -1,0 +1,50 @@
+# Copyright 2020 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+module Google
+  module Cloud
+    module Securitycenter
+      module Settings
+        module V1beta1
+          # Detector is a set of detectors or scanners act as individual checks done
+          # within a component e.g. bad IP, bad domains, IAM anomaly, cryptomining, open
+          # firewall, etc. Detector is independent of Organization, meaning each detector
+          # must be defined for a given Security Center component under a specified
+          # billing tier. Organizations can configure the list of detectors based on
+          # their subscribed billing tier.
+          #
+          # Defines a detector, its billing tier and any applicable labels.
+          # @!attribute [rw] detector
+          #   @return [String]
+          #     Output only. Detector Identifier
+          # @!attribute [rw] component
+          #   @return [String]
+          #     Output only. Component that supports detector type.  Multiple components may support the
+          #     same detector.
+          # @!attribute [rw] billing_tier
+          #   @return [Google::Cloud::Securitycenter::Settings::V1beta1::BillingTier]
+          #     Output only. The billing tier may be different for a detector of the same name in
+          #     another component.
+          # @!attribute [rw] detector_labels
+          #   @return [Array<String>]
+          #     Output only. Google curated detector labels. These are alphanumeric tags that are not
+          #     necessarily human readable. Labels can be used to group detectors together
+          #     in the future. An example might be tagging all detectors “PCI” that help
+          #     with PCI compliance.
+          class Detector; end
+        end
+      end
+    end
+  end
+end

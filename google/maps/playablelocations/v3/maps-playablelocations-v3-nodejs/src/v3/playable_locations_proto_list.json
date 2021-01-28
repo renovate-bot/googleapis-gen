@@ -1,0 +1,5 @@
+[
+  "../../protos/google/maps/playablelocations/v3/playablelocations.proto",
+  "../../protos/google/maps/playablelocations/v3/resources.proto",
+  "../../protos/google/maps/playablelocations/v3/sample/resources.proto"
+]

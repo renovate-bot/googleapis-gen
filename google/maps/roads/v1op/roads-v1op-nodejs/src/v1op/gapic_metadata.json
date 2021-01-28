@@ -1,0 +1,43 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "typescript",
+  "protoPackage": "google.maps.roads.v1op",
+  "libraryPackage": "roads",
+  "services": {
+    "RoadsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RoadsServiceClient",
+          "rpcs": {
+            "SnapToRoads": {
+              "methods": [
+                "snapToRoads"
+              ]
+            },
+            "ListNearestRoads": {
+              "methods": [
+                "listNearestRoads"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "RoadsServiceClient",
+          "rpcs": {
+            "SnapToRoads": {
+              "methods": [
+                "snapToRoads"
+              ]
+            },
+            "ListNearestRoads": {
+              "methods": [
+                "listNearestRoads"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

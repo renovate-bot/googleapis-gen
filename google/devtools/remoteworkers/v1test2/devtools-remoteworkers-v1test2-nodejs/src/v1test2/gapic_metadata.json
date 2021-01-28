@@ -1,0 +1,43 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "typescript",
+  "protoPackage": "google.devtools.remoteworkers.v1test2",
+  "libraryPackage": "remoteworkers",
+  "services": {
+    "Bots": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BotsClient",
+          "rpcs": {
+            "CreateBotSession": {
+              "methods": [
+                "createBotSession"
+              ]
+            },
+            "UpdateBotSession": {
+              "methods": [
+                "updateBotSession"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "BotsClient",
+          "rpcs": {
+            "CreateBotSession": {
+              "methods": [
+                "createBotSession"
+              ]
+            },
+            "UpdateBotSession": {
+              "methods": [
+                "updateBotSession"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

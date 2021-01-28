@@ -1,0 +1,1602 @@
+<?php
+/*
+ * Copyright 2020 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*
+ * GENERATED CODE WARNING
+ * This file was generated from the file
+ * https://github.com/google/googleapis/blob/master/google/cloud/securitycenter/settings/v1beta1/securitycenter_settings_service.proto
+ * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
+ */
+
+namespace Google\Cloud\SecurityCenter\Settings\V1beta1\Gapic;
+
+use Google\ApiCore\ApiException;
+use Google\ApiCore\CredentialsWrapper;
+use Google\ApiCore\GapicClientTrait;
+use Google\ApiCore\PathTemplate;
+use Google\ApiCore\RequestParamsHeaderDescriptor;
+use Google\ApiCore\RetrySettings;
+use Google\ApiCore\Transport\TransportInterface;
+use Google\ApiCore\ValidationException;
+use Google\Auth\FetchAuthTokenInterface;
+use Google\Cloud\SecurityCenter\Settings\V1beta1\BatchCalculateEffectiveSettingsRequest;
+use Google\Cloud\SecurityCenter\Settings\V1beta1\BatchCalculateEffectiveSettingsResponse;
+use Google\Cloud\SecurityCenter\Settings\V1beta1\BatchGetSettingsRequest;
+use Google\Cloud\SecurityCenter\Settings\V1beta1\BatchGetSettingsResponse;
+use Google\Cloud\SecurityCenter\Settings\V1beta1\CalculateEffectiveComponentSettingsRequest;
+use Google\Cloud\SecurityCenter\Settings\V1beta1\CalculateEffectiveSettingsRequest;
+use Google\Cloud\SecurityCenter\Settings\V1beta1\ComponentSettings;
+use Google\Cloud\SecurityCenter\Settings\V1beta1\GetComponentSettingsRequest;
+use Google\Cloud\SecurityCenter\Settings\V1beta1\GetServiceAccountRequest;
+use Google\Cloud\SecurityCenter\Settings\V1beta1\GetSettingsRequest;
+use Google\Cloud\SecurityCenter\Settings\V1beta1\ListComponentsRequest;
+use Google\Cloud\SecurityCenter\Settings\V1beta1\ListComponentsResponse;
+use Google\Cloud\SecurityCenter\Settings\V1beta1\ListDetectorsRequest;
+use Google\Cloud\SecurityCenter\Settings\V1beta1\ListDetectorsResponse;
+use Google\Cloud\SecurityCenter\Settings\V1beta1\ResetComponentSettingsRequest;
+use Google\Cloud\SecurityCenter\Settings\V1beta1\ResetSettingsRequest;
+use Google\Cloud\SecurityCenter\Settings\V1beta1\ServiceAccount;
+use Google\Cloud\SecurityCenter\Settings\V1beta1\Settings;
+use Google\Cloud\SecurityCenter\Settings\V1beta1\UpdateComponentSettingsRequest;
+use Google\Cloud\SecurityCenter\Settings\V1beta1\UpdateSettingsRequest;
+use Google\Protobuf\FieldMask;
+use Google\Protobuf\GPBEmpty;
+
+/**
+ * Service Description: ## API Overview.
+ *
+ * The SecurityCenterSettingsService is a sub-api of
+ * `securitycenter.googleapis.com`. The service provides methods to manage
+ * Security Center Settings, and Component Settings for GCP organizations,
+ * folders, projects, and clusters.
+ *
+ * This class provides the ability to make remote calls to the backing service through method
+ * calls that map to API methods. Sample code to get started:
+ *
+ * ```
+ * $securityCenterSettingsServiceClient = new SecurityCenterSettingsServiceClient();
+ * try {
+ *     $formattedName = $securityCenterSettingsServiceClient->serviceAccountName('[ORGANIZATION]');
+ *     $response = $securityCenterSettingsServiceClient->getServiceAccount($formattedName);
+ * } finally {
+ *     $securityCenterSettingsServiceClient->close();
+ * }
+ * ```
+ *
+ * Many parameters require resource names to be formatted in a particular way. To assist
+ * with these names, this class includes a format method for each type of name, and additionally
+ * a parseName method to extract the individual identifiers contained within formatted names
+ * that are returned by the API.
+ *
+ * @experimental
+ */
+class SecurityCenterSettingsServiceGapicClient
+{
+    use GapicClientTrait;
+
+    /**
+     * The name of the service.
+     */
+    const SERVICE_NAME = 'google.cloud.securitycenter.settings.v1beta1.SecurityCenterSettingsService';
+
+    /**
+     * The default address of the service.
+     */
+    const SERVICE_ADDRESS = 'securitycenter.googleapis.com';
+
+    /**
+     * The default port of the service.
+     */
+    const DEFAULT_SERVICE_PORT = 443;
+
+    /**
+     * The name of the code generator, to be included in the agent header.
+     */
+    const CODEGEN_NAME = 'gapic';
+
+    /**
+     * The default scopes required by the service.
+     */
+    public static $serviceScopes = [
+        'https://www.googleapis.com/auth/cloud-platform',
+    ];
+    private static $componentSettingsNameTemplate;
+    private static $folderComponentSettingsNameTemplate;
+    private static $folderSettingsNameTemplate;
+    private static $organizationNameTemplate;
+    private static $organizationComponentSettingsNameTemplate;
+    private static $organizationSettingsNameTemplate;
+    private static $projectComponentSettingsNameTemplate;
+    private static $projectLocationClusterComponentSettingsNameTemplate;
+    private static $projectLocationClusterSettingsNameTemplate;
+    private static $projectRegionClusterComponentSettingsNameTemplate;
+    private static $projectRegionClusterSettingsNameTemplate;
+    private static $projectSettingsNameTemplate;
+    private static $projectZoneClusterComponentSettingsNameTemplate;
+    private static $projectZoneClusterSettingsNameTemplate;
+    private static $serviceAccountNameTemplate;
+    private static $settingsNameTemplate;
+    private static $pathTemplateMap;
+
+    private static function getClientDefaults()
+    {
+        return [
+            'serviceName' => self::SERVICE_NAME,
+            'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
+            'clientConfig' => __DIR__.'/../resources/security_center_settings_service_client_config.json',
+            'descriptorsConfigPath' => __DIR__.'/../resources/security_center_settings_service_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__.'/../resources/security_center_settings_service_grpc_config.json',
+            'credentialsConfig' => [
+                'defaultScopes' => self::$serviceScopes,
+            ],
+            'transportConfig' => [
+                'rest' => [
+                    'restClientConfigPath' => __DIR__.'/../resources/security_center_settings_service_rest_client_config.php',
+                ],
+            ],
+        ];
+    }
+
+    private static function getComponentSettingsNameTemplate()
+    {
+        if (null == self::$componentSettingsNameTemplate) {
+            self::$componentSettingsNameTemplate = new PathTemplate('organizations/{organization}/components/{component}/settings');
+        }
+
+        return self::$componentSettingsNameTemplate;
+    }
+
+    private static function getFolderComponentSettingsNameTemplate()
+    {
+        if (null == self::$folderComponentSettingsNameTemplate) {
+            self::$folderComponentSettingsNameTemplate = new PathTemplate('folders/{folder}/components/{component}/settings');
+        }
+
+        return self::$folderComponentSettingsNameTemplate;
+    }
+
+    private static function getFolderSettingsNameTemplate()
+    {
+        if (null == self::$folderSettingsNameTemplate) {
+            self::$folderSettingsNameTemplate = new PathTemplate('folders/{folder}/settings');
+        }
+
+        return self::$folderSettingsNameTemplate;
+    }
+
+    private static function getOrganizationNameTemplate()
+    {
+        if (null == self::$organizationNameTemplate) {
+            self::$organizationNameTemplate = new PathTemplate('organizations/{organization}');
+        }
+
+        return self::$organizationNameTemplate;
+    }
+
+    private static function getOrganizationComponentSettingsNameTemplate()
+    {
+        if (null == self::$organizationComponentSettingsNameTemplate) {
+            self::$organizationComponentSettingsNameTemplate = new PathTemplate('organizations/{organization}/components/{component}/settings');
+        }
+
+        return self::$organizationComponentSettingsNameTemplate;
+    }
+
+    private static function getOrganizationSettingsNameTemplate()
+    {
+        if (null == self::$organizationSettingsNameTemplate) {
+            self::$organizationSettingsNameTemplate = new PathTemplate('organizations/{organization}/settings');
+        }
+
+        return self::$organizationSettingsNameTemplate;
+    }
+
+    private static function getProjectComponentSettingsNameTemplate()
+    {
+        if (null == self::$projectComponentSettingsNameTemplate) {
+            self::$projectComponentSettingsNameTemplate = new PathTemplate('projects/{project}/components/{component}/settings');
+        }
+
+        return self::$projectComponentSettingsNameTemplate;
+    }
+
+    private static function getProjectLocationClusterComponentSettingsNameTemplate()
+    {
+        if (null == self::$projectLocationClusterComponentSettingsNameTemplate) {
+            self::$projectLocationClusterComponentSettingsNameTemplate = new PathTemplate('projects/{project}/locations/{location}/clusters/{cluster}/components/{component}/settings');
+        }
+
+        return self::$projectLocationClusterComponentSettingsNameTemplate;
+    }
+
+    private static function getProjectLocationClusterSettingsNameTemplate()
+    {
+        if (null == self::$projectLocationClusterSettingsNameTemplate) {
+            self::$projectLocationClusterSettingsNameTemplate = new PathTemplate('projects/{project}/locations/{location}/clusters/{cluster}/settings');
+        }
+
+        return self::$projectLocationClusterSettingsNameTemplate;
+    }
+
+    private static function getProjectRegionClusterComponentSettingsNameTemplate()
+    {
+        if (null == self::$projectRegionClusterComponentSettingsNameTemplate) {
+            self::$projectRegionClusterComponentSettingsNameTemplate = new PathTemplate('projects/{project}/regions/{region}/clusters/{cluster}/components/{component}/settings');
+        }
+
+        return self::$projectRegionClusterComponentSettingsNameTemplate;
+    }
+
+    private static function getProjectRegionClusterSettingsNameTemplate()
+    {
+        if (null == self::$projectRegionClusterSettingsNameTemplate) {
+            self::$projectRegionClusterSettingsNameTemplate = new PathTemplate('projects/{project}/regions/{region}/clusters/{cluster}/settings');
+        }
+
+        return self::$projectRegionClusterSettingsNameTemplate;
+    }
+
+    private static function getProjectSettingsNameTemplate()
+    {
+        if (null == self::$projectSettingsNameTemplate) {
+            self::$projectSettingsNameTemplate = new PathTemplate('projects/{project}/settings');
+        }
+
+        return self::$projectSettingsNameTemplate;
+    }
+
+    private static function getProjectZoneClusterComponentSettingsNameTemplate()
+    {
+        if (null == self::$projectZoneClusterComponentSettingsNameTemplate) {
+            self::$projectZoneClusterComponentSettingsNameTemplate = new PathTemplate('projects/{project}/zones/{zone}/clusters/{cluster}/components/{component}/settings');
+        }
+
+        return self::$projectZoneClusterComponentSettingsNameTemplate;
+    }
+
+    private static function getProjectZoneClusterSettingsNameTemplate()
+    {
+        if (null == self::$projectZoneClusterSettingsNameTemplate) {
+            self::$projectZoneClusterSettingsNameTemplate = new PathTemplate('projects/{project}/zones/{zone}/clusters/{cluster}/settings');
+        }
+
+        return self::$projectZoneClusterSettingsNameTemplate;
+    }
+
+    private static function getServiceAccountNameTemplate()
+    {
+        if (null == self::$serviceAccountNameTemplate) {
+            self::$serviceAccountNameTemplate = new PathTemplate('organizations/{organization}/serviceAccount');
+        }
+
+        return self::$serviceAccountNameTemplate;
+    }
+
+    private static function getSettingsNameTemplate()
+    {
+        if (null == self::$settingsNameTemplate) {
+            self::$settingsNameTemplate = new PathTemplate('organizations/{organization}/settings');
+        }
+
+        return self::$settingsNameTemplate;
+    }
+
+    private static function getPathTemplateMap()
+    {
+        if (null == self::$pathTemplateMap) {
+            self::$pathTemplateMap = [
+                'componentSettings' => self::getComponentSettingsNameTemplate(),
+                'folderComponentSettings' => self::getFolderComponentSettingsNameTemplate(),
+                'folderSettings' => self::getFolderSettingsNameTemplate(),
+                'organization' => self::getOrganizationNameTemplate(),
+                'organizationComponentSettings' => self::getOrganizationComponentSettingsNameTemplate(),
+                'organizationSettings' => self::getOrganizationSettingsNameTemplate(),
+                'projectComponentSettings' => self::getProjectComponentSettingsNameTemplate(),
+                'projectLocationClusterComponentSettings' => self::getProjectLocationClusterComponentSettingsNameTemplate(),
+                'projectLocationClusterSettings' => self::getProjectLocationClusterSettingsNameTemplate(),
+                'projectRegionClusterComponentSettings' => self::getProjectRegionClusterComponentSettingsNameTemplate(),
+                'projectRegionClusterSettings' => self::getProjectRegionClusterSettingsNameTemplate(),
+                'projectSettings' => self::getProjectSettingsNameTemplate(),
+                'projectZoneClusterComponentSettings' => self::getProjectZoneClusterComponentSettingsNameTemplate(),
+                'projectZoneClusterSettings' => self::getProjectZoneClusterSettingsNameTemplate(),
+                'serviceAccount' => self::getServiceAccountNameTemplate(),
+                'settings' => self::getSettingsNameTemplate(),
+            ];
+        }
+
+        return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent
+     * a component_settings resource.
+     *
+     * @param string $organization
+     * @param string $component
+     *
+     * @return string The formatted component_settings resource.
+     * @experimental
+     */
+    public static function componentSettingsName($organization, $component)
+    {
+        return self::getComponentSettingsNameTemplate()->render([
+            'organization' => $organization,
+            'component' => $component,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent
+     * a folder_component_settings resource.
+     *
+     * @param string $folder
+     * @param string $component
+     *
+     * @return string The formatted folder_component_settings resource.
+     * @experimental
+     */
+    public static function folderComponentSettingsName($folder, $component)
+    {
+        return self::getFolderComponentSettingsNameTemplate()->render([
+            'folder' => $folder,
+            'component' => $component,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent
+     * a folder_settings resource.
+     *
+     * @param string $folder
+     *
+     * @return string The formatted folder_settings resource.
+     * @experimental
+     */
+    public static function folderSettingsName($folder)
+    {
+        return self::getFolderSettingsNameTemplate()->render([
+            'folder' => $folder,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent
+     * a organization resource.
+     *
+     * @param string $organization
+     *
+     * @return string The formatted organization resource.
+     * @experimental
+     */
+    public static function organizationName($organization)
+    {
+        return self::getOrganizationNameTemplate()->render([
+            'organization' => $organization,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent
+     * a organization_component_settings resource.
+     *
+     * @param string $organization
+     * @param string $component
+     *
+     * @return string The formatted organization_component_settings resource.
+     * @experimental
+     */
+    public static function organizationComponentSettingsName($organization, $component)
+    {
+        return self::getOrganizationComponentSettingsNameTemplate()->render([
+            'organization' => $organization,
+            'component' => $component,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent
+     * a organization_settings resource.
+     *
+     * @param string $organization
+     *
+     * @return string The formatted organization_settings resource.
+     * @experimental
+     */
+    public static function organizationSettingsName($organization)
+    {
+        return self::getOrganizationSettingsNameTemplate()->render([
+            'organization' => $organization,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent
+     * a project_component_settings resource.
+     *
+     * @param string $project
+     * @param string $component
+     *
+     * @return string The formatted project_component_settings resource.
+     * @experimental
+     */
+    public static function projectComponentSettingsName($project, $component)
+    {
+        return self::getProjectComponentSettingsNameTemplate()->render([
+            'project' => $project,
+            'component' => $component,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent
+     * a project_location_cluster_component_settings resource.
+     *
+     * @param string $project
+     * @param string $location
+     * @param string $cluster
+     * @param string $component
+     *
+     * @return string The formatted project_location_cluster_component_settings resource.
+     * @experimental
+     */
+    public static function projectLocationClusterComponentSettingsName($project, $location, $cluster, $component)
+    {
+        return self::getProjectLocationClusterComponentSettingsNameTemplate()->render([
+            'project' => $project,
+            'location' => $location,
+            'cluster' => $cluster,
+            'component' => $component,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent
+     * a project_location_cluster_settings resource.
+     *
+     * @param string $project
+     * @param string $location
+     * @param string $cluster
+     *
+     * @return string The formatted project_location_cluster_settings resource.
+     * @experimental
+     */
+    public static function projectLocationClusterSettingsName($project, $location, $cluster)
+    {
+        return self::getProjectLocationClusterSettingsNameTemplate()->render([
+            'project' => $project,
+            'location' => $location,
+            'cluster' => $cluster,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent
+     * a project_region_cluster_component_settings resource.
+     *
+     * @param string $project
+     * @param string $region
+     * @param string $cluster
+     * @param string $component
+     *
+     * @return string The formatted project_region_cluster_component_settings resource.
+     * @experimental
+     */
+    public static function projectRegionClusterComponentSettingsName($project, $region, $cluster, $component)
+    {
+        return self::getProjectRegionClusterComponentSettingsNameTemplate()->render([
+            'project' => $project,
+            'region' => $region,
+            'cluster' => $cluster,
+            'component' => $component,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent
+     * a project_region_cluster_settings resource.
+     *
+     * @param string $project
+     * @param string $region
+     * @param string $cluster
+     *
+     * @return string The formatted project_region_cluster_settings resource.
+     * @experimental
+     */
+    public static function projectRegionClusterSettingsName($project, $region, $cluster)
+    {
+        return self::getProjectRegionClusterSettingsNameTemplate()->render([
+            'project' => $project,
+            'region' => $region,
+            'cluster' => $cluster,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent
+     * a project_settings resource.
+     *
+     * @param string $project
+     *
+     * @return string The formatted project_settings resource.
+     * @experimental
+     */
+    public static function projectSettingsName($project)
+    {
+        return self::getProjectSettingsNameTemplate()->render([
+            'project' => $project,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent
+     * a project_zone_cluster_component_settings resource.
+     *
+     * @param string $project
+     * @param string $zone
+     * @param string $cluster
+     * @param string $component
+     *
+     * @return string The formatted project_zone_cluster_component_settings resource.
+     * @experimental
+     */
+    public static function projectZoneClusterComponentSettingsName($project, $zone, $cluster, $component)
+    {
+        return self::getProjectZoneClusterComponentSettingsNameTemplate()->render([
+            'project' => $project,
+            'zone' => $zone,
+            'cluster' => $cluster,
+            'component' => $component,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent
+     * a project_zone_cluster_settings resource.
+     *
+     * @param string $project
+     * @param string $zone
+     * @param string $cluster
+     *
+     * @return string The formatted project_zone_cluster_settings resource.
+     * @experimental
+     */
+    public static function projectZoneClusterSettingsName($project, $zone, $cluster)
+    {
+        return self::getProjectZoneClusterSettingsNameTemplate()->render([
+            'project' => $project,
+            'zone' => $zone,
+            'cluster' => $cluster,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent
+     * a service_account resource.
+     *
+     * @param string $organization
+     *
+     * @return string The formatted service_account resource.
+     * @experimental
+     */
+    public static function serviceAccountName($organization)
+    {
+        return self::getServiceAccountNameTemplate()->render([
+            'organization' => $organization,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent
+     * a settings resource.
+     *
+     * @param string $organization
+     *
+     * @return string The formatted settings resource.
+     * @experimental
+     */
+    public static function settingsName($organization)
+    {
+        return self::getSettingsNameTemplate()->render([
+            'organization' => $organization,
+        ]);
+    }
+
+    /**
+     * Parses a formatted name string and returns an associative array of the components in the name.
+     * The following name formats are supported:
+     * Template: Pattern
+     * - componentSettings: organizations/{organization}/components/{component}/settings
+     * - folderComponentSettings: folders/{folder}/components/{component}/settings
+     * - folderSettings: folders/{folder}/settings
+     * - organization: organizations/{organization}
+     * - organizationComponentSettings: organizations/{organization}/components/{component}/settings
+     * - organizationSettings: organizations/{organization}/settings
+     * - projectComponentSettings: projects/{project}/components/{component}/settings
+     * - projectLocationClusterComponentSettings: projects/{project}/locations/{location}/clusters/{cluster}/components/{component}/settings
+     * - projectLocationClusterSettings: projects/{project}/locations/{location}/clusters/{cluster}/settings
+     * - projectRegionClusterComponentSettings: projects/{project}/regions/{region}/clusters/{cluster}/components/{component}/settings
+     * - projectRegionClusterSettings: projects/{project}/regions/{region}/clusters/{cluster}/settings
+     * - projectSettings: projects/{project}/settings
+     * - projectZoneClusterComponentSettings: projects/{project}/zones/{zone}/clusters/{cluster}/components/{component}/settings
+     * - projectZoneClusterSettings: projects/{project}/zones/{zone}/clusters/{cluster}/settings
+     * - serviceAccount: organizations/{organization}/serviceAccount
+     * - settings: organizations/{organization}/settings.
+     *
+     * The optional $template argument can be supplied to specify a particular pattern, and must
+     * match one of the templates listed above. If no $template argument is provided, or if the
+     * $template argument does not match one of the templates listed, then parseName will check
+     * each of the supported templates, and return the first match.
+     *
+     * @param string $formattedName The formatted name string
+     * @param string $template      Optional name of template to match
+     *
+     * @return array An associative array from name component IDs to component values.
+     *
+     * @throws ValidationException If $formattedName could not be matched.
+     * @experimental
+     */
+    public static function parseName($formattedName, $template = null)
+    {
+        $templateMap = self::getPathTemplateMap();
+
+        if ($template) {
+            if (!isset($templateMap[$template])) {
+                throw new ValidationException("Template name $template does not exist");
+            }
+
+            return $templateMap[$template]->match($formattedName);
+        }
+
+        foreach ($templateMap as $templateName => $pathTemplate) {
+            try {
+                return $pathTemplate->match($formattedName);
+            } catch (ValidationException $ex) {
+                // Swallow the exception to continue trying other path templates
+            }
+        }
+        throw new ValidationException("Input did not match any known format. Input: $formattedName");
+    }
+
+    /**
+     * Constructor.
+     *
+     * @param array $options {
+     *                       Optional. Options for configuring the service API wrapper.
+     *
+     *     @type string $serviceAddress
+     *           The address of the API remote host. May optionally include the port, formatted
+     *           as "<uri>:<port>". Default 'securitycenter.googleapis.com:443'.
+     *     @type string|array|FetchAuthTokenInterface|CredentialsWrapper $credentials
+     *           The credentials to be used by the client to authorize API calls. This option
+     *           accepts either a path to a credentials file, or a decoded credentials file as a
+     *           PHP array.
+     *           *Advanced usage*: In addition, this option can also accept a pre-constructed
+     *           {@see \Google\Auth\FetchAuthTokenInterface} object or
+     *           {@see \Google\ApiCore\CredentialsWrapper} object. Note that when one of these
+     *           objects are provided, any settings in $credentialsConfig will be ignored.
+     *     @type array $credentialsConfig
+     *           Options used to configure credentials, including auth token caching, for the client.
+     *           For a full list of supporting configuration options, see
+     *           {@see \Google\ApiCore\CredentialsWrapper::build()}.
+     *     @type bool $disableRetries
+     *           Determines whether or not retries defined by the client configuration should be
+     *           disabled. Defaults to `false`.
+     *     @type string|array $clientConfig
+     *           Client method configuration, including retry settings. This option can be either a
+     *           path to a JSON file, or a PHP array containing the decoded JSON data.
+     *           By default this settings points to the default client config file, which is provided
+     *           in the resources folder.
+     *     @type string|TransportInterface $transport
+     *           The transport used for executing network requests. May be either the string `rest`
+     *           or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
+     *           *Advanced usage*: Additionally, it is possible to pass in an already instantiated
+     *           {@see \Google\ApiCore\Transport\TransportInterface} object. Note that when this
+     *           object is provided, any settings in $transportConfig, and any $serviceAddress
+     *           setting, will be ignored.
+     *     @type array $transportConfig
+     *           Configuration options that will be used to construct the transport. Options for
+     *           each supported transport type should be passed in a key for that transport. For
+     *           example:
+     *           $transportConfig = [
+     *               'grpc' => [...],
+     *               'rest' => [...]
+     *           ];
+     *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
+     *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
+     *           supported options.
+     * }
+     *
+     * @throws ValidationException
+     * @experimental
+     */
+    public function __construct(array $options = [])
+    {
+        $clientOptions = $this->buildClientOptions($options);
+        $this->setClientOptions($clientOptions);
+    }
+
+    /**
+     * Retrieves the organizations service account, if it exists, otherwise it
+     * creates the organization service account. This API is idempotent and
+     * will only create a service account once. On subsequent calls it will
+     * return the previously created service account.  SHA, SCC and CTD Infra
+     * Automation will use this SA.  This SA will not have any permissions when
+     * created.  The UI will provision this via IAM or the user will using
+     * their own internal process. This API only creates SAs on the organization.
+     * Folders are not supported and projects will use per-project SAs associated
+     * with APIs enabled on a project. This API will be called by the UX
+     * onboarding workflow.
+     *
+     * Sample code:
+     * ```
+     * $securityCenterSettingsServiceClient = new SecurityCenterSettingsServiceClient();
+     * try {
+     *     $formattedName = $securityCenterSettingsServiceClient->serviceAccountName('[ORGANIZATION]');
+     *     $response = $securityCenterSettingsServiceClient->getServiceAccount($formattedName);
+     * } finally {
+     *     $securityCenterSettingsServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The relative resource name of the service account resource.
+     *                             Format:
+     *                             * `organizations/{organization}/serviceAccount`
+     * @param array  $optionalArgs {
+     *                             Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\SecurityCenter\Settings\V1beta1\ServiceAccount
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function getServiceAccount($name, array $optionalArgs = [])
+    {
+        $request = new GetServiceAccountRequest();
+        $request->setName($name);
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'name' => $request->getName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'GetServiceAccount',
+            ServiceAccount::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Gets the Settings.
+     *
+     * Sample code:
+     * ```
+     * $securityCenterSettingsServiceClient = new SecurityCenterSettingsServiceClient();
+     * try {
+     *     $name = '';
+     *     $response = $securityCenterSettingsServiceClient->getSettings($name);
+     * } finally {
+     *     $securityCenterSettingsServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The name of the settings to retrieve.
+     *                             Formats:
+     *                             * `organizations/{organization}/settings`
+     *                             * `folders/{folder}/settings`
+     *                             * `projects/{project}/settings`
+     *                             * `projects/{project}/locations/{location}/clusters/{cluster}/settings`
+     *                             * `projects/{project}/regions/{region}/clusters/{cluster}/settings`
+     *                             * `projects/{project}/zones/{zone}/clusters/{cluster}/settings`
+     * @param array  $optionalArgs {
+     *                             Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\SecurityCenter\Settings\V1beta1\Settings
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function getSettings($name, array $optionalArgs = [])
+    {
+        $request = new GetSettingsRequest();
+        $request->setName($name);
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'name' => $request->getName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'GetSettings',
+            Settings::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Updates the Settings.
+     *
+     * Sample code:
+     * ```
+     * $securityCenterSettingsServiceClient = new SecurityCenterSettingsServiceClient();
+     * try {
+     *     $settings = new Settings();
+     *     $response = $securityCenterSettingsServiceClient->updateSettings($settings);
+     * } finally {
+     *     $securityCenterSettingsServiceClient->close();
+     * }
+     * ```
+     *
+     * @param Settings $settings Required. The settings to update.
+     *
+     * The settings' `name` field is used to identify the settings to be updated.
+     * Formats:
+     *  * `organizations/{organization}/settings`
+     *  * `folders/{folder}/settings`
+     *  * `projects/{project}/settings`
+     *  * `projects/{project}/locations/{location}/clusters/{cluster}/settings`
+     *  * `projects/{project}/regions/{region}/clusters/{cluster}/settings`
+     *  * `projects/{project}/zones/{zone}/clusters/{cluster}/settings`
+     * @param array $optionalArgs {
+     *                            Optional.
+     *
+     *     @type FieldMask $updateMask
+     *          The list of fields to be updated on the settings.
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\SecurityCenter\Settings\V1beta1\Settings
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function updateSettings($settings, array $optionalArgs = [])
+    {
+        $request = new UpdateSettingsRequest();
+        $request->setSettings($settings);
+        if (isset($optionalArgs['updateMask'])) {
+            $request->setUpdateMask($optionalArgs['updateMask']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'settings.name' => $request->getSettings()->getName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'UpdateSettings',
+            Settings::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Reset the organization, folder or project's settings and return
+     * the settings of just that resource to the default.
+     *
+     * Settings are present at the organization, folder, project, and cluster
+     * levels. Using Reset on a sub-organization level will remove that resource's
+     * override and result in the parent's settings being used (eg: if Reset on a
+     * cluster, project settings will be used).
+     *
+     * Using Reset on organization will remove the override that was set and
+     * result in default settings being used.
+     *
+     * Sample code:
+     * ```
+     * $securityCenterSettingsServiceClient = new SecurityCenterSettingsServiceClient();
+     * try {
+     *     $name = '';
+     *     $securityCenterSettingsServiceClient->resetSettings($name);
+     * } finally {
+     *     $securityCenterSettingsServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The name of the settings to reset.
+     *                             Formats:
+     *                             * `organizations/{organization}/settings`
+     *                             * `folders/{folder}/settings`
+     *                             * `projects/{project}/settings`
+     *                             * `projects/{project}/locations/{location}/clusters/{cluster}/settings`
+     *                             * `projects/{project}/regions/{region}/clusters/{cluster}/settings`
+     *                             * `projects/{project}/zones/{zone}/clusters/{cluster}/settings`
+     * @param array  $optionalArgs {
+     *                             Optional.
+     *
+     *     @type string $etag
+     *          A fingerprint used for optimistic concurrency. If none is provided,
+     *          then the existing settings will be blindly overwritten.
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function resetSettings($name, array $optionalArgs = [])
+    {
+        $request = new ResetSettingsRequest();
+        $request->setName($name);
+        if (isset($optionalArgs['etag'])) {
+            $request->setEtag($optionalArgs['etag']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'name' => $request->getName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'ResetSettings',
+            GPBEmpty::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Gets a list of settings.
+     *
+     * Sample code:
+     * ```
+     * $securityCenterSettingsServiceClient = new SecurityCenterSettingsServiceClient();
+     * try {
+     *     $formattedParent = $securityCenterSettingsServiceClient->organizationName('[ORGANIZATION]');
+     *     $response = $securityCenterSettingsServiceClient->batchGetSettings($formattedParent);
+     * } finally {
+     *     $securityCenterSettingsServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $parent       Required. The relative resource name of the organization shared by all of the
+     *                             settings being retrieved.
+     *                             Format:
+     *                             * `organizations/{organization}`
+     * @param array  $optionalArgs {
+     *                             Optional.
+     *
+     *     @type string[] $names
+     *          The names of the settings to retrieve.
+     *          A maximum of 1000 settings can be retrieved in a batch.
+     *          Formats:
+     *           * `organizations/{organization}/settings`
+     *           * `folders/{folder}/settings`
+     *           * `projects/{project}/settings`
+     *           * `projects/{project}/locations/{location}/clusters/{cluster}/settings`
+     *           * `projects/{project}/regions/{region}/clusters/{cluster}/settings`
+     *           * `projects/{project}/zones/{zone}/clusters/{cluster}/settings`
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\SecurityCenter\Settings\V1beta1\BatchGetSettingsResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function batchGetSettings($parent, array $optionalArgs = [])
+    {
+        $request = new BatchGetSettingsRequest();
+        $request->setParent($parent);
+        if (isset($optionalArgs['names'])) {
+            $request->setNames($optionalArgs['names']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'parent' => $request->getParent(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'BatchGetSettings',
+            BatchGetSettingsResponse::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * CalculateEffectiveSettings looks up all of the Security Center
+     * Settings resources in the GCP resource hierarchy, and calculates the
+     * effective settings on that resource by applying the following rules:
+     *  * Settings provided closer to the target resource take precedence over
+     *    those further away (e.g. folder will override organization level
+     *    settings).
+     *  * Product defaults can be overridden at org, folder, project, and cluster
+     *  levels.
+     *  * Detectors will be filtered out if they belong to a billing tier the
+     *  customer
+     *    has not configured.
+     *
+     * Sample code:
+     * ```
+     * $securityCenterSettingsServiceClient = new SecurityCenterSettingsServiceClient();
+     * try {
+     *     $name = '';
+     *     $response = $securityCenterSettingsServiceClient->calculateEffectiveSettings($name);
+     * } finally {
+     *     $securityCenterSettingsServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The name of the effective settings to retrieve.
+     *                             Formats:
+     *                             * `organizations/{organization}/effectiveSettings`
+     *                             * `folders/{folder}/effectiveSettings`
+     *                             * `projects/{project}/effectiveSettings`
+     *                             * `projects/{project}/locations/{location}/clusters/{cluster}/effectiveSettings`
+     *                             * `projects/{project}/regions/{region}/clusters/{cluster}/effectiveSettings`
+     *                             * `projects/{project}/zones/{zone}/clusters/{cluster}/effectiveSettings`
+     * @param array  $optionalArgs {
+     *                             Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\SecurityCenter\Settings\V1beta1\Settings
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function calculateEffectiveSettings($name, array $optionalArgs = [])
+    {
+        $request = new CalculateEffectiveSettingsRequest();
+        $request->setName($name);
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'name' => $request->getName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'CalculateEffectiveSettings',
+            Settings::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Gets a list of effective settings.
+     *
+     * Sample code:
+     * ```
+     * $securityCenterSettingsServiceClient = new SecurityCenterSettingsServiceClient();
+     * try {
+     *     $formattedParent = $securityCenterSettingsServiceClient->organizationName('[ORGANIZATION]');
+     *     $response = $securityCenterSettingsServiceClient->batchCalculateEffectiveSettings($formattedParent);
+     * } finally {
+     *     $securityCenterSettingsServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $parent       Required. The relative resource name of the organization shared by all of the
+     *                             settings being retrieved.
+     *                             Format:
+     *                             * `organizations/{organization}`
+     * @param array  $optionalArgs {
+     *                             Optional.
+     *
+     *     @type CalculateEffectiveSettingsRequest[] $requests
+     *          The requests specifying the effective settings to retrieve.
+     *          A maximum of 1000 effective settings can be retrieved in a batch.
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\SecurityCenter\Settings\V1beta1\BatchCalculateEffectiveSettingsResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function batchCalculateEffectiveSettings($parent, array $optionalArgs = [])
+    {
+        $request = new BatchCalculateEffectiveSettingsRequest();
+        $request->setParent($parent);
+        if (isset($optionalArgs['requests'])) {
+            $request->setRequests($optionalArgs['requests']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'parent' => $request->getParent(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'BatchCalculateEffectiveSettings',
+            BatchCalculateEffectiveSettingsResponse::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Gets the Component Settings.
+     *
+     * Sample code:
+     * ```
+     * $securityCenterSettingsServiceClient = new SecurityCenterSettingsServiceClient();
+     * try {
+     *     $name = '';
+     *     $response = $securityCenterSettingsServiceClient->getComponentSettings($name);
+     * } finally {
+     *     $securityCenterSettingsServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name Required. The component settings to retrieve.
+     *
+     * Formats:
+     *  * `organizations/{organization}/components/{component}/settings`
+     *  * `folders/{folder}/components/{component}/settings`
+     *  * `projects/{project}/components/{component}/settings`
+     *  * `projects/{project}/locations/{location}/clusters/{cluster}/components/{component}/settings`
+     *  * `projects/{project}/regions/{region}/clusters/{cluster}/components/{component}/settings`
+     *  * `projects/{project}/zones/{zone}/clusters/{cluster}/components/{component}/settings`
+     * @param array $optionalArgs {
+     *                            Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\SecurityCenter\Settings\V1beta1\ComponentSettings
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function getComponentSettings($name, array $optionalArgs = [])
+    {
+        $request = new GetComponentSettingsRequest();
+        $request->setName($name);
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'name' => $request->getName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'GetComponentSettings',
+            ComponentSettings::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Updates the Component Settings.
+     *
+     * Sample code:
+     * ```
+     * $securityCenterSettingsServiceClient = new SecurityCenterSettingsServiceClient();
+     * try {
+     *     $componentSettings = new ComponentSettings();
+     *     $response = $securityCenterSettingsServiceClient->updateComponentSettings($componentSettings);
+     * } finally {
+     *     $securityCenterSettingsServiceClient->close();
+     * }
+     * ```
+     *
+     * @param ComponentSettings $componentSettings Required. The component settings to update.
+     *
+     * The component settings' `name` field is used to identify the component
+     * settings to be updated. Formats:
+     *  * `organizations/{organization}/components/{component}/settings`
+     *  * `folders/{folder}/components/{component}/settings`
+     *  * `projects/{project}/components/{component}/settings`
+     *  * `projects/{project}/locations/{location}/clusters/{cluster}/components/{component}/settings`
+     *  * `projects/{project}/regions/{region}/clusters/{cluster}/components/{component}/settings`
+     *  * `projects/{project}/zones/{zone}/clusters/{cluster}/components/{component}/settings`
+     * @param array $optionalArgs {
+     *                            Optional.
+     *
+     *     @type FieldMask $updateMask
+     *          The list of fields to be updated on the component settings resource.
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\SecurityCenter\Settings\V1beta1\ComponentSettings
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function updateComponentSettings($componentSettings, array $optionalArgs = [])
+    {
+        $request = new UpdateComponentSettingsRequest();
+        $request->setComponentSettings($componentSettings);
+        if (isset($optionalArgs['updateMask'])) {
+            $request->setUpdateMask($optionalArgs['updateMask']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'component_settings.name' => $request->getComponentSettings()->getName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'UpdateComponentSettings',
+            ComponentSettings::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Reset the organization, folder or project's component settings and return
+     * the settings to the default. Settings are present at the
+     * organization, folder and project levels. Using Reset for a folder or
+     * project will remove the override that was set and result in the
+     * organization-level settings being used.
+     *
+     * Sample code:
+     * ```
+     * $securityCenterSettingsServiceClient = new SecurityCenterSettingsServiceClient();
+     * try {
+     *     $name = '';
+     *     $securityCenterSettingsServiceClient->resetComponentSettings($name);
+     * } finally {
+     *     $securityCenterSettingsServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name Required. The component settings to reset.
+     *
+     * Formats:
+     *  * `organizations/{organization}/components/{component}/settings`
+     *  * `folders/{folder}/components/{component}/settings`
+     *  * `projects/{project}/components/{component}/settings`
+     *  * `projects/{project}/locations/{location}/clusters/{cluster}/components/{component}/settings`
+     *  * `projects/{project}/regions/{region}/clusters/{cluster}/components/{component}/settings`
+     *  * `projects/{project}/zones/{zone}/clusters/{cluster}/components/{component}/settings`
+     * @param array $optionalArgs {
+     *                            Optional.
+     *
+     *     @type string $etag
+     *          An fingerprint used for optimistic concurrency. If none is provided,
+     *          then the existing settings will be blindly overwritten.
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function resetComponentSettings($name, array $optionalArgs = [])
+    {
+        $request = new ResetComponentSettingsRequest();
+        $request->setName($name);
+        if (isset($optionalArgs['etag'])) {
+            $request->setEtag($optionalArgs['etag']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'name' => $request->getName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'ResetComponentSettings',
+            GPBEmpty::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Gets the Effective Component Settings.
+     *
+     * Sample code:
+     * ```
+     * $securityCenterSettingsServiceClient = new SecurityCenterSettingsServiceClient();
+     * try {
+     *     $name = '';
+     *     $response = $securityCenterSettingsServiceClient->calculateEffectiveComponentSettings($name);
+     * } finally {
+     *     $securityCenterSettingsServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name Required. The effective component settings to retrieve.
+     *
+     * Formats:
+     *  * `organizations/{organization}/components/{component}/settings`
+     *  * `folders/{folder}/components/{component}/settings`
+     *  * `projects/{project}/components/{component}/settings`
+     *  * `projects/{project}/locations/{location}/clusters/{cluster}/components/{component}/settings`
+     *  * `projects/{project}/regions/{region}/clusters/{cluster}/components/{component}/settings`
+     *  * `projects/{project}/zones/{zone}/clusters/{cluster}/components/{component}/settings`
+     * @param array $optionalArgs {
+     *                            Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\SecurityCenter\Settings\V1beta1\ComponentSettings
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function calculateEffectiveComponentSettings($name, array $optionalArgs = [])
+    {
+        $request = new CalculateEffectiveComponentSettingsRequest();
+        $request->setName($name);
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'name' => $request->getName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'CalculateEffectiveComponentSettings',
+            ComponentSettings::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Retrieves an unordered list of available detectors.
+     *
+     * Sample code:
+     * ```
+     * $securityCenterSettingsServiceClient = new SecurityCenterSettingsServiceClient();
+     * try {
+     *     $formattedParent = $securityCenterSettingsServiceClient->organizationName('[ORGANIZATION]');
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $securityCenterSettingsServiceClient->listDetectors($formattedParent);
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *
+     *
+     *     // Alternatively:
+     *
+     *     // Iterate through all elements
+     *     $pagedResponse = $securityCenterSettingsServiceClient->listDetectors($formattedParent);
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $securityCenterSettingsServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $parent       Required. The parent, which owns this collection of detectors.
+     *                             Format:
+     *                             * `organizations/{organization}`
+     * @param array  $optionalArgs {
+     *                             Optional.
+     *
+     *     @type string $filter
+     *          Filters to apply on the response. Filters can be applied on:
+     *           * components
+     *           * labels
+     *           * billing tiers
+     *
+     *          Component filters will retrieve only detectors for the components
+     *          specified. Label filters will retrieve only detectors that match one of the
+     *          labels specified. Billing tier filters will retrieve only detectors for
+     *          that billing tier.
+     *
+     *          The filters
+     *     @type int $pageSize
+     *          The maximum number of resources contained in the underlying API
+     *          response. The API may return fewer values in a page, even if
+     *          there are additional values to be retrieved.
+     *     @type string $pageToken
+     *          A page token is used to specify a page of values to be returned.
+     *          If no page token is specified (the default), the first page
+     *          of values will be returned. Any page token used here must have
+     *          been generated by a previous call to the API.
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function listDetectors($parent, array $optionalArgs = [])
+    {
+        $request = new ListDetectorsRequest();
+        $request->setParent($parent);
+        if (isset($optionalArgs['filter'])) {
+            $request->setFilter($optionalArgs['filter']);
+        }
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'parent' => $request->getParent(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->getPagedListResponse(
+            'ListDetectors',
+            $optionalArgs,
+            ListDetectorsResponse::class,
+            $request
+        );
+    }
+
+    /**
+     * Retrieves an unordered list of available SCC components.
+     *
+     * Sample code:
+     * ```
+     * $securityCenterSettingsServiceClient = new SecurityCenterSettingsServiceClient();
+     * try {
+     *     $formattedParent = $securityCenterSettingsServiceClient->organizationName('[ORGANIZATION]');
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $securityCenterSettingsServiceClient->listComponents($formattedParent);
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *
+     *
+     *     // Alternatively:
+     *
+     *     // Iterate through all elements
+     *     $pagedResponse = $securityCenterSettingsServiceClient->listComponents($formattedParent);
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $securityCenterSettingsServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $parent       Required. The parent, which owns this collection of components.
+     *                             Format:
+     *                             * `organizations/{organization}`
+     * @param array  $optionalArgs {
+     *                             Optional.
+     *
+     *     @type int $pageSize
+     *          The maximum number of resources contained in the underlying API
+     *          response. The API may return fewer values in a page, even if
+     *          there are additional values to be retrieved.
+     *     @type string $pageToken
+     *          A page token is used to specify a page of values to be returned.
+     *          If no page token is specified (the default), the first page
+     *          of values will be returned. Any page token used here must have
+     *          been generated by a previous call to the API.
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function listComponents($parent, array $optionalArgs = [])
+    {
+        $request = new ListComponentsRequest();
+        $request->setParent($parent);
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'parent' => $request->getParent(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->getPagedListResponse(
+            'ListComponents',
+            $optionalArgs,
+            ListComponentsResponse::class,
+            $request
+        );
+    }
+}

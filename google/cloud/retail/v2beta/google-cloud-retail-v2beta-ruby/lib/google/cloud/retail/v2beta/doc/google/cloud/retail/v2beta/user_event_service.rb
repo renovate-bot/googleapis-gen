@@ -1,0 +1,94 @@
+# Copyright 2020 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+module Google
+  module Cloud
+    module Retail
+      module V2beta
+        # Request message for WriteUserEvent method.
+        # @!attribute [rw] parent
+        #   @return [String]
+        #     Required. The parent catalog resource name, such as
+        #     "projects/1234/locations/global/catalogs/default_catalog".
+        # @!attribute [rw] user_event
+        #   @return [Google::Cloud::Retail::V2beta::UserEvent]
+        #     Required. User event to write.
+        class WriteUserEventRequest; end
+
+        # Request message for CollectUserEvent method.
+        # @!attribute [rw] parent
+        #   @return [String]
+        #     Required. The parent catalog name, such as
+        #     "projects/1234/locations/global/catalogs/default_catalog".
+        # @!attribute [rw] user_event
+        #   @return [String]
+        #     Required. URL encoded UserEvent proto with a length limit of 2,000,000
+        #     characters.
+        # @!attribute [rw] uri
+        #   @return [String]
+        #     The URL including cgi-parameters but excluding the hash fragment with a
+        #     length limit of 5,000 characters. This is often more useful than the
+        #     referer URL, because many browsers only send the domain for 3rd party
+        #     requests.
+        # @!attribute [rw] ets
+        #   @return [Integer]
+        #     The event timestamp in milliseconds. This prevents browser caching of
+        #     otherwise identical get requests. The name is abbreviated to reduce the
+        #     payload bytes.
+        class CollectUserEventRequest; end
+
+        # Request message for RejoinUserEvents method.
+        # @!attribute [rw] parent
+        #   @return [String]
+        #     Required. The parent catalog resource name, such as
+        #     "projects/1234/locations/global/catalogs/default_catalog".
+        # @!attribute [rw] user_event_rejoin_scope
+        #   @return [Google::Cloud::Retail::V2beta::RejoinUserEventsRequest::UserEventRejoinScope]
+        #     The type of the user event rejoin to define the scope and range of the user
+        #     events to be rejoined with the latest product catalog. Defaults to
+        #     USER_EVENT_REJOIN_SCOPE_UNSPECIFIED if this field is not set, or set to an
+        #     invalid integer value.
+        class RejoinUserEventsRequest
+          # The scope of user events to be rejoined with the latest product catalog.
+          # If the rejoining aims at reducing number of unjoined events, set
+          # UserEventRejoinScope to UNJOINED_EVENTS.
+          # If the rejoining aims at correcting product catalog information in joined
+          # events, set UserEventRejoinScope to JOINED_EVENTS.
+          # If all events needs to be rejoined, set UserEventRejoinScope to
+          # USER_EVENT_REJOIN_SCOPE_UNSPECIFIED.
+          module UserEventRejoinScope
+            # Rejoin all events with the latest product catalog, including both joined
+            # events and unjoined events.
+            USER_EVENT_REJOIN_SCOPE_UNSPECIFIED = 0
+
+            # Only rejoin joined events with the latest product catalog.
+            JOINED_EVENTS = 1
+
+            # Only rejoin unjoined events with the latest product catalog.
+            UNJOINED_EVENTS = 2
+          end
+        end
+
+        # Response message for RejoinUserEvents method.
+        # @!attribute [rw] rejoined_user_events_count
+        #   @return [Integer]
+        #     Number of user events that were joined with latest product catalog.
+        class RejoinUserEventsResponse; end
+
+        # Metadata for RejoinUserEvents method.
+        class RejoinUserEventsMetadata; end
+      end
+    end
+  end
+end

@@ -1,0 +1,5 @@
+[
+  "../../protos/google/devtools/clouddebugger/v2/controller.proto",
+  "../../protos/google/devtools/clouddebugger/v2/data.proto",
+  "../../protos/google/devtools/clouddebugger/v2/debugger.proto"
+]

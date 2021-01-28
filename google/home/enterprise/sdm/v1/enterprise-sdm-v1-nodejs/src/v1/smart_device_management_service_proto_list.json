@@ -1,0 +1,5 @@
+[
+  "../../protos/google/home/enterprise/sdm/v1/device.proto",
+  "../../protos/google/home/enterprise/sdm/v1/site.proto",
+  "../../protos/google/home/enterprise/sdm/v1/smart_device_management_service.proto"
+]

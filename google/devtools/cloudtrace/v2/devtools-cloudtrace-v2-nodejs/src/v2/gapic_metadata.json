@@ -1,0 +1,43 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "typescript",
+  "protoPackage": "google.devtools.cloudtrace.v2",
+  "libraryPackage": "cloudtrace",
+  "services": {
+    "TraceService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TraceServiceClient",
+          "rpcs": {
+            "BatchWriteSpans": {
+              "methods": [
+                "batchWriteSpans"
+              ]
+            },
+            "CreateSpan": {
+              "methods": [
+                "createSpan"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "TraceServiceClient",
+          "rpcs": {
+            "BatchWriteSpans": {
+              "methods": [
+                "batchWriteSpans"
+              ]
+            },
+            "CreateSpan": {
+              "methods": [
+                "createSpan"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

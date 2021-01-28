@@ -1,0 +1,50 @@
+{
+  "interfaces": {
+    "google.devtools.cloudtrace.v1.TraceService": {
+      "retry_codes": {
+        "non_idempotent": [],
+        "idempotent": [
+          "DEADLINE_EXCEEDED",
+          "UNAVAILABLE"
+        ]
+      },
+      "retry_params": {
+        "default": {
+          "initial_retry_delay_millis": 100,
+          "retry_delay_multiplier": 1.3,
+          "max_retry_delay_millis": 60000,
+          "initial_rpc_timeout_millis": 60000,
+          "rpc_timeout_multiplier": 1,
+          "max_rpc_timeout_millis": 60000,
+          "total_timeout_millis": 600000
+        },
+        "fdaeadfe65e0e27f0de46f2746a87a53863175ec": {
+          "initial_retry_delay_millis": 100,
+          "retry_delay_multiplier": 1.2,
+          "max_retry_delay_millis": 1000,
+          "initial_rpc_timeout_millis": 60000,
+          "rpc_timeout_multiplier": 1,
+          "max_rpc_timeout_millis": 60000,
+          "total_timeout_millis": 600000
+        }
+      },
+      "methods": {
+        "ListTraces": {
+          "timeout_millis": 45000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "fdaeadfe65e0e27f0de46f2746a87a53863175ec"
+        },
+        "GetTrace": {
+          "timeout_millis": 45000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "fdaeadfe65e0e27f0de46f2746a87a53863175ec"
+        },
+        "PatchTraces": {
+          "timeout_millis": 45000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "fdaeadfe65e0e27f0de46f2746a87a53863175ec"
+        }
+      }
+    }
+  }
+}
