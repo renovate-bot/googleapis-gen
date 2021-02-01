@@ -25,14 +25,14 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      */
     protected $export_format_id = '';
     /**
-     * The Google Cloud Storage location where the Model artifact is to be
+     * The Cloud Storage location where the Model artifact is to be
      * written to. Under the directory given as the destination a new one with
      * name "`model-export-<model-display-name>-<timestamp-of-export-call>`",
      * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format,
      * will be created. Inside, the Model and any of its supporting files
      * will be written.
-     * This field should only be set when
-     * [Models.supported_export_formats.exportable_contents] contains ARTIFACT.
+     * This field should only be set when the `exportableContent` field of the
+     * [Model.supported_export_formats] object contains `ARTIFACT`.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.GcsDestination artifact_destination = 3;</code>
      */
@@ -40,8 +40,8 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
     /**
      * The Google Container Registry or Artifact Registry uri where the
      * Model container image will be copied to.
-     * This field should only be set when
-     * [Models.supported_export_formats.exportable_contents] contains IMAGE.
+     * This field should only be set when the `exportableContent` field of the
+     * [Model.supported_export_formats] object contains `IMAGE`.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ContainerRegistryDestination image_destination = 4;</code>
      */
@@ -59,19 +59,19 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      *           If no value is provided here, then the first from the list of the Model's
      *           supported formats is used by default.
      *     @type \Google\Cloud\Aiplatform\V1beta1\GcsDestination $artifact_destination
-     *           The Google Cloud Storage location where the Model artifact is to be
+     *           The Cloud Storage location where the Model artifact is to be
      *           written to. Under the directory given as the destination a new one with
      *           name "`model-export-<model-display-name>-<timestamp-of-export-call>`",
      *           where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format,
      *           will be created. Inside, the Model and any of its supporting files
      *           will be written.
-     *           This field should only be set when
-     *           [Models.supported_export_formats.exportable_contents] contains ARTIFACT.
+     *           This field should only be set when the `exportableContent` field of the
+     *           [Model.supported_export_formats] object contains `ARTIFACT`.
      *     @type \Google\Cloud\Aiplatform\V1beta1\ContainerRegistryDestination $image_destination
      *           The Google Container Registry or Artifact Registry uri where the
      *           Model container image will be copied to.
-     *           This field should only be set when
-     *           [Models.supported_export_formats.exportable_contents] contains IMAGE.
+     *           This field should only be set when the `exportableContent` field of the
+     *           [Model.supported_export_formats] object contains `IMAGE`.
      * }
      */
     public function __construct($data = NULL) {
@@ -112,14 +112,14 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The Google Cloud Storage location where the Model artifact is to be
+     * The Cloud Storage location where the Model artifact is to be
      * written to. Under the directory given as the destination a new one with
      * name "`model-export-<model-display-name>-<timestamp-of-export-call>`",
      * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format,
      * will be created. Inside, the Model and any of its supporting files
      * will be written.
-     * This field should only be set when
-     * [Models.supported_export_formats.exportable_contents] contains ARTIFACT.
+     * This field should only be set when the `exportableContent` field of the
+     * [Model.supported_export_formats] object contains `ARTIFACT`.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.GcsDestination artifact_destination = 3;</code>
      * @return \Google\Cloud\Aiplatform\V1beta1\GcsDestination
@@ -140,14 +140,14 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The Google Cloud Storage location where the Model artifact is to be
+     * The Cloud Storage location where the Model artifact is to be
      * written to. Under the directory given as the destination a new one with
      * name "`model-export-<model-display-name>-<timestamp-of-export-call>`",
      * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format,
      * will be created. Inside, the Model and any of its supporting files
      * will be written.
-     * This field should only be set when
-     * [Models.supported_export_formats.exportable_contents] contains ARTIFACT.
+     * This field should only be set when the `exportableContent` field of the
+     * [Model.supported_export_formats] object contains `ARTIFACT`.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.GcsDestination artifact_destination = 3;</code>
      * @param \Google\Cloud\Aiplatform\V1beta1\GcsDestination $var
@@ -164,8 +164,8 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
     /**
      * The Google Container Registry or Artifact Registry uri where the
      * Model container image will be copied to.
-     * This field should only be set when
-     * [Models.supported_export_formats.exportable_contents] contains IMAGE.
+     * This field should only be set when the `exportableContent` field of the
+     * [Model.supported_export_formats] object contains `IMAGE`.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ContainerRegistryDestination image_destination = 4;</code>
      * @return \Google\Cloud\Aiplatform\V1beta1\ContainerRegistryDestination
@@ -188,8 +188,8 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
     /**
      * The Google Container Registry or Artifact Registry uri where the
      * Model container image will be copied to.
-     * This field should only be set when
-     * [Models.supported_export_formats.exportable_contents] contains IMAGE.
+     * This field should only be set when the `exportableContent` field of the
+     * [Model.supported_export_formats] object contains `IMAGE`.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ContainerRegistryDestination image_destination = 4;</code>
      * @param \Google\Cloud\Aiplatform\V1beta1\ContainerRegistryDestination $var

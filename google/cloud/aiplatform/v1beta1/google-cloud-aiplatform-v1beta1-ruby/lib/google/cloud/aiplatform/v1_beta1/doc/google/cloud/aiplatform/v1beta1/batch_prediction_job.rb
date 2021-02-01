@@ -69,29 +69,30 @@ module Google
         #     the tuning itself).
         # @!attribute [rw] generate_explanation
         #   @return [true, false]
-        #     Generate explanation along with the batch prediction results.
+        #     Generate explanation with the batch prediction results.
         #
-        #     When it's true, the batch prediction output will change based on the
-        #     {BatchPredictionJob#output_config#predictions_format output format}:
+        #     When set to `true`, the batch prediction output changes based on the
+        #     `predictions_format` field of the
+        #     {Google::Cloud::Aiplatform::V1beta1::BatchPredictionJob#output_config BatchPredictionJob#output_config} object:
         #
-        #     * `bigquery`: output will include a column named `explanation`. The value
+        #     * `bigquery`: output includes a column named `explanation`. The value
         #       is a struct that conforms to the {Google::Cloud::Aiplatform::V1beta1::Explanation Explanation} object.
-        #     * `jsonl`: The JSON objects on each line will include an additional entry
+        #     * `jsonl`: The JSON objects on each line include an additional entry
         #       keyed `explanation`. The value of the entry is a JSON object that
         #       conforms to the {Google::Cloud::Aiplatform::V1beta1::Explanation Explanation} object.
         #     * `csv`: Generating explanations for CSV format is not supported.
+        #
+        #     If this field is set to true, the {Google::Cloud::Aiplatform::V1beta1::Model#explanation_spec Model#explanation_spec} must be
+        #     populated.
         # @!attribute [rw] explanation_spec
         #   @return [Google::Cloud::Aiplatform::V1beta1::ExplanationSpec]
-        #     Explanation configuration for this BatchPredictionJob. Can only be
-        #     specified if {Google::Cloud::Aiplatform::V1beta1::BatchPredictionJob#generate_explanation generate_explanation} is set to `true`. It's invalid to
-        #     specified it with generate_explanation set to false or unset.
+        #     Explanation configuration for this BatchPredictionJob. Can be
+        #     specified only if {Google::Cloud::Aiplatform::V1beta1::BatchPredictionJob#generate_explanation generate_explanation} is set to `true`.
         #
         #     This value overrides the value of {Google::Cloud::Aiplatform::V1beta1::Model#explanation_spec Model#explanation_spec}. All fields of
-        #     {Google::Cloud::Aiplatform::V1beta1::BatchPredictionJob#explanation_spec explanation_spec} are optional in the request. If a field of
-        #     {Google::Cloud::Aiplatform::V1beta1::BatchPredictionJob#explanation_spec explanation_spec} is not populated, the value of the same field of
-        #     {Google::Cloud::Aiplatform::V1beta1::Model#explanation_spec Model#explanation_spec} is inherited. The corresponding
-        #     {Google::Cloud::Aiplatform::V1beta1::Model#explanation_spec Model#explanation_spec} must be populated, otherwise explanation for
-        #     this Model is not allowed.
+        #     {Google::Cloud::Aiplatform::V1beta1::BatchPredictionJob#explanation_spec explanation_spec} are optional in the request. If a field of the
+        #     {Google::Cloud::Aiplatform::V1beta1::BatchPredictionJob#explanation_spec explanation_spec} object is not populated, the corresponding field of
+        #     the {Google::Cloud::Aiplatform::V1beta1::Model#explanation_spec Model#explanation_spec} object is inherited.
         # @!attribute [rw] output_info
         #   @return [Google::Cloud::Aiplatform::V1beta1::BatchPredictionJob::OutputInfo]
         #     Output only. Information further describing the output of this job.
@@ -142,13 +143,18 @@ module Google
         #     characters, underscores and dashes. International characters are allowed.
         #
         #     See https://goo.gl/xmQnxf for more information and examples of labels.
+        # @!attribute [rw] encryption_spec
+        #   @return [Google::Cloud::Aiplatform::V1beta1::EncryptionSpec]
+        #     Customer-managed encryption key options for a BatchPredictionJob. If this
+        #     is set, then all resources created by the BatchPredictionJob will be
+        #     encrypted with the provided encryption key.
         class BatchPredictionJob
           # Configures the input to {Google::Cloud::Aiplatform::V1beta1::BatchPredictionJob BatchPredictionJob}.
           # See {Google::Cloud::Aiplatform::V1beta1::Model#supported_input_storage_formats Model#supported_input_storage_formats} for Model's supported input
           # formats, and how instances should be expressed via any of them.
           # @!attribute [rw] gcs_source
           #   @return [Google::Cloud::Aiplatform::V1beta1::GcsSource]
-          #     The Google Cloud Storage location for the input instances.
+          #     The Cloud Storage location for the input instances.
           # @!attribute [rw] bigquery_source
           #   @return [Google::Cloud::Aiplatform::V1beta1::BigQuerySource]
           #     The BigQuery location of the input table.
@@ -168,7 +174,7 @@ module Google
           # formats, and how predictions are expressed via any of them.
           # @!attribute [rw] gcs_destination
           #   @return [Google::Cloud::Aiplatform::V1beta1::GcsDestination]
-          #     The Google Cloud Storage location of the directory where the output is
+          #     The Cloud Storage location of the directory where the output is
           #     to be written to. In the given directory a new directory is created.
           #     Its name is `prediction-<model-display-name>-<job-create-time>`,
           #     where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format.
@@ -221,7 +227,7 @@ module Google
           # Supplements {Google::Cloud::Aiplatform::V1beta1::BatchPredictionJob#output_config output_config}.
           # @!attribute [rw] gcs_output_directory
           #   @return [String]
-          #     Output only. The full path of the Google Cloud Storage directory created, into which
+          #     Output only. The full path of the Cloud Storage directory created, into which
           #     the prediction output is written.
           # @!attribute [rw] bigquery_output_dataset
           #   @return [String]

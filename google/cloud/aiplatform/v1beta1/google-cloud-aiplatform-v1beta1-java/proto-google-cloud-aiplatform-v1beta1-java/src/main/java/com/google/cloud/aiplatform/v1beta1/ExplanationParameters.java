@@ -375,7 +375,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * If populated, only returns attributions that have
-   * [output_index][Attributions.output_index] contained in output_indices. It
+   * [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] contained in output_indices. It
    * must be an ndarray of integers, with the same shape of the output it's
    * explaining.
    * If not populated, returns attributions for [top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k] indices of outputs.
@@ -395,7 +395,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * If populated, only returns attributions that have
-   * [output_index][Attributions.output_index] contained in output_indices. It
+   * [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] contained in output_indices. It
    * must be an ndarray of integers, with the same shape of the output it's
    * explaining.
    * If not populated, returns attributions for [top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k] indices of outputs.
@@ -415,7 +415,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * If populated, only returns attributions that have
-   * [output_index][Attributions.output_index] contained in output_indices. It
+   * [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] contained in output_indices. It
    * must be an ndarray of integers, with the same shape of the output it's
    * explaining.
    * If not populated, returns attributions for [top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k] indices of outputs.
@@ -1575,7 +1575,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If populated, only returns attributions that have
-     * [output_index][Attributions.output_index] contained in output_indices. It
+     * [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] contained in output_indices. It
      * must be an ndarray of integers, with the same shape of the output it's
      * explaining.
      * If not populated, returns attributions for [top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k] indices of outputs.
@@ -1594,7 +1594,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If populated, only returns attributions that have
-     * [output_index][Attributions.output_index] contained in output_indices. It
+     * [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] contained in output_indices. It
      * must be an ndarray of integers, with the same shape of the output it's
      * explaining.
      * If not populated, returns attributions for [top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k] indices of outputs.
@@ -1617,7 +1617,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If populated, only returns attributions that have
-     * [output_index][Attributions.output_index] contained in output_indices. It
+     * [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] contained in output_indices. It
      * must be an ndarray of integers, with the same shape of the output it's
      * explaining.
      * If not populated, returns attributions for [top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k] indices of outputs.
@@ -1645,7 +1645,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If populated, only returns attributions that have
-     * [output_index][Attributions.output_index] contained in output_indices. It
+     * [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] contained in output_indices. It
      * must be an ndarray of integers, with the same shape of the output it's
      * explaining.
      * If not populated, returns attributions for [top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k] indices of outputs.
@@ -1671,7 +1671,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If populated, only returns attributions that have
-     * [output_index][Attributions.output_index] contained in output_indices. It
+     * [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] contained in output_indices. It
      * must be an ndarray of integers, with the same shape of the output it's
      * explaining.
      * If not populated, returns attributions for [top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k] indices of outputs.
@@ -1701,7 +1701,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If populated, only returns attributions that have
-     * [output_index][Attributions.output_index] contained in output_indices. It
+     * [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] contained in output_indices. It
      * must be an ndarray of integers, with the same shape of the output it's
      * explaining.
      * If not populated, returns attributions for [top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k] indices of outputs.
@@ -1727,7 +1727,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If populated, only returns attributions that have
-     * [output_index][Attributions.output_index] contained in output_indices. It
+     * [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] contained in output_indices. It
      * must be an ndarray of integers, with the same shape of the output it's
      * explaining.
      * If not populated, returns attributions for [top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k] indices of outputs.
@@ -1747,7 +1747,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If populated, only returns attributions that have
-     * [output_index][Attributions.output_index] contained in output_indices. It
+     * [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] contained in output_indices. It
      * must be an ndarray of integers, with the same shape of the output it's
      * explaining.
      * If not populated, returns attributions for [top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k] indices of outputs.
@@ -1770,7 +1770,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If populated, only returns attributions that have
-     * [output_index][Attributions.output_index] contained in output_indices. It
+     * [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] contained in output_indices. It
      * must be an ndarray of integers, with the same shape of the output it's
      * explaining.
      * If not populated, returns attributions for [top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k] indices of outputs.

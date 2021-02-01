@@ -135,6 +135,10 @@ class Model extends \Google\Protobuf\Internal\Message
      * * `bigquery`
      * Each instance is a single row in BigQuery. Uses
      * [BigQuerySource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.bigquery_source].
+     * * `file-list`
+     * Each line of the file is the location of an instance to process, uses
+     * `gcs_source` field of the
+     * [InputConfig][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig] object.
      * If this Model doesn't support any of these formats it means it cannot be
      * used with a [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob]. However, if it has
      * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types], it could serve online
@@ -194,16 +198,19 @@ class Model extends \Google\Protobuf\Internal\Message
      */
     private $deployed_models;
     /**
-     * Output only. The default explanation specification for this Model.
-     * Model can be used for [requesting explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain]
-     * after being [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+     * The default explanation specification for this Model.
+     * The Model can be used for [requesting
+     * explanation][PredictionService.Explain] after being
+     * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+     * The Model can be used for [batch
+     * explanation][BatchPredictionJob.generate_explanation] iff it is populated.
      * All fields of the explanation_spec can be overridden by
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of
-     * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model].
-     * This field is populated only for tabular AutoML Models.
-     * Specifying it with [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel] is not supported.
+     * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model], or
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] of
+     * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
      *
-     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 23;</code>
      */
     protected $explanation_spec = null;
     /**
@@ -223,6 +230,13 @@ class Model extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>map<string, string> labels = 17;</code>
      */
     private $labels;
+    /**
+     * Customer-managed encryption key spec for a Model. If set, this
+     * Model and all sub-resources of this Model will be secured by this key.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 24;</code>
+     */
+    protected $encryption_spec = null;
 
     /**
      * Constructor.
@@ -306,6 +320,10 @@ class Model extends \Google\Protobuf\Internal\Message
      *           * `bigquery`
      *           Each instance is a single row in BigQuery. Uses
      *           [BigQuerySource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.bigquery_source].
+     *           * `file-list`
+     *           Each line of the file is the location of an instance to process, uses
+     *           `gcs_source` field of the
+     *           [InputConfig][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig] object.
      *           If this Model doesn't support any of these formats it means it cannot be
      *           used with a [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob]. However, if it has
      *           [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types], it could serve online
@@ -345,14 +363,17 @@ class Model extends \Google\Protobuf\Internal\Message
      *           Output only. The pointers to DeployedModels created from this Model. Note that
      *           Model could have been deployed to Endpoints in different Locations.
      *     @type \Google\Cloud\Aiplatform\V1beta1\ExplanationSpec $explanation_spec
-     *           Output only. The default explanation specification for this Model.
-     *           Model can be used for [requesting explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain]
-     *           after being [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+     *           The default explanation specification for this Model.
+     *           The Model can be used for [requesting
+     *           explanation][PredictionService.Explain] after being
+     *           [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+     *           The Model can be used for [batch
+     *           explanation][BatchPredictionJob.generate_explanation] iff it is populated.
      *           All fields of the explanation_spec can be overridden by
      *           [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of
-     *           [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model].
-     *           This field is populated only for tabular AutoML Models.
-     *           Specifying it with [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel] is not supported.
+     *           [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model], or
+     *           [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] of
+     *           [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
      *     @type string $etag
      *           Used to perform consistent read-modify-write updates. If not set, a blind
      *           "overwrite" update happens.
@@ -362,6 +383,9 @@ class Model extends \Google\Protobuf\Internal\Message
      *           (Unicode codepoints), can only contain lowercase letters, numeric
      *           characters, underscores and dashes. International characters are allowed.
      *           See https://goo.gl/xmQnxf for more information and examples of labels.
+     *     @type \Google\Cloud\Aiplatform\V1beta1\EncryptionSpec $encryption_spec
+     *           Customer-managed encryption key spec for a Model. If set, this
+     *           Model and all sub-resources of this Model will be secured by this key.
      * }
      */
     public function __construct($data = NULL) {
@@ -771,6 +795,10 @@ class Model extends \Google\Protobuf\Internal\Message
      * * `bigquery`
      * Each instance is a single row in BigQuery. Uses
      * [BigQuerySource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.bigquery_source].
+     * * `file-list`
+     * Each line of the file is the location of an instance to process, uses
+     * `gcs_source` field of the
+     * [InputConfig][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig] object.
      * If this Model doesn't support any of these formats it means it cannot be
      * used with a [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob]. However, if it has
      * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types], it could serve online
@@ -807,6 +835,10 @@ class Model extends \Google\Protobuf\Internal\Message
      * * `bigquery`
      * Each instance is a single row in BigQuery. Uses
      * [BigQuerySource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.bigquery_source].
+     * * `file-list`
+     * Each line of the file is the location of an instance to process, uses
+     * `gcs_source` field of the
+     * [InputConfig][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig] object.
      * If this Model doesn't support any of these formats it means it cannot be
      * used with a [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob]. However, if it has
      * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types], it could serve online
@@ -1000,16 +1032,19 @@ class Model extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The default explanation specification for this Model.
-     * Model can be used for [requesting explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain]
-     * after being [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+     * The default explanation specification for this Model.
+     * The Model can be used for [requesting
+     * explanation][PredictionService.Explain] after being
+     * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+     * The Model can be used for [batch
+     * explanation][BatchPredictionJob.generate_explanation] iff it is populated.
      * All fields of the explanation_spec can be overridden by
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of
-     * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model].
-     * This field is populated only for tabular AutoML Models.
-     * Specifying it with [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel] is not supported.
+     * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model], or
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] of
+     * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
      *
-     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 23;</code>
      * @return \Google\Cloud\Aiplatform\V1beta1\ExplanationSpec
      */
     public function getExplanationSpec()
@@ -1028,16 +1063,19 @@ class Model extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The default explanation specification for this Model.
-     * Model can be used for [requesting explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain]
-     * after being [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+     * The default explanation specification for this Model.
+     * The Model can be used for [requesting
+     * explanation][PredictionService.Explain] after being
+     * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+     * The Model can be used for [batch
+     * explanation][BatchPredictionJob.generate_explanation] iff it is populated.
      * All fields of the explanation_spec can be overridden by
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of
-     * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model].
-     * This field is populated only for tabular AutoML Models.
-     * Specifying it with [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel] is not supported.
+     * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model], or
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] of
+     * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
      *
-     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 23;</code>
      * @param \Google\Cloud\Aiplatform\V1beta1\ExplanationSpec $var
      * @return $this
      */
@@ -1107,6 +1145,44 @@ class Model extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->labels = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Customer-managed encryption key spec for a Model. If set, this
+     * Model and all sub-resources of this Model will be secured by this key.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 24;</code>
+     * @return \Google\Cloud\Aiplatform\V1beta1\EncryptionSpec
+     */
+    public function getEncryptionSpec()
+    {
+        return isset($this->encryption_spec) ? $this->encryption_spec : null;
+    }
+
+    public function hasEncryptionSpec()
+    {
+        return isset($this->encryption_spec);
+    }
+
+    public function clearEncryptionSpec()
+    {
+        unset($this->encryption_spec);
+    }
+
+    /**
+     * Customer-managed encryption key spec for a Model. If set, this
+     * Model and all sub-resources of this Model will be secured by this key.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 24;</code>
+     * @param \Google\Cloud\Aiplatform\V1beta1\EncryptionSpec $var
+     * @return $this
+     */
+    public function setEncryptionSpec($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Aiplatform\V1beta1\EncryptionSpec::class);
+        $this->encryption_spec = $var;
 
         return $this;
     }

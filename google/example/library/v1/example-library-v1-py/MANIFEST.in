@@ -1,0 +1,2 @@
+recursive-include google/example/library *.py
+recursive-include google/example/library_v1 *.py

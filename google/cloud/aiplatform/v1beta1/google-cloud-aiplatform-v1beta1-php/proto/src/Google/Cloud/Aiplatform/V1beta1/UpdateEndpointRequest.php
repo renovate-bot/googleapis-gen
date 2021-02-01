@@ -23,6 +23,8 @@ class UpdateEndpointRequest extends \Google\Protobuf\Internal\Message
     protected $endpoint = null;
     /**
      * Required. The update mask applies to the resource.
+     * See
+     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -38,6 +40,8 @@ class UpdateEndpointRequest extends \Google\Protobuf\Internal\Message
      *           Required. The Endpoint which replaces the resource on the server.
      *     @type \Google\Protobuf\FieldMask $update_mask
      *           Required. The update mask applies to the resource.
+     *           See
+     *           [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
      * }
      */
     public function __construct($data = NULL) {
@@ -83,6 +87,8 @@ class UpdateEndpointRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The update mask applies to the resource.
+     * See
+     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\FieldMask
@@ -104,6 +110,8 @@ class UpdateEndpointRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The update mask applies to the resource.
+     * See
+     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Protobuf\FieldMask $var

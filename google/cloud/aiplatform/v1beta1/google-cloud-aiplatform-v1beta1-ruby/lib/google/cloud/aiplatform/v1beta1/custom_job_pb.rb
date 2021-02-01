@@ -5,6 +5,7 @@ require 'google/protobuf'
 
 require 'google/api/field_behavior_pb'
 require 'google/api/resource_pb'
+require 'google/cloud/aiplatform/v1beta1/encryption_spec_pb'
 require 'google/cloud/aiplatform/v1beta1/env_var_pb'
 require 'google/cloud/aiplatform/v1beta1/io_pb'
 require 'google/cloud/aiplatform/v1beta1/job_state_pb'
@@ -26,6 +27,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :update_time, :message, 9, "google.protobuf.Timestamp"
       optional :error, :message, 10, "google.rpc.Status"
       map :labels, :string, :string, 11
+      optional :encryption_spec, :message, 12, "google.cloud.aiplatform.v1beta1.EncryptionSpec"
     end
     add_message "google.cloud.aiplatform.v1beta1.CustomJobSpec" do
       repeated :worker_pool_specs, :message, 1, "google.cloud.aiplatform.v1beta1.WorkerPoolSpec"

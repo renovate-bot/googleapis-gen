@@ -31,6 +31,17 @@ module Google
         # @!attribute [rw] page_token
         #   @return [String]
         #     The standard page token.
+        # @!attribute [rw] filter
+        #   @return [String]
+        #     Supported filters are:
+        #     * Resource type: For a specific type of MigratableResource.
+        #       * `ml_engine_model_version:*`
+        #       * `automl_model:*`,
+        #       * `automl_dataset:*`
+        #       * `data_labeling_dataset:*`.
+        #     * Migrated or not: Filter migrated resource or not by last_migrate_time.
+        #       * `last_migrate_time:*` will filter migrated resources.
+        #       * `NOT last_migrate_time:*` will filter not yet migrated resource.
         class SearchMigratableResourcesRequest; end
 
         # Response message for {Google::Cloud::Aiplatform::V1beta1::MigrationService::SearchMigratableResources MigrationService::SearchMigratableResources}.
@@ -176,7 +187,27 @@ module Google
         # @!attribute [rw] generic_metadata
         #   @return [Google::Cloud::Aiplatform::V1beta1::GenericOperationMetadata]
         #     The common part of the operation metadata.
-        class BatchMigrateResourcesOperationMetadata; end
+        # @!attribute [rw] partial_results
+        #   @return [Array<Google::Cloud::Aiplatform::V1beta1::BatchMigrateResourcesOperationMetadata::PartialResult>]
+        #     Partial results that reflects the latest migration operation progress.
+        class BatchMigrateResourcesOperationMetadata
+          # Represents a partial result in batch migration opreation for one
+          # {Google::Cloud::Aiplatform::V1beta1::MigrateResourceRequest MigrateResourceRequest}.
+          # @!attribute [rw] error
+          #   @return [Google::Rpc::Status]
+          #     The error result of the migration request in case of failure.
+          # @!attribute [rw] model
+          #   @return [String]
+          #     Migrated model resource name.
+          # @!attribute [rw] dataset
+          #   @return [String]
+          #     Migrated dataset resource name.
+          # @!attribute [rw] request
+          #   @return [Google::Cloud::Aiplatform::V1beta1::MigrateResourceRequest]
+          #     It's the same as the value in
+          #     {MigrateResourceRequest#migrate_resource_requests}.
+          class PartialResult; end
+        end
       end
     end
   end

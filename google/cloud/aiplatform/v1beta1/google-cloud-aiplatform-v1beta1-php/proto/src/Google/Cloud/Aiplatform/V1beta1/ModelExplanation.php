@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class ModelExplanation extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -43,7 +43,7 @@ class ModelExplanation extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Aiplatform\V1beta1\Attribution[]|\Google\Protobuf\Internal\RepeatedField $mean_attributions
-     *           Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     *           Output only. Aggregated attributions explaining the Model's prediction outputs over the
      *           set of instances. The attributions are grouped by outputs.
      *           For Models that predict only one output, such as regression Models that
      *           predict only one score, there is only one attibution that explains the
@@ -66,7 +66,7 @@ class ModelExplanation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -91,7 +91,7 @@ class ModelExplanation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the

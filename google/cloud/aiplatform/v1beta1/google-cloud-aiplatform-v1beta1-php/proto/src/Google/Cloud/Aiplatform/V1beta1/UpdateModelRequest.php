@@ -24,9 +24,7 @@ class UpdateModelRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The update mask applies to the resource.
      * For the `FieldMask` definition, see
-     * [FieldMask](https:
-     * //developers.google.com/protocol-buffers
-     * // /docs/reference/google.protobuf#fieldmask).
+     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -43,9 +41,7 @@ class UpdateModelRequest extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\FieldMask $update_mask
      *           Required. The update mask applies to the resource.
      *           For the `FieldMask` definition, see
-     *           [FieldMask](https:
-     *           //developers.google.com/protocol-buffers
-     *           // /docs/reference/google.protobuf#fieldmask).
+     *           [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
      * }
      */
     public function __construct($data = NULL) {
@@ -92,9 +88,7 @@ class UpdateModelRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The update mask applies to the resource.
      * For the `FieldMask` definition, see
-     * [FieldMask](https:
-     * //developers.google.com/protocol-buffers
-     * // /docs/reference/google.protobuf#fieldmask).
+     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\FieldMask
@@ -117,9 +111,7 @@ class UpdateModelRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The update mask applies to the resource.
      * For the `FieldMask` definition, see
-     * [FieldMask](https:
-     * //developers.google.com/protocol-buffers
-     * // /docs/reference/google.protobuf#fieldmask).
+     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Protobuf\FieldMask $var

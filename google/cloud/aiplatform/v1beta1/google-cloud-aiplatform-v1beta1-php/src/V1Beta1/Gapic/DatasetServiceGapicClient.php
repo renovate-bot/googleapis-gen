@@ -591,10 +591,8 @@ class DatasetServiceGapicClient
      * @param Dataset   $dataset    Required. The Dataset which replaces the resource on the server.
      * @param FieldMask $updateMask Required. The update mask applies to the resource.
      *                              For the `FieldMask` definition, see
-     *
-     * [FieldMask](https:
-     * //tinyurl.com/dev-google-protobuf#google.protobuf.FieldMask).
-     * Updatable fields:
+     *                              [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     *                              Updatable fields:
      *
      *   * `display_name`
      *   * `description`
@@ -670,7 +668,19 @@ class DatasetServiceGapicClient
      *                             Optional.
      *
      *     @type string $filter
-     *          The standard list filter.
+     *          An expression for filtering the results of the request. For field names
+     *          both snake_case and camelCase are supported.
+     *
+     *            * `display_name`: supports = and !=
+     *            * `metadata_schema_uri`: supports = and !=
+     *            * `labels` supports general map functions that is:
+     *              * `labels.key=value` - key:value equality
+     *              * `labels.key:* or labels:key - key existence
+     *              * A key including a space must be quoted. `labels."a key"`.
+     *
+     *          Some examples:
+     *            * `displayName="myDisplayName"`
+     *            * `labels.myKey="myValue"`
      *     @type int $pageSize
      *          The maximum number of resources contained in the underlying API
      *          response. The API may return fewer values in a page, even if
@@ -687,7 +697,7 @@ class DatasetServiceGapicClient
      *          Use "desc" after a field name for descending.
      *          Supported fields:
      *            * `display_name`
-     *            * `data_item_count`   * `create_time`
+     *            * `create_time`
      *            * `update_time`
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a

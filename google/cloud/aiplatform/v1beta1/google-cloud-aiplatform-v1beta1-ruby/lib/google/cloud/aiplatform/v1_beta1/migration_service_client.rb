@@ -241,6 +241,16 @@ module Google
           #   parameter does not affect the return value. If page streaming is
           #   performed per-page, this determines the maximum number of
           #   resources in a page.
+          # @param filter [String]
+          #   Supported filters are:
+          #   * Resource type: For a specific type of MigratableResource.
+          #     * `ml_engine_model_version:*`
+          #     * `automl_model:*`,
+          #     * `automl_dataset:*`
+          #     * `data_labeling_dataset:*`.
+          #   * Migrated or not: Filter migrated resource or not by last_migrate_time.
+          #     * `last_migrate_time:*` will filter migrated resources.
+          #     * `NOT last_migrate_time:*` will filter not yet migrated resource.
           # @param options [Google::Gax::CallOptions]
           #   Overrides the default settings for this call, e.g, timeout,
           #   retries, etc.
@@ -275,11 +285,13 @@ module Google
           def search_migratable_resources \
               parent,
               page_size: nil,
+              filter: nil,
               options: nil,
               &block
             req = {
               parent: parent,
-              page_size: page_size
+              page_size: page_size,
+              filter: filter
             }.delete_if { |_, v| v.nil? }
             req = Google::Gax::to_proto(req, Google::Cloud::Aiplatform::V1beta1::SearchMigratableResourcesRequest)
             @search_migratable_resources.call(req, options, &block)

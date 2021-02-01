@@ -610,7 +610,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * If true, the container of the DeployedModel instances will send `stderr`
    * and `stdout` streams to Stackdriver Logging.
-   * Only supported for custom-trained Models and AutoML Tables Models.
+   * Only supported for custom-trained Models and AutoML Tabular Models.
    * </pre>
    *
    * <code>bool enable_container_logging = 12;</code>
@@ -2346,7 +2346,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * If true, the container of the DeployedModel instances will send `stderr`
      * and `stdout` streams to Stackdriver Logging.
-     * Only supported for custom-trained Models and AutoML Tables Models.
+     * Only supported for custom-trained Models and AutoML Tabular Models.
      * </pre>
      *
      * <code>bool enable_container_logging = 12;</code>
@@ -2360,7 +2360,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * If true, the container of the DeployedModel instances will send `stderr`
      * and `stdout` streams to Stackdriver Logging.
-     * Only supported for custom-trained Models and AutoML Tables Models.
+     * Only supported for custom-trained Models and AutoML Tabular Models.
      * </pre>
      *
      * <code>bool enable_container_logging = 12;</code>
@@ -2377,7 +2377,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * If true, the container of the DeployedModel instances will send `stderr`
      * and `stdout` streams to Stackdriver Logging.
-     * Only supported for custom-trained Models and AutoML Tables Models.
+     * Only supported for custom-trained Models and AutoML Tabular Models.
      * </pre>
      *
      * <code>bool enable_container_logging = 12;</code>

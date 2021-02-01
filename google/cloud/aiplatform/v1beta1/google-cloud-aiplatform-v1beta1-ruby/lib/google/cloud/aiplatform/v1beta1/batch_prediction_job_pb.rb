@@ -6,6 +6,7 @@ require 'google/protobuf'
 require 'google/api/field_behavior_pb'
 require 'google/api/resource_pb'
 require 'google/cloud/aiplatform/v1beta1/completion_stats_pb'
+require 'google/cloud/aiplatform/v1beta1/encryption_spec_pb'
 require 'google/cloud/aiplatform/v1beta1/explanation_pb'
 require 'google/cloud/aiplatform/v1beta1/io_pb'
 require 'google/cloud/aiplatform/v1beta1/job_state_pb'
@@ -39,6 +40,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :end_time, :message, 17, "google.protobuf.Timestamp"
       optional :update_time, :message, 18, "google.protobuf.Timestamp"
       map :labels, :string, :string, 19
+      optional :encryption_spec, :message, 24, "google.cloud.aiplatform.v1beta1.EncryptionSpec"
     end
     add_message "google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig" do
       optional :instances_format, :string, 1

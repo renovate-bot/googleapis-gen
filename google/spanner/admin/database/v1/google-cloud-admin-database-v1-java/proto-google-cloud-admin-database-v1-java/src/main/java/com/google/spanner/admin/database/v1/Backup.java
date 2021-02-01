@@ -115,6 +115,19 @@ private static final long serialVersionUID = 0L;
             referencingDatabases_.add(s);
             break;
           }
+          case 74: {
+            com.google.protobuf.Timestamp.Builder subBuilder = null;
+            if (versionTime_ != null) {
+              subBuilder = versionTime_.toBuilder();
+            }
+            versionTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(versionTime_);
+              versionTime_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -351,6 +364,53 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int VERSION_TIME_FIELD_NUMBER = 9;
+  private com.google.protobuf.Timestamp versionTime_;
+  /**
+   * <pre>
+   * The backup will contain an externally consistent copy of the database at
+   * the timestamp specified by `version_time`. If `version_time` is not
+   * specified, the system will set `version_time` to the `create_time` of the
+   * backup.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp version_time = 9;</code>
+   * @return Whether the versionTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasVersionTime() {
+    return versionTime_ != null;
+  }
+  /**
+   * <pre>
+   * The backup will contain an externally consistent copy of the database at
+   * the timestamp specified by `version_time`. If `version_time` is not
+   * specified, the system will set `version_time` to the `create_time` of the
+   * backup.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp version_time = 9;</code>
+   * @return The versionTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getVersionTime() {
+    return versionTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : versionTime_;
+  }
+  /**
+   * <pre>
+   * The backup will contain an externally consistent copy of the database at
+   * the timestamp specified by `version_time`. If `version_time` is not
+   * specified, the system will set `version_time` to the `create_time` of the
+   * backup.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp version_time = 9;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getVersionTimeOrBuilder() {
+    return getVersionTime();
+  }
+
   public static final int EXPIRE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp expireTime_;
   /**
@@ -474,10 +534,9 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp createTime_;
   /**
    * <pre>
-   * Output only. The backup will contain an externally consistent
-   * copy of the database at the timestamp specified by
-   * `create_time`. `create_time` is approximately the time the
-   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] request is received.
+   * Output only. The time the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+   * request is received. If the request does not specify `version_time`, the
+   * `version_time` of the backup will be equivalent to the `create_time`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -489,10 +548,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The backup will contain an externally consistent
-   * copy of the database at the timestamp specified by
-   * `create_time`. `create_time` is approximately the time the
-   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] request is received.
+   * Output only. The time the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+   * request is received. If the request does not specify `version_time`, the
+   * `version_time` of the backup will be equivalent to the `create_time`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -504,10 +562,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The backup will contain an externally consistent
-   * copy of the database at the timestamp specified by
-   * `create_time`. `create_time` is approximately the time the
-   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] request is received.
+   * Output only. The time the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+   * request is received. If the request does not specify `version_time`, the
+   * `version_time` of the backup will be equivalent to the `create_time`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -669,6 +726,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < referencingDatabases_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, referencingDatabases_.getRaw(i));
     }
+    if (versionTime_ != null) {
+      output.writeMessage(9, getVersionTime());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -708,6 +768,10 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getReferencingDatabasesList().size();
     }
+    if (versionTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, getVersionTime());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -725,6 +789,11 @@ private static final long serialVersionUID = 0L;
 
     if (!getDatabase()
         .equals(other.getDatabase())) return false;
+    if (hasVersionTime() != other.hasVersionTime()) return false;
+    if (hasVersionTime()) {
+      if (!getVersionTime()
+          .equals(other.getVersionTime())) return false;
+    }
     if (hasExpireTime() != other.hasExpireTime()) return false;
     if (hasExpireTime()) {
       if (!getExpireTime()
@@ -755,6 +824,10 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + DATABASE_FIELD_NUMBER;
     hash = (53 * hash) + getDatabase().hashCode();
+    if (hasVersionTime()) {
+      hash = (37 * hash) + VERSION_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getVersionTime().hashCode();
+    }
     if (hasExpireTime()) {
       hash = (37 * hash) + EXPIRE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getExpireTime().hashCode();
@@ -913,6 +986,12 @@ private static final long serialVersionUID = 0L;
       super.clear();
       database_ = "";
 
+      if (versionTimeBuilder_ == null) {
+        versionTime_ = null;
+      } else {
+        versionTime_ = null;
+        versionTimeBuilder_ = null;
+      }
       if (expireTimeBuilder_ == null) {
         expireTime_ = null;
       } else {
@@ -961,6 +1040,11 @@ private static final long serialVersionUID = 0L;
       com.google.spanner.admin.database.v1.Backup result = new com.google.spanner.admin.database.v1.Backup(this);
       int from_bitField0_ = bitField0_;
       result.database_ = database_;
+      if (versionTimeBuilder_ == null) {
+        result.versionTime_ = versionTime_;
+      } else {
+        result.versionTime_ = versionTimeBuilder_.build();
+      }
       if (expireTimeBuilder_ == null) {
         result.expireTime_ = expireTime_;
       } else {
@@ -1030,6 +1114,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getDatabase().isEmpty()) {
         database_ = other.database_;
         onChanged();
+      }
+      if (other.hasVersionTime()) {
+        mergeVersionTime(other.getVersionTime());
       }
       if (other.hasExpireTime()) {
         mergeExpireTime(other.getExpireTime());
@@ -1201,6 +1288,188 @@ private static final long serialVersionUID = 0L;
       database_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Timestamp versionTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> versionTimeBuilder_;
+    /**
+     * <pre>
+     * The backup will contain an externally consistent copy of the database at
+     * the timestamp specified by `version_time`. If `version_time` is not
+     * specified, the system will set `version_time` to the `create_time` of the
+     * backup.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp version_time = 9;</code>
+     * @return Whether the versionTime field is set.
+     */
+    public boolean hasVersionTime() {
+      return versionTimeBuilder_ != null || versionTime_ != null;
+    }
+    /**
+     * <pre>
+     * The backup will contain an externally consistent copy of the database at
+     * the timestamp specified by `version_time`. If `version_time` is not
+     * specified, the system will set `version_time` to the `create_time` of the
+     * backup.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp version_time = 9;</code>
+     * @return The versionTime.
+     */
+    public com.google.protobuf.Timestamp getVersionTime() {
+      if (versionTimeBuilder_ == null) {
+        return versionTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : versionTime_;
+      } else {
+        return versionTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The backup will contain an externally consistent copy of the database at
+     * the timestamp specified by `version_time`. If `version_time` is not
+     * specified, the system will set `version_time` to the `create_time` of the
+     * backup.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp version_time = 9;</code>
+     */
+    public Builder setVersionTime(com.google.protobuf.Timestamp value) {
+      if (versionTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        versionTime_ = value;
+        onChanged();
+      } else {
+        versionTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The backup will contain an externally consistent copy of the database at
+     * the timestamp specified by `version_time`. If `version_time` is not
+     * specified, the system will set `version_time` to the `create_time` of the
+     * backup.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp version_time = 9;</code>
+     */
+    public Builder setVersionTime(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (versionTimeBuilder_ == null) {
+        versionTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        versionTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The backup will contain an externally consistent copy of the database at
+     * the timestamp specified by `version_time`. If `version_time` is not
+     * specified, the system will set `version_time` to the `create_time` of the
+     * backup.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp version_time = 9;</code>
+     */
+    public Builder mergeVersionTime(com.google.protobuf.Timestamp value) {
+      if (versionTimeBuilder_ == null) {
+        if (versionTime_ != null) {
+          versionTime_ =
+            com.google.protobuf.Timestamp.newBuilder(versionTime_).mergeFrom(value).buildPartial();
+        } else {
+          versionTime_ = value;
+        }
+        onChanged();
+      } else {
+        versionTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The backup will contain an externally consistent copy of the database at
+     * the timestamp specified by `version_time`. If `version_time` is not
+     * specified, the system will set `version_time` to the `create_time` of the
+     * backup.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp version_time = 9;</code>
+     */
+    public Builder clearVersionTime() {
+      if (versionTimeBuilder_ == null) {
+        versionTime_ = null;
+        onChanged();
+      } else {
+        versionTime_ = null;
+        versionTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The backup will contain an externally consistent copy of the database at
+     * the timestamp specified by `version_time`. If `version_time` is not
+     * specified, the system will set `version_time` to the `create_time` of the
+     * backup.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp version_time = 9;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getVersionTimeBuilder() {
+      
+      onChanged();
+      return getVersionTimeFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The backup will contain an externally consistent copy of the database at
+     * the timestamp specified by `version_time`. If `version_time` is not
+     * specified, the system will set `version_time` to the `create_time` of the
+     * backup.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp version_time = 9;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getVersionTimeOrBuilder() {
+      if (versionTimeBuilder_ != null) {
+        return versionTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return versionTime_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : versionTime_;
+      }
+    }
+    /**
+     * <pre>
+     * The backup will contain an externally consistent copy of the database at
+     * the timestamp specified by `version_time`. If `version_time` is not
+     * specified, the system will set `version_time` to the `create_time` of the
+     * backup.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp version_time = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getVersionTimeFieldBuilder() {
+      if (versionTimeBuilder_ == null) {
+        versionTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getVersionTime(),
+                getParentForChildren(),
+                isClean());
+        versionTime_ = null;
+      }
+      return versionTimeBuilder_;
     }
 
     private com.google.protobuf.Timestamp expireTime_;
@@ -1554,10 +1823,9 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
     /**
      * <pre>
-     * Output only. The backup will contain an externally consistent
-     * copy of the database at the timestamp specified by
-     * `create_time`. `create_time` is approximately the time the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] request is received.
+     * Output only. The time the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * request is received. If the request does not specify `version_time`, the
+     * `version_time` of the backup will be equivalent to the `create_time`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1568,10 +1836,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The backup will contain an externally consistent
-     * copy of the database at the timestamp specified by
-     * `create_time`. `create_time` is approximately the time the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] request is received.
+     * Output only. The time the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * request is received. If the request does not specify `version_time`, the
+     * `version_time` of the backup will be equivalent to the `create_time`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1586,10 +1853,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The backup will contain an externally consistent
-     * copy of the database at the timestamp specified by
-     * `create_time`. `create_time` is approximately the time the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] request is received.
+     * Output only. The time the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * request is received. If the request does not specify `version_time`, the
+     * `version_time` of the backup will be equivalent to the `create_time`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1609,10 +1875,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The backup will contain an externally consistent
-     * copy of the database at the timestamp specified by
-     * `create_time`. `create_time` is approximately the time the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] request is received.
+     * Output only. The time the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * request is received. If the request does not specify `version_time`, the
+     * `version_time` of the backup will be equivalent to the `create_time`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1630,10 +1895,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The backup will contain an externally consistent
-     * copy of the database at the timestamp specified by
-     * `create_time`. `create_time` is approximately the time the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] request is received.
+     * Output only. The time the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * request is received. If the request does not specify `version_time`, the
+     * `version_time` of the backup will be equivalent to the `create_time`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1655,10 +1919,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The backup will contain an externally consistent
-     * copy of the database at the timestamp specified by
-     * `create_time`. `create_time` is approximately the time the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] request is received.
+     * Output only. The time the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * request is received. If the request does not specify `version_time`, the
+     * `version_time` of the backup will be equivalent to the `create_time`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1676,10 +1939,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The backup will contain an externally consistent
-     * copy of the database at the timestamp specified by
-     * `create_time`. `create_time` is approximately the time the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] request is received.
+     * Output only. The time the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * request is received. If the request does not specify `version_time`, the
+     * `version_time` of the backup will be equivalent to the `create_time`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1691,10 +1953,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The backup will contain an externally consistent
-     * copy of the database at the timestamp specified by
-     * `create_time`. `create_time` is approximately the time the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] request is received.
+     * Output only. The time the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * request is received. If the request does not specify `version_time`, the
+     * `version_time` of the backup will be equivalent to the `create_time`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1709,10 +1970,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The backup will contain an externally consistent
-     * copy of the database at the timestamp specified by
-     * `create_time`. `create_time` is approximately the time the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] request is received.
+     * Output only. The time the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * request is received. If the request does not specify `version_time`, the
+     * `version_time` of the backup will be equivalent to the `create_time`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

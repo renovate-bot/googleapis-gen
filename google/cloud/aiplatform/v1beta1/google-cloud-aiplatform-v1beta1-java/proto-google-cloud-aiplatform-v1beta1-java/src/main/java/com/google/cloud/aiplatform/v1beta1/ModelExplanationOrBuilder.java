@@ -9,7 +9,7 @@ public interface ModelExplanationOrBuilder extends
 
   /**
    * <pre>
-   * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+   * Output only. Aggregated attributions explaining the Model's prediction outputs over the
    * set of instances. The attributions are grouped by outputs.
    * For Models that predict only one output, such as regression Models that
    * predict only one score, there is only one attibution that explains the
@@ -32,7 +32,7 @@ public interface ModelExplanationOrBuilder extends
       getMeanAttributionsList();
   /**
    * <pre>
-   * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+   * Output only. Aggregated attributions explaining the Model's prediction outputs over the
    * set of instances. The attributions are grouped by outputs.
    * For Models that predict only one output, such as regression Models that
    * predict only one score, there is only one attibution that explains the
@@ -54,7 +54,7 @@ public interface ModelExplanationOrBuilder extends
   com.google.cloud.aiplatform.v1beta1.Attribution getMeanAttributions(int index);
   /**
    * <pre>
-   * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+   * Output only. Aggregated attributions explaining the Model's prediction outputs over the
    * set of instances. The attributions are grouped by outputs.
    * For Models that predict only one output, such as regression Models that
    * predict only one score, there is only one attibution that explains the
@@ -76,7 +76,7 @@ public interface ModelExplanationOrBuilder extends
   int getMeanAttributionsCount();
   /**
    * <pre>
-   * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+   * Output only. Aggregated attributions explaining the Model's prediction outputs over the
    * set of instances. The attributions are grouped by outputs.
    * For Models that predict only one output, such as regression Models that
    * predict only one score, there is only one attibution that explains the
@@ -99,7 +99,7 @@ public interface ModelExplanationOrBuilder extends
       getMeanAttributionsOrBuilderList();
   /**
    * <pre>
-   * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+   * Output only. Aggregated attributions explaining the Model's prediction outputs over the
    * set of instances. The attributions are grouped by outputs.
    * For Models that predict only one output, such as regression Models that
    * predict only one score, there is only one attibution that explains the

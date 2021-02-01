@@ -84,6 +84,14 @@ class Endpoint extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $update_time = null;
+    /**
+     * Customer-managed encryption key spec for an Endpoint. If set, this
+     * Endpoint and all sub-resources of this Endpoint will be secured by
+     * this key.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 10;</code>
+     */
+    protected $encryption_spec = null;
 
     /**
      * Constructor.
@@ -123,6 +131,10 @@ class Endpoint extends \Google\Protobuf\Internal\Message
      *           Output only. Timestamp when this Endpoint was created.
      *     @type \Google\Protobuf\Timestamp $update_time
      *           Output only. Timestamp when this Endpoint was last updated.
+     *     @type \Google\Cloud\Aiplatform\V1beta1\EncryptionSpec $encryption_spec
+     *           Customer-managed encryption key spec for an Endpoint. If set, this
+     *           Endpoint and all sub-resources of this Endpoint will be secured by
+     *           this key.
      * }
      */
     public function __construct($data = NULL) {
@@ -408,6 +420,46 @@ class Endpoint extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->update_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * Customer-managed encryption key spec for an Endpoint. If set, this
+     * Endpoint and all sub-resources of this Endpoint will be secured by
+     * this key.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 10;</code>
+     * @return \Google\Cloud\Aiplatform\V1beta1\EncryptionSpec
+     */
+    public function getEncryptionSpec()
+    {
+        return isset($this->encryption_spec) ? $this->encryption_spec : null;
+    }
+
+    public function hasEncryptionSpec()
+    {
+        return isset($this->encryption_spec);
+    }
+
+    public function clearEncryptionSpec()
+    {
+        unset($this->encryption_spec);
+    }
+
+    /**
+     * Customer-managed encryption key spec for an Endpoint. If set, this
+     * Endpoint and all sub-resources of this Endpoint will be secured by
+     * this key.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 10;</code>
+     * @param \Google\Cloud\Aiplatform\V1beta1\EncryptionSpec $var
+     * @return $this
+     */
+    public function setEncryptionSpec($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Aiplatform\V1beta1\EncryptionSpec::class);
+        $this->encryption_spec = $var;
 
         return $this;
     }

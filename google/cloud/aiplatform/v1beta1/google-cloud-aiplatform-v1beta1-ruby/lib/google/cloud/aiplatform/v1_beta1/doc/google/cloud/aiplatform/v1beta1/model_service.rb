@@ -53,7 +53,21 @@ module Google
         #     Format: `projects/{project}/locations/{location}`
         # @!attribute [rw] filter
         #   @return [String]
-        #     The standard list filter.
+        #     An expression for filtering the results of the request. For field names
+        #     both snake_case and camelCase are supported.
+        #
+        #     * `model` supports = and !=. `model` represents the Model ID,
+        #       i.e. the last segment of the Model's {Google::Cloud::Aiplatform::V1beta1::Model#name resource name}.
+        #       * `display_name` supports = and !=
+        #       * `labels` supports general map functions that is:
+        #         * `labels.key=value` - key:value equality
+        #         * `labels.key:* or labels:key - key existence
+        #         * A key including a space must be quoted. `labels."a key"`.
+        #
+        #         Some examples:
+        #       * `model=1234`
+        #       * `displayName="myDisplayName"`
+        #       * `labels.myKey="myValue"`
         # @!attribute [rw] page_size
         #   @return [Integer]
         #     The standard list page size.
@@ -86,10 +100,7 @@ module Google
         #   @return [Google::Protobuf::FieldMask]
         #     Required. The update mask applies to the resource.
         #     For the `FieldMask` definition, see
-        #
-        #     [FieldMask](https:
-        #     //developers.google.com/protocol-buffers
-        #     // /docs/reference/google.protobuf#fieldmask).
+        #     [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
         class UpdateModelRequest; end
 
         # Request message for {Google::Cloud::Aiplatform::V1beta1::ModelService::DeleteModel ModelService::DeleteModel}.
@@ -117,20 +128,20 @@ module Google
           #     supported formats is used by default.
           # @!attribute [rw] artifact_destination
           #   @return [Google::Cloud::Aiplatform::V1beta1::GcsDestination]
-          #     The Google Cloud Storage location where the Model artifact is to be
+          #     The Cloud Storage location where the Model artifact is to be
           #     written to. Under the directory given as the destination a new one with
           #     name "`model-export-<model-display-name>-<timestamp-of-export-call>`",
           #     where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format,
           #     will be created. Inside, the Model and any of its supporting files
           #     will be written.
-          #     This field should only be set when
-          #     [Models.supported_export_formats.exportable_contents] contains ARTIFACT.
+          #     This field should only be set when the `exportableContent` field of the
+          #     [Model.supported_export_formats] object contains `ARTIFACT`.
           # @!attribute [rw] image_destination
           #   @return [Google::Cloud::Aiplatform::V1beta1::ContainerRegistryDestination]
           #     The Google Container Registry or Artifact Registry uri where the
           #     Model container image will be copied to.
-          #     This field should only be set when
-          #     [Models.supported_export_formats.exportable_contents] contains IMAGE.
+          #     This field should only be set when the `exportableContent` field of the
+          #     [Model.supported_export_formats] object contains `IMAGE`.
           class OutputConfig; end
         end
 

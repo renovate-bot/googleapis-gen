@@ -353,4 +353,37 @@ public interface EndpointOrBuilder extends
    * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   * <pre>
+   * Customer-managed encryption key spec for an Endpoint. If set, this
+   * Endpoint and all sub-resources of this Endpoint will be secured by
+   * this key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 10;</code>
+   * @return Whether the encryptionSpec field is set.
+   */
+  boolean hasEncryptionSpec();
+  /**
+   * <pre>
+   * Customer-managed encryption key spec for an Endpoint. If set, this
+   * Endpoint and all sub-resources of this Endpoint will be secured by
+   * this key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 10;</code>
+   * @return The encryptionSpec.
+   */
+  com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec();
+  /**
+   * <pre>
+   * Customer-managed encryption key spec for an Endpoint. If set, this
+   * Endpoint and all sub-resources of this Endpoint will be secured by
+   * this key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 10;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
 }

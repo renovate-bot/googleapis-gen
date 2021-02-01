@@ -45,7 +45,24 @@ module Google
         #     Output only. Aggregated explanation metrics for the Model's prediction output over the
         #     data this ModelEvaluation uses. This field is populated only if the Model
         #     is evaluated with explanations, and only for AutoML tabular Models.
-        class ModelEvaluation; end
+        # @!attribute [rw] explanation_specs
+        #   @return [Array<Google::Cloud::Aiplatform::V1beta1::ModelEvaluation::ModelEvaluationExplanationSpec>]
+        #     Output only. Describes the values of {Google::Cloud::Aiplatform::V1beta1::ExplanationSpec ExplanationSpec} that are used for explaining
+        #     the predicted values on the evaluated data.
+        class ModelEvaluation
+          # @!attribute [rw] explanation_type
+          #   @return [String]
+          #     Explanation type.
+          #
+          #     For AutoML Image Classification models, possible values are:
+          #
+          #     * `image-integrated-gradients`
+          #       * `image-xrai`
+          # @!attribute [rw] explanation_spec
+          #   @return [Google::Cloud::Aiplatform::V1beta1::ExplanationSpec]
+          #     Explanation spec details.
+          class ModelEvaluationExplanationSpec; end
+        end
       end
     end
   end

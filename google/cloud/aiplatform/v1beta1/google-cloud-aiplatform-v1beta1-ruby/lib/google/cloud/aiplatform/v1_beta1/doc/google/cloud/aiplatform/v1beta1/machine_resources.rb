@@ -19,41 +19,13 @@ module Google
         # Specification of a single machine.
         # @!attribute [rw] machine_type
         #   @return [String]
-        #     Immutable. The type of the machine.
-        #     Following machine types are supported:
+        #     Immutable. The type of the machine. For the machine types supported for prediction,
+        #     see https://tinyurl.com/aip-docs/predictions/machine-types.
+        #     For machine types supported for creating a custom training job, see
+        #     https://tinyurl.com/aip-docs/training/configure-compute.
         #
-        #     * `n1-standard-2`
-        #
-        #     * `n1-standard-4`
-        #
-        #     * `n1-standard-8`
-        #
-        #     * `n1-standard-16`
-        #
-        #     * `n1-standard-32`
-        #
-        #     * `n1-highmem-2`
-        #
-        #     * `n1-highmem-4`
-        #
-        #     * `n1-highmem-8`
-        #
-        #     * `n1-highmem-16`
-        #
-        #     * `n1-highmem-32`
-        #
-        #     * `n1-highcpu-2`
-        #
-        #     * `n1-highcpu-4`
-        #
-        #     * `n1-highcpu-8`
-        #
-        #     * `n1-highcpu-16`
-        #
-        #     * `n1-highcpu-32`
-        #
-        #     When used for {DeployedMode} this field is optional and the default value
-        #     is `n1-standard-2`. If used for {Google::Cloud::Aiplatform::V1beta1::BatchPredictionJob BatchPredictionJob} or as part of
+        #     For {Google::Cloud::Aiplatform::V1beta1::DeployedModel DeployedModel} this field is optional, and the default
+        #     value is `n1-standard-2`. For {Google::Cloud::Aiplatform::V1beta1::BatchPredictionJob BatchPredictionJob} or as part of
         #     {Google::Cloud::Aiplatform::V1beta1::WorkerPoolSpec WorkerPoolSpec} this field is required.
         # @!attribute [rw] accelerator_type
         #   @return [Google::Cloud::Aiplatform::V1beta1::AcceleratorType]
@@ -140,7 +112,7 @@ module Google
         # Represents the spec of disk options.
         # @!attribute [rw] boot_disk_type
         #   @return [String]
-        #     Type of the boot disk (default is "pd-standard").
+        #     Type of the boot disk (default is "pd-ssd").
         #     Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
         #     "pd-standard" (Persistent Disk Hard Disk Drive).
         # @!attribute [rw] boot_disk_size_gb

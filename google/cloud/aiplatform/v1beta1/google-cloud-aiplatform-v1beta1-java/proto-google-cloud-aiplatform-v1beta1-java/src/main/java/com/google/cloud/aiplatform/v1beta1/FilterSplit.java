@@ -10,6 +10,7 @@ package com.google.cloud.aiplatform.v1beta1;
  * supported for Datasets containing DataItems.
  * If any of the filters in this message are to match nothing, then they can be
  * set as '-' (the minus sign).
+ * Supported only for unstructured Datasets.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.FilterSplit}
@@ -117,7 +118,7 @@ private static final long serialVersionUID = 0L;
    * this filter are used to train the Model. A filter with same syntax
    * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
    * single DataItem is matched by more than one of the FilterSplit filters,
-   * then it will be assigned to the first set that applies to it in the
+   * then it is assigned to the first set that applies to it in the
    * training, validation, test order.
    * </pre>
    *
@@ -143,7 +144,7 @@ private static final long serialVersionUID = 0L;
    * this filter are used to train the Model. A filter with same syntax
    * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
    * single DataItem is matched by more than one of the FilterSplit filters,
-   * then it will be assigned to the first set that applies to it in the
+   * then it is assigned to the first set that applies to it in the
    * training, validation, test order.
    * </pre>
    *
@@ -173,7 +174,7 @@ private static final long serialVersionUID = 0L;
    * this filter are used to validate the Model. A filter with same syntax
    * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
    * single DataItem is matched by more than one of the FilterSplit filters,
-   * then it will be assigned to the first set that applies to it in the
+   * then it is assigned to the first set that applies to it in the
    * training, validation, test order.
    * </pre>
    *
@@ -199,7 +200,7 @@ private static final long serialVersionUID = 0L;
    * this filter are used to validate the Model. A filter with same syntax
    * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
    * single DataItem is matched by more than one of the FilterSplit filters,
-   * then it will be assigned to the first set that applies to it in the
+   * then it is assigned to the first set that applies to it in the
    * training, validation, test order.
    * </pre>
    *
@@ -229,7 +230,7 @@ private static final long serialVersionUID = 0L;
    * this filter are used to test the Model. A filter with same syntax
    * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
    * single DataItem is matched by more than one of the FilterSplit filters,
-   * then it will be assigned to the first set that applies to it in the
+   * then it is assigned to the first set that applies to it in the
    * training, validation, test order.
    * </pre>
    *
@@ -255,7 +256,7 @@ private static final long serialVersionUID = 0L;
    * this filter are used to test the Model. A filter with same syntax
    * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
    * single DataItem is matched by more than one of the FilterSplit filters,
-   * then it will be assigned to the first set that applies to it in the
+   * then it is assigned to the first set that applies to it in the
    * training, validation, test order.
    * </pre>
    *
@@ -458,6 +459,7 @@ private static final long serialVersionUID = 0L;
    * supported for Datasets containing DataItems.
    * If any of the filters in this message are to match nothing, then they can be
    * set as '-' (the minus sign).
+   * Supported only for unstructured Datasets.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.FilterSplit}
@@ -628,7 +630,7 @@ private static final long serialVersionUID = 0L;
      * this filter are used to train the Model. A filter with same syntax
      * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
      * single DataItem is matched by more than one of the FilterSplit filters,
-     * then it will be assigned to the first set that applies to it in the
+     * then it is assigned to the first set that applies to it in the
      * training, validation, test order.
      * </pre>
      *
@@ -653,7 +655,7 @@ private static final long serialVersionUID = 0L;
      * this filter are used to train the Model. A filter with same syntax
      * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
      * single DataItem is matched by more than one of the FilterSplit filters,
-     * then it will be assigned to the first set that applies to it in the
+     * then it is assigned to the first set that applies to it in the
      * training, validation, test order.
      * </pre>
      *
@@ -679,7 +681,7 @@ private static final long serialVersionUID = 0L;
      * this filter are used to train the Model. A filter with same syntax
      * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
      * single DataItem is matched by more than one of the FilterSplit filters,
-     * then it will be assigned to the first set that applies to it in the
+     * then it is assigned to the first set that applies to it in the
      * training, validation, test order.
      * </pre>
      *
@@ -703,7 +705,7 @@ private static final long serialVersionUID = 0L;
      * this filter are used to train the Model. A filter with same syntax
      * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
      * single DataItem is matched by more than one of the FilterSplit filters,
-     * then it will be assigned to the first set that applies to it in the
+     * then it is assigned to the first set that applies to it in the
      * training, validation, test order.
      * </pre>
      *
@@ -722,7 +724,7 @@ private static final long serialVersionUID = 0L;
      * this filter are used to train the Model. A filter with same syntax
      * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
      * single DataItem is matched by more than one of the FilterSplit filters,
-     * then it will be assigned to the first set that applies to it in the
+     * then it is assigned to the first set that applies to it in the
      * training, validation, test order.
      * </pre>
      *
@@ -749,7 +751,7 @@ private static final long serialVersionUID = 0L;
      * this filter are used to validate the Model. A filter with same syntax
      * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
      * single DataItem is matched by more than one of the FilterSplit filters,
-     * then it will be assigned to the first set that applies to it in the
+     * then it is assigned to the first set that applies to it in the
      * training, validation, test order.
      * </pre>
      *
@@ -774,7 +776,7 @@ private static final long serialVersionUID = 0L;
      * this filter are used to validate the Model. A filter with same syntax
      * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
      * single DataItem is matched by more than one of the FilterSplit filters,
-     * then it will be assigned to the first set that applies to it in the
+     * then it is assigned to the first set that applies to it in the
      * training, validation, test order.
      * </pre>
      *
@@ -800,7 +802,7 @@ private static final long serialVersionUID = 0L;
      * this filter are used to validate the Model. A filter with same syntax
      * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
      * single DataItem is matched by more than one of the FilterSplit filters,
-     * then it will be assigned to the first set that applies to it in the
+     * then it is assigned to the first set that applies to it in the
      * training, validation, test order.
      * </pre>
      *
@@ -824,7 +826,7 @@ private static final long serialVersionUID = 0L;
      * this filter are used to validate the Model. A filter with same syntax
      * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
      * single DataItem is matched by more than one of the FilterSplit filters,
-     * then it will be assigned to the first set that applies to it in the
+     * then it is assigned to the first set that applies to it in the
      * training, validation, test order.
      * </pre>
      *
@@ -843,7 +845,7 @@ private static final long serialVersionUID = 0L;
      * this filter are used to validate the Model. A filter with same syntax
      * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
      * single DataItem is matched by more than one of the FilterSplit filters,
-     * then it will be assigned to the first set that applies to it in the
+     * then it is assigned to the first set that applies to it in the
      * training, validation, test order.
      * </pre>
      *
@@ -870,7 +872,7 @@ private static final long serialVersionUID = 0L;
      * this filter are used to test the Model. A filter with same syntax
      * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
      * single DataItem is matched by more than one of the FilterSplit filters,
-     * then it will be assigned to the first set that applies to it in the
+     * then it is assigned to the first set that applies to it in the
      * training, validation, test order.
      * </pre>
      *
@@ -895,7 +897,7 @@ private static final long serialVersionUID = 0L;
      * this filter are used to test the Model. A filter with same syntax
      * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
      * single DataItem is matched by more than one of the FilterSplit filters,
-     * then it will be assigned to the first set that applies to it in the
+     * then it is assigned to the first set that applies to it in the
      * training, validation, test order.
      * </pre>
      *
@@ -921,7 +923,7 @@ private static final long serialVersionUID = 0L;
      * this filter are used to test the Model. A filter with same syntax
      * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
      * single DataItem is matched by more than one of the FilterSplit filters,
-     * then it will be assigned to the first set that applies to it in the
+     * then it is assigned to the first set that applies to it in the
      * training, validation, test order.
      * </pre>
      *
@@ -945,7 +947,7 @@ private static final long serialVersionUID = 0L;
      * this filter are used to test the Model. A filter with same syntax
      * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
      * single DataItem is matched by more than one of the FilterSplit filters,
-     * then it will be assigned to the first set that applies to it in the
+     * then it is assigned to the first set that applies to it in the
      * training, validation, test order.
      * </pre>
      *
@@ -964,7 +966,7 @@ private static final long serialVersionUID = 0L;
      * this filter are used to test the Model. A filter with same syntax
      * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
      * single DataItem is matched by more than one of the FilterSplit filters,
-     * then it will be assigned to the first set that applies to it in the
+     * then it is assigned to the first set that applies to it in the
      * training, validation, test order.
      * </pre>
      *

@@ -197,6 +197,19 @@ private static final long serialVersionUID = 0L;
             specialistPools_.add(s);
             break;
           }
+          case 162: {
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder subBuilder = null;
+            if (encryptionSpec_ != null) {
+              subBuilder = encryptionSpec_.toBuilder();
+            }
+            encryptionSpec_ = input.readMessage(com.google.cloud.aiplatform.v1beta1.EncryptionSpec.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(encryptionSpec_);
+              encryptionSpec_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           case 170: {
             com.google.cloud.aiplatform.v1beta1.ActiveLearningConfig.Builder subBuilder = null;
             if (activeLearningConfig_ != null) {
@@ -1095,11 +1108,58 @@ private static final long serialVersionUID = 0L;
     return specialistPools_.getByteString(index);
   }
 
+  public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 20;
+  private com.google.cloud.aiplatform.v1beta1.EncryptionSpec encryptionSpec_;
+  /**
+   * <pre>
+   * Customer-managed encryption key spec for a DataLabelingJob. If set, this
+   * DataLabelingJob will be secured by this key.
+   * Note: Annotations created in the DataLabelingJob are associated with
+   * the EncryptionSpec of the Dataset they are exported to.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 20;</code>
+   * @return Whether the encryptionSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryptionSpec() {
+    return encryptionSpec_ != null;
+  }
+  /**
+   * <pre>
+   * Customer-managed encryption key spec for a DataLabelingJob. If set, this
+   * DataLabelingJob will be secured by this key.
+   * Note: Annotations created in the DataLabelingJob are associated with
+   * the EncryptionSpec of the Dataset they are exported to.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 20;</code>
+   * @return The encryptionSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec() {
+    return encryptionSpec_ == null ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance() : encryptionSpec_;
+  }
+  /**
+   * <pre>
+   * Customer-managed encryption key spec for a DataLabelingJob. If set, this
+   * DataLabelingJob will be secured by this key.
+   * Note: Annotations created in the DataLabelingJob are associated with
+   * the EncryptionSpec of the Dataset they are exported to.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 20;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder() {
+    return getEncryptionSpec();
+  }
+
   public static final int ACTIVE_LEARNING_CONFIG_FIELD_NUMBER = 21;
   private com.google.cloud.aiplatform.v1beta1.ActiveLearningConfig activeLearningConfig_;
   /**
    * <pre>
-   * Paramaters that configure active learning pipeline. Active learning will
+   * Parameters that configure active learning pipeline. Active learning will
    * label the data incrementally via several iterations. For every iteration,
    * it will select a batch of data based on the sampling strategy.
    * </pre>
@@ -1113,7 +1173,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Paramaters that configure active learning pipeline. Active learning will
+   * Parameters that configure active learning pipeline. Active learning will
    * label the data incrementally via several iterations. For every iteration,
    * it will select a batch of data based on the sampling strategy.
    * </pre>
@@ -1127,7 +1187,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Paramaters that configure active learning pipeline. Active learning will
+   * Parameters that configure active learning pipeline. Active learning will
    * label the data incrementally via several iterations. For every iteration,
    * it will select a batch of data based on the sampling strategy.
    * </pre>
@@ -1203,6 +1263,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < specialistPools_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, specialistPools_.getRaw(i));
+    }
+    if (encryptionSpec_ != null) {
+      output.writeMessage(20, getEncryptionSpec());
     }
     if (activeLearningConfig_ != null) {
       output.writeMessage(21, getActiveLearningConfig());
@@ -1295,6 +1358,10 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 2 * getSpecialistPoolsList().size();
     }
+    if (encryptionSpec_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(20, getEncryptionSpec());
+    }
     if (activeLearningConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(21, getActiveLearningConfig());
@@ -1364,6 +1431,11 @@ private static final long serialVersionUID = 0L;
         other.internalGetLabels())) return false;
     if (!getSpecialistPoolsList()
         .equals(other.getSpecialistPoolsList())) return false;
+    if (hasEncryptionSpec() != other.hasEncryptionSpec()) return false;
+    if (hasEncryptionSpec()) {
+      if (!getEncryptionSpec()
+          .equals(other.getEncryptionSpec())) return false;
+    }
     if (hasActiveLearningConfig() != other.hasActiveLearningConfig()) return false;
     if (hasActiveLearningConfig()) {
       if (!getActiveLearningConfig()
@@ -1429,6 +1501,10 @@ private static final long serialVersionUID = 0L;
     if (getSpecialistPoolsCount() > 0) {
       hash = (37 * hash) + SPECIALIST_POOLS_FIELD_NUMBER;
       hash = (53 * hash) + getSpecialistPoolsList().hashCode();
+    }
+    if (hasEncryptionSpec()) {
+      hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionSpec().hashCode();
     }
     if (hasActiveLearningConfig()) {
       hash = (37 * hash) + ACTIVE_LEARNING_CONFIG_FIELD_NUMBER;
@@ -1648,6 +1724,12 @@ private static final long serialVersionUID = 0L;
       internalGetMutableLabels().clear();
       specialistPools_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpec_ = null;
+      } else {
+        encryptionSpec_ = null;
+        encryptionSpecBuilder_ = null;
+      }
       if (activeLearningConfigBuilder_ == null) {
         activeLearningConfig_ = null;
       } else {
@@ -1727,6 +1809,11 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.specialistPools_ = specialistPools_;
+      if (encryptionSpecBuilder_ == null) {
+        result.encryptionSpec_ = encryptionSpec_;
+      } else {
+        result.encryptionSpec_ = encryptionSpecBuilder_.build();
+      }
       if (activeLearningConfigBuilder_ == null) {
         result.activeLearningConfig_ = activeLearningConfig_;
       } else {
@@ -1843,6 +1930,9 @@ private static final long serialVersionUID = 0L;
           specialistPools_.addAll(other.specialistPools_);
         }
         onChanged();
+      }
+      if (other.hasEncryptionSpec()) {
+        mergeEncryptionSpec(other.getEncryptionSpec());
       }
       if (other.hasActiveLearningConfig()) {
         mergeActiveLearningConfig(other.getActiveLearningConfig());
@@ -3991,12 +4081,194 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private com.google.cloud.aiplatform.v1beta1.EncryptionSpec encryptionSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.aiplatform.v1beta1.EncryptionSpec, com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder, com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder> encryptionSpecBuilder_;
+    /**
+     * <pre>
+     * Customer-managed encryption key spec for a DataLabelingJob. If set, this
+     * DataLabelingJob will be secured by this key.
+     * Note: Annotations created in the DataLabelingJob are associated with
+     * the EncryptionSpec of the Dataset they are exported to.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 20;</code>
+     * @return Whether the encryptionSpec field is set.
+     */
+    public boolean hasEncryptionSpec() {
+      return encryptionSpecBuilder_ != null || encryptionSpec_ != null;
+    }
+    /**
+     * <pre>
+     * Customer-managed encryption key spec for a DataLabelingJob. If set, this
+     * DataLabelingJob will be secured by this key.
+     * Note: Annotations created in the DataLabelingJob are associated with
+     * the EncryptionSpec of the Dataset they are exported to.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 20;</code>
+     * @return The encryptionSpec.
+     */
+    public com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec() {
+      if (encryptionSpecBuilder_ == null) {
+        return encryptionSpec_ == null ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance() : encryptionSpec_;
+      } else {
+        return encryptionSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Customer-managed encryption key spec for a DataLabelingJob. If set, this
+     * DataLabelingJob will be secured by this key.
+     * Note: Annotations created in the DataLabelingJob are associated with
+     * the EncryptionSpec of the Dataset they are exported to.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 20;</code>
+     */
+    public Builder setEncryptionSpec(com.google.cloud.aiplatform.v1beta1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionSpec_ = value;
+        onChanged();
+      } else {
+        encryptionSpecBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Customer-managed encryption key spec for a DataLabelingJob. If set, this
+     * DataLabelingJob will be secured by this key.
+     * Note: Annotations created in the DataLabelingJob are associated with
+     * the EncryptionSpec of the Dataset they are exported to.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 20;</code>
+     */
+    public Builder setEncryptionSpec(
+        com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder builderForValue) {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpec_ = builderForValue.build();
+        onChanged();
+      } else {
+        encryptionSpecBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Customer-managed encryption key spec for a DataLabelingJob. If set, this
+     * DataLabelingJob will be secured by this key.
+     * Note: Annotations created in the DataLabelingJob are associated with
+     * the EncryptionSpec of the Dataset they are exported to.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 20;</code>
+     */
+    public Builder mergeEncryptionSpec(com.google.cloud.aiplatform.v1beta1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (encryptionSpec_ != null) {
+          encryptionSpec_ =
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec.newBuilder(encryptionSpec_).mergeFrom(value).buildPartial();
+        } else {
+          encryptionSpec_ = value;
+        }
+        onChanged();
+      } else {
+        encryptionSpecBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Customer-managed encryption key spec for a DataLabelingJob. If set, this
+     * DataLabelingJob will be secured by this key.
+     * Note: Annotations created in the DataLabelingJob are associated with
+     * the EncryptionSpec of the Dataset they are exported to.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 20;</code>
+     */
+    public Builder clearEncryptionSpec() {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpec_ = null;
+        onChanged();
+      } else {
+        encryptionSpec_ = null;
+        encryptionSpecBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Customer-managed encryption key spec for a DataLabelingJob. If set, this
+     * DataLabelingJob will be secured by this key.
+     * Note: Annotations created in the DataLabelingJob are associated with
+     * the EncryptionSpec of the Dataset they are exported to.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 20;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder getEncryptionSpecBuilder() {
+      
+      onChanged();
+      return getEncryptionSpecFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Customer-managed encryption key spec for a DataLabelingJob. If set, this
+     * DataLabelingJob will be secured by this key.
+     * Note: Annotations created in the DataLabelingJob are associated with
+     * the EncryptionSpec of the Dataset they are exported to.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 20;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder() {
+      if (encryptionSpecBuilder_ != null) {
+        return encryptionSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionSpec_ == null ?
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance() : encryptionSpec_;
+      }
+    }
+    /**
+     * <pre>
+     * Customer-managed encryption key spec for a DataLabelingJob. If set, this
+     * DataLabelingJob will be secured by this key.
+     * Note: Annotations created in the DataLabelingJob are associated with
+     * the EncryptionSpec of the Dataset they are exported to.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 20;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.aiplatform.v1beta1.EncryptionSpec, com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder, com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder> 
+        getEncryptionSpecFieldBuilder() {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpecBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec, com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder, com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder>(
+                getEncryptionSpec(),
+                getParentForChildren(),
+                isClean());
+        encryptionSpec_ = null;
+      }
+      return encryptionSpecBuilder_;
+    }
+
     private com.google.cloud.aiplatform.v1beta1.ActiveLearningConfig activeLearningConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.aiplatform.v1beta1.ActiveLearningConfig, com.google.cloud.aiplatform.v1beta1.ActiveLearningConfig.Builder, com.google.cloud.aiplatform.v1beta1.ActiveLearningConfigOrBuilder> activeLearningConfigBuilder_;
     /**
      * <pre>
-     * Paramaters that configure active learning pipeline. Active learning will
+     * Parameters that configure active learning pipeline. Active learning will
      * label the data incrementally via several iterations. For every iteration,
      * it will select a batch of data based on the sampling strategy.
      * </pre>
@@ -4009,7 +4281,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Paramaters that configure active learning pipeline. Active learning will
+     * Parameters that configure active learning pipeline. Active learning will
      * label the data incrementally via several iterations. For every iteration,
      * it will select a batch of data based on the sampling strategy.
      * </pre>
@@ -4026,7 +4298,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Paramaters that configure active learning pipeline. Active learning will
+     * Parameters that configure active learning pipeline. Active learning will
      * label the data incrementally via several iterations. For every iteration,
      * it will select a batch of data based on the sampling strategy.
      * </pre>
@@ -4048,7 +4320,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Paramaters that configure active learning pipeline. Active learning will
+     * Parameters that configure active learning pipeline. Active learning will
      * label the data incrementally via several iterations. For every iteration,
      * it will select a batch of data based on the sampling strategy.
      * </pre>
@@ -4068,7 +4340,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Paramaters that configure active learning pipeline. Active learning will
+     * Parameters that configure active learning pipeline. Active learning will
      * label the data incrementally via several iterations. For every iteration,
      * it will select a batch of data based on the sampling strategy.
      * </pre>
@@ -4092,7 +4364,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Paramaters that configure active learning pipeline. Active learning will
+     * Parameters that configure active learning pipeline. Active learning will
      * label the data incrementally via several iterations. For every iteration,
      * it will select a batch of data based on the sampling strategy.
      * </pre>
@@ -4112,7 +4384,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Paramaters that configure active learning pipeline. Active learning will
+     * Parameters that configure active learning pipeline. Active learning will
      * label the data incrementally via several iterations. For every iteration,
      * it will select a batch of data based on the sampling strategy.
      * </pre>
@@ -4126,7 +4398,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Paramaters that configure active learning pipeline. Active learning will
+     * Parameters that configure active learning pipeline. Active learning will
      * label the data incrementally via several iterations. For every iteration,
      * it will select a batch of data based on the sampling strategy.
      * </pre>
@@ -4143,7 +4415,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Paramaters that configure active learning pipeline. Active learning will
+     * Parameters that configure active learning pipeline. Active learning will
      * label the data incrementally via several iterations. For every iteration,
      * it will select a batch of data based on the sampling strategy.
      * </pre>

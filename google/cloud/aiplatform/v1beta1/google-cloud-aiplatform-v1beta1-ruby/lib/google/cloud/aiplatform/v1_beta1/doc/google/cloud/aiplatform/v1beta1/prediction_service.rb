@@ -77,6 +77,16 @@ module Google
         #     be specified via Endpoint's DeployedModels' {Google::Cloud::Aiplatform::V1beta1::DeployedModel#model Model's }
         #     {Google::Cloud::Aiplatform::V1beta1::Model#predict_schemata PredictSchemata's}
         #     {Google::Cloud::Aiplatform::V1beta1::PredictSchemata#parameters_schema_uri parameters_schema_uri}.
+        # @!attribute [rw] explanation_spec_override
+        #   @return [Google::Cloud::Aiplatform::V1beta1::ExplanationSpecOverride]
+        #     If specified, overrides the
+        #     {Google::Cloud::Aiplatform::V1beta1::DeployedModel#explanation_spec explanation_spec} of the DeployedModel.
+        #     Can be used for explaining prediction results with different
+        #     configurations, such as:
+        #     * Explaining top-5 predictions results as opposed to top-1;
+        #       * Increasing path count or step count of the attribution methods to reduce
+        #         approximate errors;
+        #       * Using different baselines for explaining the prediction results.
         # @!attribute [rw] deployed_model_id
         #   @return [String]
         #     If specified, this ExplainRequest will be served by the chosen

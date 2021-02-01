@@ -39,7 +39,7 @@ module Google
         # Aggregated explanation metrics for a Model over a set of instances.
         # @!attribute [rw] mean_attributions
         #   @return [Array<Google::Cloud::Aiplatform::V1beta1::Attribution>]
-        #     Output only. Aggregated attributions explaning the Model's prediction outputs over the
+        #     Output only. Aggregated attributions explaining the Model's prediction outputs over the
         #     set of instances. The attributions are grouped by outputs.
         #
         #     For Models that predict only one output, such as regression Models that
@@ -118,8 +118,8 @@ module Google
         #     of the output vector. Indices start from 0.
         # @!attribute [rw] output_display_name
         #   @return [String]
-        #     Output only. The display name of the output identified by {Google::Cloud::Aiplatform::V1beta1::Attribution#output_index output_index}, e.g. the
-        #     predicted class name by a multi-classification Model.
+        #     Output only. The display name of the output identified by {Google::Cloud::Aiplatform::V1beta1::Attribution#output_index output_index}. For example,
+        #     the predicted class name by a multi-classification Model.
         #
         #     This field is only populated iff the Model predicts display names as a
         #     separate field along with the explained output. The predicted display name
@@ -130,22 +130,20 @@ module Google
         #     Output only. Error of {Google::Cloud::Aiplatform::V1beta1::Attribution#feature_attributions feature_attributions} caused by approximation used in the
         #     explanation method. Lower value means more precise attributions.
         #
-        #     * For [Sampled Shapley
-        #       attribution][ExplanationParameters.sampled_shapley_attribution], increasing
-        #       {Google::Cloud::Aiplatform::V1beta1::SampledShapleyAttribution#path_count path_count} may reduce the error.
-        #     * For [Integrated Gradients
-        #       attribution][ExplanationParameters.integrated_gradients_attribution],
-        #       increasing {Google::Cloud::Aiplatform::V1beta1::IntegratedGradientsAttribution#step_count step_count} may
+        #     * For Sampled Shapley
+        #       {Google::Cloud::Aiplatform::V1beta1::ExplanationParameters#sampled_shapley_attribution attribution},
+        #       increasing {Google::Cloud::Aiplatform::V1beta1::SampledShapleyAttribution#path_count path_count} might reduce
+        #       the error.
+        #     * For Integrated Gradients
+        #       {Google::Cloud::Aiplatform::V1beta1::ExplanationParameters#integrated_gradients_attribution attribution},
+        #       increasing {Google::Cloud::Aiplatform::V1beta1::IntegratedGradientsAttribution#step_count step_count} might
         #       reduce the error.
-        #     * For [XRAI
-        #       attribution][ExplanationParameters.xrai_attribution], increasing
-        #       {Google::Cloud::Aiplatform::V1beta1::XraiAttribution#step_count step_count} may reduce the error.
+        #     * For {Google::Cloud::Aiplatform::V1beta1::ExplanationParameters#xrai_attribution XRAI attribution},
+        #       increasing
+        #       {Google::Cloud::Aiplatform::V1beta1::XraiAttribution#step_count step_count} might reduce the error.
         #
-        #     Refer to  AI Explanations Whitepaper for more details:
-        #
-        #     https:
-        #     //storage.googleapis.com/cloud-ai-whitep
-        #     // apers/AI%20Explainability%20Whitepaper.pdf
+        #     See [this introduction](https://cloud.google.com/ai-platform-unified/docs/explainable-ai/overview)
+        #     for more information.
         # @!attribute [rw] output_name
         #   @return [String]
         #     Output only. Name of the explain output. Specified as the key in
@@ -193,7 +191,7 @@ module Google
         # @!attribute [rw] output_indices
         #   @return [Google::Protobuf::ListValue]
         #     If populated, only returns attributions that have
-        #     {Attributions#output_index output_index} contained in output_indices. It
+        #     {Google::Cloud::Aiplatform::V1beta1::Attribution#output_index output_index} contained in output_indices. It
         #     must be an ndarray of integers, with the same shape of the output it's
         #     explaining.
         #
@@ -241,7 +239,7 @@ module Google
         # differentiable structure. Refer to this paper for more details:
         # https://arxiv.org/abs/1906.02825
         #
-        # Only supports image Models ({InputMetadata#modality modality} is IMAGE).
+        # Supported only by image Models.
         # @!attribute [rw] step_count
         #   @return [Integer]
         #     Required. The number of steps for approximating the path integral.
@@ -270,12 +268,9 @@ module Google
         #     This is a single float value and will be used to add noise to all the
         #     features. Use this field when all features are normalized to have the
         #     same distribution: scale to range [0, 1], [-1, 1] or z-scoring, where
-        #     features are normalized to have 0-mean and 1-variance. Refer to
-        #     this doc for more details about normalization:
-        #
-        #     https:
-        #     //developers.google.com/machine-learning
-        #     // /data-prep/transform/normalization.
+        #     features are normalized to have 0-mean and 1-variance. For more details
+        #     about normalization:
+        #     https://tinyurl.com/dgc-normalization.
         #
         #     For best results the recommended value is about 10% - 20% of the standard
         #     deviation of the input feature. Refer to section 3.2 of the SmoothGrad
@@ -320,6 +315,41 @@ module Google
           #     to {Google::Cloud::Aiplatform::V1beta1::SmoothGradConfig#noise_sigma noise_sigma} but represents the
           #     noise added to the current feature. Defaults to 0.1.
           class NoiseSigmaForFeature; end
+        end
+
+        # The {Google::Cloud::Aiplatform::V1beta1::ExplanationSpec ExplanationSpec} entries that can be overridden at [online
+        # explanation]{Google::Cloud::Aiplatform::V1beta1::PredictionService::Explain PredictionService::Explain} time.
+        # @!attribute [rw] parameters
+        #   @return [Google::Cloud::Aiplatform::V1beta1::ExplanationParameters]
+        #     The parameters to be overridden. Note that the
+        #     {Google::Cloud::Aiplatform::V1beta1::ExplanationParameters#method method} cannot be changed. If not specified,
+        #     no parameter is overridden.
+        # @!attribute [rw] metadata
+        #   @return [Google::Cloud::Aiplatform::V1beta1::ExplanationMetadataOverride]
+        #     The metadata to be overridden. If not specified, no metadata is overridden.
+        class ExplanationSpecOverride; end
+
+        # The {Google::Cloud::Aiplatform::V1beta1::ExplanationMetadata ExplanationMetadata} entries that can be overridden at
+        # {Google::Cloud::Aiplatform::V1beta1::PredictionService::Explain online explanation} time.
+        # @!attribute [rw] inputs
+        #   @return [Hash{String => Google::Cloud::Aiplatform::V1beta1::ExplanationMetadataOverride::InputMetadataOverride}]
+        #     Required. Overrides the {Google::Cloud::Aiplatform::V1beta1::ExplanationMetadata#inputs input metadata} of the features.
+        #     The key is the name of the feature to be overridden. The keys specified
+        #     here must exist in the input metadata to be overridden. If a feature is
+        #     not specified here, the corresponding feature's input metadata is not
+        #     overridden.
+        class ExplanationMetadataOverride
+          # The {Google::Cloud::Aiplatform::V1beta1::ExplanationMetadata::InputMetadata input metadata} entries to be
+          # overridden.
+          # @!attribute [rw] input_baselines
+          #   @return [Array<Google::Protobuf::Value>]
+          #     Baseline inputs for this feature.
+          #
+          #     This overrides the `input_baseline` field of the
+          #     {Google::Cloud::Aiplatform::V1beta1::ExplanationMetadata::InputMetadata ExplanationMetadata::InputMetadata}
+          #     object of the corresponding feature's input metadata. If it's not
+          #     specified, the original baselines are not overridden.
+          class InputMetadataOverride; end
         end
       end
     end

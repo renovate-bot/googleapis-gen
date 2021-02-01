@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private SearchMigratableResourcesRequest() {
     parent_ = "";
     pageToken_ = "";
+    filter_ = "";
   }
 
   @java.lang.Override
@@ -69,6 +70,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             pageToken_ = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            filter_ = s;
             break;
           }
           default: {
@@ -219,6 +226,68 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int FILTER_FIELD_NUMBER = 4;
+  private volatile java.lang.Object filter_;
+  /**
+   * <pre>
+   * Supported filters are:
+   * * Resource type: For a specific type of MigratableResource.
+   *   * `ml_engine_model_version:*`
+   *   * `automl_model:*`,
+   *   * `automl_dataset:*`
+   *   * `data_labeling_dataset:*`.
+   * * Migrated or not: Filter migrated resource or not by last_migrate_time.
+   *   * `last_migrate_time:*` will filter migrated resources.
+   *   * `NOT last_migrate_time:*` will filter not yet migrated resource.
+   * </pre>
+   *
+   * <code>string filter = 4;</code>
+   * @return The filter.
+   */
+  @java.lang.Override
+  public java.lang.String getFilter() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      filter_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Supported filters are:
+   * * Resource type: For a specific type of MigratableResource.
+   *   * `ml_engine_model_version:*`
+   *   * `automl_model:*`,
+   *   * `automl_dataset:*`
+   *   * `data_labeling_dataset:*`.
+   * * Migrated or not: Filter migrated resource or not by last_migrate_time.
+   *   * `last_migrate_time:*` will filter migrated resources.
+   *   * `NOT last_migrate_time:*` will filter not yet migrated resource.
+   * </pre>
+   *
+   * <code>string filter = 4;</code>
+   * @return The bytes for filter.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getFilterBytes() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      filter_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -242,6 +311,9 @@ private static final long serialVersionUID = 0L;
     if (!getPageTokenBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
     }
+    if (!getFilterBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, filter_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -260,6 +332,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
+    }
+    if (!getFilterBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, filter_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -282,6 +357,8 @@ private static final long serialVersionUID = 0L;
         != other.getPageSize()) return false;
     if (!getPageToken()
         .equals(other.getPageToken())) return false;
+    if (!getFilter()
+        .equals(other.getFilter())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -299,6 +376,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPageToken().hashCode();
+    hash = (37 * hash) + FILTER_FIELD_NUMBER;
+    hash = (53 * hash) + getFilter().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -442,6 +521,8 @@ private static final long serialVersionUID = 0L;
 
       pageToken_ = "";
 
+      filter_ = "";
+
       return this;
     }
 
@@ -471,6 +552,7 @@ private static final long serialVersionUID = 0L;
       result.parent_ = parent_;
       result.pageSize_ = pageSize_;
       result.pageToken_ = pageToken_;
+      result.filter_ = filter_;
       onBuilt();
       return result;
     }
@@ -528,6 +610,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        onChanged();
+      }
+      if (!other.getFilter().isEmpty()) {
+        filter_ = other.filter_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -813,6 +899,142 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       pageToken_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object filter_ = "";
+    /**
+     * <pre>
+     * Supported filters are:
+     * * Resource type: For a specific type of MigratableResource.
+     *   * `ml_engine_model_version:*`
+     *   * `automl_model:*`,
+     *   * `automl_dataset:*`
+     *   * `data_labeling_dataset:*`.
+     * * Migrated or not: Filter migrated resource or not by last_migrate_time.
+     *   * `last_migrate_time:*` will filter migrated resources.
+     *   * `NOT last_migrate_time:*` will filter not yet migrated resource.
+     * </pre>
+     *
+     * <code>string filter = 4;</code>
+     * @return The filter.
+     */
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Supported filters are:
+     * * Resource type: For a specific type of MigratableResource.
+     *   * `ml_engine_model_version:*`
+     *   * `automl_model:*`,
+     *   * `automl_dataset:*`
+     *   * `data_labeling_dataset:*`.
+     * * Migrated or not: Filter migrated resource or not by last_migrate_time.
+     *   * `last_migrate_time:*` will filter migrated resources.
+     *   * `NOT last_migrate_time:*` will filter not yet migrated resource.
+     * </pre>
+     *
+     * <code>string filter = 4;</code>
+     * @return The bytes for filter.
+     */
+    public com.google.protobuf.ByteString
+        getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Supported filters are:
+     * * Resource type: For a specific type of MigratableResource.
+     *   * `ml_engine_model_version:*`
+     *   * `automl_model:*`,
+     *   * `automl_dataset:*`
+     *   * `data_labeling_dataset:*`.
+     * * Migrated or not: Filter migrated resource or not by last_migrate_time.
+     *   * `last_migrate_time:*` will filter migrated resources.
+     *   * `NOT last_migrate_time:*` will filter not yet migrated resource.
+     * </pre>
+     *
+     * <code>string filter = 4;</code>
+     * @param value The filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilter(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      filter_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Supported filters are:
+     * * Resource type: For a specific type of MigratableResource.
+     *   * `ml_engine_model_version:*`
+     *   * `automl_model:*`,
+     *   * `automl_dataset:*`
+     *   * `data_labeling_dataset:*`.
+     * * Migrated or not: Filter migrated resource or not by last_migrate_time.
+     *   * `last_migrate_time:*` will filter migrated resources.
+     *   * `NOT last_migrate_time:*` will filter not yet migrated resource.
+     * </pre>
+     *
+     * <code>string filter = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearFilter() {
+      
+      filter_ = getDefaultInstance().getFilter();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Supported filters are:
+     * * Resource type: For a specific type of MigratableResource.
+     *   * `ml_engine_model_version:*`
+     *   * `automl_model:*`,
+     *   * `automl_dataset:*`
+     *   * `data_labeling_dataset:*`.
+     * * Migrated or not: Filter migrated resource or not by last_migrate_time.
+     *   * `last_migrate_time:*` will filter migrated resources.
+     *   * `NOT last_migrate_time:*` will filter not yet migrated resource.
+     * </pre>
+     *
+     * <code>string filter = 4;</code>
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilterBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      filter_ = value;
       onChanged();
       return this;
     }

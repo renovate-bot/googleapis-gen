@@ -251,6 +251,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 194: {
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder subBuilder = null;
+            if (encryptionSpec_ != null) {
+              subBuilder = encryptionSpec_.toBuilder();
+            }
+            encryptionSpec_ = input.readMessage(com.google.cloud.aiplatform.v1beta1.EncryptionSpec.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(encryptionSpec_);
+              encryptionSpec_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           case 210: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -2403,6 +2416,10 @@ private static final long serialVersionUID = 0L;
    * * `bigquery`
    * Each instance is a single row in BigQuery. Uses
    * [BigQuerySource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.bigquery_source].
+   * * `file-list`
+   * Each line of the file is the location of an instance to process, uses
+   * `gcs_source` field of the
+   * [InputConfig][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig] object.
    * If this Model doesn't support any of these formats it means it cannot be
    * used with a [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob]. However, if it has
    * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types], it could serve online
@@ -2440,6 +2457,10 @@ private static final long serialVersionUID = 0L;
    * * `bigquery`
    * Each instance is a single row in BigQuery. Uses
    * [BigQuerySource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.bigquery_source].
+   * * `file-list`
+   * Each line of the file is the location of an instance to process, uses
+   * `gcs_source` field of the
+   * [InputConfig][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig] object.
    * If this Model doesn't support any of these formats it means it cannot be
    * used with a [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob]. However, if it has
    * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types], it could serve online
@@ -2476,6 +2497,10 @@ private static final long serialVersionUID = 0L;
    * * `bigquery`
    * Each instance is a single row in BigQuery. Uses
    * [BigQuerySource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.bigquery_source].
+   * * `file-list`
+   * Each line of the file is the location of an instance to process, uses
+   * `gcs_source` field of the
+   * [InputConfig][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig] object.
    * If this Model doesn't support any of these formats it means it cannot be
    * used with a [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob]. However, if it has
    * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types], it could serve online
@@ -2513,6 +2538,10 @@ private static final long serialVersionUID = 0L;
    * * `bigquery`
    * Each instance is a single row in BigQuery. Uses
    * [BigQuerySource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.bigquery_source].
+   * * `file-list`
+   * Each line of the file is the location of an instance to process, uses
+   * `gcs_source` field of the
+   * [InputConfig][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig] object.
    * If this Model doesn't support any of these formats it means it cannot be
    * used with a [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob]. However, if it has
    * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types], it could serve online
@@ -2821,17 +2850,20 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.aiplatform.v1beta1.ExplanationSpec explanationSpec_;
   /**
    * <pre>
-   * Output only. The default explanation specification for this Model.
-   * Model can be used for [requesting explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain]
-   * after being [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+   * The default explanation specification for this Model.
+   * The Model can be used for [requesting
+   * explanation][PredictionService.Explain] after being
+   * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+   * The Model can be used for [batch
+   * explanation][BatchPredictionJob.generate_explanation] iff it is populated.
    * All fields of the explanation_spec can be overridden by
    * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of
-   * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model].
-   * This field is populated only for tabular AutoML Models.
-   * Specifying it with [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel] is not supported.
+   * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model], or
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] of
+   * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 23;</code>
    * @return Whether the explanationSpec field is set.
    */
   @java.lang.Override
@@ -2840,17 +2872,20 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The default explanation specification for this Model.
-   * Model can be used for [requesting explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain]
-   * after being [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+   * The default explanation specification for this Model.
+   * The Model can be used for [requesting
+   * explanation][PredictionService.Explain] after being
+   * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+   * The Model can be used for [batch
+   * explanation][BatchPredictionJob.generate_explanation] iff it is populated.
    * All fields of the explanation_spec can be overridden by
    * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of
-   * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model].
-   * This field is populated only for tabular AutoML Models.
-   * Specifying it with [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel] is not supported.
+   * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model], or
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] of
+   * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 23;</code>
    * @return The explanationSpec.
    */
   @java.lang.Override
@@ -2859,17 +2894,20 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The default explanation specification for this Model.
-   * Model can be used for [requesting explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain]
-   * after being [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+   * The default explanation specification for this Model.
+   * The Model can be used for [requesting
+   * explanation][PredictionService.Explain] after being
+   * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+   * The Model can be used for [batch
+   * explanation][BatchPredictionJob.generate_explanation] iff it is populated.
    * All fields of the explanation_spec can be overridden by
    * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of
-   * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model].
-   * This field is populated only for tabular AutoML Models.
-   * Specifying it with [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel] is not supported.
+   * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model], or
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] of
+   * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 23;</code>
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.ExplanationSpecOrBuilder getExplanationSpecOrBuilder() {
@@ -3037,6 +3075,47 @@ private static final long serialVersionUID = 0L;
     return map.get(key);
   }
 
+  public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 24;
+  private com.google.cloud.aiplatform.v1beta1.EncryptionSpec encryptionSpec_;
+  /**
+   * <pre>
+   * Customer-managed encryption key spec for a Model. If set, this
+   * Model and all sub-resources of this Model will be secured by this key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 24;</code>
+   * @return Whether the encryptionSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryptionSpec() {
+    return encryptionSpec_ != null;
+  }
+  /**
+   * <pre>
+   * Customer-managed encryption key spec for a Model. If set, this
+   * Model and all sub-resources of this Model will be secured by this key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 24;</code>
+   * @return The encryptionSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec() {
+    return encryptionSpec_ == null ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance() : encryptionSpec_;
+  }
+  /**
+   * <pre>
+   * Customer-managed encryption key spec for a Model. If set, this
+   * Model and all sub-resources of this Model will be secured by this key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 24;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder() {
+    return getEncryptionSpec();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -3112,6 +3191,9 @@ private static final long serialVersionUID = 0L;
     }
     if (explanationSpec_ != null) {
       output.writeMessage(23, getExplanationSpec());
+    }
+    if (encryptionSpec_ != null) {
+      output.writeMessage(24, getEncryptionSpec());
     }
     if (!getArtifactUriBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 26, artifactUri_);
@@ -3213,6 +3295,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(23, getExplanationSpec());
     }
+    if (encryptionSpec_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(24, getEncryptionSpec());
+    }
     if (!getArtifactUriBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(26, artifactUri_);
     }
@@ -3286,6 +3372,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getEtag())) return false;
     if (!internalGetLabels().equals(
         other.internalGetLabels())) return false;
+    if (hasEncryptionSpec() != other.hasEncryptionSpec()) return false;
+    if (hasEncryptionSpec()) {
+      if (!getEncryptionSpec()
+          .equals(other.getEncryptionSpec())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -3358,6 +3449,10 @@ private static final long serialVersionUID = 0L;
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
+    }
+    if (hasEncryptionSpec()) {
+      hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionSpec().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -3589,6 +3684,12 @@ private static final long serialVersionUID = 0L;
       etag_ = "";
 
       internalGetMutableLabels().clear();
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpec_ = null;
+      } else {
+        encryptionSpec_ = null;
+        encryptionSpecBuilder_ = null;
+      }
       return this;
     }
 
@@ -3688,6 +3789,11 @@ private static final long serialVersionUID = 0L;
       result.etag_ = etag_;
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
+      if (encryptionSpecBuilder_ == null) {
+        result.encryptionSpec_ = encryptionSpec_;
+      } else {
+        result.encryptionSpec_ = encryptionSpecBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -3866,6 +3972,9 @@ private static final long serialVersionUID = 0L;
       }
       internalGetMutableLabels().mergeFrom(
           other.internalGetLabels());
+      if (other.hasEncryptionSpec()) {
+        mergeEncryptionSpec(other.getEncryptionSpec());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -5742,6 +5851,10 @@ private static final long serialVersionUID = 0L;
      * * `bigquery`
      * Each instance is a single row in BigQuery. Uses
      * [BigQuerySource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.bigquery_source].
+     * * `file-list`
+     * Each line of the file is the location of an instance to process, uses
+     * `gcs_source` field of the
+     * [InputConfig][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig] object.
      * If this Model doesn't support any of these formats it means it cannot be
      * used with a [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob]. However, if it has
      * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types], it could serve online
@@ -5779,6 +5892,10 @@ private static final long serialVersionUID = 0L;
      * * `bigquery`
      * Each instance is a single row in BigQuery. Uses
      * [BigQuerySource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.bigquery_source].
+     * * `file-list`
+     * Each line of the file is the location of an instance to process, uses
+     * `gcs_source` field of the
+     * [InputConfig][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig] object.
      * If this Model doesn't support any of these formats it means it cannot be
      * used with a [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob]. However, if it has
      * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types], it could serve online
@@ -5815,6 +5932,10 @@ private static final long serialVersionUID = 0L;
      * * `bigquery`
      * Each instance is a single row in BigQuery. Uses
      * [BigQuerySource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.bigquery_source].
+     * * `file-list`
+     * Each line of the file is the location of an instance to process, uses
+     * `gcs_source` field of the
+     * [InputConfig][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig] object.
      * If this Model doesn't support any of these formats it means it cannot be
      * used with a [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob]. However, if it has
      * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types], it could serve online
@@ -5852,6 +5973,10 @@ private static final long serialVersionUID = 0L;
      * * `bigquery`
      * Each instance is a single row in BigQuery. Uses
      * [BigQuerySource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.bigquery_source].
+     * * `file-list`
+     * Each line of the file is the location of an instance to process, uses
+     * `gcs_source` field of the
+     * [InputConfig][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig] object.
      * If this Model doesn't support any of these formats it means it cannot be
      * used with a [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob]. However, if it has
      * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types], it could serve online
@@ -5890,6 +6015,10 @@ private static final long serialVersionUID = 0L;
      * * `bigquery`
      * Each instance is a single row in BigQuery. Uses
      * [BigQuerySource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.bigquery_source].
+     * * `file-list`
+     * Each line of the file is the location of an instance to process, uses
+     * `gcs_source` field of the
+     * [InputConfig][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig] object.
      * If this Model doesn't support any of these formats it means it cannot be
      * used with a [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob]. However, if it has
      * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types], it could serve online
@@ -5935,6 +6064,10 @@ private static final long serialVersionUID = 0L;
      * * `bigquery`
      * Each instance is a single row in BigQuery. Uses
      * [BigQuerySource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.bigquery_source].
+     * * `file-list`
+     * Each line of the file is the location of an instance to process, uses
+     * `gcs_source` field of the
+     * [InputConfig][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig] object.
      * If this Model doesn't support any of these formats it means it cannot be
      * used with a [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob]. However, if it has
      * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types], it could serve online
@@ -5979,6 +6112,10 @@ private static final long serialVersionUID = 0L;
      * * `bigquery`
      * Each instance is a single row in BigQuery. Uses
      * [BigQuerySource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.bigquery_source].
+     * * `file-list`
+     * Each line of the file is the location of an instance to process, uses
+     * `gcs_source` field of the
+     * [InputConfig][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig] object.
      * If this Model doesn't support any of these formats it means it cannot be
      * used with a [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob]. However, if it has
      * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types], it could serve online
@@ -6021,6 +6158,10 @@ private static final long serialVersionUID = 0L;
      * * `bigquery`
      * Each instance is a single row in BigQuery. Uses
      * [BigQuerySource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.bigquery_source].
+     * * `file-list`
+     * Each line of the file is the location of an instance to process, uses
+     * `gcs_source` field of the
+     * [InputConfig][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig] object.
      * If this Model doesn't support any of these formats it means it cannot be
      * used with a [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob]. However, if it has
      * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types], it could serve online
@@ -6060,6 +6201,10 @@ private static final long serialVersionUID = 0L;
      * * `bigquery`
      * Each instance is a single row in BigQuery. Uses
      * [BigQuerySource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.bigquery_source].
+     * * `file-list`
+     * Each line of the file is the location of an instance to process, uses
+     * `gcs_source` field of the
+     * [InputConfig][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig] object.
      * If this Model doesn't support any of these formats it means it cannot be
      * used with a [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob]. However, if it has
      * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types], it could serve online
@@ -7090,17 +7235,20 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.aiplatform.v1beta1.ExplanationSpec, com.google.cloud.aiplatform.v1beta1.ExplanationSpec.Builder, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOrBuilder> explanationSpecBuilder_;
     /**
      * <pre>
-     * Output only. The default explanation specification for this Model.
-     * Model can be used for [requesting explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain]
-     * after being [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+     * The default explanation specification for this Model.
+     * The Model can be used for [requesting
+     * explanation][PredictionService.Explain] after being
+     * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+     * The Model can be used for [batch
+     * explanation][BatchPredictionJob.generate_explanation] iff it is populated.
      * All fields of the explanation_spec can be overridden by
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of
-     * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model].
-     * This field is populated only for tabular AutoML Models.
-     * Specifying it with [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel] is not supported.
+     * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model], or
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] of
+     * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 23;</code>
      * @return Whether the explanationSpec field is set.
      */
     public boolean hasExplanationSpec() {
@@ -7108,17 +7256,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The default explanation specification for this Model.
-     * Model can be used for [requesting explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain]
-     * after being [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+     * The default explanation specification for this Model.
+     * The Model can be used for [requesting
+     * explanation][PredictionService.Explain] after being
+     * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+     * The Model can be used for [batch
+     * explanation][BatchPredictionJob.generate_explanation] iff it is populated.
      * All fields of the explanation_spec can be overridden by
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of
-     * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model].
-     * This field is populated only for tabular AutoML Models.
-     * Specifying it with [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel] is not supported.
+     * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model], or
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] of
+     * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 23;</code>
      * @return The explanationSpec.
      */
     public com.google.cloud.aiplatform.v1beta1.ExplanationSpec getExplanationSpec() {
@@ -7130,17 +7281,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The default explanation specification for this Model.
-     * Model can be used for [requesting explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain]
-     * after being [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+     * The default explanation specification for this Model.
+     * The Model can be used for [requesting
+     * explanation][PredictionService.Explain] after being
+     * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+     * The Model can be used for [batch
+     * explanation][BatchPredictionJob.generate_explanation] iff it is populated.
      * All fields of the explanation_spec can be overridden by
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of
-     * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model].
-     * This field is populated only for tabular AutoML Models.
-     * Specifying it with [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel] is not supported.
+     * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model], or
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] of
+     * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 23;</code>
      */
     public Builder setExplanationSpec(com.google.cloud.aiplatform.v1beta1.ExplanationSpec value) {
       if (explanationSpecBuilder_ == null) {
@@ -7157,17 +7311,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The default explanation specification for this Model.
-     * Model can be used for [requesting explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain]
-     * after being [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+     * The default explanation specification for this Model.
+     * The Model can be used for [requesting
+     * explanation][PredictionService.Explain] after being
+     * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+     * The Model can be used for [batch
+     * explanation][BatchPredictionJob.generate_explanation] iff it is populated.
      * All fields of the explanation_spec can be overridden by
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of
-     * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model].
-     * This field is populated only for tabular AutoML Models.
-     * Specifying it with [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel] is not supported.
+     * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model], or
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] of
+     * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 23;</code>
      */
     public Builder setExplanationSpec(
         com.google.cloud.aiplatform.v1beta1.ExplanationSpec.Builder builderForValue) {
@@ -7182,17 +7339,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The default explanation specification for this Model.
-     * Model can be used for [requesting explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain]
-     * after being [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+     * The default explanation specification for this Model.
+     * The Model can be used for [requesting
+     * explanation][PredictionService.Explain] after being
+     * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+     * The Model can be used for [batch
+     * explanation][BatchPredictionJob.generate_explanation] iff it is populated.
      * All fields of the explanation_spec can be overridden by
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of
-     * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model].
-     * This field is populated only for tabular AutoML Models.
-     * Specifying it with [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel] is not supported.
+     * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model], or
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] of
+     * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 23;</code>
      */
     public Builder mergeExplanationSpec(com.google.cloud.aiplatform.v1beta1.ExplanationSpec value) {
       if (explanationSpecBuilder_ == null) {
@@ -7211,17 +7371,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The default explanation specification for this Model.
-     * Model can be used for [requesting explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain]
-     * after being [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+     * The default explanation specification for this Model.
+     * The Model can be used for [requesting
+     * explanation][PredictionService.Explain] after being
+     * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+     * The Model can be used for [batch
+     * explanation][BatchPredictionJob.generate_explanation] iff it is populated.
      * All fields of the explanation_spec can be overridden by
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of
-     * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model].
-     * This field is populated only for tabular AutoML Models.
-     * Specifying it with [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel] is not supported.
+     * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model], or
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] of
+     * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 23;</code>
      */
     public Builder clearExplanationSpec() {
       if (explanationSpecBuilder_ == null) {
@@ -7236,17 +7399,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The default explanation specification for this Model.
-     * Model can be used for [requesting explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain]
-     * after being [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+     * The default explanation specification for this Model.
+     * The Model can be used for [requesting
+     * explanation][PredictionService.Explain] after being
+     * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+     * The Model can be used for [batch
+     * explanation][BatchPredictionJob.generate_explanation] iff it is populated.
      * All fields of the explanation_spec can be overridden by
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of
-     * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model].
-     * This field is populated only for tabular AutoML Models.
-     * Specifying it with [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel] is not supported.
+     * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model], or
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] of
+     * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 23;</code>
      */
     public com.google.cloud.aiplatform.v1beta1.ExplanationSpec.Builder getExplanationSpecBuilder() {
       
@@ -7255,17 +7421,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The default explanation specification for this Model.
-     * Model can be used for [requesting explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain]
-     * after being [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+     * The default explanation specification for this Model.
+     * The Model can be used for [requesting
+     * explanation][PredictionService.Explain] after being
+     * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+     * The Model can be used for [batch
+     * explanation][BatchPredictionJob.generate_explanation] iff it is populated.
      * All fields of the explanation_spec can be overridden by
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of
-     * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model].
-     * This field is populated only for tabular AutoML Models.
-     * Specifying it with [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel] is not supported.
+     * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model], or
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] of
+     * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 23;</code>
      */
     public com.google.cloud.aiplatform.v1beta1.ExplanationSpecOrBuilder getExplanationSpecOrBuilder() {
       if (explanationSpecBuilder_ != null) {
@@ -7277,17 +7446,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The default explanation specification for this Model.
-     * Model can be used for [requesting explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain]
-     * after being [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+     * The default explanation specification for this Model.
+     * The Model can be used for [requesting
+     * explanation][PredictionService.Explain] after being
+     * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] iff it is populated.
+     * The Model can be used for [batch
+     * explanation][BatchPredictionJob.generate_explanation] iff it is populated.
      * All fields of the explanation_spec can be overridden by
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of
-     * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model].
-     * This field is populated only for tabular AutoML Models.
-     * Specifying it with [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel] is not supported.
+     * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model], or
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] of
+     * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 23;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.aiplatform.v1beta1.ExplanationSpec, com.google.cloud.aiplatform.v1beta1.ExplanationSpec.Builder, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOrBuilder> 
@@ -7586,6 +7758,170 @@ private static final long serialVersionUID = 0L;
       internalGetMutableLabels().getMutableMap()
           .putAll(values);
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.EncryptionSpec encryptionSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.aiplatform.v1beta1.EncryptionSpec, com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder, com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder> encryptionSpecBuilder_;
+    /**
+     * <pre>
+     * Customer-managed encryption key spec for a Model. If set, this
+     * Model and all sub-resources of this Model will be secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 24;</code>
+     * @return Whether the encryptionSpec field is set.
+     */
+    public boolean hasEncryptionSpec() {
+      return encryptionSpecBuilder_ != null || encryptionSpec_ != null;
+    }
+    /**
+     * <pre>
+     * Customer-managed encryption key spec for a Model. If set, this
+     * Model and all sub-resources of this Model will be secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 24;</code>
+     * @return The encryptionSpec.
+     */
+    public com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec() {
+      if (encryptionSpecBuilder_ == null) {
+        return encryptionSpec_ == null ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance() : encryptionSpec_;
+      } else {
+        return encryptionSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Customer-managed encryption key spec for a Model. If set, this
+     * Model and all sub-resources of this Model will be secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 24;</code>
+     */
+    public Builder setEncryptionSpec(com.google.cloud.aiplatform.v1beta1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionSpec_ = value;
+        onChanged();
+      } else {
+        encryptionSpecBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Customer-managed encryption key spec for a Model. If set, this
+     * Model and all sub-resources of this Model will be secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 24;</code>
+     */
+    public Builder setEncryptionSpec(
+        com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder builderForValue) {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpec_ = builderForValue.build();
+        onChanged();
+      } else {
+        encryptionSpecBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Customer-managed encryption key spec for a Model. If set, this
+     * Model and all sub-resources of this Model will be secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 24;</code>
+     */
+    public Builder mergeEncryptionSpec(com.google.cloud.aiplatform.v1beta1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (encryptionSpec_ != null) {
+          encryptionSpec_ =
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec.newBuilder(encryptionSpec_).mergeFrom(value).buildPartial();
+        } else {
+          encryptionSpec_ = value;
+        }
+        onChanged();
+      } else {
+        encryptionSpecBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Customer-managed encryption key spec for a Model. If set, this
+     * Model and all sub-resources of this Model will be secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 24;</code>
+     */
+    public Builder clearEncryptionSpec() {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpec_ = null;
+        onChanged();
+      } else {
+        encryptionSpec_ = null;
+        encryptionSpecBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Customer-managed encryption key spec for a Model. If set, this
+     * Model and all sub-resources of this Model will be secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 24;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder getEncryptionSpecBuilder() {
+      
+      onChanged();
+      return getEncryptionSpecFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Customer-managed encryption key spec for a Model. If set, this
+     * Model and all sub-resources of this Model will be secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 24;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder() {
+      if (encryptionSpecBuilder_ != null) {
+        return encryptionSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionSpec_ == null ?
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance() : encryptionSpec_;
+      }
+    }
+    /**
+     * <pre>
+     * Customer-managed encryption key spec for a Model. If set, this
+     * Model and all sub-resources of this Model will be secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 24;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.aiplatform.v1beta1.EncryptionSpec, com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder, com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder> 
+        getEncryptionSpecFieldBuilder() {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpecBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec, com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder, com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder>(
+                getEncryptionSpec(),
+                getParentForChildren(),
+                isClean());
+        encryptionSpec_ = null;
+      }
+      return encryptionSpecBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

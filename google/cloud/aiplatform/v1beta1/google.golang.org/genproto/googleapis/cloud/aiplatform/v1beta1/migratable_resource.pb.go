@@ -183,6 +183,7 @@ type MigratableResource_MlEngineModelVersion struct {
 	// The ml.googleapis.com endpoint that this model Version currently lives
 	// in.
 	// Example values:
+	//
 	// * ml.googleapis.com
 	// * us-centrall-ml.googleapis.com
 	// * europe-west4-ml.googleapis.com

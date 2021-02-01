@@ -24,6 +24,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :endpoint, :string, 1
       repeated :instances, :message, 2, "google.protobuf.Value"
       optional :parameters, :message, 4, "google.protobuf.Value"
+      optional :explanation_spec_override, :message, 5, "google.cloud.aiplatform.v1beta1.ExplanationSpecOverride"
       optional :deployed_model_id, :string, 3
     end
     add_message "google.cloud.aiplatform.v1beta1.ExplainResponse" do

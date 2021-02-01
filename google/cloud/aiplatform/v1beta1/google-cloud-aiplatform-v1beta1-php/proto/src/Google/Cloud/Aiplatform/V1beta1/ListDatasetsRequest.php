@@ -23,7 +23,17 @@ class ListDatasetsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $parent = '';
     /**
-     * The standard list filter.
+     * An expression for filtering the results of the request. For field names
+     * both snake_case and camelCase are supported.
+     *   * `display_name`: supports = and !=
+     *   * `metadata_schema_uri`: supports = and !=
+     *   * `labels` supports general map functions that is:
+     *     * `labels.key=value` - key:value equality
+     *     * `labels.key:* or labels:key - key existence
+     *     * A key including a space must be quoted. `labels."a key"`.
+     * Some examples:
+     *   * `displayName="myDisplayName"`
+     *   * `labels.myKey="myValue"`
      *
      * Generated from protobuf field <code>string filter = 2;</code>
      */
@@ -51,7 +61,7 @@ class ListDatasetsRequest extends \Google\Protobuf\Internal\Message
      * Use "desc" after a field name for descending.
      * Supported fields:
      *   * `display_name`
-     *   * `data_item_count`   * `create_time`
+     *   * `create_time`
      *   * `update_time`
      *
      * Generated from protobuf field <code>string order_by = 6;</code>
@@ -68,7 +78,17 @@ class ListDatasetsRequest extends \Google\Protobuf\Internal\Message
      *           Required. The name of the Dataset's parent resource.
      *           Format: `projects/{project}/locations/{location}`
      *     @type string $filter
-     *           The standard list filter.
+     *           An expression for filtering the results of the request. For field names
+     *           both snake_case and camelCase are supported.
+     *             * `display_name`: supports = and !=
+     *             * `metadata_schema_uri`: supports = and !=
+     *             * `labels` supports general map functions that is:
+     *               * `labels.key=value` - key:value equality
+     *               * `labels.key:* or labels:key - key existence
+     *               * A key including a space must be quoted. `labels."a key"`.
+     *           Some examples:
+     *             * `displayName="myDisplayName"`
+     *             * `labels.myKey="myValue"`
      *     @type int $page_size
      *           The standard list page size.
      *     @type string $page_token
@@ -80,7 +100,7 @@ class ListDatasetsRequest extends \Google\Protobuf\Internal\Message
      *           Use "desc" after a field name for descending.
      *           Supported fields:
      *             * `display_name`
-     *             * `data_item_count`   * `create_time`
+     *             * `create_time`
      *             * `update_time`
      * }
      */
@@ -118,7 +138,17 @@ class ListDatasetsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The standard list filter.
+     * An expression for filtering the results of the request. For field names
+     * both snake_case and camelCase are supported.
+     *   * `display_name`: supports = and !=
+     *   * `metadata_schema_uri`: supports = and !=
+     *   * `labels` supports general map functions that is:
+     *     * `labels.key=value` - key:value equality
+     *     * `labels.key:* or labels:key - key existence
+     *     * A key including a space must be quoted. `labels."a key"`.
+     * Some examples:
+     *   * `displayName="myDisplayName"`
+     *   * `labels.myKey="myValue"`
      *
      * Generated from protobuf field <code>string filter = 2;</code>
      * @return string
@@ -129,7 +159,17 @@ class ListDatasetsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The standard list filter.
+     * An expression for filtering the results of the request. For field names
+     * both snake_case and camelCase are supported.
+     *   * `display_name`: supports = and !=
+     *   * `metadata_schema_uri`: supports = and !=
+     *   * `labels` supports general map functions that is:
+     *     * `labels.key=value` - key:value equality
+     *     * `labels.key:* or labels:key - key existence
+     *     * A key including a space must be quoted. `labels."a key"`.
+     * Some examples:
+     *   * `displayName="myDisplayName"`
+     *   * `labels.myKey="myValue"`
      *
      * Generated from protobuf field <code>string filter = 2;</code>
      * @param string $var
@@ -236,7 +276,7 @@ class ListDatasetsRequest extends \Google\Protobuf\Internal\Message
      * Use "desc" after a field name for descending.
      * Supported fields:
      *   * `display_name`
-     *   * `data_item_count`   * `create_time`
+     *   * `create_time`
      *   * `update_time`
      *
      * Generated from protobuf field <code>string order_by = 6;</code>
@@ -252,7 +292,7 @@ class ListDatasetsRequest extends \Google\Protobuf\Internal\Message
      * Use "desc" after a field name for descending.
      * Supported fields:
      *   * `display_name`
-     *   * `data_item_count`   * `create_time`
+     *   * `create_time`
      *   * `update_time`
      *
      * Generated from protobuf field <code>string order_by = 6;</code>

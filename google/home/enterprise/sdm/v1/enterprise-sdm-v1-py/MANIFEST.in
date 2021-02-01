@@ -1,0 +1,2 @@
+recursive-include google/home/enterprise/sdm *.py
+recursive-include google/home/enterprise/sdm_v1 *.py

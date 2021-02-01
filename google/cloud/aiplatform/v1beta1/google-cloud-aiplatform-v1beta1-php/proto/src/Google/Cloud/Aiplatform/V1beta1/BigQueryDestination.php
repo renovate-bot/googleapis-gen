@@ -16,9 +16,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class BigQueryDestination extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. BigQuery URI to a project, up to 2000 characters long.
+     * Required. BigQuery URI to a project or table, up to 2000 characters long.
+     * When only project is specified, Dataset and Table is created.
+     * When full table reference is specified, Dataset must exist and table must
+     * not exist.
      * Accepted forms:
-     * *  BigQuery path. For example: `bq://projectId`.
+     * *  BigQuery path. For example:
+     * `bq://projectId` or `bq://projectId.bqDatasetId.bqTableId`.
      *
      * Generated from protobuf field <code>string output_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -31,9 +35,13 @@ class BigQueryDestination extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $output_uri
-     *           Required. BigQuery URI to a project, up to 2000 characters long.
+     *           Required. BigQuery URI to a project or table, up to 2000 characters long.
+     *           When only project is specified, Dataset and Table is created.
+     *           When full table reference is specified, Dataset must exist and table must
+     *           not exist.
      *           Accepted forms:
-     *           *  BigQuery path. For example: `bq://projectId`.
+     *           *  BigQuery path. For example:
+     *           `bq://projectId` or `bq://projectId.bqDatasetId.bqTableId`.
      * }
      */
     public function __construct($data = NULL) {
@@ -42,9 +50,13 @@ class BigQueryDestination extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. BigQuery URI to a project, up to 2000 characters long.
+     * Required. BigQuery URI to a project or table, up to 2000 characters long.
+     * When only project is specified, Dataset and Table is created.
+     * When full table reference is specified, Dataset must exist and table must
+     * not exist.
      * Accepted forms:
-     * *  BigQuery path. For example: `bq://projectId`.
+     * *  BigQuery path. For example:
+     * `bq://projectId` or `bq://projectId.bqDatasetId.bqTableId`.
      *
      * Generated from protobuf field <code>string output_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -55,9 +67,13 @@ class BigQueryDestination extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. BigQuery URI to a project, up to 2000 characters long.
+     * Required. BigQuery URI to a project or table, up to 2000 characters long.
+     * When only project is specified, Dataset and Table is created.
+     * When full table reference is specified, Dataset must exist and table must
+     * not exist.
      * Accepted forms:
-     * *  BigQuery path. For example: `bq://projectId`.
+     * *  BigQuery path. For example:
+     * `bq://projectId` or `bq://projectId.bqDatasetId.bqTableId`.
      *
      * Generated from protobuf field <code>string output_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var

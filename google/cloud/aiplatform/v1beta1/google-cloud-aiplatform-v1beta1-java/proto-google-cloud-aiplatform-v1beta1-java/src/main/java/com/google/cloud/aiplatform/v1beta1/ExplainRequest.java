@@ -90,6 +90,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 42: {
+            com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride.Builder subBuilder = null;
+            if (explanationSpecOverride_ != null) {
+              subBuilder = explanationSpecOverride_.toBuilder();
+            }
+            explanationSpecOverride_ = input.readMessage(com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(explanationSpecOverride_);
+              explanationSpecOverride_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -322,6 +335,65 @@ private static final long serialVersionUID = 0L;
     return getParameters();
   }
 
+  public static final int EXPLANATION_SPEC_OVERRIDE_FIELD_NUMBER = 5;
+  private com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride explanationSpecOverride_;
+  /**
+   * <pre>
+   * If specified, overrides the
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of the DeployedModel.
+   * Can be used for explaining prediction results with different
+   * configurations, such as:
+   *  - Explaining top-5 predictions results as opposed to top-1;
+   *  - Increasing path count or step count of the attribution methods to reduce
+   *    approximate errors;
+   *  - Using different baselines for explaining the prediction results.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride explanation_spec_override = 5;</code>
+   * @return Whether the explanationSpecOverride field is set.
+   */
+  @java.lang.Override
+  public boolean hasExplanationSpecOverride() {
+    return explanationSpecOverride_ != null;
+  }
+  /**
+   * <pre>
+   * If specified, overrides the
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of the DeployedModel.
+   * Can be used for explaining prediction results with different
+   * configurations, such as:
+   *  - Explaining top-5 predictions results as opposed to top-1;
+   *  - Increasing path count or step count of the attribution methods to reduce
+   *    approximate errors;
+   *  - Using different baselines for explaining the prediction results.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride explanation_spec_override = 5;</code>
+   * @return The explanationSpecOverride.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride getExplanationSpecOverride() {
+    return explanationSpecOverride_ == null ? com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride.getDefaultInstance() : explanationSpecOverride_;
+  }
+  /**
+   * <pre>
+   * If specified, overrides the
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of the DeployedModel.
+   * Can be used for explaining prediction results with different
+   * configurations, such as:
+   *  - Explaining top-5 predictions results as opposed to top-1;
+   *  - Increasing path count or step count of the attribution methods to reduce
+   *    approximate errors;
+   *  - Using different baselines for explaining the prediction results.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride explanation_spec_override = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverrideOrBuilder getExplanationSpecOverrideOrBuilder() {
+    return getExplanationSpecOverride();
+  }
+
   public static final int DEPLOYED_MODEL_ID_FIELD_NUMBER = 3;
   private volatile java.lang.Object deployedModelId_;
   /**
@@ -396,6 +468,9 @@ private static final long serialVersionUID = 0L;
     if (parameters_ != null) {
       output.writeMessage(4, getParameters());
     }
+    if (explanationSpecOverride_ != null) {
+      output.writeMessage(5, getExplanationSpecOverride());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -418,6 +493,10 @@ private static final long serialVersionUID = 0L;
     if (parameters_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getParameters());
+    }
+    if (explanationSpecOverride_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getExplanationSpecOverride());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -443,6 +522,11 @@ private static final long serialVersionUID = 0L;
       if (!getParameters()
           .equals(other.getParameters())) return false;
     }
+    if (hasExplanationSpecOverride() != other.hasExplanationSpecOverride()) return false;
+    if (hasExplanationSpecOverride()) {
+      if (!getExplanationSpecOverride()
+          .equals(other.getExplanationSpecOverride())) return false;
+    }
     if (!getDeployedModelId()
         .equals(other.getDeployedModelId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -465,6 +549,10 @@ private static final long serialVersionUID = 0L;
     if (hasParameters()) {
       hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
       hash = (53 * hash) + getParameters().hashCode();
+    }
+    if (hasExplanationSpecOverride()) {
+      hash = (37 * hash) + EXPLANATION_SPEC_OVERRIDE_FIELD_NUMBER;
+      hash = (53 * hash) + getExplanationSpecOverride().hashCode();
     }
     hash = (37 * hash) + DEPLOYED_MODEL_ID_FIELD_NUMBER;
     hash = (53 * hash) + getDeployedModelId().hashCode();
@@ -620,6 +708,12 @@ private static final long serialVersionUID = 0L;
         parameters_ = null;
         parametersBuilder_ = null;
       }
+      if (explanationSpecOverrideBuilder_ == null) {
+        explanationSpecOverride_ = null;
+      } else {
+        explanationSpecOverride_ = null;
+        explanationSpecOverrideBuilder_ = null;
+      }
       deployedModelId_ = "";
 
       return this;
@@ -663,6 +757,11 @@ private static final long serialVersionUID = 0L;
         result.parameters_ = parameters_;
       } else {
         result.parameters_ = parametersBuilder_.build();
+      }
+      if (explanationSpecOverrideBuilder_ == null) {
+        result.explanationSpecOverride_ = explanationSpecOverride_;
+      } else {
+        result.explanationSpecOverride_ = explanationSpecOverrideBuilder_.build();
       }
       result.deployedModelId_ = deployedModelId_;
       onBuilt();
@@ -745,6 +844,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasParameters()) {
         mergeParameters(other.getParameters());
+      }
+      if (other.hasExplanationSpecOverride()) {
+        mergeExplanationSpecOverride(other.getExplanationSpecOverride());
       }
       if (!other.getDeployedModelId().isEmpty()) {
         deployedModelId_ = other.deployedModelId_;
@@ -1522,6 +1624,224 @@ private static final long serialVersionUID = 0L;
         parameters_ = null;
       }
       return parametersBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride explanationSpecOverride_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride.Builder, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverrideOrBuilder> explanationSpecOverrideBuilder_;
+    /**
+     * <pre>
+     * If specified, overrides the
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of the DeployedModel.
+     * Can be used for explaining prediction results with different
+     * configurations, such as:
+     *  - Explaining top-5 predictions results as opposed to top-1;
+     *  - Increasing path count or step count of the attribution methods to reduce
+     *    approximate errors;
+     *  - Using different baselines for explaining the prediction results.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride explanation_spec_override = 5;</code>
+     * @return Whether the explanationSpecOverride field is set.
+     */
+    public boolean hasExplanationSpecOverride() {
+      return explanationSpecOverrideBuilder_ != null || explanationSpecOverride_ != null;
+    }
+    /**
+     * <pre>
+     * If specified, overrides the
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of the DeployedModel.
+     * Can be used for explaining prediction results with different
+     * configurations, such as:
+     *  - Explaining top-5 predictions results as opposed to top-1;
+     *  - Increasing path count or step count of the attribution methods to reduce
+     *    approximate errors;
+     *  - Using different baselines for explaining the prediction results.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride explanation_spec_override = 5;</code>
+     * @return The explanationSpecOverride.
+     */
+    public com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride getExplanationSpecOverride() {
+      if (explanationSpecOverrideBuilder_ == null) {
+        return explanationSpecOverride_ == null ? com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride.getDefaultInstance() : explanationSpecOverride_;
+      } else {
+        return explanationSpecOverrideBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * If specified, overrides the
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of the DeployedModel.
+     * Can be used for explaining prediction results with different
+     * configurations, such as:
+     *  - Explaining top-5 predictions results as opposed to top-1;
+     *  - Increasing path count or step count of the attribution methods to reduce
+     *    approximate errors;
+     *  - Using different baselines for explaining the prediction results.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride explanation_spec_override = 5;</code>
+     */
+    public Builder setExplanationSpecOverride(com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride value) {
+      if (explanationSpecOverrideBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        explanationSpecOverride_ = value;
+        onChanged();
+      } else {
+        explanationSpecOverrideBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * If specified, overrides the
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of the DeployedModel.
+     * Can be used for explaining prediction results with different
+     * configurations, such as:
+     *  - Explaining top-5 predictions results as opposed to top-1;
+     *  - Increasing path count or step count of the attribution methods to reduce
+     *    approximate errors;
+     *  - Using different baselines for explaining the prediction results.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride explanation_spec_override = 5;</code>
+     */
+    public Builder setExplanationSpecOverride(
+        com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride.Builder builderForValue) {
+      if (explanationSpecOverrideBuilder_ == null) {
+        explanationSpecOverride_ = builderForValue.build();
+        onChanged();
+      } else {
+        explanationSpecOverrideBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * If specified, overrides the
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of the DeployedModel.
+     * Can be used for explaining prediction results with different
+     * configurations, such as:
+     *  - Explaining top-5 predictions results as opposed to top-1;
+     *  - Increasing path count or step count of the attribution methods to reduce
+     *    approximate errors;
+     *  - Using different baselines for explaining the prediction results.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride explanation_spec_override = 5;</code>
+     */
+    public Builder mergeExplanationSpecOverride(com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride value) {
+      if (explanationSpecOverrideBuilder_ == null) {
+        if (explanationSpecOverride_ != null) {
+          explanationSpecOverride_ =
+            com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride.newBuilder(explanationSpecOverride_).mergeFrom(value).buildPartial();
+        } else {
+          explanationSpecOverride_ = value;
+        }
+        onChanged();
+      } else {
+        explanationSpecOverrideBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * If specified, overrides the
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of the DeployedModel.
+     * Can be used for explaining prediction results with different
+     * configurations, such as:
+     *  - Explaining top-5 predictions results as opposed to top-1;
+     *  - Increasing path count or step count of the attribution methods to reduce
+     *    approximate errors;
+     *  - Using different baselines for explaining the prediction results.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride explanation_spec_override = 5;</code>
+     */
+    public Builder clearExplanationSpecOverride() {
+      if (explanationSpecOverrideBuilder_ == null) {
+        explanationSpecOverride_ = null;
+        onChanged();
+      } else {
+        explanationSpecOverride_ = null;
+        explanationSpecOverrideBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * If specified, overrides the
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of the DeployedModel.
+     * Can be used for explaining prediction results with different
+     * configurations, such as:
+     *  - Explaining top-5 predictions results as opposed to top-1;
+     *  - Increasing path count or step count of the attribution methods to reduce
+     *    approximate errors;
+     *  - Using different baselines for explaining the prediction results.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride explanation_spec_override = 5;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride.Builder getExplanationSpecOverrideBuilder() {
+      
+      onChanged();
+      return getExplanationSpecOverrideFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * If specified, overrides the
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of the DeployedModel.
+     * Can be used for explaining prediction results with different
+     * configurations, such as:
+     *  - Explaining top-5 predictions results as opposed to top-1;
+     *  - Increasing path count or step count of the attribution methods to reduce
+     *    approximate errors;
+     *  - Using different baselines for explaining the prediction results.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride explanation_spec_override = 5;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverrideOrBuilder getExplanationSpecOverrideOrBuilder() {
+      if (explanationSpecOverrideBuilder_ != null) {
+        return explanationSpecOverrideBuilder_.getMessageOrBuilder();
+      } else {
+        return explanationSpecOverride_ == null ?
+            com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride.getDefaultInstance() : explanationSpecOverride_;
+      }
+    }
+    /**
+     * <pre>
+     * If specified, overrides the
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of the DeployedModel.
+     * Can be used for explaining prediction results with different
+     * configurations, such as:
+     *  - Explaining top-5 predictions results as opposed to top-1;
+     *  - Increasing path count or step count of the attribution methods to reduce
+     *    approximate errors;
+     *  - Using different baselines for explaining the prediction results.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride explanation_spec_override = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride.Builder, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverrideOrBuilder> 
+        getExplanationSpecOverrideFieldBuilder() {
+      if (explanationSpecOverrideBuilder_ == null) {
+        explanationSpecOverrideBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride.Builder, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverrideOrBuilder>(
+                getExplanationSpecOverride(),
+                getParentForChildren(),
+                isClean());
+        explanationSpecOverride_ = null;
+      }
+      return explanationSpecOverrideBuilder_;
     }
 
     private java.lang.Object deployedModelId_ = "";

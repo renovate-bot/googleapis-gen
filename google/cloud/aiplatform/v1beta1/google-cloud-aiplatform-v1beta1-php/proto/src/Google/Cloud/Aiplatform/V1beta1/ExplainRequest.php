@@ -47,6 +47,19 @@ class ExplainRequest extends \Google\Protobuf\Internal\Message
      */
     protected $parameters = null;
     /**
+     * If specified, overrides the
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of the DeployedModel.
+     * Can be used for explaining prediction results with different
+     * configurations, such as:
+     *  - Explaining top-5 predictions results as opposed to top-1;
+     *  - Increasing path count or step count of the attribution methods to reduce
+     *    approximate errors;
+     *  - Using different baselines for explaining the prediction results.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride explanation_spec_override = 5;</code>
+     */
+    protected $explanation_spec_override = null;
+    /**
      * If specified, this ExplainRequest will be served by the chosen
      * DeployedModel, overriding [Endpoint.traffic_split][google.cloud.aiplatform.v1beta1.Endpoint.traffic_split].
      *
@@ -79,6 +92,15 @@ class ExplainRequest extends \Google\Protobuf\Internal\Message
      *           be specified via Endpoint's DeployedModels' [Model's ][google.cloud.aiplatform.v1beta1.DeployedModel.model]
      *           [PredictSchemata's][google.cloud.aiplatform.v1beta1.Model.predict_schemata]
      *           [parameters_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.parameters_schema_uri].
+     *     @type \Google\Cloud\Aiplatform\V1beta1\ExplanationSpecOverride $explanation_spec_override
+     *           If specified, overrides the
+     *           [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of the DeployedModel.
+     *           Can be used for explaining prediction results with different
+     *           configurations, such as:
+     *            - Explaining top-5 predictions results as opposed to top-1;
+     *            - Increasing path count or step count of the attribution methods to reduce
+     *              approximate errors;
+     *            - Using different baselines for explaining the prediction results.
      *     @type string $deployed_model_id
      *           If specified, this ExplainRequest will be served by the chosen
      *           DeployedModel, overriding [Endpoint.traffic_split][google.cloud.aiplatform.v1beta1.Endpoint.traffic_split].
@@ -199,6 +221,56 @@ class ExplainRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Value::class);
         $this->parameters = $var;
+
+        return $this;
+    }
+
+    /**
+     * If specified, overrides the
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of the DeployedModel.
+     * Can be used for explaining prediction results with different
+     * configurations, such as:
+     *  - Explaining top-5 predictions results as opposed to top-1;
+     *  - Increasing path count or step count of the attribution methods to reduce
+     *    approximate errors;
+     *  - Using different baselines for explaining the prediction results.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride explanation_spec_override = 5;</code>
+     * @return \Google\Cloud\Aiplatform\V1beta1\ExplanationSpecOverride
+     */
+    public function getExplanationSpecOverride()
+    {
+        return isset($this->explanation_spec_override) ? $this->explanation_spec_override : null;
+    }
+
+    public function hasExplanationSpecOverride()
+    {
+        return isset($this->explanation_spec_override);
+    }
+
+    public function clearExplanationSpecOverride()
+    {
+        unset($this->explanation_spec_override);
+    }
+
+    /**
+     * If specified, overrides the
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of the DeployedModel.
+     * Can be used for explaining prediction results with different
+     * configurations, such as:
+     *  - Explaining top-5 predictions results as opposed to top-1;
+     *  - Increasing path count or step count of the attribution methods to reduce
+     *    approximate errors;
+     *  - Using different baselines for explaining the prediction results.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride explanation_spec_override = 5;</code>
+     * @param \Google\Cloud\Aiplatform\V1beta1\ExplanationSpecOverride $var
+     * @return $this
+     */
+    public function setExplanationSpecOverride($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Aiplatform\V1beta1\ExplanationSpecOverride::class);
+        $this->explanation_spec_override = $var;
 
         return $this;
     }

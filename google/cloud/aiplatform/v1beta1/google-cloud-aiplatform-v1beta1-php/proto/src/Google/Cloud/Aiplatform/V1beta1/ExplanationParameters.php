@@ -26,7 +26,7 @@ class ExplanationParameters extends \Google\Protobuf\Internal\Message
     protected $top_k = 0;
     /**
      * If populated, only returns attributions that have
-     * [output_index][Attributions.output_index] contained in output_indices. It
+     * [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] contained in output_indices. It
      * must be an ndarray of integers, with the same shape of the output it's
      * explaining.
      * If not populated, returns attributions for [top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k] indices of outputs.
@@ -71,7 +71,7 @@ class ExplanationParameters extends \Google\Protobuf\Internal\Message
      *           outputs.
      *     @type \Google\Protobuf\ListValue $output_indices
      *           If populated, only returns attributions that have
-     *           [output_index][Attributions.output_index] contained in output_indices. It
+     *           [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] contained in output_indices. It
      *           must be an ndarray of integers, with the same shape of the output it's
      *           explaining.
      *           If not populated, returns attributions for [top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k] indices of outputs.
@@ -237,7 +237,7 @@ class ExplanationParameters extends \Google\Protobuf\Internal\Message
 
     /**
      * If populated, only returns attributions that have
-     * [output_index][Attributions.output_index] contained in output_indices. It
+     * [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] contained in output_indices. It
      * must be an ndarray of integers, with the same shape of the output it's
      * explaining.
      * If not populated, returns attributions for [top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k] indices of outputs.
@@ -266,7 +266,7 @@ class ExplanationParameters extends \Google\Protobuf\Internal\Message
 
     /**
      * If populated, only returns attributions that have
-     * [output_index][Attributions.output_index] contained in output_indices. It
+     * [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] contained in output_indices. It
      * must be an ndarray of integers, with the same shape of the output it's
      * explaining.
      * If not populated, returns attributions for [top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k] indices of outputs.

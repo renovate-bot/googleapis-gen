@@ -485,7 +485,21 @@ module Google
           #   Required. The resource name of the Location to list the Models from.
           #   Format: `projects/{project}/locations/{location}`
           # @param filter [String]
-          #   The standard list filter.
+          #   An expression for filtering the results of the request. For field names
+          #   both snake_case and camelCase are supported.
+          #
+          #   * `model` supports = and !=. `model` represents the Model ID,
+          #     i.e. the last segment of the Model's {Google::Cloud::Aiplatform::V1beta1::Model#name resource name}.
+          #     * `display_name` supports = and !=
+          #     * `labels` supports general map functions that is:
+          #       * `labels.key=value` - key:value equality
+          #       * `labels.key:* or labels:key - key existence
+          #       * A key including a space must be quoted. `labels."a key"`.
+          #
+          #       Some examples:
+          #     * `model=1234`
+          #     * `displayName="myDisplayName"`
+          #     * `labels.myKey="myValue"`
           # @param page_size [Integer]
           #   The maximum number of resources contained in the underlying API
           #   response. If page streaming is performed per-resource, this
@@ -553,10 +567,7 @@ module Google
           # @param update_mask [Google::Protobuf::FieldMask | Hash]
           #   Required. The update mask applies to the resource.
           #   For the `FieldMask` definition, see
-          #
-          #   [FieldMask](https:
-          #   //developers.google.com/protocol-buffers
-          #   // /docs/reference/google.protobuf#fieldmask).
+          #   [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
           #   A hash of the same form as `Google::Protobuf::FieldMask`
           #   can also be provided.
           # @param options [Google::Gax::CallOptions]

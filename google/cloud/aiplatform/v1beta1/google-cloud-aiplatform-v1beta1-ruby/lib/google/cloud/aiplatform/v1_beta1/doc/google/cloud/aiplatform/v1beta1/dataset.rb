@@ -61,6 +61,10 @@ module Google
         #
         #     * "aiplatform.googleapis.com/dataset_metadata_schema": output only, its
         #       value is the {Google::Cloud::Aiplatform::V1beta1::Dataset#metadata_schema_uri metadata_schema's} title.
+        # @!attribute [rw] encryption_spec
+        #   @return [Google::Cloud::Aiplatform::V1beta1::EncryptionSpec]
+        #     Customer-managed encryption key spec for a Dataset. If set, this Dataset
+        #     and all sub-resources of this Dataset will be secured by this key.
         class Dataset; end
 
         # Describes the location from where we import data into a Dataset, together

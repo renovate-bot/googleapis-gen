@@ -80,6 +80,13 @@ class Dataset extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>map<string, string> labels = 7;</code>
      */
     private $labels;
+    /**
+     * Customer-managed encryption key spec for a Dataset. If set, this Dataset
+     * and all sub-resources of this Dataset will be secured by this key.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 11;</code>
+     */
+    protected $encryption_spec = null;
 
     /**
      * Constructor.
@@ -120,6 +127,9 @@ class Dataset extends \Google\Protobuf\Internal\Message
      *           and are immutable. Following system labels exist for each Dataset:
      *           * "aiplatform.googleapis.com/dataset_metadata_schema": output only, its
      *             value is the [metadata_schema's][google.cloud.aiplatform.v1beta1.Dataset.metadata_schema_uri] title.
+     *     @type \Google\Cloud\Aiplatform\V1beta1\EncryptionSpec $encryption_spec
+     *           Customer-managed encryption key spec for a Dataset. If set, this Dataset
+     *           and all sub-resources of this Dataset will be secured by this key.
      * }
      */
     public function __construct($data = NULL) {
@@ -395,6 +405,44 @@ class Dataset extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->labels = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Customer-managed encryption key spec for a Dataset. If set, this Dataset
+     * and all sub-resources of this Dataset will be secured by this key.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 11;</code>
+     * @return \Google\Cloud\Aiplatform\V1beta1\EncryptionSpec
+     */
+    public function getEncryptionSpec()
+    {
+        return isset($this->encryption_spec) ? $this->encryption_spec : null;
+    }
+
+    public function hasEncryptionSpec()
+    {
+        return isset($this->encryption_spec);
+    }
+
+    public function clearEncryptionSpec()
+    {
+        unset($this->encryption_spec);
+    }
+
+    /**
+     * Customer-managed encryption key spec for a Dataset. If set, this Dataset
+     * and all sub-resources of this Dataset will be secured by this key.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 11;</code>
+     * @param \Google\Cloud\Aiplatform\V1beta1\EncryptionSpec $var
+     * @return $this
+     */
+    public function setEncryptionSpec($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Aiplatform\V1beta1\EncryptionSpec::class);
+        $this->encryption_spec = $var;
 
         return $this;
     }

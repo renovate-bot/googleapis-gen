@@ -63,6 +63,11 @@ module Google
         # @!attribute [rw] update_time
         #   @return [Google::Protobuf::Timestamp]
         #     Output only. Timestamp when this Endpoint was last updated.
+        # @!attribute [rw] encryption_spec
+        #   @return [Google::Cloud::Aiplatform::V1beta1::EncryptionSpec]
+        #     Customer-managed encryption key spec for an Endpoint. If set, this
+        #     Endpoint and all sub-resources of this Endpoint will be secured by
+        #     this key.
         class Endpoint; end
 
         # A deployment of a Model. Endpoints contain one or more DeployedModels.
@@ -113,7 +118,7 @@ module Google
         #     If true, the container of the DeployedModel instances will send `stderr`
         #     and `stdout` streams to Stackdriver Logging.
         #
-        #     Only supported for custom-trained Models and AutoML Tables Models.
+        #     Only supported for custom-trained Models and AutoML Tabular Models.
         # @!attribute [rw] enable_access_logging
         #   @return [true, false]
         #     These logs are like standard server access logs, containing

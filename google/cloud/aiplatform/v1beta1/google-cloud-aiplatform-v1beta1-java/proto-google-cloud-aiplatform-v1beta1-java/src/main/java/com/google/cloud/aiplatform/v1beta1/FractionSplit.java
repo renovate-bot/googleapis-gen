@@ -10,7 +10,7 @@ package com.google.cloud.aiplatform.v1beta1;
  * `test_fraction` may optionally be provided, they must sum to up to 1. If the
  * provided ones sum to less than 1, the remainder is assigned to sets as
  * decided by AI Platform. If none of the fractions are set, by default roughly
- * 80% of data will be used for training, 10% for validation, and 10% for test.
+ * 80% of data is used for training, 10% for validation, and 10% for test.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.FractionSplit}
@@ -339,7 +339,7 @@ private static final long serialVersionUID = 0L;
    * `test_fraction` may optionally be provided, they must sum to up to 1. If the
    * provided ones sum to less than 1, the remainder is assigned to sets as
    * decided by AI Platform. If none of the fractions are set, by default roughly
-   * 80% of data will be used for training, 10% for validation, and 10% for test.
+   * 80% of data is used for training, 10% for validation, and 10% for test.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.FractionSplit}

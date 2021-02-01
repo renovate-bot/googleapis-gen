@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class DiskSpec extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Type of the boot disk (default is "pd-standard").
+     * Type of the boot disk (default is "pd-ssd").
      * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
      * "pd-standard" (Persistent Disk Hard Disk Drive).
      *
@@ -37,7 +37,7 @@ class DiskSpec extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $boot_disk_type
-     *           Type of the boot disk (default is "pd-standard").
+     *           Type of the boot disk (default is "pd-ssd").
      *           Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
      *           "pd-standard" (Persistent Disk Hard Disk Drive).
      *     @type int $boot_disk_size_gb
@@ -50,7 +50,7 @@ class DiskSpec extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Type of the boot disk (default is "pd-standard").
+     * Type of the boot disk (default is "pd-ssd").
      * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
      * "pd-standard" (Persistent Disk Hard Disk Drive).
      *
@@ -63,7 +63,7 @@ class DiskSpec extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Type of the boot disk (default is "pd-standard").
+     * Type of the boot disk (default is "pd-ssd").
      * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
      * "pd-standard" (Persistent Disk Hard Disk Drive).
      *

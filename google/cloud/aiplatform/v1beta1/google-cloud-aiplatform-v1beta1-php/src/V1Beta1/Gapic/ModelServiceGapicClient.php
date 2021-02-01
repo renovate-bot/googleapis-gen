@@ -638,7 +638,21 @@ class ModelServiceGapicClient
      *                             Optional.
      *
      *     @type string $filter
-     *          The standard list filter.
+     *          An expression for filtering the results of the request. For field names
+     *          both snake_case and camelCase are supported.
+     *
+     *            * `model` supports = and !=. `model` represents the Model ID,
+     *              i.e. the last segment of the Model's [resource name][google.cloud.aiplatform.v1beta1.Model.name].
+     *            * `display_name` supports = and !=
+     *            * `labels` supports general map functions that is:
+     *              * `labels.key=value` - key:value equality
+     *              * `labels.key:* or labels:key - key existence
+     *              * A key including a space must be quoted. `labels."a key"`.
+     *
+     *          Some examples:
+     *            * `model=1234`
+     *            * `displayName="myDisplayName"`
+     *            * `labels.myKey="myValue"`
      *     @type int $pageSize
      *          The maximum number of resources contained in the underlying API
      *          response. The API may return fewer values in a page, even if
@@ -709,15 +723,12 @@ class ModelServiceGapicClient
      * }
      * ```
      *
-     * @param Model     $model      Required. The Model which replaces the resource on the server.
-     * @param FieldMask $updateMask Required. The update mask applies to the resource.
-     *                              For the `FieldMask` definition, see
-     *
-     * [FieldMask](https:
-     * //developers.google.com/protocol-buffers
-     * // /docs/reference/google.protobuf#fieldmask).
-     * @param array $optionalArgs {
-     *                            Optional.
+     * @param Model     $model        Required. The Model which replaces the resource on the server.
+     * @param FieldMask $updateMask   Required. The update mask applies to the resource.
+     *                                For the `FieldMask` definition, see
+     *                                [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+     * @param array     $optionalArgs {
+     *                                Optional.
      *
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a

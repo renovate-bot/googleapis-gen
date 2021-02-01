@@ -1,0 +1,2 @@
+recursive-include google/devtools/build *.py
+recursive-include google/devtools/build_v1 *.py

@@ -27,8 +27,8 @@ module Google
         #     of the empty feature is chosen by AI Platform.
         #
         #     For AI Platform provided Tensorflow images, the key can be any friendly
-        #     name of the feature . Once specified, [
-        #     featureAttributions][Attribution.feature_attributions] will be keyed by
+        #     name of the feature. Once specified,
+        #     {Google::Cloud::Aiplatform::V1beta1::Attribution#feature_attributions featureAttributions} are keyed by
         #     this key (if not grouped with another feature).
         #
         #     For custom images, the key must match with the key in

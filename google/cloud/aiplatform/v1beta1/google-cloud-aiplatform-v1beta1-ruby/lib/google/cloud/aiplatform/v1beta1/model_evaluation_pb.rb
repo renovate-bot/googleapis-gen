@@ -18,6 +18,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :create_time, :message, 4, "google.protobuf.Timestamp"
       repeated :slice_dimensions, :string, 5
       optional :model_explanation, :message, 8, "google.cloud.aiplatform.v1beta1.ModelExplanation"
+      repeated :explanation_specs, :message, 9, "google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec"
+    end
+    add_message "google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec" do
+      optional :explanation_type, :string, 1
+      optional :explanation_spec, :message, 2, "google.cloud.aiplatform.v1beta1.ExplanationSpec"
     end
   end
 end
@@ -27,6 +32,7 @@ module Google
     module Aiplatform
       module V1beta1
         ModelEvaluation = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ModelEvaluation").msgclass
+        ModelEvaluation::ModelEvaluationExplanationSpec = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec").msgclass
       end
     end
   end

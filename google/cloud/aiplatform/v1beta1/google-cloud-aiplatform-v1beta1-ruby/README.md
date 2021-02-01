@@ -1,8 +1,8 @@
 # Ruby Client for Cloud AI Platform API ([Beta](https://github.com/GoogleCloudPlatform/google-cloud-ruby#versioning))
 
 [Cloud AI Platform API][Product Documentation]:
-Train high-quality custom machine learning models with minimum effort and
-machine learning expertise.
+Train high-quality custom machine learning models with minimal machine
+learning expertise and effort.
 - [Client Library Documentation][]
 - [Product Documentation][]
 

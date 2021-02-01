@@ -61,6 +61,11 @@ module Google
         #     characters, underscores and dashes. International characters are allowed.
         #
         #     See https://goo.gl/xmQnxf for more information and examples of labels.
+        # @!attribute [rw] encryption_spec
+        #   @return [Google::Cloud::Aiplatform::V1beta1::EncryptionSpec]
+        #     Customer-managed encryption key options for a CustomJob. If this is set,
+        #     then all resources created by the CustomJob will be encrypted with the
+        #     provided encryption key.
         class CustomJob; end
 
         # Represents the spec of a CustomJob.
@@ -74,39 +79,40 @@ module Google
         #   @return [String]
         #     Specifies the service account for workload run-as account.
         #     Users submitting jobs must have act-as permission on this run-as account.
+        #     If unspecified, the AI Platform Custom Code Service Agent for the
+        #     CustomJob's project is used.
         # @!attribute [rw] network
         #   @return [String]
         #     The full name of the Compute Engine
         #     [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which the Job
-        #     should be peered. For example, projects/12345/global/networks/myVPC.
-        #
-        #     [Format](https:
-        #     //cloud.google.com/compute/docs/reference/rest/v1/networks/insert)
-        #     is of the form projects/{project}/global/networks/{network}.
-        #     Where {project} is a project number, as in '12345', and {network} is
+        #     should be peered. For example, `projects/12345/global/networks/myVPC`.
+        #     [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert)
+        #     is of the form `projects/{project}/global/networks/{network}`.
+        #     Where {project} is a project number, as in `12345`, and {network} is a
         #     network name.
         #
         #     Private services access must already be configured for the network. If left
         #     unspecified, the job is not peered with any network.
         # @!attribute [rw] base_output_directory
         #   @return [Google::Cloud::Aiplatform::V1beta1::GcsDestination]
-        #     The Google Cloud Storage location to store the output of this CustomJob or
+        #     The Cloud Storage location to store the output of this CustomJob or
         #     HyperparameterTuningJob. For HyperparameterTuningJob,
-        #     {CustomJob#job_spec#base_output_directory base_output_directory} of
+        #     the baseOutputDirectory of
         #     each child CustomJob backing a Trial is set to a subdirectory of name
-        #     {Google::Cloud::Aiplatform::V1beta1::Trial#id id} under parent HyperparameterTuningJob's
+        #     {Google::Cloud::Aiplatform::V1beta1::Trial#id id} under its parent HyperparameterTuningJob's
+        #     baseOutputDirectory.
         #
-        #     {HyperparameterTuningJob#trial_job_spec#base_output_directory base_output_directory}.
-        #
-        #     Following AI Platform environment variables will be passed to containers or
-        #     python modules when this field is set:
+        #     The following AI Platform environment variables will be passed to
+        #     containers or python modules when this field is set:
         #
         #       For CustomJob:
+        #
         #     * AIP_MODEL_DIR = `<base_output_directory>/model/`
         #       * AIP_CHECKPOINT_DIR = `<base_output_directory>/checkpoints/`
         #       * AIP_TENSORBOARD_LOG_DIR = `<base_output_directory>/logs/`
         #
         #       For CustomJob backing a Trial of HyperparameterTuningJob:
+        #
         #       * AIP_MODEL_DIR = `<base_output_directory>/<trial_id>/model/`
         #       * AIP_CHECKPOINT_DIR = `<base_output_directory>/<trial_id>/checkpoints/`
         #       * AIP_TENSORBOARD_LOG_DIR = `<base_output_directory>/<trial_id>/logs/`
@@ -121,10 +127,10 @@ module Google
         #     The Python packaged task.
         # @!attribute [rw] machine_spec
         #   @return [Google::Cloud::Aiplatform::V1beta1::MachineSpec]
-        #     Required. Immutable. The specification of a single machine.
+        #     Optional. Immutable. The specification of a single machine.
         # @!attribute [rw] replica_count
         #   @return [Integer]
-        #     Required. The number of worker replicas to use for this worker pool.
+        #     Optional. The number of worker replicas to use for this worker pool.
         # @!attribute [rw] disk_spec
         #   @return [Google::Cloud::Aiplatform::V1beta1::DiskSpec]
         #     Disk spec.

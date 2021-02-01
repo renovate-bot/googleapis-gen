@@ -33,6 +33,20 @@ class StudySpec extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.StudySpec.Algorithm algorithm = 3;</code>
      */
     protected $algorithm = 0;
+    /**
+     * The observation noise level of the study.
+     * Currently only supported by the Vizier service. Not supported by
+     * HyperparamterTuningJob or TrainingPipeline.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise observation_noise = 6;</code>
+     */
+    protected $observation_noise = 0;
+    /**
+     * Describe which measurement selection type will be used
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType measurement_selection_type = 7;</code>
+     */
+    protected $measurement_selection_type = 0;
 
     /**
      * Constructor.
@@ -46,6 +60,12 @@ class StudySpec extends \Google\Protobuf\Internal\Message
      *           Required. The set of parameters to tune.
      *     @type int $algorithm
      *           The search algorithm specified for the Study.
+     *     @type int $observation_noise
+     *           The observation noise level of the study.
+     *           Currently only supported by the Vizier service. Not supported by
+     *           HyperparamterTuningJob or TrainingPipeline.
+     *     @type int $measurement_selection_type
+     *           Describe which measurement selection type will be used
      * }
      */
     public function __construct($data = NULL) {
@@ -127,6 +147,62 @@ class StudySpec extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Cloud\Aiplatform\V1beta1\StudySpec\Algorithm::class);
         $this->algorithm = $var;
+
+        return $this;
+    }
+
+    /**
+     * The observation noise level of the study.
+     * Currently only supported by the Vizier service. Not supported by
+     * HyperparamterTuningJob or TrainingPipeline.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise observation_noise = 6;</code>
+     * @return int
+     */
+    public function getObservationNoise()
+    {
+        return $this->observation_noise;
+    }
+
+    /**
+     * The observation noise level of the study.
+     * Currently only supported by the Vizier service. Not supported by
+     * HyperparamterTuningJob or TrainingPipeline.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise observation_noise = 6;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setObservationNoise($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Cloud\Aiplatform\V1beta1\StudySpec\ObservationNoise::class);
+        $this->observation_noise = $var;
+
+        return $this;
+    }
+
+    /**
+     * Describe which measurement selection type will be used
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType measurement_selection_type = 7;</code>
+     * @return int
+     */
+    public function getMeasurementSelectionType()
+    {
+        return $this->measurement_selection_type;
+    }
+
+    /**
+     * Describe which measurement selection type will be used
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType measurement_selection_type = 7;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMeasurementSelectionType($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Cloud\Aiplatform\V1beta1\StudySpec\MeasurementSelectionType::class);
+        $this->measurement_selection_type = $var;
 
         return $this;
     }

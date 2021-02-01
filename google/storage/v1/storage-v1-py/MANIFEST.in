@@ -1,0 +1,2 @@
+recursive-include google/storage *.py
+recursive-include google/storage_v1 *.py

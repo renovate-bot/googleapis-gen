@@ -29,7 +29,7 @@ public interface EnvVarOrBuilder extends
 
   /**
    * <pre>
-   * Variables that reference a $(VAR_NAME) are expanded
+   * Required. Variables that reference a $(VAR_NAME) are expanded
    * using the previous defined environment variables in the container and
    * any service environment variables. If a variable cannot be resolved,
    * the reference in the input string will be unchanged. The $(VAR_NAME)
@@ -38,13 +38,13 @@ public interface EnvVarOrBuilder extends
    * exists or not.
    * </pre>
    *
-   * <code>string value = 2;</code>
+   * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The value.
    */
   java.lang.String getValue();
   /**
    * <pre>
-   * Variables that reference a $(VAR_NAME) are expanded
+   * Required. Variables that reference a $(VAR_NAME) are expanded
    * using the previous defined environment variables in the container and
    * any service environment variables. If a variable cannot be resolved,
    * the reference in the input string will be unchanged. The $(VAR_NAME)
@@ -53,7 +53,7 @@ public interface EnvVarOrBuilder extends
    * exists or not.
    * </pre>
    *
-   * <code>string value = 2;</code>
+   * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for value.
    */
   com.google.protobuf.ByteString

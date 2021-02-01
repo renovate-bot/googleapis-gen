@@ -11,9 +11,11 @@ require 'google/cloud/aiplatform/v1beta1/batch_prediction_job_pb'
 require 'google/cloud/aiplatform/v1beta1/custom_job_pb'
 require 'google/cloud/aiplatform/v1beta1/data_labeling_job_pb'
 require 'google/cloud/aiplatform/v1beta1/hyperparameter_tuning_job_pb'
+require 'google/cloud/aiplatform/v1beta1/operation_pb'
 require 'google/longrunning/operations_pb'
 require 'google/protobuf/empty_pb'
 require 'google/protobuf/field_mask_pb'
+require 'google/protobuf/timestamp_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("google/cloud/aiplatform/v1beta1/job_service.proto", :syntax => :proto3) do
     add_message "google.cloud.aiplatform.v1beta1.CreateCustomJobRequest" do

@@ -16,15 +16,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class WorkerPoolSpec extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. Immutable. The specification of a single machine.
+     * Optional. Immutable. The specification of a single machine.
      *
-     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $machine_spec = null;
     /**
-     * Required. The number of worker replicas to use for this worker pool.
+     * Optional. The number of worker replicas to use for this worker pool.
      *
-     * Generated from protobuf field <code>int64 replica_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>int64 replica_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     protected $replica_count = 0;
     /**
@@ -46,9 +46,9 @@ class WorkerPoolSpec extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Aiplatform\V1beta1\PythonPackageSpec $python_package_spec
      *           The Python packaged task.
      *     @type \Google\Cloud\Aiplatform\V1beta1\MachineSpec $machine_spec
-     *           Required. Immutable. The specification of a single machine.
+     *           Optional. Immutable. The specification of a single machine.
      *     @type int|string $replica_count
-     *           Required. The number of worker replicas to use for this worker pool.
+     *           Optional. The number of worker replicas to use for this worker pool.
      *     @type \Google\Cloud\Aiplatform\V1beta1\DiskSpec $disk_spec
      *           Disk spec.
      * }
@@ -121,9 +121,9 @@ class WorkerPoolSpec extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Immutable. The specification of a single machine.
+     * Optional. Immutable. The specification of a single machine.
      *
-     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Cloud\Aiplatform\V1beta1\MachineSpec
      */
     public function getMachineSpec()
@@ -142,9 +142,9 @@ class WorkerPoolSpec extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Immutable. The specification of a single machine.
+     * Optional. Immutable. The specification of a single machine.
      *
-     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Cloud\Aiplatform\V1beta1\MachineSpec $var
      * @return $this
      */
@@ -157,9 +157,9 @@ class WorkerPoolSpec extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The number of worker replicas to use for this worker pool.
+     * Optional. The number of worker replicas to use for this worker pool.
      *
-     * Generated from protobuf field <code>int64 replica_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>int64 replica_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return int|string
      */
     public function getReplicaCount()
@@ -168,9 +168,9 @@ class WorkerPoolSpec extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The number of worker replicas to use for this worker pool.
+     * Optional. The number of worker replicas to use for this worker pool.
      *
-     * Generated from protobuf field <code>int64 replica_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>int64 replica_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param int|string $var
      * @return $this
      */

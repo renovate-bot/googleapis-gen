@@ -168,6 +168,19 @@ private static final long serialVersionUID = 0L;
                 labels__.getKey(), labels__.getValue());
             break;
           }
+          case 98: {
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder subBuilder = null;
+            if (encryptionSpec_ != null) {
+              subBuilder = encryptionSpec_.toBuilder();
+            }
+            encryptionSpec_ = input.readMessage(com.google.cloud.aiplatform.v1beta1.EncryptionSpec.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(encryptionSpec_);
+              encryptionSpec_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -685,6 +698,50 @@ private static final long serialVersionUID = 0L;
     return map.get(key);
   }
 
+  public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 12;
+  private com.google.cloud.aiplatform.v1beta1.EncryptionSpec encryptionSpec_;
+  /**
+   * <pre>
+   * Customer-managed encryption key options for a CustomJob. If this is set,
+   * then all resources created by the CustomJob will be encrypted with the
+   * provided encryption key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 12;</code>
+   * @return Whether the encryptionSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryptionSpec() {
+    return encryptionSpec_ != null;
+  }
+  /**
+   * <pre>
+   * Customer-managed encryption key options for a CustomJob. If this is set,
+   * then all resources created by the CustomJob will be encrypted with the
+   * provided encryption key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 12;</code>
+   * @return The encryptionSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec() {
+    return encryptionSpec_ == null ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance() : encryptionSpec_;
+  }
+  /**
+   * <pre>
+   * Customer-managed encryption key options for a CustomJob. If this is set,
+   * then all resources created by the CustomJob will be encrypted with the
+   * provided encryption key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder() {
+    return getEncryptionSpec();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -732,6 +789,9 @@ private static final long serialVersionUID = 0L;
         internalGetLabels(),
         LabelsDefaultEntryHolder.defaultEntry,
         11);
+    if (encryptionSpec_ != null) {
+      output.writeMessage(12, getEncryptionSpec());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -785,6 +845,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, labels__);
     }
+    if (encryptionSpec_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, getEncryptionSpec());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -837,6 +901,11 @@ private static final long serialVersionUID = 0L;
     }
     if (!internalGetLabels().equals(
         other.internalGetLabels())) return false;
+    if (hasEncryptionSpec() != other.hasEncryptionSpec()) return false;
+    if (hasEncryptionSpec()) {
+      if (!getEncryptionSpec()
+          .equals(other.getEncryptionSpec())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -881,6 +950,10 @@ private static final long serialVersionUID = 0L;
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
+    }
+    if (hasEncryptionSpec()) {
+      hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionSpec().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1087,6 +1160,12 @@ private static final long serialVersionUID = 0L;
         errorBuilder_ = null;
       }
       internalGetMutableLabels().clear();
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpec_ = null;
+      } else {
+        encryptionSpec_ = null;
+        encryptionSpecBuilder_ = null;
+      }
       return this;
     }
 
@@ -1149,6 +1228,11 @@ private static final long serialVersionUID = 0L;
       }
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
+      if (encryptionSpecBuilder_ == null) {
+        result.encryptionSpec_ = encryptionSpec_;
+      } else {
+        result.encryptionSpec_ = encryptionSpecBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1228,6 +1312,9 @@ private static final long serialVersionUID = 0L;
       }
       internalGetMutableLabels().mergeFrom(
           other.internalGetLabels());
+      if (other.hasEncryptionSpec()) {
+        mergeEncryptionSpec(other.getEncryptionSpec());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -2673,6 +2760,179 @@ private static final long serialVersionUID = 0L;
       internalGetMutableLabels().getMutableMap()
           .putAll(values);
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.EncryptionSpec encryptionSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.aiplatform.v1beta1.EncryptionSpec, com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder, com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder> encryptionSpecBuilder_;
+    /**
+     * <pre>
+     * Customer-managed encryption key options for a CustomJob. If this is set,
+     * then all resources created by the CustomJob will be encrypted with the
+     * provided encryption key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 12;</code>
+     * @return Whether the encryptionSpec field is set.
+     */
+    public boolean hasEncryptionSpec() {
+      return encryptionSpecBuilder_ != null || encryptionSpec_ != null;
+    }
+    /**
+     * <pre>
+     * Customer-managed encryption key options for a CustomJob. If this is set,
+     * then all resources created by the CustomJob will be encrypted with the
+     * provided encryption key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 12;</code>
+     * @return The encryptionSpec.
+     */
+    public com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec() {
+      if (encryptionSpecBuilder_ == null) {
+        return encryptionSpec_ == null ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance() : encryptionSpec_;
+      } else {
+        return encryptionSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Customer-managed encryption key options for a CustomJob. If this is set,
+     * then all resources created by the CustomJob will be encrypted with the
+     * provided encryption key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 12;</code>
+     */
+    public Builder setEncryptionSpec(com.google.cloud.aiplatform.v1beta1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionSpec_ = value;
+        onChanged();
+      } else {
+        encryptionSpecBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Customer-managed encryption key options for a CustomJob. If this is set,
+     * then all resources created by the CustomJob will be encrypted with the
+     * provided encryption key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 12;</code>
+     */
+    public Builder setEncryptionSpec(
+        com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder builderForValue) {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpec_ = builderForValue.build();
+        onChanged();
+      } else {
+        encryptionSpecBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Customer-managed encryption key options for a CustomJob. If this is set,
+     * then all resources created by the CustomJob will be encrypted with the
+     * provided encryption key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 12;</code>
+     */
+    public Builder mergeEncryptionSpec(com.google.cloud.aiplatform.v1beta1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (encryptionSpec_ != null) {
+          encryptionSpec_ =
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec.newBuilder(encryptionSpec_).mergeFrom(value).buildPartial();
+        } else {
+          encryptionSpec_ = value;
+        }
+        onChanged();
+      } else {
+        encryptionSpecBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Customer-managed encryption key options for a CustomJob. If this is set,
+     * then all resources created by the CustomJob will be encrypted with the
+     * provided encryption key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 12;</code>
+     */
+    public Builder clearEncryptionSpec() {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpec_ = null;
+        onChanged();
+      } else {
+        encryptionSpec_ = null;
+        encryptionSpecBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Customer-managed encryption key options for a CustomJob. If this is set,
+     * then all resources created by the CustomJob will be encrypted with the
+     * provided encryption key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 12;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder getEncryptionSpecBuilder() {
+      
+      onChanged();
+      return getEncryptionSpecFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Customer-managed encryption key options for a CustomJob. If this is set,
+     * then all resources created by the CustomJob will be encrypted with the
+     * provided encryption key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 12;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder() {
+      if (encryptionSpecBuilder_ != null) {
+        return encryptionSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionSpec_ == null ?
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance() : encryptionSpec_;
+      }
+    }
+    /**
+     * <pre>
+     * Customer-managed encryption key options for a CustomJob. If this is set,
+     * then all resources created by the CustomJob will be encrypted with the
+     * provided encryption key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.aiplatform.v1beta1.EncryptionSpec, com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder, com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder> 
+        getEncryptionSpecFieldBuilder() {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpecBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec, com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder, com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder>(
+                getEncryptionSpec(),
+                getParentForChildren(),
+                isClean());
+        encryptionSpec_ = null;
+      }
+      return encryptionSpecBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

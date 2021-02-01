@@ -1,0 +1,2 @@
+recursive-include google/partner/aistreams *.py
+recursive-include google/partner/aistreams_v1alpha1 *.py

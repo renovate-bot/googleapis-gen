@@ -99,14 +99,21 @@ module Google
         # @!attribute [rw] specialist_pools
         #   @return [Array<String>]
         #     The SpecialistPools' resource names associated with this job.
+        # @!attribute [rw] encryption_spec
+        #   @return [Google::Cloud::Aiplatform::V1beta1::EncryptionSpec]
+        #     Customer-managed encryption key spec for a DataLabelingJob. If set, this
+        #     DataLabelingJob will be secured by this key.
+        #
+        #     Note: Annotations created in the DataLabelingJob are associated with
+        #     the EncryptionSpec of the Dataset they are exported to.
         # @!attribute [rw] active_learning_config
         #   @return [Google::Cloud::Aiplatform::V1beta1::ActiveLearningConfig]
-        #     Paramaters that configure active learning pipeline. Active learning will
+        #     Parameters that configure active learning pipeline. Active learning will
         #     label the data incrementally via several iterations. For every iteration,
         #     it will select a batch of data based on the sampling strategy.
         class DataLabelingJob; end
 
-        # Paramaters that configure active learning pipeline. Active learning will
+        # Parameters that configure active learning pipeline. Active learning will
         #  label the data incrementally by several iterations. For every iteration, it
         #  will select a batch of data based on the sampling strategy.
         # @!attribute [rw] max_data_item_count

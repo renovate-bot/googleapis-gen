@@ -17,6 +17,7 @@ class HyperparameterTuningJob
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Cloud\Aiplatform\V1Beta1\CustomJob::initOnce();
+        \GPBMetadata\Google\Cloud\Aiplatform\V1Beta1\EncryptionSpec::initOnce();
         \GPBMetadata\Google\Cloud\Aiplatform\V1Beta1\JobState::initOnce();
         \GPBMetadata\Google\Cloud\Aiplatform\V1Beta1\Study::initOnce();
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
@@ -24,8 +25,8 @@ class HyperparameterTuningJob
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-“
-?google/cloud/aiplatform/v1beta1/hyperparameter_tuning_job.protogoogle.cloud.aiplatform.v1beta1google/api/resource.proto0google/cloud/aiplatform/v1beta1/custom_job.proto/google/cloud/aiplatform/v1beta1/job_state.proto+google/cloud/aiplatform/v1beta1/study.protogoogle/protobuf/timestamp.protogoogle/rpc/status.protogoogle/api/annotations.proto"œ
+”
+?google/cloud/aiplatform/v1beta1/hyperparameter_tuning_job.protogoogle.cloud.aiplatform.v1beta1google/api/resource.proto0google/cloud/aiplatform/v1beta1/custom_job.proto5google/cloud/aiplatform/v1beta1/encryption_spec.proto/google/cloud/aiplatform/v1beta1/job_state.proto+google/cloud/aiplatform/v1beta1/study.protogoogle/protobuf/timestamp.protogoogle/rpc/status.protogoogle/api/annotations.proto"ô
 HyperparameterTuningJob
 name (	B‡A
 display_name (	B‡AC
@@ -44,7 +45,8 @@ start_time (2.google.protobuf.TimestampB‡A1
 end_time (2.google.protobuf.TimestampB‡A4
 update_time (2.google.protobuf.TimestampB‡A&
 error (2.google.rpc.StatusB‡AT
-labels (2D.google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.LabelsEntry-
+labels (2D.google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.LabelsEntryH
+encryption_spec (2/.google.cloud.aiplatform.v1beta1.EncryptionSpec-
 LabelsEntry
 key (	
 value (	:8:ïÍAë

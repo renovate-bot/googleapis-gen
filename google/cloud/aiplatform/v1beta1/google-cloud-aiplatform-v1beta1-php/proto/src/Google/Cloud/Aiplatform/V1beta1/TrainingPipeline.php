@@ -73,7 +73,7 @@ class TrainingPipeline extends \Google\Protobuf\Internal\Message
      */
     protected $training_task_metadata = null;
     /**
-     * Describes the Model that may be uploaded (via [ModelService.UploadMode][])
+     * Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
      * by this TrainingPipeline. The TrainingPipeline's
      * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
      * description should be populated, and if there are any special requirements
@@ -141,6 +141,15 @@ class TrainingPipeline extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>map<string, string> labels = 15;</code>
      */
     private $labels;
+    /**
+     * Customer-managed encryption key spec for a TrainingPipeline. If set, this
+     * TrainingPipeline will be secured by this key.
+     * Note: Model trained by this TrainingPipeline is also secured by this key if
+     * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 18;</code>
+     */
+    protected $encryption_spec = null;
 
     /**
      * Constructor.
@@ -178,7 +187,7 @@ class TrainingPipeline extends \Google\Protobuf\Internal\Message
      *           populated only at a best effort basis. Only present if the
      *           pipeline's [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] contains `metadata` object.
      *     @type \Google\Cloud\Aiplatform\V1beta1\Model $model_to_upload
-     *           Describes the Model that may be uploaded (via [ModelService.UploadMode][])
+     *           Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
      *           by this TrainingPipeline. The TrainingPipeline's
      *           [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
      *           description should be populated, and if there are any special requirements
@@ -214,6 +223,11 @@ class TrainingPipeline extends \Google\Protobuf\Internal\Message
      *           (Unicode codepoints), can only contain lowercase letters, numeric
      *           characters, underscores and dashes. International characters are allowed.
      *           See https://goo.gl/xmQnxf for more information and examples of labels.
+     *     @type \Google\Cloud\Aiplatform\V1beta1\EncryptionSpec $encryption_spec
+     *           Customer-managed encryption key spec for a TrainingPipeline. If set, this
+     *           TrainingPipeline will be secured by this key.
+     *           Note: Model trained by this TrainingPipeline is also secured by this key if
+     *           [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
      * }
      */
     public function __construct($data = NULL) {
@@ -442,7 +456,7 @@ class TrainingPipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Describes the Model that may be uploaded (via [ModelService.UploadMode][])
+     * Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
      * by this TrainingPipeline. The TrainingPipeline's
      * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
      * description should be populated, and if there are any special requirements
@@ -476,7 +490,7 @@ class TrainingPipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Describes the Model that may be uploaded (via [ModelService.UploadMode][])
+     * Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
      * by this TrainingPipeline. The TrainingPipeline's
      * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
      * description should be populated, and if there are any special requirements
@@ -747,6 +761,48 @@ class TrainingPipeline extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->labels = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Customer-managed encryption key spec for a TrainingPipeline. If set, this
+     * TrainingPipeline will be secured by this key.
+     * Note: Model trained by this TrainingPipeline is also secured by this key if
+     * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 18;</code>
+     * @return \Google\Cloud\Aiplatform\V1beta1\EncryptionSpec
+     */
+    public function getEncryptionSpec()
+    {
+        return isset($this->encryption_spec) ? $this->encryption_spec : null;
+    }
+
+    public function hasEncryptionSpec()
+    {
+        return isset($this->encryption_spec);
+    }
+
+    public function clearEncryptionSpec()
+    {
+        unset($this->encryption_spec);
+    }
+
+    /**
+     * Customer-managed encryption key spec for a TrainingPipeline. If set, this
+     * TrainingPipeline will be secured by this key.
+     * Note: Model trained by this TrainingPipeline is also secured by this key if
+     * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 18;</code>
+     * @param \Google\Cloud\Aiplatform\V1beta1\EncryptionSpec $var
+     * @return $this
+     */
+    public function setEncryptionSpec($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Aiplatform\V1beta1\EncryptionSpec::class);
+        $this->encryption_spec = $var;
 
         return $this;
     }

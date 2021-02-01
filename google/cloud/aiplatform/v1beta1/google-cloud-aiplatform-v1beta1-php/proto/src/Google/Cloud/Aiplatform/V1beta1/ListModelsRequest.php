@@ -23,7 +23,19 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $parent = '';
     /**
-     * The standard list filter.
+     * An expression for filtering the results of the request. For field names
+     * both snake_case and camelCase are supported.
+     *   * `model` supports = and !=. `model` represents the Model ID,
+     *     i.e. the last segment of the Model's [resource name][google.cloud.aiplatform.v1beta1.Model.name].
+     *   * `display_name` supports = and !=
+     *   * `labels` supports general map functions that is:
+     *     * `labels.key=value` - key:value equality
+     *     * `labels.key:* or labels:key - key existence
+     *     * A key including a space must be quoted. `labels."a key"`.
+     * Some examples:
+     *   * `model=1234`
+     *   * `displayName="myDisplayName"`
+     *   * `labels.myKey="myValue"`
      *
      * Generated from protobuf field <code>string filter = 2;</code>
      */
@@ -60,7 +72,19 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      *           Required. The resource name of the Location to list the Models from.
      *           Format: `projects/{project}/locations/{location}`
      *     @type string $filter
-     *           The standard list filter.
+     *           An expression for filtering the results of the request. For field names
+     *           both snake_case and camelCase are supported.
+     *             * `model` supports = and !=. `model` represents the Model ID,
+     *               i.e. the last segment of the Model's [resource name][google.cloud.aiplatform.v1beta1.Model.name].
+     *             * `display_name` supports = and !=
+     *             * `labels` supports general map functions that is:
+     *               * `labels.key=value` - key:value equality
+     *               * `labels.key:* or labels:key - key existence
+     *               * A key including a space must be quoted. `labels."a key"`.
+     *           Some examples:
+     *             * `model=1234`
+     *             * `displayName="myDisplayName"`
+     *             * `labels.myKey="myValue"`
      *     @type int $page_size
      *           The standard list page size.
      *     @type string $page_token
@@ -106,7 +130,19 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The standard list filter.
+     * An expression for filtering the results of the request. For field names
+     * both snake_case and camelCase are supported.
+     *   * `model` supports = and !=. `model` represents the Model ID,
+     *     i.e. the last segment of the Model's [resource name][google.cloud.aiplatform.v1beta1.Model.name].
+     *   * `display_name` supports = and !=
+     *   * `labels` supports general map functions that is:
+     *     * `labels.key=value` - key:value equality
+     *     * `labels.key:* or labels:key - key existence
+     *     * A key including a space must be quoted. `labels."a key"`.
+     * Some examples:
+     *   * `model=1234`
+     *   * `displayName="myDisplayName"`
+     *   * `labels.myKey="myValue"`
      *
      * Generated from protobuf field <code>string filter = 2;</code>
      * @return string
@@ -117,7 +153,19 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The standard list filter.
+     * An expression for filtering the results of the request. For field names
+     * both snake_case and camelCase are supported.
+     *   * `model` supports = and !=. `model` represents the Model ID,
+     *     i.e. the last segment of the Model's [resource name][google.cloud.aiplatform.v1beta1.Model.name].
+     *   * `display_name` supports = and !=
+     *   * `labels` supports general map functions that is:
+     *     * `labels.key=value` - key:value equality
+     *     * `labels.key:* or labels:key - key existence
+     *     * A key including a space must be quoted. `labels."a key"`.
+     * Some examples:
+     *   * `model=1234`
+     *   * `displayName="myDisplayName"`
+     *   * `labels.myKey="myValue"`
      *
      * Generated from protobuf field <code>string filter = 2;</code>
      * @param string $var

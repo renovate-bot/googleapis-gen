@@ -80,6 +80,11 @@ module Google
         #     characters, underscores and dashes. International characters are allowed.
         #
         #     See https://goo.gl/xmQnxf for more information and examples of labels.
+        # @!attribute [rw] encryption_spec
+        #   @return [Google::Cloud::Aiplatform::V1beta1::EncryptionSpec]
+        #     Customer-managed encryption key options for a HyperparameterTuningJob.
+        #     If this is set, then all resources created by the HyperparameterTuningJob
+        #     will be encrypted with the provided encryption key.
         class HyperparameterTuningJob; end
       end
     end

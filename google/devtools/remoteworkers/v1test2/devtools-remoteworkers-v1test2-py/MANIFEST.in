@@ -1,0 +1,2 @@
+recursive-include google/devtools/remoteworkers *.py
+recursive-include google/devtools/remoteworkers_v1 *.py

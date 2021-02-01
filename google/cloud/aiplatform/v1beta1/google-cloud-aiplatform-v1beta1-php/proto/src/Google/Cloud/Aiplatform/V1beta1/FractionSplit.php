@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  * `test_fraction` may optionally be provided, they must sum to up to 1. If the
  * provided ones sum to less than 1, the remainder is assigned to sets as
  * decided by AI Platform. If none of the fractions are set, by default roughly
- * 80% of data will be used for training, 10% for validation, and 10% for test.
+ * 80% of data is used for training, 10% for validation, and 10% for test.
  *
  * Generated from protobuf message <code>google.cloud.aiplatform.v1beta1.FractionSplit</code>
  */

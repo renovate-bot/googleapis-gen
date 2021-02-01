@@ -292,6 +292,17 @@ module Google
           #   {Google::Cloud::Aiplatform::V1beta1::PredictSchemata#parameters_schema_uri parameters_schema_uri}.
           #   A hash of the same form as `Google::Protobuf::Value`
           #   can also be provided.
+          # @param explanation_spec_override [Google::Cloud::Aiplatform::V1beta1::ExplanationSpecOverride | Hash]
+          #   If specified, overrides the
+          #   {Google::Cloud::Aiplatform::V1beta1::DeployedModel#explanation_spec explanation_spec} of the DeployedModel.
+          #   Can be used for explaining prediction results with different
+          #   configurations, such as:
+          #   * Explaining top-5 predictions results as opposed to top-1;
+          #     * Increasing path count or step count of the attribution methods to reduce
+          #       approximate errors;
+          #     * Using different baselines for explaining the prediction results.
+          #   A hash of the same form as `Google::Cloud::Aiplatform::V1beta1::ExplanationSpecOverride`
+          #   can also be provided.
           # @param deployed_model_id [String]
           #   If specified, this ExplainRequest will be served by the chosen
           #   DeployedModel, overriding {Google::Cloud::Aiplatform::V1beta1::Endpoint#traffic_split Endpoint#traffic_split}.
@@ -317,6 +328,7 @@ module Google
               endpoint,
               instances,
               parameters: nil,
+              explanation_spec_override: nil,
               deployed_model_id: nil,
               options: nil,
               &block
@@ -324,6 +336,7 @@ module Google
               endpoint: endpoint,
               instances: instances,
               parameters: parameters,
+              explanation_spec_override: explanation_spec_override,
               deployed_model_id: deployed_model_id
             }.delete_if { |_, v| v.nil? }
             req = Google::Gax::to_proto(req, Google::Cloud::Aiplatform::V1beta1::ExplainRequest)

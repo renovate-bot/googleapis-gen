@@ -37,6 +37,7 @@ use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
 use Google\Cloud\Aiplatform\V1beta1\ExplainRequest;
 use Google\Cloud\Aiplatform\V1beta1\ExplainResponse;
+use Google\Cloud\Aiplatform\V1beta1\ExplanationSpecOverride;
 use Google\Cloud\Aiplatform\V1beta1\PredictRequest;
 use Google\Cloud\Aiplatform\V1beta1\PredictResponse;
 use Google\Protobuf\Value;
@@ -371,6 +372,15 @@ class PredictionServiceGapicClient
      *          be specified via Endpoint's DeployedModels' [Model's ][google.cloud.aiplatform.v1beta1.DeployedModel.model]
      *          [PredictSchemata's][google.cloud.aiplatform.v1beta1.Model.predict_schemata]
      *          [parameters_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.parameters_schema_uri].
+     *     @type ExplanationSpecOverride $explanationSpecOverride
+     *          If specified, overrides the
+     *          [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of the DeployedModel.
+     *          Can be used for explaining prediction results with different
+     *          configurations, such as:
+     *           - Explaining top-5 predictions results as opposed to top-1;
+     *           - Increasing path count or step count of the attribution methods to reduce
+     *             approximate errors;
+     *           - Using different baselines for explaining the prediction results.
      *     @type string $deployedModelId
      *          If specified, this ExplainRequest will be served by the chosen
      *          DeployedModel, overriding [Endpoint.traffic_split][google.cloud.aiplatform.v1beta1.Endpoint.traffic_split].
@@ -393,6 +403,9 @@ class PredictionServiceGapicClient
         $request->setInstances($instances);
         if (isset($optionalArgs['parameters'])) {
             $request->setParameters($optionalArgs['parameters']);
+        }
+        if (isset($optionalArgs['explanationSpecOverride'])) {
+            $request->setExplanationSpecOverride($optionalArgs['explanationSpecOverride']);
         }
         if (isset($optionalArgs['deployedModelId'])) {
             $request->setDeployedModelId($optionalArgs['deployedModelId']);

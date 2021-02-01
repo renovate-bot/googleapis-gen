@@ -34,7 +34,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Aiplatform\V1beta1\GcsDestination $gcs_destination
-     *           The Google Cloud Storage location of the directory where the output is
+     *           The Cloud Storage location of the directory where the output is
      *           to be written to. In the given directory a new directory is created.
      *           Its name is `prediction-<model-display-name>-<job-create-time>`,
      *           where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format.
@@ -86,7 +86,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The Google Cloud Storage location of the directory where the output is
+     * The Cloud Storage location of the directory where the output is
      * to be written to. In the given directory a new directory is created.
      * Its name is `prediction-<model-display-name>-<job-create-time>`,
      * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format.
@@ -122,7 +122,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The Google Cloud Storage location of the directory where the output is
+     * The Cloud Storage location of the directory where the output is
      * to be written to. In the given directory a new directory is created.
      * Its name is `prediction-<model-display-name>-<job-create-time>`,
      * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format.

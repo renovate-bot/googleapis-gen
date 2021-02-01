@@ -5,6 +5,7 @@ require 'google/protobuf'
 
 require 'google/api/field_behavior_pb'
 require 'google/api/resource_pb'
+require 'google/cloud/aiplatform/v1beta1/encryption_spec_pb'
 require 'google/cloud/aiplatform/v1beta1/io_pb'
 require 'google/protobuf/struct_pb'
 require 'google/protobuf/timestamp_pb'
@@ -20,6 +21,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :update_time, :message, 5, "google.protobuf.Timestamp"
       optional :etag, :string, 6
       map :labels, :string, :string, 7
+      optional :encryption_spec, :message, 11, "google.cloud.aiplatform.v1beta1.EncryptionSpec"
     end
     add_message "google.cloud.aiplatform.v1beta1.ImportDataConfig" do
       map :data_item_labels, :string, :string, 2

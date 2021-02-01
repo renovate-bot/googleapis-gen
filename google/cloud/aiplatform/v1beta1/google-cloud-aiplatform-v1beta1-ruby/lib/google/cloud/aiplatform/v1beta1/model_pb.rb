@@ -7,6 +7,7 @@ require 'google/api/field_behavior_pb'
 require 'google/api/resource_pb'
 require 'google/cloud/aiplatform/v1beta1/dataset_pb'
 require 'google/cloud/aiplatform/v1beta1/deployed_model_ref_pb'
+require 'google/cloud/aiplatform/v1beta1/encryption_spec_pb'
 require 'google/cloud/aiplatform/v1beta1/env_var_pb'
 require 'google/cloud/aiplatform/v1beta1/explanation_pb'
 require 'google/protobuf/struct_pb'
@@ -34,6 +35,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :explanation_spec, :message, 23, "google.cloud.aiplatform.v1beta1.ExplanationSpec"
       optional :etag, :string, 16
       map :labels, :string, :string, 17
+      optional :encryption_spec, :message, 24, "google.cloud.aiplatform.v1beta1.EncryptionSpec"
     end
     add_message "google.cloud.aiplatform.v1beta1.Model.ExportFormat" do
       optional :id, :string, 1

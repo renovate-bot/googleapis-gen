@@ -63,37 +63,37 @@ public interface WorkerPoolSpecOrBuilder extends
 
   /**
    * <pre>
-   * Required. Immutable. The specification of a single machine.
+   * Optional. Immutable. The specification of a single machine.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];</code>
    * @return Whether the machineSpec field is set.
    */
   boolean hasMachineSpec();
   /**
    * <pre>
-   * Required. Immutable. The specification of a single machine.
+   * Optional. Immutable. The specification of a single machine.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The machineSpec.
    */
   com.google.cloud.aiplatform.v1beta1.MachineSpec getMachineSpec();
   /**
    * <pre>
-   * Required. Immutable. The specification of a single machine.
+   * Optional. Immutable. The specification of a single machine.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];</code>
    */
   com.google.cloud.aiplatform.v1beta1.MachineSpecOrBuilder getMachineSpecOrBuilder();
 
   /**
    * <pre>
-   * Required. The number of worker replicas to use for this worker pool.
+   * Optional. The number of worker replicas to use for this worker pool.
    * </pre>
    *
-   * <code>int64 replica_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>int64 replica_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The replicaCount.
    */
   long getReplicaCount();

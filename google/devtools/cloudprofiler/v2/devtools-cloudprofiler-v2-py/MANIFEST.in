@@ -1,0 +1,2 @@
+recursive-include google/devtools/cloudprofiler *.py
+recursive-include google/devtools/cloudprofiler_v2 *.py

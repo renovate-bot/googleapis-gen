@@ -25,7 +25,7 @@ class OutputInfo extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $gcs_output_directory
-     *           Output only. The full path of the Google Cloud Storage directory created, into which
+     *           Output only. The full path of the Cloud Storage directory created, into which
      *           the prediction output is written.
      *     @type string $bigquery_output_dataset
      *           Output only. The path of the BigQuery dataset created, in
@@ -39,7 +39,7 @@ class OutputInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The full path of the Google Cloud Storage directory created, into which
+     * Output only. The full path of the Cloud Storage directory created, into which
      * the prediction output is written.
      *
      * Generated from protobuf field <code>string gcs_output_directory = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -56,7 +56,7 @@ class OutputInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The full path of the Google Cloud Storage directory created, into which
+     * Output only. The full path of the Cloud Storage directory created, into which
      * the prediction output is written.
      *
      * Generated from protobuf field <code>string gcs_output_directory = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

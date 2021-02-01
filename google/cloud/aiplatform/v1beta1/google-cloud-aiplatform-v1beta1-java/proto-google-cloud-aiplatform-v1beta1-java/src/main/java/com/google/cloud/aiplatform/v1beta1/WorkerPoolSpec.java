@@ -274,10 +274,10 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.aiplatform.v1beta1.MachineSpec machineSpec_;
   /**
    * <pre>
-   * Required. Immutable. The specification of a single machine.
+   * Optional. Immutable. The specification of a single machine.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];</code>
    * @return Whether the machineSpec field is set.
    */
   @java.lang.Override
@@ -286,10 +286,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Immutable. The specification of a single machine.
+   * Optional. Immutable. The specification of a single machine.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The machineSpec.
    */
   @java.lang.Override
@@ -298,10 +298,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Immutable. The specification of a single machine.
+   * Optional. Immutable. The specification of a single machine.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];</code>
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.MachineSpecOrBuilder getMachineSpecOrBuilder() {
@@ -312,10 +312,10 @@ private static final long serialVersionUID = 0L;
   private long replicaCount_;
   /**
    * <pre>
-   * Required. The number of worker replicas to use for this worker pool.
+   * Optional. The number of worker replicas to use for this worker pool.
    * </pre>
    *
-   * <code>int64 replica_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>int64 replica_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The replicaCount.
    */
   @java.lang.Override
@@ -1171,10 +1171,10 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.aiplatform.v1beta1.MachineSpec, com.google.cloud.aiplatform.v1beta1.MachineSpec.Builder, com.google.cloud.aiplatform.v1beta1.MachineSpecOrBuilder> machineSpecBuilder_;
     /**
      * <pre>
-     * Required. Immutable. The specification of a single machine.
+     * Optional. Immutable. The specification of a single machine.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];</code>
      * @return Whether the machineSpec field is set.
      */
     public boolean hasMachineSpec() {
@@ -1182,10 +1182,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Immutable. The specification of a single machine.
+     * Optional. Immutable. The specification of a single machine.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The machineSpec.
      */
     public com.google.cloud.aiplatform.v1beta1.MachineSpec getMachineSpec() {
@@ -1197,10 +1197,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Immutable. The specification of a single machine.
+     * Optional. Immutable. The specification of a single machine.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];</code>
      */
     public Builder setMachineSpec(com.google.cloud.aiplatform.v1beta1.MachineSpec value) {
       if (machineSpecBuilder_ == null) {
@@ -1217,10 +1217,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Immutable. The specification of a single machine.
+     * Optional. Immutable. The specification of a single machine.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];</code>
      */
     public Builder setMachineSpec(
         com.google.cloud.aiplatform.v1beta1.MachineSpec.Builder builderForValue) {
@@ -1235,10 +1235,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Immutable. The specification of a single machine.
+     * Optional. Immutable. The specification of a single machine.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];</code>
      */
     public Builder mergeMachineSpec(com.google.cloud.aiplatform.v1beta1.MachineSpec value) {
       if (machineSpecBuilder_ == null) {
@@ -1257,10 +1257,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Immutable. The specification of a single machine.
+     * Optional. Immutable. The specification of a single machine.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];</code>
      */
     public Builder clearMachineSpec() {
       if (machineSpecBuilder_ == null) {
@@ -1275,10 +1275,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Immutable. The specification of a single machine.
+     * Optional. Immutable. The specification of a single machine.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];</code>
      */
     public com.google.cloud.aiplatform.v1beta1.MachineSpec.Builder getMachineSpecBuilder() {
       
@@ -1287,10 +1287,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Immutable. The specification of a single machine.
+     * Optional. Immutable. The specification of a single machine.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];</code>
      */
     public com.google.cloud.aiplatform.v1beta1.MachineSpecOrBuilder getMachineSpecOrBuilder() {
       if (machineSpecBuilder_ != null) {
@@ -1302,10 +1302,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Immutable. The specification of a single machine.
+     * Optional. Immutable. The specification of a single machine.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>.google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.aiplatform.v1beta1.MachineSpec, com.google.cloud.aiplatform.v1beta1.MachineSpec.Builder, com.google.cloud.aiplatform.v1beta1.MachineSpecOrBuilder> 
@@ -1324,10 +1324,10 @@ private static final long serialVersionUID = 0L;
     private long replicaCount_ ;
     /**
      * <pre>
-     * Required. The number of worker replicas to use for this worker pool.
+     * Optional. The number of worker replicas to use for this worker pool.
      * </pre>
      *
-     * <code>int64 replica_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>int64 replica_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The replicaCount.
      */
     @java.lang.Override
@@ -1336,10 +1336,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The number of worker replicas to use for this worker pool.
+     * Optional. The number of worker replicas to use for this worker pool.
      * </pre>
      *
-     * <code>int64 replica_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>int64 replica_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The replicaCount to set.
      * @return This builder for chaining.
      */
@@ -1351,10 +1351,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The number of worker replicas to use for this worker pool.
+     * Optional. The number of worker replicas to use for this worker pool.
      * </pre>
      *
-     * <code>int64 replica_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>int64 replica_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearReplicaCount() {

@@ -100,7 +100,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object bootDiskType_;
   /**
    * <pre>
-   * Type of the boot disk (default is "pd-standard").
+   * Type of the boot disk (default is "pd-ssd").
    * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
    * "pd-standard" (Persistent Disk Hard Disk Drive).
    * </pre>
@@ -123,7 +123,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Type of the boot disk (default is "pd-standard").
+   * Type of the boot disk (default is "pd-ssd").
    * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
    * "pd-standard" (Persistent Disk Hard Disk Drive).
    * </pre>
@@ -487,7 +487,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object bootDiskType_ = "";
     /**
      * <pre>
-     * Type of the boot disk (default is "pd-standard").
+     * Type of the boot disk (default is "pd-ssd").
      * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
      * "pd-standard" (Persistent Disk Hard Disk Drive).
      * </pre>
@@ -509,7 +509,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Type of the boot disk (default is "pd-standard").
+     * Type of the boot disk (default is "pd-ssd").
      * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
      * "pd-standard" (Persistent Disk Hard Disk Drive).
      * </pre>
@@ -532,7 +532,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Type of the boot disk (default is "pd-standard").
+     * Type of the boot disk (default is "pd-ssd").
      * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
      * "pd-standard" (Persistent Disk Hard Disk Drive).
      * </pre>
@@ -553,7 +553,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Type of the boot disk (default is "pd-standard").
+     * Type of the boot disk (default is "pd-ssd").
      * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
      * "pd-standard" (Persistent Disk Hard Disk Drive).
      * </pre>
@@ -569,7 +569,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Type of the boot disk (default is "pd-standard").
+     * Type of the boot disk (default is "pd-ssd").
      * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
      * "pd-standard" (Persistent Disk Hard Disk Drive).
      * </pre>

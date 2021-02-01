@@ -58,7 +58,7 @@ module Google
         #     pipeline's {Google::Cloud::Aiplatform::V1beta1::TrainingPipeline#training_task_definition training_task_definition} contains `metadata` object.
         # @!attribute [rw] model_to_upload
         #   @return [Google::Cloud::Aiplatform::V1beta1::Model]
-        #     Describes the Model that may be uploaded (via {ModelService::UploadMode})
+        #     Describes the Model that may be uploaded (via {Google::Cloud::Aiplatform::V1beta1::ModelService::UploadModel ModelService::UploadModel})
         #     by this TrainingPipeline. The TrainingPipeline's
         #     {Google::Cloud::Aiplatform::V1beta1::TrainingPipeline#training_task_definition training_task_definition} should make clear whether this Model
         #     description should be populated, and if there are any special requirements
@@ -103,6 +103,13 @@ module Google
         #     characters, underscores and dashes. International characters are allowed.
         #
         #     See https://goo.gl/xmQnxf for more information and examples of labels.
+        # @!attribute [rw] encryption_spec
+        #   @return [Google::Cloud::Aiplatform::V1beta1::EncryptionSpec]
+        #     Customer-managed encryption key spec for a TrainingPipeline. If set, this
+        #     TrainingPipeline will be secured by this key.
+        #
+        #     Note: Model trained by this TrainingPipeline is also secured by this key if
+        #     {Google::Cloud::Aiplatform::V1beta1::TrainingPipeline#encryption_spec model_to_upload} is not set separately.
         class TrainingPipeline; end
 
         # Specifies AI Platform owned input data to be used for training, and
@@ -125,43 +132,50 @@ module Google
         #     Split based on the timestamp of the input data pieces.
         # @!attribute [rw] gcs_destination
         #   @return [Google::Cloud::Aiplatform::V1beta1::GcsDestination]
-        #     The Google Cloud Storage location where the training data is to be
-        #     written to. In the given directory a new directory will be created with
+        #     The Cloud Storage location where the training data is to be
+        #     written to. In the given directory a new directory is created with
         #     name:
         #     `dataset-<dataset-id>-<annotation-type>-<timestamp-of-training-call>`
         #     where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format.
-        #     All training input data will be written into that directory.
+        #     All training input data is written into that directory.
         #
-        #     The AI Platform environment variables representing Google Cloud Storage
-        #     data URIs will always be represented in the Google Cloud Storage wildcard
+        #     The AI Platform environment variables representing Cloud Storage
+        #     data URIs are represented in the Cloud Storage wildcard
         #     format to support sharded data. e.g.: "gs://.../training-*.jsonl"
         #
         #     * AIP_DATA_FORMAT = "jsonl" for non-tabular data, "csv" for tabular data
-        #     * AIP_TRAINING_DATA_URI  =
+        #     * AIP_TRAINING_DATA_URI =
         #
         #     "gcs_destination/dataset-<dataset-id>-<annotation-type>-<time>/training-*.${AIP_DATA_FORMAT}"
+        #
         #     * AIP_VALIDATION_DATA_URI =
         #
         #     "gcs_destination/dataset-<dataset-id>-<annotation-type>-<time>/validation-*.${AIP_DATA_FORMAT}"
+        #
         #     * AIP_TEST_DATA_URI =
         #
         #     "gcs_destination/dataset-<dataset-id>-<annotation-type>-<time>/test-*.${AIP_DATA_FORMAT}"
         # @!attribute [rw] bigquery_destination
         #   @return [Google::Cloud::Aiplatform::V1beta1::BigQueryDestination]
+        #     Only applicable to custom training with tabular Dataset with BigQuery
+        #     source.
+        #
         #     The BigQuery project location where the training data is to be written
         #     to. In the given project a new dataset is created with name
         #     `dataset_<dataset-id>_<annotation-type>_<timestamp-of-training-call>`
         #     where timestamp is in YYYY_MM_DDThh_mm_ss_sssZ format. All training
-        #     input data will be written into that dataset. In the dataset three
-        #     tables will be created, `training`, `validation` and `test`.
+        #     input data is written into that dataset. In the dataset three
+        #     tables are created, `training`, `validation` and `test`.
         #
         #     * AIP_DATA_FORMAT = "bigquery".
         #     * AIP_TRAINING_DATA_URI  =
         #
         #     "bigquery_destination.dataset_<dataset-id>_<annotation-type>_<time>.training"
+        #
         #     * AIP_VALIDATION_DATA_URI =
         #
         #     "bigquery_destination.dataset_<dataset-id>_<annotation-type>_<time>.validation"
+        #
         #     * AIP_TEST_DATA_URI =
         #       "bigquery_destination.dataset_<dataset-id>_<annotation-type>_<time>.test"
         # @!attribute [rw] dataset_id
@@ -175,7 +189,7 @@ module Google
         #     and choose from.
         # @!attribute [rw] annotations_filter
         #   @return [String]
-        #     Only applicable to Datasets that have DataItems and Annotations.
+        #     Applicable only to Datasets that have DataItems and Annotations.
         #
         #     A filter on Annotations of the Dataset. Only Annotations that both
         #     match this filter and belong to DataItems not ignored by the split method
@@ -187,16 +201,14 @@ module Google
         #     a single DataItem.
         # @!attribute [rw] annotation_schema_uri
         #   @return [String]
-        #     Only applicable to custom training.
+        #     Applicable only to custom training with Datasets that have DataItems and
+        #     Annotations.
         #
-        #     Google Cloud Storage URI points to a YAML file describing annotation
-        #     schema. The schema is defined as an OpenAPI 3.0.2 [Schema Object](
-        #
-        #     https:
-        #     //github.com/OAI/OpenAPI-Specification/b
-        #     // lob/master/versions/3.0.2.md#schema-object)
+        #     Cloud Storage URI that points to a YAML file describing the annotation
+        #     schema. The schema is defined as an OpenAPI 3.0.2
+        #     [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
         #     The schema files that can be used here are found in
-        #     gs://google-cloud-aiplatform/schema/dataset/annotation/, note that the
+        #     gs://google-cloud-aiplatform/schema/dataset/annotation/ , note that the
         #     chosen schema must be consistent with
         #     {Google::Cloud::Aiplatform::V1beta1::Dataset#metadata_schema_uri metadata} of the Dataset specified by
         #     {Google::Cloud::Aiplatform::V1beta1::InputDataConfig#dataset_id dataset_id}.
@@ -215,7 +227,7 @@ module Google
         # `test_fraction` may optionally be provided, they must sum to up to 1. If the
         # provided ones sum to less than 1, the remainder is assigned to sets as
         # decided by AI Platform. If none of the fractions are set, by default roughly
-        # 80% of data will be used for training, 10% for validation, and 10% for test.
+        # 80% of data is used for training, 10% for validation, and 10% for test.
         # @!attribute [rw] training_fraction
         #   @return [Float]
         #     The fraction of the input data that is to be used to train the Model.
@@ -232,13 +244,15 @@ module Google
         # supported for Datasets containing DataItems.
         # If any of the filters in this message are to match nothing, then they can be
         # set as '-' (the minus sign).
+        #
+        # Supported only for unstructured Datasets.
         # @!attribute [rw] training_filter
         #   @return [String]
         #     Required. A filter on DataItems of the Dataset. DataItems that match
         #     this filter are used to train the Model. A filter with same syntax
         #     as the one used in {Google::Cloud::Aiplatform::V1beta1::DatasetService::ListDataItems DatasetService::ListDataItems} may be used. If a
         #     single DataItem is matched by more than one of the FilterSplit filters,
-        #     then it will be assigned to the first set that applies to it in the
+        #     then it is assigned to the first set that applies to it in the
         #     training, validation, test order.
         # @!attribute [rw] validation_filter
         #   @return [String]
@@ -246,7 +260,7 @@ module Google
         #     this filter are used to validate the Model. A filter with same syntax
         #     as the one used in {Google::Cloud::Aiplatform::V1beta1::DatasetService::ListDataItems DatasetService::ListDataItems} may be used. If a
         #     single DataItem is matched by more than one of the FilterSplit filters,
-        #     then it will be assigned to the first set that applies to it in the
+        #     then it is assigned to the first set that applies to it in the
         #     training, validation, test order.
         # @!attribute [rw] test_filter
         #   @return [String]
@@ -254,7 +268,7 @@ module Google
         #     this filter are used to test the Model. A filter with same syntax
         #     as the one used in {Google::Cloud::Aiplatform::V1beta1::DatasetService::ListDataItems DatasetService::ListDataItems} may be used. If a
         #     single DataItem is matched by more than one of the FilterSplit filters,
-        #     then it will be assigned to the first set that applies to it in the
+        #     then it is assigned to the first set that applies to it in the
         #     training, validation, test order.
         class FilterSplit; end
 

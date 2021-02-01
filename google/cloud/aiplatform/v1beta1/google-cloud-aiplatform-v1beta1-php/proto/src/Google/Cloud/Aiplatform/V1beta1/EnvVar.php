@@ -22,7 +22,7 @@ class EnvVar extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * Variables that reference a $(VAR_NAME) are expanded
+     * Required. Variables that reference a $(VAR_NAME) are expanded
      * using the previous defined environment variables in the container and
      * any service environment variables. If a variable cannot be resolved,
      * the reference in the input string will be unchanged. The $(VAR_NAME)
@@ -30,7 +30,7 @@ class EnvVar extends \Google\Protobuf\Internal\Message
      * references will never be expanded, regardless of whether the variable
      * exists or not.
      *
-     * Generated from protobuf field <code>string value = 2;</code>
+     * Generated from protobuf field <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $value = '';
 
@@ -43,7 +43,7 @@ class EnvVar extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *           Required. Name of the environment variable. Must be a valid C identifier.
      *     @type string $value
-     *           Variables that reference a $(VAR_NAME) are expanded
+     *           Required. Variables that reference a $(VAR_NAME) are expanded
      *           using the previous defined environment variables in the container and
      *           any service environment variables. If a variable cannot be resolved,
      *           the reference in the input string will be unchanged. The $(VAR_NAME)
@@ -84,7 +84,7 @@ class EnvVar extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Variables that reference a $(VAR_NAME) are expanded
+     * Required. Variables that reference a $(VAR_NAME) are expanded
      * using the previous defined environment variables in the container and
      * any service environment variables. If a variable cannot be resolved,
      * the reference in the input string will be unchanged. The $(VAR_NAME)
@@ -92,7 +92,7 @@ class EnvVar extends \Google\Protobuf\Internal\Message
      * references will never be expanded, regardless of whether the variable
      * exists or not.
      *
-     * Generated from protobuf field <code>string value = 2;</code>
+     * Generated from protobuf field <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getValue()
@@ -101,7 +101,7 @@ class EnvVar extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Variables that reference a $(VAR_NAME) are expanded
+     * Required. Variables that reference a $(VAR_NAME) are expanded
      * using the previous defined environment variables in the container and
      * any service environment variables. If a variable cannot be resolved,
      * the reference in the input string will be unchanged. The $(VAR_NAME)
@@ -109,7 +109,7 @@ class EnvVar extends \Google\Protobuf\Internal\Message
      * references will never be expanded, regardless of whether the variable
      * exists or not.
      *
-     * Generated from protobuf field <code>string value = 2;</code>
+     * Generated from protobuf field <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

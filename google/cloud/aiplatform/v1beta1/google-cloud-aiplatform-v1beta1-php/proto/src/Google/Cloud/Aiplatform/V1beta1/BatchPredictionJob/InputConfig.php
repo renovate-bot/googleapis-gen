@@ -34,7 +34,7 @@ class InputConfig extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Aiplatform\V1beta1\GcsSource $gcs_source
-     *           The Google Cloud Storage location for the input instances.
+     *           The Cloud Storage location for the input instances.
      *     @type \Google\Cloud\Aiplatform\V1beta1\BigQuerySource $bigquery_source
      *           The BigQuery location of the input table.
      *           The schema of the table should be in the format described by the given
@@ -53,7 +53,7 @@ class InputConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The Google Cloud Storage location for the input instances.
+     * The Cloud Storage location for the input instances.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 2;</code>
      * @return \Google\Cloud\Aiplatform\V1beta1\GcsSource
@@ -69,7 +69,7 @@ class InputConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The Google Cloud Storage location for the input instances.
+     * The Cloud Storage location for the input instances.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 2;</code>
      * @param \Google\Cloud\Aiplatform\V1beta1\GcsSource $var

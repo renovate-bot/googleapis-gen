@@ -44,10 +44,16 @@ module Google
         # The BigQuery location for the output content.
         # @!attribute [rw] output_uri
         #   @return [String]
-        #     Required. BigQuery URI to a project, up to 2000 characters long.
+        #     Required. BigQuery URI to a project or table, up to 2000 characters long.
+        #
+        #     When only project is specified, Dataset and Table is created.
+        #     When full table reference is specified, Dataset must exist and table must
+        #     not exist.
+        #
         #     Accepted forms:
         #
-        #     * BigQuery path. For example: `bq://projectId`.
+        #     * BigQuery path. For example:
+        #       `bq://projectId` or `bq://projectId.bqDatasetId.bqTableId`.
         class BigQueryDestination; end
 
         # The Container Regsitry location for the container image.

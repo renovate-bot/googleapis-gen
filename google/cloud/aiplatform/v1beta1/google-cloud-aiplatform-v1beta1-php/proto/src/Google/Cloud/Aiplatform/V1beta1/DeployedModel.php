@@ -68,7 +68,7 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
     /**
      * If true, the container of the DeployedModel instances will send `stderr`
      * and `stdout` streams to Stackdriver Logging.
-     * Only supported for custom-trained Models and AutoML Tables Models.
+     * Only supported for custom-trained Models and AutoML Tabular Models.
      *
      * Generated from protobuf field <code>bool enable_container_logging = 12;</code>
      */
@@ -126,7 +126,7 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
      *     @type bool $enable_container_logging
      *           If true, the container of the DeployedModel instances will send `stderr`
      *           and `stdout` streams to Stackdriver Logging.
-     *           Only supported for custom-trained Models and AutoML Tables Models.
+     *           Only supported for custom-trained Models and AutoML Tabular Models.
      *     @type bool $enable_access_logging
      *           These logs are like standard server access logs, containing
      *           information like timestamp and latency for each prediction request.
@@ -413,7 +413,7 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
     /**
      * If true, the container of the DeployedModel instances will send `stderr`
      * and `stdout` streams to Stackdriver Logging.
-     * Only supported for custom-trained Models and AutoML Tables Models.
+     * Only supported for custom-trained Models and AutoML Tabular Models.
      *
      * Generated from protobuf field <code>bool enable_container_logging = 12;</code>
      * @return bool
@@ -426,7 +426,7 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
     /**
      * If true, the container of the DeployedModel instances will send `stderr`
      * and `stdout` streams to Stackdriver Logging.
-     * Only supported for custom-trained Models and AutoML Tables Models.
+     * Only supported for custom-trained Models and AutoML Tabular Models.
      *
      * Generated from protobuf field <code>bool enable_container_logging = 12;</code>
      * @param bool $var

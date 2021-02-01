@@ -412,18 +412,16 @@ module Google
           #   both snake_case and camelCase are supported.
           #
           #   * `endpoint` supports = and !=. `endpoint` represents the Endpoint ID,
-          #     ie. the last segment of the Endpoint's {Google::Cloud::Aiplatform::V1beta1::Endpoint#name resource name}.
-          #     * `display_name` supports =, != and regex()
-          #       (uses [re2](https://github.com/google/re2/wiki/Syntax) syntax)
+          #     i.e. the last segment of the Endpoint's {Google::Cloud::Aiplatform::V1beta1::Endpoint#name resource name}.
+          #     * `display_name` supports = and, !=
           #     * `labels` supports general map functions that is:
-          #       `labels.key=value` - key:value equality
-          #       `labels.key:* or labels:key - key existence
-          #       A key including a space must be quoted. `labels."a key"`.
+          #       * `labels.key=value` - key:value equality
+          #       * `labels.key:* or labels:key - key existence
+          #       * A key including a space must be quoted. `labels."a key"`.
           #
-          #     Some examples:
+          #       Some examples:
           #     * `endpoint=1`
           #     * `displayName="myDisplayName"`
-          #     * `regex(display_name, "^A") -> The display name starts with an A.
           #     * `labels.myKey="myValue"`
           # @param page_size [Integer]
           #   The maximum number of resources contained in the underlying API
@@ -491,6 +489,8 @@ module Google
           #   can also be provided.
           # @param update_mask [Google::Protobuf::FieldMask | Hash]
           #   Required. The update mask applies to the resource.
+          #   See
+          #   [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
           #   A hash of the same form as `Google::Protobuf::FieldMask`
           #   can also be provided.
           # @param options [Google::Gax::CallOptions]

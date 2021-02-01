@@ -38,6 +38,20 @@ class SearchMigratableResourcesRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string page_token = 3;</code>
      */
     protected $page_token = '';
+    /**
+     * Supported filters are:
+     * * Resource type: For a specific type of MigratableResource.
+     *   * `ml_engine_model_version:*`
+     *   * `automl_model:*`,
+     *   * `automl_dataset:*`
+     *   * `data_labeling_dataset:*`.
+     * * Migrated or not: Filter migrated resource or not by last_migrate_time.
+     *   * `last_migrate_time:*` will filter migrated resources.
+     *   * `NOT last_migrate_time:*` will filter not yet migrated resource.
+     *
+     * Generated from protobuf field <code>string filter = 4;</code>
+     */
+    protected $filter = '';
 
     /**
      * Constructor.
@@ -56,6 +70,16 @@ class SearchMigratableResourcesRequest extends \Google\Protobuf\Internal\Message
      *           The default and maximum value is 100.
      *     @type string $page_token
      *           The standard page token.
+     *     @type string $filter
+     *           Supported filters are:
+     *           * Resource type: For a specific type of MigratableResource.
+     *             * `ml_engine_model_version:*`
+     *             * `automl_model:*`,
+     *             * `automl_dataset:*`
+     *             * `data_labeling_dataset:*`.
+     *           * Migrated or not: Filter migrated resource or not by last_migrate_time.
+     *             * `last_migrate_time:*` will filter migrated resources.
+     *             * `NOT last_migrate_time:*` will filter not yet migrated resource.
      * }
      */
     public function __construct($data = NULL) {
@@ -147,6 +171,48 @@ class SearchMigratableResourcesRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->page_token = $var;
+
+        return $this;
+    }
+
+    /**
+     * Supported filters are:
+     * * Resource type: For a specific type of MigratableResource.
+     *   * `ml_engine_model_version:*`
+     *   * `automl_model:*`,
+     *   * `automl_dataset:*`
+     *   * `data_labeling_dataset:*`.
+     * * Migrated or not: Filter migrated resource or not by last_migrate_time.
+     *   * `last_migrate_time:*` will filter migrated resources.
+     *   * `NOT last_migrate_time:*` will filter not yet migrated resource.
+     *
+     * Generated from protobuf field <code>string filter = 4;</code>
+     * @return string
+     */
+    public function getFilter()
+    {
+        return $this->filter;
+    }
+
+    /**
+     * Supported filters are:
+     * * Resource type: For a specific type of MigratableResource.
+     *   * `ml_engine_model_version:*`
+     *   * `automl_model:*`,
+     *   * `automl_dataset:*`
+     *   * `data_labeling_dataset:*`.
+     * * Migrated or not: Filter migrated resource or not by last_migrate_time.
+     *   * `last_migrate_time:*` will filter migrated resources.
+     *   * `NOT last_migrate_time:*` will filter not yet migrated resource.
+     *
+     * Generated from protobuf field <code>string filter = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFilter($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->filter = $var;
 
         return $this;
     }

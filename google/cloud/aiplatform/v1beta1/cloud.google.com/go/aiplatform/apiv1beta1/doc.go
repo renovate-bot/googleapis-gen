@@ -17,8 +17,8 @@
 // Package aiplatform is an auto-generated package for the
 // Cloud AI Platform API.
 //
-// Train high-quality custom machine learning models with minimum effort and
-// machine learning expertise.
+// Train high-quality custom machine learning models with minimal machine
+// learning expertise and effort.
 //
 // Use of Context
 //

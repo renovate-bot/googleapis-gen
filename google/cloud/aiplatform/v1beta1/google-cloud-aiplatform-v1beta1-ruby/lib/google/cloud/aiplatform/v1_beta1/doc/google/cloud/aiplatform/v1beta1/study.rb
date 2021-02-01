@@ -91,6 +91,14 @@ module Google
         # @!attribute [rw] algorithm
         #   @return [Google::Cloud::Aiplatform::V1beta1::StudySpec::Algorithm]
         #     The search algorithm specified for the Study.
+        # @!attribute [rw] observation_noise
+        #   @return [Google::Cloud::Aiplatform::V1beta1::StudySpec::ObservationNoise]
+        #     The observation noise level of the study.
+        #     Currently only supported by the Vizier service. Not supported by
+        #     HyperparamterTuningJob or TrainingPipeline.
+        # @!attribute [rw] measurement_selection_type
+        #   @return [Google::Cloud::Aiplatform::V1beta1::StudySpec::MeasurementSelectionType]
+        #     Describe which measurement selection type will be used
         class StudySpec
           # Represents a metric to optimize.
           # @!attribute [rw] metric_id
@@ -249,6 +257,48 @@ module Google
 
             # Simple random search within the feasible space.
             RANDOM_SEARCH = 3
+          end
+
+          # This indicates which measurement to use if/when the service automatically
+          # selects the final measurement from previously reported intermediate
+          # measurements. Choose this based on two considerations:
+          #  A) Do you expect your measurements to monotonically improve?
+          #     If so, choose LAST_MEASUREMENT. On the other hand, if you're in a
+          #     situation where your system can "over-train" and you expect the
+          #     performance to get better for a while but then start declining,
+          #     choose BEST_MEASUREMENT.
+          #  B) Are your measurements significantly noisy and/or irreproducible?
+          #     If so, BEST_MEASUREMENT will tend to be over-optimistic, and it
+          #     may be better to choose LAST_MEASUREMENT.
+          #  If both or neither of (A) and (B) apply, it doesn't matter which
+          #  selection type is chosen.
+          module MeasurementSelectionType
+            # Will be treated as LAST_MEASUREMENT.
+            MEASUREMENT_SELECTION_TYPE_UNSPECIFIED = 0
+
+            # Use the last measurement reported.
+            LAST_MEASUREMENT = 1
+
+            # Use the best measurement reported.
+            BEST_MEASUREMENT = 2
+          end
+
+          # Describes the noise level of the repeated observations.
+          #
+          # "Noisy" means that the repeated observations with the same Trial parameters
+          # may lead to different metric evaluations.
+          module ObservationNoise
+            # The default noise level chosen by the AI Platform service.
+            OBSERVATION_NOISE_UNSPECIFIED = 0
+
+            # AI Platform Vizier assumes that the objective function is (nearly)
+            # perfectly reproducible, and will never repeat the same Trial
+            # parameters.
+            LOW = 1
+
+            # AI Platform Vizier will estimate the amount of noise in metric
+            # evaluations, it may repeat the same Trial parameters more than once.
+            HIGH = 2
           end
         end
 

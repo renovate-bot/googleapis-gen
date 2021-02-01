@@ -21,6 +21,12 @@ class BatchMigrateResourcesOperationMetadata extends \Google\Protobuf\Internal\M
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 1;</code>
      */
     protected $generic_metadata = null;
+    /**
+     * Partial results that reflects the latest migration operation progress.
+     *
+     * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
+     */
+    private $partial_results;
 
     /**
      * Constructor.
@@ -30,6 +36,8 @@ class BatchMigrateResourcesOperationMetadata extends \Google\Protobuf\Internal\M
      *
      *     @type \Google\Cloud\Aiplatform\V1beta1\GenericOperationMetadata $generic_metadata
      *           The common part of the operation metadata.
+     *     @type \Google\Cloud\Aiplatform\V1beta1\BatchMigrateResourcesOperationMetadata\PartialResult[]|\Google\Protobuf\Internal\RepeatedField $partial_results
+     *           Partial results that reflects the latest migration operation progress.
      * }
      */
     public function __construct($data = NULL) {
@@ -69,6 +77,32 @@ class BatchMigrateResourcesOperationMetadata extends \Google\Protobuf\Internal\M
     {
         GPBUtil::checkMessage($var, \Google\Cloud\Aiplatform\V1beta1\GenericOperationMetadata::class);
         $this->generic_metadata = $var;
+
+        return $this;
+    }
+
+    /**
+     * Partial results that reflects the latest migration operation progress.
+     *
+     * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPartialResults()
+    {
+        return $this->partial_results;
+    }
+
+    /**
+     * Partial results that reflects the latest migration operation progress.
+     *
+     * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult partial_results = 2;</code>
+     * @param \Google\Cloud\Aiplatform\V1beta1\BatchMigrateResourcesOperationMetadata\PartialResult[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPartialResults($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Cloud\Aiplatform\V1beta1\BatchMigrateResourcesOperationMetadata\PartialResult::class);
+        $this->partial_results = $arr;
 
         return $this;
     }

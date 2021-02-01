@@ -10,6 +10,8 @@ public interface GetDatabaseDdlRequestOrBuilder extends
   /**
    * <pre>
    * Required. The database whose schema we wish to get.
+   * Values are of the form
+   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;`
    * </pre>
    *
    * <code>string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -19,6 +21,8 @@ public interface GetDatabaseDdlRequestOrBuilder extends
   /**
    * <pre>
    * Required. The database whose schema we wish to get.
+   * Values are of the form
+   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;`
    * </pre>
    *
    * <code>string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

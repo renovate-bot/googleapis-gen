@@ -102,7 +102,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.cloud.aiplatform.v1beta1.Attribution> meanAttributions_;
   /**
    * <pre>
-   * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+   * Output only. Aggregated attributions explaining the Model's prediction outputs over the
    * set of instances. The attributions are grouped by outputs.
    * For Models that predict only one output, such as regression Models that
    * predict only one score, there is only one attibution that explains the
@@ -127,7 +127,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+   * Output only. Aggregated attributions explaining the Model's prediction outputs over the
    * set of instances. The attributions are grouped by outputs.
    * For Models that predict only one output, such as regression Models that
    * predict only one score, there is only one attibution that explains the
@@ -153,7 +153,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+   * Output only. Aggregated attributions explaining the Model's prediction outputs over the
    * set of instances. The attributions are grouped by outputs.
    * For Models that predict only one output, such as regression Models that
    * predict only one score, there is only one attibution that explains the
@@ -178,7 +178,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+   * Output only. Aggregated attributions explaining the Model's prediction outputs over the
    * set of instances. The attributions are grouped by outputs.
    * For Models that predict only one output, such as regression Models that
    * predict only one score, there is only one attibution that explains the
@@ -203,7 +203,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+   * Output only. Aggregated attributions explaining the Model's prediction outputs over the
    * set of instances. The attributions are grouped by outputs.
    * For Models that predict only one output, such as regression Models that
    * predict only one score, there is only one attibution that explains the
@@ -588,7 +588,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -616,7 +616,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -644,7 +644,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -672,7 +672,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -707,7 +707,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -739,7 +739,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -773,7 +773,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -808,7 +808,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -840,7 +840,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -872,7 +872,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -905,7 +905,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -936,7 +936,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -967,7 +967,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -992,7 +992,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -1020,7 +1020,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -1049,7 +1049,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -1074,7 +1074,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -1100,7 +1100,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the

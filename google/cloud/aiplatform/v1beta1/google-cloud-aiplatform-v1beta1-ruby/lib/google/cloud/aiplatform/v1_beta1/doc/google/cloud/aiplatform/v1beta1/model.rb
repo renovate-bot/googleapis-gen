@@ -112,6 +112,10 @@ module Google
         #       Each instance is a single row in BigQuery. Uses
         #       {Google::Cloud::Aiplatform::V1beta1::BatchPredictionJob::InputConfig#bigquery_source BigQuerySource}.
         #
+        #     * `file-list`
+        #       Each line of the file is the location of an instance to process, uses
+        #       `gcs_source` field of the
+        #       {Google::Cloud::Aiplatform::V1beta1::BatchPredictionJob::InputConfig InputConfig} object.
         #
         #
         #     If this Model doesn't support any of these formats it means it cannot be
@@ -164,17 +168,19 @@ module Google
         #     Model could have been deployed to Endpoints in different Locations.
         # @!attribute [rw] explanation_spec
         #   @return [Google::Cloud::Aiplatform::V1beta1::ExplanationSpec]
-        #     Output only. The default explanation specification for this Model.
+        #     The default explanation specification for this Model.
         #
-        #     Model can be used for {Google::Cloud::Aiplatform::V1beta1::PredictionService::Explain requesting explanation}
-        #     after being {Google::Cloud::Aiplatform::V1beta1::EndpointService::DeployModel deployed} iff it is populated.
+        #     The Model can be used for [requesting
+        #     explanation][PredictionService.Explain] after being
+        #     {Google::Cloud::Aiplatform::V1beta1::EndpointService::DeployModel deployed} iff it is populated.
+        #     The Model can be used for [batch
+        #     explanation][BatchPredictionJob.generate_explanation] iff it is populated.
         #
         #     All fields of the explanation_spec can be overridden by
         #     {Google::Cloud::Aiplatform::V1beta1::DeployedModel#explanation_spec explanation_spec} of
-        #     {Google::Cloud::Aiplatform::V1beta1::DeployModelRequest#deployed_model DeployModelRequest#deployed_model}.
-        #
-        #     This field is populated only for tabular AutoML Models.
-        #     Specifying it with {Google::Cloud::Aiplatform::V1beta1::ModelService::UploadModel ModelService::UploadModel} is not supported.
+        #     {Google::Cloud::Aiplatform::V1beta1::DeployModelRequest#deployed_model DeployModelRequest#deployed_model}, or
+        #     {Google::Cloud::Aiplatform::V1beta1::BatchPredictionJob#explanation_spec explanation_spec} of
+        #     {Google::Cloud::Aiplatform::V1beta1::BatchPredictionJob BatchPredictionJob}.
         # @!attribute [rw] etag
         #   @return [String]
         #     Used to perform consistent read-modify-write updates. If not set, a blind
@@ -188,6 +194,10 @@ module Google
         #     characters, underscores and dashes. International characters are allowed.
         #
         #     See https://goo.gl/xmQnxf for more information and examples of labels.
+        # @!attribute [rw] encryption_spec
+        #   @return [Google::Cloud::Aiplatform::V1beta1::EncryptionSpec]
+        #     Customer-managed encryption key spec for a Model. If set, this
+        #     Model and all sub-resources of this Model will be secured by this key.
         class Model
           # Represents a supported by the Model export format.
           # All formats export to Google Cloud Storage.
@@ -442,9 +452,8 @@ module Google
         #
         #     For example, if you set this field to `/foo`, then when AI Platform
         #     receives a prediction request, it forwards the request body in a POST
-        #     request to the following URL on the container:
-        #     <code>localhost:<var>PORT</var>/foo</code>
-        #     <var>PORT</var> refers to the first value of this `ModelContainerSpec`'s
+        #     request to the `/foo` path on the port of your container specified by the
+        #     first value of this `ModelContainerSpec`'s
         #     {Google::Cloud::Aiplatform::V1beta1::ModelContainerSpec#ports ports} field.
         #
         #     If you don't specify this field, it defaults to the following value when
@@ -472,9 +481,8 @@ module Google
         #     checks](https://tinyurl.com/cust-cont-reqs#checks).
         #
         #     For example, if you set this field to `/bar`, then AI Platform
-        #     intermittently sends a GET request to the following URL on the container:
-        #     <code>localhost:<var>PORT</var>/bar</code>
-        #     <var>PORT</var> refers to the first value of this `ModelContainerSpec`'s
+        #     intermittently sends a GET request to the `/bar` path on the port of your
+        #     container specified by the first value of this `ModelContainerSpec`'s
         #     {Google::Cloud::Aiplatform::V1beta1::ModelContainerSpec#ports ports} field.
         #
         #     If you don't specify this field, it defaults to the following value when

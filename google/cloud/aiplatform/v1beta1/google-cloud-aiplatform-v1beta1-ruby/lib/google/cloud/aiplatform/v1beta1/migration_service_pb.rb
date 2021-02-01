@@ -12,12 +12,14 @@ require 'google/api/resource_pb'
 require 'google/cloud/aiplatform/v1beta1/migratable_resource_pb'
 require 'google/cloud/aiplatform/v1beta1/operation_pb'
 require 'google/longrunning/operations_pb'
+require 'google/rpc/status_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("google/cloud/aiplatform/v1beta1/migration_service.proto", :syntax => :proto3) do
     add_message "google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest" do
       optional :parent, :string, 1
       optional :page_size, :int32, 2
       optional :page_token, :string, 3
+      optional :filter, :string, 4
     end
     add_message "google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse" do
       repeated :migratable_resources, :message, 1, "google.cloud.aiplatform.v1beta1.MigratableResource"
@@ -68,6 +70,15 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata" do
       optional :generic_metadata, :message, 1, "google.cloud.aiplatform.v1beta1.GenericOperationMetadata"
+      repeated :partial_results, :message, 2, "google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult"
+    end
+    add_message "google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult" do
+      optional :request, :message, 1, "google.cloud.aiplatform.v1beta1.MigrateResourceRequest"
+      oneof :result do
+        optional :error, :message, 2, "google.rpc.Status"
+        optional :model, :string, 3
+        optional :dataset, :string, 4
+      end
     end
   end
 end
@@ -88,6 +99,7 @@ module Google
         BatchMigrateResourcesResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.BatchMigrateResourcesResponse").msgclass
         MigrateResourceResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.MigrateResourceResponse").msgclass
         BatchMigrateResourcesOperationMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata").msgclass
+        BatchMigrateResourcesOperationMetadata::PartialResult = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult").msgclass
       end
     end
   end

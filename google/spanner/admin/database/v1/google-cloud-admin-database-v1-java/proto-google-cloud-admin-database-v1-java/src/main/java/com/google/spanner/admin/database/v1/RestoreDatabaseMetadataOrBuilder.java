@@ -12,7 +12,7 @@ public interface RestoreDatabaseMetadataOrBuilder extends
    * Name of the database being created and restored to.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
    * @return The name.
    */
   java.lang.String getName();
@@ -21,7 +21,7 @@ public interface RestoreDatabaseMetadataOrBuilder extends
    * Name of the database being created and restored to.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString

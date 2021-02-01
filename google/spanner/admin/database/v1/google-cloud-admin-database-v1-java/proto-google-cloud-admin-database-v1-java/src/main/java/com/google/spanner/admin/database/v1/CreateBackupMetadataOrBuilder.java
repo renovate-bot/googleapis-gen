@@ -12,7 +12,7 @@ public interface CreateBackupMetadataOrBuilder extends
    * The name of the backup being created.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
    * @return The name.
    */
   java.lang.String getName();
@@ -21,7 +21,7 @@ public interface CreateBackupMetadataOrBuilder extends
    * The name of the backup being created.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
@@ -32,7 +32,7 @@ public interface CreateBackupMetadataOrBuilder extends
    * The name of the database the backup is created from.
    * </pre>
    *
-   * <code>string database = 2;</code>
+   * <code>string database = 2 [(.google.api.resource_reference) = { ... }</code>
    * @return The database.
    */
   java.lang.String getDatabase();
@@ -41,7 +41,7 @@ public interface CreateBackupMetadataOrBuilder extends
    * The name of the database the backup is created from.
    * </pre>
    *
-   * <code>string database = 2;</code>
+   * <code>string database = 2 [(.google.api.resource_reference) = { ... }</code>
    * @return The bytes for database.
    */
   com.google.protobuf.ByteString

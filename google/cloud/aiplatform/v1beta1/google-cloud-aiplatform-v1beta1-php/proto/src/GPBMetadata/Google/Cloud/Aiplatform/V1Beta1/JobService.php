@@ -22,13 +22,15 @@ class JobService
         \GPBMetadata\Google\Cloud\Aiplatform\V1Beta1\CustomJob::initOnce();
         \GPBMetadata\Google\Cloud\Aiplatform\V1Beta1\DataLabelingJob::initOnce();
         \GPBMetadata\Google\Cloud\Aiplatform\V1Beta1\HyperparameterTuningJob::initOnce();
+        \GPBMetadata\Google\Cloud\Aiplatform\V1Beta1\Operation::initOnce();
         \GPBMetadata\Google\Longrunning\Operations::initOnce();
         \GPBMetadata\Google\Protobuf\GPBEmpty::initOnce();
         \GPBMetadata\Google\Protobuf\FieldMask::initOnce();
+        \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-çC
-1google/cloud/aiplatform/v1beta1/job_service.protogoogle.cloud.aiplatform.v1beta1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto:google/cloud/aiplatform/v1beta1/batch_prediction_job.proto0google/cloud/aiplatform/v1beta1/custom_job.proto7google/cloud/aiplatform/v1beta1/data_labeling_job.proto?google/cloud/aiplatform/v1beta1/hyperparameter_tuning_job.proto#google/longrunning/operations.protogoogle/protobuf/empty.proto google/protobuf/field_mask.proto"ò
+ﬂC
+1google/cloud/aiplatform/v1beta1/job_service.protogoogle.cloud.aiplatform.v1beta1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto:google/cloud/aiplatform/v1beta1/batch_prediction_job.proto0google/cloud/aiplatform/v1beta1/custom_job.proto7google/cloud/aiplatform/v1beta1/data_labeling_job.proto?google/cloud/aiplatform/v1beta1/hyperparameter_tuning_job.proto/google/cloud/aiplatform/v1beta1/operation.proto#google/longrunning/operations.protogoogle/protobuf/empty.proto google/protobuf/field_mask.protogoogle/protobuf/timestamp.proto"ò
 CreateCustomJobRequest9
 parent (	B)‡A˙A#
 !locations.googleapis.com/LocationC

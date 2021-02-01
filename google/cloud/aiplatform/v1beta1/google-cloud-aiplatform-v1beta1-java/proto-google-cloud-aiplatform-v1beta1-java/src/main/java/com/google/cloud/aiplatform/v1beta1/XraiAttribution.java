@@ -9,7 +9,7 @@ package com.google.cloud.aiplatform.v1beta1;
  * attributions to segmented regions, taking advantage of the model's fully
  * differentiable structure. Refer to this paper for more details:
  * https://arxiv.org/abs/1906.02825
- * Only supports image Models ([modality][InputMetadata.modality] is IMAGE).
+ * Supported only by image Models.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.XraiAttribution}
@@ -351,7 +351,7 @@ private static final long serialVersionUID = 0L;
    * attributions to segmented regions, taking advantage of the model's fully
    * differentiable structure. Refer to this paper for more details:
    * https://arxiv.org/abs/1906.02825
-   * Only supports image Models ([modality][InputMetadata.modality] is IMAGE).
+   * Supported only by image Models.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.XraiAttribution}

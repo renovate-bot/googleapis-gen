@@ -8,6 +8,7 @@ require 'google/api/resource_pb'
 require 'google/protobuf/duration_pb'
 require 'google/protobuf/struct_pb'
 require 'google/protobuf/timestamp_pb'
+require 'google/protobuf/wrappers_pb'
 require 'google/api/annotations_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("google/cloud/aiplatform/v1beta1/study.proto", :syntax => :proto3) do
@@ -36,6 +37,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       repeated :metrics, :message, 1, "google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec"
       repeated :parameters, :message, 2, "google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec"
       optional :algorithm, :enum, 3, "google.cloud.aiplatform.v1beta1.StudySpec.Algorithm"
+      optional :observation_noise, :enum, 6, "google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise"
+      optional :measurement_selection_type, :enum, 7, "google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType"
     end
     add_message "google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec" do
       optional :metric_id, :string, 1
@@ -99,6 +102,16 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :GRID_SEARCH, 2
       value :RANDOM_SEARCH, 3
     end
+    add_enum "google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise" do
+      value :OBSERVATION_NOISE_UNSPECIFIED, 0
+      value :LOW, 1
+      value :HIGH, 2
+    end
+    add_enum "google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType" do
+      value :MEASUREMENT_SELECTION_TYPE_UNSPECIFIED, 0
+      value :LAST_MEASUREMENT, 1
+      value :BEST_MEASUREMENT, 2
+    end
     add_message "google.cloud.aiplatform.v1beta1.Measurement" do
       optional :step_count, :int64, 2
       repeated :metrics, :message, 3, "google.cloud.aiplatform.v1beta1.Measurement.Metric"
@@ -131,6 +144,8 @@ module Google
         StudySpec::ParameterSpec::ConditionalParameterSpec::CategoricalValueCondition = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.CategoricalValueCondition").msgclass
         StudySpec::ParameterSpec::ScaleType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ScaleType").enummodule
         StudySpec::Algorithm = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.StudySpec.Algorithm").enummodule
+        StudySpec::ObservationNoise = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise").enummodule
+        StudySpec::MeasurementSelectionType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType").enummodule
         Measurement = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.Measurement").msgclass
         Measurement::Metric = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.Measurement.Metric").msgclass
       end
