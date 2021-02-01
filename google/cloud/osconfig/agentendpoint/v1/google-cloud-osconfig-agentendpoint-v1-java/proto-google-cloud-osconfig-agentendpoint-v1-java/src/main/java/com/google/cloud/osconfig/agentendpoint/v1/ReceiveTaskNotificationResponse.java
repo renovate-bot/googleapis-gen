@@ -5,8 +5,8 @@ package com.google.cloud.osconfig.agentendpoint.v1;
 
 /**
  * <pre>
- * The streaming rpc message that notifies the agent when it has a task
- * that it needs to perform on the VM instance.
+ * The streaming rpc message that will notify the agent when it has a task
+ * it needs to perform on the instance.
  * </pre>
  *
  * Protobuf type {@code google.cloud.osconfig.agentendpoint.v1.ReceiveTaskNotificationResponse}
@@ -231,8 +231,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The streaming rpc message that notifies the agent when it has a task
-   * that it needs to perform on the VM instance.
+   * The streaming rpc message that will notify the agent when it has a task
+   * it needs to perform on the instance.
    * </pre>
    *
    * Protobuf type {@code google.cloud.osconfig.agentendpoint.v1.ReceiveTaskNotificationResponse}

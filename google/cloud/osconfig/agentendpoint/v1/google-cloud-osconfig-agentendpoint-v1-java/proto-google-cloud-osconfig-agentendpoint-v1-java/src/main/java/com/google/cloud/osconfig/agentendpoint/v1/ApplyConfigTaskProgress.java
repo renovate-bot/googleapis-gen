@@ -5,21 +5,22 @@ package com.google.cloud.osconfig.agentendpoint.v1;
 
 /**
  * <pre>
- * Information reported from the agent about applying patches execution.
+ * Information reported from the agent regarding the progress of the task of
+ * applying desired state configuration.
  * </pre>
  *
- * Protobuf type {@code google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress}
+ * Protobuf type {@code google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress}
  */
-public final class ApplyPatchesTaskProgress extends
+public final class ApplyConfigTaskProgress extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress)
-    ApplyPatchesTaskProgressOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress)
+    ApplyConfigTaskProgressOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ApplyPatchesTaskProgress.newBuilder() to construct.
-  private ApplyPatchesTaskProgress(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ApplyConfigTaskProgress.newBuilder() to construct.
+  private ApplyConfigTaskProgress(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ApplyPatchesTaskProgress() {
+  private ApplyConfigTaskProgress() {
     state_ = 0;
   }
 
@@ -27,7 +28,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new ApplyPatchesTaskProgress();
+    return new ApplyConfigTaskProgress();
   }
 
   @java.lang.Override
@@ -35,7 +36,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ApplyPatchesTaskProgress(
+  private ApplyConfigTaskProgress(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -80,29 +81,29 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.google.cloud.osconfig.agentendpoint.v1.Tasks.internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyPatchesTaskProgress_descriptor;
+    return com.google.cloud.osconfig.agentendpoint.v1.Tasks.internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTaskProgress_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.osconfig.agentendpoint.v1.Tasks.internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyPatchesTaskProgress_fieldAccessorTable
+    return com.google.cloud.osconfig.agentendpoint.v1.Tasks.internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTaskProgress_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress.class, com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress.Builder.class);
+            com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.class, com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.Builder.class);
   }
 
   /**
    * <pre>
-   * The intermediate states of applying patches.
+   * The intermediate states of apply config task.
    * </pre>
    *
-   * Protobuf enum {@code google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress.State}
+   * Protobuf enum {@code google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.State}
    */
   public enum State
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
      * <pre>
-     * Unspecified is invalid.
+     * Invalid state
      * </pre>
      *
      * <code>STATE_UNSPECIFIED = 0;</code>
@@ -110,42 +111,26 @@ private static final long serialVersionUID = 0L;
     STATE_UNSPECIFIED(0),
     /**
      * <pre>
-     * The agent has started the patch task.
+     * The agent has started the task.
      * </pre>
      *
-     * <code>STARTED = 4;</code>
+     * <code>STARTED = 1;</code>
      */
-    STARTED(4),
+    STARTED(1),
     /**
      * <pre>
-     * The agent is currently downloading patches.
+     * The agent is in the process of applying the configuration.
      * </pre>
      *
-     * <code>DOWNLOADING_PATCHES = 1;</code>
+     * <code>APPLYING_CONFIG = 2;</code>
      */
-    DOWNLOADING_PATCHES(1),
-    /**
-     * <pre>
-     * The agent is currently applying patches.
-     * </pre>
-     *
-     * <code>APPLYING_PATCHES = 2;</code>
-     */
-    APPLYING_PATCHES(2),
-    /**
-     * <pre>
-     * The agent is currently rebooting the instance.
-     * </pre>
-     *
-     * <code>REBOOTING = 3;</code>
-     */
-    REBOOTING(3),
+    APPLYING_CONFIG(2),
     UNRECOGNIZED(-1),
     ;
 
     /**
      * <pre>
-     * Unspecified is invalid.
+     * Invalid state
      * </pre>
      *
      * <code>STATE_UNSPECIFIED = 0;</code>
@@ -153,36 +138,20 @@ private static final long serialVersionUID = 0L;
     public static final int STATE_UNSPECIFIED_VALUE = 0;
     /**
      * <pre>
-     * The agent has started the patch task.
+     * The agent has started the task.
      * </pre>
      *
-     * <code>STARTED = 4;</code>
+     * <code>STARTED = 1;</code>
      */
-    public static final int STARTED_VALUE = 4;
+    public static final int STARTED_VALUE = 1;
     /**
      * <pre>
-     * The agent is currently downloading patches.
+     * The agent is in the process of applying the configuration.
      * </pre>
      *
-     * <code>DOWNLOADING_PATCHES = 1;</code>
+     * <code>APPLYING_CONFIG = 2;</code>
      */
-    public static final int DOWNLOADING_PATCHES_VALUE = 1;
-    /**
-     * <pre>
-     * The agent is currently applying patches.
-     * </pre>
-     *
-     * <code>APPLYING_PATCHES = 2;</code>
-     */
-    public static final int APPLYING_PATCHES_VALUE = 2;
-    /**
-     * <pre>
-     * The agent is currently rebooting the instance.
-     * </pre>
-     *
-     * <code>REBOOTING = 3;</code>
-     */
-    public static final int REBOOTING_VALUE = 3;
+    public static final int APPLYING_CONFIG_VALUE = 2;
 
 
     public final int getNumber() {
@@ -210,10 +179,8 @@ private static final long serialVersionUID = 0L;
     public static State forNumber(int value) {
       switch (value) {
         case 0: return STATE_UNSPECIFIED;
-        case 4: return STARTED;
-        case 1: return DOWNLOADING_PATCHES;
-        case 2: return APPLYING_PATCHES;
-        case 3: return REBOOTING;
+        case 1: return STARTED;
+        case 2: return APPLYING_CONFIG;
         default: return null;
       }
     }
@@ -244,7 +211,7 @@ private static final long serialVersionUID = 0L;
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress.getDescriptor().getEnumTypes().get(0);
+      return com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final State[] VALUES = values();
@@ -267,17 +234,17 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress.State)
+    // @@protoc_insertion_point(enum_scope:google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.State)
   }
 
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_;
   /**
    * <pre>
-   * Required. The current state of this patch execution.
+   * The current state of this task.
    * </pre>
    *
-   * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress.State state = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.State state = 1;</code>
    * @return The enum numeric value on the wire for state.
    */
   @java.lang.Override public int getStateValue() {
@@ -285,16 +252,16 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The current state of this patch execution.
+   * The current state of this task.
    * </pre>
    *
-   * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress.State state = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.State state = 1;</code>
    * @return The state.
    */
-  @java.lang.Override public com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress.State getState() {
+  @java.lang.Override public com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.State getState() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress.State result = com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress.State.valueOf(state_);
-    return result == null ? com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress.State.UNRECOGNIZED : result;
+    com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.State result = com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.State.valueOf(state_);
+    return result == null ? com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.State.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -311,7 +278,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (state_ != com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress.State.STATE_UNSPECIFIED.getNumber()) {
+    if (state_ != com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.State.STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, state_);
     }
     unknownFields.writeTo(output);
@@ -323,7 +290,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (state_ != com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress.State.STATE_UNSPECIFIED.getNumber()) {
+    if (state_ != com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.State.STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, state_);
     }
@@ -337,10 +304,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress)) {
+    if (!(obj instanceof com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress)) {
       return super.equals(obj);
     }
-    com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress other = (com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress) obj;
+    com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress other = (com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress) obj;
 
     if (state_ != other.state_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -361,69 +328,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress parseFrom(
+  public static com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress parseFrom(
+  public static com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress parseFrom(
+  public static com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress parseFrom(
+  public static com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress parseFrom(byte[] data)
+  public static com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress parseFrom(
+  public static com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress parseFrom(java.io.InputStream input)
+  public static com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress parseFrom(
+  public static com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress parseDelimitedFrom(java.io.InputStream input)
+  public static com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress parseDelimitedFrom(
+  public static com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress parseFrom(
+  public static com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress parseFrom(
+  public static com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -436,7 +403,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress prototype) {
+  public static Builder newBuilder(com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -453,29 +420,30 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Information reported from the agent about applying patches execution.
+   * Information reported from the agent regarding the progress of the task of
+   * applying desired state configuration.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress}
+   * Protobuf type {@code google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress)
-      com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgressOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress)
+      com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgressOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.google.cloud.osconfig.agentendpoint.v1.Tasks.internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyPatchesTaskProgress_descriptor;
+      return com.google.cloud.osconfig.agentendpoint.v1.Tasks.internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTaskProgress_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.osconfig.agentendpoint.v1.Tasks.internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyPatchesTaskProgress_fieldAccessorTable
+      return com.google.cloud.osconfig.agentendpoint.v1.Tasks.internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTaskProgress_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress.class, com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress.Builder.class);
+              com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.class, com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.Builder.class);
     }
 
-    // Construct using com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress.newBuilder()
+    // Construct using com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -501,17 +469,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.google.cloud.osconfig.agentendpoint.v1.Tasks.internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyPatchesTaskProgress_descriptor;
+      return com.google.cloud.osconfig.agentendpoint.v1.Tasks.internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTaskProgress_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress getDefaultInstanceForType() {
-      return com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress.getDefaultInstance();
+    public com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress getDefaultInstanceForType() {
+      return com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress build() {
-      com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress result = buildPartial();
+    public com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress build() {
+      com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -519,8 +487,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress buildPartial() {
-      com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress result = new com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress(this);
+    public com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress buildPartial() {
+      com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress result = new com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress(this);
       result.state_ = state_;
       onBuilt();
       return result;
@@ -560,16 +528,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress) {
-        return mergeFrom((com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress)other);
+      if (other instanceof com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress) {
+        return mergeFrom((com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress other) {
-      if (other == com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress other) {
+      if (other == com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.getDefaultInstance()) return this;
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
       }
@@ -588,11 +556,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress parsedMessage = null;
+      com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress) e.getUnfinishedMessage();
+        parsedMessage = (com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -605,10 +573,10 @@ private static final long serialVersionUID = 0L;
     private int state_ = 0;
     /**
      * <pre>
-     * Required. The current state of this patch execution.
+     * The current state of this task.
      * </pre>
      *
-     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress.State state = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.State state = 1;</code>
      * @return The enum numeric value on the wire for state.
      */
     @java.lang.Override public int getStateValue() {
@@ -616,10 +584,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The current state of this patch execution.
+     * The current state of this task.
      * </pre>
      *
-     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress.State state = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.State state = 1;</code>
      * @param value The enum numeric value on the wire for state to set.
      * @return This builder for chaining.
      */
@@ -631,28 +599,28 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The current state of this patch execution.
+     * The current state of this task.
      * </pre>
      *
-     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress.State state = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.State state = 1;</code>
      * @return The state.
      */
     @java.lang.Override
-    public com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress.State getState() {
+    public com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.State getState() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress.State result = com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress.State.valueOf(state_);
-      return result == null ? com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress.State.UNRECOGNIZED : result;
+      com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.State result = com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.State.valueOf(state_);
+      return result == null ? com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.State.UNRECOGNIZED : result;
     }
     /**
      * <pre>
-     * Required. The current state of this patch execution.
+     * The current state of this task.
      * </pre>
      *
-     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress.State state = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.State state = 1;</code>
      * @param value The state to set.
      * @return This builder for chaining.
      */
-    public Builder setState(com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress.State value) {
+    public Builder setState(com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.State value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -663,10 +631,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The current state of this patch execution.
+     * The current state of this task.
      * </pre>
      *
-     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress.State state = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.State state = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearState() {
@@ -688,41 +656,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress)
+    // @@protoc_insertion_point(builder_scope:google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress)
-  private static final com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress)
+  private static final com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress();
+    DEFAULT_INSTANCE = new com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress();
   }
 
-  public static com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress getDefaultInstance() {
+  public static com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ApplyPatchesTaskProgress>
-      PARSER = new com.google.protobuf.AbstractParser<ApplyPatchesTaskProgress>() {
+  private static final com.google.protobuf.Parser<ApplyConfigTaskProgress>
+      PARSER = new com.google.protobuf.AbstractParser<ApplyConfigTaskProgress>() {
     @java.lang.Override
-    public ApplyPatchesTaskProgress parsePartialFrom(
+    public ApplyConfigTaskProgress parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ApplyPatchesTaskProgress(input, extensionRegistry);
+      return new ApplyConfigTaskProgress(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ApplyPatchesTaskProgress> parser() {
+  public static com.google.protobuf.Parser<ApplyConfigTaskProgress> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ApplyPatchesTaskProgress> getParserForType() {
+  public com.google.protobuf.Parser<ApplyConfigTaskProgress> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress getDefaultInstanceForType() {
+  public com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

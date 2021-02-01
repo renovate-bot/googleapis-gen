@@ -54,6 +54,31 @@ public final class Tasks {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_osconfig_agentendpoint_v1_ExecStepTaskOutput_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTask_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTask_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTask_OSPolicy_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTask_OSPolicy_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTaskProgress_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTaskProgress_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTaskOutput_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTaskOutput_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTaskOutput_OSPolicyResult_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTaskOutput_OSPolicyResult_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -66,58 +91,97 @@ public final class Tasks {
       "\n2google/cloud/osconfig/agentendpoint/v1" +
       "/tasks.proto\022&google.cloud.osconfig.agen" +
       "tendpoint.v1\032\037google/api/field_behavior." +
-      "proto\0327google/cloud/osconfig/agentendpoi" +
-      "nt/v1/patch_jobs.proto\"\362\003\n\004Task\022\017\n\007task_" +
-      "id\030\001 \001(\t\022C\n\ttask_type\030\002 \001(\01620.google.clo" +
-      "ud.osconfig.agentendpoint.v1.TaskType\022M\n" +
-      "\016task_directive\030\003 \001(\01625.google.cloud.osc" +
-      "onfig.agentendpoint.v1.TaskDirective\022V\n\022" +
-      "apply_patches_task\030\004 \001(\01328.google.cloud." +
-      "osconfig.agentendpoint.v1.ApplyPatchesTa" +
-      "skH\000\022N\n\016exec_step_task\030\005 \001(\01324.google.cl" +
-      "oud.osconfig.agentendpoint.v1.ExecStepTa" +
-      "skH\000\022W\n\016service_labels\030\006 \003(\0132?.google.cl" +
-      "oud.osconfig.agentendpoint.v1.Task.Servi" +
-      "ceLabelsEntry\0324\n\022ServiceLabelsEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\016\n\014task_deta" +
-      "ils\"n\n\020ApplyPatchesTask\022I\n\014patch_config\030" +
-      "\001 \001(\01323.google.cloud.osconfig.agentendpo" +
-      "int.v1.PatchConfig\022\017\n\007dry_run\030\003 \001(\010\"\341\001\n\030" +
-      "ApplyPatchesTaskProgress\022Z\n\005state\030\001 \001(\0162" +
-      "F.google.cloud.osconfig.agentendpoint.v1" +
-      ".ApplyPatchesTaskProgress.StateB\003\340A\002\"i\n\005" +
-      "State\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007STARTED\020" +
-      "\004\022\027\n\023DOWNLOADING_PATCHES\020\001\022\024\n\020APPLYING_P" +
-      "ATCHES\020\002\022\r\n\tREBOOTING\020\003\"\314\001\n\026ApplyPatches" +
-      "TaskOutput\022X\n\005state\030\001 \001(\0162D.google.cloud" +
-      ".osconfig.agentendpoint.v1.ApplyPatchesT" +
-      "askOutput.StateB\003\340A\002\"X\n\005State\022\025\n\021STATE_U" +
-      "NSPECIFIED\020\000\022\r\n\tSUCCEEDED\020\001\022\035\n\031SUCCEEDED" +
-      "_REBOOT_REQUIRED\020\002\022\n\n\006FAILED\020\003\"S\n\014ExecSt" +
-      "epTask\022C\n\texec_step\030\001 \001(\01320.google.cloud" +
-      ".osconfig.agentendpoint.v1.ExecStep\"\233\001\n\024" +
-      "ExecStepTaskProgress\022V\n\005state\030\001 \001(\0162B.go" +
-      "ogle.cloud.osconfig.agentendpoint.v1.Exe" +
-      "cStepTaskProgress.StateB\003\340A\002\"+\n\005State\022\025\n" +
-      "\021STATE_UNSPECIFIED\020\000\022\013\n\007STARTED\020\001\"\317\001\n\022Ex" +
-      "ecStepTaskOutput\022T\n\005state\030\001 \001(\0162@.google" +
-      ".cloud.osconfig.agentendpoint.v1.ExecSte" +
-      "pTaskOutput.StateB\003\340A\002\022\026\n\texit_code\030\002 \001(" +
-      "\005B\003\340A\002\"K\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\r" +
-      "\n\tCOMPLETED\020\001\022\r\n\tTIMED_OUT\020\002\022\r\n\tCANCELLE" +
-      "D\020\003*G\n\rTaskDirective\022\036\n\032TASK_DIRECTIVE_U" +
-      "NSPECIFIED\020\000\022\014\n\010CONTINUE\020\001\022\010\n\004STOP\020\002*L\n\010" +
-      "TaskType\022\031\n\025TASK_TYPE_UNSPECIFIED\020\000\022\021\n\rA" +
-      "PPLY_PATCHES\020\001\022\022\n\016EXEC_STEP_TASK\020\002B\212\001\n*c" +
-      "om.google.cloud.osconfig.agentendpoint.v" +
-      "1B\005TasksP\001ZSgoogle.golang.org/genproto/g" +
-      "oogleapis/cloud/osconfig/agentendpoint/v" +
-      "1;agentendpointb\006proto3"
+      "proto\032\031google/api/resource.proto\032:google" +
+      "/cloud/osconfig/agentendpoint/v1/config_" +
+      "common.proto\0326google/cloud/osconfig/agen" +
+      "tendpoint/v1/os_policy.proto\0327google/clo" +
+      "ud/osconfig/agentendpoint/v1/patch_jobs." +
+      "proto\"\310\004\n\004Task\022\017\n\007task_id\030\001 \001(\t\022C\n\ttask_" +
+      "type\030\002 \001(\01620.google.cloud.osconfig.agent" +
+      "endpoint.v1.TaskType\022M\n\016task_directive\030\003" +
+      " \001(\01625.google.cloud.osconfig.agentendpoi" +
+      "nt.v1.TaskDirective\022V\n\022apply_patches_tas" +
+      "k\030\004 \001(\01328.google.cloud.osconfig.agentend" +
+      "point.v1.ApplyPatchesTaskH\000\022N\n\016exec_step" +
+      "_task\030\005 \001(\01324.google.cloud.osconfig.agen" +
+      "tendpoint.v1.ExecStepTaskH\000\022T\n\021apply_con" +
+      "fig_task\030\007 \001(\01327.google.cloud.osconfig.a" +
+      "gentendpoint.v1.ApplyConfigTaskH\000\022W\n\016ser" +
+      "vice_labels\030\006 \003(\0132?.google.cloud.osconfi" +
+      "g.agentendpoint.v1.Task.ServiceLabelsEnt" +
+      "ry\0324\n\022ServiceLabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n" +
+      "\005value\030\002 \001(\t:\0028\001B\016\n\014task_details\"n\n\020Appl" +
+      "yPatchesTask\022I\n\014patch_config\030\001 \001(\01323.goo" +
+      "gle.cloud.osconfig.agentendpoint.v1.Patc" +
+      "hConfig\022\017\n\007dry_run\030\003 \001(\010\"\341\001\n\030ApplyPatche" +
+      "sTaskProgress\022Z\n\005state\030\001 \001(\0162F.google.cl" +
+      "oud.osconfig.agentendpoint.v1.ApplyPatch" +
+      "esTaskProgress.StateB\003\340A\002\"i\n\005State\022\025\n\021ST" +
+      "ATE_UNSPECIFIED\020\000\022\013\n\007STARTED\020\004\022\027\n\023DOWNLO" +
+      "ADING_PATCHES\020\001\022\024\n\020APPLYING_PATCHES\020\002\022\r\n" +
+      "\tREBOOTING\020\003\"\314\001\n\026ApplyPatchesTaskOutput\022" +
+      "X\n\005state\030\001 \001(\0162D.google.cloud.osconfig.a" +
+      "gentendpoint.v1.ApplyPatchesTaskOutput.S" +
+      "tateB\003\340A\002\"X\n\005State\022\025\n\021STATE_UNSPECIFIED\020" +
+      "\000\022\r\n\tSUCCEEDED\020\001\022\035\n\031SUCCEEDED_REBOOT_REQ" +
+      "UIRED\020\002\022\n\n\006FAILED\020\003\"S\n\014ExecStepTask\022C\n\te" +
+      "xec_step\030\001 \001(\01320.google.cloud.osconfig.a" +
+      "gentendpoint.v1.ExecStep\"\233\001\n\024ExecStepTas" +
+      "kProgress\022V\n\005state\030\001 \001(\0162B.google.cloud." +
+      "osconfig.agentendpoint.v1.ExecStepTaskPr" +
+      "ogress.StateB\003\340A\002\"+\n\005State\022\025\n\021STATE_UNSP" +
+      "ECIFIED\020\000\022\013\n\007STARTED\020\001\"\317\001\n\022ExecStepTaskO" +
+      "utput\022T\n\005state\030\001 \001(\0162@.google.cloud.osco" +
+      "nfig.agentendpoint.v1.ExecStepTaskOutput" +
+      ".StateB\003\340A\002\022\026\n\texit_code\030\002 \001(\005B\003\340A\002\"K\n\005S" +
+      "tate\022\025\n\021STATE_UNSPECIFIED\020\000\022\r\n\tCOMPLETED" +
+      "\020\001\022\r\n\tTIMED_OUT\020\002\022\r\n\tCANCELLED\020\003\"\343\002\n\017App" +
+      "lyConfigTask\022U\n\013os_policies\030\001 \003(\0132@.goog" +
+      "le.cloud.osconfig.agentendpoint.v1.Apply" +
+      "ConfigTask.OSPolicy\032\370\001\n\010OSPolicy\022\n\n\002id\030\001" +
+      " \001(\t\022C\n\004mode\030\002 \001(\01625.google.cloud.osconf" +
+      "ig.agentendpoint.v1.OSPolicy.Mode\022M\n\024os_" +
+      "policy_assignment\030\003 \001(\tB/\372A,\n*osconfig.g" +
+      "oogleapis.com/OSPolicyAssignment\022L\n\treso" +
+      "urces\030\004 \003(\01329.google.cloud.osconfig.agen" +
+      "tendpoint.v1.OSPolicy.Resource\"\261\001\n\027Apply" +
+      "ConfigTaskProgress\022T\n\005state\030\001 \001(\0162E.goog" +
+      "le.cloud.osconfig.agentendpoint.v1.Apply" +
+      "ConfigTaskProgress.State\"@\n\005State\022\025\n\021STA" +
+      "TE_UNSPECIFIED\020\000\022\013\n\007STARTED\020\001\022\023\n\017APPLYIN" +
+      "G_CONFIG\020\002\"\207\004\n\025ApplyConfigTaskOutput\022W\n\005" +
+      "state\030\001 \001(\0162C.google.cloud.osconfig.agen" +
+      "tendpoint.v1.ApplyConfigTaskOutput.State" +
+      "B\003\340A\002\022g\n\021os_policy_results\030\002 \003(\0132L.googl" +
+      "e.cloud.osconfig.agentendpoint.v1.ApplyC" +
+      "onfigTaskOutput.OSPolicyResult\032\341\001\n\016OSPol" +
+      "icyResult\022\024\n\014os_policy_id\030\001 \001(\t\022M\n\024os_po" +
+      "licy_assignment\030\002 \001(\tB/\372A,\n*osconfig.goo" +
+      "gleapis.com/OSPolicyAssignment\022j\n\036os_pol" +
+      "icy_resource_compliances\030\003 \003(\0132B.google." +
+      "cloud.osconfig.agentendpoint.v1.OSPolicy" +
+      "ResourceCompliance\"H\n\005State\022\025\n\021STATE_UNS" +
+      "PECIFIED\020\000\022\r\n\tSUCCEEDED\020\001\022\n\n\006FAILED\020\002\022\r\n" +
+      "\tCANCELLED\020\003*G\n\rTaskDirective\022\036\n\032TASK_DI" +
+      "RECTIVE_UNSPECIFIED\020\000\022\014\n\010CONTINUE\020\001\022\010\n\004S" +
+      "TOP\020\002*c\n\010TaskType\022\031\n\025TASK_TYPE_UNSPECIFI" +
+      "ED\020\000\022\021\n\rAPPLY_PATCHES\020\001\022\022\n\016EXEC_STEP_TAS" +
+      "K\020\002\022\025\n\021APPLY_CONFIG_TASK\020\003B\216\002\n*com.googl" +
+      "e.cloud.osconfig.agentendpoint.v1B\005Tasks" +
+      "P\001ZSgoogle.golang.org/genproto/googleapi" +
+      "s/cloud/osconfig/agentendpoint/v1;agente" +
+      "ndpoint\352A\200\001\n*osconfig.googleapis.com/OSP" +
+      "olicyAssignment\022Rprojects/{project}/loca" +
+      "tions/{location}/osPolicyAssignments/{os" +
+      "_policy_assignment}b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.FieldBehaviorProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
+          com.google.cloud.osconfig.agentendpoint.v1.ConfigCommonProto.getDescriptor(),
+          com.google.cloud.osconfig.agentendpoint.v1.OSPolicyProto.getDescriptor(),
           com.google.cloud.osconfig.agentendpoint.v1.PatchJobs.getDescriptor(),
         });
     internal_static_google_cloud_osconfig_agentendpoint_v1_Task_descriptor =
@@ -125,7 +189,7 @@ public final class Tasks {
     internal_static_google_cloud_osconfig_agentendpoint_v1_Task_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_osconfig_agentendpoint_v1_Task_descriptor,
-        new java.lang.String[] { "TaskId", "TaskType", "TaskDirective", "ApplyPatchesTask", "ExecStepTask", "ServiceLabels", "TaskDetails", });
+        new java.lang.String[] { "TaskId", "TaskType", "TaskDirective", "ApplyPatchesTask", "ExecStepTask", "ApplyConfigTask", "ServiceLabels", "TaskDetails", });
     internal_static_google_cloud_osconfig_agentendpoint_v1_Task_ServiceLabelsEntry_descriptor =
       internal_static_google_cloud_osconfig_agentendpoint_v1_Task_descriptor.getNestedTypes().get(0);
     internal_static_google_cloud_osconfig_agentendpoint_v1_Task_ServiceLabelsEntry_fieldAccessorTable = new
@@ -168,12 +232,47 @@ public final class Tasks {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_osconfig_agentendpoint_v1_ExecStepTaskOutput_descriptor,
         new java.lang.String[] { "State", "ExitCode", });
+    internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTask_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTask_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTask_descriptor,
+        new java.lang.String[] { "OsPolicies", });
+    internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTask_OSPolicy_descriptor =
+      internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTask_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTask_OSPolicy_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTask_OSPolicy_descriptor,
+        new java.lang.String[] { "Id", "Mode", "OsPolicyAssignment", "Resources", });
+    internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTaskProgress_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTaskProgress_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTaskProgress_descriptor,
+        new java.lang.String[] { "State", });
+    internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTaskOutput_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTaskOutput_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTaskOutput_descriptor,
+        new java.lang.String[] { "State", "OsPolicyResults", });
+    internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTaskOutput_OSPolicyResult_descriptor =
+      internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTaskOutput_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTaskOutput_OSPolicyResult_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_osconfig_agentendpoint_v1_ApplyConfigTaskOutput_OSPolicyResult_descriptor,
+        new java.lang.String[] { "OsPolicyId", "OsPolicyAssignment", "OsPolicyResourceCompliances", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.osconfig.agentendpoint.v1.ConfigCommonProto.getDescriptor();
+    com.google.cloud.osconfig.agentendpoint.v1.OSPolicyProto.getDescriptor();
     com.google.cloud.osconfig.agentendpoint.v1.PatchJobs.getDescriptor();
   }
 

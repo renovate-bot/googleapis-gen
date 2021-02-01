@@ -28,8 +28,8 @@ module Google
           #     Required. The version of the agent making the request.
           class ReceiveTaskNotificationRequest; end
 
-          # The streaming rpc message that notifies the agent when it has a task
-          # that it needs to perform on the VM instance.
+          # The streaming rpc message that will notify the agent when it has a task
+          # it needs to perform on the instance.
           class ReceiveTaskNotificationResponse; end
 
           # A request message for signaling the start of a task execution.
@@ -70,6 +70,9 @@ module Google
           # @!attribute [rw] exec_step_task_progress
           #   @return [Google::Cloud::Osconfig::Agentendpoint::V1::ExecStepTaskProgress]
           #     Details about the progress of the exec step task.
+          # @!attribute [rw] apply_config_task_progress
+          #   @return [Google::Cloud::Osconfig::Agentendpoint::V1::ApplyConfigTaskProgress]
+          #     Details about the progress of the apply config task.
           class ReportTaskProgressRequest; end
 
           # The response message after the agent reported the current task progress.
@@ -91,8 +94,8 @@ module Google
           #   @return [Google::Cloud::Osconfig::Agentendpoint::V1::TaskType]
           #     Required. The type of task to report completed.
           #
-          #     The output must include the appropriate message based on the following
-          #     enum values:
+          #     Output must include the appropriate message based on this enum as
+          #     specified below:
           #     APPLY_PATCHES = ApplyPatchesTaskOutput
           #     EXEC_STEP = ExecStepTaskOutput
           # @!attribute [rw] error_message
@@ -104,6 +107,9 @@ module Google
           # @!attribute [rw] exec_step_task_output
           #   @return [Google::Cloud::Osconfig::Agentendpoint::V1::ExecStepTaskOutput]
           #     Final output details of the exec step task;
+          # @!attribute [rw] apply_config_task_output
+          #   @return [Google::Cloud::Osconfig::Agentendpoint::V1::ApplyConfigTaskOutput]
+          #     Final output details of the apply config task;
           class ReportTaskCompleteRequest; end
 
           # The response message after the agent signaled the current task complete.

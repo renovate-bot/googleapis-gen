@@ -115,6 +115,20 @@ private static final long serialVersionUID = 0L;
                 serviceLabels__.getKey(), serviceLabels__.getValue());
             break;
           }
+          case 58: {
+            com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask.Builder subBuilder = null;
+            if (taskDetailsCase_ == 7) {
+              subBuilder = ((com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask) taskDetails_).toBuilder();
+            }
+            taskDetails_ =
+                input.readMessage(com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask) taskDetails_);
+              taskDetails_ = subBuilder.buildPartial();
+            }
+            taskDetailsCase_ = 7;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -166,6 +180,7 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     APPLY_PATCHES_TASK(4),
     EXEC_STEP_TASK(5),
+    APPLY_CONFIG_TASK(7),
     TASKDETAILS_NOT_SET(0);
     private final int value;
     private TaskDetailsCase(int value) {
@@ -185,6 +200,7 @@ private static final long serialVersionUID = 0L;
       switch (value) {
         case 4: return APPLY_PATCHES_TASK;
         case 5: return EXEC_STEP_TASK;
+        case 7: return APPLY_CONFIG_TASK;
         case 0: return TASKDETAILS_NOT_SET;
         default: return null;
       }
@@ -254,7 +270,8 @@ private static final long serialVersionUID = 0L;
    * Task details must include the appropriate message based on this enum as
    * specified below:
    * APPLY_PATCHES = ApplyPatchesTask
-   * EXEC_STEP = ExecStepTask;
+   * EXEC_STEP = ExecStepTask
+   * APPLY_CONFIG_TASK = ApplyConfigTask
    * </pre>
    *
    * <code>.google.cloud.osconfig.agentendpoint.v1.TaskType task_type = 2;</code>
@@ -269,7 +286,8 @@ private static final long serialVersionUID = 0L;
    * Task details must include the appropriate message based on this enum as
    * specified below:
    * APPLY_PATCHES = ApplyPatchesTask
-   * EXEC_STEP = ExecStepTask;
+   * EXEC_STEP = ExecStepTask
+   * APPLY_CONFIG_TASK = ApplyConfigTask
    * </pre>
    *
    * <code>.google.cloud.osconfig.agentendpoint.v1.TaskType task_type = 2;</code>
@@ -392,6 +410,49 @@ private static final long serialVersionUID = 0L;
        return (com.google.cloud.osconfig.agentendpoint.v1.ExecStepTask) taskDetails_;
     }
     return com.google.cloud.osconfig.agentendpoint.v1.ExecStepTask.getDefaultInstance();
+  }
+
+  public static final int APPLY_CONFIG_TASK_FIELD_NUMBER = 7;
+  /**
+   * <pre>
+   * Details about the apply config step task to perform.
+   * </pre>
+   *
+   * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask apply_config_task = 7;</code>
+   * @return Whether the applyConfigTask field is set.
+   */
+  @java.lang.Override
+  public boolean hasApplyConfigTask() {
+    return taskDetailsCase_ == 7;
+  }
+  /**
+   * <pre>
+   * Details about the apply config step task to perform.
+   * </pre>
+   *
+   * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask apply_config_task = 7;</code>
+   * @return The applyConfigTask.
+   */
+  @java.lang.Override
+  public com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask getApplyConfigTask() {
+    if (taskDetailsCase_ == 7) {
+       return (com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask) taskDetails_;
+    }
+    return com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * Details about the apply config step task to perform.
+   * </pre>
+   *
+   * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask apply_config_task = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOrBuilder getApplyConfigTaskOrBuilder() {
+    if (taskDetailsCase_ == 7) {
+       return (com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask) taskDetails_;
+    }
+    return com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask.getDefaultInstance();
   }
 
   public static final int SERVICE_LABELS_FIELD_NUMBER = 6;
@@ -526,6 +587,9 @@ private static final long serialVersionUID = 0L;
         internalGetServiceLabels(),
         ServiceLabelsDefaultEntryHolder.defaultEntry,
         6);
+    if (taskDetailsCase_ == 7) {
+      output.writeMessage(7, (com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask) taskDetails_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -564,6 +628,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, serviceLabels__);
     }
+    if (taskDetailsCase_ == 7) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, (com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask) taskDetails_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -594,6 +662,10 @@ private static final long serialVersionUID = 0L;
       case 5:
         if (!getExecStepTask()
             .equals(other.getExecStepTask())) return false;
+        break;
+      case 7:
+        if (!getApplyConfigTask()
+            .equals(other.getApplyConfigTask())) return false;
         break;
       case 0:
       default:
@@ -627,6 +699,10 @@ private static final long serialVersionUID = 0L;
       case 5:
         hash = (37 * hash) + EXEC_STEP_TASK_FIELD_NUMBER;
         hash = (53 * hash) + getExecStepTask().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + APPLY_CONFIG_TASK_FIELD_NUMBER;
+        hash = (53 * hash) + getApplyConfigTask().hashCode();
         break;
       case 0:
       default:
@@ -843,6 +919,13 @@ private static final long serialVersionUID = 0L;
           result.taskDetails_ = execStepTaskBuilder_.build();
         }
       }
+      if (taskDetailsCase_ == 7) {
+        if (applyConfigTaskBuilder_ == null) {
+          result.taskDetails_ = taskDetails_;
+        } else {
+          result.taskDetails_ = applyConfigTaskBuilder_.build();
+        }
+      }
       result.serviceLabels_ = internalGetServiceLabels();
       result.serviceLabels_.makeImmutable();
       result.taskDetailsCase_ = taskDetailsCase_;
@@ -913,6 +996,10 @@ private static final long serialVersionUID = 0L;
         }
         case EXEC_STEP_TASK: {
           mergeExecStepTask(other.getExecStepTask());
+          break;
+        }
+        case APPLY_CONFIG_TASK: {
+          mergeApplyConfigTask(other.getApplyConfigTask());
           break;
         }
         case TASKDETAILS_NOT_SET: {
@@ -1067,7 +1154,8 @@ private static final long serialVersionUID = 0L;
      * Task details must include the appropriate message based on this enum as
      * specified below:
      * APPLY_PATCHES = ApplyPatchesTask
-     * EXEC_STEP = ExecStepTask;
+     * EXEC_STEP = ExecStepTask
+     * APPLY_CONFIG_TASK = ApplyConfigTask
      * </pre>
      *
      * <code>.google.cloud.osconfig.agentendpoint.v1.TaskType task_type = 2;</code>
@@ -1082,7 +1170,8 @@ private static final long serialVersionUID = 0L;
      * Task details must include the appropriate message based on this enum as
      * specified below:
      * APPLY_PATCHES = ApplyPatchesTask
-     * EXEC_STEP = ExecStepTask;
+     * EXEC_STEP = ExecStepTask
+     * APPLY_CONFIG_TASK = ApplyConfigTask
      * </pre>
      *
      * <code>.google.cloud.osconfig.agentendpoint.v1.TaskType task_type = 2;</code>
@@ -1101,7 +1190,8 @@ private static final long serialVersionUID = 0L;
      * Task details must include the appropriate message based on this enum as
      * specified below:
      * APPLY_PATCHES = ApplyPatchesTask
-     * EXEC_STEP = ExecStepTask;
+     * EXEC_STEP = ExecStepTask
+     * APPLY_CONFIG_TASK = ApplyConfigTask
      * </pre>
      *
      * <code>.google.cloud.osconfig.agentendpoint.v1.TaskType task_type = 2;</code>
@@ -1119,7 +1209,8 @@ private static final long serialVersionUID = 0L;
      * Task details must include the appropriate message based on this enum as
      * specified below:
      * APPLY_PATCHES = ApplyPatchesTask
-     * EXEC_STEP = ExecStepTask;
+     * EXEC_STEP = ExecStepTask
+     * APPLY_CONFIG_TASK = ApplyConfigTask
      * </pre>
      *
      * <code>.google.cloud.osconfig.agentendpoint.v1.TaskType task_type = 2;</code>
@@ -1141,7 +1232,8 @@ private static final long serialVersionUID = 0L;
      * Task details must include the appropriate message based on this enum as
      * specified below:
      * APPLY_PATCHES = ApplyPatchesTask
-     * EXEC_STEP = ExecStepTask;
+     * EXEC_STEP = ExecStepTask
+     * APPLY_CONFIG_TASK = ApplyConfigTask
      * </pre>
      *
      * <code>.google.cloud.osconfig.agentendpoint.v1.TaskType task_type = 2;</code>
@@ -1580,6 +1672,183 @@ private static final long serialVersionUID = 0L;
       taskDetailsCase_ = 5;
       onChanged();;
       return execStepTaskBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask, com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask.Builder, com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOrBuilder> applyConfigTaskBuilder_;
+    /**
+     * <pre>
+     * Details about the apply config step task to perform.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask apply_config_task = 7;</code>
+     * @return Whether the applyConfigTask field is set.
+     */
+    @java.lang.Override
+    public boolean hasApplyConfigTask() {
+      return taskDetailsCase_ == 7;
+    }
+    /**
+     * <pre>
+     * Details about the apply config step task to perform.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask apply_config_task = 7;</code>
+     * @return The applyConfigTask.
+     */
+    @java.lang.Override
+    public com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask getApplyConfigTask() {
+      if (applyConfigTaskBuilder_ == null) {
+        if (taskDetailsCase_ == 7) {
+          return (com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask) taskDetails_;
+        }
+        return com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask.getDefaultInstance();
+      } else {
+        if (taskDetailsCase_ == 7) {
+          return applyConfigTaskBuilder_.getMessage();
+        }
+        return com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Details about the apply config step task to perform.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask apply_config_task = 7;</code>
+     */
+    public Builder setApplyConfigTask(com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask value) {
+      if (applyConfigTaskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        taskDetails_ = value;
+        onChanged();
+      } else {
+        applyConfigTaskBuilder_.setMessage(value);
+      }
+      taskDetailsCase_ = 7;
+      return this;
+    }
+    /**
+     * <pre>
+     * Details about the apply config step task to perform.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask apply_config_task = 7;</code>
+     */
+    public Builder setApplyConfigTask(
+        com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask.Builder builderForValue) {
+      if (applyConfigTaskBuilder_ == null) {
+        taskDetails_ = builderForValue.build();
+        onChanged();
+      } else {
+        applyConfigTaskBuilder_.setMessage(builderForValue.build());
+      }
+      taskDetailsCase_ = 7;
+      return this;
+    }
+    /**
+     * <pre>
+     * Details about the apply config step task to perform.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask apply_config_task = 7;</code>
+     */
+    public Builder mergeApplyConfigTask(com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask value) {
+      if (applyConfigTaskBuilder_ == null) {
+        if (taskDetailsCase_ == 7 &&
+            taskDetails_ != com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask.getDefaultInstance()) {
+          taskDetails_ = com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask.newBuilder((com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask) taskDetails_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          taskDetails_ = value;
+        }
+        onChanged();
+      } else {
+        if (taskDetailsCase_ == 7) {
+          applyConfigTaskBuilder_.mergeFrom(value);
+        }
+        applyConfigTaskBuilder_.setMessage(value);
+      }
+      taskDetailsCase_ = 7;
+      return this;
+    }
+    /**
+     * <pre>
+     * Details about the apply config step task to perform.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask apply_config_task = 7;</code>
+     */
+    public Builder clearApplyConfigTask() {
+      if (applyConfigTaskBuilder_ == null) {
+        if (taskDetailsCase_ == 7) {
+          taskDetailsCase_ = 0;
+          taskDetails_ = null;
+          onChanged();
+        }
+      } else {
+        if (taskDetailsCase_ == 7) {
+          taskDetailsCase_ = 0;
+          taskDetails_ = null;
+        }
+        applyConfigTaskBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Details about the apply config step task to perform.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask apply_config_task = 7;</code>
+     */
+    public com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask.Builder getApplyConfigTaskBuilder() {
+      return getApplyConfigTaskFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Details about the apply config step task to perform.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask apply_config_task = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOrBuilder getApplyConfigTaskOrBuilder() {
+      if ((taskDetailsCase_ == 7) && (applyConfigTaskBuilder_ != null)) {
+        return applyConfigTaskBuilder_.getMessageOrBuilder();
+      } else {
+        if (taskDetailsCase_ == 7) {
+          return (com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask) taskDetails_;
+        }
+        return com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Details about the apply config step task to perform.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask apply_config_task = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask, com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask.Builder, com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOrBuilder> 
+        getApplyConfigTaskFieldBuilder() {
+      if (applyConfigTaskBuilder_ == null) {
+        if (!(taskDetailsCase_ == 7)) {
+          taskDetails_ = com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask.getDefaultInstance();
+        }
+        applyConfigTaskBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask, com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask.Builder, com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOrBuilder>(
+                (com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask) taskDetails_,
+                getParentForChildren(),
+                isClean());
+        taskDetails_ = null;
+      }
+      taskDetailsCase_ = 7;
+      onChanged();;
+      return applyConfigTaskBuilder_;
     }
 
     private com.google.protobuf.MapField<

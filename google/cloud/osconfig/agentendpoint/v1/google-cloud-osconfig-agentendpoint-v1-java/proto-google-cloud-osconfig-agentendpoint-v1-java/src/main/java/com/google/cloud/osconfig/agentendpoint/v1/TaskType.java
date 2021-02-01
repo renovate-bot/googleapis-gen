@@ -36,6 +36,14 @@ public enum TaskType
    * <code>EXEC_STEP_TASK = 2;</code>
    */
   EXEC_STEP_TASK(2),
+  /**
+   * <pre>
+   * The apply config task
+   * </pre>
+   *
+   * <code>APPLY_CONFIG_TASK = 3;</code>
+   */
+  APPLY_CONFIG_TASK(3),
   UNRECOGNIZED(-1),
   ;
 
@@ -63,6 +71,14 @@ public enum TaskType
    * <code>EXEC_STEP_TASK = 2;</code>
    */
   public static final int EXEC_STEP_TASK_VALUE = 2;
+  /**
+   * <pre>
+   * The apply config task
+   * </pre>
+   *
+   * <code>APPLY_CONFIG_TASK = 3;</code>
+   */
+  public static final int APPLY_CONFIG_TASK_VALUE = 3;
 
 
   public final int getNumber() {
@@ -92,6 +108,7 @@ public enum TaskType
       case 0: return TASK_TYPE_UNSPECIFIED;
       case 1: return APPLY_PATCHES;
       case 2: return EXEC_STEP_TASK;
+      case 3: return APPLY_CONFIG_TASK;
       default: return null;
     }
   }

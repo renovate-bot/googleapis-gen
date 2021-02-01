@@ -54,8 +54,8 @@ public interface ReportTaskCompleteRequestOrBuilder extends
   /**
    * <pre>
    * Required. The type of task to report completed.
-   * The output must include the appropriate message based on the following
-   * enum values:
+   * Output must include the appropriate message based on this enum as
+   * specified below:
    * APPLY_PATCHES = ApplyPatchesTaskOutput
    * EXEC_STEP = ExecStepTaskOutput
    * </pre>
@@ -67,8 +67,8 @@ public interface ReportTaskCompleteRequestOrBuilder extends
   /**
    * <pre>
    * Required. The type of task to report completed.
-   * The output must include the appropriate message based on the following
-   * enum values:
+   * Output must include the appropriate message based on this enum as
+   * specified below:
    * APPLY_PATCHES = ApplyPatchesTaskOutput
    * EXEC_STEP = ExecStepTaskOutput
    * </pre>
@@ -151,6 +151,33 @@ public interface ReportTaskCompleteRequestOrBuilder extends
    * <code>.google.cloud.osconfig.agentendpoint.v1.ExecStepTaskOutput exec_step_task_output = 6;</code>
    */
   com.google.cloud.osconfig.agentendpoint.v1.ExecStepTaskOutputOrBuilder getExecStepTaskOutputOrBuilder();
+
+  /**
+   * <pre>
+   * Final output details of the apply config task;
+   * </pre>
+   *
+   * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput apply_config_task_output = 7;</code>
+   * @return Whether the applyConfigTaskOutput field is set.
+   */
+  boolean hasApplyConfigTaskOutput();
+  /**
+   * <pre>
+   * Final output details of the apply config task;
+   * </pre>
+   *
+   * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput apply_config_task_output = 7;</code>
+   * @return The applyConfigTaskOutput.
+   */
+  com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput getApplyConfigTaskOutput();
+  /**
+   * <pre>
+   * Final output details of the apply config task;
+   * </pre>
+   *
+   * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput apply_config_task_output = 7;</code>
+   */
+  com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutputOrBuilder getApplyConfigTaskOutputOrBuilder();
 
   public com.google.cloud.osconfig.agentendpoint.v1.ReportTaskCompleteRequest.OutputCase getOutputCase();
 }

@@ -28,6 +28,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       oneof :progress do
         optional :apply_patches_task_progress, :message, 4, "google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress"
         optional :exec_step_task_progress, :message, 5, "google.cloud.osconfig.agentendpoint.v1.ExecStepTaskProgress"
+        optional :apply_config_task_progress, :message, 6, "google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress"
       end
     end
     add_message "google.cloud.osconfig.agentendpoint.v1.ReportTaskProgressResponse" do
@@ -41,6 +42,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       oneof :output do
         optional :apply_patches_task_output, :message, 5, "google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskOutput"
         optional :exec_step_task_output, :message, 6, "google.cloud.osconfig.agentendpoint.v1.ExecStepTaskOutput"
+        optional :apply_config_task_output, :message, 7, "google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput"
       end
     end
     add_message "google.cloud.osconfig.agentendpoint.v1.ReportTaskCompleteResponse" do

@@ -293,6 +293,10 @@ module Google
             #   Details about the progress of the exec step task.
             #   A hash of the same form as `Google::Cloud::Osconfig::Agentendpoint::V1::ExecStepTaskProgress`
             #   can also be provided.
+            # @param apply_config_task_progress [Google::Cloud::Osconfig::Agentendpoint::V1::ApplyConfigTaskProgress | Hash]
+            #   Details about the progress of the apply config task.
+            #   A hash of the same form as `Google::Cloud::Osconfig::Agentendpoint::V1::ApplyConfigTaskProgress`
+            #   can also be provided.
             # @param options [Google::Gax::CallOptions]
             #   Overrides the default settings for this call, e.g, timeout,
             #   retries, etc.
@@ -322,6 +326,7 @@ module Google
                 task_type,
                 apply_patches_task_progress: nil,
                 exec_step_task_progress: nil,
+                apply_config_task_progress: nil,
                 options: nil,
                 &block
               req = {
@@ -329,7 +334,8 @@ module Google
                 task_id: task_id,
                 task_type: task_type,
                 apply_patches_task_progress: apply_patches_task_progress,
-                exec_step_task_progress: exec_step_task_progress
+                exec_step_task_progress: exec_step_task_progress,
+                apply_config_task_progress: apply_config_task_progress
               }.delete_if { |_, v| v.nil? }
               req = Google::Gax::to_proto(req, Google::Cloud::Osconfig::Agentendpoint::V1::ReportTaskProgressRequest)
               @report_task_progress.call(req, options, &block)
@@ -347,8 +353,8 @@ module Google
             # @param task_type [Google::Cloud::Osconfig::Agentendpoint::V1::TaskType]
             #   Required. The type of task to report completed.
             #
-            #   The output must include the appropriate message based on the following
-            #   enum values:
+            #   Output must include the appropriate message based on this enum as
+            #   specified below:
             #   APPLY_PATCHES = ApplyPatchesTaskOutput
             #   EXEC_STEP = ExecStepTaskOutput
             # @param error_message [String]
@@ -360,6 +366,10 @@ module Google
             # @param exec_step_task_output [Google::Cloud::Osconfig::Agentendpoint::V1::ExecStepTaskOutput | Hash]
             #   Final output details of the exec step task;
             #   A hash of the same form as `Google::Cloud::Osconfig::Agentendpoint::V1::ExecStepTaskOutput`
+            #   can also be provided.
+            # @param apply_config_task_output [Google::Cloud::Osconfig::Agentendpoint::V1::ApplyConfigTaskOutput | Hash]
+            #   Final output details of the apply config task;
+            #   A hash of the same form as `Google::Cloud::Osconfig::Agentendpoint::V1::ApplyConfigTaskOutput`
             #   can also be provided.
             # @param options [Google::Gax::CallOptions]
             #   Overrides the default settings for this call, e.g, timeout,
@@ -391,6 +401,7 @@ module Google
                 error_message: nil,
                 apply_patches_task_output: nil,
                 exec_step_task_output: nil,
+                apply_config_task_output: nil,
                 options: nil,
                 &block
               req = {
@@ -399,7 +410,8 @@ module Google
                 task_type: task_type,
                 error_message: error_message,
                 apply_patches_task_output: apply_patches_task_output,
-                exec_step_task_output: exec_step_task_output
+                exec_step_task_output: exec_step_task_output,
+                apply_config_task_output: apply_config_task_output
               }.delete_if { |_, v| v.nil? }
               req = Google::Gax::to_proto(req, Google::Cloud::Osconfig::Agentendpoint::V1::ReportTaskCompleteRequest)
               @report_task_complete.call(req, options, &block)

@@ -4,6 +4,9 @@
 require 'google/protobuf'
 
 require 'google/api/field_behavior_pb'
+require 'google/api/resource_pb'
+require 'google/cloud/osconfig/agentendpoint/v1/config_common_pb'
+require 'google/cloud/osconfig/agentendpoint/v1/os_policy_pb'
 require 'google/cloud/osconfig/agentendpoint/v1/patch_jobs_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("google/cloud/osconfig/agentendpoint/v1/tasks.proto", :syntax => :proto3) do
@@ -15,6 +18,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       oneof :task_details do
         optional :apply_patches_task, :message, 4, "google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTask"
         optional :exec_step_task, :message, 5, "google.cloud.osconfig.agentendpoint.v1.ExecStepTask"
+        optional :apply_config_task, :message, 7, "google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask"
       end
     end
     add_message "google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTask" do
@@ -60,6 +64,38 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :TIMED_OUT, 2
       value :CANCELLED, 3
     end
+    add_message "google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask" do
+      repeated :os_policies, :message, 1, "google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask.OSPolicy"
+    end
+    add_message "google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask.OSPolicy" do
+      optional :id, :string, 1
+      optional :mode, :enum, 2, "google.cloud.osconfig.agentendpoint.v1.OSPolicy.Mode"
+      optional :os_policy_assignment, :string, 3
+      repeated :resources, :message, 4, "google.cloud.osconfig.agentendpoint.v1.OSPolicy.Resource"
+    end
+    add_message "google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress" do
+      optional :state, :enum, 1, "google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.State"
+    end
+    add_enum "google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.State" do
+      value :STATE_UNSPECIFIED, 0
+      value :STARTED, 1
+      value :APPLYING_CONFIG, 2
+    end
+    add_message "google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput" do
+      optional :state, :enum, 1, "google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput.State"
+      repeated :os_policy_results, :message, 2, "google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput.OSPolicyResult"
+    end
+    add_message "google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput.OSPolicyResult" do
+      optional :os_policy_id, :string, 1
+      optional :os_policy_assignment, :string, 2
+      repeated :os_policy_resource_compliances, :message, 3, "google.cloud.osconfig.agentendpoint.v1.OSPolicyResourceCompliance"
+    end
+    add_enum "google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput.State" do
+      value :STATE_UNSPECIFIED, 0
+      value :SUCCEEDED, 1
+      value :FAILED, 2
+      value :CANCELLED, 3
+    end
     add_enum "google.cloud.osconfig.agentendpoint.v1.TaskDirective" do
       value :TASK_DIRECTIVE_UNSPECIFIED, 0
       value :CONTINUE, 1
@@ -69,6 +105,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :TASK_TYPE_UNSPECIFIED, 0
       value :APPLY_PATCHES, 1
       value :EXEC_STEP_TASK, 2
+      value :APPLY_CONFIG_TASK, 3
     end
   end
 end
@@ -89,6 +126,13 @@ module Google
           ExecStepTaskProgress::State = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.osconfig.agentendpoint.v1.ExecStepTaskProgress.State").enummodule
           ExecStepTaskOutput = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.osconfig.agentendpoint.v1.ExecStepTaskOutput").msgclass
           ExecStepTaskOutput::State = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.osconfig.agentendpoint.v1.ExecStepTaskOutput.State").enummodule
+          ApplyConfigTask = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask").msgclass
+          ApplyConfigTask::OSPolicy = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask.OSPolicy").msgclass
+          ApplyConfigTaskProgress = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress").msgclass
+          ApplyConfigTaskProgress::State = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.State").enummodule
+          ApplyConfigTaskOutput = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput").msgclass
+          ApplyConfigTaskOutput::OSPolicyResult = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput.OSPolicyResult").msgclass
+          ApplyConfigTaskOutput::State = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput.State").enummodule
           TaskDirective = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.osconfig.agentendpoint.v1.TaskDirective").enummodule
           TaskType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.osconfig.agentendpoint.v1.TaskType").enummodule
         end

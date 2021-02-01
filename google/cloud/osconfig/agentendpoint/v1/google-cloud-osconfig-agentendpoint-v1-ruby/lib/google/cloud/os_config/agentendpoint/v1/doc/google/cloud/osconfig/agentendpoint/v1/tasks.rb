@@ -28,7 +28,8 @@ module Google
           #     Task details must include the appropriate message based on this enum as
           #     specified below:
           #     APPLY_PATCHES = ApplyPatchesTask
-          #     EXEC_STEP = ExecStepTask;
+          #     EXEC_STEP = ExecStepTask
+          #     APPLY_CONFIG_TASK = ApplyConfigTask
           # @!attribute [rw] task_directive
           #   @return [Google::Cloud::Osconfig::Agentendpoint::V1::TaskDirective]
           #     Current directive to the agent.
@@ -38,6 +39,9 @@ module Google
           # @!attribute [rw] exec_step_task
           #   @return [Google::Cloud::Osconfig::Agentendpoint::V1::ExecStepTask]
           #     Details about the exec step task to perform.
+          # @!attribute [rw] apply_config_task
+          #   @return [Google::Cloud::Osconfig::Agentendpoint::V1::ApplyConfigTask]
+          #     Details about the apply config step task to perform.
           # @!attribute [rw] service_labels
           #   @return [Hash{String => String}]
           #     Labels describing the task.  Used for logging by the agent.
@@ -72,7 +76,7 @@ module Google
               # The agent is currently applying patches.
               APPLYING_PATCHES = 2
 
-              # The agent is currently rebooting the VM instance.
+              # The agent is currently rebooting the instance.
               REBOOTING = 3
             end
           end
@@ -144,6 +148,94 @@ module Google
             end
           end
 
+          # Message which instructs OS Config agent to apply the desired state
+          # configuration.
+          # @!attribute [rw] os_policies
+          #   @return [Array<Google::Cloud::Osconfig::Agentendpoint::V1::ApplyConfigTask::OSPolicy>]
+          #     List of os policies to be applied for the instance.
+          class ApplyConfigTask
+            # Message representing an OS policy.
+            # @!attribute [rw] id
+            #   @return [String]
+            #     User provided policy id.
+            #     Used for reporting and logging by the agent.
+            # @!attribute [rw] mode
+            #   @return [Google::Cloud::Osconfig::Agentendpoint::V1::OSPolicy::Mode]
+            #     The policy mode
+            # @!attribute [rw] os_policy_assignment
+            #   @return [String]
+            #     Reference to the `OSPolicyAssignment` API resource that this `OSPolicy`
+            #     belongs to.
+            #     Format:
+            #     projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id@revision_id}
+            #     Used for reporting and logging by the agent.
+            # @!attribute [rw] resources
+            #   @return [Array<Google::Cloud::Osconfig::Agentendpoint::V1::OSPolicy::Resource>]
+            #     List of resources associated with the policy to be set to their
+            #     desired state.
+            class OSPolicy; end
+          end
+
+          # Information reported from the agent regarding the progress of the task of
+          # applying desired state configuration.
+          # @!attribute [rw] state
+          #   @return [Google::Cloud::Osconfig::Agentendpoint::V1::ApplyConfigTaskProgress::State]
+          #     The current state of this task.
+          class ApplyConfigTaskProgress
+            # The intermediate states of apply config task.
+            module State
+              # Invalid state
+              STATE_UNSPECIFIED = 0
+
+              # The agent has started the task.
+              STARTED = 1
+
+              # The agent is in the process of applying the configuration.
+              APPLYING_CONFIG = 2
+            end
+          end
+
+          # Information reported from the agent regarding the output of the task of
+          # applying desired state configuration.
+          # @!attribute [rw] state
+          #   @return [Google::Cloud::Osconfig::Agentendpoint::V1::ApplyConfigTaskOutput::State]
+          #     Required. The final state of this task.
+          # @!attribute [rw] os_policy_results
+          #   @return [Array<Google::Cloud::Osconfig::Agentendpoint::V1::ApplyConfigTaskOutput::OSPolicyResult>]
+          #     Results of applying desired state config for the OS policies.
+          class ApplyConfigTaskOutput
+            # Result of applying desired state config for an OS policy.
+            # @!attribute [rw] os_policy_id
+            #   @return [String]
+            #     The OS policy id
+            # @!attribute [rw] os_policy_assignment
+            #   @return [String]
+            #     Reference to the `OSPolicyAssignment` API resource that this `OSPolicy`
+            #     belongs to.
+            #     Format:
+            #     projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id@revision_id}
+            #     Used for reporting and logging by the agent.
+            # @!attribute [rw] os_policy_resource_compliances
+            #   @return [Array<Google::Cloud::Osconfig::Agentendpoint::V1::OSPolicyResourceCompliance>]
+            #     Results of applying desired state config for the OS policy resources.
+            class OSPolicyResult; end
+
+            # The final state of this task.
+            module State
+              # Unspecified is invalid.
+              STATE_UNSPECIFIED = 0
+
+              # The apply config task completed successfully.
+              SUCCEEDED = 1
+
+              # The apply config task failed.
+              FAILED = 2
+
+              # The apply config task was cancelled.
+              CANCELLED = 3
+            end
+          end
+
           # Specifies the current agent behavior.
           module TaskDirective
             # Unspecified is invalid.
@@ -168,6 +260,9 @@ module Google
 
             # The exec step task.
             EXEC_STEP_TASK = 2
+
+            # The apply config task
+            APPLY_CONFIG_TASK = 3
           end
         end
       end

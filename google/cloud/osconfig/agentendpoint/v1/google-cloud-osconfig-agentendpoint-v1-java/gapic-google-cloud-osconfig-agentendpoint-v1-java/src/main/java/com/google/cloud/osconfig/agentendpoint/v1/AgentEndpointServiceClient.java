@@ -239,7 +239,7 @@ public class AgentEndpointServiceClient implements BackgroundResource {
    *     audience is 'osconfig.googleapis.com' and the format is 'full'.
    * @param taskId Required. Unique identifier of the task this applies to.
    * @param taskType Required. The type of task to report completed.
-   *     <p>The output must include the appropriate message based on the following enum values:
+   *     <p>Output must include the appropriate message based on this enum as specified below:
    *     APPLY_PATCHES = ApplyPatchesTaskOutput EXEC_STEP = ExecStepTaskOutput
    * @param errorMessage Descriptive error message if the task execution ended in error.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

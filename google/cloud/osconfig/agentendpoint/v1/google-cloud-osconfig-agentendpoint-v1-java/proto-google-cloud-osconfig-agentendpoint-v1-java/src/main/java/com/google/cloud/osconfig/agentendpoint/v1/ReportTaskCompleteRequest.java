@@ -108,6 +108,20 @@ private static final long serialVersionUID = 0L;
             outputCase_ = 6;
             break;
           }
+          case 58: {
+            com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput.Builder subBuilder = null;
+            if (outputCase_ == 7) {
+              subBuilder = ((com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput) output_).toBuilder();
+            }
+            output_ =
+                input.readMessage(com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput) output_);
+              output_ = subBuilder.buildPartial();
+            }
+            outputCase_ = 7;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -147,6 +161,7 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     APPLY_PATCHES_TASK_OUTPUT(5),
     EXEC_STEP_TASK_OUTPUT(6),
+    APPLY_CONFIG_TASK_OUTPUT(7),
     OUTPUT_NOT_SET(0);
     private final int value;
     private OutputCase(int value) {
@@ -166,6 +181,7 @@ private static final long serialVersionUID = 0L;
       switch (value) {
         case 5: return APPLY_PATCHES_TASK_OUTPUT;
         case 6: return EXEC_STEP_TASK_OUTPUT;
+        case 7: return APPLY_CONFIG_TASK_OUTPUT;
         case 0: return OUTPUT_NOT_SET;
         default: return null;
       }
@@ -282,8 +298,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The type of task to report completed.
-   * The output must include the appropriate message based on the following
-   * enum values:
+   * Output must include the appropriate message based on this enum as
+   * specified below:
    * APPLY_PATCHES = ApplyPatchesTaskOutput
    * EXEC_STEP = ExecStepTaskOutput
    * </pre>
@@ -297,8 +313,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The type of task to report completed.
-   * The output must include the appropriate message based on the following
-   * enum values:
+   * Output must include the appropriate message based on this enum as
+   * specified below:
    * APPLY_PATCHES = ApplyPatchesTaskOutput
    * EXEC_STEP = ExecStepTaskOutput
    * </pre>
@@ -444,6 +460,49 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.osconfig.agentendpoint.v1.ExecStepTaskOutput.getDefaultInstance();
   }
 
+  public static final int APPLY_CONFIG_TASK_OUTPUT_FIELD_NUMBER = 7;
+  /**
+   * <pre>
+   * Final output details of the apply config task;
+   * </pre>
+   *
+   * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput apply_config_task_output = 7;</code>
+   * @return Whether the applyConfigTaskOutput field is set.
+   */
+  @java.lang.Override
+  public boolean hasApplyConfigTaskOutput() {
+    return outputCase_ == 7;
+  }
+  /**
+   * <pre>
+   * Final output details of the apply config task;
+   * </pre>
+   *
+   * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput apply_config_task_output = 7;</code>
+   * @return The applyConfigTaskOutput.
+   */
+  @java.lang.Override
+  public com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput getApplyConfigTaskOutput() {
+    if (outputCase_ == 7) {
+       return (com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput) output_;
+    }
+    return com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * Final output details of the apply config task;
+   * </pre>
+   *
+   * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput apply_config_task_output = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutputOrBuilder getApplyConfigTaskOutputOrBuilder() {
+    if (outputCase_ == 7) {
+       return (com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput) output_;
+    }
+    return com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -476,6 +535,9 @@ private static final long serialVersionUID = 0L;
     if (outputCase_ == 6) {
       output.writeMessage(6, (com.google.cloud.osconfig.agentendpoint.v1.ExecStepTaskOutput) output_);
     }
+    if (outputCase_ == 7) {
+      output.writeMessage(7, (com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput) output_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -505,6 +567,10 @@ private static final long serialVersionUID = 0L;
     if (outputCase_ == 6) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, (com.google.cloud.osconfig.agentendpoint.v1.ExecStepTaskOutput) output_);
+    }
+    if (outputCase_ == 7) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, (com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput) output_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -538,6 +604,10 @@ private static final long serialVersionUID = 0L;
         if (!getExecStepTaskOutput()
             .equals(other.getExecStepTaskOutput())) return false;
         break;
+      case 7:
+        if (!getApplyConfigTaskOutput()
+            .equals(other.getApplyConfigTaskOutput())) return false;
+        break;
       case 0:
       default:
     }
@@ -568,6 +638,10 @@ private static final long serialVersionUID = 0L;
       case 6:
         hash = (37 * hash) + EXEC_STEP_TASK_OUTPUT_FIELD_NUMBER;
         hash = (53 * hash) + getExecStepTaskOutput().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + APPLY_CONFIG_TASK_OUTPUT_FIELD_NUMBER;
+        hash = (53 * hash) + getApplyConfigTaskOutput().hashCode();
         break;
       case 0:
       default:
@@ -763,6 +837,13 @@ private static final long serialVersionUID = 0L;
           result.output_ = execStepTaskOutputBuilder_.build();
         }
       }
+      if (outputCase_ == 7) {
+        if (applyConfigTaskOutputBuilder_ == null) {
+          result.output_ = output_;
+        } else {
+          result.output_ = applyConfigTaskOutputBuilder_.build();
+        }
+      }
       result.outputCase_ = outputCase_;
       onBuilt();
       return result;
@@ -834,6 +915,10 @@ private static final long serialVersionUID = 0L;
         }
         case EXEC_STEP_TASK_OUTPUT: {
           mergeExecStepTaskOutput(other.getExecStepTaskOutput());
+          break;
+        }
+        case APPLY_CONFIG_TASK_OUTPUT: {
+          mergeApplyConfigTaskOutput(other.getApplyConfigTaskOutput());
           break;
         }
         case OUTPUT_NOT_SET: {
@@ -1090,8 +1175,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The type of task to report completed.
-     * The output must include the appropriate message based on the following
-     * enum values:
+     * Output must include the appropriate message based on this enum as
+     * specified below:
      * APPLY_PATCHES = ApplyPatchesTaskOutput
      * EXEC_STEP = ExecStepTaskOutput
      * </pre>
@@ -1105,8 +1190,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The type of task to report completed.
-     * The output must include the appropriate message based on the following
-     * enum values:
+     * Output must include the appropriate message based on this enum as
+     * specified below:
      * APPLY_PATCHES = ApplyPatchesTaskOutput
      * EXEC_STEP = ExecStepTaskOutput
      * </pre>
@@ -1124,8 +1209,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The type of task to report completed.
-     * The output must include the appropriate message based on the following
-     * enum values:
+     * Output must include the appropriate message based on this enum as
+     * specified below:
      * APPLY_PATCHES = ApplyPatchesTaskOutput
      * EXEC_STEP = ExecStepTaskOutput
      * </pre>
@@ -1142,8 +1227,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The type of task to report completed.
-     * The output must include the appropriate message based on the following
-     * enum values:
+     * Output must include the appropriate message based on this enum as
+     * specified below:
      * APPLY_PATCHES = ApplyPatchesTaskOutput
      * EXEC_STEP = ExecStepTaskOutput
      * </pre>
@@ -1164,8 +1249,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The type of task to report completed.
-     * The output must include the appropriate message based on the following
-     * enum values:
+     * Output must include the appropriate message based on this enum as
+     * specified below:
      * APPLY_PATCHES = ApplyPatchesTaskOutput
      * EXEC_STEP = ExecStepTaskOutput
      * </pre>
@@ -1628,6 +1713,183 @@ private static final long serialVersionUID = 0L;
       outputCase_ = 6;
       onChanged();;
       return execStepTaskOutputBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput, com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput.Builder, com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutputOrBuilder> applyConfigTaskOutputBuilder_;
+    /**
+     * <pre>
+     * Final output details of the apply config task;
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput apply_config_task_output = 7;</code>
+     * @return Whether the applyConfigTaskOutput field is set.
+     */
+    @java.lang.Override
+    public boolean hasApplyConfigTaskOutput() {
+      return outputCase_ == 7;
+    }
+    /**
+     * <pre>
+     * Final output details of the apply config task;
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput apply_config_task_output = 7;</code>
+     * @return The applyConfigTaskOutput.
+     */
+    @java.lang.Override
+    public com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput getApplyConfigTaskOutput() {
+      if (applyConfigTaskOutputBuilder_ == null) {
+        if (outputCase_ == 7) {
+          return (com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput) output_;
+        }
+        return com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput.getDefaultInstance();
+      } else {
+        if (outputCase_ == 7) {
+          return applyConfigTaskOutputBuilder_.getMessage();
+        }
+        return com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Final output details of the apply config task;
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput apply_config_task_output = 7;</code>
+     */
+    public Builder setApplyConfigTaskOutput(com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput value) {
+      if (applyConfigTaskOutputBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        output_ = value;
+        onChanged();
+      } else {
+        applyConfigTaskOutputBuilder_.setMessage(value);
+      }
+      outputCase_ = 7;
+      return this;
+    }
+    /**
+     * <pre>
+     * Final output details of the apply config task;
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput apply_config_task_output = 7;</code>
+     */
+    public Builder setApplyConfigTaskOutput(
+        com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput.Builder builderForValue) {
+      if (applyConfigTaskOutputBuilder_ == null) {
+        output_ = builderForValue.build();
+        onChanged();
+      } else {
+        applyConfigTaskOutputBuilder_.setMessage(builderForValue.build());
+      }
+      outputCase_ = 7;
+      return this;
+    }
+    /**
+     * <pre>
+     * Final output details of the apply config task;
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput apply_config_task_output = 7;</code>
+     */
+    public Builder mergeApplyConfigTaskOutput(com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput value) {
+      if (applyConfigTaskOutputBuilder_ == null) {
+        if (outputCase_ == 7 &&
+            output_ != com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput.getDefaultInstance()) {
+          output_ = com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput.newBuilder((com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput) output_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          output_ = value;
+        }
+        onChanged();
+      } else {
+        if (outputCase_ == 7) {
+          applyConfigTaskOutputBuilder_.mergeFrom(value);
+        }
+        applyConfigTaskOutputBuilder_.setMessage(value);
+      }
+      outputCase_ = 7;
+      return this;
+    }
+    /**
+     * <pre>
+     * Final output details of the apply config task;
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput apply_config_task_output = 7;</code>
+     */
+    public Builder clearApplyConfigTaskOutput() {
+      if (applyConfigTaskOutputBuilder_ == null) {
+        if (outputCase_ == 7) {
+          outputCase_ = 0;
+          output_ = null;
+          onChanged();
+        }
+      } else {
+        if (outputCase_ == 7) {
+          outputCase_ = 0;
+          output_ = null;
+        }
+        applyConfigTaskOutputBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Final output details of the apply config task;
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput apply_config_task_output = 7;</code>
+     */
+    public com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput.Builder getApplyConfigTaskOutputBuilder() {
+      return getApplyConfigTaskOutputFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Final output details of the apply config task;
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput apply_config_task_output = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutputOrBuilder getApplyConfigTaskOutputOrBuilder() {
+      if ((outputCase_ == 7) && (applyConfigTaskOutputBuilder_ != null)) {
+        return applyConfigTaskOutputBuilder_.getMessageOrBuilder();
+      } else {
+        if (outputCase_ == 7) {
+          return (com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput) output_;
+        }
+        return com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Final output details of the apply config task;
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput apply_config_task_output = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput, com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput.Builder, com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutputOrBuilder> 
+        getApplyConfigTaskOutputFieldBuilder() {
+      if (applyConfigTaskOutputBuilder_ == null) {
+        if (!(outputCase_ == 7)) {
+          output_ = com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput.getDefaultInstance();
+        }
+        applyConfigTaskOutputBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput, com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput.Builder, com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutputOrBuilder>(
+                (com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput) output_,
+                getParentForChildren(),
+                isClean());
+        output_ = null;
+      }
+      outputCase_ = 7;
+      onChanged();;
+      return applyConfigTaskOutputBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

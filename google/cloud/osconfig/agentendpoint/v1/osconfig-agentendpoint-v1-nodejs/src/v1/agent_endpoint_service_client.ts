@@ -381,6 +381,8 @@ export class AgentEndpointServiceClient {
  *   Details about the progress of the apply patches task.
  * @param {google.cloud.osconfig.agentendpoint.v1.ExecStepTaskProgress} request.execStepTaskProgress
  *   Details about the progress of the exec step task.
+ * @param {google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress} request.applyConfigTaskProgress
+ *   Details about the progress of the apply config task.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -453,8 +455,8 @@ export class AgentEndpointServiceClient {
  * @param {google.cloud.osconfig.agentendpoint.v1.TaskType} request.taskType
  *   Required. The type of task to report completed.
  *
- *   The output must include the appropriate message based on the following
- *   enum values:
+ *   Output must include the appropriate message based on this enum as
+ *   specified below:
  *   APPLY_PATCHES = ApplyPatchesTaskOutput
  *   EXEC_STEP = ExecStepTaskOutput
  * @param {string} request.errorMessage
@@ -463,6 +465,8 @@ export class AgentEndpointServiceClient {
  *   Final output details of the apply patches task;
  * @param {google.cloud.osconfig.agentendpoint.v1.ExecStepTaskOutput} request.execStepTaskOutput
  *   Final output details of the exec step task;
+ * @param {google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOutput} request.applyConfigTaskOutput
+ *   Final output details of the apply config task;
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.

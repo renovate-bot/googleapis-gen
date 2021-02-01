@@ -33,7 +33,8 @@ public interface TaskOrBuilder extends
    * Task details must include the appropriate message based on this enum as
    * specified below:
    * APPLY_PATCHES = ApplyPatchesTask
-   * EXEC_STEP = ExecStepTask;
+   * EXEC_STEP = ExecStepTask
+   * APPLY_CONFIG_TASK = ApplyConfigTask
    * </pre>
    *
    * <code>.google.cloud.osconfig.agentendpoint.v1.TaskType task_type = 2;</code>
@@ -46,7 +47,8 @@ public interface TaskOrBuilder extends
    * Task details must include the appropriate message based on this enum as
    * specified below:
    * APPLY_PATCHES = ApplyPatchesTask
-   * EXEC_STEP = ExecStepTask;
+   * EXEC_STEP = ExecStepTask
+   * APPLY_CONFIG_TASK = ApplyConfigTask
    * </pre>
    *
    * <code>.google.cloud.osconfig.agentendpoint.v1.TaskType task_type = 2;</code>
@@ -126,6 +128,33 @@ public interface TaskOrBuilder extends
    * <code>.google.cloud.osconfig.agentendpoint.v1.ExecStepTask exec_step_task = 5;</code>
    */
   com.google.cloud.osconfig.agentendpoint.v1.ExecStepTaskOrBuilder getExecStepTaskOrBuilder();
+
+  /**
+   * <pre>
+   * Details about the apply config step task to perform.
+   * </pre>
+   *
+   * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask apply_config_task = 7;</code>
+   * @return Whether the applyConfigTask field is set.
+   */
+  boolean hasApplyConfigTask();
+  /**
+   * <pre>
+   * Details about the apply config step task to perform.
+   * </pre>
+   *
+   * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask apply_config_task = 7;</code>
+   * @return The applyConfigTask.
+   */
+  com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask getApplyConfigTask();
+  /**
+   * <pre>
+   * Details about the apply config step task to perform.
+   * </pre>
+   *
+   * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTask apply_config_task = 7;</code>
+   */
+  com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskOrBuilder getApplyConfigTaskOrBuilder();
 
   /**
    * <pre>

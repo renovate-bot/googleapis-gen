@@ -101,6 +101,20 @@ private static final long serialVersionUID = 0L;
             progressCase_ = 5;
             break;
           }
+          case 50: {
+            com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.Builder subBuilder = null;
+            if (progressCase_ == 6) {
+              subBuilder = ((com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress) progress_).toBuilder();
+            }
+            progress_ =
+                input.readMessage(com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress) progress_);
+              progress_ = subBuilder.buildPartial();
+            }
+            progressCase_ = 6;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -140,6 +154,7 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     APPLY_PATCHES_TASK_PROGRESS(4),
     EXEC_STEP_TASK_PROGRESS(5),
+    APPLY_CONFIG_TASK_PROGRESS(6),
     PROGRESS_NOT_SET(0);
     private final int value;
     private ProgressCase(int value) {
@@ -159,6 +174,7 @@ private static final long serialVersionUID = 0L;
       switch (value) {
         case 4: return APPLY_PATCHES_TASK_PROGRESS;
         case 5: return EXEC_STEP_TASK_PROGRESS;
+        case 6: return APPLY_CONFIG_TASK_PROGRESS;
         case 0: return PROGRESS_NOT_SET;
         default: return null;
       }
@@ -391,6 +407,49 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.osconfig.agentendpoint.v1.ExecStepTaskProgress.getDefaultInstance();
   }
 
+  public static final int APPLY_CONFIG_TASK_PROGRESS_FIELD_NUMBER = 6;
+  /**
+   * <pre>
+   * Details about the progress of the apply config task.
+   * </pre>
+   *
+   * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress apply_config_task_progress = 6;</code>
+   * @return Whether the applyConfigTaskProgress field is set.
+   */
+  @java.lang.Override
+  public boolean hasApplyConfigTaskProgress() {
+    return progressCase_ == 6;
+  }
+  /**
+   * <pre>
+   * Details about the progress of the apply config task.
+   * </pre>
+   *
+   * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress apply_config_task_progress = 6;</code>
+   * @return The applyConfigTaskProgress.
+   */
+  @java.lang.Override
+  public com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress getApplyConfigTaskProgress() {
+    if (progressCase_ == 6) {
+       return (com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress) progress_;
+    }
+    return com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * Details about the progress of the apply config task.
+   * </pre>
+   *
+   * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress apply_config_task_progress = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgressOrBuilder getApplyConfigTaskProgressOrBuilder() {
+    if (progressCase_ == 6) {
+       return (com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress) progress_;
+    }
+    return com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -420,6 +479,9 @@ private static final long serialVersionUID = 0L;
     if (progressCase_ == 5) {
       output.writeMessage(5, (com.google.cloud.osconfig.agentendpoint.v1.ExecStepTaskProgress) progress_);
     }
+    if (progressCase_ == 6) {
+      output.writeMessage(6, (com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress) progress_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -446,6 +508,10 @@ private static final long serialVersionUID = 0L;
     if (progressCase_ == 5) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, (com.google.cloud.osconfig.agentendpoint.v1.ExecStepTaskProgress) progress_);
+    }
+    if (progressCase_ == 6) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, (com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress) progress_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -477,6 +543,10 @@ private static final long serialVersionUID = 0L;
         if (!getExecStepTaskProgress()
             .equals(other.getExecStepTaskProgress())) return false;
         break;
+      case 6:
+        if (!getApplyConfigTaskProgress()
+            .equals(other.getApplyConfigTaskProgress())) return false;
+        break;
       case 0:
       default:
     }
@@ -505,6 +575,10 @@ private static final long serialVersionUID = 0L;
       case 5:
         hash = (37 * hash) + EXEC_STEP_TASK_PROGRESS_FIELD_NUMBER;
         hash = (53 * hash) + getExecStepTaskProgress().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + APPLY_CONFIG_TASK_PROGRESS_FIELD_NUMBER;
+        hash = (53 * hash) + getApplyConfigTaskProgress().hashCode();
         break;
       case 0:
       default:
@@ -697,6 +771,13 @@ private static final long serialVersionUID = 0L;
           result.progress_ = execStepTaskProgressBuilder_.build();
         }
       }
+      if (progressCase_ == 6) {
+        if (applyConfigTaskProgressBuilder_ == null) {
+          result.progress_ = progress_;
+        } else {
+          result.progress_ = applyConfigTaskProgressBuilder_.build();
+        }
+      }
       result.progressCase_ = progressCase_;
       onBuilt();
       return result;
@@ -764,6 +845,10 @@ private static final long serialVersionUID = 0L;
         }
         case EXEC_STEP_TASK_PROGRESS: {
           mergeExecStepTaskProgress(other.getExecStepTaskProgress());
+          break;
+        }
+        case APPLY_CONFIG_TASK_PROGRESS: {
+          mergeApplyConfigTaskProgress(other.getApplyConfigTaskProgress());
           break;
         }
         case PROGRESS_NOT_SET: {
@@ -1462,6 +1547,183 @@ private static final long serialVersionUID = 0L;
       progressCase_ = 5;
       onChanged();;
       return execStepTaskProgressBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress, com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.Builder, com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgressOrBuilder> applyConfigTaskProgressBuilder_;
+    /**
+     * <pre>
+     * Details about the progress of the apply config task.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress apply_config_task_progress = 6;</code>
+     * @return Whether the applyConfigTaskProgress field is set.
+     */
+    @java.lang.Override
+    public boolean hasApplyConfigTaskProgress() {
+      return progressCase_ == 6;
+    }
+    /**
+     * <pre>
+     * Details about the progress of the apply config task.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress apply_config_task_progress = 6;</code>
+     * @return The applyConfigTaskProgress.
+     */
+    @java.lang.Override
+    public com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress getApplyConfigTaskProgress() {
+      if (applyConfigTaskProgressBuilder_ == null) {
+        if (progressCase_ == 6) {
+          return (com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress) progress_;
+        }
+        return com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.getDefaultInstance();
+      } else {
+        if (progressCase_ == 6) {
+          return applyConfigTaskProgressBuilder_.getMessage();
+        }
+        return com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Details about the progress of the apply config task.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress apply_config_task_progress = 6;</code>
+     */
+    public Builder setApplyConfigTaskProgress(com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress value) {
+      if (applyConfigTaskProgressBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        progress_ = value;
+        onChanged();
+      } else {
+        applyConfigTaskProgressBuilder_.setMessage(value);
+      }
+      progressCase_ = 6;
+      return this;
+    }
+    /**
+     * <pre>
+     * Details about the progress of the apply config task.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress apply_config_task_progress = 6;</code>
+     */
+    public Builder setApplyConfigTaskProgress(
+        com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.Builder builderForValue) {
+      if (applyConfigTaskProgressBuilder_ == null) {
+        progress_ = builderForValue.build();
+        onChanged();
+      } else {
+        applyConfigTaskProgressBuilder_.setMessage(builderForValue.build());
+      }
+      progressCase_ = 6;
+      return this;
+    }
+    /**
+     * <pre>
+     * Details about the progress of the apply config task.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress apply_config_task_progress = 6;</code>
+     */
+    public Builder mergeApplyConfigTaskProgress(com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress value) {
+      if (applyConfigTaskProgressBuilder_ == null) {
+        if (progressCase_ == 6 &&
+            progress_ != com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.getDefaultInstance()) {
+          progress_ = com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.newBuilder((com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress) progress_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          progress_ = value;
+        }
+        onChanged();
+      } else {
+        if (progressCase_ == 6) {
+          applyConfigTaskProgressBuilder_.mergeFrom(value);
+        }
+        applyConfigTaskProgressBuilder_.setMessage(value);
+      }
+      progressCase_ = 6;
+      return this;
+    }
+    /**
+     * <pre>
+     * Details about the progress of the apply config task.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress apply_config_task_progress = 6;</code>
+     */
+    public Builder clearApplyConfigTaskProgress() {
+      if (applyConfigTaskProgressBuilder_ == null) {
+        if (progressCase_ == 6) {
+          progressCase_ = 0;
+          progress_ = null;
+          onChanged();
+        }
+      } else {
+        if (progressCase_ == 6) {
+          progressCase_ = 0;
+          progress_ = null;
+        }
+        applyConfigTaskProgressBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Details about the progress of the apply config task.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress apply_config_task_progress = 6;</code>
+     */
+    public com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.Builder getApplyConfigTaskProgressBuilder() {
+      return getApplyConfigTaskProgressFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Details about the progress of the apply config task.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress apply_config_task_progress = 6;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgressOrBuilder getApplyConfigTaskProgressOrBuilder() {
+      if ((progressCase_ == 6) && (applyConfigTaskProgressBuilder_ != null)) {
+        return applyConfigTaskProgressBuilder_.getMessageOrBuilder();
+      } else {
+        if (progressCase_ == 6) {
+          return (com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress) progress_;
+        }
+        return com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Details about the progress of the apply config task.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress apply_config_task_progress = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress, com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.Builder, com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgressOrBuilder> 
+        getApplyConfigTaskProgressFieldBuilder() {
+      if (applyConfigTaskProgressBuilder_ == null) {
+        if (!(progressCase_ == 6)) {
+          progress_ = com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.getDefaultInstance();
+        }
+        applyConfigTaskProgressBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress, com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress.Builder, com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgressOrBuilder>(
+                (com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress) progress_,
+                getParentForChildren(),
+                isClean());
+        progress_ = null;
+      }
+      progressCase_ = 6;
+      onChanged();;
+      return applyConfigTaskProgressBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -132,5 +132,32 @@ public interface ReportTaskProgressRequestOrBuilder extends
    */
   com.google.cloud.osconfig.agentendpoint.v1.ExecStepTaskProgressOrBuilder getExecStepTaskProgressOrBuilder();
 
+  /**
+   * <pre>
+   * Details about the progress of the apply config task.
+   * </pre>
+   *
+   * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress apply_config_task_progress = 6;</code>
+   * @return Whether the applyConfigTaskProgress field is set.
+   */
+  boolean hasApplyConfigTaskProgress();
+  /**
+   * <pre>
+   * Details about the progress of the apply config task.
+   * </pre>
+   *
+   * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress apply_config_task_progress = 6;</code>
+   * @return The applyConfigTaskProgress.
+   */
+  com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress getApplyConfigTaskProgress();
+  /**
+   * <pre>
+   * Details about the progress of the apply config task.
+   * </pre>
+   *
+   * <code>.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgress apply_config_task_progress = 6;</code>
+   */
+  com.google.cloud.osconfig.agentendpoint.v1.ApplyConfigTaskProgressOrBuilder getApplyConfigTaskProgressOrBuilder();
+
   public com.google.cloud.osconfig.agentendpoint.v1.ReportTaskProgressRequest.ProgressCase getProgressCase();
 }
