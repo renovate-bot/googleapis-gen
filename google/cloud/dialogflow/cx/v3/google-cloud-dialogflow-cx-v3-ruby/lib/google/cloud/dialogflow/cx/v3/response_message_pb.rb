@@ -37,11 +37,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
         optional :ssml, :string, 2
       end
     end
-    add_message "google.cloud.dialogflow.cx.v3.ResponseMessage.EndInteraction" do
-    end
     add_message "google.cloud.dialogflow.cx.v3.ResponseMessage.PlayAudio" do
       optional :audio_uri, :string, 1
       optional :allow_playback_interruption, :bool, 2
+    end
+    add_message "google.cloud.dialogflow.cx.v3.ResponseMessage.EndInteraction" do
     end
     add_message "google.cloud.dialogflow.cx.v3.ResponseMessage.MixedAudio" do
       repeated :segments, :message, 1, "google.cloud.dialogflow.cx.v3.ResponseMessage.MixedAudio.Segment"
@@ -66,8 +66,8 @@ module Google
           ResponseMessage::LiveAgentHandoff = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.ResponseMessage.LiveAgentHandoff").msgclass
           ResponseMessage::ConversationSuccess = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.ResponseMessage.ConversationSuccess").msgclass
           ResponseMessage::OutputAudioText = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.ResponseMessage.OutputAudioText").msgclass
-          ResponseMessage::EndInteraction = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.ResponseMessage.EndInteraction").msgclass
           ResponseMessage::PlayAudio = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.ResponseMessage.PlayAudio").msgclass
+          ResponseMessage::EndInteraction = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.ResponseMessage.EndInteraction").msgclass
           ResponseMessage::MixedAudio = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.ResponseMessage.MixedAudio").msgclass
           ResponseMessage::MixedAudio::Segment = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.ResponseMessage.MixedAudio.Segment").msgclass
         end

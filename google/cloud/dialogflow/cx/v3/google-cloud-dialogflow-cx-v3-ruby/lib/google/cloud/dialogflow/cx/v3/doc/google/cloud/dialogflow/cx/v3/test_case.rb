@@ -60,7 +60,7 @@ module Google
           #     <TestCase ID>/results/<TestCaseResult ID>`.
           # @!attribute [rw] environment
           #   @return [String]
-          #     Optional. Environment where the test was run. If not set, it indicates the draft
+          #     Environment where the test was run. If not set, it indicates the draft
           #     environment.
           # @!attribute [rw] conversation_turns
           #   @return [Array<Google::Cloud::Dialogflow::Cx::V3::ConversationTurn>]

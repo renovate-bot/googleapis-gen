@@ -67,7 +67,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo" do
       optional :last_matched_intent, :string, 1
+      optional :display_name, :string, 3
       map :parameters, :string, :message, 2, "google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo.IntentParameterValue"
+      optional :confidence, :float, 4
     end
     add_message "google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo.IntentParameterValue" do
       optional :original_value, :string, 1

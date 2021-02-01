@@ -16,7 +16,7 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
-import {AgentsClient, EntityTypesClient, EnvironmentsClient, FlowsClient, IntentsClient, PagesClient, SecuritySettingsServiceClient, SessionEntityTypesClient, SessionsClient, TestCasesClient, TransitionRouteGroupsClient, VersionsClient, WebhooksClient} from '@google-cloud/dialogflow-cx';
+import {AgentsClient, EntityTypesClient, EnvironmentsClient, ExperimentsClient, FlowsClient, IntentsClient, PagesClient, SecuritySettingsServiceClient, SessionEntityTypesClient, SessionsClient, TestCasesClient, TransitionRouteGroupsClient, VersionsClient, WebhooksClient} from '@google-cloud/dialogflow-cx';
 
 // check that the client class type name can be used
 function doStuffWithAgentsClient(client: AgentsClient) {
@@ -26,6 +26,9 @@ function doStuffWithEntityTypesClient(client: EntityTypesClient) {
   client.close();
 }
 function doStuffWithEnvironmentsClient(client: EnvironmentsClient) {
+  client.close();
+}
+function doStuffWithExperimentsClient(client: ExperimentsClient) {
   client.close();
 }
 function doStuffWithFlowsClient(client: FlowsClient) {
@@ -69,6 +72,9 @@ function main() {
   // check that the client instance can be created
   const environmentsClient = new EnvironmentsClient();
   doStuffWithEnvironmentsClient(environmentsClient);
+  // check that the client instance can be created
+  const experimentsClient = new ExperimentsClient();
+  doStuffWithExperimentsClient(experimentsClient);
   // check that the client instance can be created
   const flowsClient = new FlowsClient();
   doStuffWithFlowsClient(flowsClient);

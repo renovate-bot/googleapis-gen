@@ -150,10 +150,12 @@ describe Google::Cloud::Dialogflow::Cx::V3::EntityTypesClient do
       name_2 = "name2-1052831874"
       display_name = "displayName1615086568"
       enable_fuzzy_extraction = true
+      redact = false
       expected_response = {
         name: name_2,
         display_name: display_name,
-        enable_fuzzy_extraction: enable_fuzzy_extraction
+        enable_fuzzy_extraction: enable_fuzzy_extraction,
+        redact: redact
       }
       expected_response = Google::Gax::to_proto(expected_response, Google::Cloud::Dialogflow::Cx::V3::EntityType)
 
@@ -231,10 +233,12 @@ describe Google::Cloud::Dialogflow::Cx::V3::EntityTypesClient do
       name = "name3373707"
       display_name = "displayName1615086568"
       enable_fuzzy_extraction = true
+      redact = false
       expected_response = {
         name: name,
         display_name: display_name,
-        enable_fuzzy_extraction: enable_fuzzy_extraction
+        enable_fuzzy_extraction: enable_fuzzy_extraction,
+        redact: redact
       }
       expected_response = Google::Gax::to_proto(expected_response, Google::Cloud::Dialogflow::Cx::V3::EntityType)
 
@@ -314,10 +318,12 @@ describe Google::Cloud::Dialogflow::Cx::V3::EntityTypesClient do
       name = "name3373707"
       display_name = "displayName1615086568"
       enable_fuzzy_extraction = true
+      redact = false
       expected_response = {
         name: name,
         display_name: display_name,
-        enable_fuzzy_extraction: enable_fuzzy_extraction
+        enable_fuzzy_extraction: enable_fuzzy_extraction,
+        redact: redact
       }
       expected_response = Google::Gax::to_proto(expected_response, Google::Cloud::Dialogflow::Cx::V3::EntityType)
 
