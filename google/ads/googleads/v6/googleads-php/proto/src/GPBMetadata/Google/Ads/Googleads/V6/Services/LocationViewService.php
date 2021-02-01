@@ -13,9 +13,9 @@ class LocationViewService
         if (static::$is_initialized == true) {
           return;
         }
+        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Http::initOnce();
         \GPBMetadata\Google\Api\Annotations::initOnce();
-        \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Api\Client::initOnce();
         $pool->internalAddGeneratedFile(
