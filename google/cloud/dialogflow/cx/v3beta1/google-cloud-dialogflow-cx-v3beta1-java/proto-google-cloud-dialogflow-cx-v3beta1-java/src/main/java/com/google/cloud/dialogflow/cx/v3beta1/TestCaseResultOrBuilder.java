@@ -33,21 +33,21 @@ public interface TestCaseResultOrBuilder extends
 
   /**
    * <pre>
-   * Optional. Environment where the test was run. If not set, it indicates the draft
+   * Environment where the test was run. If not set, it indicates the draft
    * environment.
    * </pre>
    *
-   * <code>string environment = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+   * <code>string environment = 2 [(.google.api.resource_reference) = { ... }</code>
    * @return The environment.
    */
   java.lang.String getEnvironment();
   /**
    * <pre>
-   * Optional. Environment where the test was run. If not set, it indicates the draft
+   * Environment where the test was run. If not set, it indicates the draft
    * environment.
    * </pre>
    *
-   * <code>string environment = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+   * <code>string environment = 2 [(.google.api.resource_reference) = { ... }</code>
    * @return The bytes for environment.
    */
   com.google.protobuf.ByteString

@@ -19,6 +19,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       repeated :entities, :message, 5, "google.cloud.dialogflow.cx.v3beta1.EntityType.Entity"
       repeated :excluded_phrases, :message, 6, "google.cloud.dialogflow.cx.v3beta1.EntityType.ExcludedPhrase"
       optional :enable_fuzzy_extraction, :bool, 7
+      optional :redact, :bool, 9
     end
     add_message "google.cloud.dialogflow.cx.v3beta1.EntityType.Entity" do
       optional :value, :string, 1

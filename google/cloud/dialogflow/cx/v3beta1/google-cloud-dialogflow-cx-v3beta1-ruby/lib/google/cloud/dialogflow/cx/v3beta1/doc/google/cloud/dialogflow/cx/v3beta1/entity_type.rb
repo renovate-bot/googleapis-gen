@@ -72,6 +72,11 @@ module Google
           # @!attribute [rw] enable_fuzzy_extraction
           #   @return [true, false]
           #     Enables fuzzy entity extraction during classification.
+          # @!attribute [rw] redact
+          #   @return [true, false]
+          #     Indicates whether parameters of the entity type should be redacted in log.
+          #     If redaction is enabled, page parameters and intent parameters referring to
+          #     the entity type will be replaced by parameter name during logging.
           class EntityType
             # An **entity entry** for an associated entity type.
             # @!attribute [rw] value

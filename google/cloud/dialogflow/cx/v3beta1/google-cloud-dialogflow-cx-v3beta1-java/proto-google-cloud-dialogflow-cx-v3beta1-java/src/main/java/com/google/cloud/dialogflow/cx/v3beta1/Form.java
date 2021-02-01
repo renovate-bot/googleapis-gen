@@ -239,9 +239,9 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Indicates whether the parameter content should be redacted in text and
-     * audio. If the flag is set to true, the parameter content will be replaced
-     * by parameter name in both request and response.
+     * Indicates whether the parameter content should be redacted in log.  If
+     * redaction is enabled, the parameter content will be replaced by parameter
+     * name during logging.
      * Note: the parameter content is subject to redaction if either parameter
      * level redaction or [entity type level redaction][google.cloud.dialogflow.cx.v3beta1.EntityType.redact] is
      * enabled.
@@ -2526,9 +2526,9 @@ private static final long serialVersionUID = 0L;
     private boolean redact_;
     /**
      * <pre>
-     * Indicates whether the parameter content should be redacted in text and
-     * audio. If the flag is set to true, the parameter content will be replaced
-     * by parameter name in both request and response.
+     * Indicates whether the parameter content should be redacted in log.  If
+     * redaction is enabled, the parameter content will be replaced by parameter
+     * name during logging.
      * Note: the parameter content is subject to redaction if either parameter
      * level redaction or [entity type level redaction][google.cloud.dialogflow.cx.v3beta1.EntityType.redact] is
      * enabled.
@@ -3615,9 +3615,9 @@ private static final long serialVersionUID = 0L;
       private boolean redact_ ;
       /**
        * <pre>
-       * Indicates whether the parameter content should be redacted in text and
-       * audio. If the flag is set to true, the parameter content will be replaced
-       * by parameter name in both request and response.
+       * Indicates whether the parameter content should be redacted in log.  If
+       * redaction is enabled, the parameter content will be replaced by parameter
+       * name during logging.
        * Note: the parameter content is subject to redaction if either parameter
        * level redaction or [entity type level redaction][google.cloud.dialogflow.cx.v3beta1.EntityType.redact] is
        * enabled.
@@ -3632,9 +3632,9 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Indicates whether the parameter content should be redacted in text and
-       * audio. If the flag is set to true, the parameter content will be replaced
-       * by parameter name in both request and response.
+       * Indicates whether the parameter content should be redacted in log.  If
+       * redaction is enabled, the parameter content will be replaced by parameter
+       * name during logging.
        * Note: the parameter content is subject to redaction if either parameter
        * level redaction or [entity type level redaction][google.cloud.dialogflow.cx.v3beta1.EntityType.redact] is
        * enabled.
@@ -3652,9 +3652,9 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Indicates whether the parameter content should be redacted in text and
-       * audio. If the flag is set to true, the parameter content will be replaced
-       * by parameter name in both request and response.
+       * Indicates whether the parameter content should be redacted in log.  If
+       * redaction is enabled, the parameter content will be replaced by parameter
+       * name during logging.
        * Note: the parameter content is subject to redaction if either parameter
        * level redaction or [entity type level redaction][google.cloud.dialogflow.cx.v3beta1.EntityType.redact] is
        * enabled.

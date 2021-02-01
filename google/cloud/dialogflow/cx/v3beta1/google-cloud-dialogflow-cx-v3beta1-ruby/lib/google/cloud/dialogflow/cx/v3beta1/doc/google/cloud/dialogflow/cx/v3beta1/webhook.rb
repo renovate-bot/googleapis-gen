@@ -172,12 +172,19 @@ module Google
             #     Always present. The unique identifier of the last matched
             #     {Google::Cloud::Dialogflow::Cx::V3beta1::Intent intent}. Format: `projects/<Project ID>/locations/<Location
             #     ID>/agents/<Agent ID>/intents/<Intent ID>`.
+            # @!attribute [rw] display_name
+            #   @return [String]
+            #     Always present. The display name of the last matched {Google::Cloud::Dialogflow::Cx::V3beta1::Intent intent}.
             # @!attribute [rw] parameters
             #   @return [Hash{String => Google::Cloud::Dialogflow::Cx::V3beta1::WebhookRequest::IntentInfo::IntentParameterValue}]
             #     Parameters identified as a result of intent matching. This is a map of
             #     the name of the identified parameter to the value of the parameter
             #     identified from the user's utterance. All parameters defined in the
             #     matched intent that are identified will be surfaced here.
+            # @!attribute [rw] confidence
+            #   @return [Float]
+            #     The confidence of the matched intent. Values range from 0.0 (completely
+            #     uncertain) to 1.0 (completely certain).
             class IntentInfo
               # Represents a value for an intent parameter.
               # @!attribute [rw] original_value

@@ -821,6 +821,26 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
+     * Always present. The display name of the last matched [intent][google.cloud.dialogflow.cx.v3beta1.Intent].
+     * </pre>
+     *
+     * <code>string display_name = 3;</code>
+     * @return The displayName.
+     */
+    java.lang.String getDisplayName();
+    /**
+     * <pre>
+     * Always present. The display name of the last matched [intent][google.cloud.dialogflow.cx.v3beta1.Intent].
+     * </pre>
+     *
+     * <code>string display_name = 3;</code>
+     * @return The bytes for displayName.
+     */
+    com.google.protobuf.ByteString
+        getDisplayNameBytes();
+
+    /**
+     * <pre>
      * Parameters identified as a result of intent matching. This is a map of
      * the name of the identified parameter to the value of the parameter
      * identified from the user's utterance. All parameters defined in the
@@ -887,6 +907,17 @@ private static final long serialVersionUID = 0L;
 
     com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.IntentInfo.IntentParameterValue getParametersOrThrow(
         java.lang.String key);
+
+    /**
+     * <pre>
+     * The confidence of the matched intent. Values range from 0.0 (completely
+     * uncertain) to 1.0 (completely certain).
+     * </pre>
+     *
+     * <code>float confidence = 4;</code>
+     * @return The confidence.
+     */
+    float getConfidence();
   }
   /**
    * <pre>
@@ -906,6 +937,7 @@ private static final long serialVersionUID = 0L;
     }
     private IntentInfo() {
       lastMatchedIntent_ = "";
+      displayName_ = "";
     }
 
     @java.lang.Override
@@ -956,6 +988,17 @@ private static final long serialVersionUID = 0L;
                   ParametersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               parameters_.getMutableMap().put(
                   parameters__.getKey(), parameters__.getValue());
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              displayName_ = s;
+              break;
+            }
+            case 37: {
+
+              confidence_ = input.readFloat();
               break;
             }
             default: {
@@ -1942,6 +1985,52 @@ private static final long serialVersionUID = 0L;
       }
     }
 
+    public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object displayName_;
+    /**
+     * <pre>
+     * Always present. The display name of the last matched [intent][google.cloud.dialogflow.cx.v3beta1.Intent].
+     * </pre>
+     *
+     * <code>string display_name = 3;</code>
+     * @return The displayName.
+     */
+    @java.lang.Override
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Always present. The display name of the last matched [intent][google.cloud.dialogflow.cx.v3beta1.Intent].
+     * </pre>
+     *
+     * <code>string display_name = 3;</code>
+     * @return The bytes for displayName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     public static final int PARAMETERS_FIELD_NUMBER = 2;
     private static final class ParametersDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
@@ -2051,6 +2140,22 @@ private static final long serialVersionUID = 0L;
       return map.get(key);
     }
 
+    public static final int CONFIDENCE_FIELD_NUMBER = 4;
+    private float confidence_;
+    /**
+     * <pre>
+     * The confidence of the matched intent. Values range from 0.0 (completely
+     * uncertain) to 1.0 (completely certain).
+     * </pre>
+     *
+     * <code>float confidence = 4;</code>
+     * @return The confidence.
+     */
+    @java.lang.Override
+    public float getConfidence() {
+      return confidence_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2074,6 +2179,12 @@ private static final long serialVersionUID = 0L;
           internalGetParameters(),
           ParametersDefaultEntryHolder.defaultEntry,
           2);
+      if (!getDisplayNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, displayName_);
+      }
+      if (confidence_ != 0F) {
+        output.writeFloat(4, confidence_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2096,6 +2207,13 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(2, parameters__);
       }
+      if (!getDisplayNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, displayName_);
+      }
+      if (confidence_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(4, confidence_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2113,8 +2231,13 @@ private static final long serialVersionUID = 0L;
 
       if (!getLastMatchedIntent()
           .equals(other.getLastMatchedIntent())) return false;
+      if (!getDisplayName()
+          .equals(other.getDisplayName())) return false;
       if (!internalGetParameters().equals(
           other.internalGetParameters())) return false;
+      if (java.lang.Float.floatToIntBits(getConfidence())
+          != java.lang.Float.floatToIntBits(
+              other.getConfidence())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2128,10 +2251,15 @@ private static final long serialVersionUID = 0L;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + LAST_MATCHED_INTENT_FIELD_NUMBER;
       hash = (53 * hash) + getLastMatchedIntent().hashCode();
+      hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getDisplayName().hashCode();
       if (!internalGetParameters().getMap().isEmpty()) {
         hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
         hash = (53 * hash) + internalGetParameters().hashCode();
       }
+      hash = (37 * hash) + CONFIDENCE_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getConfidence());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2293,7 +2421,11 @@ private static final long serialVersionUID = 0L;
         super.clear();
         lastMatchedIntent_ = "";
 
+        displayName_ = "";
+
         internalGetMutableParameters().clear();
+        confidence_ = 0F;
+
         return this;
       }
 
@@ -2322,8 +2454,10 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.IntentInfo result = new com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.IntentInfo(this);
         int from_bitField0_ = bitField0_;
         result.lastMatchedIntent_ = lastMatchedIntent_;
+        result.displayName_ = displayName_;
         result.parameters_ = internalGetParameters();
         result.parameters_.makeImmutable();
+        result.confidence_ = confidence_;
         onBuilt();
         return result;
       }
@@ -2376,8 +2510,15 @@ private static final long serialVersionUID = 0L;
           lastMatchedIntent_ = other.lastMatchedIntent_;
           onChanged();
         }
+        if (!other.getDisplayName().isEmpty()) {
+          displayName_ = other.displayName_;
+          onChanged();
+        }
         internalGetMutableParameters().mergeFrom(
             other.internalGetParameters());
+        if (other.getConfidence() != 0F) {
+          setConfidence(other.getConfidence());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -2510,6 +2651,102 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
         
         lastMatchedIntent_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object displayName_ = "";
+      /**
+       * <pre>
+       * Always present. The display name of the last matched [intent][google.cloud.dialogflow.cx.v3beta1.Intent].
+       * </pre>
+       *
+       * <code>string display_name = 3;</code>
+       * @return The displayName.
+       */
+      public java.lang.String getDisplayName() {
+        java.lang.Object ref = displayName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          displayName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Always present. The display name of the last matched [intent][google.cloud.dialogflow.cx.v3beta1.Intent].
+       * </pre>
+       *
+       * <code>string display_name = 3;</code>
+       * @return The bytes for displayName.
+       */
+      public com.google.protobuf.ByteString
+          getDisplayNameBytes() {
+        java.lang.Object ref = displayName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          displayName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Always present. The display name of the last matched [intent][google.cloud.dialogflow.cx.v3beta1.Intent].
+       * </pre>
+       *
+       * <code>string display_name = 3;</code>
+       * @param value The displayName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisplayName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        displayName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Always present. The display name of the last matched [intent][google.cloud.dialogflow.cx.v3beta1.Intent].
+       * </pre>
+       *
+       * <code>string display_name = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDisplayName() {
+        
+        displayName_ = getDefaultInstance().getDisplayName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Always present. The display name of the last matched [intent][google.cloud.dialogflow.cx.v3beta1.Intent].
+       * </pre>
+       *
+       * <code>string display_name = 3;</code>
+       * @param value The bytes for displayName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisplayNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        displayName_ = value;
         onChanged();
         return this;
       }
@@ -2688,6 +2925,52 @@ private static final long serialVersionUID = 0L;
           java.util.Map<java.lang.String, com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.IntentInfo.IntentParameterValue> values) {
         internalGetMutableParameters().getMutableMap()
             .putAll(values);
+        return this;
+      }
+
+      private float confidence_ ;
+      /**
+       * <pre>
+       * The confidence of the matched intent. Values range from 0.0 (completely
+       * uncertain) to 1.0 (completely certain).
+       * </pre>
+       *
+       * <code>float confidence = 4;</code>
+       * @return The confidence.
+       */
+      @java.lang.Override
+      public float getConfidence() {
+        return confidence_;
+      }
+      /**
+       * <pre>
+       * The confidence of the matched intent. Values range from 0.0 (completely
+       * uncertain) to 1.0 (completely certain).
+       * </pre>
+       *
+       * <code>float confidence = 4;</code>
+       * @param value The confidence to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConfidence(float value) {
+        
+        confidence_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The confidence of the matched intent. Values range from 0.0 (completely
+       * uncertain) to 1.0 (completely certain).
+       * </pre>
+       *
+       * <code>float confidence = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConfidence() {
+        
+        confidence_ = 0F;
+        onChanged();
         return this;
       }
       @java.lang.Override

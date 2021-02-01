@@ -208,4 +208,16 @@ public interface EntityTypeOrBuilder extends
    * @return The enableFuzzyExtraction.
    */
   boolean getEnableFuzzyExtraction();
+
+  /**
+   * <pre>
+   * Indicates whether parameters of the entity type should be redacted in log.
+   * If redaction is enabled, page parameters and intent parameters referring to
+   * the entity type will be replaced by parameter name during logging.
+   * </pre>
+   *
+   * <code>bool redact = 9;</code>
+   * @return The redact.
+   */
+  boolean getRedact();
 }

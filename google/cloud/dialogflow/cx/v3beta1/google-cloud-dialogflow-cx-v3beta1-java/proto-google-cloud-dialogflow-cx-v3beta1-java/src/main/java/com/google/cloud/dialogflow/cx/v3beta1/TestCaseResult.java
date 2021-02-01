@@ -186,11 +186,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object environment_;
   /**
    * <pre>
-   * Optional. Environment where the test was run. If not set, it indicates the draft
+   * Environment where the test was run. If not set, it indicates the draft
    * environment.
    * </pre>
    *
-   * <code>string environment = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+   * <code>string environment = 2 [(.google.api.resource_reference) = { ... }</code>
    * @return The environment.
    */
   @java.lang.Override
@@ -208,11 +208,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Environment where the test was run. If not set, it indicates the draft
+   * Environment where the test was run. If not set, it indicates the draft
    * environment.
    * </pre>
    *
-   * <code>string environment = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+   * <code>string environment = 2 [(.google.api.resource_reference) = { ... }</code>
    * @return The bytes for environment.
    */
   @java.lang.Override
@@ -895,11 +895,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object environment_ = "";
     /**
      * <pre>
-     * Optional. Environment where the test was run. If not set, it indicates the draft
+     * Environment where the test was run. If not set, it indicates the draft
      * environment.
      * </pre>
      *
-     * <code>string environment = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+     * <code>string environment = 2 [(.google.api.resource_reference) = { ... }</code>
      * @return The environment.
      */
     public java.lang.String getEnvironment() {
@@ -916,11 +916,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Environment where the test was run. If not set, it indicates the draft
+     * Environment where the test was run. If not set, it indicates the draft
      * environment.
      * </pre>
      *
-     * <code>string environment = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+     * <code>string environment = 2 [(.google.api.resource_reference) = { ... }</code>
      * @return The bytes for environment.
      */
     public com.google.protobuf.ByteString
@@ -938,11 +938,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Environment where the test was run. If not set, it indicates the draft
+     * Environment where the test was run. If not set, it indicates the draft
      * environment.
      * </pre>
      *
-     * <code>string environment = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+     * <code>string environment = 2 [(.google.api.resource_reference) = { ... }</code>
      * @param value The environment to set.
      * @return This builder for chaining.
      */
@@ -958,11 +958,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Environment where the test was run. If not set, it indicates the draft
+     * Environment where the test was run. If not set, it indicates the draft
      * environment.
      * </pre>
      *
-     * <code>string environment = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+     * <code>string environment = 2 [(.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearEnvironment() {
@@ -973,11 +973,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Environment where the test was run. If not set, it indicates the draft
+     * Environment where the test was run. If not set, it indicates the draft
      * environment.
      * </pre>
      *
-     * <code>string environment = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+     * <code>string environment = 2 [(.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for environment to set.
      * @return This builder for chaining.
      */
