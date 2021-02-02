@@ -18,7 +18,7 @@
 
 
 /* eslint-disable node/no-missing-require, no-unused-vars */
-const channel = require('channel');
+const channel = require('@google-cloud/channel');
 
 function main() {
   const cloudChannelServiceClient = new channel.CloudChannelServiceClient();

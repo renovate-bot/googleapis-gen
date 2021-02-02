@@ -1,5 +1,5 @@
 {
-  "name": "channel",
+  "name": "@google-cloud/channel",
   "version": "0.1.0",
   "description": "Channel client for Node.js",
   "repository": "googleapis/nodejs-channel",
