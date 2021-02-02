@@ -743,14 +743,14 @@ class ServiceManagerClientTest extends GeneratedTest
 
         // Mock response
         $name = 'name3373707';
-        $id = 'id3355';
         $title = 'title110371416';
         $producerProjectId = 'producerProjectId1450187470';
+        $id = 'id3355';
         $expectedResponse = new Service();
         $expectedResponse->setName($name);
-        $expectedResponse->setId($id);
         $expectedResponse->setTitle($title);
         $expectedResponse->setProducerProjectId($producerProjectId);
+        $expectedResponse->setId($id);
         $transport->addResponse($expectedResponse);
 
         // Mock request
@@ -827,14 +827,14 @@ class ServiceManagerClientTest extends GeneratedTest
 
         // Mock response
         $name = 'name3373707';
-        $id = 'id3355';
         $title = 'title110371416';
         $producerProjectId = 'producerProjectId1450187470';
+        $id = 'id3355';
         $expectedResponse = new Service();
         $expectedResponse->setName($name);
-        $expectedResponse->setId($id);
         $expectedResponse->setTitle($title);
         $expectedResponse->setProducerProjectId($producerProjectId);
+        $expectedResponse->setId($id);
         $transport->addResponse($expectedResponse);
 
         // Mock request

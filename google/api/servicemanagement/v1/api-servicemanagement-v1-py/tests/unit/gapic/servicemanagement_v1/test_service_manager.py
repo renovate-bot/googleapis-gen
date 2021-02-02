@@ -1719,11 +1719,11 @@ def test_get_service_config(transport: str = 'grpc', request_type=servicemanager
         call.return_value = service.Service(
             name='name_value',
 
-            id='id_value',
-
             title='title_value',
 
             producer_project_id='producer_project_id_value',
+
+            id='id_value',
 
         )
 
@@ -1741,11 +1741,11 @@ def test_get_service_config(transport: str = 'grpc', request_type=servicemanager
 
     assert response.name == 'name_value'
 
-    assert response.id == 'id_value'
-
     assert response.title == 'title_value'
 
     assert response.producer_project_id == 'producer_project_id_value'
+
+    assert response.id == 'id_value'
 
 
 def test_get_service_config_from_dict():
@@ -1770,9 +1770,9 @@ async def test_get_service_config_async(transport: str = 'grpc_asyncio', request
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.Service(
             name='name_value',
-            id='id_value',
             title='title_value',
             producer_project_id='producer_project_id_value',
+            id='id_value',
         ))
 
         response = await client.get_service_config(request)
@@ -1788,11 +1788,11 @@ async def test_get_service_config_async(transport: str = 'grpc_asyncio', request
 
     assert response.name == 'name_value'
 
-    assert response.id == 'id_value'
-
     assert response.title == 'title_value'
 
     assert response.producer_project_id == 'producer_project_id_value'
+
+    assert response.id == 'id_value'
 
 
 @pytest.mark.asyncio
@@ -1917,11 +1917,11 @@ def test_create_service_config(transport: str = 'grpc', request_type=servicemana
         call.return_value = service.Service(
             name='name_value',
 
-            id='id_value',
-
             title='title_value',
 
             producer_project_id='producer_project_id_value',
+
+            id='id_value',
 
         )
 
@@ -1939,11 +1939,11 @@ def test_create_service_config(transport: str = 'grpc', request_type=servicemana
 
     assert response.name == 'name_value'
 
-    assert response.id == 'id_value'
-
     assert response.title == 'title_value'
 
     assert response.producer_project_id == 'producer_project_id_value'
+
+    assert response.id == 'id_value'
 
 
 def test_create_service_config_from_dict():
@@ -1968,9 +1968,9 @@ async def test_create_service_config_async(transport: str = 'grpc_asyncio', requ
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.Service(
             name='name_value',
-            id='id_value',
             title='title_value',
             producer_project_id='producer_project_id_value',
+            id='id_value',
         ))
 
         response = await client.create_service_config(request)
@@ -1986,11 +1986,11 @@ async def test_create_service_config_async(transport: str = 'grpc_asyncio', requ
 
     assert response.name == 'name_value'
 
-    assert response.id == 'id_value'
-
     assert response.title == 'title_value'
 
     assert response.producer_project_id == 'producer_project_id_value'
+
+    assert response.id == 'id_value'
 
 
 @pytest.mark.asyncio
@@ -2014,7 +2014,7 @@ def test_create_service_config_flattened():
         # using the keyword arguments to the method.
         client.create_service_config(
             service_name='service_name_value',
-            service_config=service.Service(config_version=wrappers.UInt32Value(value=541)),
+            service_config=service.Service(name='name_value'),
         )
 
         # Establish that the underlying call was made with the expected
@@ -2024,7 +2024,7 @@ def test_create_service_config_flattened():
 
         assert args[0].service_name == 'service_name_value'
 
-        assert args[0].service_config == service.Service(config_version=wrappers.UInt32Value(value=541))
+        assert args[0].service_config == service.Service(name='name_value')
 
 
 def test_create_service_config_flattened_error():
@@ -2038,7 +2038,7 @@ def test_create_service_config_flattened_error():
         client.create_service_config(
             servicemanager.CreateServiceConfigRequest(),
             service_name='service_name_value',
-            service_config=service.Service(config_version=wrappers.UInt32Value(value=541)),
+            service_config=service.Service(name='name_value'),
         )
 
 
@@ -2060,7 +2060,7 @@ async def test_create_service_config_flattened_async():
         # using the keyword arguments to the method.
         response = await client.create_service_config(
             service_name='service_name_value',
-            service_config=service.Service(config_version=wrappers.UInt32Value(value=541)),
+            service_config=service.Service(name='name_value'),
         )
 
         # Establish that the underlying call was made with the expected
@@ -2070,7 +2070,7 @@ async def test_create_service_config_flattened_async():
 
         assert args[0].service_name == 'service_name_value'
 
-        assert args[0].service_config == service.Service(config_version=wrappers.UInt32Value(value=541))
+        assert args[0].service_config == service.Service(name='name_value')
 
 
 @pytest.mark.asyncio
@@ -2085,7 +2085,7 @@ async def test_create_service_config_flattened_error_async():
         await client.create_service_config(
             servicemanager.CreateServiceConfigRequest(),
             service_name='service_name_value',
-            service_config=service.Service(config_version=wrappers.UInt32Value(value=541)),
+            service_config=service.Service(name='name_value'),
         )
 
 

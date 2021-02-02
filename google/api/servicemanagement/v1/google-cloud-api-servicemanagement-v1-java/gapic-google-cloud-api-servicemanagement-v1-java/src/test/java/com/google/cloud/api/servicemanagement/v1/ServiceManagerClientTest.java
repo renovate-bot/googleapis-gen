@@ -407,11 +407,10 @@ public class ServiceManagerClientTest {
   public void getServiceConfigTest() throws Exception {
     Service expectedResponse =
         Service.newBuilder()
-            .setConfigVersion(UInt32Value.newBuilder().build())
             .setName("name3373707")
-            .setId("id3355")
             .setTitle("title110371416")
             .setProducerProjectId("producerProjectId-1297373534")
+            .setId("id3355")
             .addAllApis(new ArrayList<Api>())
             .addAllTypes(new ArrayList<Type>())
             .addAllEnums(new ArrayList<Enum>())
@@ -432,6 +431,7 @@ public class ServiceManagerClientTest {
             .setMonitoring(Monitoring.newBuilder().build())
             .setSystemParameters(SystemParameters.newBuilder().build())
             .setSourceInfo(SourceInfo.newBuilder().build())
+            .setConfigVersion(UInt32Value.newBuilder().build())
             .build();
     mockServiceManager.addResponse(expectedResponse);
 
@@ -475,11 +475,10 @@ public class ServiceManagerClientTest {
   public void createServiceConfigTest() throws Exception {
     Service expectedResponse =
         Service.newBuilder()
-            .setConfigVersion(UInt32Value.newBuilder().build())
             .setName("name3373707")
-            .setId("id3355")
             .setTitle("title110371416")
             .setProducerProjectId("producerProjectId-1297373534")
+            .setId("id3355")
             .addAllApis(new ArrayList<Api>())
             .addAllTypes(new ArrayList<Type>())
             .addAllEnums(new ArrayList<Enum>())
@@ -500,6 +499,7 @@ public class ServiceManagerClientTest {
             .setMonitoring(Monitoring.newBuilder().build())
             .setSystemParameters(SystemParameters.newBuilder().build())
             .setSourceInfo(SourceInfo.newBuilder().build())
+            .setConfigVersion(UInt32Value.newBuilder().build())
             .build();
     mockServiceManager.addResponse(expectedResponse);
 
