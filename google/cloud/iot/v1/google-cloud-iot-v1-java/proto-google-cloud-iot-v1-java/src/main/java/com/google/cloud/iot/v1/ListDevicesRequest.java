@@ -320,7 +320,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The fields of the `Device` resource to be returned in the response. The
    * fields `id` and `num_id` are always returned, along with any
-   * other fields specified.
+   * other fields specified in snake_case format, for example:
+   * `last_heartbeat_time`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 4;</code>
@@ -334,7 +335,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The fields of the `Device` resource to be returned in the response. The
    * fields `id` and `num_id` are always returned, along with any
-   * other fields specified.
+   * other fields specified in snake_case format, for example:
+   * `last_heartbeat_time`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 4;</code>
@@ -348,7 +350,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The fields of the `Device` resource to be returned in the response. The
    * fields `id` and `num_id` are always returned, along with any
-   * other fields specified.
+   * other fields specified in snake_case format, for example:
+   * `last_heartbeat_time`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 4;</code>
@@ -1322,7 +1325,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The fields of the `Device` resource to be returned in the response. The
      * fields `id` and `num_id` are always returned, along with any
-     * other fields specified.
+     * other fields specified in snake_case format, for example:
+     * `last_heartbeat_time`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 4;</code>
@@ -1335,7 +1339,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The fields of the `Device` resource to be returned in the response. The
      * fields `id` and `num_id` are always returned, along with any
-     * other fields specified.
+     * other fields specified in snake_case format, for example:
+     * `last_heartbeat_time`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 4;</code>
@@ -1352,7 +1357,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The fields of the `Device` resource to be returned in the response. The
      * fields `id` and `num_id` are always returned, along with any
-     * other fields specified.
+     * other fields specified in snake_case format, for example:
+     * `last_heartbeat_time`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 4;</code>
@@ -1374,7 +1380,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The fields of the `Device` resource to be returned in the response. The
      * fields `id` and `num_id` are always returned, along with any
-     * other fields specified.
+     * other fields specified in snake_case format, for example:
+     * `last_heartbeat_time`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 4;</code>
@@ -1394,7 +1401,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The fields of the `Device` resource to be returned in the response. The
      * fields `id` and `num_id` are always returned, along with any
-     * other fields specified.
+     * other fields specified in snake_case format, for example:
+     * `last_heartbeat_time`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 4;</code>
@@ -1418,7 +1426,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The fields of the `Device` resource to be returned in the response. The
      * fields `id` and `num_id` are always returned, along with any
-     * other fields specified.
+     * other fields specified in snake_case format, for example:
+     * `last_heartbeat_time`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 4;</code>
@@ -1438,7 +1447,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The fields of the `Device` resource to be returned in the response. The
      * fields `id` and `num_id` are always returned, along with any
-     * other fields specified.
+     * other fields specified in snake_case format, for example:
+     * `last_heartbeat_time`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 4;</code>
@@ -1452,7 +1462,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The fields of the `Device` resource to be returned in the response. The
      * fields `id` and `num_id` are always returned, along with any
-     * other fields specified.
+     * other fields specified in snake_case format, for example:
+     * `last_heartbeat_time`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 4;</code>
@@ -1469,7 +1480,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The fields of the `Device` resource to be returned in the response. The
      * fields `id` and `num_id` are always returned, along with any
-     * other fields specified.
+     * other fields specified in snake_case format, for example:
+     * `last_heartbeat_time`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 4;</code>

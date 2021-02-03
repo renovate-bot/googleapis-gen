@@ -34,7 +34,8 @@ public interface GetDeviceRequestOrBuilder extends
   /**
    * <pre>
    * The fields of the `Device` resource to be returned in the response. If the
-   * field mask is unset or empty, all fields are returned.
+   * field mask is unset or empty, all fields are returned. Fields have to be
+   * provided in snake_case format, for example: `last_heartbeat_time`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 2;</code>
@@ -44,7 +45,8 @@ public interface GetDeviceRequestOrBuilder extends
   /**
    * <pre>
    * The fields of the `Device` resource to be returned in the response. If the
-   * field mask is unset or empty, all fields are returned.
+   * field mask is unset or empty, all fields are returned. Fields have to be
+   * provided in snake_case format, for example: `last_heartbeat_time`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 2;</code>
@@ -54,7 +56,8 @@ public interface GetDeviceRequestOrBuilder extends
   /**
    * <pre>
    * The fields of the `Device` resource to be returned in the response. If the
-   * field mask is unset or empty, all fields are returned.
+   * field mask is unset or empty, all fields are returned. Fields have to be
+   * provided in snake_case format, for example: `last_heartbeat_time`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 2;</code>
