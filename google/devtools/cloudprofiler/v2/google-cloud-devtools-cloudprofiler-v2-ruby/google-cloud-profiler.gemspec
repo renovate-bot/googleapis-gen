@@ -2,12 +2,12 @@
 # encoding: utf-8
 
 Gem::Specification.new do |gem|
-  gem.name          = "google-devtools-cloudprofiler"
+  gem.name          = "google-cloud-profiler"
   gem.version       = "0.1.0"
 
   gem.authors       = ["Google LLC"]
   gem.email         = "googleapis-packages@google.com"
-  gem.description   = "google-devtools-cloudprofiler is the official library for Cloud Profiler API."
+  gem.description   = "google-cloud-profiler is the official library for Cloud Profiler API."
   gem.summary       = "API Client library for Cloud Profiler API"
   gem.homepage      = "https://github.com/googleapis/googleapis"
   gem.license       = "Apache-2.0"

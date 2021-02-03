@@ -49,8 +49,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
 end
 
 module Google
-  module Devtools
-    module Cloudprofiler
+  module Cloud
+    module Profiler
       module V2
         CreateProfileRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.devtools.cloudprofiler.v2.CreateProfileRequest").msgclass
         CreateOfflineProfileRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.devtools.cloudprofiler.v2.CreateOfflineProfileRequest").msgclass

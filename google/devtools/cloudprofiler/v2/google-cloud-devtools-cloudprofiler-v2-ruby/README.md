@@ -16,7 +16,7 @@ steps:
 
 ### Installation
 ```
-$ gem install google-devtools-cloudprofiler
+$ gem install google-cloud-profiler
 ```
 
 ### Next Steps
@@ -27,7 +27,7 @@ $ gem install google-devtools-cloudprofiler
 - View this [repository's main README](https://github.com/GoogleCloudPlatform/google-cloud-ruby/blob/master/README.md)
   to see the full list of Cloud APIs that we cover.
 
-[Client Library Documentation]: https://googlecloudplatform.github.io/google-cloud-ruby/#/docs/google-devtools-cloudprofiler/latest/google/devtools/cloudprofiler/v2
+[Client Library Documentation]: https://googlecloudplatform.github.io/google-cloud-ruby/#/docs/google-cloud-profiler/latest/google/devtools/cloudprofiler/v2
 [Product Documentation]: https://cloud.google.com/devtools-cloudprofiler
 
 ## Enabling Logging

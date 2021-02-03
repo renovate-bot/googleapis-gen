@@ -24,7 +24,7 @@
  * @experimental
  */
 
-namespace Google\Devtools\Cloudprofiler\V2\Gapic;
+namespace Google\Cloud\Profiler\V2\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -34,12 +34,12 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Devtools\Cloudprofiler\V2\CreateOfflineProfileRequest;
-use Google\Devtools\Cloudprofiler\V2\CreateProfileRequest;
-use Google\Devtools\Cloudprofiler\V2\Deployment;
-use Google\Devtools\Cloudprofiler\V2\Profile;
-use Google\Devtools\Cloudprofiler\V2\ProfileType;
-use Google\Devtools\Cloudprofiler\V2\UpdateProfileRequest;
+use Google\Cloud\Profiler\V2\CreateOfflineProfileRequest;
+use Google\Cloud\Profiler\V2\CreateProfileRequest;
+use Google\Cloud\Profiler\V2\Deployment;
+use Google\Cloud\Profiler\V2\Profile;
+use Google\Cloud\Profiler\V2\ProfileType;
+use Google\Cloud\Profiler\V2\UpdateProfileRequest;
 use Google\Protobuf\FieldMask;
 
 /**
@@ -208,7 +208,7 @@ class ProfilerServiceGapicClient
      *          Deployment details.
      *     @type int[] $profileType
      *          One or more profile types that the agent is capable of providing.
-     *          For allowed values, use constants defined on {@see \Google\Devtools\Cloudprofiler\V2\ProfileType}
+     *          For allowed values, use constants defined on {@see \Google\Cloud\Profiler\V2\ProfileType}
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -216,7 +216,7 @@ class ProfilerServiceGapicClient
      *          {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Devtools\Cloudprofiler\V2\Profile
+     * @return \Google\Cloud\Profiler\V2\Profile
      *
      * @throws ApiException if the remote call fails
      * @experimental
@@ -278,7 +278,7 @@ class ProfilerServiceGapicClient
      *          {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Devtools\Cloudprofiler\V2\Profile
+     * @return \Google\Cloud\Profiler\V2\Profile
      *
      * @throws ApiException if the remote call fails
      * @experimental
@@ -341,7 +341,7 @@ class ProfilerServiceGapicClient
      *          {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Devtools\Cloudprofiler\V2\Profile
+     * @return \Google\Cloud\Profiler\V2\Profile
      *
      * @throws ApiException if the remote call fails
      * @experimental

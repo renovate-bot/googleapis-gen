@@ -16,7 +16,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-namespace Google\Devtools\Cloudprofiler\V2;
+namespace Google\Cloud\Profiler\V2;
 
 /**
  * Manage the collection of continuous profiling data provided by profiling
@@ -51,16 +51,16 @@ class ProfilerServiceGrpcClient extends \Grpc\BaseStub {
      * status. To a gRPC client, the extension will be return as a
      * binary-serialized proto in the trailing metadata item named
      * "google.rpc.retryinfo-bin".
-     * @param \Google\Devtools\Cloudprofiler\V2\CreateProfileRequest $argument input argument
+     * @param \Google\Cloud\Profiler\V2\CreateProfileRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function CreateProfile(\Google\Devtools\Cloudprofiler\V2\CreateProfileRequest $argument,
+    public function CreateProfile(\Google\Cloud\Profiler\V2\CreateProfileRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.devtools.cloudprofiler.v2.ProfilerService/CreateProfile',
         $argument,
-        ['\Google\Devtools\Cloudprofiler\V2\Profile', 'decode'],
+        ['\Google\Cloud\Profiler\V2\Profile', 'decode'],
         $metadata, $options);
     }
 
@@ -68,16 +68,16 @@ class ProfilerServiceGrpcClient extends \Grpc\BaseStub {
      * CreateOfflineProfile creates a new profile resource in the offline mode.
      * The client provides the profile to create along with the profile bytes, the
      * server records it.
-     * @param \Google\Devtools\Cloudprofiler\V2\CreateOfflineProfileRequest $argument input argument
+     * @param \Google\Cloud\Profiler\V2\CreateOfflineProfileRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function CreateOfflineProfile(\Google\Devtools\Cloudprofiler\V2\CreateOfflineProfileRequest $argument,
+    public function CreateOfflineProfile(\Google\Cloud\Profiler\V2\CreateOfflineProfileRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.devtools.cloudprofiler.v2.ProfilerService/CreateOfflineProfile',
         $argument,
-        ['\Google\Devtools\Cloudprofiler\V2\Profile', 'decode'],
+        ['\Google\Cloud\Profiler\V2\Profile', 'decode'],
         $metadata, $options);
     }
 
@@ -86,16 +86,16 @@ class ProfilerServiceGrpcClient extends \Grpc\BaseStub {
      * created in the online mode. Updating the bytes for profiles created in the
      * offline mode is currently not supported: the profile content must be
      * provided at the time of the profile creation.
-     * @param \Google\Devtools\Cloudprofiler\V2\UpdateProfileRequest $argument input argument
+     * @param \Google\Cloud\Profiler\V2\UpdateProfileRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function UpdateProfile(\Google\Devtools\Cloudprofiler\V2\UpdateProfileRequest $argument,
+    public function UpdateProfile(\Google\Cloud\Profiler\V2\UpdateProfileRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.devtools.cloudprofiler.v2.ProfilerService/UpdateProfile',
         $argument,
-        ['\Google\Devtools\Cloudprofiler\V2\Profile', 'decode'],
+        ['\Google\Cloud\Profiler\V2\Profile', 'decode'],
         $metadata, $options);
     }
 

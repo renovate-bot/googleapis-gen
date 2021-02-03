@@ -24,9 +24,9 @@
  * @experimental
  */
 
-namespace Google\Devtools\Cloudprofiler\V2;
+namespace Google\Cloud\Profiler\V2;
 
-use Google\Devtools\Cloudprofiler\V2\Gapic\ProfilerServiceGapicClient;
+use Google\Cloud\Profiler\V2\Gapic\ProfilerServiceGapicClient;
 
 /**
  * {@inheritdoc}

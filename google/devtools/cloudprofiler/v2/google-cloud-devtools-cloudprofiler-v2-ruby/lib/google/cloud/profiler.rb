@@ -16,7 +16,7 @@ require "google/gax"
 require "pathname"
 
 module Google
-  module Devtools
+  module Cloud
     # rubocop:disable LineLength
 
     ##
@@ -37,7 +37,7 @@ module Google
     #
     # ### Installation
     # ```
-    # $ gem install google-devtools-cloudprofiler
+    # $ gem install google-cloud-profiler
     # ```
     #
     # ### Next Steps
@@ -74,10 +74,10 @@ module Google
     # end
     # ```
     #
-    module Cloudprofiler
+    module Profiler
       # rubocop:enable LineLength
 
-      FILE_DIR = File.realdirpath(Pathname.new(__FILE__).join("..").join("cloudprofiler"))
+      FILE_DIR = File.realdirpath(Pathname.new(__FILE__).join("..").join("profiler"))
 
       AVAILABLE_VERSIONS = Dir["#{FILE_DIR}/*"]
         .select { |file| File.directory?(file) }
@@ -133,11 +133,11 @@ module Google
         end
 
         require "#{FILE_DIR}/#{version.to_s.downcase}"
-        version_module = Google::Devtools::Cloudprofiler
+        version_module = Google::Cloud::Profiler
           .constants
           .select {|sym| sym.to_s.downcase == version.to_s.downcase}
           .first
-        Google::Devtools::Cloudprofiler.const_get(version_module).new(*args, **kwargs)
+        Google::Cloud::Profiler.const_get(version_module).new(*args, **kwargs)
       end
     end
   end

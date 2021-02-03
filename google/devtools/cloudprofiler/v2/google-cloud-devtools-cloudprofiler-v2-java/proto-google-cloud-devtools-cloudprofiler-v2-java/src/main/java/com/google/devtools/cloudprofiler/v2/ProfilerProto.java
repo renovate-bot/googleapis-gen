@@ -108,10 +108,12 @@ public final class ProfilerProto {
       "oogleapis.com/auth/cloud-platform,https:" +
       "//www.googleapis.com/auth/monitoring,htt" +
       "ps://www.googleapis.com/auth/monitoring." +
-      "writeB\206\001\n$com.google.devtools.cloudprofi" +
+      "writeB\332\001\n$com.google.devtools.cloudprofi" +
       "ler.v2B\rProfilerProtoP\001ZMgoogle.golang.o" +
       "rg/genproto/googleapis/devtools/cloudpro" +
-      "filer/v2;cloudprofilerb\006proto3"
+      "filer/v2;cloudprofiler\252\002\030Google.Cloud.Pr" +
+      "ofiler.V2\312\002\030Google\\Cloud\\Profiler\\V2\352\002\033G" +
+      "oogle::Cloud::Profiler::V2b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

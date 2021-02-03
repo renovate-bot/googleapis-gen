@@ -20,20 +20,20 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Devtools\Cloudprofiler\Tests\Unit\V2;
+namespace Google\Cloud\Profiler\Tests\Unit\V2;
 
-use Google\Devtools\Cloudprofiler\V2\ProfilerServiceClient;
+use Google\Cloud\Profiler\V2\ProfilerServiceClient;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
-use Google\Devtools\Cloudprofiler\V2\Profile;
+use Google\Cloud\Profiler\V2\Profile;
 use Google\Protobuf\Any;
 use Google\Rpc\Code;
 use stdClass;
 
 /**
- * @group cloudprofiler
+ * @group profiler
  * @group gapic
  */
 class ProfilerServiceClientTest extends GeneratedTest

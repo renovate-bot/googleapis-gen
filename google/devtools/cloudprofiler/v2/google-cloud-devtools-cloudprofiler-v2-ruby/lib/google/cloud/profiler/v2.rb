@@ -12,11 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-require "google/devtools/cloudprofiler/v2/profiler_service_client"
+require "google/cloud/profiler/v2/profiler_service_client"
 
 module Google
-  module Devtools
-    module Cloudprofiler
+  module Cloud
+    module Profiler
       # rubocop:disable LineLength
 
       ##
@@ -37,7 +37,7 @@ module Google
       #
       # ### Installation
       # ```
-      # $ gem install google-devtools-cloudprofiler
+      # $ gem install google-cloud-profiler
       # ```
       #
       # ### Next Steps
@@ -133,7 +133,7 @@ module Google
             lib_name: lib_name,
             lib_version: lib_version
           }.select { |_, v| v != nil }
-          Google::Devtools::Cloudprofiler::V2::ProfilerServiceClient.new(**kwargs)
+          Google::Cloud::Profiler::V2::ProfilerServiceClient.new(**kwargs)
         end
       end
     end

@@ -15,8 +15,8 @@
 require "googleauth"
 
 module Google
-  module Devtools
-    module Cloudprofiler
+  module Cloud
+    module Profiler
       module V2
         class Credentials < Google::Auth::Credentials
           SCOPE = [

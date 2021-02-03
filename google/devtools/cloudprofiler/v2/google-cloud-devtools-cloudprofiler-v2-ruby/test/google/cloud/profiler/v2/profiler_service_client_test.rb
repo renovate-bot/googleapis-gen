@@ -17,8 +17,8 @@ require "minitest/spec"
 
 require "google/gax"
 
-require "google/devtools/cloudprofiler"
-require "google/devtools/cloudprofiler/v2/profiler_service_client"
+require "google/cloud/profiler"
+require "google/cloud/profiler/v2/profiler_service_client"
 require "google/devtools/cloudprofiler/v2/profiler_services_pb"
 
 class CustomTestError_v2 < StandardError; end
@@ -52,7 +52,7 @@ class MockGrpcClientStub_v2
   end
 end
 
-class MockProfilerServiceCredentials_v2 < Google::Devtools::Cloudprofiler::V2::Credentials
+class MockProfilerServiceCredentials_v2 < Google::Cloud::Profiler::V2::Credentials
   def initialize(method_name)
     @method_name = method_name
   end
@@ -65,10 +65,10 @@ class MockProfilerServiceCredentials_v2 < Google::Devtools::Cloudprofiler::V2::C
   end
 end
 
-describe Google::Devtools::Cloudprofiler::V2::ProfilerServiceClient do
+describe Google::Cloud::Profiler::V2::ProfilerServiceClient do
 
   describe 'create_profile' do
-    custom_error = CustomTestError_v2.new "Custom test error for Google::Devtools::Cloudprofiler::V2::ProfilerServiceClient#create_profile."
+    custom_error = CustomTestError_v2.new "Custom test error for Google::Cloud::Profiler::V2::ProfilerServiceClient#create_profile."
 
     it 'invokes create_profile without error' do
       # Create expected grpc response
@@ -87,8 +87,8 @@ describe Google::Devtools::Cloudprofiler::V2::ProfilerServiceClient do
       mock_credentials = MockProfilerServiceCredentials_v2.new("create_profile")
 
       Google::Devtools::Cloudprofiler::V2::ProfilerService::Stub.stub(:new, mock_stub) do
-        Google::Devtools::Cloudprofiler::V2::Credentials.stub(:default, mock_credentials) do
-          client = Google::Devtools::Cloudprofiler.new(version: :v2)
+        Google::Cloud::Profiler::V2::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Profiler.new(version: :v2)
 
           # Call method
           response = client.create_profile
@@ -117,8 +117,8 @@ describe Google::Devtools::Cloudprofiler::V2::ProfilerServiceClient do
       mock_credentials = MockProfilerServiceCredentials_v2.new("create_profile")
 
       Google::Devtools::Cloudprofiler::V2::ProfilerService::Stub.stub(:new, mock_stub) do
-        Google::Devtools::Cloudprofiler::V2::Credentials.stub(:default, mock_credentials) do
-          client = Google::Devtools::Cloudprofiler.new(version: :v2)
+        Google::Cloud::Profiler::V2::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Profiler.new(version: :v2)
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v2 do
@@ -133,7 +133,7 @@ describe Google::Devtools::Cloudprofiler::V2::ProfilerServiceClient do
   end
 
   describe 'create_offline_profile' do
-    custom_error = CustomTestError_v2.new "Custom test error for Google::Devtools::Cloudprofiler::V2::ProfilerServiceClient#create_offline_profile."
+    custom_error = CustomTestError_v2.new "Custom test error for Google::Cloud::Profiler::V2::ProfilerServiceClient#create_offline_profile."
 
     it 'invokes create_offline_profile without error' do
       # Create expected grpc response
@@ -152,8 +152,8 @@ describe Google::Devtools::Cloudprofiler::V2::ProfilerServiceClient do
       mock_credentials = MockProfilerServiceCredentials_v2.new("create_offline_profile")
 
       Google::Devtools::Cloudprofiler::V2::ProfilerService::Stub.stub(:new, mock_stub) do
-        Google::Devtools::Cloudprofiler::V2::Credentials.stub(:default, mock_credentials) do
-          client = Google::Devtools::Cloudprofiler.new(version: :v2)
+        Google::Cloud::Profiler::V2::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Profiler.new(version: :v2)
 
           # Call method
           response = client.create_offline_profile
@@ -182,8 +182,8 @@ describe Google::Devtools::Cloudprofiler::V2::ProfilerServiceClient do
       mock_credentials = MockProfilerServiceCredentials_v2.new("create_offline_profile")
 
       Google::Devtools::Cloudprofiler::V2::ProfilerService::Stub.stub(:new, mock_stub) do
-        Google::Devtools::Cloudprofiler::V2::Credentials.stub(:default, mock_credentials) do
-          client = Google::Devtools::Cloudprofiler.new(version: :v2)
+        Google::Cloud::Profiler::V2::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Profiler.new(version: :v2)
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v2 do
@@ -198,7 +198,7 @@ describe Google::Devtools::Cloudprofiler::V2::ProfilerServiceClient do
   end
 
   describe 'update_profile' do
-    custom_error = CustomTestError_v2.new "Custom test error for Google::Devtools::Cloudprofiler::V2::ProfilerServiceClient#update_profile."
+    custom_error = CustomTestError_v2.new "Custom test error for Google::Cloud::Profiler::V2::ProfilerServiceClient#update_profile."
 
     it 'invokes update_profile without error' do
       # Create expected grpc response
@@ -217,8 +217,8 @@ describe Google::Devtools::Cloudprofiler::V2::ProfilerServiceClient do
       mock_credentials = MockProfilerServiceCredentials_v2.new("update_profile")
 
       Google::Devtools::Cloudprofiler::V2::ProfilerService::Stub.stub(:new, mock_stub) do
-        Google::Devtools::Cloudprofiler::V2::Credentials.stub(:default, mock_credentials) do
-          client = Google::Devtools::Cloudprofiler.new(version: :v2)
+        Google::Cloud::Profiler::V2::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Profiler.new(version: :v2)
 
           # Call method
           response = client.update_profile
@@ -247,8 +247,8 @@ describe Google::Devtools::Cloudprofiler::V2::ProfilerServiceClient do
       mock_credentials = MockProfilerServiceCredentials_v2.new("update_profile")
 
       Google::Devtools::Cloudprofiler::V2::ProfilerService::Stub.stub(:new, mock_stub) do
-        Google::Devtools::Cloudprofiler::V2::Credentials.stub(:default, mock_credentials) do
-          client = Google::Devtools::Cloudprofiler.new(version: :v2)
+        Google::Cloud::Profiler::V2::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Profiler.new(version: :v2)
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v2 do

@@ -1,6 +1,6 @@
 AllCops:
   Exclude:
-    - "google-devtools-cloudprofiler.gemspec"
+    - "google-cloud-profiler.gemspec"
     - "lib/google/**/*"
     - "Rakefile"
     - "test/**/*"

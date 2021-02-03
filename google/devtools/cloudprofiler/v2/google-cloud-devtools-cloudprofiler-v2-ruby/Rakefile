@@ -30,7 +30,7 @@ namespace :test do
   task :coverage do
     require "simplecov"
     SimpleCov.start do
-      command_name "google-devtools-cloudprofiler"
+      command_name "google-cloud-profiler"
       track_files "lib/**/*.rb"
       add_filter "test/"
     end
@@ -40,7 +40,7 @@ namespace :test do
 end
 
 # Acceptance tests
-desc "Run the google-devtools-cloudprofiler acceptance tests."
+desc "Run the google-cloud-profiler acceptance tests."
 task :acceptance, :project, :keyfile do |t, args|
 
   Rake::Task["acceptance:run"].invoke
@@ -48,7 +48,7 @@ end
 
 namespace :acceptance do
   task :run do
-    puts "The google-devtools-cloudprofiler gem does not have acceptance tests."
+    puts "The google-cloud-profiler gem does not have acceptance tests."
   end
 
   desc "Run acceptance tests with coverage."
@@ -64,7 +64,7 @@ require "yard"
 require "yard/rake/yardoc_task"
 YARD::Rake::YardocTask.new
 
-desc "Generates JSON output from google-devtools-cloudprofiler .yardoc"
+desc "Generates JSON output from google-cloud-profiler .yardoc"
 task :jsondoc => :yard do
   require "rubygems"
   require "gcloud/jsondoc"
@@ -79,7 +79,7 @@ task :jsondoc => :yard do
         modules: [
           {
             title: "Google::Devtools::Cloudprofiler::V2",
-            include: ["google/devtools/cloudprofiler/v2"]
+            include: ["google/cloud/profiler/v2"]
           },
           {
             title: "Google::Protobuf",
@@ -95,7 +95,7 @@ task :jsondoc => :yard do
   }
 
   generator = Gcloud::Jsondoc::Generator.new registry,
-                                             "google-devtools-cloudprofiler",
+                                             "google-cloud-profiler",
                                              generate: toc_config
   rm_rf "jsondoc", verbose: true
   generator.write_to "jsondoc"
@@ -104,19 +104,19 @@ end
 
 desc "Run yard-doctest example tests."
 task :doctest do
-  puts "The google-devtools-cloudprofiler gem does not have doctest tests."
+  puts "The google-cloud-profiler gem does not have doctest tests."
 end
 
 desc "Run the CI build"
 task :ci do
-  header "BUILDING google-devtools-cloudprofiler"
-  header "google-devtools-cloudprofiler rubocop", "*"
+  header "BUILDING google-cloud-profiler"
+  header "google-cloud-profiler rubocop", "*"
   sh "bundle exec rake rubocop"
-  header "google-devtools-cloudprofiler jsondoc", "*"
+  header "google-cloud-profiler jsondoc", "*"
   sh "bundle exec rake jsondoc"
-  header "google-devtools-cloudprofiler doctest", "*"
+  header "google-cloud-profiler doctest", "*"
   sh "bundle exec rake doctest"
-  header "google-devtools-cloudprofiler test", "*"
+  header "google-cloud-profiler test", "*"
   sh "bundle exec rake test"
 end
 
@@ -124,7 +124,7 @@ namespace :ci do
   desc "Run the CI build, with acceptance tests."
   task :acceptance do
     Rake::Task["ci"].invoke
-    header "google-devtools-cloudprofiler acceptance", "*"
+    header "google-cloud-profiler acceptance", "*"
     sh "bundle exec rake acceptance -v"
   end
   task :a do

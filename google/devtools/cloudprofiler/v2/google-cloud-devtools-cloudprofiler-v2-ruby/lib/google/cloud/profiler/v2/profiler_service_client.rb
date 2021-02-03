@@ -25,11 +25,11 @@ require "pathname"
 require "google/gax"
 
 require "google/devtools/cloudprofiler/v2/profiler_pb"
-require "google/devtools/cloudprofiler/v2/credentials"
+require "google/cloud/profiler/v2/credentials"
 
 module Google
-  module Devtools
-    module Cloudprofiler
+  module Cloud
+    module Profiler
       module V2
         # Manage the collection of continuous profiling data provided by profiling
         # agents running in the cloud or by an offline provider of profiling data.
@@ -107,10 +107,10 @@ module Google
             require "google/gax/grpc"
             require "google/devtools/cloudprofiler/v2/profiler_services_pb"
 
-            credentials ||= Google::Devtools::Cloudprofiler::V2::Credentials.default
+            credentials ||= Google::Cloud::Profiler::V2::Credentials.default
 
             if credentials.is_a?(String) || credentials.is_a?(Hash)
-              updater_proc = Google::Devtools::Cloudprofiler::V2::Credentials.new(credentials).updater_proc
+              updater_proc = Google::Cloud::Profiler::V2::Credentials.new(credentials).updater_proc
             end
             if credentials.is_a?(GRPC::Core::Channel)
               channel = credentials
@@ -125,7 +125,7 @@ module Google
               updater_proc = credentials.updater_proc
             end
 
-            package_version = Gem.loaded_specs['google-devtools-cloudprofiler'].version.version
+            package_version = Gem.loaded_specs['google-cloud-profiler'].version.version
 
             google_api_client = "gl-ruby/#{RUBY_VERSION}"
             google_api_client << " #{lib_name}/#{lib_version}" if lib_name
@@ -227,9 +227,9 @@ module Google
           # @return [Google::Devtools::Cloudprofiler::V2::Profile]
           # @raise [Google::Gax::GaxError] if the RPC is aborted.
           # @example
-          #   require "google/devtools/cloudprofiler"
+          #   require "google/cloud/profiler"
           #
-          #   profiler_client = Google::Devtools::Cloudprofiler.new(version: :v2)
+          #   profiler_client = Google::Cloud::Profiler.new(version: :v2)
           #   response = profiler_client.create_profile
 
           def create_profile \
@@ -266,9 +266,9 @@ module Google
           # @return [Google::Devtools::Cloudprofiler::V2::Profile]
           # @raise [Google::Gax::GaxError] if the RPC is aborted.
           # @example
-          #   require "google/devtools/cloudprofiler"
+          #   require "google/cloud/profiler"
           #
-          #   profiler_client = Google::Devtools::Cloudprofiler.new(version: :v2)
+          #   profiler_client = Google::Cloud::Profiler.new(version: :v2)
           #   response = profiler_client.create_offline_profile
 
           def create_offline_profile \
@@ -309,9 +309,9 @@ module Google
           # @return [Google::Devtools::Cloudprofiler::V2::Profile]
           # @raise [Google::Gax::GaxError] if the RPC is aborted.
           # @example
-          #   require "google/devtools/cloudprofiler"
+          #   require "google/cloud/profiler"
           #
-          #   profiler_client = Google::Devtools::Cloudprofiler.new(version: :v2)
+          #   profiler_client = Google::Cloud::Profiler.new(version: :v2)
           #   response = profiler_client.update_profile
 
           def update_profile \
