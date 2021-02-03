@@ -24,9 +24,9 @@
  * @experimental
  */
 
-namespace Google\Ads\Googleads\V5\Services;
+namespace Google\Ads\GoogleAds\V5\Services;
 
-use Google\Ads\Googleads\V5\Services\Gapic\BillingSetupServiceGapicClient;
+use Google\Ads\GoogleAds\V5\Services\Gapic\BillingSetupServiceGapicClient;
 
 /**
  * {@inheritdoc}

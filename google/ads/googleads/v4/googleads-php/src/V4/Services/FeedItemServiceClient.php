@@ -24,9 +24,9 @@
  * @experimental
  */
 
-namespace Google\Ads\Googleads\V4\Services;
+namespace Google\Ads\GoogleAds\V4\Services;
 
-use Google\Ads\Googleads\V4\Services\Gapic\FeedItemServiceGapicClient;
+use Google\Ads\GoogleAds\V4\Services\Gapic\FeedItemServiceGapicClient;
 
 /**
  * {@inheritdoc}

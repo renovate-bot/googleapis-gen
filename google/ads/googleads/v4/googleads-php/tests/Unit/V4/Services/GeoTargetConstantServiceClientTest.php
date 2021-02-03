@@ -20,9 +20,9 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Ads\Googleads\Tests\Unit\V4\Services;
+namespace Google\Ads\GoogleAds\Tests\Unit\V4\Services;
 
-use Google\Ads\Googleads\V4\Services\GeoTargetConstantServiceClient;
+use Google\Ads\GoogleAds\V4\Services\GeoTargetConstantServiceClient;
 use Google\Ads\GoogleAds\V4\Resources\GeoTargetConstant;
 use Google\Ads\GoogleAds\V4\Services\SuggestGeoTargetConstantsResponse;
 use Google\ApiCore\ApiException;

@@ -20,9 +20,9 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Ads\Googleads\Tests\Unit\V4\Services;
+namespace Google\Ads\GoogleAds\Tests\Unit\V4\Services;
 
-use Google\Ads\Googleads\V4\Services\CampaignServiceClient;
+use Google\Ads\GoogleAds\V4\Services\CampaignServiceClient;
 use Google\Ads\GoogleAds\V4\Resources\Campaign;
 use Google\Ads\GoogleAds\V4\Services\MutateCampaignsResponse;
 use Google\ApiCore\ApiException;

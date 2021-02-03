@@ -24,9 +24,9 @@
  * @experimental
  */
 
-namespace Google\Ads\Googleads\V3\Services;
+namespace Google\Ads\GoogleAds\V3\Services;
 
-use Google\Ads\Googleads\V3\Services\Gapic\GroupPlacementViewServiceGapicClient;
+use Google\Ads\GoogleAds\V3\Services\Gapic\GroupPlacementViewServiceGapicClient;
 
 /**
  * {@inheritdoc}

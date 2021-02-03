@@ -20,9 +20,9 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Ads\Googleads\Tests\Unit\V5\Services;
+namespace Google\Ads\GoogleAds\Tests\Unit\V5\Services;
 
-use Google\Ads\Googleads\V5\Services\CampaignDraftServiceClient;
+use Google\Ads\GoogleAds\V5\Services\CampaignDraftServiceClient;
 use Google\Ads\GoogleAds\V5\Resources\CampaignDraft;
 use Google\Ads\GoogleAds\V5\Services\ListCampaignDraftAsyncErrorsResponse;
 use Google\Ads\GoogleAds\V5\Services\MutateCampaignDraftsResponse;

@@ -24,7 +24,7 @@
  * @experimental
  */
 
-namespace Google\Ads\Googleads\V6\Services\Gapic;
+namespace Google\Ads\GoogleAds\V6\Services\Gapic;
 
 use Google\Ads\GoogleAds\V6\Services\CallConversion;
 use Google\Ads\GoogleAds\V6\Services\ClickConversion;

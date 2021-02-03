@@ -24,7 +24,7 @@
  * @experimental
  */
 
-namespace Google\Ads\Googleads\V4\Services\Gapic;
+namespace Google\Ads\GoogleAds\V4\Services\Gapic;
 
 use Google\Ads\GoogleAds\V4\Resources\CustomerClientLink;
 use Google\Ads\GoogleAds\V4\Services\CustomerClientLinkOperation;

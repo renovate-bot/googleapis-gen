@@ -20,9 +20,9 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Ads\Googleads\Tests\Unit\V6\Services;
+namespace Google\Ads\GoogleAds\Tests\Unit\V6\Services;
 
-use Google\Ads\Googleads\V6\Services\AdGroupServiceClient;
+use Google\Ads\GoogleAds\V6\Services\AdGroupServiceClient;
 use Google\Ads\GoogleAds\V6\Resources\AdGroup;
 use Google\Ads\GoogleAds\V6\Services\MutateAdGroupsResponse;
 use Google\ApiCore\ApiException;

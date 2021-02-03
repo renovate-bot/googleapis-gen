@@ -20,9 +20,9 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Ads\Googleads\Tests\Unit\V6\Services;
+namespace Google\Ads\GoogleAds\Tests\Unit\V6\Services;
 
-use Google\Ads\Googleads\V6\Services\CustomerManagerLinkServiceClient;
+use Google\Ads\GoogleAds\V6\Services\CustomerManagerLinkServiceClient;
 use Google\Ads\GoogleAds\V6\Resources\CustomerManagerLink;
 use Google\Ads\GoogleAds\V6\Services\MoveManagerLinkResponse;
 use Google\Ads\GoogleAds\V6\Services\MutateCustomerManagerLinkResponse;

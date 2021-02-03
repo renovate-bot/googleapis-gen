@@ -20,9 +20,9 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Ads\Googleads\Tests\Unit\V5\Services;
+namespace Google\Ads\GoogleAds\Tests\Unit\V5\Services;
 
-use Google\Ads\Googleads\V5\Services\AccountLinkServiceClient;
+use Google\Ads\GoogleAds\V5\Services\AccountLinkServiceClient;
 use Google\Ads\GoogleAds\V5\Resources\AccountLink;
 use Google\Ads\GoogleAds\V5\Services\AccountLinkOperation;
 use Google\Ads\GoogleAds\V5\Services\CreateAccountLinkResponse;

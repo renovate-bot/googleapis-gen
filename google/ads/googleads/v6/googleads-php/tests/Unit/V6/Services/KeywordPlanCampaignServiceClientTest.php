@@ -20,9 +20,9 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Ads\Googleads\Tests\Unit\V6\Services;
+namespace Google\Ads\GoogleAds\Tests\Unit\V6\Services;
 
-use Google\Ads\Googleads\V6\Services\KeywordPlanCampaignServiceClient;
+use Google\Ads\GoogleAds\V6\Services\KeywordPlanCampaignServiceClient;
 use Google\Ads\GoogleAds\V6\Resources\KeywordPlanCampaign;
 use Google\Ads\GoogleAds\V6\Services\MutateKeywordPlanCampaignsResponse;
 use Google\ApiCore\ApiException;

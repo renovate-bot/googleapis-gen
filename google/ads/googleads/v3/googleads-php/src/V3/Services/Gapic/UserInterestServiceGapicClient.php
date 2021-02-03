@@ -24,7 +24,7 @@
  * @experimental
  */
 
-namespace Google\Ads\Googleads\V3\Services\Gapic;
+namespace Google\Ads\GoogleAds\V3\Services\Gapic;
 
 use Google\Ads\GoogleAds\V3\Resources\UserInterest;
 use Google\Ads\GoogleAds\V3\Services\GetUserInterestRequest;

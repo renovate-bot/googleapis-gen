@@ -20,9 +20,9 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Ads\Googleads\Tests\Unit\V6\Services;
+namespace Google\Ads\GoogleAds\Tests\Unit\V6\Services;
 
-use Google\Ads\Googleads\V6\Services\BatchJobServiceClient;
+use Google\Ads\GoogleAds\V6\Services\BatchJobServiceClient;
 use Google\Ads\GoogleAds\V6\Resources\BatchJob;
 use Google\Ads\GoogleAds\V6\Services\AddBatchJobOperationsResponse;
 use Google\Ads\GoogleAds\V6\Services\BatchJobOperation;

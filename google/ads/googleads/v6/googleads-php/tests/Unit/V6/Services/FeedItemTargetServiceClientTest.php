@@ -20,9 +20,9 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Ads\Googleads\Tests\Unit\V6\Services;
+namespace Google\Ads\GoogleAds\Tests\Unit\V6\Services;
 
-use Google\Ads\Googleads\V6\Services\FeedItemTargetServiceClient;
+use Google\Ads\GoogleAds\V6\Services\FeedItemTargetServiceClient;
 use Google\Ads\GoogleAds\V6\Resources\FeedItemTarget;
 use Google\Ads\GoogleAds\V6\Services\MutateFeedItemTargetsResponse;
 use Google\ApiCore\ApiException;

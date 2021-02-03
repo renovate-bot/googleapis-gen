@@ -20,9 +20,9 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Ads\Googleads\Tests\Unit\V3\Services;
+namespace Google\Ads\GoogleAds\Tests\Unit\V3\Services;
 
-use Google\Ads\Googleads\V3\Services\KeywordPlanServiceClient;
+use Google\Ads\GoogleAds\V3\Services\KeywordPlanServiceClient;
 use Google\Ads\GoogleAds\V3\Resources\KeywordPlan;
 use Google\Ads\GoogleAds\V3\Services\GenerateForecastMetricsResponse;
 use Google\Ads\GoogleAds\V3\Services\GenerateHistoricalMetricsResponse;

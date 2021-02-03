@@ -20,9 +20,9 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Ads\Googleads\Tests\Unit\V5\Services;
+namespace Google\Ads\GoogleAds\Tests\Unit\V5\Services;
 
-use Google\Ads\Googleads\V5\Services\RecommendationServiceClient;
+use Google\Ads\GoogleAds\V5\Services\RecommendationServiceClient;
 use Google\Ads\GoogleAds\V5\Resources\Recommendation;
 use Google\Ads\GoogleAds\V5\Services\ApplyRecommendationResponse;
 use Google\Ads\GoogleAds\V5\Services\DismissRecommendationResponse;

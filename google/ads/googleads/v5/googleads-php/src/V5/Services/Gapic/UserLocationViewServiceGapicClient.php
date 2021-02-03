@@ -24,7 +24,7 @@
  * @experimental
  */
 
-namespace Google\Ads\Googleads\V5\Services\Gapic;
+namespace Google\Ads\GoogleAds\V5\Services\Gapic;
 
 use Google\Ads\GoogleAds\V5\Resources\UserLocationView;
 use Google\Ads\GoogleAds\V5\Services\GetUserLocationViewRequest;
