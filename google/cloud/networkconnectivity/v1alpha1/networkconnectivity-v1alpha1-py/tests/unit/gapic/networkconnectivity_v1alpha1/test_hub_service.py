@@ -792,6 +792,8 @@ def test_get_hub(transport: str = 'grpc', request_type=hub.GetHubRequest):
 
             unique_id='unique_id_value',
 
+            state=hub.State.CREATING,
+
         )
 
         response = client.get_hub(request)
@@ -813,6 +815,8 @@ def test_get_hub(transport: str = 'grpc', request_type=hub.GetHubRequest):
     assert response.spokes == ['spokes_value']
 
     assert response.unique_id == 'unique_id_value'
+
+    assert response.state == hub.State.CREATING
 
 
 def test_get_hub_from_dict():
@@ -840,6 +844,7 @@ async def test_get_hub_async(transport: str = 'grpc_asyncio', request_type=hub.G
             description='description_value',
             spokes=['spokes_value'],
             unique_id='unique_id_value',
+            state=hub.State.CREATING,
         ))
 
         response = await client.get_hub(request)
@@ -860,6 +865,8 @@ async def test_get_hub_async(transport: str = 'grpc_asyncio', request_type=hub.G
     assert response.spokes == ['spokes_value']
 
     assert response.unique_id == 'unique_id_value'
+
+    assert response.state == hub.State.CREATING
 
 
 @pytest.mark.asyncio
@@ -2137,6 +2144,8 @@ def test_get_spoke(transport: str = 'grpc', request_type=hub.GetSpokeRequest):
 
             unique_id='unique_id_value',
 
+            state=hub.State.CREATING,
+
         )
 
         response = client.get_spoke(request)
@@ -2162,6 +2171,8 @@ def test_get_spoke(transport: str = 'grpc', request_type=hub.GetSpokeRequest):
     assert response.linked_interconnect_attachments == ['linked_interconnect_attachments_value']
 
     assert response.unique_id == 'unique_id_value'
+
+    assert response.state == hub.State.CREATING
 
 
 def test_get_spoke_from_dict():
@@ -2191,6 +2202,7 @@ async def test_get_spoke_async(transport: str = 'grpc_asyncio', request_type=hub
             linked_vpn_tunnels=['linked_vpn_tunnels_value'],
             linked_interconnect_attachments=['linked_interconnect_attachments_value'],
             unique_id='unique_id_value',
+            state=hub.State.CREATING,
         ))
 
         response = await client.get_spoke(request)
@@ -2215,6 +2227,8 @@ async def test_get_spoke_async(transport: str = 'grpc_asyncio', request_type=hub
     assert response.linked_interconnect_attachments == ['linked_interconnect_attachments_value']
 
     assert response.unique_id == 'unique_id_value'
+
+    assert response.state == hub.State.CREATING
 
 
 @pytest.mark.asyncio

@@ -9,10 +9,10 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * The Connectivity Hub is a hub-and-spoke abstraction for network connectivity
- * management in Google Cloud. It aims to reduce operational complexity
- * through a simple, centralized connectivity management model. Here is the
- * resource message of a Hub.
+ * Network Connectivity Center is a hub-and-spoke abstraction for
+ * network connectivity management in Google Cloud. It reduces
+ * operational complexity through a simple, centralized connectivity management
+ * model. Following is the resource message of a hub.
  *
  * Generated from protobuf message <code>google.cloud.networkconnectivity.v1alpha1.Hub</code>
  */
@@ -62,6 +62,12 @@ class Hub extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string unique_id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $unique_id = '';
+    /**
+     * Output only. The current lifecycle state of this Hub.
+     *
+     * Generated from protobuf field <code>.google.cloud.networkconnectivity.v1alpha1.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $state = 0;
 
     /**
      * Constructor.
@@ -85,6 +91,8 @@ class Hub extends \Google\Protobuf\Internal\Message
      *           Output only. Google-generated UUID for this resource. This is unique across all Hub
      *           resources. If a Hub resource is deleted and another with the same name is
      *           created, it gets a different unique_id.
+     *     @type int $state
+     *           Output only. The current lifecycle state of this Hub.
      * }
      */
     public function __construct($data = NULL) {
@@ -294,6 +302,32 @@ class Hub extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->unique_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The current lifecycle state of this Hub.
+     *
+     * Generated from protobuf field <code>.google.cloud.networkconnectivity.v1alpha1.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return int
+     */
+    public function getState()
+    {
+        return $this->state;
+    }
+
+    /**
+     * Output only. The current lifecycle state of this Hub.
+     *
+     * Generated from protobuf field <code>.google.cloud.networkconnectivity.v1alpha1.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setState($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Cloud\NetworkConnectivity\V1alpha1\State::class);
+        $this->state = $var;
 
         return $this;
     }

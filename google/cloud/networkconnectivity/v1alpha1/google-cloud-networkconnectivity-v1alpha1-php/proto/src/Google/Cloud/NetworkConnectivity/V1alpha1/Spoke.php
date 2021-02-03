@@ -79,6 +79,12 @@ class Spoke extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string unique_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $unique_id = '';
+    /**
+     * Output only. The current lifecycle state of this Hub.
+     *
+     * Generated from protobuf field <code>.google.cloud.networkconnectivity.v1alpha1.State state = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $state = 0;
 
     /**
      * Constructor.
@@ -108,6 +114,8 @@ class Spoke extends \Google\Protobuf\Internal\Message
      *           Output only. Google-generated UUID for this resource. This is unique across all Spoke
      *           resources. If a Spoke resource is deleted and another with the same name is
      *           created, it gets a different unique_id.
+     *     @type int $state
+     *           Output only. The current lifecycle state of this Hub.
      * }
      */
     public function __construct($data = NULL) {
@@ -395,6 +403,32 @@ class Spoke extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->unique_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The current lifecycle state of this Hub.
+     *
+     * Generated from protobuf field <code>.google.cloud.networkconnectivity.v1alpha1.State state = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return int
+     */
+    public function getState()
+    {
+        return $this->state;
+    }
+
+    /**
+     * Output only. The current lifecycle state of this Hub.
+     *
+     * Generated from protobuf field <code>.google.cloud.networkconnectivity.v1alpha1.State state = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setState($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Cloud\NetworkConnectivity\V1alpha1\State::class);
+        $this->state = $var;
 
         return $this;
     }

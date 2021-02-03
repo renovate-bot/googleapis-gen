@@ -80,9 +80,10 @@ module Google
         # rubocop:enable LineLength
 
         ##
-        # Connectivity Hub is a hub-and-spoke abstraction for network connectivity
-        # management in Google Cloud. The Hub aims to reduce operational complexity
-        # through a simple, centralized connectivity management model.
+        # Network Connectivity Center is a hub-and-spoke abstraction for
+        # network connectivity management in Google Cloud. It reduces
+        # operational complexity through a simple, centralized connectivity management
+        # model.
         #
         # @param credentials [Google::Auth::Credentials, String, Hash, GRPC::Core::Channel, GRPC::Core::ChannelCredentials, Proc]
         #   Provides the means for authenticating requests made by the client. This parameter can
