@@ -18,7 +18,7 @@
 
 
 /* eslint-disable node/no-missing-require, no-unused-vars */
-const domains = require('domains');
+const domains = require('@google-cloud/domains');
 
 function main() {
   const domainsClient = new domains.DomainsClient();
