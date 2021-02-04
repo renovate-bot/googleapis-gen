@@ -16,7 +16,7 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
-import {CatalogServiceClient, PredictionServiceClient, ProductServiceClient, UserEventServiceClient} from 'retail';
+import {CatalogServiceClient, PredictionServiceClient, ProductServiceClient, UserEventServiceClient} from '@google-cloud/retail';
 
 // check that the client class type name can be used
 function doStuffWithCatalogServiceClient(client: CatalogServiceClient) {
