@@ -19,10 +19,10 @@ import setuptools  # type: ignore
 
 
 setuptools.setup(
-    name='google-cloud-aiplatform',
+    name='google-cloud-aiplatform-v1-schema-trainingjob-definition',
     version='0.0.1',
     packages=setuptools.PEP420PackageFinder.find(),
-    namespace_packages=('google', 'google.cloud'),
+    namespace_packages=('google', 'google.cloud', 'google.cloud.aiplatform', 'google.cloud.aiplatform.v1', 'google.cloud.aiplatform.v1.schema', 'google.cloud.aiplatform.v1.schema.trainingjob'),
     platforms='Posix; MacOS X; Windows',
     include_package_data=True,
     install_requires=(
@@ -32,7 +32,7 @@ setuptools.setup(
     ),
     python_requires='>=3.6',
     scripts=[
-        'scripts/fixup_aiplatform_v1_keywords.py',
+        'scripts/fixup_definition_v1_keywords.py',
     ],
     classifiers=[
         'Development Status :: 3 - Alpha',

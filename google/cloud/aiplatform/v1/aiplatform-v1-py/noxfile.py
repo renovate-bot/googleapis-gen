@@ -31,7 +31,7 @@ def unit(session):
     session.run(
         'py.test',
         '--quiet',
-        '--cov=google/cloud/aiplatform_v1/',
+        '--cov=google/cloud/aiplatform/v1/schema/trainingjob/definition_v1/',
         '--cov-config=.coveragerc',
         '--cov-report=term',
         '--cov-report=html',

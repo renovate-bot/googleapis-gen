@@ -16,7 +16,7 @@
 #
 
 #
-# google-cloud-aiplatform documentation build configuration file
+# google-cloud-aiplatform-v1-schema-trainingjob-definition documentation build configuration file
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -80,7 +80,7 @@ source_suffix = [".rst", ".md"]
 master_doc = "index"
 
 # General information about the project.
-project = u"google-cloud-aiplatform"
+project = u"google-cloud-aiplatform-v1-schema-trainingjob-definition"
 copyright = u"2020, Google, LLC"
 author = u"Google APIs"         # TODO: autogenerate this bit
 
@@ -148,7 +148,7 @@ html_theme = "alabaster"
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
-    "description": "Google Cloud Client Libraries for Python",
+    "description": "Google Cloud Aiplatform V1 Schema Trainingjob Client Libraries for Python",
     "github_user": "googleapis",
     "github_repo": "google-cloud-python",
     "github_banner": True,
@@ -242,7 +242,7 @@ html_static_path = ["_static"]
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "google-cloud-aiplatform-doc"
+htmlhelp_basename = "google-cloud-aiplatform-v1-schema-trainingjob-definition-doc"
 
 # -- Options for warnings ------------------------------------------------------
 
@@ -275,8 +275,8 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "google-cloud-aiplatform.tex",
-        u"google-cloud-aiplatform Documentation",
+        "google-cloud-aiplatform-v1-schema-trainingjob-definition.tex",
+        u"google-cloud-aiplatform-v1-schema-trainingjob-definition Documentation",
         author,
         "manual",
     )
@@ -310,8 +310,8 @@ latex_documents = [
 man_pages = [
     (
         master_doc,
-        "google-cloud-aiplatform",
-        u"Google Cloud Aiplatform Documentation",
+        "google-cloud-aiplatform-v1-schema-trainingjob-definition",
+        u"Google Cloud Aiplatform V1 Schema Trainingjob Definition Documentation",
         [author],
         1,
     )
@@ -329,11 +329,11 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "google-cloud-aiplatform",
-        u"google-cloud-aiplatform Documentation",
+        "google-cloud-aiplatform-v1-schema-trainingjob-definition",
+        u"google-cloud-aiplatform-v1-schema-trainingjob-definition Documentation",
         author,
-        "google-cloud-aiplatform",
-        "GAPIC library for Google Cloud Aiplatform API",
+        "google-cloud-aiplatform-v1-schema-trainingjob-definition",
+        "GAPIC library for Google Cloud Aiplatform V1 Schema Trainingjob Definition API",
         "APIs",
     )
 ]
