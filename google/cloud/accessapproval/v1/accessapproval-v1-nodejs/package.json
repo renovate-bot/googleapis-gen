@@ -1,5 +1,5 @@
 {
-  "name": "accessapproval",
+  "name": "@google-cloud/access-approval",
   "version": "0.1.0",
   "description": "Accessapproval client for Node.js",
   "repository": "googleapis/nodejs-accessapproval",

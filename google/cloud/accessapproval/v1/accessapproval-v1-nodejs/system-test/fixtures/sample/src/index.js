@@ -18,7 +18,7 @@
 
 
 /* eslint-disable node/no-missing-require, no-unused-vars */
-const accessapproval = require('accessapproval');
+const accessapproval = require('@google-cloud/access-approval');
 
 function main() {
   const accessApprovalClient = new accessapproval.AccessApprovalClient();
