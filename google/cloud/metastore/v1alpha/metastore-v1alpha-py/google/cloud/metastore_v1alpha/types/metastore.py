@@ -329,8 +329,8 @@ class ListServicesRequest(proto.Message):
         order_by (str):
             Optional. Specify the ordering of results as described in
             `Sorting
-            Order </apis/design/design_patterns#sorting_order>`__. If
-            not specified, the results will be sorted in the default
+            Order <https://cloud.google.com/apis/design/design_patterns#sorting_order>`__.
+            If not specified, the results will be sorted in the default
             order.
     """
 
@@ -551,8 +551,8 @@ class ListMetadataImportsRequest(proto.Message):
         order_by (str):
             Optional. Specify the ordering of results as described in
             `Sorting
-            Order </apis/design/design_patterns#sorting_order>`__. If
-            not specified, the results will be sorted in the default
+            Order <https://cloud.google.com/apis/design/design_patterns#sorting_order>`__.
+            If not specified, the results will be sorted in the default
             order.
     """
 

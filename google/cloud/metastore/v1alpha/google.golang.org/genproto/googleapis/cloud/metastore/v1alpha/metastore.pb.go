@@ -821,7 +821,7 @@ type ListServicesRequest struct {
 	// Optional. The filter to apply to list results.
 	Filter string `protobuf:"bytes,4,opt,name=filter,proto3" json:"filter,omitempty"`
 	// Optional. Specify the ordering of results as described in
-	// [Sorting Order](/apis/design/design_patterns#sorting_order). If not
+	// [Sorting Order](https://cloud.google.com/apis/design/design_patterns#sorting_order). If not
 	// specified, the results will be sorted in the default order.
 	OrderBy string `protobuf:"bytes,5,opt,name=order_by,json=orderBy,proto3" json:"order_by,omitempty"`
 }
@@ -1294,7 +1294,7 @@ type ListMetadataImportsRequest struct {
 	// Optional. The filter to apply to list results.
 	Filter string `protobuf:"bytes,4,opt,name=filter,proto3" json:"filter,omitempty"`
 	// Optional. Specify the ordering of results as described in
-	// [Sorting Order](/apis/design/design_patterns#sorting_order). If not
+	// [Sorting Order](https://cloud.google.com/apis/design/design_patterns#sorting_order). If not
 	// specified, the results will be sorted in the default order.
 	OrderBy string `protobuf:"bytes,5,opt,name=order_by,json=orderBy,proto3" json:"order_by,omitempty"`
 }

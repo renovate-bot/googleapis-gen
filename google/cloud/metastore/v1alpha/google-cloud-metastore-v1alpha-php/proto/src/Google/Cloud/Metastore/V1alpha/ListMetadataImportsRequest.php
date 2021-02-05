@@ -50,7 +50,7 @@ class ListMetadataImportsRequest extends \Google\Protobuf\Internal\Message
     protected $filter = '';
     /**
      * Optional. Specify the ordering of results as described in
-     * [Sorting Order](/apis/design/design_patterns#sorting_order). If not
+     * [Sorting Order](https://cloud.google.com/apis/design/design_patterns#sorting_order). If not
      * specified, the results will be sorted in the default order.
      *
      * Generated from protobuf field <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -82,7 +82,7 @@ class ListMetadataImportsRequest extends \Google\Protobuf\Internal\Message
      *           Optional. The filter to apply to list results.
      *     @type string $order_by
      *           Optional. Specify the ordering of results as described in
-     *           [Sorting Order](/apis/design/design_patterns#sorting_order). If not
+     *           [Sorting Order](https://cloud.google.com/apis/design/design_patterns#sorting_order). If not
      *           specified, the results will be sorted in the default order.
      * }
      */
@@ -215,7 +215,7 @@ class ListMetadataImportsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional. Specify the ordering of results as described in
-     * [Sorting Order](/apis/design/design_patterns#sorting_order). If not
+     * [Sorting Order](https://cloud.google.com/apis/design/design_patterns#sorting_order). If not
      * specified, the results will be sorted in the default order.
      *
      * Generated from protobuf field <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -228,7 +228,7 @@ class ListMetadataImportsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional. Specify the ordering of results as described in
-     * [Sorting Order](/apis/design/design_patterns#sorting_order). If not
+     * [Sorting Order](https://cloud.google.com/apis/design/design_patterns#sorting_order). If not
      * specified, the results will be sorted in the default order.
      *
      * Generated from protobuf field <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

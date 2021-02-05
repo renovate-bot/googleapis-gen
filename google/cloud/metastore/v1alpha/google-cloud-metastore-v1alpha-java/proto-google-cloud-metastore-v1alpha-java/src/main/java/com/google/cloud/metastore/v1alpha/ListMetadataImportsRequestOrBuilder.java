@@ -96,7 +96,7 @@ public interface ListMetadataImportsRequestOrBuilder extends
   /**
    * <pre>
    * Optional. Specify the ordering of results as described in
-   * [Sorting Order](/apis/design/design_patterns#sorting_order). If not
+   * [Sorting Order](https://cloud.google.com/apis/design/design_patterns#sorting_order). If not
    * specified, the results will be sorted in the default order.
    * </pre>
    *
@@ -107,7 +107,7 @@ public interface ListMetadataImportsRequestOrBuilder extends
   /**
    * <pre>
    * Optional. Specify the ordering of results as described in
-   * [Sorting Order](/apis/design/design_patterns#sorting_order). If not
+   * [Sorting Order](https://cloud.google.com/apis/design/design_patterns#sorting_order). If not
    * specified, the results will be sorted in the default order.
    * </pre>
    *

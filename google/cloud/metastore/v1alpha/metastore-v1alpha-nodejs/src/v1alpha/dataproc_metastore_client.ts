@@ -1162,7 +1162,7 @@ export class DataprocMetastoreClient {
  *   Optional. The filter to apply to list results.
  * @param {string} [request.orderBy]
  *   Optional. Specify the ordering of results as described in
- *   [Sorting Order](/apis/design/design_patterns#sorting_order). If not
+ *   [Sorting Order](https://cloud.google.com/apis/design/design_patterns#sorting_order). If not
  *   specified, the results will be sorted in the default order.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -1239,7 +1239,7 @@ export class DataprocMetastoreClient {
  *   Optional. The filter to apply to list results.
  * @param {string} [request.orderBy]
  *   Optional. Specify the ordering of results as described in
- *   [Sorting Order](/apis/design/design_patterns#sorting_order). If not
+ *   [Sorting Order](https://cloud.google.com/apis/design/design_patterns#sorting_order). If not
  *   specified, the results will be sorted in the default order.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -1303,7 +1303,7 @@ export class DataprocMetastoreClient {
  *   Optional. The filter to apply to list results.
  * @param {string} [request.orderBy]
  *   Optional. Specify the ordering of results as described in
- *   [Sorting Order](/apis/design/design_patterns#sorting_order). If not
+ *   [Sorting Order](https://cloud.google.com/apis/design/design_patterns#sorting_order). If not
  *   specified, the results will be sorted in the default order.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -1391,7 +1391,7 @@ export class DataprocMetastoreClient {
  *   Optional. The filter to apply to list results.
  * @param {string} [request.orderBy]
  *   Optional. Specify the ordering of results as described in
- *   [Sorting Order](/apis/design/design_patterns#sorting_order). If not
+ *   [Sorting Order](https://cloud.google.com/apis/design/design_patterns#sorting_order). If not
  *   specified, the results will be sorted in the default order.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -1468,7 +1468,7 @@ export class DataprocMetastoreClient {
  *   Optional. The filter to apply to list results.
  * @param {string} [request.orderBy]
  *   Optional. Specify the ordering of results as described in
- *   [Sorting Order](/apis/design/design_patterns#sorting_order). If not
+ *   [Sorting Order](https://cloud.google.com/apis/design/design_patterns#sorting_order). If not
  *   specified, the results will be sorted in the default order.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -1532,7 +1532,7 @@ export class DataprocMetastoreClient {
  *   Optional. The filter to apply to list results.
  * @param {string} [request.orderBy]
  *   Optional. Specify the ordering of results as described in
- *   [Sorting Order](/apis/design/design_patterns#sorting_order). If not
+ *   [Sorting Order](https://cloud.google.com/apis/design/design_patterns#sorting_order). If not
  *   specified, the results will be sorted in the default order.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
