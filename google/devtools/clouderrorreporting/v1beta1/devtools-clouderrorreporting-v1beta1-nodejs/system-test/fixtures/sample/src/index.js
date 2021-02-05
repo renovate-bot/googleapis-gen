@@ -18,7 +18,7 @@
 
 
 /* eslint-disable node/no-missing-require, no-unused-vars */
-const clouderrorreporting = require('clouderrorreporting');
+const clouderrorreporting = require('@google-cloud/clouderrorreporting');
 
 function main() {
   const errorGroupServiceClient = new clouderrorreporting.ErrorGroupServiceClient();

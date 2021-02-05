@@ -16,7 +16,7 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
-import {ErrorGroupServiceClient, ErrorStatsServiceClient, ReportErrorsServiceClient} from 'clouderrorreporting';
+import {ErrorGroupServiceClient, ErrorStatsServiceClient, ReportErrorsServiceClient} from '@google-cloud/clouderrorreporting';
 
 // check that the client class type name can be used
 function doStuffWithErrorGroupServiceClient(client: ErrorGroupServiceClient) {

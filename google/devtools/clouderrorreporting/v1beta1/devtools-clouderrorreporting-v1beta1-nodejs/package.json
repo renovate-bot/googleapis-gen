@@ -1,5 +1,5 @@
 {
-  "name": "clouderrorreporting",
+  "name": "@google-cloud/clouderrorreporting",
   "version": "0.1.0",
   "description": "Clouderrorreporting client for Node.js",
   "repository": "googleapis/nodejs-clouderrorreporting",
