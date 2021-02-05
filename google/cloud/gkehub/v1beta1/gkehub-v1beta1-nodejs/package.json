@@ -1,5 +1,5 @@
 {
-  "name": "@google-cloud/gkehub",
+  "name": "@google-cloud/gke-hub",
   "version": "0.1.0",
   "description": "Gkehub client for Node.js",
   "repository": "googleapis/nodejs-gkehub",
