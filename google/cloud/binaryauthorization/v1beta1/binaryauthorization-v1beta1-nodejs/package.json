@@ -1,5 +1,5 @@
 {
-  "name": "binaryauthorization",
+  "name": "@google-cloud/binary-authorization",
   "version": "0.1.0",
   "description": "Binaryauthorization client for Node.js",
   "repository": "googleapis/nodejs-binaryauthorization",
