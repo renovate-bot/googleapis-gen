@@ -18,7 +18,7 @@
 
 
 /* eslint-disable node/no-missing-require, no-unused-vars */
-const metastore = require('metastore');
+const metastore = require('@google-cloud/dataproc-metastore');
 
 function main() {
   const dataprocMetastoreClient = new metastore.DataprocMetastoreClient();

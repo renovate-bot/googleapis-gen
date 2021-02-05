@@ -1,5 +1,5 @@
 {
-  "name": "metastore",
+  "name": "@google-cloud/dataproc-metastore",
   "version": "0.1.0",
   "description": "Metastore client for Node.js",
   "repository": "googleapis/nodejs-metastore",
