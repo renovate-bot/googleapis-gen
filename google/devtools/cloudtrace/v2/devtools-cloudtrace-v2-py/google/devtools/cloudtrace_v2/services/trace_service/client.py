@@ -391,9 +391,8 @@ class TraceServiceClient(metaclass=TraceServiceClientMeta):
 
             if name is not None:
                 request.name = name
-
-            if spans:
-                request.spans.extend(spans)
+            if spans is not None:
+                request.spans = spans
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.

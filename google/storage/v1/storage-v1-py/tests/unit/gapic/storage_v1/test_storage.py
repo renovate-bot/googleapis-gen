@@ -41,6 +41,7 @@ from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
 from google.storage_v1.services.storage import StorageAsyncClient
 from google.storage_v1.services.storage import StorageClient
+from google.storage_v1.services.storage import pagers
 from google.storage_v1.services.storage import transports
 from google.storage_v1.types import storage
 from google.storage_v1.types import storage_resources
@@ -1447,9 +1448,7 @@ def test_list_buckets(transport: str = 'grpc', request_type=storage.ListBucketsR
 
     # Establish that the response is the type that we expect.
 
-    assert response.raw_page is response
-
-    assert isinstance(response, storage_resources.ListBucketsResponse)
+    assert isinstance(response, pagers.ListBucketsPager)
 
     assert response.next_page_token == 'next_page_token_value'
 
@@ -1487,7 +1486,7 @@ async def test_list_buckets_async(transport: str = 'grpc_asyncio', request_type=
         assert args[0] == storage.ListBucketsRequest()
 
     # Establish that the response is the type that we expect.
-    assert isinstance(response, storage_resources.ListBucketsResponse)
+    assert isinstance(response, pagers.ListBucketsAsyncPager)
 
     assert response.next_page_token == 'next_page_token_value'
 
@@ -1495,6 +1494,188 @@ async def test_list_buckets_async(transport: str = 'grpc_asyncio', request_type=
 @pytest.mark.asyncio
 async def test_list_buckets_async_from_dict():
     await test_list_buckets_async(request_type=dict)
+
+
+def test_list_buckets_pager():
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_buckets),
+            '__call__') as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            storage_resources.ListBucketsResponse(
+                items=[
+                    storage_resources.Bucket(),
+                    storage_resources.Bucket(),
+                    storage_resources.Bucket(),
+                ],
+                next_page_token='abc',
+            ),
+            storage_resources.ListBucketsResponse(
+                items=[],
+                next_page_token='def',
+            ),
+            storage_resources.ListBucketsResponse(
+                items=[
+                    storage_resources.Bucket(),
+                ],
+                next_page_token='ghi',
+            ),
+            storage_resources.ListBucketsResponse(
+                items=[
+                    storage_resources.Bucket(),
+                    storage_resources.Bucket(),
+                ],
+            ),
+            RuntimeError,
+        )
+
+        metadata = ()
+        pager = client.list_buckets(request={})
+
+        assert pager._metadata == metadata
+
+        results = [i for i in pager]
+        assert len(results) == 6
+        assert all(isinstance(i, storage_resources.Bucket)
+                   for i in results)
+
+def test_list_buckets_pages():
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_buckets),
+            '__call__') as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            storage_resources.ListBucketsResponse(
+                items=[
+                    storage_resources.Bucket(),
+                    storage_resources.Bucket(),
+                    storage_resources.Bucket(),
+                ],
+                next_page_token='abc',
+            ),
+            storage_resources.ListBucketsResponse(
+                items=[],
+                next_page_token='def',
+            ),
+            storage_resources.ListBucketsResponse(
+                items=[
+                    storage_resources.Bucket(),
+                ],
+                next_page_token='ghi',
+            ),
+            storage_resources.ListBucketsResponse(
+                items=[
+                    storage_resources.Bucket(),
+                    storage_resources.Bucket(),
+                ],
+            ),
+            RuntimeError,
+        )
+        pages = list(client.list_buckets(request={}).pages)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
+
+@pytest.mark.asyncio
+async def test_list_buckets_async_pager():
+    client = StorageAsyncClient(
+        credentials=credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_buckets),
+            '__call__', new_callable=mock.AsyncMock) as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            storage_resources.ListBucketsResponse(
+                items=[
+                    storage_resources.Bucket(),
+                    storage_resources.Bucket(),
+                    storage_resources.Bucket(),
+                ],
+                next_page_token='abc',
+            ),
+            storage_resources.ListBucketsResponse(
+                items=[],
+                next_page_token='def',
+            ),
+            storage_resources.ListBucketsResponse(
+                items=[
+                    storage_resources.Bucket(),
+                ],
+                next_page_token='ghi',
+            ),
+            storage_resources.ListBucketsResponse(
+                items=[
+                    storage_resources.Bucket(),
+                    storage_resources.Bucket(),
+                ],
+            ),
+            RuntimeError,
+        )
+        async_pager = await client.list_buckets(request={},)
+        assert async_pager.next_page_token == 'abc'
+        responses = []
+        async for response in async_pager:
+            responses.append(response)
+
+        assert len(responses) == 6
+        assert all(isinstance(i, storage_resources.Bucket)
+                   for i in responses)
+
+@pytest.mark.asyncio
+async def test_list_buckets_async_pages():
+    client = StorageAsyncClient(
+        credentials=credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_buckets),
+            '__call__', new_callable=mock.AsyncMock) as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            storage_resources.ListBucketsResponse(
+                items=[
+                    storage_resources.Bucket(),
+                    storage_resources.Bucket(),
+                    storage_resources.Bucket(),
+                ],
+                next_page_token='abc',
+            ),
+            storage_resources.ListBucketsResponse(
+                items=[],
+                next_page_token='def',
+            ),
+            storage_resources.ListBucketsResponse(
+                items=[
+                    storage_resources.Bucket(),
+                ],
+                next_page_token='ghi',
+            ),
+            storage_resources.ListBucketsResponse(
+                items=[
+                    storage_resources.Bucket(),
+                    storage_resources.Bucket(),
+                ],
+            ),
+            RuntimeError,
+        )
+        pages = []
+        async for page_ in (await client.list_buckets(request={})).pages:
+            pages.append(page_)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
 
 
 def test_lock_bucket_retention_policy(transport: str = 'grpc', request_type=storage.LockRetentionPolicyRequest):
@@ -4942,9 +5123,7 @@ def test_list_objects(transport: str = 'grpc', request_type=storage.ListObjectsR
 
     # Establish that the response is the type that we expect.
 
-    assert response.raw_page is response
-
-    assert isinstance(response, storage_resources.ListObjectsResponse)
+    assert isinstance(response, pagers.ListObjectsPager)
 
     assert response.prefixes == ['prefixes_value']
 
@@ -4985,7 +5164,7 @@ async def test_list_objects_async(transport: str = 'grpc_asyncio', request_type=
         assert args[0] == storage.ListObjectsRequest()
 
     # Establish that the response is the type that we expect.
-    assert isinstance(response, storage_resources.ListObjectsResponse)
+    assert isinstance(response, pagers.ListObjectsAsyncPager)
 
     assert response.prefixes == ['prefixes_value']
 
@@ -4995,6 +5174,188 @@ async def test_list_objects_async(transport: str = 'grpc_asyncio', request_type=
 @pytest.mark.asyncio
 async def test_list_objects_async_from_dict():
     await test_list_objects_async(request_type=dict)
+
+
+def test_list_objects_pager():
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_objects),
+            '__call__') as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            storage_resources.ListObjectsResponse(
+                prefixes=[
+                    str(),
+                    str(),
+                    str(),
+                ],
+                next_page_token='abc',
+            ),
+            storage_resources.ListObjectsResponse(
+                prefixes=[],
+                next_page_token='def',
+            ),
+            storage_resources.ListObjectsResponse(
+                prefixes=[
+                    str(),
+                ],
+                next_page_token='ghi',
+            ),
+            storage_resources.ListObjectsResponse(
+                prefixes=[
+                    str(),
+                    str(),
+                ],
+            ),
+            RuntimeError,
+        )
+
+        metadata = ()
+        pager = client.list_objects(request={})
+
+        assert pager._metadata == metadata
+
+        results = [i for i in pager]
+        assert len(results) == 6
+        assert all(isinstance(i, str)
+                   for i in results)
+
+def test_list_objects_pages():
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_objects),
+            '__call__') as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            storage_resources.ListObjectsResponse(
+                prefixes=[
+                    str(),
+                    str(),
+                    str(),
+                ],
+                next_page_token='abc',
+            ),
+            storage_resources.ListObjectsResponse(
+                prefixes=[],
+                next_page_token='def',
+            ),
+            storage_resources.ListObjectsResponse(
+                prefixes=[
+                    str(),
+                ],
+                next_page_token='ghi',
+            ),
+            storage_resources.ListObjectsResponse(
+                prefixes=[
+                    str(),
+                    str(),
+                ],
+            ),
+            RuntimeError,
+        )
+        pages = list(client.list_objects(request={}).pages)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
+
+@pytest.mark.asyncio
+async def test_list_objects_async_pager():
+    client = StorageAsyncClient(
+        credentials=credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_objects),
+            '__call__', new_callable=mock.AsyncMock) as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            storage_resources.ListObjectsResponse(
+                prefixes=[
+                    str(),
+                    str(),
+                    str(),
+                ],
+                next_page_token='abc',
+            ),
+            storage_resources.ListObjectsResponse(
+                prefixes=[],
+                next_page_token='def',
+            ),
+            storage_resources.ListObjectsResponse(
+                prefixes=[
+                    str(),
+                ],
+                next_page_token='ghi',
+            ),
+            storage_resources.ListObjectsResponse(
+                prefixes=[
+                    str(),
+                    str(),
+                ],
+            ),
+            RuntimeError,
+        )
+        async_pager = await client.list_objects(request={},)
+        assert async_pager.next_page_token == 'abc'
+        responses = []
+        async for response in async_pager:
+            responses.append(response)
+
+        assert len(responses) == 6
+        assert all(isinstance(i, str)
+                   for i in responses)
+
+@pytest.mark.asyncio
+async def test_list_objects_async_pages():
+    client = StorageAsyncClient(
+        credentials=credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_objects),
+            '__call__', new_callable=mock.AsyncMock) as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            storage_resources.ListObjectsResponse(
+                prefixes=[
+                    str(),
+                    str(),
+                    str(),
+                ],
+                next_page_token='abc',
+            ),
+            storage_resources.ListObjectsResponse(
+                prefixes=[],
+                next_page_token='def',
+            ),
+            storage_resources.ListObjectsResponse(
+                prefixes=[
+                    str(),
+                ],
+                next_page_token='ghi',
+            ),
+            storage_resources.ListObjectsResponse(
+                prefixes=[
+                    str(),
+                    str(),
+                ],
+            ),
+            RuntimeError,
+        )
+        pages = []
+        async for page_ in (await client.list_objects(request={})).pages:
+            pages.append(page_)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
 
 
 def test_rewrite_object(transport: str = 'grpc', request_type=storage.RewriteObjectRequest):
@@ -6374,9 +6735,7 @@ def test_list_hmac_keys(transport: str = 'grpc', request_type=storage.ListHmacKe
 
     # Establish that the response is the type that we expect.
 
-    assert response.raw_page is response
-
-    assert isinstance(response, storage.ListHmacKeysResponse)
+    assert isinstance(response, pagers.ListHmacKeysPager)
 
     assert response.next_page_token == 'next_page_token_value'
 
@@ -6414,7 +6773,7 @@ async def test_list_hmac_keys_async(transport: str = 'grpc_asyncio', request_typ
         assert args[0] == storage.ListHmacKeysRequest()
 
     # Establish that the response is the type that we expect.
-    assert isinstance(response, storage.ListHmacKeysResponse)
+    assert isinstance(response, pagers.ListHmacKeysAsyncPager)
 
     assert response.next_page_token == 'next_page_token_value'
 
@@ -6422,6 +6781,188 @@ async def test_list_hmac_keys_async(transport: str = 'grpc_asyncio', request_typ
 @pytest.mark.asyncio
 async def test_list_hmac_keys_async_from_dict():
     await test_list_hmac_keys_async(request_type=dict)
+
+
+def test_list_hmac_keys_pager():
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_hmac_keys),
+            '__call__') as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            storage.ListHmacKeysResponse(
+                items=[
+                    storage_resources.HmacKeyMetadata(),
+                    storage_resources.HmacKeyMetadata(),
+                    storage_resources.HmacKeyMetadata(),
+                ],
+                next_page_token='abc',
+            ),
+            storage.ListHmacKeysResponse(
+                items=[],
+                next_page_token='def',
+            ),
+            storage.ListHmacKeysResponse(
+                items=[
+                    storage_resources.HmacKeyMetadata(),
+                ],
+                next_page_token='ghi',
+            ),
+            storage.ListHmacKeysResponse(
+                items=[
+                    storage_resources.HmacKeyMetadata(),
+                    storage_resources.HmacKeyMetadata(),
+                ],
+            ),
+            RuntimeError,
+        )
+
+        metadata = ()
+        pager = client.list_hmac_keys(request={})
+
+        assert pager._metadata == metadata
+
+        results = [i for i in pager]
+        assert len(results) == 6
+        assert all(isinstance(i, storage_resources.HmacKeyMetadata)
+                   for i in results)
+
+def test_list_hmac_keys_pages():
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_hmac_keys),
+            '__call__') as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            storage.ListHmacKeysResponse(
+                items=[
+                    storage_resources.HmacKeyMetadata(),
+                    storage_resources.HmacKeyMetadata(),
+                    storage_resources.HmacKeyMetadata(),
+                ],
+                next_page_token='abc',
+            ),
+            storage.ListHmacKeysResponse(
+                items=[],
+                next_page_token='def',
+            ),
+            storage.ListHmacKeysResponse(
+                items=[
+                    storage_resources.HmacKeyMetadata(),
+                ],
+                next_page_token='ghi',
+            ),
+            storage.ListHmacKeysResponse(
+                items=[
+                    storage_resources.HmacKeyMetadata(),
+                    storage_resources.HmacKeyMetadata(),
+                ],
+            ),
+            RuntimeError,
+        )
+        pages = list(client.list_hmac_keys(request={}).pages)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
+
+@pytest.mark.asyncio
+async def test_list_hmac_keys_async_pager():
+    client = StorageAsyncClient(
+        credentials=credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_hmac_keys),
+            '__call__', new_callable=mock.AsyncMock) as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            storage.ListHmacKeysResponse(
+                items=[
+                    storage_resources.HmacKeyMetadata(),
+                    storage_resources.HmacKeyMetadata(),
+                    storage_resources.HmacKeyMetadata(),
+                ],
+                next_page_token='abc',
+            ),
+            storage.ListHmacKeysResponse(
+                items=[],
+                next_page_token='def',
+            ),
+            storage.ListHmacKeysResponse(
+                items=[
+                    storage_resources.HmacKeyMetadata(),
+                ],
+                next_page_token='ghi',
+            ),
+            storage.ListHmacKeysResponse(
+                items=[
+                    storage_resources.HmacKeyMetadata(),
+                    storage_resources.HmacKeyMetadata(),
+                ],
+            ),
+            RuntimeError,
+        )
+        async_pager = await client.list_hmac_keys(request={},)
+        assert async_pager.next_page_token == 'abc'
+        responses = []
+        async for response in async_pager:
+            responses.append(response)
+
+        assert len(responses) == 6
+        assert all(isinstance(i, storage_resources.HmacKeyMetadata)
+                   for i in responses)
+
+@pytest.mark.asyncio
+async def test_list_hmac_keys_async_pages():
+    client = StorageAsyncClient(
+        credentials=credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_hmac_keys),
+            '__call__', new_callable=mock.AsyncMock) as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            storage.ListHmacKeysResponse(
+                items=[
+                    storage_resources.HmacKeyMetadata(),
+                    storage_resources.HmacKeyMetadata(),
+                    storage_resources.HmacKeyMetadata(),
+                ],
+                next_page_token='abc',
+            ),
+            storage.ListHmacKeysResponse(
+                items=[],
+                next_page_token='def',
+            ),
+            storage.ListHmacKeysResponse(
+                items=[
+                    storage_resources.HmacKeyMetadata(),
+                ],
+                next_page_token='ghi',
+            ),
+            storage.ListHmacKeysResponse(
+                items=[
+                    storage_resources.HmacKeyMetadata(),
+                    storage_resources.HmacKeyMetadata(),
+                ],
+            ),
+            RuntimeError,
+        )
+        pages = []
+        async for page_ in (await client.list_hmac_keys(request={})).pages:
+            pages.append(page_)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
 
 
 def test_update_hmac_key(transport: str = 'grpc', request_type=storage.UpdateHmacKeyRequest):

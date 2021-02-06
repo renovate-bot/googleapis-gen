@@ -32,6 +32,7 @@ from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as policy  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.storage_v1.services.storage import pagers
 from google.storage_v1.types import storage
 from google.storage_v1.types import storage_resources
 
@@ -593,7 +594,7 @@ class StorageAsyncClient:
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> storage_resources.ListBucketsResponse:
+            ) -> pagers.ListBucketsAsyncPager:
         r"""Retrieves a list of buckets for a given project.
 
         Args:
@@ -607,9 +608,12 @@ class StorageAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.storage_v1.types.ListBucketsResponse:
+            google.storage_v1.services.storage.pagers.ListBucketsAsyncPager:
                 The result of a call to
                 Buckets.ListBuckets
+                Iterating over this object will yield
+                results and resolve additional pages
+                automatically.
 
         """
         # Create or coerce a protobuf request object.
@@ -629,6 +633,15 @@ class StorageAsyncClient:
             request,
             retry=retry,
             timeout=timeout,
+            metadata=metadata,
+        )
+
+        # This method is paged; wrap the response in a pager, which provides
+        # an `__aiter__` convenience method.
+        response = pagers.ListBucketsAsyncPager(
+            method=rpc,
+            request=request,
+            response=response,
             metadata=metadata,
         )
 
@@ -2140,7 +2153,7 @@ class StorageAsyncClient:
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> storage_resources.ListObjectsResponse:
+            ) -> pagers.ListObjectsAsyncPager:
         r"""Retrieves a list of objects matching the criteria.
 
         Args:
@@ -2154,9 +2167,12 @@ class StorageAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.storage_v1.types.ListObjectsResponse:
+            google.storage_v1.services.storage.pagers.ListObjectsAsyncPager:
                 The result of a call to
                 Objects.ListObjects
+                Iterating over this object will yield
+                results and resolve additional pages
+                automatically.
 
         """
         # Create or coerce a protobuf request object.
@@ -2176,6 +2192,15 @@ class StorageAsyncClient:
             request,
             retry=retry,
             timeout=timeout,
+            metadata=metadata,
+        )
+
+        # This method is paged; wrap the response in a pager, which provides
+        # an `__aiter__` convenience method.
+        response = pagers.ListObjectsAsyncPager(
+            method=rpc,
+            request=request,
+            response=response,
             metadata=metadata,
         )
 
@@ -2930,7 +2955,7 @@ class StorageAsyncClient:
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> storage.ListHmacKeysResponse:
+            ) -> pagers.ListHmacKeysAsyncPager:
         r"""Lists HMAC keys under a given project with the
         additional filters provided.
 
@@ -2946,9 +2971,12 @@ class StorageAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.storage_v1.types.ListHmacKeysResponse:
+            google.storage_v1.services.storage.pagers.ListHmacKeysAsyncPager:
                 Hmac key list response with next page
                 information.
+                Iterating over this object will yield
+                results and resolve additional pages
+                automatically.
 
         """
         # Create or coerce a protobuf request object.
@@ -2968,6 +2996,15 @@ class StorageAsyncClient:
             request,
             retry=retry,
             timeout=timeout,
+            metadata=metadata,
+        )
+
+        # This method is paged; wrap the response in a pager, which provides
+        # an `__aiter__` convenience method.
+        response = pagers.ListHmacKeysAsyncPager(
+            method=rpc,
+            request=request,
+            response=response,
             metadata=metadata,
         )
 

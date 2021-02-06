@@ -17,33 +17,31 @@
 
 from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
 
-from google.cloud.aiplatform_v1.types import annotation
-from google.cloud.aiplatform_v1.types import data_item
-from google.cloud.aiplatform_v1.types import dataset
-from google.cloud.aiplatform_v1.types import dataset_service
+from google.storage_v1.types import storage
+from google.storage_v1.types import storage_resources
 
 
-class ListDatasetsPager:
-    """A pager for iterating through ``list_datasets`` requests.
+class ListBucketsPager:
+    """A pager for iterating through ``list_buckets`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.aiplatform_v1.types.ListDatasetsResponse` object, and
+    :class:`google.storage_v1.types.ListBucketsResponse` object, and
     provides an ``__iter__`` method to iterate through its
-    ``datasets`` field.
+    ``items`` field.
 
     If there are more pages, the ``__iter__`` method will make additional
-    ``ListDatasets`` requests and continue to iterate
-    through the ``datasets`` field on the
+    ``ListBuckets`` requests and continue to iterate
+    through the ``items`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.aiplatform_v1.types.ListDatasetsResponse`
+    All the usual :class:`google.storage_v1.types.ListBucketsResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
     def __init__(self,
-            method: Callable[..., dataset_service.ListDatasetsResponse],
-            request: dataset_service.ListDatasetsRequest,
-            response: dataset_service.ListDatasetsResponse,
+            method: Callable[..., storage_resources.ListBucketsResponse],
+            request: storage.ListBucketsRequest,
+            response: storage_resources.ListBucketsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
         """Instantiate the pager.
@@ -51,15 +49,15 @@ class ListDatasetsPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.aiplatform_v1.types.ListDatasetsRequest):
+            request (google.storage_v1.types.ListBucketsRequest):
                 The initial request object.
-            response (google.cloud.aiplatform_v1.types.ListDatasetsResponse):
+            response (google.storage_v1.types.ListBucketsResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
         """
         self._method = method
-        self._request = dataset_service.ListDatasetsRequest(request)
+        self._request = storage.ListBucketsRequest(request)
         self._response = response
         self._metadata = metadata
 
@@ -67,42 +65,42 @@ class ListDatasetsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[dataset_service.ListDatasetsResponse]:
+    def pages(self) -> Iterable[storage_resources.ListBucketsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[dataset.Dataset]:
+    def __iter__(self) -> Iterable[storage_resources.Bucket]:
         for page in self.pages:
-            yield from page.datasets
+            yield from page.items
 
     def __repr__(self) -> str:
         return '{0}<{1!r}>'.format(self.__class__.__name__, self._response)
 
 
-class ListDatasetsAsyncPager:
-    """A pager for iterating through ``list_datasets`` requests.
+class ListBucketsAsyncPager:
+    """A pager for iterating through ``list_buckets`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.aiplatform_v1.types.ListDatasetsResponse` object, and
+    :class:`google.storage_v1.types.ListBucketsResponse` object, and
     provides an ``__aiter__`` method to iterate through its
-    ``datasets`` field.
+    ``items`` field.
 
     If there are more pages, the ``__aiter__`` method will make additional
-    ``ListDatasets`` requests and continue to iterate
-    through the ``datasets`` field on the
+    ``ListBuckets`` requests and continue to iterate
+    through the ``items`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.aiplatform_v1.types.ListDatasetsResponse`
+    All the usual :class:`google.storage_v1.types.ListBucketsResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
     def __init__(self,
-            method: Callable[..., Awaitable[dataset_service.ListDatasetsResponse]],
-            request: dataset_service.ListDatasetsRequest,
-            response: dataset_service.ListDatasetsResponse,
+            method: Callable[..., Awaitable[storage_resources.ListBucketsResponse]],
+            request: storage.ListBucketsRequest,
+            response: storage_resources.ListBucketsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
         """Instantiate the pager.
@@ -110,15 +108,15 @@ class ListDatasetsAsyncPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.aiplatform_v1.types.ListDatasetsRequest):
+            request (google.storage_v1.types.ListBucketsRequest):
                 The initial request object.
-            response (google.cloud.aiplatform_v1.types.ListDatasetsResponse):
+            response (google.storage_v1.types.ListBucketsResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
         """
         self._method = method
-        self._request = dataset_service.ListDatasetsRequest(request)
+        self._request = storage.ListBucketsRequest(request)
         self._response = response
         self._metadata = metadata
 
@@ -126,17 +124,17 @@ class ListDatasetsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[dataset_service.ListDatasetsResponse]:
+    async def pages(self) -> AsyncIterable[storage_resources.ListBucketsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[dataset.Dataset]:
+    def __aiter__(self) -> AsyncIterable[storage_resources.Bucket]:
         async def async_generator():
             async for page in self.pages:
-                for response in page.datasets:
+                for response in page.items:
                     yield response
 
         return async_generator()
@@ -145,27 +143,27 @@ class ListDatasetsAsyncPager:
         return '{0}<{1!r}>'.format(self.__class__.__name__, self._response)
 
 
-class ListDataItemsPager:
-    """A pager for iterating through ``list_data_items`` requests.
+class ListObjectsPager:
+    """A pager for iterating through ``list_objects`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.aiplatform_v1.types.ListDataItemsResponse` object, and
+    :class:`google.storage_v1.types.ListObjectsResponse` object, and
     provides an ``__iter__`` method to iterate through its
-    ``data_items`` field.
+    ``prefixes`` field.
 
     If there are more pages, the ``__iter__`` method will make additional
-    ``ListDataItems`` requests and continue to iterate
-    through the ``data_items`` field on the
+    ``ListObjects`` requests and continue to iterate
+    through the ``prefixes`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.aiplatform_v1.types.ListDataItemsResponse`
+    All the usual :class:`google.storage_v1.types.ListObjectsResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
     def __init__(self,
-            method: Callable[..., dataset_service.ListDataItemsResponse],
-            request: dataset_service.ListDataItemsRequest,
-            response: dataset_service.ListDataItemsResponse,
+            method: Callable[..., storage_resources.ListObjectsResponse],
+            request: storage.ListObjectsRequest,
+            response: storage_resources.ListObjectsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
         """Instantiate the pager.
@@ -173,15 +171,15 @@ class ListDataItemsPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.aiplatform_v1.types.ListDataItemsRequest):
+            request (google.storage_v1.types.ListObjectsRequest):
                 The initial request object.
-            response (google.cloud.aiplatform_v1.types.ListDataItemsResponse):
+            response (google.storage_v1.types.ListObjectsResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
         """
         self._method = method
-        self._request = dataset_service.ListDataItemsRequest(request)
+        self._request = storage.ListObjectsRequest(request)
         self._response = response
         self._metadata = metadata
 
@@ -189,42 +187,42 @@ class ListDataItemsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[dataset_service.ListDataItemsResponse]:
+    def pages(self) -> Iterable[storage_resources.ListObjectsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[data_item.DataItem]:
+    def __iter__(self) -> Iterable[str]:
         for page in self.pages:
-            yield from page.data_items
+            yield from page.prefixes
 
     def __repr__(self) -> str:
         return '{0}<{1!r}>'.format(self.__class__.__name__, self._response)
 
 
-class ListDataItemsAsyncPager:
-    """A pager for iterating through ``list_data_items`` requests.
+class ListObjectsAsyncPager:
+    """A pager for iterating through ``list_objects`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.aiplatform_v1.types.ListDataItemsResponse` object, and
+    :class:`google.storage_v1.types.ListObjectsResponse` object, and
     provides an ``__aiter__`` method to iterate through its
-    ``data_items`` field.
+    ``prefixes`` field.
 
     If there are more pages, the ``__aiter__`` method will make additional
-    ``ListDataItems`` requests and continue to iterate
-    through the ``data_items`` field on the
+    ``ListObjects`` requests and continue to iterate
+    through the ``prefixes`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.aiplatform_v1.types.ListDataItemsResponse`
+    All the usual :class:`google.storage_v1.types.ListObjectsResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
     def __init__(self,
-            method: Callable[..., Awaitable[dataset_service.ListDataItemsResponse]],
-            request: dataset_service.ListDataItemsRequest,
-            response: dataset_service.ListDataItemsResponse,
+            method: Callable[..., Awaitable[storage_resources.ListObjectsResponse]],
+            request: storage.ListObjectsRequest,
+            response: storage_resources.ListObjectsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
         """Instantiate the pager.
@@ -232,15 +230,15 @@ class ListDataItemsAsyncPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.aiplatform_v1.types.ListDataItemsRequest):
+            request (google.storage_v1.types.ListObjectsRequest):
                 The initial request object.
-            response (google.cloud.aiplatform_v1.types.ListDataItemsResponse):
+            response (google.storage_v1.types.ListObjectsResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
         """
         self._method = method
-        self._request = dataset_service.ListDataItemsRequest(request)
+        self._request = storage.ListObjectsRequest(request)
         self._response = response
         self._metadata = metadata
 
@@ -248,17 +246,17 @@ class ListDataItemsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[dataset_service.ListDataItemsResponse]:
+    async def pages(self) -> AsyncIterable[storage_resources.ListObjectsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[data_item.DataItem]:
+    def __aiter__(self) -> AsyncIterable[str]:
         async def async_generator():
             async for page in self.pages:
-                for response in page.data_items:
+                for response in page.prefixes:
                     yield response
 
         return async_generator()
@@ -267,27 +265,27 @@ class ListDataItemsAsyncPager:
         return '{0}<{1!r}>'.format(self.__class__.__name__, self._response)
 
 
-class ListAnnotationsPager:
-    """A pager for iterating through ``list_annotations`` requests.
+class ListHmacKeysPager:
+    """A pager for iterating through ``list_hmac_keys`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.aiplatform_v1.types.ListAnnotationsResponse` object, and
+    :class:`google.storage_v1.types.ListHmacKeysResponse` object, and
     provides an ``__iter__`` method to iterate through its
-    ``annotations`` field.
+    ``items`` field.
 
     If there are more pages, the ``__iter__`` method will make additional
-    ``ListAnnotations`` requests and continue to iterate
-    through the ``annotations`` field on the
+    ``ListHmacKeys`` requests and continue to iterate
+    through the ``items`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.aiplatform_v1.types.ListAnnotationsResponse`
+    All the usual :class:`google.storage_v1.types.ListHmacKeysResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
     def __init__(self,
-            method: Callable[..., dataset_service.ListAnnotationsResponse],
-            request: dataset_service.ListAnnotationsRequest,
-            response: dataset_service.ListAnnotationsResponse,
+            method: Callable[..., storage.ListHmacKeysResponse],
+            request: storage.ListHmacKeysRequest,
+            response: storage.ListHmacKeysResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
         """Instantiate the pager.
@@ -295,15 +293,15 @@ class ListAnnotationsPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.aiplatform_v1.types.ListAnnotationsRequest):
+            request (google.storage_v1.types.ListHmacKeysRequest):
                 The initial request object.
-            response (google.cloud.aiplatform_v1.types.ListAnnotationsResponse):
+            response (google.storage_v1.types.ListHmacKeysResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
         """
         self._method = method
-        self._request = dataset_service.ListAnnotationsRequest(request)
+        self._request = storage.ListHmacKeysRequest(request)
         self._response = response
         self._metadata = metadata
 
@@ -311,42 +309,42 @@ class ListAnnotationsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[dataset_service.ListAnnotationsResponse]:
+    def pages(self) -> Iterable[storage.ListHmacKeysResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[annotation.Annotation]:
+    def __iter__(self) -> Iterable[storage_resources.HmacKeyMetadata]:
         for page in self.pages:
-            yield from page.annotations
+            yield from page.items
 
     def __repr__(self) -> str:
         return '{0}<{1!r}>'.format(self.__class__.__name__, self._response)
 
 
-class ListAnnotationsAsyncPager:
-    """A pager for iterating through ``list_annotations`` requests.
+class ListHmacKeysAsyncPager:
+    """A pager for iterating through ``list_hmac_keys`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.aiplatform_v1.types.ListAnnotationsResponse` object, and
+    :class:`google.storage_v1.types.ListHmacKeysResponse` object, and
     provides an ``__aiter__`` method to iterate through its
-    ``annotations`` field.
+    ``items`` field.
 
     If there are more pages, the ``__aiter__`` method will make additional
-    ``ListAnnotations`` requests and continue to iterate
-    through the ``annotations`` field on the
+    ``ListHmacKeys`` requests and continue to iterate
+    through the ``items`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.aiplatform_v1.types.ListAnnotationsResponse`
+    All the usual :class:`google.storage_v1.types.ListHmacKeysResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
     def __init__(self,
-            method: Callable[..., Awaitable[dataset_service.ListAnnotationsResponse]],
-            request: dataset_service.ListAnnotationsRequest,
-            response: dataset_service.ListAnnotationsResponse,
+            method: Callable[..., Awaitable[storage.ListHmacKeysResponse]],
+            request: storage.ListHmacKeysRequest,
+            response: storage.ListHmacKeysResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
         """Instantiate the pager.
@@ -354,15 +352,15 @@ class ListAnnotationsAsyncPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.aiplatform_v1.types.ListAnnotationsRequest):
+            request (google.storage_v1.types.ListHmacKeysRequest):
                 The initial request object.
-            response (google.cloud.aiplatform_v1.types.ListAnnotationsResponse):
+            response (google.storage_v1.types.ListHmacKeysResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
         """
         self._method = method
-        self._request = dataset_service.ListAnnotationsRequest(request)
+        self._request = storage.ListHmacKeysRequest(request)
         self._response = response
         self._metadata = metadata
 
@@ -370,17 +368,17 @@ class ListAnnotationsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[dataset_service.ListAnnotationsResponse]:
+    async def pages(self) -> AsyncIterable[storage.ListHmacKeysResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[annotation.Annotation]:
+    def __aiter__(self) -> AsyncIterable[storage_resources.HmacKeyMetadata]:
         async def async_generator():
             async for page in self.pages:
-                for response in page.annotations:
+                for response in page.items:
                     yield response
 
         return async_generator()

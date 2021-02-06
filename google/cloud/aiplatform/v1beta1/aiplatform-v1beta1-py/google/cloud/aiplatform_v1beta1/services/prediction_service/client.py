@@ -409,11 +409,10 @@ class PredictionServiceClient(metaclass=PredictionServiceClientMeta):
 
             if endpoint is not None:
                 request.endpoint = endpoint
+            if instances is not None:
+                request.instances = instances
             if parameters is not None:
                 request.parameters = parameters
-
-            if instances:
-                request.instances.extend(instances)
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -542,13 +541,12 @@ class PredictionServiceClient(metaclass=PredictionServiceClientMeta):
 
             if endpoint is not None:
                 request.endpoint = endpoint
+            if instances is not None:
+                request.instances = instances
             if parameters is not None:
                 request.parameters = parameters
             if deployed_model_id is not None:
                 request.deployed_model_id = deployed_model_id
-
-            if instances:
-                request.instances.extend(instances)
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.

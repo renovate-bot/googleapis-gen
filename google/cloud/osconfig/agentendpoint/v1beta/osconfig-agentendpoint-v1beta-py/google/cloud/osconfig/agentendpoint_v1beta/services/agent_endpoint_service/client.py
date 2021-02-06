@@ -870,9 +870,8 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
                 request.instance_id_token = instance_id_token
             if agent_version is not None:
                 request.agent_version = agent_version
-
-            if supported_capabilities:
-                request.supported_capabilities.extend(supported_capabilities)
+            if supported_capabilities is not None:
+                request.supported_capabilities = supported_capabilities
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.

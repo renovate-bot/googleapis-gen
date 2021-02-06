@@ -1026,11 +1026,10 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
 
             if name is not None:
                 request.name = name
+            if node_ids is not None:
+                request.node_ids = node_ids
             if apply_all is not None:
                 request.apply_all = apply_all
-
-            if node_ids:
-                request.node_ids.extend(node_ids)
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.

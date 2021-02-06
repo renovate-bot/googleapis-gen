@@ -471,9 +471,8 @@ class PredictionServiceClient(metaclass=PredictionServiceClientMeta):
                 request.name = name
             if payload is not None:
                 request.payload = payload
-
-            if params:
-                request.params.update(params)
+            if params is not None:
+                request.params = params
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -686,9 +685,8 @@ class PredictionServiceClient(metaclass=PredictionServiceClientMeta):
                 request.input_config = input_config
             if output_config is not None:
                 request.output_config = output_config
-
-            if params:
-                request.params.update(params)
+            if params is not None:
+                request.params = params
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.

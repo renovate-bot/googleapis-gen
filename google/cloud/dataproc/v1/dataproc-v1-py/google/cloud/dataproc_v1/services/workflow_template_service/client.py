@@ -629,9 +629,8 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
 
             if name is not None:
                 request.name = name
-
-            if parameters:
-                request.parameters.update(parameters)
+            if parameters is not None:
+                request.parameters = parameters
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.

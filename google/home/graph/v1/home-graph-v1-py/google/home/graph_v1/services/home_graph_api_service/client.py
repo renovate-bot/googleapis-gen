@@ -719,9 +719,8 @@ class HomeGraphApiServiceClient(metaclass=HomeGraphApiServiceClientMeta):
                 request.request_id = request_id
             if agent_user_id is not None:
                 request.agent_user_id = agent_user_id
-
-            if inputs:
-                request.inputs.extend(inputs)
+            if inputs is not None:
+                request.inputs = inputs
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.

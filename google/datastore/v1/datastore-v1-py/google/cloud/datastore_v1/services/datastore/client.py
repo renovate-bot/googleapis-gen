@@ -391,9 +391,8 @@ class DatastoreClient(metaclass=DatastoreClientMeta):
                 request.project_id = project_id
             if read_options is not None:
                 request.read_options = read_options
-
-            if keys:
-                request.keys.extend(keys)
+            if keys is not None:
+                request.keys = keys
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -627,9 +626,8 @@ class DatastoreClient(metaclass=DatastoreClientMeta):
                 request.mode = mode
             if transaction is not None:
                 request.transaction = transaction
-
-            if mutations:
-                request.mutations.extend(mutations)
+            if mutations is not None:
+                request.mutations = mutations
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -792,9 +790,8 @@ class DatastoreClient(metaclass=DatastoreClientMeta):
 
             if project_id is not None:
                 request.project_id = project_id
-
-            if keys:
-                request.keys.extend(keys)
+            if keys is not None:
+                request.keys = keys
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -875,9 +872,8 @@ class DatastoreClient(metaclass=DatastoreClientMeta):
 
             if project_id is not None:
                 request.project_id = project_id
-
-            if keys:
-                request.keys.extend(keys)
+            if keys is not None:
+                request.keys = keys
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.

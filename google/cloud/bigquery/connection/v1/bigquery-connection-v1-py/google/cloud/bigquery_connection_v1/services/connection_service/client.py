@@ -871,6 +871,9 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
         elif not request:
             request = iam_policy.GetIamPolicyRequest(resource=resource, )
 
+            if resource is not None:
+                request.resource = resource
+
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
         rpc = self._transport._wrapped_methods[self._transport.get_iam_policy]
@@ -1003,6 +1006,9 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
         elif not request:
             request = iam_policy.SetIamPolicyRequest(resource=resource, )
 
+            if resource is not None:
+                request.resource = resource
+
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
         rpc = self._transport._wrapped_methods[self._transport.set_iam_policy]
@@ -1092,6 +1098,12 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
 
         elif not request:
             request = iam_policy.TestIamPermissionsRequest(resource=resource, permissions=permissions, )
+
+            if resource is not None:
+                request.resource = resource
+
+            if permissions:
+                request.permissions.extend(permissions)
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.

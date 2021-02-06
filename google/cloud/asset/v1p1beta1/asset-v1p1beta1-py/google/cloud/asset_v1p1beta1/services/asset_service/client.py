@@ -399,9 +399,8 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
                 request.scope = scope
             if query is not None:
                 request.query = query
-
-            if asset_types:
-                request.asset_types.extend(asset_types)
+            if asset_types is not None:
+                request.asset_types = asset_types
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
