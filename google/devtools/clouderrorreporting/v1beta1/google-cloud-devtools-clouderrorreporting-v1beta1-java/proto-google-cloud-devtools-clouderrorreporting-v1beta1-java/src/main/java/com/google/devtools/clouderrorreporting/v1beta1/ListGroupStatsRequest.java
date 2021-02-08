@@ -188,10 +188,10 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The resource name of the Google Cloud Platform project. Written
-   * as &lt;code&gt;projects/&lt;/code&gt; plus the
-   * &lt;a href="https://support.google.com/cloud/answer/6158840"&gt;Google Cloud
-   * Platform project ID&lt;/a&gt;.
-   * Example: &lt;code&gt;projects/my-project-123&lt;/code&gt;.
+   * as `projects/{projectID}` or `projects/{projectNumber}`, where `{projectID}`
+   * and `{projectNumber}` can be found in the
+   * [Google Cloud Console](https://support.google.com/cloud/answer/6158840).
+   * Examples: `projects/my-project-123`, `projects/5551234`.
    * </pre>
    *
    * <code>string project_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -213,10 +213,10 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The resource name of the Google Cloud Platform project. Written
-   * as &lt;code&gt;projects/&lt;/code&gt; plus the
-   * &lt;a href="https://support.google.com/cloud/answer/6158840"&gt;Google Cloud
-   * Platform project ID&lt;/a&gt;.
-   * Example: &lt;code&gt;projects/my-project-123&lt;/code&gt;.
+   * as `projects/{projectID}` or `projects/{projectNumber}`, where `{projectID}`
+   * and `{projectNumber}` can be found in the
+   * [Google Cloud Console](https://support.google.com/cloud/answer/6158840).
+   * Examples: `projects/my-project-123`, `projects/5551234`.
    * </pre>
    *
    * <code>string project_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -1129,10 +1129,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the Google Cloud Platform project. Written
-     * as &lt;code&gt;projects/&lt;/code&gt; plus the
-     * &lt;a href="https://support.google.com/cloud/answer/6158840"&gt;Google Cloud
-     * Platform project ID&lt;/a&gt;.
-     * Example: &lt;code&gt;projects/my-project-123&lt;/code&gt;.
+     * as `projects/{projectID}` or `projects/{projectNumber}`, where `{projectID}`
+     * and `{projectNumber}` can be found in the
+     * [Google Cloud Console](https://support.google.com/cloud/answer/6158840).
+     * Examples: `projects/my-project-123`, `projects/5551234`.
      * </pre>
      *
      * <code>string project_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -1153,10 +1153,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the Google Cloud Platform project. Written
-     * as &lt;code&gt;projects/&lt;/code&gt; plus the
-     * &lt;a href="https://support.google.com/cloud/answer/6158840"&gt;Google Cloud
-     * Platform project ID&lt;/a&gt;.
-     * Example: &lt;code&gt;projects/my-project-123&lt;/code&gt;.
+     * as `projects/{projectID}` or `projects/{projectNumber}`, where `{projectID}`
+     * and `{projectNumber}` can be found in the
+     * [Google Cloud Console](https://support.google.com/cloud/answer/6158840).
+     * Examples: `projects/my-project-123`, `projects/5551234`.
      * </pre>
      *
      * <code>string project_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -1178,10 +1178,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the Google Cloud Platform project. Written
-     * as &lt;code&gt;projects/&lt;/code&gt; plus the
-     * &lt;a href="https://support.google.com/cloud/answer/6158840"&gt;Google Cloud
-     * Platform project ID&lt;/a&gt;.
-     * Example: &lt;code&gt;projects/my-project-123&lt;/code&gt;.
+     * as `projects/{projectID}` or `projects/{projectNumber}`, where `{projectID}`
+     * and `{projectNumber}` can be found in the
+     * [Google Cloud Console](https://support.google.com/cloud/answer/6158840).
+     * Examples: `projects/my-project-123`, `projects/5551234`.
      * </pre>
      *
      * <code>string project_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -1201,10 +1201,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the Google Cloud Platform project. Written
-     * as &lt;code&gt;projects/&lt;/code&gt; plus the
-     * &lt;a href="https://support.google.com/cloud/answer/6158840"&gt;Google Cloud
-     * Platform project ID&lt;/a&gt;.
-     * Example: &lt;code&gt;projects/my-project-123&lt;/code&gt;.
+     * as `projects/{projectID}` or `projects/{projectNumber}`, where `{projectID}`
+     * and `{projectNumber}` can be found in the
+     * [Google Cloud Console](https://support.google.com/cloud/answer/6158840).
+     * Examples: `projects/my-project-123`, `projects/5551234`.
      * </pre>
      *
      * <code>string project_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -1219,10 +1219,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the Google Cloud Platform project. Written
-     * as &lt;code&gt;projects/&lt;/code&gt; plus the
-     * &lt;a href="https://support.google.com/cloud/answer/6158840"&gt;Google Cloud
-     * Platform project ID&lt;/a&gt;.
-     * Example: &lt;code&gt;projects/my-project-123&lt;/code&gt;.
+     * as `projects/{projectID}` or `projects/{projectNumber}`, where `{projectID}`
+     * and `{projectNumber}` can be found in the
+     * [Google Cloud Console](https://support.google.com/cloud/answer/6158840).
+     * Examples: `projects/my-project-123`, `projects/5551234`.
      * </pre>
      *
      * <code>string project_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

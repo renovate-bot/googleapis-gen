@@ -10,7 +10,7 @@ public interface ErrorGroupOrBuilder extends
   /**
    * <pre>
    * The group resource name.
-   * Example: &lt;code&gt;projects/my-project-123/groups/my-groupid&lt;/code&gt;
+   * Example: &lt;code&gt;projects/my-project-123/groups/CNSgkpnppqKCUw&lt;/code&gt;
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -20,7 +20,7 @@ public interface ErrorGroupOrBuilder extends
   /**
    * <pre>
    * The group resource name.
-   * Example: &lt;code&gt;projects/my-project-123/groups/my-groupid&lt;/code&gt;
+   * Example: &lt;code&gt;projects/my-project-123/groups/CNSgkpnppqKCUw&lt;/code&gt;
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -94,4 +94,25 @@ public interface ErrorGroupOrBuilder extends
    */
   com.google.devtools.clouderrorreporting.v1beta1.TrackingIssueOrBuilder getTrackingIssuesOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * Error group's resolution status.
+   * An unspecified resolution status will be interpreted as OPEN
+   * </pre>
+   *
+   * <code>.google.devtools.clouderrorreporting.v1beta1.ResolutionStatus resolution_status = 5;</code>
+   * @return The enum numeric value on the wire for resolutionStatus.
+   */
+  int getResolutionStatusValue();
+  /**
+   * <pre>
+   * Error group's resolution status.
+   * An unspecified resolution status will be interpreted as OPEN
+   * </pre>
+   *
+   * <code>.google.devtools.clouderrorreporting.v1beta1.ResolutionStatus resolution_status = 5;</code>
+   * @return The resolutionStatus.
+   */
+  com.google.devtools.clouderrorreporting.v1beta1.ResolutionStatus getResolutionStatus();
 }

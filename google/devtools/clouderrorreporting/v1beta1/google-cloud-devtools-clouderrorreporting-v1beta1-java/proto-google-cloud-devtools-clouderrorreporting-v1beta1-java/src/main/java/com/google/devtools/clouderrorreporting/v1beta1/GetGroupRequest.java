@@ -95,7 +95,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object groupName_;
   /**
    * <pre>
-   * The group resource name. Written as
+   * Required. The group resource name. Written as
    * `projects/{projectID}/groups/{group_name}`. Call
    * [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
    * to return a list of groups belonging to this project.
@@ -120,7 +120,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The group resource name. Written as
+   * Required. The group resource name. Written as
    * `projects/{projectID}/groups/{group_name}`. Call
    * [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
    * to return a list of groups belonging to this project.
@@ -454,7 +454,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object groupName_ = "";
     /**
      * <pre>
-     * The group resource name. Written as
+     * Required. The group resource name. Written as
      * `projects/{projectID}/groups/{group_name}`. Call
      * [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
      * to return a list of groups belonging to this project.
@@ -478,7 +478,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The group resource name. Written as
+     * Required. The group resource name. Written as
      * `projects/{projectID}/groups/{group_name}`. Call
      * [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
      * to return a list of groups belonging to this project.
@@ -503,7 +503,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The group resource name. Written as
+     * Required. The group resource name. Written as
      * `projects/{projectID}/groups/{group_name}`. Call
      * [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
      * to return a list of groups belonging to this project.
@@ -526,7 +526,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The group resource name. Written as
+     * Required. The group resource name. Written as
      * `projects/{projectID}/groups/{group_name}`. Call
      * [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
      * to return a list of groups belonging to this project.
@@ -544,7 +544,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The group resource name. Written as
+     * Required. The group resource name. Written as
      * `projects/{projectID}/groups/{group_name}`. Call
      * [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
      * to return a list of groups belonging to this project.

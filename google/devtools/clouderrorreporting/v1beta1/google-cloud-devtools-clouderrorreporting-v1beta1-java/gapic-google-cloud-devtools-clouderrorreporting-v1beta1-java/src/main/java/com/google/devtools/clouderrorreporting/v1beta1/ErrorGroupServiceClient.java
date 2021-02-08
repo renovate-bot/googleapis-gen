@@ -139,7 +139,7 @@ public class ErrorGroupServiceClient implements BackgroundResource {
   /**
    * Get the specified group.
    *
-   * @param groupName The group resource name. Written as
+   * @param groupName Required. The group resource name. Written as
    *     `projects/{projectID}/groups/{group_name}`. Call
    *     [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
    *     to return a list of groups belonging to this project.
@@ -158,7 +158,7 @@ public class ErrorGroupServiceClient implements BackgroundResource {
   /**
    * Get the specified group.
    *
-   * @param groupName The group resource name. Written as
+   * @param groupName Required. The group resource name. Written as
    *     `projects/{projectID}/groups/{group_name}`. Call
    *     [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
    *     to return a list of groups belonging to this project.

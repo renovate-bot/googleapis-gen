@@ -20,7 +20,7 @@ module Google
         # @!attribute [rw] name
         #   @return [String]
         #     The group resource name.
-        #     Example: <code>projects/my-project-123/groups/my-groupid</code>
+        #     Example: <code>projects/my-project-123/groups/CNSgkpnppqKCUw</code>
         # @!attribute [rw] group_id
         #   @return [String]
         #     Group IDs are unique for a given project. If the same kind of error
@@ -28,6 +28,10 @@ module Google
         # @!attribute [rw] tracking_issues
         #   @return [Array<Google::Devtools::Clouderrorreporting::V1beta1::TrackingIssue>]
         #     Associated tracking issues.
+        # @!attribute [rw] resolution_status
+        #   @return [Google::Devtools::Clouderrorreporting::V1beta1::ResolutionStatus]
+        #     Error group's resolution status.
+        #     An unspecified resolution status will be interpreted as OPEN
         class ErrorGroup; end
 
         # Information related to tracking the progress on resolving the error.
@@ -105,6 +109,10 @@ module Google
         #     For a logged exception this would be the source line where the
         #     exception is logged, usually close to the place where it was
         #     caught.
+        # @!attribute [rw] source_references
+        #   @return [Array<Google::Appengine::Logging::V1::SourceReference>]
+        #     Source code that was used to build the executable which has
+        #     caused the given error message.
         class ErrorContext; end
 
         # HTTP request data that is related to a reported error.
@@ -151,6 +159,27 @@ module Google
         #     The value can include optional context like the class or package name.
         #     For example, `my.package.MyClass.method` in case of Java.
         class SourceLocation; end
+
+        # Resolution status of an error group.
+        module ResolutionStatus
+          # Status is unknown. When left unspecified in requests, it is treated like
+          # OPEN.
+          RESOLUTION_STATUS_UNSPECIFIED = 0
+
+          # The error group is not being addressed. This is the default for
+          # new groups. It is also used for errors re-occurring after marked RESOLVED.
+          OPEN = 1
+
+          # Error Group manually acknowledged, it can have an issue link attached.
+          ACKNOWLEDGED = 2
+
+          # Error Group manually resolved, more events for this group are not expected
+          # to occur.
+          RESOLVED = 3
+
+          # The error group is muted and excluded by default on group stats requests.
+          MUTED = 4
+        end
       end
     end
   end

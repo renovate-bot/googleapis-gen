@@ -362,6 +362,8 @@ def test_get_group(transport: str = 'grpc', request_type=error_group_service.Get
 
             group_id='group_id_value',
 
+            resolution_status=common.ResolutionStatus.OPEN,
+
         )
 
         response = client.get_group(request)
@@ -379,6 +381,8 @@ def test_get_group(transport: str = 'grpc', request_type=error_group_service.Get
     assert response.name == 'name_value'
 
     assert response.group_id == 'group_id_value'
+
+    assert response.resolution_status == common.ResolutionStatus.OPEN
 
 
 def test_get_group_from_dict():
@@ -404,6 +408,7 @@ async def test_get_group_async(transport: str = 'grpc_asyncio', request_type=err
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(common.ErrorGroup(
             name='name_value',
             group_id='group_id_value',
+            resolution_status=common.ResolutionStatus.OPEN,
         ))
 
         response = await client.get_group(request)
@@ -420,6 +425,8 @@ async def test_get_group_async(transport: str = 'grpc_asyncio', request_type=err
     assert response.name == 'name_value'
 
     assert response.group_id == 'group_id_value'
+
+    assert response.resolution_status == common.ResolutionStatus.OPEN
 
 
 @pytest.mark.asyncio
@@ -593,6 +600,8 @@ def test_update_group(transport: str = 'grpc', request_type=error_group_service.
 
             group_id='group_id_value',
 
+            resolution_status=common.ResolutionStatus.OPEN,
+
         )
 
         response = client.update_group(request)
@@ -610,6 +619,8 @@ def test_update_group(transport: str = 'grpc', request_type=error_group_service.
     assert response.name == 'name_value'
 
     assert response.group_id == 'group_id_value'
+
+    assert response.resolution_status == common.ResolutionStatus.OPEN
 
 
 def test_update_group_from_dict():
@@ -635,6 +646,7 @@ async def test_update_group_async(transport: str = 'grpc_asyncio', request_type=
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(common.ErrorGroup(
             name='name_value',
             group_id='group_id_value',
+            resolution_status=common.ResolutionStatus.OPEN,
         ))
 
         response = await client.update_group(request)
@@ -651,6 +663,8 @@ async def test_update_group_async(transport: str = 'grpc_asyncio', request_type=
     assert response.name == 'name_value'
 
     assert response.group_id == 'group_id_value'
+
+    assert response.resolution_status == common.ResolutionStatus.OPEN
 
 
 @pytest.mark.asyncio

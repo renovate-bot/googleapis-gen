@@ -1,6 +1,6 @@
-# Ruby Client for Cloud Error Reporting API ([Beta](https://github.com/GoogleCloudPlatform/google-cloud-ruby#versioning))
+# Ruby Client for Error Reporting API ([Beta](https://github.com/GoogleCloudPlatform/google-cloud-ruby#versioning))
 
-[Cloud Error Reporting API][Product Documentation]:
+[Error Reporting API][Product Documentation]:
 Groups and counts similar errors from cloud services and applications,
 reports new errors, and provides access to error groups and their
 associated errors.
@@ -13,7 +13,7 @@ steps:
 
 1. [Select or create a Cloud Platform project.](https://console.cloud.google.com/project)
 2. [Enable billing for your project.](https://cloud.google.com/billing/docs/how-to/modify-project#enable_billing_for_a_project)
-3. [Enable the Cloud Error Reporting API.](https://console.cloud.google.com/apis/library/devtools-clouderrorreporting.googleapis.com)
+3. [Enable the Error Reporting API.](https://console.cloud.google.com/apis/library/devtools-clouderrorreporting.googleapis.com)
 4. [Setup Authentication.](https://googlecloudplatform.github.io/google-cloud-ruby/#/docs/google-cloud/master/guides/authentication)
 
 ### Installation
@@ -49,9 +49,9 @@ response = report_errors_client.report_error_event(formatted_project_name, event
 ```
 
 ### Next Steps
-- Read the [Client Library Documentation][] for Cloud Error Reporting API
+- Read the [Client Library Documentation][] for Error Reporting API
   to see other available methods on the client.
-- Read the [Cloud Error Reporting API Product documentation][Product Documentation]
+- Read the [Error Reporting API Product documentation][Product Documentation]
   to learn more about the product and see How-to Guides.
 - View this [repository's main README](https://github.com/GoogleCloudPlatform/google-cloud-ruby/blob/master/README.md)
   to see the full list of Cloud APIs that we cover.

@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     name_ = "";
     groupId_ = "";
     trackingIssues_ = java.util.Collections.emptyList();
+    resolutionStatus_ = 0;
   }
 
   @java.lang.Override
@@ -77,6 +78,12 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.parser(), extensionRegistry));
             break;
           }
+          case 40: {
+            int rawValue = input.readEnum();
+
+            resolutionStatus_ = rawValue;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -117,7 +124,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The group resource name.
-   * Example: &lt;code&gt;projects/my-project-123/groups/my-groupid&lt;/code&gt;
+   * Example: &lt;code&gt;projects/my-project-123/groups/CNSgkpnppqKCUw&lt;/code&gt;
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -139,7 +146,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The group resource name.
-   * Example: &lt;code&gt;projects/my-project-123/groups/my-groupid&lt;/code&gt;
+   * Example: &lt;code&gt;projects/my-project-123/groups/CNSgkpnppqKCUw&lt;/code&gt;
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -268,6 +275,35 @@ private static final long serialVersionUID = 0L;
     return trackingIssues_.get(index);
   }
 
+  public static final int RESOLUTION_STATUS_FIELD_NUMBER = 5;
+  private int resolutionStatus_;
+  /**
+   * <pre>
+   * Error group's resolution status.
+   * An unspecified resolution status will be interpreted as OPEN
+   * </pre>
+   *
+   * <code>.google.devtools.clouderrorreporting.v1beta1.ResolutionStatus resolution_status = 5;</code>
+   * @return The enum numeric value on the wire for resolutionStatus.
+   */
+  @java.lang.Override public int getResolutionStatusValue() {
+    return resolutionStatus_;
+  }
+  /**
+   * <pre>
+   * Error group's resolution status.
+   * An unspecified resolution status will be interpreted as OPEN
+   * </pre>
+   *
+   * <code>.google.devtools.clouderrorreporting.v1beta1.ResolutionStatus resolution_status = 5;</code>
+   * @return The resolutionStatus.
+   */
+  @java.lang.Override public com.google.devtools.clouderrorreporting.v1beta1.ResolutionStatus getResolutionStatus() {
+    @SuppressWarnings("deprecation")
+    com.google.devtools.clouderrorreporting.v1beta1.ResolutionStatus result = com.google.devtools.clouderrorreporting.v1beta1.ResolutionStatus.valueOf(resolutionStatus_);
+    return result == null ? com.google.devtools.clouderrorreporting.v1beta1.ResolutionStatus.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -291,6 +327,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < trackingIssues_.size(); i++) {
       output.writeMessage(3, trackingIssues_.get(i));
     }
+    if (resolutionStatus_ != com.google.devtools.clouderrorreporting.v1beta1.ResolutionStatus.RESOLUTION_STATUS_UNSPECIFIED.getNumber()) {
+      output.writeEnum(5, resolutionStatus_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -309,6 +348,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < trackingIssues_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, trackingIssues_.get(i));
+    }
+    if (resolutionStatus_ != com.google.devtools.clouderrorreporting.v1beta1.ResolutionStatus.RESOLUTION_STATUS_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(5, resolutionStatus_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -331,6 +374,7 @@ private static final long serialVersionUID = 0L;
         .equals(other.getGroupId())) return false;
     if (!getTrackingIssuesList()
         .equals(other.getTrackingIssuesList())) return false;
+    if (resolutionStatus_ != other.resolutionStatus_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -350,6 +394,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + TRACKING_ISSUES_FIELD_NUMBER;
       hash = (53 * hash) + getTrackingIssuesList().hashCode();
     }
+    hash = (37 * hash) + RESOLUTION_STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + resolutionStatus_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -498,6 +544,8 @@ private static final long serialVersionUID = 0L;
       } else {
         trackingIssuesBuilder_.clear();
       }
+      resolutionStatus_ = 0;
+
       return this;
     }
 
@@ -536,6 +584,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.trackingIssues_ = trackingIssuesBuilder_.build();
       }
+      result.resolutionStatus_ = resolutionStatus_;
       onBuilt();
       return result;
     }
@@ -618,6 +667,9 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
+      if (other.resolutionStatus_ != 0) {
+        setResolutionStatusValue(other.getResolutionStatusValue());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -652,7 +704,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The group resource name.
-     * Example: &lt;code&gt;projects/my-project-123/groups/my-groupid&lt;/code&gt;
+     * Example: &lt;code&gt;projects/my-project-123/groups/CNSgkpnppqKCUw&lt;/code&gt;
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -673,7 +725,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The group resource name.
-     * Example: &lt;code&gt;projects/my-project-123/groups/my-groupid&lt;/code&gt;
+     * Example: &lt;code&gt;projects/my-project-123/groups/CNSgkpnppqKCUw&lt;/code&gt;
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -695,7 +747,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The group resource name.
-     * Example: &lt;code&gt;projects/my-project-123/groups/my-groupid&lt;/code&gt;
+     * Example: &lt;code&gt;projects/my-project-123/groups/CNSgkpnppqKCUw&lt;/code&gt;
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -715,7 +767,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The group resource name.
-     * Example: &lt;code&gt;projects/my-project-123/groups/my-groupid&lt;/code&gt;
+     * Example: &lt;code&gt;projects/my-project-123/groups/CNSgkpnppqKCUw&lt;/code&gt;
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -730,7 +782,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The group resource name.
-     * Example: &lt;code&gt;projects/my-project-123/groups/my-groupid&lt;/code&gt;
+     * Example: &lt;code&gt;projects/my-project-123/groups/CNSgkpnppqKCUw&lt;/code&gt;
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1160,6 +1212,85 @@ private static final long serialVersionUID = 0L;
         trackingIssues_ = null;
       }
       return trackingIssuesBuilder_;
+    }
+
+    private int resolutionStatus_ = 0;
+    /**
+     * <pre>
+     * Error group's resolution status.
+     * An unspecified resolution status will be interpreted as OPEN
+     * </pre>
+     *
+     * <code>.google.devtools.clouderrorreporting.v1beta1.ResolutionStatus resolution_status = 5;</code>
+     * @return The enum numeric value on the wire for resolutionStatus.
+     */
+    @java.lang.Override public int getResolutionStatusValue() {
+      return resolutionStatus_;
+    }
+    /**
+     * <pre>
+     * Error group's resolution status.
+     * An unspecified resolution status will be interpreted as OPEN
+     * </pre>
+     *
+     * <code>.google.devtools.clouderrorreporting.v1beta1.ResolutionStatus resolution_status = 5;</code>
+     * @param value The enum numeric value on the wire for resolutionStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResolutionStatusValue(int value) {
+      
+      resolutionStatus_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Error group's resolution status.
+     * An unspecified resolution status will be interpreted as OPEN
+     * </pre>
+     *
+     * <code>.google.devtools.clouderrorreporting.v1beta1.ResolutionStatus resolution_status = 5;</code>
+     * @return The resolutionStatus.
+     */
+    @java.lang.Override
+    public com.google.devtools.clouderrorreporting.v1beta1.ResolutionStatus getResolutionStatus() {
+      @SuppressWarnings("deprecation")
+      com.google.devtools.clouderrorreporting.v1beta1.ResolutionStatus result = com.google.devtools.clouderrorreporting.v1beta1.ResolutionStatus.valueOf(resolutionStatus_);
+      return result == null ? com.google.devtools.clouderrorreporting.v1beta1.ResolutionStatus.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * Error group's resolution status.
+     * An unspecified resolution status will be interpreted as OPEN
+     * </pre>
+     *
+     * <code>.google.devtools.clouderrorreporting.v1beta1.ResolutionStatus resolution_status = 5;</code>
+     * @param value The resolutionStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResolutionStatus(com.google.devtools.clouderrorreporting.v1beta1.ResolutionStatus value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      resolutionStatus_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Error group's resolution status.
+     * An unspecified resolution status will be interpreted as OPEN
+     * </pre>
+     *
+     * <code>.google.devtools.clouderrorreporting.v1beta1.ResolutionStatus resolution_status = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearResolutionStatus() {
+      
+      resolutionStatus_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

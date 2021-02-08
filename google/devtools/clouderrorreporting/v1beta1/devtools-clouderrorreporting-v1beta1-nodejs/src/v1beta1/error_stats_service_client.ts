@@ -322,9 +322,10 @@ export class ErrorStatsServiceClient {
  *   The request object that will be sent.
  * @param {string} request.projectName
  *   Required. The resource name of the Google Cloud Platform project. Written
- *   as `projects/` plus the
+ *   as `projects/{projectID}`, where `{projectID}` is the
  *   [Google Cloud Platform project
  *   ID](https://support.google.com/cloud/answer/6158840).
+ *
  *   Example: `projects/my-project-123`.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -399,11 +400,11 @@ export class ErrorStatsServiceClient {
  *   The request object that will be sent.
  * @param {string} request.projectName
  *   Required. The resource name of the Google Cloud Platform project. Written
- *   as <code>projects/</code> plus the
- *   <a href="https://support.google.com/cloud/answer/6158840">Google Cloud
- *   Platform project ID</a>.
+ *   as `projects/{projectID}` or `projects/{projectNumber}`, where `{projectID}`
+ *   and `{projectNumber}` can be found in the
+ *   [Google Cloud Console](https://support.google.com/cloud/answer/6158840).
  *
- *   Example: <code>projects/my-project-123</code>.
+ *   Examples: `projects/my-project-123`, `projects/5551234`.
  * @param {string[]} [request.groupId]
  *   Optional. List all <code>ErrorGroupStats</code> with these IDs.
  * @param {google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter} [request.serviceFilter]
@@ -493,11 +494,11 @@ export class ErrorStatsServiceClient {
  *   The request object that will be sent.
  * @param {string} request.projectName
  *   Required. The resource name of the Google Cloud Platform project. Written
- *   as <code>projects/</code> plus the
- *   <a href="https://support.google.com/cloud/answer/6158840">Google Cloud
- *   Platform project ID</a>.
+ *   as `projects/{projectID}` or `projects/{projectNumber}`, where `{projectID}`
+ *   and `{projectNumber}` can be found in the
+ *   [Google Cloud Console](https://support.google.com/cloud/answer/6158840).
  *
- *   Example: <code>projects/my-project-123</code>.
+ *   Examples: `projects/my-project-123`, `projects/5551234`.
  * @param {string[]} [request.groupId]
  *   Optional. List all <code>ErrorGroupStats</code> with these IDs.
  * @param {google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter} [request.serviceFilter]
@@ -574,11 +575,11 @@ export class ErrorStatsServiceClient {
  *   The request object that will be sent.
  * @param {string} request.projectName
  *   Required. The resource name of the Google Cloud Platform project. Written
- *   as <code>projects/</code> plus the
- *   <a href="https://support.google.com/cloud/answer/6158840">Google Cloud
- *   Platform project ID</a>.
+ *   as `projects/{projectID}` or `projects/{projectNumber}`, where `{projectID}`
+ *   and `{projectNumber}` can be found in the
+ *   [Google Cloud Console](https://support.google.com/cloud/answer/6158840).
  *
- *   Example: <code>projects/my-project-123</code>.
+ *   Examples: `projects/my-project-123`, `projects/5551234`.
  * @param {string[]} [request.groupId]
  *   Optional. List all <code>ErrorGroupStats</code> with these IDs.
  * @param {google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter} [request.serviceFilter]
@@ -679,9 +680,10 @@ export class ErrorStatsServiceClient {
  *   The request object that will be sent.
  * @param {string} request.projectName
  *   Required. The resource name of the Google Cloud Platform project. Written
- *   as `projects/` plus the
+ *   as `projects/{projectID}`, where `{projectID}` is the
  *   [Google Cloud Platform project
  *   ID](https://support.google.com/cloud/answer/6158840).
+ *
  *   Example: `projects/my-project-123`.
  * @param {string} request.groupId
  *   Required. The group for which events shall be returned.
@@ -752,9 +754,10 @@ export class ErrorStatsServiceClient {
  *   The request object that will be sent.
  * @param {string} request.projectName
  *   Required. The resource name of the Google Cloud Platform project. Written
- *   as `projects/` plus the
+ *   as `projects/{projectID}`, where `{projectID}` is the
  *   [Google Cloud Platform project
  *   ID](https://support.google.com/cloud/answer/6158840).
+ *
  *   Example: `projects/my-project-123`.
  * @param {string} request.groupId
  *   Required. The group for which events shall be returned.
@@ -812,9 +815,10 @@ export class ErrorStatsServiceClient {
  *   The request object that will be sent.
  * @param {string} request.projectName
  *   Required. The resource name of the Google Cloud Platform project. Written
- *   as `projects/` plus the
+ *   as `projects/{projectID}`, where `{projectID}` is the
  *   [Google Cloud Platform project
  *   ID](https://support.google.com/cloud/answer/6158840).
+ *
  *   Example: `projects/my-project-123`.
  * @param {string} request.groupId
  *   Required. The group for which events shall be returned.

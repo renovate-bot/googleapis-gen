@@ -25,6 +25,7 @@ from google.cloud.errorreporting_v1beta1.types.common import ErrorContext
 from google.cloud.errorreporting_v1beta1.types.common import ErrorEvent
 from google.cloud.errorreporting_v1beta1.types.common import ErrorGroup
 from google.cloud.errorreporting_v1beta1.types.common import HttpRequestContext
+from google.cloud.errorreporting_v1beta1.types.common import ResolutionStatus
 from google.cloud.errorreporting_v1beta1.types.common import ServiceContext
 from google.cloud.errorreporting_v1beta1.types.common import SourceLocation
 from google.cloud.errorreporting_v1beta1.types.common import TrackingIssue
@@ -70,6 +71,7 @@ __all__ = (
     'ReportErrorsServiceAsyncClient',
     'ReportErrorsServiceClient',
     'ReportedErrorEvent',
+    'ResolutionStatus',
     'ServiceContext',
     'ServiceContextFilter',
     'SourceLocation',
