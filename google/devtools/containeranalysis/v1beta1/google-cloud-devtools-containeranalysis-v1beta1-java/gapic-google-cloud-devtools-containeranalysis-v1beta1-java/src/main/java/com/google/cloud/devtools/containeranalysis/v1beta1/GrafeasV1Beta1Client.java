@@ -76,6 +76,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+ *   GetOccurrenceRequest request =
+ *       GetOccurrenceRequest.newBuilder().setName("name3373707").build();
+ *   Occurrence response = grafeasV1Beta1Client.getOccurrence(request);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the GrafeasV1Beta1Client object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -180,6 +188,16 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
   /**
    * Gets the specified occurrence.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   GetOccurrenceRequest request =
+   *       GetOccurrenceRequest.newBuilder().setName("name3373707").build();
+   *   Occurrence response = grafeasV1Beta1Client.getOccurrence(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -192,6 +210,17 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    * Gets the specified occurrence.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   GetOccurrenceRequest request =
+   *       GetOccurrenceRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Occurrence> future =
+   *       grafeasV1Beta1Client.getOccurrenceCallable().futureCall(request);
+   *   // Do something.
+   *   Occurrence response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetOccurrenceRequest, Occurrence> getOccurrenceCallable() {
     return stub.getOccurrenceCallable();
@@ -200,6 +229,23 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists occurrences for the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   ListOccurrencesRequest request =
+   *       ListOccurrencesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Occurrence element : grafeasV1Beta1Client.listOccurrences(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -213,6 +259,24 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    * Lists occurrences for the specified project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   ListOccurrencesRequest request =
+   *       ListOccurrencesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Occurrence> future =
+   *       grafeasV1Beta1Client.listOccurrencesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Occurrence element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListOccurrencesRequest, ListOccurrencesPagedResponse>
       listOccurrencesPagedCallable() {
@@ -224,6 +288,24 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    * Lists occurrences for the specified project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   while (true) {
+   *     ListOccurrencesResponse response =
+   *         grafeasV1Beta1Client.listOccurrencesCallable().call(request);
+   *     for (Occurrence element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListOccurrencesRequest, ListOccurrencesResponse>
       listOccurrencesCallable() {
@@ -234,6 +316,16 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
   /**
    * Deletes the specified occurrence. For example, use this method to delete an occurrence when the
    * occurrence is no longer applicable for the given resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   DeleteOccurrenceRequest request =
+   *       DeleteOccurrenceRequest.newBuilder().setName("name3373707").build();
+   *   grafeasV1Beta1Client.deleteOccurrence(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -248,6 +340,16 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    * occurrence is no longer applicable for the given resource.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   DeleteOccurrenceRequest request =
+   *       DeleteOccurrenceRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Empty> future = grafeasV1Beta1Client.deleteOccurrenceCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteOccurrenceRequest, Empty> deleteOccurrenceCallable() {
     return stub.deleteOccurrenceCallable();
@@ -256,6 +358,19 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new occurrence.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   CreateOccurrenceRequest request =
+   *       CreateOccurrenceRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setOccurrence(Occurrence.newBuilder().build())
+   *           .build();
+   *   Occurrence response = grafeasV1Beta1Client.createOccurrence(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -269,6 +384,20 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    * Creates a new occurrence.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   CreateOccurrenceRequest request =
+   *       CreateOccurrenceRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setOccurrence(Occurrence.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Occurrence> future =
+   *       grafeasV1Beta1Client.createOccurrenceCallable().futureCall(request);
+   *   // Do something.
+   *   Occurrence response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateOccurrenceRequest, Occurrence> createOccurrenceCallable() {
     return stub.createOccurrenceCallable();
@@ -277,6 +406,20 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates new occurrences in batch.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   BatchCreateOccurrencesRequest request =
+   *       BatchCreateOccurrencesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .addAllOccurrences(new ArrayList<Occurrence>())
+   *           .build();
+   *   BatchCreateOccurrencesResponse response =
+   *       grafeasV1Beta1Client.batchCreateOccurrences(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -291,6 +434,20 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    * Creates new occurrences in batch.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   BatchCreateOccurrencesRequest request =
+   *       BatchCreateOccurrencesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .addAllOccurrences(new ArrayList<Occurrence>())
+   *           .build();
+   *   ApiFuture<BatchCreateOccurrencesResponse> future =
+   *       grafeasV1Beta1Client.batchCreateOccurrencesCallable().futureCall(request);
+   *   // Do something.
+   *   BatchCreateOccurrencesResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<BatchCreateOccurrencesRequest, BatchCreateOccurrencesResponse>
       batchCreateOccurrencesCallable() {
@@ -300,6 +457,20 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified occurrence.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   UpdateOccurrenceRequest request =
+   *       UpdateOccurrenceRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setOccurrence(Occurrence.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Occurrence response = grafeasV1Beta1Client.updateOccurrence(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -313,6 +484,21 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    * Updates the specified occurrence.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   UpdateOccurrenceRequest request =
+   *       UpdateOccurrenceRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setOccurrence(Occurrence.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Occurrence> future =
+   *       grafeasV1Beta1Client.updateOccurrenceCallable().futureCall(request);
+   *   // Do something.
+   *   Occurrence response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateOccurrenceRequest, Occurrence> updateOccurrenceCallable() {
     return stub.updateOccurrenceCallable();
@@ -322,6 +508,16 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
   /**
    * Gets the note attached to the specified occurrence. Consumer projects can use this method to
    * get a note that belongs to a provider project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   GetOccurrenceNoteRequest request =
+   *       GetOccurrenceNoteRequest.newBuilder().setName("name3373707").build();
+   *   Note response = grafeasV1Beta1Client.getOccurrenceNote(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -336,6 +532,16 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    * get a note that belongs to a provider project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   GetOccurrenceNoteRequest request =
+   *       GetOccurrenceNoteRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Note> future = grafeasV1Beta1Client.getOccurrenceNoteCallable().futureCall(request);
+   *   // Do something.
+   *   Note response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetOccurrenceNoteRequest, Note> getOccurrenceNoteCallable() {
     return stub.getOccurrenceNoteCallable();
@@ -344,6 +550,15 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the specified note.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   GetNoteRequest request = GetNoteRequest.newBuilder().setName("name3373707").build();
+   *   Note response = grafeasV1Beta1Client.getNote(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -357,6 +572,15 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    * Gets the specified note.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   GetNoteRequest request = GetNoteRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Note> future = grafeasV1Beta1Client.getNoteCallable().futureCall(request);
+   *   // Do something.
+   *   Note response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetNoteRequest, Note> getNoteCallable() {
     return stub.getNoteCallable();
@@ -365,6 +589,23 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists notes for the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   ListNotesRequest request =
+   *       ListNotesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Note element : grafeasV1Beta1Client.listNotes(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -378,6 +619,23 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    * Lists notes for the specified project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   ListNotesRequest request =
+   *       ListNotesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Note> future = grafeasV1Beta1Client.listNotesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Note element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListNotesRequest, ListNotesPagedResponse> listNotesPagedCallable() {
     return stub.listNotesPagedCallable();
@@ -388,6 +646,23 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    * Lists notes for the specified project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   while (true) {
+   *     ListNotesResponse response = grafeasV1Beta1Client.listNotesCallable().call(request);
+   *     for (Note element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListNotesRequest, ListNotesResponse> listNotesCallable() {
     return stub.listNotesCallable();
@@ -396,6 +671,15 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified note.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   DeleteNoteRequest request = DeleteNoteRequest.newBuilder().setName("name3373707").build();
+   *   grafeasV1Beta1Client.deleteNote(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -409,6 +693,15 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    * Deletes the specified note.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   DeleteNoteRequest request = DeleteNoteRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Empty> future = grafeasV1Beta1Client.deleteNoteCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteNoteRequest, Empty> deleteNoteCallable() {
     return stub.deleteNoteCallable();
@@ -417,6 +710,20 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new note.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   CreateNoteRequest request =
+   *       CreateNoteRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setNoteId("noteId-1039694675")
+   *           .setNote(Note.newBuilder().build())
+   *           .build();
+   *   Note response = grafeasV1Beta1Client.createNote(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -430,6 +737,20 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    * Creates a new note.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   CreateNoteRequest request =
+   *       CreateNoteRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setNoteId("noteId-1039694675")
+   *           .setNote(Note.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Note> future = grafeasV1Beta1Client.createNoteCallable().futureCall(request);
+   *   // Do something.
+   *   Note response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateNoteRequest, Note> createNoteCallable() {
     return stub.createNoteCallable();
@@ -438,6 +759,19 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates new notes in batch.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   BatchCreateNotesRequest request =
+   *       BatchCreateNotesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .putAllNotes(new HashMap<String, Note>())
+   *           .build();
+   *   BatchCreateNotesResponse response = grafeasV1Beta1Client.batchCreateNotes(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -451,6 +785,20 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    * Creates new notes in batch.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   BatchCreateNotesRequest request =
+   *       BatchCreateNotesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .putAllNotes(new HashMap<String, Note>())
+   *           .build();
+   *   ApiFuture<BatchCreateNotesResponse> future =
+   *       grafeasV1Beta1Client.batchCreateNotesCallable().futureCall(request);
+   *   // Do something.
+   *   BatchCreateNotesResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<BatchCreateNotesRequest, BatchCreateNotesResponse>
       batchCreateNotesCallable() {
@@ -460,6 +808,20 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified note.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   UpdateNoteRequest request =
+   *       UpdateNoteRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setNote(Note.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Note response = grafeasV1Beta1Client.updateNote(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -473,6 +835,20 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    * Updates the specified note.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   UpdateNoteRequest request =
+   *       UpdateNoteRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setNote(Note.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Note> future = grafeasV1Beta1Client.updateNoteCallable().futureCall(request);
+   *   // Do something.
+   *   Note response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateNoteRequest, Note> updateNoteCallable() {
     return stub.updateNoteCallable();
@@ -482,6 +858,23 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
   /**
    * Lists occurrences referencing the specified note. Provider projects can use this method to get
    * all occurrences across consumer projects referencing the specified note.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   ListNoteOccurrencesRequest request =
+   *       ListNoteOccurrencesRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Occurrence element : grafeasV1Beta1Client.listNoteOccurrences(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -497,6 +890,24 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    * all occurrences across consumer projects referencing the specified note.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   ListNoteOccurrencesRequest request =
+   *       ListNoteOccurrencesRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Occurrence> future =
+   *       grafeasV1Beta1Client.listNoteOccurrencesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Occurrence element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListNoteOccurrencesRequest, ListNoteOccurrencesPagedResponse>
       listNoteOccurrencesPagedCallable() {
@@ -509,6 +920,24 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    * all occurrences across consumer projects referencing the specified note.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   while (true) {
+   *     ListNoteOccurrencesResponse response =
+   *         grafeasV1Beta1Client.listNoteOccurrencesCallable().call(request);
+   *     for (Occurrence element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse>
       listNoteOccurrencesCallable() {
@@ -518,6 +947,20 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a summary of the number and severity of occurrences.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   GetVulnerabilityOccurrencesSummaryRequest request =
+   *       GetVulnerabilityOccurrencesSummaryRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   VulnerabilityOccurrencesSummary response =
+   *       grafeasV1Beta1Client.getVulnerabilityOccurrencesSummary(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -532,6 +975,20 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    * Gets a summary of the number and severity of occurrences.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   GetVulnerabilityOccurrencesSummaryRequest request =
+   *       GetVulnerabilityOccurrencesSummaryRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<VulnerabilityOccurrencesSummary> future =
+   *       grafeasV1Beta1Client.getVulnerabilityOccurrencesSummaryCallable().futureCall(request);
+   *   // Do something.
+   *   VulnerabilityOccurrencesSummary response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>

@@ -35,6 +35,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (KeywordPlanServiceClient keywordPlanServiceClient = KeywordPlanServiceClient.create()) {
+ *   KeywordPlanName resourceName = KeywordPlanName.of("[CUSTOMER]", "[KEYWORD_PLAN]");
+ *   KeywordPlan response = keywordPlanServiceClient.getKeywordPlan(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the KeywordPlanServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -141,6 +148,15 @@ public class KeywordPlanServiceClient implements BackgroundResource {
   /**
    * Returns the requested plan in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeywordPlanServiceClient keywordPlanServiceClient = KeywordPlanServiceClient.create()) {
+   *   KeywordPlanName resourceName = KeywordPlanName.of("[CUSTOMER]", "[KEYWORD_PLAN]");
+   *   KeywordPlan response = keywordPlanServiceClient.getKeywordPlan(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the plan to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -156,6 +172,15 @@ public class KeywordPlanServiceClient implements BackgroundResource {
   /**
    * Returns the requested plan in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeywordPlanServiceClient keywordPlanServiceClient = KeywordPlanServiceClient.create()) {
+   *   String resourceName = KeywordPlanName.of("[CUSTOMER]", "[KEYWORD_PLAN]").toString();
+   *   KeywordPlan response = keywordPlanServiceClient.getKeywordPlan(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the plan to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -169,6 +194,18 @@ public class KeywordPlanServiceClient implements BackgroundResource {
   /**
    * Returns the requested plan in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeywordPlanServiceClient keywordPlanServiceClient = KeywordPlanServiceClient.create()) {
+   *   GetKeywordPlanRequest request =
+   *       GetKeywordPlanRequest.newBuilder()
+   *           .setResourceName(KeywordPlanName.of("[CUSTOMER]", "[KEYWORD_PLAN]").toString())
+   *           .build();
+   *   KeywordPlan response = keywordPlanServiceClient.getKeywordPlan(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -181,6 +218,19 @@ public class KeywordPlanServiceClient implements BackgroundResource {
    * Returns the requested plan in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeywordPlanServiceClient keywordPlanServiceClient = KeywordPlanServiceClient.create()) {
+   *   GetKeywordPlanRequest request =
+   *       GetKeywordPlanRequest.newBuilder()
+   *           .setResourceName(KeywordPlanName.of("[CUSTOMER]", "[KEYWORD_PLAN]").toString())
+   *           .build();
+   *   ApiFuture<KeywordPlan> future =
+   *       keywordPlanServiceClient.getKeywordPlanCallable().futureCall(request);
+   *   // Do something.
+   *   KeywordPlan response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetKeywordPlanRequest, KeywordPlan> getKeywordPlanCallable() {
     return stub.getKeywordPlanCallable();
@@ -189,6 +239,17 @@ public class KeywordPlanServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates, updates, or removes keyword plans. Operation statuses are returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeywordPlanServiceClient keywordPlanServiceClient = KeywordPlanServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   List<KeywordPlanOperation> operations = new ArrayList<>();
+   *   MutateKeywordPlansResponse response =
+   *       keywordPlanServiceClient.mutateKeywordPlans(customerId, operations);
+   * }
+   * }</pre>
    *
    * @param customerId Required. The ID of the customer whose keyword plans are being modified.
    * @param operations Required. The list of operations to perform on individual keyword plans.
@@ -208,6 +269,21 @@ public class KeywordPlanServiceClient implements BackgroundResource {
   /**
    * Creates, updates, or removes keyword plans. Operation statuses are returned.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeywordPlanServiceClient keywordPlanServiceClient = KeywordPlanServiceClient.create()) {
+   *   MutateKeywordPlansRequest request =
+   *       MutateKeywordPlansRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<KeywordPlanOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   MutateKeywordPlansResponse response = keywordPlanServiceClient.mutateKeywordPlans(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -220,6 +296,22 @@ public class KeywordPlanServiceClient implements BackgroundResource {
    * Creates, updates, or removes keyword plans. Operation statuses are returned.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeywordPlanServiceClient keywordPlanServiceClient = KeywordPlanServiceClient.create()) {
+   *   MutateKeywordPlansRequest request =
+   *       MutateKeywordPlansRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<KeywordPlanOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<MutateKeywordPlansResponse> future =
+   *       keywordPlanServiceClient.mutateKeywordPlansCallable().futureCall(request);
+   *   // Do something.
+   *   MutateKeywordPlansResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<MutateKeywordPlansRequest, MutateKeywordPlansResponse>
       mutateKeywordPlansCallable() {
@@ -233,6 +325,16 @@ public class KeywordPlanServiceClient implements BackgroundResource {
    *
    * <p>To generate a forecast at a value specified in the plan, use
    * KeywordPlanService.GenerateForecastMetrics.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeywordPlanServiceClient keywordPlanServiceClient = KeywordPlanServiceClient.create()) {
+   *   KeywordPlanName keywordPlan = KeywordPlanName.of("[CUSTOMER]", "[KEYWORD_PLAN]");
+   *   GenerateForecastCurveResponse response =
+   *       keywordPlanServiceClient.generateForecastCurve(keywordPlan);
+   * }
+   * }</pre>
    *
    * @param keywordPlan Required. The resource name of the keyword plan to be forecasted.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -253,6 +355,16 @@ public class KeywordPlanServiceClient implements BackgroundResource {
    * <p>To generate a forecast at a value specified in the plan, use
    * KeywordPlanService.GenerateForecastMetrics.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeywordPlanServiceClient keywordPlanServiceClient = KeywordPlanServiceClient.create()) {
+   *   String keywordPlan = KeywordPlanName.of("[CUSTOMER]", "[KEYWORD_PLAN]").toString();
+   *   GenerateForecastCurveResponse response =
+   *       keywordPlanServiceClient.generateForecastCurve(keywordPlan);
+   * }
+   * }</pre>
+   *
    * @param keywordPlan Required. The resource name of the keyword plan to be forecasted.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -269,6 +381,19 @@ public class KeywordPlanServiceClient implements BackgroundResource {
    *
    * <p>To generate a forecast at a value specified in the plan, use
    * KeywordPlanService.GenerateForecastMetrics.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeywordPlanServiceClient keywordPlanServiceClient = KeywordPlanServiceClient.create()) {
+   *   GenerateForecastCurveRequest request =
+   *       GenerateForecastCurveRequest.newBuilder()
+   *           .setKeywordPlan(KeywordPlanName.of("[CUSTOMER]", "[KEYWORD_PLAN]").toString())
+   *           .build();
+   *   GenerateForecastCurveResponse response =
+   *       keywordPlanServiceClient.generateForecastCurve(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -287,6 +412,19 @@ public class KeywordPlanServiceClient implements BackgroundResource {
    * KeywordPlanService.GenerateForecastMetrics.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeywordPlanServiceClient keywordPlanServiceClient = KeywordPlanServiceClient.create()) {
+   *   GenerateForecastCurveRequest request =
+   *       GenerateForecastCurveRequest.newBuilder()
+   *           .setKeywordPlan(KeywordPlanName.of("[CUSTOMER]", "[KEYWORD_PLAN]").toString())
+   *           .build();
+   *   ApiFuture<GenerateForecastCurveResponse> future =
+   *       keywordPlanServiceClient.generateForecastCurveCallable().futureCall(request);
+   *   // Do something.
+   *   GenerateForecastCurveResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GenerateForecastCurveRequest, GenerateForecastCurveResponse>
       generateForecastCurveCallable() {
@@ -296,6 +434,16 @@ public class KeywordPlanServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the requested Keyword Plan forecasts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeywordPlanServiceClient keywordPlanServiceClient = KeywordPlanServiceClient.create()) {
+   *   KeywordPlanName keywordPlan = KeywordPlanName.of("[CUSTOMER]", "[KEYWORD_PLAN]");
+   *   GenerateForecastMetricsResponse response =
+   *       keywordPlanServiceClient.generateForecastMetrics(keywordPlan);
+   * }
+   * }</pre>
    *
    * @param keywordPlan Required. The resource name of the keyword plan to be forecasted.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -313,6 +461,16 @@ public class KeywordPlanServiceClient implements BackgroundResource {
   /**
    * Returns the requested Keyword Plan forecasts.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeywordPlanServiceClient keywordPlanServiceClient = KeywordPlanServiceClient.create()) {
+   *   String keywordPlan = KeywordPlanName.of("[CUSTOMER]", "[KEYWORD_PLAN]").toString();
+   *   GenerateForecastMetricsResponse response =
+   *       keywordPlanServiceClient.generateForecastMetrics(keywordPlan);
+   * }
+   * }</pre>
+   *
    * @param keywordPlan Required. The resource name of the keyword plan to be forecasted.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -325,6 +483,19 @@ public class KeywordPlanServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the requested Keyword Plan forecasts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeywordPlanServiceClient keywordPlanServiceClient = KeywordPlanServiceClient.create()) {
+   *   GenerateForecastMetricsRequest request =
+   *       GenerateForecastMetricsRequest.newBuilder()
+   *           .setKeywordPlan(KeywordPlanName.of("[CUSTOMER]", "[KEYWORD_PLAN]").toString())
+   *           .build();
+   *   GenerateForecastMetricsResponse response =
+   *       keywordPlanServiceClient.generateForecastMetrics(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -339,6 +510,19 @@ public class KeywordPlanServiceClient implements BackgroundResource {
    * Returns the requested Keyword Plan forecasts.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeywordPlanServiceClient keywordPlanServiceClient = KeywordPlanServiceClient.create()) {
+   *   GenerateForecastMetricsRequest request =
+   *       GenerateForecastMetricsRequest.newBuilder()
+   *           .setKeywordPlan(KeywordPlanName.of("[CUSTOMER]", "[KEYWORD_PLAN]").toString())
+   *           .build();
+   *   ApiFuture<GenerateForecastMetricsResponse> future =
+   *       keywordPlanServiceClient.generateForecastMetricsCallable().futureCall(request);
+   *   // Do something.
+   *   GenerateForecastMetricsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GenerateForecastMetricsRequest, GenerateForecastMetricsResponse>
       generateForecastMetricsCallable() {
@@ -348,6 +532,16 @@ public class KeywordPlanServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the requested Keyword Plan historical metrics.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeywordPlanServiceClient keywordPlanServiceClient = KeywordPlanServiceClient.create()) {
+   *   KeywordPlanName keywordPlan = KeywordPlanName.of("[CUSTOMER]", "[KEYWORD_PLAN]");
+   *   GenerateHistoricalMetricsResponse response =
+   *       keywordPlanServiceClient.generateHistoricalMetrics(keywordPlan);
+   * }
+   * }</pre>
    *
    * @param keywordPlan Required. The resource name of the keyword plan of which historical metrics
    *     are requested.
@@ -366,6 +560,16 @@ public class KeywordPlanServiceClient implements BackgroundResource {
   /**
    * Returns the requested Keyword Plan historical metrics.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeywordPlanServiceClient keywordPlanServiceClient = KeywordPlanServiceClient.create()) {
+   *   String keywordPlan = KeywordPlanName.of("[CUSTOMER]", "[KEYWORD_PLAN]").toString();
+   *   GenerateHistoricalMetricsResponse response =
+   *       keywordPlanServiceClient.generateHistoricalMetrics(keywordPlan);
+   * }
+   * }</pre>
+   *
    * @param keywordPlan Required. The resource name of the keyword plan of which historical metrics
    *     are requested.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -380,6 +584,19 @@ public class KeywordPlanServiceClient implements BackgroundResource {
   /**
    * Returns the requested Keyword Plan historical metrics.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeywordPlanServiceClient keywordPlanServiceClient = KeywordPlanServiceClient.create()) {
+   *   GenerateHistoricalMetricsRequest request =
+   *       GenerateHistoricalMetricsRequest.newBuilder()
+   *           .setKeywordPlan(KeywordPlanName.of("[CUSTOMER]", "[KEYWORD_PLAN]").toString())
+   *           .build();
+   *   GenerateHistoricalMetricsResponse response =
+   *       keywordPlanServiceClient.generateHistoricalMetrics(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -393,6 +610,19 @@ public class KeywordPlanServiceClient implements BackgroundResource {
    * Returns the requested Keyword Plan historical metrics.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeywordPlanServiceClient keywordPlanServiceClient = KeywordPlanServiceClient.create()) {
+   *   GenerateHistoricalMetricsRequest request =
+   *       GenerateHistoricalMetricsRequest.newBuilder()
+   *           .setKeywordPlan(KeywordPlanName.of("[CUSTOMER]", "[KEYWORD_PLAN]").toString())
+   *           .build();
+   *   ApiFuture<GenerateHistoricalMetricsResponse> future =
+   *       keywordPlanServiceClient.generateHistoricalMetricsCallable().futureCall(request);
+   *   // Do something.
+   *   GenerateHistoricalMetricsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GenerateHistoricalMetricsRequest, GenerateHistoricalMetricsResponse>
       generateHistoricalMetricsCallable() {

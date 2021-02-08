@@ -35,6 +35,15 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (CustomAudienceServiceClient customAudienceServiceClient =
+ *     CustomAudienceServiceClient.create()) {
+ *   CustomAudienceName resourceName =
+ *       CustomAudienceName.of("[CUSTOMER_ID]", "[CUSTOM_AUDIENCE_ID]");
+ *   CustomAudience response = customAudienceServiceClient.getCustomAudience(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the CustomAudienceServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -141,6 +150,17 @@ public class CustomAudienceServiceClient implements BackgroundResource {
   /**
    * Returns the requested custom audience in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomAudienceServiceClient customAudienceServiceClient =
+   *     CustomAudienceServiceClient.create()) {
+   *   CustomAudienceName resourceName =
+   *       CustomAudienceName.of("[CUSTOMER_ID]", "[CUSTOM_AUDIENCE_ID]");
+   *   CustomAudience response = customAudienceServiceClient.getCustomAudience(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the custom audience to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -156,6 +176,17 @@ public class CustomAudienceServiceClient implements BackgroundResource {
   /**
    * Returns the requested custom audience in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomAudienceServiceClient customAudienceServiceClient =
+   *     CustomAudienceServiceClient.create()) {
+   *   String resourceName =
+   *       CustomAudienceName.of("[CUSTOMER_ID]", "[CUSTOM_AUDIENCE_ID]").toString();
+   *   CustomAudience response = customAudienceServiceClient.getCustomAudience(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the custom audience to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -169,6 +200,20 @@ public class CustomAudienceServiceClient implements BackgroundResource {
   /**
    * Returns the requested custom audience in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomAudienceServiceClient customAudienceServiceClient =
+   *     CustomAudienceServiceClient.create()) {
+   *   GetCustomAudienceRequest request =
+   *       GetCustomAudienceRequest.newBuilder()
+   *           .setResourceName(
+   *               CustomAudienceName.of("[CUSTOMER_ID]", "[CUSTOM_AUDIENCE_ID]").toString())
+   *           .build();
+   *   CustomAudience response = customAudienceServiceClient.getCustomAudience(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -181,6 +226,21 @@ public class CustomAudienceServiceClient implements BackgroundResource {
    * Returns the requested custom audience in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomAudienceServiceClient customAudienceServiceClient =
+   *     CustomAudienceServiceClient.create()) {
+   *   GetCustomAudienceRequest request =
+   *       GetCustomAudienceRequest.newBuilder()
+   *           .setResourceName(
+   *               CustomAudienceName.of("[CUSTOMER_ID]", "[CUSTOM_AUDIENCE_ID]").toString())
+   *           .build();
+   *   ApiFuture<CustomAudience> future =
+   *       customAudienceServiceClient.getCustomAudienceCallable().futureCall(request);
+   *   // Do something.
+   *   CustomAudience response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetCustomAudienceRequest, CustomAudience> getCustomAudienceCallable() {
     return stub.getCustomAudienceCallable();
@@ -189,6 +249,18 @@ public class CustomAudienceServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates or updates custom audiences. Operation statuses are returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomAudienceServiceClient customAudienceServiceClient =
+   *     CustomAudienceServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   List<CustomAudienceOperation> operations = new ArrayList<>();
+   *   MutateCustomAudiencesResponse response =
+   *       customAudienceServiceClient.mutateCustomAudiences(customerId, operations);
+   * }
+   * }</pre>
    *
    * @param customerId Required. The ID of the customer whose custom audiences are being modified.
    * @param operations Required. The list of operations to perform on individual custom audiences.
@@ -208,6 +280,22 @@ public class CustomAudienceServiceClient implements BackgroundResource {
   /**
    * Creates or updates custom audiences. Operation statuses are returned.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomAudienceServiceClient customAudienceServiceClient =
+   *     CustomAudienceServiceClient.create()) {
+   *   MutateCustomAudiencesRequest request =
+   *       MutateCustomAudiencesRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<CustomAudienceOperation>())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   MutateCustomAudiencesResponse response =
+   *       customAudienceServiceClient.mutateCustomAudiences(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -221,6 +309,22 @@ public class CustomAudienceServiceClient implements BackgroundResource {
    * Creates or updates custom audiences. Operation statuses are returned.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomAudienceServiceClient customAudienceServiceClient =
+   *     CustomAudienceServiceClient.create()) {
+   *   MutateCustomAudiencesRequest request =
+   *       MutateCustomAudiencesRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<CustomAudienceOperation>())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<MutateCustomAudiencesResponse> future =
+   *       customAudienceServiceClient.mutateCustomAudiencesCallable().futureCall(request);
+   *   // Do something.
+   *   MutateCustomAudiencesResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<MutateCustomAudiencesRequest, MutateCustomAudiencesResponse>
       mutateCustomAudiencesCallable() {

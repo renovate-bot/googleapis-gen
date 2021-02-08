@@ -67,6 +67,15 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+ *     WorkloadIdentityPoolsClient.create()) {
+ *   WorkloadIdentityPoolName name =
+ *       WorkloadIdentityPoolName.of("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]");
+ *   WorkloadIdentityPool response = workloadIdentityPoolsClient.getWorkloadIdentityPool(name);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the WorkloadIdentityPoolsClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -186,6 +195,19 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * Lists all non-deleted [WorkloadIdentityPool][google.iam.v1beta.WorkloadIdentityPool]s in a
    * project. If `show_deleted` is set to `true`, then deleted pools are also listed.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   for (WorkloadIdentityPool element :
+   *       workloadIdentityPoolsClient.listWorkloadIdentityPools(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent resource to list pools for.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -203,6 +225,19 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * Lists all non-deleted [WorkloadIdentityPool][google.iam.v1beta.WorkloadIdentityPool]s in a
    * project. If `show_deleted` is set to `true`, then deleted pools are also listed.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   for (WorkloadIdentityPool element :
+   *       workloadIdentityPoolsClient.listWorkloadIdentityPools(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent resource to list pools for.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -216,6 +251,25 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
   /**
    * Lists all non-deleted [WorkloadIdentityPool][google.iam.v1beta.WorkloadIdentityPool]s in a
    * project. If `show_deleted` is set to `true`, then deleted pools are also listed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   ListWorkloadIdentityPoolsRequest request =
+   *       ListWorkloadIdentityPoolsRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setShowDeleted(true)
+   *           .build();
+   *   for (WorkloadIdentityPool element :
+   *       workloadIdentityPoolsClient.listWorkloadIdentityPools(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -231,6 +285,25 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * project. If `show_deleted` is set to `true`, then deleted pools are also listed.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   ListWorkloadIdentityPoolsRequest request =
+   *       ListWorkloadIdentityPoolsRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setShowDeleted(true)
+   *           .build();
+   *   ApiFuture<WorkloadIdentityPool> future =
+   *       workloadIdentityPoolsClient.listWorkloadIdentityPoolsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (WorkloadIdentityPool element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           ListWorkloadIdentityPoolsRequest, ListWorkloadIdentityPoolsPagedResponse>
@@ -244,6 +317,25 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * project. If `show_deleted` is set to `true`, then deleted pools are also listed.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   while (true) {
+   *     ListWorkloadIdentityPoolsResponse response =
+   *         workloadIdentityPoolsClient.listWorkloadIdentityPoolsCallable().call(request);
+   *     for (WorkloadIdentityPool element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListWorkloadIdentityPoolsRequest, ListWorkloadIdentityPoolsResponse>
       listWorkloadIdentityPoolsCallable() {
@@ -253,6 +345,17 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets an individual [WorkloadIdentityPool][google.iam.v1beta.WorkloadIdentityPool].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   WorkloadIdentityPoolName name =
+   *       WorkloadIdentityPoolName.of("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]");
+   *   WorkloadIdentityPool response = workloadIdentityPoolsClient.getWorkloadIdentityPool(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the pool to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -269,6 +372,18 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
   /**
    * Gets an individual [WorkloadIdentityPool][google.iam.v1beta.WorkloadIdentityPool].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   String name =
+   *       WorkloadIdentityPoolName.of("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+   *           .toString();
+   *   WorkloadIdentityPool response = workloadIdentityPoolsClient.getWorkloadIdentityPool(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the pool to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -281,6 +396,21 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets an individual [WorkloadIdentityPool][google.iam.v1beta.WorkloadIdentityPool].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   GetWorkloadIdentityPoolRequest request =
+   *       GetWorkloadIdentityPoolRequest.newBuilder()
+   *           .setName(
+   *               WorkloadIdentityPoolName.of("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+   *                   .toString())
+   *           .build();
+   *   WorkloadIdentityPool response = workloadIdentityPoolsClient.getWorkloadIdentityPool(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -295,6 +425,22 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * Gets an individual [WorkloadIdentityPool][google.iam.v1beta.WorkloadIdentityPool].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   GetWorkloadIdentityPoolRequest request =
+   *       GetWorkloadIdentityPoolRequest.newBuilder()
+   *           .setName(
+   *               WorkloadIdentityPoolName.of("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<WorkloadIdentityPool> future =
+   *       workloadIdentityPoolsClient.getWorkloadIdentityPoolCallable().futureCall(request);
+   *   // Do something.
+   *   WorkloadIdentityPool response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetWorkloadIdentityPoolRequest, WorkloadIdentityPool>
       getWorkloadIdentityPoolCallable() {
@@ -306,6 +452,21 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * Creates a new [WorkloadIdentityPool][google.iam.v1beta.WorkloadIdentityPool].
    *
    * <p>You cannot reuse the name of a deleted pool until 30 days after deletion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   WorkloadIdentityPool workloadIdentityPool = WorkloadIdentityPool.newBuilder().build();
+   *   String workloadIdentityPoolId = "workloadIdentityPoolId1304488972";
+   *   WorkloadIdentityPool response =
+   *       workloadIdentityPoolsClient
+   *           .createWorkloadIdentityPoolAsync(parent, workloadIdentityPool, workloadIdentityPoolId)
+   *           .get();
+   * }
+   * }</pre>
    *
    * @param parent Required. The parent resource to create the pool in. The only supported location
    *     is `global`.
@@ -336,6 +497,21 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    *
    * <p>You cannot reuse the name of a deleted pool until 30 days after deletion.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   WorkloadIdentityPool workloadIdentityPool = WorkloadIdentityPool.newBuilder().build();
+   *   String workloadIdentityPoolId = "workloadIdentityPoolId1304488972";
+   *   WorkloadIdentityPool response =
+   *       workloadIdentityPoolsClient
+   *           .createWorkloadIdentityPoolAsync(parent, workloadIdentityPool, workloadIdentityPoolId)
+   *           .get();
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent resource to create the pool in. The only supported location
    *     is `global`.
    * @param workloadIdentityPool Required. The pool to create.
@@ -363,6 +539,22 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    *
    * <p>You cannot reuse the name of a deleted pool until 30 days after deletion.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   CreateWorkloadIdentityPoolRequest request =
+   *       CreateWorkloadIdentityPoolRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setWorkloadIdentityPool(WorkloadIdentityPool.newBuilder().build())
+   *           .setWorkloadIdentityPoolId("workloadIdentityPoolId1304488972")
+   *           .build();
+   *   WorkloadIdentityPool response =
+   *       workloadIdentityPoolsClient.createWorkloadIdentityPoolAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -378,6 +570,24 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * <p>You cannot reuse the name of a deleted pool until 30 days after deletion.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   CreateWorkloadIdentityPoolRequest request =
+   *       CreateWorkloadIdentityPoolRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setWorkloadIdentityPool(WorkloadIdentityPool.newBuilder().build())
+   *           .setWorkloadIdentityPoolId("workloadIdentityPoolId1304488972")
+   *           .build();
+   *   OperationFuture<WorkloadIdentityPool, WorkloadIdentityPoolOperationMetadata> future =
+   *       workloadIdentityPoolsClient
+   *           .createWorkloadIdentityPoolOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   WorkloadIdentityPool response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<
           CreateWorkloadIdentityPoolRequest,
@@ -394,6 +604,22 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * <p>You cannot reuse the name of a deleted pool until 30 days after deletion.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   CreateWorkloadIdentityPoolRequest request =
+   *       CreateWorkloadIdentityPoolRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setWorkloadIdentityPool(WorkloadIdentityPool.newBuilder().build())
+   *           .setWorkloadIdentityPoolId("workloadIdentityPoolId1304488972")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       workloadIdentityPoolsClient.createWorkloadIdentityPoolCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateWorkloadIdentityPoolRequest, Operation>
       createWorkloadIdentityPoolCallable() {
@@ -403,6 +629,20 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an existing [WorkloadIdentityPool][google.iam.v1beta.WorkloadIdentityPool].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   WorkloadIdentityPool workloadIdentityPool = WorkloadIdentityPool.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   WorkloadIdentityPool response =
+   *       workloadIdentityPoolsClient
+   *           .updateWorkloadIdentityPoolAsync(workloadIdentityPool, updateMask)
+   *           .get();
+   * }
+   * }</pre>
    *
    * @param workloadIdentityPool Required. The pool to update. The `name` field is used to identify
    *     the pool.
@@ -424,6 +664,21 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
   /**
    * Updates an existing [WorkloadIdentityPool][google.iam.v1beta.WorkloadIdentityPool].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   UpdateWorkloadIdentityPoolRequest request =
+   *       UpdateWorkloadIdentityPoolRequest.newBuilder()
+   *           .setWorkloadIdentityPool(WorkloadIdentityPool.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   WorkloadIdentityPool response =
+   *       workloadIdentityPoolsClient.updateWorkloadIdentityPoolAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -437,6 +692,23 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * Updates an existing [WorkloadIdentityPool][google.iam.v1beta.WorkloadIdentityPool].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   UpdateWorkloadIdentityPoolRequest request =
+   *       UpdateWorkloadIdentityPoolRequest.newBuilder()
+   *           .setWorkloadIdentityPool(WorkloadIdentityPool.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<WorkloadIdentityPool, WorkloadIdentityPoolOperationMetadata> future =
+   *       workloadIdentityPoolsClient
+   *           .updateWorkloadIdentityPoolOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   WorkloadIdentityPool response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<
           UpdateWorkloadIdentityPoolRequest,
@@ -451,6 +723,21 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * Updates an existing [WorkloadIdentityPool][google.iam.v1beta.WorkloadIdentityPool].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   UpdateWorkloadIdentityPoolRequest request =
+   *       UpdateWorkloadIdentityPoolRequest.newBuilder()
+   *           .setWorkloadIdentityPool(WorkloadIdentityPool.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       workloadIdentityPoolsClient.updateWorkloadIdentityPoolCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateWorkloadIdentityPoolRequest, Operation>
       updateWorkloadIdentityPoolCallable() {
@@ -467,6 +754,18 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * credentials are not expired, they grant access again. You can undelete a pool for 30 days.
    * After 30 days, deletion is permanent. You cannot update deleted pools. However, you can view
    * and list them.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   WorkloadIdentityPoolName name =
+   *       WorkloadIdentityPoolName.of("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]");
+   *   WorkloadIdentityPool response =
+   *       workloadIdentityPoolsClient.deleteWorkloadIdentityPoolAsync(name).get();
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the pool to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -491,6 +790,19 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * After 30 days, deletion is permanent. You cannot update deleted pools. However, you can view
    * and list them.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   String name =
+   *       WorkloadIdentityPoolName.of("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+   *           .toString();
+   *   WorkloadIdentityPool response =
+   *       workloadIdentityPoolsClient.deleteWorkloadIdentityPoolAsync(name).get();
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the pool to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -512,6 +824,22 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * After 30 days, deletion is permanent. You cannot update deleted pools. However, you can view
    * and list them.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   DeleteWorkloadIdentityPoolRequest request =
+   *       DeleteWorkloadIdentityPoolRequest.newBuilder()
+   *           .setName(
+   *               WorkloadIdentityPoolName.of("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+   *                   .toString())
+   *           .build();
+   *   WorkloadIdentityPool response =
+   *       workloadIdentityPoolsClient.deleteWorkloadIdentityPoolAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -532,6 +860,24 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * and list them.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   DeleteWorkloadIdentityPoolRequest request =
+   *       DeleteWorkloadIdentityPoolRequest.newBuilder()
+   *           .setName(
+   *               WorkloadIdentityPoolName.of("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<WorkloadIdentityPool, WorkloadIdentityPoolOperationMetadata> future =
+   *       workloadIdentityPoolsClient
+   *           .deleteWorkloadIdentityPoolOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   WorkloadIdentityPool response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<
           DeleteWorkloadIdentityPoolRequest,
@@ -553,6 +899,22 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * and list them.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   DeleteWorkloadIdentityPoolRequest request =
+   *       DeleteWorkloadIdentityPoolRequest.newBuilder()
+   *           .setName(
+   *               WorkloadIdentityPoolName.of("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       workloadIdentityPoolsClient.deleteWorkloadIdentityPoolCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteWorkloadIdentityPoolRequest, Operation>
       deleteWorkloadIdentityPoolCallable() {
@@ -563,6 +925,18 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
   /**
    * Undeletes a [WorkloadIdentityPool][google.iam.v1beta.WorkloadIdentityPool], as long as it was
    * deleted fewer than 30 days ago.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   WorkloadIdentityPoolName name =
+   *       WorkloadIdentityPoolName.of("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]");
+   *   WorkloadIdentityPool response =
+   *       workloadIdentityPoolsClient.undeleteWorkloadIdentityPoolAsync(name).get();
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the pool to undelete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -581,6 +955,19 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * Undeletes a [WorkloadIdentityPool][google.iam.v1beta.WorkloadIdentityPool], as long as it was
    * deleted fewer than 30 days ago.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   String name =
+   *       WorkloadIdentityPoolName.of("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+   *           .toString();
+   *   WorkloadIdentityPool response =
+   *       workloadIdentityPoolsClient.undeleteWorkloadIdentityPoolAsync(name).get();
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the pool to undelete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -596,6 +983,22 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * Undeletes a [WorkloadIdentityPool][google.iam.v1beta.WorkloadIdentityPool], as long as it was
    * deleted fewer than 30 days ago.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   UndeleteWorkloadIdentityPoolRequest request =
+   *       UndeleteWorkloadIdentityPoolRequest.newBuilder()
+   *           .setName(
+   *               WorkloadIdentityPoolName.of("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+   *                   .toString())
+   *           .build();
+   *   WorkloadIdentityPool response =
+   *       workloadIdentityPoolsClient.undeleteWorkloadIdentityPoolAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -610,6 +1013,24 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * deleted fewer than 30 days ago.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   UndeleteWorkloadIdentityPoolRequest request =
+   *       UndeleteWorkloadIdentityPoolRequest.newBuilder()
+   *           .setName(
+   *               WorkloadIdentityPoolName.of("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<WorkloadIdentityPool, WorkloadIdentityPoolOperationMetadata> future =
+   *       workloadIdentityPoolsClient
+   *           .undeleteWorkloadIdentityPoolOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   WorkloadIdentityPool response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<
           UndeleteWorkloadIdentityPoolRequest,
@@ -625,6 +1046,22 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * deleted fewer than 30 days ago.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   UndeleteWorkloadIdentityPoolRequest request =
+   *       UndeleteWorkloadIdentityPoolRequest.newBuilder()
+   *           .setName(
+   *               WorkloadIdentityPoolName.of("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       workloadIdentityPoolsClient.undeleteWorkloadIdentityPoolCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UndeleteWorkloadIdentityPoolRequest, Operation>
       undeleteWorkloadIdentityPoolCallable() {
@@ -637,6 +1074,20 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * [WorkloadIdentityPoolProvider][google.iam.v1beta.WorkloadIdentityPoolProvider]s in a
    * [WorkloadIdentityPool][google.iam.v1beta.WorkloadIdentityPool]. If `show_deleted` is set to
    * `true`, then deleted providers are also listed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   WorkloadIdentityPoolName parent =
+   *       WorkloadIdentityPoolName.of("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]");
+   *   for (WorkloadIdentityPoolProvider element :
+   *       workloadIdentityPoolsClient.listWorkloadIdentityPoolProviders(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent Required. The pool to list providers for.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -657,6 +1108,21 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * [WorkloadIdentityPool][google.iam.v1beta.WorkloadIdentityPool]. If `show_deleted` is set to
    * `true`, then deleted providers are also listed.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   String parent =
+   *       WorkloadIdentityPoolName.of("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+   *           .toString();
+   *   for (WorkloadIdentityPoolProvider element :
+   *       workloadIdentityPoolsClient.listWorkloadIdentityPoolProviders(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The pool to list providers for.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -674,6 +1140,27 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * [WorkloadIdentityPool][google.iam.v1beta.WorkloadIdentityPool]. If `show_deleted` is set to
    * `true`, then deleted providers are also listed.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   ListWorkloadIdentityPoolProvidersRequest request =
+   *       ListWorkloadIdentityPoolProvidersRequest.newBuilder()
+   *           .setParent(
+   *               WorkloadIdentityPoolName.of("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setShowDeleted(true)
+   *           .build();
+   *   for (WorkloadIdentityPoolProvider element :
+   *       workloadIdentityPoolsClient.listWorkloadIdentityPoolProviders(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -690,6 +1177,29 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * `true`, then deleted providers are also listed.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   ListWorkloadIdentityPoolProvidersRequest request =
+   *       ListWorkloadIdentityPoolProvidersRequest.newBuilder()
+   *           .setParent(
+   *               WorkloadIdentityPoolName.of("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setShowDeleted(true)
+   *           .build();
+   *   ApiFuture<WorkloadIdentityPoolProvider> future =
+   *       workloadIdentityPoolsClient
+   *           .listWorkloadIdentityPoolProvidersPagedCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   for (WorkloadIdentityPoolProvider element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           ListWorkloadIdentityPoolProvidersRequest, ListWorkloadIdentityPoolProvidersPagedResponse>
@@ -705,6 +1215,25 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * `true`, then deleted providers are also listed.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   while (true) {
+   *     ListWorkloadIdentityPoolProvidersResponse response =
+   *         workloadIdentityPoolsClient.listWorkloadIdentityPoolProvidersCallable().call(request);
+   *     for (WorkloadIdentityPoolProvider element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           ListWorkloadIdentityPoolProvidersRequest, ListWorkloadIdentityPoolProvidersResponse>
@@ -716,6 +1245,22 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
   /**
    * Gets an individual
    * [WorkloadIdentityPoolProvider][google.iam.v1beta.WorkloadIdentityPoolProvider].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   WorkloadIdentityPoolProviderName name =
+   *       WorkloadIdentityPoolProviderName.of(
+   *           "[PROJECT]",
+   *           "[LOCATION]",
+   *           "[WORKLOAD_IDENTITY_POOL]",
+   *           "[WORKLOAD_IDENTITY_POOL_PROVIDER]");
+   *   WorkloadIdentityPoolProvider response =
+   *       workloadIdentityPoolsClient.getWorkloadIdentityPoolProvider(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the provider to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -734,6 +1279,23 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * Gets an individual
    * [WorkloadIdentityPoolProvider][google.iam.v1beta.WorkloadIdentityPoolProvider].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   String name =
+   *       WorkloadIdentityPoolProviderName.of(
+   *               "[PROJECT]",
+   *               "[LOCATION]",
+   *               "[WORKLOAD_IDENTITY_POOL]",
+   *               "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
+   *           .toString();
+   *   WorkloadIdentityPoolProvider response =
+   *       workloadIdentityPoolsClient.getWorkloadIdentityPoolProvider(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the provider to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -747,6 +1309,26 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
   /**
    * Gets an individual
    * [WorkloadIdentityPoolProvider][google.iam.v1beta.WorkloadIdentityPoolProvider].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   GetWorkloadIdentityPoolProviderRequest request =
+   *       GetWorkloadIdentityPoolProviderRequest.newBuilder()
+   *           .setName(
+   *               WorkloadIdentityPoolProviderName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[WORKLOAD_IDENTITY_POOL]",
+   *                       "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
+   *                   .toString())
+   *           .build();
+   *   WorkloadIdentityPoolProvider response =
+   *       workloadIdentityPoolsClient.getWorkloadIdentityPoolProvider(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -762,6 +1344,26 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * [WorkloadIdentityPoolProvider][google.iam.v1beta.WorkloadIdentityPoolProvider].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   GetWorkloadIdentityPoolProviderRequest request =
+   *       GetWorkloadIdentityPoolProviderRequest.newBuilder()
+   *           .setName(
+   *               WorkloadIdentityPoolProviderName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[WORKLOAD_IDENTITY_POOL]",
+   *                       "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<WorkloadIdentityPoolProvider> future =
+   *       workloadIdentityPoolsClient.getWorkloadIdentityPoolProviderCallable().futureCall(request);
+   *   // Do something.
+   *   WorkloadIdentityPoolProvider response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider>
       getWorkloadIdentityPoolProviderCallable() {
@@ -774,6 +1376,24 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * [WorkloadIdentityPool][google.iam.v1beta.WorkloadIdentityPool].
    *
    * <p>You cannot reuse the name of a deleted provider until 30 days after deletion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   WorkloadIdentityPoolName parent =
+   *       WorkloadIdentityPoolName.of("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]");
+   *   WorkloadIdentityPoolProvider workloadIdentityPoolProvider =
+   *       WorkloadIdentityPoolProvider.newBuilder().build();
+   *   String workloadIdentityPoolProviderId = "workloadIdentityPoolProviderId-2035698467";
+   *   WorkloadIdentityPoolProvider response =
+   *       workloadIdentityPoolsClient
+   *           .createWorkloadIdentityPoolProviderAsync(
+   *               parent, workloadIdentityPoolProvider, workloadIdentityPoolProviderId)
+   *           .get();
+   * }
+   * }</pre>
    *
    * @param parent Required. The pool to create this provider in.
    * @param workloadIdentityPoolProvider Required. The provider to create.
@@ -805,6 +1425,25 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    *
    * <p>You cannot reuse the name of a deleted provider until 30 days after deletion.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   String parent =
+   *       WorkloadIdentityPoolName.of("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+   *           .toString();
+   *   WorkloadIdentityPoolProvider workloadIdentityPoolProvider =
+   *       WorkloadIdentityPoolProvider.newBuilder().build();
+   *   String workloadIdentityPoolProviderId = "workloadIdentityPoolProviderId-2035698467";
+   *   WorkloadIdentityPoolProvider response =
+   *       workloadIdentityPoolsClient
+   *           .createWorkloadIdentityPoolProviderAsync(
+   *               parent, workloadIdentityPoolProvider, workloadIdentityPoolProviderId)
+   *           .get();
+   * }
+   * }</pre>
+   *
    * @param parent Required. The pool to create this provider in.
    * @param workloadIdentityPoolProvider Required. The provider to create.
    * @param workloadIdentityPoolProviderId Required. The ID for the provider, which becomes the
@@ -835,6 +1474,24 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    *
    * <p>You cannot reuse the name of a deleted provider until 30 days after deletion.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   CreateWorkloadIdentityPoolProviderRequest request =
+   *       CreateWorkloadIdentityPoolProviderRequest.newBuilder()
+   *           .setParent(
+   *               WorkloadIdentityPoolName.of("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+   *                   .toString())
+   *           .setWorkloadIdentityPoolProvider(WorkloadIdentityPoolProvider.newBuilder().build())
+   *           .setWorkloadIdentityPoolProviderId("workloadIdentityPoolProviderId-2035698467")
+   *           .build();
+   *   WorkloadIdentityPoolProvider response =
+   *       workloadIdentityPoolsClient.createWorkloadIdentityPoolProviderAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -852,6 +1509,27 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * <p>You cannot reuse the name of a deleted provider until 30 days after deletion.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   CreateWorkloadIdentityPoolProviderRequest request =
+   *       CreateWorkloadIdentityPoolProviderRequest.newBuilder()
+   *           .setParent(
+   *               WorkloadIdentityPoolName.of("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+   *                   .toString())
+   *           .setWorkloadIdentityPoolProvider(WorkloadIdentityPoolProvider.newBuilder().build())
+   *           .setWorkloadIdentityPoolProviderId("workloadIdentityPoolProviderId-2035698467")
+   *           .build();
+   *   OperationFuture<WorkloadIdentityPoolProvider, WorkloadIdentityPoolProviderOperationMetadata>
+   *       future =
+   *           workloadIdentityPoolsClient
+   *               .createWorkloadIdentityPoolProviderOperationCallable()
+   *               .futureCall(request);
+   *   // Do something.
+   *   WorkloadIdentityPoolProvider response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<
           CreateWorkloadIdentityPoolProviderRequest,
@@ -869,6 +1547,26 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * <p>You cannot reuse the name of a deleted provider until 30 days after deletion.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   CreateWorkloadIdentityPoolProviderRequest request =
+   *       CreateWorkloadIdentityPoolProviderRequest.newBuilder()
+   *           .setParent(
+   *               WorkloadIdentityPoolName.of("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+   *                   .toString())
+   *           .setWorkloadIdentityPoolProvider(WorkloadIdentityPoolProvider.newBuilder().build())
+   *           .setWorkloadIdentityPoolProviderId("workloadIdentityPoolProviderId-2035698467")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       workloadIdentityPoolsClient
+   *           .createWorkloadIdentityPoolProviderCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateWorkloadIdentityPoolProviderRequest, Operation>
       createWorkloadIdentityPoolProviderCallable() {
@@ -878,6 +1576,21 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an existing [WorkloadIdentityPoolProvider][google.iam.v1beta.WorkloadIdentityProvider].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   WorkloadIdentityPoolProvider workloadIdentityPoolProvider =
+   *       WorkloadIdentityPoolProvider.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   WorkloadIdentityPoolProvider response =
+   *       workloadIdentityPoolsClient
+   *           .updateWorkloadIdentityPoolProviderAsync(workloadIdentityPoolProvider, updateMask)
+   *           .get();
+   * }
+   * }</pre>
    *
    * @param workloadIdentityPoolProvider Required. The provider to update.
    * @param updateMask Required. The list of fields to update.
@@ -899,6 +1612,21 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
   /**
    * Updates an existing [WorkloadIdentityPoolProvider][google.iam.v1beta.WorkloadIdentityProvider].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   UpdateWorkloadIdentityPoolProviderRequest request =
+   *       UpdateWorkloadIdentityPoolProviderRequest.newBuilder()
+   *           .setWorkloadIdentityPoolProvider(WorkloadIdentityPoolProvider.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   WorkloadIdentityPoolProvider response =
+   *       workloadIdentityPoolsClient.updateWorkloadIdentityPoolProviderAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -913,6 +1641,24 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * Updates an existing [WorkloadIdentityPoolProvider][google.iam.v1beta.WorkloadIdentityProvider].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   UpdateWorkloadIdentityPoolProviderRequest request =
+   *       UpdateWorkloadIdentityPoolProviderRequest.newBuilder()
+   *           .setWorkloadIdentityPoolProvider(WorkloadIdentityPoolProvider.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<WorkloadIdentityPoolProvider, WorkloadIdentityPoolProviderOperationMetadata>
+   *       future =
+   *           workloadIdentityPoolsClient
+   *               .updateWorkloadIdentityPoolProviderOperationCallable()
+   *               .futureCall(request);
+   *   // Do something.
+   *   WorkloadIdentityPoolProvider response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<
           UpdateWorkloadIdentityPoolProviderRequest,
@@ -927,6 +1673,23 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * Updates an existing [WorkloadIdentityPoolProvider][google.iam.v1beta.WorkloadIdentityProvider].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   UpdateWorkloadIdentityPoolProviderRequest request =
+   *       UpdateWorkloadIdentityPoolProviderRequest.newBuilder()
+   *           .setWorkloadIdentityPoolProvider(WorkloadIdentityPoolProvider.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       workloadIdentityPoolsClient
+   *           .updateWorkloadIdentityPoolProviderCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateWorkloadIdentityPoolProviderRequest, Operation>
       updateWorkloadIdentityPoolProviderCallable() {
@@ -939,6 +1702,22 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * a provider does not revoke credentials that have already been issued; they continue to grant
    * access. You can undelete a provider for 30 days. After 30 days, deletion is permanent. You
    * cannot update deleted providers. However, you can view and list them.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   WorkloadIdentityPoolProviderName name =
+   *       WorkloadIdentityPoolProviderName.of(
+   *           "[PROJECT]",
+   *           "[LOCATION]",
+   *           "[WORKLOAD_IDENTITY_POOL]",
+   *           "[WORKLOAD_IDENTITY_POOL_PROVIDER]");
+   *   WorkloadIdentityPoolProvider response =
+   *       workloadIdentityPoolsClient.deleteWorkloadIdentityPoolProviderAsync(name).get();
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the provider to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -960,6 +1739,23 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * access. You can undelete a provider for 30 days. After 30 days, deletion is permanent. You
    * cannot update deleted providers. However, you can view and list them.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   String name =
+   *       WorkloadIdentityPoolProviderName.of(
+   *               "[PROJECT]",
+   *               "[LOCATION]",
+   *               "[WORKLOAD_IDENTITY_POOL]",
+   *               "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
+   *           .toString();
+   *   WorkloadIdentityPoolProvider response =
+   *       workloadIdentityPoolsClient.deleteWorkloadIdentityPoolProviderAsync(name).get();
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the provider to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -978,6 +1774,26 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * access. You can undelete a provider for 30 days. After 30 days, deletion is permanent. You
    * cannot update deleted providers. However, you can view and list them.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   DeleteWorkloadIdentityPoolProviderRequest request =
+   *       DeleteWorkloadIdentityPoolProviderRequest.newBuilder()
+   *           .setName(
+   *               WorkloadIdentityPoolProviderName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[WORKLOAD_IDENTITY_POOL]",
+   *                       "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
+   *                   .toString())
+   *           .build();
+   *   WorkloadIdentityPoolProvider response =
+   *       workloadIdentityPoolsClient.deleteWorkloadIdentityPoolProviderAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -995,6 +1811,29 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * cannot update deleted providers. However, you can view and list them.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   DeleteWorkloadIdentityPoolProviderRequest request =
+   *       DeleteWorkloadIdentityPoolProviderRequest.newBuilder()
+   *           .setName(
+   *               WorkloadIdentityPoolProviderName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[WORKLOAD_IDENTITY_POOL]",
+   *                       "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<WorkloadIdentityPoolProvider, WorkloadIdentityPoolProviderOperationMetadata>
+   *       future =
+   *           workloadIdentityPoolsClient
+   *               .deleteWorkloadIdentityPoolProviderOperationCallable()
+   *               .futureCall(request);
+   *   // Do something.
+   *   WorkloadIdentityPoolProvider response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<
           DeleteWorkloadIdentityPoolProviderRequest,
@@ -1012,6 +1851,28 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * cannot update deleted providers. However, you can view and list them.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   DeleteWorkloadIdentityPoolProviderRequest request =
+   *       DeleteWorkloadIdentityPoolProviderRequest.newBuilder()
+   *           .setName(
+   *               WorkloadIdentityPoolProviderName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[WORKLOAD_IDENTITY_POOL]",
+   *                       "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       workloadIdentityPoolsClient
+   *           .deleteWorkloadIdentityPoolProviderCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteWorkloadIdentityPoolProviderRequest, Operation>
       deleteWorkloadIdentityPoolProviderCallable() {
@@ -1022,6 +1883,22 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
   /**
    * Undeletes a [WorkloadIdentityPoolProvider][google.iam.v1beta.WorkloadIdentityProvider], as long
    * as it was deleted fewer than 30 days ago.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   WorkloadIdentityPoolProviderName name =
+   *       WorkloadIdentityPoolProviderName.of(
+   *           "[PROJECT]",
+   *           "[LOCATION]",
+   *           "[WORKLOAD_IDENTITY_POOL]",
+   *           "[WORKLOAD_IDENTITY_POOL_PROVIDER]");
+   *   WorkloadIdentityPoolProvider response =
+   *       workloadIdentityPoolsClient.undeleteWorkloadIdentityPoolProviderAsync(name).get();
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the provider to undelete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1041,6 +1918,23 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * Undeletes a [WorkloadIdentityPoolProvider][google.iam.v1beta.WorkloadIdentityProvider], as long
    * as it was deleted fewer than 30 days ago.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   String name =
+   *       WorkloadIdentityPoolProviderName.of(
+   *               "[PROJECT]",
+   *               "[LOCATION]",
+   *               "[WORKLOAD_IDENTITY_POOL]",
+   *               "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
+   *           .toString();
+   *   WorkloadIdentityPoolProvider response =
+   *       workloadIdentityPoolsClient.undeleteWorkloadIdentityPoolProviderAsync(name).get();
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the provider to undelete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1056,6 +1950,26 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
   /**
    * Undeletes a [WorkloadIdentityPoolProvider][google.iam.v1beta.WorkloadIdentityProvider], as long
    * as it was deleted fewer than 30 days ago.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   UndeleteWorkloadIdentityPoolProviderRequest request =
+   *       UndeleteWorkloadIdentityPoolProviderRequest.newBuilder()
+   *           .setName(
+   *               WorkloadIdentityPoolProviderName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[WORKLOAD_IDENTITY_POOL]",
+   *                       "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
+   *                   .toString())
+   *           .build();
+   *   WorkloadIdentityPoolProvider response =
+   *       workloadIdentityPoolsClient.undeleteWorkloadIdentityPoolProviderAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1073,6 +1987,29 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * as it was deleted fewer than 30 days ago.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   UndeleteWorkloadIdentityPoolProviderRequest request =
+   *       UndeleteWorkloadIdentityPoolProviderRequest.newBuilder()
+   *           .setName(
+   *               WorkloadIdentityPoolProviderName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[WORKLOAD_IDENTITY_POOL]",
+   *                       "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<WorkloadIdentityPoolProvider, WorkloadIdentityPoolProviderOperationMetadata>
+   *       future =
+   *           workloadIdentityPoolsClient
+   *               .undeleteWorkloadIdentityPoolProviderOperationCallable()
+   *               .futureCall(request);
+   *   // Do something.
+   *   WorkloadIdentityPoolProvider response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<
           UndeleteWorkloadIdentityPoolProviderRequest,
@@ -1088,6 +2025,28 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * as it was deleted fewer than 30 days ago.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+   *     WorkloadIdentityPoolsClient.create()) {
+   *   UndeleteWorkloadIdentityPoolProviderRequest request =
+   *       UndeleteWorkloadIdentityPoolProviderRequest.newBuilder()
+   *           .setName(
+   *               WorkloadIdentityPoolProviderName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[WORKLOAD_IDENTITY_POOL]",
+   *                       "[WORKLOAD_IDENTITY_POOL_PROVIDER]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       workloadIdentityPoolsClient
+   *           .undeleteWorkloadIdentityPoolProviderCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UndeleteWorkloadIdentityPoolProviderRequest, Operation>
       undeleteWorkloadIdentityPoolProviderCallable() {

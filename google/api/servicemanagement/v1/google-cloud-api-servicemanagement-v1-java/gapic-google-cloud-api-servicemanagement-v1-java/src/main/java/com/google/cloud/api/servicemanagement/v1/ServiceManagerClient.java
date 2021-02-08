@@ -75,6 +75,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+ *   String serviceName = "serviceName-1928572192";
+ *   ManagedService response = serviceManagerClient.getService(serviceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the ServiceManagerClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -196,6 +203,19 @@ public class ServiceManagerClient implements BackgroundResource {
    * services enabled on the consumer. The `consumer_id` must have the format of
    * "project:{PROJECT-ID}".
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   String producerProjectId = "producerProjectId-1297373534";
+   *   String consumerId = "consumerId-166238287";
+   *   for (ManagedService element :
+   *       serviceManagerClient.listServices(producerProjectId, consumerId).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param producerProjectId Include services produced by the specified project.
    * @param consumerId Include services consumed by the specified consumer.
    *     <p>The Google Service Management implementation accepts the following forms: -
@@ -222,6 +242,23 @@ public class ServiceManagerClient implements BackgroundResource {
    * services enabled on the consumer. The `consumer_id` must have the format of
    * "project:{PROJECT-ID}".
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   ListServicesRequest request =
+   *       ListServicesRequest.newBuilder()
+   *           .setProducerProjectId("producerProjectId-1297373534")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setConsumerId("consumerId-166238287")
+   *           .build();
+   *   for (ManagedService element : serviceManagerClient.listServices(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -241,6 +278,24 @@ public class ServiceManagerClient implements BackgroundResource {
    * "project:{PROJECT-ID}".
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   ListServicesRequest request =
+   *       ListServicesRequest.newBuilder()
+   *           .setProducerProjectId("producerProjectId-1297373534")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setConsumerId("consumerId-166238287")
+   *           .build();
+   *   ApiFuture<ManagedService> future =
+   *       serviceManagerClient.listServicesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ManagedService element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListServicesRequest, ListServicesPagedResponse>
       listServicesPagedCallable() {
@@ -259,6 +314,23 @@ public class ServiceManagerClient implements BackgroundResource {
    * "project:{PROJECT-ID}".
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   while (true) {
+   *     ListServicesResponse response = serviceManagerClient.listServicesCallable().call(request);
+   *     for (ManagedService element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListServicesRequest, ListServicesResponse> listServicesCallable() {
     return stub.listServicesCallable();
@@ -267,6 +339,15 @@ public class ServiceManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a managed service. Authentication is required unless the service is public.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   String serviceName = "serviceName-1928572192";
+   *   ManagedService response = serviceManagerClient.getService(serviceName);
+   * }
+   * }</pre>
    *
    * @param serviceName Required. The name of the service. See the `ServiceManager` overview for
    *     naming requirements. For example: `example.googleapis.com`.
@@ -281,6 +362,16 @@ public class ServiceManagerClient implements BackgroundResource {
   /**
    * Gets a managed service. Authentication is required unless the service is public.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   GetServiceRequest request =
+   *       GetServiceRequest.newBuilder().setServiceName("serviceName-1928572192").build();
+   *   ManagedService response = serviceManagerClient.getService(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -293,6 +384,17 @@ public class ServiceManagerClient implements BackgroundResource {
    * Gets a managed service. Authentication is required unless the service is public.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   GetServiceRequest request =
+   *       GetServiceRequest.newBuilder().setServiceName("serviceName-1928572192").build();
+   *   ApiFuture<ManagedService> future =
+   *       serviceManagerClient.getServiceCallable().futureCall(request);
+   *   // Do something.
+   *   ManagedService response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetServiceRequest, ManagedService> getServiceCallable() {
     return stub.getServiceCallable();
@@ -304,6 +406,15 @@ public class ServiceManagerClient implements BackgroundResource {
    * services.
    *
    * <p>Operation&lt;response: ManagedService&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   ManagedService service = ManagedService.newBuilder().build();
+   *   ManagedService response = serviceManagerClient.createServiceAsync(service).get();
+   * }
+   * }</pre>
    *
    * @param service Required. Initial values for the service resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -321,6 +432,16 @@ public class ServiceManagerClient implements BackgroundResource {
    *
    * <p>Operation&lt;response: ManagedService&gt;
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   CreateServiceRequest request =
+   *       CreateServiceRequest.newBuilder().setService(ManagedService.newBuilder().build()).build();
+   *   ManagedService response = serviceManagerClient.createServiceAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -337,6 +458,17 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Operation&lt;response: ManagedService&gt;
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   CreateServiceRequest request =
+   *       CreateServiceRequest.newBuilder().setService(ManagedService.newBuilder().build()).build();
+   *   OperationFuture<ManagedService, OperationMetadata> future =
+   *       serviceManagerClient.createServiceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ManagedService response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<CreateServiceRequest, ManagedService, OperationMetadata>
       createServiceOperationCallable() {
@@ -351,6 +483,17 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Operation&lt;response: ManagedService&gt;
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   CreateServiceRequest request =
+   *       CreateServiceRequest.newBuilder().setService(ManagedService.newBuilder().build()).build();
+   *   ApiFuture<Operation> future =
+   *       serviceManagerClient.createServiceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateServiceRequest, Operation> createServiceCallable() {
     return stub.createServiceCallable();
@@ -364,6 +507,15 @@ public class ServiceManagerClient implements BackgroundResource {
    * the service. After 30 days, the service will be permanently deleted.
    *
    * <p>Operation&lt;response: google.protobuf.Empty&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   String serviceName = "serviceName-1928572192";
+   *   serviceManagerClient.deleteServiceAsync(serviceName).get();
+   * }
+   * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
    *     [overview](/service-management/overview) for naming requirements. For example:
@@ -385,6 +537,16 @@ public class ServiceManagerClient implements BackgroundResource {
    *
    * <p>Operation&lt;response: google.protobuf.Empty&gt;
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   DeleteServiceRequest request =
+   *       DeleteServiceRequest.newBuilder().setServiceName("serviceName-1928572192").build();
+   *   serviceManagerClient.deleteServiceAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -403,6 +565,17 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Operation&lt;response: google.protobuf.Empty&gt;
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   DeleteServiceRequest request =
+   *       DeleteServiceRequest.newBuilder().setServiceName("serviceName-1928572192").build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       serviceManagerClient.deleteServiceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<DeleteServiceRequest, Empty, OperationMetadata>
       deleteServiceOperationCallable() {
@@ -419,6 +592,17 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Operation&lt;response: google.protobuf.Empty&gt;
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   DeleteServiceRequest request =
+   *       DeleteServiceRequest.newBuilder().setServiceName("serviceName-1928572192").build();
+   *   ApiFuture<Operation> future =
+   *       serviceManagerClient.deleteServiceCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteServiceRequest, Operation> deleteServiceCallable() {
     return stub.deleteServiceCallable();
@@ -431,6 +615,16 @@ public class ServiceManagerClient implements BackgroundResource {
    * been deleted within the last 30 days.
    *
    * <p>Operation&lt;response: UndeleteServiceResponse&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   String serviceName = "serviceName-1928572192";
+   *   UndeleteServiceResponse response =
+   *       serviceManagerClient.undeleteServiceAsync(serviceName).get();
+   * }
+   * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
    *     [overview](/service-management/overview) for naming requirements. For example:
@@ -452,6 +646,16 @@ public class ServiceManagerClient implements BackgroundResource {
    *
    * <p>Operation&lt;response: UndeleteServiceResponse&gt;
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   UndeleteServiceRequest request =
+   *       UndeleteServiceRequest.newBuilder().setServiceName("serviceName-1928572192").build();
+   *   UndeleteServiceResponse response = serviceManagerClient.undeleteServiceAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -469,6 +673,17 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Operation&lt;response: UndeleteServiceResponse&gt;
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   UndeleteServiceRequest request =
+   *       UndeleteServiceRequest.newBuilder().setServiceName("serviceName-1928572192").build();
+   *   OperationFuture<UndeleteServiceResponse, OperationMetadata> future =
+   *       serviceManagerClient.undeleteServiceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   UndeleteServiceResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<UndeleteServiceRequest, UndeleteServiceResponse, OperationMetadata>
       undeleteServiceOperationCallable() {
@@ -484,6 +699,17 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Operation&lt;response: UndeleteServiceResponse&gt;
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   UndeleteServiceRequest request =
+   *       UndeleteServiceRequest.newBuilder().setServiceName("serviceName-1928572192").build();
+   *   ApiFuture<Operation> future =
+   *       serviceManagerClient.undeleteServiceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UndeleteServiceRequest, Operation> undeleteServiceCallable() {
     return stub.undeleteServiceCallable();
@@ -493,6 +719,17 @@ public class ServiceManagerClient implements BackgroundResource {
   /**
    * Lists the history of the service configuration for a managed service, from the newest to the
    * oldest.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   String serviceName = "serviceName-1928572192";
+   *   for (Service element : serviceManagerClient.listServiceConfigs(serviceName).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
    *     [overview](/service-management/overview) for naming requirements. For example:
@@ -510,6 +747,22 @@ public class ServiceManagerClient implements BackgroundResource {
    * Lists the history of the service configuration for a managed service, from the newest to the
    * oldest.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   ListServiceConfigsRequest request =
+   *       ListServiceConfigsRequest.newBuilder()
+   *           .setServiceName("serviceName-1928572192")
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
+   *   for (Service element : serviceManagerClient.listServiceConfigs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -524,6 +777,23 @@ public class ServiceManagerClient implements BackgroundResource {
    * oldest.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   ListServiceConfigsRequest request =
+   *       ListServiceConfigsRequest.newBuilder()
+   *           .setServiceName("serviceName-1928572192")
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
+   *   ApiFuture<Service> future =
+   *       serviceManagerClient.listServiceConfigsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Service element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListServiceConfigsRequest, ListServiceConfigsPagedResponse>
       listServiceConfigsPagedCallable() {
@@ -536,6 +806,24 @@ public class ServiceManagerClient implements BackgroundResource {
    * oldest.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   while (true) {
+   *     ListServiceConfigsResponse response =
+   *         serviceManagerClient.listServiceConfigsCallable().call(request);
+   *     for (Service element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListServiceConfigsRequest, ListServiceConfigsResponse>
       listServiceConfigsCallable() {
@@ -545,6 +833,17 @@ public class ServiceManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a service configuration (version) for a managed service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   String serviceName = "serviceName-1928572192";
+   *   String configId = "configId-580140035";
+   *   GetServiceConfigRequest.ConfigView view = GetServiceConfigRequest.ConfigView.forNumber(0);
+   *   Service response = serviceManagerClient.getServiceConfig(serviceName, configId, view);
+   * }
+   * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
    *     [overview](/service-management/overview) for naming requirements. For example:
@@ -570,6 +869,19 @@ public class ServiceManagerClient implements BackgroundResource {
   /**
    * Gets a service configuration (version) for a managed service.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   GetServiceConfigRequest request =
+   *       GetServiceConfigRequest.newBuilder()
+   *           .setServiceName("serviceName-1928572192")
+   *           .setConfigId("configId-580140035")
+   *           .build();
+   *   Service response = serviceManagerClient.getServiceConfig(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -582,6 +894,20 @@ public class ServiceManagerClient implements BackgroundResource {
    * Gets a service configuration (version) for a managed service.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   GetServiceConfigRequest request =
+   *       GetServiceConfigRequest.newBuilder()
+   *           .setServiceName("serviceName-1928572192")
+   *           .setConfigId("configId-580140035")
+   *           .build();
+   *   ApiFuture<Service> future =
+   *       serviceManagerClient.getServiceConfigCallable().futureCall(request);
+   *   // Do something.
+   *   Service response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetServiceConfigRequest, Service> getServiceConfigCallable() {
     return stub.getServiceConfigCallable();
@@ -595,6 +921,16 @@ public class ServiceManagerClient implements BackgroundResource {
    *
    * <p>Only the 100 most recent service configurations and ones referenced by existing rollouts are
    * kept for each service. The rest will be deleted eventually.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   String serviceName = "serviceName-1928572192";
+   *   Service serviceConfig = Service.newBuilder().build();
+   *   Service response = serviceManagerClient.createServiceConfig(serviceName, serviceConfig);
+   * }
+   * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
    *     [overview](/service-management/overview) for naming requirements. For example:
@@ -620,6 +956,19 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Only the 100 most recent service configurations and ones referenced by existing rollouts are
    * kept for each service. The rest will be deleted eventually.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   CreateServiceConfigRequest request =
+   *       CreateServiceConfigRequest.newBuilder()
+   *           .setServiceName("serviceName-1928572192")
+   *           .setServiceConfig(Service.newBuilder().build())
+   *           .build();
+   *   Service response = serviceManagerClient.createServiceConfig(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -637,6 +986,20 @@ public class ServiceManagerClient implements BackgroundResource {
    * kept for each service. The rest will be deleted eventually.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   CreateServiceConfigRequest request =
+   *       CreateServiceConfigRequest.newBuilder()
+   *           .setServiceName("serviceName-1928572192")
+   *           .setServiceConfig(Service.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Service> future =
+   *       serviceManagerClient.createServiceConfigCallable().futureCall(request);
+   *   // Do something.
+   *   Service response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateServiceConfigRequest, Service> createServiceConfigCallable() {
     return stub.createServiceConfigCallable();
@@ -654,6 +1017,20 @@ public class ServiceManagerClient implements BackgroundResource {
    * configurtions are kept for each service. The rest will be deleted eventually.
    *
    * <p>Operation&lt;response: SubmitConfigSourceResponse&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   String serviceName = "serviceName-1928572192";
+   *   ConfigSource configSource = ConfigSource.newBuilder().build();
+   *   boolean validateOnly = true;
+   *   SubmitConfigSourceResponse response =
+   *       serviceManagerClient
+   *           .submitConfigSourceAsync(serviceName, configSource, validateOnly)
+   *           .get();
+   * }
+   * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
    *     [overview](/service-management/overview) for naming requirements. For example:
@@ -688,6 +1065,21 @@ public class ServiceManagerClient implements BackgroundResource {
    *
    * <p>Operation&lt;response: SubmitConfigSourceResponse&gt;
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   SubmitConfigSourceRequest request =
+   *       SubmitConfigSourceRequest.newBuilder()
+   *           .setServiceName("serviceName-1928572192")
+   *           .setConfigSource(ConfigSource.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   SubmitConfigSourceResponse response =
+   *       serviceManagerClient.submitConfigSourceAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -710,6 +1102,21 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Operation&lt;response: SubmitConfigSourceResponse&gt;
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   SubmitConfigSourceRequest request =
+   *       SubmitConfigSourceRequest.newBuilder()
+   *           .setServiceName("serviceName-1928572192")
+   *           .setConfigSource(ConfigSource.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<SubmitConfigSourceResponse, OperationMetadata> future =
+   *       serviceManagerClient.submitConfigSourceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   SubmitConfigSourceResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<
           SubmitConfigSourceRequest, SubmitConfigSourceResponse, OperationMetadata>
@@ -731,6 +1138,21 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Operation&lt;response: SubmitConfigSourceResponse&gt;
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   SubmitConfigSourceRequest request =
+   *       SubmitConfigSourceRequest.newBuilder()
+   *           .setServiceName("serviceName-1928572192")
+   *           .setConfigSource(ConfigSource.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       serviceManagerClient.submitConfigSourceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SubmitConfigSourceRequest, Operation> submitConfigSourceCallable() {
     return stub.submitConfigSourceCallable();
@@ -740,6 +1162,19 @@ public class ServiceManagerClient implements BackgroundResource {
   /**
    * Lists the history of the service configuration rollouts for a managed service, from the newest
    * to the oldest.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   String serviceName = "serviceName-1928572192";
+   *   String filter = "filter-1274492040";
+   *   for (Rollout element :
+   *       serviceManagerClient.listServiceRollouts(serviceName, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
    *     [overview](/service-management/overview) for naming requirements. For example:
@@ -767,6 +1202,23 @@ public class ServiceManagerClient implements BackgroundResource {
    * Lists the history of the service configuration rollouts for a managed service, from the newest
    * to the oldest.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   ListServiceRolloutsRequest request =
+   *       ListServiceRolloutsRequest.newBuilder()
+   *           .setServiceName("serviceName-1928572192")
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (Rollout element : serviceManagerClient.listServiceRollouts(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -781,6 +1233,24 @@ public class ServiceManagerClient implements BackgroundResource {
    * to the oldest.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   ListServiceRolloutsRequest request =
+   *       ListServiceRolloutsRequest.newBuilder()
+   *           .setServiceName("serviceName-1928572192")
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<Rollout> future =
+   *       serviceManagerClient.listServiceRolloutsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Rollout element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListServiceRolloutsRequest, ListServiceRolloutsPagedResponse>
       listServiceRolloutsPagedCallable() {
@@ -793,6 +1263,24 @@ public class ServiceManagerClient implements BackgroundResource {
    * to the oldest.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   while (true) {
+   *     ListServiceRolloutsResponse response =
+   *         serviceManagerClient.listServiceRolloutsCallable().call(request);
+   *     for (Rollout element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListServiceRolloutsRequest, ListServiceRolloutsResponse>
       listServiceRolloutsCallable() {
@@ -802,6 +1290,16 @@ public class ServiceManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a service configuration [rollout][google.api.servicemanagement.v1.Rollout].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   String serviceName = "serviceName-1928572192";
+   *   String rolloutId = "rolloutId551248556";
+   *   Rollout response = serviceManagerClient.getServiceRollout(serviceName, rolloutId);
+   * }
+   * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
    *     [overview](/service-management/overview) for naming requirements. For example:
@@ -822,6 +1320,19 @@ public class ServiceManagerClient implements BackgroundResource {
   /**
    * Gets a service configuration [rollout][google.api.servicemanagement.v1.Rollout].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   GetServiceRolloutRequest request =
+   *       GetServiceRolloutRequest.newBuilder()
+   *           .setServiceName("serviceName-1928572192")
+   *           .setRolloutId("rolloutId551248556")
+   *           .build();
+   *   Rollout response = serviceManagerClient.getServiceRollout(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -834,6 +1345,20 @@ public class ServiceManagerClient implements BackgroundResource {
    * Gets a service configuration [rollout][google.api.servicemanagement.v1.Rollout].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   GetServiceRolloutRequest request =
+   *       GetServiceRolloutRequest.newBuilder()
+   *           .setServiceName("serviceName-1928572192")
+   *           .setRolloutId("rolloutId551248556")
+   *           .build();
+   *   ApiFuture<Rollout> future =
+   *       serviceManagerClient.getServiceRolloutCallable().futureCall(request);
+   *   // Do something.
+   *   Rollout response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetServiceRolloutRequest, Rollout> getServiceRolloutCallable() {
     return stub.getServiceRolloutCallable();
@@ -853,6 +1378,16 @@ public class ServiceManagerClient implements BackgroundResource {
    * eventually.
    *
    * <p>Operation&lt;response: Rollout&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   String serviceName = "serviceName-1928572192";
+   *   Rollout rollout = Rollout.newBuilder().build();
+   *   Rollout response = serviceManagerClient.createServiceRolloutAsync(serviceName, rollout).get();
+   * }
+   * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
    *     [overview](/service-management/overview) for naming requirements. For example:
@@ -885,6 +1420,19 @@ public class ServiceManagerClient implements BackgroundResource {
    *
    * <p>Operation&lt;response: Rollout&gt;
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   CreateServiceRolloutRequest request =
+   *       CreateServiceRolloutRequest.newBuilder()
+   *           .setServiceName("serviceName-1928572192")
+   *           .setRollout(Rollout.newBuilder().build())
+   *           .build();
+   *   Rollout response = serviceManagerClient.createServiceRolloutAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -909,6 +1457,20 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Operation&lt;response: Rollout&gt;
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   CreateServiceRolloutRequest request =
+   *       CreateServiceRolloutRequest.newBuilder()
+   *           .setServiceName("serviceName-1928572192")
+   *           .setRollout(Rollout.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Rollout, OperationMetadata> future =
+   *       serviceManagerClient.createServiceRolloutOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Rollout response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<CreateServiceRolloutRequest, Rollout, OperationMetadata>
       createServiceRolloutOperationCallable() {
@@ -931,6 +1493,20 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Operation&lt;response: Rollout&gt;
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   CreateServiceRolloutRequest request =
+   *       CreateServiceRolloutRequest.newBuilder()
+   *           .setServiceName("serviceName-1928572192")
+   *           .setRollout(Rollout.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       serviceManagerClient.createServiceRolloutCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateServiceRolloutRequest, Operation>
       createServiceRolloutCallable() {
@@ -947,6 +1523,17 @@ public class ServiceManagerClient implements BackgroundResource {
    * GenerateConfigReportRequest.new_value and GenerateConfigReportRequest.old_value. If
    * GenerateConfigReportRequest.old_value is not specified, this method will compare
    * GenerateConfigReportRequest.new_value with the last pushed service configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   Any newConfig = Any.newBuilder().build();
+   *   Any oldConfig = Any.newBuilder().build();
+   *   GenerateConfigReportResponse response =
+   *       serviceManagerClient.generateConfigReport(newConfig, oldConfig);
+   * }
+   * }</pre>
    *
    * @param newConfig Required. Service configuration for which we want to generate the report. For
    *     this version of API, the supported types are
@@ -980,6 +1567,19 @@ public class ServiceManagerClient implements BackgroundResource {
    * GenerateConfigReportRequest.old_value is not specified, this method will compare
    * GenerateConfigReportRequest.new_value with the last pushed service configuration.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   GenerateConfigReportRequest request =
+   *       GenerateConfigReportRequest.newBuilder()
+   *           .setNewConfig(Any.newBuilder().build())
+   *           .setOldConfig(Any.newBuilder().build())
+   *           .build();
+   *   GenerateConfigReportResponse response = serviceManagerClient.generateConfigReport(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1000,6 +1600,20 @@ public class ServiceManagerClient implements BackgroundResource {
    * GenerateConfigReportRequest.new_value with the last pushed service configuration.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   GenerateConfigReportRequest request =
+   *       GenerateConfigReportRequest.newBuilder()
+   *           .setNewConfig(Any.newBuilder().build())
+   *           .setOldConfig(Any.newBuilder().build())
+   *           .build();
+   *   ApiFuture<GenerateConfigReportResponse> future =
+   *       serviceManagerClient.generateConfigReportCallable().futureCall(request);
+   *   // Do something.
+   *   GenerateConfigReportResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GenerateConfigReportRequest, GenerateConfigReportResponse>
       generateConfigReportCallable() {
@@ -1013,6 +1627,17 @@ public class ServiceManagerClient implements BackgroundResource {
    * more information.
    *
    * <p>Operation&lt;response: EnableServiceResponse&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   String serviceName = "serviceName-1928572192";
+   *   String consumerId = "consumerId-166238287";
+   *   EnableServiceResponse response =
+   *       serviceManagerClient.enableServiceAsync(serviceName, consumerId).get();
+   * }
+   * }</pre>
    *
    * @param serviceName Required. Name of the service to enable. Specifying an unknown service name
    *     will cause the request to fail.
@@ -1041,6 +1666,19 @@ public class ServiceManagerClient implements BackgroundResource {
    *
    * <p>Operation&lt;response: EnableServiceResponse&gt;
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   EnableServiceRequest request =
+   *       EnableServiceRequest.newBuilder()
+   *           .setServiceName("serviceName-1928572192")
+   *           .setConsumerId("consumerId-166238287")
+   *           .build();
+   *   EnableServiceResponse response = serviceManagerClient.enableServiceAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1058,6 +1696,20 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Operation&lt;response: EnableServiceResponse&gt;
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   EnableServiceRequest request =
+   *       EnableServiceRequest.newBuilder()
+   *           .setServiceName("serviceName-1928572192")
+   *           .setConsumerId("consumerId-166238287")
+   *           .build();
+   *   OperationFuture<EnableServiceResponse, OperationMetadata> future =
+   *       serviceManagerClient.enableServiceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   EnableServiceResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<EnableServiceRequest, EnableServiceResponse, OperationMetadata>
       enableServiceOperationCallable() {
@@ -1073,6 +1725,20 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Operation&lt;response: EnableServiceResponse&gt;
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   EnableServiceRequest request =
+   *       EnableServiceRequest.newBuilder()
+   *           .setServiceName("serviceName-1928572192")
+   *           .setConsumerId("consumerId-166238287")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       serviceManagerClient.enableServiceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<EnableServiceRequest, Operation> enableServiceCallable() {
     return stub.enableServiceCallable();
@@ -1085,6 +1751,17 @@ public class ServiceManagerClient implements BackgroundResource {
    * billing charges or security leaks.
    *
    * <p>Operation&lt;response: DisableServiceResponse&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   String serviceName = "serviceName-1928572192";
+   *   String consumerId = "consumerId-166238287";
+   *   DisableServiceResponse response =
+   *       serviceManagerClient.disableServiceAsync(serviceName, consumerId).get();
+   * }
+   * }</pre>
    *
    * @param serviceName Required. Name of the service to disable. Specifying an unknown service name
    *     will cause the request to fail.
@@ -1113,6 +1790,19 @@ public class ServiceManagerClient implements BackgroundResource {
    *
    * <p>Operation&lt;response: DisableServiceResponse&gt;
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   DisableServiceRequest request =
+   *       DisableServiceRequest.newBuilder()
+   *           .setServiceName("serviceName-1928572192")
+   *           .setConsumerId("consumerId-166238287")
+   *           .build();
+   *   DisableServiceResponse response = serviceManagerClient.disableServiceAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1130,6 +1820,20 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Operation&lt;response: DisableServiceResponse&gt;
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   DisableServiceRequest request =
+   *       DisableServiceRequest.newBuilder()
+   *           .setServiceName("serviceName-1928572192")
+   *           .setConsumerId("consumerId-166238287")
+   *           .build();
+   *   OperationFuture<DisableServiceResponse, OperationMetadata> future =
+   *       serviceManagerClient.disableServiceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DisableServiceResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<DisableServiceRequest, DisableServiceResponse, OperationMetadata>
       disableServiceOperationCallable() {
@@ -1145,6 +1849,20 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Operation&lt;response: DisableServiceResponse&gt;
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   DisableServiceRequest request =
+   *       DisableServiceRequest.newBuilder()
+   *           .setServiceName("serviceName-1928572192")
+   *           .setConsumerId("consumerId-166238287")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       serviceManagerClient.disableServiceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DisableServiceRequest, Operation> disableServiceCallable() {
     return stub.disableServiceCallable();

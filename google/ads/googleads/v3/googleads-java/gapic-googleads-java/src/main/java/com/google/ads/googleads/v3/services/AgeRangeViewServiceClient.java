@@ -34,6 +34,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (AgeRangeViewServiceClient ageRangeViewServiceClient = AgeRangeViewServiceClient.create()) {
+ *   AgeRangeViewName resourceName = AgeRangeViewName.of("[CUSTOMER]", "[AGE_RANGE_VIEW]");
+ *   AgeRangeView response = ageRangeViewServiceClient.getAgeRangeView(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the AgeRangeViewServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -140,6 +147,15 @@ public class AgeRangeViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested age range view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AgeRangeViewServiceClient ageRangeViewServiceClient = AgeRangeViewServiceClient.create()) {
+   *   AgeRangeViewName resourceName = AgeRangeViewName.of("[CUSTOMER]", "[AGE_RANGE_VIEW]");
+   *   AgeRangeView response = ageRangeViewServiceClient.getAgeRangeView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the age range view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -155,6 +171,15 @@ public class AgeRangeViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested age range view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AgeRangeViewServiceClient ageRangeViewServiceClient = AgeRangeViewServiceClient.create()) {
+   *   String resourceName = AgeRangeViewName.of("[CUSTOMER]", "[AGE_RANGE_VIEW]").toString();
+   *   AgeRangeView response = ageRangeViewServiceClient.getAgeRangeView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the age range view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -168,6 +193,18 @@ public class AgeRangeViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested age range view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AgeRangeViewServiceClient ageRangeViewServiceClient = AgeRangeViewServiceClient.create()) {
+   *   GetAgeRangeViewRequest request =
+   *       GetAgeRangeViewRequest.newBuilder()
+   *           .setResourceName(AgeRangeViewName.of("[CUSTOMER]", "[AGE_RANGE_VIEW]").toString())
+   *           .build();
+   *   AgeRangeView response = ageRangeViewServiceClient.getAgeRangeView(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -180,6 +217,19 @@ public class AgeRangeViewServiceClient implements BackgroundResource {
    * Returns the requested age range view in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AgeRangeViewServiceClient ageRangeViewServiceClient = AgeRangeViewServiceClient.create()) {
+   *   GetAgeRangeViewRequest request =
+   *       GetAgeRangeViewRequest.newBuilder()
+   *           .setResourceName(AgeRangeViewName.of("[CUSTOMER]", "[AGE_RANGE_VIEW]").toString())
+   *           .build();
+   *   ApiFuture<AgeRangeView> future =
+   *       ageRangeViewServiceClient.getAgeRangeViewCallable().futureCall(request);
+   *   // Do something.
+   *   AgeRangeView response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetAgeRangeViewRequest, AgeRangeView> getAgeRangeViewCallable() {
     return stub.getAgeRangeViewCallable();

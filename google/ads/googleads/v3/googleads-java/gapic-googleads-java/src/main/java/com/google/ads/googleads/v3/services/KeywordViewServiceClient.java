@@ -34,6 +34,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (KeywordViewServiceClient keywordViewServiceClient = KeywordViewServiceClient.create()) {
+ *   KeywordViewName resourceName = KeywordViewName.of("[CUSTOMER]", "[KEYWORD_VIEW]");
+ *   KeywordView response = keywordViewServiceClient.getKeywordView(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the KeywordViewServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -140,6 +147,15 @@ public class KeywordViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested keyword view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeywordViewServiceClient keywordViewServiceClient = KeywordViewServiceClient.create()) {
+   *   KeywordViewName resourceName = KeywordViewName.of("[CUSTOMER]", "[KEYWORD_VIEW]");
+   *   KeywordView response = keywordViewServiceClient.getKeywordView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the keyword view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -155,6 +171,15 @@ public class KeywordViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested keyword view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeywordViewServiceClient keywordViewServiceClient = KeywordViewServiceClient.create()) {
+   *   String resourceName = KeywordViewName.of("[CUSTOMER]", "[KEYWORD_VIEW]").toString();
+   *   KeywordView response = keywordViewServiceClient.getKeywordView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the keyword view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -168,6 +193,18 @@ public class KeywordViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested keyword view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeywordViewServiceClient keywordViewServiceClient = KeywordViewServiceClient.create()) {
+   *   GetKeywordViewRequest request =
+   *       GetKeywordViewRequest.newBuilder()
+   *           .setResourceName(KeywordViewName.of("[CUSTOMER]", "[KEYWORD_VIEW]").toString())
+   *           .build();
+   *   KeywordView response = keywordViewServiceClient.getKeywordView(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -180,6 +217,19 @@ public class KeywordViewServiceClient implements BackgroundResource {
    * Returns the requested keyword view in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeywordViewServiceClient keywordViewServiceClient = KeywordViewServiceClient.create()) {
+   *   GetKeywordViewRequest request =
+   *       GetKeywordViewRequest.newBuilder()
+   *           .setResourceName(KeywordViewName.of("[CUSTOMER]", "[KEYWORD_VIEW]").toString())
+   *           .build();
+   *   ApiFuture<KeywordView> future =
+   *       keywordViewServiceClient.getKeywordViewCallable().futureCall(request);
+   *   // Do something.
+   *   KeywordView response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetKeywordViewRequest, KeywordView> getKeywordViewCallable() {
     return stub.getKeywordViewCallable();

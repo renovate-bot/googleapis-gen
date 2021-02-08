@@ -34,6 +34,16 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (AdGroupSimulationServiceClient adGroupSimulationServiceClient =
+ *     AdGroupSimulationServiceClient.create()) {
+ *   AdGroupSimulationName resourceName =
+ *       AdGroupSimulationName.of("[CUSTOMER]", "[AD_GROUP_SIMULATION]");
+ *   AdGroupSimulation response =
+ *       adGroupSimulationServiceClient.getAdGroupSimulation(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the AdGroupSimulationServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -142,6 +152,18 @@ public class AdGroupSimulationServiceClient implements BackgroundResource {
   /**
    * Returns the requested ad group simulation in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdGroupSimulationServiceClient adGroupSimulationServiceClient =
+   *     AdGroupSimulationServiceClient.create()) {
+   *   AdGroupSimulationName resourceName =
+   *       AdGroupSimulationName.of("[CUSTOMER]", "[AD_GROUP_SIMULATION]");
+   *   AdGroupSimulation response =
+   *       adGroupSimulationServiceClient.getAdGroupSimulation(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the ad group simulation to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -157,6 +179,18 @@ public class AdGroupSimulationServiceClient implements BackgroundResource {
   /**
    * Returns the requested ad group simulation in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdGroupSimulationServiceClient adGroupSimulationServiceClient =
+   *     AdGroupSimulationServiceClient.create()) {
+   *   String resourceName =
+   *       AdGroupSimulationName.of("[CUSTOMER]", "[AD_GROUP_SIMULATION]").toString();
+   *   AdGroupSimulation response =
+   *       adGroupSimulationServiceClient.getAdGroupSimulation(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the ad group simulation to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -170,6 +204,20 @@ public class AdGroupSimulationServiceClient implements BackgroundResource {
   /**
    * Returns the requested ad group simulation in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdGroupSimulationServiceClient adGroupSimulationServiceClient =
+   *     AdGroupSimulationServiceClient.create()) {
+   *   GetAdGroupSimulationRequest request =
+   *       GetAdGroupSimulationRequest.newBuilder()
+   *           .setResourceName(
+   *               AdGroupSimulationName.of("[CUSTOMER]", "[AD_GROUP_SIMULATION]").toString())
+   *           .build();
+   *   AdGroupSimulation response = adGroupSimulationServiceClient.getAdGroupSimulation(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -182,6 +230,21 @@ public class AdGroupSimulationServiceClient implements BackgroundResource {
    * Returns the requested ad group simulation in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdGroupSimulationServiceClient adGroupSimulationServiceClient =
+   *     AdGroupSimulationServiceClient.create()) {
+   *   GetAdGroupSimulationRequest request =
+   *       GetAdGroupSimulationRequest.newBuilder()
+   *           .setResourceName(
+   *               AdGroupSimulationName.of("[CUSTOMER]", "[AD_GROUP_SIMULATION]").toString())
+   *           .build();
+   *   ApiFuture<AdGroupSimulation> future =
+   *       adGroupSimulationServiceClient.getAdGroupSimulationCallable().futureCall(request);
+   *   // Do something.
+   *   AdGroupSimulation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetAdGroupSimulationRequest, AdGroupSimulation>
       getAdGroupSimulationCallable() {

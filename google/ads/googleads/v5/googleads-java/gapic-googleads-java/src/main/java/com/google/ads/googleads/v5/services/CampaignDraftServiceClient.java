@@ -49,6 +49,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (CampaignDraftServiceClient campaignDraftServiceClient =
+ *     CampaignDraftServiceClient.create()) {
+ *   CampaignDraftName resourceName = CampaignDraftName.of("[CUSTOMER]", "[CAMPAIGN_DRAFT]");
+ *   CampaignDraft response = campaignDraftServiceClient.getCampaignDraft(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the CampaignDraftServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -166,6 +174,16 @@ public class CampaignDraftServiceClient implements BackgroundResource {
   /**
    * Returns the requested campaign draft in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignDraftServiceClient campaignDraftServiceClient =
+   *     CampaignDraftServiceClient.create()) {
+   *   CampaignDraftName resourceName = CampaignDraftName.of("[CUSTOMER]", "[CAMPAIGN_DRAFT]");
+   *   CampaignDraft response = campaignDraftServiceClient.getCampaignDraft(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the campaign draft to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -181,6 +199,16 @@ public class CampaignDraftServiceClient implements BackgroundResource {
   /**
    * Returns the requested campaign draft in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignDraftServiceClient campaignDraftServiceClient =
+   *     CampaignDraftServiceClient.create()) {
+   *   String resourceName = CampaignDraftName.of("[CUSTOMER]", "[CAMPAIGN_DRAFT]").toString();
+   *   CampaignDraft response = campaignDraftServiceClient.getCampaignDraft(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the campaign draft to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -194,6 +222,19 @@ public class CampaignDraftServiceClient implements BackgroundResource {
   /**
    * Returns the requested campaign draft in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignDraftServiceClient campaignDraftServiceClient =
+   *     CampaignDraftServiceClient.create()) {
+   *   GetCampaignDraftRequest request =
+   *       GetCampaignDraftRequest.newBuilder()
+   *           .setResourceName(CampaignDraftName.of("[CUSTOMER]", "[CAMPAIGN_DRAFT]").toString())
+   *           .build();
+   *   CampaignDraft response = campaignDraftServiceClient.getCampaignDraft(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -206,6 +247,20 @@ public class CampaignDraftServiceClient implements BackgroundResource {
    * Returns the requested campaign draft in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignDraftServiceClient campaignDraftServiceClient =
+   *     CampaignDraftServiceClient.create()) {
+   *   GetCampaignDraftRequest request =
+   *       GetCampaignDraftRequest.newBuilder()
+   *           .setResourceName(CampaignDraftName.of("[CUSTOMER]", "[CAMPAIGN_DRAFT]").toString())
+   *           .build();
+   *   ApiFuture<CampaignDraft> future =
+   *       campaignDraftServiceClient.getCampaignDraftCallable().futureCall(request);
+   *   // Do something.
+   *   CampaignDraft response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetCampaignDraftRequest, CampaignDraft> getCampaignDraftCallable() {
     return stub.getCampaignDraftCallable();
@@ -214,6 +269,18 @@ public class CampaignDraftServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates, updates, or removes campaign drafts. Operation statuses are returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignDraftServiceClient campaignDraftServiceClient =
+   *     CampaignDraftServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   List<CampaignDraftOperation> operations = new ArrayList<>();
+   *   MutateCampaignDraftsResponse response =
+   *       campaignDraftServiceClient.mutateCampaignDrafts(customerId, operations);
+   * }
+   * }</pre>
    *
    * @param customerId Required. The ID of the customer whose campaign drafts are being modified.
    * @param operations Required. The list of operations to perform on individual campaign drafts.
@@ -233,6 +300,23 @@ public class CampaignDraftServiceClient implements BackgroundResource {
   /**
    * Creates, updates, or removes campaign drafts. Operation statuses are returned.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignDraftServiceClient campaignDraftServiceClient =
+   *     CampaignDraftServiceClient.create()) {
+   *   MutateCampaignDraftsRequest request =
+   *       MutateCampaignDraftsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<CampaignDraftOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   MutateCampaignDraftsResponse response =
+   *       campaignDraftServiceClient.mutateCampaignDrafts(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -246,6 +330,23 @@ public class CampaignDraftServiceClient implements BackgroundResource {
    * Creates, updates, or removes campaign drafts. Operation statuses are returned.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignDraftServiceClient campaignDraftServiceClient =
+   *     CampaignDraftServiceClient.create()) {
+   *   MutateCampaignDraftsRequest request =
+   *       MutateCampaignDraftsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<CampaignDraftOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<MutateCampaignDraftsResponse> future =
+   *       campaignDraftServiceClient.mutateCampaignDraftsCallable().futureCall(request);
+   *   // Do something.
+   *   MutateCampaignDraftsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<MutateCampaignDraftsRequest, MutateCampaignDraftsResponse>
       mutateCampaignDraftsCallable() {
@@ -262,6 +363,16 @@ public class CampaignDraftServiceClient implements BackgroundResource {
    * successful. If the LRO failed, use
    * [CampaignDraftService.ListCampaignDraftAsyncErrors][google.ads.googleads.v5.services.CampaignDraftService.ListCampaignDraftAsyncErrors]
    * to view the list of error reasons.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignDraftServiceClient campaignDraftServiceClient =
+   *     CampaignDraftServiceClient.create()) {
+   *   String campaignDraft = "campaignDraft1041281649";
+   *   campaignDraftServiceClient.promoteCampaignDraftAsync(campaignDraft).get();
+   * }
+   * }</pre>
    *
    * @param campaignDraft Required. The resource name of the campaign draft to promote.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -283,6 +394,19 @@ public class CampaignDraftServiceClient implements BackgroundResource {
    * [CampaignDraftService.ListCampaignDraftAsyncErrors][google.ads.googleads.v5.services.CampaignDraftService.ListCampaignDraftAsyncErrors]
    * to view the list of error reasons.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignDraftServiceClient campaignDraftServiceClient =
+   *     CampaignDraftServiceClient.create()) {
+   *   PromoteCampaignDraftRequest request =
+   *       PromoteCampaignDraftRequest.newBuilder()
+   *           .setCampaignDraft("campaignDraft1041281649")
+   *           .build();
+   *   campaignDraftServiceClient.promoteCampaignDraftAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -303,6 +427,20 @@ public class CampaignDraftServiceClient implements BackgroundResource {
    * to view the list of error reasons.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignDraftServiceClient campaignDraftServiceClient =
+   *     CampaignDraftServiceClient.create()) {
+   *   PromoteCampaignDraftRequest request =
+   *       PromoteCampaignDraftRequest.newBuilder()
+   *           .setCampaignDraft("campaignDraft1041281649")
+   *           .build();
+   *   OperationFuture<Empty, Empty> future =
+   *       campaignDraftServiceClient.promoteCampaignDraftOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<PromoteCampaignDraftRequest, Empty, Empty>
       promoteCampaignDraftOperationCallable() {
@@ -321,6 +459,20 @@ public class CampaignDraftServiceClient implements BackgroundResource {
    * to view the list of error reasons.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignDraftServiceClient campaignDraftServiceClient =
+   *     CampaignDraftServiceClient.create()) {
+   *   PromoteCampaignDraftRequest request =
+   *       PromoteCampaignDraftRequest.newBuilder()
+   *           .setCampaignDraft("campaignDraft1041281649")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       campaignDraftServiceClient.promoteCampaignDraftCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<PromoteCampaignDraftRequest, Operation>
       promoteCampaignDraftCallable() {
@@ -331,6 +483,19 @@ public class CampaignDraftServiceClient implements BackgroundResource {
   /**
    * Returns all errors that occurred during CampaignDraft promote. Throws an error if called before
    * campaign draft is promoted. Supports standard list paging.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignDraftServiceClient campaignDraftServiceClient =
+   *     CampaignDraftServiceClient.create()) {
+   *   CampaignDraftName resourceName = CampaignDraftName.of("[CUSTOMER]", "[CAMPAIGN_DRAFT]");
+   *   for (Status element :
+   *       campaignDraftServiceClient.listCampaignDraftAsyncErrors(resourceName).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param resourceName Required. The name of the campaign draft from which to retrieve the async
    *     errors.
@@ -350,6 +515,19 @@ public class CampaignDraftServiceClient implements BackgroundResource {
    * Returns all errors that occurred during CampaignDraft promote. Throws an error if called before
    * campaign draft is promoted. Supports standard list paging.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignDraftServiceClient campaignDraftServiceClient =
+   *     CampaignDraftServiceClient.create()) {
+   *   String resourceName = CampaignDraftName.of("[CUSTOMER]", "[CAMPAIGN_DRAFT]").toString();
+   *   for (Status element :
+   *       campaignDraftServiceClient.listCampaignDraftAsyncErrors(resourceName).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The name of the campaign draft from which to retrieve the async
    *     errors.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -366,6 +544,24 @@ public class CampaignDraftServiceClient implements BackgroundResource {
    * Returns all errors that occurred during CampaignDraft promote. Throws an error if called before
    * campaign draft is promoted. Supports standard list paging.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignDraftServiceClient campaignDraftServiceClient =
+   *     CampaignDraftServiceClient.create()) {
+   *   ListCampaignDraftAsyncErrorsRequest request =
+   *       ListCampaignDraftAsyncErrorsRequest.newBuilder()
+   *           .setResourceName(CampaignDraftName.of("[CUSTOMER]", "[CAMPAIGN_DRAFT]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
+   *   for (Status element :
+   *       campaignDraftServiceClient.listCampaignDraftAsyncErrors(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -380,6 +576,26 @@ public class CampaignDraftServiceClient implements BackgroundResource {
    * campaign draft is promoted. Supports standard list paging.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignDraftServiceClient campaignDraftServiceClient =
+   *     CampaignDraftServiceClient.create()) {
+   *   ListCampaignDraftAsyncErrorsRequest request =
+   *       ListCampaignDraftAsyncErrorsRequest.newBuilder()
+   *           .setResourceName(CampaignDraftName.of("[CUSTOMER]", "[CAMPAIGN_DRAFT]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
+   *   ApiFuture<Status> future =
+   *       campaignDraftServiceClient
+   *           .listCampaignDraftAsyncErrorsPagedCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   for (Status element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           ListCampaignDraftAsyncErrorsRequest, ListCampaignDraftAsyncErrorsPagedResponse>
@@ -393,6 +609,25 @@ public class CampaignDraftServiceClient implements BackgroundResource {
    * campaign draft is promoted. Supports standard list paging.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignDraftServiceClient campaignDraftServiceClient =
+   *     CampaignDraftServiceClient.create()) {
+   *   while (true) {
+   *     ListCampaignDraftAsyncErrorsResponse response =
+   *         campaignDraftServiceClient.listCampaignDraftAsyncErrorsCallable().call(request);
+   *     for (Status element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           ListCampaignDraftAsyncErrorsRequest, ListCampaignDraftAsyncErrorsResponse>

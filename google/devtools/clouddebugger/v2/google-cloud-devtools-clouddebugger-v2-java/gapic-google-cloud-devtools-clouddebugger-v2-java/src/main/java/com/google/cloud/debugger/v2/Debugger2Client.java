@@ -53,6 +53,16 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
+ *   String debuggeeId = "debuggeeId-1833285553";
+ *   Breakpoint breakpoint = Breakpoint.newBuilder().build();
+ *   String clientVersion = "clientVersion771880589";
+ *   SetBreakpointResponse response =
+ *       debugger2Client.setBreakpoint(debuggeeId, breakpoint, clientVersion);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the Debugger2Client object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -154,6 +164,18 @@ public class Debugger2Client implements BackgroundResource {
   /**
    * Sets the breakpoint to the debuggee.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
+   *   String debuggeeId = "debuggeeId-1833285553";
+   *   Breakpoint breakpoint = Breakpoint.newBuilder().build();
+   *   String clientVersion = "clientVersion771880589";
+   *   SetBreakpointResponse response =
+   *       debugger2Client.setBreakpoint(debuggeeId, breakpoint, clientVersion);
+   * }
+   * }</pre>
+   *
    * @param debuggeeId Required. ID of the debuggee where the breakpoint is to be set.
    * @param breakpoint Required. Breakpoint specification to set. The field `location` of the
    *     breakpoint must be set.
@@ -176,6 +198,20 @@ public class Debugger2Client implements BackgroundResource {
   /**
    * Sets the breakpoint to the debuggee.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
+   *   SetBreakpointRequest request =
+   *       SetBreakpointRequest.newBuilder()
+   *           .setDebuggeeId("debuggeeId-1833285553")
+   *           .setBreakpoint(Breakpoint.newBuilder().build())
+   *           .setClientVersion("clientVersion771880589")
+   *           .build();
+   *   SetBreakpointResponse response = debugger2Client.setBreakpoint(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -188,6 +224,21 @@ public class Debugger2Client implements BackgroundResource {
    * Sets the breakpoint to the debuggee.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
+   *   SetBreakpointRequest request =
+   *       SetBreakpointRequest.newBuilder()
+   *           .setDebuggeeId("debuggeeId-1833285553")
+   *           .setBreakpoint(Breakpoint.newBuilder().build())
+   *           .setClientVersion("clientVersion771880589")
+   *           .build();
+   *   ApiFuture<SetBreakpointResponse> future =
+   *       debugger2Client.setBreakpointCallable().futureCall(request);
+   *   // Do something.
+   *   SetBreakpointResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SetBreakpointRequest, SetBreakpointResponse> setBreakpointCallable() {
     return stub.setBreakpointCallable();
@@ -196,6 +247,18 @@ public class Debugger2Client implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets breakpoint information.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
+   *   String debuggeeId = "debuggeeId-1833285553";
+   *   String breakpointId = "breakpointId570266860";
+   *   String clientVersion = "clientVersion771880589";
+   *   GetBreakpointResponse response =
+   *       debugger2Client.getBreakpoint(debuggeeId, breakpointId, clientVersion);
+   * }
+   * }</pre>
    *
    * @param debuggeeId Required. ID of the debuggee whose breakpoint to get.
    * @param breakpointId Required. ID of the breakpoint to get.
@@ -218,6 +281,20 @@ public class Debugger2Client implements BackgroundResource {
   /**
    * Gets breakpoint information.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
+   *   GetBreakpointRequest request =
+   *       GetBreakpointRequest.newBuilder()
+   *           .setDebuggeeId("debuggeeId-1833285553")
+   *           .setBreakpointId("breakpointId570266860")
+   *           .setClientVersion("clientVersion771880589")
+   *           .build();
+   *   GetBreakpointResponse response = debugger2Client.getBreakpoint(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -230,6 +307,21 @@ public class Debugger2Client implements BackgroundResource {
    * Gets breakpoint information.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
+   *   GetBreakpointRequest request =
+   *       GetBreakpointRequest.newBuilder()
+   *           .setDebuggeeId("debuggeeId-1833285553")
+   *           .setBreakpointId("breakpointId570266860")
+   *           .setClientVersion("clientVersion771880589")
+   *           .build();
+   *   ApiFuture<GetBreakpointResponse> future =
+   *       debugger2Client.getBreakpointCallable().futureCall(request);
+   *   // Do something.
+   *   GetBreakpointResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetBreakpointRequest, GetBreakpointResponse> getBreakpointCallable() {
     return stub.getBreakpointCallable();
@@ -238,6 +330,17 @@ public class Debugger2Client implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the breakpoint from the debuggee.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
+   *   String debuggeeId = "debuggeeId-1833285553";
+   *   String breakpointId = "breakpointId570266860";
+   *   String clientVersion = "clientVersion771880589";
+   *   debugger2Client.deleteBreakpoint(debuggeeId, breakpointId, clientVersion);
+   * }
+   * }</pre>
    *
    * @param debuggeeId Required. ID of the debuggee whose breakpoint to delete.
    * @param breakpointId Required. ID of the breakpoint to delete.
@@ -259,6 +362,20 @@ public class Debugger2Client implements BackgroundResource {
   /**
    * Deletes the breakpoint from the debuggee.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
+   *   DeleteBreakpointRequest request =
+   *       DeleteBreakpointRequest.newBuilder()
+   *           .setDebuggeeId("debuggeeId-1833285553")
+   *           .setBreakpointId("breakpointId570266860")
+   *           .setClientVersion("clientVersion771880589")
+   *           .build();
+   *   debugger2Client.deleteBreakpoint(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -271,6 +388,20 @@ public class Debugger2Client implements BackgroundResource {
    * Deletes the breakpoint from the debuggee.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
+   *   DeleteBreakpointRequest request =
+   *       DeleteBreakpointRequest.newBuilder()
+   *           .setDebuggeeId("debuggeeId-1833285553")
+   *           .setBreakpointId("breakpointId570266860")
+   *           .setClientVersion("clientVersion771880589")
+   *           .build();
+   *   ApiFuture<Empty> future = debugger2Client.deleteBreakpointCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteBreakpointRequest, Empty> deleteBreakpointCallable() {
     return stub.deleteBreakpointCallable();
@@ -279,6 +410,16 @@ public class Debugger2Client implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all breakpoints for the debuggee.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
+   *   String debuggeeId = "debuggeeId-1833285553";
+   *   String clientVersion = "clientVersion771880589";
+   *   ListBreakpointsResponse response = debugger2Client.listBreakpoints(debuggeeId, clientVersion);
+   * }
+   * }</pre>
    *
    * @param debuggeeId Required. ID of the debuggee whose breakpoints to list.
    * @param clientVersion Required. The client version making the call. Schema:
@@ -298,6 +439,24 @@ public class Debugger2Client implements BackgroundResource {
   /**
    * Lists all breakpoints for the debuggee.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
+   *   ListBreakpointsRequest request =
+   *       ListBreakpointsRequest.newBuilder()
+   *           .setDebuggeeId("debuggeeId-1833285553")
+   *           .setIncludeAllUsers(true)
+   *           .setIncludeInactive(true)
+   *           .setAction(ListBreakpointsRequest.BreakpointActionValue.newBuilder().build())
+   *           .setStripResults(true)
+   *           .setWaitToken("waitToken-984229500")
+   *           .setClientVersion("clientVersion771880589")
+   *           .build();
+   *   ListBreakpointsResponse response = debugger2Client.listBreakpoints(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -310,6 +469,25 @@ public class Debugger2Client implements BackgroundResource {
    * Lists all breakpoints for the debuggee.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
+   *   ListBreakpointsRequest request =
+   *       ListBreakpointsRequest.newBuilder()
+   *           .setDebuggeeId("debuggeeId-1833285553")
+   *           .setIncludeAllUsers(true)
+   *           .setIncludeInactive(true)
+   *           .setAction(ListBreakpointsRequest.BreakpointActionValue.newBuilder().build())
+   *           .setStripResults(true)
+   *           .setWaitToken("waitToken-984229500")
+   *           .setClientVersion("clientVersion771880589")
+   *           .build();
+   *   ApiFuture<ListBreakpointsResponse> future =
+   *       debugger2Client.listBreakpointsCallable().futureCall(request);
+   *   // Do something.
+   *   ListBreakpointsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListBreakpointsRequest, ListBreakpointsResponse>
       listBreakpointsCallable() {
@@ -319,6 +497,16 @@ public class Debugger2Client implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all the debuggees that the user has access to.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
+   *   String project = "project-309310695";
+   *   String clientVersion = "clientVersion771880589";
+   *   ListDebuggeesResponse response = debugger2Client.listDebuggees(project, clientVersion);
+   * }
+   * }</pre>
    *
    * @param project Required. Project number of a Google Cloud project whose debuggees to list.
    * @param clientVersion Required. The client version making the call. Schema:
@@ -338,6 +526,20 @@ public class Debugger2Client implements BackgroundResource {
   /**
    * Lists all the debuggees that the user has access to.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
+   *   ListDebuggeesRequest request =
+   *       ListDebuggeesRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setIncludeInactive(true)
+   *           .setClientVersion("clientVersion771880589")
+   *           .build();
+   *   ListDebuggeesResponse response = debugger2Client.listDebuggees(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -350,6 +552,21 @@ public class Debugger2Client implements BackgroundResource {
    * Lists all the debuggees that the user has access to.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
+   *   ListDebuggeesRequest request =
+   *       ListDebuggeesRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setIncludeInactive(true)
+   *           .setClientVersion("clientVersion771880589")
+   *           .build();
+   *   ApiFuture<ListDebuggeesResponse> future =
+   *       debugger2Client.listDebuggeesCallable().futureCall(request);
+   *   // Do something.
+   *   ListDebuggeesResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListDebuggeesRequest, ListDebuggeesResponse> listDebuggeesCallable() {
     return stub.listDebuggeesCallable();

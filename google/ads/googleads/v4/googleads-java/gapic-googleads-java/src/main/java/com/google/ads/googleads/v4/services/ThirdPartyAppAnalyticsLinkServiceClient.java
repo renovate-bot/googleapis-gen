@@ -34,6 +34,21 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (ThirdPartyAppAnalyticsLinkServiceClient thirdPartyAppAnalyticsLinkServiceClient =
+ *     ThirdPartyAppAnalyticsLinkServiceClient.create()) {
+ *   GetThirdPartyAppAnalyticsLinkRequest request =
+ *       GetThirdPartyAppAnalyticsLinkRequest.newBuilder()
+ *           .setResourceName(
+ *               ThirdPartyAppAnalyticsLinkName.of(
+ *                       "[CUSTOMER]", "[THIRD_PARTY_APP_ANALYTICS_LINK]")
+ *                   .toString())
+ *           .build();
+ *   ThirdPartyAppAnalyticsLink response =
+ *       thirdPartyAppAnalyticsLinkServiceClient.getThirdPartyAppAnalyticsLink(request);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the ThirdPartyAppAnalyticsLinkServiceClient object to
  * clean up resources such as threads. In the example above, try-with-resources is used, which
  * automatically calls close().
@@ -145,6 +160,23 @@ public class ThirdPartyAppAnalyticsLinkServiceClient implements BackgroundResour
   /**
    * Returns the third party app analytics link in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ThirdPartyAppAnalyticsLinkServiceClient thirdPartyAppAnalyticsLinkServiceClient =
+   *     ThirdPartyAppAnalyticsLinkServiceClient.create()) {
+   *   GetThirdPartyAppAnalyticsLinkRequest request =
+   *       GetThirdPartyAppAnalyticsLinkRequest.newBuilder()
+   *           .setResourceName(
+   *               ThirdPartyAppAnalyticsLinkName.of(
+   *                       "[CUSTOMER]", "[THIRD_PARTY_APP_ANALYTICS_LINK]")
+   *                   .toString())
+   *           .build();
+   *   ThirdPartyAppAnalyticsLink response =
+   *       thirdPartyAppAnalyticsLinkServiceClient.getThirdPartyAppAnalyticsLink(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -158,6 +190,25 @@ public class ThirdPartyAppAnalyticsLinkServiceClient implements BackgroundResour
    * Returns the third party app analytics link in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ThirdPartyAppAnalyticsLinkServiceClient thirdPartyAppAnalyticsLinkServiceClient =
+   *     ThirdPartyAppAnalyticsLinkServiceClient.create()) {
+   *   GetThirdPartyAppAnalyticsLinkRequest request =
+   *       GetThirdPartyAppAnalyticsLinkRequest.newBuilder()
+   *           .setResourceName(
+   *               ThirdPartyAppAnalyticsLinkName.of(
+   *                       "[CUSTOMER]", "[THIRD_PARTY_APP_ANALYTICS_LINK]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<ThirdPartyAppAnalyticsLink> future =
+   *       thirdPartyAppAnalyticsLinkServiceClient
+   *           .getThirdPartyAppAnalyticsLinkCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   ThirdPartyAppAnalyticsLink response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetThirdPartyAppAnalyticsLinkRequest, ThirdPartyAppAnalyticsLink>
       getThirdPartyAppAnalyticsLinkCallable() {

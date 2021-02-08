@@ -20,6 +20,16 @@
  * <p>======================= ManagedIdentitiesServiceClient =======================
  *
  * <p>Sample for ManagedIdentitiesServiceClient:
+ *
+ * <pre>{@code
+ * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+ *     ManagedIdentitiesServiceClient.create()) {
+ *   ResetAdminPasswordRequest request =
+ *       ResetAdminPasswordRequest.newBuilder().setName("name3373707").build();
+ *   ResetAdminPasswordResponse response =
+ *       managedIdentitiesServiceClient.resetAdminPassword(request);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.managedidentities.v1beta1;

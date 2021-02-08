@@ -35,6 +35,15 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (RecommendationServiceClient recommendationServiceClient =
+ *     RecommendationServiceClient.create()) {
+ *   RecommendationName resourceName =
+ *       RecommendationName.of("[CUSTOMER_ID]", "[RECOMMENDATION_ID]");
+ *   Recommendation response = recommendationServiceClient.getRecommendation(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the RecommendationServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -141,6 +150,17 @@ public class RecommendationServiceClient implements BackgroundResource {
   /**
    * Returns the requested recommendation in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecommendationServiceClient recommendationServiceClient =
+   *     RecommendationServiceClient.create()) {
+   *   RecommendationName resourceName =
+   *       RecommendationName.of("[CUSTOMER_ID]", "[RECOMMENDATION_ID]");
+   *   Recommendation response = recommendationServiceClient.getRecommendation(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the recommendation to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -156,6 +176,17 @@ public class RecommendationServiceClient implements BackgroundResource {
   /**
    * Returns the requested recommendation in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecommendationServiceClient recommendationServiceClient =
+   *     RecommendationServiceClient.create()) {
+   *   String resourceName =
+   *       RecommendationName.of("[CUSTOMER_ID]", "[RECOMMENDATION_ID]").toString();
+   *   Recommendation response = recommendationServiceClient.getRecommendation(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the recommendation to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -169,6 +200,20 @@ public class RecommendationServiceClient implements BackgroundResource {
   /**
    * Returns the requested recommendation in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecommendationServiceClient recommendationServiceClient =
+   *     RecommendationServiceClient.create()) {
+   *   GetRecommendationRequest request =
+   *       GetRecommendationRequest.newBuilder()
+   *           .setResourceName(
+   *               RecommendationName.of("[CUSTOMER_ID]", "[RECOMMENDATION_ID]").toString())
+   *           .build();
+   *   Recommendation response = recommendationServiceClient.getRecommendation(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -181,6 +226,21 @@ public class RecommendationServiceClient implements BackgroundResource {
    * Returns the requested recommendation in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecommendationServiceClient recommendationServiceClient =
+   *     RecommendationServiceClient.create()) {
+   *   GetRecommendationRequest request =
+   *       GetRecommendationRequest.newBuilder()
+   *           .setResourceName(
+   *               RecommendationName.of("[CUSTOMER_ID]", "[RECOMMENDATION_ID]").toString())
+   *           .build();
+   *   ApiFuture<Recommendation> future =
+   *       recommendationServiceClient.getRecommendationCallable().futureCall(request);
+   *   // Do something.
+   *   Recommendation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetRecommendationRequest, Recommendation> getRecommendationCallable() {
     return stub.getRecommendationCallable();
@@ -189,6 +249,18 @@ public class RecommendationServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Applies given recommendations with corresponding apply parameters.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecommendationServiceClient recommendationServiceClient =
+   *     RecommendationServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   List<ApplyRecommendationOperation> operations = new ArrayList<>();
+   *   ApplyRecommendationResponse response =
+   *       recommendationServiceClient.applyRecommendation(customerId, operations);
+   * }
+   * }</pre>
    *
    * @param customerId Required. The ID of the customer with the recommendation.
    * @param operations Required. The list of operations to apply recommendations. If
@@ -210,6 +282,22 @@ public class RecommendationServiceClient implements BackgroundResource {
   /**
    * Applies given recommendations with corresponding apply parameters.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecommendationServiceClient recommendationServiceClient =
+   *     RecommendationServiceClient.create()) {
+   *   ApplyRecommendationRequest request =
+   *       ApplyRecommendationRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<ApplyRecommendationOperation>())
+   *           .setPartialFailure(true)
+   *           .build();
+   *   ApplyRecommendationResponse response =
+   *       recommendationServiceClient.applyRecommendation(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -222,6 +310,22 @@ public class RecommendationServiceClient implements BackgroundResource {
    * Applies given recommendations with corresponding apply parameters.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecommendationServiceClient recommendationServiceClient =
+   *     RecommendationServiceClient.create()) {
+   *   ApplyRecommendationRequest request =
+   *       ApplyRecommendationRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<ApplyRecommendationOperation>())
+   *           .setPartialFailure(true)
+   *           .build();
+   *   ApiFuture<ApplyRecommendationResponse> future =
+   *       recommendationServiceClient.applyRecommendationCallable().futureCall(request);
+   *   // Do something.
+   *   ApplyRecommendationResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ApplyRecommendationRequest, ApplyRecommendationResponse>
       applyRecommendationCallable() {
@@ -231,6 +335,19 @@ public class RecommendationServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Dismisses given recommendations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecommendationServiceClient recommendationServiceClient =
+   *     RecommendationServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   List<DismissRecommendationRequest.DismissRecommendationOperation> operations =
+   *       new ArrayList<>();
+   *   DismissRecommendationResponse response =
+   *       recommendationServiceClient.dismissRecommendation(customerId, operations);
+   * }
+   * }</pre>
    *
    * @param customerId Required. The ID of the customer with the recommendation.
    * @param operations Required. The list of operations to dismiss recommendations. If
@@ -253,6 +370,23 @@ public class RecommendationServiceClient implements BackgroundResource {
   /**
    * Dismisses given recommendations.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecommendationServiceClient recommendationServiceClient =
+   *     RecommendationServiceClient.create()) {
+   *   DismissRecommendationRequest request =
+   *       DismissRecommendationRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(
+   *               new ArrayList<DismissRecommendationRequest.DismissRecommendationOperation>())
+   *           .setPartialFailure(true)
+   *           .build();
+   *   DismissRecommendationResponse response =
+   *       recommendationServiceClient.dismissRecommendation(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -266,6 +400,23 @@ public class RecommendationServiceClient implements BackgroundResource {
    * Dismisses given recommendations.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RecommendationServiceClient recommendationServiceClient =
+   *     RecommendationServiceClient.create()) {
+   *   DismissRecommendationRequest request =
+   *       DismissRecommendationRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(
+   *               new ArrayList<DismissRecommendationRequest.DismissRecommendationOperation>())
+   *           .setPartialFailure(true)
+   *           .build();
+   *   ApiFuture<DismissRecommendationResponse> future =
+   *       recommendationServiceClient.dismissRecommendationCallable().futureCall(request);
+   *   // Do something.
+   *   DismissRecommendationResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DismissRecommendationRequest, DismissRecommendationResponse>
       dismissRecommendationCallable() {

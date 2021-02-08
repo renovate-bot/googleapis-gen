@@ -34,6 +34,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (ChangeStatusServiceClient changeStatusServiceClient = ChangeStatusServiceClient.create()) {
+ *   ChangeStatusName resourceName = ChangeStatusName.of("[CUSTOMER_ID]", "[CHANGE_STATUS_ID]");
+ *   ChangeStatus response = changeStatusServiceClient.getChangeStatus(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the ChangeStatusServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -140,6 +147,15 @@ public class ChangeStatusServiceClient implements BackgroundResource {
   /**
    * Returns the requested change status in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ChangeStatusServiceClient changeStatusServiceClient = ChangeStatusServiceClient.create()) {
+   *   ChangeStatusName resourceName = ChangeStatusName.of("[CUSTOMER_ID]", "[CHANGE_STATUS_ID]");
+   *   ChangeStatus response = changeStatusServiceClient.getChangeStatus(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the change status to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -155,6 +171,15 @@ public class ChangeStatusServiceClient implements BackgroundResource {
   /**
    * Returns the requested change status in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ChangeStatusServiceClient changeStatusServiceClient = ChangeStatusServiceClient.create()) {
+   *   String resourceName = ChangeStatusName.of("[CUSTOMER_ID]", "[CHANGE_STATUS_ID]").toString();
+   *   ChangeStatus response = changeStatusServiceClient.getChangeStatus(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the change status to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -168,6 +193,19 @@ public class ChangeStatusServiceClient implements BackgroundResource {
   /**
    * Returns the requested change status in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ChangeStatusServiceClient changeStatusServiceClient = ChangeStatusServiceClient.create()) {
+   *   GetChangeStatusRequest request =
+   *       GetChangeStatusRequest.newBuilder()
+   *           .setResourceName(
+   *               ChangeStatusName.of("[CUSTOMER_ID]", "[CHANGE_STATUS_ID]").toString())
+   *           .build();
+   *   ChangeStatus response = changeStatusServiceClient.getChangeStatus(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -180,6 +218,20 @@ public class ChangeStatusServiceClient implements BackgroundResource {
    * Returns the requested change status in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ChangeStatusServiceClient changeStatusServiceClient = ChangeStatusServiceClient.create()) {
+   *   GetChangeStatusRequest request =
+   *       GetChangeStatusRequest.newBuilder()
+   *           .setResourceName(
+   *               ChangeStatusName.of("[CUSTOMER_ID]", "[CHANGE_STATUS_ID]").toString())
+   *           .build();
+   *   ApiFuture<ChangeStatus> future =
+   *       changeStatusServiceClient.getChangeStatusCallable().futureCall(request);
+   *   // Do something.
+   *   ChangeStatus response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetChangeStatusRequest, ChangeStatus> getChangeStatusCallable() {
     return stub.getChangeStatusCallable();

@@ -71,17 +71,18 @@ import org.threeten.bp.Duration;
  * <p>For example, to set the total timeout of mutateRow to 30 seconds:
  *
  * <pre>{@code
- * BigtableStubSettings.Builder bigtableSettingsBuilder = BigtableStubSettings.newBuilder();
- * bigtableSettingsBuilder
+ * BigtableStubSettings.Builder baseBigtableDataSettingsBuilder =
+ *     BigtableStubSettings.newBuilder();
+ * baseBigtableDataSettingsBuilder
  *     .mutateRowSettings()
  *     .setRetrySettings(
- *         bigtableSettingsBuilder
+ *         baseBigtableDataSettingsBuilder
  *             .mutateRowSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * BigtableStubSettings bigtableSettings = bigtableSettingsBuilder.build();
+ * BigtableStubSettings baseBigtableDataSettings = baseBigtableDataSettingsBuilder.build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")

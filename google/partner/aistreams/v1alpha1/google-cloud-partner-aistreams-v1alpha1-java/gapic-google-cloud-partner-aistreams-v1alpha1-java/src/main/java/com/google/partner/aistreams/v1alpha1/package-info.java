@@ -22,6 +22,13 @@
  * <p>Service Description: AIStreams service.
  *
  * <p>Sample for AIStreamsClient:
+ *
+ * <pre>{@code
+ * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+ *   ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+ *   Cluster response = aIStreamsClient.getCluster(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.partner.aistreams.v1alpha1;

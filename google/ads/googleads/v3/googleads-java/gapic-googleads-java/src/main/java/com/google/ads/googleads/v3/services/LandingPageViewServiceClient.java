@@ -34,6 +34,15 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (LandingPageViewServiceClient landingPageViewServiceClient =
+ *     LandingPageViewServiceClient.create()) {
+ *   LandingPageViewName resourceName =
+ *       LandingPageViewName.of("[CUSTOMER]", "[LANDING_PAGE_VIEW]");
+ *   LandingPageView response = landingPageViewServiceClient.getLandingPageView(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the LandingPageViewServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -141,6 +150,17 @@ public class LandingPageViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested landing page view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (LandingPageViewServiceClient landingPageViewServiceClient =
+   *     LandingPageViewServiceClient.create()) {
+   *   LandingPageViewName resourceName =
+   *       LandingPageViewName.of("[CUSTOMER]", "[LANDING_PAGE_VIEW]");
+   *   LandingPageView response = landingPageViewServiceClient.getLandingPageView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the landing page view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -156,6 +176,16 @@ public class LandingPageViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested landing page view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (LandingPageViewServiceClient landingPageViewServiceClient =
+   *     LandingPageViewServiceClient.create()) {
+   *   String resourceName = LandingPageViewName.of("[CUSTOMER]", "[LANDING_PAGE_VIEW]").toString();
+   *   LandingPageView response = landingPageViewServiceClient.getLandingPageView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the landing page view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -169,6 +199,20 @@ public class LandingPageViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested landing page view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (LandingPageViewServiceClient landingPageViewServiceClient =
+   *     LandingPageViewServiceClient.create()) {
+   *   GetLandingPageViewRequest request =
+   *       GetLandingPageViewRequest.newBuilder()
+   *           .setResourceName(
+   *               LandingPageViewName.of("[CUSTOMER]", "[LANDING_PAGE_VIEW]").toString())
+   *           .build();
+   *   LandingPageView response = landingPageViewServiceClient.getLandingPageView(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -181,6 +225,21 @@ public class LandingPageViewServiceClient implements BackgroundResource {
    * Returns the requested landing page view in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (LandingPageViewServiceClient landingPageViewServiceClient =
+   *     LandingPageViewServiceClient.create()) {
+   *   GetLandingPageViewRequest request =
+   *       GetLandingPageViewRequest.newBuilder()
+   *           .setResourceName(
+   *               LandingPageViewName.of("[CUSTOMER]", "[LANDING_PAGE_VIEW]").toString())
+   *           .build();
+   *   ApiFuture<LandingPageView> future =
+   *       landingPageViewServiceClient.getLandingPageViewCallable().futureCall(request);
+   *   // Do something.
+   *   LandingPageView response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetLandingPageViewRequest, LandingPageView>
       getLandingPageViewCallable() {

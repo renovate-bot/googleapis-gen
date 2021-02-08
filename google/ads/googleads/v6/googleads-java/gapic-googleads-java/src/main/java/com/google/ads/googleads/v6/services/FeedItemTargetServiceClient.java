@@ -35,6 +35,20 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (FeedItemTargetServiceClient feedItemTargetServiceClient =
+ *     FeedItemTargetServiceClient.create()) {
+ *   FeedItemTargetName resourceName =
+ *       FeedItemTargetName.of(
+ *           "[CUSTOMER_ID]",
+ *           "[FEED_ID]",
+ *           "[FEED_ITEM_ID]",
+ *           "[FEED_ITEM_TARGET_TYPE]",
+ *           "[FEED_ITEM_TARGET_ID]");
+ *   FeedItemTarget response = feedItemTargetServiceClient.getFeedItemTarget(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the FeedItemTargetServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -141,6 +155,22 @@ public class FeedItemTargetServiceClient implements BackgroundResource {
   /**
    * Returns the requested feed item targets in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FeedItemTargetServiceClient feedItemTargetServiceClient =
+   *     FeedItemTargetServiceClient.create()) {
+   *   FeedItemTargetName resourceName =
+   *       FeedItemTargetName.of(
+   *           "[CUSTOMER_ID]",
+   *           "[FEED_ID]",
+   *           "[FEED_ITEM_ID]",
+   *           "[FEED_ITEM_TARGET_TYPE]",
+   *           "[FEED_ITEM_TARGET_ID]");
+   *   FeedItemTarget response = feedItemTargetServiceClient.getFeedItemTarget(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the feed item targets to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -156,6 +186,23 @@ public class FeedItemTargetServiceClient implements BackgroundResource {
   /**
    * Returns the requested feed item targets in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FeedItemTargetServiceClient feedItemTargetServiceClient =
+   *     FeedItemTargetServiceClient.create()) {
+   *   String resourceName =
+   *       FeedItemTargetName.of(
+   *               "[CUSTOMER_ID]",
+   *               "[FEED_ID]",
+   *               "[FEED_ITEM_ID]",
+   *               "[FEED_ITEM_TARGET_TYPE]",
+   *               "[FEED_ITEM_TARGET_ID]")
+   *           .toString();
+   *   FeedItemTarget response = feedItemTargetServiceClient.getFeedItemTarget(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the feed item targets to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -169,6 +216,26 @@ public class FeedItemTargetServiceClient implements BackgroundResource {
   /**
    * Returns the requested feed item targets in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FeedItemTargetServiceClient feedItemTargetServiceClient =
+   *     FeedItemTargetServiceClient.create()) {
+   *   GetFeedItemTargetRequest request =
+   *       GetFeedItemTargetRequest.newBuilder()
+   *           .setResourceName(
+   *               FeedItemTargetName.of(
+   *                       "[CUSTOMER_ID]",
+   *                       "[FEED_ID]",
+   *                       "[FEED_ITEM_ID]",
+   *                       "[FEED_ITEM_TARGET_TYPE]",
+   *                       "[FEED_ITEM_TARGET_ID]")
+   *                   .toString())
+   *           .build();
+   *   FeedItemTarget response = feedItemTargetServiceClient.getFeedItemTarget(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -181,6 +248,27 @@ public class FeedItemTargetServiceClient implements BackgroundResource {
    * Returns the requested feed item targets in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FeedItemTargetServiceClient feedItemTargetServiceClient =
+   *     FeedItemTargetServiceClient.create()) {
+   *   GetFeedItemTargetRequest request =
+   *       GetFeedItemTargetRequest.newBuilder()
+   *           .setResourceName(
+   *               FeedItemTargetName.of(
+   *                       "[CUSTOMER_ID]",
+   *                       "[FEED_ID]",
+   *                       "[FEED_ITEM_ID]",
+   *                       "[FEED_ITEM_TARGET_TYPE]",
+   *                       "[FEED_ITEM_TARGET_ID]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<FeedItemTarget> future =
+   *       feedItemTargetServiceClient.getFeedItemTargetCallable().futureCall(request);
+   *   // Do something.
+   *   FeedItemTarget response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetFeedItemTargetRequest, FeedItemTarget> getFeedItemTargetCallable() {
     return stub.getFeedItemTargetCallable();
@@ -189,6 +277,18 @@ public class FeedItemTargetServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates or removes feed item targets. Operation statuses are returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FeedItemTargetServiceClient feedItemTargetServiceClient =
+   *     FeedItemTargetServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   List<FeedItemTargetOperation> operations = new ArrayList<>();
+   *   MutateFeedItemTargetsResponse response =
+   *       feedItemTargetServiceClient.mutateFeedItemTargets(customerId, operations);
+   * }
+   * }</pre>
    *
    * @param customerId Required. The ID of the customer whose feed item targets are being modified.
    * @param operations Required. The list of operations to perform on individual feed item targets.
@@ -208,6 +308,21 @@ public class FeedItemTargetServiceClient implements BackgroundResource {
   /**
    * Creates or removes feed item targets. Operation statuses are returned.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FeedItemTargetServiceClient feedItemTargetServiceClient =
+   *     FeedItemTargetServiceClient.create()) {
+   *   MutateFeedItemTargetsRequest request =
+   *       MutateFeedItemTargetsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<FeedItemTargetOperation>())
+   *           .build();
+   *   MutateFeedItemTargetsResponse response =
+   *       feedItemTargetServiceClient.mutateFeedItemTargets(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -221,6 +336,21 @@ public class FeedItemTargetServiceClient implements BackgroundResource {
    * Creates or removes feed item targets. Operation statuses are returned.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FeedItemTargetServiceClient feedItemTargetServiceClient =
+   *     FeedItemTargetServiceClient.create()) {
+   *   MutateFeedItemTargetsRequest request =
+   *       MutateFeedItemTargetsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<FeedItemTargetOperation>())
+   *           .build();
+   *   ApiFuture<MutateFeedItemTargetsResponse> future =
+   *       feedItemTargetServiceClient.mutateFeedItemTargetsCallable().futureCall(request);
+   *   // Do something.
+   *   MutateFeedItemTargetsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<MutateFeedItemTargetsRequest, MutateFeedItemTargetsResponse>
       mutateFeedItemTargetsCallable() {

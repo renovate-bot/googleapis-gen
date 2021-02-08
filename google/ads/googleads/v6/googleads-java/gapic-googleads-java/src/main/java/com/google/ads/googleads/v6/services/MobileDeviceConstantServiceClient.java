@@ -34,6 +34,15 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (MobileDeviceConstantServiceClient mobileDeviceConstantServiceClient =
+ *     MobileDeviceConstantServiceClient.create()) {
+ *   MobileDeviceConstantName resourceName = MobileDeviceConstantName.of("[CRITERION_ID]");
+ *   MobileDeviceConstant response =
+ *       mobileDeviceConstantServiceClient.getMobileDeviceConstant(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the MobileDeviceConstantServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -143,6 +152,17 @@ public class MobileDeviceConstantServiceClient implements BackgroundResource {
   /**
    * Returns the requested mobile device constant in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MobileDeviceConstantServiceClient mobileDeviceConstantServiceClient =
+   *     MobileDeviceConstantServiceClient.create()) {
+   *   MobileDeviceConstantName resourceName = MobileDeviceConstantName.of("[CRITERION_ID]");
+   *   MobileDeviceConstant response =
+   *       mobileDeviceConstantServiceClient.getMobileDeviceConstant(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. Resource name of the mobile device to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -158,6 +178,17 @@ public class MobileDeviceConstantServiceClient implements BackgroundResource {
   /**
    * Returns the requested mobile device constant in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MobileDeviceConstantServiceClient mobileDeviceConstantServiceClient =
+   *     MobileDeviceConstantServiceClient.create()) {
+   *   String resourceName = MobileDeviceConstantName.of("[CRITERION_ID]").toString();
+   *   MobileDeviceConstant response =
+   *       mobileDeviceConstantServiceClient.getMobileDeviceConstant(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. Resource name of the mobile device to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -170,6 +201,20 @@ public class MobileDeviceConstantServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the requested mobile device constant in full detail.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MobileDeviceConstantServiceClient mobileDeviceConstantServiceClient =
+   *     MobileDeviceConstantServiceClient.create()) {
+   *   GetMobileDeviceConstantRequest request =
+   *       GetMobileDeviceConstantRequest.newBuilder()
+   *           .setResourceName(MobileDeviceConstantName.of("[CRITERION_ID]").toString())
+   *           .build();
+   *   MobileDeviceConstant response =
+   *       mobileDeviceConstantServiceClient.getMobileDeviceConstant(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -184,6 +229,20 @@ public class MobileDeviceConstantServiceClient implements BackgroundResource {
    * Returns the requested mobile device constant in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MobileDeviceConstantServiceClient mobileDeviceConstantServiceClient =
+   *     MobileDeviceConstantServiceClient.create()) {
+   *   GetMobileDeviceConstantRequest request =
+   *       GetMobileDeviceConstantRequest.newBuilder()
+   *           .setResourceName(MobileDeviceConstantName.of("[CRITERION_ID]").toString())
+   *           .build();
+   *   ApiFuture<MobileDeviceConstant> future =
+   *       mobileDeviceConstantServiceClient.getMobileDeviceConstantCallable().futureCall(request);
+   *   // Do something.
+   *   MobileDeviceConstant response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetMobileDeviceConstantRequest, MobileDeviceConstant>
       getMobileDeviceConstantCallable() {

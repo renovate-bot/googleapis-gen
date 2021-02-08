@@ -22,6 +22,14 @@
  * <p>Service Description: OS Config agent endpoint API.
  *
  * <p>Sample for AgentEndpointServiceClient:
+ *
+ * <pre>{@code
+ * try (AgentEndpointServiceClient agentEndpointServiceClient =
+ *     AgentEndpointServiceClient.create()) {
+ *   String instanceIdToken = "instanceIdToken55138121";
+ *   StartNextTaskResponse response = agentEndpointServiceClient.startNextTask(instanceIdToken);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.osconfig.agentendpoint.v1;

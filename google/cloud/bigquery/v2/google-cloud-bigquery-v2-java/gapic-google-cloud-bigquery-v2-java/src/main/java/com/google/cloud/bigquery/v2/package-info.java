@@ -20,6 +20,15 @@
  * <p>======================= ModelServiceClient =======================
  *
  * <p>Sample for ModelServiceClient:
+ *
+ * <pre>{@code
+ * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+ *   String projectId = "projectId-894832108";
+ *   String datasetId = "datasetId-345342029";
+ *   String modelId = "modelId1226956324";
+ *   ModelProto.Model response = modelServiceClient.getModel(projectId, datasetId, modelId);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.bigquery.v2;

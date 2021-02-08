@@ -42,6 +42,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+ *   Catalog catalog = Catalog.newBuilder().build();
+ *   FieldMask updateMask = FieldMask.newBuilder().build();
+ *   Catalog response = catalogServiceClient.updateCatalog(catalog, updateMask);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the CatalogServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -146,6 +154,17 @@ public class CatalogServiceClient implements BackgroundResource {
   /**
    * Lists all the [Catalog][google.cloud.retail.v2alpha.Catalog]s associated with the project.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Catalog element : catalogServiceClient.listCatalogs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The account resource name with an associated location.
    *     <p>If the caller does not have permission to list
    *     [Catalog][google.cloud.retail.v2alpha.Catalog]s under this location, regardless of whether
@@ -164,6 +183,17 @@ public class CatalogServiceClient implements BackgroundResource {
   /**
    * Lists all the [Catalog][google.cloud.retail.v2alpha.Catalog]s associated with the project.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (Catalog element : catalogServiceClient.listCatalogs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The account resource name with an associated location.
    *     <p>If the caller does not have permission to list
    *     [Catalog][google.cloud.retail.v2alpha.Catalog]s under this location, regardless of whether
@@ -179,6 +209,22 @@ public class CatalogServiceClient implements BackgroundResource {
   /**
    * Lists all the [Catalog][google.cloud.retail.v2alpha.Catalog]s associated with the project.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   ListCatalogsRequest request =
+   *       ListCatalogsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Catalog element : catalogServiceClient.listCatalogs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -191,6 +237,23 @@ public class CatalogServiceClient implements BackgroundResource {
    * Lists all the [Catalog][google.cloud.retail.v2alpha.Catalog]s associated with the project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   ListCatalogsRequest request =
+   *       ListCatalogsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Catalog> future =
+   *       catalogServiceClient.listCatalogsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Catalog element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListCatalogsRequest, ListCatalogsPagedResponse>
       listCatalogsPagedCallable() {
@@ -202,6 +265,23 @@ public class CatalogServiceClient implements BackgroundResource {
    * Lists all the [Catalog][google.cloud.retail.v2alpha.Catalog]s associated with the project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   while (true) {
+   *     ListCatalogsResponse response = catalogServiceClient.listCatalogsCallable().call(request);
+   *     for (Catalog element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListCatalogsRequest, ListCatalogsResponse> listCatalogsCallable() {
     return stub.listCatalogsCallable();
@@ -210,6 +290,16 @@ public class CatalogServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the [Catalog][google.cloud.retail.v2alpha.Catalog]s.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   Catalog catalog = Catalog.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Catalog response = catalogServiceClient.updateCatalog(catalog, updateMask);
+   * }
+   * }</pre>
    *
    * @param catalog Required. The [Catalog][google.cloud.retail.v2alpha.Catalog] to update.
    *     <p>If the caller does not have permission to update the
@@ -234,6 +324,19 @@ public class CatalogServiceClient implements BackgroundResource {
   /**
    * Updates the [Catalog][google.cloud.retail.v2alpha.Catalog]s.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   UpdateCatalogRequest request =
+   *       UpdateCatalogRequest.newBuilder()
+   *           .setCatalog(Catalog.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Catalog response = catalogServiceClient.updateCatalog(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -246,6 +349,19 @@ public class CatalogServiceClient implements BackgroundResource {
    * Updates the [Catalog][google.cloud.retail.v2alpha.Catalog]s.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   UpdateCatalogRequest request =
+   *       UpdateCatalogRequest.newBuilder()
+   *           .setCatalog(Catalog.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Catalog> future = catalogServiceClient.updateCatalogCallable().futureCall(request);
+   *   // Do something.
+   *   Catalog response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateCatalogRequest, Catalog> updateCatalogCallable() {
     return stub.updateCatalogCallable();

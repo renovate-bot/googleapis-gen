@@ -34,6 +34,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (ClickViewServiceClient clickViewServiceClient = ClickViewServiceClient.create()) {
+ *   ClickViewName resourceName = ClickViewName.of("[CUSTOMER]", "[CLICK_VIEW]");
+ *   ClickView response = clickViewServiceClient.getClickView(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the ClickViewServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -140,6 +147,15 @@ public class ClickViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested click view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClickViewServiceClient clickViewServiceClient = ClickViewServiceClient.create()) {
+   *   ClickViewName resourceName = ClickViewName.of("[CUSTOMER]", "[CLICK_VIEW]");
+   *   ClickView response = clickViewServiceClient.getClickView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the click view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -155,6 +171,15 @@ public class ClickViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested click view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClickViewServiceClient clickViewServiceClient = ClickViewServiceClient.create()) {
+   *   String resourceName = ClickViewName.of("[CUSTOMER]", "[CLICK_VIEW]").toString();
+   *   ClickView response = clickViewServiceClient.getClickView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the click view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -168,6 +193,18 @@ public class ClickViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested click view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClickViewServiceClient clickViewServiceClient = ClickViewServiceClient.create()) {
+   *   GetClickViewRequest request =
+   *       GetClickViewRequest.newBuilder()
+   *           .setResourceName(ClickViewName.of("[CUSTOMER]", "[CLICK_VIEW]").toString())
+   *           .build();
+   *   ClickView response = clickViewServiceClient.getClickView(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -180,6 +217,19 @@ public class ClickViewServiceClient implements BackgroundResource {
    * Returns the requested click view in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClickViewServiceClient clickViewServiceClient = ClickViewServiceClient.create()) {
+   *   GetClickViewRequest request =
+   *       GetClickViewRequest.newBuilder()
+   *           .setResourceName(ClickViewName.of("[CUSTOMER]", "[CLICK_VIEW]").toString())
+   *           .build();
+   *   ApiFuture<ClickView> future =
+   *       clickViewServiceClient.getClickViewCallable().futureCall(request);
+   *   // Do something.
+   *   ClickView response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetClickViewRequest, ClickView> getClickViewCallable() {
     return stub.getClickViewCallable();

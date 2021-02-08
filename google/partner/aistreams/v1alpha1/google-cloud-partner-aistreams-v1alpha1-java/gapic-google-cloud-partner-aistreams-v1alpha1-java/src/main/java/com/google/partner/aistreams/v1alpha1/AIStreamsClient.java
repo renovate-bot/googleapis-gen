@@ -47,6 +47,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+ *   ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+ *   Cluster response = aIStreamsClient.getCluster(name);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the AIStreamsClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -160,6 +167,17 @@ public class AIStreamsClient implements BackgroundResource {
   /**
    * Lists Clusters in a given project and location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Cluster element : aIStreamsClient.listClusters(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent that owns the collection of Clusters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -175,6 +193,17 @@ public class AIStreamsClient implements BackgroundResource {
   /**
    * Lists Clusters in a given project and location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (Cluster element : aIStreamsClient.listClusters(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent that owns the collection of Clusters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -186,6 +215,24 @@ public class AIStreamsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Clusters in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   ListClustersRequest request =
+   *       ListClustersRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (Cluster element : aIStreamsClient.listClusters(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -199,6 +246,24 @@ public class AIStreamsClient implements BackgroundResource {
    * Lists Clusters in a given project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   ListClustersRequest request =
+   *       ListClustersRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<Cluster> future = aIStreamsClient.listClustersPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Cluster element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListClustersRequest, ListClustersPagedResponse>
       listClustersPagedCallable() {
@@ -210,6 +275,23 @@ public class AIStreamsClient implements BackgroundResource {
    * Lists Clusters in a given project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   while (true) {
+   *     ListClustersResponse response = aIStreamsClient.listClustersCallable().call(request);
+   *     for (Cluster element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable() {
     return stub.listClustersCallable();
@@ -218,6 +300,15 @@ public class AIStreamsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets details of a single Cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+   *   Cluster response = aIStreamsClient.getCluster(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the Cluster resource to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -232,6 +323,15 @@ public class AIStreamsClient implements BackgroundResource {
   /**
    * Gets details of a single Cluster.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   String name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString();
+   *   Cluster response = aIStreamsClient.getCluster(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the Cluster resource to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -243,6 +343,18 @@ public class AIStreamsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets details of a single Cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   GetClusterRequest request =
+   *       GetClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .build();
+   *   Cluster response = aIStreamsClient.getCluster(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -256,6 +368,18 @@ public class AIStreamsClient implements BackgroundResource {
    * Gets details of a single Cluster.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   GetClusterRequest request =
+   *       GetClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .build();
+   *   ApiFuture<Cluster> future = aIStreamsClient.getClusterCallable().futureCall(request);
+   *   // Do something.
+   *   Cluster response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetClusterRequest, Cluster> getClusterCallable() {
     return stub.getClusterCallable();
@@ -264,6 +388,17 @@ public class AIStreamsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new Cluster in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Cluster cluster = Cluster.newBuilder().build();
+   *   String clusterId = "clusterId561939637";
+   *   Cluster response = aIStreamsClient.createClusterAsync(parent, cluster, clusterId).get();
+   * }
+   * }</pre>
    *
    * @param parent Required. The parent that owns the collection of Clusters.
    * @param cluster Required. The cluster resource to create.
@@ -285,6 +420,17 @@ public class AIStreamsClient implements BackgroundResource {
   /**
    * Creates a new Cluster in a given project and location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Cluster cluster = Cluster.newBuilder().build();
+   *   String clusterId = "clusterId561939637";
+   *   Cluster response = aIStreamsClient.createClusterAsync(parent, cluster, clusterId).get();
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent that owns the collection of Clusters.
    * @param cluster Required. The cluster resource to create.
    * @param clusterId Required. The cluster identifier.
@@ -305,6 +451,21 @@ public class AIStreamsClient implements BackgroundResource {
   /**
    * Creates a new Cluster in a given project and location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   CreateClusterRequest request =
+   *       CreateClusterRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setClusterId("clusterId561939637")
+   *           .setCluster(Cluster.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Cluster response = aIStreamsClient.createClusterAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -318,6 +479,22 @@ public class AIStreamsClient implements BackgroundResource {
    * Creates a new Cluster in a given project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   CreateClusterRequest request =
+   *       CreateClusterRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setClusterId("clusterId561939637")
+   *           .setCluster(Cluster.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Cluster, OperationMetadata> future =
+   *       aIStreamsClient.createClusterOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Cluster response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<CreateClusterRequest, Cluster, OperationMetadata>
       createClusterOperationCallable() {
@@ -329,6 +506,21 @@ public class AIStreamsClient implements BackgroundResource {
    * Creates a new Cluster in a given project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   CreateClusterRequest request =
+   *       CreateClusterRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setClusterId("clusterId561939637")
+   *           .setCluster(Cluster.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = aIStreamsClient.createClusterCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateClusterRequest, Operation> createClusterCallable() {
     return stub.createClusterCallable();
@@ -337,6 +529,16 @@ public class AIStreamsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the parameters of a single Cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   Cluster cluster = Cluster.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Cluster response = aIStreamsClient.updateClusterAsync(cluster, updateMask).get();
+   * }
+   * }</pre>
    *
    * @param cluster Required. The Cluster resource to update.
    * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
@@ -356,6 +558,20 @@ public class AIStreamsClient implements BackgroundResource {
   /**
    * Updates the parameters of a single Cluster.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   UpdateClusterRequest request =
+   *       UpdateClusterRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setCluster(Cluster.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Cluster response = aIStreamsClient.updateClusterAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -369,6 +585,21 @@ public class AIStreamsClient implements BackgroundResource {
    * Updates the parameters of a single Cluster.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   UpdateClusterRequest request =
+   *       UpdateClusterRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setCluster(Cluster.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Cluster, OperationMetadata> future =
+   *       aIStreamsClient.updateClusterOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Cluster response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<UpdateClusterRequest, Cluster, OperationMetadata>
       updateClusterOperationCallable() {
@@ -380,6 +611,20 @@ public class AIStreamsClient implements BackgroundResource {
    * Updates the parameters of a single Cluster.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   UpdateClusterRequest request =
+   *       UpdateClusterRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setCluster(Cluster.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = aIStreamsClient.updateClusterCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateClusterRequest, Operation> updateClusterCallable() {
     return stub.updateClusterCallable();
@@ -388,6 +633,15 @@ public class AIStreamsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single Cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+   *   aIStreamsClient.deleteClusterAsync(name).get();
+   * }
+   * }</pre>
    *
    * @param name Required. The name of cluster to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -402,6 +656,15 @@ public class AIStreamsClient implements BackgroundResource {
   /**
    * Deletes a single Cluster.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   String name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString();
+   *   aIStreamsClient.deleteClusterAsync(name).get();
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of cluster to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -413,6 +676,19 @@ public class AIStreamsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single Cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   DeleteClusterRequest request =
+   *       DeleteClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   aIStreamsClient.deleteClusterAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -427,6 +703,20 @@ public class AIStreamsClient implements BackgroundResource {
    * Deletes a single Cluster.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   DeleteClusterRequest request =
+   *       DeleteClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       aIStreamsClient.deleteClusterOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<DeleteClusterRequest, Empty, OperationMetadata>
       deleteClusterOperationCallable() {
@@ -438,6 +728,19 @@ public class AIStreamsClient implements BackgroundResource {
    * Deletes a single Cluster.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   DeleteClusterRequest request =
+   *       DeleteClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = aIStreamsClient.deleteClusterCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable() {
     return stub.deleteClusterCallable();
@@ -446,6 +749,17 @@ public class AIStreamsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Streams in a given project, location and cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+   *   for (Stream element : aIStreamsClient.listStreams(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent Required. The parent that owns the collection of the Streams.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -462,6 +776,17 @@ public class AIStreamsClient implements BackgroundResource {
   /**
    * Lists Streams in a given project, location and cluster.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   String parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString();
+   *   for (Stream element : aIStreamsClient.listStreams(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent that owns the collection of the Streams.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -473,6 +798,24 @@ public class AIStreamsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Streams in a given project, location and cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   ListStreamsRequest request =
+   *       ListStreamsRequest.newBuilder()
+   *           .setParent(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (Stream element : aIStreamsClient.listStreams(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -486,6 +829,24 @@ public class AIStreamsClient implements BackgroundResource {
    * Lists Streams in a given project, location and cluster.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   ListStreamsRequest request =
+   *       ListStreamsRequest.newBuilder()
+   *           .setParent(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<Stream> future = aIStreamsClient.listStreamsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Stream element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListStreamsRequest, ListStreamsPagedResponse>
       listStreamsPagedCallable() {
@@ -497,6 +858,23 @@ public class AIStreamsClient implements BackgroundResource {
    * Lists Streams in a given project, location and cluster.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   while (true) {
+   *     ListStreamsResponse response = aIStreamsClient.listStreamsCallable().call(request);
+   *     for (Stream element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListStreamsRequest, ListStreamsResponse> listStreamsCallable() {
     return stub.listStreamsCallable();
@@ -505,6 +883,15 @@ public class AIStreamsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets details of a single Stream.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   StreamName name = StreamName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[STREAM]");
+   *   Stream response = aIStreamsClient.getStream(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the stream.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -519,6 +906,15 @@ public class AIStreamsClient implements BackgroundResource {
   /**
    * Gets details of a single Stream.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   String name = StreamName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[STREAM]").toString();
+   *   Stream response = aIStreamsClient.getStream(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the stream.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -530,6 +926,18 @@ public class AIStreamsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets details of a single Stream.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   GetStreamRequest request =
+   *       GetStreamRequest.newBuilder()
+   *           .setName(StreamName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[STREAM]").toString())
+   *           .build();
+   *   Stream response = aIStreamsClient.getStream(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -543,6 +951,18 @@ public class AIStreamsClient implements BackgroundResource {
    * Gets details of a single Stream.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   GetStreamRequest request =
+   *       GetStreamRequest.newBuilder()
+   *           .setName(StreamName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[STREAM]").toString())
+   *           .build();
+   *   ApiFuture<Stream> future = aIStreamsClient.getStreamCallable().futureCall(request);
+   *   // Do something.
+   *   Stream response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetStreamRequest, Stream> getStreamCallable() {
     return stub.getStreamCallable();
@@ -551,6 +971,17 @@ public class AIStreamsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new Stream in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+   *   Stream stream = Stream.newBuilder().build();
+   *   String streamId = "streamId1790933179";
+   *   Stream response = aIStreamsClient.createStreamAsync(parent, stream, streamId).get();
+   * }
+   * }</pre>
    *
    * @param parent Required. The parent that owns the collection of streams.
    * @param stream Required. The stream to create.
@@ -572,6 +1003,17 @@ public class AIStreamsClient implements BackgroundResource {
   /**
    * Creates a new Stream in a given project and location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   String parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString();
+   *   Stream stream = Stream.newBuilder().build();
+   *   String streamId = "streamId1790933179";
+   *   Stream response = aIStreamsClient.createStreamAsync(parent, stream, streamId).get();
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent that owns the collection of streams.
    * @param stream Required. The stream to create.
    * @param streamId Required. The stream identifier.
@@ -592,6 +1034,21 @@ public class AIStreamsClient implements BackgroundResource {
   /**
    * Creates a new Stream in a given project and location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   CreateStreamRequest request =
+   *       CreateStreamRequest.newBuilder()
+   *           .setParent(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setStreamId("streamId1790933179")
+   *           .setStream(Stream.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Stream response = aIStreamsClient.createStreamAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -605,6 +1062,22 @@ public class AIStreamsClient implements BackgroundResource {
    * Creates a new Stream in a given project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   CreateStreamRequest request =
+   *       CreateStreamRequest.newBuilder()
+   *           .setParent(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setStreamId("streamId1790933179")
+   *           .setStream(Stream.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Stream, OperationMetadata> future =
+   *       aIStreamsClient.createStreamOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Stream response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<CreateStreamRequest, Stream, OperationMetadata>
       createStreamOperationCallable() {
@@ -616,6 +1089,21 @@ public class AIStreamsClient implements BackgroundResource {
    * Creates a new Stream in a given project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   CreateStreamRequest request =
+   *       CreateStreamRequest.newBuilder()
+   *           .setParent(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setStreamId("streamId1790933179")
+   *           .setStream(Stream.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = aIStreamsClient.createStreamCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateStreamRequest, Operation> createStreamCallable() {
     return stub.createStreamCallable();
@@ -624,6 +1112,16 @@ public class AIStreamsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the parameters of a single Stream.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   Stream stream = Stream.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Stream response = aIStreamsClient.updateStreamAsync(stream, updateMask).get();
+   * }
+   * }</pre>
    *
    * @param stream Required. The stream resource to update.
    * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
@@ -643,6 +1141,20 @@ public class AIStreamsClient implements BackgroundResource {
   /**
    * Updates the parameters of a single Stream.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   UpdateStreamRequest request =
+   *       UpdateStreamRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setStream(Stream.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Stream response = aIStreamsClient.updateStreamAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -656,6 +1168,21 @@ public class AIStreamsClient implements BackgroundResource {
    * Updates the parameters of a single Stream.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   UpdateStreamRequest request =
+   *       UpdateStreamRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setStream(Stream.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Stream, OperationMetadata> future =
+   *       aIStreamsClient.updateStreamOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Stream response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<UpdateStreamRequest, Stream, OperationMetadata>
       updateStreamOperationCallable() {
@@ -667,6 +1194,20 @@ public class AIStreamsClient implements BackgroundResource {
    * Updates the parameters of a single Stream.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   UpdateStreamRequest request =
+   *       UpdateStreamRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setStream(Stream.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = aIStreamsClient.updateStreamCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateStreamRequest, Operation> updateStreamCallable() {
     return stub.updateStreamCallable();
@@ -675,6 +1216,15 @@ public class AIStreamsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single Stream.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   StreamName name = StreamName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[STREAM]");
+   *   aIStreamsClient.deleteStreamAsync(name).get();
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the stream.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -689,6 +1239,15 @@ public class AIStreamsClient implements BackgroundResource {
   /**
    * Deletes a single Stream.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   String name = StreamName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[STREAM]").toString();
+   *   aIStreamsClient.deleteStreamAsync(name).get();
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the stream.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -700,6 +1259,19 @@ public class AIStreamsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single Stream.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   DeleteStreamRequest request =
+   *       DeleteStreamRequest.newBuilder()
+   *           .setName(StreamName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[STREAM]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   aIStreamsClient.deleteStreamAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -714,6 +1286,20 @@ public class AIStreamsClient implements BackgroundResource {
    * Deletes a single Stream.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   DeleteStreamRequest request =
+   *       DeleteStreamRequest.newBuilder()
+   *           .setName(StreamName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[STREAM]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       aIStreamsClient.deleteStreamOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<DeleteStreamRequest, Empty, OperationMetadata>
       deleteStreamOperationCallable() {
@@ -725,6 +1311,19 @@ public class AIStreamsClient implements BackgroundResource {
    * Deletes a single Stream.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   DeleteStreamRequest request =
+   *       DeleteStreamRequest.newBuilder()
+   *           .setName(StreamName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[STREAM]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = aIStreamsClient.deleteStreamCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteStreamRequest, Operation> deleteStreamCallable() {
     return stub.deleteStreamCallable();

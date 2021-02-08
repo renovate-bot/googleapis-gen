@@ -46,6 +46,20 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+ *   PatchJobs.ExecutePatchJobRequest request =
+ *       PatchJobs.ExecutePatchJobRequest.newBuilder()
+ *           .setParent("parent-995424086")
+ *           .setDescription("description-1724546052")
+ *           .setDuration(Duration.newBuilder().build())
+ *           .setDryRun(true)
+ *           .setDisplayName("displayName1714148973")
+ *           .build();
+ *   PatchJobs.PatchJob response = osConfigServiceClient.executePatchJob(request);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the OsConfigServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -153,6 +167,22 @@ public class OsConfigServiceClient implements BackgroundResource {
   /**
    * Patch VM instances by creating and running a patch job.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchJobs.ExecutePatchJobRequest request =
+   *       PatchJobs.ExecutePatchJobRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setDescription("description-1724546052")
+   *           .setDuration(Duration.newBuilder().build())
+   *           .setDryRun(true)
+   *           .setDisplayName("displayName1714148973")
+   *           .build();
+   *   PatchJobs.PatchJob response = osConfigServiceClient.executePatchJob(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -165,6 +195,23 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Patch VM instances by creating and running a patch job.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchJobs.ExecutePatchJobRequest request =
+   *       PatchJobs.ExecutePatchJobRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setDescription("description-1724546052")
+   *           .setDuration(Duration.newBuilder().build())
+   *           .setDryRun(true)
+   *           .setDisplayName("displayName1714148973")
+   *           .build();
+   *   ApiFuture<PatchJobs.PatchJob> future =
+   *       osConfigServiceClient.executePatchJobCallable().futureCall(request);
+   *   // Do something.
+   *   PatchJobs.PatchJob response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<PatchJobs.ExecutePatchJobRequest, PatchJobs.PatchJob>
       executePatchJobCallable() {
@@ -175,6 +222,16 @@ public class OsConfigServiceClient implements BackgroundResource {
   /**
    * Get the patch job. This can be used to track the progress of an ongoing patch job or review the
    * details of completed jobs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchJobs.GetPatchJobRequest request =
+   *       PatchJobs.GetPatchJobRequest.newBuilder().setName("name3373707").build();
+   *   PatchJobs.PatchJob response = osConfigServiceClient.getPatchJob(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -189,6 +246,17 @@ public class OsConfigServiceClient implements BackgroundResource {
    * details of completed jobs.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchJobs.GetPatchJobRequest request =
+   *       PatchJobs.GetPatchJobRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<PatchJobs.PatchJob> future =
+   *       osConfigServiceClient.getPatchJobCallable().futureCall(request);
+   *   // Do something.
+   *   PatchJobs.PatchJob response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<PatchJobs.GetPatchJobRequest, PatchJobs.PatchJob>
       getPatchJobCallable() {
@@ -198,6 +266,16 @@ public class OsConfigServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Cancel a patch job. The patch job must be active. Canceled patch jobs cannot be restarted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchJobs.CancelPatchJobRequest request =
+   *       PatchJobs.CancelPatchJobRequest.newBuilder().setName("name3373707").build();
+   *   PatchJobs.PatchJob response = osConfigServiceClient.cancelPatchJob(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -211,6 +289,17 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Cancel a patch job. The patch job must be active. Canceled patch jobs cannot be restarted.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchJobs.CancelPatchJobRequest request =
+   *       PatchJobs.CancelPatchJobRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<PatchJobs.PatchJob> future =
+   *       osConfigServiceClient.cancelPatchJobCallable().futureCall(request);
+   *   // Do something.
+   *   PatchJobs.PatchJob response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<PatchJobs.CancelPatchJobRequest, PatchJobs.PatchJob>
       cancelPatchJobCallable() {
@@ -220,6 +309,23 @@ public class OsConfigServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Get a list of patch jobs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchJobs.ListPatchJobsRequest request =
+   *       PatchJobs.ListPatchJobsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (PatchJobs.PatchJob element : osConfigServiceClient.listPatchJobs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -233,6 +339,24 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Get a list of patch jobs.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchJobs.ListPatchJobsRequest request =
+   *       PatchJobs.ListPatchJobsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<PatchJobs.PatchJob> future =
+   *       osConfigServiceClient.listPatchJobsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (PatchJobs.PatchJob element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<PatchJobs.ListPatchJobsRequest, ListPatchJobsPagedResponse>
       listPatchJobsPagedCallable() {
@@ -244,6 +368,24 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Get a list of patch jobs.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   while (true) {
+   *     PatchJobs.ListPatchJobsResponse response =
+   *         osConfigServiceClient.listPatchJobsCallable().call(request);
+   *     for (PatchJobs.PatchJob element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse>
       listPatchJobsCallable() {
@@ -253,6 +395,18 @@ public class OsConfigServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Get a list of instance details for a given patch job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   String parent = "parent-995424086";
+   *   for (PatchJobs.PatchJobInstanceDetails element :
+   *       osConfigServiceClient.listPatchJobInstanceDetails(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent Required. The parent for the instances are in the form of
    *     `projects/&#42;/patchJobs/&#42;`.
@@ -268,6 +422,24 @@ public class OsConfigServiceClient implements BackgroundResource {
   /**
    * Get a list of instance details for a given patch job.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchJobs.ListPatchJobInstanceDetailsRequest request =
+   *       PatchJobs.ListPatchJobInstanceDetailsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (PatchJobs.PatchJobInstanceDetails element :
+   *       osConfigServiceClient.listPatchJobInstanceDetails(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -281,6 +453,24 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Get a list of instance details for a given patch job.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchJobs.ListPatchJobInstanceDetailsRequest request =
+   *       PatchJobs.ListPatchJobInstanceDetailsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<PatchJobs.PatchJobInstanceDetails> future =
+   *       osConfigServiceClient.listPatchJobInstanceDetailsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (PatchJobs.PatchJobInstanceDetails element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           PatchJobs.ListPatchJobInstanceDetailsRequest, ListPatchJobInstanceDetailsPagedResponse>
@@ -293,6 +483,24 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Get a list of instance details for a given patch job.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   while (true) {
+   *     PatchJobs.ListPatchJobInstanceDetailsResponse response =
+   *         osConfigServiceClient.listPatchJobInstanceDetailsCallable().call(request);
+   *     for (PatchJobs.PatchJobInstanceDetails element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           PatchJobs.ListPatchJobInstanceDetailsRequest,
@@ -304,6 +512,20 @@ public class OsConfigServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Create an OS Config patch deployment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchDeployments.CreatePatchDeploymentRequest request =
+   *       PatchDeployments.CreatePatchDeploymentRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPatchDeploymentId("patchDeploymentId-1180405976")
+   *           .build();
+   *   PatchDeployments.PatchDeployment response =
+   *       osConfigServiceClient.createPatchDeployment(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -318,6 +540,20 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Create an OS Config patch deployment.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchDeployments.CreatePatchDeploymentRequest request =
+   *       PatchDeployments.CreatePatchDeploymentRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPatchDeploymentId("patchDeploymentId-1180405976")
+   *           .build();
+   *   ApiFuture<PatchDeployments.PatchDeployment> future =
+   *       osConfigServiceClient.createPatchDeploymentCallable().futureCall(request);
+   *   // Do something.
+   *   PatchDeployments.PatchDeployment response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           PatchDeployments.CreatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
@@ -328,6 +564,16 @@ public class OsConfigServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Get an OS Config patch deployment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchDeployments.GetPatchDeploymentRequest request =
+   *       PatchDeployments.GetPatchDeploymentRequest.newBuilder().setName("name3373707").build();
+   *   PatchDeployments.PatchDeployment response = osConfigServiceClient.getPatchDeployment(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -342,6 +588,17 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Get an OS Config patch deployment.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchDeployments.GetPatchDeploymentRequest request =
+   *       PatchDeployments.GetPatchDeploymentRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<PatchDeployments.PatchDeployment> future =
+   *       osConfigServiceClient.getPatchDeploymentCallable().futureCall(request);
+   *   // Do something.
+   *   PatchDeployments.PatchDeployment response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           PatchDeployments.GetPatchDeploymentRequest, PatchDeployments.PatchDeployment>
@@ -352,6 +609,23 @@ public class OsConfigServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Get a page of OS Config patch deployments.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchDeployments.ListPatchDeploymentsRequest request =
+   *       PatchDeployments.ListPatchDeploymentsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (PatchDeployments.PatchDeployment element :
+   *       osConfigServiceClient.listPatchDeployments(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -366,6 +640,23 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Get a page of OS Config patch deployments.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchDeployments.ListPatchDeploymentsRequest request =
+   *       PatchDeployments.ListPatchDeploymentsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<PatchDeployments.PatchDeployment> future =
+   *       osConfigServiceClient.listPatchDeploymentsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (PatchDeployments.PatchDeployment element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           PatchDeployments.ListPatchDeploymentsRequest, ListPatchDeploymentsPagedResponse>
@@ -378,6 +669,24 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Get a page of OS Config patch deployments.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   while (true) {
+   *     PatchDeployments.ListPatchDeploymentsResponse response =
+   *         osConfigServiceClient.listPatchDeploymentsCallable().call(request);
+   *     for (PatchDeployments.PatchDeployment element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           PatchDeployments.ListPatchDeploymentsRequest,
@@ -389,6 +698,16 @@ public class OsConfigServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Delete an OS Config patch deployment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchDeployments.DeletePatchDeploymentRequest request =
+   *       PatchDeployments.DeletePatchDeploymentRequest.newBuilder().setName("name3373707").build();
+   *   osConfigServiceClient.deletePatchDeployment(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -402,6 +721,17 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Delete an OS Config patch deployment.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchDeployments.DeletePatchDeploymentRequest request =
+   *       PatchDeployments.DeletePatchDeploymentRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Empty> future =
+   *       osConfigServiceClient.deletePatchDeploymentCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<PatchDeployments.DeletePatchDeploymentRequest, Empty>
       deletePatchDeploymentCallable() {
@@ -411,6 +741,17 @@ public class OsConfigServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Create an OS Config guest policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   GuestPolicies.GuestPolicy guestPolicy = GuestPolicies.GuestPolicy.newBuilder().build();
+   *   GuestPolicies.GuestPolicy response =
+   *       osConfigServiceClient.createGuestPolicy(parent, guestPolicy);
+   * }
+   * }</pre>
    *
    * @param parent Required. The resource name of the parent using one of the following forms:
    *     `projects/{project_number}`.
@@ -431,6 +772,17 @@ public class OsConfigServiceClient implements BackgroundResource {
   /**
    * Create an OS Config guest policy.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   String parent = GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]").toString();
+   *   GuestPolicies.GuestPolicy guestPolicy = GuestPolicies.GuestPolicy.newBuilder().build();
+   *   GuestPolicies.GuestPolicy response =
+   *       osConfigServiceClient.createGuestPolicy(parent, guestPolicy);
+   * }
+   * }</pre>
+   *
    * @param parent Required. The resource name of the parent using one of the following forms:
    *     `projects/{project_number}`.
    * @param guestPolicy Required. The GuestPolicy to create.
@@ -450,6 +802,19 @@ public class OsConfigServiceClient implements BackgroundResource {
   /**
    * Create an OS Config guest policy.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   GuestPolicies.CreateGuestPolicyRequest request =
+   *       GuestPolicies.CreateGuestPolicyRequest.newBuilder()
+   *           .setParent(GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]").toString())
+   *           .setGuestPolicyId("guestPolicyId1234592741")
+   *           .build();
+   *   GuestPolicies.GuestPolicy response = osConfigServiceClient.createGuestPolicy(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -463,6 +828,20 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Create an OS Config guest policy.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   GuestPolicies.CreateGuestPolicyRequest request =
+   *       GuestPolicies.CreateGuestPolicyRequest.newBuilder()
+   *           .setParent(GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]").toString())
+   *           .setGuestPolicyId("guestPolicyId1234592741")
+   *           .build();
+   *   ApiFuture<GuestPolicies.GuestPolicy> future =
+   *       osConfigServiceClient.createGuestPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   GuestPolicies.GuestPolicy response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GuestPolicies.CreateGuestPolicyRequest, GuestPolicies.GuestPolicy>
       createGuestPolicyCallable() {
@@ -472,6 +851,15 @@ public class OsConfigServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Get an OS Config guest policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   GuestPolicyName name = GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]");
+   *   GuestPolicies.GuestPolicy response = osConfigServiceClient.getGuestPolicy(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The resource name of the guest policy using one of the following forms:
    *     `projects/{project_number}/guestPolicies/{guest_policy_id}`.
@@ -489,6 +877,15 @@ public class OsConfigServiceClient implements BackgroundResource {
   /**
    * Get an OS Config guest policy.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   String name = GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]").toString();
+   *   GuestPolicies.GuestPolicy response = osConfigServiceClient.getGuestPolicy(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the guest policy using one of the following forms:
    *     `projects/{project_number}/guestPolicies/{guest_policy_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -503,6 +900,18 @@ public class OsConfigServiceClient implements BackgroundResource {
   /**
    * Get an OS Config guest policy.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   GuestPolicies.GetGuestPolicyRequest request =
+   *       GuestPolicies.GetGuestPolicyRequest.newBuilder()
+   *           .setName(GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]").toString())
+   *           .build();
+   *   GuestPolicies.GuestPolicy response = osConfigServiceClient.getGuestPolicy(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -516,6 +925,19 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Get an OS Config guest policy.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   GuestPolicies.GetGuestPolicyRequest request =
+   *       GuestPolicies.GetGuestPolicyRequest.newBuilder()
+   *           .setName(GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]").toString())
+   *           .build();
+   *   ApiFuture<GuestPolicies.GuestPolicy> future =
+   *       osConfigServiceClient.getGuestPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   GuestPolicies.GuestPolicy response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GuestPolicies.GetGuestPolicyRequest, GuestPolicies.GuestPolicy>
       getGuestPolicyCallable() {
@@ -525,6 +947,18 @@ public class OsConfigServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Get a page of OS Config guest policies.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   for (GuestPolicies.GuestPolicy element :
+   *       osConfigServiceClient.listGuestPolicies(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent Required. The resource name of the parent using one of the following forms:
    *     `projects/{project_number}`.
@@ -542,6 +976,18 @@ public class OsConfigServiceClient implements BackgroundResource {
   /**
    * Get a page of OS Config guest policies.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   String parent = GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]").toString();
+   *   for (GuestPolicies.GuestPolicy element :
+   *       osConfigServiceClient.listGuestPolicies(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The resource name of the parent using one of the following forms:
    *     `projects/{project_number}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -556,6 +1002,23 @@ public class OsConfigServiceClient implements BackgroundResource {
   /**
    * Get a page of OS Config guest policies.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   GuestPolicies.ListGuestPoliciesRequest request =
+   *       GuestPolicies.ListGuestPoliciesRequest.newBuilder()
+   *           .setParent(GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (GuestPolicies.GuestPolicy element :
+   *       osConfigServiceClient.listGuestPolicies(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -569,6 +1032,23 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Get a page of OS Config guest policies.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   GuestPolicies.ListGuestPoliciesRequest request =
+   *       GuestPolicies.ListGuestPoliciesRequest.newBuilder()
+   *           .setParent(GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<GuestPolicies.GuestPolicy> future =
+   *       osConfigServiceClient.listGuestPoliciesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (GuestPolicies.GuestPolicy element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GuestPolicies.ListGuestPoliciesRequest, ListGuestPoliciesPagedResponse>
       listGuestPoliciesPagedCallable() {
@@ -580,6 +1060,24 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Get a page of OS Config guest policies.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   while (true) {
+   *     GuestPolicies.ListGuestPoliciesResponse response =
+   *         osConfigServiceClient.listGuestPoliciesCallable().call(request);
+   *     for (GuestPolicies.GuestPolicy element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           GuestPolicies.ListGuestPoliciesRequest, GuestPolicies.ListGuestPoliciesResponse>
@@ -590,6 +1088,17 @@ public class OsConfigServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Update an OS Config guest policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   GuestPolicies.GuestPolicy guestPolicy = GuestPolicies.GuestPolicy.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   GuestPolicies.GuestPolicy response =
+   *       osConfigServiceClient.updateGuestPolicy(guestPolicy, updateMask);
+   * }
+   * }</pre>
    *
    * @param guestPolicy Required. The updated GuestPolicy.
    * @param updateMask Field mask that controls which fields of the guest policy should be updated.
@@ -609,6 +1118,18 @@ public class OsConfigServiceClient implements BackgroundResource {
   /**
    * Update an OS Config guest policy.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   GuestPolicies.UpdateGuestPolicyRequest request =
+   *       GuestPolicies.UpdateGuestPolicyRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   GuestPolicies.GuestPolicy response = osConfigServiceClient.updateGuestPolicy(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -622,6 +1143,19 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Update an OS Config guest policy.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   GuestPolicies.UpdateGuestPolicyRequest request =
+   *       GuestPolicies.UpdateGuestPolicyRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<GuestPolicies.GuestPolicy> future =
+   *       osConfigServiceClient.updateGuestPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   GuestPolicies.GuestPolicy response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GuestPolicies.UpdateGuestPolicyRequest, GuestPolicies.GuestPolicy>
       updateGuestPolicyCallable() {
@@ -631,6 +1165,15 @@ public class OsConfigServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Delete an OS Config guest policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   GuestPolicyName name = GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]");
+   *   osConfigServiceClient.deleteGuestPolicy(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The resource name of the guest policy using one of the following forms:
    *     `projects/{project_number}/guestPolicies/{guest_policy_id}`.
@@ -648,6 +1191,15 @@ public class OsConfigServiceClient implements BackgroundResource {
   /**
    * Delete an OS Config guest policy.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   String name = GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]").toString();
+   *   osConfigServiceClient.deleteGuestPolicy(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the guest policy using one of the following forms:
    *     `projects/{project_number}/guestPolicies/{guest_policy_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -662,6 +1214,18 @@ public class OsConfigServiceClient implements BackgroundResource {
   /**
    * Delete an OS Config guest policy.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   GuestPolicies.DeleteGuestPolicyRequest request =
+   *       GuestPolicies.DeleteGuestPolicyRequest.newBuilder()
+   *           .setName(GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]").toString())
+   *           .build();
+   *   osConfigServiceClient.deleteGuestPolicy(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -674,6 +1238,19 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Delete an OS Config guest policy.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   GuestPolicies.DeleteGuestPolicyRequest request =
+   *       GuestPolicies.DeleteGuestPolicyRequest.newBuilder()
+   *           .setName(GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       osConfigServiceClient.deleteGuestPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GuestPolicies.DeleteGuestPolicyRequest, Empty>
       deleteGuestPolicyCallable() {
@@ -684,6 +1261,22 @@ public class OsConfigServiceClient implements BackgroundResource {
   /**
    * Lookup the effective guest policy that applies to a VM instance. This lookup merges all
    * policies that are assigned to the instance ancestry.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   GuestPolicies.LookupEffectiveGuestPolicyRequest request =
+   *       GuestPolicies.LookupEffectiveGuestPolicyRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setOsShortName("osShortName1253394339")
+   *           .setOsVersion("osVersion1812004436")
+   *           .setOsArchitecture("osArchitecture1339954519")
+   *           .build();
+   *   GuestPolicies.EffectiveGuestPolicy response =
+   *       osConfigServiceClient.lookupEffectiveGuestPolicy(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -699,6 +1292,22 @@ public class OsConfigServiceClient implements BackgroundResource {
    * policies that are assigned to the instance ancestry.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   GuestPolicies.LookupEffectiveGuestPolicyRequest request =
+   *       GuestPolicies.LookupEffectiveGuestPolicyRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setOsShortName("osShortName1253394339")
+   *           .setOsVersion("osVersion1812004436")
+   *           .setOsArchitecture("osArchitecture1339954519")
+   *           .build();
+   *   ApiFuture<GuestPolicies.EffectiveGuestPolicy> future =
+   *       osConfigServiceClient.lookupEffectiveGuestPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   GuestPolicies.EffectiveGuestPolicy response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           GuestPolicies.LookupEffectiveGuestPolicyRequest, GuestPolicies.EffectiveGuestPolicy>

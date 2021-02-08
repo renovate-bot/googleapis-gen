@@ -35,6 +35,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (CampaignAssetServiceClient campaignAssetServiceClient =
+ *     CampaignAssetServiceClient.create()) {
+ *   CampaignAssetName resourceName = CampaignAssetName.of("[CUSTOMER]", "[CAMPAIGN_ASSET]");
+ *   CampaignAsset response = campaignAssetServiceClient.getCampaignAsset(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the CampaignAssetServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -141,6 +149,16 @@ public class CampaignAssetServiceClient implements BackgroundResource {
   /**
    * Returns the requested campaign asset in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignAssetServiceClient campaignAssetServiceClient =
+   *     CampaignAssetServiceClient.create()) {
+   *   CampaignAssetName resourceName = CampaignAssetName.of("[CUSTOMER]", "[CAMPAIGN_ASSET]");
+   *   CampaignAsset response = campaignAssetServiceClient.getCampaignAsset(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the campaign asset to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -156,6 +174,16 @@ public class CampaignAssetServiceClient implements BackgroundResource {
   /**
    * Returns the requested campaign asset in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignAssetServiceClient campaignAssetServiceClient =
+   *     CampaignAssetServiceClient.create()) {
+   *   String resourceName = CampaignAssetName.of("[CUSTOMER]", "[CAMPAIGN_ASSET]").toString();
+   *   CampaignAsset response = campaignAssetServiceClient.getCampaignAsset(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the campaign asset to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -169,6 +197,19 @@ public class CampaignAssetServiceClient implements BackgroundResource {
   /**
    * Returns the requested campaign asset in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignAssetServiceClient campaignAssetServiceClient =
+   *     CampaignAssetServiceClient.create()) {
+   *   GetCampaignAssetRequest request =
+   *       GetCampaignAssetRequest.newBuilder()
+   *           .setResourceName(CampaignAssetName.of("[CUSTOMER]", "[CAMPAIGN_ASSET]").toString())
+   *           .build();
+   *   CampaignAsset response = campaignAssetServiceClient.getCampaignAsset(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -181,6 +222,20 @@ public class CampaignAssetServiceClient implements BackgroundResource {
    * Returns the requested campaign asset in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignAssetServiceClient campaignAssetServiceClient =
+   *     CampaignAssetServiceClient.create()) {
+   *   GetCampaignAssetRequest request =
+   *       GetCampaignAssetRequest.newBuilder()
+   *           .setResourceName(CampaignAssetName.of("[CUSTOMER]", "[CAMPAIGN_ASSET]").toString())
+   *           .build();
+   *   ApiFuture<CampaignAsset> future =
+   *       campaignAssetServiceClient.getCampaignAssetCallable().futureCall(request);
+   *   // Do something.
+   *   CampaignAsset response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetCampaignAssetRequest, CampaignAsset> getCampaignAssetCallable() {
     return stub.getCampaignAssetCallable();
@@ -189,6 +244,18 @@ public class CampaignAssetServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates or removes campaign assets. Operation statuses are returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignAssetServiceClient campaignAssetServiceClient =
+   *     CampaignAssetServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   List<CampaignAssetOperation> operations = new ArrayList<>();
+   *   MutateCampaignAssetsResponse response =
+   *       campaignAssetServiceClient.mutateCampaignAssets(customerId, operations);
+   * }
+   * }</pre>
    *
    * @param customerId Required. The ID of the customer whose campaign assets are being modified.
    * @param operations Required. The list of operations to perform on individual campaign assets.
@@ -208,6 +275,23 @@ public class CampaignAssetServiceClient implements BackgroundResource {
   /**
    * Creates or removes campaign assets. Operation statuses are returned.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignAssetServiceClient campaignAssetServiceClient =
+   *     CampaignAssetServiceClient.create()) {
+   *   MutateCampaignAssetsRequest request =
+   *       MutateCampaignAssetsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<CampaignAssetOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   MutateCampaignAssetsResponse response =
+   *       campaignAssetServiceClient.mutateCampaignAssets(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -221,6 +305,23 @@ public class CampaignAssetServiceClient implements BackgroundResource {
    * Creates or removes campaign assets. Operation statuses are returned.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignAssetServiceClient campaignAssetServiceClient =
+   *     CampaignAssetServiceClient.create()) {
+   *   MutateCampaignAssetsRequest request =
+   *       MutateCampaignAssetsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<CampaignAssetOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<MutateCampaignAssetsResponse> future =
+   *       campaignAssetServiceClient.mutateCampaignAssetsCallable().futureCall(request);
+   *   // Do something.
+   *   MutateCampaignAssetsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<MutateCampaignAssetsRequest, MutateCampaignAssetsResponse>
       mutateCampaignAssetsCallable() {

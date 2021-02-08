@@ -34,6 +34,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (DistanceViewServiceClient distanceViewServiceClient = DistanceViewServiceClient.create()) {
+ *   DistanceViewName resourceName = DistanceViewName.of("[CUSTOMER]", "[DISTANCE_VIEW]");
+ *   DistanceView response = distanceViewServiceClient.getDistanceView(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the DistanceViewServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -140,6 +147,15 @@ public class DistanceViewServiceClient implements BackgroundResource {
   /**
    * Returns the attributes of the requested distance view.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DistanceViewServiceClient distanceViewServiceClient = DistanceViewServiceClient.create()) {
+   *   DistanceViewName resourceName = DistanceViewName.of("[CUSTOMER]", "[DISTANCE_VIEW]");
+   *   DistanceView response = distanceViewServiceClient.getDistanceView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the distance view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -155,6 +171,15 @@ public class DistanceViewServiceClient implements BackgroundResource {
   /**
    * Returns the attributes of the requested distance view.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DistanceViewServiceClient distanceViewServiceClient = DistanceViewServiceClient.create()) {
+   *   String resourceName = DistanceViewName.of("[CUSTOMER]", "[DISTANCE_VIEW]").toString();
+   *   DistanceView response = distanceViewServiceClient.getDistanceView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the distance view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -168,6 +193,18 @@ public class DistanceViewServiceClient implements BackgroundResource {
   /**
    * Returns the attributes of the requested distance view.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DistanceViewServiceClient distanceViewServiceClient = DistanceViewServiceClient.create()) {
+   *   GetDistanceViewRequest request =
+   *       GetDistanceViewRequest.newBuilder()
+   *           .setResourceName(DistanceViewName.of("[CUSTOMER]", "[DISTANCE_VIEW]").toString())
+   *           .build();
+   *   DistanceView response = distanceViewServiceClient.getDistanceView(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -180,6 +217,19 @@ public class DistanceViewServiceClient implements BackgroundResource {
    * Returns the attributes of the requested distance view.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DistanceViewServiceClient distanceViewServiceClient = DistanceViewServiceClient.create()) {
+   *   GetDistanceViewRequest request =
+   *       GetDistanceViewRequest.newBuilder()
+   *           .setResourceName(DistanceViewName.of("[CUSTOMER]", "[DISTANCE_VIEW]").toString())
+   *           .build();
+   *   ApiFuture<DistanceView> future =
+   *       distanceViewServiceClient.getDistanceViewCallable().futureCall(request);
+   *   // Do something.
+   *   DistanceView response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetDistanceViewRequest, DistanceView> getDistanceViewCallable() {
     return stub.getDistanceViewCallable();

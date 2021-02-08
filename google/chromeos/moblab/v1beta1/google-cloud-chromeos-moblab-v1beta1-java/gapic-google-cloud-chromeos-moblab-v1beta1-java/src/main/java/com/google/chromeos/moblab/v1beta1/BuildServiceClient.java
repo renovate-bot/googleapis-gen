@@ -45,6 +45,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (BuildServiceClient buildServiceClient = BuildServiceClient.create()) {
+ *   BuildArtifactName name =
+ *       BuildArtifactName.of("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]");
+ *   CheckBuildStageStatusResponse response = buildServiceClient.checkBuildStageStatus(name);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the BuildServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -160,6 +168,17 @@ public class BuildServiceClient implements BackgroundResource {
    * Lists all builds for the given build target and model in descending order for the milestones
    * and build versions.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BuildServiceClient buildServiceClient = BuildServiceClient.create()) {
+   *   ModelName parent = ModelName.of("[BUILD_TARGET]", "[MODEL]");
+   *   for (Build element : buildServiceClient.listBuilds(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The full resource name of the model. The model id is the same as the
    *     build target id for non-unified builds. For example, 'buildTargets/octopus/models/bobba'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -175,6 +194,17 @@ public class BuildServiceClient implements BackgroundResource {
    * Lists all builds for the given build target and model in descending order for the milestones
    * and build versions.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BuildServiceClient buildServiceClient = BuildServiceClient.create()) {
+   *   String parent = ModelName.of("[BUILD_TARGET]", "[MODEL]").toString();
+   *   for (Build element : buildServiceClient.listBuilds(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The full resource name of the model. The model id is the same as the
    *     build target id for non-unified builds. For example, 'buildTargets/octopus/models/bobba'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -189,6 +219,25 @@ public class BuildServiceClient implements BackgroundResource {
    * Lists all builds for the given build target and model in descending order for the milestones
    * and build versions.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BuildServiceClient buildServiceClient = BuildServiceClient.create()) {
+   *   ListBuildsRequest request =
+   *       ListBuildsRequest.newBuilder()
+   *           .setParent(ModelName.of("[BUILD_TARGET]", "[MODEL]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .setGroupBy(FieldMask.newBuilder().build())
+   *           .build();
+   *   for (Build element : buildServiceClient.listBuilds(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -202,6 +251,25 @@ public class BuildServiceClient implements BackgroundResource {
    * and build versions.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BuildServiceClient buildServiceClient = BuildServiceClient.create()) {
+   *   ListBuildsRequest request =
+   *       ListBuildsRequest.newBuilder()
+   *           .setParent(ModelName.of("[BUILD_TARGET]", "[MODEL]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .setGroupBy(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Build> future = buildServiceClient.listBuildsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Build element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListBuildsRequest, ListBuildsPagedResponse> listBuildsPagedCallable() {
     return stub.listBuildsPagedCallable();
@@ -213,6 +281,23 @@ public class BuildServiceClient implements BackgroundResource {
    * and build versions.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BuildServiceClient buildServiceClient = BuildServiceClient.create()) {
+   *   while (true) {
+   *     ListBuildsResponse response = buildServiceClient.listBuildsCallable().call(request);
+   *     for (Build element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListBuildsRequest, ListBuildsResponse> listBuildsCallable() {
     return stub.listBuildsCallable();
@@ -221,6 +306,16 @@ public class BuildServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Checks the stage status for a given build artifact in a partner Google Cloud Storage bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BuildServiceClient buildServiceClient = BuildServiceClient.create()) {
+   *   BuildArtifactName name =
+   *       BuildArtifactName.of("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]");
+   *   CheckBuildStageStatusResponse response = buildServiceClient.checkBuildStageStatus(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The full resource name of the build artifact. For example,
    *     'buildTargets/octopus/models/bobba/builds/12607.6.0/artifacts/chromeos-moblab-peng-staging'.
@@ -238,6 +333,16 @@ public class BuildServiceClient implements BackgroundResource {
   /**
    * Checks the stage status for a given build artifact in a partner Google Cloud Storage bucket.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BuildServiceClient buildServiceClient = BuildServiceClient.create()) {
+   *   String name =
+   *       BuildArtifactName.of("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]").toString();
+   *   CheckBuildStageStatusResponse response = buildServiceClient.checkBuildStageStatus(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The full resource name of the build artifact. For example,
    *     'buildTargets/octopus/models/bobba/builds/12607.6.0/artifacts/chromeos-moblab-peng-staging'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -252,6 +357,20 @@ public class BuildServiceClient implements BackgroundResource {
   /**
    * Checks the stage status for a given build artifact in a partner Google Cloud Storage bucket.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BuildServiceClient buildServiceClient = BuildServiceClient.create()) {
+   *   CheckBuildStageStatusRequest request =
+   *       CheckBuildStageStatusRequest.newBuilder()
+   *           .setName(
+   *               BuildArtifactName.of("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]")
+   *                   .toString())
+   *           .build();
+   *   CheckBuildStageStatusResponse response = buildServiceClient.checkBuildStageStatus(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -265,6 +384,21 @@ public class BuildServiceClient implements BackgroundResource {
    * Checks the stage status for a given build artifact in a partner Google Cloud Storage bucket.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BuildServiceClient buildServiceClient = BuildServiceClient.create()) {
+   *   CheckBuildStageStatusRequest request =
+   *       CheckBuildStageStatusRequest.newBuilder()
+   *           .setName(
+   *               BuildArtifactName.of("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<CheckBuildStageStatusResponse> future =
+   *       buildServiceClient.checkBuildStageStatusCallable().futureCall(request);
+   *   // Do something.
+   *   CheckBuildStageStatusResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CheckBuildStageStatusRequest, CheckBuildStageStatusResponse>
       checkBuildStageStatusCallable() {
@@ -278,6 +412,16 @@ public class BuildServiceClient implements BackgroundResource {
    * objects. Operation &lt;response:
    * [StageBuildResponse][google.chromeos.moblab.v1beta1.StageBuildResponse], metadata:
    * [StageBuildMetadata][google.chromeos.moblab.v1beta1.StageBuildMetadata]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BuildServiceClient buildServiceClient = BuildServiceClient.create()) {
+   *   BuildArtifactName name =
+   *       BuildArtifactName.of("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]");
+   *   StageBuildResponse response = buildServiceClient.stageBuildAsync(name).get();
+   * }
+   * }</pre>
    *
    * @param name Required. The full resource name of the build artifact. For example,
    *     'buildTargets/octopus/models/bobba/builds/12607.6.0/artifacts/chromeos-moblab-peng-staging'.
@@ -298,6 +442,16 @@ public class BuildServiceClient implements BackgroundResource {
    * [StageBuildResponse][google.chromeos.moblab.v1beta1.StageBuildResponse], metadata:
    * [StageBuildMetadata][google.chromeos.moblab.v1beta1.StageBuildMetadata]&gt;
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BuildServiceClient buildServiceClient = BuildServiceClient.create()) {
+   *   String name =
+   *       BuildArtifactName.of("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]").toString();
+   *   StageBuildResponse response = buildServiceClient.stageBuildAsync(name).get();
+   * }
+   * }</pre>
+   *
    * @param name Required. The full resource name of the build artifact. For example,
    *     'buildTargets/octopus/models/bobba/builds/12607.6.0/artifacts/chromeos-moblab-peng-staging'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -316,6 +470,20 @@ public class BuildServiceClient implements BackgroundResource {
    * [StageBuildResponse][google.chromeos.moblab.v1beta1.StageBuildResponse], metadata:
    * [StageBuildMetadata][google.chromeos.moblab.v1beta1.StageBuildMetadata]&gt;
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BuildServiceClient buildServiceClient = BuildServiceClient.create()) {
+   *   StageBuildRequest request =
+   *       StageBuildRequest.newBuilder()
+   *           .setName(
+   *               BuildArtifactName.of("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]")
+   *                   .toString())
+   *           .build();
+   *   StageBuildResponse response = buildServiceClient.stageBuildAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -333,6 +501,21 @@ public class BuildServiceClient implements BackgroundResource {
    * [StageBuildMetadata][google.chromeos.moblab.v1beta1.StageBuildMetadata]&gt;
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BuildServiceClient buildServiceClient = BuildServiceClient.create()) {
+   *   StageBuildRequest request =
+   *       StageBuildRequest.newBuilder()
+   *           .setName(
+   *               BuildArtifactName.of("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<StageBuildResponse, StageBuildMetadata> future =
+   *       buildServiceClient.stageBuildOperationCallable().futureCall(request);
+   *   // Do something.
+   *   StageBuildResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<StageBuildRequest, StageBuildResponse, StageBuildMetadata>
       stageBuildOperationCallable() {
@@ -348,6 +531,20 @@ public class BuildServiceClient implements BackgroundResource {
    * [StageBuildMetadata][google.chromeos.moblab.v1beta1.StageBuildMetadata]&gt;
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BuildServiceClient buildServiceClient = BuildServiceClient.create()) {
+   *   StageBuildRequest request =
+   *       StageBuildRequest.newBuilder()
+   *           .setName(
+   *               BuildArtifactName.of("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future = buildServiceClient.stageBuildCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<StageBuildRequest, Operation> stageBuildCallable() {
     return stub.stageBuildCallable();

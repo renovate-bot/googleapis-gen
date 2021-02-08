@@ -35,6 +35,16 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (CampaignExtensionSettingServiceClient campaignExtensionSettingServiceClient =
+ *     CampaignExtensionSettingServiceClient.create()) {
+ *   CampaignExtensionSettingName resourceName =
+ *       CampaignExtensionSettingName.of("[CUSTOMER_ID]", "[CAMPAIGN_ID]", "[EXTENSION_TYPE]");
+ *   CampaignExtensionSetting response =
+ *       campaignExtensionSettingServiceClient.getCampaignExtensionSetting(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the CampaignExtensionSettingServiceClient object to clean
  * up resources such as threads. In the example above, try-with-resources is used, which
  * automatically calls close().
@@ -146,6 +156,18 @@ public class CampaignExtensionSettingServiceClient implements BackgroundResource
   /**
    * Returns the requested campaign extension setting in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignExtensionSettingServiceClient campaignExtensionSettingServiceClient =
+   *     CampaignExtensionSettingServiceClient.create()) {
+   *   CampaignExtensionSettingName resourceName =
+   *       CampaignExtensionSettingName.of("[CUSTOMER_ID]", "[CAMPAIGN_ID]", "[EXTENSION_TYPE]");
+   *   CampaignExtensionSetting response =
+   *       campaignExtensionSettingServiceClient.getCampaignExtensionSetting(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the campaign extension setting to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -162,6 +184,19 @@ public class CampaignExtensionSettingServiceClient implements BackgroundResource
   /**
    * Returns the requested campaign extension setting in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignExtensionSettingServiceClient campaignExtensionSettingServiceClient =
+   *     CampaignExtensionSettingServiceClient.create()) {
+   *   String resourceName =
+   *       CampaignExtensionSettingName.of("[CUSTOMER_ID]", "[CAMPAIGN_ID]", "[EXTENSION_TYPE]")
+   *           .toString();
+   *   CampaignExtensionSetting response =
+   *       campaignExtensionSettingServiceClient.getCampaignExtensionSetting(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the campaign extension setting to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -174,6 +209,23 @@ public class CampaignExtensionSettingServiceClient implements BackgroundResource
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the requested campaign extension setting in full detail.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignExtensionSettingServiceClient campaignExtensionSettingServiceClient =
+   *     CampaignExtensionSettingServiceClient.create()) {
+   *   GetCampaignExtensionSettingRequest request =
+   *       GetCampaignExtensionSettingRequest.newBuilder()
+   *           .setResourceName(
+   *               CampaignExtensionSettingName.of(
+   *                       "[CUSTOMER_ID]", "[CAMPAIGN_ID]", "[EXTENSION_TYPE]")
+   *                   .toString())
+   *           .build();
+   *   CampaignExtensionSetting response =
+   *       campaignExtensionSettingServiceClient.getCampaignExtensionSetting(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -188,6 +240,25 @@ public class CampaignExtensionSettingServiceClient implements BackgroundResource
    * Returns the requested campaign extension setting in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignExtensionSettingServiceClient campaignExtensionSettingServiceClient =
+   *     CampaignExtensionSettingServiceClient.create()) {
+   *   GetCampaignExtensionSettingRequest request =
+   *       GetCampaignExtensionSettingRequest.newBuilder()
+   *           .setResourceName(
+   *               CampaignExtensionSettingName.of(
+   *                       "[CUSTOMER_ID]", "[CAMPAIGN_ID]", "[EXTENSION_TYPE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<CampaignExtensionSetting> future =
+   *       campaignExtensionSettingServiceClient
+   *           .getCampaignExtensionSettingCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   CampaignExtensionSetting response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetCampaignExtensionSettingRequest, CampaignExtensionSetting>
       getCampaignExtensionSettingCallable() {
@@ -197,6 +268,19 @@ public class CampaignExtensionSettingServiceClient implements BackgroundResource
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates, updates, or removes campaign extension settings. Operation statuses are returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignExtensionSettingServiceClient campaignExtensionSettingServiceClient =
+   *     CampaignExtensionSettingServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   List<CampaignExtensionSettingOperation> operations = new ArrayList<>();
+   *   MutateCampaignExtensionSettingsResponse response =
+   *       campaignExtensionSettingServiceClient.mutateCampaignExtensionSettings(
+   *           customerId, operations);
+   * }
+   * }</pre>
    *
    * @param customerId Required. The ID of the customer whose campaign extension settings are being
    *     modified.
@@ -218,6 +302,23 @@ public class CampaignExtensionSettingServiceClient implements BackgroundResource
   /**
    * Creates, updates, or removes campaign extension settings. Operation statuses are returned.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignExtensionSettingServiceClient campaignExtensionSettingServiceClient =
+   *     CampaignExtensionSettingServiceClient.create()) {
+   *   MutateCampaignExtensionSettingsRequest request =
+   *       MutateCampaignExtensionSettingsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<CampaignExtensionSettingOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   MutateCampaignExtensionSettingsResponse response =
+   *       campaignExtensionSettingServiceClient.mutateCampaignExtensionSettings(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -231,6 +332,25 @@ public class CampaignExtensionSettingServiceClient implements BackgroundResource
    * Creates, updates, or removes campaign extension settings. Operation statuses are returned.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignExtensionSettingServiceClient campaignExtensionSettingServiceClient =
+   *     CampaignExtensionSettingServiceClient.create()) {
+   *   MutateCampaignExtensionSettingsRequest request =
+   *       MutateCampaignExtensionSettingsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<CampaignExtensionSettingOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<MutateCampaignExtensionSettingsResponse> future =
+   *       campaignExtensionSettingServiceClient
+   *           .mutateCampaignExtensionSettingsCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   MutateCampaignExtensionSettingsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           MutateCampaignExtensionSettingsRequest, MutateCampaignExtensionSettingsResponse>

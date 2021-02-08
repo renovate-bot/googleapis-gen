@@ -35,6 +35,16 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (CustomerManagerLinkServiceClient customerManagerLinkServiceClient =
+ *     CustomerManagerLinkServiceClient.create()) {
+ *   CustomerManagerLinkName resourceName =
+ *       CustomerManagerLinkName.of("[CUSTOMER_ID]", "[MANAGER_CUSTOMER_ID]", "[MANAGER_LINK_ID]");
+ *   CustomerManagerLink response =
+ *       customerManagerLinkServiceClient.getCustomerManagerLink(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the CustomerManagerLinkServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -143,6 +153,18 @@ public class CustomerManagerLinkServiceClient implements BackgroundResource {
   /**
    * Returns the requested CustomerManagerLink in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerManagerLinkServiceClient customerManagerLinkServiceClient =
+   *     CustomerManagerLinkServiceClient.create()) {
+   *   CustomerManagerLinkName resourceName =
+   *       CustomerManagerLinkName.of("[CUSTOMER_ID]", "[MANAGER_CUSTOMER_ID]", "[MANAGER_LINK_ID]");
+   *   CustomerManagerLink response =
+   *       customerManagerLinkServiceClient.getCustomerManagerLink(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the CustomerManagerLink to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -158,6 +180,19 @@ public class CustomerManagerLinkServiceClient implements BackgroundResource {
   /**
    * Returns the requested CustomerManagerLink in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerManagerLinkServiceClient customerManagerLinkServiceClient =
+   *     CustomerManagerLinkServiceClient.create()) {
+   *   String resourceName =
+   *       CustomerManagerLinkName.of("[CUSTOMER_ID]", "[MANAGER_CUSTOMER_ID]", "[MANAGER_LINK_ID]")
+   *           .toString();
+   *   CustomerManagerLink response =
+   *       customerManagerLinkServiceClient.getCustomerManagerLink(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the CustomerManagerLink to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -171,6 +206,23 @@ public class CustomerManagerLinkServiceClient implements BackgroundResource {
   /**
    * Returns the requested CustomerManagerLink in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerManagerLinkServiceClient customerManagerLinkServiceClient =
+   *     CustomerManagerLinkServiceClient.create()) {
+   *   GetCustomerManagerLinkRequest request =
+   *       GetCustomerManagerLinkRequest.newBuilder()
+   *           .setResourceName(
+   *               CustomerManagerLinkName.of(
+   *                       "[CUSTOMER_ID]", "[MANAGER_CUSTOMER_ID]", "[MANAGER_LINK_ID]")
+   *                   .toString())
+   *           .build();
+   *   CustomerManagerLink response =
+   *       customerManagerLinkServiceClient.getCustomerManagerLink(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -183,6 +235,23 @@ public class CustomerManagerLinkServiceClient implements BackgroundResource {
    * Returns the requested CustomerManagerLink in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerManagerLinkServiceClient customerManagerLinkServiceClient =
+   *     CustomerManagerLinkServiceClient.create()) {
+   *   GetCustomerManagerLinkRequest request =
+   *       GetCustomerManagerLinkRequest.newBuilder()
+   *           .setResourceName(
+   *               CustomerManagerLinkName.of(
+   *                       "[CUSTOMER_ID]", "[MANAGER_CUSTOMER_ID]", "[MANAGER_LINK_ID]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<CustomerManagerLink> future =
+   *       customerManagerLinkServiceClient.getCustomerManagerLinkCallable().futureCall(request);
+   *   // Do something.
+   *   CustomerManagerLink response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetCustomerManagerLinkRequest, CustomerManagerLink>
       getCustomerManagerLinkCallable() {
@@ -192,6 +261,18 @@ public class CustomerManagerLinkServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates or updates customer manager links. Operation statuses are returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerManagerLinkServiceClient customerManagerLinkServiceClient =
+   *     CustomerManagerLinkServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   List<CustomerManagerLinkOperation> operations = new ArrayList<>();
+   *   MutateCustomerManagerLinkResponse response =
+   *       customerManagerLinkServiceClient.mutateCustomerManagerLink(customerId, operations);
+   * }
+   * }</pre>
    *
    * @param customerId Required. The ID of the customer whose customer manager links are being
    *     modified.
@@ -213,6 +294,21 @@ public class CustomerManagerLinkServiceClient implements BackgroundResource {
   /**
    * Creates or updates customer manager links. Operation statuses are returned.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerManagerLinkServiceClient customerManagerLinkServiceClient =
+   *     CustomerManagerLinkServiceClient.create()) {
+   *   MutateCustomerManagerLinkRequest request =
+   *       MutateCustomerManagerLinkRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<CustomerManagerLinkOperation>())
+   *           .build();
+   *   MutateCustomerManagerLinkResponse response =
+   *       customerManagerLinkServiceClient.mutateCustomerManagerLink(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -226,6 +322,21 @@ public class CustomerManagerLinkServiceClient implements BackgroundResource {
    * Creates or updates customer manager links. Operation statuses are returned.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerManagerLinkServiceClient customerManagerLinkServiceClient =
+   *     CustomerManagerLinkServiceClient.create()) {
+   *   MutateCustomerManagerLinkRequest request =
+   *       MutateCustomerManagerLinkRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<CustomerManagerLinkOperation>())
+   *           .build();
+   *   ApiFuture<MutateCustomerManagerLinkResponse> future =
+   *       customerManagerLinkServiceClient.mutateCustomerManagerLinkCallable().futureCall(request);
+   *   // Do something.
+   *   MutateCustomerManagerLinkResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<MutateCustomerManagerLinkRequest, MutateCustomerManagerLinkResponse>
       mutateCustomerManagerLinkCallable() {
@@ -238,6 +349,20 @@ public class CustomerManagerLinkServiceClient implements BackgroundResource {
    * requires two operations to move a client customer to a new manager. i.e: 1. Update operation
    * with Status INACTIVE (previous manager) and, 2. Update operation with Status ACTIVE (new
    * manager).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerManagerLinkServiceClient customerManagerLinkServiceClient =
+   *     CustomerManagerLinkServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   String previousCustomerManagerLink = "previousCustomerManagerLink-222598638";
+   *   String newManager = "newManager1429989869";
+   *   MoveManagerLinkResponse response =
+   *       customerManagerLinkServiceClient.moveManagerLink(
+   *           customerId, previousCustomerManagerLink, newManager);
+   * }
+   * }</pre>
    *
    * @param customerId Required. The ID of the client customer that is being moved.
    * @param previousCustomerManagerLink Required. The resource name of the previous
@@ -265,6 +390,21 @@ public class CustomerManagerLinkServiceClient implements BackgroundResource {
    * with Status INACTIVE (previous manager) and, 2. Update operation with Status ACTIVE (new
    * manager).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerManagerLinkServiceClient customerManagerLinkServiceClient =
+   *     CustomerManagerLinkServiceClient.create()) {
+   *   MoveManagerLinkRequest request =
+   *       MoveManagerLinkRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .setPreviousCustomerManagerLink("previousCustomerManagerLink-222598638")
+   *           .setNewManager("newManager1429989869")
+   *           .build();
+   *   MoveManagerLinkResponse response = customerManagerLinkServiceClient.moveManagerLink(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -280,6 +420,22 @@ public class CustomerManagerLinkServiceClient implements BackgroundResource {
    * manager).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerManagerLinkServiceClient customerManagerLinkServiceClient =
+   *     CustomerManagerLinkServiceClient.create()) {
+   *   MoveManagerLinkRequest request =
+   *       MoveManagerLinkRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .setPreviousCustomerManagerLink("previousCustomerManagerLink-222598638")
+   *           .setNewManager("newManager1429989869")
+   *           .build();
+   *   ApiFuture<MoveManagerLinkResponse> future =
+   *       customerManagerLinkServiceClient.moveManagerLinkCallable().futureCall(request);
+   *   // Do something.
+   *   MoveManagerLinkResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<MoveManagerLinkRequest, MoveManagerLinkResponse>
       moveManagerLinkCallable() {

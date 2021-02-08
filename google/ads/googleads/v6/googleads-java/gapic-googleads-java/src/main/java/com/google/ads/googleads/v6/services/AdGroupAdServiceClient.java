@@ -35,6 +35,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (AdGroupAdServiceClient adGroupAdServiceClient = AdGroupAdServiceClient.create()) {
+ *   AdGroupAdName resourceName = AdGroupAdName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[AD_ID]");
+ *   AdGroupAd response = adGroupAdServiceClient.getAdGroupAd(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the AdGroupAdServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -141,6 +148,15 @@ public class AdGroupAdServiceClient implements BackgroundResource {
   /**
    * Returns the requested ad in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdGroupAdServiceClient adGroupAdServiceClient = AdGroupAdServiceClient.create()) {
+   *   AdGroupAdName resourceName = AdGroupAdName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[AD_ID]");
+   *   AdGroupAd response = adGroupAdServiceClient.getAdGroupAd(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the ad to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -156,6 +172,16 @@ public class AdGroupAdServiceClient implements BackgroundResource {
   /**
    * Returns the requested ad in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdGroupAdServiceClient adGroupAdServiceClient = AdGroupAdServiceClient.create()) {
+   *   String resourceName =
+   *       AdGroupAdName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[AD_ID]").toString();
+   *   AdGroupAd response = adGroupAdServiceClient.getAdGroupAd(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the ad to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -169,6 +195,19 @@ public class AdGroupAdServiceClient implements BackgroundResource {
   /**
    * Returns the requested ad in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdGroupAdServiceClient adGroupAdServiceClient = AdGroupAdServiceClient.create()) {
+   *   GetAdGroupAdRequest request =
+   *       GetAdGroupAdRequest.newBuilder()
+   *           .setResourceName(
+   *               AdGroupAdName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[AD_ID]").toString())
+   *           .build();
+   *   AdGroupAd response = adGroupAdServiceClient.getAdGroupAd(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -181,6 +220,20 @@ public class AdGroupAdServiceClient implements BackgroundResource {
    * Returns the requested ad in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdGroupAdServiceClient adGroupAdServiceClient = AdGroupAdServiceClient.create()) {
+   *   GetAdGroupAdRequest request =
+   *       GetAdGroupAdRequest.newBuilder()
+   *           .setResourceName(
+   *               AdGroupAdName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[AD_ID]").toString())
+   *           .build();
+   *   ApiFuture<AdGroupAd> future =
+   *       adGroupAdServiceClient.getAdGroupAdCallable().futureCall(request);
+   *   // Do something.
+   *   AdGroupAd response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetAdGroupAdRequest, AdGroupAd> getAdGroupAdCallable() {
     return stub.getAdGroupAdCallable();
@@ -189,6 +242,17 @@ public class AdGroupAdServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates, updates, or removes ads. Operation statuses are returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdGroupAdServiceClient adGroupAdServiceClient = AdGroupAdServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   List<AdGroupAdOperation> operations = new ArrayList<>();
+   *   MutateAdGroupAdsResponse response =
+   *       adGroupAdServiceClient.mutateAdGroupAds(customerId, operations);
+   * }
+   * }</pre>
    *
    * @param customerId Required. The ID of the customer whose ads are being modified.
    * @param operations Required. The list of operations to perform on individual ads.
@@ -208,6 +272,21 @@ public class AdGroupAdServiceClient implements BackgroundResource {
   /**
    * Creates, updates, or removes ads. Operation statuses are returned.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdGroupAdServiceClient adGroupAdServiceClient = AdGroupAdServiceClient.create()) {
+   *   MutateAdGroupAdsRequest request =
+   *       MutateAdGroupAdsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<AdGroupAdOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   MutateAdGroupAdsResponse response = adGroupAdServiceClient.mutateAdGroupAds(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -220,6 +299,22 @@ public class AdGroupAdServiceClient implements BackgroundResource {
    * Creates, updates, or removes ads. Operation statuses are returned.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdGroupAdServiceClient adGroupAdServiceClient = AdGroupAdServiceClient.create()) {
+   *   MutateAdGroupAdsRequest request =
+   *       MutateAdGroupAdsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<AdGroupAdOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<MutateAdGroupAdsResponse> future =
+   *       adGroupAdServiceClient.mutateAdGroupAdsCallable().futureCall(request);
+   *   // Do something.
+   *   MutateAdGroupAdsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<MutateAdGroupAdsRequest, MutateAdGroupAdsResponse>
       mutateAdGroupAdsCallable() {

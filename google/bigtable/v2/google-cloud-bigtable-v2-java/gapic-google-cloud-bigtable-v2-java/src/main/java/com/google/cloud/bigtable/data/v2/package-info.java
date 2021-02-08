@@ -22,6 +22,15 @@
  * <p>Service Description: Service for reading from and writing to existing Bigtable tables.
  *
  * <p>Sample for BaseBigtableDataClient:
+ *
+ * <pre>{@code
+ * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
+ *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
+ *   ByteString rowKey = ByteString.EMPTY;
+ *   List<Mutation> mutations = new ArrayList<>();
+ *   MutateRowResponse response = baseBigtableDataClient.mutateRow(tableName, rowKey, mutations);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.bigtable.data.v2;

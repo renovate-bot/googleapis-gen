@@ -48,6 +48,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+ *     GkeHubMembershipServiceClient.create()) {
+ *   String name = "name3373707";
+ *   Membership response = gkeHubMembershipServiceClient.getMembership(name);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the GkeHubMembershipServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -167,6 +175,19 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
   /**
    * Lists Memberships in a given project and location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   String parent = "parent-995424086";
+   *   for (Membership element :
+   *       gkeHubMembershipServiceClient.listMemberships(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent (project and location) where the Memberships will be listed.
    *     Specified in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -180,6 +201,26 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
   /**
    * Lists Memberships in a given project and location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   ListMembershipsRequest request =
+   *       ListMembershipsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (Membership element :
+   *       gkeHubMembershipServiceClient.listMemberships(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -192,6 +233,26 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * Lists Memberships in a given project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   ListMembershipsRequest request =
+   *       ListMembershipsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<Membership> future =
+   *       gkeHubMembershipServiceClient.listMembershipsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Membership element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListMembershipsRequest, ListMembershipsPagedResponse>
       listMembershipsPagedCallable() {
@@ -203,6 +264,25 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * Lists Memberships in a given project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   while (true) {
+   *     ListMembershipsResponse response =
+   *         gkeHubMembershipServiceClient.listMembershipsCallable().call(request);
+   *     for (Membership element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListMembershipsRequest, ListMembershipsResponse>
       listMembershipsCallable() {
@@ -212,6 +292,16 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the details of a Membership.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   String name = "name3373707";
+   *   Membership response = gkeHubMembershipServiceClient.getMembership(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The Membership resource name in the format
    *     `projects/&#42;/locations/&#42;/memberships/&#42;`.
@@ -226,6 +316,17 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
   /**
    * Gets the details of a Membership.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   GetMembershipRequest request =
+   *       GetMembershipRequest.newBuilder().setName("name3373707").build();
+   *   Membership response = gkeHubMembershipServiceClient.getMembership(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -238,6 +339,18 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * Gets the details of a Membership.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   GetMembershipRequest request =
+   *       GetMembershipRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Membership> future =
+   *       gkeHubMembershipServiceClient.getMembershipCallable().futureCall(request);
+   *   // Do something.
+   *   Membership response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetMembershipRequest, Membership> getMembershipCallable() {
     return stub.getMembershipCallable();
@@ -246,6 +359,19 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds a new Membership.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   String parent = "parent-995424086";
+   *   Membership resource = Membership.newBuilder().build();
+   *   String membershipId = "membershipId517665681";
+   *   Membership response =
+   *       gkeHubMembershipServiceClient.createMembershipAsync(parent, resource, membershipId).get();
+   * }
+   * }</pre>
    *
    * @param parent Required. The parent (project and location) where the Memberships will be
    *     created. Specified in the format `projects/&#42;/locations/&#42;`.
@@ -273,6 +399,21 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
   /**
    * Adds a new Membership.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   CreateMembershipRequest request =
+   *       CreateMembershipRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setMembershipId("membershipId517665681")
+   *           .setResource(Membership.newBuilder().build())
+   *           .build();
+   *   Membership response = gkeHubMembershipServiceClient.createMembershipAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -286,6 +427,22 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * Adds a new Membership.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   CreateMembershipRequest request =
+   *       CreateMembershipRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setMembershipId("membershipId517665681")
+   *           .setResource(Membership.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Membership, OperationMetadata> future =
+   *       gkeHubMembershipServiceClient.createMembershipOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Membership response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<CreateMembershipRequest, Membership, OperationMetadata>
       createMembershipOperationCallable() {
@@ -297,6 +454,22 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * Adds a new Membership.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   CreateMembershipRequest request =
+   *       CreateMembershipRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setMembershipId("membershipId517665681")
+   *           .setResource(Membership.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       gkeHubMembershipServiceClient.createMembershipCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateMembershipRequest, Operation> createMembershipCallable() {
     return stub.createMembershipCallable();
@@ -305,6 +478,16 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes a Membership.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   String name = "name3373707";
+   *   gkeHubMembershipServiceClient.deleteMembershipAsync(name).get();
+   * }
+   * }</pre>
    *
    * @param name Required. The Membership resource name in the format
    *     `projects/&#42;/locations/&#42;/memberships/&#42;`.
@@ -319,6 +502,17 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
   /**
    * Removes a Membership.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   DeleteMembershipRequest request =
+   *       DeleteMembershipRequest.newBuilder().setName("name3373707").build();
+   *   gkeHubMembershipServiceClient.deleteMembershipAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -332,6 +526,18 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * Removes a Membership.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   DeleteMembershipRequest request =
+   *       DeleteMembershipRequest.newBuilder().setName("name3373707").build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       gkeHubMembershipServiceClient.deleteMembershipOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<DeleteMembershipRequest, Empty, OperationMetadata>
       deleteMembershipOperationCallable() {
@@ -343,6 +549,18 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * Removes a Membership.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   DeleteMembershipRequest request =
+   *       DeleteMembershipRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Operation> future =
+   *       gkeHubMembershipServiceClient.deleteMembershipCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteMembershipRequest, Operation> deleteMembershipCallable() {
     return stub.deleteMembershipCallable();
@@ -351,6 +569,19 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an existing Membership.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   String name = "name3373707";
+   *   Membership resource = Membership.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Membership response =
+   *       gkeHubMembershipServiceClient.updateMembershipAsync(name, resource, updateMask).get();
+   * }
+   * }</pre>
    *
    * @param name Required. The membership resource name in the format:
    *     `projects/[project_id]/locations/global/memberships/[membership_id]`
@@ -377,6 +608,21 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
   /**
    * Updates an existing Membership.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   UpdateMembershipRequest request =
+   *       UpdateMembershipRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setResource(Membership.newBuilder().build())
+   *           .build();
+   *   Membership response = gkeHubMembershipServiceClient.updateMembershipAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -390,6 +636,22 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * Updates an existing Membership.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   UpdateMembershipRequest request =
+   *       UpdateMembershipRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setResource(Membership.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Membership, OperationMetadata> future =
+   *       gkeHubMembershipServiceClient.updateMembershipOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Membership response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<UpdateMembershipRequest, Membership, OperationMetadata>
       updateMembershipOperationCallable() {
@@ -401,6 +663,22 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * Updates an existing Membership.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   UpdateMembershipRequest request =
+   *       UpdateMembershipRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setResource(Membership.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       gkeHubMembershipServiceClient.updateMembershipCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateMembershipRequest, Operation> updateMembershipCallable() {
     return stub.updateMembershipCallable();
@@ -409,6 +687,25 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Generates the manifest for deployment of the GKE connect agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   GenerateConnectManifestRequest request =
+   *       GenerateConnectManifestRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setConnectAgent(ConnectAgent.newBuilder().build())
+   *           .setVersion("version351608024")
+   *           .setIsUpgrade(true)
+   *           .setRegistry("registry-690212803")
+   *           .setImagePullSecretContent(ByteString.EMPTY)
+   *           .build();
+   *   GenerateConnectManifestResponse response =
+   *       gkeHubMembershipServiceClient.generateConnectManifest(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -423,6 +720,25 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * Generates the manifest for deployment of the GKE connect agent.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   GenerateConnectManifestRequest request =
+   *       GenerateConnectManifestRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setConnectAgent(ConnectAgent.newBuilder().build())
+   *           .setVersion("version351608024")
+   *           .setIsUpgrade(true)
+   *           .setRegistry("registry-690212803")
+   *           .setImagePullSecretContent(ByteString.EMPTY)
+   *           .build();
+   *   ApiFuture<GenerateConnectManifestResponse> future =
+   *       gkeHubMembershipServiceClient.generateConnectManifestCallable().futureCall(request);
+   *   // Do something.
+   *   GenerateConnectManifestResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GenerateConnectManifestRequest, GenerateConnectManifestResponse>
       generateConnectManifestCallable() {
@@ -433,6 +749,22 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
   /**
    * ValidateExclusivity validates the state of exclusivity in the cluster. The validation does not
    * depend on an existing Hub membership resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   ValidateExclusivityRequest request =
+   *       ValidateExclusivityRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setCrManifest("crManifest-1971077186")
+   *           .setIntendedMembership("intendedMembership-2074920351")
+   *           .build();
+   *   ValidateExclusivityResponse response =
+   *       gkeHubMembershipServiceClient.validateExclusivity(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -447,6 +779,22 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * depend on an existing Hub membership resource.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   ValidateExclusivityRequest request =
+   *       ValidateExclusivityRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setCrManifest("crManifest-1971077186")
+   *           .setIntendedMembership("intendedMembership-2074920351")
+   *           .build();
+   *   ApiFuture<ValidateExclusivityResponse> future =
+   *       gkeHubMembershipServiceClient.validateExclusivityCallable().futureCall(request);
+   *   // Do something.
+   *   ValidateExclusivityResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ValidateExclusivityRequest, ValidateExclusivityResponse>
       validateExclusivityCallable() {
@@ -465,6 +813,22 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * <p>The Membership CRD is versioned, and may require conversion when the GKE Hub API server
    * begins serving a newer version of the CRD and corresponding CR. The response will be the
    * converted CRD and CR if there are any differences between the versions.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   GenerateExclusivityManifestRequest request =
+   *       GenerateExclusivityManifestRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setCrdManifest("crdManifest1401188132")
+   *           .setCrManifest("crManifest-1971077186")
+   *           .build();
+   *   GenerateExclusivityManifestResponse response =
+   *       gkeHubMembershipServiceClient.generateExclusivityManifest(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -488,6 +852,22 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * converted CRD and CR if there are any differences between the versions.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   GenerateExclusivityManifestRequest request =
+   *       GenerateExclusivityManifestRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setCrdManifest("crdManifest1401188132")
+   *           .setCrManifest("crManifest-1971077186")
+   *           .build();
+   *   ApiFuture<GenerateExclusivityManifestResponse> future =
+   *       gkeHubMembershipServiceClient.generateExclusivityManifestCallable().futureCall(request);
+   *   // Do something.
+   *   GenerateExclusivityManifestResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           GenerateExclusivityManifestRequest, GenerateExclusivityManifestResponse>

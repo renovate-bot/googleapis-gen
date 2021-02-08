@@ -39,6 +39,13 @@
  *
  * <p>Sample for Controller2Client:
  *
+ * <pre>{@code
+ * try (Controller2Client controller2Client = Controller2Client.create()) {
+ *   Debuggee debuggee = Debuggee.newBuilder().build();
+ *   RegisterDebuggeeResponse response = controller2Client.registerDebuggee(debuggee);
+ * }
+ * }</pre>
+ *
  * <p>======================= Debugger2Client =======================
  *
  * <p>Service Description: The Debugger service provides the API that allows users to collect
@@ -55,6 +62,16 @@
  * collect the results of the set Breakpoints.
  *
  * <p>Sample for Debugger2Client:
+ *
+ * <pre>{@code
+ * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
+ *   String debuggeeId = "debuggeeId-1833285553";
+ *   Breakpoint breakpoint = Breakpoint.newBuilder().build();
+ *   String clientVersion = "clientVersion771880589";
+ *   SetBreakpointResponse response =
+ *       debugger2Client.setBreakpoint(debuggeeId, breakpoint, clientVersion);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.debugger.v2;

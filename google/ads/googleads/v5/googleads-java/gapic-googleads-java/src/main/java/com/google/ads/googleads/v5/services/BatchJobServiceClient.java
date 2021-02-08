@@ -48,6 +48,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (BatchJobServiceClient batchJobServiceClient = BatchJobServiceClient.create()) {
+ *   String customerId = "customerId-1581184615";
+ *   BatchJobOperation operation = BatchJobOperation.newBuilder().build();
+ *   MutateBatchJobResponse response = batchJobServiceClient.mutateBatchJob(customerId, operation);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the BatchJobServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -165,6 +173,16 @@ public class BatchJobServiceClient implements BackgroundResource {
   /**
    * Mutates a batch job.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BatchJobServiceClient batchJobServiceClient = BatchJobServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   BatchJobOperation operation = BatchJobOperation.newBuilder().build();
+   *   MutateBatchJobResponse response = batchJobServiceClient.mutateBatchJob(customerId, operation);
+   * }
+   * }</pre>
+   *
    * @param customerId Required. The ID of the customer for which to create a batch job.
    * @param operation Required. The operation to perform on an individual batch job.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -183,6 +201,19 @@ public class BatchJobServiceClient implements BackgroundResource {
   /**
    * Mutates a batch job.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BatchJobServiceClient batchJobServiceClient = BatchJobServiceClient.create()) {
+   *   MutateBatchJobRequest request =
+   *       MutateBatchJobRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .setOperation(BatchJobOperation.newBuilder().build())
+   *           .build();
+   *   MutateBatchJobResponse response = batchJobServiceClient.mutateBatchJob(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -195,6 +226,20 @@ public class BatchJobServiceClient implements BackgroundResource {
    * Mutates a batch job.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BatchJobServiceClient batchJobServiceClient = BatchJobServiceClient.create()) {
+   *   MutateBatchJobRequest request =
+   *       MutateBatchJobRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .setOperation(BatchJobOperation.newBuilder().build())
+   *           .build();
+   *   ApiFuture<MutateBatchJobResponse> future =
+   *       batchJobServiceClient.mutateBatchJobCallable().futureCall(request);
+   *   // Do something.
+   *   MutateBatchJobResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<MutateBatchJobRequest, MutateBatchJobResponse>
       mutateBatchJobCallable() {
@@ -204,6 +249,15 @@ public class BatchJobServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the batch job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BatchJobServiceClient batchJobServiceClient = BatchJobServiceClient.create()) {
+   *   BatchJobName resourceName = BatchJobName.of("[CUSTOMER]", "[BATCH_JOB]");
+   *   BatchJob response = batchJobServiceClient.getBatchJob(resourceName);
+   * }
+   * }</pre>
    *
    * @param resourceName Required. The resource name of the batch job to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -220,6 +274,15 @@ public class BatchJobServiceClient implements BackgroundResource {
   /**
    * Returns the batch job.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BatchJobServiceClient batchJobServiceClient = BatchJobServiceClient.create()) {
+   *   String resourceName = BatchJobName.of("[CUSTOMER]", "[BATCH_JOB]").toString();
+   *   BatchJob response = batchJobServiceClient.getBatchJob(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the batch job to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -233,6 +296,18 @@ public class BatchJobServiceClient implements BackgroundResource {
   /**
    * Returns the batch job.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BatchJobServiceClient batchJobServiceClient = BatchJobServiceClient.create()) {
+   *   GetBatchJobRequest request =
+   *       GetBatchJobRequest.newBuilder()
+   *           .setResourceName(BatchJobName.of("[CUSTOMER]", "[BATCH_JOB]").toString())
+   *           .build();
+   *   BatchJob response = batchJobServiceClient.getBatchJob(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -245,6 +320,18 @@ public class BatchJobServiceClient implements BackgroundResource {
    * Returns the batch job.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BatchJobServiceClient batchJobServiceClient = BatchJobServiceClient.create()) {
+   *   GetBatchJobRequest request =
+   *       GetBatchJobRequest.newBuilder()
+   *           .setResourceName(BatchJobName.of("[CUSTOMER]", "[BATCH_JOB]").toString())
+   *           .build();
+   *   ApiFuture<BatchJob> future = batchJobServiceClient.getBatchJobCallable().futureCall(request);
+   *   // Do something.
+   *   BatchJob response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetBatchJobRequest, BatchJob> getBatchJobCallable() {
     return stub.getBatchJobCallable();
@@ -253,6 +340,18 @@ public class BatchJobServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the results of the batch job. The job must be done. Supports standard list paging.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BatchJobServiceClient batchJobServiceClient = BatchJobServiceClient.create()) {
+   *   BatchJobName resourceName = BatchJobName.of("[CUSTOMER]", "[BATCH_JOB]");
+   *   for (BatchJobResult element :
+   *       batchJobServiceClient.listBatchJobResults(resourceName).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param resourceName Required. The resource name of the batch job whose results are being
    *     listed.
@@ -270,6 +369,18 @@ public class BatchJobServiceClient implements BackgroundResource {
   /**
    * Returns the results of the batch job. The job must be done. Supports standard list paging.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BatchJobServiceClient batchJobServiceClient = BatchJobServiceClient.create()) {
+   *   String resourceName = BatchJobName.of("[CUSTOMER]", "[BATCH_JOB]").toString();
+   *   for (BatchJobResult element :
+   *       batchJobServiceClient.listBatchJobResults(resourceName).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the batch job whose results are being
    *     listed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -284,6 +395,23 @@ public class BatchJobServiceClient implements BackgroundResource {
   /**
    * Returns the results of the batch job. The job must be done. Supports standard list paging.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BatchJobServiceClient batchJobServiceClient = BatchJobServiceClient.create()) {
+   *   ListBatchJobResultsRequest request =
+   *       ListBatchJobResultsRequest.newBuilder()
+   *           .setResourceName(BatchJobName.of("[CUSTOMER]", "[BATCH_JOB]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
+   *   for (BatchJobResult element :
+   *       batchJobServiceClient.listBatchJobResults(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -297,6 +425,23 @@ public class BatchJobServiceClient implements BackgroundResource {
    * Returns the results of the batch job. The job must be done. Supports standard list paging.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BatchJobServiceClient batchJobServiceClient = BatchJobServiceClient.create()) {
+   *   ListBatchJobResultsRequest request =
+   *       ListBatchJobResultsRequest.newBuilder()
+   *           .setResourceName(BatchJobName.of("[CUSTOMER]", "[BATCH_JOB]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
+   *   ApiFuture<BatchJobResult> future =
+   *       batchJobServiceClient.listBatchJobResultsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (BatchJobResult element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListBatchJobResultsRequest, ListBatchJobResultsPagedResponse>
       listBatchJobResultsPagedCallable() {
@@ -308,6 +453,24 @@ public class BatchJobServiceClient implements BackgroundResource {
    * Returns the results of the batch job. The job must be done. Supports standard list paging.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BatchJobServiceClient batchJobServiceClient = BatchJobServiceClient.create()) {
+   *   while (true) {
+   *     ListBatchJobResultsResponse response =
+   *         batchJobServiceClient.listBatchJobResultsCallable().call(request);
+   *     for (BatchJobResult element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListBatchJobResultsRequest, ListBatchJobResultsResponse>
       listBatchJobResultsCallable() {
@@ -321,6 +484,15 @@ public class BatchJobServiceClient implements BackgroundResource {
    * <p>The Operation.metadata field type is BatchJobMetadata. When finished, the long running
    * operation will not contain errors or a response. Instead, use ListBatchJobResults to get the
    * results of the job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BatchJobServiceClient batchJobServiceClient = BatchJobServiceClient.create()) {
+   *   BatchJobName resourceName = BatchJobName.of("[CUSTOMER]", "[BATCH_JOB]");
+   *   batchJobServiceClient.runBatchJobAsync(resourceName).get();
+   * }
+   * }</pre>
    *
    * @param resourceName Required. The resource name of the BatchJob to run.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -342,6 +514,15 @@ public class BatchJobServiceClient implements BackgroundResource {
    * operation will not contain errors or a response. Instead, use ListBatchJobResults to get the
    * results of the job.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BatchJobServiceClient batchJobServiceClient = BatchJobServiceClient.create()) {
+   *   String resourceName = BatchJobName.of("[CUSTOMER]", "[BATCH_JOB]").toString();
+   *   batchJobServiceClient.runBatchJobAsync(resourceName).get();
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the BatchJob to run.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -360,6 +541,18 @@ public class BatchJobServiceClient implements BackgroundResource {
    * operation will not contain errors or a response. Instead, use ListBatchJobResults to get the
    * results of the job.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BatchJobServiceClient batchJobServiceClient = BatchJobServiceClient.create()) {
+   *   RunBatchJobRequest request =
+   *       RunBatchJobRequest.newBuilder()
+   *           .setResourceName(BatchJobName.of("[CUSTOMER]", "[BATCH_JOB]").toString())
+   *           .build();
+   *   batchJobServiceClient.runBatchJobAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -377,6 +570,19 @@ public class BatchJobServiceClient implements BackgroundResource {
    * results of the job.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BatchJobServiceClient batchJobServiceClient = BatchJobServiceClient.create()) {
+   *   RunBatchJobRequest request =
+   *       RunBatchJobRequest.newBuilder()
+   *           .setResourceName(BatchJobName.of("[CUSTOMER]", "[BATCH_JOB]").toString())
+   *           .build();
+   *   OperationFuture<Empty, BatchJob.BatchJobMetadata> future =
+   *       batchJobServiceClient.runBatchJobOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<RunBatchJobRequest, Empty, BatchJob.BatchJobMetadata>
       runBatchJobOperationCallable() {
@@ -392,6 +598,18 @@ public class BatchJobServiceClient implements BackgroundResource {
    * results of the job.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BatchJobServiceClient batchJobServiceClient = BatchJobServiceClient.create()) {
+   *   RunBatchJobRequest request =
+   *       RunBatchJobRequest.newBuilder()
+   *           .setResourceName(BatchJobName.of("[CUSTOMER]", "[BATCH_JOB]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future = batchJobServiceClient.runBatchJobCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<RunBatchJobRequest, Operation> runBatchJobCallable() {
     return stub.runBatchJobCallable();
@@ -400,6 +618,17 @@ public class BatchJobServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Add operations to the batch job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BatchJobServiceClient batchJobServiceClient = BatchJobServiceClient.create()) {
+   *   BatchJobName resourceName = BatchJobName.of("[CUSTOMER]", "[BATCH_JOB]");
+   *   List<MutateOperation> mutateOperations = new ArrayList<>();
+   *   AddBatchJobOperationsResponse response =
+   *       batchJobServiceClient.addBatchJobOperations(resourceName, mutateOperations);
+   * }
+   * }</pre>
    *
    * @param resourceName Required. The resource name of the batch job.
    * @param mutateOperations Required. The list of mutates being added.
@@ -425,6 +654,17 @@ public class BatchJobServiceClient implements BackgroundResource {
   /**
    * Add operations to the batch job.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BatchJobServiceClient batchJobServiceClient = BatchJobServiceClient.create()) {
+   *   String resourceName = BatchJobName.of("[CUSTOMER]", "[BATCH_JOB]").toString();
+   *   List<MutateOperation> mutateOperations = new ArrayList<>();
+   *   AddBatchJobOperationsResponse response =
+   *       batchJobServiceClient.addBatchJobOperations(resourceName, mutateOperations);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the batch job.
    * @param mutateOperations Required. The list of mutates being added.
    *     <p>Operations can use negative integers as temp ids to signify dependencies between
@@ -448,6 +688,19 @@ public class BatchJobServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Add operations to the batch job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BatchJobServiceClient batchJobServiceClient = BatchJobServiceClient.create()) {
+   *   BatchJobName resourceName = BatchJobName.of("[CUSTOMER]", "[BATCH_JOB]");
+   *   String sequenceToken = "sequenceToken-731053384";
+   *   List<MutateOperation> mutateOperations = new ArrayList<>();
+   *   AddBatchJobOperationsResponse response =
+   *       batchJobServiceClient.addBatchJobOperations(
+   *           resourceName, sequenceToken, mutateOperations);
+   * }
+   * }</pre>
    *
    * @param resourceName Required. The resource name of the batch job.
    * @param sequenceToken A token used to enforce sequencing.
@@ -478,6 +731,19 @@ public class BatchJobServiceClient implements BackgroundResource {
   /**
    * Add operations to the batch job.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BatchJobServiceClient batchJobServiceClient = BatchJobServiceClient.create()) {
+   *   String resourceName = BatchJobName.of("[CUSTOMER]", "[BATCH_JOB]").toString();
+   *   String sequenceToken = "sequenceToken-731053384";
+   *   List<MutateOperation> mutateOperations = new ArrayList<>();
+   *   AddBatchJobOperationsResponse response =
+   *       batchJobServiceClient.addBatchJobOperations(
+   *           resourceName, sequenceToken, mutateOperations);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the batch job.
    * @param sequenceToken A token used to enforce sequencing.
    *     <p>The first AddBatchJobOperations request for a batch job should not set sequence_token.
@@ -507,6 +773,20 @@ public class BatchJobServiceClient implements BackgroundResource {
   /**
    * Add operations to the batch job.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BatchJobServiceClient batchJobServiceClient = BatchJobServiceClient.create()) {
+   *   AddBatchJobOperationsRequest request =
+   *       AddBatchJobOperationsRequest.newBuilder()
+   *           .setResourceName(BatchJobName.of("[CUSTOMER]", "[BATCH_JOB]").toString())
+   *           .setSequenceToken("sequenceToken-731053384")
+   *           .addAllMutateOperations(new ArrayList<MutateOperation>())
+   *           .build();
+   *   AddBatchJobOperationsResponse response = batchJobServiceClient.addBatchJobOperations(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -520,6 +800,21 @@ public class BatchJobServiceClient implements BackgroundResource {
    * Add operations to the batch job.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BatchJobServiceClient batchJobServiceClient = BatchJobServiceClient.create()) {
+   *   AddBatchJobOperationsRequest request =
+   *       AddBatchJobOperationsRequest.newBuilder()
+   *           .setResourceName(BatchJobName.of("[CUSTOMER]", "[BATCH_JOB]").toString())
+   *           .setSequenceToken("sequenceToken-731053384")
+   *           .addAllMutateOperations(new ArrayList<MutateOperation>())
+   *           .build();
+   *   ApiFuture<AddBatchJobOperationsResponse> future =
+   *       batchJobServiceClient.addBatchJobOperationsCallable().futureCall(request);
+   *   // Do something.
+   *   AddBatchJobOperationsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<AddBatchJobOperationsRequest, AddBatchJobOperationsResponse>
       addBatchJobOperationsCallable() {

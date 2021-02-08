@@ -23,6 +23,14 @@
  * structures and devices for enterprise use cases.
  *
  * <p>Sample for SmartDeviceManagementServiceClient:
+ *
+ * <pre>{@code
+ * try (SmartDeviceManagementServiceClient smartDeviceManagementServiceClient =
+ *     SmartDeviceManagementServiceClient.create()) {
+ *   GetDeviceRequest request = GetDeviceRequest.newBuilder().setName("name3373707").build();
+ *   Device response = smartDeviceManagementServiceClient.getDevice(request);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.home.enterprise.sdm.v1;

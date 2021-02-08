@@ -33,6 +33,17 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (InvoiceServiceClient invoiceServiceClient = InvoiceServiceClient.create()) {
+ *   String customerId = "customerId-1581184615";
+ *   String billingSetup = "billingSetup-1435075390";
+ *   String issueYear = "issueYear184914102";
+ *   MonthOfYearEnum.MonthOfYear issueMonth = MonthOfYearEnum.MonthOfYear.forNumber(0);
+ *   ListInvoicesResponse response =
+ *       invoiceServiceClient.listInvoices(customerId, billingSetup, issueYear, issueMonth);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the InvoiceServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -136,6 +147,19 @@ public class InvoiceServiceClient implements BackgroundResource {
   /**
    * Returns all invoices associated with a billing setup, for a given month.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InvoiceServiceClient invoiceServiceClient = InvoiceServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   String billingSetup = "billingSetup-1435075390";
+   *   String issueYear = "issueYear184914102";
+   *   MonthOfYearEnum.MonthOfYear issueMonth = MonthOfYearEnum.MonthOfYear.forNumber(0);
+   *   ListInvoicesResponse response =
+   *       invoiceServiceClient.listInvoices(customerId, billingSetup, issueYear, issueMonth);
+   * }
+   * }</pre>
+   *
    * @param customerId Required. The ID of the customer to fetch invoices for.
    * @param billingSetup Required. The billing setup resource name of the requested invoices.
    *     <p>`customers/{customer_id}/billingSetups/{billing_setup_id}`
@@ -163,6 +187,20 @@ public class InvoiceServiceClient implements BackgroundResource {
   /**
    * Returns all invoices associated with a billing setup, for a given month.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InvoiceServiceClient invoiceServiceClient = InvoiceServiceClient.create()) {
+   *   ListInvoicesRequest request =
+   *       ListInvoicesRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .setBillingSetup("billingSetup-1435075390")
+   *           .setIssueYear("issueYear184914102")
+   *           .build();
+   *   ListInvoicesResponse response = invoiceServiceClient.listInvoices(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -175,6 +213,21 @@ public class InvoiceServiceClient implements BackgroundResource {
    * Returns all invoices associated with a billing setup, for a given month.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InvoiceServiceClient invoiceServiceClient = InvoiceServiceClient.create()) {
+   *   ListInvoicesRequest request =
+   *       ListInvoicesRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .setBillingSetup("billingSetup-1435075390")
+   *           .setIssueYear("issueYear184914102")
+   *           .build();
+   *   ApiFuture<ListInvoicesResponse> future =
+   *       invoiceServiceClient.listInvoicesCallable().futureCall(request);
+   *   // Do something.
+   *   ListInvoicesResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListInvoicesRequest, ListInvoicesResponse> listInvoicesCallable() {
     return stub.listInvoicesCallable();

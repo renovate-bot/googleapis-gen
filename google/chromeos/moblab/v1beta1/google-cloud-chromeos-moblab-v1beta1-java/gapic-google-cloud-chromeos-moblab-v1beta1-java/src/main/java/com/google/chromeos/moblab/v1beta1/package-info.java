@@ -22,6 +22,14 @@
  * <p>Service Description: Manages Chrome OS build services.
  *
  * <p>Sample for BuildServiceClient:
+ *
+ * <pre>{@code
+ * try (BuildServiceClient buildServiceClient = BuildServiceClient.create()) {
+ *   BuildArtifactName name =
+ *       BuildArtifactName.of("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]");
+ *   CheckBuildStageStatusResponse response = buildServiceClient.checkBuildStageStatus(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.chromeos.moblab.v1beta1;

@@ -34,6 +34,15 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (GeoTargetConstantServiceClient geoTargetConstantServiceClient =
+ *     GeoTargetConstantServiceClient.create()) {
+ *   GeoTargetConstantName resourceName = GeoTargetConstantName.of("[CRITERION_ID]");
+ *   GeoTargetConstant response =
+ *       geoTargetConstantServiceClient.getGeoTargetConstant(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the GeoTargetConstantServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -142,6 +151,17 @@ public class GeoTargetConstantServiceClient implements BackgroundResource {
   /**
    * Returns the requested geo target constant in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GeoTargetConstantServiceClient geoTargetConstantServiceClient =
+   *     GeoTargetConstantServiceClient.create()) {
+   *   GeoTargetConstantName resourceName = GeoTargetConstantName.of("[CRITERION_ID]");
+   *   GeoTargetConstant response =
+   *       geoTargetConstantServiceClient.getGeoTargetConstant(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the geo target constant to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -157,6 +177,17 @@ public class GeoTargetConstantServiceClient implements BackgroundResource {
   /**
    * Returns the requested geo target constant in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GeoTargetConstantServiceClient geoTargetConstantServiceClient =
+   *     GeoTargetConstantServiceClient.create()) {
+   *   String resourceName = GeoTargetConstantName.of("[CRITERION_ID]").toString();
+   *   GeoTargetConstant response =
+   *       geoTargetConstantServiceClient.getGeoTargetConstant(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the geo target constant to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -170,6 +201,19 @@ public class GeoTargetConstantServiceClient implements BackgroundResource {
   /**
    * Returns the requested geo target constant in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GeoTargetConstantServiceClient geoTargetConstantServiceClient =
+   *     GeoTargetConstantServiceClient.create()) {
+   *   GetGeoTargetConstantRequest request =
+   *       GetGeoTargetConstantRequest.newBuilder()
+   *           .setResourceName(GeoTargetConstantName.of("[CRITERION_ID]").toString())
+   *           .build();
+   *   GeoTargetConstant response = geoTargetConstantServiceClient.getGeoTargetConstant(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -182,6 +226,20 @@ public class GeoTargetConstantServiceClient implements BackgroundResource {
    * Returns the requested geo target constant in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GeoTargetConstantServiceClient geoTargetConstantServiceClient =
+   *     GeoTargetConstantServiceClient.create()) {
+   *   GetGeoTargetConstantRequest request =
+   *       GetGeoTargetConstantRequest.newBuilder()
+   *           .setResourceName(GeoTargetConstantName.of("[CRITERION_ID]").toString())
+   *           .build();
+   *   ApiFuture<GeoTargetConstant> future =
+   *       geoTargetConstantServiceClient.getGeoTargetConstantCallable().futureCall(request);
+   *   // Do something.
+   *   GeoTargetConstant response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetGeoTargetConstantRequest, GeoTargetConstant>
       getGeoTargetConstantCallable() {
@@ -191,6 +249,18 @@ public class GeoTargetConstantServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns GeoTargetConstant suggestions by location name or by resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GeoTargetConstantServiceClient geoTargetConstantServiceClient =
+   *     GeoTargetConstantServiceClient.create()) {
+   *   SuggestGeoTargetConstantsRequest request =
+   *       SuggestGeoTargetConstantsRequest.newBuilder().build();
+   *   SuggestGeoTargetConstantsResponse response =
+   *       geoTargetConstantServiceClient.suggestGeoTargetConstants(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -205,6 +275,18 @@ public class GeoTargetConstantServiceClient implements BackgroundResource {
    * Returns GeoTargetConstant suggestions by location name or by resource name.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GeoTargetConstantServiceClient geoTargetConstantServiceClient =
+   *     GeoTargetConstantServiceClient.create()) {
+   *   SuggestGeoTargetConstantsRequest request =
+   *       SuggestGeoTargetConstantsRequest.newBuilder().build();
+   *   ApiFuture<SuggestGeoTargetConstantsResponse> future =
+   *       geoTargetConstantServiceClient.suggestGeoTargetConstantsCallable().futureCall(request);
+   *   // Do something.
+   *   SuggestGeoTargetConstantsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SuggestGeoTargetConstantsRequest, SuggestGeoTargetConstantsResponse>
       suggestGeoTargetConstantsCallable() {

@@ -42,6 +42,15 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (GoogleAdsServiceClient googleAdsServiceClient = GoogleAdsServiceClient.create()) {
+ *   String customerId = "customerId-1581184615";
+ *   List<MutateOperation> mutateOperations = new ArrayList<>();
+ *   MutateGoogleAdsResponse response =
+ *       googleAdsServiceClient.mutate(customerId, mutateOperations);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the GoogleAdsServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -148,6 +157,18 @@ public class GoogleAdsServiceClient implements BackgroundResource {
   /**
    * Returns all rows that match the search query.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GoogleAdsServiceClient googleAdsServiceClient = GoogleAdsServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   String query = "query107944136";
+   *   for (GoogleAdsRow element : googleAdsServiceClient.search(customerId, query).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param customerId Required. The ID of the customer being queried.
    * @param query Required. The query string.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -162,6 +183,25 @@ public class GoogleAdsServiceClient implements BackgroundResource {
   /**
    * Returns all rows that match the search query.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GoogleAdsServiceClient googleAdsServiceClient = GoogleAdsServiceClient.create()) {
+   *   SearchGoogleAdsRequest request =
+   *       SearchGoogleAdsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .setQuery("query107944136")
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .setValidateOnly(true)
+   *           .setReturnTotalResultsCount(true)
+   *           .build();
+   *   for (GoogleAdsRow element : googleAdsServiceClient.search(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -174,6 +214,26 @@ public class GoogleAdsServiceClient implements BackgroundResource {
    * Returns all rows that match the search query.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GoogleAdsServiceClient googleAdsServiceClient = GoogleAdsServiceClient.create()) {
+   *   SearchGoogleAdsRequest request =
+   *       SearchGoogleAdsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .setQuery("query107944136")
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .setValidateOnly(true)
+   *           .setReturnTotalResultsCount(true)
+   *           .build();
+   *   ApiFuture<GoogleAdsRow> future =
+   *       googleAdsServiceClient.searchPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (GoogleAdsRow element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SearchGoogleAdsRequest, SearchPagedResponse> searchPagedCallable() {
     return stub.searchPagedCallable();
@@ -184,6 +244,23 @@ public class GoogleAdsServiceClient implements BackgroundResource {
    * Returns all rows that match the search query.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GoogleAdsServiceClient googleAdsServiceClient = GoogleAdsServiceClient.create()) {
+   *   while (true) {
+   *     SearchGoogleAdsResponse response = googleAdsServiceClient.searchCallable().call(request);
+   *     for (GoogleAdsRow element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SearchGoogleAdsRequest, SearchGoogleAdsResponse> searchCallable() {
     return stub.searchCallable();
@@ -194,6 +271,21 @@ public class GoogleAdsServiceClient implements BackgroundResource {
    * Returns all rows that match the search stream query.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GoogleAdsServiceClient googleAdsServiceClient = GoogleAdsServiceClient.create()) {
+   *   SearchGoogleAdsStreamRequest request =
+   *       SearchGoogleAdsStreamRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .setQuery("query107944136")
+   *           .build();
+   *   ServerStream<SearchGoogleAdsStreamResponse> stream =
+   *       googleAdsServiceClient.searchStreamCallable().call(request);
+   *   for (SearchGoogleAdsStreamResponse response : stream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
    */
   public final ServerStreamingCallable<SearchGoogleAdsStreamRequest, SearchGoogleAdsStreamResponse>
       searchStreamCallable() {
@@ -245,6 +337,17 @@ public class GoogleAdsServiceClient implements BackgroundResource {
    * Latency is roughly equal to a series of calls to individual mutate methods, where each change
    * in resource type is a new call. For example, mutating 10 campaigns then 10 ad groups is like 2
    * calls, while mutating 1 campaign, 1 ad group, 1 campaign, 1 ad group is like 4 calls.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GoogleAdsServiceClient googleAdsServiceClient = GoogleAdsServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   List<MutateOperation> mutateOperations = new ArrayList<>();
+   *   MutateGoogleAdsResponse response =
+   *       googleAdsServiceClient.mutate(customerId, mutateOperations);
+   * }
+   * }</pre>
    *
    * @param customerId Required. The ID of the customer whose resources are being modified.
    * @param mutateOperations Required. The list of operations to perform on individual resources.
@@ -306,6 +409,21 @@ public class GoogleAdsServiceClient implements BackgroundResource {
    * in resource type is a new call. For example, mutating 10 campaigns then 10 ad groups is like 2
    * calls, while mutating 1 campaign, 1 ad group, 1 campaign, 1 ad group is like 4 calls.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GoogleAdsServiceClient googleAdsServiceClient = GoogleAdsServiceClient.create()) {
+   *   MutateGoogleAdsRequest request =
+   *       MutateGoogleAdsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllMutateOperations(new ArrayList<MutateOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   MutateGoogleAdsResponse response = googleAdsServiceClient.mutate(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -360,6 +478,22 @@ public class GoogleAdsServiceClient implements BackgroundResource {
    * calls, while mutating 1 campaign, 1 ad group, 1 campaign, 1 ad group is like 4 calls.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GoogleAdsServiceClient googleAdsServiceClient = GoogleAdsServiceClient.create()) {
+   *   MutateGoogleAdsRequest request =
+   *       MutateGoogleAdsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllMutateOperations(new ArrayList<MutateOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<MutateGoogleAdsResponse> future =
+   *       googleAdsServiceClient.mutateCallable().futureCall(request);
+   *   // Do something.
+   *   MutateGoogleAdsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<MutateGoogleAdsRequest, MutateGoogleAdsResponse> mutateCallable() {
     return stub.mutateCallable();

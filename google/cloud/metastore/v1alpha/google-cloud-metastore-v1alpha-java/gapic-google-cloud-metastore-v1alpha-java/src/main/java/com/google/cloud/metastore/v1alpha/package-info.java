@@ -38,6 +38,13 @@
  * <p>`/projects/{project_id}/locations/{location_id}/services/{service_id}`.
  *
  * <p>Sample for DataprocMetastoreClient:
+ *
+ * <pre>{@code
+ * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+ *   ServiceName name = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]");
+ *   Service response = dataprocMetastoreClient.getService(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.metastore.v1alpha;

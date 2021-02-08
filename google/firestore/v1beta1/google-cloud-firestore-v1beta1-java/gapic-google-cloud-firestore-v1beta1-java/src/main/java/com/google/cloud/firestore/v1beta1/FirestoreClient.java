@@ -84,6 +84,17 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+ *   GetDocumentRequest request =
+ *       GetDocumentRequest.newBuilder()
+ *           .setName("name3373707")
+ *           .setMask(DocumentMask.newBuilder().build())
+ *           .build();
+ *   Document response = firestoreClient.getDocument(request);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the FirestoreClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -186,6 +197,19 @@ public class FirestoreClient implements BackgroundResource {
   /**
    * Gets a single document.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   GetDocumentRequest request =
+   *       GetDocumentRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setMask(DocumentMask.newBuilder().build())
+   *           .build();
+   *   Document response = firestoreClient.getDocument(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -198,6 +222,19 @@ public class FirestoreClient implements BackgroundResource {
    * Gets a single document.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   GetDocumentRequest request =
+   *       GetDocumentRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setMask(DocumentMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Document> future = firestoreClient.getDocumentCallable().futureCall(request);
+   *   // Do something.
+   *   Document response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetDocumentRequest, Document> getDocumentCallable() {
     return stub.getDocumentCallable();
@@ -206,6 +243,26 @@ public class FirestoreClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists documents.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   ListDocumentsRequest request =
+   *       ListDocumentsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setCollectionId("collectionId1636075609")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setMask(DocumentMask.newBuilder().build())
+   *           .setShowMissing(true)
+   *           .build();
+   *   for (Document element : firestoreClient.listDocuments(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -219,6 +276,26 @@ public class FirestoreClient implements BackgroundResource {
    * Lists documents.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   ListDocumentsRequest request =
+   *       ListDocumentsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setCollectionId("collectionId1636075609")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setMask(DocumentMask.newBuilder().build())
+   *           .setShowMissing(true)
+   *           .build();
+   *   ApiFuture<Document> future = firestoreClient.listDocumentsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Document element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListDocumentsRequest, ListDocumentsPagedResponse>
       listDocumentsPagedCallable() {
@@ -230,6 +307,23 @@ public class FirestoreClient implements BackgroundResource {
    * Lists documents.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   while (true) {
+   *     ListDocumentsResponse response = firestoreClient.listDocumentsCallable().call(request);
+   *     for (Document element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListDocumentsRequest, ListDocumentsResponse> listDocumentsCallable() {
     return stub.listDocumentsCallable();
@@ -238,6 +332,22 @@ public class FirestoreClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new document.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   CreateDocumentRequest request =
+   *       CreateDocumentRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setCollectionId("collectionId1636075609")
+   *           .setDocumentId("documentId-814940266")
+   *           .setDocument(Document.newBuilder().build())
+   *           .setMask(DocumentMask.newBuilder().build())
+   *           .build();
+   *   Document response = firestoreClient.createDocument(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -251,6 +361,22 @@ public class FirestoreClient implements BackgroundResource {
    * Creates a new document.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   CreateDocumentRequest request =
+   *       CreateDocumentRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setCollectionId("collectionId1636075609")
+   *           .setDocumentId("documentId-814940266")
+   *           .setDocument(Document.newBuilder().build())
+   *           .setMask(DocumentMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Document> future = firestoreClient.createDocumentCallable().futureCall(request);
+   *   // Do something.
+   *   Document response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateDocumentRequest, Document> createDocumentCallable() {
     return stub.createDocumentCallable();
@@ -259,6 +385,16 @@ public class FirestoreClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates or inserts a document.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   Document document = Document.newBuilder().build();
+   *   DocumentMask updateMask = DocumentMask.newBuilder().build();
+   *   Document response = firestoreClient.updateDocument(document, updateMask);
+   * }
+   * }</pre>
    *
    * @param document Required. The updated document. Creates the document if it does not already
    *     exist.
@@ -279,6 +415,21 @@ public class FirestoreClient implements BackgroundResource {
   /**
    * Updates or inserts a document.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   UpdateDocumentRequest request =
+   *       UpdateDocumentRequest.newBuilder()
+   *           .setDocument(Document.newBuilder().build())
+   *           .setUpdateMask(DocumentMask.newBuilder().build())
+   *           .setMask(DocumentMask.newBuilder().build())
+   *           .setCurrentDocument(Precondition.newBuilder().build())
+   *           .build();
+   *   Document response = firestoreClient.updateDocument(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -291,6 +442,21 @@ public class FirestoreClient implements BackgroundResource {
    * Updates or inserts a document.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   UpdateDocumentRequest request =
+   *       UpdateDocumentRequest.newBuilder()
+   *           .setDocument(Document.newBuilder().build())
+   *           .setUpdateMask(DocumentMask.newBuilder().build())
+   *           .setMask(DocumentMask.newBuilder().build())
+   *           .setCurrentDocument(Precondition.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Document> future = firestoreClient.updateDocumentCallable().futureCall(request);
+   *   // Do something.
+   *   Document response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateDocumentRequest, Document> updateDocumentCallable() {
     return stub.updateDocumentCallable();
@@ -299,6 +465,15 @@ public class FirestoreClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a document.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   String name = "name3373707";
+   *   firestoreClient.deleteDocument(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The resource name of the Document to delete. In the format:
    *     `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
@@ -313,6 +488,19 @@ public class FirestoreClient implements BackgroundResource {
   /**
    * Deletes a document.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   DeleteDocumentRequest request =
+   *       DeleteDocumentRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setCurrentDocument(Precondition.newBuilder().build())
+   *           .build();
+   *   firestoreClient.deleteDocument(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -325,6 +513,19 @@ public class FirestoreClient implements BackgroundResource {
    * Deletes a document.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   DeleteDocumentRequest request =
+   *       DeleteDocumentRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setCurrentDocument(Precondition.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Empty> future = firestoreClient.deleteDocumentCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteDocumentRequest, Empty> deleteDocumentCallable() {
     return stub.deleteDocumentCallable();
@@ -338,6 +539,22 @@ public class FirestoreClient implements BackgroundResource {
    * they were requested.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   BatchGetDocumentsRequest request =
+   *       BatchGetDocumentsRequest.newBuilder()
+   *           .setDatabase("database1789464955")
+   *           .addAllDocuments(new ArrayList<String>())
+   *           .setMask(DocumentMask.newBuilder().build())
+   *           .build();
+   *   ServerStream<BatchGetDocumentsResponse> stream =
+   *       firestoreClient.batchGetDocumentsCallable().call(request);
+   *   for (BatchGetDocumentsResponse response : stream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
    */
   public final ServerStreamingCallable<BatchGetDocumentsRequest, BatchGetDocumentsResponse>
       batchGetDocumentsCallable() {
@@ -347,6 +564,15 @@ public class FirestoreClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Starts a new transaction.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   String database = "database1789464955";
+   *   BeginTransactionResponse response = firestoreClient.beginTransaction(database);
+   * }
+   * }</pre>
    *
    * @param database Required. The database name. In the format:
    *     `projects/{project_id}/databases/{database_id}`.
@@ -362,6 +588,19 @@ public class FirestoreClient implements BackgroundResource {
   /**
    * Starts a new transaction.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   BeginTransactionRequest request =
+   *       BeginTransactionRequest.newBuilder()
+   *           .setDatabase("database1789464955")
+   *           .setOptions(TransactionOptions.newBuilder().build())
+   *           .build();
+   *   BeginTransactionResponse response = firestoreClient.beginTransaction(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -374,6 +613,20 @@ public class FirestoreClient implements BackgroundResource {
    * Starts a new transaction.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   BeginTransactionRequest request =
+   *       BeginTransactionRequest.newBuilder()
+   *           .setDatabase("database1789464955")
+   *           .setOptions(TransactionOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<BeginTransactionResponse> future =
+   *       firestoreClient.beginTransactionCallable().futureCall(request);
+   *   // Do something.
+   *   BeginTransactionResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<BeginTransactionRequest, BeginTransactionResponse>
       beginTransactionCallable() {
@@ -383,6 +636,16 @@ public class FirestoreClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Commits a transaction, while optionally updating documents.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   String database = "database1789464955";
+   *   List<Write> writes = new ArrayList<>();
+   *   CommitResponse response = firestoreClient.commit(database, writes);
+   * }
+   * }</pre>
    *
    * @param database Required. The database name. In the format:
    *     `projects/{project_id}/databases/{database_id}`.
@@ -400,6 +663,20 @@ public class FirestoreClient implements BackgroundResource {
   /**
    * Commits a transaction, while optionally updating documents.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   CommitRequest request =
+   *       CommitRequest.newBuilder()
+   *           .setDatabase("database1789464955")
+   *           .addAllWrites(new ArrayList<Write>())
+   *           .setTransaction(ByteString.EMPTY)
+   *           .build();
+   *   CommitResponse response = firestoreClient.commit(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -412,6 +689,20 @@ public class FirestoreClient implements BackgroundResource {
    * Commits a transaction, while optionally updating documents.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   CommitRequest request =
+   *       CommitRequest.newBuilder()
+   *           .setDatabase("database1789464955")
+   *           .addAllWrites(new ArrayList<Write>())
+   *           .setTransaction(ByteString.EMPTY)
+   *           .build();
+   *   ApiFuture<CommitResponse> future = firestoreClient.commitCallable().futureCall(request);
+   *   // Do something.
+   *   CommitResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CommitRequest, CommitResponse> commitCallable() {
     return stub.commitCallable();
@@ -420,6 +711,16 @@ public class FirestoreClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Rolls back a transaction.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   String database = "database1789464955";
+   *   ByteString transaction = ByteString.EMPTY;
+   *   firestoreClient.rollback(database, transaction);
+   * }
+   * }</pre>
    *
    * @param database Required. The database name. In the format:
    *     `projects/{project_id}/databases/{database_id}`.
@@ -436,6 +737,19 @@ public class FirestoreClient implements BackgroundResource {
   /**
    * Rolls back a transaction.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   RollbackRequest request =
+   *       RollbackRequest.newBuilder()
+   *           .setDatabase("database1789464955")
+   *           .setTransaction(ByteString.EMPTY)
+   *           .build();
+   *   firestoreClient.rollback(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -448,6 +762,19 @@ public class FirestoreClient implements BackgroundResource {
    * Rolls back a transaction.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   RollbackRequest request =
+   *       RollbackRequest.newBuilder()
+   *           .setDatabase("database1789464955")
+   *           .setTransaction(ByteString.EMPTY)
+   *           .build();
+   *   ApiFuture<Empty> future = firestoreClient.rollbackCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<RollbackRequest, Empty> rollbackCallable() {
     return stub.rollbackCallable();
@@ -458,6 +785,16 @@ public class FirestoreClient implements BackgroundResource {
    * Runs a query.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   RunQueryRequest request = RunQueryRequest.newBuilder().setParent("parent-995424086").build();
+   *   ServerStream<RunQueryResponse> stream = firestoreClient.runQueryCallable().call(request);
+   *   for (RunQueryResponse response : stream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
    */
   public final ServerStreamingCallable<RunQueryRequest, RunQueryResponse> runQueryCallable() {
     return stub.runQueryCallable();
@@ -468,6 +805,24 @@ public class FirestoreClient implements BackgroundResource {
    * Streams batches of document updates and deletes, in order.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   BidiStream<WriteRequest, WriteResponse> bidiStream = firestoreClient.writeCallable().call();
+   *   WriteRequest request =
+   *       WriteRequest.newBuilder()
+   *           .setDatabase("database1789464955")
+   *           .setStreamId("streamId1790933179")
+   *           .addAllWrites(new ArrayList<Write>())
+   *           .setStreamToken(ByteString.EMPTY)
+   *           .putAllLabels(new HashMap<String, String>())
+   *           .build();
+   *   bidiStream.send(request);
+   *   for (WriteResponse response : bidiStream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
    */
   public final BidiStreamingCallable<WriteRequest, WriteResponse> writeCallable() {
     return stub.writeCallable();
@@ -478,6 +833,22 @@ public class FirestoreClient implements BackgroundResource {
    * Listens to changes.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   BidiStream<ListenRequest, ListenResponse> bidiStream =
+   *       firestoreClient.listenCallable().call();
+   *   ListenRequest request =
+   *       ListenRequest.newBuilder()
+   *           .setDatabase("database1789464955")
+   *           .putAllLabels(new HashMap<String, String>())
+   *           .build();
+   *   bidiStream.send(request);
+   *   for (ListenResponse response : bidiStream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
    */
   public final BidiStreamingCallable<ListenRequest, ListenResponse> listenCallable() {
     return stub.listenCallable();
@@ -486,6 +857,17 @@ public class FirestoreClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all the collection IDs underneath a document.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   String parent = "parent-995424086";
+   *   for (String element : firestoreClient.listCollectionIds(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent Required. The parent document. In the format:
    *     `projects/{project_id}/databases/{database_id}/documents/{document_path}`. For example:
@@ -502,6 +884,22 @@ public class FirestoreClient implements BackgroundResource {
   /**
    * Lists all the collection IDs underneath a document.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   ListCollectionIdsRequest request =
+   *       ListCollectionIdsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (String element : firestoreClient.listCollectionIds(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -514,6 +912,23 @@ public class FirestoreClient implements BackgroundResource {
    * Lists all the collection IDs underneath a document.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   ListCollectionIdsRequest request =
+   *       ListCollectionIdsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<String> future =
+   *       firestoreClient.listCollectionIdsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (String element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListCollectionIdsRequest, ListCollectionIdsPagedResponse>
       listCollectionIdsPagedCallable() {
@@ -525,6 +940,24 @@ public class FirestoreClient implements BackgroundResource {
    * Lists all the collection IDs underneath a document.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   while (true) {
+   *     ListCollectionIdsResponse response =
+   *         firestoreClient.listCollectionIdsCallable().call(request);
+   *     for (String element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListCollectionIdsRequest, ListCollectionIdsResponse>
       listCollectionIdsCallable() {

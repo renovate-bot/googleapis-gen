@@ -34,6 +34,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (AgentEndpointServiceClient agentEndpointServiceClient =
+ *     AgentEndpointServiceClient.create()) {
+ *   String instanceIdToken = "instanceIdToken55138121";
+ *   StartNextTaskResponse response = agentEndpointServiceClient.startNextTask(instanceIdToken);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the AgentEndpointServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -142,6 +150,22 @@ public class AgentEndpointServiceClient implements BackgroundResource {
    * Stream established by client to receive Task notifications.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AgentEndpointServiceClient agentEndpointServiceClient =
+   *     AgentEndpointServiceClient.create()) {
+   *   ReceiveTaskNotificationRequest request =
+   *       ReceiveTaskNotificationRequest.newBuilder()
+   *           .setInstanceIdToken("instanceIdToken55138121")
+   *           .setAgentVersion("agentVersion1928000019")
+   *           .build();
+   *   ServerStream<ReceiveTaskNotificationResponse> stream =
+   *       agentEndpointServiceClient.receiveTaskNotificationCallable().call(request);
+   *   for (ReceiveTaskNotificationResponse response : stream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
    */
   public final ServerStreamingCallable<
           ReceiveTaskNotificationRequest, ReceiveTaskNotificationResponse>
@@ -152,6 +176,16 @@ public class AgentEndpointServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Signals the start of a task execution and returns the task info.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AgentEndpointServiceClient agentEndpointServiceClient =
+   *     AgentEndpointServiceClient.create()) {
+   *   String instanceIdToken = "instanceIdToken55138121";
+   *   StartNextTaskResponse response = agentEndpointServiceClient.startNextTask(instanceIdToken);
+   * }
+   * }</pre>
    *
    * @param instanceIdToken Required. This is the Compute Engine instance identity token described
    *     in https://cloud.google.com/compute/docs/instances/verifying-instance-identity where the
@@ -168,6 +202,17 @@ public class AgentEndpointServiceClient implements BackgroundResource {
   /**
    * Signals the start of a task execution and returns the task info.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AgentEndpointServiceClient agentEndpointServiceClient =
+   *     AgentEndpointServiceClient.create()) {
+   *   StartNextTaskRequest request =
+   *       StartNextTaskRequest.newBuilder().setInstanceIdToken("instanceIdToken55138121").build();
+   *   StartNextTaskResponse response = agentEndpointServiceClient.startNextTask(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -180,6 +225,18 @@ public class AgentEndpointServiceClient implements BackgroundResource {
    * Signals the start of a task execution and returns the task info.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AgentEndpointServiceClient agentEndpointServiceClient =
+   *     AgentEndpointServiceClient.create()) {
+   *   StartNextTaskRequest request =
+   *       StartNextTaskRequest.newBuilder().setInstanceIdToken("instanceIdToken55138121").build();
+   *   ApiFuture<StartNextTaskResponse> future =
+   *       agentEndpointServiceClient.startNextTaskCallable().futureCall(request);
+   *   // Do something.
+   *   StartNextTaskResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<StartNextTaskRequest, StartNextTaskResponse> startNextTaskCallable() {
     return stub.startNextTaskCallable();
@@ -188,6 +245,19 @@ public class AgentEndpointServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Signals an intermediary progress checkpoint in task execution.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AgentEndpointServiceClient agentEndpointServiceClient =
+   *     AgentEndpointServiceClient.create()) {
+   *   String instanceIdToken = "instanceIdToken55138121";
+   *   String taskId = "taskId-880873088";
+   *   TaskType taskType = TaskType.forNumber(0);
+   *   ReportTaskProgressResponse response =
+   *       agentEndpointServiceClient.reportTaskProgress(instanceIdToken, taskId, taskType);
+   * }
+   * }</pre>
    *
    * @param instanceIdToken Required. This is the Compute Engine instance identity token described
    *     in https://cloud.google.com/compute/docs/instances/verifying-instance-identity where the
@@ -213,6 +283,20 @@ public class AgentEndpointServiceClient implements BackgroundResource {
   /**
    * Signals an intermediary progress checkpoint in task execution.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AgentEndpointServiceClient agentEndpointServiceClient =
+   *     AgentEndpointServiceClient.create()) {
+   *   ReportTaskProgressRequest request =
+   *       ReportTaskProgressRequest.newBuilder()
+   *           .setInstanceIdToken("instanceIdToken55138121")
+   *           .setTaskId("taskId-880873088")
+   *           .build();
+   *   ReportTaskProgressResponse response = agentEndpointServiceClient.reportTaskProgress(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -225,6 +309,21 @@ public class AgentEndpointServiceClient implements BackgroundResource {
    * Signals an intermediary progress checkpoint in task execution.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AgentEndpointServiceClient agentEndpointServiceClient =
+   *     AgentEndpointServiceClient.create()) {
+   *   ReportTaskProgressRequest request =
+   *       ReportTaskProgressRequest.newBuilder()
+   *           .setInstanceIdToken("instanceIdToken55138121")
+   *           .setTaskId("taskId-880873088")
+   *           .build();
+   *   ApiFuture<ReportTaskProgressResponse> future =
+   *       agentEndpointServiceClient.reportTaskProgressCallable().futureCall(request);
+   *   // Do something.
+   *   ReportTaskProgressResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ReportTaskProgressRequest, ReportTaskProgressResponse>
       reportTaskProgressCallable() {
@@ -234,6 +333,21 @@ public class AgentEndpointServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Signals that the task execution is complete and optionally returns the next task.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AgentEndpointServiceClient agentEndpointServiceClient =
+   *     AgentEndpointServiceClient.create()) {
+   *   String instanceIdToken = "instanceIdToken55138121";
+   *   String taskId = "taskId-880873088";
+   *   TaskType taskType = TaskType.forNumber(0);
+   *   String errorMessage = "errorMessage1203236063";
+   *   ReportTaskCompleteResponse response =
+   *       agentEndpointServiceClient.reportTaskComplete(
+   *           instanceIdToken, taskId, taskType, errorMessage);
+   * }
+   * }</pre>
    *
    * @param instanceIdToken Required. This is the Compute Engine instance identity token described
    *     in https://cloud.google.com/compute/docs/instances/verifying-instance-identity where the
@@ -261,6 +375,21 @@ public class AgentEndpointServiceClient implements BackgroundResource {
   /**
    * Signals that the task execution is complete and optionally returns the next task.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AgentEndpointServiceClient agentEndpointServiceClient =
+   *     AgentEndpointServiceClient.create()) {
+   *   ReportTaskCompleteRequest request =
+   *       ReportTaskCompleteRequest.newBuilder()
+   *           .setInstanceIdToken("instanceIdToken55138121")
+   *           .setTaskId("taskId-880873088")
+   *           .setErrorMessage("errorMessage1203236063")
+   *           .build();
+   *   ReportTaskCompleteResponse response = agentEndpointServiceClient.reportTaskComplete(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -273,6 +402,22 @@ public class AgentEndpointServiceClient implements BackgroundResource {
    * Signals that the task execution is complete and optionally returns the next task.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AgentEndpointServiceClient agentEndpointServiceClient =
+   *     AgentEndpointServiceClient.create()) {
+   *   ReportTaskCompleteRequest request =
+   *       ReportTaskCompleteRequest.newBuilder()
+   *           .setInstanceIdToken("instanceIdToken55138121")
+   *           .setTaskId("taskId-880873088")
+   *           .setErrorMessage("errorMessage1203236063")
+   *           .build();
+   *   ApiFuture<ReportTaskCompleteResponse> future =
+   *       agentEndpointServiceClient.reportTaskCompleteCallable().futureCall(request);
+   *   // Do something.
+   *   ReportTaskCompleteResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ReportTaskCompleteRequest, ReportTaskCompleteResponse>
       reportTaskCompleteCallable() {
@@ -283,6 +428,21 @@ public class AgentEndpointServiceClient implements BackgroundResource {
   /**
    * Lookup the effective guest policy that applies to a VM instance. This lookup merges all
    * policies that are assigned to the instance ancestry.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AgentEndpointServiceClient agentEndpointServiceClient =
+   *     AgentEndpointServiceClient.create()) {
+   *   String instanceIdToken = "instanceIdToken55138121";
+   *   String osShortName = "osShortName1253394339";
+   *   String osVersion = "osVersion1812004436";
+   *   String osArchitecture = "osArchitecture1339954519";
+   *   GuestPolicies.EffectiveGuestPolicy response =
+   *       agentEndpointServiceClient.lookupEffectiveGuestPolicy(
+   *           instanceIdToken, osShortName, osVersion, osArchitecture);
+   * }
+   * }</pre>
    *
    * @param instanceIdToken Required. This is the GCE instance identity token described in
    *     https://cloud.google.com/compute/docs/instances/verifying-instance-identity where the
@@ -312,6 +472,23 @@ public class AgentEndpointServiceClient implements BackgroundResource {
    * Lookup the effective guest policy that applies to a VM instance. This lookup merges all
    * policies that are assigned to the instance ancestry.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AgentEndpointServiceClient agentEndpointServiceClient =
+   *     AgentEndpointServiceClient.create()) {
+   *   GuestPolicies.LookupEffectiveGuestPolicyRequest request =
+   *       GuestPolicies.LookupEffectiveGuestPolicyRequest.newBuilder()
+   *           .setInstanceIdToken("instanceIdToken55138121")
+   *           .setOsShortName("osShortName1253394339")
+   *           .setOsVersion("osVersion1812004436")
+   *           .setOsArchitecture("osArchitecture1339954519")
+   *           .build();
+   *   GuestPolicies.EffectiveGuestPolicy response =
+   *       agentEndpointServiceClient.lookupEffectiveGuestPolicy(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -326,6 +503,23 @@ public class AgentEndpointServiceClient implements BackgroundResource {
    * policies that are assigned to the instance ancestry.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AgentEndpointServiceClient agentEndpointServiceClient =
+   *     AgentEndpointServiceClient.create()) {
+   *   GuestPolicies.LookupEffectiveGuestPolicyRequest request =
+   *       GuestPolicies.LookupEffectiveGuestPolicyRequest.newBuilder()
+   *           .setInstanceIdToken("instanceIdToken55138121")
+   *           .setOsShortName("osShortName1253394339")
+   *           .setOsVersion("osVersion1812004436")
+   *           .setOsArchitecture("osArchitecture1339954519")
+   *           .build();
+   *   ApiFuture<GuestPolicies.EffectiveGuestPolicy> future =
+   *       agentEndpointServiceClient.lookupEffectiveGuestPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   GuestPolicies.EffectiveGuestPolicy response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           GuestPolicies.LookupEffectiveGuestPolicyRequest, GuestPolicies.EffectiveGuestPolicy>
@@ -336,6 +530,20 @@ public class AgentEndpointServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Registers the agent running on the VM.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AgentEndpointServiceClient agentEndpointServiceClient =
+   *     AgentEndpointServiceClient.create()) {
+   *   String instanceIdToken = "instanceIdToken55138121";
+   *   String agentVersion = "agentVersion1928000019";
+   *   List<String> supportedCapabilities = new ArrayList<>();
+   *   RegisterAgentResponse response =
+   *       agentEndpointServiceClient.registerAgent(
+   *           instanceIdToken, agentVersion, supportedCapabilities);
+   * }
+   * }</pre>
    *
    * @param instanceIdToken Required. This is the Compute Engine instance identity token described
    *     in https://cloud.google.com/compute/docs/instances/verifying-instance-identity where the
@@ -360,6 +568,21 @@ public class AgentEndpointServiceClient implements BackgroundResource {
   /**
    * Registers the agent running on the VM.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AgentEndpointServiceClient agentEndpointServiceClient =
+   *     AgentEndpointServiceClient.create()) {
+   *   RegisterAgentRequest request =
+   *       RegisterAgentRequest.newBuilder()
+   *           .setInstanceIdToken("instanceIdToken55138121")
+   *           .setAgentVersion("agentVersion1928000019")
+   *           .addAllSupportedCapabilities(new ArrayList<String>())
+   *           .build();
+   *   RegisterAgentResponse response = agentEndpointServiceClient.registerAgent(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -372,6 +595,22 @@ public class AgentEndpointServiceClient implements BackgroundResource {
    * Registers the agent running on the VM.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AgentEndpointServiceClient agentEndpointServiceClient =
+   *     AgentEndpointServiceClient.create()) {
+   *   RegisterAgentRequest request =
+   *       RegisterAgentRequest.newBuilder()
+   *           .setInstanceIdToken("instanceIdToken55138121")
+   *           .setAgentVersion("agentVersion1928000019")
+   *           .addAllSupportedCapabilities(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<RegisterAgentResponse> future =
+   *       agentEndpointServiceClient.registerAgentCallable().futureCall(request);
+   *   // Do something.
+   *   RegisterAgentResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<RegisterAgentRequest, RegisterAgentResponse> registerAgentCallable() {
     return stub.registerAgentCallable();

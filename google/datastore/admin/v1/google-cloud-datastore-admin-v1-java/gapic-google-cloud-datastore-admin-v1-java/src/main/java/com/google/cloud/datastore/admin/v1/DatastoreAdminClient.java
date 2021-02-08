@@ -110,6 +110,17 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
+ *   GetIndexRequest request =
+ *       GetIndexRequest.newBuilder()
+ *           .setProjectId("projectId-894832108")
+ *           .setIndexId("indexId1943291277")
+ *           .build();
+ *   Index response = datastoreAdminClient.getIndex(request);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the DatastoreAdminClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -229,6 +240,21 @@ public class DatastoreAdminClient implements BackgroundResource {
    * associated operation is done. If an export operation is cancelled before completion it may
    * leave partial data behind in Google Cloud Storage.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   Map<String, String> labels = new HashMap<>();
+   *   EntityFilter entityFilter = EntityFilter.newBuilder().build();
+   *   String outputUrlPrefix = "outputUrlPrefix-1132598048";
+   *   ExportEntitiesResponse response =
+   *       datastoreAdminClient
+   *           .exportEntitiesAsync(projectId, labels, entityFilter, outputUrlPrefix)
+   *           .get();
+   * }
+   * }</pre>
+   *
    * @param projectId Required. Project ID against which to make the request.
    * @param labels Client-assigned labels.
    * @param entityFilter Description of what data from the project is included in the export.
@@ -272,6 +298,21 @@ public class DatastoreAdminClient implements BackgroundResource {
    * associated operation is done. If an export operation is cancelled before completion it may
    * leave partial data behind in Google Cloud Storage.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
+   *   ExportEntitiesRequest request =
+   *       ExportEntitiesRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .putAllLabels(new HashMap<String, String>())
+   *           .setEntityFilter(EntityFilter.newBuilder().build())
+   *           .setOutputUrlPrefix("outputUrlPrefix-1132598048")
+   *           .build();
+   *   ExportEntitiesResponse response = datastoreAdminClient.exportEntitiesAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -290,6 +331,22 @@ public class DatastoreAdminClient implements BackgroundResource {
    * leave partial data behind in Google Cloud Storage.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
+   *   ExportEntitiesRequest request =
+   *       ExportEntitiesRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .putAllLabels(new HashMap<String, String>())
+   *           .setEntityFilter(EntityFilter.newBuilder().build())
+   *           .setOutputUrlPrefix("outputUrlPrefix-1132598048")
+   *           .build();
+   *   OperationFuture<ExportEntitiesResponse, ExportEntitiesMetadata> future =
+   *       datastoreAdminClient.exportEntitiesOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ExportEntitiesResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<
           ExportEntitiesRequest, ExportEntitiesResponse, ExportEntitiesMetadata>
@@ -307,6 +364,22 @@ public class DatastoreAdminClient implements BackgroundResource {
    * leave partial data behind in Google Cloud Storage.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
+   *   ExportEntitiesRequest request =
+   *       ExportEntitiesRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .putAllLabels(new HashMap<String, String>())
+   *           .setEntityFilter(EntityFilter.newBuilder().build())
+   *           .setOutputUrlPrefix("outputUrlPrefix-1132598048")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       datastoreAdminClient.exportEntitiesCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ExportEntitiesRequest, Operation> exportEntitiesCallable() {
     return stub.exportEntitiesCallable();
@@ -318,6 +391,18 @@ public class DatastoreAdminClient implements BackgroundResource {
    * overwritten. The import occurs in the background and its progress can be monitored and managed
    * via the Operation resource that is created. If an ImportEntities operation is cancelled, it is
    * possible that a subset of the data has already been imported to Cloud Datastore.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   Map<String, String> labels = new HashMap<>();
+   *   String inputUrl = "inputUrl470706501";
+   *   EntityFilter entityFilter = EntityFilter.newBuilder().build();
+   *   datastoreAdminClient.importEntitiesAsync(projectId, labels, inputUrl, entityFilter).get();
+   * }
+   * }</pre>
    *
    * @param projectId Required. Project ID against which to make the request.
    * @param labels Client-assigned labels.
@@ -356,6 +441,21 @@ public class DatastoreAdminClient implements BackgroundResource {
    * via the Operation resource that is created. If an ImportEntities operation is cancelled, it is
    * possible that a subset of the data has already been imported to Cloud Datastore.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
+   *   ImportEntitiesRequest request =
+   *       ImportEntitiesRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .putAllLabels(new HashMap<String, String>())
+   *           .setInputUrl("inputUrl470706501")
+   *           .setEntityFilter(EntityFilter.newBuilder().build())
+   *           .build();
+   *   datastoreAdminClient.importEntitiesAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -372,6 +472,22 @@ public class DatastoreAdminClient implements BackgroundResource {
    * possible that a subset of the data has already been imported to Cloud Datastore.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
+   *   ImportEntitiesRequest request =
+   *       ImportEntitiesRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .putAllLabels(new HashMap<String, String>())
+   *           .setInputUrl("inputUrl470706501")
+   *           .setEntityFilter(EntityFilter.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Empty, ImportEntitiesMetadata> future =
+   *       datastoreAdminClient.importEntitiesOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<ImportEntitiesRequest, Empty, ImportEntitiesMetadata>
       importEntitiesOperationCallable() {
@@ -386,6 +502,22 @@ public class DatastoreAdminClient implements BackgroundResource {
    * possible that a subset of the data has already been imported to Cloud Datastore.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
+   *   ImportEntitiesRequest request =
+   *       ImportEntitiesRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .putAllLabels(new HashMap<String, String>())
+   *           .setInputUrl("inputUrl470706501")
+   *           .setEntityFilter(EntityFilter.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       datastoreAdminClient.importEntitiesCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ImportEntitiesRequest, Operation> importEntitiesCallable() {
     return stub.importEntitiesCallable();
@@ -394,6 +526,19 @@ public class DatastoreAdminClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets an index.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
+   *   GetIndexRequest request =
+   *       GetIndexRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setIndexId("indexId1943291277")
+   *           .build();
+   *   Index response = datastoreAdminClient.getIndex(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -407,6 +552,19 @@ public class DatastoreAdminClient implements BackgroundResource {
    * Gets an index.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
+   *   GetIndexRequest request =
+   *       GetIndexRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setIndexId("indexId1943291277")
+   *           .build();
+   *   ApiFuture<Index> future = datastoreAdminClient.getIndexCallable().futureCall(request);
+   *   // Do something.
+   *   Index response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetIndexRequest, Index> getIndexCallable() {
     return stub.getIndexCallable();
@@ -416,6 +574,23 @@ public class DatastoreAdminClient implements BackgroundResource {
   /**
    * Lists the indexes that match the specified filters. Datastore uses an eventually consistent
    * query to fetch the list of indexes and may occasionally return stale results.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
+   *   ListIndexesRequest request =
+   *       ListIndexesRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Index element : datastoreAdminClient.listIndexes(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -430,6 +605,23 @@ public class DatastoreAdminClient implements BackgroundResource {
    * query to fetch the list of indexes and may occasionally return stale results.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
+   *   ListIndexesRequest request =
+   *       ListIndexesRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Index> future = datastoreAdminClient.listIndexesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Index element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListIndexesRequest, ListIndexesPagedResponse>
       listIndexesPagedCallable() {
@@ -442,6 +634,23 @@ public class DatastoreAdminClient implements BackgroundResource {
    * query to fetch the list of indexes and may occasionally return stale results.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
+   *   while (true) {
+   *     ListIndexesResponse response = datastoreAdminClient.listIndexesCallable().call(request);
+   *     for (Index element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListIndexesRequest, ListIndexesResponse> listIndexesCallable() {
     return stub.listIndexesCallable();

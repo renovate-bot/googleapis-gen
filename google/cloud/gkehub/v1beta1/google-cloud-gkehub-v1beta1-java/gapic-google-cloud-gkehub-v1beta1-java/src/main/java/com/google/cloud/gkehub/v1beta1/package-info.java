@@ -23,6 +23,14 @@
  * currently only available in the global location.
  *
  * <p>Sample for GkeHubMembershipServiceClient:
+ *
+ * <pre>{@code
+ * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+ *     GkeHubMembershipServiceClient.create()) {
+ *   String name = "name3373707";
+ *   Membership response = gkeHubMembershipServiceClient.getMembership(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.gkehub.v1beta1;

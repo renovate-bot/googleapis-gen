@@ -34,6 +34,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (VideoServiceClient videoServiceClient = VideoServiceClient.create()) {
+ *   VideoName resourceName = VideoName.of("[CUSTOMER_ID]", "[VIDEO_ID]");
+ *   Video response = videoServiceClient.getVideo(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the VideoServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -136,6 +143,15 @@ public class VideoServiceClient implements BackgroundResource {
   /**
    * Returns the requested video in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VideoServiceClient videoServiceClient = VideoServiceClient.create()) {
+   *   VideoName resourceName = VideoName.of("[CUSTOMER_ID]", "[VIDEO_ID]");
+   *   Video response = videoServiceClient.getVideo(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the video to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -151,6 +167,15 @@ public class VideoServiceClient implements BackgroundResource {
   /**
    * Returns the requested video in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VideoServiceClient videoServiceClient = VideoServiceClient.create()) {
+   *   String resourceName = VideoName.of("[CUSTOMER_ID]", "[VIDEO_ID]").toString();
+   *   Video response = videoServiceClient.getVideo(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the video to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -162,6 +187,18 @@ public class VideoServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the requested video in full detail.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VideoServiceClient videoServiceClient = VideoServiceClient.create()) {
+   *   GetVideoRequest request =
+   *       GetVideoRequest.newBuilder()
+   *           .setResourceName(VideoName.of("[CUSTOMER_ID]", "[VIDEO_ID]").toString())
+   *           .build();
+   *   Video response = videoServiceClient.getVideo(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -175,6 +212,18 @@ public class VideoServiceClient implements BackgroundResource {
    * Returns the requested video in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VideoServiceClient videoServiceClient = VideoServiceClient.create()) {
+   *   GetVideoRequest request =
+   *       GetVideoRequest.newBuilder()
+   *           .setResourceName(VideoName.of("[CUSTOMER_ID]", "[VIDEO_ID]").toString())
+   *           .build();
+   *   ApiFuture<Video> future = videoServiceClient.getVideoCallable().futureCall(request);
+   *   // Do something.
+   *   Video response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetVideoRequest, Video> getVideoCallable() {
     return stub.getVideoCallable();

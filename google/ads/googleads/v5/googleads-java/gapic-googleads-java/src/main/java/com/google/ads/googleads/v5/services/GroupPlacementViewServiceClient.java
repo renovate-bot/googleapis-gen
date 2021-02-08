@@ -34,6 +34,16 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (GroupPlacementViewServiceClient groupPlacementViewServiceClient =
+ *     GroupPlacementViewServiceClient.create()) {
+ *   GroupPlacementViewName resourceName =
+ *       GroupPlacementViewName.of("[CUSTOMER]", "[GROUP_PLACEMENT_VIEW]");
+ *   GroupPlacementView response =
+ *       groupPlacementViewServiceClient.getGroupPlacementView(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the GroupPlacementViewServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -142,6 +152,18 @@ public class GroupPlacementViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested Group Placement view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GroupPlacementViewServiceClient groupPlacementViewServiceClient =
+   *     GroupPlacementViewServiceClient.create()) {
+   *   GroupPlacementViewName resourceName =
+   *       GroupPlacementViewName.of("[CUSTOMER]", "[GROUP_PLACEMENT_VIEW]");
+   *   GroupPlacementView response =
+   *       groupPlacementViewServiceClient.getGroupPlacementView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the Group Placement view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -157,6 +179,18 @@ public class GroupPlacementViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested Group Placement view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GroupPlacementViewServiceClient groupPlacementViewServiceClient =
+   *     GroupPlacementViewServiceClient.create()) {
+   *   String resourceName =
+   *       GroupPlacementViewName.of("[CUSTOMER]", "[GROUP_PLACEMENT_VIEW]").toString();
+   *   GroupPlacementView response =
+   *       groupPlacementViewServiceClient.getGroupPlacementView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the Group Placement view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -170,6 +204,20 @@ public class GroupPlacementViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested Group Placement view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GroupPlacementViewServiceClient groupPlacementViewServiceClient =
+   *     GroupPlacementViewServiceClient.create()) {
+   *   GetGroupPlacementViewRequest request =
+   *       GetGroupPlacementViewRequest.newBuilder()
+   *           .setResourceName(
+   *               GroupPlacementViewName.of("[CUSTOMER]", "[GROUP_PLACEMENT_VIEW]").toString())
+   *           .build();
+   *   GroupPlacementView response = groupPlacementViewServiceClient.getGroupPlacementView(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -182,6 +230,21 @@ public class GroupPlacementViewServiceClient implements BackgroundResource {
    * Returns the requested Group Placement view in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GroupPlacementViewServiceClient groupPlacementViewServiceClient =
+   *     GroupPlacementViewServiceClient.create()) {
+   *   GetGroupPlacementViewRequest request =
+   *       GetGroupPlacementViewRequest.newBuilder()
+   *           .setResourceName(
+   *               GroupPlacementViewName.of("[CUSTOMER]", "[GROUP_PLACEMENT_VIEW]").toString())
+   *           .build();
+   *   ApiFuture<GroupPlacementView> future =
+   *       groupPlacementViewServiceClient.getGroupPlacementViewCallable().futureCall(request);
+   *   // Do something.
+   *   GroupPlacementView response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetGroupPlacementViewRequest, GroupPlacementView>
       getGroupPlacementViewCallable() {

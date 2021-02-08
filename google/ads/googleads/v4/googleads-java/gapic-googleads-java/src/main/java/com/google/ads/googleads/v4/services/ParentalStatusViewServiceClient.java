@@ -34,6 +34,16 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (ParentalStatusViewServiceClient parentalStatusViewServiceClient =
+ *     ParentalStatusViewServiceClient.create()) {
+ *   ParentalStatusViewName resourceName =
+ *       ParentalStatusViewName.of("[CUSTOMER]", "[PARENTAL_STATUS_VIEW]");
+ *   ParentalStatusView response =
+ *       parentalStatusViewServiceClient.getParentalStatusView(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the ParentalStatusViewServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -142,6 +152,18 @@ public class ParentalStatusViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested parental status view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ParentalStatusViewServiceClient parentalStatusViewServiceClient =
+   *     ParentalStatusViewServiceClient.create()) {
+   *   ParentalStatusViewName resourceName =
+   *       ParentalStatusViewName.of("[CUSTOMER]", "[PARENTAL_STATUS_VIEW]");
+   *   ParentalStatusView response =
+   *       parentalStatusViewServiceClient.getParentalStatusView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the parental status view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -157,6 +179,18 @@ public class ParentalStatusViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested parental status view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ParentalStatusViewServiceClient parentalStatusViewServiceClient =
+   *     ParentalStatusViewServiceClient.create()) {
+   *   String resourceName =
+   *       ParentalStatusViewName.of("[CUSTOMER]", "[PARENTAL_STATUS_VIEW]").toString();
+   *   ParentalStatusView response =
+   *       parentalStatusViewServiceClient.getParentalStatusView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the parental status view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -170,6 +204,20 @@ public class ParentalStatusViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested parental status view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ParentalStatusViewServiceClient parentalStatusViewServiceClient =
+   *     ParentalStatusViewServiceClient.create()) {
+   *   GetParentalStatusViewRequest request =
+   *       GetParentalStatusViewRequest.newBuilder()
+   *           .setResourceName(
+   *               ParentalStatusViewName.of("[CUSTOMER]", "[PARENTAL_STATUS_VIEW]").toString())
+   *           .build();
+   *   ParentalStatusView response = parentalStatusViewServiceClient.getParentalStatusView(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -182,6 +230,21 @@ public class ParentalStatusViewServiceClient implements BackgroundResource {
    * Returns the requested parental status view in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ParentalStatusViewServiceClient parentalStatusViewServiceClient =
+   *     ParentalStatusViewServiceClient.create()) {
+   *   GetParentalStatusViewRequest request =
+   *       GetParentalStatusViewRequest.newBuilder()
+   *           .setResourceName(
+   *               ParentalStatusViewName.of("[CUSTOMER]", "[PARENTAL_STATUS_VIEW]").toString())
+   *           .build();
+   *   ApiFuture<ParentalStatusView> future =
+   *       parentalStatusViewServiceClient.getParentalStatusViewCallable().futureCall(request);
+   *   // Do something.
+   *   ParentalStatusView response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetParentalStatusViewRequest, ParentalStatusView>
       getParentalStatusViewCallable() {

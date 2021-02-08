@@ -34,6 +34,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (TopicConstantServiceClient topicConstantServiceClient =
+ *     TopicConstantServiceClient.create()) {
+ *   TopicConstantName resourceName = TopicConstantName.of("[TOPIC_CONSTANT]");
+ *   TopicConstant response = topicConstantServiceClient.getTopicConstant(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the TopicConstantServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -140,6 +148,16 @@ public class TopicConstantServiceClient implements BackgroundResource {
   /**
    * Returns the requested topic constant in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TopicConstantServiceClient topicConstantServiceClient =
+   *     TopicConstantServiceClient.create()) {
+   *   TopicConstantName resourceName = TopicConstantName.of("[TOPIC_CONSTANT]");
+   *   TopicConstant response = topicConstantServiceClient.getTopicConstant(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. Resource name of the Topic to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -155,6 +173,16 @@ public class TopicConstantServiceClient implements BackgroundResource {
   /**
    * Returns the requested topic constant in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TopicConstantServiceClient topicConstantServiceClient =
+   *     TopicConstantServiceClient.create()) {
+   *   String resourceName = TopicConstantName.of("[TOPIC_CONSTANT]").toString();
+   *   TopicConstant response = topicConstantServiceClient.getTopicConstant(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. Resource name of the Topic to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -168,6 +196,19 @@ public class TopicConstantServiceClient implements BackgroundResource {
   /**
    * Returns the requested topic constant in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TopicConstantServiceClient topicConstantServiceClient =
+   *     TopicConstantServiceClient.create()) {
+   *   GetTopicConstantRequest request =
+   *       GetTopicConstantRequest.newBuilder()
+   *           .setResourceName(TopicConstantName.of("[TOPIC_CONSTANT]").toString())
+   *           .build();
+   *   TopicConstant response = topicConstantServiceClient.getTopicConstant(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -180,6 +221,20 @@ public class TopicConstantServiceClient implements BackgroundResource {
    * Returns the requested topic constant in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TopicConstantServiceClient topicConstantServiceClient =
+   *     TopicConstantServiceClient.create()) {
+   *   GetTopicConstantRequest request =
+   *       GetTopicConstantRequest.newBuilder()
+   *           .setResourceName(TopicConstantName.of("[TOPIC_CONSTANT]").toString())
+   *           .build();
+   *   ApiFuture<TopicConstant> future =
+   *       topicConstantServiceClient.getTopicConstantCallable().futureCall(request);
+   *   // Do something.
+   *   TopicConstant response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetTopicConstantRequest, TopicConstant> getTopicConstantCallable() {
     return stub.getTopicConstantCallable();

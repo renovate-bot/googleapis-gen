@@ -34,6 +34,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (DomainCategoryServiceClient domainCategoryServiceClient =
+ *     DomainCategoryServiceClient.create()) {
+ *   DomainCategoryName resourceName = DomainCategoryName.of("[CUSTOMER]", "[DOMAIN_CATEGORY]");
+ *   DomainCategory response = domainCategoryServiceClient.getDomainCategory(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the DomainCategoryServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -140,6 +148,16 @@ public class DomainCategoryServiceClient implements BackgroundResource {
   /**
    * Returns the requested domain category.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainCategoryServiceClient domainCategoryServiceClient =
+   *     DomainCategoryServiceClient.create()) {
+   *   DomainCategoryName resourceName = DomainCategoryName.of("[CUSTOMER]", "[DOMAIN_CATEGORY]");
+   *   DomainCategory response = domainCategoryServiceClient.getDomainCategory(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. Resource name of the domain category to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -155,6 +173,16 @@ public class DomainCategoryServiceClient implements BackgroundResource {
   /**
    * Returns the requested domain category.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainCategoryServiceClient domainCategoryServiceClient =
+   *     DomainCategoryServiceClient.create()) {
+   *   String resourceName = DomainCategoryName.of("[CUSTOMER]", "[DOMAIN_CATEGORY]").toString();
+   *   DomainCategory response = domainCategoryServiceClient.getDomainCategory(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. Resource name of the domain category to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -168,6 +196,19 @@ public class DomainCategoryServiceClient implements BackgroundResource {
   /**
    * Returns the requested domain category.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainCategoryServiceClient domainCategoryServiceClient =
+   *     DomainCategoryServiceClient.create()) {
+   *   GetDomainCategoryRequest request =
+   *       GetDomainCategoryRequest.newBuilder()
+   *           .setResourceName(DomainCategoryName.of("[CUSTOMER]", "[DOMAIN_CATEGORY]").toString())
+   *           .build();
+   *   DomainCategory response = domainCategoryServiceClient.getDomainCategory(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -180,6 +221,20 @@ public class DomainCategoryServiceClient implements BackgroundResource {
    * Returns the requested domain category.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainCategoryServiceClient domainCategoryServiceClient =
+   *     DomainCategoryServiceClient.create()) {
+   *   GetDomainCategoryRequest request =
+   *       GetDomainCategoryRequest.newBuilder()
+   *           .setResourceName(DomainCategoryName.of("[CUSTOMER]", "[DOMAIN_CATEGORY]").toString())
+   *           .build();
+   *   ApiFuture<DomainCategory> future =
+   *       domainCategoryServiceClient.getDomainCategoryCallable().futureCall(request);
+   *   // Do something.
+   *   DomainCategory response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetDomainCategoryRequest, DomainCategory> getDomainCategoryCallable() {
     return stub.getDomainCategoryCallable();

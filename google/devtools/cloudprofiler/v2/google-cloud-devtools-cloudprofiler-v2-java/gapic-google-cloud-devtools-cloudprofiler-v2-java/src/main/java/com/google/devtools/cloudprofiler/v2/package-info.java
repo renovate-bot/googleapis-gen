@@ -30,6 +30,18 @@
  * </ul>
  *
  * <p>Sample for ProfilerServiceClient:
+ *
+ * <pre>{@code
+ * try (ProfilerServiceClient profilerServiceClient = ProfilerServiceClient.create()) {
+ *   CreateProfileRequest request =
+ *       CreateProfileRequest.newBuilder()
+ *           .setParent("parent-995424086")
+ *           .setDeployment(Deployment.newBuilder().build())
+ *           .addAllProfileType(new ArrayList<ProfileType>())
+ *           .build();
+ *   Profile response = profilerServiceClient.createProfile(request);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.devtools.cloudprofiler.v2;

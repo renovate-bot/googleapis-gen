@@ -35,6 +35,15 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (AdParameterServiceClient adParameterServiceClient = AdParameterServiceClient.create()) {
+ *   AdParameterName resourceName =
+ *       AdParameterName.of(
+ *           "[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]", "[PARAMETER_INDEX]");
+ *   AdParameter response = adParameterServiceClient.getAdParameter(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the AdParameterServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -141,6 +150,17 @@ public class AdParameterServiceClient implements BackgroundResource {
   /**
    * Returns the requested ad parameter in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdParameterServiceClient adParameterServiceClient = AdParameterServiceClient.create()) {
+   *   AdParameterName resourceName =
+   *       AdParameterName.of(
+   *           "[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]", "[PARAMETER_INDEX]");
+   *   AdParameter response = adParameterServiceClient.getAdParameter(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the ad parameter to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -156,6 +176,18 @@ public class AdParameterServiceClient implements BackgroundResource {
   /**
    * Returns the requested ad parameter in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdParameterServiceClient adParameterServiceClient = AdParameterServiceClient.create()) {
+   *   String resourceName =
+   *       AdParameterName.of(
+   *               "[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]", "[PARAMETER_INDEX]")
+   *           .toString();
+   *   AdParameter response = adParameterServiceClient.getAdParameter(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the ad parameter to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -169,6 +201,21 @@ public class AdParameterServiceClient implements BackgroundResource {
   /**
    * Returns the requested ad parameter in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdParameterServiceClient adParameterServiceClient = AdParameterServiceClient.create()) {
+   *   GetAdParameterRequest request =
+   *       GetAdParameterRequest.newBuilder()
+   *           .setResourceName(
+   *               AdParameterName.of(
+   *                       "[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]", "[PARAMETER_INDEX]")
+   *                   .toString())
+   *           .build();
+   *   AdParameter response = adParameterServiceClient.getAdParameter(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -181,6 +228,22 @@ public class AdParameterServiceClient implements BackgroundResource {
    * Returns the requested ad parameter in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdParameterServiceClient adParameterServiceClient = AdParameterServiceClient.create()) {
+   *   GetAdParameterRequest request =
+   *       GetAdParameterRequest.newBuilder()
+   *           .setResourceName(
+   *               AdParameterName.of(
+   *                       "[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]", "[PARAMETER_INDEX]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<AdParameter> future =
+   *       adParameterServiceClient.getAdParameterCallable().futureCall(request);
+   *   // Do something.
+   *   AdParameter response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetAdParameterRequest, AdParameter> getAdParameterCallable() {
     return stub.getAdParameterCallable();
@@ -189,6 +252,17 @@ public class AdParameterServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates, updates, or removes ad parameters. Operation statuses are returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdParameterServiceClient adParameterServiceClient = AdParameterServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   List<AdParameterOperation> operations = new ArrayList<>();
+   *   MutateAdParametersResponse response =
+   *       adParameterServiceClient.mutateAdParameters(customerId, operations);
+   * }
+   * }</pre>
    *
    * @param customerId Required. The ID of the customer whose ad parameters are being modified.
    * @param operations Required. The list of operations to perform on individual ad parameters.
@@ -208,6 +282,21 @@ public class AdParameterServiceClient implements BackgroundResource {
   /**
    * Creates, updates, or removes ad parameters. Operation statuses are returned.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdParameterServiceClient adParameterServiceClient = AdParameterServiceClient.create()) {
+   *   MutateAdParametersRequest request =
+   *       MutateAdParametersRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<AdParameterOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   MutateAdParametersResponse response = adParameterServiceClient.mutateAdParameters(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -220,6 +309,22 @@ public class AdParameterServiceClient implements BackgroundResource {
    * Creates, updates, or removes ad parameters. Operation statuses are returned.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdParameterServiceClient adParameterServiceClient = AdParameterServiceClient.create()) {
+   *   MutateAdParametersRequest request =
+   *       MutateAdParametersRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<AdParameterOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<MutateAdParametersResponse> future =
+   *       adParameterServiceClient.mutateAdParametersCallable().futureCall(request);
+   *   // Do something.
+   *   MutateAdParametersResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<MutateAdParametersRequest, MutateAdParametersResponse>
       mutateAdParametersCallable() {

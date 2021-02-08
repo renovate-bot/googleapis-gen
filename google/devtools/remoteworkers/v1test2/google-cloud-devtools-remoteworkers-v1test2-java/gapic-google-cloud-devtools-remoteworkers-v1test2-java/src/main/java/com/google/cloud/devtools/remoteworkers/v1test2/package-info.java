@@ -44,6 +44,14 @@
  * "projects/{project_id}". This is referred to below as "the farm resource."
  *
  * <p>Sample for BotsClient:
+ *
+ * <pre>{@code
+ * try (BotsClient botsClient = BotsClient.create()) {
+ *   String parent = "parent-995424086";
+ *   BotSession botSession = BotSession.newBuilder().build();
+ *   BotSession response = botsClient.createBotSession(parent, botSession);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.devtools.remoteworkers.v1test2;

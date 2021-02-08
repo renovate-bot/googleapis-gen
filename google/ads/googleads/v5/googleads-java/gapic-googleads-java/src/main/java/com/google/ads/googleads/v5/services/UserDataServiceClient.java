@@ -33,6 +33,17 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (UserDataServiceClient userDataServiceClient = UserDataServiceClient.create()) {
+ *   UploadUserDataRequest request =
+ *       UploadUserDataRequest.newBuilder()
+ *           .setCustomerId("customerId-1581184615")
+ *           .addAllOperations(new ArrayList<UserDataOperation>())
+ *           .build();
+ *   UploadUserDataResponse response = userDataServiceClient.uploadUserData(request);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the UserDataServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -139,6 +150,19 @@ public class UserDataServiceClient implements BackgroundResource {
   /**
    * Uploads the given user data.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserDataServiceClient userDataServiceClient = UserDataServiceClient.create()) {
+   *   UploadUserDataRequest request =
+   *       UploadUserDataRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<UserDataOperation>())
+   *           .build();
+   *   UploadUserDataResponse response = userDataServiceClient.uploadUserData(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -151,6 +175,20 @@ public class UserDataServiceClient implements BackgroundResource {
    * Uploads the given user data.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserDataServiceClient userDataServiceClient = UserDataServiceClient.create()) {
+   *   UploadUserDataRequest request =
+   *       UploadUserDataRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<UserDataOperation>())
+   *           .build();
+   *   ApiFuture<UploadUserDataResponse> future =
+   *       userDataServiceClient.uploadUserDataCallable().futureCall(request);
+   *   // Do something.
+   *   UploadUserDataResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UploadUserDataRequest, UploadUserDataResponse>
       uploadUserDataCallable() {

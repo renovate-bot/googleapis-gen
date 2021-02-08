@@ -34,6 +34,16 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (ManagedPlacementViewServiceClient managedPlacementViewServiceClient =
+ *     ManagedPlacementViewServiceClient.create()) {
+ *   ManagedPlacementViewName resourceName =
+ *       ManagedPlacementViewName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]");
+ *   ManagedPlacementView response =
+ *       managedPlacementViewServiceClient.getManagedPlacementView(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the ManagedPlacementViewServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -143,6 +153,18 @@ public class ManagedPlacementViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested Managed Placement view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedPlacementViewServiceClient managedPlacementViewServiceClient =
+   *     ManagedPlacementViewServiceClient.create()) {
+   *   ManagedPlacementViewName resourceName =
+   *       ManagedPlacementViewName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]");
+   *   ManagedPlacementView response =
+   *       managedPlacementViewServiceClient.getManagedPlacementView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the Managed Placement View to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -158,6 +180,19 @@ public class ManagedPlacementViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested Managed Placement view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedPlacementViewServiceClient managedPlacementViewServiceClient =
+   *     ManagedPlacementViewServiceClient.create()) {
+   *   String resourceName =
+   *       ManagedPlacementViewName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]")
+   *           .toString();
+   *   ManagedPlacementView response =
+   *       managedPlacementViewServiceClient.getManagedPlacementView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the Managed Placement View to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -170,6 +205,22 @@ public class ManagedPlacementViewServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the requested Managed Placement view in full detail.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedPlacementViewServiceClient managedPlacementViewServiceClient =
+   *     ManagedPlacementViewServiceClient.create()) {
+   *   GetManagedPlacementViewRequest request =
+   *       GetManagedPlacementViewRequest.newBuilder()
+   *           .setResourceName(
+   *               ManagedPlacementViewName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]")
+   *                   .toString())
+   *           .build();
+   *   ManagedPlacementView response =
+   *       managedPlacementViewServiceClient.getManagedPlacementView(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -184,6 +235,22 @@ public class ManagedPlacementViewServiceClient implements BackgroundResource {
    * Returns the requested Managed Placement view in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedPlacementViewServiceClient managedPlacementViewServiceClient =
+   *     ManagedPlacementViewServiceClient.create()) {
+   *   GetManagedPlacementViewRequest request =
+   *       GetManagedPlacementViewRequest.newBuilder()
+   *           .setResourceName(
+   *               ManagedPlacementViewName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<ManagedPlacementView> future =
+   *       managedPlacementViewServiceClient.getManagedPlacementViewCallable().futureCall(request);
+   *   // Do something.
+   *   ManagedPlacementView response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetManagedPlacementViewRequest, ManagedPlacementView>
       getManagedPlacementViewCallable() {

@@ -50,6 +50,14 @@
  * within the customer project.
  *
  * <p>Sample for ManagedIdentitiesServiceClient:
+ *
+ * <pre>{@code
+ * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+ *     ManagedIdentitiesServiceClient.create()) {
+ *   DomainName name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]");
+ *   ResetAdminPasswordResponse response = managedIdentitiesServiceClient.resetAdminPassword(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.managedidentities.v1;

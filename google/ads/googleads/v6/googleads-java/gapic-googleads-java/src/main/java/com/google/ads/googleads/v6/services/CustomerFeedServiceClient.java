@@ -35,6 +35,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (CustomerFeedServiceClient customerFeedServiceClient = CustomerFeedServiceClient.create()) {
+ *   CustomerFeedName resourceName = CustomerFeedName.of("[CUSTOMER_ID]", "[FEED_ID]");
+ *   CustomerFeed response = customerFeedServiceClient.getCustomerFeed(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the CustomerFeedServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -141,6 +148,15 @@ public class CustomerFeedServiceClient implements BackgroundResource {
   /**
    * Returns the requested customer feed in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerFeedServiceClient customerFeedServiceClient = CustomerFeedServiceClient.create()) {
+   *   CustomerFeedName resourceName = CustomerFeedName.of("[CUSTOMER_ID]", "[FEED_ID]");
+   *   CustomerFeed response = customerFeedServiceClient.getCustomerFeed(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the customer feed to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -156,6 +172,15 @@ public class CustomerFeedServiceClient implements BackgroundResource {
   /**
    * Returns the requested customer feed in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerFeedServiceClient customerFeedServiceClient = CustomerFeedServiceClient.create()) {
+   *   String resourceName = CustomerFeedName.of("[CUSTOMER_ID]", "[FEED_ID]").toString();
+   *   CustomerFeed response = customerFeedServiceClient.getCustomerFeed(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the customer feed to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -169,6 +194,18 @@ public class CustomerFeedServiceClient implements BackgroundResource {
   /**
    * Returns the requested customer feed in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerFeedServiceClient customerFeedServiceClient = CustomerFeedServiceClient.create()) {
+   *   GetCustomerFeedRequest request =
+   *       GetCustomerFeedRequest.newBuilder()
+   *           .setResourceName(CustomerFeedName.of("[CUSTOMER_ID]", "[FEED_ID]").toString())
+   *           .build();
+   *   CustomerFeed response = customerFeedServiceClient.getCustomerFeed(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -181,6 +218,19 @@ public class CustomerFeedServiceClient implements BackgroundResource {
    * Returns the requested customer feed in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerFeedServiceClient customerFeedServiceClient = CustomerFeedServiceClient.create()) {
+   *   GetCustomerFeedRequest request =
+   *       GetCustomerFeedRequest.newBuilder()
+   *           .setResourceName(CustomerFeedName.of("[CUSTOMER_ID]", "[FEED_ID]").toString())
+   *           .build();
+   *   ApiFuture<CustomerFeed> future =
+   *       customerFeedServiceClient.getCustomerFeedCallable().futureCall(request);
+   *   // Do something.
+   *   CustomerFeed response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetCustomerFeedRequest, CustomerFeed> getCustomerFeedCallable() {
     return stub.getCustomerFeedCallable();
@@ -189,6 +239,17 @@ public class CustomerFeedServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates, updates, or removes customer feeds. Operation statuses are returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerFeedServiceClient customerFeedServiceClient = CustomerFeedServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   List<CustomerFeedOperation> operations = new ArrayList<>();
+   *   MutateCustomerFeedsResponse response =
+   *       customerFeedServiceClient.mutateCustomerFeeds(customerId, operations);
+   * }
+   * }</pre>
    *
    * @param customerId Required. The ID of the customer whose customer feeds are being modified.
    * @param operations Required. The list of operations to perform on individual customer feeds.
@@ -208,6 +269,21 @@ public class CustomerFeedServiceClient implements BackgroundResource {
   /**
    * Creates, updates, or removes customer feeds. Operation statuses are returned.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerFeedServiceClient customerFeedServiceClient = CustomerFeedServiceClient.create()) {
+   *   MutateCustomerFeedsRequest request =
+   *       MutateCustomerFeedsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<CustomerFeedOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   MutateCustomerFeedsResponse response = customerFeedServiceClient.mutateCustomerFeeds(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -220,6 +296,22 @@ public class CustomerFeedServiceClient implements BackgroundResource {
    * Creates, updates, or removes customer feeds. Operation statuses are returned.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerFeedServiceClient customerFeedServiceClient = CustomerFeedServiceClient.create()) {
+   *   MutateCustomerFeedsRequest request =
+   *       MutateCustomerFeedsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<CustomerFeedOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<MutateCustomerFeedsResponse> future =
+   *       customerFeedServiceClient.mutateCustomerFeedsCallable().futureCall(request);
+   *   // Do something.
+   *   MutateCustomerFeedsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<MutateCustomerFeedsRequest, MutateCustomerFeedsResponse>
       mutateCustomerFeedsCallable() {

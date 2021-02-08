@@ -35,6 +35,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (SharedSetServiceClient sharedSetServiceClient = SharedSetServiceClient.create()) {
+ *   SharedSetName resourceName = SharedSetName.of("[CUSTOMER]", "[SHARED_SET]");
+ *   SharedSet response = sharedSetServiceClient.getSharedSet(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the SharedSetServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -141,6 +148,15 @@ public class SharedSetServiceClient implements BackgroundResource {
   /**
    * Returns the requested shared set in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SharedSetServiceClient sharedSetServiceClient = SharedSetServiceClient.create()) {
+   *   SharedSetName resourceName = SharedSetName.of("[CUSTOMER]", "[SHARED_SET]");
+   *   SharedSet response = sharedSetServiceClient.getSharedSet(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the shared set to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -156,6 +172,15 @@ public class SharedSetServiceClient implements BackgroundResource {
   /**
    * Returns the requested shared set in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SharedSetServiceClient sharedSetServiceClient = SharedSetServiceClient.create()) {
+   *   String resourceName = SharedSetName.of("[CUSTOMER]", "[SHARED_SET]").toString();
+   *   SharedSet response = sharedSetServiceClient.getSharedSet(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the shared set to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -169,6 +194,18 @@ public class SharedSetServiceClient implements BackgroundResource {
   /**
    * Returns the requested shared set in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SharedSetServiceClient sharedSetServiceClient = SharedSetServiceClient.create()) {
+   *   GetSharedSetRequest request =
+   *       GetSharedSetRequest.newBuilder()
+   *           .setResourceName(SharedSetName.of("[CUSTOMER]", "[SHARED_SET]").toString())
+   *           .build();
+   *   SharedSet response = sharedSetServiceClient.getSharedSet(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -181,6 +218,19 @@ public class SharedSetServiceClient implements BackgroundResource {
    * Returns the requested shared set in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SharedSetServiceClient sharedSetServiceClient = SharedSetServiceClient.create()) {
+   *   GetSharedSetRequest request =
+   *       GetSharedSetRequest.newBuilder()
+   *           .setResourceName(SharedSetName.of("[CUSTOMER]", "[SHARED_SET]").toString())
+   *           .build();
+   *   ApiFuture<SharedSet> future =
+   *       sharedSetServiceClient.getSharedSetCallable().futureCall(request);
+   *   // Do something.
+   *   SharedSet response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetSharedSetRequest, SharedSet> getSharedSetCallable() {
     return stub.getSharedSetCallable();
@@ -189,6 +239,17 @@ public class SharedSetServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates, updates, or removes shared sets. Operation statuses are returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SharedSetServiceClient sharedSetServiceClient = SharedSetServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   List<SharedSetOperation> operations = new ArrayList<>();
+   *   MutateSharedSetsResponse response =
+   *       sharedSetServiceClient.mutateSharedSets(customerId, operations);
+   * }
+   * }</pre>
    *
    * @param customerId Required. The ID of the customer whose shared sets are being modified.
    * @param operations Required. The list of operations to perform on individual shared sets.
@@ -208,6 +269,21 @@ public class SharedSetServiceClient implements BackgroundResource {
   /**
    * Creates, updates, or removes shared sets. Operation statuses are returned.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SharedSetServiceClient sharedSetServiceClient = SharedSetServiceClient.create()) {
+   *   MutateSharedSetsRequest request =
+   *       MutateSharedSetsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<SharedSetOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   MutateSharedSetsResponse response = sharedSetServiceClient.mutateSharedSets(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -220,6 +296,22 @@ public class SharedSetServiceClient implements BackgroundResource {
    * Creates, updates, or removes shared sets. Operation statuses are returned.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SharedSetServiceClient sharedSetServiceClient = SharedSetServiceClient.create()) {
+   *   MutateSharedSetsRequest request =
+   *       MutateSharedSetsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<SharedSetOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<MutateSharedSetsResponse> future =
+   *       sharedSetServiceClient.mutateSharedSetsCallable().futureCall(request);
+   *   // Do something.
+   *   MutateSharedSetsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<MutateSharedSetsRequest, MutateSharedSetsResponse>
       mutateSharedSetsCallable() {

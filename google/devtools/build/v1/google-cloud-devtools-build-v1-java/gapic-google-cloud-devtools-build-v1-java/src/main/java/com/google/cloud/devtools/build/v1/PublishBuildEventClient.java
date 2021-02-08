@@ -49,6 +49,19 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (PublishBuildEventClient publishBuildEventClient = PublishBuildEventClient.create()) {
+ *   PublishLifecycleEventRequest request =
+ *       PublishLifecycleEventRequest.newBuilder()
+ *           .setBuildEvent(OrderedBuildEvent.newBuilder().build())
+ *           .setStreamTimeout(Duration.newBuilder().build())
+ *           .addAllNotificationKeywords(new ArrayList<String>())
+ *           .setProjectId("projectId-894832108")
+ *           .build();
+ *   publishBuildEventClient.publishLifecycleEvent(request);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the PublishBuildEventClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -162,6 +175,21 @@ public class PublishBuildEventClient implements BackgroundResource {
    * <p>The commit status of the request is reported by the RPC's util_status() function. The error
    * code is the canoncial error code defined in //util/task/codes.proto.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PublishBuildEventClient publishBuildEventClient = PublishBuildEventClient.create()) {
+   *   PublishLifecycleEventRequest request =
+   *       PublishLifecycleEventRequest.newBuilder()
+   *           .setBuildEvent(OrderedBuildEvent.newBuilder().build())
+   *           .setStreamTimeout(Duration.newBuilder().build())
+   *           .addAllNotificationKeywords(new ArrayList<String>())
+   *           .setProjectId("projectId-894832108")
+   *           .build();
+   *   publishBuildEventClient.publishLifecycleEvent(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -181,6 +209,22 @@ public class PublishBuildEventClient implements BackgroundResource {
    * code is the canoncial error code defined in //util/task/codes.proto.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PublishBuildEventClient publishBuildEventClient = PublishBuildEventClient.create()) {
+   *   PublishLifecycleEventRequest request =
+   *       PublishLifecycleEventRequest.newBuilder()
+   *           .setBuildEvent(OrderedBuildEvent.newBuilder().build())
+   *           .setStreamTimeout(Duration.newBuilder().build())
+   *           .addAllNotificationKeywords(new ArrayList<String>())
+   *           .setProjectId("projectId-894832108")
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       publishBuildEventClient.publishLifecycleEventCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<PublishLifecycleEventRequest, Empty> publishLifecycleEventCallable() {
     return stub.publishLifecycleEventCallable();
@@ -192,6 +236,23 @@ public class PublishBuildEventClient implements BackgroundResource {
    * streaming.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PublishBuildEventClient publishBuildEventClient = PublishBuildEventClient.create()) {
+   *   BidiStream<PublishBuildToolEventStreamRequest, PublishBuildToolEventStreamResponse>
+   *       bidiStream = publishBuildEventClient.publishBuildToolEventStreamCallable().call();
+   *   PublishBuildToolEventStreamRequest request =
+   *       PublishBuildToolEventStreamRequest.newBuilder()
+   *           .setOrderedBuildEvent(OrderedBuildEvent.newBuilder().build())
+   *           .addAllNotificationKeywords(new ArrayList<String>())
+   *           .setProjectId("projectId-894832108")
+   *           .build();
+   *   bidiStream.send(request);
+   *   for (PublishBuildToolEventStreamResponse response : bidiStream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
    */
   public final BidiStreamingCallable<
           PublishBuildToolEventStreamRequest, PublishBuildToolEventStreamResponse>

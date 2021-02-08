@@ -22,6 +22,18 @@
  * <p>Service Description: Manages Google Cloud Storage resources.
  *
  * <p>Sample for StorageClient:
+ *
+ * <pre>{@code
+ * try (StorageClient storageClient = StorageClient.create()) {
+ *   DeleteBucketAccessControlRequest request =
+ *       DeleteBucketAccessControlRequest.newBuilder()
+ *           .setBucket("bucket-1378203158")
+ *           .setEntity("entity-1298275357")
+ *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+ *           .build();
+ *   storageClient.deleteBucketAccessControl(request);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.google.storage.v1;

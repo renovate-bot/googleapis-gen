@@ -35,6 +35,15 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (CustomInterestServiceClient customInterestServiceClient =
+ *     CustomInterestServiceClient.create()) {
+ *   CustomInterestName resourceName =
+ *       CustomInterestName.of("[CUSTOMER_ID]", "[CUSTOM_INTEREST_ID]");
+ *   CustomInterest response = customInterestServiceClient.getCustomInterest(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the CustomInterestServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -141,6 +150,17 @@ public class CustomInterestServiceClient implements BackgroundResource {
   /**
    * Returns the requested custom interest in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomInterestServiceClient customInterestServiceClient =
+   *     CustomInterestServiceClient.create()) {
+   *   CustomInterestName resourceName =
+   *       CustomInterestName.of("[CUSTOMER_ID]", "[CUSTOM_INTEREST_ID]");
+   *   CustomInterest response = customInterestServiceClient.getCustomInterest(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the custom interest to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -156,6 +176,17 @@ public class CustomInterestServiceClient implements BackgroundResource {
   /**
    * Returns the requested custom interest in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomInterestServiceClient customInterestServiceClient =
+   *     CustomInterestServiceClient.create()) {
+   *   String resourceName =
+   *       CustomInterestName.of("[CUSTOMER_ID]", "[CUSTOM_INTEREST_ID]").toString();
+   *   CustomInterest response = customInterestServiceClient.getCustomInterest(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the custom interest to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -169,6 +200,20 @@ public class CustomInterestServiceClient implements BackgroundResource {
   /**
    * Returns the requested custom interest in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomInterestServiceClient customInterestServiceClient =
+   *     CustomInterestServiceClient.create()) {
+   *   GetCustomInterestRequest request =
+   *       GetCustomInterestRequest.newBuilder()
+   *           .setResourceName(
+   *               CustomInterestName.of("[CUSTOMER_ID]", "[CUSTOM_INTEREST_ID]").toString())
+   *           .build();
+   *   CustomInterest response = customInterestServiceClient.getCustomInterest(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -181,6 +226,21 @@ public class CustomInterestServiceClient implements BackgroundResource {
    * Returns the requested custom interest in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomInterestServiceClient customInterestServiceClient =
+   *     CustomInterestServiceClient.create()) {
+   *   GetCustomInterestRequest request =
+   *       GetCustomInterestRequest.newBuilder()
+   *           .setResourceName(
+   *               CustomInterestName.of("[CUSTOMER_ID]", "[CUSTOM_INTEREST_ID]").toString())
+   *           .build();
+   *   ApiFuture<CustomInterest> future =
+   *       customInterestServiceClient.getCustomInterestCallable().futureCall(request);
+   *   // Do something.
+   *   CustomInterest response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetCustomInterestRequest, CustomInterest> getCustomInterestCallable() {
     return stub.getCustomInterestCallable();
@@ -189,6 +249,18 @@ public class CustomInterestServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates or updates custom interests. Operation statuses are returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomInterestServiceClient customInterestServiceClient =
+   *     CustomInterestServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   List<CustomInterestOperation> operations = new ArrayList<>();
+   *   MutateCustomInterestsResponse response =
+   *       customInterestServiceClient.mutateCustomInterests(customerId, operations);
+   * }
+   * }</pre>
    *
    * @param customerId Required. The ID of the customer whose custom interests are being modified.
    * @param operations Required. The list of operations to perform on individual custom interests.
@@ -208,6 +280,22 @@ public class CustomInterestServiceClient implements BackgroundResource {
   /**
    * Creates or updates custom interests. Operation statuses are returned.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomInterestServiceClient customInterestServiceClient =
+   *     CustomInterestServiceClient.create()) {
+   *   MutateCustomInterestsRequest request =
+   *       MutateCustomInterestsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<CustomInterestOperation>())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   MutateCustomInterestsResponse response =
+   *       customInterestServiceClient.mutateCustomInterests(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -221,6 +309,22 @@ public class CustomInterestServiceClient implements BackgroundResource {
    * Creates or updates custom interests. Operation statuses are returned.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomInterestServiceClient customInterestServiceClient =
+   *     CustomInterestServiceClient.create()) {
+   *   MutateCustomInterestsRequest request =
+   *       MutateCustomInterestsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<CustomInterestOperation>())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<MutateCustomInterestsResponse> future =
+   *       customInterestServiceClient.mutateCustomInterestsCallable().futureCall(request);
+   *   // Do something.
+   *   MutateCustomInterestsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<MutateCustomInterestsRequest, MutateCustomInterestsResponse>
       mutateCustomInterestsCallable() {

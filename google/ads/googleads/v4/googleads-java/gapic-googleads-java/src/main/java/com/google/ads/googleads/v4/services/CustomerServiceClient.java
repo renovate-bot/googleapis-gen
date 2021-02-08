@@ -34,6 +34,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (CustomerServiceClient customerServiceClient = CustomerServiceClient.create()) {
+ *   CustomerName resourceName = CustomerName.of("[CUSTOMER]");
+ *   Customer response = customerServiceClient.getCustomer(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the CustomerServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -140,6 +147,15 @@ public class CustomerServiceClient implements BackgroundResource {
   /**
    * Returns the requested customer in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerServiceClient customerServiceClient = CustomerServiceClient.create()) {
+   *   CustomerName resourceName = CustomerName.of("[CUSTOMER]");
+   *   Customer response = customerServiceClient.getCustomer(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the customer to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -155,6 +171,15 @@ public class CustomerServiceClient implements BackgroundResource {
   /**
    * Returns the requested customer in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerServiceClient customerServiceClient = CustomerServiceClient.create()) {
+   *   String resourceName = CustomerName.of("[CUSTOMER]").toString();
+   *   Customer response = customerServiceClient.getCustomer(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the customer to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -168,6 +193,18 @@ public class CustomerServiceClient implements BackgroundResource {
   /**
    * Returns the requested customer in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerServiceClient customerServiceClient = CustomerServiceClient.create()) {
+   *   GetCustomerRequest request =
+   *       GetCustomerRequest.newBuilder()
+   *           .setResourceName(CustomerName.of("[CUSTOMER]").toString())
+   *           .build();
+   *   Customer response = customerServiceClient.getCustomer(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -180,6 +217,18 @@ public class CustomerServiceClient implements BackgroundResource {
    * Returns the requested customer in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerServiceClient customerServiceClient = CustomerServiceClient.create()) {
+   *   GetCustomerRequest request =
+   *       GetCustomerRequest.newBuilder()
+   *           .setResourceName(CustomerName.of("[CUSTOMER]").toString())
+   *           .build();
+   *   ApiFuture<Customer> future = customerServiceClient.getCustomerCallable().futureCall(request);
+   *   // Do something.
+   *   Customer response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetCustomerRequest, Customer> getCustomerCallable() {
     return stub.getCustomerCallable();
@@ -188,6 +237,16 @@ public class CustomerServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a customer. Operation statuses are returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerServiceClient customerServiceClient = CustomerServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   CustomerOperation operation = CustomerOperation.newBuilder().build();
+   *   MutateCustomerResponse response = customerServiceClient.mutateCustomer(customerId, operation);
+   * }
+   * }</pre>
    *
    * @param customerId Required. The ID of the customer being modified.
    * @param operation Required. The operation to perform on the customer
@@ -207,6 +266,20 @@ public class CustomerServiceClient implements BackgroundResource {
   /**
    * Updates a customer. Operation statuses are returned.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerServiceClient customerServiceClient = CustomerServiceClient.create()) {
+   *   MutateCustomerRequest request =
+   *       MutateCustomerRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .setOperation(CustomerOperation.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   MutateCustomerResponse response = customerServiceClient.mutateCustomer(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -219,6 +292,21 @@ public class CustomerServiceClient implements BackgroundResource {
    * Updates a customer. Operation statuses are returned.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerServiceClient customerServiceClient = CustomerServiceClient.create()) {
+   *   MutateCustomerRequest request =
+   *       MutateCustomerRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .setOperation(CustomerOperation.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<MutateCustomerResponse> future =
+   *       customerServiceClient.mutateCustomerCallable().futureCall(request);
+   *   // Do something.
+   *   MutateCustomerResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<MutateCustomerRequest, MutateCustomerResponse>
       mutateCustomerCallable() {
@@ -228,6 +316,16 @@ public class CustomerServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns resource names of customers directly accessible by the user authenticating the call.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerServiceClient customerServiceClient = CustomerServiceClient.create()) {
+   *   ListAccessibleCustomersRequest request = ListAccessibleCustomersRequest.newBuilder().build();
+   *   ListAccessibleCustomersResponse response =
+   *       customerServiceClient.listAccessibleCustomers(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -242,6 +340,16 @@ public class CustomerServiceClient implements BackgroundResource {
    * Returns resource names of customers directly accessible by the user authenticating the call.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerServiceClient customerServiceClient = CustomerServiceClient.create()) {
+   *   ListAccessibleCustomersRequest request = ListAccessibleCustomersRequest.newBuilder().build();
+   *   ApiFuture<ListAccessibleCustomersResponse> future =
+   *       customerServiceClient.listAccessibleCustomersCallable().futureCall(request);
+   *   // Do something.
+   *   ListAccessibleCustomersResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListAccessibleCustomersRequest, ListAccessibleCustomersResponse>
       listAccessibleCustomersCallable() {
@@ -251,6 +359,17 @@ public class CustomerServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new client under manager. The new client customer is returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerServiceClient customerServiceClient = CustomerServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   Customer customerClient = Customer.newBuilder().build();
+   *   CreateCustomerClientResponse response =
+   *       customerServiceClient.createCustomerClient(customerId, customerClient);
+   * }
+   * }</pre>
    *
    * @param customerId Required. The ID of the Manager under whom client customer is being created.
    * @param customerClient Required. The new client customer to create. The resource name on this
@@ -271,6 +390,20 @@ public class CustomerServiceClient implements BackgroundResource {
   /**
    * Creates a new client under manager. The new client customer is returned.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerServiceClient customerServiceClient = CustomerServiceClient.create()) {
+   *   CreateCustomerClientRequest request =
+   *       CreateCustomerClientRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .setCustomerClient(Customer.newBuilder().build())
+   *           .setEmailAddress(StringValue.newBuilder().build())
+   *           .build();
+   *   CreateCustomerClientResponse response = customerServiceClient.createCustomerClient(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -284,6 +417,21 @@ public class CustomerServiceClient implements BackgroundResource {
    * Creates a new client under manager. The new client customer is returned.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerServiceClient customerServiceClient = CustomerServiceClient.create()) {
+   *   CreateCustomerClientRequest request =
+   *       CreateCustomerClientRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .setCustomerClient(Customer.newBuilder().build())
+   *           .setEmailAddress(StringValue.newBuilder().build())
+   *           .build();
+   *   ApiFuture<CreateCustomerClientResponse> future =
+   *       customerServiceClient.createCustomerClientCallable().futureCall(request);
+   *   // Do something.
+   *   CreateCustomerClientResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateCustomerClientRequest, CreateCustomerClientResponse>
       createCustomerClientCallable() {

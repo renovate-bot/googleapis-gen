@@ -27,6 +27,14 @@
  * guide](https://developers.google.com/assistant/smarthome/concepts/homegraph).
  *
  * <p>Sample for HomeGraphApiServiceClient:
+ *
+ * <pre>{@code
+ * try (HomeGraphApiServiceClient homeGraphApiServiceClient = HomeGraphApiServiceClient.create()) {
+ *   String agentUserId = "agentUserId1708672427";
+ *   HomeGraphApiServiceProto.RequestSyncDevicesResponse response =
+ *       homeGraphApiServiceClient.requestSyncDevices(agentUserId);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.home.graph.v1;

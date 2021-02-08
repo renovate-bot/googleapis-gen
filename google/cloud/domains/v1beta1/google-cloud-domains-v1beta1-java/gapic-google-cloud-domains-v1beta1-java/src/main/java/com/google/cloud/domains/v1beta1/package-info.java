@@ -23,6 +23,14 @@
  * names.
  *
  * <p>Sample for DomainsClient:
+ *
+ * <pre>{@code
+ * try (DomainsClient domainsClient = DomainsClient.create()) {
+ *   LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   String query = "query107944136";
+ *   SearchDomainsResponse response = domainsClient.searchDomains(location, query);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.domains.v1beta1;

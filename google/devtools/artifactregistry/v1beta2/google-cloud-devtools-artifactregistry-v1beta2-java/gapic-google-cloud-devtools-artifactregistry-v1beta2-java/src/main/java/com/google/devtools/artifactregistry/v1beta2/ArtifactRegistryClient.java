@@ -65,6 +65,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+ *   String name = "name3373707";
+ *   Repository response = artifactRegistryClient.getRepository(name);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the ArtifactRegistryClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -183,6 +190,17 @@ public class ArtifactRegistryClient implements BackgroundResource {
   /**
    * Lists repositories.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String parent = "parent-995424086";
+   *   for (Repository element : artifactRegistryClient.listRepositories(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent The name of the parent resource whose repositories will be listed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -196,6 +214,22 @@ public class ArtifactRegistryClient implements BackgroundResource {
   /**
    * Lists repositories.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ListRepositoriesRequest request =
+   *       ListRepositoriesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Repository element : artifactRegistryClient.listRepositories(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -208,6 +242,23 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * Lists repositories.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ListRepositoriesRequest request =
+   *       ListRepositoriesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Repository> future =
+   *       artifactRegistryClient.listRepositoriesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Repository element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListRepositoriesRequest, ListRepositoriesPagedResponse>
       listRepositoriesPagedCallable() {
@@ -219,6 +270,24 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * Lists repositories.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   while (true) {
+   *     ListRepositoriesResponse response =
+   *         artifactRegistryClient.listRepositoriesCallable().call(request);
+   *     for (Repository element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListRepositoriesRequest, ListRepositoriesResponse>
       listRepositoriesCallable() {
@@ -228,6 +297,15 @@ public class ArtifactRegistryClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String name = "name3373707";
+   *   Repository response = artifactRegistryClient.getRepository(name);
+   * }
+   * }</pre>
    *
    * @param name The name of the repository to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -241,6 +319,16 @@ public class ArtifactRegistryClient implements BackgroundResource {
   /**
    * Gets a repository.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   GetRepositoryRequest request =
+   *       GetRepositoryRequest.newBuilder().setName("name3373707").build();
+   *   Repository response = artifactRegistryClient.getRepository(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -253,6 +341,17 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * Gets a repository.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   GetRepositoryRequest request =
+   *       GetRepositoryRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Repository> future =
+   *       artifactRegistryClient.getRepositoryCallable().futureCall(request);
+   *   // Do something.
+   *   Repository response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetRepositoryRequest, Repository> getRepositoryCallable() {
     return stub.getRepositoryCallable();
@@ -262,6 +361,18 @@ public class ArtifactRegistryClient implements BackgroundResource {
   /**
    * Creates a repository. The returned Operation will finish once the repository has been created.
    * Its response will be the created Repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String parent = "parent-995424086";
+   *   Repository repository = Repository.newBuilder().build();
+   *   String repositoryId = "repositoryId2113747461";
+   *   Repository response =
+   *       artifactRegistryClient.createRepositoryAsync(parent, repository, repositoryId).get();
+   * }
+   * }</pre>
    *
    * @param parent The name of the parent resource where the repository will be created.
    * @param repository The repository to be created.
@@ -284,6 +395,20 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * Creates a repository. The returned Operation will finish once the repository has been created.
    * Its response will be the created Repository.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   CreateRepositoryRequest request =
+   *       CreateRepositoryRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setRepositoryId("repositoryId2113747461")
+   *           .setRepository(Repository.newBuilder().build())
+   *           .build();
+   *   Repository response = artifactRegistryClient.createRepositoryAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -298,6 +423,21 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * Its response will be the created Repository.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   CreateRepositoryRequest request =
+   *       CreateRepositoryRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setRepositoryId("repositoryId2113747461")
+   *           .setRepository(Repository.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Repository, OperationMetadata> future =
+   *       artifactRegistryClient.createRepositoryOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Repository response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<CreateRepositoryRequest, Repository, OperationMetadata>
       createRepositoryOperationCallable() {
@@ -310,6 +450,21 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * Its response will be the created Repository.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   CreateRepositoryRequest request =
+   *       CreateRepositoryRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setRepositoryId("repositoryId2113747461")
+   *           .setRepository(Repository.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       artifactRegistryClient.createRepositoryCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateRepositoryRequest, Operation> createRepositoryCallable() {
     return stub.createRepositoryCallable();
@@ -318,6 +473,16 @@ public class ArtifactRegistryClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   Repository repository = Repository.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Repository response = artifactRegistryClient.updateRepository(repository, updateMask);
+   * }
+   * }</pre>
    *
    * @param repository The repository that replaces the resource on the server.
    * @param updateMask The update mask applies to the resource. For the `FieldMask` definition, see
@@ -337,6 +502,19 @@ public class ArtifactRegistryClient implements BackgroundResource {
   /**
    * Updates a repository.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   UpdateRepositoryRequest request =
+   *       UpdateRepositoryRequest.newBuilder()
+   *           .setRepository(Repository.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Repository response = artifactRegistryClient.updateRepository(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -349,6 +527,20 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * Updates a repository.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   UpdateRepositoryRequest request =
+   *       UpdateRepositoryRequest.newBuilder()
+   *           .setRepository(Repository.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Repository> future =
+   *       artifactRegistryClient.updateRepositoryCallable().futureCall(request);
+   *   // Do something.
+   *   Repository response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateRepositoryRequest, Repository> updateRepositoryCallable() {
     return stub.updateRepositoryCallable();
@@ -359,6 +551,15 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * Deletes a repository and all of its contents. The returned Operation will finish once the
    * repository has been deleted. It will not have any Operation metadata and will return a
    * google.protobuf.Empty response.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String name = "name3373707";
+   *   artifactRegistryClient.deleteRepositoryAsync(name).get();
+   * }
+   * }</pre>
    *
    * @param name The name of the repository to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -373,6 +574,16 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * Deletes a repository and all of its contents. The returned Operation will finish once the
    * repository has been deleted. It will not have any Operation metadata and will return a
    * google.protobuf.Empty response.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   DeleteRepositoryRequest request =
+   *       DeleteRepositoryRequest.newBuilder().setName("name3373707").build();
+   *   artifactRegistryClient.deleteRepositoryAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -389,6 +600,17 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * google.protobuf.Empty response.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   DeleteRepositoryRequest request =
+   *       DeleteRepositoryRequest.newBuilder().setName("name3373707").build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       artifactRegistryClient.deleteRepositoryOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<DeleteRepositoryRequest, Empty, OperationMetadata>
       deleteRepositoryOperationCallable() {
@@ -402,6 +624,17 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * google.protobuf.Empty response.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   DeleteRepositoryRequest request =
+   *       DeleteRepositoryRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Operation> future =
+   *       artifactRegistryClient.deleteRepositoryCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteRepositoryRequest, Operation> deleteRepositoryCallable() {
     return stub.deleteRepositoryCallable();
@@ -410,6 +643,17 @@ public class ArtifactRegistryClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists packages.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String parent = "parent-995424086";
+   *   for (Package element : artifactRegistryClient.listPackages(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent The name of the parent resource whose packages will be listed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -423,6 +667,22 @@ public class ArtifactRegistryClient implements BackgroundResource {
   /**
    * Lists packages.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ListPackagesRequest request =
+   *       ListPackagesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Package element : artifactRegistryClient.listPackages(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -435,6 +695,23 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * Lists packages.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ListPackagesRequest request =
+   *       ListPackagesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Package> future =
+   *       artifactRegistryClient.listPackagesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Package element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListPackagesRequest, ListPackagesPagedResponse>
       listPackagesPagedCallable() {
@@ -446,6 +723,23 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * Lists packages.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   while (true) {
+   *     ListPackagesResponse response = artifactRegistryClient.listPackagesCallable().call(request);
+   *     for (Package element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListPackagesRequest, ListPackagesResponse> listPackagesCallable() {
     return stub.listPackagesCallable();
@@ -454,6 +748,15 @@ public class ArtifactRegistryClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a package.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String name = "name3373707";
+   *   Package response = artifactRegistryClient.getPackage(name);
+   * }
+   * }</pre>
    *
    * @param name The name of the package to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -467,6 +770,15 @@ public class ArtifactRegistryClient implements BackgroundResource {
   /**
    * Gets a package.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   GetPackageRequest request = GetPackageRequest.newBuilder().setName("name3373707").build();
+   *   Package response = artifactRegistryClient.getPackage(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -479,6 +791,15 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * Gets a package.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   GetPackageRequest request = GetPackageRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Package> future = artifactRegistryClient.getPackageCallable().futureCall(request);
+   *   // Do something.
+   *   Package response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetPackageRequest, Package> getPackageCallable() {
     return stub.getPackageCallable();
@@ -488,6 +809,15 @@ public class ArtifactRegistryClient implements BackgroundResource {
   /**
    * Deletes a package and all of its versions and tags. The returned operation will complete once
    * the package has been deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String name = "name3373707";
+   *   artifactRegistryClient.deletePackageAsync(name).get();
+   * }
+   * }</pre>
    *
    * @param name The name of the package to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -501,6 +831,16 @@ public class ArtifactRegistryClient implements BackgroundResource {
   /**
    * Deletes a package and all of its versions and tags. The returned operation will complete once
    * the package has been deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   DeletePackageRequest request =
+   *       DeletePackageRequest.newBuilder().setName("name3373707").build();
+   *   artifactRegistryClient.deletePackageAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -516,6 +856,17 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * the package has been deleted.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   DeletePackageRequest request =
+   *       DeletePackageRequest.newBuilder().setName("name3373707").build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       artifactRegistryClient.deletePackageOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<DeletePackageRequest, Empty, OperationMetadata>
       deletePackageOperationCallable() {
@@ -528,6 +879,17 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * the package has been deleted.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   DeletePackageRequest request =
+   *       DeletePackageRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Operation> future =
+   *       artifactRegistryClient.deletePackageCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeletePackageRequest, Operation> deletePackageCallable() {
     return stub.deletePackageCallable();
@@ -536,6 +898,17 @@ public class ArtifactRegistryClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists versions.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String parent = "parent-995424086";
+   *   for (Version element : artifactRegistryClient.listVersions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent The name of the parent resource whose versions will be listed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -549,6 +922,22 @@ public class ArtifactRegistryClient implements BackgroundResource {
   /**
    * Lists versions.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ListVersionsRequest request =
+   *       ListVersionsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Version element : artifactRegistryClient.listVersions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -561,6 +950,23 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * Lists versions.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ListVersionsRequest request =
+   *       ListVersionsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Version> future =
+   *       artifactRegistryClient.listVersionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Version element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListVersionsRequest, ListVersionsPagedResponse>
       listVersionsPagedCallable() {
@@ -572,6 +978,23 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * Lists versions.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   while (true) {
+   *     ListVersionsResponse response = artifactRegistryClient.listVersionsCallable().call(request);
+   *     for (Version element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListVersionsRequest, ListVersionsResponse> listVersionsCallable() {
     return stub.listVersionsCallable();
@@ -580,6 +1003,15 @@ public class ArtifactRegistryClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a version
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String name = "name3373707";
+   *   Version response = artifactRegistryClient.getVersion(name);
+   * }
+   * }</pre>
    *
    * @param name The name of the version to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -593,6 +1025,15 @@ public class ArtifactRegistryClient implements BackgroundResource {
   /**
    * Gets a version
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   GetVersionRequest request = GetVersionRequest.newBuilder().setName("name3373707").build();
+   *   Version response = artifactRegistryClient.getVersion(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -605,6 +1046,15 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * Gets a version
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   GetVersionRequest request = GetVersionRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Version> future = artifactRegistryClient.getVersionCallable().futureCall(request);
+   *   // Do something.
+   *   Version response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetVersionRequest, Version> getVersionCallable() {
     return stub.getVersionCallable();
@@ -614,6 +1064,15 @@ public class ArtifactRegistryClient implements BackgroundResource {
   /**
    * Deletes a version and all of its content. The returned operation will complete once the version
    * has been deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String name = "name3373707";
+   *   artifactRegistryClient.deleteVersionAsync(name).get();
+   * }
+   * }</pre>
    *
    * @param name The name of the version to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -627,6 +1086,16 @@ public class ArtifactRegistryClient implements BackgroundResource {
   /**
    * Deletes a version and all of its content. The returned operation will complete once the version
    * has been deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   DeleteVersionRequest request =
+   *       DeleteVersionRequest.newBuilder().setName("name3373707").setForce(true).build();
+   *   artifactRegistryClient.deleteVersionAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -642,6 +1111,17 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * has been deleted.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   DeleteVersionRequest request =
+   *       DeleteVersionRequest.newBuilder().setName("name3373707").setForce(true).build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       artifactRegistryClient.deleteVersionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<DeleteVersionRequest, Empty, OperationMetadata>
       deleteVersionOperationCallable() {
@@ -654,6 +1134,17 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * has been deleted.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   DeleteVersionRequest request =
+   *       DeleteVersionRequest.newBuilder().setName("name3373707").setForce(true).build();
+   *   ApiFuture<Operation> future =
+   *       artifactRegistryClient.deleteVersionCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteVersionRequest, Operation> deleteVersionCallable() {
     return stub.deleteVersionCallable();
@@ -662,6 +1153,17 @@ public class ArtifactRegistryClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists files.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String parent = "parent-995424086";
+   *   for (File element : artifactRegistryClient.listFiles(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent The name of the parent resource whose files will be listed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -675,6 +1177,23 @@ public class ArtifactRegistryClient implements BackgroundResource {
   /**
    * Lists files.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ListFilesRequest request =
+   *       ListFilesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (File element : artifactRegistryClient.listFiles(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -687,6 +1206,23 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * Lists files.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ListFilesRequest request =
+   *       ListFilesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<File> future = artifactRegistryClient.listFilesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (File element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListFilesRequest, ListFilesPagedResponse> listFilesPagedCallable() {
     return stub.listFilesPagedCallable();
@@ -697,6 +1233,23 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * Lists files.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   while (true) {
+   *     ListFilesResponse response = artifactRegistryClient.listFilesCallable().call(request);
+   *     for (File element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListFilesRequest, ListFilesResponse> listFilesCallable() {
     return stub.listFilesCallable();
@@ -705,6 +1258,15 @@ public class ArtifactRegistryClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a file.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String name = "name3373707";
+   *   File response = artifactRegistryClient.getFile(name);
+   * }
+   * }</pre>
    *
    * @param name The name of the file to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -718,6 +1280,15 @@ public class ArtifactRegistryClient implements BackgroundResource {
   /**
    * Gets a file.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   GetFileRequest request = GetFileRequest.newBuilder().setName("name3373707").build();
+   *   File response = artifactRegistryClient.getFile(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -730,6 +1301,15 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * Gets a file.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   GetFileRequest request = GetFileRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<File> future = artifactRegistryClient.getFileCallable().futureCall(request);
+   *   // Do something.
+   *   File response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetFileRequest, File> getFileCallable() {
     return stub.getFileCallable();
@@ -738,6 +1318,17 @@ public class ArtifactRegistryClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists tags.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String parent = "parent-995424086";
+   *   for (Tag element : artifactRegistryClient.listTags(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent The name of the parent resource whose tags will be listed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -751,6 +1342,23 @@ public class ArtifactRegistryClient implements BackgroundResource {
   /**
    * Lists tags.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ListTagsRequest request =
+   *       ListTagsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Tag element : artifactRegistryClient.listTags(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -763,6 +1371,23 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * Lists tags.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ListTagsRequest request =
+   *       ListTagsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Tag> future = artifactRegistryClient.listTagsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Tag element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListTagsRequest, ListTagsPagedResponse> listTagsPagedCallable() {
     return stub.listTagsPagedCallable();
@@ -773,6 +1398,23 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * Lists tags.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   while (true) {
+   *     ListTagsResponse response = artifactRegistryClient.listTagsCallable().call(request);
+   *     for (Tag element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListTagsRequest, ListTagsResponse> listTagsCallable() {
     return stub.listTagsCallable();
@@ -781,6 +1423,15 @@ public class ArtifactRegistryClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a tag.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String name = "name3373707";
+   *   Tag response = artifactRegistryClient.getTag(name);
+   * }
+   * }</pre>
    *
    * @param name The name of the tag to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -794,6 +1445,15 @@ public class ArtifactRegistryClient implements BackgroundResource {
   /**
    * Gets a tag.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   GetTagRequest request = GetTagRequest.newBuilder().setName("name3373707").build();
+   *   Tag response = artifactRegistryClient.getTag(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -806,6 +1466,15 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * Gets a tag.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   GetTagRequest request = GetTagRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Tag> future = artifactRegistryClient.getTagCallable().futureCall(request);
+   *   // Do something.
+   *   Tag response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetTagRequest, Tag> getTagCallable() {
     return stub.getTagCallable();
@@ -814,6 +1483,17 @@ public class ArtifactRegistryClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a tag.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String parent = "parent-995424086";
+   *   Tag tag = Tag.newBuilder().build();
+   *   String tagId = "tagId110119509";
+   *   Tag response = artifactRegistryClient.createTag(parent, tag, tagId);
+   * }
+   * }</pre>
    *
    * @param parent The name of the parent resource where the tag will be created.
    * @param tag The tag to be created.
@@ -830,6 +1510,20 @@ public class ArtifactRegistryClient implements BackgroundResource {
   /**
    * Creates a tag.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   CreateTagRequest request =
+   *       CreateTagRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setTagId("tagId110119509")
+   *           .setTag(Tag.newBuilder().build())
+   *           .build();
+   *   Tag response = artifactRegistryClient.createTag(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -842,6 +1536,20 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * Creates a tag.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   CreateTagRequest request =
+   *       CreateTagRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setTagId("tagId110119509")
+   *           .setTag(Tag.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Tag> future = artifactRegistryClient.createTagCallable().futureCall(request);
+   *   // Do something.
+   *   Tag response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateTagRequest, Tag> createTagCallable() {
     return stub.createTagCallable();
@@ -850,6 +1558,16 @@ public class ArtifactRegistryClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a tag.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   Tag tag = Tag.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Tag response = artifactRegistryClient.updateTag(tag, updateMask);
+   * }
+   * }</pre>
    *
    * @param tag The tag that replaces the resource on the server.
    * @param updateMask The update mask applies to the resource. For the `FieldMask` definition, see
@@ -866,6 +1584,19 @@ public class ArtifactRegistryClient implements BackgroundResource {
   /**
    * Updates a tag.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   UpdateTagRequest request =
+   *       UpdateTagRequest.newBuilder()
+   *           .setTag(Tag.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Tag response = artifactRegistryClient.updateTag(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -878,6 +1609,19 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * Updates a tag.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   UpdateTagRequest request =
+   *       UpdateTagRequest.newBuilder()
+   *           .setTag(Tag.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Tag> future = artifactRegistryClient.updateTagCallable().futureCall(request);
+   *   // Do something.
+   *   Tag response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateTagRequest, Tag> updateTagCallable() {
     return stub.updateTagCallable();
@@ -886,6 +1630,15 @@ public class ArtifactRegistryClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a tag.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String name = "name3373707";
+   *   artifactRegistryClient.deleteTag(name);
+   * }
+   * }</pre>
    *
    * @param name The name of the tag to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -899,6 +1652,15 @@ public class ArtifactRegistryClient implements BackgroundResource {
   /**
    * Deletes a tag.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   DeleteTagRequest request = DeleteTagRequest.newBuilder().setName("name3373707").build();
+   *   artifactRegistryClient.deleteTag(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -911,6 +1673,15 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * Deletes a tag.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   DeleteTagRequest request = DeleteTagRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Empty> future = artifactRegistryClient.deleteTagCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteTagRequest, Empty> deleteTagCallable() {
     return stub.deleteTagCallable();
@@ -919,6 +1690,19 @@ public class ArtifactRegistryClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the IAM policy for a given resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .build();
+   *   Policy response = artifactRegistryClient.setIamPolicy(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -932,6 +1716,19 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * Updates the IAM policy for a given resource.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = artifactRegistryClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return stub.setIamPolicyCallable();
@@ -940,6 +1737,19 @@ public class ArtifactRegistryClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the IAM policy for a given resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   Policy response = artifactRegistryClient.getIamPolicy(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -953,6 +1763,19 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * Gets the IAM policy for a given resource.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = artifactRegistryClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return stub.getIamPolicyCallable();
@@ -961,6 +1784,19 @@ public class ArtifactRegistryClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Tests if the caller has a list of permissions on a resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   TestIamPermissionsResponse response = artifactRegistryClient.testIamPermissions(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -974,6 +1810,20 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * Tests if the caller has a list of permissions on a resource.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<TestIamPermissionsResponse> future =
+   *       artifactRegistryClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {

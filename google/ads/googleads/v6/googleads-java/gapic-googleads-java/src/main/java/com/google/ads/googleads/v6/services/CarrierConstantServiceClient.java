@@ -34,6 +34,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (CarrierConstantServiceClient carrierConstantServiceClient =
+ *     CarrierConstantServiceClient.create()) {
+ *   CarrierConstantName resourceName = CarrierConstantName.of("[CRITERION_ID]");
+ *   CarrierConstant response = carrierConstantServiceClient.getCarrierConstant(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the CarrierConstantServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -141,6 +149,16 @@ public class CarrierConstantServiceClient implements BackgroundResource {
   /**
    * Returns the requested carrier constant in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CarrierConstantServiceClient carrierConstantServiceClient =
+   *     CarrierConstantServiceClient.create()) {
+   *   CarrierConstantName resourceName = CarrierConstantName.of("[CRITERION_ID]");
+   *   CarrierConstant response = carrierConstantServiceClient.getCarrierConstant(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. Resource name of the carrier constant to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -156,6 +174,16 @@ public class CarrierConstantServiceClient implements BackgroundResource {
   /**
    * Returns the requested carrier constant in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CarrierConstantServiceClient carrierConstantServiceClient =
+   *     CarrierConstantServiceClient.create()) {
+   *   String resourceName = CarrierConstantName.of("[CRITERION_ID]").toString();
+   *   CarrierConstant response = carrierConstantServiceClient.getCarrierConstant(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. Resource name of the carrier constant to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -169,6 +197,19 @@ public class CarrierConstantServiceClient implements BackgroundResource {
   /**
    * Returns the requested carrier constant in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CarrierConstantServiceClient carrierConstantServiceClient =
+   *     CarrierConstantServiceClient.create()) {
+   *   GetCarrierConstantRequest request =
+   *       GetCarrierConstantRequest.newBuilder()
+   *           .setResourceName(CarrierConstantName.of("[CRITERION_ID]").toString())
+   *           .build();
+   *   CarrierConstant response = carrierConstantServiceClient.getCarrierConstant(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -181,6 +222,20 @@ public class CarrierConstantServiceClient implements BackgroundResource {
    * Returns the requested carrier constant in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CarrierConstantServiceClient carrierConstantServiceClient =
+   *     CarrierConstantServiceClient.create()) {
+   *   GetCarrierConstantRequest request =
+   *       GetCarrierConstantRequest.newBuilder()
+   *           .setResourceName(CarrierConstantName.of("[CRITERION_ID]").toString())
+   *           .build();
+   *   ApiFuture<CarrierConstant> future =
+   *       carrierConstantServiceClient.getCarrierConstantCallable().futureCall(request);
+   *   // Do something.
+   *   CarrierConstant response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetCarrierConstantRequest, CarrierConstant>
       getCarrierConstantCallable() {

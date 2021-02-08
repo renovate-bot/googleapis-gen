@@ -34,6 +34,16 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (FeedPlaceholderViewServiceClient feedPlaceholderViewServiceClient =
+ *     FeedPlaceholderViewServiceClient.create()) {
+ *   FeedPlaceholderViewName resourceName =
+ *       FeedPlaceholderViewName.of("[CUSTOMER_ID]", "[PLACEHOLDER_TYPE]");
+ *   FeedPlaceholderView response =
+ *       feedPlaceholderViewServiceClient.getFeedPlaceholderView(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the FeedPlaceholderViewServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -142,6 +152,18 @@ public class FeedPlaceholderViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested feed placeholder view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FeedPlaceholderViewServiceClient feedPlaceholderViewServiceClient =
+   *     FeedPlaceholderViewServiceClient.create()) {
+   *   FeedPlaceholderViewName resourceName =
+   *       FeedPlaceholderViewName.of("[CUSTOMER_ID]", "[PLACEHOLDER_TYPE]");
+   *   FeedPlaceholderView response =
+   *       feedPlaceholderViewServiceClient.getFeedPlaceholderView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the feed placeholder view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -157,6 +179,18 @@ public class FeedPlaceholderViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested feed placeholder view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FeedPlaceholderViewServiceClient feedPlaceholderViewServiceClient =
+   *     FeedPlaceholderViewServiceClient.create()) {
+   *   String resourceName =
+   *       FeedPlaceholderViewName.of("[CUSTOMER_ID]", "[PLACEHOLDER_TYPE]").toString();
+   *   FeedPlaceholderView response =
+   *       feedPlaceholderViewServiceClient.getFeedPlaceholderView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the feed placeholder view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -170,6 +204,21 @@ public class FeedPlaceholderViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested feed placeholder view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FeedPlaceholderViewServiceClient feedPlaceholderViewServiceClient =
+   *     FeedPlaceholderViewServiceClient.create()) {
+   *   GetFeedPlaceholderViewRequest request =
+   *       GetFeedPlaceholderViewRequest.newBuilder()
+   *           .setResourceName(
+   *               FeedPlaceholderViewName.of("[CUSTOMER_ID]", "[PLACEHOLDER_TYPE]").toString())
+   *           .build();
+   *   FeedPlaceholderView response =
+   *       feedPlaceholderViewServiceClient.getFeedPlaceholderView(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -182,6 +231,21 @@ public class FeedPlaceholderViewServiceClient implements BackgroundResource {
    * Returns the requested feed placeholder view in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FeedPlaceholderViewServiceClient feedPlaceholderViewServiceClient =
+   *     FeedPlaceholderViewServiceClient.create()) {
+   *   GetFeedPlaceholderViewRequest request =
+   *       GetFeedPlaceholderViewRequest.newBuilder()
+   *           .setResourceName(
+   *               FeedPlaceholderViewName.of("[CUSTOMER_ID]", "[PLACEHOLDER_TYPE]").toString())
+   *           .build();
+   *   ApiFuture<FeedPlaceholderView> future =
+   *       feedPlaceholderViewServiceClient.getFeedPlaceholderViewCallable().futureCall(request);
+   *   // Do something.
+   *   FeedPlaceholderView response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetFeedPlaceholderViewRequest, FeedPlaceholderView>
       getFeedPlaceholderViewCallable() {

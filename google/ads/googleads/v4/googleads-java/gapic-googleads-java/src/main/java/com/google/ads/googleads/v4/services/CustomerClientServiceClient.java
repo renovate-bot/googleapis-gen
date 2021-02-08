@@ -34,6 +34,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (CustomerClientServiceClient customerClientServiceClient =
+ *     CustomerClientServiceClient.create()) {
+ *   CustomerClientName resourceName = CustomerClientName.of("[CUSTOMER]", "[CUSTOMER_CLIENT]");
+ *   CustomerClient response = customerClientServiceClient.getCustomerClient(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the CustomerClientServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -140,6 +148,16 @@ public class CustomerClientServiceClient implements BackgroundResource {
   /**
    * Returns the requested client in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerClientServiceClient customerClientServiceClient =
+   *     CustomerClientServiceClient.create()) {
+   *   CustomerClientName resourceName = CustomerClientName.of("[CUSTOMER]", "[CUSTOMER_CLIENT]");
+   *   CustomerClient response = customerClientServiceClient.getCustomerClient(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the client to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -155,6 +173,16 @@ public class CustomerClientServiceClient implements BackgroundResource {
   /**
    * Returns the requested client in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerClientServiceClient customerClientServiceClient =
+   *     CustomerClientServiceClient.create()) {
+   *   String resourceName = CustomerClientName.of("[CUSTOMER]", "[CUSTOMER_CLIENT]").toString();
+   *   CustomerClient response = customerClientServiceClient.getCustomerClient(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the client to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -168,6 +196,19 @@ public class CustomerClientServiceClient implements BackgroundResource {
   /**
    * Returns the requested client in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerClientServiceClient customerClientServiceClient =
+   *     CustomerClientServiceClient.create()) {
+   *   GetCustomerClientRequest request =
+   *       GetCustomerClientRequest.newBuilder()
+   *           .setResourceName(CustomerClientName.of("[CUSTOMER]", "[CUSTOMER_CLIENT]").toString())
+   *           .build();
+   *   CustomerClient response = customerClientServiceClient.getCustomerClient(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -180,6 +221,20 @@ public class CustomerClientServiceClient implements BackgroundResource {
    * Returns the requested client in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerClientServiceClient customerClientServiceClient =
+   *     CustomerClientServiceClient.create()) {
+   *   GetCustomerClientRequest request =
+   *       GetCustomerClientRequest.newBuilder()
+   *           .setResourceName(CustomerClientName.of("[CUSTOMER]", "[CUSTOMER_CLIENT]").toString())
+   *           .build();
+   *   ApiFuture<CustomerClient> future =
+   *       customerClientServiceClient.getCustomerClientCallable().futureCall(request);
+   *   // Do something.
+   *   CustomerClient response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetCustomerClientRequest, CustomerClient> getCustomerClientCallable() {
     return stub.getCustomerClientCallable();

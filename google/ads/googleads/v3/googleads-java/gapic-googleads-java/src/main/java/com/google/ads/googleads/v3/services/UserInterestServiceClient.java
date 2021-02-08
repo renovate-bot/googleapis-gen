@@ -34,6 +34,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (UserInterestServiceClient userInterestServiceClient = UserInterestServiceClient.create()) {
+ *   UserInterestName resourceName = UserInterestName.of("[CUSTOMER]", "[USER_INTEREST]");
+ *   UserInterest response = userInterestServiceClient.getUserInterest(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the UserInterestServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -140,6 +147,15 @@ public class UserInterestServiceClient implements BackgroundResource {
   /**
    * Returns the requested user interest in full detail
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserInterestServiceClient userInterestServiceClient = UserInterestServiceClient.create()) {
+   *   UserInterestName resourceName = UserInterestName.of("[CUSTOMER]", "[USER_INTEREST]");
+   *   UserInterest response = userInterestServiceClient.getUserInterest(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. Resource name of the UserInterest to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -155,6 +171,15 @@ public class UserInterestServiceClient implements BackgroundResource {
   /**
    * Returns the requested user interest in full detail
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserInterestServiceClient userInterestServiceClient = UserInterestServiceClient.create()) {
+   *   String resourceName = UserInterestName.of("[CUSTOMER]", "[USER_INTEREST]").toString();
+   *   UserInterest response = userInterestServiceClient.getUserInterest(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. Resource name of the UserInterest to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -168,6 +193,18 @@ public class UserInterestServiceClient implements BackgroundResource {
   /**
    * Returns the requested user interest in full detail
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserInterestServiceClient userInterestServiceClient = UserInterestServiceClient.create()) {
+   *   GetUserInterestRequest request =
+   *       GetUserInterestRequest.newBuilder()
+   *           .setResourceName(UserInterestName.of("[CUSTOMER]", "[USER_INTEREST]").toString())
+   *           .build();
+   *   UserInterest response = userInterestServiceClient.getUserInterest(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -180,6 +217,19 @@ public class UserInterestServiceClient implements BackgroundResource {
    * Returns the requested user interest in full detail
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserInterestServiceClient userInterestServiceClient = UserInterestServiceClient.create()) {
+   *   GetUserInterestRequest request =
+   *       GetUserInterestRequest.newBuilder()
+   *           .setResourceName(UserInterestName.of("[CUSTOMER]", "[USER_INTEREST]").toString())
+   *           .build();
+   *   ApiFuture<UserInterest> future =
+   *       userInterestServiceClient.getUserInterestCallable().futureCall(request);
+   *   // Do something.
+   *   UserInterest response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetUserInterestRequest, UserInterest> getUserInterestCallable() {
     return stub.getUserInterestCallable();

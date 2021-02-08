@@ -35,6 +35,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (CampaignServiceClient campaignServiceClient = CampaignServiceClient.create()) {
+ *   CampaignName resourceName = CampaignName.of("[CUSTOMER_ID]", "[CAMPAIGN_ID]");
+ *   Campaign response = campaignServiceClient.getCampaign(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the CampaignServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -141,6 +148,15 @@ public class CampaignServiceClient implements BackgroundResource {
   /**
    * Returns the requested campaign in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignServiceClient campaignServiceClient = CampaignServiceClient.create()) {
+   *   CampaignName resourceName = CampaignName.of("[CUSTOMER_ID]", "[CAMPAIGN_ID]");
+   *   Campaign response = campaignServiceClient.getCampaign(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the campaign to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -156,6 +172,15 @@ public class CampaignServiceClient implements BackgroundResource {
   /**
    * Returns the requested campaign in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignServiceClient campaignServiceClient = CampaignServiceClient.create()) {
+   *   String resourceName = CampaignName.of("[CUSTOMER_ID]", "[CAMPAIGN_ID]").toString();
+   *   Campaign response = campaignServiceClient.getCampaign(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the campaign to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -169,6 +194,18 @@ public class CampaignServiceClient implements BackgroundResource {
   /**
    * Returns the requested campaign in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignServiceClient campaignServiceClient = CampaignServiceClient.create()) {
+   *   GetCampaignRequest request =
+   *       GetCampaignRequest.newBuilder()
+   *           .setResourceName(CampaignName.of("[CUSTOMER_ID]", "[CAMPAIGN_ID]").toString())
+   *           .build();
+   *   Campaign response = campaignServiceClient.getCampaign(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -181,6 +218,18 @@ public class CampaignServiceClient implements BackgroundResource {
    * Returns the requested campaign in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignServiceClient campaignServiceClient = CampaignServiceClient.create()) {
+   *   GetCampaignRequest request =
+   *       GetCampaignRequest.newBuilder()
+   *           .setResourceName(CampaignName.of("[CUSTOMER_ID]", "[CAMPAIGN_ID]").toString())
+   *           .build();
+   *   ApiFuture<Campaign> future = campaignServiceClient.getCampaignCallable().futureCall(request);
+   *   // Do something.
+   *   Campaign response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetCampaignRequest, Campaign> getCampaignCallable() {
     return stub.getCampaignCallable();
@@ -189,6 +238,17 @@ public class CampaignServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates, updates, or removes campaigns. Operation statuses are returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignServiceClient campaignServiceClient = CampaignServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   List<CampaignOperation> operations = new ArrayList<>();
+   *   MutateCampaignsResponse response =
+   *       campaignServiceClient.mutateCampaigns(customerId, operations);
+   * }
+   * }</pre>
    *
    * @param customerId Required. The ID of the customer whose campaigns are being modified.
    * @param operations Required. The list of operations to perform on individual campaigns.
@@ -208,6 +268,21 @@ public class CampaignServiceClient implements BackgroundResource {
   /**
    * Creates, updates, or removes campaigns. Operation statuses are returned.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignServiceClient campaignServiceClient = CampaignServiceClient.create()) {
+   *   MutateCampaignsRequest request =
+   *       MutateCampaignsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<CampaignOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   MutateCampaignsResponse response = campaignServiceClient.mutateCampaigns(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -220,6 +295,22 @@ public class CampaignServiceClient implements BackgroundResource {
    * Creates, updates, or removes campaigns. Operation statuses are returned.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignServiceClient campaignServiceClient = CampaignServiceClient.create()) {
+   *   MutateCampaignsRequest request =
+   *       MutateCampaignsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<CampaignOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<MutateCampaignsResponse> future =
+   *       campaignServiceClient.mutateCampaignsCallable().futureCall(request);
+   *   // Do something.
+   *   MutateCampaignsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<MutateCampaignsRequest, MutateCampaignsResponse>
       mutateCampaignsCallable() {

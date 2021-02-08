@@ -22,6 +22,13 @@
  * <p>Service Description: [Google Service Management API](/service-management/overview)
  *
  * <p>Sample for ServiceManagerClient:
+ *
+ * <pre>{@code
+ * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+ *   String serviceName = "serviceName-1928572192";
+ *   ManagedService response = serviceManagerClient.getService(serviceName);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.api.servicemanagement.v1;

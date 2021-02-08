@@ -35,6 +35,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (FeedMappingServiceClient feedMappingServiceClient = FeedMappingServiceClient.create()) {
+ *   FeedMappingName resourceName =
+ *       FeedMappingName.of("[CUSTOMER_ID]", "[FEED_ID]", "[FEED_MAPPING_ID]");
+ *   FeedMapping response = feedMappingServiceClient.getFeedMapping(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the FeedMappingServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -141,6 +149,16 @@ public class FeedMappingServiceClient implements BackgroundResource {
   /**
    * Returns the requested feed mapping in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FeedMappingServiceClient feedMappingServiceClient = FeedMappingServiceClient.create()) {
+   *   FeedMappingName resourceName =
+   *       FeedMappingName.of("[CUSTOMER_ID]", "[FEED_ID]", "[FEED_MAPPING_ID]");
+   *   FeedMapping response = feedMappingServiceClient.getFeedMapping(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the feed mapping to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -156,6 +174,16 @@ public class FeedMappingServiceClient implements BackgroundResource {
   /**
    * Returns the requested feed mapping in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FeedMappingServiceClient feedMappingServiceClient = FeedMappingServiceClient.create()) {
+   *   String resourceName =
+   *       FeedMappingName.of("[CUSTOMER_ID]", "[FEED_ID]", "[FEED_MAPPING_ID]").toString();
+   *   FeedMapping response = feedMappingServiceClient.getFeedMapping(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the feed mapping to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -169,6 +197,19 @@ public class FeedMappingServiceClient implements BackgroundResource {
   /**
    * Returns the requested feed mapping in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FeedMappingServiceClient feedMappingServiceClient = FeedMappingServiceClient.create()) {
+   *   GetFeedMappingRequest request =
+   *       GetFeedMappingRequest.newBuilder()
+   *           .setResourceName(
+   *               FeedMappingName.of("[CUSTOMER_ID]", "[FEED_ID]", "[FEED_MAPPING_ID]").toString())
+   *           .build();
+   *   FeedMapping response = feedMappingServiceClient.getFeedMapping(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -181,6 +222,20 @@ public class FeedMappingServiceClient implements BackgroundResource {
    * Returns the requested feed mapping in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FeedMappingServiceClient feedMappingServiceClient = FeedMappingServiceClient.create()) {
+   *   GetFeedMappingRequest request =
+   *       GetFeedMappingRequest.newBuilder()
+   *           .setResourceName(
+   *               FeedMappingName.of("[CUSTOMER_ID]", "[FEED_ID]", "[FEED_MAPPING_ID]").toString())
+   *           .build();
+   *   ApiFuture<FeedMapping> future =
+   *       feedMappingServiceClient.getFeedMappingCallable().futureCall(request);
+   *   // Do something.
+   *   FeedMapping response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetFeedMappingRequest, FeedMapping> getFeedMappingCallable() {
     return stub.getFeedMappingCallable();
@@ -189,6 +244,17 @@ public class FeedMappingServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates or removes feed mappings. Operation statuses are returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FeedMappingServiceClient feedMappingServiceClient = FeedMappingServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   List<FeedMappingOperation> operations = new ArrayList<>();
+   *   MutateFeedMappingsResponse response =
+   *       feedMappingServiceClient.mutateFeedMappings(customerId, operations);
+   * }
+   * }</pre>
    *
    * @param customerId Required. The ID of the customer whose feed mappings are being modified.
    * @param operations Required. The list of operations to perform on individual feed mappings.
@@ -208,6 +274,21 @@ public class FeedMappingServiceClient implements BackgroundResource {
   /**
    * Creates or removes feed mappings. Operation statuses are returned.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FeedMappingServiceClient feedMappingServiceClient = FeedMappingServiceClient.create()) {
+   *   MutateFeedMappingsRequest request =
+   *       MutateFeedMappingsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<FeedMappingOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   MutateFeedMappingsResponse response = feedMappingServiceClient.mutateFeedMappings(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -220,6 +301,22 @@ public class FeedMappingServiceClient implements BackgroundResource {
    * Creates or removes feed mappings. Operation statuses are returned.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FeedMappingServiceClient feedMappingServiceClient = FeedMappingServiceClient.create()) {
+   *   MutateFeedMappingsRequest request =
+   *       MutateFeedMappingsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<FeedMappingOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<MutateFeedMappingsResponse> future =
+   *       feedMappingServiceClient.mutateFeedMappingsCallable().futureCall(request);
+   *   // Do something.
+   *   MutateFeedMappingsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<MutateFeedMappingsRequest, MutateFeedMappingsResponse>
       mutateFeedMappingsCallable() {

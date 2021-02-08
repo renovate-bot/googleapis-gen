@@ -38,6 +38,16 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (KeywordPlanCampaignKeywordServiceClient keywordPlanCampaignKeywordServiceClient =
+ *     KeywordPlanCampaignKeywordServiceClient.create()) {
+ *   KeywordPlanCampaignKeywordName resourceName =
+ *       KeywordPlanCampaignKeywordName.of("[CUSTOMER]", "[KEYWORD_PLAN_CAMPAIGN_KEYWORD]");
+ *   KeywordPlanCampaignKeyword response =
+ *       keywordPlanCampaignKeywordServiceClient.getKeywordPlanCampaignKeyword(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the KeywordPlanCampaignKeywordServiceClient object to
  * clean up resources such as threads. In the example above, try-with-resources is used, which
  * automatically calls close().
@@ -149,6 +159,18 @@ public class KeywordPlanCampaignKeywordServiceClient implements BackgroundResour
   /**
    * Returns the requested plan in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeywordPlanCampaignKeywordServiceClient keywordPlanCampaignKeywordServiceClient =
+   *     KeywordPlanCampaignKeywordServiceClient.create()) {
+   *   KeywordPlanCampaignKeywordName resourceName =
+   *       KeywordPlanCampaignKeywordName.of("[CUSTOMER]", "[KEYWORD_PLAN_CAMPAIGN_KEYWORD]");
+   *   KeywordPlanCampaignKeyword response =
+   *       keywordPlanCampaignKeywordServiceClient.getKeywordPlanCampaignKeyword(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the plan to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -165,6 +187,19 @@ public class KeywordPlanCampaignKeywordServiceClient implements BackgroundResour
   /**
    * Returns the requested plan in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeywordPlanCampaignKeywordServiceClient keywordPlanCampaignKeywordServiceClient =
+   *     KeywordPlanCampaignKeywordServiceClient.create()) {
+   *   String resourceName =
+   *       KeywordPlanCampaignKeywordName.of("[CUSTOMER]", "[KEYWORD_PLAN_CAMPAIGN_KEYWORD]")
+   *           .toString();
+   *   KeywordPlanCampaignKeyword response =
+   *       keywordPlanCampaignKeywordServiceClient.getKeywordPlanCampaignKeyword(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the plan to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -177,6 +212,22 @@ public class KeywordPlanCampaignKeywordServiceClient implements BackgroundResour
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the requested plan in full detail.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeywordPlanCampaignKeywordServiceClient keywordPlanCampaignKeywordServiceClient =
+   *     KeywordPlanCampaignKeywordServiceClient.create()) {
+   *   GetKeywordPlanCampaignKeywordRequest request =
+   *       GetKeywordPlanCampaignKeywordRequest.newBuilder()
+   *           .setResourceName(
+   *               KeywordPlanCampaignKeywordName.of("[CUSTOMER]", "[KEYWORD_PLAN_CAMPAIGN_KEYWORD]")
+   *                   .toString())
+   *           .build();
+   *   KeywordPlanCampaignKeyword response =
+   *       keywordPlanCampaignKeywordServiceClient.getKeywordPlanCampaignKeyword(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -191,6 +242,24 @@ public class KeywordPlanCampaignKeywordServiceClient implements BackgroundResour
    * Returns the requested plan in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeywordPlanCampaignKeywordServiceClient keywordPlanCampaignKeywordServiceClient =
+   *     KeywordPlanCampaignKeywordServiceClient.create()) {
+   *   GetKeywordPlanCampaignKeywordRequest request =
+   *       GetKeywordPlanCampaignKeywordRequest.newBuilder()
+   *           .setResourceName(
+   *               KeywordPlanCampaignKeywordName.of("[CUSTOMER]", "[KEYWORD_PLAN_CAMPAIGN_KEYWORD]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<KeywordPlanCampaignKeyword> future =
+   *       keywordPlanCampaignKeywordServiceClient
+   *           .getKeywordPlanCampaignKeywordCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   KeywordPlanCampaignKeyword response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetKeywordPlanCampaignKeywordRequest, KeywordPlanCampaignKeyword>
       getKeywordPlanCampaignKeywordCallable() {
@@ -200,6 +269,19 @@ public class KeywordPlanCampaignKeywordServiceClient implements BackgroundResour
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates, updates, or removes Keyword Plan campaign keywords. Operation statuses are returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeywordPlanCampaignKeywordServiceClient keywordPlanCampaignKeywordServiceClient =
+   *     KeywordPlanCampaignKeywordServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   List<KeywordPlanCampaignKeywordOperation> operations = new ArrayList<>();
+   *   MutateKeywordPlanCampaignKeywordsResponse response =
+   *       keywordPlanCampaignKeywordServiceClient.mutateKeywordPlanCampaignKeywords(
+   *           customerId, operations);
+   * }
+   * }</pre>
    *
    * @param customerId Required. The ID of the customer whose campaign keywords are being modified.
    * @param operations Required. The list of operations to perform on individual Keyword Plan
@@ -220,6 +302,23 @@ public class KeywordPlanCampaignKeywordServiceClient implements BackgroundResour
   /**
    * Creates, updates, or removes Keyword Plan campaign keywords. Operation statuses are returned.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeywordPlanCampaignKeywordServiceClient keywordPlanCampaignKeywordServiceClient =
+   *     KeywordPlanCampaignKeywordServiceClient.create()) {
+   *   MutateKeywordPlanCampaignKeywordsRequest request =
+   *       MutateKeywordPlanCampaignKeywordsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<KeywordPlanCampaignKeywordOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   MutateKeywordPlanCampaignKeywordsResponse response =
+   *       keywordPlanCampaignKeywordServiceClient.mutateKeywordPlanCampaignKeywords(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -233,6 +332,25 @@ public class KeywordPlanCampaignKeywordServiceClient implements BackgroundResour
    * Creates, updates, or removes Keyword Plan campaign keywords. Operation statuses are returned.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (KeywordPlanCampaignKeywordServiceClient keywordPlanCampaignKeywordServiceClient =
+   *     KeywordPlanCampaignKeywordServiceClient.create()) {
+   *   MutateKeywordPlanCampaignKeywordsRequest request =
+   *       MutateKeywordPlanCampaignKeywordsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<KeywordPlanCampaignKeywordOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<MutateKeywordPlanCampaignKeywordsResponse> future =
+   *       keywordPlanCampaignKeywordServiceClient
+   *           .mutateKeywordPlanCampaignKeywordsCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   MutateKeywordPlanCampaignKeywordsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           MutateKeywordPlanCampaignKeywordsRequest, MutateKeywordPlanCampaignKeywordsResponse>

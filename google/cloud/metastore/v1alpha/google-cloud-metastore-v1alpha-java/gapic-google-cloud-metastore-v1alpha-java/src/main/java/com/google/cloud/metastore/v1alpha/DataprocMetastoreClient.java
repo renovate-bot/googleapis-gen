@@ -63,6 +63,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+ *   ServiceName name = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]");
+ *   Service response = dataprocMetastoreClient.getService(name);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the DataprocMetastoreClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -181,6 +188,17 @@ public class DataprocMetastoreClient implements BackgroundResource {
   /**
    * Lists services in a project and location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Service element : dataprocMetastoreClient.listServices(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The relative resource name of the location of metastore services to
    *     list, in the following form:
    *     <p>"projects/{project_id}/locations/{location_id}".
@@ -198,6 +216,17 @@ public class DataprocMetastoreClient implements BackgroundResource {
   /**
    * Lists services in a project and location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (Service element : dataprocMetastoreClient.listServices(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The relative resource name of the location of metastore services to
    *     list, in the following form:
    *     <p>"projects/{project_id}/locations/{location_id}".
@@ -212,6 +241,24 @@ public class DataprocMetastoreClient implements BackgroundResource {
   /**
    * Lists services in a project and location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   ListServicesRequest request =
+   *       ListServicesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (Service element : dataprocMetastoreClient.listServices(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -224,6 +271,25 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * Lists services in a project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   ListServicesRequest request =
+   *       ListServicesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<Service> future =
+   *       dataprocMetastoreClient.listServicesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Service element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListServicesRequest, ListServicesPagedResponse>
       listServicesPagedCallable() {
@@ -235,6 +301,24 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * Lists services in a project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   while (true) {
+   *     ListServicesResponse response =
+   *         dataprocMetastoreClient.listServicesCallable().call(request);
+   *     for (Service element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListServicesRequest, ListServicesResponse> listServicesCallable() {
     return stub.listServicesCallable();
@@ -243,6 +327,15 @@ public class DataprocMetastoreClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the details of a single service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   ServiceName name = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]");
+   *   Service response = dataprocMetastoreClient.getService(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The relative resource name of the metastore service to retrieve, in the
    *     following form:
@@ -259,6 +352,15 @@ public class DataprocMetastoreClient implements BackgroundResource {
   /**
    * Gets the details of a single service.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   String name = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString();
+   *   Service response = dataprocMetastoreClient.getService(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The relative resource name of the metastore service to retrieve, in the
    *     following form:
    *     <p>"projects/{project_id}/locations/{location_id}/services/{service_id}".
@@ -273,6 +375,18 @@ public class DataprocMetastoreClient implements BackgroundResource {
   /**
    * Gets the details of a single service.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   GetServiceRequest request =
+   *       GetServiceRequest.newBuilder()
+   *           .setName(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+   *           .build();
+   *   Service response = dataprocMetastoreClient.getService(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -285,6 +399,18 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * Gets the details of a single service.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   GetServiceRequest request =
+   *       GetServiceRequest.newBuilder()
+   *           .setName(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+   *           .build();
+   *   ApiFuture<Service> future = dataprocMetastoreClient.getServiceCallable().futureCall(request);
+   *   // Do something.
+   *   Service response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetServiceRequest, Service> getServiceCallable() {
     return stub.getServiceCallable();
@@ -293,6 +419,18 @@ public class DataprocMetastoreClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a metastore service in a project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Service service = Service.newBuilder().build();
+   *   String serviceId = "serviceId-194185552";
+   *   Service response =
+   *       dataprocMetastoreClient.createServiceAsync(parent, service, serviceId).get();
+   * }
+   * }</pre>
    *
    * @param parent Required. The relative resource name of the location in which to create a
    *     metastore service, in the following form:
@@ -320,6 +458,18 @@ public class DataprocMetastoreClient implements BackgroundResource {
   /**
    * Creates a metastore service in a project and location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Service service = Service.newBuilder().build();
+   *   String serviceId = "serviceId-194185552";
+   *   Service response =
+   *       dataprocMetastoreClient.createServiceAsync(parent, service, serviceId).get();
+   * }
+   * }</pre>
+   *
    * @param parent Required. The relative resource name of the location in which to create a
    *     metastore service, in the following form:
    *     <p>"projects/{project_id}/locations/{location_id}".
@@ -346,6 +496,21 @@ public class DataprocMetastoreClient implements BackgroundResource {
   /**
    * Creates a metastore service in a project and location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   CreateServiceRequest request =
+   *       CreateServiceRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setServiceId("serviceId-194185552")
+   *           .setService(Service.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Service response = dataprocMetastoreClient.createServiceAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -359,6 +524,22 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * Creates a metastore service in a project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   CreateServiceRequest request =
+   *       CreateServiceRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setServiceId("serviceId-194185552")
+   *           .setService(Service.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Service, OperationMetadata> future =
+   *       dataprocMetastoreClient.createServiceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Service response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<CreateServiceRequest, Service, OperationMetadata>
       createServiceOperationCallable() {
@@ -370,6 +551,22 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * Creates a metastore service in a project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   CreateServiceRequest request =
+   *       CreateServiceRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setServiceId("serviceId-194185552")
+   *           .setService(Service.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       dataprocMetastoreClient.createServiceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateServiceRequest, Operation> createServiceCallable() {
     return stub.createServiceCallable();
@@ -378,6 +575,16 @@ public class DataprocMetastoreClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the parameters of a single service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   Service service = Service.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Service response = dataprocMetastoreClient.updateServiceAsync(service, updateMask).get();
+   * }
+   * }</pre>
    *
    * @param service Required. The metastore service to update. The server only merges fields in the
    *     service if they are specified in `update_mask`.
@@ -400,6 +607,20 @@ public class DataprocMetastoreClient implements BackgroundResource {
   /**
    * Updates the parameters of a single service.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   UpdateServiceRequest request =
+   *       UpdateServiceRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setService(Service.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Service response = dataprocMetastoreClient.updateServiceAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -413,6 +634,21 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * Updates the parameters of a single service.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   UpdateServiceRequest request =
+   *       UpdateServiceRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setService(Service.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Service, OperationMetadata> future =
+   *       dataprocMetastoreClient.updateServiceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Service response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<UpdateServiceRequest, Service, OperationMetadata>
       updateServiceOperationCallable() {
@@ -424,6 +660,21 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * Updates the parameters of a single service.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   UpdateServiceRequest request =
+   *       UpdateServiceRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setService(Service.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       dataprocMetastoreClient.updateServiceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateServiceRequest, Operation> updateServiceCallable() {
     return stub.updateServiceCallable();
@@ -432,6 +683,15 @@ public class DataprocMetastoreClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   ServiceName name = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]");
+   *   dataprocMetastoreClient.deleteServiceAsync(name).get();
+   * }
+   * }</pre>
    *
    * @param name Required. The relative resource name of the metastore service to delete, in the
    *     following form:
@@ -448,6 +708,15 @@ public class DataprocMetastoreClient implements BackgroundResource {
   /**
    * Deletes a single service.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   String name = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString();
+   *   dataprocMetastoreClient.deleteServiceAsync(name).get();
+   * }
+   * }</pre>
+   *
    * @param name Required. The relative resource name of the metastore service to delete, in the
    *     following form:
    *     <p>"projects/{project_id}/locations/{location_id}/services/{service_id}".
@@ -462,6 +731,19 @@ public class DataprocMetastoreClient implements BackgroundResource {
   /**
    * Deletes a single service.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   DeleteServiceRequest request =
+   *       DeleteServiceRequest.newBuilder()
+   *           .setName(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   dataprocMetastoreClient.deleteServiceAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -475,6 +757,20 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * Deletes a single service.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   DeleteServiceRequest request =
+   *       DeleteServiceRequest.newBuilder()
+   *           .setName(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       dataprocMetastoreClient.deleteServiceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<DeleteServiceRequest, Empty, OperationMetadata>
       deleteServiceOperationCallable() {
@@ -486,6 +782,20 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * Deletes a single service.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   DeleteServiceRequest request =
+   *       DeleteServiceRequest.newBuilder()
+   *           .setName(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       dataprocMetastoreClient.deleteServiceCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteServiceRequest, Operation> deleteServiceCallable() {
     return stub.deleteServiceCallable();
@@ -494,6 +804,18 @@ public class DataprocMetastoreClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists imports in a service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   ServiceName parent = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]");
+   *   for (MetadataImport element :
+   *       dataprocMetastoreClient.listMetadataImports(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent Required. The relative resource name of the service whose metadata imports to
    *     list, in the following form:
@@ -512,6 +834,18 @@ public class DataprocMetastoreClient implements BackgroundResource {
   /**
    * Lists imports in a service.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   String parent = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString();
+   *   for (MetadataImport element :
+   *       dataprocMetastoreClient.listMetadataImports(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The relative resource name of the service whose metadata imports to
    *     list, in the following form:
    *     <p>"projects/{project_id}/locations/{location_id}/services/{service_id}/metadataImports".
@@ -527,6 +861,25 @@ public class DataprocMetastoreClient implements BackgroundResource {
   /**
    * Lists imports in a service.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   ListMetadataImportsRequest request =
+   *       ListMetadataImportsRequest.newBuilder()
+   *           .setParent(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (MetadataImport element :
+   *       dataprocMetastoreClient.listMetadataImports(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -540,6 +893,25 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * Lists imports in a service.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   ListMetadataImportsRequest request =
+   *       ListMetadataImportsRequest.newBuilder()
+   *           .setParent(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<MetadataImport> future =
+   *       dataprocMetastoreClient.listMetadataImportsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (MetadataImport element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListMetadataImportsRequest, ListMetadataImportsPagedResponse>
       listMetadataImportsPagedCallable() {
@@ -551,6 +923,24 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * Lists imports in a service.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   while (true) {
+   *     ListMetadataImportsResponse response =
+   *         dataprocMetastoreClient.listMetadataImportsCallable().call(request);
+   *     for (MetadataImport element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListMetadataImportsRequest, ListMetadataImportsResponse>
       listMetadataImportsCallable() {
@@ -560,6 +950,16 @@ public class DataprocMetastoreClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets details of a single import.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   MetadataImportName name =
+   *       MetadataImportName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[METADATA_IMPORT]");
+   *   MetadataImport response = dataprocMetastoreClient.getMetadataImport(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The relative resource name of the metadata import to retrieve, in the
    *     following form:
@@ -578,6 +978,17 @@ public class DataprocMetastoreClient implements BackgroundResource {
   /**
    * Gets details of a single import.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   String name =
+   *       MetadataImportName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[METADATA_IMPORT]")
+   *           .toString();
+   *   MetadataImport response = dataprocMetastoreClient.getMetadataImport(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The relative resource name of the metadata import to retrieve, in the
    *     following form:
    *     <p>"projects/{project_id}/locations/{location_id}/services/{service_id}/metadataImports/{import_id}".
@@ -592,6 +1003,20 @@ public class DataprocMetastoreClient implements BackgroundResource {
   /**
    * Gets details of a single import.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   GetMetadataImportRequest request =
+   *       GetMetadataImportRequest.newBuilder()
+   *           .setName(
+   *               MetadataImportName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[METADATA_IMPORT]")
+   *                   .toString())
+   *           .build();
+   *   MetadataImport response = dataprocMetastoreClient.getMetadataImport(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -604,6 +1029,21 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * Gets details of a single import.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   GetMetadataImportRequest request =
+   *       GetMetadataImportRequest.newBuilder()
+   *           .setName(
+   *               MetadataImportName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[METADATA_IMPORT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<MetadataImport> future =
+   *       dataprocMetastoreClient.getMetadataImportCallable().futureCall(request);
+   *   // Do something.
+   *   MetadataImport response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetMetadataImportRequest, MetadataImport> getMetadataImportCallable() {
     return stub.getMetadataImportCallable();
@@ -612,6 +1052,20 @@ public class DataprocMetastoreClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new MetadataImport in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   ServiceName parent = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]");
+   *   MetadataImport metadataImport = MetadataImport.newBuilder().build();
+   *   String metadataImportId = "metadataImportId1824548847";
+   *   MetadataImport response =
+   *       dataprocMetastoreClient
+   *           .createMetadataImportAsync(parent, metadataImport, metadataImportId)
+   *           .get();
+   * }
+   * }</pre>
    *
    * @param parent Required. The relative resource name of the service in which to create a
    *     metastore import, in the following form:
@@ -640,6 +1094,20 @@ public class DataprocMetastoreClient implements BackgroundResource {
   /**
    * Creates a new MetadataImport in a given project and location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   String parent = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString();
+   *   MetadataImport metadataImport = MetadataImport.newBuilder().build();
+   *   String metadataImportId = "metadataImportId1824548847";
+   *   MetadataImport response =
+   *       dataprocMetastoreClient
+   *           .createMetadataImportAsync(parent, metadataImport, metadataImportId)
+   *           .get();
+   * }
+   * }</pre>
+   *
    * @param parent Required. The relative resource name of the service in which to create a
    *     metastore import, in the following form:
    *     <p>"projects/{project_id}/locations/{location_id}/services/{service_id}"
@@ -667,6 +1135,21 @@ public class DataprocMetastoreClient implements BackgroundResource {
   /**
    * Creates a new MetadataImport in a given project and location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   CreateMetadataImportRequest request =
+   *       CreateMetadataImportRequest.newBuilder()
+   *           .setParent(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+   *           .setMetadataImportId("metadataImportId1824548847")
+   *           .setMetadataImport(MetadataImport.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   MetadataImport response = dataprocMetastoreClient.createMetadataImportAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -680,6 +1163,22 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * Creates a new MetadataImport in a given project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   CreateMetadataImportRequest request =
+   *       CreateMetadataImportRequest.newBuilder()
+   *           .setParent(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+   *           .setMetadataImportId("metadataImportId1824548847")
+   *           .setMetadataImport(MetadataImport.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<MetadataImport, OperationMetadata> future =
+   *       dataprocMetastoreClient.createMetadataImportOperationCallable().futureCall(request);
+   *   // Do something.
+   *   MetadataImport response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<CreateMetadataImportRequest, MetadataImport, OperationMetadata>
       createMetadataImportOperationCallable() {
@@ -691,6 +1190,22 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * Creates a new MetadataImport in a given project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   CreateMetadataImportRequest request =
+   *       CreateMetadataImportRequest.newBuilder()
+   *           .setParent(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+   *           .setMetadataImportId("metadataImportId1824548847")
+   *           .setMetadataImport(MetadataImport.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       dataprocMetastoreClient.createMetadataImportCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateMetadataImportRequest, Operation>
       createMetadataImportCallable() {
@@ -701,6 +1216,17 @@ public class DataprocMetastoreClient implements BackgroundResource {
   /**
    * Updates a single import. Only the description field of MetadataImport is supported to be
    * updated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   MetadataImport metadataImport = MetadataImport.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   MetadataImport response =
+   *       dataprocMetastoreClient.updateMetadataImportAsync(metadataImport, updateMask).get();
+   * }
+   * }</pre>
    *
    * @param metadataImport Required. The metadata import to update. The server only merges fields in
    *     the import if they are specified in `update_mask`.
@@ -726,6 +1252,20 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * Updates a single import. Only the description field of MetadataImport is supported to be
    * updated.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   UpdateMetadataImportRequest request =
+   *       UpdateMetadataImportRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setMetadataImport(MetadataImport.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   MetadataImport response = dataprocMetastoreClient.updateMetadataImportAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -740,6 +1280,21 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * updated.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   UpdateMetadataImportRequest request =
+   *       UpdateMetadataImportRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setMetadataImport(MetadataImport.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<MetadataImport, OperationMetadata> future =
+   *       dataprocMetastoreClient.updateMetadataImportOperationCallable().futureCall(request);
+   *   // Do something.
+   *   MetadataImport response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<UpdateMetadataImportRequest, MetadataImport, OperationMetadata>
       updateMetadataImportOperationCallable() {
@@ -752,6 +1307,21 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * updated.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   UpdateMetadataImportRequest request =
+   *       UpdateMetadataImportRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setMetadataImport(MetadataImport.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       dataprocMetastoreClient.updateMetadataImportCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateMetadataImportRequest, Operation>
       updateMetadataImportCallable() {

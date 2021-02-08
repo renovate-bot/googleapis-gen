@@ -55,6 +55,15 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (DatastoreClient datastoreClient = DatastoreClient.create()) {
+ *   String projectId = "projectId-894832108";
+ *   ReadOptions readOptions = ReadOptions.newBuilder().build();
+ *   List<Key> keys = new ArrayList<>();
+ *   LookupResponse response = datastoreClient.lookup(projectId, readOptions, keys);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the DatastoreClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -156,6 +165,17 @@ public class DatastoreClient implements BackgroundResource {
   /**
    * Looks up entities by key.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreClient datastoreClient = DatastoreClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   ReadOptions readOptions = ReadOptions.newBuilder().build();
+   *   List<Key> keys = new ArrayList<>();
+   *   LookupResponse response = datastoreClient.lookup(projectId, readOptions, keys);
+   * }
+   * }</pre>
+   *
    * @param projectId Required. The ID of the project against which to make the request.
    * @param readOptions The options for this lookup request.
    * @param keys Required. Keys of entities to look up.
@@ -175,6 +195,20 @@ public class DatastoreClient implements BackgroundResource {
   /**
    * Looks up entities by key.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreClient datastoreClient = DatastoreClient.create()) {
+   *   LookupRequest request =
+   *       LookupRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setReadOptions(ReadOptions.newBuilder().build())
+   *           .addAllKeys(new ArrayList<Key>())
+   *           .build();
+   *   LookupResponse response = datastoreClient.lookup(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -187,6 +221,20 @@ public class DatastoreClient implements BackgroundResource {
    * Looks up entities by key.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreClient datastoreClient = DatastoreClient.create()) {
+   *   LookupRequest request =
+   *       LookupRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setReadOptions(ReadOptions.newBuilder().build())
+   *           .addAllKeys(new ArrayList<Key>())
+   *           .build();
+   *   ApiFuture<LookupResponse> future = datastoreClient.lookupCallable().futureCall(request);
+   *   // Do something.
+   *   LookupResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<LookupRequest, LookupResponse> lookupCallable() {
     return stub.lookupCallable();
@@ -195,6 +243,20 @@ public class DatastoreClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Queries for entities.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreClient datastoreClient = DatastoreClient.create()) {
+   *   RunQueryRequest request =
+   *       RunQueryRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setPartitionId(PartitionId.newBuilder().build())
+   *           .setReadOptions(ReadOptions.newBuilder().build())
+   *           .build();
+   *   RunQueryResponse response = datastoreClient.runQuery(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -208,6 +270,20 @@ public class DatastoreClient implements BackgroundResource {
    * Queries for entities.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreClient datastoreClient = DatastoreClient.create()) {
+   *   RunQueryRequest request =
+   *       RunQueryRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setPartitionId(PartitionId.newBuilder().build())
+   *           .setReadOptions(ReadOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<RunQueryResponse> future = datastoreClient.runQueryCallable().futureCall(request);
+   *   // Do something.
+   *   RunQueryResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<RunQueryRequest, RunQueryResponse> runQueryCallable() {
     return stub.runQueryCallable();
@@ -216,6 +292,15 @@ public class DatastoreClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Begins a new transaction.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreClient datastoreClient = DatastoreClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   BeginTransactionResponse response = datastoreClient.beginTransaction(projectId);
+   * }
+   * }</pre>
    *
    * @param projectId Required. The ID of the project against which to make the request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -230,6 +315,19 @@ public class DatastoreClient implements BackgroundResource {
   /**
    * Begins a new transaction.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreClient datastoreClient = DatastoreClient.create()) {
+   *   BeginTransactionRequest request =
+   *       BeginTransactionRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setTransactionOptions(TransactionOptions.newBuilder().build())
+   *           .build();
+   *   BeginTransactionResponse response = datastoreClient.beginTransaction(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -242,6 +340,20 @@ public class DatastoreClient implements BackgroundResource {
    * Begins a new transaction.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreClient datastoreClient = DatastoreClient.create()) {
+   *   BeginTransactionRequest request =
+   *       BeginTransactionRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setTransactionOptions(TransactionOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<BeginTransactionResponse> future =
+   *       datastoreClient.beginTransactionCallable().futureCall(request);
+   *   // Do something.
+   *   BeginTransactionResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<BeginTransactionRequest, BeginTransactionResponse>
       beginTransactionCallable() {
@@ -251,6 +363,17 @@ public class DatastoreClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Commits a transaction, optionally creating, deleting or modifying some entities.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreClient datastoreClient = DatastoreClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   CommitRequest.Mode mode = CommitRequest.Mode.forNumber(0);
+   *   List<Mutation> mutations = new ArrayList<>();
+   *   CommitResponse response = datastoreClient.commit(projectId, mode, mutations);
+   * }
+   * }</pre>
    *
    * @param projectId Required. The ID of the project against which to make the request.
    * @param mode The type of commit to perform. Defaults to `TRANSACTIONAL`.
@@ -277,6 +400,18 @@ public class DatastoreClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Commits a transaction, optionally creating, deleting or modifying some entities.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreClient datastoreClient = DatastoreClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   CommitRequest.Mode mode = CommitRequest.Mode.forNumber(0);
+   *   ByteString transaction = ByteString.EMPTY;
+   *   List<Mutation> mutations = new ArrayList<>();
+   *   CommitResponse response = datastoreClient.commit(projectId, mode, transaction, mutations);
+   * }
+   * }</pre>
    *
    * @param projectId Required. The ID of the project against which to make the request.
    * @param mode The type of commit to perform. Defaults to `TRANSACTIONAL`.
@@ -308,6 +443,19 @@ public class DatastoreClient implements BackgroundResource {
   /**
    * Commits a transaction, optionally creating, deleting or modifying some entities.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreClient datastoreClient = DatastoreClient.create()) {
+   *   CommitRequest request =
+   *       CommitRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .addAllMutations(new ArrayList<Mutation>())
+   *           .build();
+   *   CommitResponse response = datastoreClient.commit(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -320,6 +468,19 @@ public class DatastoreClient implements BackgroundResource {
    * Commits a transaction, optionally creating, deleting or modifying some entities.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreClient datastoreClient = DatastoreClient.create()) {
+   *   CommitRequest request =
+   *       CommitRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .addAllMutations(new ArrayList<Mutation>())
+   *           .build();
+   *   ApiFuture<CommitResponse> future = datastoreClient.commitCallable().futureCall(request);
+   *   // Do something.
+   *   CommitResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CommitRequest, CommitResponse> commitCallable() {
     return stub.commitCallable();
@@ -328,6 +489,16 @@ public class DatastoreClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Rolls back a transaction.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreClient datastoreClient = DatastoreClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   ByteString transaction = ByteString.EMPTY;
+   *   RollbackResponse response = datastoreClient.rollback(projectId, transaction);
+   * }
+   * }</pre>
    *
    * @param projectId Required. The ID of the project against which to make the request.
    * @param transaction Required. The transaction identifier, returned by a call to
@@ -344,6 +515,19 @@ public class DatastoreClient implements BackgroundResource {
   /**
    * Rolls back a transaction.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreClient datastoreClient = DatastoreClient.create()) {
+   *   RollbackRequest request =
+   *       RollbackRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setTransaction(ByteString.EMPTY)
+   *           .build();
+   *   RollbackResponse response = datastoreClient.rollback(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -356,6 +540,19 @@ public class DatastoreClient implements BackgroundResource {
    * Rolls back a transaction.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreClient datastoreClient = DatastoreClient.create()) {
+   *   RollbackRequest request =
+   *       RollbackRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setTransaction(ByteString.EMPTY)
+   *           .build();
+   *   ApiFuture<RollbackResponse> future = datastoreClient.rollbackCallable().futureCall(request);
+   *   // Do something.
+   *   RollbackResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<RollbackRequest, RollbackResponse> rollbackCallable() {
     return stub.rollbackCallable();
@@ -365,6 +562,16 @@ public class DatastoreClient implements BackgroundResource {
   /**
    * Allocates IDs for the given keys, which is useful for referencing an entity before it is
    * inserted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreClient datastoreClient = DatastoreClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   List<Key> keys = new ArrayList<>();
+   *   AllocateIdsResponse response = datastoreClient.allocateIds(projectId, keys);
+   * }
+   * }</pre>
    *
    * @param projectId Required. The ID of the project against which to make the request.
    * @param keys Required. A list of keys with incomplete key paths for which to allocate IDs. No
@@ -382,6 +589,19 @@ public class DatastoreClient implements BackgroundResource {
    * Allocates IDs for the given keys, which is useful for referencing an entity before it is
    * inserted.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreClient datastoreClient = DatastoreClient.create()) {
+   *   AllocateIdsRequest request =
+   *       AllocateIdsRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .addAllKeys(new ArrayList<Key>())
+   *           .build();
+   *   AllocateIdsResponse response = datastoreClient.allocateIds(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -395,6 +615,20 @@ public class DatastoreClient implements BackgroundResource {
    * inserted.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreClient datastoreClient = DatastoreClient.create()) {
+   *   AllocateIdsRequest request =
+   *       AllocateIdsRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .addAllKeys(new ArrayList<Key>())
+   *           .build();
+   *   ApiFuture<AllocateIdsResponse> future =
+   *       datastoreClient.allocateIdsCallable().futureCall(request);
+   *   // Do something.
+   *   AllocateIdsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<AllocateIdsRequest, AllocateIdsResponse> allocateIdsCallable() {
     return stub.allocateIdsCallable();
@@ -403,6 +637,16 @@ public class DatastoreClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Prevents the supplied keys' IDs from being auto-allocated by Cloud Datastore.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreClient datastoreClient = DatastoreClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   List<Key> keys = new ArrayList<>();
+   *   ReserveIdsResponse response = datastoreClient.reserveIds(projectId, keys);
+   * }
+   * }</pre>
    *
    * @param projectId Required. The ID of the project against which to make the request.
    * @param keys Required. A list of keys with complete key paths whose numeric IDs should not be
@@ -419,6 +663,20 @@ public class DatastoreClient implements BackgroundResource {
   /**
    * Prevents the supplied keys' IDs from being auto-allocated by Cloud Datastore.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreClient datastoreClient = DatastoreClient.create()) {
+   *   ReserveIdsRequest request =
+   *       ReserveIdsRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setDatabaseId("databaseId1688905718")
+   *           .addAllKeys(new ArrayList<Key>())
+   *           .build();
+   *   ReserveIdsResponse response = datastoreClient.reserveIds(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -431,6 +689,21 @@ public class DatastoreClient implements BackgroundResource {
    * Prevents the supplied keys' IDs from being auto-allocated by Cloud Datastore.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DatastoreClient datastoreClient = DatastoreClient.create()) {
+   *   ReserveIdsRequest request =
+   *       ReserveIdsRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setDatabaseId("databaseId1688905718")
+   *           .addAllKeys(new ArrayList<Key>())
+   *           .build();
+   *   ApiFuture<ReserveIdsResponse> future =
+   *       datastoreClient.reserveIdsCallable().futureCall(request);
+   *   // Do something.
+   *   ReserveIdsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ReserveIdsRequest, ReserveIdsResponse> reserveIdsCallable() {
     return stub.reserveIdsCallable();

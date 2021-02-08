@@ -34,6 +34,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (LanguageConstantServiceClient languageConstantServiceClient =
+ *     LanguageConstantServiceClient.create()) {
+ *   LanguageConstantName resourceName = LanguageConstantName.of("[LANGUAGE_CONSTANT]");
+ *   LanguageConstant response = languageConstantServiceClient.getLanguageConstant(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the LanguageConstantServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -141,6 +149,16 @@ public class LanguageConstantServiceClient implements BackgroundResource {
   /**
    * Returns the requested language constant.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (LanguageConstantServiceClient languageConstantServiceClient =
+   *     LanguageConstantServiceClient.create()) {
+   *   LanguageConstantName resourceName = LanguageConstantName.of("[LANGUAGE_CONSTANT]");
+   *   LanguageConstant response = languageConstantServiceClient.getLanguageConstant(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. Resource name of the language constant to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -156,6 +174,16 @@ public class LanguageConstantServiceClient implements BackgroundResource {
   /**
    * Returns the requested language constant.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (LanguageConstantServiceClient languageConstantServiceClient =
+   *     LanguageConstantServiceClient.create()) {
+   *   String resourceName = LanguageConstantName.of("[LANGUAGE_CONSTANT]").toString();
+   *   LanguageConstant response = languageConstantServiceClient.getLanguageConstant(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. Resource name of the language constant to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -169,6 +197,19 @@ public class LanguageConstantServiceClient implements BackgroundResource {
   /**
    * Returns the requested language constant.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (LanguageConstantServiceClient languageConstantServiceClient =
+   *     LanguageConstantServiceClient.create()) {
+   *   GetLanguageConstantRequest request =
+   *       GetLanguageConstantRequest.newBuilder()
+   *           .setResourceName(LanguageConstantName.of("[LANGUAGE_CONSTANT]").toString())
+   *           .build();
+   *   LanguageConstant response = languageConstantServiceClient.getLanguageConstant(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -181,6 +222,20 @@ public class LanguageConstantServiceClient implements BackgroundResource {
    * Returns the requested language constant.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (LanguageConstantServiceClient languageConstantServiceClient =
+   *     LanguageConstantServiceClient.create()) {
+   *   GetLanguageConstantRequest request =
+   *       GetLanguageConstantRequest.newBuilder()
+   *           .setResourceName(LanguageConstantName.of("[LANGUAGE_CONSTANT]").toString())
+   *           .build();
+   *   ApiFuture<LanguageConstant> future =
+   *       languageConstantServiceClient.getLanguageConstantCallable().futureCall(request);
+   *   // Do something.
+   *   LanguageConstant response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetLanguageConstantRequest, LanguageConstant>
       getLanguageConstantCallable() {

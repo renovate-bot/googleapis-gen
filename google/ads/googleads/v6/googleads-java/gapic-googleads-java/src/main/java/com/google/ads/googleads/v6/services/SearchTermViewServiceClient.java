@@ -34,6 +34,15 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (SearchTermViewServiceClient searchTermViewServiceClient =
+ *     SearchTermViewServiceClient.create()) {
+ *   SearchTermViewName resourceName =
+ *       SearchTermViewName.of("[CUSTOMER_ID]", "[CAMPAIGN_ID]", "[AD_GROUP_ID]", "[QUERY]");
+ *   SearchTermView response = searchTermViewServiceClient.getSearchTermView(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the SearchTermViewServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -140,6 +149,17 @@ public class SearchTermViewServiceClient implements BackgroundResource {
   /**
    * Returns the attributes of the requested search term view.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SearchTermViewServiceClient searchTermViewServiceClient =
+   *     SearchTermViewServiceClient.create()) {
+   *   SearchTermViewName resourceName =
+   *       SearchTermViewName.of("[CUSTOMER_ID]", "[CAMPAIGN_ID]", "[AD_GROUP_ID]", "[QUERY]");
+   *   SearchTermView response = searchTermViewServiceClient.getSearchTermView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the search term view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -155,6 +175,18 @@ public class SearchTermViewServiceClient implements BackgroundResource {
   /**
    * Returns the attributes of the requested search term view.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SearchTermViewServiceClient searchTermViewServiceClient =
+   *     SearchTermViewServiceClient.create()) {
+   *   String resourceName =
+   *       SearchTermViewName.of("[CUSTOMER_ID]", "[CAMPAIGN_ID]", "[AD_GROUP_ID]", "[QUERY]")
+   *           .toString();
+   *   SearchTermView response = searchTermViewServiceClient.getSearchTermView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the search term view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -168,6 +200,22 @@ public class SearchTermViewServiceClient implements BackgroundResource {
   /**
    * Returns the attributes of the requested search term view.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SearchTermViewServiceClient searchTermViewServiceClient =
+   *     SearchTermViewServiceClient.create()) {
+   *   GetSearchTermViewRequest request =
+   *       GetSearchTermViewRequest.newBuilder()
+   *           .setResourceName(
+   *               SearchTermViewName.of(
+   *                       "[CUSTOMER_ID]", "[CAMPAIGN_ID]", "[AD_GROUP_ID]", "[QUERY]")
+   *                   .toString())
+   *           .build();
+   *   SearchTermView response = searchTermViewServiceClient.getSearchTermView(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -180,6 +228,23 @@ public class SearchTermViewServiceClient implements BackgroundResource {
    * Returns the attributes of the requested search term view.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SearchTermViewServiceClient searchTermViewServiceClient =
+   *     SearchTermViewServiceClient.create()) {
+   *   GetSearchTermViewRequest request =
+   *       GetSearchTermViewRequest.newBuilder()
+   *           .setResourceName(
+   *               SearchTermViewName.of(
+   *                       "[CUSTOMER_ID]", "[CAMPAIGN_ID]", "[AD_GROUP_ID]", "[QUERY]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<SearchTermView> future =
+   *       searchTermViewServiceClient.getSearchTermViewCallable().futureCall(request);
+   *   // Do something.
+   *   SearchTermView response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetSearchTermViewRequest, SearchTermView> getSearchTermViewCallable() {
     return stub.getSearchTermViewCallable();

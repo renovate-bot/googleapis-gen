@@ -36,6 +36,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (AccountBudgetServiceClient accountBudgetServiceClient =
+ *     AccountBudgetServiceClient.create()) {
+ *   AccountBudgetName resourceName = AccountBudgetName.of("[CUSTOMER_ID]", "[ACCOUNT_BUDGET_ID]");
+ *   AccountBudget response = accountBudgetServiceClient.getAccountBudget(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the AccountBudgetServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -142,6 +150,16 @@ public class AccountBudgetServiceClient implements BackgroundResource {
   /**
    * Returns an account-level budget in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AccountBudgetServiceClient accountBudgetServiceClient =
+   *     AccountBudgetServiceClient.create()) {
+   *   AccountBudgetName resourceName = AccountBudgetName.of("[CUSTOMER_ID]", "[ACCOUNT_BUDGET_ID]");
+   *   AccountBudget response = accountBudgetServiceClient.getAccountBudget(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the account-level budget to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -157,6 +175,16 @@ public class AccountBudgetServiceClient implements BackgroundResource {
   /**
    * Returns an account-level budget in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AccountBudgetServiceClient accountBudgetServiceClient =
+   *     AccountBudgetServiceClient.create()) {
+   *   String resourceName = AccountBudgetName.of("[CUSTOMER_ID]", "[ACCOUNT_BUDGET_ID]").toString();
+   *   AccountBudget response = accountBudgetServiceClient.getAccountBudget(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the account-level budget to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -170,6 +198,20 @@ public class AccountBudgetServiceClient implements BackgroundResource {
   /**
    * Returns an account-level budget in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AccountBudgetServiceClient accountBudgetServiceClient =
+   *     AccountBudgetServiceClient.create()) {
+   *   GetAccountBudgetRequest request =
+   *       GetAccountBudgetRequest.newBuilder()
+   *           .setResourceName(
+   *               AccountBudgetName.of("[CUSTOMER_ID]", "[ACCOUNT_BUDGET_ID]").toString())
+   *           .build();
+   *   AccountBudget response = accountBudgetServiceClient.getAccountBudget(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -182,6 +224,21 @@ public class AccountBudgetServiceClient implements BackgroundResource {
    * Returns an account-level budget in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AccountBudgetServiceClient accountBudgetServiceClient =
+   *     AccountBudgetServiceClient.create()) {
+   *   GetAccountBudgetRequest request =
+   *       GetAccountBudgetRequest.newBuilder()
+   *           .setResourceName(
+   *               AccountBudgetName.of("[CUSTOMER_ID]", "[ACCOUNT_BUDGET_ID]").toString())
+   *           .build();
+   *   ApiFuture<AccountBudget> future =
+   *       accountBudgetServiceClient.getAccountBudgetCallable().futureCall(request);
+   *   // Do something.
+   *   AccountBudget response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetAccountBudgetRequest, AccountBudget> getAccountBudgetCallable() {
     return stub.getAccountBudgetCallable();

@@ -33,6 +33,18 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (ConversionUploadServiceClient conversionUploadServiceClient =
+ *     ConversionUploadServiceClient.create()) {
+ *   String customerId = "customerId-1581184615";
+ *   List<ClickConversion> conversions = new ArrayList<>();
+ *   boolean partialFailure = true;
+ *   UploadClickConversionsResponse response =
+ *       conversionUploadServiceClient.uploadClickConversions(
+ *           customerId, conversions, partialFailure);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the ConversionUploadServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -140,6 +152,20 @@ public class ConversionUploadServiceClient implements BackgroundResource {
   /**
    * Processes the given click conversions.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConversionUploadServiceClient conversionUploadServiceClient =
+   *     ConversionUploadServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   List<ClickConversion> conversions = new ArrayList<>();
+   *   boolean partialFailure = true;
+   *   UploadClickConversionsResponse response =
+   *       conversionUploadServiceClient.uploadClickConversions(
+   *           customerId, conversions, partialFailure);
+   * }
+   * }</pre>
+   *
    * @param customerId Required. The ID of the customer performing the upload.
    * @param conversions Required. The conversions that are being uploaded.
    * @param partialFailure Required. If true, successful operations will be carried out and invalid
@@ -164,6 +190,23 @@ public class ConversionUploadServiceClient implements BackgroundResource {
   /**
    * Processes the given click conversions.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConversionUploadServiceClient conversionUploadServiceClient =
+   *     ConversionUploadServiceClient.create()) {
+   *   UploadClickConversionsRequest request =
+   *       UploadClickConversionsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllConversions(new ArrayList<ClickConversion>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   UploadClickConversionsResponse response =
+   *       conversionUploadServiceClient.uploadClickConversions(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -177,6 +220,23 @@ public class ConversionUploadServiceClient implements BackgroundResource {
    * Processes the given click conversions.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConversionUploadServiceClient conversionUploadServiceClient =
+   *     ConversionUploadServiceClient.create()) {
+   *   UploadClickConversionsRequest request =
+   *       UploadClickConversionsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllConversions(new ArrayList<ClickConversion>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<UploadClickConversionsResponse> future =
+   *       conversionUploadServiceClient.uploadClickConversionsCallable().futureCall(request);
+   *   // Do something.
+   *   UploadClickConversionsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UploadClickConversionsRequest, UploadClickConversionsResponse>
       uploadClickConversionsCallable() {
@@ -186,6 +246,20 @@ public class ConversionUploadServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Processes the given call conversions.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConversionUploadServiceClient conversionUploadServiceClient =
+   *     ConversionUploadServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   List<CallConversion> conversions = new ArrayList<>();
+   *   boolean partialFailure = true;
+   *   UploadCallConversionsResponse response =
+   *       conversionUploadServiceClient.uploadCallConversions(
+   *           customerId, conversions, partialFailure);
+   * }
+   * }</pre>
    *
    * @param customerId Required. The ID of the customer performing the upload.
    * @param conversions Required. The conversions that are being uploaded.
@@ -211,6 +285,23 @@ public class ConversionUploadServiceClient implements BackgroundResource {
   /**
    * Processes the given call conversions.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConversionUploadServiceClient conversionUploadServiceClient =
+   *     ConversionUploadServiceClient.create()) {
+   *   UploadCallConversionsRequest request =
+   *       UploadCallConversionsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllConversions(new ArrayList<CallConversion>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   UploadCallConversionsResponse response =
+   *       conversionUploadServiceClient.uploadCallConversions(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -224,6 +315,23 @@ public class ConversionUploadServiceClient implements BackgroundResource {
    * Processes the given call conversions.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConversionUploadServiceClient conversionUploadServiceClient =
+   *     ConversionUploadServiceClient.create()) {
+   *   UploadCallConversionsRequest request =
+   *       UploadCallConversionsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllConversions(new ArrayList<CallConversion>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<UploadCallConversionsResponse> future =
+   *       conversionUploadServiceClient.uploadCallConversionsCallable().futureCall(request);
+   *   // Do something.
+   *   UploadCallConversionsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UploadCallConversionsRequest, UploadCallConversionsResponse>
       uploadCallConversionsCallable() {

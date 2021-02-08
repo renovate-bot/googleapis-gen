@@ -48,6 +48,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (DomainsClient domainsClient = DomainsClient.create()) {
+ *   LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   String query = "query107944136";
+ *   SearchDomainsResponse response = domainsClient.searchDomains(location, query);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the DomainsClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -163,6 +171,16 @@ public class DomainsClient implements BackgroundResource {
    * <p>Availability results from this method are approximate; call `RetrieveRegisterParameters` on
    * a domain before registering to confirm availability.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   String query = "query107944136";
+   *   SearchDomainsResponse response = domainsClient.searchDomains(location, query);
+   * }
+   * }</pre>
+   *
    * @param location Required. The location. Must be in the format `projects/&#42;/locations/&#42;`.
    * @param query Required. String used to search for available domain names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -183,6 +201,16 @@ public class DomainsClient implements BackgroundResource {
    * <p>Availability results from this method are approximate; call `RetrieveRegisterParameters` on
    * a domain before registering to confirm availability.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   String location = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   String query = "query107944136";
+   *   SearchDomainsResponse response = domainsClient.searchDomains(location, query);
+   * }
+   * }</pre>
+   *
    * @param location Required. The location. Must be in the format `projects/&#42;/locations/&#42;`.
    * @param query Required. String used to search for available domain names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -200,6 +228,19 @@ public class DomainsClient implements BackgroundResource {
    * <p>Availability results from this method are approximate; call `RetrieveRegisterParameters` on
    * a domain before registering to confirm availability.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   SearchDomainsRequest request =
+   *       SearchDomainsRequest.newBuilder()
+   *           .setQuery("query107944136")
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   SearchDomainsResponse response = domainsClient.searchDomains(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -215,6 +256,20 @@ public class DomainsClient implements BackgroundResource {
    * a domain before registering to confirm availability.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   SearchDomainsRequest request =
+   *       SearchDomainsRequest.newBuilder()
+   *           .setQuery("query107944136")
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   ApiFuture<SearchDomainsResponse> future =
+   *       domainsClient.searchDomainsCallable().futureCall(request);
+   *   // Do something.
+   *   SearchDomainsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SearchDomainsRequest, SearchDomainsResponse> searchDomainsCallable() {
     return stub.searchDomainsCallable();
@@ -224,6 +279,17 @@ public class DomainsClient implements BackgroundResource {
   /**
    * Gets parameters needed to register a new domain name, including price and up-to-date
    * availability. Use the returned values to call `RegisterDomain`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   String domainName = "domainName-1244085905";
+   *   RetrieveRegisterParametersResponse response =
+   *       domainsClient.retrieveRegisterParameters(location, domainName);
+   * }
+   * }</pre>
    *
    * @param location Required. The location. Must be in the format `projects/&#42;/locations/&#42;`.
    * @param domainName Required. The domain name. Unicode domain names must be expressed in Punycode
@@ -245,6 +311,17 @@ public class DomainsClient implements BackgroundResource {
    * Gets parameters needed to register a new domain name, including price and up-to-date
    * availability. Use the returned values to call `RegisterDomain`.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   String location = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   String domainName = "domainName-1244085905";
+   *   RetrieveRegisterParametersResponse response =
+   *       domainsClient.retrieveRegisterParameters(location, domainName);
+   * }
+   * }</pre>
+   *
    * @param location Required. The location. Must be in the format `projects/&#42;/locations/&#42;`.
    * @param domainName Required. The domain name. Unicode domain names must be expressed in Punycode
    *     format.
@@ -265,6 +342,20 @@ public class DomainsClient implements BackgroundResource {
    * Gets parameters needed to register a new domain name, including price and up-to-date
    * availability. Use the returned values to call `RegisterDomain`.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   RetrieveRegisterParametersRequest request =
+   *       RetrieveRegisterParametersRequest.newBuilder()
+   *           .setDomainName("domainName-1244085905")
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   RetrieveRegisterParametersResponse response =
+   *       domainsClient.retrieveRegisterParameters(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -279,6 +370,20 @@ public class DomainsClient implements BackgroundResource {
    * availability. Use the returned values to call `RegisterDomain`.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   RetrieveRegisterParametersRequest request =
+   *       RetrieveRegisterParametersRequest.newBuilder()
+   *           .setDomainName("domainName-1244085905")
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   ApiFuture<RetrieveRegisterParametersResponse> future =
+   *       domainsClient.retrieveRegisterParametersCallable().futureCall(request);
+   *   // Do something.
+   *   RetrieveRegisterParametersResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<RetrieveRegisterParametersRequest, RetrieveRegisterParametersResponse>
       retrieveRegisterParametersCallable() {
@@ -297,6 +402,18 @@ public class DomainsClient implements BackgroundResource {
    * registered. If the resource ends up in state `REGISTRATION_FAILED`, it indicates that the
    * domain was not registered successfully, and you can safely delete the resource and retry
    * registration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Registration registration = Registration.newBuilder().build();
+   *   Money yearlyPrice = Money.newBuilder().build();
+   *   Registration response =
+   *       domainsClient.registerDomainAsync(parent, registration, yearlyPrice).get();
+   * }
+   * }</pre>
    *
    * @param parent Required. The parent resource of the `Registration`. Must be in the format
    *     `projects/&#42;/locations/&#42;`.
@@ -329,6 +446,18 @@ public class DomainsClient implements BackgroundResource {
    * domain was not registered successfully, and you can safely delete the resource and retry
    * registration.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Registration registration = Registration.newBuilder().build();
+   *   Money yearlyPrice = Money.newBuilder().build();
+   *   Registration response =
+   *       domainsClient.registerDomainAsync(parent, registration, yearlyPrice).get();
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent resource of the `Registration`. Must be in the format
    *     `projects/&#42;/locations/&#42;`.
    * @param registration Required. The complete `Registration` resource to be created.
@@ -360,6 +489,23 @@ public class DomainsClient implements BackgroundResource {
    * domain was not registered successfully, and you can safely delete the resource and retry
    * registration.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   RegisterDomainRequest request =
+   *       RegisterDomainRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setRegistration(Registration.newBuilder().build())
+   *           .addAllDomainNotices(new ArrayList<DomainNotice>())
+   *           .addAllContactNotices(new ArrayList<ContactNotice>())
+   *           .setYearlyPrice(Money.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   Registration response = domainsClient.registerDomainAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -382,6 +528,24 @@ public class DomainsClient implements BackgroundResource {
    * registration.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   RegisterDomainRequest request =
+   *       RegisterDomainRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setRegistration(Registration.newBuilder().build())
+   *           .addAllDomainNotices(new ArrayList<DomainNotice>())
+   *           .addAllContactNotices(new ArrayList<ContactNotice>())
+   *           .setYearlyPrice(Money.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<Registration, OperationMetadata> future =
+   *       domainsClient.registerDomainOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Registration response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<RegisterDomainRequest, Registration, OperationMetadata>
       registerDomainOperationCallable() {
@@ -402,6 +566,23 @@ public class DomainsClient implements BackgroundResource {
    * registration.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   RegisterDomainRequest request =
+   *       RegisterDomainRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setRegistration(Registration.newBuilder().build())
+   *           .addAllDomainNotices(new ArrayList<DomainNotice>())
+   *           .addAllContactNotices(new ArrayList<ContactNotice>())
+   *           .setYearlyPrice(Money.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future = domainsClient.registerDomainCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<RegisterDomainRequest, Operation> registerDomainCallable() {
     return stub.registerDomainCallable();
@@ -410,6 +591,17 @@ public class DomainsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the `Registration` resources in a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Registration element : domainsClient.listRegistrations(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent Required. The project and location from which to list `Registration`s, specified
    *     in the format `projects/&#42;/locations/&#42;`.
@@ -427,6 +619,17 @@ public class DomainsClient implements BackgroundResource {
   /**
    * Lists the `Registration` resources in a project.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (Registration element : domainsClient.listRegistrations(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The project and location from which to list `Registration`s, specified
    *     in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -441,6 +644,23 @@ public class DomainsClient implements BackgroundResource {
   /**
    * Lists the `Registration` resources in a project.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   ListRegistrationsRequest request =
+   *       ListRegistrationsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (Registration element : domainsClient.listRegistrations(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -453,6 +673,24 @@ public class DomainsClient implements BackgroundResource {
    * Lists the `Registration` resources in a project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   ListRegistrationsRequest request =
+   *       ListRegistrationsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<Registration> future =
+   *       domainsClient.listRegistrationsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Registration element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListRegistrationsRequest, ListRegistrationsPagedResponse>
       listRegistrationsPagedCallable() {
@@ -464,6 +702,24 @@ public class DomainsClient implements BackgroundResource {
    * Lists the `Registration` resources in a project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   while (true) {
+   *     ListRegistrationsResponse response =
+   *         domainsClient.listRegistrationsCallable().call(request);
+   *     for (Registration element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListRegistrationsRequest, ListRegistrationsResponse>
       listRegistrationsCallable() {
@@ -473,6 +729,15 @@ public class DomainsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the details of a `Registration` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   RegistrationName name = RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]");
+   *   Registration response = domainsClient.getRegistration(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the `Registration` to get, in the format
    *     `projects/&#42;/locations/&#42;/registrations/&#42;`.
@@ -488,6 +753,15 @@ public class DomainsClient implements BackgroundResource {
   /**
    * Gets the details of a `Registration` resource.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   String name = RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]").toString();
+   *   Registration response = domainsClient.getRegistration(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the `Registration` to get, in the format
    *     `projects/&#42;/locations/&#42;/registrations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -501,6 +775,18 @@ public class DomainsClient implements BackgroundResource {
   /**
    * Gets the details of a `Registration` resource.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   GetRegistrationRequest request =
+   *       GetRegistrationRequest.newBuilder()
+   *           .setName(RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]").toString())
+   *           .build();
+   *   Registration response = domainsClient.getRegistration(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -513,6 +799,18 @@ public class DomainsClient implements BackgroundResource {
    * Gets the details of a `Registration` resource.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   GetRegistrationRequest request =
+   *       GetRegistrationRequest.newBuilder()
+   *           .setName(RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]").toString())
+   *           .build();
+   *   ApiFuture<Registration> future = domainsClient.getRegistrationCallable().futureCall(request);
+   *   // Do something.
+   *   Registration response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetRegistrationRequest, Registration> getRegistrationCallable() {
     return stub.getRegistrationCallable();
@@ -528,6 +826,16 @@ public class DomainsClient implements BackgroundResource {
    *   <li>To update DNS configuration, see `ConfigureDnsSettings`
    *   <li>To update contact information, see `ConfigureContactSettings`
    * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   Registration registration = Registration.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Registration response = domainsClient.updateRegistrationAsync(registration, updateMask).get();
+   * }
+   * }</pre>
    *
    * @param registration Fields of the `Registration` to update.
    * @param updateMask Required. The field mask describing which fields to update as a
@@ -556,6 +864,19 @@ public class DomainsClient implements BackgroundResource {
    *   <li>To update contact information, see `ConfigureContactSettings`
    * </ul>
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   UpdateRegistrationRequest request =
+   *       UpdateRegistrationRequest.newBuilder()
+   *           .setRegistration(Registration.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Registration response = domainsClient.updateRegistrationAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -576,6 +897,20 @@ public class DomainsClient implements BackgroundResource {
    * </ul>
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   UpdateRegistrationRequest request =
+   *       UpdateRegistrationRequest.newBuilder()
+   *           .setRegistration(Registration.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Registration, OperationMetadata> future =
+   *       domainsClient.updateRegistrationOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Registration response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<UpdateRegistrationRequest, Registration, OperationMetadata>
       updateRegistrationOperationCallable() {
@@ -594,6 +929,19 @@ public class DomainsClient implements BackgroundResource {
    * </ul>
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   UpdateRegistrationRequest request =
+   *       UpdateRegistrationRequest.newBuilder()
+   *           .setRegistration(Registration.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = domainsClient.updateRegistrationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateRegistrationRequest, Operation> updateRegistrationCallable() {
     return stub.updateRegistrationCallable();
@@ -602,6 +950,21 @@ public class DomainsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a `Registration`'s management settings.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   RegistrationName registration =
+   *       RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]");
+   *   ManagementSettings managementSettings = ManagementSettings.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Registration response =
+   *       domainsClient
+   *           .configureManagementSettingsAsync(registration, managementSettings, updateMask)
+   *           .get();
+   * }
+   * }</pre>
    *
    * @param registration Required. The name of the `Registration` whose management settings are
    *     being updated, in the format `projects/&#42;/locations/&#42;/registrations/&#42;`.
@@ -626,6 +989,21 @@ public class DomainsClient implements BackgroundResource {
   /**
    * Updates a `Registration`'s management settings.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   String registration =
+   *       RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]").toString();
+   *   ManagementSettings managementSettings = ManagementSettings.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Registration response =
+   *       domainsClient
+   *           .configureManagementSettingsAsync(registration, managementSettings, updateMask)
+   *           .get();
+   * }
+   * }</pre>
+   *
    * @param registration Required. The name of the `Registration` whose management settings are
    *     being updated, in the format `projects/&#42;/locations/&#42;/registrations/&#42;`.
    * @param managementSettings Fields of the `ManagementSettings` to update.
@@ -649,6 +1027,21 @@ public class DomainsClient implements BackgroundResource {
   /**
    * Updates a `Registration`'s management settings.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   ConfigureManagementSettingsRequest request =
+   *       ConfigureManagementSettingsRequest.newBuilder()
+   *           .setRegistration(
+   *               RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]").toString())
+   *           .setManagementSettings(ManagementSettings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Registration response = domainsClient.configureManagementSettingsAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -662,6 +1055,22 @@ public class DomainsClient implements BackgroundResource {
    * Updates a `Registration`'s management settings.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   ConfigureManagementSettingsRequest request =
+   *       ConfigureManagementSettingsRequest.newBuilder()
+   *           .setRegistration(
+   *               RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]").toString())
+   *           .setManagementSettings(ManagementSettings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Registration, OperationMetadata> future =
+   *       domainsClient.configureManagementSettingsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Registration response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<
           ConfigureManagementSettingsRequest, Registration, OperationMetadata>
@@ -674,6 +1083,22 @@ public class DomainsClient implements BackgroundResource {
    * Updates a `Registration`'s management settings.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   ConfigureManagementSettingsRequest request =
+   *       ConfigureManagementSettingsRequest.newBuilder()
+   *           .setRegistration(
+   *               RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]").toString())
+   *           .setManagementSettings(ManagementSettings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       domainsClient.configureManagementSettingsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ConfigureManagementSettingsRequest, Operation>
       configureManagementSettingsCallable() {
@@ -683,6 +1108,19 @@ public class DomainsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a `Registration`'s DNS settings.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   RegistrationName registration =
+   *       RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]");
+   *   DnsSettings dnsSettings = DnsSettings.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Registration response =
+   *       domainsClient.configureDnsSettingsAsync(registration, dnsSettings, updateMask).get();
+   * }
+   * }</pre>
    *
    * @param registration Required. The name of the `Registration` whose DNS settings are being
    *     updated, in the format `projects/&#42;/locations/&#42;/registrations/&#42;`.
@@ -710,6 +1148,19 @@ public class DomainsClient implements BackgroundResource {
   /**
    * Updates a `Registration`'s DNS settings.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   String registration =
+   *       RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]").toString();
+   *   DnsSettings dnsSettings = DnsSettings.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Registration response =
+   *       domainsClient.configureDnsSettingsAsync(registration, dnsSettings, updateMask).get();
+   * }
+   * }</pre>
+   *
    * @param registration Required. The name of the `Registration` whose DNS settings are being
    *     updated, in the format `projects/&#42;/locations/&#42;/registrations/&#42;`.
    * @param dnsSettings Fields of the `DnsSettings` to update.
@@ -736,6 +1187,22 @@ public class DomainsClient implements BackgroundResource {
   /**
    * Updates a `Registration`'s DNS settings.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   ConfigureDnsSettingsRequest request =
+   *       ConfigureDnsSettingsRequest.newBuilder()
+   *           .setRegistration(
+   *               RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]").toString())
+   *           .setDnsSettings(DnsSettings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   Registration response = domainsClient.configureDnsSettingsAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -749,6 +1216,23 @@ public class DomainsClient implements BackgroundResource {
    * Updates a `Registration`'s DNS settings.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   ConfigureDnsSettingsRequest request =
+   *       ConfigureDnsSettingsRequest.newBuilder()
+   *           .setRegistration(
+   *               RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]").toString())
+   *           .setDnsSettings(DnsSettings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<Registration, OperationMetadata> future =
+   *       domainsClient.configureDnsSettingsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Registration response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<ConfigureDnsSettingsRequest, Registration, OperationMetadata>
       configureDnsSettingsOperationCallable() {
@@ -760,6 +1244,23 @@ public class DomainsClient implements BackgroundResource {
    * Updates a `Registration`'s DNS settings.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   ConfigureDnsSettingsRequest request =
+   *       ConfigureDnsSettingsRequest.newBuilder()
+   *           .setRegistration(
+   *               RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]").toString())
+   *           .setDnsSettings(DnsSettings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       domainsClient.configureDnsSettingsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ConfigureDnsSettingsRequest, Operation>
       configureDnsSettingsCallable() {
@@ -770,6 +1271,21 @@ public class DomainsClient implements BackgroundResource {
   /**
    * Updates a `Registration`'s contact settings. Some changes require confirmation by the domain's
    * registrant contact .
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   RegistrationName registration =
+   *       RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]");
+   *   ContactSettings contactSettings = ContactSettings.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Registration response =
+   *       domainsClient
+   *           .configureContactSettingsAsync(registration, contactSettings, updateMask)
+   *           .get();
+   * }
+   * }</pre>
    *
    * @param registration Required. The name of the `Registration` whose contact settings are being
    *     updated, in the format `projects/&#42;/locations/&#42;/registrations/&#42;`.
@@ -795,6 +1311,21 @@ public class DomainsClient implements BackgroundResource {
    * Updates a `Registration`'s contact settings. Some changes require confirmation by the domain's
    * registrant contact .
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   String registration =
+   *       RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]").toString();
+   *   ContactSettings contactSettings = ContactSettings.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Registration response =
+   *       domainsClient
+   *           .configureContactSettingsAsync(registration, contactSettings, updateMask)
+   *           .get();
+   * }
+   * }</pre>
+   *
    * @param registration Required. The name of the `Registration` whose contact settings are being
    *     updated, in the format `projects/&#42;/locations/&#42;/registrations/&#42;`.
    * @param contactSettings Fields of the `ContactSettings` to update.
@@ -819,6 +1350,23 @@ public class DomainsClient implements BackgroundResource {
    * Updates a `Registration`'s contact settings. Some changes require confirmation by the domain's
    * registrant contact .
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   ConfigureContactSettingsRequest request =
+   *       ConfigureContactSettingsRequest.newBuilder()
+   *           .setRegistration(
+   *               RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]").toString())
+   *           .setContactSettings(ContactSettings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .addAllContactNotices(new ArrayList<ContactNotice>())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   Registration response = domainsClient.configureContactSettingsAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -833,6 +1381,24 @@ public class DomainsClient implements BackgroundResource {
    * registrant contact .
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   ConfigureContactSettingsRequest request =
+   *       ConfigureContactSettingsRequest.newBuilder()
+   *           .setRegistration(
+   *               RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]").toString())
+   *           .setContactSettings(ContactSettings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .addAllContactNotices(new ArrayList<ContactNotice>())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<Registration, OperationMetadata> future =
+   *       domainsClient.configureContactSettingsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Registration response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<ConfigureContactSettingsRequest, Registration, OperationMetadata>
       configureContactSettingsOperationCallable() {
@@ -845,6 +1411,24 @@ public class DomainsClient implements BackgroundResource {
    * registrant contact .
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   ConfigureContactSettingsRequest request =
+   *       ConfigureContactSettingsRequest.newBuilder()
+   *           .setRegistration(
+   *               RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]").toString())
+   *           .setContactSettings(ContactSettings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .addAllContactNotices(new ArrayList<ContactNotice>())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       domainsClient.configureContactSettingsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ConfigureContactSettingsRequest, Operation>
       configureContactSettingsCallable() {
@@ -867,6 +1451,15 @@ public class DomainsClient implements BackgroundResource {
    *   <li>Without further action, the domain does not renew automatically. The new owner can set up
    *       billing in Google Domains to renew the domain if needed.
    * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   RegistrationName name = RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]");
+   *   Registration response = domainsClient.exportRegistrationAsync(name).get();
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the `Registration` to export, in the format
    *     `projects/&#42;/locations/&#42;/registrations/&#42;`.
@@ -898,6 +1491,15 @@ public class DomainsClient implements BackgroundResource {
    *       billing in Google Domains to renew the domain if needed.
    * </ul>
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   String name = RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]").toString();
+   *   Registration response = domainsClient.exportRegistrationAsync(name).get();
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the `Registration` to export, in the format
    *     `projects/&#42;/locations/&#42;/registrations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -926,6 +1528,18 @@ public class DomainsClient implements BackgroundResource {
    *       billing in Google Domains to renew the domain if needed.
    * </ul>
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   ExportRegistrationRequest request =
+   *       ExportRegistrationRequest.newBuilder()
+   *           .setName(RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]").toString())
+   *           .build();
+   *   Registration response = domainsClient.exportRegistrationAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -952,6 +1566,19 @@ public class DomainsClient implements BackgroundResource {
    * </ul>
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   ExportRegistrationRequest request =
+   *       ExportRegistrationRequest.newBuilder()
+   *           .setName(RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]").toString())
+   *           .build();
+   *   OperationFuture<Registration, OperationMetadata> future =
+   *       domainsClient.exportRegistrationOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Registration response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<ExportRegistrationRequest, Registration, OperationMetadata>
       exportRegistrationOperationCallable() {
@@ -976,6 +1603,18 @@ public class DomainsClient implements BackgroundResource {
    * </ul>
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   ExportRegistrationRequest request =
+   *       ExportRegistrationRequest.newBuilder()
+   *           .setName(RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future = domainsClient.exportRegistrationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ExportRegistrationRequest, Operation> exportRegistrationCallable() {
     return stub.exportRegistrationCallable();
@@ -991,6 +1630,15 @@ public class DomainsClient implements BackgroundResource {
    *   <li>`state` is `EXPORTED` with `expire_time` in the past
    *   <li>`state` is `REGISTRATION_FAILED`
    * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   RegistrationName name = RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]");
+   *   domainsClient.deleteRegistrationAsync(name).get();
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the `Registration` to delete, in the format
    *     `projects/&#42;/locations/&#42;/registrations/&#42;`.
@@ -1016,6 +1664,15 @@ public class DomainsClient implements BackgroundResource {
    *   <li>`state` is `REGISTRATION_FAILED`
    * </ul>
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   String name = RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]").toString();
+   *   domainsClient.deleteRegistrationAsync(name).get();
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the `Registration` to delete, in the format
    *     `projects/&#42;/locations/&#42;/registrations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1037,6 +1694,18 @@ public class DomainsClient implements BackgroundResource {
    *   <li>`state` is `REGISTRATION_FAILED`
    * </ul>
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   DeleteRegistrationRequest request =
+   *       DeleteRegistrationRequest.newBuilder()
+   *           .setName(RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]").toString())
+   *           .build();
+   *   domainsClient.deleteRegistrationAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1057,6 +1726,19 @@ public class DomainsClient implements BackgroundResource {
    * </ul>
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   DeleteRegistrationRequest request =
+   *       DeleteRegistrationRequest.newBuilder()
+   *           .setName(RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]").toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       domainsClient.deleteRegistrationOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<DeleteRegistrationRequest, Empty, OperationMetadata>
       deleteRegistrationOperationCallable() {
@@ -1075,6 +1757,18 @@ public class DomainsClient implements BackgroundResource {
    * </ul>
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   DeleteRegistrationRequest request =
+   *       DeleteRegistrationRequest.newBuilder()
+   *           .setName(RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future = domainsClient.deleteRegistrationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteRegistrationRequest, Operation> deleteRegistrationCallable() {
     return stub.deleteRegistrationCallable();
@@ -1087,6 +1781,16 @@ public class DomainsClient implements BackgroundResource {
    *
    * <p>You can call this method only after 60 days have elapsed since the initial domain
    * registration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   RegistrationName registration =
+   *       RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]");
+   *   AuthorizationCode response = domainsClient.retrieveAuthorizationCode(registration);
+   * }
+   * }</pre>
    *
    * @param registration Required. The name of the `Registration` whose authorization code is being
    *     retrieved, in the format `projects/&#42;/locations/&#42;/registrations/&#42;`.
@@ -1108,6 +1812,16 @@ public class DomainsClient implements BackgroundResource {
    * <p>You can call this method only after 60 days have elapsed since the initial domain
    * registration.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   String registration =
+   *       RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]").toString();
+   *   AuthorizationCode response = domainsClient.retrieveAuthorizationCode(registration);
+   * }
+   * }</pre>
+   *
    * @param registration Required. The name of the `Registration` whose authorization code is being
    *     retrieved, in the format `projects/&#42;/locations/&#42;/registrations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1126,6 +1840,19 @@ public class DomainsClient implements BackgroundResource {
    * <p>You can call this method only after 60 days have elapsed since the initial domain
    * registration.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   RetrieveAuthorizationCodeRequest request =
+   *       RetrieveAuthorizationCodeRequest.newBuilder()
+   *           .setRegistration(
+   *               RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]").toString())
+   *           .build();
+   *   AuthorizationCode response = domainsClient.retrieveAuthorizationCode(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1143,6 +1870,20 @@ public class DomainsClient implements BackgroundResource {
    * registration.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   RetrieveAuthorizationCodeRequest request =
+   *       RetrieveAuthorizationCodeRequest.newBuilder()
+   *           .setRegistration(
+   *               RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]").toString())
+   *           .build();
+   *   ApiFuture<AuthorizationCode> future =
+   *       domainsClient.retrieveAuthorizationCodeCallable().futureCall(request);
+   *   // Do something.
+   *   AuthorizationCode response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<RetrieveAuthorizationCodeRequest, AuthorizationCode>
       retrieveAuthorizationCodeCallable() {
@@ -1155,6 +1896,16 @@ public class DomainsClient implements BackgroundResource {
    *
    * <p>You can call this method only after 60 days have elapsed since the initial domain
    * registration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   RegistrationName registration =
+   *       RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]");
+   *   AuthorizationCode response = domainsClient.resetAuthorizationCode(registration);
+   * }
+   * }</pre>
    *
    * @param registration Required. The name of the `Registration` whose authorization code is being
    *     reset, in the format `projects/&#42;/locations/&#42;/registrations/&#42;`.
@@ -1175,6 +1926,16 @@ public class DomainsClient implements BackgroundResource {
    * <p>You can call this method only after 60 days have elapsed since the initial domain
    * registration.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   String registration =
+   *       RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]").toString();
+   *   AuthorizationCode response = domainsClient.resetAuthorizationCode(registration);
+   * }
+   * }</pre>
+   *
    * @param registration Required. The name of the `Registration` whose authorization code is being
    *     reset, in the format `projects/&#42;/locations/&#42;/registrations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1192,6 +1953,19 @@ public class DomainsClient implements BackgroundResource {
    * <p>You can call this method only after 60 days have elapsed since the initial domain
    * registration.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   ResetAuthorizationCodeRequest request =
+   *       ResetAuthorizationCodeRequest.newBuilder()
+   *           .setRegistration(
+   *               RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]").toString())
+   *           .build();
+   *   AuthorizationCode response = domainsClient.resetAuthorizationCode(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1207,6 +1981,20 @@ public class DomainsClient implements BackgroundResource {
    * registration.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DomainsClient domainsClient = DomainsClient.create()) {
+   *   ResetAuthorizationCodeRequest request =
+   *       ResetAuthorizationCodeRequest.newBuilder()
+   *           .setRegistration(
+   *               RegistrationName.of("[PROJECT]", "[LOCATION]", "[REGISTRATION]").toString())
+   *           .build();
+   *   ApiFuture<AuthorizationCode> future =
+   *       domainsClient.resetAuthorizationCodeCallable().futureCall(request);
+   *   // Do something.
+   *   AuthorizationCode response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ResetAuthorizationCodeRequest, AuthorizationCode>
       resetAuthorizationCodeCallable() {

@@ -96,6 +96,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (IAMClient iAMClient = IAMClient.create()) {
+ *   ServiceAccountName name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
+ *   ServiceAccount response = iAMClient.getServiceAccount(name);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the IAMClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -196,6 +203,17 @@ public class IAMClient implements BackgroundResource {
   /**
    * Lists [ServiceAccounts][google.iam.admin.v1.ServiceAccount] for a project.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   for (ServiceAccount element : iAMClient.listServiceAccounts(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the project associated with the service accounts,
    *     such as `projects/my-project-123`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -212,6 +230,17 @@ public class IAMClient implements BackgroundResource {
   /**
    * Lists [ServiceAccounts][google.iam.admin.v1.ServiceAccount] for a project.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   String name = ProjectName.of("[PROJECT]").toString();
+   *   for (ServiceAccount element : iAMClient.listServiceAccounts(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the project associated with the service accounts,
    *     such as `projects/my-project-123`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -226,6 +255,22 @@ public class IAMClient implements BackgroundResource {
   /**
    * Lists [ServiceAccounts][google.iam.admin.v1.ServiceAccount] for a project.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   ListServiceAccountsRequest request =
+   *       ListServiceAccountsRequest.newBuilder()
+   *           .setName(ProjectName.of("[PROJECT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (ServiceAccount element : iAMClient.listServiceAccounts(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -239,6 +284,23 @@ public class IAMClient implements BackgroundResource {
    * Lists [ServiceAccounts][google.iam.admin.v1.ServiceAccount] for a project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   ListServiceAccountsRequest request =
+   *       ListServiceAccountsRequest.newBuilder()
+   *           .setName(ProjectName.of("[PROJECT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<ServiceAccount> future =
+   *       iAMClient.listServiceAccountsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ServiceAccount element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListServiceAccountsRequest, ListServiceAccountsPagedResponse>
       listServiceAccountsPagedCallable() {
@@ -250,6 +312,24 @@ public class IAMClient implements BackgroundResource {
    * Lists [ServiceAccounts][google.iam.admin.v1.ServiceAccount] for a project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   while (true) {
+   *     ListServiceAccountsResponse response =
+   *         iAMClient.listServiceAccountsCallable().call(request);
+   *     for (ServiceAccount element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListServiceAccountsRequest, ListServiceAccountsResponse>
       listServiceAccountsCallable() {
@@ -259,6 +339,15 @@ public class IAMClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   ServiceAccountName name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
+   *   ServiceAccount response = iAMClient.getServiceAccount(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The resource name of the service account in the following format:
    *     `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. Using `-` as a wildcard for the
@@ -278,6 +367,15 @@ public class IAMClient implements BackgroundResource {
   /**
    * Gets a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   String name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString();
+   *   ServiceAccount response = iAMClient.getServiceAccount(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the service account in the following format:
    *     `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. Using `-` as a wildcard for the
    *     `PROJECT_ID` will infer the project from the account. The `ACCOUNT` value can be the
@@ -293,6 +391,18 @@ public class IAMClient implements BackgroundResource {
   /**
    * Gets a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   GetServiceAccountRequest request =
+   *       GetServiceAccountRequest.newBuilder()
+   *           .setName(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .build();
+   *   ServiceAccount response = iAMClient.getServiceAccount(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -305,6 +415,18 @@ public class IAMClient implements BackgroundResource {
    * Gets a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   GetServiceAccountRequest request =
+   *       GetServiceAccountRequest.newBuilder()
+   *           .setName(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .build();
+   *   ApiFuture<ServiceAccount> future = iAMClient.getServiceAccountCallable().futureCall(request);
+   *   // Do something.
+   *   ServiceAccount response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetServiceAccountRequest, ServiceAccount> getServiceAccountCallable() {
     return stub.getServiceAccountCallable();
@@ -313,6 +435,17 @@ public class IAMClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a [ServiceAccount][google.iam.admin.v1.ServiceAccount] and returns it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   String accountId = "accountId-1827029976";
+   *   ServiceAccount serviceAccount = ServiceAccount.newBuilder().build();
+   *   ServiceAccount response = iAMClient.createServiceAccount(name, accountId, serviceAccount);
+   * }
+   * }</pre>
    *
    * @param name Required. The resource name of the project associated with the service accounts,
    *     such as `projects/my-project-123`.
@@ -340,6 +473,17 @@ public class IAMClient implements BackgroundResource {
   /**
    * Creates a [ServiceAccount][google.iam.admin.v1.ServiceAccount] and returns it.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   String name = ProjectName.of("[PROJECT]").toString();
+   *   String accountId = "accountId-1827029976";
+   *   ServiceAccount serviceAccount = ServiceAccount.newBuilder().build();
+   *   ServiceAccount response = iAMClient.createServiceAccount(name, accountId, serviceAccount);
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the project associated with the service accounts,
    *     such as `projects/my-project-123`.
    * @param accountId Required. The account id that is used to generate the service account email
@@ -366,6 +510,20 @@ public class IAMClient implements BackgroundResource {
   /**
    * Creates a [ServiceAccount][google.iam.admin.v1.ServiceAccount] and returns it.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   CreateServiceAccountRequest request =
+   *       CreateServiceAccountRequest.newBuilder()
+   *           .setName(ProjectName.of("[PROJECT]").toString())
+   *           .setAccountId("accountId-1827029976")
+   *           .setServiceAccount(ServiceAccount.newBuilder().build())
+   *           .build();
+   *   ServiceAccount response = iAMClient.createServiceAccount(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -378,6 +536,21 @@ public class IAMClient implements BackgroundResource {
    * Creates a [ServiceAccount][google.iam.admin.v1.ServiceAccount] and returns it.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   CreateServiceAccountRequest request =
+   *       CreateServiceAccountRequest.newBuilder()
+   *           .setName(ProjectName.of("[PROJECT]").toString())
+   *           .setAccountId("accountId-1827029976")
+   *           .setServiceAccount(ServiceAccount.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ServiceAccount> future =
+   *       iAMClient.createServiceAccountCallable().futureCall(request);
+   *   // Do something.
+   *   ServiceAccount response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateServiceAccountRequest, ServiceAccount>
       createServiceAccountCallable() {
@@ -389,6 +562,24 @@ public class IAMClient implements BackgroundResource {
    * Updates a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
    * <p>Currently, only the following fields are updatable: `display_name` and `description`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   ServiceAccount request =
+   *       ServiceAccount.newBuilder()
+   *           .setName(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .setProjectId("projectId-894832108")
+   *           .setUniqueId("uniqueId-294460212")
+   *           .setEmail("email96619420")
+   *           .setDisplayName("displayName1714148973")
+   *           .setEtag(ByteString.EMPTY)
+   *           .setOauth2ClientId("oauth2ClientId-1210797087")
+   *           .build();
+   *   ServiceAccount response = iAMClient.updateServiceAccount(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -404,6 +595,25 @@ public class IAMClient implements BackgroundResource {
    * <p>Currently, only the following fields are updatable: `display_name` and `description`.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   ServiceAccount request =
+   *       ServiceAccount.newBuilder()
+   *           .setName(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .setProjectId("projectId-894832108")
+   *           .setUniqueId("uniqueId-294460212")
+   *           .setEmail("email96619420")
+   *           .setDisplayName("displayName1714148973")
+   *           .setEtag(ByteString.EMPTY)
+   *           .setOauth2ClientId("oauth2ClientId-1210797087")
+   *           .build();
+   *   ApiFuture<ServiceAccount> future =
+   *       iAMClient.updateServiceAccountCallable().futureCall(request);
+   *   // Do something.
+   *   ServiceAccount response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ServiceAccount, ServiceAccount> updateServiceAccountCallable() {
     return stub.updateServiceAccountCallable();
@@ -412,6 +622,15 @@ public class IAMClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   ServiceAccountName name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
+   *   iAMClient.deleteServiceAccount(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The resource name of the service account in the following format:
    *     `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. Using `-` as a wildcard for the
@@ -431,6 +650,15 @@ public class IAMClient implements BackgroundResource {
   /**
    * Deletes a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   String name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString();
+   *   iAMClient.deleteServiceAccount(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the service account in the following format:
    *     `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. Using `-` as a wildcard for the
    *     `PROJECT_ID` will infer the project from the account. The `ACCOUNT` value can be the
@@ -447,6 +675,18 @@ public class IAMClient implements BackgroundResource {
   /**
    * Deletes a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   DeleteServiceAccountRequest request =
+   *       DeleteServiceAccountRequest.newBuilder()
+   *           .setName(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .build();
+   *   iAMClient.deleteServiceAccount(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -459,6 +699,18 @@ public class IAMClient implements BackgroundResource {
    * Deletes a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   DeleteServiceAccountRequest request =
+   *       DeleteServiceAccountRequest.newBuilder()
+   *           .setName(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future = iAMClient.deleteServiceAccountCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteServiceAccountRequest, Empty> deleteServiceAccountCallable() {
     return stub.deleteServiceAccountCallable();
@@ -467,6 +719,16 @@ public class IAMClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists [ServiceAccountKeys][google.iam.admin.v1.ServiceAccountKey].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   ServiceAccountName name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
+   *   List<ListServiceAccountKeysRequest.KeyType> keyTypes = new ArrayList<>();
+   *   ListServiceAccountKeysResponse response = iAMClient.listServiceAccountKeys(name, keyTypes);
+   * }
+   * }</pre>
    *
    * @param name Required. The resource name of the service account in the following format:
    *     `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
@@ -490,6 +752,16 @@ public class IAMClient implements BackgroundResource {
   /**
    * Lists [ServiceAccountKeys][google.iam.admin.v1.ServiceAccountKey].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   String name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString();
+   *   List<ListServiceAccountKeysRequest.KeyType> keyTypes = new ArrayList<>();
+   *   ListServiceAccountKeysResponse response = iAMClient.listServiceAccountKeys(name, keyTypes);
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the service account in the following format:
    *     `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
    *     <p>Using `-` as a wildcard for the `PROJECT_ID`, will infer the project from the account.
@@ -509,6 +781,19 @@ public class IAMClient implements BackgroundResource {
   /**
    * Lists [ServiceAccountKeys][google.iam.admin.v1.ServiceAccountKey].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   ListServiceAccountKeysRequest request =
+   *       ListServiceAccountKeysRequest.newBuilder()
+   *           .setName(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .addAllKeyTypes(new ArrayList<ListServiceAccountKeysRequest.KeyType>())
+   *           .build();
+   *   ListServiceAccountKeysResponse response = iAMClient.listServiceAccountKeys(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -522,6 +807,20 @@ public class IAMClient implements BackgroundResource {
    * Lists [ServiceAccountKeys][google.iam.admin.v1.ServiceAccountKey].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   ListServiceAccountKeysRequest request =
+   *       ListServiceAccountKeysRequest.newBuilder()
+   *           .setName(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .addAllKeyTypes(new ArrayList<ListServiceAccountKeysRequest.KeyType>())
+   *           .build();
+   *   ApiFuture<ListServiceAccountKeysResponse> future =
+   *       iAMClient.listServiceAccountKeysCallable().futureCall(request);
+   *   // Do something.
+   *   ListServiceAccountKeysResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListServiceAccountKeysRequest, ListServiceAccountKeysResponse>
       listServiceAccountKeysCallable() {
@@ -531,6 +830,16 @@ public class IAMClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] by key id.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   KeyName name = KeyName.of("[PROJECT]", "[SERVICE_ACCOUNT]", "[KEY]");
+   *   ServiceAccountPublicKeyType publicKeyType = ServiceAccountPublicKeyType.forNumber(0);
+   *   ServiceAccountKey response = iAMClient.getServiceAccountKey(name, publicKeyType);
+   * }
+   * }</pre>
    *
    * @param name Required. The resource name of the service account key in the following format:
    *     `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}`.
@@ -554,6 +863,16 @@ public class IAMClient implements BackgroundResource {
   /**
    * Gets the [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] by key id.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   String name = KeyName.of("[PROJECT]", "[SERVICE_ACCOUNT]", "[KEY]").toString();
+   *   ServiceAccountPublicKeyType publicKeyType = ServiceAccountPublicKeyType.forNumber(0);
+   *   ServiceAccountKey response = iAMClient.getServiceAccountKey(name, publicKeyType);
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the service account key in the following format:
    *     `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}`.
    *     <p>Using `-` as a wildcard for the `PROJECT_ID` will infer the project from the account.
@@ -576,6 +895,18 @@ public class IAMClient implements BackgroundResource {
   /**
    * Gets the [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] by key id.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   GetServiceAccountKeyRequest request =
+   *       GetServiceAccountKeyRequest.newBuilder()
+   *           .setName(KeyName.of("[PROJECT]", "[SERVICE_ACCOUNT]", "[KEY]").toString())
+   *           .build();
+   *   ServiceAccountKey response = iAMClient.getServiceAccountKey(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -588,6 +919,19 @@ public class IAMClient implements BackgroundResource {
    * Gets the [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] by key id.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   GetServiceAccountKeyRequest request =
+   *       GetServiceAccountKeyRequest.newBuilder()
+   *           .setName(KeyName.of("[PROJECT]", "[SERVICE_ACCOUNT]", "[KEY]").toString())
+   *           .build();
+   *   ApiFuture<ServiceAccountKey> future =
+   *       iAMClient.getServiceAccountKeyCallable().futureCall(request);
+   *   // Do something.
+   *   ServiceAccountKey response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetServiceAccountKeyRequest, ServiceAccountKey>
       getServiceAccountKeyCallable() {
@@ -597,6 +941,18 @@ public class IAMClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] and returns it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   ServiceAccountName name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
+   *   ServiceAccountPrivateKeyType privateKeyType = ServiceAccountPrivateKeyType.forNumber(0);
+   *   ServiceAccountKeyAlgorithm keyAlgorithm = ServiceAccountKeyAlgorithm.forNumber(0);
+   *   ServiceAccountKey response =
+   *       iAMClient.createServiceAccountKey(name, privateKeyType, keyAlgorithm);
+   * }
+   * }</pre>
    *
    * @param name Required. The resource name of the service account in the following format:
    *     `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. Using `-` as a wildcard for the
@@ -625,6 +981,18 @@ public class IAMClient implements BackgroundResource {
   /**
    * Creates a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] and returns it.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   String name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString();
+   *   ServiceAccountPrivateKeyType privateKeyType = ServiceAccountPrivateKeyType.forNumber(0);
+   *   ServiceAccountKeyAlgorithm keyAlgorithm = ServiceAccountKeyAlgorithm.forNumber(0);
+   *   ServiceAccountKey response =
+   *       iAMClient.createServiceAccountKey(name, privateKeyType, keyAlgorithm);
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the service account in the following format:
    *     `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. Using `-` as a wildcard for the
    *     `PROJECT_ID` will infer the project from the account. The `ACCOUNT` value can be the
@@ -652,6 +1020,18 @@ public class IAMClient implements BackgroundResource {
   /**
    * Creates a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] and returns it.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   CreateServiceAccountKeyRequest request =
+   *       CreateServiceAccountKeyRequest.newBuilder()
+   *           .setName(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .build();
+   *   ServiceAccountKey response = iAMClient.createServiceAccountKey(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -664,6 +1044,19 @@ public class IAMClient implements BackgroundResource {
    * Creates a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] and returns it.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   CreateServiceAccountKeyRequest request =
+   *       CreateServiceAccountKeyRequest.newBuilder()
+   *           .setName(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .build();
+   *   ApiFuture<ServiceAccountKey> future =
+   *       iAMClient.createServiceAccountKeyCallable().futureCall(request);
+   *   // Do something.
+   *   ServiceAccountKey response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateServiceAccountKeyRequest, ServiceAccountKey>
       createServiceAccountKeyCallable() {
@@ -673,6 +1066,15 @@ public class IAMClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   KeyName name = KeyName.of("[PROJECT]", "[SERVICE_ACCOUNT]", "[KEY]");
+   *   iAMClient.deleteServiceAccountKey(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The resource name of the service account key in the following format:
    *     `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}`. Using `-` as a wildcard for
@@ -692,6 +1094,15 @@ public class IAMClient implements BackgroundResource {
   /**
    * Deletes a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   String name = KeyName.of("[PROJECT]", "[SERVICE_ACCOUNT]", "[KEY]").toString();
+   *   iAMClient.deleteServiceAccountKey(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the service account key in the following format:
    *     `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}`. Using `-` as a wildcard for
    *     the `PROJECT_ID` will infer the project from the account. The `ACCOUNT` value can be the
@@ -708,6 +1119,18 @@ public class IAMClient implements BackgroundResource {
   /**
    * Deletes a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   DeleteServiceAccountKeyRequest request =
+   *       DeleteServiceAccountKeyRequest.newBuilder()
+   *           .setName(KeyName.of("[PROJECT]", "[SERVICE_ACCOUNT]", "[KEY]").toString())
+   *           .build();
+   *   iAMClient.deleteServiceAccountKey(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -720,6 +1143,18 @@ public class IAMClient implements BackgroundResource {
    * Deletes a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   DeleteServiceAccountKeyRequest request =
+   *       DeleteServiceAccountKeyRequest.newBuilder()
+   *           .setName(KeyName.of("[PROJECT]", "[SERVICE_ACCOUNT]", "[KEY]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future = iAMClient.deleteServiceAccountKeyCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteServiceAccountKeyRequest, Empty>
       deleteServiceAccountKeyCallable() {
@@ -729,6 +1164,16 @@ public class IAMClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Signs a blob using a service account's system-managed private key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   ServiceAccountName name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
+   *   ByteString bytesToSign = ByteString.EMPTY;
+   *   SignBlobResponse response = iAMClient.signBlob(name, bytesToSign);
+   * }
+   * }</pre>
    *
    * @param name Required. The resource name of the service account in the following format:
    *     `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. Using `-` as a wildcard for the
@@ -750,6 +1195,16 @@ public class IAMClient implements BackgroundResource {
   /**
    * Signs a blob using a service account's system-managed private key.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   String name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString();
+   *   ByteString bytesToSign = ByteString.EMPTY;
+   *   SignBlobResponse response = iAMClient.signBlob(name, bytesToSign);
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the service account in the following format:
    *     `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. Using `-` as a wildcard for the
    *     `PROJECT_ID` will infer the project from the account. The `ACCOUNT` value can be the
@@ -767,6 +1222,19 @@ public class IAMClient implements BackgroundResource {
   /**
    * Signs a blob using a service account's system-managed private key.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   SignBlobRequest request =
+   *       SignBlobRequest.newBuilder()
+   *           .setName(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .setBytesToSign(ByteString.EMPTY)
+   *           .build();
+   *   SignBlobResponse response = iAMClient.signBlob(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -779,6 +1247,19 @@ public class IAMClient implements BackgroundResource {
    * Signs a blob using a service account's system-managed private key.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   SignBlobRequest request =
+   *       SignBlobRequest.newBuilder()
+   *           .setName(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .setBytesToSign(ByteString.EMPTY)
+   *           .build();
+   *   ApiFuture<SignBlobResponse> future = iAMClient.signBlobCallable().futureCall(request);
+   *   // Do something.
+   *   SignBlobResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SignBlobRequest, SignBlobResponse> signBlobCallable() {
     return stub.signBlobCallable();
@@ -791,6 +1272,16 @@ public class IAMClient implements BackgroundResource {
    * <p>If no expiry time (`exp`) is provided in the `SignJwtRequest`, IAM sets an an expiry time of
    * one hour by default. If you request an expiry time of more than one hour, the request will
    * fail.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   ServiceAccountName name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
+   *   String payload = "payload-786701938";
+   *   SignJwtResponse response = iAMClient.signJwt(name, payload);
+   * }
+   * }</pre>
    *
    * @param name Required. The resource name of the service account in the following format:
    *     `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. Using `-` as a wildcard for the
@@ -816,6 +1307,16 @@ public class IAMClient implements BackgroundResource {
    * one hour by default. If you request an expiry time of more than one hour, the request will
    * fail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   String name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString();
+   *   String payload = "payload-786701938";
+   *   SignJwtResponse response = iAMClient.signJwt(name, payload);
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the service account in the following format:
    *     `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. Using `-` as a wildcard for the
    *     `PROJECT_ID` will infer the project from the account. The `ACCOUNT` value can be the
@@ -836,6 +1337,19 @@ public class IAMClient implements BackgroundResource {
    * one hour by default. If you request an expiry time of more than one hour, the request will
    * fail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   SignJwtRequest request =
+   *       SignJwtRequest.newBuilder()
+   *           .setName(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .setPayload("payload-786701938")
+   *           .build();
+   *   SignJwtResponse response = iAMClient.signJwt(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -852,6 +1366,19 @@ public class IAMClient implements BackgroundResource {
    * fail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   SignJwtRequest request =
+   *       SignJwtRequest.newBuilder()
+   *           .setName(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .setPayload("payload-786701938")
+   *           .build();
+   *   ApiFuture<SignJwtResponse> future = iAMClient.signJwtCallable().futureCall(request);
+   *   // Do something.
+   *   SignJwtResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SignJwtRequest, SignJwtResponse> signJwtCallable() {
     return stub.signJwtCallable();
@@ -871,6 +1398,15 @@ public class IAMClient implements BackgroundResource {
    * service account has access to a resource, call the `getIamPolicy` method on the target
    * resource. For example, to view grants for a project, call the
    * [projects.getIamPolicy](/resource-manager/reference/rest/v1/projects/getIamPolicy) method.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   ResourceName resource = ProjectName.of("[PROJECT]");
+   *   Policy response = iAMClient.getIamPolicy(resource);
+   * }
+   * }</pre>
    *
    * @param resource REQUIRED: The resource for which the policy is being requested. See the
    *     operation documentation for the appropriate value for this field.
@@ -899,6 +1435,15 @@ public class IAMClient implements BackgroundResource {
    * resource. For example, to view grants for a project, call the
    * [projects.getIamPolicy](/resource-manager/reference/rest/v1/projects/getIamPolicy) method.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   String resource = ProjectName.of("[PROJECT]").toString();
+   *   Policy response = iAMClient.getIamPolicy(resource);
+   * }
+   * }</pre>
+   *
    * @param resource REQUIRED: The resource for which the policy is being requested. See the
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -923,6 +1468,19 @@ public class IAMClient implements BackgroundResource {
    * resource. For example, to view grants for a project, call the
    * [projects.getIamPolicy](/resource-manager/reference/rest/v1/projects/getIamPolicy) method.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   Policy response = iAMClient.getIamPolicy(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -946,6 +1504,19 @@ public class IAMClient implements BackgroundResource {
    * [projects.getIamPolicy](/resource-manager/reference/rest/v1/projects/getIamPolicy) method.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = iAMClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return stub.getIamPolicyCallable();
@@ -966,6 +1537,16 @@ public class IAMClient implements BackgroundResource {
    * policy for the desired resource, then call the appropriate `setIamPolicy` method on the target
    * resource. For example, to grant a service account access to a project, call the
    * [projects.setIamPolicy](/resource-manager/reference/rest/v1/projects/setIamPolicy) method.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   ResourceName resource = ProjectName.of("[PROJECT]");
+   *   Policy policy = Policy.newBuilder().build();
+   *   Policy response = iAMClient.setIamPolicy(resource, policy);
+   * }
+   * }</pre>
    *
    * @param resource REQUIRED: The resource for which the policy is being specified. See the
    *     operation documentation for the appropriate value for this field.
@@ -999,6 +1580,16 @@ public class IAMClient implements BackgroundResource {
    * resource. For example, to grant a service account access to a project, call the
    * [projects.setIamPolicy](/resource-manager/reference/rest/v1/projects/setIamPolicy) method.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   String resource = ProjectName.of("[PROJECT]").toString();
+   *   Policy policy = Policy.newBuilder().build();
+   *   Policy response = iAMClient.setIamPolicy(resource, policy);
+   * }
+   * }</pre>
+   *
    * @param resource REQUIRED: The resource for which the policy is being specified. See the
    *     operation documentation for the appropriate value for this field.
    * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
@@ -1028,6 +1619,19 @@ public class IAMClient implements BackgroundResource {
    * resource. For example, to grant a service account access to a project, call the
    * [projects.setIamPolicy](/resource-manager/reference/rest/v1/projects/setIamPolicy) method.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .build();
+   *   Policy response = iAMClient.setIamPolicy(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1052,6 +1656,19 @@ public class IAMClient implements BackgroundResource {
    * [projects.setIamPolicy](/resource-manager/reference/rest/v1/projects/setIamPolicy) method.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = iAMClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return stub.setIamPolicyCallable();
@@ -1061,6 +1678,16 @@ public class IAMClient implements BackgroundResource {
   /**
    * Tests the specified permissions against the IAM access control policy for a
    * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   ResourceName resource = ProjectName.of("[PROJECT]");
+   *   List<String> permissions = new ArrayList<>();
+   *   TestIamPermissionsResponse response = iAMClient.testIamPermissions(resource, permissions);
+   * }
+   * }</pre>
    *
    * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
    *     operation documentation for the appropriate value for this field.
@@ -1084,6 +1711,16 @@ public class IAMClient implements BackgroundResource {
    * Tests the specified permissions against the IAM access control policy for a
    * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   String resource = ProjectName.of("[PROJECT]").toString();
+   *   List<String> permissions = new ArrayList<>();
+   *   TestIamPermissionsResponse response = iAMClient.testIamPermissions(resource, permissions);
+   * }
+   * }</pre>
+   *
    * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
    *     operation documentation for the appropriate value for this field.
    * @param permissions The set of permissions to check for the `resource`. Permissions with
@@ -1106,6 +1743,19 @@ public class IAMClient implements BackgroundResource {
    * Tests the specified permissions against the IAM access control policy for a
    * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   TestIamPermissionsResponse response = iAMClient.testIamPermissions(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1119,6 +1769,20 @@ public class IAMClient implements BackgroundResource {
    * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<TestIamPermissionsResponse> future =
+   *       iAMClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
@@ -1129,6 +1793,17 @@ public class IAMClient implements BackgroundResource {
   /**
    * Queries roles that can be granted on a particular resource. A role is grantable if it can be
    * used as the role in a binding for a policy for that resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   String fullResourceName = "fullResourceName-853732376";
+   *   for (Role element : iAMClient.queryGrantableRoles(fullResourceName).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param fullResourceName Required. The full resource name to query from the list of grantable
    *     roles.
@@ -1148,6 +1823,22 @@ public class IAMClient implements BackgroundResource {
    * Queries roles that can be granted on a particular resource. A role is grantable if it can be
    * used as the role in a binding for a policy for that resource.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   QueryGrantableRolesRequest request =
+   *       QueryGrantableRolesRequest.newBuilder()
+   *           .setFullResourceName("fullResourceName-853732376")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Role element : iAMClient.queryGrantableRoles(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1162,6 +1853,22 @@ public class IAMClient implements BackgroundResource {
    * used as the role in a binding for a policy for that resource.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   QueryGrantableRolesRequest request =
+   *       QueryGrantableRolesRequest.newBuilder()
+   *           .setFullResourceName("fullResourceName-853732376")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Role> future = iAMClient.queryGrantableRolesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Role element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<QueryGrantableRolesRequest, QueryGrantableRolesPagedResponse>
       queryGrantableRolesPagedCallable() {
@@ -1174,6 +1881,24 @@ public class IAMClient implements BackgroundResource {
    * used as the role in a binding for a policy for that resource.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   while (true) {
+   *     QueryGrantableRolesResponse response =
+   *         iAMClient.queryGrantableRolesCallable().call(request);
+   *     for (Role element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<QueryGrantableRolesRequest, QueryGrantableRolesResponse>
       queryGrantableRolesCallable() {
@@ -1183,6 +1908,23 @@ public class IAMClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the Roles defined on a resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   ListRolesRequest request =
+   *       ListRolesRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setShowDeleted(true)
+   *           .build();
+   *   for (Role element : iAMClient.listRoles(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1196,6 +1938,23 @@ public class IAMClient implements BackgroundResource {
    * Lists the Roles defined on a resource.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   ListRolesRequest request =
+   *       ListRolesRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setShowDeleted(true)
+   *           .build();
+   *   ApiFuture<Role> future = iAMClient.listRolesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Role element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListRolesRequest, ListRolesPagedResponse> listRolesPagedCallable() {
     return stub.listRolesPagedCallable();
@@ -1206,6 +1965,23 @@ public class IAMClient implements BackgroundResource {
    * Lists the Roles defined on a resource.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   while (true) {
+   *     ListRolesResponse response = iAMClient.listRolesCallable().call(request);
+   *     for (Role element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListRolesRequest, ListRolesResponse> listRolesCallable() {
     return stub.listRolesCallable();
@@ -1214,6 +1990,16 @@ public class IAMClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a Role definition.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   GetRoleRequest request =
+   *       GetRoleRequest.newBuilder().setName(ProjectName.of("[PROJECT]").toString()).build();
+   *   Role response = iAMClient.getRole(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1227,6 +2013,16 @@ public class IAMClient implements BackgroundResource {
    * Gets a Role definition.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   GetRoleRequest request =
+   *       GetRoleRequest.newBuilder().setName(ProjectName.of("[PROJECT]").toString()).build();
+   *   ApiFuture<Role> future = iAMClient.getRoleCallable().futureCall(request);
+   *   // Do something.
+   *   Role response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetRoleRequest, Role> getRoleCallable() {
     return stub.getRoleCallable();
@@ -1235,6 +2031,20 @@ public class IAMClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new Role.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   CreateRoleRequest request =
+   *       CreateRoleRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setRoleId("roleId-925416399")
+   *           .setRole(Role.newBuilder().build())
+   *           .build();
+   *   Role response = iAMClient.createRole(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1248,6 +2058,20 @@ public class IAMClient implements BackgroundResource {
    * Creates a new Role.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   CreateRoleRequest request =
+   *       CreateRoleRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setRoleId("roleId-925416399")
+   *           .setRole(Role.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Role> future = iAMClient.createRoleCallable().futureCall(request);
+   *   // Do something.
+   *   Role response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateRoleRequest, Role> createRoleCallable() {
     return stub.createRoleCallable();
@@ -1256,6 +2080,20 @@ public class IAMClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a Role definition.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   UpdateRoleRequest request =
+   *       UpdateRoleRequest.newBuilder()
+   *           .setName(ProjectName.of("[PROJECT]").toString())
+   *           .setRole(Role.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Role response = iAMClient.updateRole(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1269,6 +2107,20 @@ public class IAMClient implements BackgroundResource {
    * Updates a Role definition.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   UpdateRoleRequest request =
+   *       UpdateRoleRequest.newBuilder()
+   *           .setName(ProjectName.of("[PROJECT]").toString())
+   *           .setRole(Role.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Role> future = iAMClient.updateRoleCallable().futureCall(request);
+   *   // Do something.
+   *   Role response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateRoleRequest, Role> updateRoleCallable() {
     return stub.updateRoleCallable();
@@ -1281,6 +2133,19 @@ public class IAMClient implements BackgroundResource {
    * `ListRolesRequest`. The Role contains the deleted boolean set. Existing Bindings remains, but
    * are inactive. The Role can be undeleted within 7 days. After 7 days the Role is deleted and all
    * Bindings associated with the role are removed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   DeleteRoleRequest request =
+   *       DeleteRoleRequest.newBuilder()
+   *           .setName(ProjectName.of("[PROJECT]").toString())
+   *           .setEtag(ByteString.EMPTY)
+   *           .build();
+   *   Role response = iAMClient.deleteRole(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1298,6 +2163,19 @@ public class IAMClient implements BackgroundResource {
    * Bindings associated with the role are removed.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   DeleteRoleRequest request =
+   *       DeleteRoleRequest.newBuilder()
+   *           .setName(ProjectName.of("[PROJECT]").toString())
+   *           .setEtag(ByteString.EMPTY)
+   *           .build();
+   *   ApiFuture<Role> future = iAMClient.deleteRoleCallable().futureCall(request);
+   *   // Do something.
+   *   Role response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteRoleRequest, Role> deleteRoleCallable() {
     return stub.deleteRoleCallable();
@@ -1306,6 +2184,19 @@ public class IAMClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Undelete a Role, bringing it back in its previous state.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   UndeleteRoleRequest request =
+   *       UndeleteRoleRequest.newBuilder()
+   *           .setName(ProjectName.of("[PROJECT]").toString())
+   *           .setEtag(ByteString.EMPTY)
+   *           .build();
+   *   Role response = iAMClient.undeleteRole(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1319,6 +2210,19 @@ public class IAMClient implements BackgroundResource {
    * Undelete a Role, bringing it back in its previous state.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   UndeleteRoleRequest request =
+   *       UndeleteRoleRequest.newBuilder()
+   *           .setName(ProjectName.of("[PROJECT]").toString())
+   *           .setEtag(ByteString.EMPTY)
+   *           .build();
+   *   ApiFuture<Role> future = iAMClient.undeleteRoleCallable().futureCall(request);
+   *   // Do something.
+   *   Role response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UndeleteRoleRequest, Role> undeleteRoleCallable() {
     return stub.undeleteRoleCallable();
@@ -1328,6 +2232,22 @@ public class IAMClient implements BackgroundResource {
   /**
    * Lists the permissions testable on a resource. A permission is testable if it can be tested for
    * an identity on a resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   QueryTestablePermissionsRequest request =
+   *       QueryTestablePermissionsRequest.newBuilder()
+   *           .setFullResourceName("fullResourceName-853732376")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Permission element : iAMClient.queryTestablePermissions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1343,6 +2263,23 @@ public class IAMClient implements BackgroundResource {
    * an identity on a resource.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   QueryTestablePermissionsRequest request =
+   *       QueryTestablePermissionsRequest.newBuilder()
+   *           .setFullResourceName("fullResourceName-853732376")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Permission> future =
+   *       iAMClient.queryTestablePermissionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Permission element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<QueryTestablePermissionsRequest, QueryTestablePermissionsPagedResponse>
       queryTestablePermissionsPagedCallable() {
@@ -1355,6 +2292,24 @@ public class IAMClient implements BackgroundResource {
    * an identity on a resource.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IAMClient iAMClient = IAMClient.create()) {
+   *   while (true) {
+   *     QueryTestablePermissionsResponse response =
+   *         iAMClient.queryTestablePermissionsCallable().call(request);
+   *     for (Permission element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<QueryTestablePermissionsRequest, QueryTestablePermissionsResponse>
       queryTestablePermissionsCallable() {

@@ -110,6 +110,18 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (StorageClient storageClient = StorageClient.create()) {
+ *   DeleteBucketAccessControlRequest request =
+ *       DeleteBucketAccessControlRequest.newBuilder()
+ *           .setBucket("bucket-1378203158")
+ *           .setEntity("entity-1298275357")
+ *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+ *           .build();
+ *   storageClient.deleteBucketAccessControl(request);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the StorageClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -210,6 +222,20 @@ public class StorageClient implements BackgroundResource {
   /**
    * Permanently deletes the ACL entry for the specified entity on the specified bucket.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   DeleteBucketAccessControlRequest request =
+   *       DeleteBucketAccessControlRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setEntity("entity-1298275357")
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   storageClient.deleteBucketAccessControl(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -222,6 +248,21 @@ public class StorageClient implements BackgroundResource {
    * Permanently deletes the ACL entry for the specified entity on the specified bucket.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   DeleteBucketAccessControlRequest request =
+   *       DeleteBucketAccessControlRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setEntity("entity-1298275357")
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       storageClient.deleteBucketAccessControlCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteBucketAccessControlRequest, Empty>
       deleteBucketAccessControlCallable() {
@@ -231,6 +272,20 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the ACL entry for the specified entity on the specified bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   GetBucketAccessControlRequest request =
+   *       GetBucketAccessControlRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setEntity("entity-1298275357")
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   BucketAccessControl response = storageClient.getBucketAccessControl(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -244,6 +299,21 @@ public class StorageClient implements BackgroundResource {
    * Returns the ACL entry for the specified entity on the specified bucket.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   GetBucketAccessControlRequest request =
+   *       GetBucketAccessControlRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setEntity("entity-1298275357")
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<BucketAccessControl> future =
+   *       storageClient.getBucketAccessControlCallable().futureCall(request);
+   *   // Do something.
+   *   BucketAccessControl response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetBucketAccessControlRequest, BucketAccessControl>
       getBucketAccessControlCallable() {
@@ -253,6 +323,20 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new ACL entry on the specified bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   InsertBucketAccessControlRequest request =
+   *       InsertBucketAccessControlRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setBucketAccessControl(BucketAccessControl.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   BucketAccessControl response = storageClient.insertBucketAccessControl(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -267,6 +351,21 @@ public class StorageClient implements BackgroundResource {
    * Creates a new ACL entry on the specified bucket.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   InsertBucketAccessControlRequest request =
+   *       InsertBucketAccessControlRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setBucketAccessControl(BucketAccessControl.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<BucketAccessControl> future =
+   *       storageClient.insertBucketAccessControlCallable().futureCall(request);
+   *   // Do something.
+   *   BucketAccessControl response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<InsertBucketAccessControlRequest, BucketAccessControl>
       insertBucketAccessControlCallable() {
@@ -276,6 +375,19 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves ACL entries on the specified bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   ListBucketAccessControlsRequest request =
+   *       ListBucketAccessControlsRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ListBucketAccessControlsResponse response = storageClient.listBucketAccessControls(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -290,6 +402,20 @@ public class StorageClient implements BackgroundResource {
    * Retrieves ACL entries on the specified bucket.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   ListBucketAccessControlsRequest request =
+   *       ListBucketAccessControlsRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ListBucketAccessControlsResponse> future =
+   *       storageClient.listBucketAccessControlsCallable().futureCall(request);
+   *   // Do something.
+   *   ListBucketAccessControlsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListBucketAccessControlsRequest, ListBucketAccessControlsResponse>
       listBucketAccessControlsCallable() {
@@ -300,6 +426,21 @@ public class StorageClient implements BackgroundResource {
   /**
    * Updates an ACL entry on the specified bucket. Equivalent to PatchBucketAccessControl, but all
    * unspecified fields will be reset to their default values.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   UpdateBucketAccessControlRequest request =
+   *       UpdateBucketAccessControlRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setEntity("entity-1298275357")
+   *           .setBucketAccessControl(BucketAccessControl.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   BucketAccessControl response = storageClient.updateBucketAccessControl(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -315,6 +456,22 @@ public class StorageClient implements BackgroundResource {
    * unspecified fields will be reset to their default values.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   UpdateBucketAccessControlRequest request =
+   *       UpdateBucketAccessControlRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setEntity("entity-1298275357")
+   *           .setBucketAccessControl(BucketAccessControl.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<BucketAccessControl> future =
+   *       storageClient.updateBucketAccessControlCallable().futureCall(request);
+   *   // Do something.
+   *   BucketAccessControl response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateBucketAccessControlRequest, BucketAccessControl>
       updateBucketAccessControlCallable() {
@@ -324,6 +481,22 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an ACL entry on the specified bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   PatchBucketAccessControlRequest request =
+   *       PatchBucketAccessControlRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setEntity("entity-1298275357")
+   *           .setBucketAccessControl(BucketAccessControl.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   BucketAccessControl response = storageClient.patchBucketAccessControl(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -338,6 +511,23 @@ public class StorageClient implements BackgroundResource {
    * Updates an ACL entry on the specified bucket.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   PatchBucketAccessControlRequest request =
+   *       PatchBucketAccessControlRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setEntity("entity-1298275357")
+   *           .setBucketAccessControl(BucketAccessControl.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<BucketAccessControl> future =
+   *       storageClient.patchBucketAccessControlCallable().futureCall(request);
+   *   // Do something.
+   *   BucketAccessControl response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<PatchBucketAccessControlRequest, BucketAccessControl>
       patchBucketAccessControlCallable() {
@@ -347,6 +537,21 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Permanently deletes an empty bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   DeleteBucketRequest request =
+   *       DeleteBucketRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setIfMetagenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   storageClient.deleteBucket(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -360,6 +565,21 @@ public class StorageClient implements BackgroundResource {
    * Permanently deletes an empty bucket.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   DeleteBucketRequest request =
+   *       DeleteBucketRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setIfMetagenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Empty> future = storageClient.deleteBucketCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteBucketRequest, Empty> deleteBucketCallable() {
     return stub.deleteBucketCallable();
@@ -368,6 +588,21 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns metadata for the specified bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   GetBucketRequest request =
+   *       GetBucketRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setIfMetagenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   Bucket response = storageClient.getBucket(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -381,6 +616,21 @@ public class StorageClient implements BackgroundResource {
    * Returns metadata for the specified bucket.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   GetBucketRequest request =
+   *       GetBucketRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setIfMetagenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Bucket> future = storageClient.getBucketCallable().futureCall(request);
+   *   // Do something.
+   *   Bucket response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetBucketRequest, Bucket> getBucketCallable() {
     return stub.getBucketCallable();
@@ -389,6 +639,20 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   InsertBucketRequest request =
+   *       InsertBucketRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setBucket(Bucket.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   Bucket response = storageClient.insertBucket(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -402,6 +666,20 @@ public class StorageClient implements BackgroundResource {
    * Creates a new bucket.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   InsertBucketRequest request =
+   *       InsertBucketRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setBucket(Bucket.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Bucket> future = storageClient.insertBucketCallable().futureCall(request);
+   *   // Do something.
+   *   Bucket response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<InsertBucketRequest, Bucket> insertBucketCallable() {
     return stub.insertBucketCallable();
@@ -410,6 +688,19 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List active object change notification channels for this bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   ListChannelsRequest request =
+   *       ListChannelsRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ListChannelsResponse response = storageClient.listChannels(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -423,6 +714,20 @@ public class StorageClient implements BackgroundResource {
    * List active object change notification channels for this bucket.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   ListChannelsRequest request =
+   *       ListChannelsRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ListChannelsResponse> future =
+   *       storageClient.listChannelsCallable().futureCall(request);
+   *   // Do something.
+   *   ListChannelsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListChannelsRequest, ListChannelsResponse> listChannelsCallable() {
     return stub.listChannelsCallable();
@@ -431,6 +736,22 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of buckets for a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   ListBucketsRequest request =
+   *       ListBucketsRequest.newBuilder()
+   *           .setMaxResults(1128457243)
+   *           .setPageToken("pageToken873572522")
+   *           .setPrefix("prefix-980110702")
+   *           .setProject("project-309310695")
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ListBucketsResponse response = storageClient.listBuckets(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -444,6 +765,23 @@ public class StorageClient implements BackgroundResource {
    * Retrieves a list of buckets for a given project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   ListBucketsRequest request =
+   *       ListBucketsRequest.newBuilder()
+   *           .setMaxResults(1128457243)
+   *           .setPageToken("pageToken873572522")
+   *           .setPrefix("prefix-980110702")
+   *           .setProject("project-309310695")
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ListBucketsResponse> future =
+   *       storageClient.listBucketsCallable().futureCall(request);
+   *   // Do something.
+   *   ListBucketsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListBucketsRequest, ListBucketsResponse> listBucketsCallable() {
     return stub.listBucketsCallable();
@@ -452,6 +790,20 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Locks retention policy on a bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   LockRetentionPolicyRequest request =
+   *       LockRetentionPolicyRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setIfMetagenerationMatch(1043427781)
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   Bucket response = storageClient.lockBucketRetentionPolicy(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -465,6 +817,21 @@ public class StorageClient implements BackgroundResource {
    * Locks retention policy on a bucket.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   LockRetentionPolicyRequest request =
+   *       LockRetentionPolicyRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setIfMetagenerationMatch(1043427781)
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Bucket> future =
+   *       storageClient.lockBucketRetentionPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Bucket response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<LockRetentionPolicyRequest, Bucket>
       lockBucketRetentionPolicyCallable() {
@@ -474,6 +841,19 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the IAM policy for the specified bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setIamRequest(GetIamPolicyRequest.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   Policy response = storageClient.getBucketIamPolicy(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -487,6 +867,19 @@ public class StorageClient implements BackgroundResource {
    * Gets the IAM policy for the specified bucket.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setIamRequest(GetIamPolicyRequest.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = storageClient.getBucketIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetIamPolicyRequest, Policy> getBucketIamPolicyCallable() {
     return stub.getBucketIamPolicyCallable();
@@ -495,6 +888,19 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an IAM policy for the specified bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setIamRequest(SetIamPolicyRequest.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   Policy response = storageClient.setBucketIamPolicy(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -508,6 +914,19 @@ public class StorageClient implements BackgroundResource {
    * Updates an IAM policy for the specified bucket.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setIamRequest(SetIamPolicyRequest.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = storageClient.setBucketIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SetIamPolicyRequest, Policy> setBucketIamPolicyCallable() {
     return stub.setBucketIamPolicyCallable();
@@ -516,6 +935,19 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Tests a set of permissions on the given bucket to see which, if any, are held by the caller.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setIamRequest(TestIamPermissionsRequest.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   TestIamPermissionsResponse response = storageClient.testBucketIamPermissions(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -530,6 +962,20 @@ public class StorageClient implements BackgroundResource {
    * Tests a set of permissions on the given bucket to see which, if any, are held by the caller.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setIamRequest(TestIamPermissionsRequest.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<TestIamPermissionsResponse> future =
+   *       storageClient.testBucketIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testBucketIamPermissionsCallable() {
@@ -540,6 +986,23 @@ public class StorageClient implements BackgroundResource {
   /**
    * Updates a bucket. Changes to the bucket will be readable immediately after writing, but
    * configuration changes may take time to propagate.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   PatchBucketRequest request =
+   *       PatchBucketRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setIfMetagenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setMetadata(Bucket.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   Bucket response = storageClient.patchBucket(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -554,6 +1017,23 @@ public class StorageClient implements BackgroundResource {
    * configuration changes may take time to propagate.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   PatchBucketRequest request =
+   *       PatchBucketRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setIfMetagenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setMetadata(Bucket.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Bucket> future = storageClient.patchBucketCallable().futureCall(request);
+   *   // Do something.
+   *   Bucket response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<PatchBucketRequest, Bucket> patchBucketCallable() {
     return stub.patchBucketCallable();
@@ -565,6 +1045,22 @@ public class StorageClient implements BackgroundResource {
    * bucket with new values, reverting all unspecified fields to their default values. Like
    * PatchBucket, Changes to the bucket will be readable immediately after writing, but
    * configuration changes may take time to propagate.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   UpdateBucketRequest request =
+   *       UpdateBucketRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setIfMetagenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setMetadata(Bucket.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   Bucket response = storageClient.updateBucket(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -581,6 +1077,22 @@ public class StorageClient implements BackgroundResource {
    * configuration changes may take time to propagate.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   UpdateBucketRequest request =
+   *       UpdateBucketRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setIfMetagenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setMetadata(Bucket.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Bucket> future = storageClient.updateBucketCallable().futureCall(request);
+   *   // Do something.
+   *   Bucket response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateBucketRequest, Bucket> updateBucketCallable() {
     return stub.updateBucketCallable();
@@ -591,6 +1103,19 @@ public class StorageClient implements BackgroundResource {
    * Halts "Object Change Notification" push messagages. See
    * https://cloud.google.com/storage/docs/object-change-notification Note: this is not related to
    * the newer "Notifications" resource, which are stopped using DeleteNotification.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   StopChannelRequest request =
+   *       StopChannelRequest.newBuilder()
+   *           .setChannel(Channel.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   storageClient.stopChannel(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -606,6 +1131,19 @@ public class StorageClient implements BackgroundResource {
    * the newer "Notifications" resource, which are stopped using DeleteNotification.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   StopChannelRequest request =
+   *       StopChannelRequest.newBuilder()
+   *           .setChannel(Channel.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Empty> future = storageClient.stopChannelCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<StopChannelRequest, Empty> stopChannelCallable() {
     return stub.stopChannelCallable();
@@ -615,6 +1153,20 @@ public class StorageClient implements BackgroundResource {
   /**
    * Permanently deletes the default object ACL entry for the specified entity on the specified
    * bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   DeleteDefaultObjectAccessControlRequest request =
+   *       DeleteDefaultObjectAccessControlRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setEntity("entity-1298275357")
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   storageClient.deleteDefaultObjectAccessControl(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -630,6 +1182,21 @@ public class StorageClient implements BackgroundResource {
    * bucket.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   DeleteDefaultObjectAccessControlRequest request =
+   *       DeleteDefaultObjectAccessControlRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setEntity("entity-1298275357")
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       storageClient.deleteDefaultObjectAccessControlCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteDefaultObjectAccessControlRequest, Empty>
       deleteDefaultObjectAccessControlCallable() {
@@ -639,6 +1206,20 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the default object ACL entry for the specified entity on the specified bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   GetDefaultObjectAccessControlRequest request =
+   *       GetDefaultObjectAccessControlRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setEntity("entity-1298275357")
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ObjectAccessControl response = storageClient.getDefaultObjectAccessControl(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -653,6 +1234,21 @@ public class StorageClient implements BackgroundResource {
    * Returns the default object ACL entry for the specified entity on the specified bucket.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   GetDefaultObjectAccessControlRequest request =
+   *       GetDefaultObjectAccessControlRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setEntity("entity-1298275357")
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ObjectAccessControl> future =
+   *       storageClient.getDefaultObjectAccessControlCallable().futureCall(request);
+   *   // Do something.
+   *   ObjectAccessControl response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetDefaultObjectAccessControlRequest, ObjectAccessControl>
       getDefaultObjectAccessControlCallable() {
@@ -662,6 +1258,20 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new default object ACL entry on the specified bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   InsertDefaultObjectAccessControlRequest request =
+   *       InsertDefaultObjectAccessControlRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setObjectAccessControl(ObjectAccessControl.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ObjectAccessControl response = storageClient.insertDefaultObjectAccessControl(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -676,6 +1286,21 @@ public class StorageClient implements BackgroundResource {
    * Creates a new default object ACL entry on the specified bucket.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   InsertDefaultObjectAccessControlRequest request =
+   *       InsertDefaultObjectAccessControlRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setObjectAccessControl(ObjectAccessControl.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ObjectAccessControl> future =
+   *       storageClient.insertDefaultObjectAccessControlCallable().futureCall(request);
+   *   // Do something.
+   *   ObjectAccessControl response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<InsertDefaultObjectAccessControlRequest, ObjectAccessControl>
       insertDefaultObjectAccessControlCallable() {
@@ -685,6 +1310,22 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves default object ACL entries on the specified bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   ListDefaultObjectAccessControlsRequest request =
+   *       ListDefaultObjectAccessControlsRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setIfMetagenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ListObjectAccessControlsResponse response =
+   *       storageClient.listDefaultObjectAccessControls(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -699,6 +1340,22 @@ public class StorageClient implements BackgroundResource {
    * Retrieves default object ACL entries on the specified bucket.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   ListDefaultObjectAccessControlsRequest request =
+   *       ListDefaultObjectAccessControlsRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setIfMetagenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ListObjectAccessControlsResponse> future =
+   *       storageClient.listDefaultObjectAccessControlsCallable().futureCall(request);
+   *   // Do something.
+   *   ListObjectAccessControlsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           ListDefaultObjectAccessControlsRequest, ListObjectAccessControlsResponse>
@@ -709,6 +1366,22 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a default object ACL entry on the specified bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   PatchDefaultObjectAccessControlRequest request =
+   *       PatchDefaultObjectAccessControlRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setEntity("entity-1298275357")
+   *           .setObjectAccessControl(ObjectAccessControl.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ObjectAccessControl response = storageClient.patchDefaultObjectAccessControl(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -723,6 +1396,23 @@ public class StorageClient implements BackgroundResource {
    * Updates a default object ACL entry on the specified bucket.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   PatchDefaultObjectAccessControlRequest request =
+   *       PatchDefaultObjectAccessControlRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setEntity("entity-1298275357")
+   *           .setObjectAccessControl(ObjectAccessControl.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ObjectAccessControl> future =
+   *       storageClient.patchDefaultObjectAccessControlCallable().futureCall(request);
+   *   // Do something.
+   *   ObjectAccessControl response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<PatchDefaultObjectAccessControlRequest, ObjectAccessControl>
       patchDefaultObjectAccessControlCallable() {
@@ -733,6 +1423,21 @@ public class StorageClient implements BackgroundResource {
   /**
    * Updates a default object ACL entry on the specified bucket. Equivalent to
    * PatchDefaultObjectAccessControl, but modifies all unspecified fields to their default values.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   UpdateDefaultObjectAccessControlRequest request =
+   *       UpdateDefaultObjectAccessControlRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setEntity("entity-1298275357")
+   *           .setObjectAccessControl(ObjectAccessControl.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ObjectAccessControl response = storageClient.updateDefaultObjectAccessControl(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -748,6 +1453,22 @@ public class StorageClient implements BackgroundResource {
    * PatchDefaultObjectAccessControl, but modifies all unspecified fields to their default values.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   UpdateDefaultObjectAccessControlRequest request =
+   *       UpdateDefaultObjectAccessControlRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setEntity("entity-1298275357")
+   *           .setObjectAccessControl(ObjectAccessControl.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ObjectAccessControl> future =
+   *       storageClient.updateDefaultObjectAccessControlCallable().futureCall(request);
+   *   // Do something.
+   *   ObjectAccessControl response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateDefaultObjectAccessControlRequest, ObjectAccessControl>
       updateDefaultObjectAccessControlCallable() {
@@ -758,6 +1479,20 @@ public class StorageClient implements BackgroundResource {
   /**
    * Permanently deletes a notification subscription. Note: Older, "Object Change Notification" push
    * subscriptions should be deleted using StopChannel instead.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   DeleteNotificationRequest request =
+   *       DeleteNotificationRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setNotification("notification595233003")
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   storageClient.deleteNotification(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -772,6 +1507,20 @@ public class StorageClient implements BackgroundResource {
    * subscriptions should be deleted using StopChannel instead.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   DeleteNotificationRequest request =
+   *       DeleteNotificationRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setNotification("notification595233003")
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Empty> future = storageClient.deleteNotificationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteNotificationRequest, Empty> deleteNotificationCallable() {
     return stub.deleteNotificationCallable();
@@ -780,6 +1529,20 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * View a notification configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   GetNotificationRequest request =
+   *       GetNotificationRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setNotification("notification595233003")
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   Notification response = storageClient.getNotification(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -793,6 +1556,20 @@ public class StorageClient implements BackgroundResource {
    * View a notification configuration.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   GetNotificationRequest request =
+   *       GetNotificationRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setNotification("notification595233003")
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Notification> future = storageClient.getNotificationCallable().futureCall(request);
+   *   // Do something.
+   *   Notification response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetNotificationRequest, Notification> getNotificationCallable() {
     return stub.getNotificationCallable();
@@ -803,6 +1580,20 @@ public class StorageClient implements BackgroundResource {
    * Creates a notification subscription for a given bucket. These notifications, when triggered,
    * publish messages to the specified Cloud Pub/Sub topics. See
    * https://cloud.google.com/storage/docs/pubsub-notifications.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   InsertNotificationRequest request =
+   *       InsertNotificationRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setNotification(Notification.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   Notification response = storageClient.insertNotification(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -818,6 +1609,21 @@ public class StorageClient implements BackgroundResource {
    * https://cloud.google.com/storage/docs/pubsub-notifications.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   InsertNotificationRequest request =
+   *       InsertNotificationRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setNotification(Notification.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Notification> future =
+   *       storageClient.insertNotificationCallable().futureCall(request);
+   *   // Do something.
+   *   Notification response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<InsertNotificationRequest, Notification> insertNotificationCallable() {
     return stub.insertNotificationCallable();
@@ -826,6 +1632,19 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of notification subscriptions for a given bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   ListNotificationsRequest request =
+   *       ListNotificationsRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ListNotificationsResponse response = storageClient.listNotifications(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -839,6 +1658,20 @@ public class StorageClient implements BackgroundResource {
    * Retrieves a list of notification subscriptions for a given bucket.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   ListNotificationsRequest request =
+   *       ListNotificationsRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ListNotificationsResponse> future =
+   *       storageClient.listNotificationsCallable().futureCall(request);
+   *   // Do something.
+   *   ListNotificationsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListNotificationsRequest, ListNotificationsResponse>
       listNotificationsCallable() {
@@ -848,6 +1681,22 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Permanently deletes the ACL entry for the specified entity on the specified object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   DeleteObjectAccessControlRequest request =
+   *       DeleteObjectAccessControlRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setEntity("entity-1298275357")
+   *           .setObject("object-1023368385")
+   *           .setGeneration(305703192)
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   storageClient.deleteObjectAccessControl(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -861,6 +1710,23 @@ public class StorageClient implements BackgroundResource {
    * Permanently deletes the ACL entry for the specified entity on the specified object.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   DeleteObjectAccessControlRequest request =
+   *       DeleteObjectAccessControlRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setEntity("entity-1298275357")
+   *           .setObject("object-1023368385")
+   *           .setGeneration(305703192)
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       storageClient.deleteObjectAccessControlCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteObjectAccessControlRequest, Empty>
       deleteObjectAccessControlCallable() {
@@ -870,6 +1736,22 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the ACL entry for the specified entity on the specified object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   GetObjectAccessControlRequest request =
+   *       GetObjectAccessControlRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setEntity("entity-1298275357")
+   *           .setObject("object-1023368385")
+   *           .setGeneration(305703192)
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ObjectAccessControl response = storageClient.getObjectAccessControl(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -883,6 +1765,23 @@ public class StorageClient implements BackgroundResource {
    * Returns the ACL entry for the specified entity on the specified object.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   GetObjectAccessControlRequest request =
+   *       GetObjectAccessControlRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setEntity("entity-1298275357")
+   *           .setObject("object-1023368385")
+   *           .setGeneration(305703192)
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ObjectAccessControl> future =
+   *       storageClient.getObjectAccessControlCallable().futureCall(request);
+   *   // Do something.
+   *   ObjectAccessControl response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetObjectAccessControlRequest, ObjectAccessControl>
       getObjectAccessControlCallable() {
@@ -892,6 +1791,22 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new ACL entry on the specified object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   InsertObjectAccessControlRequest request =
+   *       InsertObjectAccessControlRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setObject("object-1023368385")
+   *           .setGeneration(305703192)
+   *           .setObjectAccessControl(ObjectAccessControl.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ObjectAccessControl response = storageClient.insertObjectAccessControl(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -906,6 +1821,23 @@ public class StorageClient implements BackgroundResource {
    * Creates a new ACL entry on the specified object.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   InsertObjectAccessControlRequest request =
+   *       InsertObjectAccessControlRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setObject("object-1023368385")
+   *           .setGeneration(305703192)
+   *           .setObjectAccessControl(ObjectAccessControl.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ObjectAccessControl> future =
+   *       storageClient.insertObjectAccessControlCallable().futureCall(request);
+   *   // Do something.
+   *   ObjectAccessControl response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<InsertObjectAccessControlRequest, ObjectAccessControl>
       insertObjectAccessControlCallable() {
@@ -915,6 +1847,21 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves ACL entries on the specified object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   ListObjectAccessControlsRequest request =
+   *       ListObjectAccessControlsRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setObject("object-1023368385")
+   *           .setGeneration(305703192)
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ListObjectAccessControlsResponse response = storageClient.listObjectAccessControls(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -929,6 +1876,22 @@ public class StorageClient implements BackgroundResource {
    * Retrieves ACL entries on the specified object.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   ListObjectAccessControlsRequest request =
+   *       ListObjectAccessControlsRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setObject("object-1023368385")
+   *           .setGeneration(305703192)
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ListObjectAccessControlsResponse> future =
+   *       storageClient.listObjectAccessControlsCallable().futureCall(request);
+   *   // Do something.
+   *   ListObjectAccessControlsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListObjectAccessControlsRequest, ListObjectAccessControlsResponse>
       listObjectAccessControlsCallable() {
@@ -939,6 +1902,24 @@ public class StorageClient implements BackgroundResource {
   /**
    * Patches an ACL entry on the specified object. Patch is similar to update, but only applies or
    * appends the specified fields in the object_access_control object. Other fields are unaffected.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   PatchObjectAccessControlRequest request =
+   *       PatchObjectAccessControlRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setEntity("entity-1298275357")
+   *           .setObject("object-1023368385")
+   *           .setGeneration(305703192)
+   *           .setObjectAccessControl(ObjectAccessControl.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ObjectAccessControl response = storageClient.patchObjectAccessControl(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -954,6 +1935,25 @@ public class StorageClient implements BackgroundResource {
    * appends the specified fields in the object_access_control object. Other fields are unaffected.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   PatchObjectAccessControlRequest request =
+   *       PatchObjectAccessControlRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setEntity("entity-1298275357")
+   *           .setObject("object-1023368385")
+   *           .setGeneration(305703192)
+   *           .setObjectAccessControl(ObjectAccessControl.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ObjectAccessControl> future =
+   *       storageClient.patchObjectAccessControlCallable().futureCall(request);
+   *   // Do something.
+   *   ObjectAccessControl response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<PatchObjectAccessControlRequest, ObjectAccessControl>
       patchObjectAccessControlCallable() {
@@ -963,6 +1963,24 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an ACL entry on the specified object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   UpdateObjectAccessControlRequest request =
+   *       UpdateObjectAccessControlRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setEntity("entity-1298275357")
+   *           .setObject("object-1023368385")
+   *           .setGeneration(305703192)
+   *           .setObjectAccessControl(ObjectAccessControl.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ObjectAccessControl response = storageClient.updateObjectAccessControl(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -977,6 +1995,25 @@ public class StorageClient implements BackgroundResource {
    * Updates an ACL entry on the specified object.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   UpdateObjectAccessControlRequest request =
+   *       UpdateObjectAccessControlRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setEntity("entity-1298275357")
+   *           .setObject("object-1023368385")
+   *           .setGeneration(305703192)
+   *           .setObjectAccessControl(ObjectAccessControl.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ObjectAccessControl> future =
+   *       storageClient.updateObjectAccessControlCallable().futureCall(request);
+   *   // Do something.
+   *   ObjectAccessControl response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateObjectAccessControlRequest, ObjectAccessControl>
       updateObjectAccessControlCallable() {
@@ -986,6 +2023,26 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Concatenates a list of existing objects into a new object in the same bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   ComposeObjectRequest request =
+   *       ComposeObjectRequest.newBuilder()
+   *           .setDestinationBucket("destinationBucket-2116438120")
+   *           .setDestinationObject("destinationObject-1761603347")
+   *           .setDestination(Object.newBuilder().build())
+   *           .addAllSourceObjects(new ArrayList<ComposeObjectRequest.SourceObjects>())
+   *           .setIfGenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationMatch(Int64Value.newBuilder().build())
+   *           .setKmsKeyName("kmsKeyName412586233")
+   *           .setCommonObjectRequestParams(CommonObjectRequestParams.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   Object response = storageClient.composeObject(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -999,6 +2056,26 @@ public class StorageClient implements BackgroundResource {
    * Concatenates a list of existing objects into a new object in the same bucket.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   ComposeObjectRequest request =
+   *       ComposeObjectRequest.newBuilder()
+   *           .setDestinationBucket("destinationBucket-2116438120")
+   *           .setDestinationObject("destinationObject-1761603347")
+   *           .setDestination(Object.newBuilder().build())
+   *           .addAllSourceObjects(new ArrayList<ComposeObjectRequest.SourceObjects>())
+   *           .setIfGenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationMatch(Int64Value.newBuilder().build())
+   *           .setKmsKeyName("kmsKeyName412586233")
+   *           .setCommonObjectRequestParams(CommonObjectRequestParams.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Object> future = storageClient.composeObjectCallable().futureCall(request);
+   *   // Do something.
+   *   Object response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ComposeObjectRequest, Object> composeObjectCallable() {
     return stub.composeObjectCallable();
@@ -1007,6 +2084,34 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Copies a source object to a destination object. Optionally overrides metadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   CopyObjectRequest request =
+   *       CopyObjectRequest.newBuilder()
+   *           .setDestinationBucket("destinationBucket-2116438120")
+   *           .setDestinationObject("destinationObject-1761603347")
+   *           .setIfGenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfGenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setIfSourceGenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfSourceGenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setIfSourceMetagenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfSourceMetagenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setSourceBucket("sourceBucket841604581")
+   *           .setSourceObject("sourceObject1196439354")
+   *           .setSourceGeneration(1232209852)
+   *           .setDestination(Object.newBuilder().build())
+   *           .setDestinationKmsKeyName("destinationKmsKeyName-559122521")
+   *           .setCommonObjectRequestParams(CommonObjectRequestParams.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   Object response = storageClient.copyObject(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1020,6 +2125,34 @@ public class StorageClient implements BackgroundResource {
    * Copies a source object to a destination object. Optionally overrides metadata.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   CopyObjectRequest request =
+   *       CopyObjectRequest.newBuilder()
+   *           .setDestinationBucket("destinationBucket-2116438120")
+   *           .setDestinationObject("destinationObject-1761603347")
+   *           .setIfGenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfGenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setIfSourceGenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfSourceGenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setIfSourceMetagenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfSourceMetagenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setSourceBucket("sourceBucket841604581")
+   *           .setSourceObject("sourceObject1196439354")
+   *           .setSourceGeneration(1232209852)
+   *           .setDestination(Object.newBuilder().build())
+   *           .setDestinationKmsKeyName("destinationKmsKeyName-559122521")
+   *           .setCommonObjectRequestParams(CommonObjectRequestParams.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Object> future = storageClient.copyObjectCallable().futureCall(request);
+   *   // Do something.
+   *   Object response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CopyObjectRequest, Object> copyObjectCallable() {
     return stub.copyObjectCallable();
@@ -1029,6 +2162,27 @@ public class StorageClient implements BackgroundResource {
   /**
    * Deletes an object and its metadata. Deletions are permanent if versioning is not enabled for
    * the bucket, or if the `generation` parameter is used.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   DeleteObjectRequest request =
+   *       DeleteObjectRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setObject("object-1023368385")
+   *           .setUploadId("uploadId1563990780")
+   *           .setGeneration(305703192)
+   *           .setIfGenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfGenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setCommonObjectRequestParams(CommonObjectRequestParams.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   storageClient.deleteObject(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1043,6 +2197,27 @@ public class StorageClient implements BackgroundResource {
    * the bucket, or if the `generation` parameter is used.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   DeleteObjectRequest request =
+   *       DeleteObjectRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setObject("object-1023368385")
+   *           .setUploadId("uploadId1563990780")
+   *           .setGeneration(305703192)
+   *           .setIfGenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfGenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setCommonObjectRequestParams(CommonObjectRequestParams.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Empty> future = storageClient.deleteObjectCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteObjectRequest, Empty> deleteObjectCallable() {
     return stub.deleteObjectCallable();
@@ -1051,6 +2226,26 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an object's metadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   GetObjectRequest request =
+   *       GetObjectRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setObject("object-1023368385")
+   *           .setGeneration(305703192)
+   *           .setIfGenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfGenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setCommonObjectRequestParams(CommonObjectRequestParams.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   Object response = storageClient.getObject(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1064,6 +2259,26 @@ public class StorageClient implements BackgroundResource {
    * Retrieves an object's metadata.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   GetObjectRequest request =
+   *       GetObjectRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setObject("object-1023368385")
+   *           .setGeneration(305703192)
+   *           .setIfGenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfGenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setCommonObjectRequestParams(CommonObjectRequestParams.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Object> future = storageClient.getObjectCallable().futureCall(request);
+   *   // Do something.
+   *   Object response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetObjectRequest, Object> getObjectCallable() {
     return stub.getObjectCallable();
@@ -1074,6 +2289,30 @@ public class StorageClient implements BackgroundResource {
    * Reads an object's data.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   GetObjectMediaRequest request =
+   *       GetObjectMediaRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setObject("object-1023368385")
+   *           .setGeneration(305703192)
+   *           .setReadOffset(-715377828)
+   *           .setReadLimit(-164298798)
+   *           .setIfGenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfGenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setCommonObjectRequestParams(CommonObjectRequestParams.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ServerStream<GetObjectMediaResponse> stream =
+   *       storageClient.getObjectMediaCallable().call(request);
+   *   for (GetObjectMediaResponse response : stream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
    */
   public final ServerStreamingCallable<GetObjectMediaRequest, GetObjectMediaResponse>
       getObjectMediaCallable() {
@@ -1104,6 +2343,39 @@ public class StorageClient implements BackgroundResource {
    * the service views the object as complete.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   ApiStreamObserver<InsertObjectRequest> responseObserver =
+   *       new ApiStreamObserver<InsertObjectRequest>() {
+   *         {@literal @}Override
+   *         public void onNext(Object response) {
+   *           // Do something when a response is received.
+   *         }
+   *
+   *         {@literal @}Override
+   *         public void onError(Throwable t) {
+   *           // Add error-handling
+   *         }
+   *
+   *         {@literal @}Override
+   *         public void onCompleted() {
+   *           // Do something when complete.
+   *         }
+   *       };
+   *   ApiStreamObserver<InsertObjectRequest> requestObserver =
+   *       storageClient.insertObject().clientStreamingCall(responseObserver);
+   *   InsertObjectRequest request =
+   *       InsertObjectRequest.newBuilder()
+   *           .setWriteOffset(-1559543565)
+   *           .setObjectChecksums(ObjectChecksums.newBuilder().build())
+   *           .setFinishWrite(true)
+   *           .setCommonObjectRequestParams(CommonObjectRequestParams.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   requestObserver.onNext(request);
+   * }
+   * }</pre>
    */
   public final ClientStreamingCallable<InsertObjectRequest, Object> insertObjectCallable() {
     return stub.insertObjectCallable();
@@ -1112,6 +2384,25 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a list of objects matching the criteria.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   ListObjectsRequest request =
+   *       ListObjectsRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setDelimiter("delimiter-250518009")
+   *           .setIncludeTrailingDelimiter(true)
+   *           .setMaxResults(1128457243)
+   *           .setPageToken("pageToken873572522")
+   *           .setPrefix("prefix-980110702")
+   *           .setVersions(true)
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ListObjectsResponse response = storageClient.listObjects(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1125,6 +2416,26 @@ public class StorageClient implements BackgroundResource {
    * Retrieves a list of objects matching the criteria.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   ListObjectsRequest request =
+   *       ListObjectsRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setDelimiter("delimiter-250518009")
+   *           .setIncludeTrailingDelimiter(true)
+   *           .setMaxResults(1128457243)
+   *           .setPageToken("pageToken873572522")
+   *           .setPrefix("prefix-980110702")
+   *           .setVersions(true)
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ListObjectsResponse> future =
+   *       storageClient.listObjectsCallable().futureCall(request);
+   *   // Do something.
+   *   ListObjectsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListObjectsRequest, ListObjectsResponse> listObjectsCallable() {
     return stub.listObjectsCallable();
@@ -1133,6 +2444,39 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Rewrites a source object to a destination object. Optionally overrides metadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   RewriteObjectRequest request =
+   *       RewriteObjectRequest.newBuilder()
+   *           .setDestinationBucket("destinationBucket-2116438120")
+   *           .setDestinationObject("destinationObject-1761603347")
+   *           .setDestinationKmsKeyName("destinationKmsKeyName-559122521")
+   *           .setIfGenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfGenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setIfSourceGenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfSourceGenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setIfSourceMetagenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfSourceMetagenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setMaxBytesRewrittenPerCall(1178170730)
+   *           .setRewriteToken("rewriteToken80654285")
+   *           .setSourceBucket("sourceBucket841604581")
+   *           .setSourceObject("sourceObject1196439354")
+   *           .setSourceGeneration(1232209852)
+   *           .setObject(Object.newBuilder().build())
+   *           .setCopySourceEncryptionAlgorithm("copySourceEncryptionAlgorithm-1524952548")
+   *           .setCopySourceEncryptionKey("copySourceEncryptionKey1199243724")
+   *           .setCopySourceEncryptionKeySha256("copySourceEncryptionKeySha256544611091")
+   *           .setCommonObjectRequestParams(CommonObjectRequestParams.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   RewriteResponse response = storageClient.rewriteObject(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1146,6 +2490,39 @@ public class StorageClient implements BackgroundResource {
    * Rewrites a source object to a destination object. Optionally overrides metadata.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   RewriteObjectRequest request =
+   *       RewriteObjectRequest.newBuilder()
+   *           .setDestinationBucket("destinationBucket-2116438120")
+   *           .setDestinationObject("destinationObject-1761603347")
+   *           .setDestinationKmsKeyName("destinationKmsKeyName-559122521")
+   *           .setIfGenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfGenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setIfSourceGenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfSourceGenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setIfSourceMetagenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfSourceMetagenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setMaxBytesRewrittenPerCall(1178170730)
+   *           .setRewriteToken("rewriteToken80654285")
+   *           .setSourceBucket("sourceBucket841604581")
+   *           .setSourceObject("sourceObject1196439354")
+   *           .setSourceGeneration(1232209852)
+   *           .setObject(Object.newBuilder().build())
+   *           .setCopySourceEncryptionAlgorithm("copySourceEncryptionAlgorithm-1524952548")
+   *           .setCopySourceEncryptionKey("copySourceEncryptionKey1199243724")
+   *           .setCopySourceEncryptionKeySha256("copySourceEncryptionKeySha256544611091")
+   *           .setCommonObjectRequestParams(CommonObjectRequestParams.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<RewriteResponse> future = storageClient.rewriteObjectCallable().futureCall(request);
+   *   // Do something.
+   *   RewriteResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<RewriteObjectRequest, RewriteResponse> rewriteObjectCallable() {
     return stub.rewriteObjectCallable();
@@ -1155,6 +2532,20 @@ public class StorageClient implements BackgroundResource {
   /**
    * Starts a resumable write. How long the write operation remains valid, and what happens when the
    * write operation becomes invalid, are service-dependent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   StartResumableWriteRequest request =
+   *       StartResumableWriteRequest.newBuilder()
+   *           .setInsertObjectSpec(InsertObjectSpec.newBuilder().build())
+   *           .setCommonObjectRequestParams(CommonObjectRequestParams.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   StartResumableWriteResponse response = storageClient.startResumableWrite(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1169,6 +2560,21 @@ public class StorageClient implements BackgroundResource {
    * write operation becomes invalid, are service-dependent.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   StartResumableWriteRequest request =
+   *       StartResumableWriteRequest.newBuilder()
+   *           .setInsertObjectSpec(InsertObjectSpec.newBuilder().build())
+   *           .setCommonObjectRequestParams(CommonObjectRequestParams.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<StartResumableWriteResponse> future =
+   *       storageClient.startResumableWriteCallable().futureCall(request);
+   *   // Do something.
+   *   StartResumableWriteResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<StartResumableWriteRequest, StartResumableWriteResponse>
       startResumableWriteCallable() {
@@ -1188,6 +2594,20 @@ public class StorageClient implements BackgroundResource {
    * and needs to know which data can be safely evicted. For any sequence of `QueryWriteStatus()`
    * calls for a given object name, the sequence of returned `committed_size` values will be
    * non-decreasing.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   QueryWriteStatusRequest request =
+   *       QueryWriteStatusRequest.newBuilder()
+   *           .setUploadId("uploadId1563990780")
+   *           .setCommonObjectRequestParams(CommonObjectRequestParams.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   QueryWriteStatusResponse response = storageClient.queryWriteStatus(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1211,6 +2631,21 @@ public class StorageClient implements BackgroundResource {
    * non-decreasing.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   QueryWriteStatusRequest request =
+   *       QueryWriteStatusRequest.newBuilder()
+   *           .setUploadId("uploadId1563990780")
+   *           .setCommonObjectRequestParams(CommonObjectRequestParams.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<QueryWriteStatusResponse> future =
+   *       storageClient.queryWriteStatusCallable().futureCall(request);
+   *   // Do something.
+   *   QueryWriteStatusResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<QueryWriteStatusRequest, QueryWriteStatusResponse>
       queryWriteStatusCallable() {
@@ -1220,6 +2655,28 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an object's metadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   PatchObjectRequest request =
+   *       PatchObjectRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setObject("object-1023368385")
+   *           .setGeneration(305703192)
+   *           .setIfGenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfGenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setMetadata(Object.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setCommonObjectRequestParams(CommonObjectRequestParams.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   Object response = storageClient.patchObject(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1233,6 +2690,28 @@ public class StorageClient implements BackgroundResource {
    * Updates an object's metadata.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   PatchObjectRequest request =
+   *       PatchObjectRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setObject("object-1023368385")
+   *           .setGeneration(305703192)
+   *           .setIfGenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfGenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setMetadata(Object.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setCommonObjectRequestParams(CommonObjectRequestParams.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Object> future = storageClient.patchObjectCallable().futureCall(request);
+   *   // Do something.
+   *   Object response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<PatchObjectRequest, Object> patchObjectCallable() {
     return stub.patchObjectCallable();
@@ -1242,6 +2721,27 @@ public class StorageClient implements BackgroundResource {
   /**
    * Updates an object's metadata. Equivalent to PatchObject, but always replaces all mutatable
    * fields of the bucket with new values, reverting all unspecified fields to their default values.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   UpdateObjectRequest request =
+   *       UpdateObjectRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setObject("object-1023368385")
+   *           .setGeneration(305703192)
+   *           .setIfGenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfGenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setMetadata(Object.newBuilder().build())
+   *           .setCommonObjectRequestParams(CommonObjectRequestParams.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   Object response = storageClient.updateObject(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1256,6 +2756,27 @@ public class StorageClient implements BackgroundResource {
    * fields of the bucket with new values, reverting all unspecified fields to their default values.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   UpdateObjectRequest request =
+   *       UpdateObjectRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setObject("object-1023368385")
+   *           .setGeneration(305703192)
+   *           .setIfGenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfGenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationMatch(Int64Value.newBuilder().build())
+   *           .setIfMetagenerationNotMatch(Int64Value.newBuilder().build())
+   *           .setMetadata(Object.newBuilder().build())
+   *           .setCommonObjectRequestParams(CommonObjectRequestParams.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Object> future = storageClient.updateObjectCallable().futureCall(request);
+   *   // Do something.
+   *   Object response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateObjectRequest, Object> updateObjectCallable() {
     return stub.updateObjectCallable();
@@ -1264,6 +2785,19 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the IAM policy for the specified object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setIamRequest(GetIamPolicyRequest.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   Policy response = storageClient.getObjectIamPolicy(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1277,6 +2811,19 @@ public class StorageClient implements BackgroundResource {
    * Gets the IAM policy for the specified object.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setIamRequest(GetIamPolicyRequest.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = storageClient.getObjectIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetIamPolicyRequest, Policy> getObjectIamPolicyCallable() {
     return stub.getObjectIamPolicyCallable();
@@ -1285,6 +2832,19 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an IAM policy for the specified object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setIamRequest(SetIamPolicyRequest.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   Policy response = storageClient.setObjectIamPolicy(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1298,6 +2858,19 @@ public class StorageClient implements BackgroundResource {
    * Updates an IAM policy for the specified object.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setIamRequest(SetIamPolicyRequest.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = storageClient.setObjectIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SetIamPolicyRequest, Policy> setObjectIamPolicyCallable() {
     return stub.setObjectIamPolicyCallable();
@@ -1306,6 +2879,19 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Tests a set of permissions on the given object to see which, if any, are held by the caller.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setIamRequest(TestIamPermissionsRequest.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   TestIamPermissionsResponse response = storageClient.testObjectIamPermissions(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1320,6 +2906,20 @@ public class StorageClient implements BackgroundResource {
    * Tests a set of permissions on the given object to see which, if any, are held by the caller.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setIamRequest(TestIamPermissionsRequest.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<TestIamPermissionsResponse> future =
+   *       storageClient.testObjectIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testObjectIamPermissionsCallable() {
@@ -1329,6 +2929,26 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Watch for changes on all objects in a bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   WatchAllObjectsRequest request =
+   *       WatchAllObjectsRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setVersions(true)
+   *           .setDelimiter("delimiter-250518009")
+   *           .setMaxResults(1128457243)
+   *           .setPrefix("prefix-980110702")
+   *           .setIncludeTrailingDelimiter(true)
+   *           .setPageToken("pageToken873572522")
+   *           .setChannel(Channel.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   Channel response = storageClient.watchAllObjects(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1342,6 +2962,26 @@ public class StorageClient implements BackgroundResource {
    * Watch for changes on all objects in a bucket.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   WatchAllObjectsRequest request =
+   *       WatchAllObjectsRequest.newBuilder()
+   *           .setBucket("bucket-1378203158")
+   *           .setVersions(true)
+   *           .setDelimiter("delimiter-250518009")
+   *           .setMaxResults(1128457243)
+   *           .setPrefix("prefix-980110702")
+   *           .setIncludeTrailingDelimiter(true)
+   *           .setPageToken("pageToken873572522")
+   *           .setChannel(Channel.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Channel> future = storageClient.watchAllObjectsCallable().futureCall(request);
+   *   // Do something.
+   *   Channel response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<WatchAllObjectsRequest, Channel> watchAllObjectsCallable() {
     return stub.watchAllObjectsCallable();
@@ -1350,6 +2990,19 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the name of a project's Google Cloud Storage service account.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   GetProjectServiceAccountRequest request =
+   *       GetProjectServiceAccountRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ServiceAccount response = storageClient.getServiceAccount(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1363,6 +3016,20 @@ public class StorageClient implements BackgroundResource {
    * Retrieves the name of a project's Google Cloud Storage service account.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   GetProjectServiceAccountRequest request =
+   *       GetProjectServiceAccountRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ServiceAccount> future =
+   *       storageClient.getServiceAccountCallable().futureCall(request);
+   *   // Do something.
+   *   ServiceAccount response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetProjectServiceAccountRequest, ServiceAccount>
       getServiceAccountCallable() {
@@ -1372,6 +3039,20 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new HMAC key for the given service account.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   CreateHmacKeyRequest request =
+   *       CreateHmacKeyRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setServiceAccountEmail("serviceAccountEmail1825953988")
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   CreateHmacKeyResponse response = storageClient.createHmacKey(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1385,6 +3066,21 @@ public class StorageClient implements BackgroundResource {
    * Creates a new HMAC key for the given service account.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   CreateHmacKeyRequest request =
+   *       CreateHmacKeyRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setServiceAccountEmail("serviceAccountEmail1825953988")
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<CreateHmacKeyResponse> future =
+   *       storageClient.createHmacKeyCallable().futureCall(request);
+   *   // Do something.
+   *   CreateHmacKeyResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateHmacKeyRequest, CreateHmacKeyResponse> createHmacKeyCallable() {
     return stub.createHmacKeyCallable();
@@ -1393,6 +3089,20 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a given HMAC key. Key must be in an INACTIVE state.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   DeleteHmacKeyRequest request =
+   *       DeleteHmacKeyRequest.newBuilder()
+   *           .setAccessId("accessId-2146437729")
+   *           .setProjectId("projectId-894832108")
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   storageClient.deleteHmacKey(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1406,6 +3116,20 @@ public class StorageClient implements BackgroundResource {
    * Deletes a given HMAC key. Key must be in an INACTIVE state.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   DeleteHmacKeyRequest request =
+   *       DeleteHmacKeyRequest.newBuilder()
+   *           .setAccessId("accessId-2146437729")
+   *           .setProjectId("projectId-894832108")
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Empty> future = storageClient.deleteHmacKeyCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteHmacKeyRequest, Empty> deleteHmacKeyCallable() {
     return stub.deleteHmacKeyCallable();
@@ -1414,6 +3138,20 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets an existing HMAC key metadata for the given id.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   GetHmacKeyRequest request =
+   *       GetHmacKeyRequest.newBuilder()
+   *           .setAccessId("accessId-2146437729")
+   *           .setProjectId("projectId-894832108")
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   HmacKeyMetadata response = storageClient.getHmacKey(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1427,6 +3165,20 @@ public class StorageClient implements BackgroundResource {
    * Gets an existing HMAC key metadata for the given id.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   GetHmacKeyRequest request =
+   *       GetHmacKeyRequest.newBuilder()
+   *           .setAccessId("accessId-2146437729")
+   *           .setProjectId("projectId-894832108")
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<HmacKeyMetadata> future = storageClient.getHmacKeyCallable().futureCall(request);
+   *   // Do something.
+   *   HmacKeyMetadata response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetHmacKeyRequest, HmacKeyMetadata> getHmacKeyCallable() {
     return stub.getHmacKeyCallable();
@@ -1435,6 +3187,23 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists HMAC keys under a given project with the additional filters provided.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   ListHmacKeysRequest request =
+   *       ListHmacKeysRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setServiceAccountEmail("serviceAccountEmail1825953988")
+   *           .setShowDeletedKeys(true)
+   *           .setMaxResults(1128457243)
+   *           .setPageToken("pageToken873572522")
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ListHmacKeysResponse response = storageClient.listHmacKeys(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1448,6 +3217,24 @@ public class StorageClient implements BackgroundResource {
    * Lists HMAC keys under a given project with the additional filters provided.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   ListHmacKeysRequest request =
+   *       ListHmacKeysRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setServiceAccountEmail("serviceAccountEmail1825953988")
+   *           .setShowDeletedKeys(true)
+   *           .setMaxResults(1128457243)
+   *           .setPageToken("pageToken873572522")
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ListHmacKeysResponse> future =
+   *       storageClient.listHmacKeysCallable().futureCall(request);
+   *   // Do something.
+   *   ListHmacKeysResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListHmacKeysRequest, ListHmacKeysResponse> listHmacKeysCallable() {
     return stub.listHmacKeysCallable();
@@ -1456,6 +3243,21 @@ public class StorageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a given HMAC key state between ACTIVE and INACTIVE.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   UpdateHmacKeyRequest request =
+   *       UpdateHmacKeyRequest.newBuilder()
+   *           .setAccessId("accessId-2146437729")
+   *           .setProjectId("projectId-894832108")
+   *           .setMetadata(HmacKeyMetadata.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   HmacKeyMetadata response = storageClient.updateHmacKey(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1469,6 +3271,21 @@ public class StorageClient implements BackgroundResource {
    * Updates a given HMAC key state between ACTIVE and INACTIVE.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageClient storageClient = StorageClient.create()) {
+   *   UpdateHmacKeyRequest request =
+   *       UpdateHmacKeyRequest.newBuilder()
+   *           .setAccessId("accessId-2146437729")
+   *           .setProjectId("projectId-894832108")
+   *           .setMetadata(HmacKeyMetadata.newBuilder().build())
+   *           .setCommonRequestParams(CommonRequestParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<HmacKeyMetadata> future = storageClient.updateHmacKeyCallable().futureCall(request);
+   *   // Do something.
+   *   HmacKeyMetadata response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateHmacKeyRequest, HmacKeyMetadata> updateHmacKeyCallable() {
     return stub.updateHmacKeyCallable();

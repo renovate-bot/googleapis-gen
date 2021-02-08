@@ -34,6 +34,15 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (HotelPerformanceViewServiceClient hotelPerformanceViewServiceClient =
+ *     HotelPerformanceViewServiceClient.create()) {
+ *   HotelPerformanceViewName resourceName = HotelPerformanceViewName.of("[CUSTOMER_ID]");
+ *   HotelPerformanceView response =
+ *       hotelPerformanceViewServiceClient.getHotelPerformanceView(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the HotelPerformanceViewServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -143,6 +152,17 @@ public class HotelPerformanceViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested Hotel Performance View in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HotelPerformanceViewServiceClient hotelPerformanceViewServiceClient =
+   *     HotelPerformanceViewServiceClient.create()) {
+   *   HotelPerformanceViewName resourceName = HotelPerformanceViewName.of("[CUSTOMER_ID]");
+   *   HotelPerformanceView response =
+   *       hotelPerformanceViewServiceClient.getHotelPerformanceView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. Resource name of the Hotel Performance View to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -158,6 +178,17 @@ public class HotelPerformanceViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested Hotel Performance View in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HotelPerformanceViewServiceClient hotelPerformanceViewServiceClient =
+   *     HotelPerformanceViewServiceClient.create()) {
+   *   String resourceName = HotelPerformanceViewName.of("[CUSTOMER_ID]").toString();
+   *   HotelPerformanceView response =
+   *       hotelPerformanceViewServiceClient.getHotelPerformanceView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. Resource name of the Hotel Performance View to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -170,6 +201,20 @@ public class HotelPerformanceViewServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the requested Hotel Performance View in full detail.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HotelPerformanceViewServiceClient hotelPerformanceViewServiceClient =
+   *     HotelPerformanceViewServiceClient.create()) {
+   *   GetHotelPerformanceViewRequest request =
+   *       GetHotelPerformanceViewRequest.newBuilder()
+   *           .setResourceName(HotelPerformanceViewName.of("[CUSTOMER_ID]").toString())
+   *           .build();
+   *   HotelPerformanceView response =
+   *       hotelPerformanceViewServiceClient.getHotelPerformanceView(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -184,6 +229,20 @@ public class HotelPerformanceViewServiceClient implements BackgroundResource {
    * Returns the requested Hotel Performance View in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HotelPerformanceViewServiceClient hotelPerformanceViewServiceClient =
+   *     HotelPerformanceViewServiceClient.create()) {
+   *   GetHotelPerformanceViewRequest request =
+   *       GetHotelPerformanceViewRequest.newBuilder()
+   *           .setResourceName(HotelPerformanceViewName.of("[CUSTOMER_ID]").toString())
+   *           .build();
+   *   ApiFuture<HotelPerformanceView> future =
+   *       hotelPerformanceViewServiceClient.getHotelPerformanceViewCallable().futureCall(request);
+   *   // Do something.
+   *   HotelPerformanceView response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetHotelPerformanceViewRequest, HotelPerformanceView>
       getHotelPerformanceViewCallable() {

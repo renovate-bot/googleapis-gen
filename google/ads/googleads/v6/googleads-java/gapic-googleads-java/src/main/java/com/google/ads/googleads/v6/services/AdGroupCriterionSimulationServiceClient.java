@@ -34,6 +34,23 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (AdGroupCriterionSimulationServiceClient adGroupCriterionSimulationServiceClient =
+ *     AdGroupCriterionSimulationServiceClient.create()) {
+ *   AdGroupCriterionSimulationName resourceName =
+ *       AdGroupCriterionSimulationName.of(
+ *           "[CUSTOMER_ID]",
+ *           "[AD_GROUP_ID]",
+ *           "[CRITERION_ID]",
+ *           "[TYPE]",
+ *           "[MODIFICATION_METHOD]",
+ *           "[START_DATE]",
+ *           "[END_DATE]");
+ *   AdGroupCriterionSimulation response =
+ *       adGroupCriterionSimulationServiceClient.getAdGroupCriterionSimulation(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the AdGroupCriterionSimulationServiceClient object to
  * clean up resources such as threads. In the example above, try-with-resources is used, which
  * automatically calls close().
@@ -145,6 +162,25 @@ public class AdGroupCriterionSimulationServiceClient implements BackgroundResour
   /**
    * Returns the requested ad group criterion simulation in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdGroupCriterionSimulationServiceClient adGroupCriterionSimulationServiceClient =
+   *     AdGroupCriterionSimulationServiceClient.create()) {
+   *   AdGroupCriterionSimulationName resourceName =
+   *       AdGroupCriterionSimulationName.of(
+   *           "[CUSTOMER_ID]",
+   *           "[AD_GROUP_ID]",
+   *           "[CRITERION_ID]",
+   *           "[TYPE]",
+   *           "[MODIFICATION_METHOD]",
+   *           "[START_DATE]",
+   *           "[END_DATE]");
+   *   AdGroupCriterionSimulation response =
+   *       adGroupCriterionSimulationServiceClient.getAdGroupCriterionSimulation(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the ad group criterion simulation to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -161,6 +197,26 @@ public class AdGroupCriterionSimulationServiceClient implements BackgroundResour
   /**
    * Returns the requested ad group criterion simulation in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdGroupCriterionSimulationServiceClient adGroupCriterionSimulationServiceClient =
+   *     AdGroupCriterionSimulationServiceClient.create()) {
+   *   String resourceName =
+   *       AdGroupCriterionSimulationName.of(
+   *               "[CUSTOMER_ID]",
+   *               "[AD_GROUP_ID]",
+   *               "[CRITERION_ID]",
+   *               "[TYPE]",
+   *               "[MODIFICATION_METHOD]",
+   *               "[START_DATE]",
+   *               "[END_DATE]")
+   *           .toString();
+   *   AdGroupCriterionSimulation response =
+   *       adGroupCriterionSimulationServiceClient.getAdGroupCriterionSimulation(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the ad group criterion simulation to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -173,6 +229,29 @@ public class AdGroupCriterionSimulationServiceClient implements BackgroundResour
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the requested ad group criterion simulation in full detail.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdGroupCriterionSimulationServiceClient adGroupCriterionSimulationServiceClient =
+   *     AdGroupCriterionSimulationServiceClient.create()) {
+   *   GetAdGroupCriterionSimulationRequest request =
+   *       GetAdGroupCriterionSimulationRequest.newBuilder()
+   *           .setResourceName(
+   *               AdGroupCriterionSimulationName.of(
+   *                       "[CUSTOMER_ID]",
+   *                       "[AD_GROUP_ID]",
+   *                       "[CRITERION_ID]",
+   *                       "[TYPE]",
+   *                       "[MODIFICATION_METHOD]",
+   *                       "[START_DATE]",
+   *                       "[END_DATE]")
+   *                   .toString())
+   *           .build();
+   *   AdGroupCriterionSimulation response =
+   *       adGroupCriterionSimulationServiceClient.getAdGroupCriterionSimulation(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -187,6 +266,31 @@ public class AdGroupCriterionSimulationServiceClient implements BackgroundResour
    * Returns the requested ad group criterion simulation in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdGroupCriterionSimulationServiceClient adGroupCriterionSimulationServiceClient =
+   *     AdGroupCriterionSimulationServiceClient.create()) {
+   *   GetAdGroupCriterionSimulationRequest request =
+   *       GetAdGroupCriterionSimulationRequest.newBuilder()
+   *           .setResourceName(
+   *               AdGroupCriterionSimulationName.of(
+   *                       "[CUSTOMER_ID]",
+   *                       "[AD_GROUP_ID]",
+   *                       "[CRITERION_ID]",
+   *                       "[TYPE]",
+   *                       "[MODIFICATION_METHOD]",
+   *                       "[START_DATE]",
+   *                       "[END_DATE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<AdGroupCriterionSimulation> future =
+   *       adGroupCriterionSimulationServiceClient
+   *           .getAdGroupCriterionSimulationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   AdGroupCriterionSimulation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetAdGroupCriterionSimulationRequest, AdGroupCriterionSimulation>
       getAdGroupCriterionSimulationCallable() {

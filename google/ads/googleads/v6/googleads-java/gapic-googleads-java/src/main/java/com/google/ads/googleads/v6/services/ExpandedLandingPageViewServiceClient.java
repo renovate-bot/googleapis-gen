@@ -34,6 +34,16 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (ExpandedLandingPageViewServiceClient expandedLandingPageViewServiceClient =
+ *     ExpandedLandingPageViewServiceClient.create()) {
+ *   ExpandedLandingPageViewName resourceName =
+ *       ExpandedLandingPageViewName.of("[CUSTOMER_ID]", "[EXPANDED_FINAL_URL_FINGERPRINT]");
+ *   ExpandedLandingPageView response =
+ *       expandedLandingPageViewServiceClient.getExpandedLandingPageView(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the ExpandedLandingPageViewServiceClient object to clean
  * up resources such as threads. In the example above, try-with-resources is used, which
  * automatically calls close().
@@ -145,6 +155,18 @@ public class ExpandedLandingPageViewServiceClient implements BackgroundResource 
   /**
    * Returns the requested expanded landing page view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExpandedLandingPageViewServiceClient expandedLandingPageViewServiceClient =
+   *     ExpandedLandingPageViewServiceClient.create()) {
+   *   ExpandedLandingPageViewName resourceName =
+   *       ExpandedLandingPageViewName.of("[CUSTOMER_ID]", "[EXPANDED_FINAL_URL_FINGERPRINT]");
+   *   ExpandedLandingPageView response =
+   *       expandedLandingPageViewServiceClient.getExpandedLandingPageView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the expanded landing page view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -161,6 +183,19 @@ public class ExpandedLandingPageViewServiceClient implements BackgroundResource 
   /**
    * Returns the requested expanded landing page view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExpandedLandingPageViewServiceClient expandedLandingPageViewServiceClient =
+   *     ExpandedLandingPageViewServiceClient.create()) {
+   *   String resourceName =
+   *       ExpandedLandingPageViewName.of("[CUSTOMER_ID]", "[EXPANDED_FINAL_URL_FINGERPRINT]")
+   *           .toString();
+   *   ExpandedLandingPageView response =
+   *       expandedLandingPageViewServiceClient.getExpandedLandingPageView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the expanded landing page view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -173,6 +208,23 @@ public class ExpandedLandingPageViewServiceClient implements BackgroundResource 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the requested expanded landing page view in full detail.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExpandedLandingPageViewServiceClient expandedLandingPageViewServiceClient =
+   *     ExpandedLandingPageViewServiceClient.create()) {
+   *   GetExpandedLandingPageViewRequest request =
+   *       GetExpandedLandingPageViewRequest.newBuilder()
+   *           .setResourceName(
+   *               ExpandedLandingPageViewName.of(
+   *                       "[CUSTOMER_ID]", "[EXPANDED_FINAL_URL_FINGERPRINT]")
+   *                   .toString())
+   *           .build();
+   *   ExpandedLandingPageView response =
+   *       expandedLandingPageViewServiceClient.getExpandedLandingPageView(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -187,6 +239,25 @@ public class ExpandedLandingPageViewServiceClient implements BackgroundResource 
    * Returns the requested expanded landing page view in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExpandedLandingPageViewServiceClient expandedLandingPageViewServiceClient =
+   *     ExpandedLandingPageViewServiceClient.create()) {
+   *   GetExpandedLandingPageViewRequest request =
+   *       GetExpandedLandingPageViewRequest.newBuilder()
+   *           .setResourceName(
+   *               ExpandedLandingPageViewName.of(
+   *                       "[CUSTOMER_ID]", "[EXPANDED_FINAL_URL_FINGERPRINT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<ExpandedLandingPageView> future =
+   *       expandedLandingPageViewServiceClient
+   *           .getExpandedLandingPageViewCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   ExpandedLandingPageView response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetExpandedLandingPageViewRequest, ExpandedLandingPageView>
       getExpandedLandingPageViewCallable() {

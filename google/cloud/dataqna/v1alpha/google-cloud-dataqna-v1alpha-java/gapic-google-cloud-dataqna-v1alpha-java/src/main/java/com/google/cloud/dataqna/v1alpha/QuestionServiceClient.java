@@ -45,6 +45,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (QuestionServiceClient questionServiceClient = QuestionServiceClient.create()) {
+ *   QuestionName name = QuestionName.of("[PROJECT]", "[LOCATION]", "[QUESTION]");
+ *   Question response = questionServiceClient.getQuestion(name);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the QuestionServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -152,6 +159,15 @@ public class QuestionServiceClient implements BackgroundResource {
   /**
    * Gets a previously created question.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (QuestionServiceClient questionServiceClient = QuestionServiceClient.create()) {
+   *   QuestionName name = QuestionName.of("[PROJECT]", "[LOCATION]", "[QUESTION]");
+   *   Question response = questionServiceClient.getQuestion(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The unique identifier for the question. Example:
    *     `projects/foo/locations/bar/questions/1234`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -166,6 +182,15 @@ public class QuestionServiceClient implements BackgroundResource {
   /**
    * Gets a previously created question.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (QuestionServiceClient questionServiceClient = QuestionServiceClient.create()) {
+   *   String name = QuestionName.of("[PROJECT]", "[LOCATION]", "[QUESTION]").toString();
+   *   Question response = questionServiceClient.getQuestion(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The unique identifier for the question. Example:
    *     `projects/foo/locations/bar/questions/1234`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -179,6 +204,19 @@ public class QuestionServiceClient implements BackgroundResource {
   /**
    * Gets a previously created question.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (QuestionServiceClient questionServiceClient = QuestionServiceClient.create()) {
+   *   GetQuestionRequest request =
+   *       GetQuestionRequest.newBuilder()
+   *           .setName(QuestionName.of("[PROJECT]", "[LOCATION]", "[QUESTION]").toString())
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Question response = questionServiceClient.getQuestion(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -191,6 +229,19 @@ public class QuestionServiceClient implements BackgroundResource {
    * Gets a previously created question.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (QuestionServiceClient questionServiceClient = QuestionServiceClient.create()) {
+   *   GetQuestionRequest request =
+   *       GetQuestionRequest.newBuilder()
+   *           .setName(QuestionName.of("[PROJECT]", "[LOCATION]", "[QUESTION]").toString())
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Question> future = questionServiceClient.getQuestionCallable().futureCall(request);
+   *   // Do something.
+   *   Question response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetQuestionRequest, Question> getQuestionCallable() {
     return stub.getQuestionCallable();
@@ -199,6 +250,16 @@ public class QuestionServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a question.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (QuestionServiceClient questionServiceClient = QuestionServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Question question = Question.newBuilder().build();
+   *   Question response = questionServiceClient.createQuestion(parent, question);
+   * }
+   * }</pre>
    *
    * @param parent Required. The name of the project this data source reference belongs to. Example:
    *     `projects/foo/locations/bar`
@@ -218,6 +279,16 @@ public class QuestionServiceClient implements BackgroundResource {
   /**
    * Creates a question.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (QuestionServiceClient questionServiceClient = QuestionServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Question question = Question.newBuilder().build();
+   *   Question response = questionServiceClient.createQuestion(parent, question);
+   * }
+   * }</pre>
+   *
    * @param parent Required. The name of the project this data source reference belongs to. Example:
    *     `projects/foo/locations/bar`
    * @param question Required. The question to create.
@@ -233,6 +304,19 @@ public class QuestionServiceClient implements BackgroundResource {
   /**
    * Creates a question.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (QuestionServiceClient questionServiceClient = QuestionServiceClient.create()) {
+   *   CreateQuestionRequest request =
+   *       CreateQuestionRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setQuestion(Question.newBuilder().build())
+   *           .build();
+   *   Question response = questionServiceClient.createQuestion(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -245,6 +329,20 @@ public class QuestionServiceClient implements BackgroundResource {
    * Creates a question.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (QuestionServiceClient questionServiceClient = QuestionServiceClient.create()) {
+   *   CreateQuestionRequest request =
+   *       CreateQuestionRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setQuestion(Question.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Question> future =
+   *       questionServiceClient.createQuestionCallable().futureCall(request);
+   *   // Do something.
+   *   Question response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateQuestionRequest, Question> createQuestionCallable() {
     return stub.createQuestionCallable();
@@ -253,6 +351,16 @@ public class QuestionServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Executes an interpretation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (QuestionServiceClient questionServiceClient = QuestionServiceClient.create()) {
+   *   String name = "name3373707";
+   *   int interpretationIndex = -1924823077;
+   *   Question response = questionServiceClient.executeQuestion(name, interpretationIndex);
+   * }
+   * }</pre>
    *
    * @param name Required. The unique identifier for the question. Example:
    *     `projects/foo/locations/bar/questions/1234`
@@ -272,6 +380,19 @@ public class QuestionServiceClient implements BackgroundResource {
   /**
    * Executes an interpretation.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (QuestionServiceClient questionServiceClient = QuestionServiceClient.create()) {
+   *   ExecuteQuestionRequest request =
+   *       ExecuteQuestionRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setInterpretationIndex(-1924823077)
+   *           .build();
+   *   Question response = questionServiceClient.executeQuestion(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -284,6 +405,20 @@ public class QuestionServiceClient implements BackgroundResource {
    * Executes an interpretation.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (QuestionServiceClient questionServiceClient = QuestionServiceClient.create()) {
+   *   ExecuteQuestionRequest request =
+   *       ExecuteQuestionRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setInterpretationIndex(-1924823077)
+   *           .build();
+   *   ApiFuture<Question> future =
+   *       questionServiceClient.executeQuestionCallable().futureCall(request);
+   *   // Do something.
+   *   Question response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ExecuteQuestionRequest, Question> executeQuestionCallable() {
     return stub.executeQuestionCallable();
@@ -292,6 +427,15 @@ public class QuestionServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets previously created user feedback.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (QuestionServiceClient questionServiceClient = QuestionServiceClient.create()) {
+   *   UserFeedbackName name = UserFeedbackName.of("[PROJECT]", "[LOCATION]", "[QUESTION]");
+   *   UserFeedback response = questionServiceClient.getUserFeedback(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The unique identifier for the user feedback. User feedback is a singleton
    *     resource on a Question. Example: `projects/foo/locations/bar/questions/1234/userFeedback`
@@ -307,6 +451,15 @@ public class QuestionServiceClient implements BackgroundResource {
   /**
    * Gets previously created user feedback.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (QuestionServiceClient questionServiceClient = QuestionServiceClient.create()) {
+   *   String name = UserFeedbackName.of("[PROJECT]", "[LOCATION]", "[QUESTION]").toString();
+   *   UserFeedback response = questionServiceClient.getUserFeedback(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The unique identifier for the user feedback. User feedback is a singleton
    *     resource on a Question. Example: `projects/foo/locations/bar/questions/1234/userFeedback`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -320,6 +473,18 @@ public class QuestionServiceClient implements BackgroundResource {
   /**
    * Gets previously created user feedback.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (QuestionServiceClient questionServiceClient = QuestionServiceClient.create()) {
+   *   GetUserFeedbackRequest request =
+   *       GetUserFeedbackRequest.newBuilder()
+   *           .setName(UserFeedbackName.of("[PROJECT]", "[LOCATION]", "[QUESTION]").toString())
+   *           .build();
+   *   UserFeedback response = questionServiceClient.getUserFeedback(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -332,6 +497,19 @@ public class QuestionServiceClient implements BackgroundResource {
    * Gets previously created user feedback.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (QuestionServiceClient questionServiceClient = QuestionServiceClient.create()) {
+   *   GetUserFeedbackRequest request =
+   *       GetUserFeedbackRequest.newBuilder()
+   *           .setName(UserFeedbackName.of("[PROJECT]", "[LOCATION]", "[QUESTION]").toString())
+   *           .build();
+   *   ApiFuture<UserFeedback> future =
+   *       questionServiceClient.getUserFeedbackCallable().futureCall(request);
+   *   // Do something.
+   *   UserFeedback response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetUserFeedbackRequest, UserFeedback> getUserFeedbackCallable() {
     return stub.getUserFeedbackCallable();
@@ -340,6 +518,16 @@ public class QuestionServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates user feedback. This creates user feedback if there was none before (upsert).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (QuestionServiceClient questionServiceClient = QuestionServiceClient.create()) {
+   *   UserFeedback userFeedback = UserFeedback.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   UserFeedback response = questionServiceClient.updateUserFeedback(userFeedback, updateMask);
+   * }
+   * }</pre>
    *
    * @param userFeedback Required. The user feedback to update. This can be called even if there is
    *     no user feedback so far. The feedback's name field is used to identify the user feedback
@@ -360,6 +548,19 @@ public class QuestionServiceClient implements BackgroundResource {
   /**
    * Updates user feedback. This creates user feedback if there was none before (upsert).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (QuestionServiceClient questionServiceClient = QuestionServiceClient.create()) {
+   *   UpdateUserFeedbackRequest request =
+   *       UpdateUserFeedbackRequest.newBuilder()
+   *           .setUserFeedback(UserFeedback.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   UserFeedback response = questionServiceClient.updateUserFeedback(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -372,6 +573,20 @@ public class QuestionServiceClient implements BackgroundResource {
    * Updates user feedback. This creates user feedback if there was none before (upsert).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (QuestionServiceClient questionServiceClient = QuestionServiceClient.create()) {
+   *   UpdateUserFeedbackRequest request =
+   *       UpdateUserFeedbackRequest.newBuilder()
+   *           .setUserFeedback(UserFeedback.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<UserFeedback> future =
+   *       questionServiceClient.updateUserFeedbackCallable().futureCall(request);
+   *   // Do something.
+   *   UserFeedback response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateUserFeedbackRequest, UserFeedback> updateUserFeedbackCallable() {
     return stub.updateUserFeedbackCallable();

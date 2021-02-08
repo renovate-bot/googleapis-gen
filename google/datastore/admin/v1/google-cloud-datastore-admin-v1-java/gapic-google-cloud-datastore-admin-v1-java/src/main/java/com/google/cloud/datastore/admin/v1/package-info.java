@@ -75,6 +75,17 @@
  * google.longrunning.Operations.
  *
  * <p>Sample for DatastoreAdminClient:
+ *
+ * <pre>{@code
+ * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
+ *   GetIndexRequest request =
+ *       GetIndexRequest.newBuilder()
+ *           .setProjectId("projectId-894832108")
+ *           .setIndexId("indexId1943291277")
+ *           .build();
+ *   Index response = datastoreAdminClient.getIndex(request);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.datastore.admin.v1;

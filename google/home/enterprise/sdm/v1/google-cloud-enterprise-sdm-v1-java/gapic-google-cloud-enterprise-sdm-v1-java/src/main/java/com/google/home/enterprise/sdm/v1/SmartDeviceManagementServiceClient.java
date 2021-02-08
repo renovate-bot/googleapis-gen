@@ -42,6 +42,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (SmartDeviceManagementServiceClient smartDeviceManagementServiceClient =
+ *     SmartDeviceManagementServiceClient.create()) {
+ *   GetDeviceRequest request = GetDeviceRequest.newBuilder().setName("name3373707").build();
+ *   Device response = smartDeviceManagementServiceClient.getDevice(request);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the SmartDeviceManagementServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -152,6 +160,16 @@ public class SmartDeviceManagementServiceClient implements BackgroundResource {
   /**
    * Gets a device managed by the enterprise.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SmartDeviceManagementServiceClient smartDeviceManagementServiceClient =
+   *     SmartDeviceManagementServiceClient.create()) {
+   *   GetDeviceRequest request = GetDeviceRequest.newBuilder().setName("name3373707").build();
+   *   Device response = smartDeviceManagementServiceClient.getDevice(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -164,6 +182,17 @@ public class SmartDeviceManagementServiceClient implements BackgroundResource {
    * Gets a device managed by the enterprise.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SmartDeviceManagementServiceClient smartDeviceManagementServiceClient =
+   *     SmartDeviceManagementServiceClient.create()) {
+   *   GetDeviceRequest request = GetDeviceRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Device> future =
+   *       smartDeviceManagementServiceClient.getDeviceCallable().futureCall(request);
+   *   // Do something.
+   *   Device response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetDeviceRequest, Device> getDeviceCallable() {
     return stub.getDeviceCallable();
@@ -172,6 +201,24 @@ public class SmartDeviceManagementServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists devices managed by the enterprise.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SmartDeviceManagementServiceClient smartDeviceManagementServiceClient =
+   *     SmartDeviceManagementServiceClient.create()) {
+   *   ListDevicesRequest request =
+   *       ListDevicesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (Device element : smartDeviceManagementServiceClient.listDevices(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -185,6 +232,25 @@ public class SmartDeviceManagementServiceClient implements BackgroundResource {
    * Lists devices managed by the enterprise.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SmartDeviceManagementServiceClient smartDeviceManagementServiceClient =
+   *     SmartDeviceManagementServiceClient.create()) {
+   *   ListDevicesRequest request =
+   *       ListDevicesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<Device> future =
+   *       smartDeviceManagementServiceClient.listDevicesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Device element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListDevicesRequest, ListDevicesPagedResponse>
       listDevicesPagedCallable() {
@@ -196,6 +262,25 @@ public class SmartDeviceManagementServiceClient implements BackgroundResource {
    * Lists devices managed by the enterprise.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SmartDeviceManagementServiceClient smartDeviceManagementServiceClient =
+   *     SmartDeviceManagementServiceClient.create()) {
+   *   while (true) {
+   *     ListDevicesResponse response =
+   *         smartDeviceManagementServiceClient.listDevicesCallable().call(request);
+   *     for (Device element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListDevicesRequest, ListDevicesResponse> listDevicesCallable() {
     return stub.listDevicesCallable();
@@ -204,6 +289,22 @@ public class SmartDeviceManagementServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Executes a command to device managed by the enterprise.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SmartDeviceManagementServiceClient smartDeviceManagementServiceClient =
+   *     SmartDeviceManagementServiceClient.create()) {
+   *   ExecuteDeviceCommandRequest request =
+   *       ExecuteDeviceCommandRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setCommand("command950394699")
+   *           .setParams(Struct.newBuilder().build())
+   *           .build();
+   *   ExecuteDeviceCommandResponse response =
+   *       smartDeviceManagementServiceClient.executeDeviceCommand(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -218,6 +319,22 @@ public class SmartDeviceManagementServiceClient implements BackgroundResource {
    * Executes a command to device managed by the enterprise.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SmartDeviceManagementServiceClient smartDeviceManagementServiceClient =
+   *     SmartDeviceManagementServiceClient.create()) {
+   *   ExecuteDeviceCommandRequest request =
+   *       ExecuteDeviceCommandRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setCommand("command950394699")
+   *           .setParams(Struct.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ExecuteDeviceCommandResponse> future =
+   *       smartDeviceManagementServiceClient.executeDeviceCommandCallable().futureCall(request);
+   *   // Do something.
+   *   ExecuteDeviceCommandResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ExecuteDeviceCommandRequest, ExecuteDeviceCommandResponse>
       executeDeviceCommandCallable() {
@@ -227,6 +344,16 @@ public class SmartDeviceManagementServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a structure managed by the enterprise.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SmartDeviceManagementServiceClient smartDeviceManagementServiceClient =
+   *     SmartDeviceManagementServiceClient.create()) {
+   *   GetStructureRequest request = GetStructureRequest.newBuilder().setName("name3373707").build();
+   *   Structure response = smartDeviceManagementServiceClient.getStructure(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -240,6 +367,17 @@ public class SmartDeviceManagementServiceClient implements BackgroundResource {
    * Gets a structure managed by the enterprise.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SmartDeviceManagementServiceClient smartDeviceManagementServiceClient =
+   *     SmartDeviceManagementServiceClient.create()) {
+   *   GetStructureRequest request = GetStructureRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Structure> future =
+   *       smartDeviceManagementServiceClient.getStructureCallable().futureCall(request);
+   *   // Do something.
+   *   Structure response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetStructureRequest, Structure> getStructureCallable() {
     return stub.getStructureCallable();
@@ -248,6 +386,25 @@ public class SmartDeviceManagementServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists structures managed by the enterprise.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SmartDeviceManagementServiceClient smartDeviceManagementServiceClient =
+   *     SmartDeviceManagementServiceClient.create()) {
+   *   ListStructuresRequest request =
+   *       ListStructuresRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (Structure element :
+   *       smartDeviceManagementServiceClient.listStructures(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -261,6 +418,25 @@ public class SmartDeviceManagementServiceClient implements BackgroundResource {
    * Lists structures managed by the enterprise.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SmartDeviceManagementServiceClient smartDeviceManagementServiceClient =
+   *     SmartDeviceManagementServiceClient.create()) {
+   *   ListStructuresRequest request =
+   *       ListStructuresRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<Structure> future =
+   *       smartDeviceManagementServiceClient.listStructuresPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Structure element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListStructuresRequest, ListStructuresPagedResponse>
       listStructuresPagedCallable() {
@@ -272,6 +448,25 @@ public class SmartDeviceManagementServiceClient implements BackgroundResource {
    * Lists structures managed by the enterprise.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SmartDeviceManagementServiceClient smartDeviceManagementServiceClient =
+   *     SmartDeviceManagementServiceClient.create()) {
+   *   while (true) {
+   *     ListStructuresResponse response =
+   *         smartDeviceManagementServiceClient.listStructuresCallable().call(request);
+   *     for (Structure element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListStructuresRequest, ListStructuresResponse>
       listStructuresCallable() {
@@ -281,6 +476,16 @@ public class SmartDeviceManagementServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a room managed by the enterprise.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SmartDeviceManagementServiceClient smartDeviceManagementServiceClient =
+   *     SmartDeviceManagementServiceClient.create()) {
+   *   GetRoomRequest request = GetRoomRequest.newBuilder().setName("name3373707").build();
+   *   Room response = smartDeviceManagementServiceClient.getRoom(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -294,6 +499,17 @@ public class SmartDeviceManagementServiceClient implements BackgroundResource {
    * Gets a room managed by the enterprise.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SmartDeviceManagementServiceClient smartDeviceManagementServiceClient =
+   *     SmartDeviceManagementServiceClient.create()) {
+   *   GetRoomRequest request = GetRoomRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Room> future =
+   *       smartDeviceManagementServiceClient.getRoomCallable().futureCall(request);
+   *   // Do something.
+   *   Room response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetRoomRequest, Room> getRoomCallable() {
     return stub.getRoomCallable();
@@ -302,6 +518,23 @@ public class SmartDeviceManagementServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists rooms managed by the enterprise.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SmartDeviceManagementServiceClient smartDeviceManagementServiceClient =
+   *     SmartDeviceManagementServiceClient.create()) {
+   *   ListRoomsRequest request =
+   *       ListRoomsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Room element : smartDeviceManagementServiceClient.listRooms(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -315,6 +548,24 @@ public class SmartDeviceManagementServiceClient implements BackgroundResource {
    * Lists rooms managed by the enterprise.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SmartDeviceManagementServiceClient smartDeviceManagementServiceClient =
+   *     SmartDeviceManagementServiceClient.create()) {
+   *   ListRoomsRequest request =
+   *       ListRoomsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Room> future =
+   *       smartDeviceManagementServiceClient.listRoomsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Room element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListRoomsRequest, ListRoomsPagedResponse> listRoomsPagedCallable() {
     return stub.listRoomsPagedCallable();
@@ -325,6 +576,25 @@ public class SmartDeviceManagementServiceClient implements BackgroundResource {
    * Lists rooms managed by the enterprise.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SmartDeviceManagementServiceClient smartDeviceManagementServiceClient =
+   *     SmartDeviceManagementServiceClient.create()) {
+   *   while (true) {
+   *     ListRoomsResponse response =
+   *         smartDeviceManagementServiceClient.listRoomsCallable().call(request);
+   *     for (Room element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListRoomsRequest, ListRoomsResponse> listRoomsCallable() {
     return stub.listRoomsCallable();

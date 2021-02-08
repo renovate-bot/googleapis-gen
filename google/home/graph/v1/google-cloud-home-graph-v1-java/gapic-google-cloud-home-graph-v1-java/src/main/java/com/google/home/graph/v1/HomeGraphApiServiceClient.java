@@ -39,6 +39,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (HomeGraphApiServiceClient homeGraphApiServiceClient = HomeGraphApiServiceClient.create()) {
+ *   String agentUserId = "agentUserId1708672427";
+ *   HomeGraphApiServiceProto.RequestSyncDevicesResponse response =
+ *       homeGraphApiServiceClient.requestSyncDevices(agentUserId);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the HomeGraphApiServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -151,6 +159,16 @@ public class HomeGraphApiServiceClient implements BackgroundResource {
    * [RequestSyncDevicesRequest][google.home.graph.v1.RequestSyncDevicesRequest]). This request must
    * be authorized using service account credentials from your Actions console project.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HomeGraphApiServiceClient homeGraphApiServiceClient = HomeGraphApiServiceClient.create()) {
+   *   String agentUserId = "agentUserId1708672427";
+   *   HomeGraphApiServiceProto.RequestSyncDevicesResponse response =
+   *       homeGraphApiServiceClient.requestSyncDevices(agentUserId);
+   * }
+   * }</pre>
+   *
    * @param agentUserId Required. Third-party user ID.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -173,6 +191,20 @@ public class HomeGraphApiServiceClient implements BackgroundResource {
    * [RequestSyncDevicesRequest][google.home.graph.v1.RequestSyncDevicesRequest]). This request must
    * be authorized using service account credentials from your Actions console project.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HomeGraphApiServiceClient homeGraphApiServiceClient = HomeGraphApiServiceClient.create()) {
+   *   HomeGraphApiServiceProto.RequestSyncDevicesRequest request =
+   *       HomeGraphApiServiceProto.RequestSyncDevicesRequest.newBuilder()
+   *           .setAgentUserId("agentUserId1708672427")
+   *           .setAsync(true)
+   *           .build();
+   *   HomeGraphApiServiceProto.RequestSyncDevicesResponse response =
+   *       homeGraphApiServiceClient.requestSyncDevices(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -192,6 +224,20 @@ public class HomeGraphApiServiceClient implements BackgroundResource {
    * be authorized using service account credentials from your Actions console project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HomeGraphApiServiceClient homeGraphApiServiceClient = HomeGraphApiServiceClient.create()) {
+   *   HomeGraphApiServiceProto.RequestSyncDevicesRequest request =
+   *       HomeGraphApiServiceProto.RequestSyncDevicesRequest.newBuilder()
+   *           .setAgentUserId("agentUserId1708672427")
+   *           .setAsync(true)
+   *           .build();
+   *   ApiFuture<HomeGraphApiServiceProto.RequestSyncDevicesResponse> future =
+   *       homeGraphApiServiceClient.requestSyncDevicesCallable().futureCall(request);
+   *   // Do something.
+   *   HomeGraphApiServiceProto.RequestSyncDevicesResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           HomeGraphApiServiceProto.RequestSyncDevicesRequest,
@@ -216,6 +262,21 @@ public class HomeGraphApiServiceClient implements BackgroundResource {
    * [ReportStateAndNotificationRequest][google.home.graph.v1.ReportStateAndNotificationRequest]).
    * This request must be authorized using service account credentials from your Actions console
    * project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HomeGraphApiServiceClient homeGraphApiServiceClient = HomeGraphApiServiceClient.create()) {
+   *   String requestId = "requestId693933066";
+   *   String eventId = "eventId-1376502443";
+   *   String agentUserId = "agentUserId1708672427";
+   *   HomeGraphApiServiceProto.StateAndNotificationPayload payload =
+   *       HomeGraphApiServiceProto.StateAndNotificationPayload.newBuilder().build();
+   *   HomeGraphApiServiceProto.ReportStateAndNotificationResponse response =
+   *       homeGraphApiServiceClient.reportStateAndNotification(
+   *           requestId, eventId, agentUserId, payload);
+   * }
+   * }</pre>
    *
    * @param requestId Request ID used for debugging.
    * @param eventId Unique identifier per event (for example, a doorbell press).
@@ -256,6 +317,22 @@ public class HomeGraphApiServiceClient implements BackgroundResource {
    * This request must be authorized using service account credentials from your Actions console
    * project.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HomeGraphApiServiceClient homeGraphApiServiceClient = HomeGraphApiServiceClient.create()) {
+   *   HomeGraphApiServiceProto.ReportStateAndNotificationRequest request =
+   *       HomeGraphApiServiceProto.ReportStateAndNotificationRequest.newBuilder()
+   *           .setRequestId("requestId693933066")
+   *           .setEventId("eventId-1376502443")
+   *           .setAgentUserId("agentUserId1708672427")
+   *           .setFollowUpToken("followUpToken628008749")
+   *           .build();
+   *   HomeGraphApiServiceProto.ReportStateAndNotificationResponse response =
+   *       homeGraphApiServiceClient.reportStateAndNotification(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -283,6 +360,22 @@ public class HomeGraphApiServiceClient implements BackgroundResource {
    * project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HomeGraphApiServiceClient homeGraphApiServiceClient = HomeGraphApiServiceClient.create()) {
+   *   HomeGraphApiServiceProto.ReportStateAndNotificationRequest request =
+   *       HomeGraphApiServiceProto.ReportStateAndNotificationRequest.newBuilder()
+   *           .setRequestId("requestId693933066")
+   *           .setEventId("eventId-1376502443")
+   *           .setAgentUserId("agentUserId1708672427")
+   *           .setFollowUpToken("followUpToken628008749")
+   *           .build();
+   *   ApiFuture<HomeGraphApiServiceProto.ReportStateAndNotificationResponse> future =
+   *       homeGraphApiServiceClient.reportStateAndNotificationCallable().futureCall(request);
+   *   // Do something.
+   *   HomeGraphApiServiceProto.ReportStateAndNotificationResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           HomeGraphApiServiceProto.ReportStateAndNotificationRequest,
@@ -302,6 +395,16 @@ public class HomeGraphApiServiceClient implements BackgroundResource {
    * <p>The third-party user's identity is passed in via the `agent_user_id` (see
    * [DeleteAgentUserRequest][google.home.graph.v1.DeleteAgentUserRequest]). This request must be
    * authorized using service account credentials from your Actions console project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HomeGraphApiServiceClient homeGraphApiServiceClient = HomeGraphApiServiceClient.create()) {
+   *   String requestId = "requestId693933066";
+   *   AgentUserPathName agentUserId = AgentUserPathName.of("[AGENT_USER_PATH]");
+   *   homeGraphApiServiceClient.deleteAgentUser(requestId, agentUserId);
+   * }
+   * }</pre>
    *
    * @param requestId Request ID used for debugging.
    * @param agentUserId Required. Third-party user ID.
@@ -328,6 +431,16 @@ public class HomeGraphApiServiceClient implements BackgroundResource {
    * [DeleteAgentUserRequest][google.home.graph.v1.DeleteAgentUserRequest]). This request must be
    * authorized using service account credentials from your Actions console project.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HomeGraphApiServiceClient homeGraphApiServiceClient = HomeGraphApiServiceClient.create()) {
+   *   String requestId = "requestId693933066";
+   *   String agentUserId = AgentUserPathName.of("[AGENT_USER_PATH]").toString();
+   *   homeGraphApiServiceClient.deleteAgentUser(requestId, agentUserId);
+   * }
+   * }</pre>
+   *
    * @param requestId Request ID used for debugging.
    * @param agentUserId Required. Third-party user ID.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -353,6 +466,19 @@ public class HomeGraphApiServiceClient implements BackgroundResource {
    * [DeleteAgentUserRequest][google.home.graph.v1.DeleteAgentUserRequest]). This request must be
    * authorized using service account credentials from your Actions console project.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HomeGraphApiServiceClient homeGraphApiServiceClient = HomeGraphApiServiceClient.create()) {
+   *   HomeGraphApiServiceProto.DeleteAgentUserRequest request =
+   *       HomeGraphApiServiceProto.DeleteAgentUserRequest.newBuilder()
+   *           .setRequestId("requestId693933066")
+   *           .setAgentUserId(AgentUserPathName.of("[AGENT_USER_PATH]").toString())
+   *           .build();
+   *   homeGraphApiServiceClient.deleteAgentUser(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -373,6 +499,20 @@ public class HomeGraphApiServiceClient implements BackgroundResource {
    * authorized using service account credentials from your Actions console project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HomeGraphApiServiceClient homeGraphApiServiceClient = HomeGraphApiServiceClient.create()) {
+   *   HomeGraphApiServiceProto.DeleteAgentUserRequest request =
+   *       HomeGraphApiServiceProto.DeleteAgentUserRequest.newBuilder()
+   *           .setRequestId("requestId693933066")
+   *           .setAgentUserId(AgentUserPathName.of("[AGENT_USER_PATH]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       homeGraphApiServiceClient.deleteAgentUserCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<HomeGraphApiServiceProto.DeleteAgentUserRequest, Empty>
       deleteAgentUserCallable() {
@@ -386,6 +526,18 @@ public class HomeGraphApiServiceClient implements BackgroundResource {
    * <p>The third-party user's identity is passed in via the `agent_user_id` (see
    * [QueryRequest][google.home.graph.v1.QueryRequest]). This request must be authorized using
    * service account credentials from your Actions console project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HomeGraphApiServiceClient homeGraphApiServiceClient = HomeGraphApiServiceClient.create()) {
+   *   String requestId = "requestId693933066";
+   *   String agentUserId = "agentUserId1708672427";
+   *   List<HomeGraphApiServiceProto.QueryRequestInput> inputs = new ArrayList<>();
+   *   HomeGraphApiServiceProto.QueryResponse response =
+   *       homeGraphApiServiceClient.query(requestId, agentUserId, inputs);
+   * }
+   * }</pre>
    *
    * @param requestId Request ID used for debugging.
    * @param agentUserId Required. Third-party user ID.
@@ -414,6 +566,20 @@ public class HomeGraphApiServiceClient implements BackgroundResource {
    * [QueryRequest][google.home.graph.v1.QueryRequest]). This request must be authorized using
    * service account credentials from your Actions console project.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HomeGraphApiServiceClient homeGraphApiServiceClient = HomeGraphApiServiceClient.create()) {
+   *   HomeGraphApiServiceProto.QueryRequest request =
+   *       HomeGraphApiServiceProto.QueryRequest.newBuilder()
+   *           .setRequestId("requestId693933066")
+   *           .setAgentUserId("agentUserId1708672427")
+   *           .addAllInputs(new ArrayList<HomeGraphApiServiceProto.QueryRequestInput>())
+   *           .build();
+   *   HomeGraphApiServiceProto.QueryResponse response = homeGraphApiServiceClient.query(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -431,6 +597,21 @@ public class HomeGraphApiServiceClient implements BackgroundResource {
    * service account credentials from your Actions console project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HomeGraphApiServiceClient homeGraphApiServiceClient = HomeGraphApiServiceClient.create()) {
+   *   HomeGraphApiServiceProto.QueryRequest request =
+   *       HomeGraphApiServiceProto.QueryRequest.newBuilder()
+   *           .setRequestId("requestId693933066")
+   *           .setAgentUserId("agentUserId1708672427")
+   *           .addAllInputs(new ArrayList<HomeGraphApiServiceProto.QueryRequestInput>())
+   *           .build();
+   *   ApiFuture<HomeGraphApiServiceProto.QueryResponse> future =
+   *       homeGraphApiServiceClient.queryCallable().futureCall(request);
+   *   // Do something.
+   *   HomeGraphApiServiceProto.QueryResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           HomeGraphApiServiceProto.QueryRequest, HomeGraphApiServiceProto.QueryResponse>
@@ -445,6 +626,17 @@ public class HomeGraphApiServiceClient implements BackgroundResource {
    * <p>The third-party user's identity is passed in via the `agent_user_id` (see
    * [SyncRequest][google.home.graph.v1.SyncRequest]). This request must be authorized using service
    * account credentials from your Actions console project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HomeGraphApiServiceClient homeGraphApiServiceClient = HomeGraphApiServiceClient.create()) {
+   *   String requestId = "requestId693933066";
+   *   String agentUserId = "agentUserId1708672427";
+   *   HomeGraphApiServiceProto.SyncResponse response =
+   *       homeGraphApiServiceClient.sync(requestId, agentUserId);
+   * }
+   * }</pre>
    *
    * @param requestId Request ID used for debugging.
    * @param agentUserId Required. Third-party user ID.
@@ -467,6 +659,19 @@ public class HomeGraphApiServiceClient implements BackgroundResource {
    * [SyncRequest][google.home.graph.v1.SyncRequest]). This request must be authorized using service
    * account credentials from your Actions console project.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HomeGraphApiServiceClient homeGraphApiServiceClient = HomeGraphApiServiceClient.create()) {
+   *   HomeGraphApiServiceProto.SyncRequest request =
+   *       HomeGraphApiServiceProto.SyncRequest.newBuilder()
+   *           .setRequestId("requestId693933066")
+   *           .setAgentUserId("agentUserId1708672427")
+   *           .build();
+   *   HomeGraphApiServiceProto.SyncResponse response = homeGraphApiServiceClient.sync(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -484,6 +689,20 @@ public class HomeGraphApiServiceClient implements BackgroundResource {
    * account credentials from your Actions console project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HomeGraphApiServiceClient homeGraphApiServiceClient = HomeGraphApiServiceClient.create()) {
+   *   HomeGraphApiServiceProto.SyncRequest request =
+   *       HomeGraphApiServiceProto.SyncRequest.newBuilder()
+   *           .setRequestId("requestId693933066")
+   *           .setAgentUserId("agentUserId1708672427")
+   *           .build();
+   *   ApiFuture<HomeGraphApiServiceProto.SyncResponse> future =
+   *       homeGraphApiServiceClient.syncCallable().futureCall(request);
+   *   // Do something.
+   *   HomeGraphApiServiceProto.SyncResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           HomeGraphApiServiceProto.SyncRequest, HomeGraphApiServiceProto.SyncResponse>

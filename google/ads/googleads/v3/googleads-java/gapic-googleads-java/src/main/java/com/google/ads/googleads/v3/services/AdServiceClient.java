@@ -35,6 +35,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (AdServiceClient adServiceClient = AdServiceClient.create()) {
+ *   AdName resourceName = AdName.of("[CUSTOMER]", "[AD]");
+ *   Ad response = adServiceClient.getAd(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the AdServiceClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -136,6 +143,15 @@ public class AdServiceClient implements BackgroundResource {
   /**
    * Returns the requested ad in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdServiceClient adServiceClient = AdServiceClient.create()) {
+   *   AdName resourceName = AdName.of("[CUSTOMER]", "[AD]");
+   *   Ad response = adServiceClient.getAd(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the ad to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -151,6 +167,15 @@ public class AdServiceClient implements BackgroundResource {
   /**
    * Returns the requested ad in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdServiceClient adServiceClient = AdServiceClient.create()) {
+   *   String resourceName = AdName.of("[CUSTOMER]", "[AD]").toString();
+   *   Ad response = adServiceClient.getAd(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the ad to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -162,6 +187,18 @@ public class AdServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the requested ad in full detail.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdServiceClient adServiceClient = AdServiceClient.create()) {
+   *   GetAdRequest request =
+   *       GetAdRequest.newBuilder()
+   *           .setResourceName(AdName.of("[CUSTOMER]", "[AD]").toString())
+   *           .build();
+   *   Ad response = adServiceClient.getAd(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -175,6 +212,18 @@ public class AdServiceClient implements BackgroundResource {
    * Returns the requested ad in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdServiceClient adServiceClient = AdServiceClient.create()) {
+   *   GetAdRequest request =
+   *       GetAdRequest.newBuilder()
+   *           .setResourceName(AdName.of("[CUSTOMER]", "[AD]").toString())
+   *           .build();
+   *   ApiFuture<Ad> future = adServiceClient.getAdCallable().futureCall(request);
+   *   // Do something.
+   *   Ad response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetAdRequest, Ad> getAdCallable() {
     return stub.getAdCallable();
@@ -184,6 +233,16 @@ public class AdServiceClient implements BackgroundResource {
   /**
    * Updates ads. Operation statuses are returned. Updating ads is not supported for TextAd,
    * ExpandedDynamicSearchAd, GmailAd and ImageAd.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdServiceClient adServiceClient = AdServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   List<AdOperation> operations = new ArrayList<>();
+   *   MutateAdsResponse response = adServiceClient.mutateAds(customerId, operations);
+   * }
+   * }</pre>
    *
    * @param customerId Required. The ID of the customer whose ads are being modified.
    * @param operations Required. The list of operations to perform on individual ads.
@@ -203,6 +262,19 @@ public class AdServiceClient implements BackgroundResource {
    * Updates ads. Operation statuses are returned. Updating ads is not supported for TextAd,
    * ExpandedDynamicSearchAd, GmailAd and ImageAd.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdServiceClient adServiceClient = AdServiceClient.create()) {
+   *   MutateAdsRequest request =
+   *       MutateAdsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<AdOperation>())
+   *           .build();
+   *   MutateAdsResponse response = adServiceClient.mutateAds(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -216,6 +288,19 @@ public class AdServiceClient implements BackgroundResource {
    * ExpandedDynamicSearchAd, GmailAd and ImageAd.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdServiceClient adServiceClient = AdServiceClient.create()) {
+   *   MutateAdsRequest request =
+   *       MutateAdsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<AdOperation>())
+   *           .build();
+   *   ApiFuture<MutateAdsResponse> future = adServiceClient.mutateAdsCallable().futureCall(request);
+   *   // Do something.
+   *   MutateAdsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<MutateAdsRequest, MutateAdsResponse> mutateAdsCallable() {
     return stub.mutateAdsCallable();

@@ -34,6 +34,13 @@
  * `unique_id` of the service account.
  *
  * <p>Sample for IAMClient:
+ *
+ * <pre>{@code
+ * try (IAMClient iAMClient = IAMClient.create()) {
+ *   ServiceAccountName name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
+ *   ServiceAccount response = iAMClient.getServiceAccount(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.iam.admin.v1;

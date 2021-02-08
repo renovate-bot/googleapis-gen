@@ -54,6 +54,20 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (AutoSuggestionServiceClient autoSuggestionServiceClient =
+ *     AutoSuggestionServiceClient.create()) {
+ *   SuggestQueriesRequest request =
+ *       SuggestQueriesRequest.newBuilder()
+ *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+ *           .addAllScopes(new ArrayList<String>())
+ *           .setQuery("query107944136")
+ *           .addAllSuggestionTypes(new ArrayList<SuggestionType>())
+ *           .build();
+ *   SuggestQueriesResponse response = autoSuggestionServiceClient.suggestQueries(request);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the AutoSuggestionServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -162,6 +176,22 @@ public class AutoSuggestionServiceClient implements BackgroundResource {
    * Gets a list of suggestions based on a prefix string. AutoSuggestion tolerance should be less
    * than 1 second.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AutoSuggestionServiceClient autoSuggestionServiceClient =
+   *     AutoSuggestionServiceClient.create()) {
+   *   SuggestQueriesRequest request =
+   *       SuggestQueriesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllScopes(new ArrayList<String>())
+   *           .setQuery("query107944136")
+   *           .addAllSuggestionTypes(new ArrayList<SuggestionType>())
+   *           .build();
+   *   SuggestQueriesResponse response = autoSuggestionServiceClient.suggestQueries(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -175,6 +205,23 @@ public class AutoSuggestionServiceClient implements BackgroundResource {
    * than 1 second.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AutoSuggestionServiceClient autoSuggestionServiceClient =
+   *     AutoSuggestionServiceClient.create()) {
+   *   SuggestQueriesRequest request =
+   *       SuggestQueriesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllScopes(new ArrayList<String>())
+   *           .setQuery("query107944136")
+   *           .addAllSuggestionTypes(new ArrayList<SuggestionType>())
+   *           .build();
+   *   ApiFuture<SuggestQueriesResponse> future =
+   *       autoSuggestionServiceClient.suggestQueriesCallable().futureCall(request);
+   *   // Do something.
+   *   SuggestQueriesResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SuggestQueriesRequest, SuggestQueriesResponse>
       suggestQueriesCallable() {

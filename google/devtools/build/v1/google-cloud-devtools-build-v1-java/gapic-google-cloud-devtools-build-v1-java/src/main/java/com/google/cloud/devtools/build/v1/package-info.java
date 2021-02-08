@@ -34,6 +34,19 @@
  * for an invocation attempt of a build.
  *
  * <p>Sample for PublishBuildEventClient:
+ *
+ * <pre>{@code
+ * try (PublishBuildEventClient publishBuildEventClient = PublishBuildEventClient.create()) {
+ *   PublishLifecycleEventRequest request =
+ *       PublishLifecycleEventRequest.newBuilder()
+ *           .setBuildEvent(OrderedBuildEvent.newBuilder().build())
+ *           .setStreamTimeout(Duration.newBuilder().build())
+ *           .addAllNotificationKeywords(new ArrayList<String>())
+ *           .setProjectId("projectId-894832108")
+ *           .build();
+ *   publishBuildEventClient.publishLifecycleEvent(request);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.devtools.build.v1;

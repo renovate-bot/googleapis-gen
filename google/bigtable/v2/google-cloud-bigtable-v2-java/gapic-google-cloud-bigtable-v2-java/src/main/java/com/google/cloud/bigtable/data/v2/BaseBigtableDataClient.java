@@ -51,6 +51,15 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
+ *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
+ *   ByteString rowKey = ByteString.EMPTY;
+ *   List<Mutation> mutations = new ArrayList<>();
+ *   MutateRowResponse response = baseBigtableDataClient.mutateRow(tableName, rowKey, mutations);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the BaseBigtableDataClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -161,6 +170,24 @@ public class BaseBigtableDataClient implements BackgroundResource {
    * documentation for details.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
+   *   ReadRowsRequest request =
+   *       ReadRowsRequest.newBuilder()
+   *           .setTableName(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
+   *           .setAppProfileId("appProfileId704923523")
+   *           .setRows(RowSet.newBuilder().build())
+   *           .setFilter(RowFilter.newBuilder().build())
+   *           .setRowsLimit(-944199211)
+   *           .build();
+   *   ServerStream<ReadRowsResponse> stream =
+   *       baseBigtableDataClient.readRowsCallable().call(request);
+   *   for (ReadRowsResponse response : stream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
    */
   public final ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> readRowsCallable() {
     return stub.readRowsCallable();
@@ -173,6 +200,21 @@ public class BaseBigtableDataClient implements BackgroundResource {
    * distributed tasks like mapreduces.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
+   *   SampleRowKeysRequest request =
+   *       SampleRowKeysRequest.newBuilder()
+   *           .setTableName(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
+   *           .setAppProfileId("appProfileId704923523")
+   *           .build();
+   *   ServerStream<SampleRowKeysResponse> stream =
+   *       baseBigtableDataClient.sampleRowKeysCallable().call(request);
+   *   for (SampleRowKeysResponse response : stream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
    */
   public final ServerStreamingCallable<SampleRowKeysRequest, SampleRowKeysResponse>
       sampleRowKeysCallable() {
@@ -183,6 +225,17 @@ public class BaseBigtableDataClient implements BackgroundResource {
   /**
    * Mutates a row atomically. Cells already present in the row are left unchanged unless explicitly
    * changed by `mutation`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
+   *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   ByteString rowKey = ByteString.EMPTY;
+   *   List<Mutation> mutations = new ArrayList<>();
+   *   MutateRowResponse response = baseBigtableDataClient.mutateRow(tableName, rowKey, mutations);
+   * }
+   * }</pre>
    *
    * @param tableName Required. The unique name of the table to which the mutation should be
    *     applied. Values are of the form
@@ -209,6 +262,17 @@ public class BaseBigtableDataClient implements BackgroundResource {
    * Mutates a row atomically. Cells already present in the row are left unchanged unless explicitly
    * changed by `mutation`.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
+   *   String tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString();
+   *   ByteString rowKey = ByteString.EMPTY;
+   *   List<Mutation> mutations = new ArrayList<>();
+   *   MutateRowResponse response = baseBigtableDataClient.mutateRow(tableName, rowKey, mutations);
+   * }
+   * }</pre>
+   *
    * @param tableName Required. The unique name of the table to which the mutation should be
    *     applied. Values are of the form
    *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
@@ -233,6 +297,19 @@ public class BaseBigtableDataClient implements BackgroundResource {
   /**
    * Mutates a row atomically. Cells already present in the row are left unchanged unless explicitly
    * changed by `mutation`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
+   *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   ByteString rowKey = ByteString.EMPTY;
+   *   List<Mutation> mutations = new ArrayList<>();
+   *   String appProfileId = "appProfileId704923523";
+   *   MutateRowResponse response =
+   *       baseBigtableDataClient.mutateRow(tableName, rowKey, mutations, appProfileId);
+   * }
+   * }</pre>
    *
    * @param tableName Required. The unique name of the table to which the mutation should be
    *     applied. Values are of the form
@@ -262,6 +339,19 @@ public class BaseBigtableDataClient implements BackgroundResource {
    * Mutates a row atomically. Cells already present in the row are left unchanged unless explicitly
    * changed by `mutation`.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
+   *   String tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString();
+   *   ByteString rowKey = ByteString.EMPTY;
+   *   List<Mutation> mutations = new ArrayList<>();
+   *   String appProfileId = "appProfileId704923523";
+   *   MutateRowResponse response =
+   *       baseBigtableDataClient.mutateRow(tableName, rowKey, mutations, appProfileId);
+   * }
+   * }</pre>
+   *
    * @param tableName Required. The unique name of the table to which the mutation should be
    *     applied. Values are of the form
    *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
@@ -290,6 +380,21 @@ public class BaseBigtableDataClient implements BackgroundResource {
    * Mutates a row atomically. Cells already present in the row are left unchanged unless explicitly
    * changed by `mutation`.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
+   *   MutateRowRequest request =
+   *       MutateRowRequest.newBuilder()
+   *           .setTableName(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
+   *           .setAppProfileId("appProfileId704923523")
+   *           .setRowKey(ByteString.EMPTY)
+   *           .addAllMutations(new ArrayList<Mutation>())
+   *           .build();
+   *   MutateRowResponse response = baseBigtableDataClient.mutateRow(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -303,6 +408,22 @@ public class BaseBigtableDataClient implements BackgroundResource {
    * changed by `mutation`.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
+   *   MutateRowRequest request =
+   *       MutateRowRequest.newBuilder()
+   *           .setTableName(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
+   *           .setAppProfileId("appProfileId704923523")
+   *           .setRowKey(ByteString.EMPTY)
+   *           .addAllMutations(new ArrayList<Mutation>())
+   *           .build();
+   *   ApiFuture<MutateRowResponse> future =
+   *       baseBigtableDataClient.mutateRowCallable().futureCall(request);
+   *   // Do something.
+   *   MutateRowResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<MutateRowRequest, MutateRowResponse> mutateRowCallable() {
     return stub.mutateRowCallable();
@@ -314,6 +435,22 @@ public class BaseBigtableDataClient implements BackgroundResource {
    * but the entire batch is not executed atomically.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
+   *   MutateRowsRequest request =
+   *       MutateRowsRequest.newBuilder()
+   *           .setTableName(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
+   *           .setAppProfileId("appProfileId704923523")
+   *           .addAllEntries(new ArrayList<MutateRowsRequest.Entry>())
+   *           .build();
+   *   ServerStream<MutateRowsResponse> stream =
+   *       baseBigtableDataClient.mutateRowsCallable().call(request);
+   *   for (MutateRowsResponse response : stream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
    */
   public final ServerStreamingCallable<MutateRowsRequest, MutateRowsResponse> mutateRowsCallable() {
     return stub.mutateRowsCallable();
@@ -323,6 +460,21 @@ public class BaseBigtableDataClient implements BackgroundResource {
   /**
    * Mutates a row atomically based on the output of a predicate Reader filter.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
+   *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   ByteString rowKey = ByteString.EMPTY;
+   *   RowFilter predicateFilter = RowFilter.newBuilder().build();
+   *   List<Mutation> trueMutations = new ArrayList<>();
+   *   List<Mutation> falseMutations = new ArrayList<>();
+   *   CheckAndMutateRowResponse response =
+   *       baseBigtableDataClient.checkAndMutateRow(
+   *           tableName, rowKey, predicateFilter, trueMutations, falseMutations);
+   * }
+   * }</pre>
+   *
    * @param tableName Required. The unique name of the table to which the conditional mutation
    *     should be applied. Values are of the form
    *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
@@ -361,6 +513,21 @@ public class BaseBigtableDataClient implements BackgroundResource {
   /**
    * Mutates a row atomically based on the output of a predicate Reader filter.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
+   *   String tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString();
+   *   ByteString rowKey = ByteString.EMPTY;
+   *   RowFilter predicateFilter = RowFilter.newBuilder().build();
+   *   List<Mutation> trueMutations = new ArrayList<>();
+   *   List<Mutation> falseMutations = new ArrayList<>();
+   *   CheckAndMutateRowResponse response =
+   *       baseBigtableDataClient.checkAndMutateRow(
+   *           tableName, rowKey, predicateFilter, trueMutations, falseMutations);
+   * }
+   * }</pre>
+   *
    * @param tableName Required. The unique name of the table to which the conditional mutation
    *     should be applied. Values are of the form
    *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
@@ -398,6 +565,22 @@ public class BaseBigtableDataClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Mutates a row atomically based on the output of a predicate Reader filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
+   *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   ByteString rowKey = ByteString.EMPTY;
+   *   RowFilter predicateFilter = RowFilter.newBuilder().build();
+   *   List<Mutation> trueMutations = new ArrayList<>();
+   *   List<Mutation> falseMutations = new ArrayList<>();
+   *   String appProfileId = "appProfileId704923523";
+   *   CheckAndMutateRowResponse response =
+   *       baseBigtableDataClient.checkAndMutateRow(
+   *           tableName, rowKey, predicateFilter, trueMutations, falseMutations, appProfileId);
+   * }
+   * }</pre>
    *
    * @param tableName Required. The unique name of the table to which the conditional mutation
    *     should be applied. Values are of the form
@@ -441,6 +624,22 @@ public class BaseBigtableDataClient implements BackgroundResource {
   /**
    * Mutates a row atomically based on the output of a predicate Reader filter.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
+   *   String tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString();
+   *   ByteString rowKey = ByteString.EMPTY;
+   *   RowFilter predicateFilter = RowFilter.newBuilder().build();
+   *   List<Mutation> trueMutations = new ArrayList<>();
+   *   List<Mutation> falseMutations = new ArrayList<>();
+   *   String appProfileId = "appProfileId704923523";
+   *   CheckAndMutateRowResponse response =
+   *       baseBigtableDataClient.checkAndMutateRow(
+   *           tableName, rowKey, predicateFilter, trueMutations, falseMutations, appProfileId);
+   * }
+   * }</pre>
+   *
    * @param tableName Required. The unique name of the table to which the conditional mutation
    *     should be applied. Values are of the form
    *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
@@ -482,6 +681,23 @@ public class BaseBigtableDataClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Mutates a row atomically based on the output of a predicate Reader filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
+   *   CheckAndMutateRowRequest request =
+   *       CheckAndMutateRowRequest.newBuilder()
+   *           .setTableName(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
+   *           .setAppProfileId("appProfileId704923523")
+   *           .setRowKey(ByteString.EMPTY)
+   *           .setPredicateFilter(RowFilter.newBuilder().build())
+   *           .addAllTrueMutations(new ArrayList<Mutation>())
+   *           .addAllFalseMutations(new ArrayList<Mutation>())
+   *           .build();
+   *   CheckAndMutateRowResponse response = baseBigtableDataClient.checkAndMutateRow(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -495,6 +711,24 @@ public class BaseBigtableDataClient implements BackgroundResource {
    * Mutates a row atomically based on the output of a predicate Reader filter.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
+   *   CheckAndMutateRowRequest request =
+   *       CheckAndMutateRowRequest.newBuilder()
+   *           .setTableName(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
+   *           .setAppProfileId("appProfileId704923523")
+   *           .setRowKey(ByteString.EMPTY)
+   *           .setPredicateFilter(RowFilter.newBuilder().build())
+   *           .addAllTrueMutations(new ArrayList<Mutation>())
+   *           .addAllFalseMutations(new ArrayList<Mutation>())
+   *           .build();
+   *   ApiFuture<CheckAndMutateRowResponse> future =
+   *       baseBigtableDataClient.checkAndMutateRowCallable().futureCall(request);
+   *   // Do something.
+   *   CheckAndMutateRowResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CheckAndMutateRowRequest, CheckAndMutateRowResponse>
       checkAndMutateRowCallable() {
@@ -507,6 +741,18 @@ public class BaseBigtableDataClient implements BackgroundResource {
    * value from the specified columns and writes a new entry based on pre-defined read/modify/write
    * rules. The new value for the timestamp is the greater of the existing timestamp or the current
    * server time. The method returns the new contents of all modified cells.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
+   *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   ByteString rowKey = ByteString.EMPTY;
+   *   List<ReadModifyWriteRule> rules = new ArrayList<>();
+   *   ReadModifyWriteRowResponse response =
+   *       baseBigtableDataClient.readModifyWriteRow(tableName, rowKey, rules);
+   * }
+   * }</pre>
    *
    * @param tableName Required. The unique name of the table to which the read/modify/write rules
    *     should be applied. Values are of the form
@@ -536,6 +782,18 @@ public class BaseBigtableDataClient implements BackgroundResource {
    * rules. The new value for the timestamp is the greater of the existing timestamp or the current
    * server time. The method returns the new contents of all modified cells.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
+   *   String tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString();
+   *   ByteString rowKey = ByteString.EMPTY;
+   *   List<ReadModifyWriteRule> rules = new ArrayList<>();
+   *   ReadModifyWriteRowResponse response =
+   *       baseBigtableDataClient.readModifyWriteRow(tableName, rowKey, rules);
+   * }
+   * }</pre>
+   *
    * @param tableName Required. The unique name of the table to which the read/modify/write rules
    *     should be applied. Values are of the form
    *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
@@ -563,6 +821,19 @@ public class BaseBigtableDataClient implements BackgroundResource {
    * value from the specified columns and writes a new entry based on pre-defined read/modify/write
    * rules. The new value for the timestamp is the greater of the existing timestamp or the current
    * server time. The method returns the new contents of all modified cells.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
+   *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   ByteString rowKey = ByteString.EMPTY;
+   *   List<ReadModifyWriteRule> rules = new ArrayList<>();
+   *   String appProfileId = "appProfileId704923523";
+   *   ReadModifyWriteRowResponse response =
+   *       baseBigtableDataClient.readModifyWriteRow(tableName, rowKey, rules, appProfileId);
+   * }
+   * }</pre>
    *
    * @param tableName Required. The unique name of the table to which the read/modify/write rules
    *     should be applied. Values are of the form
@@ -598,6 +869,19 @@ public class BaseBigtableDataClient implements BackgroundResource {
    * rules. The new value for the timestamp is the greater of the existing timestamp or the current
    * server time. The method returns the new contents of all modified cells.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
+   *   String tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString();
+   *   ByteString rowKey = ByteString.EMPTY;
+   *   List<ReadModifyWriteRule> rules = new ArrayList<>();
+   *   String appProfileId = "appProfileId704923523";
+   *   ReadModifyWriteRowResponse response =
+   *       baseBigtableDataClient.readModifyWriteRow(tableName, rowKey, rules, appProfileId);
+   * }
+   * }</pre>
+   *
    * @param tableName Required. The unique name of the table to which the read/modify/write rules
    *     should be applied. Values are of the form
    *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
@@ -629,6 +913,21 @@ public class BaseBigtableDataClient implements BackgroundResource {
    * rules. The new value for the timestamp is the greater of the existing timestamp or the current
    * server time. The method returns the new contents of all modified cells.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
+   *   ReadModifyWriteRowRequest request =
+   *       ReadModifyWriteRowRequest.newBuilder()
+   *           .setTableName(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
+   *           .setAppProfileId("appProfileId704923523")
+   *           .setRowKey(ByteString.EMPTY)
+   *           .addAllRules(new ArrayList<ReadModifyWriteRule>())
+   *           .build();
+   *   ReadModifyWriteRowResponse response = baseBigtableDataClient.readModifyWriteRow(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -644,6 +943,22 @@ public class BaseBigtableDataClient implements BackgroundResource {
    * server time. The method returns the new contents of all modified cells.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
+   *   ReadModifyWriteRowRequest request =
+   *       ReadModifyWriteRowRequest.newBuilder()
+   *           .setTableName(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
+   *           .setAppProfileId("appProfileId704923523")
+   *           .setRowKey(ByteString.EMPTY)
+   *           .addAllRules(new ArrayList<ReadModifyWriteRule>())
+   *           .build();
+   *   ApiFuture<ReadModifyWriteRowResponse> future =
+   *       baseBigtableDataClient.readModifyWriteRowCallable().futureCall(request);
+   *   // Do something.
+   *   ReadModifyWriteRowResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse>
       readModifyWriteRowCallable() {

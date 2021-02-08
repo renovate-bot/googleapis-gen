@@ -33,6 +33,18 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (ConversionAdjustmentUploadServiceClient conversionAdjustmentUploadServiceClient =
+ *     ConversionAdjustmentUploadServiceClient.create()) {
+ *   String customerId = "customerId-1581184615";
+ *   List<ConversionAdjustment> conversionAdjustments = new ArrayList<>();
+ *   boolean partialFailure = true;
+ *   UploadConversionAdjustmentsResponse response =
+ *       conversionAdjustmentUploadServiceClient.uploadConversionAdjustments(
+ *           customerId, conversionAdjustments, partialFailure);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the ConversionAdjustmentUploadServiceClient object to
  * clean up resources such as threads. In the example above, try-with-resources is used, which
  * automatically calls close().
@@ -144,6 +156,20 @@ public class ConversionAdjustmentUploadServiceClient implements BackgroundResour
   /**
    * Processes the given conversion adjustments.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConversionAdjustmentUploadServiceClient conversionAdjustmentUploadServiceClient =
+   *     ConversionAdjustmentUploadServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   List<ConversionAdjustment> conversionAdjustments = new ArrayList<>();
+   *   boolean partialFailure = true;
+   *   UploadConversionAdjustmentsResponse response =
+   *       conversionAdjustmentUploadServiceClient.uploadConversionAdjustments(
+   *           customerId, conversionAdjustments, partialFailure);
+   * }
+   * }</pre>
+   *
    * @param customerId Required. The ID of the customer performing the upload.
    * @param conversionAdjustments Required. The conversion adjustments that are being uploaded.
    * @param partialFailure Required. If true, successful operations will be carried out and invalid
@@ -168,6 +194,23 @@ public class ConversionAdjustmentUploadServiceClient implements BackgroundResour
   /**
    * Processes the given conversion adjustments.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConversionAdjustmentUploadServiceClient conversionAdjustmentUploadServiceClient =
+   *     ConversionAdjustmentUploadServiceClient.create()) {
+   *   UploadConversionAdjustmentsRequest request =
+   *       UploadConversionAdjustmentsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllConversionAdjustments(new ArrayList<ConversionAdjustment>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   UploadConversionAdjustmentsResponse response =
+   *       conversionAdjustmentUploadServiceClient.uploadConversionAdjustments(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -181,6 +224,25 @@ public class ConversionAdjustmentUploadServiceClient implements BackgroundResour
    * Processes the given conversion adjustments.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConversionAdjustmentUploadServiceClient conversionAdjustmentUploadServiceClient =
+   *     ConversionAdjustmentUploadServiceClient.create()) {
+   *   UploadConversionAdjustmentsRequest request =
+   *       UploadConversionAdjustmentsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllConversionAdjustments(new ArrayList<ConversionAdjustment>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<UploadConversionAdjustmentsResponse> future =
+   *       conversionAdjustmentUploadServiceClient
+   *           .uploadConversionAdjustmentsCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   UploadConversionAdjustmentsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           UploadConversionAdjustmentsRequest, UploadConversionAdjustmentsResponse>

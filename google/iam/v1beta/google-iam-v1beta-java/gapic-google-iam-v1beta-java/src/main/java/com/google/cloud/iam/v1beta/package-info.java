@@ -22,6 +22,15 @@
  * <p>Service Description: Manages WorkloadIdentityPools.
  *
  * <p>Sample for WorkloadIdentityPoolsClient:
+ *
+ * <pre>{@code
+ * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
+ *     WorkloadIdentityPoolsClient.create()) {
+ *   WorkloadIdentityPoolName name =
+ *       WorkloadIdentityPoolName.of("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]");
+ *   WorkloadIdentityPool response = workloadIdentityPoolsClient.getWorkloadIdentityPool(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.iam.v1beta;

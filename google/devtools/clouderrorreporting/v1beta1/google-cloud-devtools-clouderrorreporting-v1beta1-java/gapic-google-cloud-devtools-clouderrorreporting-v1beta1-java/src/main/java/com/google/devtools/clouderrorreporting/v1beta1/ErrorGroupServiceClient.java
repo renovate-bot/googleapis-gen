@@ -32,6 +32,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+ *   ErrorGroupName groupName = ErrorGroupName.of("[PROJECT]", "[GROUP]");
+ *   ErrorGroup response = errorGroupServiceClient.getGroup(groupName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the ErrorGroupServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -139,6 +146,15 @@ public class ErrorGroupServiceClient implements BackgroundResource {
   /**
    * Get the specified group.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+   *   ErrorGroupName groupName = ErrorGroupName.of("[PROJECT]", "[GROUP]");
+   *   ErrorGroup response = errorGroupServiceClient.getGroup(groupName);
+   * }
+   * }</pre>
+   *
    * @param groupName Required. The group resource name. Written as
    *     `projects/{projectID}/groups/{group_name}`. Call
    *     [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
@@ -158,6 +174,15 @@ public class ErrorGroupServiceClient implements BackgroundResource {
   /**
    * Get the specified group.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+   *   String groupName = ErrorGroupName.of("[PROJECT]", "[GROUP]").toString();
+   *   ErrorGroup response = errorGroupServiceClient.getGroup(groupName);
+   * }
+   * }</pre>
+   *
    * @param groupName Required. The group resource name. Written as
    *     `projects/{projectID}/groups/{group_name}`. Call
    *     [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
@@ -174,6 +199,18 @@ public class ErrorGroupServiceClient implements BackgroundResource {
   /**
    * Get the specified group.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+   *   GetGroupRequest request =
+   *       GetGroupRequest.newBuilder()
+   *           .setGroupName(ErrorGroupName.of("[PROJECT]", "[GROUP]").toString())
+   *           .build();
+   *   ErrorGroup response = errorGroupServiceClient.getGroup(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -186,6 +223,18 @@ public class ErrorGroupServiceClient implements BackgroundResource {
    * Get the specified group.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+   *   GetGroupRequest request =
+   *       GetGroupRequest.newBuilder()
+   *           .setGroupName(ErrorGroupName.of("[PROJECT]", "[GROUP]").toString())
+   *           .build();
+   *   ApiFuture<ErrorGroup> future = errorGroupServiceClient.getGroupCallable().futureCall(request);
+   *   // Do something.
+   *   ErrorGroup response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetGroupRequest, ErrorGroup> getGroupCallable() {
     return stub.getGroupCallable();
@@ -194,6 +243,15 @@ public class ErrorGroupServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Replace the data for the specified group. Fails if the group does not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+   *   ErrorGroup group = ErrorGroup.newBuilder().build();
+   *   ErrorGroup response = errorGroupServiceClient.updateGroup(group);
+   * }
+   * }</pre>
    *
    * @param group Required. The group which replaces the resource on the server.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -207,6 +265,16 @@ public class ErrorGroupServiceClient implements BackgroundResource {
   /**
    * Replace the data for the specified group. Fails if the group does not exist.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+   *   UpdateGroupRequest request =
+   *       UpdateGroupRequest.newBuilder().setGroup(ErrorGroup.newBuilder().build()).build();
+   *   ErrorGroup response = errorGroupServiceClient.updateGroup(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -219,6 +287,17 @@ public class ErrorGroupServiceClient implements BackgroundResource {
    * Replace the data for the specified group. Fails if the group does not exist.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+   *   UpdateGroupRequest request =
+   *       UpdateGroupRequest.newBuilder().setGroup(ErrorGroup.newBuilder().build()).build();
+   *   ApiFuture<ErrorGroup> future =
+   *       errorGroupServiceClient.updateGroupCallable().futureCall(request);
+   *   // Do something.
+   *   ErrorGroup response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateGroupRequest, ErrorGroup> updateGroupCallable() {
     return stub.updateGroupCallable();

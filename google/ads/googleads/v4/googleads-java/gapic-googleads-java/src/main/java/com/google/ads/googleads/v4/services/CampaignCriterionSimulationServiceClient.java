@@ -34,6 +34,16 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (CampaignCriterionSimulationServiceClient campaignCriterionSimulationServiceClient =
+ *     CampaignCriterionSimulationServiceClient.create()) {
+ *   CampaignCriterionSimulationName resourceName =
+ *       CampaignCriterionSimulationName.of("[CUSTOMER]", "[CAMPAIGN_CRITERION_SIMULATION]");
+ *   CampaignCriterionSimulation response =
+ *       campaignCriterionSimulationServiceClient.getCampaignCriterionSimulation(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the CampaignCriterionSimulationServiceClient object to
  * clean up resources such as threads. In the example above, try-with-resources is used, which
  * automatically calls close().
@@ -145,6 +155,18 @@ public class CampaignCriterionSimulationServiceClient implements BackgroundResou
   /**
    * Returns the requested campaign criterion simulation in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignCriterionSimulationServiceClient campaignCriterionSimulationServiceClient =
+   *     CampaignCriterionSimulationServiceClient.create()) {
+   *   CampaignCriterionSimulationName resourceName =
+   *       CampaignCriterionSimulationName.of("[CUSTOMER]", "[CAMPAIGN_CRITERION_SIMULATION]");
+   *   CampaignCriterionSimulation response =
+   *       campaignCriterionSimulationServiceClient.getCampaignCriterionSimulation(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the campaign criterion simulation to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -161,6 +183,19 @@ public class CampaignCriterionSimulationServiceClient implements BackgroundResou
   /**
    * Returns the requested campaign criterion simulation in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignCriterionSimulationServiceClient campaignCriterionSimulationServiceClient =
+   *     CampaignCriterionSimulationServiceClient.create()) {
+   *   String resourceName =
+   *       CampaignCriterionSimulationName.of("[CUSTOMER]", "[CAMPAIGN_CRITERION_SIMULATION]")
+   *           .toString();
+   *   CampaignCriterionSimulation response =
+   *       campaignCriterionSimulationServiceClient.getCampaignCriterionSimulation(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the campaign criterion simulation to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -173,6 +208,23 @@ public class CampaignCriterionSimulationServiceClient implements BackgroundResou
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the requested campaign criterion simulation in full detail.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignCriterionSimulationServiceClient campaignCriterionSimulationServiceClient =
+   *     CampaignCriterionSimulationServiceClient.create()) {
+   *   GetCampaignCriterionSimulationRequest request =
+   *       GetCampaignCriterionSimulationRequest.newBuilder()
+   *           .setResourceName(
+   *               CampaignCriterionSimulationName.of(
+   *                       "[CUSTOMER]", "[CAMPAIGN_CRITERION_SIMULATION]")
+   *                   .toString())
+   *           .build();
+   *   CampaignCriterionSimulation response =
+   *       campaignCriterionSimulationServiceClient.getCampaignCriterionSimulation(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -187,6 +239,25 @@ public class CampaignCriterionSimulationServiceClient implements BackgroundResou
    * Returns the requested campaign criterion simulation in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignCriterionSimulationServiceClient campaignCriterionSimulationServiceClient =
+   *     CampaignCriterionSimulationServiceClient.create()) {
+   *   GetCampaignCriterionSimulationRequest request =
+   *       GetCampaignCriterionSimulationRequest.newBuilder()
+   *           .setResourceName(
+   *               CampaignCriterionSimulationName.of(
+   *                       "[CUSTOMER]", "[CAMPAIGN_CRITERION_SIMULATION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<CampaignCriterionSimulation> future =
+   *       campaignCriterionSimulationServiceClient
+   *           .getCampaignCriterionSimulationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   CampaignCriterionSimulation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetCampaignCriterionSimulationRequest, CampaignCriterionSimulation>
       getCampaignCriterionSimulationCallable() {

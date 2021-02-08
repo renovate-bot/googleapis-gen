@@ -41,6 +41,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (BillingSetupServiceClient billingSetupServiceClient = BillingSetupServiceClient.create()) {
+ *   BillingSetupName resourceName = BillingSetupName.of("[CUSTOMER]", "[BILLING_SETUP]");
+ *   BillingSetup response = billingSetupServiceClient.getBillingSetup(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the BillingSetupServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -147,6 +154,15 @@ public class BillingSetupServiceClient implements BackgroundResource {
   /**
    * Returns a billing setup.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BillingSetupServiceClient billingSetupServiceClient = BillingSetupServiceClient.create()) {
+   *   BillingSetupName resourceName = BillingSetupName.of("[CUSTOMER]", "[BILLING_SETUP]");
+   *   BillingSetup response = billingSetupServiceClient.getBillingSetup(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the billing setup to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -162,6 +178,15 @@ public class BillingSetupServiceClient implements BackgroundResource {
   /**
    * Returns a billing setup.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BillingSetupServiceClient billingSetupServiceClient = BillingSetupServiceClient.create()) {
+   *   String resourceName = BillingSetupName.of("[CUSTOMER]", "[BILLING_SETUP]").toString();
+   *   BillingSetup response = billingSetupServiceClient.getBillingSetup(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the billing setup to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -175,6 +200,18 @@ public class BillingSetupServiceClient implements BackgroundResource {
   /**
    * Returns a billing setup.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BillingSetupServiceClient billingSetupServiceClient = BillingSetupServiceClient.create()) {
+   *   GetBillingSetupRequest request =
+   *       GetBillingSetupRequest.newBuilder()
+   *           .setResourceName(BillingSetupName.of("[CUSTOMER]", "[BILLING_SETUP]").toString())
+   *           .build();
+   *   BillingSetup response = billingSetupServiceClient.getBillingSetup(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -187,6 +224,19 @@ public class BillingSetupServiceClient implements BackgroundResource {
    * Returns a billing setup.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BillingSetupServiceClient billingSetupServiceClient = BillingSetupServiceClient.create()) {
+   *   GetBillingSetupRequest request =
+   *       GetBillingSetupRequest.newBuilder()
+   *           .setResourceName(BillingSetupName.of("[CUSTOMER]", "[BILLING_SETUP]").toString())
+   *           .build();
+   *   ApiFuture<BillingSetup> future =
+   *       billingSetupServiceClient.getBillingSetupCallable().futureCall(request);
+   *   // Do something.
+   *   BillingSetup response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetBillingSetupRequest, BillingSetup> getBillingSetupCallable() {
     return stub.getBillingSetupCallable();
@@ -195,6 +245,17 @@ public class BillingSetupServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a billing setup, or cancels an existing billing setup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BillingSetupServiceClient billingSetupServiceClient = BillingSetupServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   BillingSetupOperation operation = BillingSetupOperation.newBuilder().build();
+   *   MutateBillingSetupResponse response =
+   *       billingSetupServiceClient.mutateBillingSetup(customerId, operation);
+   * }
+   * }</pre>
    *
    * @param customerId Required. Id of the customer to apply the billing setup mutate operation to.
    * @param operation Required. The operation to perform.
@@ -214,6 +275,19 @@ public class BillingSetupServiceClient implements BackgroundResource {
   /**
    * Creates a billing setup, or cancels an existing billing setup.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BillingSetupServiceClient billingSetupServiceClient = BillingSetupServiceClient.create()) {
+   *   MutateBillingSetupRequest request =
+   *       MutateBillingSetupRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .setOperation(BillingSetupOperation.newBuilder().build())
+   *           .build();
+   *   MutateBillingSetupResponse response = billingSetupServiceClient.mutateBillingSetup(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -226,6 +300,20 @@ public class BillingSetupServiceClient implements BackgroundResource {
    * Creates a billing setup, or cancels an existing billing setup.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BillingSetupServiceClient billingSetupServiceClient = BillingSetupServiceClient.create()) {
+   *   MutateBillingSetupRequest request =
+   *       MutateBillingSetupRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .setOperation(BillingSetupOperation.newBuilder().build())
+   *           .build();
+   *   ApiFuture<MutateBillingSetupResponse> future =
+   *       billingSetupServiceClient.mutateBillingSetupCallable().futureCall(request);
+   *   // Do something.
+   *   MutateBillingSetupResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<MutateBillingSetupRequest, MutateBillingSetupResponse>
       mutateBillingSetupCallable() {

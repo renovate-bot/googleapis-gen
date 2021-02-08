@@ -34,6 +34,15 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (IncomeRangeViewServiceClient incomeRangeViewServiceClient =
+ *     IncomeRangeViewServiceClient.create()) {
+ *   IncomeRangeViewName resourceName =
+ *       IncomeRangeViewName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]");
+ *   IncomeRangeView response = incomeRangeViewServiceClient.getIncomeRangeView(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the IncomeRangeViewServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -141,6 +150,17 @@ public class IncomeRangeViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested income range view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IncomeRangeViewServiceClient incomeRangeViewServiceClient =
+   *     IncomeRangeViewServiceClient.create()) {
+   *   IncomeRangeViewName resourceName =
+   *       IncomeRangeViewName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]");
+   *   IncomeRangeView response = incomeRangeViewServiceClient.getIncomeRangeView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the income range view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -156,6 +176,17 @@ public class IncomeRangeViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested income range view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IncomeRangeViewServiceClient incomeRangeViewServiceClient =
+   *     IncomeRangeViewServiceClient.create()) {
+   *   String resourceName =
+   *       IncomeRangeViewName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]").toString();
+   *   IncomeRangeView response = incomeRangeViewServiceClient.getIncomeRangeView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the income range view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -169,6 +200,21 @@ public class IncomeRangeViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested income range view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IncomeRangeViewServiceClient incomeRangeViewServiceClient =
+   *     IncomeRangeViewServiceClient.create()) {
+   *   GetIncomeRangeViewRequest request =
+   *       GetIncomeRangeViewRequest.newBuilder()
+   *           .setResourceName(
+   *               IncomeRangeViewName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]")
+   *                   .toString())
+   *           .build();
+   *   IncomeRangeView response = incomeRangeViewServiceClient.getIncomeRangeView(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -181,6 +227,22 @@ public class IncomeRangeViewServiceClient implements BackgroundResource {
    * Returns the requested income range view in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IncomeRangeViewServiceClient incomeRangeViewServiceClient =
+   *     IncomeRangeViewServiceClient.create()) {
+   *   GetIncomeRangeViewRequest request =
+   *       GetIncomeRangeViewRequest.newBuilder()
+   *           .setResourceName(
+   *               IncomeRangeViewName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<IncomeRangeView> future =
+   *       incomeRangeViewServiceClient.getIncomeRangeViewCallable().futureCall(request);
+   *   // Do something.
+   *   IncomeRangeView response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetIncomeRangeViewRequest, IncomeRangeView>
       getIncomeRangeViewCallable() {

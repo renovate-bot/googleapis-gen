@@ -34,6 +34,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (TopicViewServiceClient topicViewServiceClient = TopicViewServiceClient.create()) {
+ *   TopicViewName resourceName =
+ *       TopicViewName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]");
+ *   TopicView response = topicViewServiceClient.getTopicView(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the TopicViewServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -140,6 +148,16 @@ public class TopicViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested topic view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TopicViewServiceClient topicViewServiceClient = TopicViewServiceClient.create()) {
+   *   TopicViewName resourceName =
+   *       TopicViewName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]");
+   *   TopicView response = topicViewServiceClient.getTopicView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the topic view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -155,6 +173,16 @@ public class TopicViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested topic view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TopicViewServiceClient topicViewServiceClient = TopicViewServiceClient.create()) {
+   *   String resourceName =
+   *       TopicViewName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]").toString();
+   *   TopicView response = topicViewServiceClient.getTopicView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the topic view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -168,6 +196,19 @@ public class TopicViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested topic view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TopicViewServiceClient topicViewServiceClient = TopicViewServiceClient.create()) {
+   *   GetTopicViewRequest request =
+   *       GetTopicViewRequest.newBuilder()
+   *           .setResourceName(
+   *               TopicViewName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]").toString())
+   *           .build();
+   *   TopicView response = topicViewServiceClient.getTopicView(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -180,6 +221,20 @@ public class TopicViewServiceClient implements BackgroundResource {
    * Returns the requested topic view in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TopicViewServiceClient topicViewServiceClient = TopicViewServiceClient.create()) {
+   *   GetTopicViewRequest request =
+   *       GetTopicViewRequest.newBuilder()
+   *           .setResourceName(
+   *               TopicViewName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]").toString())
+   *           .build();
+   *   ApiFuture<TopicView> future =
+   *       topicViewServiceClient.getTopicViewCallable().futureCall(request);
+   *   // Do something.
+   *   TopicView response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetTopicViewRequest, TopicView> getTopicViewCallable() {
     return stub.getTopicViewCallable();

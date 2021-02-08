@@ -56,6 +56,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (Controller2Client controller2Client = Controller2Client.create()) {
+ *   Debuggee debuggee = Debuggee.newBuilder().build();
+ *   RegisterDebuggeeResponse response = controller2Client.registerDebuggee(debuggee);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the Controller2Client object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -166,6 +173,15 @@ public class Controller2Client implements BackgroundResource {
    * change the `debuggee_id` format. Agents must handle `debuggee_id` value changing upon
    * re-registration.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (Controller2Client controller2Client = Controller2Client.create()) {
+   *   Debuggee debuggee = Debuggee.newBuilder().build();
+   *   RegisterDebuggeeResponse response = controller2Client.registerDebuggee(debuggee);
+   * }
+   * }</pre>
+   *
    * @param debuggee Required. Debuggee information to register. The fields `project`, `uniquifier`,
    *     `description` and `agent_version` of the debuggee must be set.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -188,6 +204,16 @@ public class Controller2Client implements BackgroundResource {
    * change the `debuggee_id` format. Agents must handle `debuggee_id` value changing upon
    * re-registration.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (Controller2Client controller2Client = Controller2Client.create()) {
+   *   RegisterDebuggeeRequest request =
+   *       RegisterDebuggeeRequest.newBuilder().setDebuggee(Debuggee.newBuilder().build()).build();
+   *   RegisterDebuggeeResponse response = controller2Client.registerDebuggee(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -208,6 +234,17 @@ public class Controller2Client implements BackgroundResource {
    * re-registration.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (Controller2Client controller2Client = Controller2Client.create()) {
+   *   RegisterDebuggeeRequest request =
+   *       RegisterDebuggeeRequest.newBuilder().setDebuggee(Debuggee.newBuilder().build()).build();
+   *   ApiFuture<RegisterDebuggeeResponse> future =
+   *       controller2Client.registerDebuggeeCallable().futureCall(request);
+   *   // Do something.
+   *   RegisterDebuggeeResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<RegisterDebuggeeRequest, RegisterDebuggeeResponse>
       registerDebuggeeCallable() {
@@ -227,6 +264,15 @@ public class Controller2Client implements BackgroundResource {
    * encounters the same breakpoint on a successive call. Moreover, an agent should remember the
    * breakpoints that are completed until the controller removes them from the active list to avoid
    * setting those breakpoints again.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (Controller2Client controller2Client = Controller2Client.create()) {
+   *   String debuggeeId = "debuggeeId-1833285553";
+   *   ListActiveBreakpointsResponse response = controller2Client.listActiveBreakpoints(debuggeeId);
+   * }
+   * }</pre>
    *
    * @param debuggeeId Required. Identifies the debuggee.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -251,6 +297,20 @@ public class Controller2Client implements BackgroundResource {
    * breakpoints that are completed until the controller removes them from the active list to avoid
    * setting those breakpoints again.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (Controller2Client controller2Client = Controller2Client.create()) {
+   *   ListActiveBreakpointsRequest request =
+   *       ListActiveBreakpointsRequest.newBuilder()
+   *           .setDebuggeeId("debuggeeId-1833285553")
+   *           .setWaitToken("waitToken-984229500")
+   *           .setSuccessOnTimeout(true)
+   *           .build();
+   *   ListActiveBreakpointsResponse response = controller2Client.listActiveBreakpoints(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -274,6 +334,21 @@ public class Controller2Client implements BackgroundResource {
    * setting those breakpoints again.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (Controller2Client controller2Client = Controller2Client.create()) {
+   *   ListActiveBreakpointsRequest request =
+   *       ListActiveBreakpointsRequest.newBuilder()
+   *           .setDebuggeeId("debuggeeId-1833285553")
+   *           .setWaitToken("waitToken-984229500")
+   *           .setSuccessOnTimeout(true)
+   *           .build();
+   *   ApiFuture<ListActiveBreakpointsResponse> future =
+   *       controller2Client.listActiveBreakpointsCallable().futureCall(request);
+   *   // Do something.
+   *   ListActiveBreakpointsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListActiveBreakpointsRequest, ListActiveBreakpointsResponse>
       listActiveBreakpointsCallable() {
@@ -289,6 +364,17 @@ public class Controller2Client implements BackgroundResource {
    * breakpoint specification. Updates to the `location`, `condition` and `expressions` fields
    * should not alter the breakpoint semantics. These may only make changes such as canonicalizing a
    * value or snapping the location to the correct line of code.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (Controller2Client controller2Client = Controller2Client.create()) {
+   *   String debuggeeId = "debuggeeId-1833285553";
+   *   Breakpoint breakpoint = Breakpoint.newBuilder().build();
+   *   UpdateActiveBreakpointResponse response =
+   *       controller2Client.updateActiveBreakpoint(debuggeeId, breakpoint);
+   * }
+   * }</pre>
    *
    * @param debuggeeId Required. Identifies the debuggee being debugged.
    * @param breakpoint Required. Updated breakpoint information. The field `id` must be set. The
@@ -315,6 +401,19 @@ public class Controller2Client implements BackgroundResource {
    * should not alter the breakpoint semantics. These may only make changes such as canonicalizing a
    * value or snapping the location to the correct line of code.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (Controller2Client controller2Client = Controller2Client.create()) {
+   *   UpdateActiveBreakpointRequest request =
+   *       UpdateActiveBreakpointRequest.newBuilder()
+   *           .setDebuggeeId("debuggeeId-1833285553")
+   *           .setBreakpoint(Breakpoint.newBuilder().build())
+   *           .build();
+   *   UpdateActiveBreakpointResponse response = controller2Client.updateActiveBreakpoint(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -334,6 +433,20 @@ public class Controller2Client implements BackgroundResource {
    * value or snapping the location to the correct line of code.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (Controller2Client controller2Client = Controller2Client.create()) {
+   *   UpdateActiveBreakpointRequest request =
+   *       UpdateActiveBreakpointRequest.newBuilder()
+   *           .setDebuggeeId("debuggeeId-1833285553")
+   *           .setBreakpoint(Breakpoint.newBuilder().build())
+   *           .build();
+   *   ApiFuture<UpdateActiveBreakpointResponse> future =
+   *       controller2Client.updateActiveBreakpointCallable().futureCall(request);
+   *   // Do something.
+   *   UpdateActiveBreakpointResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateActiveBreakpointRequest, UpdateActiveBreakpointResponse>
       updateActiveBreakpointCallable() {

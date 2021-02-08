@@ -59,6 +59,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (BotsClient botsClient = BotsClient.create()) {
+ *   String parent = "parent-995424086";
+ *   BotSession botSession = BotSession.newBuilder().build();
+ *   BotSession response = botsClient.createBotSession(parent, botSession);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the BotsClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -160,6 +168,16 @@ public class BotsClient implements BackgroundResource {
    * CreateBotSession is called when the bot first joins the farm, and establishes a session ID to
    * ensure that multiple machines do not register using the same name accidentally.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BotsClient botsClient = BotsClient.create()) {
+   *   String parent = "parent-995424086";
+   *   BotSession botSession = BotSession.newBuilder().build();
+   *   BotSession response = botsClient.createBotSession(parent, botSession);
+   * }
+   * }</pre>
+   *
    * @param parent Required. The farm resource.
    * @param botSession Required. The bot session to create. Server-assigned fields like name must be
    *     unset.
@@ -176,6 +194,19 @@ public class BotsClient implements BackgroundResource {
    * CreateBotSession is called when the bot first joins the farm, and establishes a session ID to
    * ensure that multiple machines do not register using the same name accidentally.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BotsClient botsClient = BotsClient.create()) {
+   *   CreateBotSessionRequest request =
+   *       CreateBotSessionRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setBotSession(BotSession.newBuilder().build())
+   *           .build();
+   *   BotSession response = botsClient.createBotSession(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -189,6 +220,19 @@ public class BotsClient implements BackgroundResource {
    * ensure that multiple machines do not register using the same name accidentally.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BotsClient botsClient = BotsClient.create()) {
+   *   CreateBotSessionRequest request =
+   *       CreateBotSessionRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setBotSession(BotSession.newBuilder().build())
+   *           .build();
+   *   ApiFuture<BotSession> future = botsClient.createBotSessionCallable().futureCall(request);
+   *   // Do something.
+   *   BotSession response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateBotSessionRequest, BotSession> createBotSessionCallable() {
     return stub.createBotSessionCallable();
@@ -199,6 +243,17 @@ public class BotsClient implements BackgroundResource {
    * UpdateBotSession must be called periodically by the bot (on a schedule determined by the
    * server) to let the server know about its status, and to pick up new lease requests from the
    * server.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BotsClient botsClient = BotsClient.create()) {
+   *   BotSessionName name = BotSessionName.of("[UNKNOWN_PATH]", "[BOT_SESSION]");
+   *   BotSession botSession = BotSession.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   BotSession response = botsClient.updateBotSession(name, botSession, updateMask);
+   * }
+   * }</pre>
    *
    * @param name Required. The bot session name. Must match bot_session.name.
    * @param botSession Required. The bot session resource to update.
@@ -223,6 +278,17 @@ public class BotsClient implements BackgroundResource {
    * server) to let the server know about its status, and to pick up new lease requests from the
    * server.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BotsClient botsClient = BotsClient.create()) {
+   *   String name = BotSessionName.of("[UNKNOWN_PATH]", "[BOT_SESSION]").toString();
+   *   BotSession botSession = BotSession.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   BotSession response = botsClient.updateBotSession(name, botSession, updateMask);
+   * }
+   * }</pre>
+   *
    * @param name Required. The bot session name. Must match bot_session.name.
    * @param botSession Required. The bot session resource to update.
    * @param updateMask Required. The fields on the bot that should be updated. See the BotSession
@@ -246,6 +312,20 @@ public class BotsClient implements BackgroundResource {
    * server) to let the server know about its status, and to pick up new lease requests from the
    * server.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BotsClient botsClient = BotsClient.create()) {
+   *   UpdateBotSessionRequest request =
+   *       UpdateBotSessionRequest.newBuilder()
+   *           .setName(BotSessionName.of("[UNKNOWN_PATH]", "[BOT_SESSION]").toString())
+   *           .setBotSession(BotSession.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   BotSession response = botsClient.updateBotSession(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -260,6 +340,20 @@ public class BotsClient implements BackgroundResource {
    * server.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BotsClient botsClient = BotsClient.create()) {
+   *   UpdateBotSessionRequest request =
+   *       UpdateBotSessionRequest.newBuilder()
+   *           .setName(BotSessionName.of("[UNKNOWN_PATH]", "[BOT_SESSION]").toString())
+   *           .setBotSession(BotSession.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<BotSession> future = botsClient.updateBotSessionCallable().futureCall(request);
+   *   // Do something.
+   *   BotSession response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateBotSessionRequest, BotSession> updateBotSessionCallable() {
     return stub.updateBotSessionCallable();

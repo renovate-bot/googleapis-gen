@@ -34,6 +34,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (GeographicViewServiceClient geographicViewServiceClient =
+ *     GeographicViewServiceClient.create()) {
+ *   GeographicViewName resourceName = GeographicViewName.of("[CUSTOMER]", "[GEOGRAPHIC_VIEW]");
+ *   GeographicView response = geographicViewServiceClient.getGeographicView(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the GeographicViewServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -140,6 +148,16 @@ public class GeographicViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested geographic view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GeographicViewServiceClient geographicViewServiceClient =
+   *     GeographicViewServiceClient.create()) {
+   *   GeographicViewName resourceName = GeographicViewName.of("[CUSTOMER]", "[GEOGRAPHIC_VIEW]");
+   *   GeographicView response = geographicViewServiceClient.getGeographicView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the geographic view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -155,6 +173,16 @@ public class GeographicViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested geographic view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GeographicViewServiceClient geographicViewServiceClient =
+   *     GeographicViewServiceClient.create()) {
+   *   String resourceName = GeographicViewName.of("[CUSTOMER]", "[GEOGRAPHIC_VIEW]").toString();
+   *   GeographicView response = geographicViewServiceClient.getGeographicView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the geographic view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -168,6 +196,19 @@ public class GeographicViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested geographic view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GeographicViewServiceClient geographicViewServiceClient =
+   *     GeographicViewServiceClient.create()) {
+   *   GetGeographicViewRequest request =
+   *       GetGeographicViewRequest.newBuilder()
+   *           .setResourceName(GeographicViewName.of("[CUSTOMER]", "[GEOGRAPHIC_VIEW]").toString())
+   *           .build();
+   *   GeographicView response = geographicViewServiceClient.getGeographicView(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -180,6 +221,20 @@ public class GeographicViewServiceClient implements BackgroundResource {
    * Returns the requested geographic view in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GeographicViewServiceClient geographicViewServiceClient =
+   *     GeographicViewServiceClient.create()) {
+   *   GetGeographicViewRequest request =
+   *       GetGeographicViewRequest.newBuilder()
+   *           .setResourceName(GeographicViewName.of("[CUSTOMER]", "[GEOGRAPHIC_VIEW]").toString())
+   *           .build();
+   *   ApiFuture<GeographicView> future =
+   *       geographicViewServiceClient.getGeographicViewCallable().futureCall(request);
+   *   // Do something.
+   *   GeographicView response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetGeographicViewRequest, GeographicView> getGeographicViewCallable() {
     return stub.getGeographicViewCallable();

@@ -48,6 +48,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (MutateJobServiceClient mutateJobServiceClient = MutateJobServiceClient.create()) {
+ *   String customerId = "customerId-1581184615";
+ *   CreateMutateJobResponse response = mutateJobServiceClient.createMutateJob(customerId);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the MutateJobServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -165,6 +172,15 @@ public class MutateJobServiceClient implements BackgroundResource {
   /**
    * Creates a mutate job.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MutateJobServiceClient mutateJobServiceClient = MutateJobServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   CreateMutateJobResponse response = mutateJobServiceClient.createMutateJob(customerId);
+   * }
+   * }</pre>
+   *
    * @param customerId Required. The ID of the customer for which to create a mutate job.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -178,6 +194,16 @@ public class MutateJobServiceClient implements BackgroundResource {
   /**
    * Creates a mutate job.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MutateJobServiceClient mutateJobServiceClient = MutateJobServiceClient.create()) {
+   *   CreateMutateJobRequest request =
+   *       CreateMutateJobRequest.newBuilder().setCustomerId("customerId-1581184615").build();
+   *   CreateMutateJobResponse response = mutateJobServiceClient.createMutateJob(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -190,6 +216,17 @@ public class MutateJobServiceClient implements BackgroundResource {
    * Creates a mutate job.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MutateJobServiceClient mutateJobServiceClient = MutateJobServiceClient.create()) {
+   *   CreateMutateJobRequest request =
+   *       CreateMutateJobRequest.newBuilder().setCustomerId("customerId-1581184615").build();
+   *   ApiFuture<CreateMutateJobResponse> future =
+   *       mutateJobServiceClient.createMutateJobCallable().futureCall(request);
+   *   // Do something.
+   *   CreateMutateJobResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateMutateJobRequest, CreateMutateJobResponse>
       createMutateJobCallable() {
@@ -199,6 +236,15 @@ public class MutateJobServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the mutate job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MutateJobServiceClient mutateJobServiceClient = MutateJobServiceClient.create()) {
+   *   MutateJobName resourceName = MutateJobName.of("[CUSTOMER]", "[MUTATE_JOB]");
+   *   MutateJob response = mutateJobServiceClient.getMutateJob(resourceName);
+   * }
+   * }</pre>
    *
    * @param resourceName Required. The resource name of the MutateJob to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -215,6 +261,15 @@ public class MutateJobServiceClient implements BackgroundResource {
   /**
    * Returns the mutate job.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MutateJobServiceClient mutateJobServiceClient = MutateJobServiceClient.create()) {
+   *   String resourceName = MutateJobName.of("[CUSTOMER]", "[MUTATE_JOB]").toString();
+   *   MutateJob response = mutateJobServiceClient.getMutateJob(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the MutateJob to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -228,6 +283,18 @@ public class MutateJobServiceClient implements BackgroundResource {
   /**
    * Returns the mutate job.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MutateJobServiceClient mutateJobServiceClient = MutateJobServiceClient.create()) {
+   *   GetMutateJobRequest request =
+   *       GetMutateJobRequest.newBuilder()
+   *           .setResourceName(MutateJobName.of("[CUSTOMER]", "[MUTATE_JOB]").toString())
+   *           .build();
+   *   MutateJob response = mutateJobServiceClient.getMutateJob(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -240,6 +307,19 @@ public class MutateJobServiceClient implements BackgroundResource {
    * Returns the mutate job.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MutateJobServiceClient mutateJobServiceClient = MutateJobServiceClient.create()) {
+   *   GetMutateJobRequest request =
+   *       GetMutateJobRequest.newBuilder()
+   *           .setResourceName(MutateJobName.of("[CUSTOMER]", "[MUTATE_JOB]").toString())
+   *           .build();
+   *   ApiFuture<MutateJob> future =
+   *       mutateJobServiceClient.getMutateJobCallable().futureCall(request);
+   *   // Do something.
+   *   MutateJob response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetMutateJobRequest, MutateJob> getMutateJobCallable() {
     return stub.getMutateJobCallable();
@@ -248,6 +328,18 @@ public class MutateJobServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the results of the mutate job. The job must be done. Supports standard list paging.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MutateJobServiceClient mutateJobServiceClient = MutateJobServiceClient.create()) {
+   *   MutateJobName resourceName = MutateJobName.of("[CUSTOMER]", "[MUTATE_JOB]");
+   *   for (MutateJobResult element :
+   *       mutateJobServiceClient.listMutateJobResults(resourceName).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param resourceName Required. The resource name of the MutateJob whose results are being
    *     listed.
@@ -265,6 +357,18 @@ public class MutateJobServiceClient implements BackgroundResource {
   /**
    * Returns the results of the mutate job. The job must be done. Supports standard list paging.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MutateJobServiceClient mutateJobServiceClient = MutateJobServiceClient.create()) {
+   *   String resourceName = MutateJobName.of("[CUSTOMER]", "[MUTATE_JOB]").toString();
+   *   for (MutateJobResult element :
+   *       mutateJobServiceClient.listMutateJobResults(resourceName).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the MutateJob whose results are being
    *     listed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -279,6 +383,23 @@ public class MutateJobServiceClient implements BackgroundResource {
   /**
    * Returns the results of the mutate job. The job must be done. Supports standard list paging.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MutateJobServiceClient mutateJobServiceClient = MutateJobServiceClient.create()) {
+   *   ListMutateJobResultsRequest request =
+   *       ListMutateJobResultsRequest.newBuilder()
+   *           .setResourceName(MutateJobName.of("[CUSTOMER]", "[MUTATE_JOB]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
+   *   for (MutateJobResult element :
+   *       mutateJobServiceClient.listMutateJobResults(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -292,6 +413,23 @@ public class MutateJobServiceClient implements BackgroundResource {
    * Returns the results of the mutate job. The job must be done. Supports standard list paging.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MutateJobServiceClient mutateJobServiceClient = MutateJobServiceClient.create()) {
+   *   ListMutateJobResultsRequest request =
+   *       ListMutateJobResultsRequest.newBuilder()
+   *           .setResourceName(MutateJobName.of("[CUSTOMER]", "[MUTATE_JOB]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
+   *   ApiFuture<MutateJobResult> future =
+   *       mutateJobServiceClient.listMutateJobResultsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (MutateJobResult element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListMutateJobResultsRequest, ListMutateJobResultsPagedResponse>
       listMutateJobResultsPagedCallable() {
@@ -303,6 +441,24 @@ public class MutateJobServiceClient implements BackgroundResource {
    * Returns the results of the mutate job. The job must be done. Supports standard list paging.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MutateJobServiceClient mutateJobServiceClient = MutateJobServiceClient.create()) {
+   *   while (true) {
+   *     ListMutateJobResultsResponse response =
+   *         mutateJobServiceClient.listMutateJobResultsCallable().call(request);
+   *     for (MutateJobResult element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListMutateJobResultsRequest, ListMutateJobResultsResponse>
       listMutateJobResultsCallable() {
@@ -316,6 +472,15 @@ public class MutateJobServiceClient implements BackgroundResource {
    * <p>The Operation.metadata field type is MutateJobMetadata. When finished, the long running
    * operation will not contain errors or a response. Instead, use ListMutateJobResults to get the
    * results of the job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MutateJobServiceClient mutateJobServiceClient = MutateJobServiceClient.create()) {
+   *   MutateJobName resourceName = MutateJobName.of("[CUSTOMER]", "[MUTATE_JOB]");
+   *   mutateJobServiceClient.runMutateJobAsync(resourceName).get();
+   * }
+   * }</pre>
    *
    * @param resourceName Required. The resource name of the MutateJob to run.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -337,6 +502,15 @@ public class MutateJobServiceClient implements BackgroundResource {
    * operation will not contain errors or a response. Instead, use ListMutateJobResults to get the
    * results of the job.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MutateJobServiceClient mutateJobServiceClient = MutateJobServiceClient.create()) {
+   *   String resourceName = MutateJobName.of("[CUSTOMER]", "[MUTATE_JOB]").toString();
+   *   mutateJobServiceClient.runMutateJobAsync(resourceName).get();
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the MutateJob to run.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -355,6 +529,18 @@ public class MutateJobServiceClient implements BackgroundResource {
    * operation will not contain errors or a response. Instead, use ListMutateJobResults to get the
    * results of the job.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MutateJobServiceClient mutateJobServiceClient = MutateJobServiceClient.create()) {
+   *   RunMutateJobRequest request =
+   *       RunMutateJobRequest.newBuilder()
+   *           .setResourceName(MutateJobName.of("[CUSTOMER]", "[MUTATE_JOB]").toString())
+   *           .build();
+   *   mutateJobServiceClient.runMutateJobAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -372,6 +558,19 @@ public class MutateJobServiceClient implements BackgroundResource {
    * results of the job.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MutateJobServiceClient mutateJobServiceClient = MutateJobServiceClient.create()) {
+   *   RunMutateJobRequest request =
+   *       RunMutateJobRequest.newBuilder()
+   *           .setResourceName(MutateJobName.of("[CUSTOMER]", "[MUTATE_JOB]").toString())
+   *           .build();
+   *   OperationFuture<Empty, MutateJob.MutateJobMetadata> future =
+   *       mutateJobServiceClient.runMutateJobOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<RunMutateJobRequest, Empty, MutateJob.MutateJobMetadata>
       runMutateJobOperationCallable() {
@@ -387,6 +586,19 @@ public class MutateJobServiceClient implements BackgroundResource {
    * results of the job.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MutateJobServiceClient mutateJobServiceClient = MutateJobServiceClient.create()) {
+   *   RunMutateJobRequest request =
+   *       RunMutateJobRequest.newBuilder()
+   *           .setResourceName(MutateJobName.of("[CUSTOMER]", "[MUTATE_JOB]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       mutateJobServiceClient.runMutateJobCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<RunMutateJobRequest, Operation> runMutateJobCallable() {
     return stub.runMutateJobCallable();
@@ -395,6 +607,17 @@ public class MutateJobServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Add operations to the mutate job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MutateJobServiceClient mutateJobServiceClient = MutateJobServiceClient.create()) {
+   *   MutateJobName resourceName = MutateJobName.of("[CUSTOMER]", "[MUTATE_JOB]");
+   *   List<MutateOperation> mutateOperations = new ArrayList<>();
+   *   AddMutateJobOperationsResponse response =
+   *       mutateJobServiceClient.addMutateJobOperations(resourceName, mutateOperations);
+   * }
+   * }</pre>
    *
    * @param resourceName Required. The resource name of the MutateJob.
    * @param mutateOperations Required. The list of mutates being added.
@@ -420,6 +643,17 @@ public class MutateJobServiceClient implements BackgroundResource {
   /**
    * Add operations to the mutate job.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MutateJobServiceClient mutateJobServiceClient = MutateJobServiceClient.create()) {
+   *   String resourceName = MutateJobName.of("[CUSTOMER]", "[MUTATE_JOB]").toString();
+   *   List<MutateOperation> mutateOperations = new ArrayList<>();
+   *   AddMutateJobOperationsResponse response =
+   *       mutateJobServiceClient.addMutateJobOperations(resourceName, mutateOperations);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the MutateJob.
    * @param mutateOperations Required. The list of mutates being added.
    *     <p>Operations can use negative integers as temp ids to signify dependencies between
@@ -443,6 +677,19 @@ public class MutateJobServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Add operations to the mutate job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MutateJobServiceClient mutateJobServiceClient = MutateJobServiceClient.create()) {
+   *   MutateJobName resourceName = MutateJobName.of("[CUSTOMER]", "[MUTATE_JOB]");
+   *   String sequenceToken = "sequenceToken-731053384";
+   *   List<MutateOperation> mutateOperations = new ArrayList<>();
+   *   AddMutateJobOperationsResponse response =
+   *       mutateJobServiceClient.addMutateJobOperations(
+   *           resourceName, sequenceToken, mutateOperations);
+   * }
+   * }</pre>
    *
    * @param resourceName Required. The resource name of the MutateJob.
    * @param sequenceToken A token used to enforce sequencing.
@@ -473,6 +720,19 @@ public class MutateJobServiceClient implements BackgroundResource {
   /**
    * Add operations to the mutate job.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MutateJobServiceClient mutateJobServiceClient = MutateJobServiceClient.create()) {
+   *   String resourceName = MutateJobName.of("[CUSTOMER]", "[MUTATE_JOB]").toString();
+   *   String sequenceToken = "sequenceToken-731053384";
+   *   List<MutateOperation> mutateOperations = new ArrayList<>();
+   *   AddMutateJobOperationsResponse response =
+   *       mutateJobServiceClient.addMutateJobOperations(
+   *           resourceName, sequenceToken, mutateOperations);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the MutateJob.
    * @param sequenceToken A token used to enforce sequencing.
    *     <p>The first AddMutateJobOperations request for a MutateJob should not set sequence_token.
@@ -502,6 +762,21 @@ public class MutateJobServiceClient implements BackgroundResource {
   /**
    * Add operations to the mutate job.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MutateJobServiceClient mutateJobServiceClient = MutateJobServiceClient.create()) {
+   *   AddMutateJobOperationsRequest request =
+   *       AddMutateJobOperationsRequest.newBuilder()
+   *           .setResourceName(MutateJobName.of("[CUSTOMER]", "[MUTATE_JOB]").toString())
+   *           .setSequenceToken("sequenceToken-731053384")
+   *           .addAllMutateOperations(new ArrayList<MutateOperation>())
+   *           .build();
+   *   AddMutateJobOperationsResponse response =
+   *       mutateJobServiceClient.addMutateJobOperations(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -515,6 +790,21 @@ public class MutateJobServiceClient implements BackgroundResource {
    * Add operations to the mutate job.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MutateJobServiceClient mutateJobServiceClient = MutateJobServiceClient.create()) {
+   *   AddMutateJobOperationsRequest request =
+   *       AddMutateJobOperationsRequest.newBuilder()
+   *           .setResourceName(MutateJobName.of("[CUSTOMER]", "[MUTATE_JOB]").toString())
+   *           .setSequenceToken("sequenceToken-731053384")
+   *           .addAllMutateOperations(new ArrayList<MutateOperation>())
+   *           .build();
+   *   ApiFuture<AddMutateJobOperationsResponse> future =
+   *       mutateJobServiceClient.addMutateJobOperationsCallable().futureCall(request);
+   *   // Do something.
+   *   AddMutateJobOperationsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<AddMutateJobOperationsRequest, AddMutateJobOperationsResponse>
       addMutateJobOperationsCallable() {

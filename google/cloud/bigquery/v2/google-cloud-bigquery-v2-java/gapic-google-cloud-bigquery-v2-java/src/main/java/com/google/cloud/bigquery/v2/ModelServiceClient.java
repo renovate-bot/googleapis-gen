@@ -32,6 +32,15 @@ import javax.annotation.Generated;
  * This class provides the ability to make remote calls to the backing service through method calls
  * that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+ *   String projectId = "projectId-894832108";
+ *   String datasetId = "datasetId-345342029";
+ *   String modelId = "modelId1226956324";
+ *   ModelProto.Model response = modelServiceClient.getModel(projectId, datasetId, modelId);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the ModelServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -134,6 +143,17 @@ public class ModelServiceClient implements BackgroundResource {
   /**
    * Gets the specified model resource by model ID.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String datasetId = "datasetId-345342029";
+   *   String modelId = "modelId1226956324";
+   *   ModelProto.Model response = modelServiceClient.getModel(projectId, datasetId, modelId);
+   * }
+   * }</pre>
+   *
    * @param projectId Required. Project ID of the requested model.
    * @param datasetId Required. Dataset ID of the requested model.
    * @param modelId Required. Model ID of the requested model.
@@ -153,6 +173,20 @@ public class ModelServiceClient implements BackgroundResource {
   /**
    * Gets the specified model resource by model ID.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   ModelProto.GetModelRequest request =
+   *       ModelProto.GetModelRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setDatasetId("datasetId-345342029")
+   *           .setModelId("modelId1226956324")
+   *           .build();
+   *   ModelProto.Model response = modelServiceClient.getModel(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -165,6 +199,21 @@ public class ModelServiceClient implements BackgroundResource {
    * Gets the specified model resource by model ID.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   ModelProto.GetModelRequest request =
+   *       ModelProto.GetModelRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setDatasetId("datasetId-345342029")
+   *           .setModelId("modelId1226956324")
+   *           .build();
+   *   ApiFuture<ModelProto.Model> future =
+   *       modelServiceClient.getModelCallable().futureCall(request);
+   *   // Do something.
+   *   ModelProto.Model response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ModelProto.GetModelRequest, ModelProto.Model> getModelCallable() {
     return stub.getModelCallable();
@@ -173,6 +222,18 @@ public class ModelServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all models in the specified dataset. Requires the READER dataset role.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String datasetId = "datasetId-345342029";
+   *   UInt32Value maxResults = UInt32Value.newBuilder().build();
+   *   ModelProto.ListModelsResponse response =
+   *       modelServiceClient.listModels(projectId, datasetId, maxResults);
+   * }
+   * }</pre>
    *
    * @param projectId Required. Project ID of the models to list.
    * @param datasetId Required. Dataset ID of the models to list.
@@ -195,6 +256,21 @@ public class ModelServiceClient implements BackgroundResource {
   /**
    * Lists all models in the specified dataset. Requires the READER dataset role.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   ModelProto.ListModelsRequest request =
+   *       ModelProto.ListModelsRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setDatasetId("datasetId-345342029")
+   *           .setMaxResults(UInt32Value.newBuilder().build())
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ModelProto.ListModelsResponse response = modelServiceClient.listModels(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -207,6 +283,22 @@ public class ModelServiceClient implements BackgroundResource {
    * Lists all models in the specified dataset. Requires the READER dataset role.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   ModelProto.ListModelsRequest request =
+   *       ModelProto.ListModelsRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setDatasetId("datasetId-345342029")
+   *           .setMaxResults(UInt32Value.newBuilder().build())
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<ModelProto.ListModelsResponse> future =
+   *       modelServiceClient.listModelsCallable().futureCall(request);
+   *   // Do something.
+   *   ModelProto.ListModelsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ModelProto.ListModelsRequest, ModelProto.ListModelsResponse>
       listModelsCallable() {
@@ -216,6 +308,19 @@ public class ModelServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patch specific fields in the specified model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String datasetId = "datasetId-345342029";
+   *   String modelId = "modelId1226956324";
+   *   ModelProto.Model model = ModelProto.Model.newBuilder().build();
+   *   ModelProto.Model response =
+   *       modelServiceClient.patchModel(projectId, datasetId, modelId, model);
+   * }
+   * }</pre>
    *
    * @param projectId Required. Project ID of the model to patch.
    * @param datasetId Required. Dataset ID of the model to patch.
@@ -240,6 +345,20 @@ public class ModelServiceClient implements BackgroundResource {
   /**
    * Patch specific fields in the specified model.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   ModelProto.PatchModelRequest request =
+   *       ModelProto.PatchModelRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setDatasetId("datasetId-345342029")
+   *           .setModelId("modelId1226956324")
+   *           .build();
+   *   ModelProto.Model response = modelServiceClient.patchModel(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -252,6 +371,21 @@ public class ModelServiceClient implements BackgroundResource {
    * Patch specific fields in the specified model.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   ModelProto.PatchModelRequest request =
+   *       ModelProto.PatchModelRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setDatasetId("datasetId-345342029")
+   *           .setModelId("modelId1226956324")
+   *           .build();
+   *   ApiFuture<ModelProto.Model> future =
+   *       modelServiceClient.patchModelCallable().futureCall(request);
+   *   // Do something.
+   *   ModelProto.Model response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ModelProto.PatchModelRequest, ModelProto.Model> patchModelCallable() {
     return stub.patchModelCallable();
@@ -260,6 +394,17 @@ public class ModelServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the model specified by modelId from the dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String datasetId = "datasetId-345342029";
+   *   String modelId = "modelId1226956324";
+   *   modelServiceClient.deleteModel(projectId, datasetId, modelId);
+   * }
+   * }</pre>
    *
    * @param projectId Required. Project ID of the model to delete.
    * @param datasetId Required. Dataset ID of the model to delete.
@@ -280,6 +425,20 @@ public class ModelServiceClient implements BackgroundResource {
   /**
    * Deletes the model specified by modelId from the dataset.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   ModelProto.DeleteModelRequest request =
+   *       ModelProto.DeleteModelRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setDatasetId("datasetId-345342029")
+   *           .setModelId("modelId1226956324")
+   *           .build();
+   *   modelServiceClient.deleteModel(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -292,6 +451,20 @@ public class ModelServiceClient implements BackgroundResource {
    * Deletes the model specified by modelId from the dataset.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   ModelProto.DeleteModelRequest request =
+   *       ModelProto.DeleteModelRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setDatasetId("datasetId-345342029")
+   *           .setModelId("modelId1226956324")
+   *           .build();
+   *   ApiFuture<Empty> future = modelServiceClient.deleteModelCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ModelProto.DeleteModelRequest, Empty> deleteModelCallable() {
     return stub.deleteModelCallable();

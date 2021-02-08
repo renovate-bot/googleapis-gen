@@ -35,6 +35,15 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (AdGroupCriterionServiceClient adGroupCriterionServiceClient =
+ *     AdGroupCriterionServiceClient.create()) {
+ *   AdGroupCriterionName resourceName =
+ *       AdGroupCriterionName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]");
+ *   AdGroupCriterion response = adGroupCriterionServiceClient.getAdGroupCriterion(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the AdGroupCriterionServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -142,6 +151,17 @@ public class AdGroupCriterionServiceClient implements BackgroundResource {
   /**
    * Returns the requested criterion in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdGroupCriterionServiceClient adGroupCriterionServiceClient =
+   *     AdGroupCriterionServiceClient.create()) {
+   *   AdGroupCriterionName resourceName =
+   *       AdGroupCriterionName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]");
+   *   AdGroupCriterion response = adGroupCriterionServiceClient.getAdGroupCriterion(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the criterion to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -157,6 +177,17 @@ public class AdGroupCriterionServiceClient implements BackgroundResource {
   /**
    * Returns the requested criterion in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdGroupCriterionServiceClient adGroupCriterionServiceClient =
+   *     AdGroupCriterionServiceClient.create()) {
+   *   String resourceName =
+   *       AdGroupCriterionName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]").toString();
+   *   AdGroupCriterion response = adGroupCriterionServiceClient.getAdGroupCriterion(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the criterion to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -170,6 +201,21 @@ public class AdGroupCriterionServiceClient implements BackgroundResource {
   /**
    * Returns the requested criterion in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdGroupCriterionServiceClient adGroupCriterionServiceClient =
+   *     AdGroupCriterionServiceClient.create()) {
+   *   GetAdGroupCriterionRequest request =
+   *       GetAdGroupCriterionRequest.newBuilder()
+   *           .setResourceName(
+   *               AdGroupCriterionName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]")
+   *                   .toString())
+   *           .build();
+   *   AdGroupCriterion response = adGroupCriterionServiceClient.getAdGroupCriterion(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -182,6 +228,22 @@ public class AdGroupCriterionServiceClient implements BackgroundResource {
    * Returns the requested criterion in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdGroupCriterionServiceClient adGroupCriterionServiceClient =
+   *     AdGroupCriterionServiceClient.create()) {
+   *   GetAdGroupCriterionRequest request =
+   *       GetAdGroupCriterionRequest.newBuilder()
+   *           .setResourceName(
+   *               AdGroupCriterionName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<AdGroupCriterion> future =
+   *       adGroupCriterionServiceClient.getAdGroupCriterionCallable().futureCall(request);
+   *   // Do something.
+   *   AdGroupCriterion response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetAdGroupCriterionRequest, AdGroupCriterion>
       getAdGroupCriterionCallable() {
@@ -191,6 +253,18 @@ public class AdGroupCriterionServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates, updates, or removes criteria. Operation statuses are returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdGroupCriterionServiceClient adGroupCriterionServiceClient =
+   *     AdGroupCriterionServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   List<AdGroupCriterionOperation> operations = new ArrayList<>();
+   *   MutateAdGroupCriteriaResponse response =
+   *       adGroupCriterionServiceClient.mutateAdGroupCriteria(customerId, operations);
+   * }
+   * }</pre>
    *
    * @param customerId Required. ID of the customer whose criteria are being modified.
    * @param operations Required. The list of operations to perform on individual criteria.
@@ -210,6 +284,23 @@ public class AdGroupCriterionServiceClient implements BackgroundResource {
   /**
    * Creates, updates, or removes criteria. Operation statuses are returned.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdGroupCriterionServiceClient adGroupCriterionServiceClient =
+   *     AdGroupCriterionServiceClient.create()) {
+   *   MutateAdGroupCriteriaRequest request =
+   *       MutateAdGroupCriteriaRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<AdGroupCriterionOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   MutateAdGroupCriteriaResponse response =
+   *       adGroupCriterionServiceClient.mutateAdGroupCriteria(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -223,6 +314,23 @@ public class AdGroupCriterionServiceClient implements BackgroundResource {
    * Creates, updates, or removes criteria. Operation statuses are returned.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdGroupCriterionServiceClient adGroupCriterionServiceClient =
+   *     AdGroupCriterionServiceClient.create()) {
+   *   MutateAdGroupCriteriaRequest request =
+   *       MutateAdGroupCriteriaRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<AdGroupCriterionOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<MutateAdGroupCriteriaResponse> future =
+   *       adGroupCriterionServiceClient.mutateAdGroupCriteriaCallable().futureCall(request);
+   *   // Do something.
+   *   MutateAdGroupCriteriaResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<MutateAdGroupCriteriaRequest, MutateAdGroupCriteriaResponse>
       mutateAdGroupCriteriaCallable() {

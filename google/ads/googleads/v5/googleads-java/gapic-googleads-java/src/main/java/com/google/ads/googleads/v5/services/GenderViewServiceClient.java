@@ -34,6 +34,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (GenderViewServiceClient genderViewServiceClient = GenderViewServiceClient.create()) {
+ *   GenderViewName resourceName = GenderViewName.of("[CUSTOMER]", "[GENDER_VIEW]");
+ *   GenderView response = genderViewServiceClient.getGenderView(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the GenderViewServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -140,6 +147,15 @@ public class GenderViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested gender view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GenderViewServiceClient genderViewServiceClient = GenderViewServiceClient.create()) {
+   *   GenderViewName resourceName = GenderViewName.of("[CUSTOMER]", "[GENDER_VIEW]");
+   *   GenderView response = genderViewServiceClient.getGenderView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the gender view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -155,6 +171,15 @@ public class GenderViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested gender view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GenderViewServiceClient genderViewServiceClient = GenderViewServiceClient.create()) {
+   *   String resourceName = GenderViewName.of("[CUSTOMER]", "[GENDER_VIEW]").toString();
+   *   GenderView response = genderViewServiceClient.getGenderView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the gender view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -168,6 +193,18 @@ public class GenderViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested gender view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GenderViewServiceClient genderViewServiceClient = GenderViewServiceClient.create()) {
+   *   GetGenderViewRequest request =
+   *       GetGenderViewRequest.newBuilder()
+   *           .setResourceName(GenderViewName.of("[CUSTOMER]", "[GENDER_VIEW]").toString())
+   *           .build();
+   *   GenderView response = genderViewServiceClient.getGenderView(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -180,6 +217,19 @@ public class GenderViewServiceClient implements BackgroundResource {
    * Returns the requested gender view in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GenderViewServiceClient genderViewServiceClient = GenderViewServiceClient.create()) {
+   *   GetGenderViewRequest request =
+   *       GetGenderViewRequest.newBuilder()
+   *           .setResourceName(GenderViewName.of("[CUSTOMER]", "[GENDER_VIEW]").toString())
+   *           .build();
+   *   ApiFuture<GenderView> future =
+   *       genderViewServiceClient.getGenderViewCallable().futureCall(request);
+   *   // Do something.
+   *   GenderView response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetGenderViewRequest, GenderView> getGenderViewCallable() {
     return stub.getGenderViewCallable();

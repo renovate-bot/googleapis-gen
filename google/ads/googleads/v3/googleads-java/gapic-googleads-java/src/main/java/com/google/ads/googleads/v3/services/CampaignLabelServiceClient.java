@@ -35,6 +35,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (CampaignLabelServiceClient campaignLabelServiceClient =
+ *     CampaignLabelServiceClient.create()) {
+ *   CampaignLabelName resourceName = CampaignLabelName.of("[CUSTOMER]", "[CAMPAIGN_LABEL]");
+ *   CampaignLabel response = campaignLabelServiceClient.getCampaignLabel(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the CampaignLabelServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -141,6 +149,16 @@ public class CampaignLabelServiceClient implements BackgroundResource {
   /**
    * Returns the requested campaign-label relationship in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignLabelServiceClient campaignLabelServiceClient =
+   *     CampaignLabelServiceClient.create()) {
+   *   CampaignLabelName resourceName = CampaignLabelName.of("[CUSTOMER]", "[CAMPAIGN_LABEL]");
+   *   CampaignLabel response = campaignLabelServiceClient.getCampaignLabel(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the campaign-label relationship to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -156,6 +174,16 @@ public class CampaignLabelServiceClient implements BackgroundResource {
   /**
    * Returns the requested campaign-label relationship in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignLabelServiceClient campaignLabelServiceClient =
+   *     CampaignLabelServiceClient.create()) {
+   *   String resourceName = CampaignLabelName.of("[CUSTOMER]", "[CAMPAIGN_LABEL]").toString();
+   *   CampaignLabel response = campaignLabelServiceClient.getCampaignLabel(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the campaign-label relationship to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -169,6 +197,19 @@ public class CampaignLabelServiceClient implements BackgroundResource {
   /**
    * Returns the requested campaign-label relationship in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignLabelServiceClient campaignLabelServiceClient =
+   *     CampaignLabelServiceClient.create()) {
+   *   GetCampaignLabelRequest request =
+   *       GetCampaignLabelRequest.newBuilder()
+   *           .setResourceName(CampaignLabelName.of("[CUSTOMER]", "[CAMPAIGN_LABEL]").toString())
+   *           .build();
+   *   CampaignLabel response = campaignLabelServiceClient.getCampaignLabel(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -181,6 +222,20 @@ public class CampaignLabelServiceClient implements BackgroundResource {
    * Returns the requested campaign-label relationship in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignLabelServiceClient campaignLabelServiceClient =
+   *     CampaignLabelServiceClient.create()) {
+   *   GetCampaignLabelRequest request =
+   *       GetCampaignLabelRequest.newBuilder()
+   *           .setResourceName(CampaignLabelName.of("[CUSTOMER]", "[CAMPAIGN_LABEL]").toString())
+   *           .build();
+   *   ApiFuture<CampaignLabel> future =
+   *       campaignLabelServiceClient.getCampaignLabelCallable().futureCall(request);
+   *   // Do something.
+   *   CampaignLabel response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetCampaignLabelRequest, CampaignLabel> getCampaignLabelCallable() {
     return stub.getCampaignLabelCallable();
@@ -189,6 +244,18 @@ public class CampaignLabelServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates and removes campaign-label relationships. Operation statuses are returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignLabelServiceClient campaignLabelServiceClient =
+   *     CampaignLabelServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   List<CampaignLabelOperation> operations = new ArrayList<>();
+   *   MutateCampaignLabelsResponse response =
+   *       campaignLabelServiceClient.mutateCampaignLabels(customerId, operations);
+   * }
+   * }</pre>
    *
    * @param customerId Required. ID of the customer whose campaign-label relationships are being
    *     modified.
@@ -209,6 +276,23 @@ public class CampaignLabelServiceClient implements BackgroundResource {
   /**
    * Creates and removes campaign-label relationships. Operation statuses are returned.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignLabelServiceClient campaignLabelServiceClient =
+   *     CampaignLabelServiceClient.create()) {
+   *   MutateCampaignLabelsRequest request =
+   *       MutateCampaignLabelsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<CampaignLabelOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   MutateCampaignLabelsResponse response =
+   *       campaignLabelServiceClient.mutateCampaignLabels(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -222,6 +306,23 @@ public class CampaignLabelServiceClient implements BackgroundResource {
    * Creates and removes campaign-label relationships. Operation statuses are returned.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CampaignLabelServiceClient campaignLabelServiceClient =
+   *     CampaignLabelServiceClient.create()) {
+   *   MutateCampaignLabelsRequest request =
+   *       MutateCampaignLabelsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<CampaignLabelOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<MutateCampaignLabelsResponse> future =
+   *       campaignLabelServiceClient.mutateCampaignLabelsCallable().futureCall(request);
+   *   // Do something.
+   *   MutateCampaignLabelsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<MutateCampaignLabelsRequest, MutateCampaignLabelsResponse>
       mutateCampaignLabelsCallable() {

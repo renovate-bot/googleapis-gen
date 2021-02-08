@@ -35,6 +35,16 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (ExtensionFeedItemServiceClient extensionFeedItemServiceClient =
+ *     ExtensionFeedItemServiceClient.create()) {
+ *   ExtensionFeedItemName resourceName =
+ *       ExtensionFeedItemName.of("[CUSTOMER]", "[EXTENSION_FEED_ITEM]");
+ *   ExtensionFeedItem response =
+ *       extensionFeedItemServiceClient.getExtensionFeedItem(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the ExtensionFeedItemServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -143,6 +153,18 @@ public class ExtensionFeedItemServiceClient implements BackgroundResource {
   /**
    * Returns the requested extension feed item in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExtensionFeedItemServiceClient extensionFeedItemServiceClient =
+   *     ExtensionFeedItemServiceClient.create()) {
+   *   ExtensionFeedItemName resourceName =
+   *       ExtensionFeedItemName.of("[CUSTOMER]", "[EXTENSION_FEED_ITEM]");
+   *   ExtensionFeedItem response =
+   *       extensionFeedItemServiceClient.getExtensionFeedItem(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the extension feed item to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -158,6 +180,18 @@ public class ExtensionFeedItemServiceClient implements BackgroundResource {
   /**
    * Returns the requested extension feed item in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExtensionFeedItemServiceClient extensionFeedItemServiceClient =
+   *     ExtensionFeedItemServiceClient.create()) {
+   *   String resourceName =
+   *       ExtensionFeedItemName.of("[CUSTOMER]", "[EXTENSION_FEED_ITEM]").toString();
+   *   ExtensionFeedItem response =
+   *       extensionFeedItemServiceClient.getExtensionFeedItem(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the extension feed item to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -171,6 +205,20 @@ public class ExtensionFeedItemServiceClient implements BackgroundResource {
   /**
    * Returns the requested extension feed item in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExtensionFeedItemServiceClient extensionFeedItemServiceClient =
+   *     ExtensionFeedItemServiceClient.create()) {
+   *   GetExtensionFeedItemRequest request =
+   *       GetExtensionFeedItemRequest.newBuilder()
+   *           .setResourceName(
+   *               ExtensionFeedItemName.of("[CUSTOMER]", "[EXTENSION_FEED_ITEM]").toString())
+   *           .build();
+   *   ExtensionFeedItem response = extensionFeedItemServiceClient.getExtensionFeedItem(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -183,6 +231,21 @@ public class ExtensionFeedItemServiceClient implements BackgroundResource {
    * Returns the requested extension feed item in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExtensionFeedItemServiceClient extensionFeedItemServiceClient =
+   *     ExtensionFeedItemServiceClient.create()) {
+   *   GetExtensionFeedItemRequest request =
+   *       GetExtensionFeedItemRequest.newBuilder()
+   *           .setResourceName(
+   *               ExtensionFeedItemName.of("[CUSTOMER]", "[EXTENSION_FEED_ITEM]").toString())
+   *           .build();
+   *   ApiFuture<ExtensionFeedItem> future =
+   *       extensionFeedItemServiceClient.getExtensionFeedItemCallable().futureCall(request);
+   *   // Do something.
+   *   ExtensionFeedItem response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetExtensionFeedItemRequest, ExtensionFeedItem>
       getExtensionFeedItemCallable() {
@@ -192,6 +255,18 @@ public class ExtensionFeedItemServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates, updates, or removes extension feed items. Operation statuses are returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExtensionFeedItemServiceClient extensionFeedItemServiceClient =
+   *     ExtensionFeedItemServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   List<ExtensionFeedItemOperation> operations = new ArrayList<>();
+   *   MutateExtensionFeedItemsResponse response =
+   *       extensionFeedItemServiceClient.mutateExtensionFeedItems(customerId, operations);
+   * }
+   * }</pre>
    *
    * @param customerId Required. The ID of the customer whose extension feed items are being
    *     modified.
@@ -213,6 +288,23 @@ public class ExtensionFeedItemServiceClient implements BackgroundResource {
   /**
    * Creates, updates, or removes extension feed items. Operation statuses are returned.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExtensionFeedItemServiceClient extensionFeedItemServiceClient =
+   *     ExtensionFeedItemServiceClient.create()) {
+   *   MutateExtensionFeedItemsRequest request =
+   *       MutateExtensionFeedItemsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<ExtensionFeedItemOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   MutateExtensionFeedItemsResponse response =
+   *       extensionFeedItemServiceClient.mutateExtensionFeedItems(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -226,6 +318,23 @@ public class ExtensionFeedItemServiceClient implements BackgroundResource {
    * Creates, updates, or removes extension feed items. Operation statuses are returned.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExtensionFeedItemServiceClient extensionFeedItemServiceClient =
+   *     ExtensionFeedItemServiceClient.create()) {
+   *   MutateExtensionFeedItemsRequest request =
+   *       MutateExtensionFeedItemsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<ExtensionFeedItemOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<MutateExtensionFeedItemsResponse> future =
+   *       extensionFeedItemServiceClient.mutateExtensionFeedItemsCallable().futureCall(request);
+   *   // Do something.
+   *   MutateExtensionFeedItemsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<MutateExtensionFeedItemsRequest, MutateExtensionFeedItemsResponse>
       mutateExtensionFeedItemsCallable() {

@@ -75,6 +75,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+ *     ManagedIdentitiesServiceClient.create()) {
+ *   DomainName name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]");
+ *   ResetAdminPasswordResponse response = managedIdentitiesServiceClient.resetAdminPassword(name);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the ManagedIdentitiesServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -194,6 +202,21 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
   /**
    * Creates a Microsoft AD domain.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   String domainName = "domainName-1244085905";
+   *   Domain domain = Domain.newBuilder().build();
+   *   Domain response =
+   *       managedIdentitiesServiceClient
+   *           .createMicrosoftAdDomainAsync(parent, domainName, domain)
+   *           .get();
+   * }
+   * }</pre>
+   *
    * @param parent Required. The resource project name and location using the form:
    *     `projects/{project_id}/locations/global`
    * @param domainName Required. The fully qualified domain name. e.g. mydomain.myorganization.com,
@@ -220,6 +243,21 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a Microsoft AD domain.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   String parent = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString();
+   *   String domainName = "domainName-1244085905";
+   *   Domain domain = Domain.newBuilder().build();
+   *   Domain response =
+   *       managedIdentitiesServiceClient
+   *           .createMicrosoftAdDomainAsync(parent, domainName, domain)
+   *           .get();
+   * }
+   * }</pre>
    *
    * @param parent Required. The resource project name and location using the form:
    *     `projects/{project_id}/locations/global`
@@ -248,6 +286,21 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
   /**
    * Creates a Microsoft AD domain.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   CreateMicrosoftAdDomainRequest request =
+   *       CreateMicrosoftAdDomainRequest.newBuilder()
+   *           .setParent(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setDomainName("domainName-1244085905")
+   *           .setDomain(Domain.newBuilder().build())
+   *           .build();
+   *   Domain response = managedIdentitiesServiceClient.createMicrosoftAdDomainAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -261,6 +314,24 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * Creates a Microsoft AD domain.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   CreateMicrosoftAdDomainRequest request =
+   *       CreateMicrosoftAdDomainRequest.newBuilder()
+   *           .setParent(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setDomainName("domainName-1244085905")
+   *           .setDomain(Domain.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Domain, OpMetadata> future =
+   *       managedIdentitiesServiceClient
+   *           .createMicrosoftAdDomainOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   Domain response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<CreateMicrosoftAdDomainRequest, Domain, OpMetadata>
       createMicrosoftAdDomainOperationCallable() {
@@ -272,6 +343,22 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * Creates a Microsoft AD domain.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   CreateMicrosoftAdDomainRequest request =
+   *       CreateMicrosoftAdDomainRequest.newBuilder()
+   *           .setParent(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setDomainName("domainName-1244085905")
+   *           .setDomain(Domain.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       managedIdentitiesServiceClient.createMicrosoftAdDomainCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateMicrosoftAdDomainRequest, Operation>
       createMicrosoftAdDomainCallable() {
@@ -281,6 +368,16 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Resets a domain's administrator password.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   DomainName name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]");
+   *   ResetAdminPasswordResponse response = managedIdentitiesServiceClient.resetAdminPassword(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The domain resource name using the form:
    *     `projects/{project_id}/locations/global/domains/{domain_name}`
@@ -298,6 +395,16 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
   /**
    * Resets a domain's administrator password.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   String name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString();
+   *   ResetAdminPasswordResponse response = managedIdentitiesServiceClient.resetAdminPassword(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The domain resource name using the form:
    *     `projects/{project_id}/locations/global/domains/{domain_name}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -312,6 +419,20 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
   /**
    * Resets a domain's administrator password.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   ResetAdminPasswordRequest request =
+   *       ResetAdminPasswordRequest.newBuilder()
+   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .build();
+   *   ResetAdminPasswordResponse response =
+   *       managedIdentitiesServiceClient.resetAdminPassword(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -324,6 +445,20 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * Resets a domain's administrator password.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   ResetAdminPasswordRequest request =
+   *       ResetAdminPasswordRequest.newBuilder()
+   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .build();
+   *   ApiFuture<ResetAdminPasswordResponse> future =
+   *       managedIdentitiesServiceClient.resetAdminPasswordCallable().futureCall(request);
+   *   // Do something.
+   *   ResetAdminPasswordResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ResetAdminPasswordRequest, ResetAdminPasswordResponse>
       resetAdminPasswordCallable() {
@@ -333,6 +468,18 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists domains in a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Domain element : managedIdentitiesServiceClient.listDomains(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent Required. The resource name of the domain location using the form:
    *     `projects/{project_id}/locations/global`
@@ -350,6 +497,18 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
   /**
    * Lists domains in a project.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   String parent = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString();
+   *   for (Domain element : managedIdentitiesServiceClient.listDomains(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The resource name of the domain location using the form:
    *     `projects/{project_id}/locations/global`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -363,6 +522,25 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
   /**
    * Lists domains in a project.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   ListDomainsRequest request =
+   *       ListDomainsRequest.newBuilder()
+   *           .setParent(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (Domain element : managedIdentitiesServiceClient.listDomains(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -375,6 +553,26 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * Lists domains in a project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   ListDomainsRequest request =
+   *       ListDomainsRequest.newBuilder()
+   *           .setParent(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<Domain> future =
+   *       managedIdentitiesServiceClient.listDomainsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Domain element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListDomainsRequest, ListDomainsPagedResponse>
       listDomainsPagedCallable() {
@@ -386,6 +584,25 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * Lists domains in a project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   while (true) {
+   *     ListDomainsResponse response =
+   *         managedIdentitiesServiceClient.listDomainsCallable().call(request);
+   *     for (Domain element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListDomainsRequest, ListDomainsResponse> listDomainsCallable() {
     return stub.listDomainsCallable();
@@ -394,6 +611,16 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets information about a domain.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   DomainName name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]");
+   *   Domain response = managedIdentitiesServiceClient.getDomain(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The domain resource name using the form:
    *     `projects/{project_id}/locations/global/domains/{domain_name}`
@@ -409,6 +636,16 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
   /**
    * Gets information about a domain.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   String name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString();
+   *   Domain response = managedIdentitiesServiceClient.getDomain(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The domain resource name using the form:
    *     `projects/{project_id}/locations/global/domains/{domain_name}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -422,6 +659,19 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
   /**
    * Gets information about a domain.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   GetDomainRequest request =
+   *       GetDomainRequest.newBuilder()
+   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .build();
+   *   Domain response = managedIdentitiesServiceClient.getDomain(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -434,6 +684,20 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * Gets information about a domain.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   GetDomainRequest request =
+   *       GetDomainRequest.newBuilder()
+   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .build();
+   *   ApiFuture<Domain> future =
+   *       managedIdentitiesServiceClient.getDomainCallable().futureCall(request);
+   *   // Do something.
+   *   Domain response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetDomainRequest, Domain> getDomainCallable() {
     return stub.getDomainCallable();
@@ -442,6 +706,17 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the metadata and configuration of a domain.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   Domain domain = Domain.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Domain response = managedIdentitiesServiceClient.updateDomainAsync(domain, updateMask).get();
+   * }
+   * }</pre>
    *
    * @param domain Required. Domain message with updated fields. Only supported fields specified in
    *     update_mask are updated.
@@ -462,6 +737,20 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
   /**
    * Updates the metadata and configuration of a domain.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   UpdateDomainRequest request =
+   *       UpdateDomainRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setDomain(Domain.newBuilder().build())
+   *           .build();
+   *   Domain response = managedIdentitiesServiceClient.updateDomainAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -474,6 +763,21 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * Updates the metadata and configuration of a domain.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   UpdateDomainRequest request =
+   *       UpdateDomainRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setDomain(Domain.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Domain, OpMetadata> future =
+   *       managedIdentitiesServiceClient.updateDomainOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Domain response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<UpdateDomainRequest, Domain, OpMetadata>
       updateDomainOperationCallable() {
@@ -485,6 +789,21 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * Updates the metadata and configuration of a domain.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   UpdateDomainRequest request =
+   *       UpdateDomainRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setDomain(Domain.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       managedIdentitiesServiceClient.updateDomainCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateDomainRequest, Operation> updateDomainCallable() {
     return stub.updateDomainCallable();
@@ -493,6 +812,16 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a domain.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   DomainName name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]");
+   *   managedIdentitiesServiceClient.deleteDomainAsync(name).get();
+   * }
+   * }</pre>
    *
    * @param name Required. The domain resource name using the form:
    *     `projects/{project_id}/locations/global/domains/{domain_name}`
@@ -508,6 +837,16 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
   /**
    * Deletes a domain.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   String name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString();
+   *   managedIdentitiesServiceClient.deleteDomainAsync(name).get();
+   * }
+   * }</pre>
+   *
    * @param name Required. The domain resource name using the form:
    *     `projects/{project_id}/locations/global/domains/{domain_name}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -521,6 +860,19 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
   /**
    * Deletes a domain.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   DeleteDomainRequest request =
+   *       DeleteDomainRequest.newBuilder()
+   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .build();
+   *   managedIdentitiesServiceClient.deleteDomainAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -533,6 +885,20 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * Deletes a domain.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   DeleteDomainRequest request =
+   *       DeleteDomainRequest.newBuilder()
+   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .build();
+   *   OperationFuture<Empty, OpMetadata> future =
+   *       managedIdentitiesServiceClient.deleteDomainOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<DeleteDomainRequest, Empty, OpMetadata>
       deleteDomainOperationCallable() {
@@ -544,6 +910,20 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * Deletes a domain.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   DeleteDomainRequest request =
+   *       DeleteDomainRequest.newBuilder()
+   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       managedIdentitiesServiceClient.deleteDomainCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteDomainRequest, Operation> deleteDomainCallable() {
     return stub.deleteDomainCallable();
@@ -552,6 +932,17 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds an AD trust to a domain.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   DomainName name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]");
+   *   Trust trust = Trust.newBuilder().build();
+   *   Domain response = managedIdentitiesServiceClient.attachTrustAsync(name, trust).get();
+   * }
+   * }</pre>
    *
    * @param name Required. The resource domain name, project name and location using the form:
    *     `projects/{project_id}/locations/global/domains/{domain_name}`
@@ -571,6 +962,17 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
   /**
    * Adds an AD trust to a domain.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   String name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString();
+   *   Trust trust = Trust.newBuilder().build();
+   *   Domain response = managedIdentitiesServiceClient.attachTrustAsync(name, trust).get();
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource domain name, project name and location using the form:
    *     `projects/{project_id}/locations/global/domains/{domain_name}`
    * @param trust Required. The domain trust resource.
@@ -586,6 +988,20 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
   /**
    * Adds an AD trust to a domain.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   AttachTrustRequest request =
+   *       AttachTrustRequest.newBuilder()
+   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setTrust(Trust.newBuilder().build())
+   *           .build();
+   *   Domain response = managedIdentitiesServiceClient.attachTrustAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -598,6 +1014,21 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * Adds an AD trust to a domain.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   AttachTrustRequest request =
+   *       AttachTrustRequest.newBuilder()
+   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setTrust(Trust.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Domain, OpMetadata> future =
+   *       managedIdentitiesServiceClient.attachTrustOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Domain response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<AttachTrustRequest, Domain, OpMetadata>
       attachTrustOperationCallable() {
@@ -609,6 +1040,21 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * Adds an AD trust to a domain.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   AttachTrustRequest request =
+   *       AttachTrustRequest.newBuilder()
+   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setTrust(Trust.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       managedIdentitiesServiceClient.attachTrustCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<AttachTrustRequest, Operation> attachTrustCallable() {
     return stub.attachTrustCallable();
@@ -617,6 +1063,21 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the DNS conditional forwarder.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   DomainName name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]");
+   *   String targetDomainName = "targetDomainName2065239520";
+   *   List<String> targetDnsIpAddresses = new ArrayList<>();
+   *   Domain response =
+   *       managedIdentitiesServiceClient
+   *           .reconfigureTrustAsync(name, targetDomainName, targetDnsIpAddresses)
+   *           .get();
+   * }
+   * }</pre>
    *
    * @param name Required. The resource domain name, project name and location using the form:
    *     `projects/{project_id}/locations/global/domains/{domain_name}`
@@ -641,6 +1102,21 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
   /**
    * Updates the DNS conditional forwarder.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   String name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString();
+   *   String targetDomainName = "targetDomainName2065239520";
+   *   List<String> targetDnsIpAddresses = new ArrayList<>();
+   *   Domain response =
+   *       managedIdentitiesServiceClient
+   *           .reconfigureTrustAsync(name, targetDomainName, targetDnsIpAddresses)
+   *           .get();
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource domain name, project name and location using the form:
    *     `projects/{project_id}/locations/global/domains/{domain_name}`
    * @param targetDomainName Required. The fully-qualified target domain name which will be in trust
@@ -664,6 +1140,21 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
   /**
    * Updates the DNS conditional forwarder.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   ReconfigureTrustRequest request =
+   *       ReconfigureTrustRequest.newBuilder()
+   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setTargetDomainName("targetDomainName2065239520")
+   *           .addAllTargetDnsIpAddresses(new ArrayList<String>())
+   *           .build();
+   *   Domain response = managedIdentitiesServiceClient.reconfigureTrustAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -677,6 +1168,22 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * Updates the DNS conditional forwarder.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   ReconfigureTrustRequest request =
+   *       ReconfigureTrustRequest.newBuilder()
+   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setTargetDomainName("targetDomainName2065239520")
+   *           .addAllTargetDnsIpAddresses(new ArrayList<String>())
+   *           .build();
+   *   OperationFuture<Domain, OpMetadata> future =
+   *       managedIdentitiesServiceClient.reconfigureTrustOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Domain response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<ReconfigureTrustRequest, Domain, OpMetadata>
       reconfigureTrustOperationCallable() {
@@ -688,6 +1195,22 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * Updates the DNS conditional forwarder.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   ReconfigureTrustRequest request =
+   *       ReconfigureTrustRequest.newBuilder()
+   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setTargetDomainName("targetDomainName2065239520")
+   *           .addAllTargetDnsIpAddresses(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       managedIdentitiesServiceClient.reconfigureTrustCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ReconfigureTrustRequest, Operation> reconfigureTrustCallable() {
     return stub.reconfigureTrustCallable();
@@ -696,6 +1219,17 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes an AD trust.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   DomainName name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]");
+   *   Trust trust = Trust.newBuilder().build();
+   *   Domain response = managedIdentitiesServiceClient.detachTrustAsync(name, trust).get();
+   * }
+   * }</pre>
    *
    * @param name Required. The resource domain name, project name, and location using the form:
    *     `projects/{project_id}/locations/global/domains/{domain_name}`
@@ -715,6 +1249,17 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
   /**
    * Removes an AD trust.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   String name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString();
+   *   Trust trust = Trust.newBuilder().build();
+   *   Domain response = managedIdentitiesServiceClient.detachTrustAsync(name, trust).get();
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource domain name, project name, and location using the form:
    *     `projects/{project_id}/locations/global/domains/{domain_name}`
    * @param trust Required. The domain trust resource to removed.
@@ -730,6 +1275,20 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
   /**
    * Removes an AD trust.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   DetachTrustRequest request =
+   *       DetachTrustRequest.newBuilder()
+   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setTrust(Trust.newBuilder().build())
+   *           .build();
+   *   Domain response = managedIdentitiesServiceClient.detachTrustAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -742,6 +1301,21 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * Removes an AD trust.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   DetachTrustRequest request =
+   *       DetachTrustRequest.newBuilder()
+   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setTrust(Trust.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Domain, OpMetadata> future =
+   *       managedIdentitiesServiceClient.detachTrustOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Domain response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<DetachTrustRequest, Domain, OpMetadata>
       detachTrustOperationCallable() {
@@ -753,6 +1327,21 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * Removes an AD trust.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   DetachTrustRequest request =
+   *       DetachTrustRequest.newBuilder()
+   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setTrust(Trust.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       managedIdentitiesServiceClient.detachTrustCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DetachTrustRequest, Operation> detachTrustCallable() {
     return stub.detachTrustCallable();
@@ -762,6 +1351,17 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
   /**
    * Validates a trust state, that the target domain is reachable, and that the target domain is
    * able to accept incoming trust requests.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   DomainName name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]");
+   *   Trust trust = Trust.newBuilder().build();
+   *   Domain response = managedIdentitiesServiceClient.validateTrustAsync(name, trust).get();
+   * }
+   * }</pre>
    *
    * @param name Required. The resource domain name, project name, and location using the form:
    *     `projects/{project_id}/locations/global/domains/{domain_name}`
@@ -783,6 +1383,17 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * Validates a trust state, that the target domain is reachable, and that the target domain is
    * able to accept incoming trust requests.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   String name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString();
+   *   Trust trust = Trust.newBuilder().build();
+   *   Domain response = managedIdentitiesServiceClient.validateTrustAsync(name, trust).get();
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource domain name, project name, and location using the form:
    *     `projects/{project_id}/locations/global/domains/{domain_name}`
    * @param trust Required. The domain trust to validate trust state for.
@@ -799,6 +1410,20 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * Validates a trust state, that the target domain is reachable, and that the target domain is
    * able to accept incoming trust requests.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   ValidateTrustRequest request =
+   *       ValidateTrustRequest.newBuilder()
+   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setTrust(Trust.newBuilder().build())
+   *           .build();
+   *   Domain response = managedIdentitiesServiceClient.validateTrustAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -813,6 +1438,21 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * able to accept incoming trust requests.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   ValidateTrustRequest request =
+   *       ValidateTrustRequest.newBuilder()
+   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setTrust(Trust.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Domain, OpMetadata> future =
+   *       managedIdentitiesServiceClient.validateTrustOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Domain response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<ValidateTrustRequest, Domain, OpMetadata>
       validateTrustOperationCallable() {
@@ -825,6 +1465,21 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * able to accept incoming trust requests.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
+   *     ManagedIdentitiesServiceClient.create()) {
+   *   ValidateTrustRequest request =
+   *       ValidateTrustRequest.newBuilder()
+   *           .setName(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setTrust(Trust.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       managedIdentitiesServiceClient.validateTrustCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ValidateTrustRequest, Operation> validateTrustCallable() {
     return stub.validateTrustCallable();

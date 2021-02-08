@@ -34,6 +34,15 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (HotelGroupViewServiceClient hotelGroupViewServiceClient =
+ *     HotelGroupViewServiceClient.create()) {
+ *   HotelGroupViewName resourceName =
+ *       HotelGroupViewName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]");
+ *   HotelGroupView response = hotelGroupViewServiceClient.getHotelGroupView(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the HotelGroupViewServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -140,6 +149,17 @@ public class HotelGroupViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested Hotel Group View in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HotelGroupViewServiceClient hotelGroupViewServiceClient =
+   *     HotelGroupViewServiceClient.create()) {
+   *   HotelGroupViewName resourceName =
+   *       HotelGroupViewName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]");
+   *   HotelGroupView response = hotelGroupViewServiceClient.getHotelGroupView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. Resource name of the Hotel Group View to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -155,6 +175,17 @@ public class HotelGroupViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested Hotel Group View in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HotelGroupViewServiceClient hotelGroupViewServiceClient =
+   *     HotelGroupViewServiceClient.create()) {
+   *   String resourceName =
+   *       HotelGroupViewName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]").toString();
+   *   HotelGroupView response = hotelGroupViewServiceClient.getHotelGroupView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. Resource name of the Hotel Group View to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -168,6 +199,21 @@ public class HotelGroupViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested Hotel Group View in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HotelGroupViewServiceClient hotelGroupViewServiceClient =
+   *     HotelGroupViewServiceClient.create()) {
+   *   GetHotelGroupViewRequest request =
+   *       GetHotelGroupViewRequest.newBuilder()
+   *           .setResourceName(
+   *               HotelGroupViewName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]")
+   *                   .toString())
+   *           .build();
+   *   HotelGroupView response = hotelGroupViewServiceClient.getHotelGroupView(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -180,6 +226,22 @@ public class HotelGroupViewServiceClient implements BackgroundResource {
    * Returns the requested Hotel Group View in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HotelGroupViewServiceClient hotelGroupViewServiceClient =
+   *     HotelGroupViewServiceClient.create()) {
+   *   GetHotelGroupViewRequest request =
+   *       GetHotelGroupViewRequest.newBuilder()
+   *           .setResourceName(
+   *               HotelGroupViewName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<HotelGroupView> future =
+   *       hotelGroupViewServiceClient.getHotelGroupViewCallable().futureCall(request);
+   *   // Do something.
+   *   HotelGroupView response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetHotelGroupViewRequest, HotelGroupView> getHotelGroupViewCallable() {
     return stub.getHotelGroupViewCallable();

@@ -33,6 +33,15 @@
  *
  * <p>Sample for ContainerAnalysisV1Beta1Client:
  *
+ * <pre>{@code
+ * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client =
+ *     ContainerAnalysisV1Beta1Client.create()) {
+ *   ResourceName resource = ProjectName.of("[PROJECT]");
+ *   Policy policy = Policy.newBuilder().build();
+ *   Policy response = containerAnalysisV1Beta1Client.setIamPolicy(resource, policy);
+ * }
+ * }</pre>
+ *
  * <p>======================= GrafeasV1Beta1Client =======================
  *
  * <p>Service Description: [Grafeas](grafeas.io) API.
@@ -49,6 +58,14 @@
  * to that note.
  *
  * <p>Sample for GrafeasV1Beta1Client:
+ *
+ * <pre>{@code
+ * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+ *   GetOccurrenceRequest request =
+ *       GetOccurrenceRequest.newBuilder().setName("name3373707").build();
+ *   Occurrence response = grafeasV1Beta1Client.getOccurrence(request);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.devtools.containeranalysis.v1beta1;

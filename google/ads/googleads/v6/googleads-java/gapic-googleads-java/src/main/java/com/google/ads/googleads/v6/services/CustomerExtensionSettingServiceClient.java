@@ -35,6 +35,16 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (CustomerExtensionSettingServiceClient customerExtensionSettingServiceClient =
+ *     CustomerExtensionSettingServiceClient.create()) {
+ *   CustomerExtensionSettingName resourceName =
+ *       CustomerExtensionSettingName.of("[CUSTOMER_ID]", "[EXTENSION_TYPE]");
+ *   CustomerExtensionSetting response =
+ *       customerExtensionSettingServiceClient.getCustomerExtensionSetting(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the CustomerExtensionSettingServiceClient object to clean
  * up resources such as threads. In the example above, try-with-resources is used, which
  * automatically calls close().
@@ -146,6 +156,18 @@ public class CustomerExtensionSettingServiceClient implements BackgroundResource
   /**
    * Returns the requested customer extension setting in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerExtensionSettingServiceClient customerExtensionSettingServiceClient =
+   *     CustomerExtensionSettingServiceClient.create()) {
+   *   CustomerExtensionSettingName resourceName =
+   *       CustomerExtensionSettingName.of("[CUSTOMER_ID]", "[EXTENSION_TYPE]");
+   *   CustomerExtensionSetting response =
+   *       customerExtensionSettingServiceClient.getCustomerExtensionSetting(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the customer extension setting to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -162,6 +184,18 @@ public class CustomerExtensionSettingServiceClient implements BackgroundResource
   /**
    * Returns the requested customer extension setting in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerExtensionSettingServiceClient customerExtensionSettingServiceClient =
+   *     CustomerExtensionSettingServiceClient.create()) {
+   *   String resourceName =
+   *       CustomerExtensionSettingName.of("[CUSTOMER_ID]", "[EXTENSION_TYPE]").toString();
+   *   CustomerExtensionSetting response =
+   *       customerExtensionSettingServiceClient.getCustomerExtensionSetting(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the customer extension setting to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -174,6 +208,21 @@ public class CustomerExtensionSettingServiceClient implements BackgroundResource
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the requested customer extension setting in full detail.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerExtensionSettingServiceClient customerExtensionSettingServiceClient =
+   *     CustomerExtensionSettingServiceClient.create()) {
+   *   GetCustomerExtensionSettingRequest request =
+   *       GetCustomerExtensionSettingRequest.newBuilder()
+   *           .setResourceName(
+   *               CustomerExtensionSettingName.of("[CUSTOMER_ID]", "[EXTENSION_TYPE]").toString())
+   *           .build();
+   *   CustomerExtensionSetting response =
+   *       customerExtensionSettingServiceClient.getCustomerExtensionSetting(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -188,6 +237,23 @@ public class CustomerExtensionSettingServiceClient implements BackgroundResource
    * Returns the requested customer extension setting in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerExtensionSettingServiceClient customerExtensionSettingServiceClient =
+   *     CustomerExtensionSettingServiceClient.create()) {
+   *   GetCustomerExtensionSettingRequest request =
+   *       GetCustomerExtensionSettingRequest.newBuilder()
+   *           .setResourceName(
+   *               CustomerExtensionSettingName.of("[CUSTOMER_ID]", "[EXTENSION_TYPE]").toString())
+   *           .build();
+   *   ApiFuture<CustomerExtensionSetting> future =
+   *       customerExtensionSettingServiceClient
+   *           .getCustomerExtensionSettingCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   CustomerExtensionSetting response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetCustomerExtensionSettingRequest, CustomerExtensionSetting>
       getCustomerExtensionSettingCallable() {
@@ -197,6 +263,19 @@ public class CustomerExtensionSettingServiceClient implements BackgroundResource
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates, updates, or removes customer extension settings. Operation statuses are returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerExtensionSettingServiceClient customerExtensionSettingServiceClient =
+   *     CustomerExtensionSettingServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   List<CustomerExtensionSettingOperation> operations = new ArrayList<>();
+   *   MutateCustomerExtensionSettingsResponse response =
+   *       customerExtensionSettingServiceClient.mutateCustomerExtensionSettings(
+   *           customerId, operations);
+   * }
+   * }</pre>
    *
    * @param customerId Required. The ID of the customer whose customer extension settings are being
    *     modified.
@@ -218,6 +297,23 @@ public class CustomerExtensionSettingServiceClient implements BackgroundResource
   /**
    * Creates, updates, or removes customer extension settings. Operation statuses are returned.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerExtensionSettingServiceClient customerExtensionSettingServiceClient =
+   *     CustomerExtensionSettingServiceClient.create()) {
+   *   MutateCustomerExtensionSettingsRequest request =
+   *       MutateCustomerExtensionSettingsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<CustomerExtensionSettingOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   MutateCustomerExtensionSettingsResponse response =
+   *       customerExtensionSettingServiceClient.mutateCustomerExtensionSettings(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -231,6 +327,25 @@ public class CustomerExtensionSettingServiceClient implements BackgroundResource
    * Creates, updates, or removes customer extension settings. Operation statuses are returned.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CustomerExtensionSettingServiceClient customerExtensionSettingServiceClient =
+   *     CustomerExtensionSettingServiceClient.create()) {
+   *   MutateCustomerExtensionSettingsRequest request =
+   *       MutateCustomerExtensionSettingsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .addAllOperations(new ArrayList<CustomerExtensionSettingOperation>())
+   *           .setPartialFailure(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<MutateCustomerExtensionSettingsResponse> future =
+   *       customerExtensionSettingServiceClient
+   *           .mutateCustomerExtensionSettingsCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   MutateCustomerExtensionSettingsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           MutateCustomerExtensionSettingsRequest, MutateCustomerExtensionSettingsResponse>

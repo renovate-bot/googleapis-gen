@@ -26,6 +26,15 @@
  * ID from the request.
  *
  * <p>Sample for DatastoreClient:
+ *
+ * <pre>{@code
+ * try (DatastoreClient datastoreClient = DatastoreClient.create()) {
+ *   String projectId = "projectId-894832108";
+ *   ReadOptions readOptions = ReadOptions.newBuilder().build();
+ *   List<Key> keys = new ArrayList<>();
+ *   LookupResponse response = datastoreClient.lookup(projectId, readOptions, keys);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.datastore.v1;

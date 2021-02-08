@@ -40,6 +40,18 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (ProfilerServiceClient profilerServiceClient = ProfilerServiceClient.create()) {
+ *   CreateProfileRequest request =
+ *       CreateProfileRequest.newBuilder()
+ *           .setParent("parent-995424086")
+ *           .setDeployment(Deployment.newBuilder().build())
+ *           .addAllProfileType(new ArrayList<ProfileType>())
+ *           .build();
+ *   Profile response = profilerServiceClient.createProfile(request);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the ProfilerServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -155,6 +167,20 @@ public class ProfilerServiceClient implements BackgroundResource {
    * the response status. To a gRPC client, the extension will be return as a binary-serialized
    * proto in the trailing metadata item named "google.rpc.retryinfo-bin".
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProfilerServiceClient profilerServiceClient = ProfilerServiceClient.create()) {
+   *   CreateProfileRequest request =
+   *       CreateProfileRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setDeployment(Deployment.newBuilder().build())
+   *           .addAllProfileType(new ArrayList<ProfileType>())
+   *           .build();
+   *   Profile response = profilerServiceClient.createProfile(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -176,6 +202,20 @@ public class ProfilerServiceClient implements BackgroundResource {
    * proto in the trailing metadata item named "google.rpc.retryinfo-bin".
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProfilerServiceClient profilerServiceClient = ProfilerServiceClient.create()) {
+   *   CreateProfileRequest request =
+   *       CreateProfileRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setDeployment(Deployment.newBuilder().build())
+   *           .addAllProfileType(new ArrayList<ProfileType>())
+   *           .build();
+   *   ApiFuture<Profile> future = profilerServiceClient.createProfileCallable().futureCall(request);
+   *   // Do something.
+   *   Profile response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateProfileRequest, Profile> createProfileCallable() {
     return stub.createProfileCallable();
@@ -185,6 +225,19 @@ public class ProfilerServiceClient implements BackgroundResource {
   /**
    * CreateOfflineProfile creates a new profile resource in the offline mode. The client provides
    * the profile to create along with the profile bytes, the server records it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProfilerServiceClient profilerServiceClient = ProfilerServiceClient.create()) {
+   *   CreateOfflineProfileRequest request =
+   *       CreateOfflineProfileRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setProfile(Profile.newBuilder().build())
+   *           .build();
+   *   Profile response = profilerServiceClient.createOfflineProfile(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -199,6 +252,20 @@ public class ProfilerServiceClient implements BackgroundResource {
    * the profile to create along with the profile bytes, the server records it.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProfilerServiceClient profilerServiceClient = ProfilerServiceClient.create()) {
+   *   CreateOfflineProfileRequest request =
+   *       CreateOfflineProfileRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setProfile(Profile.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Profile> future =
+   *       profilerServiceClient.createOfflineProfileCallable().futureCall(request);
+   *   // Do something.
+   *   Profile response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateOfflineProfileRequest, Profile> createOfflineProfileCallable() {
     return stub.createOfflineProfileCallable();
@@ -209,6 +276,19 @@ public class ProfilerServiceClient implements BackgroundResource {
    * UpdateProfile updates the profile bytes and labels on the profile resource created in the
    * online mode. Updating the bytes for profiles created in the offline mode is currently not
    * supported: the profile content must be provided at the time of the profile creation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProfilerServiceClient profilerServiceClient = ProfilerServiceClient.create()) {
+   *   UpdateProfileRequest request =
+   *       UpdateProfileRequest.newBuilder()
+   *           .setProfile(Profile.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Profile response = profilerServiceClient.updateProfile(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -224,6 +304,19 @@ public class ProfilerServiceClient implements BackgroundResource {
    * supported: the profile content must be provided at the time of the profile creation.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProfilerServiceClient profilerServiceClient = ProfilerServiceClient.create()) {
+   *   UpdateProfileRequest request =
+   *       UpdateProfileRequest.newBuilder()
+   *           .setProfile(Profile.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Profile> future = profilerServiceClient.updateProfileCallable().futureCall(request);
+   *   // Do something.
+   *   Profile response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateProfileRequest, Profile> updateProfileCallable() {
     return stub.updateProfileCallable();

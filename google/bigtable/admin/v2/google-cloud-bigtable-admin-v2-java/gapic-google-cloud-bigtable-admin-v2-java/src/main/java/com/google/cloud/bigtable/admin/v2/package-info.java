@@ -25,6 +25,14 @@
  *
  * <p>Sample for BaseBigtableInstanceAdminClient:
  *
+ * <pre>{@code
+ * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+ *     BaseBigtableInstanceAdminClient.create()) {
+ *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
+ *   Instance response = baseBigtableInstanceAdminClient.getInstance(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= BaseBigtableTableAdminClient =======================
  *
  * <p>Service Description: Service for creating, configuring, and deleting Cloud Bigtable tables.
@@ -32,6 +40,16 @@
  * <p>Provides access to the table schemas only, not the data stored within the tables.
  *
  * <p>Sample for BaseBigtableTableAdminClient:
+ *
+ * <pre>{@code
+ * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+ *     BaseBigtableTableAdminClient.create()) {
+ *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
+ *   String tableId = "tableId-1552905847";
+ *   Table table = Table.newBuilder().build();
+ *   Table response = baseBigtableTableAdminClient.createTable(parent, tableId, table);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.bigtable.admin.v2;

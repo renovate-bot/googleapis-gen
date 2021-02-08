@@ -35,6 +35,13 @@
  * </ul>
  *
  * <p>Sample for ArtifactRegistryClient:
+ *
+ * <pre>{@code
+ * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+ *   String name = "name3373707";
+ *   Repository response = artifactRegistryClient.getRepository(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.devtools.artifactregistry.v1beta2;

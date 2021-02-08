@@ -43,6 +43,16 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (AccountBudgetProposalServiceClient accountBudgetProposalServiceClient =
+ *     AccountBudgetProposalServiceClient.create()) {
+ *   AccountBudgetProposalName resourceName =
+ *       AccountBudgetProposalName.of("[CUSTOMER_ID]", "[ACCOUNT_BUDGET_PROPOSAL_ID]");
+ *   AccountBudgetProposal response =
+ *       accountBudgetProposalServiceClient.getAccountBudgetProposal(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the AccountBudgetProposalServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -153,6 +163,18 @@ public class AccountBudgetProposalServiceClient implements BackgroundResource {
   /**
    * Returns an account-level budget proposal in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AccountBudgetProposalServiceClient accountBudgetProposalServiceClient =
+   *     AccountBudgetProposalServiceClient.create()) {
+   *   AccountBudgetProposalName resourceName =
+   *       AccountBudgetProposalName.of("[CUSTOMER_ID]", "[ACCOUNT_BUDGET_PROPOSAL_ID]");
+   *   AccountBudgetProposal response =
+   *       accountBudgetProposalServiceClient.getAccountBudgetProposal(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the account-level budget proposal to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -169,6 +191,18 @@ public class AccountBudgetProposalServiceClient implements BackgroundResource {
   /**
    * Returns an account-level budget proposal in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AccountBudgetProposalServiceClient accountBudgetProposalServiceClient =
+   *     AccountBudgetProposalServiceClient.create()) {
+   *   String resourceName =
+   *       AccountBudgetProposalName.of("[CUSTOMER_ID]", "[ACCOUNT_BUDGET_PROPOSAL_ID]").toString();
+   *   AccountBudgetProposal response =
+   *       accountBudgetProposalServiceClient.getAccountBudgetProposal(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the account-level budget proposal to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -181,6 +215,22 @@ public class AccountBudgetProposalServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns an account-level budget proposal in full detail.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AccountBudgetProposalServiceClient accountBudgetProposalServiceClient =
+   *     AccountBudgetProposalServiceClient.create()) {
+   *   GetAccountBudgetProposalRequest request =
+   *       GetAccountBudgetProposalRequest.newBuilder()
+   *           .setResourceName(
+   *               AccountBudgetProposalName.of("[CUSTOMER_ID]", "[ACCOUNT_BUDGET_PROPOSAL_ID]")
+   *                   .toString())
+   *           .build();
+   *   AccountBudgetProposal response =
+   *       accountBudgetProposalServiceClient.getAccountBudgetProposal(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -195,6 +245,22 @@ public class AccountBudgetProposalServiceClient implements BackgroundResource {
    * Returns an account-level budget proposal in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AccountBudgetProposalServiceClient accountBudgetProposalServiceClient =
+   *     AccountBudgetProposalServiceClient.create()) {
+   *   GetAccountBudgetProposalRequest request =
+   *       GetAccountBudgetProposalRequest.newBuilder()
+   *           .setResourceName(
+   *               AccountBudgetProposalName.of("[CUSTOMER_ID]", "[ACCOUNT_BUDGET_PROPOSAL_ID]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<AccountBudgetProposal> future =
+   *       accountBudgetProposalServiceClient.getAccountBudgetProposalCallable().futureCall(request);
+   *   // Do something.
+   *   AccountBudgetProposal response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetAccountBudgetProposalRequest, AccountBudgetProposal>
       getAccountBudgetProposalCallable() {
@@ -204,6 +270,19 @@ public class AccountBudgetProposalServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates, updates, or removes account budget proposals. Operation statuses are returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AccountBudgetProposalServiceClient accountBudgetProposalServiceClient =
+   *     AccountBudgetProposalServiceClient.create()) {
+   *   String customerId = "customerId-1581184615";
+   *   AccountBudgetProposalOperation operation =
+   *       AccountBudgetProposalOperation.newBuilder().build();
+   *   MutateAccountBudgetProposalResponse response =
+   *       accountBudgetProposalServiceClient.mutateAccountBudgetProposal(customerId, operation);
+   * }
+   * }</pre>
    *
    * @param customerId Required. The ID of the customer.
    * @param operation Required. The operation to perform on an individual account-level budget
@@ -224,6 +303,22 @@ public class AccountBudgetProposalServiceClient implements BackgroundResource {
   /**
    * Creates, updates, or removes account budget proposals. Operation statuses are returned.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AccountBudgetProposalServiceClient accountBudgetProposalServiceClient =
+   *     AccountBudgetProposalServiceClient.create()) {
+   *   MutateAccountBudgetProposalRequest request =
+   *       MutateAccountBudgetProposalRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .setOperation(AccountBudgetProposalOperation.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   MutateAccountBudgetProposalResponse response =
+   *       accountBudgetProposalServiceClient.mutateAccountBudgetProposal(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -237,6 +332,24 @@ public class AccountBudgetProposalServiceClient implements BackgroundResource {
    * Creates, updates, or removes account budget proposals. Operation statuses are returned.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AccountBudgetProposalServiceClient accountBudgetProposalServiceClient =
+   *     AccountBudgetProposalServiceClient.create()) {
+   *   MutateAccountBudgetProposalRequest request =
+   *       MutateAccountBudgetProposalRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .setOperation(AccountBudgetProposalOperation.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<MutateAccountBudgetProposalResponse> future =
+   *       accountBudgetProposalServiceClient
+   *           .mutateAccountBudgetProposalCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   MutateAccountBudgetProposalResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           MutateAccountBudgetProposalRequest, MutateAccountBudgetProposalResponse>

@@ -34,6 +34,16 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (DisplayKeywordViewServiceClient displayKeywordViewServiceClient =
+ *     DisplayKeywordViewServiceClient.create()) {
+ *   DisplayKeywordViewName resourceName =
+ *       DisplayKeywordViewName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]");
+ *   DisplayKeywordView response =
+ *       displayKeywordViewServiceClient.getDisplayKeywordView(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the DisplayKeywordViewServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -142,6 +152,18 @@ public class DisplayKeywordViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested display keyword view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DisplayKeywordViewServiceClient displayKeywordViewServiceClient =
+   *     DisplayKeywordViewServiceClient.create()) {
+   *   DisplayKeywordViewName resourceName =
+   *       DisplayKeywordViewName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]");
+   *   DisplayKeywordView response =
+   *       displayKeywordViewServiceClient.getDisplayKeywordView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the display keyword view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -157,6 +179,18 @@ public class DisplayKeywordViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested display keyword view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DisplayKeywordViewServiceClient displayKeywordViewServiceClient =
+   *     DisplayKeywordViewServiceClient.create()) {
+   *   String resourceName =
+   *       DisplayKeywordViewName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]").toString();
+   *   DisplayKeywordView response =
+   *       displayKeywordViewServiceClient.getDisplayKeywordView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the display keyword view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -170,6 +204,21 @@ public class DisplayKeywordViewServiceClient implements BackgroundResource {
   /**
    * Returns the requested display keyword view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DisplayKeywordViewServiceClient displayKeywordViewServiceClient =
+   *     DisplayKeywordViewServiceClient.create()) {
+   *   GetDisplayKeywordViewRequest request =
+   *       GetDisplayKeywordViewRequest.newBuilder()
+   *           .setResourceName(
+   *               DisplayKeywordViewName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]")
+   *                   .toString())
+   *           .build();
+   *   DisplayKeywordView response = displayKeywordViewServiceClient.getDisplayKeywordView(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -182,6 +231,22 @@ public class DisplayKeywordViewServiceClient implements BackgroundResource {
    * Returns the requested display keyword view in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DisplayKeywordViewServiceClient displayKeywordViewServiceClient =
+   *     DisplayKeywordViewServiceClient.create()) {
+   *   GetDisplayKeywordViewRequest request =
+   *       GetDisplayKeywordViewRequest.newBuilder()
+   *           .setResourceName(
+   *               DisplayKeywordViewName.of("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<DisplayKeywordView> future =
+   *       displayKeywordViewServiceClient.getDisplayKeywordViewCallable().futureCall(request);
+   *   // Do something.
+   *   DisplayKeywordView response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetDisplayKeywordViewRequest, DisplayKeywordView>
       getDisplayKeywordViewCallable() {

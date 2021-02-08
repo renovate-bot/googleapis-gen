@@ -43,6 +43,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (GoogleAdsFieldServiceClient googleAdsFieldServiceClient =
+ *     GoogleAdsFieldServiceClient.create()) {
+ *   GoogleAdsFieldName resourceName = GoogleAdsFieldName.of("[GOOGLE_ADS_FIELD]");
+ *   GoogleAdsField response = googleAdsFieldServiceClient.getGoogleAdsField(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the GoogleAdsFieldServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -149,6 +157,16 @@ public class GoogleAdsFieldServiceClient implements BackgroundResource {
   /**
    * Returns just the requested field.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GoogleAdsFieldServiceClient googleAdsFieldServiceClient =
+   *     GoogleAdsFieldServiceClient.create()) {
+   *   GoogleAdsFieldName resourceName = GoogleAdsFieldName.of("[GOOGLE_ADS_FIELD]");
+   *   GoogleAdsField response = googleAdsFieldServiceClient.getGoogleAdsField(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the field to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -164,6 +182,16 @@ public class GoogleAdsFieldServiceClient implements BackgroundResource {
   /**
    * Returns just the requested field.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GoogleAdsFieldServiceClient googleAdsFieldServiceClient =
+   *     GoogleAdsFieldServiceClient.create()) {
+   *   String resourceName = GoogleAdsFieldName.of("[GOOGLE_ADS_FIELD]").toString();
+   *   GoogleAdsField response = googleAdsFieldServiceClient.getGoogleAdsField(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the field to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -177,6 +205,19 @@ public class GoogleAdsFieldServiceClient implements BackgroundResource {
   /**
    * Returns just the requested field.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GoogleAdsFieldServiceClient googleAdsFieldServiceClient =
+   *     GoogleAdsFieldServiceClient.create()) {
+   *   GetGoogleAdsFieldRequest request =
+   *       GetGoogleAdsFieldRequest.newBuilder()
+   *           .setResourceName(GoogleAdsFieldName.of("[GOOGLE_ADS_FIELD]").toString())
+   *           .build();
+   *   GoogleAdsField response = googleAdsFieldServiceClient.getGoogleAdsField(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -189,6 +230,20 @@ public class GoogleAdsFieldServiceClient implements BackgroundResource {
    * Returns just the requested field.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GoogleAdsFieldServiceClient googleAdsFieldServiceClient =
+   *     GoogleAdsFieldServiceClient.create()) {
+   *   GetGoogleAdsFieldRequest request =
+   *       GetGoogleAdsFieldRequest.newBuilder()
+   *           .setResourceName(GoogleAdsFieldName.of("[GOOGLE_ADS_FIELD]").toString())
+   *           .build();
+   *   ApiFuture<GoogleAdsField> future =
+   *       googleAdsFieldServiceClient.getGoogleAdsFieldCallable().futureCall(request);
+   *   // Do something.
+   *   GoogleAdsField response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetGoogleAdsFieldRequest, GoogleAdsField> getGoogleAdsFieldCallable() {
     return stub.getGoogleAdsFieldCallable();
@@ -197,6 +252,19 @@ public class GoogleAdsFieldServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns all fields that match the search query.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GoogleAdsFieldServiceClient googleAdsFieldServiceClient =
+   *     GoogleAdsFieldServiceClient.create()) {
+   *   String query = "query107944136";
+   *   for (GoogleAdsField element :
+   *       googleAdsFieldServiceClient.searchGoogleAdsFields(query).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param query Required. The query string.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -211,6 +279,24 @@ public class GoogleAdsFieldServiceClient implements BackgroundResource {
   /**
    * Returns all fields that match the search query.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GoogleAdsFieldServiceClient googleAdsFieldServiceClient =
+   *     GoogleAdsFieldServiceClient.create()) {
+   *   SearchGoogleAdsFieldsRequest request =
+   *       SearchGoogleAdsFieldsRequest.newBuilder()
+   *           .setQuery("query107944136")
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
+   *   for (GoogleAdsField element :
+   *       googleAdsFieldServiceClient.searchGoogleAdsFields(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -224,6 +310,24 @@ public class GoogleAdsFieldServiceClient implements BackgroundResource {
    * Returns all fields that match the search query.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GoogleAdsFieldServiceClient googleAdsFieldServiceClient =
+   *     GoogleAdsFieldServiceClient.create()) {
+   *   SearchGoogleAdsFieldsRequest request =
+   *       SearchGoogleAdsFieldsRequest.newBuilder()
+   *           .setQuery("query107944136")
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
+   *   ApiFuture<GoogleAdsField> future =
+   *       googleAdsFieldServiceClient.searchGoogleAdsFieldsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (GoogleAdsField element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SearchGoogleAdsFieldsRequest, SearchGoogleAdsFieldsPagedResponse>
       searchGoogleAdsFieldsPagedCallable() {
@@ -235,6 +339,25 @@ public class GoogleAdsFieldServiceClient implements BackgroundResource {
    * Returns all fields that match the search query.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GoogleAdsFieldServiceClient googleAdsFieldServiceClient =
+   *     GoogleAdsFieldServiceClient.create()) {
+   *   while (true) {
+   *     SearchGoogleAdsFieldsResponse response =
+   *         googleAdsFieldServiceClient.searchGoogleAdsFieldsCallable().call(request);
+   *     for (GoogleAdsField element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SearchGoogleAdsFieldsRequest, SearchGoogleAdsFieldsResponse>
       searchGoogleAdsFieldsCallable() {

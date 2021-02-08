@@ -45,6 +45,20 @@
  *
  * <p>Sample for AutoSuggestionServiceClient:
  *
+ * <pre>{@code
+ * try (AutoSuggestionServiceClient autoSuggestionServiceClient =
+ *     AutoSuggestionServiceClient.create()) {
+ *   SuggestQueriesRequest request =
+ *       SuggestQueriesRequest.newBuilder()
+ *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+ *           .addAllScopes(new ArrayList<String>())
+ *           .setQuery("query107944136")
+ *           .addAllSuggestionTypes(new ArrayList<SuggestionType>())
+ *           .build();
+ *   SuggestQueriesResponse response = autoSuggestionServiceClient.suggestQueries(request);
+ * }
+ * }</pre>
+ *
  * <p>======================= QuestionServiceClient =======================
  *
  * <p>Service Description: Service to interpret natural language queries. The service allows to
@@ -62,6 +76,13 @@
  * feedback.
  *
  * <p>Sample for QuestionServiceClient:
+ *
+ * <pre>{@code
+ * try (QuestionServiceClient questionServiceClient = QuestionServiceClient.create()) {
+ *   QuestionName name = QuestionName.of("[PROJECT]", "[LOCATION]", "[QUESTION]");
+ *   Question response = questionServiceClient.getQuestion(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.dataqna.v1alpha;

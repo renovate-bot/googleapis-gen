@@ -34,6 +34,15 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (ShoppingPerformanceViewServiceClient shoppingPerformanceViewServiceClient =
+ *     ShoppingPerformanceViewServiceClient.create()) {
+ *   ShoppingPerformanceViewName resourceName = ShoppingPerformanceViewName.of("[CUSTOMER_ID]");
+ *   ShoppingPerformanceView response =
+ *       shoppingPerformanceViewServiceClient.getShoppingPerformanceView(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the ShoppingPerformanceViewServiceClient object to clean
  * up resources such as threads. In the example above, try-with-resources is used, which
  * automatically calls close().
@@ -145,6 +154,17 @@ public class ShoppingPerformanceViewServiceClient implements BackgroundResource 
   /**
    * Returns the requested Shopping performance view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ShoppingPerformanceViewServiceClient shoppingPerformanceViewServiceClient =
+   *     ShoppingPerformanceViewServiceClient.create()) {
+   *   ShoppingPerformanceViewName resourceName = ShoppingPerformanceViewName.of("[CUSTOMER_ID]");
+   *   ShoppingPerformanceView response =
+   *       shoppingPerformanceViewServiceClient.getShoppingPerformanceView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the Shopping performance view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -161,6 +181,17 @@ public class ShoppingPerformanceViewServiceClient implements BackgroundResource 
   /**
    * Returns the requested Shopping performance view in full detail.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ShoppingPerformanceViewServiceClient shoppingPerformanceViewServiceClient =
+   *     ShoppingPerformanceViewServiceClient.create()) {
+   *   String resourceName = ShoppingPerformanceViewName.of("[CUSTOMER_ID]").toString();
+   *   ShoppingPerformanceView response =
+   *       shoppingPerformanceViewServiceClient.getShoppingPerformanceView(resourceName);
+   * }
+   * }</pre>
+   *
    * @param resourceName Required. The resource name of the Shopping performance view to fetch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -173,6 +204,20 @@ public class ShoppingPerformanceViewServiceClient implements BackgroundResource 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the requested Shopping performance view in full detail.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ShoppingPerformanceViewServiceClient shoppingPerformanceViewServiceClient =
+   *     ShoppingPerformanceViewServiceClient.create()) {
+   *   GetShoppingPerformanceViewRequest request =
+   *       GetShoppingPerformanceViewRequest.newBuilder()
+   *           .setResourceName(ShoppingPerformanceViewName.of("[CUSTOMER_ID]").toString())
+   *           .build();
+   *   ShoppingPerformanceView response =
+   *       shoppingPerformanceViewServiceClient.getShoppingPerformanceView(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -187,6 +232,22 @@ public class ShoppingPerformanceViewServiceClient implements BackgroundResource 
    * Returns the requested Shopping performance view in full detail.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ShoppingPerformanceViewServiceClient shoppingPerformanceViewServiceClient =
+   *     ShoppingPerformanceViewServiceClient.create()) {
+   *   GetShoppingPerformanceViewRequest request =
+   *       GetShoppingPerformanceViewRequest.newBuilder()
+   *           .setResourceName(ShoppingPerformanceViewName.of("[CUSTOMER_ID]").toString())
+   *           .build();
+   *   ApiFuture<ShoppingPerformanceView> future =
+   *       shoppingPerformanceViewServiceClient
+   *           .getShoppingPerformanceViewCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   ShoppingPerformanceView response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetShoppingPerformanceViewRequest, ShoppingPerformanceView>
       getShoppingPerformanceViewCallable() {
