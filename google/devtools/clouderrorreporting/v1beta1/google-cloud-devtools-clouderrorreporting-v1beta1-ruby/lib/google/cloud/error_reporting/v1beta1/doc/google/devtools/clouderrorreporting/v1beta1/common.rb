@@ -109,10 +109,6 @@ module Google
         #     For a logged exception this would be the source line where the
         #     exception is logged, usually close to the place where it was
         #     caught.
-        # @!attribute [rw] source_references
-        #   @return [Array<Google::Appengine::Logging::V1::SourceReference>]
-        #     Source code that was used to build the executable which has
-        #     caused the given error message.
         class ErrorContext; end
 
         # HTTP request data that is related to a reported error.

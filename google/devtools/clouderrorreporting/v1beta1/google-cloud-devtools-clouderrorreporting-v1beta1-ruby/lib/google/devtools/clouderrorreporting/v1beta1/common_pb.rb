@@ -4,7 +4,6 @@
 require 'google/protobuf'
 
 require 'google/api/resource_pb'
-require 'google/appengine/logging/v1/request_log_pb'
 require 'google/protobuf/timestamp_pb'
 require 'google/api/annotations_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
@@ -33,7 +32,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :http_request, :message, 1, "google.devtools.clouderrorreporting.v1beta1.HttpRequestContext"
       optional :user, :string, 2
       optional :report_location, :message, 3, "google.devtools.clouderrorreporting.v1beta1.SourceLocation"
-      repeated :source_references, :message, 4, "google.appengine.logging.v1.SourceReference"
     end
     add_message "google.devtools.clouderrorreporting.v1beta1.HttpRequestContext" do
       optional :method, :string, 1
