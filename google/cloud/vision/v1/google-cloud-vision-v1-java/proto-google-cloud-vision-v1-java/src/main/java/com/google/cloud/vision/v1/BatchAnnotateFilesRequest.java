@@ -109,8 +109,8 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.cloud.vision.v1.AnnotateFileRequest> requests_;
   /**
    * <pre>
-   * Required. The list of file annotation requests. Right now we support only one
-   * AnnotateFileRequest in BatchAnnotateFilesRequest.
+   * Required. The list of file annotation requests. Right now we support only
+   * one AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -121,8 +121,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The list of file annotation requests. Right now we support only one
-   * AnnotateFileRequest in BatchAnnotateFilesRequest.
+   * Required. The list of file annotation requests. Right now we support only
+   * one AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -134,8 +134,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The list of file annotation requests. Right now we support only one
-   * AnnotateFileRequest in BatchAnnotateFilesRequest.
+   * Required. The list of file annotation requests. Right now we support only
+   * one AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -146,8 +146,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The list of file annotation requests. Right now we support only one
-   * AnnotateFileRequest in BatchAnnotateFilesRequest.
+   * Required. The list of file annotation requests. Right now we support only
+   * one AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -158,8 +158,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The list of file annotation requests. Right now we support only one
-   * AnnotateFileRequest in BatchAnnotateFilesRequest.
+   * Required. The list of file annotation requests. Right now we support only
+   * one AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -607,8 +607,8 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -622,8 +622,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -637,8 +637,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -652,8 +652,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -674,8 +674,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -693,8 +693,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -714,8 +714,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -736,8 +736,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -755,8 +755,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -774,8 +774,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -794,8 +794,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -812,8 +812,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -830,8 +830,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -842,8 +842,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -857,8 +857,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -873,8 +873,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -885,8 +885,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -898,8 +898,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -110,6 +110,8 @@ private static final long serialVersionUID = 0L;
    * Image content, represented as a stream of bytes.
    * Note: As with all `bytes` fields, protobuffers use a pure binary
    * representation, whereas JSON representations use base64.
+   * Currently, this field only works for BatchAnnotateImages requests. It does
+   * not work for AsyncBatchAnnotateImages requests.
    * </pre>
    *
    * <code>bytes content = 1;</code>
@@ -506,6 +508,8 @@ private static final long serialVersionUID = 0L;
      * Image content, represented as a stream of bytes.
      * Note: As with all `bytes` fields, protobuffers use a pure binary
      * representation, whereas JSON representations use base64.
+     * Currently, this field only works for BatchAnnotateImages requests. It does
+     * not work for AsyncBatchAnnotateImages requests.
      * </pre>
      *
      * <code>bytes content = 1;</code>
@@ -520,6 +524,8 @@ private static final long serialVersionUID = 0L;
      * Image content, represented as a stream of bytes.
      * Note: As with all `bytes` fields, protobuffers use a pure binary
      * representation, whereas JSON representations use base64.
+     * Currently, this field only works for BatchAnnotateImages requests. It does
+     * not work for AsyncBatchAnnotateImages requests.
      * </pre>
      *
      * <code>bytes content = 1;</code>
@@ -540,6 +546,8 @@ private static final long serialVersionUID = 0L;
      * Image content, represented as a stream of bytes.
      * Note: As with all `bytes` fields, protobuffers use a pure binary
      * representation, whereas JSON representations use base64.
+     * Currently, this field only works for BatchAnnotateImages requests. It does
+     * not work for AsyncBatchAnnotateImages requests.
      * </pre>
      *
      * <code>bytes content = 1;</code>

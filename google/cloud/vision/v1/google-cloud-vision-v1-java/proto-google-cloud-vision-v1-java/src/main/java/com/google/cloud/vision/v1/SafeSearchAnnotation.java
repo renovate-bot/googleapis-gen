@@ -308,11 +308,11 @@ private static final long serialVersionUID = 0L;
    * very confident.
    * </pre>
    *
-   * <code>float adult_confidence = 16;</code>
+   * <code>float adult_confidence = 16 [deprecated = true];</code>
    * @return The adultConfidence.
    */
   @java.lang.Override
-  public float getAdultConfidence() {
+  @java.lang.Deprecated public float getAdultConfidence() {
     return adultConfidence_;
   }
 
@@ -324,11 +324,11 @@ private static final long serialVersionUID = 0L;
    * very confident.
    * </pre>
    *
-   * <code>float spoof_confidence = 18;</code>
+   * <code>float spoof_confidence = 18 [deprecated = true];</code>
    * @return The spoofConfidence.
    */
   @java.lang.Override
-  public float getSpoofConfidence() {
+  @java.lang.Deprecated public float getSpoofConfidence() {
     return spoofConfidence_;
   }
 
@@ -340,11 +340,11 @@ private static final long serialVersionUID = 0L;
    * very confident.
    * </pre>
    *
-   * <code>float medical_confidence = 20;</code>
+   * <code>float medical_confidence = 20 [deprecated = true];</code>
    * @return The medicalConfidence.
    */
   @java.lang.Override
-  public float getMedicalConfidence() {
+  @java.lang.Deprecated public float getMedicalConfidence() {
     return medicalConfidence_;
   }
 
@@ -356,11 +356,11 @@ private static final long serialVersionUID = 0L;
    * very confident.
    * </pre>
    *
-   * <code>float violence_confidence = 22;</code>
+   * <code>float violence_confidence = 22 [deprecated = true];</code>
    * @return The violenceConfidence.
    */
   @java.lang.Override
-  public float getViolenceConfidence() {
+  @java.lang.Deprecated public float getViolenceConfidence() {
     return violenceConfidence_;
   }
 
@@ -372,11 +372,11 @@ private static final long serialVersionUID = 0L;
    * confident.
    * </pre>
    *
-   * <code>float racy_confidence = 24;</code>
+   * <code>float racy_confidence = 24 [deprecated = true];</code>
    * @return The racyConfidence.
    */
   @java.lang.Override
-  public float getRacyConfidence() {
+  @java.lang.Deprecated public float getRacyConfidence() {
     return racyConfidence_;
   }
 
@@ -388,11 +388,11 @@ private static final long serialVersionUID = 0L;
    * confident.
    * </pre>
    *
-   * <code>float nsfw_confidence = 26;</code>
+   * <code>float nsfw_confidence = 26 [deprecated = true];</code>
    * @return The nsfwConfidence.
    */
   @java.lang.Override
-  public float getNsfwConfidence() {
+  @java.lang.Deprecated public float getNsfwConfidence() {
     return nsfwConfidence_;
   }
 
@@ -1293,11 +1293,11 @@ private static final long serialVersionUID = 0L;
      * very confident.
      * </pre>
      *
-     * <code>float adult_confidence = 16;</code>
+     * <code>float adult_confidence = 16 [deprecated = true];</code>
      * @return The adultConfidence.
      */
     @java.lang.Override
-    public float getAdultConfidence() {
+    @java.lang.Deprecated public float getAdultConfidence() {
       return adultConfidence_;
     }
     /**
@@ -1306,11 +1306,11 @@ private static final long serialVersionUID = 0L;
      * very confident.
      * </pre>
      *
-     * <code>float adult_confidence = 16;</code>
+     * <code>float adult_confidence = 16 [deprecated = true];</code>
      * @param value The adultConfidence to set.
      * @return This builder for chaining.
      */
-    public Builder setAdultConfidence(float value) {
+    @java.lang.Deprecated public Builder setAdultConfidence(float value) {
       
       adultConfidence_ = value;
       onChanged();
@@ -1322,10 +1322,10 @@ private static final long serialVersionUID = 0L;
      * very confident.
      * </pre>
      *
-     * <code>float adult_confidence = 16;</code>
+     * <code>float adult_confidence = 16 [deprecated = true];</code>
      * @return This builder for chaining.
      */
-    public Builder clearAdultConfidence() {
+    @java.lang.Deprecated public Builder clearAdultConfidence() {
       
       adultConfidence_ = 0F;
       onChanged();
@@ -1339,11 +1339,11 @@ private static final long serialVersionUID = 0L;
      * very confident.
      * </pre>
      *
-     * <code>float spoof_confidence = 18;</code>
+     * <code>float spoof_confidence = 18 [deprecated = true];</code>
      * @return The spoofConfidence.
      */
     @java.lang.Override
-    public float getSpoofConfidence() {
+    @java.lang.Deprecated public float getSpoofConfidence() {
       return spoofConfidence_;
     }
     /**
@@ -1352,11 +1352,11 @@ private static final long serialVersionUID = 0L;
      * very confident.
      * </pre>
      *
-     * <code>float spoof_confidence = 18;</code>
+     * <code>float spoof_confidence = 18 [deprecated = true];</code>
      * @param value The spoofConfidence to set.
      * @return This builder for chaining.
      */
-    public Builder setSpoofConfidence(float value) {
+    @java.lang.Deprecated public Builder setSpoofConfidence(float value) {
       
       spoofConfidence_ = value;
       onChanged();
@@ -1368,10 +1368,10 @@ private static final long serialVersionUID = 0L;
      * very confident.
      * </pre>
      *
-     * <code>float spoof_confidence = 18;</code>
+     * <code>float spoof_confidence = 18 [deprecated = true];</code>
      * @return This builder for chaining.
      */
-    public Builder clearSpoofConfidence() {
+    @java.lang.Deprecated public Builder clearSpoofConfidence() {
       
       spoofConfidence_ = 0F;
       onChanged();
@@ -1385,11 +1385,11 @@ private static final long serialVersionUID = 0L;
      * very confident.
      * </pre>
      *
-     * <code>float medical_confidence = 20;</code>
+     * <code>float medical_confidence = 20 [deprecated = true];</code>
      * @return The medicalConfidence.
      */
     @java.lang.Override
-    public float getMedicalConfidence() {
+    @java.lang.Deprecated public float getMedicalConfidence() {
       return medicalConfidence_;
     }
     /**
@@ -1398,11 +1398,11 @@ private static final long serialVersionUID = 0L;
      * very confident.
      * </pre>
      *
-     * <code>float medical_confidence = 20;</code>
+     * <code>float medical_confidence = 20 [deprecated = true];</code>
      * @param value The medicalConfidence to set.
      * @return This builder for chaining.
      */
-    public Builder setMedicalConfidence(float value) {
+    @java.lang.Deprecated public Builder setMedicalConfidence(float value) {
       
       medicalConfidence_ = value;
       onChanged();
@@ -1414,10 +1414,10 @@ private static final long serialVersionUID = 0L;
      * very confident.
      * </pre>
      *
-     * <code>float medical_confidence = 20;</code>
+     * <code>float medical_confidence = 20 [deprecated = true];</code>
      * @return This builder for chaining.
      */
-    public Builder clearMedicalConfidence() {
+    @java.lang.Deprecated public Builder clearMedicalConfidence() {
       
       medicalConfidence_ = 0F;
       onChanged();
@@ -1431,11 +1431,11 @@ private static final long serialVersionUID = 0L;
      * very confident.
      * </pre>
      *
-     * <code>float violence_confidence = 22;</code>
+     * <code>float violence_confidence = 22 [deprecated = true];</code>
      * @return The violenceConfidence.
      */
     @java.lang.Override
-    public float getViolenceConfidence() {
+    @java.lang.Deprecated public float getViolenceConfidence() {
       return violenceConfidence_;
     }
     /**
@@ -1444,11 +1444,11 @@ private static final long serialVersionUID = 0L;
      * very confident.
      * </pre>
      *
-     * <code>float violence_confidence = 22;</code>
+     * <code>float violence_confidence = 22 [deprecated = true];</code>
      * @param value The violenceConfidence to set.
      * @return This builder for chaining.
      */
-    public Builder setViolenceConfidence(float value) {
+    @java.lang.Deprecated public Builder setViolenceConfidence(float value) {
       
       violenceConfidence_ = value;
       onChanged();
@@ -1460,10 +1460,10 @@ private static final long serialVersionUID = 0L;
      * very confident.
      * </pre>
      *
-     * <code>float violence_confidence = 22;</code>
+     * <code>float violence_confidence = 22 [deprecated = true];</code>
      * @return This builder for chaining.
      */
-    public Builder clearViolenceConfidence() {
+    @java.lang.Deprecated public Builder clearViolenceConfidence() {
       
       violenceConfidence_ = 0F;
       onChanged();
@@ -1477,11 +1477,11 @@ private static final long serialVersionUID = 0L;
      * confident.
      * </pre>
      *
-     * <code>float racy_confidence = 24;</code>
+     * <code>float racy_confidence = 24 [deprecated = true];</code>
      * @return The racyConfidence.
      */
     @java.lang.Override
-    public float getRacyConfidence() {
+    @java.lang.Deprecated public float getRacyConfidence() {
       return racyConfidence_;
     }
     /**
@@ -1490,11 +1490,11 @@ private static final long serialVersionUID = 0L;
      * confident.
      * </pre>
      *
-     * <code>float racy_confidence = 24;</code>
+     * <code>float racy_confidence = 24 [deprecated = true];</code>
      * @param value The racyConfidence to set.
      * @return This builder for chaining.
      */
-    public Builder setRacyConfidence(float value) {
+    @java.lang.Deprecated public Builder setRacyConfidence(float value) {
       
       racyConfidence_ = value;
       onChanged();
@@ -1506,10 +1506,10 @@ private static final long serialVersionUID = 0L;
      * confident.
      * </pre>
      *
-     * <code>float racy_confidence = 24;</code>
+     * <code>float racy_confidence = 24 [deprecated = true];</code>
      * @return This builder for chaining.
      */
-    public Builder clearRacyConfidence() {
+    @java.lang.Deprecated public Builder clearRacyConfidence() {
       
       racyConfidence_ = 0F;
       onChanged();
@@ -1523,11 +1523,11 @@ private static final long serialVersionUID = 0L;
      * confident.
      * </pre>
      *
-     * <code>float nsfw_confidence = 26;</code>
+     * <code>float nsfw_confidence = 26 [deprecated = true];</code>
      * @return The nsfwConfidence.
      */
     @java.lang.Override
-    public float getNsfwConfidence() {
+    @java.lang.Deprecated public float getNsfwConfidence() {
       return nsfwConfidence_;
     }
     /**
@@ -1536,11 +1536,11 @@ private static final long serialVersionUID = 0L;
      * confident.
      * </pre>
      *
-     * <code>float nsfw_confidence = 26;</code>
+     * <code>float nsfw_confidence = 26 [deprecated = true];</code>
      * @param value The nsfwConfidence to set.
      * @return This builder for chaining.
      */
-    public Builder setNsfwConfidence(float value) {
+    @java.lang.Deprecated public Builder setNsfwConfidence(float value) {
       
       nsfwConfidence_ = value;
       onChanged();
@@ -1552,10 +1552,10 @@ private static final long serialVersionUID = 0L;
      * confident.
      * </pre>
      *
-     * <code>float nsfw_confidence = 26;</code>
+     * <code>float nsfw_confidence = 26 [deprecated = true];</code>
      * @return This builder for chaining.
      */
-    public Builder clearNsfwConfidence() {
+    @java.lang.Deprecated public Builder clearNsfwConfidence() {
       
       nsfwConfidence_ = 0F;
       onChanged();

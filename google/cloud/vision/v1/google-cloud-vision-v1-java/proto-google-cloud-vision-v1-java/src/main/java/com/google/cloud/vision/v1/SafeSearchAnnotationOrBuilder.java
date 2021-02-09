@@ -122,10 +122,10 @@ public interface SafeSearchAnnotationOrBuilder extends
    * very confident.
    * </pre>
    *
-   * <code>float adult_confidence = 16;</code>
+   * <code>float adult_confidence = 16 [deprecated = true];</code>
    * @return The adultConfidence.
    */
-  float getAdultConfidence();
+  @java.lang.Deprecated float getAdultConfidence();
 
   /**
    * <pre>
@@ -133,10 +133,10 @@ public interface SafeSearchAnnotationOrBuilder extends
    * very confident.
    * </pre>
    *
-   * <code>float spoof_confidence = 18;</code>
+   * <code>float spoof_confidence = 18 [deprecated = true];</code>
    * @return The spoofConfidence.
    */
-  float getSpoofConfidence();
+  @java.lang.Deprecated float getSpoofConfidence();
 
   /**
    * <pre>
@@ -144,10 +144,10 @@ public interface SafeSearchAnnotationOrBuilder extends
    * very confident.
    * </pre>
    *
-   * <code>float medical_confidence = 20;</code>
+   * <code>float medical_confidence = 20 [deprecated = true];</code>
    * @return The medicalConfidence.
    */
-  float getMedicalConfidence();
+  @java.lang.Deprecated float getMedicalConfidence();
 
   /**
    * <pre>
@@ -155,10 +155,10 @@ public interface SafeSearchAnnotationOrBuilder extends
    * very confident.
    * </pre>
    *
-   * <code>float violence_confidence = 22;</code>
+   * <code>float violence_confidence = 22 [deprecated = true];</code>
    * @return The violenceConfidence.
    */
-  float getViolenceConfidence();
+  @java.lang.Deprecated float getViolenceConfidence();
 
   /**
    * <pre>
@@ -166,10 +166,10 @@ public interface SafeSearchAnnotationOrBuilder extends
    * confident.
    * </pre>
    *
-   * <code>float racy_confidence = 24;</code>
+   * <code>float racy_confidence = 24 [deprecated = true];</code>
    * @return The racyConfidence.
    */
-  float getRacyConfidence();
+  @java.lang.Deprecated float getRacyConfidence();
 
   /**
    * <pre>
@@ -177,8 +177,8 @@ public interface SafeSearchAnnotationOrBuilder extends
    * confident.
    * </pre>
    *
-   * <code>float nsfw_confidence = 26;</code>
+   * <code>float nsfw_confidence = 26 [deprecated = true];</code>
    * @return The nsfwConfidence.
    */
-  float getNsfwConfidence();
+  @java.lang.Deprecated float getNsfwConfidence();
 }

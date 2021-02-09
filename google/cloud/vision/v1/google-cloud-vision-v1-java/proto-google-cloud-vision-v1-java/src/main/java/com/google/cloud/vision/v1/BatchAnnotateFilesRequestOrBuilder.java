@@ -9,8 +9,8 @@ public interface BatchAnnotateFilesRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The list of file annotation requests. Right now we support only one
-   * AnnotateFileRequest in BatchAnnotateFilesRequest.
+   * Required. The list of file annotation requests. Right now we support only
+   * one AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -19,8 +19,8 @@ public interface BatchAnnotateFilesRequestOrBuilder extends
       getRequestsList();
   /**
    * <pre>
-   * Required. The list of file annotation requests. Right now we support only one
-   * AnnotateFileRequest in BatchAnnotateFilesRequest.
+   * Required. The list of file annotation requests. Right now we support only
+   * one AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -28,8 +28,8 @@ public interface BatchAnnotateFilesRequestOrBuilder extends
   com.google.cloud.vision.v1.AnnotateFileRequest getRequests(int index);
   /**
    * <pre>
-   * Required. The list of file annotation requests. Right now we support only one
-   * AnnotateFileRequest in BatchAnnotateFilesRequest.
+   * Required. The list of file annotation requests. Right now we support only
+   * one AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -37,8 +37,8 @@ public interface BatchAnnotateFilesRequestOrBuilder extends
   int getRequestsCount();
   /**
    * <pre>
-   * Required. The list of file annotation requests. Right now we support only one
-   * AnnotateFileRequest in BatchAnnotateFilesRequest.
+   * Required. The list of file annotation requests. Right now we support only
+   * one AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -47,8 +47,8 @@ public interface BatchAnnotateFilesRequestOrBuilder extends
       getRequestsOrBuilderList();
   /**
    * <pre>
-   * Required. The list of file annotation requests. Right now we support only one
-   * AnnotateFileRequest in BatchAnnotateFilesRequest.
+   * Required. The list of file annotation requests. Right now we support only
+   * one AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
