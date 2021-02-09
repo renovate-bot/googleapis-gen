@@ -9,15 +9,17 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * An [admission whitelist pattern][google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPattern] exempts images
- * from checks by [admission rules][google.cloud.binaryauthorization.v1beta1.AdmissionRule].
+ * An [admission allowlist
+ * pattern][google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPattern]
+ * exempts images from checks by [admission
+ * rules][google.cloud.binaryauthorization.v1beta1.AdmissionRule].
  *
  * Generated from protobuf message <code>google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPattern</code>
  */
 class AdmissionWhitelistPattern extends \Google\Protobuf\Internal\Message
 {
     /**
-     * An image name pattern to whitelist, in the form `registry/path/to/image`.
+     * An image name pattern to allow, in the form `registry/path/to/image`.
      * This supports a trailing `*` as a wildcard, but this is allowed only in
      * text after the `registry/` part.
      *
@@ -32,7 +34,7 @@ class AdmissionWhitelistPattern extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name_pattern
-     *           An image name pattern to whitelist, in the form `registry/path/to/image`.
+     *           An image name pattern to allow, in the form `registry/path/to/image`.
      *           This supports a trailing `*` as a wildcard, but this is allowed only in
      *           text after the `registry/` part.
      * }
@@ -43,7 +45,7 @@ class AdmissionWhitelistPattern extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An image name pattern to whitelist, in the form `registry/path/to/image`.
+     * An image name pattern to allow, in the form `registry/path/to/image`.
      * This supports a trailing `*` as a wildcard, but this is allowed only in
      * text after the `registry/` part.
      *
@@ -56,7 +58,7 @@ class AdmissionWhitelistPattern extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An image name pattern to whitelist, in the form `registry/path/to/image`.
+     * An image name pattern to allow, in the form `registry/path/to/image`.
      * This supports a trailing `*` as a wildcard, but this is allowed only in
      * text after the `registry/` part.
      *

@@ -9,7 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * A [policy][google.cloud.binaryauthorization.v1beta1.Policy] for container image binary authorization.
+ * A [policy][google.cloud.binaryauthorization.v1beta1.Policy] for container
+ * image binary authorization.
  *
  * Generated from protobuf message <code>google.cloud.binaryauthorization.v1beta1.Policy</code>
  */
@@ -38,7 +39,7 @@ class Policy extends \Google\Protobuf\Internal\Message
      */
     protected $global_policy_evaluation_mode = 0;
     /**
-     * Optional. Admission policy whitelisting. A matching admission request will
+     * Optional. Admission policy allowlisting. A matching admission request will
      * always be permitted. This feature is typically used to exclude Google or
      * third-party infrastructure images from Binary Authorization policies.
      *
@@ -88,7 +89,7 @@ class Policy extends \Google\Protobuf\Internal\Message
      *           policy will be subject to the project admission policy. This setting
      *           has no effect when specified inside a global admission policy.
      *     @type \Google\Cloud\BinaryAuthorization\V1beta1\AdmissionWhitelistPattern[]|\Google\Protobuf\Internal\RepeatedField $admission_whitelist_patterns
-     *           Optional. Admission policy whitelisting. A matching admission request will
+     *           Optional. Admission policy allowlisting. A matching admission request will
      *           always be permitted. This feature is typically used to exclude Google or
      *           third-party infrastructure images from Binary Authorization policies.
      *     @type array|\Google\Protobuf\Internal\MapField $cluster_admission_rules
@@ -198,7 +199,7 @@ class Policy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Admission policy whitelisting. A matching admission request will
+     * Optional. Admission policy allowlisting. A matching admission request will
      * always be permitted. This feature is typically used to exclude Google or
      * third-party infrastructure images from Binary Authorization policies.
      *
@@ -211,7 +212,7 @@ class Policy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Admission policy whitelisting. A matching admission request will
+     * Optional. Admission policy allowlisting. A matching admission request will
      * always be permitted. This feature is typically used to exclude Google or
      * third-party infrastructure images from Binary Authorization policies.
      *
