@@ -31,7 +31,7 @@ public interface ApplyParametersRequestOrBuilder extends
 
   /**
    * <pre>
-   * Nodes to which we should apply the instance-level parameter group.
+   * Nodes to which the instance-level parameter group is applied.
    * </pre>
    *
    * <code>repeated string node_ids = 2;</code>
@@ -41,7 +41,7 @@ public interface ApplyParametersRequestOrBuilder extends
       getNodeIdsList();
   /**
    * <pre>
-   * Nodes to which we should apply the instance-level parameter group.
+   * Nodes to which the instance-level parameter group is applied.
    * </pre>
    *
    * <code>repeated string node_ids = 2;</code>
@@ -50,7 +50,7 @@ public interface ApplyParametersRequestOrBuilder extends
   int getNodeIdsCount();
   /**
    * <pre>
-   * Nodes to which we should apply the instance-level parameter group.
+   * Nodes to which the instance-level parameter group is applied.
    * </pre>
    *
    * <code>repeated string node_ids = 2;</code>
@@ -60,7 +60,7 @@ public interface ApplyParametersRequestOrBuilder extends
   java.lang.String getNodeIds(int index);
   /**
    * <pre>
-   * Nodes to which we should apply the instance-level parameter group.
+   * Nodes to which the instance-level parameter group is applied.
    * </pre>
    *
    * <code>repeated string node_ids = 2;</code>
@@ -73,8 +73,8 @@ public interface ApplyParametersRequestOrBuilder extends
   /**
    * <pre>
    * Whether to apply instance-level parameter group to all nodes. If set to
-   * true, will explicitly restrict users from specifying any nodes, and apply
-   * parameter group updates to all nodes within the instance.
+   * true, users are restricted from specifying individual nodes, and
+   * `ApplyParameters` updates all nodes within the instance.
    * </pre>
    *
    * <code>bool apply_all = 3;</code>

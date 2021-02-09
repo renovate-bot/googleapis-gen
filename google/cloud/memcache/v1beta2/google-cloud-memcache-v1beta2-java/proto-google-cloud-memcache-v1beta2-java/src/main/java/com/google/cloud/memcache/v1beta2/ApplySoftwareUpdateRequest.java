@@ -5,22 +5,22 @@ package com.google.cloud.memcache.v1beta2;
 
 /**
  * <pre>
- * Request for [ApplyParameters][google.cloud.memcache.v1beta2.CloudMemcache.ApplyParameters].
+ * Request for [ApplySoftwareUpdate][google.cloud.memcache.v1beta2.CloudMemcache.ApplySoftwareUpdate].
  * </pre>
  *
- * Protobuf type {@code google.cloud.memcache.v1beta2.ApplyParametersRequest}
+ * Protobuf type {@code google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest}
  */
-public final class ApplyParametersRequest extends
+public final class ApplySoftwareUpdateRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:google.cloud.memcache.v1beta2.ApplyParametersRequest)
-    ApplyParametersRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest)
+    ApplySoftwareUpdateRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ApplyParametersRequest.newBuilder() to construct.
-  private ApplyParametersRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ApplySoftwareUpdateRequest.newBuilder() to construct.
+  private ApplySoftwareUpdateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ApplyParametersRequest() {
-    name_ = "";
+  private ApplySoftwareUpdateRequest() {
+    instance_ = "";
     nodeIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
@@ -28,7 +28,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new ApplyParametersRequest();
+    return new ApplySoftwareUpdateRequest();
   }
 
   @java.lang.Override
@@ -36,7 +36,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ApplyParametersRequest(
+  private ApplySoftwareUpdateRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -58,7 +58,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
+            instance_ = s;
             break;
           }
           case 18: {
@@ -99,59 +99,59 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.google.cloud.memcache.v1beta2.CloudMemcacheProto.internal_static_google_cloud_memcache_v1beta2_ApplyParametersRequest_descriptor;
+    return com.google.cloud.memcache.v1beta2.CloudMemcacheProto.internal_static_google_cloud_memcache_v1beta2_ApplySoftwareUpdateRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.memcache.v1beta2.CloudMemcacheProto.internal_static_google_cloud_memcache_v1beta2_ApplyParametersRequest_fieldAccessorTable
+    return com.google.cloud.memcache.v1beta2.CloudMemcacheProto.internal_static_google_cloud_memcache_v1beta2_ApplySoftwareUpdateRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.memcache.v1beta2.ApplyParametersRequest.class, com.google.cloud.memcache.v1beta2.ApplyParametersRequest.Builder.class);
+            com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest.class, com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest.Builder.class);
   }
 
-  public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+  public static final int INSTANCE_FIELD_NUMBER = 1;
+  private volatile java.lang.Object instance_;
   /**
    * <pre>
-   * Required. Resource name of the Memcached instance for which parameter group updates
-   * should be applied.
+   * Required. Resource name of the Memcached instance for which software update should be
+   * applied.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The name.
+   * <code>string instance = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The instance.
    */
   @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
+  public java.lang.String getInstance() {
+    java.lang.Object ref = instance_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      name_ = s;
+      instance_ = s;
       return s;
     }
   }
   /**
    * <pre>
-   * Required. Resource name of the Memcached instance for which parameter group updates
-   * should be applied.
+   * Required. Resource name of the Memcached instance for which software update should be
+   * applied.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The bytes for name.
+   * <code>string instance = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for instance.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
+      getInstanceBytes() {
+    java.lang.Object ref = instance_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      name_ = b;
+      instance_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -162,7 +162,8 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList nodeIds_;
   /**
    * <pre>
-   * Nodes to which the instance-level parameter group is applied.
+   * Nodes to which we should apply the update to. Note all the selected nodes
+   * are updated in parallel.
    * </pre>
    *
    * <code>repeated string node_ids = 2;</code>
@@ -174,7 +175,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Nodes to which the instance-level parameter group is applied.
+   * Nodes to which we should apply the update to. Note all the selected nodes
+   * are updated in parallel.
    * </pre>
    *
    * <code>repeated string node_ids = 2;</code>
@@ -185,7 +187,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Nodes to which the instance-level parameter group is applied.
+   * Nodes to which we should apply the update to. Note all the selected nodes
+   * are updated in parallel.
    * </pre>
    *
    * <code>repeated string node_ids = 2;</code>
@@ -197,7 +200,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Nodes to which the instance-level parameter group is applied.
+   * Nodes to which we should apply the update to. Note all the selected nodes
+   * are updated in parallel.
    * </pre>
    *
    * <code>repeated string node_ids = 2;</code>
@@ -213,9 +217,9 @@ private static final long serialVersionUID = 0L;
   private boolean applyAll_;
   /**
    * <pre>
-   * Whether to apply instance-level parameter group to all nodes. If set to
-   * true, users are restricted from specifying individual nodes, and
-   * `ApplyParameters` updates all nodes within the instance.
+   * Whether to apply the update to all nodes. If set to
+   * true, will explicitly restrict users from specifying any nodes, and apply
+   * software update to all nodes (where applicable) within the instance.
    * </pre>
    *
    * <code>bool apply_all = 3;</code>
@@ -240,8 +244,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    if (!getInstanceBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, instance_);
     }
     for (int i = 0; i < nodeIds_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nodeIds_.getRaw(i));
@@ -258,8 +262,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    if (!getInstanceBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, instance_);
     }
     {
       int dataSize = 0;
@@ -283,13 +287,13 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.google.cloud.memcache.v1beta2.ApplyParametersRequest)) {
+    if (!(obj instanceof com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.memcache.v1beta2.ApplyParametersRequest other = (com.google.cloud.memcache.v1beta2.ApplyParametersRequest) obj;
+    com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest other = (com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest) obj;
 
-    if (!getName()
-        .equals(other.getName())) return false;
+    if (!getInstance()
+        .equals(other.getInstance())) return false;
     if (!getNodeIdsList()
         .equals(other.getNodeIdsList())) return false;
     if (getApplyAll()
@@ -305,8 +309,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + INSTANCE_FIELD_NUMBER;
+    hash = (53 * hash) + getInstance().hashCode();
     if (getNodeIdsCount() > 0) {
       hash = (37 * hash) + NODE_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getNodeIdsList().hashCode();
@@ -319,69 +323,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.memcache.v1beta2.ApplyParametersRequest parseFrom(
+  public static com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.cloud.memcache.v1beta2.ApplyParametersRequest parseFrom(
+  public static com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.memcache.v1beta2.ApplyParametersRequest parseFrom(
+  public static com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.cloud.memcache.v1beta2.ApplyParametersRequest parseFrom(
+  public static com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.memcache.v1beta2.ApplyParametersRequest parseFrom(byte[] data)
+  public static com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.cloud.memcache.v1beta2.ApplyParametersRequest parseFrom(
+  public static com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.memcache.v1beta2.ApplyParametersRequest parseFrom(java.io.InputStream input)
+  public static com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.memcache.v1beta2.ApplyParametersRequest parseFrom(
+  public static com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.memcache.v1beta2.ApplyParametersRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.google.cloud.memcache.v1beta2.ApplyParametersRequest parseDelimitedFrom(
+  public static com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.memcache.v1beta2.ApplyParametersRequest parseFrom(
+  public static com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.memcache.v1beta2.ApplyParametersRequest parseFrom(
+  public static com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -394,7 +398,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.memcache.v1beta2.ApplyParametersRequest prototype) {
+  public static Builder newBuilder(com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -411,29 +415,29 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Request for [ApplyParameters][google.cloud.memcache.v1beta2.CloudMemcache.ApplyParameters].
+   * Request for [ApplySoftwareUpdate][google.cloud.memcache.v1beta2.CloudMemcache.ApplySoftwareUpdate].
    * </pre>
    *
-   * Protobuf type {@code google.cloud.memcache.v1beta2.ApplyParametersRequest}
+   * Protobuf type {@code google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.memcache.v1beta2.ApplyParametersRequest)
-      com.google.cloud.memcache.v1beta2.ApplyParametersRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest)
+      com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.google.cloud.memcache.v1beta2.CloudMemcacheProto.internal_static_google_cloud_memcache_v1beta2_ApplyParametersRequest_descriptor;
+      return com.google.cloud.memcache.v1beta2.CloudMemcacheProto.internal_static_google_cloud_memcache_v1beta2_ApplySoftwareUpdateRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.memcache.v1beta2.CloudMemcacheProto.internal_static_google_cloud_memcache_v1beta2_ApplyParametersRequest_fieldAccessorTable
+      return com.google.cloud.memcache.v1beta2.CloudMemcacheProto.internal_static_google_cloud_memcache_v1beta2_ApplySoftwareUpdateRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.memcache.v1beta2.ApplyParametersRequest.class, com.google.cloud.memcache.v1beta2.ApplyParametersRequest.Builder.class);
+              com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest.class, com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.memcache.v1beta2.ApplyParametersRequest.newBuilder()
+    // Construct using com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -451,7 +455,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      name_ = "";
+      instance_ = "";
 
       nodeIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -463,17 +467,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.google.cloud.memcache.v1beta2.CloudMemcacheProto.internal_static_google_cloud_memcache_v1beta2_ApplyParametersRequest_descriptor;
+      return com.google.cloud.memcache.v1beta2.CloudMemcacheProto.internal_static_google_cloud_memcache_v1beta2_ApplySoftwareUpdateRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.memcache.v1beta2.ApplyParametersRequest getDefaultInstanceForType() {
-      return com.google.cloud.memcache.v1beta2.ApplyParametersRequest.getDefaultInstance();
+    public com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest getDefaultInstanceForType() {
+      return com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.memcache.v1beta2.ApplyParametersRequest build() {
-      com.google.cloud.memcache.v1beta2.ApplyParametersRequest result = buildPartial();
+    public com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest build() {
+      com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -481,10 +485,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.cloud.memcache.v1beta2.ApplyParametersRequest buildPartial() {
-      com.google.cloud.memcache.v1beta2.ApplyParametersRequest result = new com.google.cloud.memcache.v1beta2.ApplyParametersRequest(this);
+    public com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest buildPartial() {
+      com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest result = new com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest(this);
       int from_bitField0_ = bitField0_;
-      result.name_ = name_;
+      result.instance_ = instance_;
       if (((bitField0_ & 0x00000001) != 0)) {
         nodeIds_ = nodeIds_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -529,18 +533,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.memcache.v1beta2.ApplyParametersRequest) {
-        return mergeFrom((com.google.cloud.memcache.v1beta2.ApplyParametersRequest)other);
+      if (other instanceof com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest) {
+        return mergeFrom((com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.memcache.v1beta2.ApplyParametersRequest other) {
-      if (other == com.google.cloud.memcache.v1beta2.ApplyParametersRequest.getDefaultInstance()) return this;
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
+    public Builder mergeFrom(com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest other) {
+      if (other == com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest.getDefaultInstance()) return this;
+      if (!other.getInstance().isEmpty()) {
+        instance_ = other.instance_;
         onChanged();
       }
       if (!other.nodeIds_.isEmpty()) {
@@ -571,11 +575,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.memcache.v1beta2.ApplyParametersRequest parsedMessage = null;
+      com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.memcache.v1beta2.ApplyParametersRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -586,23 +590,23 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.lang.Object name_ = "";
+    private java.lang.Object instance_ = "";
     /**
      * <pre>
-     * Required. Resource name of the Memcached instance for which parameter group updates
-     * should be applied.
+     * Required. Resource name of the Memcached instance for which software update should be
+     * applied.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @return The name.
+     * <code>string instance = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The instance.
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getInstance() {
+      java.lang.Object ref = instance_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        instance_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -610,21 +614,21 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the Memcached instance for which parameter group updates
-     * should be applied.
+     * Required. Resource name of the Memcached instance for which software update should be
+     * applied.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @return The bytes for name.
+     * <code>string instance = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for instance.
      */
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
+        getInstanceBytes() {
+      java.lang.Object ref = instance_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name_ = b;
+        instance_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -632,57 +636,57 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the Memcached instance for which parameter group updates
-     * should be applied.
+     * Required. Resource name of the Memcached instance for which software update should be
+     * applied.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @param value The name to set.
+     * <code>string instance = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The instance to set.
      * @return This builder for chaining.
      */
-    public Builder setName(
+    public Builder setInstance(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      name_ = value;
+      instance_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Required. Resource name of the Memcached instance for which parameter group updates
-     * should be applied.
+     * Required. Resource name of the Memcached instance for which software update should be
+     * applied.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>string instance = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder clearName() {
+    public Builder clearInstance() {
       
-      name_ = getDefaultInstance().getName();
+      instance_ = getDefaultInstance().getInstance();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Required. Resource name of the Memcached instance for which parameter group updates
-     * should be applied.
+     * Required. Resource name of the Memcached instance for which software update should be
+     * applied.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @param value The bytes for name to set.
+     * <code>string instance = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for instance to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(
+    public Builder setInstanceBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      name_ = value;
+      instance_ = value;
       onChanged();
       return this;
     }
@@ -696,7 +700,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Nodes to which the instance-level parameter group is applied.
+     * Nodes to which we should apply the update to. Note all the selected nodes
+     * are updated in parallel.
      * </pre>
      *
      * <code>repeated string node_ids = 2;</code>
@@ -708,7 +713,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Nodes to which the instance-level parameter group is applied.
+     * Nodes to which we should apply the update to. Note all the selected nodes
+     * are updated in parallel.
      * </pre>
      *
      * <code>repeated string node_ids = 2;</code>
@@ -719,7 +725,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Nodes to which the instance-level parameter group is applied.
+     * Nodes to which we should apply the update to. Note all the selected nodes
+     * are updated in parallel.
      * </pre>
      *
      * <code>repeated string node_ids = 2;</code>
@@ -731,7 +738,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Nodes to which the instance-level parameter group is applied.
+     * Nodes to which we should apply the update to. Note all the selected nodes
+     * are updated in parallel.
      * </pre>
      *
      * <code>repeated string node_ids = 2;</code>
@@ -744,7 +752,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Nodes to which the instance-level parameter group is applied.
+     * Nodes to which we should apply the update to. Note all the selected nodes
+     * are updated in parallel.
      * </pre>
      *
      * <code>repeated string node_ids = 2;</code>
@@ -764,7 +773,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Nodes to which the instance-level parameter group is applied.
+     * Nodes to which we should apply the update to. Note all the selected nodes
+     * are updated in parallel.
      * </pre>
      *
      * <code>repeated string node_ids = 2;</code>
@@ -783,7 +793,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Nodes to which the instance-level parameter group is applied.
+     * Nodes to which we should apply the update to. Note all the selected nodes
+     * are updated in parallel.
      * </pre>
      *
      * <code>repeated string node_ids = 2;</code>
@@ -800,7 +811,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Nodes to which the instance-level parameter group is applied.
+     * Nodes to which we should apply the update to. Note all the selected nodes
+     * are updated in parallel.
      * </pre>
      *
      * <code>repeated string node_ids = 2;</code>
@@ -814,7 +826,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Nodes to which the instance-level parameter group is applied.
+     * Nodes to which we should apply the update to. Note all the selected nodes
+     * are updated in parallel.
      * </pre>
      *
      * <code>repeated string node_ids = 2;</code>
@@ -836,9 +849,9 @@ private static final long serialVersionUID = 0L;
     private boolean applyAll_ ;
     /**
      * <pre>
-     * Whether to apply instance-level parameter group to all nodes. If set to
-     * true, users are restricted from specifying individual nodes, and
-     * `ApplyParameters` updates all nodes within the instance.
+     * Whether to apply the update to all nodes. If set to
+     * true, will explicitly restrict users from specifying any nodes, and apply
+     * software update to all nodes (where applicable) within the instance.
      * </pre>
      *
      * <code>bool apply_all = 3;</code>
@@ -850,9 +863,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Whether to apply instance-level parameter group to all nodes. If set to
-     * true, users are restricted from specifying individual nodes, and
-     * `ApplyParameters` updates all nodes within the instance.
+     * Whether to apply the update to all nodes. If set to
+     * true, will explicitly restrict users from specifying any nodes, and apply
+     * software update to all nodes (where applicable) within the instance.
      * </pre>
      *
      * <code>bool apply_all = 3;</code>
@@ -867,9 +880,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Whether to apply instance-level parameter group to all nodes. If set to
-     * true, users are restricted from specifying individual nodes, and
-     * `ApplyParameters` updates all nodes within the instance.
+     * Whether to apply the update to all nodes. If set to
+     * true, will explicitly restrict users from specifying any nodes, and apply
+     * software update to all nodes (where applicable) within the instance.
      * </pre>
      *
      * <code>bool apply_all = 3;</code>
@@ -894,41 +907,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.memcache.v1beta2.ApplyParametersRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.memcache.v1beta2.ApplyParametersRequest)
-  private static final com.google.cloud.memcache.v1beta2.ApplyParametersRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest)
+  private static final com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.memcache.v1beta2.ApplyParametersRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest();
   }
 
-  public static com.google.cloud.memcache.v1beta2.ApplyParametersRequest getDefaultInstance() {
+  public static com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ApplyParametersRequest>
-      PARSER = new com.google.protobuf.AbstractParser<ApplyParametersRequest>() {
+  private static final com.google.protobuf.Parser<ApplySoftwareUpdateRequest>
+      PARSER = new com.google.protobuf.AbstractParser<ApplySoftwareUpdateRequest>() {
     @java.lang.Override
-    public ApplyParametersRequest parsePartialFrom(
+    public ApplySoftwareUpdateRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ApplyParametersRequest(input, extensionRegistry);
+      return new ApplySoftwareUpdateRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ApplyParametersRequest> parser() {
+  public static com.google.protobuf.Parser<ApplySoftwareUpdateRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ApplyParametersRequest> getParserForType() {
+  public com.google.protobuf.Parser<ApplySoftwareUpdateRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.memcache.v1beta2.ApplyParametersRequest getDefaultInstanceForType() {
+  public com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

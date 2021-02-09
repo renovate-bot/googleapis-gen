@@ -12,10 +12,10 @@ public interface InstanceOrBuilder extends
    * Required. Unique name of the resource in this scope including project and
    * location using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * Note: Memcached instances are managed and addressed at regional level so
-   * location_id here refers to a GCP region; however, users may choose which
-   * zones Memcached nodes within an instances should be provisioned in.
-   * Refer to [zones] field for more details.
+   * Note: Memcached instances are managed and addressed at the regional level
+   * so `location_id` here refers to a Google Cloud region; however, users may
+   * choose which zones Memcached nodes should be provisioned in within an
+   * instance. Refer to [zones][google.cloud.memcache.v1beta2.Instance.zones] field for more details.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -27,10 +27,10 @@ public interface InstanceOrBuilder extends
    * Required. Unique name of the resource in this scope including project and
    * location using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * Note: Memcached instances are managed and addressed at regional level so
-   * location_id here refers to a GCP region; however, users may choose which
-   * zones Memcached nodes within an instances should be provisioned in.
-   * Refer to [zones] field for more details.
+   * Note: Memcached instances are managed and addressed at the regional level
+   * so `location_id` here refers to a Google Cloud region; however, users may
+   * choose which zones Memcached nodes should be provisioned in within an
+   * instance. Refer to [zones][google.cloud.memcache.v1beta2.Instance.zones] field for more details.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -41,7 +41,7 @@ public interface InstanceOrBuilder extends
 
   /**
    * <pre>
-   * Optional. User provided name for the instance only used for display
+   * User provided name for the instance, which is only used for display
    * purposes. Cannot be more than 80 characters.
    * </pre>
    *
@@ -51,7 +51,7 @@ public interface InstanceOrBuilder extends
   java.lang.String getDisplayName();
   /**
    * <pre>
-   * Optional. User provided name for the instance only used for display
+   * User provided name for the instance, which is only used for display
    * purposes. Cannot be more than 80 characters.
    * </pre>
    *
@@ -63,7 +63,7 @@ public interface InstanceOrBuilder extends
 
   /**
    * <pre>
-   * Optional. Resource labels to represent user-provided metadata.
+   * Resource labels to represent user-provided metadata.
    * Refer to cloud documentation on labels for more details.
    * https://cloud.google.com/compute/docs/labeling-resources
    * </pre>
@@ -73,7 +73,7 @@ public interface InstanceOrBuilder extends
   int getLabelsCount();
   /**
    * <pre>
-   * Optional. Resource labels to represent user-provided metadata.
+   * Resource labels to represent user-provided metadata.
    * Refer to cloud documentation on labels for more details.
    * https://cloud.google.com/compute/docs/labeling-resources
    * </pre>
@@ -90,7 +90,7 @@ public interface InstanceOrBuilder extends
   getLabels();
   /**
    * <pre>
-   * Optional. Resource labels to represent user-provided metadata.
+   * Resource labels to represent user-provided metadata.
    * Refer to cloud documentation on labels for more details.
    * https://cloud.google.com/compute/docs/labeling-resources
    * </pre>
@@ -101,7 +101,7 @@ public interface InstanceOrBuilder extends
   getLabelsMap();
   /**
    * <pre>
-   * Optional. Resource labels to represent user-provided metadata.
+   * Resource labels to represent user-provided metadata.
    * Refer to cloud documentation on labels for more details.
    * https://cloud.google.com/compute/docs/labeling-resources
    * </pre>
@@ -114,7 +114,7 @@ public interface InstanceOrBuilder extends
       java.lang.String defaultValue);
   /**
    * <pre>
-   * Optional. Resource labels to represent user-provided metadata.
+   * Resource labels to represent user-provided metadata.
    * Refer to cloud documentation on labels for more details.
    * https://cloud.google.com/compute/docs/labeling-resources
    * </pre>
@@ -127,7 +127,7 @@ public interface InstanceOrBuilder extends
 
   /**
    * <pre>
-   * Optional. The full name of the Google Compute Engine
+   * The full name of the Google Compute Engine
    * [network](https://cloud.google.com/vpc/docs/vpc) to which the
    * instance is connected. If left unspecified, the `default` network
    * will be used.
@@ -139,7 +139,7 @@ public interface InstanceOrBuilder extends
   java.lang.String getAuthorizedNetwork();
   /**
    * <pre>
-   * Optional. The full name of the Google Compute Engine
+   * The full name of the Google Compute Engine
    * [network](https://cloud.google.com/vpc/docs/vpc) to which the
    * instance is connected. If left unspecified, the `default` network
    * will be used.
@@ -153,7 +153,7 @@ public interface InstanceOrBuilder extends
 
   /**
    * <pre>
-   * Optional. Zones where Memcached nodes should be provisioned in.
+   * Zones in which Memcached nodes should be provisioned.
    * Memcached nodes will be equally distributed across these zones. If not
    * provided, the service will by default create nodes in all zones in the
    * region for the instance.
@@ -166,7 +166,7 @@ public interface InstanceOrBuilder extends
       getZonesList();
   /**
    * <pre>
-   * Optional. Zones where Memcached nodes should be provisioned in.
+   * Zones in which Memcached nodes should be provisioned.
    * Memcached nodes will be equally distributed across these zones. If not
    * provided, the service will by default create nodes in all zones in the
    * region for the instance.
@@ -178,7 +178,7 @@ public interface InstanceOrBuilder extends
   int getZonesCount();
   /**
    * <pre>
-   * Optional. Zones where Memcached nodes should be provisioned in.
+   * Zones in which Memcached nodes should be provisioned.
    * Memcached nodes will be equally distributed across these zones. If not
    * provided, the service will by default create nodes in all zones in the
    * region for the instance.
@@ -191,7 +191,7 @@ public interface InstanceOrBuilder extends
   java.lang.String getZones(int index);
   /**
    * <pre>
-   * Optional. Zones where Memcached nodes should be provisioned in.
+   * Zones in which Memcached nodes should be provisioned.
    * Memcached nodes will be equally distributed across these zones. If not
    * provided, the service will by default create nodes in all zones in the
    * region for the instance.
@@ -243,9 +243,9 @@ public interface InstanceOrBuilder extends
 
   /**
    * <pre>
-   * Optional. The major version of Memcached software.
+   * The major version of Memcached software.
    * If not provided, latest supported version will be used. Currently the
-   * latest supported major version is MEMCACHE_1_5.
+   * latest supported major version is `MEMCACHE_1_5`.
    * The minor version will be automatically determined by our system based on
    * the latest supported minor version.
    * </pre>
@@ -256,9 +256,9 @@ public interface InstanceOrBuilder extends
   int getMemcacheVersionValue();
   /**
    * <pre>
-   * Optional. The major version of Memcached software.
+   * The major version of Memcached software.
    * If not provided, latest supported version will be used. Currently the
-   * latest supported major version is MEMCACHE_1_5.
+   * latest supported major version is `MEMCACHE_1_5`.
    * The minor version will be automatically determined by our system based on
    * the latest supported minor version.
    * </pre>
@@ -301,7 +301,7 @@ public interface InstanceOrBuilder extends
   /**
    * <pre>
    * Output only. List of Memcached nodes.
-   * Refer to [Node] message for more details.
+   * Refer to [Node][google.cloud.memcache.v1beta2.Instance.Node] message for more details.
    * </pre>
    *
    * <code>repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -311,7 +311,7 @@ public interface InstanceOrBuilder extends
   /**
    * <pre>
    * Output only. List of Memcached nodes.
-   * Refer to [Node] message for more details.
+   * Refer to [Node][google.cloud.memcache.v1beta2.Instance.Node] message for more details.
    * </pre>
    *
    * <code>repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -320,7 +320,7 @@ public interface InstanceOrBuilder extends
   /**
    * <pre>
    * Output only. List of Memcached nodes.
-   * Refer to [Node] message for more details.
+   * Refer to [Node][google.cloud.memcache.v1beta2.Instance.Node] message for more details.
    * </pre>
    *
    * <code>repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -329,7 +329,7 @@ public interface InstanceOrBuilder extends
   /**
    * <pre>
    * Output only. List of Memcached nodes.
-   * Refer to [Node] message for more details.
+   * Refer to [Node][google.cloud.memcache.v1beta2.Instance.Node] message for more details.
    * </pre>
    *
    * <code>repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -339,7 +339,7 @@ public interface InstanceOrBuilder extends
   /**
    * <pre>
    * Output only. List of Memcached nodes.
-   * Refer to [Node] message for more details.
+   * Refer to [Node][google.cloud.memcache.v1beta2.Instance.Node] message for more details.
    * </pre>
    *
    * <code>repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -448,7 +448,7 @@ public interface InstanceOrBuilder extends
 
   /**
    * <pre>
-   * List of messages that describe current statuses of memcached instance.
+   * List of messages that describe the current state of the Memcached instance.
    * </pre>
    *
    * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;</code>
@@ -457,7 +457,7 @@ public interface InstanceOrBuilder extends
       getInstanceMessagesList();
   /**
    * <pre>
-   * List of messages that describe current statuses of memcached instance.
+   * List of messages that describe the current state of the Memcached instance.
    * </pre>
    *
    * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;</code>
@@ -465,7 +465,7 @@ public interface InstanceOrBuilder extends
   com.google.cloud.memcache.v1beta2.Instance.InstanceMessage getInstanceMessages(int index);
   /**
    * <pre>
-   * List of messages that describe current statuses of memcached instance.
+   * List of messages that describe the current state of the Memcached instance.
    * </pre>
    *
    * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;</code>
@@ -473,7 +473,7 @@ public interface InstanceOrBuilder extends
   int getInstanceMessagesCount();
   /**
    * <pre>
-   * List of messages that describe current statuses of memcached instance.
+   * List of messages that describe the current state of the Memcached instance.
    * </pre>
    *
    * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;</code>
@@ -482,7 +482,7 @@ public interface InstanceOrBuilder extends
       getInstanceMessagesOrBuilderList();
   /**
    * <pre>
-   * List of messages that describe current statuses of memcached instance.
+   * List of messages that describe the current state of the Memcached instance.
    * </pre>
    *
    * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;</code>
@@ -492,7 +492,7 @@ public interface InstanceOrBuilder extends
 
   /**
    * <pre>
-   * Output only. Endpoint for Discovery API
+   * Output only. Endpoint for the Discovery API.
    * </pre>
    *
    * <code>string discovery_endpoint = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -501,7 +501,7 @@ public interface InstanceOrBuilder extends
   java.lang.String getDiscoveryEndpoint();
   /**
    * <pre>
-   * Output only. Endpoint for Discovery API
+   * Output only. Endpoint for the Discovery API.
    * </pre>
    *
    * <code>string discovery_endpoint = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -509,4 +509,14 @@ public interface InstanceOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDiscoveryEndpointBytes();
+
+  /**
+   * <pre>
+   * Output only. Returns true if there is an update waiting to be applied
+   * </pre>
+   *
+   * <code>bool update_available = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The updateAvailable.
+   */
+  boolean getUpdateAvailable();
 }

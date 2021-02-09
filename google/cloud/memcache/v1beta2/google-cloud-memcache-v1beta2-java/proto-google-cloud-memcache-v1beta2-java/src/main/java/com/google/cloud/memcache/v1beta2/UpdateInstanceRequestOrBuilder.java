@@ -10,7 +10,7 @@ public interface UpdateInstanceRequestOrBuilder extends
   /**
    * <pre>
    * Required. Mask of fields to update.
-   *  *   `displayName`
+   *  *  `displayName`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -20,7 +20,7 @@ public interface UpdateInstanceRequestOrBuilder extends
   /**
    * <pre>
    * Required. Mask of fields to update.
-   *  *   `displayName`
+   *  *  `displayName`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -30,7 +30,7 @@ public interface UpdateInstanceRequestOrBuilder extends
   /**
    * <pre>
    * Required. Mask of fields to update.
-   *  *   `displayName`
+   *  *  `displayName`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>

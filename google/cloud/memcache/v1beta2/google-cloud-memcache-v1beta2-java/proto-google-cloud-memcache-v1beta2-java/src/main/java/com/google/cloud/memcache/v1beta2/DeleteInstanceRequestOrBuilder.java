@@ -9,23 +9,23 @@ public interface DeleteInstanceRequestOrBuilder extends
 
   /**
    * <pre>
-   * Memcached instance resource name in the format:
+   * Required. Memcached instance resource name in the format:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
    * where `location_id` refers to a GCP region
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The name.
    */
   java.lang.String getName();
   /**
    * <pre>
-   * Memcached instance resource name in the format:
+   * Required. Memcached instance resource name in the format:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
    * where `location_id` refers to a GCP region
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString

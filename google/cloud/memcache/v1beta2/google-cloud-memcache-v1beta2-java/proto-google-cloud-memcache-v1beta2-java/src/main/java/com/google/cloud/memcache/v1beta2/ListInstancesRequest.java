@@ -173,9 +173,9 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The maximum number of items to return.
    * If not specified, a default value of 1000 will be used by the service.
-   * Regardless of the page_size value, the response may include a partial list
-   * and a caller should only rely on response's
-   * [next_page_token][CloudMemcache.ListInstancesResponse.next_page_token]
+   * Regardless of the `page_size` value, the response may include a partial
+   * list and a caller should only rely on response's
+   * [`next_page_token`][google.cloud.memcache.v1beta2.ListInstancesResponse.next_page_token]
    * to determine if there are more instances left to be queried.
    * </pre>
    *
@@ -191,8 +191,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object pageToken_;
   /**
    * <pre>
-   * The next_page_token value returned from a previous List request,
-   * if any.
+   * The `next_page_token` value returned from a previous List request, if any.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -213,8 +212,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The next_page_token value returned from a previous List request,
-   * if any.
+   * The `next_page_token` value returned from a previous List request, if any.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -240,7 +238,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * List filter. For example, exclude all Memcached instances with name as
-   * my-instance by specifying "name != my-instance".
+   * my-instance by specifying `"name != my-instance"`.
    * </pre>
    *
    * <code>string filter = 4;</code>
@@ -262,7 +260,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * List filter. For example, exclude all Memcached instances with name as
-   * my-instance by specifying "name != my-instance".
+   * my-instance by specifying `"name != my-instance"`.
    * </pre>
    *
    * <code>string filter = 4;</code>
@@ -814,9 +812,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The maximum number of items to return.
      * If not specified, a default value of 1000 will be used by the service.
-     * Regardless of the page_size value, the response may include a partial list
-     * and a caller should only rely on response's
-     * [next_page_token][CloudMemcache.ListInstancesResponse.next_page_token]
+     * Regardless of the `page_size` value, the response may include a partial
+     * list and a caller should only rely on response's
+     * [`next_page_token`][google.cloud.memcache.v1beta2.ListInstancesResponse.next_page_token]
      * to determine if there are more instances left to be queried.
      * </pre>
      *
@@ -831,9 +829,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The maximum number of items to return.
      * If not specified, a default value of 1000 will be used by the service.
-     * Regardless of the page_size value, the response may include a partial list
-     * and a caller should only rely on response's
-     * [next_page_token][CloudMemcache.ListInstancesResponse.next_page_token]
+     * Regardless of the `page_size` value, the response may include a partial
+     * list and a caller should only rely on response's
+     * [`next_page_token`][google.cloud.memcache.v1beta2.ListInstancesResponse.next_page_token]
      * to determine if there are more instances left to be queried.
      * </pre>
      *
@@ -851,9 +849,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The maximum number of items to return.
      * If not specified, a default value of 1000 will be used by the service.
-     * Regardless of the page_size value, the response may include a partial list
-     * and a caller should only rely on response's
-     * [next_page_token][CloudMemcache.ListInstancesResponse.next_page_token]
+     * Regardless of the `page_size` value, the response may include a partial
+     * list and a caller should only rely on response's
+     * [`next_page_token`][google.cloud.memcache.v1beta2.ListInstancesResponse.next_page_token]
      * to determine if there are more instances left to be queried.
      * </pre>
      *
@@ -870,8 +868,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object pageToken_ = "";
     /**
      * <pre>
-     * The next_page_token value returned from a previous List request,
-     * if any.
+     * The `next_page_token` value returned from a previous List request, if any.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -891,8 +888,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The next_page_token value returned from a previous List request,
-     * if any.
+     * The `next_page_token` value returned from a previous List request, if any.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -913,8 +909,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The next_page_token value returned from a previous List request,
-     * if any.
+     * The `next_page_token` value returned from a previous List request, if any.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -933,8 +928,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The next_page_token value returned from a previous List request,
-     * if any.
+     * The `next_page_token` value returned from a previous List request, if any.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -948,8 +942,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The next_page_token value returned from a previous List request,
-     * if any.
+     * The `next_page_token` value returned from a previous List request, if any.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -972,7 +965,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * List filter. For example, exclude all Memcached instances with name as
-     * my-instance by specifying "name != my-instance".
+     * my-instance by specifying `"name != my-instance"`.
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -993,7 +986,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * List filter. For example, exclude all Memcached instances with name as
-     * my-instance by specifying "name != my-instance".
+     * my-instance by specifying `"name != my-instance"`.
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -1015,7 +1008,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * List filter. For example, exclude all Memcached instances with name as
-     * my-instance by specifying "name != my-instance".
+     * my-instance by specifying `"name != my-instance"`.
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -1035,7 +1028,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * List filter. For example, exclude all Memcached instances with name as
-     * my-instance by specifying "name != my-instance".
+     * my-instance by specifying `"name != my-instance"`.
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -1050,7 +1043,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * List filter. For example, exclude all Memcached instances with name as
-     * my-instance by specifying "name != my-instance".
+     * my-instance by specifying `"name != my-instance"`.
      * </pre>
      *
      * <code>string filter = 4;</code>

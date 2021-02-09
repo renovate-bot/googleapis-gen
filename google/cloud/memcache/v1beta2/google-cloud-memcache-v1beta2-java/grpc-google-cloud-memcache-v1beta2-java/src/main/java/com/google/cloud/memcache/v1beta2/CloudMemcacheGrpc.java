@@ -27,7 +27,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * `/instances/&#42;`
  * * As such, Memcached instances are resources of the form:
  *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
- * Note that location_id must be refering to a GCP `region`; for example:
+ * Note that location_id must be a GCP `region`; for example:
  * * `projects/my-memcached-project/locations/us-central1/instances/my-memcached`
  * </pre>
  */
@@ -258,6 +258,37 @@ public final class CloudMemcacheGrpc {
     return getApplyParametersMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest,
+      com.google.longrunning.Operation> getApplySoftwareUpdateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ApplySoftwareUpdate",
+      requestType = com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest,
+      com.google.longrunning.Operation> getApplySoftwareUpdateMethod() {
+    io.grpc.MethodDescriptor<com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest, com.google.longrunning.Operation> getApplySoftwareUpdateMethod;
+    if ((getApplySoftwareUpdateMethod = CloudMemcacheGrpc.getApplySoftwareUpdateMethod) == null) {
+      synchronized (CloudMemcacheGrpc.class) {
+        if ((getApplySoftwareUpdateMethod = CloudMemcacheGrpc.getApplySoftwareUpdateMethod) == null) {
+          CloudMemcacheGrpc.getApplySoftwareUpdateMethod = getApplySoftwareUpdateMethod =
+              io.grpc.MethodDescriptor.<com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest, com.google.longrunning.Operation>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ApplySoftwareUpdate"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.longrunning.Operation.getDefaultInstance()))
+              .setSchemaDescriptor(new CloudMemcacheMethodDescriptorSupplier("ApplySoftwareUpdate"))
+              .build();
+        }
+      }
+    }
+    return getApplySoftwareUpdateMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -314,7 +345,7 @@ public final class CloudMemcacheGrpc {
    * `/instances/&#42;`
    * * As such, Memcached instances are resources of the form:
    *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * Note that location_id must be refering to a GCP `region`; for example:
+   * Note that location_id must be a GCP `region`; for example:
    * * `projects/my-memcached-project/locations/us-central1/instances/my-memcached`
    * </pre>
    */
@@ -322,7 +353,7 @@ public final class CloudMemcacheGrpc {
 
     /**
      * <pre>
-     * Lists Instances in a given project and location.
+     * Lists Instances in a given location.
      * </pre>
      */
     public void listInstances(com.google.cloud.memcache.v1beta2.ListInstancesRequest request,
@@ -342,7 +373,7 @@ public final class CloudMemcacheGrpc {
 
     /**
      * <pre>
-     * Creates a new Instance in a given project and location.
+     * Creates a new Instance in a given location.
      * </pre>
      */
     public void createInstance(com.google.cloud.memcache.v1beta2.CreateInstanceRequest request,
@@ -362,9 +393,10 @@ public final class CloudMemcacheGrpc {
 
     /**
      * <pre>
-     * Updates the defined Memcached Parameters for an existing Instance.
+     * Updates the defined Memcached parameters for an existing instance.
      * This method only stages the parameters, it must be followed by
-     * ApplyParameters to apply the parameters to nodes of the Memcached Instance.
+     * `ApplyParameters` to apply the parameters to nodes of the Memcached
+     * instance.
      * </pre>
      */
     public void updateParameters(com.google.cloud.memcache.v1beta2.UpdateParametersRequest request,
@@ -384,13 +416,23 @@ public final class CloudMemcacheGrpc {
 
     /**
      * <pre>
-     * ApplyParameters will update current set of Parameters to the set of
-     * specified nodes of the Memcached Instance.
+     * `ApplyParameters` restarts the set of specified nodes in order to update
+     * them to the current set of parameters for the Memcached Instance.
      * </pre>
      */
     public void applyParameters(com.google.cloud.memcache.v1beta2.ApplyParametersRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getApplyParametersMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Updates software on the selected nodes of the Instance.
+     * </pre>
+     */
+    public void applySoftwareUpdate(com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(getApplySoftwareUpdateMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -444,6 +486,13 @@ public final class CloudMemcacheGrpc {
                 com.google.cloud.memcache.v1beta2.ApplyParametersRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_APPLY_PARAMETERS)))
+          .addMethod(
+            getApplySoftwareUpdateMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest,
+                com.google.longrunning.Operation>(
+                  this, METHODID_APPLY_SOFTWARE_UPDATE)))
           .build();
     }
   }
@@ -460,7 +509,7 @@ public final class CloudMemcacheGrpc {
    * `/instances/&#42;`
    * * As such, Memcached instances are resources of the form:
    *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * Note that location_id must be refering to a GCP `region`; for example:
+   * Note that location_id must be a GCP `region`; for example:
    * * `projects/my-memcached-project/locations/us-central1/instances/my-memcached`
    * </pre>
    */
@@ -478,7 +527,7 @@ public final class CloudMemcacheGrpc {
 
     /**
      * <pre>
-     * Lists Instances in a given project and location.
+     * Lists Instances in a given location.
      * </pre>
      */
     public void listInstances(com.google.cloud.memcache.v1beta2.ListInstancesRequest request,
@@ -500,7 +549,7 @@ public final class CloudMemcacheGrpc {
 
     /**
      * <pre>
-     * Creates a new Instance in a given project and location.
+     * Creates a new Instance in a given location.
      * </pre>
      */
     public void createInstance(com.google.cloud.memcache.v1beta2.CreateInstanceRequest request,
@@ -522,9 +571,10 @@ public final class CloudMemcacheGrpc {
 
     /**
      * <pre>
-     * Updates the defined Memcached Parameters for an existing Instance.
+     * Updates the defined Memcached parameters for an existing instance.
      * This method only stages the parameters, it must be followed by
-     * ApplyParameters to apply the parameters to nodes of the Memcached Instance.
+     * `ApplyParameters` to apply the parameters to nodes of the Memcached
+     * instance.
      * </pre>
      */
     public void updateParameters(com.google.cloud.memcache.v1beta2.UpdateParametersRequest request,
@@ -546,14 +596,25 @@ public final class CloudMemcacheGrpc {
 
     /**
      * <pre>
-     * ApplyParameters will update current set of Parameters to the set of
-     * specified nodes of the Memcached Instance.
+     * `ApplyParameters` restarts the set of specified nodes in order to update
+     * them to the current set of parameters for the Memcached Instance.
      * </pre>
      */
     public void applyParameters(com.google.cloud.memcache.v1beta2.ApplyParametersRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getApplyParametersMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Updates software on the selected nodes of the Instance.
+     * </pre>
+     */
+    public void applySoftwareUpdate(com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getApplySoftwareUpdateMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -569,7 +630,7 @@ public final class CloudMemcacheGrpc {
    * `/instances/&#42;`
    * * As such, Memcached instances are resources of the form:
    *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * Note that location_id must be refering to a GCP `region`; for example:
+   * Note that location_id must be a GCP `region`; for example:
    * * `projects/my-memcached-project/locations/us-central1/instances/my-memcached`
    * </pre>
    */
@@ -587,7 +648,7 @@ public final class CloudMemcacheGrpc {
 
     /**
      * <pre>
-     * Lists Instances in a given project and location.
+     * Lists Instances in a given location.
      * </pre>
      */
     public com.google.cloud.memcache.v1beta2.ListInstancesResponse listInstances(com.google.cloud.memcache.v1beta2.ListInstancesRequest request) {
@@ -607,7 +668,7 @@ public final class CloudMemcacheGrpc {
 
     /**
      * <pre>
-     * Creates a new Instance in a given project and location.
+     * Creates a new Instance in a given location.
      * </pre>
      */
     public com.google.longrunning.Operation createInstance(com.google.cloud.memcache.v1beta2.CreateInstanceRequest request) {
@@ -627,9 +688,10 @@ public final class CloudMemcacheGrpc {
 
     /**
      * <pre>
-     * Updates the defined Memcached Parameters for an existing Instance.
+     * Updates the defined Memcached parameters for an existing instance.
      * This method only stages the parameters, it must be followed by
-     * ApplyParameters to apply the parameters to nodes of the Memcached Instance.
+     * `ApplyParameters` to apply the parameters to nodes of the Memcached
+     * instance.
      * </pre>
      */
     public com.google.longrunning.Operation updateParameters(com.google.cloud.memcache.v1beta2.UpdateParametersRequest request) {
@@ -649,13 +711,23 @@ public final class CloudMemcacheGrpc {
 
     /**
      * <pre>
-     * ApplyParameters will update current set of Parameters to the set of
-     * specified nodes of the Memcached Instance.
+     * `ApplyParameters` restarts the set of specified nodes in order to update
+     * them to the current set of parameters for the Memcached Instance.
      * </pre>
      */
     public com.google.longrunning.Operation applyParameters(com.google.cloud.memcache.v1beta2.ApplyParametersRequest request) {
       return blockingUnaryCall(
           getChannel(), getApplyParametersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Updates software on the selected nodes of the Instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation applySoftwareUpdate(com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getApplySoftwareUpdateMethod(), getCallOptions(), request);
     }
   }
 
@@ -671,7 +743,7 @@ public final class CloudMemcacheGrpc {
    * `/instances/&#42;`
    * * As such, Memcached instances are resources of the form:
    *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * Note that location_id must be refering to a GCP `region`; for example:
+   * Note that location_id must be a GCP `region`; for example:
    * * `projects/my-memcached-project/locations/us-central1/instances/my-memcached`
    * </pre>
    */
@@ -689,7 +761,7 @@ public final class CloudMemcacheGrpc {
 
     /**
      * <pre>
-     * Lists Instances in a given project and location.
+     * Lists Instances in a given location.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.memcache.v1beta2.ListInstancesResponse> listInstances(
@@ -711,7 +783,7 @@ public final class CloudMemcacheGrpc {
 
     /**
      * <pre>
-     * Creates a new Instance in a given project and location.
+     * Creates a new Instance in a given location.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> createInstance(
@@ -733,9 +805,10 @@ public final class CloudMemcacheGrpc {
 
     /**
      * <pre>
-     * Updates the defined Memcached Parameters for an existing Instance.
+     * Updates the defined Memcached parameters for an existing instance.
      * This method only stages the parameters, it must be followed by
-     * ApplyParameters to apply the parameters to nodes of the Memcached Instance.
+     * `ApplyParameters` to apply the parameters to nodes of the Memcached
+     * instance.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> updateParameters(
@@ -757,14 +830,25 @@ public final class CloudMemcacheGrpc {
 
     /**
      * <pre>
-     * ApplyParameters will update current set of Parameters to the set of
-     * specified nodes of the Memcached Instance.
+     * `ApplyParameters` restarts the set of specified nodes in order to update
+     * them to the current set of parameters for the Memcached Instance.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> applyParameters(
         com.google.cloud.memcache.v1beta2.ApplyParametersRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getApplyParametersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Updates software on the selected nodes of the Instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> applySoftwareUpdate(
+        com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getApplySoftwareUpdateMethod(), getCallOptions()), request);
     }
   }
 
@@ -775,6 +859,7 @@ public final class CloudMemcacheGrpc {
   private static final int METHODID_UPDATE_PARAMETERS = 4;
   private static final int METHODID_DELETE_INSTANCE = 5;
   private static final int METHODID_APPLY_PARAMETERS = 6;
+  private static final int METHODID_APPLY_SOFTWARE_UPDATE = 7;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -819,6 +904,10 @@ public final class CloudMemcacheGrpc {
           break;
         case METHODID_APPLY_PARAMETERS:
           serviceImpl.applyParameters((com.google.cloud.memcache.v1beta2.ApplyParametersRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_APPLY_SOFTWARE_UPDATE:
+          serviceImpl.applySoftwareUpdate((com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -889,6 +978,7 @@ public final class CloudMemcacheGrpc {
               .addMethod(getUpdateParametersMethod())
               .addMethod(getDeleteInstanceMethod())
               .addMethod(getApplyParametersMethod())
+              .addMethod(getApplySoftwareUpdateMethod())
               .build();
         }
       }

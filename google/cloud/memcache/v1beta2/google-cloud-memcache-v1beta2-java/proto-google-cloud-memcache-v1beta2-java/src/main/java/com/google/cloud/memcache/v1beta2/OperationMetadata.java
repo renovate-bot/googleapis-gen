@@ -147,10 +147,10 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp createTime_;
   /**
    * <pre>
-   * Time when the operation was created.
+   * Output only. Time when the operation was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 1;</code>
+   * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the createTime field is set.
    */
   @java.lang.Override
@@ -159,10 +159,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Time when the operation was created.
+   * Output only. Time when the operation was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 1;</code>
+   * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The createTime.
    */
   @java.lang.Override
@@ -171,10 +171,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Time when the operation was created.
+   * Output only. Time when the operation was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 1;</code>
+   * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
@@ -185,10 +185,10 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp endTime_;
   /**
    * <pre>
-   * Time when the operation finished running.
+   * Output only. Time when the operation finished running.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 2;</code>
+   * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the endTime field is set.
    */
   @java.lang.Override
@@ -197,10 +197,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Time when the operation finished running.
+   * Output only. Time when the operation finished running.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 2;</code>
+   * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The endTime.
    */
   @java.lang.Override
@@ -209,10 +209,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Time when the operation finished running.
+   * Output only. Time when the operation finished running.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 2;</code>
+   * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
@@ -223,10 +223,10 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object target_;
   /**
    * <pre>
-   * Server-defined resource path for the target of the operation.
+   * Output only. Server-defined resource path for the target of the operation.
    * </pre>
    *
-   * <code>string target = 3;</code>
+   * <code>string target = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The target.
    */
   @java.lang.Override
@@ -244,10 +244,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Server-defined resource path for the target of the operation.
+   * Output only. Server-defined resource path for the target of the operation.
    * </pre>
    *
-   * <code>string target = 3;</code>
+   * <code>string target = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The bytes for target.
    */
   @java.lang.Override
@@ -269,10 +269,10 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object verb_;
   /**
    * <pre>
-   * Name of the verb executed by the operation.
+   * Output only. Name of the verb executed by the operation.
    * </pre>
    *
-   * <code>string verb = 4;</code>
+   * <code>string verb = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The verb.
    */
   @java.lang.Override
@@ -290,10 +290,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Name of the verb executed by the operation.
+   * Output only. Name of the verb executed by the operation.
    * </pre>
    *
-   * <code>string verb = 4;</code>
+   * <code>string verb = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The bytes for verb.
    */
   @java.lang.Override
@@ -315,10 +315,10 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object statusDetail_;
   /**
    * <pre>
-   * Human-readable status of the operation, if any.
+   * Output only. Human-readable status of the operation, if any.
    * </pre>
    *
-   * <code>string status_detail = 5;</code>
+   * <code>string status_detail = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The statusDetail.
    */
   @java.lang.Override
@@ -336,10 +336,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Human-readable status of the operation, if any.
+   * Output only. Human-readable status of the operation, if any.
    * </pre>
    *
-   * <code>string status_detail = 5;</code>
+   * <code>string status_detail = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The bytes for statusDetail.
    */
   @java.lang.Override
@@ -361,13 +361,13 @@ private static final long serialVersionUID = 0L;
   private boolean cancelRequested_;
   /**
    * <pre>
-   * Identifies whether the user has requested cancellation
+   * Output only. Identifies whether the user has requested cancellation
    * of the operation. Operations that have successfully been cancelled
    * have [Operation.error][] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
    * corresponding to `Code.CANCELLED`.
    * </pre>
    *
-   * <code>bool cancel_requested = 6;</code>
+   * <code>bool cancel_requested = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The cancelRequested.
    */
   @java.lang.Override
@@ -379,10 +379,10 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object apiVersion_;
   /**
    * <pre>
-   * API version used to start the operation.
+   * Output only. API version used to start the operation.
    * </pre>
    *
-   * <code>string api_version = 7;</code>
+   * <code>string api_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The apiVersion.
    */
   @java.lang.Override
@@ -400,10 +400,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * API version used to start the operation.
+   * Output only. API version used to start the operation.
    * </pre>
    *
-   * <code>string api_version = 7;</code>
+   * <code>string api_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The bytes for apiVersion.
    */
   @java.lang.Override
@@ -861,10 +861,10 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
     /**
      * <pre>
-     * Time when the operation was created.
+     * Output only. Time when the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
@@ -872,10 +872,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time when the operation was created.
+     * Output only. Time when the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
@@ -887,10 +887,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time when the operation was created.
+     * Output only. Time when the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -907,10 +907,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time when the operation was created.
+     * Output only. Time when the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setCreateTime(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -925,10 +925,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time when the operation was created.
+     * Output only. Time when the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -947,10 +947,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time when the operation was created.
+     * Output only. Time when the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -965,10 +965,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time when the operation was created.
+     * Output only. Time when the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
       
@@ -977,10 +977,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time when the operation was created.
+     * Output only. Time when the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -992,10 +992,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time when the operation was created.
+     * Output only. Time when the operation was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 1;</code>
+     * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -1016,10 +1016,10 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> endTimeBuilder_;
     /**
      * <pre>
-     * Time when the operation finished running.
+     * Output only. Time when the operation finished running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
@@ -1027,10 +1027,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time when the operation finished running.
+     * Output only. Time when the operation finished running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The endTime.
      */
     public com.google.protobuf.Timestamp getEndTime() {
@@ -1042,10 +1042,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time when the operation finished running.
+     * Output only. Time when the operation finished running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
@@ -1062,10 +1062,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time when the operation finished running.
+     * Output only. Time when the operation finished running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setEndTime(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -1080,10 +1080,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time when the operation finished running.
+     * Output only. Time when the operation finished running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
@@ -1102,10 +1102,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time when the operation finished running.
+     * Output only. Time when the operation finished running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearEndTime() {
       if (endTimeBuilder_ == null) {
@@ -1120,10 +1120,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time when the operation finished running.
+     * Output only. Time when the operation finished running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
       
@@ -1132,10 +1132,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time when the operation finished running.
+     * Output only. Time when the operation finished running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
       if (endTimeBuilder_ != null) {
@@ -1147,10 +1147,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Time when the operation finished running.
+     * Output only. Time when the operation finished running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -1169,10 +1169,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object target_ = "";
     /**
      * <pre>
-     * Server-defined resource path for the target of the operation.
+     * Output only. Server-defined resource path for the target of the operation.
      * </pre>
      *
-     * <code>string target = 3;</code>
+     * <code>string target = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The target.
      */
     public java.lang.String getTarget() {
@@ -1189,10 +1189,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Server-defined resource path for the target of the operation.
+     * Output only. Server-defined resource path for the target of the operation.
      * </pre>
      *
-     * <code>string target = 3;</code>
+     * <code>string target = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for target.
      */
     public com.google.protobuf.ByteString
@@ -1210,10 +1210,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Server-defined resource path for the target of the operation.
+     * Output only. Server-defined resource path for the target of the operation.
      * </pre>
      *
-     * <code>string target = 3;</code>
+     * <code>string target = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The target to set.
      * @return This builder for chaining.
      */
@@ -1229,10 +1229,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Server-defined resource path for the target of the operation.
+     * Output only. Server-defined resource path for the target of the operation.
      * </pre>
      *
-     * <code>string target = 3;</code>
+     * <code>string target = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearTarget() {
@@ -1243,10 +1243,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Server-defined resource path for the target of the operation.
+     * Output only. Server-defined resource path for the target of the operation.
      * </pre>
      *
-     * <code>string target = 3;</code>
+     * <code>string target = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The bytes for target to set.
      * @return This builder for chaining.
      */
@@ -1265,10 +1265,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object verb_ = "";
     /**
      * <pre>
-     * Name of the verb executed by the operation.
+     * Output only. Name of the verb executed by the operation.
      * </pre>
      *
-     * <code>string verb = 4;</code>
+     * <code>string verb = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The verb.
      */
     public java.lang.String getVerb() {
@@ -1285,10 +1285,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Name of the verb executed by the operation.
+     * Output only. Name of the verb executed by the operation.
      * </pre>
      *
-     * <code>string verb = 4;</code>
+     * <code>string verb = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for verb.
      */
     public com.google.protobuf.ByteString
@@ -1306,10 +1306,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Name of the verb executed by the operation.
+     * Output only. Name of the verb executed by the operation.
      * </pre>
      *
-     * <code>string verb = 4;</code>
+     * <code>string verb = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The verb to set.
      * @return This builder for chaining.
      */
@@ -1325,10 +1325,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Name of the verb executed by the operation.
+     * Output only. Name of the verb executed by the operation.
      * </pre>
      *
-     * <code>string verb = 4;</code>
+     * <code>string verb = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearVerb() {
@@ -1339,10 +1339,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Name of the verb executed by the operation.
+     * Output only. Name of the verb executed by the operation.
      * </pre>
      *
-     * <code>string verb = 4;</code>
+     * <code>string verb = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The bytes for verb to set.
      * @return This builder for chaining.
      */
@@ -1361,10 +1361,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object statusDetail_ = "";
     /**
      * <pre>
-     * Human-readable status of the operation, if any.
+     * Output only. Human-readable status of the operation, if any.
      * </pre>
      *
-     * <code>string status_detail = 5;</code>
+     * <code>string status_detail = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The statusDetail.
      */
     public java.lang.String getStatusDetail() {
@@ -1381,10 +1381,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Human-readable status of the operation, if any.
+     * Output only. Human-readable status of the operation, if any.
      * </pre>
      *
-     * <code>string status_detail = 5;</code>
+     * <code>string status_detail = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for statusDetail.
      */
     public com.google.protobuf.ByteString
@@ -1402,10 +1402,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Human-readable status of the operation, if any.
+     * Output only. Human-readable status of the operation, if any.
      * </pre>
      *
-     * <code>string status_detail = 5;</code>
+     * <code>string status_detail = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The statusDetail to set.
      * @return This builder for chaining.
      */
@@ -1421,10 +1421,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Human-readable status of the operation, if any.
+     * Output only. Human-readable status of the operation, if any.
      * </pre>
      *
-     * <code>string status_detail = 5;</code>
+     * <code>string status_detail = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearStatusDetail() {
@@ -1435,10 +1435,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Human-readable status of the operation, if any.
+     * Output only. Human-readable status of the operation, if any.
      * </pre>
      *
-     * <code>string status_detail = 5;</code>
+     * <code>string status_detail = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The bytes for statusDetail to set.
      * @return This builder for chaining.
      */
@@ -1457,13 +1457,13 @@ private static final long serialVersionUID = 0L;
     private boolean cancelRequested_ ;
     /**
      * <pre>
-     * Identifies whether the user has requested cancellation
+     * Output only. Identifies whether the user has requested cancellation
      * of the operation. Operations that have successfully been cancelled
      * have [Operation.error][] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
      * corresponding to `Code.CANCELLED`.
      * </pre>
      *
-     * <code>bool cancel_requested = 6;</code>
+     * <code>bool cancel_requested = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The cancelRequested.
      */
     @java.lang.Override
@@ -1472,13 +1472,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Identifies whether the user has requested cancellation
+     * Output only. Identifies whether the user has requested cancellation
      * of the operation. Operations that have successfully been cancelled
      * have [Operation.error][] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
      * corresponding to `Code.CANCELLED`.
      * </pre>
      *
-     * <code>bool cancel_requested = 6;</code>
+     * <code>bool cancel_requested = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The cancelRequested to set.
      * @return This builder for chaining.
      */
@@ -1490,13 +1490,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Identifies whether the user has requested cancellation
+     * Output only. Identifies whether the user has requested cancellation
      * of the operation. Operations that have successfully been cancelled
      * have [Operation.error][] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
      * corresponding to `Code.CANCELLED`.
      * </pre>
      *
-     * <code>bool cancel_requested = 6;</code>
+     * <code>bool cancel_requested = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearCancelRequested() {
@@ -1509,10 +1509,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object apiVersion_ = "";
     /**
      * <pre>
-     * API version used to start the operation.
+     * Output only. API version used to start the operation.
      * </pre>
      *
-     * <code>string api_version = 7;</code>
+     * <code>string api_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The apiVersion.
      */
     public java.lang.String getApiVersion() {
@@ -1529,10 +1529,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * API version used to start the operation.
+     * Output only. API version used to start the operation.
      * </pre>
      *
-     * <code>string api_version = 7;</code>
+     * <code>string api_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for apiVersion.
      */
     public com.google.protobuf.ByteString
@@ -1550,10 +1550,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * API version used to start the operation.
+     * Output only. API version used to start the operation.
      * </pre>
      *
-     * <code>string api_version = 7;</code>
+     * <code>string api_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The apiVersion to set.
      * @return This builder for chaining.
      */
@@ -1569,10 +1569,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * API version used to start the operation.
+     * Output only. API version used to start the operation.
      * </pre>
      *
-     * <code>string api_version = 7;</code>
+     * <code>string api_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearApiVersion() {
@@ -1583,10 +1583,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * API version used to start the operation.
+     * Output only. API version used to start the operation.
      * </pre>
      *
-     * <code>string api_version = 7;</code>
+     * <code>string api_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The bytes for apiVersion to set.
      * @return This builder for chaining.
      */

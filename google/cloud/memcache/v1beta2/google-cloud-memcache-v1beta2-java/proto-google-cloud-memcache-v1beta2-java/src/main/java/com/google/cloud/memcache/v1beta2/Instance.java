@@ -4,6 +4,10 @@
 package com.google.cloud.memcache.v1beta2;
 
 /**
+ * <pre>
+ * A Memorystore for Memcached instance
+ * </pre>
+ *
  * Protobuf type {@code google.cloud.memcache.v1beta2.Instance}
  */
 public final class Instance extends
@@ -198,6 +202,11 @@ private static final long serialVersionUID = 0L;
             discoveryEndpoint_ = s;
             break;
           }
+          case 168: {
+
+            updateAvailable_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -254,7 +263,6 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Different states of a Memcached instance.
-   * LINT.IfChange
    * </pre>
    *
    * Protobuf enum {@code google.cloud.memcache.v1beta2.Instance.State}
@@ -1160,6 +1168,16 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.memcache.v1beta2.MemcacheParameters parameters = 6;</code>
      */
     com.google.cloud.memcache.v1beta2.MemcacheParametersOrBuilder getParametersOrBuilder();
+
+    /**
+     * <pre>
+     * Output only. Returns true if there is an update waiting to be applied
+     * </pre>
+     *
+     * <code>bool update_available = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The updateAvailable.
+     */
+    boolean getUpdateAvailable();
   }
   /**
    * Protobuf type {@code google.cloud.memcache.v1beta2.Instance.Node}
@@ -1252,6 +1270,11 @@ private static final long serialVersionUID = 0L;
 
               break;
             }
+            case 56: {
+
+              updateAvailable_ = input.readBool();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -1287,7 +1310,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Different states of a Memcached node.
-     * LINT.IfChange
      * </pre>
      *
      * Protobuf enum {@code google.cloud.memcache.v1beta2.Instance.Node.State}
@@ -1686,6 +1708,21 @@ private static final long serialVersionUID = 0L;
       return getParameters();
     }
 
+    public static final int UPDATE_AVAILABLE_FIELD_NUMBER = 7;
+    private boolean updateAvailable_;
+    /**
+     * <pre>
+     * Output only. Returns true if there is an update waiting to be applied
+     * </pre>
+     *
+     * <code>bool update_available = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The updateAvailable.
+     */
+    @java.lang.Override
+    public boolean getUpdateAvailable() {
+      return updateAvailable_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1718,6 +1755,9 @@ private static final long serialVersionUID = 0L;
       if (parameters_ != null) {
         output.writeMessage(6, getParameters());
       }
+      if (updateAvailable_ != false) {
+        output.writeBool(7, updateAvailable_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1748,6 +1788,10 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, getParameters());
       }
+      if (updateAvailable_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(7, updateAvailable_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1777,6 +1821,8 @@ private static final long serialVersionUID = 0L;
         if (!getParameters()
             .equals(other.getParameters())) return false;
       }
+      if (getUpdateAvailable()
+          != other.getUpdateAvailable()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1802,6 +1848,9 @@ private static final long serialVersionUID = 0L;
         hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
         hash = (53 * hash) + getParameters().hashCode();
       }
+      hash = (37 * hash) + UPDATE_AVAILABLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getUpdateAvailable());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1951,6 +2000,8 @@ private static final long serialVersionUID = 0L;
           parameters_ = null;
           parametersBuilder_ = null;
         }
+        updateAvailable_ = false;
+
         return this;
       }
 
@@ -1987,6 +2038,7 @@ private static final long serialVersionUID = 0L;
         } else {
           result.parameters_ = parametersBuilder_.build();
         }
+        result.updateAvailable_ = updateAvailable_;
         onBuilt();
         return result;
       }
@@ -2055,6 +2107,9 @@ private static final long serialVersionUID = 0L;
         }
         if (other.hasParameters()) {
           mergeParameters(other.getParameters());
+        }
+        if (other.getUpdateAvailable() != false) {
+          setUpdateAvailable(other.getUpdateAvailable());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2653,6 +2708,49 @@ private static final long serialVersionUID = 0L;
           parameters_ = null;
         }
         return parametersBuilder_;
+      }
+
+      private boolean updateAvailable_ ;
+      /**
+       * <pre>
+       * Output only. Returns true if there is an update waiting to be applied
+       * </pre>
+       *
+       * <code>bool update_available = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return The updateAvailable.
+       */
+      @java.lang.Override
+      public boolean getUpdateAvailable() {
+        return updateAvailable_;
+      }
+      /**
+       * <pre>
+       * Output only. Returns true if there is an update waiting to be applied
+       * </pre>
+       *
+       * <code>bool update_available = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @param value The updateAvailable to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUpdateAvailable(boolean value) {
+        
+        updateAvailable_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. Returns true if there is an update waiting to be applied
+       * </pre>
+       *
+       * <code>bool update_available = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUpdateAvailable() {
+        
+        updateAvailable_ = false;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -3585,10 +3683,10 @@ private static final long serialVersionUID = 0L;
    * Required. Unique name of the resource in this scope including project and
    * location using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * Note: Memcached instances are managed and addressed at regional level so
-   * location_id here refers to a GCP region; however, users may choose which
-   * zones Memcached nodes within an instances should be provisioned in.
-   * Refer to [zones] field for more details.
+   * Note: Memcached instances are managed and addressed at the regional level
+   * so `location_id` here refers to a Google Cloud region; however, users may
+   * choose which zones Memcached nodes should be provisioned in within an
+   * instance. Refer to [zones][google.cloud.memcache.v1beta2.Instance.zones] field for more details.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3612,10 +3710,10 @@ private static final long serialVersionUID = 0L;
    * Required. Unique name of the resource in this scope including project and
    * location using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * Note: Memcached instances are managed and addressed at regional level so
-   * location_id here refers to a GCP region; however, users may choose which
-   * zones Memcached nodes within an instances should be provisioned in.
-   * Refer to [zones] field for more details.
+   * Note: Memcached instances are managed and addressed at the regional level
+   * so `location_id` here refers to a Google Cloud region; however, users may
+   * choose which zones Memcached nodes should be provisioned in within an
+   * instance. Refer to [zones][google.cloud.memcache.v1beta2.Instance.zones] field for more details.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3640,7 +3738,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object displayName_;
   /**
    * <pre>
-   * Optional. User provided name for the instance only used for display
+   * User provided name for the instance, which is only used for display
    * purposes. Cannot be more than 80 characters.
    * </pre>
    *
@@ -3662,7 +3760,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. User provided name for the instance only used for display
+   * User provided name for the instance, which is only used for display
    * purposes. Cannot be more than 80 characters.
    * </pre>
    *
@@ -3712,7 +3810,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Resource labels to represent user-provided metadata.
+   * Resource labels to represent user-provided metadata.
    * Refer to cloud documentation on labels for more details.
    * https://cloud.google.com/compute/docs/labeling-resources
    * </pre>
@@ -3736,7 +3834,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Resource labels to represent user-provided metadata.
+   * Resource labels to represent user-provided metadata.
    * Refer to cloud documentation on labels for more details.
    * https://cloud.google.com/compute/docs/labeling-resources
    * </pre>
@@ -3750,7 +3848,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Resource labels to represent user-provided metadata.
+   * Resource labels to represent user-provided metadata.
    * Refer to cloud documentation on labels for more details.
    * https://cloud.google.com/compute/docs/labeling-resources
    * </pre>
@@ -3769,7 +3867,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Resource labels to represent user-provided metadata.
+   * Resource labels to represent user-provided metadata.
    * Refer to cloud documentation on labels for more details.
    * https://cloud.google.com/compute/docs/labeling-resources
    * </pre>
@@ -3793,7 +3891,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object authorizedNetwork_;
   /**
    * <pre>
-   * Optional. The full name of the Google Compute Engine
+   * The full name of the Google Compute Engine
    * [network](https://cloud.google.com/vpc/docs/vpc) to which the
    * instance is connected. If left unspecified, the `default` network
    * will be used.
@@ -3817,7 +3915,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The full name of the Google Compute Engine
+   * The full name of the Google Compute Engine
    * [network](https://cloud.google.com/vpc/docs/vpc) to which the
    * instance is connected. If left unspecified, the `default` network
    * will be used.
@@ -3845,7 +3943,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList zones_;
   /**
    * <pre>
-   * Optional. Zones where Memcached nodes should be provisioned in.
+   * Zones in which Memcached nodes should be provisioned.
    * Memcached nodes will be equally distributed across these zones. If not
    * provided, the service will by default create nodes in all zones in the
    * region for the instance.
@@ -3860,7 +3958,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Zones where Memcached nodes should be provisioned in.
+   * Zones in which Memcached nodes should be provisioned.
    * Memcached nodes will be equally distributed across these zones. If not
    * provided, the service will by default create nodes in all zones in the
    * region for the instance.
@@ -3874,7 +3972,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Zones where Memcached nodes should be provisioned in.
+   * Zones in which Memcached nodes should be provisioned.
    * Memcached nodes will be equally distributed across these zones. If not
    * provided, the service will by default create nodes in all zones in the
    * region for the instance.
@@ -3889,7 +3987,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Zones where Memcached nodes should be provisioned in.
+   * Zones in which Memcached nodes should be provisioned.
    * Memcached nodes will be equally distributed across these zones. If not
    * provided, the service will by default create nodes in all zones in the
    * region for the instance.
@@ -3961,9 +4059,9 @@ private static final long serialVersionUID = 0L;
   private int memcacheVersion_;
   /**
    * <pre>
-   * Optional. The major version of Memcached software.
+   * The major version of Memcached software.
    * If not provided, latest supported version will be used. Currently the
-   * latest supported major version is MEMCACHE_1_5.
+   * latest supported major version is `MEMCACHE_1_5`.
    * The minor version will be automatically determined by our system based on
    * the latest supported minor version.
    * </pre>
@@ -3976,9 +4074,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The major version of Memcached software.
+   * The major version of Memcached software.
    * If not provided, latest supported version will be used. Currently the
-   * latest supported major version is MEMCACHE_1_5.
+   * latest supported major version is `MEMCACHE_1_5`.
    * The minor version will be automatically determined by our system based on
    * the latest supported minor version.
    * </pre>
@@ -4038,7 +4136,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. List of Memcached nodes.
-   * Refer to [Node] message for more details.
+   * Refer to [Node][google.cloud.memcache.v1beta2.Instance.Node] message for more details.
    * </pre>
    *
    * <code>repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4050,7 +4148,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. List of Memcached nodes.
-   * Refer to [Node] message for more details.
+   * Refer to [Node][google.cloud.memcache.v1beta2.Instance.Node] message for more details.
    * </pre>
    *
    * <code>repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4063,7 +4161,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. List of Memcached nodes.
-   * Refer to [Node] message for more details.
+   * Refer to [Node][google.cloud.memcache.v1beta2.Instance.Node] message for more details.
    * </pre>
    *
    * <code>repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4075,7 +4173,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. List of Memcached nodes.
-   * Refer to [Node] message for more details.
+   * Refer to [Node][google.cloud.memcache.v1beta2.Instance.Node] message for more details.
    * </pre>
    *
    * <code>repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4087,7 +4185,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. List of Memcached nodes.
-   * Refer to [Node] message for more details.
+   * Refer to [Node][google.cloud.memcache.v1beta2.Instance.Node] message for more details.
    * </pre>
    *
    * <code>repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4257,7 +4355,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.cloud.memcache.v1beta2.Instance.InstanceMessage> instanceMessages_;
   /**
    * <pre>
-   * List of messages that describe current statuses of memcached instance.
+   * List of messages that describe the current state of the Memcached instance.
    * </pre>
    *
    * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;</code>
@@ -4268,7 +4366,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * List of messages that describe current statuses of memcached instance.
+   * List of messages that describe the current state of the Memcached instance.
    * </pre>
    *
    * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;</code>
@@ -4280,7 +4378,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * List of messages that describe current statuses of memcached instance.
+   * List of messages that describe the current state of the Memcached instance.
    * </pre>
    *
    * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;</code>
@@ -4291,7 +4389,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * List of messages that describe current statuses of memcached instance.
+   * List of messages that describe the current state of the Memcached instance.
    * </pre>
    *
    * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;</code>
@@ -4302,7 +4400,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * List of messages that describe current statuses of memcached instance.
+   * List of messages that describe the current state of the Memcached instance.
    * </pre>
    *
    * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;</code>
@@ -4317,7 +4415,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object discoveryEndpoint_;
   /**
    * <pre>
-   * Output only. Endpoint for Discovery API
+   * Output only. Endpoint for the Discovery API.
    * </pre>
    *
    * <code>string discovery_endpoint = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4338,7 +4436,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Endpoint for Discovery API
+   * Output only. Endpoint for the Discovery API.
    * </pre>
    *
    * <code>string discovery_endpoint = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4357,6 +4455,21 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int UPDATE_AVAILABLE_FIELD_NUMBER = 21;
+  private boolean updateAvailable_;
+  /**
+   * <pre>
+   * Output only. Returns true if there is an update waiting to be applied
+   * </pre>
+   *
+   * <code>bool update_available = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The updateAvailable.
+   */
+  @java.lang.Override
+  public boolean getUpdateAvailable() {
+    return updateAvailable_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -4423,6 +4536,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getDiscoveryEndpointBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 20, discoveryEndpoint_);
+    }
+    if (updateAvailable_ != false) {
+      output.writeBool(21, updateAvailable_);
     }
     unknownFields.writeTo(output);
   }
@@ -4502,6 +4618,10 @@ private static final long serialVersionUID = 0L;
     if (!getDiscoveryEndpointBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, discoveryEndpoint_);
     }
+    if (updateAvailable_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(21, updateAvailable_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4559,6 +4679,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getInstanceMessagesList())) return false;
     if (!getDiscoveryEndpoint()
         .equals(other.getDiscoveryEndpoint())) return false;
+    if (getUpdateAvailable()
+        != other.getUpdateAvailable()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -4618,6 +4740,9 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + DISCOVERY_ENDPOINT_FIELD_NUMBER;
     hash = (53 * hash) + getDiscoveryEndpoint().hashCode();
+    hash = (37 * hash) + UPDATE_AVAILABLE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getUpdateAvailable());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -4714,6 +4839,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * A Memorystore for Memcached instance
+   * </pre>
+   *
    * Protobuf type {@code google.cloud.memcache.v1beta2.Instance}
    */
   public static final class Builder extends
@@ -4830,6 +4959,8 @@ private static final long serialVersionUID = 0L;
       }
       discoveryEndpoint_ = "";
 
+      updateAvailable_ = false;
+
       return this;
     }
 
@@ -4910,6 +5041,7 @@ private static final long serialVersionUID = 0L;
         result.instanceMessages_ = instanceMessagesBuilder_.build();
       }
       result.discoveryEndpoint_ = discoveryEndpoint_;
+      result.updateAvailable_ = updateAvailable_;
       onBuilt();
       return result;
     }
@@ -5063,6 +5195,9 @@ private static final long serialVersionUID = 0L;
         discoveryEndpoint_ = other.discoveryEndpoint_;
         onChanged();
       }
+      if (other.getUpdateAvailable() != false) {
+        setUpdateAvailable(other.getUpdateAvailable());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -5099,10 +5234,10 @@ private static final long serialVersionUID = 0L;
      * Required. Unique name of the resource in this scope including project and
      * location using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * Note: Memcached instances are managed and addressed at regional level so
-     * location_id here refers to a GCP region; however, users may choose which
-     * zones Memcached nodes within an instances should be provisioned in.
-     * Refer to [zones] field for more details.
+     * Note: Memcached instances are managed and addressed at the regional level
+     * so `location_id` here refers to a Google Cloud region; however, users may
+     * choose which zones Memcached nodes should be provisioned in within an
+     * instance. Refer to [zones][google.cloud.memcache.v1beta2.Instance.zones] field for more details.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -5125,10 +5260,10 @@ private static final long serialVersionUID = 0L;
      * Required. Unique name of the resource in this scope including project and
      * location using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * Note: Memcached instances are managed and addressed at regional level so
-     * location_id here refers to a GCP region; however, users may choose which
-     * zones Memcached nodes within an instances should be provisioned in.
-     * Refer to [zones] field for more details.
+     * Note: Memcached instances are managed and addressed at the regional level
+     * so `location_id` here refers to a Google Cloud region; however, users may
+     * choose which zones Memcached nodes should be provisioned in within an
+     * instance. Refer to [zones][google.cloud.memcache.v1beta2.Instance.zones] field for more details.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -5152,10 +5287,10 @@ private static final long serialVersionUID = 0L;
      * Required. Unique name of the resource in this scope including project and
      * location using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * Note: Memcached instances are managed and addressed at regional level so
-     * location_id here refers to a GCP region; however, users may choose which
-     * zones Memcached nodes within an instances should be provisioned in.
-     * Refer to [zones] field for more details.
+     * Note: Memcached instances are managed and addressed at the regional level
+     * so `location_id` here refers to a Google Cloud region; however, users may
+     * choose which zones Memcached nodes should be provisioned in within an
+     * instance. Refer to [zones][google.cloud.memcache.v1beta2.Instance.zones] field for more details.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -5177,10 +5312,10 @@ private static final long serialVersionUID = 0L;
      * Required. Unique name of the resource in this scope including project and
      * location using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * Note: Memcached instances are managed and addressed at regional level so
-     * location_id here refers to a GCP region; however, users may choose which
-     * zones Memcached nodes within an instances should be provisioned in.
-     * Refer to [zones] field for more details.
+     * Note: Memcached instances are managed and addressed at the regional level
+     * so `location_id` here refers to a Google Cloud region; however, users may
+     * choose which zones Memcached nodes should be provisioned in within an
+     * instance. Refer to [zones][google.cloud.memcache.v1beta2.Instance.zones] field for more details.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -5197,10 +5332,10 @@ private static final long serialVersionUID = 0L;
      * Required. Unique name of the resource in this scope including project and
      * location using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * Note: Memcached instances are managed and addressed at regional level so
-     * location_id here refers to a GCP region; however, users may choose which
-     * zones Memcached nodes within an instances should be provisioned in.
-     * Refer to [zones] field for more details.
+     * Note: Memcached instances are managed and addressed at the regional level
+     * so `location_id` here refers to a Google Cloud region; however, users may
+     * choose which zones Memcached nodes should be provisioned in within an
+     * instance. Refer to [zones][google.cloud.memcache.v1beta2.Instance.zones] field for more details.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -5222,7 +5357,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object displayName_ = "";
     /**
      * <pre>
-     * Optional. User provided name for the instance only used for display
+     * User provided name for the instance, which is only used for display
      * purposes. Cannot be more than 80 characters.
      * </pre>
      *
@@ -5243,7 +5378,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. User provided name for the instance only used for display
+     * User provided name for the instance, which is only used for display
      * purposes. Cannot be more than 80 characters.
      * </pre>
      *
@@ -5265,7 +5400,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. User provided name for the instance only used for display
+     * User provided name for the instance, which is only used for display
      * purposes. Cannot be more than 80 characters.
      * </pre>
      *
@@ -5285,7 +5420,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. User provided name for the instance only used for display
+     * User provided name for the instance, which is only used for display
      * purposes. Cannot be more than 80 characters.
      * </pre>
      *
@@ -5300,7 +5435,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. User provided name for the instance only used for display
+     * User provided name for the instance, which is only used for display
      * purposes. Cannot be more than 80 characters.
      * </pre>
      *
@@ -5348,7 +5483,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Resource labels to represent user-provided metadata.
+     * Resource labels to represent user-provided metadata.
      * Refer to cloud documentation on labels for more details.
      * https://cloud.google.com/compute/docs/labeling-resources
      * </pre>
@@ -5372,7 +5507,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Resource labels to represent user-provided metadata.
+     * Resource labels to represent user-provided metadata.
      * Refer to cloud documentation on labels for more details.
      * https://cloud.google.com/compute/docs/labeling-resources
      * </pre>
@@ -5386,7 +5521,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Resource labels to represent user-provided metadata.
+     * Resource labels to represent user-provided metadata.
      * Refer to cloud documentation on labels for more details.
      * https://cloud.google.com/compute/docs/labeling-resources
      * </pre>
@@ -5405,7 +5540,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Resource labels to represent user-provided metadata.
+     * Resource labels to represent user-provided metadata.
      * Refer to cloud documentation on labels for more details.
      * https://cloud.google.com/compute/docs/labeling-resources
      * </pre>
@@ -5432,7 +5567,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Resource labels to represent user-provided metadata.
+     * Resource labels to represent user-provided metadata.
      * Refer to cloud documentation on labels for more details.
      * https://cloud.google.com/compute/docs/labeling-resources
      * </pre>
@@ -5457,7 +5592,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Resource labels to represent user-provided metadata.
+     * Resource labels to represent user-provided metadata.
      * Refer to cloud documentation on labels for more details.
      * https://cloud.google.com/compute/docs/labeling-resources
      * </pre>
@@ -5475,7 +5610,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Resource labels to represent user-provided metadata.
+     * Resource labels to represent user-provided metadata.
      * Refer to cloud documentation on labels for more details.
      * https://cloud.google.com/compute/docs/labeling-resources
      * </pre>
@@ -5493,7 +5628,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object authorizedNetwork_ = "";
     /**
      * <pre>
-     * Optional. The full name of the Google Compute Engine
+     * The full name of the Google Compute Engine
      * [network](https://cloud.google.com/vpc/docs/vpc) to which the
      * instance is connected. If left unspecified, the `default` network
      * will be used.
@@ -5516,7 +5651,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The full name of the Google Compute Engine
+     * The full name of the Google Compute Engine
      * [network](https://cloud.google.com/vpc/docs/vpc) to which the
      * instance is connected. If left unspecified, the `default` network
      * will be used.
@@ -5540,7 +5675,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The full name of the Google Compute Engine
+     * The full name of the Google Compute Engine
      * [network](https://cloud.google.com/vpc/docs/vpc) to which the
      * instance is connected. If left unspecified, the `default` network
      * will be used.
@@ -5562,7 +5697,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The full name of the Google Compute Engine
+     * The full name of the Google Compute Engine
      * [network](https://cloud.google.com/vpc/docs/vpc) to which the
      * instance is connected. If left unspecified, the `default` network
      * will be used.
@@ -5579,7 +5714,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The full name of the Google Compute Engine
+     * The full name of the Google Compute Engine
      * [network](https://cloud.google.com/vpc/docs/vpc) to which the
      * instance is connected. If left unspecified, the `default` network
      * will be used.
@@ -5610,7 +5745,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Zones where Memcached nodes should be provisioned in.
+     * Zones in which Memcached nodes should be provisioned.
      * Memcached nodes will be equally distributed across these zones. If not
      * provided, the service will by default create nodes in all zones in the
      * region for the instance.
@@ -5625,7 +5760,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Zones where Memcached nodes should be provisioned in.
+     * Zones in which Memcached nodes should be provisioned.
      * Memcached nodes will be equally distributed across these zones. If not
      * provided, the service will by default create nodes in all zones in the
      * region for the instance.
@@ -5639,7 +5774,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Zones where Memcached nodes should be provisioned in.
+     * Zones in which Memcached nodes should be provisioned.
      * Memcached nodes will be equally distributed across these zones. If not
      * provided, the service will by default create nodes in all zones in the
      * region for the instance.
@@ -5654,7 +5789,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Zones where Memcached nodes should be provisioned in.
+     * Zones in which Memcached nodes should be provisioned.
      * Memcached nodes will be equally distributed across these zones. If not
      * provided, the service will by default create nodes in all zones in the
      * region for the instance.
@@ -5670,7 +5805,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Zones where Memcached nodes should be provisioned in.
+     * Zones in which Memcached nodes should be provisioned.
      * Memcached nodes will be equally distributed across these zones. If not
      * provided, the service will by default create nodes in all zones in the
      * region for the instance.
@@ -5693,7 +5828,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Zones where Memcached nodes should be provisioned in.
+     * Zones in which Memcached nodes should be provisioned.
      * Memcached nodes will be equally distributed across these zones. If not
      * provided, the service will by default create nodes in all zones in the
      * region for the instance.
@@ -5715,7 +5850,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Zones where Memcached nodes should be provisioned in.
+     * Zones in which Memcached nodes should be provisioned.
      * Memcached nodes will be equally distributed across these zones. If not
      * provided, the service will by default create nodes in all zones in the
      * region for the instance.
@@ -5735,7 +5870,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Zones where Memcached nodes should be provisioned in.
+     * Zones in which Memcached nodes should be provisioned.
      * Memcached nodes will be equally distributed across these zones. If not
      * provided, the service will by default create nodes in all zones in the
      * region for the instance.
@@ -5752,7 +5887,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Zones where Memcached nodes should be provisioned in.
+     * Zones in which Memcached nodes should be provisioned.
      * Memcached nodes will be equally distributed across these zones. If not
      * provided, the service will by default create nodes in all zones in the
      * region for the instance.
@@ -5975,9 +6110,9 @@ private static final long serialVersionUID = 0L;
     private int memcacheVersion_ = 0;
     /**
      * <pre>
-     * Optional. The major version of Memcached software.
+     * The major version of Memcached software.
      * If not provided, latest supported version will be used. Currently the
-     * latest supported major version is MEMCACHE_1_5.
+     * latest supported major version is `MEMCACHE_1_5`.
      * The minor version will be automatically determined by our system based on
      * the latest supported minor version.
      * </pre>
@@ -5990,9 +6125,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The major version of Memcached software.
+     * The major version of Memcached software.
      * If not provided, latest supported version will be used. Currently the
-     * latest supported major version is MEMCACHE_1_5.
+     * latest supported major version is `MEMCACHE_1_5`.
      * The minor version will be automatically determined by our system based on
      * the latest supported minor version.
      * </pre>
@@ -6009,9 +6144,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The major version of Memcached software.
+     * The major version of Memcached software.
      * If not provided, latest supported version will be used. Currently the
-     * latest supported major version is MEMCACHE_1_5.
+     * latest supported major version is `MEMCACHE_1_5`.
      * The minor version will be automatically determined by our system based on
      * the latest supported minor version.
      * </pre>
@@ -6027,9 +6162,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The major version of Memcached software.
+     * The major version of Memcached software.
      * If not provided, latest supported version will be used. Currently the
-     * latest supported major version is MEMCACHE_1_5.
+     * latest supported major version is `MEMCACHE_1_5`.
      * The minor version will be automatically determined by our system based on
      * the latest supported minor version.
      * </pre>
@@ -6049,9 +6184,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The major version of Memcached software.
+     * The major version of Memcached software.
      * If not provided, latest supported version will be used. Currently the
-     * latest supported major version is MEMCACHE_1_5.
+     * latest supported major version is `MEMCACHE_1_5`.
      * The minor version will be automatically determined by our system based on
      * the latest supported minor version.
      * </pre>
@@ -6245,7 +6380,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1beta2.Instance.Node] message for more details.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6260,7 +6395,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1beta2.Instance.Node] message for more details.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6275,7 +6410,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1beta2.Instance.Node] message for more details.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6290,7 +6425,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1beta2.Instance.Node] message for more details.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6312,7 +6447,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1beta2.Instance.Node] message for more details.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6331,7 +6466,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1beta2.Instance.Node] message for more details.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6352,7 +6487,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1beta2.Instance.Node] message for more details.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6374,7 +6509,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1beta2.Instance.Node] message for more details.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6393,7 +6528,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1beta2.Instance.Node] message for more details.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6412,7 +6547,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1beta2.Instance.Node] message for more details.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6432,7 +6567,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1beta2.Instance.Node] message for more details.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6450,7 +6585,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1beta2.Instance.Node] message for more details.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6468,7 +6603,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1beta2.Instance.Node] message for more details.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6480,7 +6615,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1beta2.Instance.Node] message for more details.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6495,7 +6630,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1beta2.Instance.Node] message for more details.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6511,7 +6646,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1beta2.Instance.Node] message for more details.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6523,7 +6658,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1beta2.Instance.Node] message for more details.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6536,7 +6671,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1beta2.Instance.Node] message for more details.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7069,7 +7204,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;</code>
@@ -7083,7 +7218,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;</code>
@@ -7097,7 +7232,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;</code>
@@ -7111,7 +7246,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;</code>
@@ -7132,7 +7267,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;</code>
@@ -7150,7 +7285,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;</code>
@@ -7170,7 +7305,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;</code>
@@ -7191,7 +7326,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;</code>
@@ -7209,7 +7344,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;</code>
@@ -7227,7 +7362,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;</code>
@@ -7246,7 +7381,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;</code>
@@ -7263,7 +7398,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;</code>
@@ -7280,7 +7415,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;</code>
@@ -7291,7 +7426,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;</code>
@@ -7305,7 +7440,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;</code>
@@ -7320,7 +7455,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;</code>
@@ -7331,7 +7466,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;</code>
@@ -7343,7 +7478,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;</code>
@@ -7370,7 +7505,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object discoveryEndpoint_ = "";
     /**
      * <pre>
-     * Output only. Endpoint for Discovery API
+     * Output only. Endpoint for the Discovery API.
      * </pre>
      *
      * <code>string discovery_endpoint = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7390,7 +7525,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Endpoint for Discovery API
+     * Output only. Endpoint for the Discovery API.
      * </pre>
      *
      * <code>string discovery_endpoint = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7411,7 +7546,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Endpoint for Discovery API
+     * Output only. Endpoint for the Discovery API.
      * </pre>
      *
      * <code>string discovery_endpoint = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7430,7 +7565,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Endpoint for Discovery API
+     * Output only. Endpoint for the Discovery API.
      * </pre>
      *
      * <code>string discovery_endpoint = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7444,7 +7579,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Endpoint for Discovery API
+     * Output only. Endpoint for the Discovery API.
      * </pre>
      *
      * <code>string discovery_endpoint = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7459,6 +7594,49 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       discoveryEndpoint_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean updateAvailable_ ;
+    /**
+     * <pre>
+     * Output only. Returns true if there is an update waiting to be applied
+     * </pre>
+     *
+     * <code>bool update_available = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The updateAvailable.
+     */
+    @java.lang.Override
+    public boolean getUpdateAvailable() {
+      return updateAvailable_;
+    }
+    /**
+     * <pre>
+     * Output only. Returns true if there is an update waiting to be applied
+     * </pre>
+     *
+     * <code>bool update_available = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The updateAvailable to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUpdateAvailable(boolean value) {
+      
+      updateAvailable_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Returns true if there is an update waiting to be applied
+     * </pre>
+     *
+     * <code>bool update_available = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUpdateAvailable() {
+      
+      updateAvailable_ = false;
       onChanged();
       return this;
     }
