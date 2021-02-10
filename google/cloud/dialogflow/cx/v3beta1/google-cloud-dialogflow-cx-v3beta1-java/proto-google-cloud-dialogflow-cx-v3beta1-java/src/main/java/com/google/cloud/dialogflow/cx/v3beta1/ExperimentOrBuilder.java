@@ -33,8 +33,8 @@ public interface ExperimentOrBuilder extends
 
   /**
    * <pre>
-   * Required. The human-readable name of the experiment (unique in an
-   * environment). Limit of 64 characters.
+   * Required. The human-readable name of the experiment (unique in an environment). Limit
+   * of 64 characters.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -43,8 +43,8 @@ public interface ExperimentOrBuilder extends
   java.lang.String getDisplayName();
   /**
    * <pre>
-   * Required. The human-readable name of the experiment (unique in an
-   * environment). Limit of 64 characters.
+   * Required. The human-readable name of the experiment (unique in an environment). Limit
+   * of 64 characters.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>

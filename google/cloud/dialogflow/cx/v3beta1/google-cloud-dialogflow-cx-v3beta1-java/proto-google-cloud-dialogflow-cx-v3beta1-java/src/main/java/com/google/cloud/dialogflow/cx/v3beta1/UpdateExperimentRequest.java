@@ -5,8 +5,7 @@ package com.google.cloud.dialogflow.cx.v3beta1;
 
 /**
  * <pre>
- * The request message for
- * [Experiments.UpdateExperiment][google.cloud.dialogflow.cx.v3beta1.Experiments.UpdateExperiment].
+ * The request message for [Experiments.UpdateExperiment][google.cloud.dialogflow.cx.v3beta1.Experiments.UpdateExperiment].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.UpdateExperimentRequest}
@@ -365,8 +364,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The request message for
-   * [Experiments.UpdateExperiment][google.cloud.dialogflow.cx.v3beta1.Experiments.UpdateExperiment].
+   * The request message for [Experiments.UpdateExperiment][google.cloud.dialogflow.cx.v3beta1.Experiments.UpdateExperiment].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.UpdateExperimentRequest}

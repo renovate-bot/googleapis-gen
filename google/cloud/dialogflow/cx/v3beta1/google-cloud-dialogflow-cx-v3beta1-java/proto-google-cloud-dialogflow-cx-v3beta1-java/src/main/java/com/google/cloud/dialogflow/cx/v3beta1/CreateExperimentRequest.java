@@ -5,8 +5,7 @@ package com.google.cloud.dialogflow.cx.v3beta1;
 
 /**
  * <pre>
- * The request message for
- * [Experiments.CreateExperiment][google.cloud.dialogflow.cx.v3beta1.Experiments.CreateExperiment].
+ * The request message for [Experiments.CreateExperiment][google.cloud.dialogflow.cx.v3beta1.Experiments.CreateExperiment].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.CreateExperimentRequest}
@@ -109,8 +108,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * Required. The [Agent][google.cloud.dialogflow.cx.v3beta1.Agent] to create
-   * an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] for.
+   * Required. The [Agent][google.cloud.dialogflow.cx.v3beta1.Agent] to create an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] for.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/environments/&lt;Environment ID&gt;`.
    * </pre>
@@ -133,8 +131,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The [Agent][google.cloud.dialogflow.cx.v3beta1.Agent] to create
-   * an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] for.
+   * Required. The [Agent][google.cloud.dialogflow.cx.v3beta1.Agent] to create an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] for.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/environments/&lt;Environment ID&gt;`.
    * </pre>
@@ -367,8 +364,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The request message for
-   * [Experiments.CreateExperiment][google.cloud.dialogflow.cx.v3beta1.Experiments.CreateExperiment].
+   * The request message for [Experiments.CreateExperiment][google.cloud.dialogflow.cx.v3beta1.Experiments.CreateExperiment].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.CreateExperimentRequest}
@@ -535,8 +531,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * Required. The [Agent][google.cloud.dialogflow.cx.v3beta1.Agent] to create
-     * an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] for.
+     * Required. The [Agent][google.cloud.dialogflow.cx.v3beta1.Agent] to create an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] for.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;`.
      * </pre>
@@ -558,8 +553,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The [Agent][google.cloud.dialogflow.cx.v3beta1.Agent] to create
-     * an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] for.
+     * Required. The [Agent][google.cloud.dialogflow.cx.v3beta1.Agent] to create an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] for.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;`.
      * </pre>
@@ -582,8 +576,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The [Agent][google.cloud.dialogflow.cx.v3beta1.Agent] to create
-     * an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] for.
+     * Required. The [Agent][google.cloud.dialogflow.cx.v3beta1.Agent] to create an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] for.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;`.
      * </pre>
@@ -604,8 +597,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The [Agent][google.cloud.dialogflow.cx.v3beta1.Agent] to create
-     * an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] for.
+     * Required. The [Agent][google.cloud.dialogflow.cx.v3beta1.Agent] to create an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] for.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;`.
      * </pre>
@@ -621,8 +613,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The [Agent][google.cloud.dialogflow.cx.v3beta1.Agent] to create
-     * an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] for.
+     * Required. The [Agent][google.cloud.dialogflow.cx.v3beta1.Agent] to create an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] for.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;`.
      * </pre>

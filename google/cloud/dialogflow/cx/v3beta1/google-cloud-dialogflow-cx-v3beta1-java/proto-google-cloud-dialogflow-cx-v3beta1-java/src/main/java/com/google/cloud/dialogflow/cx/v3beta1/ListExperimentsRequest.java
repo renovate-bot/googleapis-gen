@@ -5,8 +5,7 @@ package com.google.cloud.dialogflow.cx.v3beta1;
 
 /**
  * <pre>
- * The request message for
- * [Experiments.ListExperiments][google.cloud.dialogflow.cx.v3beta1.Experiments.ListExperiments].
+ * The request message for [Experiments.ListExperiments][google.cloud.dialogflow.cx.v3beta1.Experiments.ListExperiments].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ListExperimentsRequest}
@@ -108,10 +107,9 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
-   * to list all environments for. Format: `projects/&lt;Project
-   * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-   * ID&gt;`.
+   * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to list all environments for.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/environments/&lt;Environment ID&gt;`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -132,10 +130,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
-   * to list all environments for. Format: `projects/&lt;Project
-   * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-   * ID&gt;`.
+   * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to list all environments for.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/environments/&lt;Environment ID&gt;`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -395,8 +392,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The request message for
-   * [Experiments.ListExperiments][google.cloud.dialogflow.cx.v3beta1.Experiments.ListExperiments].
+   * The request message for [Experiments.ListExperiments][google.cloud.dialogflow.cx.v3beta1.Experiments.ListExperiments].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ListExperimentsRequest}
@@ -562,10 +558,9 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
-     * to list all environments for. Format: `projects/&lt;Project
-     * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-     * ID&gt;`.
+     * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to list all environments for.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/environments/&lt;Environment ID&gt;`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -585,10 +580,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
-     * to list all environments for. Format: `projects/&lt;Project
-     * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-     * ID&gt;`.
+     * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to list all environments for.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/environments/&lt;Environment ID&gt;`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -609,10 +603,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
-     * to list all environments for. Format: `projects/&lt;Project
-     * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-     * ID&gt;`.
+     * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to list all environments for.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/environments/&lt;Environment ID&gt;`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -631,10 +624,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
-     * to list all environments for. Format: `projects/&lt;Project
-     * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-     * ID&gt;`.
+     * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to list all environments for.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/environments/&lt;Environment ID&gt;`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -648,10 +640,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
-     * to list all environments for. Format: `projects/&lt;Project
-     * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-     * ID&gt;`.
+     * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to list all environments for.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/environments/&lt;Environment ID&gt;`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

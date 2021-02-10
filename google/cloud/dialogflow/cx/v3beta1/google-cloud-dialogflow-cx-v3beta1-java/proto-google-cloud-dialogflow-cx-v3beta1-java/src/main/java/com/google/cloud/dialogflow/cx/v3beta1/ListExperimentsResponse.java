@@ -5,8 +5,7 @@ package com.google.cloud.dialogflow.cx.v3beta1;
 
 /**
  * <pre>
- * The response message for
- * [Experiments.ListExperiments][google.cloud.dialogflow.cx.v3beta1.Experiments.ListExperiments].
+ * The response message for [Experiments.ListExperiments][google.cloud.dialogflow.cx.v3beta1.Experiments.ListExperiments].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ListExperimentsResponse}
@@ -398,8 +397,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The response message for
-   * [Experiments.ListExperiments][google.cloud.dialogflow.cx.v3beta1.Experiments.ListExperiments].
+   * The response message for [Experiments.ListExperiments][google.cloud.dialogflow.cx.v3beta1.Experiments.ListExperiments].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ListExperimentsResponse}

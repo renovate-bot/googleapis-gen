@@ -32,8 +32,7 @@ module Google
     module Dialogflow
       module Cx
         module V3beta1
-          # Service for managing
-          # {Google::Cloud::Dialogflow::Cx::V3beta1::Experiment Experiments}.
+          # Service for managing {Google::Cloud::Dialogflow::Cx::V3beta1::Experiment Experiments}.
           #
           # @!attribute [r] experiments_stub
           #   @return [Google::Cloud::Dialogflow::Cx::V3beta1::Experiments::Stub]
@@ -278,14 +277,12 @@ module Google
 
             # Service calls
 
-            # Returns the list of all experiments in the specified
-            # {Google::Cloud::Dialogflow::Cx::V3beta1::Environment Environment}.
+            # Returns the list of all experiments in the specified {Google::Cloud::Dialogflow::Cx::V3beta1::Environment Environment}.
             #
             # @param parent [String]
-            #   Required. The {Google::Cloud::Dialogflow::Cx::V3beta1::Environment Environment}
-            #   to list all environments for. Format: `projects/<Project
-            #   ID>/locations/<Location ID>/agents/<Agent ID>/environments/<Environment
-            #   ID>`.
+            #   Required. The {Google::Cloud::Dialogflow::Cx::V3beta1::Environment Environment} to list all environments for.
+            #   Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+            #   ID>/environments/<Environment ID>`.
             # @param page_size [Integer]
             #   The maximum number of resources contained in the underlying API
             #   response. If page streaming is performed per-resource, this
@@ -336,13 +333,11 @@ module Google
               @list_experiments.call(req, options, &block)
             end
 
-            # Retrieves the specified
-            # {Google::Cloud::Dialogflow::Cx::V3beta1::Experiment Experiment}.
+            # Retrieves the specified {Google::Cloud::Dialogflow::Cx::V3beta1::Experiment Experiment}.
             #
             # @param name [String]
-            #   Required. The name of the
-            #   {Google::Cloud::Dialogflow::Cx::V3beta1::Environment Environment}. Format:
-            #   `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+            #   Required. The name of the {Google::Cloud::Dialogflow::Cx::V3beta1::Environment Environment}.
+            #   Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
             #   ID>/environments/<Environment ID>/experiments/<Experiment ID>`.
             # @param options [Google::Gax::CallOptions]
             #   Overrides the default settings for this call, e.g, timeout,
@@ -370,13 +365,10 @@ module Google
               @get_experiment.call(req, options, &block)
             end
 
-            # Creates an {Google::Cloud::Dialogflow::Cx::V3beta1::Experiment Experiment} in
-            # the specified
-            # {Google::Cloud::Dialogflow::Cx::V3beta1::Environment Environment}.
+            # Creates an {Google::Cloud::Dialogflow::Cx::V3beta1::Experiment Experiment} in the specified {Google::Cloud::Dialogflow::Cx::V3beta1::Environment Environment}.
             #
             # @param parent [String]
-            #   Required. The {Google::Cloud::Dialogflow::Cx::V3beta1::Agent Agent} to create
-            #   an {Google::Cloud::Dialogflow::Cx::V3beta1::Environment Environment} for.
+            #   Required. The {Google::Cloud::Dialogflow::Cx::V3beta1::Agent Agent} to create an {Google::Cloud::Dialogflow::Cx::V3beta1::Environment Environment} for.
             #   Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
             #   ID>/environments/<Environment ID>`.
             # @param experiment [Google::Cloud::Dialogflow::Cx::V3beta1::Experiment | Hash]
@@ -414,8 +406,7 @@ module Google
               @create_experiment.call(req, options, &block)
             end
 
-            # Updates the specified
-            # {Google::Cloud::Dialogflow::Cx::V3beta1::Experiment Experiment}.
+            # Updates the specified {Google::Cloud::Dialogflow::Cx::V3beta1::Experiment Experiment}.
             #
             # @param experiment [Google::Cloud::Dialogflow::Cx::V3beta1::Experiment | Hash]
             #   Required. The experiment to update.
@@ -458,12 +449,10 @@ module Google
               @update_experiment.call(req, options, &block)
             end
 
-            # Deletes the specified
-            # {Google::Cloud::Dialogflow::Cx::V3beta1::Experiment Experiment}.
+            # Deletes the specified {Google::Cloud::Dialogflow::Cx::V3beta1::Experiment Experiment}.
             #
             # @param name [String]
-            #   Required. The name of the
-            #   {Google::Cloud::Dialogflow::Cx::V3beta1::Environment Environment} to delete.
+            #   Required. The name of the {Google::Cloud::Dialogflow::Cx::V3beta1::Environment Environment} to delete.
             #   Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
             #   ID>/environments/<Environment ID>/experiments/<Experiment ID>`.
             # @param options [Google::Gax::CallOptions]
@@ -492,9 +481,8 @@ module Google
               nil
             end
 
-            # Starts the specified
-            # {Google::Cloud::Dialogflow::Cx::V3beta1::Experiment Experiment}. This rpc only
-            # changes the state of experiment from PENDING to RUNNING.
+            # Starts the specified {Google::Cloud::Dialogflow::Cx::V3beta1::Experiment Experiment}. This rpc only changes the state of
+            # experiment from PENDING to RUNNING.
             #
             # @param name [String]
             #   Required. Resource name of the experiment to start.
@@ -526,9 +514,8 @@ module Google
               @start_experiment.call(req, options, &block)
             end
 
-            # Stops the specified
-            # {Google::Cloud::Dialogflow::Cx::V3beta1::Experiment Experiment}. This rpc only
-            # changes the state of experiment from RUNNING to DONE.
+            # Stops the specified {Google::Cloud::Dialogflow::Cx::V3beta1::Experiment Experiment}. This rpc only changes the state of
+            # experiment from RUNNING to DONE.
             #
             # @param name [String]
             #   Required. Resource name of the experiment to stop.

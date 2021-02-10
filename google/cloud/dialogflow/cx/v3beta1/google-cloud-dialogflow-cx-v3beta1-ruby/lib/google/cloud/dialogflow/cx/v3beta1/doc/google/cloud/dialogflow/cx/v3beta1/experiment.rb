@@ -25,8 +25,8 @@ module Google
           #     ID>/environments/<Environment ID>/experiments/<Experiment ID>..
           # @!attribute [rw] display_name
           #   @return [String]
-          #     Required. The human-readable name of the experiment (unique in an
-          #     environment). Limit of 64 characters.
+          #     Required. The human-readable name of the experiment (unique in an environment). Limit
+          #     of 64 characters.
           # @!attribute [rw] description
           #   @return [String]
           #     The human-readable description of the experiment.
@@ -125,10 +125,9 @@ module Google
               # Version variant and associated metrics.
               # @!attribute [rw] version
               #   @return [String]
-              #     The name of the flow
-              #     {Google::Cloud::Dialogflow::Cx::V3beta1::Version Version}. Format:
-              #     `projects/<Project Number>/locations/<Location ID>/agents/<Agent
-              #     ID>/flows/<Flow ID>/versions/<Version ID>`.
+              #     The name of the flow {Google::Cloud::Dialogflow::Cx::V3beta1::Version Version}.
+              #     Format: `projects/<Project Number>/locations/<Location
+              #     ID>/agents/<Agent ID>/flows/<Flow ID>/versions/<Version ID>`.
               # @!attribute [rw] metrics
               #   @return [Array<Google::Cloud::Dialogflow::Cx::V3beta1::Experiment::Result::Metric>]
               #     The metrics and corresponding confidence intervals in the inference
@@ -222,14 +221,12 @@ module Google
           #     Update time of the variants.
           class VariantsHistory; end
 
-          # The request message for
-          # {Google::Cloud::Dialogflow::Cx::V3beta1::Experiments::ListExperiments Experiments::ListExperiments}.
+          # The request message for {Google::Cloud::Dialogflow::Cx::V3beta1::Experiments::ListExperiments Experiments::ListExperiments}.
           # @!attribute [rw] parent
           #   @return [String]
-          #     Required. The {Google::Cloud::Dialogflow::Cx::V3beta1::Environment Environment}
-          #     to list all environments for. Format: `projects/<Project
-          #     ID>/locations/<Location ID>/agents/<Agent ID>/environments/<Environment
-          #     ID>`.
+          #     Required. The {Google::Cloud::Dialogflow::Cx::V3beta1::Environment Environment} to list all environments for.
+          #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+          #     ID>/environments/<Environment ID>`.
           # @!attribute [rw] page_size
           #   @return [Integer]
           #     The maximum number of items to return in a single page. By default 20 and
@@ -239,8 +236,7 @@ module Google
           #     The next_page_token value returned from a previous list request.
           class ListExperimentsRequest; end
 
-          # The response message for
-          # {Google::Cloud::Dialogflow::Cx::V3beta1::Experiments::ListExperiments Experiments::ListExperiments}.
+          # The response message for {Google::Cloud::Dialogflow::Cx::V3beta1::Experiments::ListExperiments Experiments::ListExperiments}.
           # @!attribute [rw] experiments
           #   @return [Array<Google::Cloud::Dialogflow::Cx::V3beta1::Experiment>]
           #     The list of experiments. There will be a maximum number of items
@@ -253,22 +249,18 @@ module Google
           #     results in the list.
           class ListExperimentsResponse; end
 
-          # The request message for
-          # {Google::Cloud::Dialogflow::Cx::V3beta1::Experiments::GetExperiment Experiments::GetExperiment}.
+          # The request message for {Google::Cloud::Dialogflow::Cx::V3beta1::Experiments::GetExperiment Experiments::GetExperiment}.
           # @!attribute [rw] name
           #   @return [String]
-          #     Required. The name of the
-          #     {Google::Cloud::Dialogflow::Cx::V3beta1::Environment Environment}. Format:
-          #     `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+          #     Required. The name of the {Google::Cloud::Dialogflow::Cx::V3beta1::Environment Environment}.
+          #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
           #     ID>/environments/<Environment ID>/experiments/<Experiment ID>`.
           class GetExperimentRequest; end
 
-          # The request message for
-          # {Google::Cloud::Dialogflow::Cx::V3beta1::Experiments::CreateExperiment Experiments::CreateExperiment}.
+          # The request message for {Google::Cloud::Dialogflow::Cx::V3beta1::Experiments::CreateExperiment Experiments::CreateExperiment}.
           # @!attribute [rw] parent
           #   @return [String]
-          #     Required. The {Google::Cloud::Dialogflow::Cx::V3beta1::Agent Agent} to create
-          #     an {Google::Cloud::Dialogflow::Cx::V3beta1::Environment Environment} for.
+          #     Required. The {Google::Cloud::Dialogflow::Cx::V3beta1::Agent Agent} to create an {Google::Cloud::Dialogflow::Cx::V3beta1::Environment Environment} for.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
           #     ID>/environments/<Environment ID>`.
           # @!attribute [rw] experiment
@@ -276,8 +268,7 @@ module Google
           #     Required. The experiment to create.
           class CreateExperimentRequest; end
 
-          # The request message for
-          # {Google::Cloud::Dialogflow::Cx::V3beta1::Experiments::UpdateExperiment Experiments::UpdateExperiment}.
+          # The request message for {Google::Cloud::Dialogflow::Cx::V3beta1::Experiments::UpdateExperiment Experiments::UpdateExperiment}.
           # @!attribute [rw] experiment
           #   @return [Google::Cloud::Dialogflow::Cx::V3beta1::Experiment]
           #     Required. The experiment to update.
@@ -286,18 +277,15 @@ module Google
           #     Required. The mask to control which fields get updated.
           class UpdateExperimentRequest; end
 
-          # The request message for
-          # {Google::Cloud::Dialogflow::Cx::V3beta1::Experiments::DeleteExperiment Experiments::DeleteExperiment}.
+          # The request message for {Google::Cloud::Dialogflow::Cx::V3beta1::Experiments::DeleteExperiment Experiments::DeleteExperiment}.
           # @!attribute [rw] name
           #   @return [String]
-          #     Required. The name of the
-          #     {Google::Cloud::Dialogflow::Cx::V3beta1::Environment Environment} to delete.
+          #     Required. The name of the {Google::Cloud::Dialogflow::Cx::V3beta1::Environment Environment} to delete.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
           #     ID>/environments/<Environment ID>/experiments/<Experiment ID>`.
           class DeleteExperimentRequest; end
 
-          # The request message for
-          # {Google::Cloud::Dialogflow::Cx::V3beta1::Experiments::StartExperiment Experiments::StartExperiment}.
+          # The request message for {Google::Cloud::Dialogflow::Cx::V3beta1::Experiments::StartExperiment Experiments::StartExperiment}.
           # @!attribute [rw] name
           #   @return [String]
           #     Required. Resource name of the experiment to start.
@@ -305,8 +293,7 @@ module Google
           #     ID>/environments/<Environment ID>/experiments/<Experiment ID>`.
           class StartExperimentRequest; end
 
-          # The request message for
-          # {Google::Cloud::Dialogflow::Cx::V3beta1::Experiments::StopExperiment Experiments::StopExperiment}.
+          # The request message for {Google::Cloud::Dialogflow::Cx::V3beta1::Experiments::StopExperiment Experiments::StopExperiment}.
           # @!attribute [rw] name
           #   @return [String]
           #     Required. Resource name of the experiment to stop.

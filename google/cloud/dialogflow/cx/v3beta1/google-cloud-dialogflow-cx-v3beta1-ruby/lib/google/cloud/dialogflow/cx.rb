@@ -401,8 +401,7 @@ module Google
 
         module Experiments
           ##
-          # Service for managing
-          # {Google::Cloud::Dialogflow::Cx::V3beta1::Experiment Experiments}.
+          # Service for managing {Google::Cloud::Dialogflow::Cx::V3beta1::Experiment Experiments}.
           #
           # @param version [Symbol, String]
           #   The major version of the service to be used. By default :v3beta1

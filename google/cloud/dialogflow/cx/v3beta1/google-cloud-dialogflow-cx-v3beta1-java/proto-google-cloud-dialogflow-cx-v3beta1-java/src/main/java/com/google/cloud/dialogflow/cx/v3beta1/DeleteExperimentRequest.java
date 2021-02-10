@@ -5,8 +5,7 @@ package com.google.cloud.dialogflow.cx.v3beta1;
 
 /**
  * <pre>
- * The request message for
- * [Experiments.DeleteExperiment][google.cloud.dialogflow.cx.v3beta1.Experiments.DeleteExperiment].
+ * The request message for [Experiments.DeleteExperiment][google.cloud.dialogflow.cx.v3beta1.Experiments.DeleteExperiment].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.DeleteExperimentRequest}
@@ -96,8 +95,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * Required. The name of the
-   * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
+   * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;`.
    * </pre>
@@ -120,8 +118,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The name of the
-   * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
+   * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;`.
    * </pre>
@@ -300,8 +297,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The request message for
-   * [Experiments.DeleteExperiment][google.cloud.dialogflow.cx.v3beta1.Experiments.DeleteExperiment].
+   * The request message for [Experiments.DeleteExperiment][google.cloud.dialogflow.cx.v3beta1.Experiments.DeleteExperiment].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.DeleteExperimentRequest}
@@ -454,8 +450,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Required. The name of the
-     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
+     * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;`.
      * </pre>
@@ -477,8 +472,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the
-     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
+     * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;`.
      * </pre>
@@ -501,8 +495,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the
-     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
+     * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;`.
      * </pre>
@@ -523,8 +516,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the
-     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
+     * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;`.
      * </pre>
@@ -540,8 +532,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the
-     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
+     * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;`.
      * </pre>

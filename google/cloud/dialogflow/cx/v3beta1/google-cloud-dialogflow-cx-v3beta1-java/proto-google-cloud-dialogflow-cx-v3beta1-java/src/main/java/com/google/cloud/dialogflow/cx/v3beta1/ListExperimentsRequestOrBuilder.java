@@ -9,10 +9,9 @@ public interface ListExperimentsRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
-   * to list all environments for. Format: `projects/&lt;Project
-   * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-   * ID&gt;`.
+   * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to list all environments for.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/environments/&lt;Environment ID&gt;`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -21,10 +20,9 @@ public interface ListExperimentsRequestOrBuilder extends
   java.lang.String getParent();
   /**
    * <pre>
-   * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
-   * to list all environments for. Format: `projects/&lt;Project
-   * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-   * ID&gt;`.
+   * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to list all environments for.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/environments/&lt;Environment ID&gt;`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

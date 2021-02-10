@@ -4028,10 +4028,9 @@ private static final long serialVersionUID = 0L;
 
       /**
        * <pre>
-       * The name of the flow
-       * [Version][google.cloud.dialogflow.cx.v3beta1.Version]. Format:
-       * `projects/&lt;Project Number&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-       * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+       * The name of the flow [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+       * Format: `projects/&lt;Project Number&gt;/locations/&lt;Location
+       * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
        * </pre>
        *
        * <code>string version = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -4040,10 +4039,9 @@ private static final long serialVersionUID = 0L;
       java.lang.String getVersion();
       /**
        * <pre>
-       * The name of the flow
-       * [Version][google.cloud.dialogflow.cx.v3beta1.Version]. Format:
-       * `projects/&lt;Project Number&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-       * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+       * The name of the flow [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+       * Format: `projects/&lt;Project Number&gt;/locations/&lt;Location
+       * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
        * </pre>
        *
        * <code>string version = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -4222,10 +4220,9 @@ private static final long serialVersionUID = 0L;
       private volatile java.lang.Object version_;
       /**
        * <pre>
-       * The name of the flow
-       * [Version][google.cloud.dialogflow.cx.v3beta1.Version]. Format:
-       * `projects/&lt;Project Number&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-       * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+       * The name of the flow [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+       * Format: `projects/&lt;Project Number&gt;/locations/&lt;Location
+       * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
        * </pre>
        *
        * <code>string version = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -4246,10 +4243,9 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The name of the flow
-       * [Version][google.cloud.dialogflow.cx.v3beta1.Version]. Format:
-       * `projects/&lt;Project Number&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-       * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+       * The name of the flow [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+       * Format: `projects/&lt;Project Number&gt;/locations/&lt;Location
+       * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
        * </pre>
        *
        * <code>string version = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -4733,10 +4729,9 @@ private static final long serialVersionUID = 0L;
         private java.lang.Object version_ = "";
         /**
          * <pre>
-         * The name of the flow
-         * [Version][google.cloud.dialogflow.cx.v3beta1.Version]. Format:
-         * `projects/&lt;Project Number&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-         * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+         * The name of the flow [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+         * Format: `projects/&lt;Project Number&gt;/locations/&lt;Location
+         * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
          * </pre>
          *
          * <code>string version = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -4756,10 +4751,9 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * The name of the flow
-         * [Version][google.cloud.dialogflow.cx.v3beta1.Version]. Format:
-         * `projects/&lt;Project Number&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-         * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+         * The name of the flow [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+         * Format: `projects/&lt;Project Number&gt;/locations/&lt;Location
+         * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
          * </pre>
          *
          * <code>string version = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -4780,10 +4774,9 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * The name of the flow
-         * [Version][google.cloud.dialogflow.cx.v3beta1.Version]. Format:
-         * `projects/&lt;Project Number&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-         * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+         * The name of the flow [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+         * Format: `projects/&lt;Project Number&gt;/locations/&lt;Location
+         * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
          * </pre>
          *
          * <code>string version = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -4802,10 +4795,9 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * The name of the flow
-         * [Version][google.cloud.dialogflow.cx.v3beta1.Version]. Format:
-         * `projects/&lt;Project Number&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-         * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+         * The name of the flow [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+         * Format: `projects/&lt;Project Number&gt;/locations/&lt;Location
+         * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
          * </pre>
          *
          * <code>string version = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -4819,10 +4811,9 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * The name of the flow
-         * [Version][google.cloud.dialogflow.cx.v3beta1.Version]. Format:
-         * `projects/&lt;Project Number&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-         * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+         * The name of the flow [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+         * Format: `projects/&lt;Project Number&gt;/locations/&lt;Location
+         * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
          * </pre>
          *
          * <code>string version = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -6326,8 +6317,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object displayName_;
   /**
    * <pre>
-   * Required. The human-readable name of the experiment (unique in an
-   * environment). Limit of 64 characters.
+   * Required. The human-readable name of the experiment (unique in an environment). Limit
+   * of 64 characters.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -6348,8 +6339,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The human-readable name of the experiment (unique in an
-   * environment). Limit of 64 characters.
+   * Required. The human-readable name of the experiment (unique in an environment). Limit
+   * of 64 characters.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -7507,8 +7498,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object displayName_ = "";
     /**
      * <pre>
-     * Required. The human-readable name of the experiment (unique in an
-     * environment). Limit of 64 characters.
+     * Required. The human-readable name of the experiment (unique in an environment). Limit
+     * of 64 characters.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -7528,8 +7519,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The human-readable name of the experiment (unique in an
-     * environment). Limit of 64 characters.
+     * Required. The human-readable name of the experiment (unique in an environment). Limit
+     * of 64 characters.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -7550,8 +7541,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The human-readable name of the experiment (unique in an
-     * environment). Limit of 64 characters.
+     * Required. The human-readable name of the experiment (unique in an environment). Limit
+     * of 64 characters.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -7570,8 +7561,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The human-readable name of the experiment (unique in an
-     * environment). Limit of 64 characters.
+     * Required. The human-readable name of the experiment (unique in an environment). Limit
+     * of 64 characters.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -7585,8 +7576,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The human-readable name of the experiment (unique in an
-     * environment). Limit of 64 characters.
+     * Required. The human-readable name of the experiment (unique in an environment). Limit
+     * of 64 characters.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>

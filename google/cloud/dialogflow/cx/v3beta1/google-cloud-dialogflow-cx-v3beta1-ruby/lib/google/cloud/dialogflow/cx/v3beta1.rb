@@ -434,8 +434,7 @@ module Google
 
           module Experiments
             ##
-            # Service for managing
-            # {Google::Cloud::Dialogflow::Cx::V3beta1::Experiment Experiments}.
+            # Service for managing {Google::Cloud::Dialogflow::Cx::V3beta1::Experiment Experiments}.
             #
             # @param credentials [Google::Auth::Credentials, String, Hash, GRPC::Core::Channel, GRPC::Core::ChannelCredentials, Proc]
             #   Provides the means for authenticating requests made by the client. This parameter can

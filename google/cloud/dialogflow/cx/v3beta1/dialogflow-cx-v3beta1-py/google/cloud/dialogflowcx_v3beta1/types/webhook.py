@@ -264,6 +264,11 @@ class WebhookRequest(proto.Message):
         payload (google.protobuf.struct_pb2.Struct):
             Custom data set in
             [QueryParameters.payload][google.cloud.dialogflow.cx.v3beta1.QueryParameters.payload].
+        sentiment_analysis_result (google.cloud.dialogflowcx_v3beta1.types.WebhookRequest.SentimentAnalysisResult):
+            The sentiment analysis result of the current
+            user request. The field is filled when sentiment
+            analysis is configured to be enabled for the
+            request.
     """
     class FulfillmentInfo(proto.Message):
         r"""Represents fulfillment information communicated to the
@@ -328,6 +333,23 @@ class WebhookRequest(proto.Message):
 
         confidence = proto.Field(proto.FLOAT, number=4)
 
+    class SentimentAnalysisResult(proto.Message):
+        r"""Represents the result of sentiment analysis.
+
+        Attributes:
+            score (float):
+                Sentiment score between -1.0 (negative
+                sentiment) and 1.0 (positive sentiment).
+            magnitude (float):
+                A non-negative number in the [0, +inf) range, which
+                represents the absolute magnitude of sentiment, regardless
+                of score (positive or negative).
+        """
+
+        score = proto.Field(proto.FLOAT, number=1)
+
+        magnitude = proto.Field(proto.FLOAT, number=2)
+
     detect_intent_response_id = proto.Field(proto.STRING, number=1)
 
     fulfillment_info = proto.Field(proto.MESSAGE, number=6,
@@ -352,6 +374,10 @@ class WebhookRequest(proto.Message):
 
     payload = proto.Field(proto.MESSAGE, number=8,
         message=struct.Struct,
+    )
+
+    sentiment_analysis_result = proto.Field(proto.MESSAGE, number=9,
+        message=SentimentAnalysisResult,
     )
 
 
