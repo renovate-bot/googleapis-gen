@@ -158,6 +158,10 @@ module Google
           # @!attribute [rw] payload
           #   @return [Google::Protobuf::Struct]
           #     Custom data set in {Google::Cloud::Dialogflow::Cx::V3::QueryParameters#payload QueryParameters#payload}.
+          # @!attribute [rw] sentiment_analysis_result
+          #   @return [Google::Cloud::Dialogflow::Cx::V3::WebhookRequest::SentimentAnalysisResult]
+          #     The sentiment analysis result of the current user request. The field is
+          #     filled when sentiment analysis is configured to be enabled for the request.
           class WebhookRequest
             # Represents fulfillment information communicated to the webhook.
             # @!attribute [rw] tag
@@ -196,6 +200,18 @@ module Google
               #     utterance.
               class IntentParameterValue; end
             end
+
+            # Represents the result of sentiment analysis.
+            # @!attribute [rw] score
+            #   @return [Float]
+            #     Sentiment score between -1.0 (negative sentiment) and 1.0 (positive
+            #     sentiment).
+            # @!attribute [rw] magnitude
+            #   @return [Float]
+            #     A non-negative number in the [0, +inf) range, which represents the
+            #     absolute magnitude of sentiment, regardless of score (positive or
+            #     negative).
+            class SentimentAnalysisResult; end
           end
 
           # The response message for a webhook call.

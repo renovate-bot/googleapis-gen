@@ -61,6 +61,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :session_info, :message, 5, "google.cloud.dialogflow.cx.v3.SessionInfo"
       repeated :messages, :message, 7, "google.cloud.dialogflow.cx.v3.ResponseMessage"
       optional :payload, :message, 8, "google.protobuf.Struct"
+      optional :sentiment_analysis_result, :message, 9, "google.cloud.dialogflow.cx.v3.WebhookRequest.SentimentAnalysisResult"
     end
     add_message "google.cloud.dialogflow.cx.v3.WebhookRequest.FulfillmentInfo" do
       optional :tag, :string, 1
@@ -74,6 +75,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo.IntentParameterValue" do
       optional :original_value, :string, 1
       optional :resolved_value, :message, 2, "google.protobuf.Value"
+    end
+    add_message "google.cloud.dialogflow.cx.v3.WebhookRequest.SentimentAnalysisResult" do
+      optional :score, :float, 1
+      optional :magnitude, :float, 2
     end
     add_message "google.cloud.dialogflow.cx.v3.WebhookResponse" do
       optional :fulfillment_response, :message, 1, "google.cloud.dialogflow.cx.v3.WebhookResponse.FulfillmentResponse"
@@ -138,6 +143,7 @@ module Google
           WebhookRequest::FulfillmentInfo = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.WebhookRequest.FulfillmentInfo").msgclass
           WebhookRequest::IntentInfo = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo").msgclass
           WebhookRequest::IntentInfo::IntentParameterValue = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo.IntentParameterValue").msgclass
+          WebhookRequest::SentimentAnalysisResult = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.WebhookRequest.SentimentAnalysisResult").msgclass
           WebhookResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.WebhookResponse").msgclass
           WebhookResponse::FulfillmentResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.WebhookResponse.FulfillmentResponse").msgclass
           WebhookResponse::FulfillmentResponse::MergeBehavior = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.WebhookResponse.FulfillmentResponse.MergeBehavior").enummodule
