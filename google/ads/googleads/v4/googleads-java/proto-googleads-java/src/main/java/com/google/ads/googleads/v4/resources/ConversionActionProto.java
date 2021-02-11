@@ -65,7 +65,7 @@ public final class ConversionActionProto {
       "endor.proto\032\037google/api/field_behavior.p" +
       "roto\032\031google/api/resource.proto\032\036google/" +
       "protobuf/wrappers.proto\032\034google/api/anno" +
-      "tations.proto\"\270\022\n\020ConversionAction\022H\n\rre" +
+      "tations.proto\"\336\022\n\020ConversionAction\022H\n\rre" +
       "source_name\030\001 \001(\tB1\340A\005\372A+\n)googleads.goo" +
       "gleapis.com/ConversionAction\022,\n\002id\030\002 \001(\013" +
       "2\033.google.protobuf.Int64ValueB\003\340A\003\022*\n\004na" +
@@ -77,61 +77,62 @@ public final class ConversionActionProto {
       "ypeEnum.ConversionActionTypeB\003\340A\005\022f\n\010cat" +
       "egory\030\006 \001(\0162T.google.ads.googleads.v4.en" +
       "ums.ConversionActionCategoryEnum.Convers" +
-      "ionActionCategory\0229\n\016owner_customer\030\007 \001(" +
-      "\0132\034.google.protobuf.StringValueB\003\340A\003\022A\n\035" +
-      "include_in_conversions_metric\030\010 \001(\0132\032.go" +
-      "ogle.protobuf.BoolValue\022G\n\"click_through" +
-      "_lookback_window_days\030\t \001(\0132\033.google.pro" +
-      "tobuf.Int64Value\022F\n!view_through_lookbac" +
-      "k_window_days\030\n \001(\0132\033.google.protobuf.In" +
-      "t64Value\022Y\n\016value_settings\030\013 \001(\0132A.googl" +
-      "e.ads.googleads.v4.resources.ConversionA" +
-      "ction.ValueSettings\022s\n\rcounting_type\030\014 \001" +
-      "(\0162\\.google.ads.googleads.v4.enums.Conve" +
-      "rsionActionCountingTypeEnum.ConversionAc" +
-      "tionCountingType\022p\n\032attribution_model_se" +
-      "ttings\030\r \001(\0132L.google.ads.googleads.v4.r" +
-      "esources.ConversionAction.AttributionMod" +
-      "elSettings\022E\n\014tag_snippets\030\016 \003(\0132*.googl" +
-      "e.ads.googleads.v4.common.TagSnippetB\003\340A" +
-      "\003\022@\n\033phone_call_duration_seconds\030\017 \001(\0132\033" +
-      ".google.protobuf.Int64Value\022,\n\006app_id\030\020 " +
-      "\001(\0132\034.google.protobuf.StringValue\022b\n\021mob" +
-      "ile_app_vendor\030\021 \001(\0162B.google.ads.google" +
-      "ads.v4.enums.MobileAppVendorEnum.MobileA" +
-      "ppVendorB\003\340A\003\022d\n\021firebase_settings\030\022 \001(\013" +
-      "2D.google.ads.googleads.v4.resources.Con" +
-      "versionAction.FirebaseSettingsB\003\340A\003\022\203\001\n\"" +
-      "third_party_app_analytics_settings\030\023 \001(\013" +
-      "2R.google.ads.googleads.v4.resources.Con" +
-      "versionAction.ThirdPartyAppAnalyticsSett" +
-      "ingsB\003\340A\003\032\362\001\n\030AttributionModelSettings\022_" +
-      "\n\021attribution_model\030\001 \001(\0162D.google.ads.g" +
-      "oogleads.v4.enums.AttributionModelEnum.A" +
-      "ttributionModel\022u\n\030data_driven_model_sta" +
-      "tus\030\002 \001(\0162N.google.ads.googleads.v4.enum" +
-      "s.DataDrivenModelStatusEnum.DataDrivenMo" +
-      "delStatusB\003\340A\003\032\277\001\n\rValueSettings\0223\n\rdefa" +
-      "ult_value\030\001 \001(\0132\034.google.protobuf.Double" +
-      "Value\022;\n\025default_currency_code\030\002 \001(\0132\034.g" +
-      "oogle.protobuf.StringValue\022<\n\030always_use" +
-      "_default_value\030\003 \001(\0132\032.google.protobuf.B" +
-      "oolValue\032W\n\036ThirdPartyAppAnalyticsSettin" +
-      "gs\0225\n\nevent_name\030\001 \001(\0132\034.google.protobuf" +
-      ".StringValueB\003\340A\003\032\200\001\n\020FirebaseSettings\0225" +
-      "\n\nevent_name\030\001 \001(\0132\034.google.protobuf.Str" +
-      "ingValueB\003\340A\003\0225\n\nproject_id\030\002 \001(\0132\034.goog" +
-      "le.protobuf.StringValueB\003\340A\003:j\352Ag\n)googl" +
-      "eads.googleapis.com/ConversionAction\022:cu" +
-      "stomers/{customer}/conversionActions/{co" +
-      "nversion_action}B\202\002\n%com.google.ads.goog" +
-      "leads.v4.resourcesB\025ConversionActionProt" +
-      "oP\001ZJgoogle.golang.org/genproto/googleap" +
-      "is/ads/googleads/v4/resources;resources\242" +
-      "\002\003GAA\252\002!Google.Ads.GoogleAds.V4.Resource" +
-      "s\312\002!Google\\Ads\\GoogleAds\\V4\\Resources\352\002%" +
-      "Google::Ads::GoogleAds::V4::Resourcesb\006p" +
-      "roto3"
+      "ionActionCategory\022_\n\016owner_customer\030\007 \001(" +
+      "\0132\034.google.protobuf.StringValueB)\340A\003\372A#\n" +
+      "!googleads.googleapis.com/Customer\022A\n\035in" +
+      "clude_in_conversions_metric\030\010 \001(\0132\032.goog" +
+      "le.protobuf.BoolValue\022G\n\"click_through_l" +
+      "ookback_window_days\030\t \001(\0132\033.google.proto" +
+      "buf.Int64Value\022F\n!view_through_lookback_" +
+      "window_days\030\n \001(\0132\033.google.protobuf.Int6" +
+      "4Value\022Y\n\016value_settings\030\013 \001(\0132A.google." +
+      "ads.googleads.v4.resources.ConversionAct" +
+      "ion.ValueSettings\022s\n\rcounting_type\030\014 \001(\016" +
+      "2\\.google.ads.googleads.v4.enums.Convers" +
+      "ionActionCountingTypeEnum.ConversionActi" +
+      "onCountingType\022p\n\032attribution_model_sett" +
+      "ings\030\r \001(\0132L.google.ads.googleads.v4.res" +
+      "ources.ConversionAction.AttributionModel" +
+      "Settings\022E\n\014tag_snippets\030\016 \003(\0132*.google." +
+      "ads.googleads.v4.common.TagSnippetB\003\340A\003\022" +
+      "@\n\033phone_call_duration_seconds\030\017 \001(\0132\033.g" +
+      "oogle.protobuf.Int64Value\022,\n\006app_id\030\020 \001(" +
+      "\0132\034.google.protobuf.StringValue\022b\n\021mobil" +
+      "e_app_vendor\030\021 \001(\0162B.google.ads.googlead" +
+      "s.v4.enums.MobileAppVendorEnum.MobileApp" +
+      "VendorB\003\340A\003\022d\n\021firebase_settings\030\022 \001(\0132D" +
+      ".google.ads.googleads.v4.resources.Conve" +
+      "rsionAction.FirebaseSettingsB\003\340A\003\022\203\001\n\"th" +
+      "ird_party_app_analytics_settings\030\023 \001(\0132R" +
+      ".google.ads.googleads.v4.resources.Conve" +
+      "rsionAction.ThirdPartyAppAnalyticsSettin" +
+      "gsB\003\340A\003\032\362\001\n\030AttributionModelSettings\022_\n\021" +
+      "attribution_model\030\001 \001(\0162D.google.ads.goo" +
+      "gleads.v4.enums.AttributionModelEnum.Att" +
+      "ributionModel\022u\n\030data_driven_model_statu" +
+      "s\030\002 \001(\0162N.google.ads.googleads.v4.enums." +
+      "DataDrivenModelStatusEnum.DataDrivenMode" +
+      "lStatusB\003\340A\003\032\277\001\n\rValueSettings\0223\n\rdefaul" +
+      "t_value\030\001 \001(\0132\034.google.protobuf.DoubleVa" +
+      "lue\022;\n\025default_currency_code\030\002 \001(\0132\034.goo" +
+      "gle.protobuf.StringValue\022<\n\030always_use_d" +
+      "efault_value\030\003 \001(\0132\032.google.protobuf.Boo" +
+      "lValue\032W\n\036ThirdPartyAppAnalyticsSettings" +
+      "\0225\n\nevent_name\030\001 \001(\0132\034.google.protobuf.S" +
+      "tringValueB\003\340A\003\032\200\001\n\020FirebaseSettings\0225\n\n" +
+      "event_name\030\001 \001(\0132\034.google.protobuf.Strin" +
+      "gValueB\003\340A\003\0225\n\nproject_id\030\002 \001(\0132\034.google" +
+      ".protobuf.StringValueB\003\340A\003:j\352Ag\n)googlea" +
+      "ds.googleapis.com/ConversionAction\022:cust" +
+      "omers/{customer}/conversionActions/{conv" +
+      "ersion_action}B\202\002\n%com.google.ads.google" +
+      "ads.v4.resourcesB\025ConversionActionProtoP" +
+      "\001ZJgoogle.golang.org/genproto/googleapis" +
+      "/ads/googleads/v4/resources;resources\242\002\003" +
+      "GAA\252\002!Google.Ads.GoogleAds.V4.Resources\312" +
+      "\002!Google\\Ads\\GoogleAds\\V4\\Resources\352\002%Go" +
+      "ogle::Ads::GoogleAds::V4::Resourcesb\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

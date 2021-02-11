@@ -177,7 +177,7 @@ private static final long serialVersionUID = 0L;
    * Read only.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return Whether the customer field is set.
    */
   @java.lang.Override
@@ -190,7 +190,7 @@ private static final long serialVersionUID = 0L;
    * Read only.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The customer.
    */
   @java.lang.Override
@@ -203,7 +203,7 @@ private static final long serialVersionUID = 0L;
    * Read only.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.StringValueOrBuilder getCustomerOrBuilder() {
@@ -219,7 +219,7 @@ private static final long serialVersionUID = 0L;
    * validated when creating a new CustomerLabel.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return Whether the label field is set.
    */
   @java.lang.Override
@@ -233,7 +233,7 @@ private static final long serialVersionUID = 0L;
    * validated when creating a new CustomerLabel.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The label.
    */
   @java.lang.Override
@@ -247,7 +247,7 @@ private static final long serialVersionUID = 0L;
    * validated when creating a new CustomerLabel.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.StringValueOrBuilder getLabelOrBuilder() {
@@ -737,7 +737,7 @@ private static final long serialVersionUID = 0L;
      * Read only.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return Whether the customer field is set.
      */
     public boolean hasCustomer() {
@@ -749,7 +749,7 @@ private static final long serialVersionUID = 0L;
      * Read only.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return The customer.
      */
     public com.google.protobuf.StringValue getCustomer() {
@@ -765,7 +765,7 @@ private static final long serialVersionUID = 0L;
      * Read only.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     public Builder setCustomer(com.google.protobuf.StringValue value) {
       if (customerBuilder_ == null) {
@@ -786,7 +786,7 @@ private static final long serialVersionUID = 0L;
      * Read only.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     public Builder setCustomer(
         com.google.protobuf.StringValue.Builder builderForValue) {
@@ -805,7 +805,7 @@ private static final long serialVersionUID = 0L;
      * Read only.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     public Builder mergeCustomer(com.google.protobuf.StringValue value) {
       if (customerBuilder_ == null) {
@@ -828,7 +828,7 @@ private static final long serialVersionUID = 0L;
      * Read only.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     public Builder clearCustomer() {
       if (customerBuilder_ == null) {
@@ -847,7 +847,7 @@ private static final long serialVersionUID = 0L;
      * Read only.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     public com.google.protobuf.StringValue.Builder getCustomerBuilder() {
       
@@ -860,7 +860,7 @@ private static final long serialVersionUID = 0L;
      * Read only.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     public com.google.protobuf.StringValueOrBuilder getCustomerOrBuilder() {
       if (customerBuilder_ != null) {
@@ -876,7 +876,7 @@ private static final long serialVersionUID = 0L;
      * Read only.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
@@ -902,7 +902,7 @@ private static final long serialVersionUID = 0L;
      * validated when creating a new CustomerLabel.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return Whether the label field is set.
      */
     public boolean hasLabel() {
@@ -915,7 +915,7 @@ private static final long serialVersionUID = 0L;
      * validated when creating a new CustomerLabel.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return The label.
      */
     public com.google.protobuf.StringValue getLabel() {
@@ -932,7 +932,7 @@ private static final long serialVersionUID = 0L;
      * validated when creating a new CustomerLabel.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     public Builder setLabel(com.google.protobuf.StringValue value) {
       if (labelBuilder_ == null) {
@@ -954,7 +954,7 @@ private static final long serialVersionUID = 0L;
      * validated when creating a new CustomerLabel.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     public Builder setLabel(
         com.google.protobuf.StringValue.Builder builderForValue) {
@@ -974,7 +974,7 @@ private static final long serialVersionUID = 0L;
      * validated when creating a new CustomerLabel.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     public Builder mergeLabel(com.google.protobuf.StringValue value) {
       if (labelBuilder_ == null) {
@@ -998,7 +998,7 @@ private static final long serialVersionUID = 0L;
      * validated when creating a new CustomerLabel.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     public Builder clearLabel() {
       if (labelBuilder_ == null) {
@@ -1018,7 +1018,7 @@ private static final long serialVersionUID = 0L;
      * validated when creating a new CustomerLabel.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     public com.google.protobuf.StringValue.Builder getLabelBuilder() {
       
@@ -1032,7 +1032,7 @@ private static final long serialVersionUID = 0L;
      * validated when creating a new CustomerLabel.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     public com.google.protobuf.StringValueOrBuilder getLabelOrBuilder() {
       if (labelBuilder_ != null) {
@@ -1049,7 +1049,7 @@ private static final long serialVersionUID = 0L;
      * validated when creating a new CustomerLabel.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 

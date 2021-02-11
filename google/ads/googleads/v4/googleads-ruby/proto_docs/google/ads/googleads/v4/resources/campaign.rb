@@ -281,6 +281,16 @@ module Google
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
 
+            # Selective optimization setting for this campaign, which includes a set of
+            # conversion actions to optimize this campaign towards.
+            # @!attribute [rw] conversion_actions
+            #   @return [::Array<::Google::Protobuf::StringValue>]
+            #     The selected set of conversion actions for optimizing this campaign.
+            class SelectiveOptimization
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
             # The setting for Shopping campaigns. Defines the universe of products that
             # can be advertised by the campaign, and how this campaign interacts with
             # other Shopping campaigns.
@@ -311,12 +321,11 @@ module Google
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
 
-            # Selective optimization setting for this campaign, which includes a set of
-            # conversion actions to optimize this campaign towards.
-            # @!attribute [rw] conversion_actions
-            #   @return [::Array<::Google::Protobuf::StringValue>]
-            #     The selected set of conversion actions for optimizing this campaign.
-            class SelectiveOptimization
+            # Campaign setting for local campaigns.
+            # @!attribute [rw] location_source_type
+            #   @return [::Google::Ads::GoogleAds::V4::Enums::LocationSourceTypeEnum::LocationSourceType]
+            #     The location source type for this local campaign.
+            class LocalCampaignSetting
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
@@ -342,15 +351,6 @@ module Google
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
 
-            # Campaign setting for local campaigns.
-            # @!attribute [rw] location_source_type
-            #   @return [::Google::Ads::GoogleAds::V4::Enums::LocationSourceTypeEnum::LocationSourceType]
-            #     The location source type for this local campaign.
-            class LocalCampaignSetting
-              include ::Google::Protobuf::MessageExts
-              extend ::Google::Protobuf::MessageExts::ClassMethods
-            end
-
             # Campaign-level settings for App Campaigns.
             # @!attribute [rw] bidding_strategy_goal_type
             #   @return [::Google::Ads::GoogleAds::V4::Enums::AppCampaignBiddingStrategyGoalTypeEnum::AppCampaignBiddingStrategyGoalType]
@@ -367,6 +367,16 @@ module Google
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
 
+            # Optimization goal setting for this campaign, which includes a set of
+            # optimization goal types.
+            # @!attribute [rw] optimization_goal_types
+            #   @return [::Array<::Google::Ads::GoogleAds::V4::Enums::OptimizationGoalTypeEnum::OptimizationGoalType>]
+            #     The list of optimization goal types.
+            class OptimizationGoalSetting
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
             # Describes how unbranded pharma ads will be displayed.
             # @!attribute [rw] vanity_pharma_display_url_mode
             #   @return [::Google::Ads::GoogleAds::V4::Enums::VanityPharmaDisplayUrlModeEnum::VanityPharmaDisplayUrlMode]
@@ -376,16 +386,6 @@ module Google
             #     The text that will be displayed in display URL of the text ad when
             #     website description is the selected display mode for vanity pharma URLs.
             class VanityPharma
-              include ::Google::Protobuf::MessageExts
-              extend ::Google::Protobuf::MessageExts::ClassMethods
-            end
-
-            # Optimization goal setting for this campaign, which includes a set of
-            # optimization goal types.
-            # @!attribute [rw] optimization_goal_types
-            #   @return [::Array<::Google::Ads::GoogleAds::V4::Enums::OptimizationGoalTypeEnum::OptimizationGoalType>]
-            #     The list of optimization goal types.
-            class OptimizationGoalSetting
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end

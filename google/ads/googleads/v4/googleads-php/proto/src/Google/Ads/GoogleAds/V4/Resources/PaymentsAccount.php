@@ -60,7 +60,7 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Paying manager of this payment account.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $paying_manager_customer = null;
 
@@ -461,7 +461,7 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Paying manager of this payment account.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getPayingManagerCustomer()
@@ -484,7 +484,7 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
 
      * Output only. Paying manager of this payment account.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getPayingManagerCustomerUnwrapped()
@@ -495,7 +495,7 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Paying manager of this payment account.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -512,7 +512,7 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
 
      * Output only. Paying manager of this payment account.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */

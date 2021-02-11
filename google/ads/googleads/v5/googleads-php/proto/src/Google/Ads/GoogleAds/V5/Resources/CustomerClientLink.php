@@ -26,7 +26,7 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The client customer linked to this customer.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $client_customer = null;
     /**
@@ -110,7 +110,7 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The client customer linked to this customer.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getClientCustomer()
@@ -133,7 +133,7 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
 
      * Immutable. The client customer linked to this customer.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getClientCustomerUnwrapped()
@@ -144,7 +144,7 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The client customer linked to this customer.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -161,7 +161,7 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
 
      * Immutable. The client customer linked to this customer.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */

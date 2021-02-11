@@ -160,7 +160,7 @@ private static final long serialVersionUID = 0L;
     INVALID_MOBILE_ID_FORMAT(8),
     /**
      * <pre>
-     * Request is exceeding the maximum number of user identifiers allowed.
+     * Maximum number of user identifiers allowed per request is 100,000.
      * </pre>
      *
      * <code>TOO_MANY_USER_IDENTIFIERS = 9;</code>
@@ -404,7 +404,7 @@ private static final long serialVersionUID = 0L;
     public static final int INVALID_MOBILE_ID_FORMAT_VALUE = 8;
     /**
      * <pre>
-     * Request is exceeding the maximum number of user identifiers allowed.
+     * Maximum number of user identifiers allowed per request is 100,000.
      * </pre>
      *
      * <code>TOO_MANY_USER_IDENTIFIERS = 9;</code>

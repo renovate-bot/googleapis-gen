@@ -33,21 +33,23 @@ public final class CustomerLabelProto {
       "4.resources\032\037google/api/field_behavior.p" +
       "roto\032\031google/api/resource.proto\032\036google/" +
       "protobuf/wrappers.proto\032\034google/api/anno" +
-      "tations.proto\"\240\002\n\rCustomerLabel\022E\n\rresou" +
+      "tations.proto\"\351\002\n\rCustomerLabel\022E\n\rresou" +
       "rce_name\030\001 \001(\tB.\340A\005\372A(\n&googleads.google" +
-      "apis.com/CustomerLabel\0223\n\010customer\030\002 \001(\013" +
-      "2\034.google.protobuf.StringValueB\003\340A\003\0220\n\005l" +
-      "abel\030\003 \001(\0132\034.google.protobuf.StringValue" +
-      "B\003\340A\003:a\352A^\n&googleads.googleapis.com/Cus" +
-      "tomerLabel\0224customers/{customer}/custome" +
-      "rLabels/{customer_label}B\377\001\n%com.google." +
-      "ads.googleads.v4.resourcesB\022CustomerLabe" +
-      "lProtoP\001ZJgoogle.golang.org/genproto/goo" +
-      "gleapis/ads/googleads/v4/resources;resou" +
-      "rces\242\002\003GAA\252\002!Google.Ads.GoogleAds.V4.Res" +
-      "ources\312\002!Google\\Ads\\GoogleAds\\V4\\Resourc" +
-      "es\352\002%Google::Ads::GoogleAds::V4::Resourc" +
-      "esb\006proto3"
+      "apis.com/CustomerLabel\022Y\n\010customer\030\002 \001(\013" +
+      "2\034.google.protobuf.StringValueB)\340A\003\372A#\n!" +
+      "googleads.googleapis.com/Customer\022S\n\005lab" +
+      "el\030\003 \001(\0132\034.google.protobuf.StringValueB&" +
+      "\340A\003\372A \n\036googleads.googleapis.com/Label:a" +
+      "\352A^\n&googleads.googleapis.com/CustomerLa" +
+      "bel\0224customers/{customer}/customerLabels" +
+      "/{customer_label}B\377\001\n%com.google.ads.goo" +
+      "gleads.v4.resourcesB\022CustomerLabelProtoP" +
+      "\001ZJgoogle.golang.org/genproto/googleapis" +
+      "/ads/googleads/v4/resources;resources\242\002\003" +
+      "GAA\252\002!Google.Ads.GoogleAds.V4.Resources\312" +
+      "\002!Google\\Ads\\GoogleAds\\V4\\Resources\352\002%Go" +
+      "ogle::Ads::GoogleAds::V4::Resourcesb\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

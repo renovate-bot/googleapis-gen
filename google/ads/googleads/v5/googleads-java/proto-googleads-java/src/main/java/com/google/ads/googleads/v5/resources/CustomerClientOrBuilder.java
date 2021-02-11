@@ -37,7 +37,7 @@ public interface CustomerClientOrBuilder extends
    * the given customer. Read only.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return Whether the clientCustomer field is set.
    */
   boolean hasClientCustomer();
@@ -47,7 +47,7 @@ public interface CustomerClientOrBuilder extends
    * the given customer. Read only.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The clientCustomer.
    */
   com.google.protobuf.StringValue getClientCustomer();
@@ -57,7 +57,7 @@ public interface CustomerClientOrBuilder extends
    * the given customer. Read only.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    */
   com.google.protobuf.StringValueOrBuilder getClientCustomerOrBuilder();
 

@@ -133,7 +133,7 @@ module Google
           #     The date when campaign started.
           # @!attribute [rw] end_date
           #   @return [::String]
-          #     The date when campaign ended.
+          #     The last day of the campaign.
           # @!attribute [rw] final_url_suffix
           #   @return [::String]
           #     Suffix used to append query parameters to landing pages that are served
@@ -260,27 +260,12 @@ module Google
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
 
-            # Campaign setting for local campaigns.
-            # @!attribute [rw] location_source_type
-            #   @return [::Google::Ads::GoogleAds::V5::Enums::LocationSourceTypeEnum::LocationSourceType]
-            #     The location source type for this local campaign.
-            class LocalCampaignSetting
-              include ::Google::Protobuf::MessageExts
-              extend ::Google::Protobuf::MessageExts::ClassMethods
-            end
-
-            # Campaign-level settings for App Campaigns.
-            # @!attribute [rw] bidding_strategy_goal_type
-            #   @return [::Google::Ads::GoogleAds::V5::Enums::AppCampaignBiddingStrategyGoalTypeEnum::AppCampaignBiddingStrategyGoalType]
-            #     Represents the goal which the bidding strategy of this app campaign
-            #     should optimize towards.
-            # @!attribute [rw] app_id
-            #   @return [::String]
-            #     Immutable. A string that uniquely identifies a mobile application.
-            # @!attribute [rw] app_store
-            #   @return [::Google::Ads::GoogleAds::V5::Enums::AppCampaignAppStoreEnum::AppCampaignAppStore]
-            #     Immutable. The application store that distributes this specific app.
-            class AppCampaignSetting
+            # Selective optimization setting for this campaign, which includes a set of
+            # conversion actions to optimize this campaign towards.
+            # @!attribute [rw] conversion_actions
+            #   @return [::Array<::String>]
+            #     The selected set of conversion actions for optimizing this campaign.
+            class SelectiveOptimization
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
@@ -300,39 +285,6 @@ module Google
             #   @return [::Array<::String>]
             #     The list of page feeds associated with the campaign.
             class DynamicSearchAdsSetting
-              include ::Google::Protobuf::MessageExts
-              extend ::Google::Protobuf::MessageExts::ClassMethods
-            end
-
-            # Describes how unbranded pharma ads will be displayed.
-            # @!attribute [rw] vanity_pharma_display_url_mode
-            #   @return [::Google::Ads::GoogleAds::V5::Enums::VanityPharmaDisplayUrlModeEnum::VanityPharmaDisplayUrlMode]
-            #     The display mode for vanity pharma URLs.
-            # @!attribute [rw] vanity_pharma_text
-            #   @return [::Google::Ads::GoogleAds::V5::Enums::VanityPharmaTextEnum::VanityPharmaText]
-            #     The text that will be displayed in display URL of the text ad when
-            #     website description is the selected display mode for vanity pharma URLs.
-            class VanityPharma
-              include ::Google::Protobuf::MessageExts
-              extend ::Google::Protobuf::MessageExts::ClassMethods
-            end
-
-            # Selective optimization setting for this campaign, which includes a set of
-            # conversion actions to optimize this campaign towards.
-            # @!attribute [rw] conversion_actions
-            #   @return [::Array<::String>]
-            #     The selected set of conversion actions for optimizing this campaign.
-            class SelectiveOptimization
-              include ::Google::Protobuf::MessageExts
-              extend ::Google::Protobuf::MessageExts::ClassMethods
-            end
-
-            # Optimization goal setting for this campaign, which includes a set of
-            # optimization goal types.
-            # @!attribute [rw] optimization_goal_types
-            #   @return [::Array<::Google::Ads::GoogleAds::V5::Enums::OptimizationGoalTypeEnum::OptimizationGoalType>]
-            #     The list of optimization goal types.
-            class OptimizationGoalSetting
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
@@ -376,6 +328,15 @@ module Google
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
 
+            # Campaign setting for local campaigns.
+            # @!attribute [rw] location_source_type
+            #   @return [::Google::Ads::GoogleAds::V5::Enums::LocationSourceTypeEnum::LocationSourceType]
+            #     The location source type for this local campaign.
+            class LocalCampaignSetting
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
             # Represents a collection of settings related to ads geotargeting.
             # @!attribute [rw] positive_geo_target_type
             #   @return [::Google::Ads::GoogleAds::V5::Enums::PositiveGeoTargetTypeEnum::PositiveGeoTargetType]
@@ -384,6 +345,45 @@ module Google
             #   @return [::Google::Ads::GoogleAds::V5::Enums::NegativeGeoTargetTypeEnum::NegativeGeoTargetType]
             #     The setting used for negative geotargeting in this particular campaign.
             class GeoTargetTypeSetting
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
+            # Optimization goal setting for this campaign, which includes a set of
+            # optimization goal types.
+            # @!attribute [rw] optimization_goal_types
+            #   @return [::Array<::Google::Ads::GoogleAds::V5::Enums::OptimizationGoalTypeEnum::OptimizationGoalType>]
+            #     The list of optimization goal types.
+            class OptimizationGoalSetting
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
+            # Campaign-level settings for App Campaigns.
+            # @!attribute [rw] bidding_strategy_goal_type
+            #   @return [::Google::Ads::GoogleAds::V5::Enums::AppCampaignBiddingStrategyGoalTypeEnum::AppCampaignBiddingStrategyGoalType]
+            #     Represents the goal which the bidding strategy of this app campaign
+            #     should optimize towards.
+            # @!attribute [rw] app_id
+            #   @return [::String]
+            #     Immutable. A string that uniquely identifies a mobile application.
+            # @!attribute [rw] app_store
+            #   @return [::Google::Ads::GoogleAds::V5::Enums::AppCampaignAppStoreEnum::AppCampaignAppStore]
+            #     Immutable. The application store that distributes this specific app.
+            class AppCampaignSetting
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
+            # Describes how unbranded pharma ads will be displayed.
+            # @!attribute [rw] vanity_pharma_display_url_mode
+            #   @return [::Google::Ads::GoogleAds::V5::Enums::VanityPharmaDisplayUrlModeEnum::VanityPharmaDisplayUrlMode]
+            #     The display mode for vanity pharma URLs.
+            # @!attribute [rw] vanity_pharma_text
+            #   @return [::Google::Ads::GoogleAds::V5::Enums::VanityPharmaTextEnum::VanityPharmaText]
+            #     The text that will be displayed in display URL of the text ad when
+            #     website description is the selected display mode for vanity pharma URLs.
+            class VanityPharma
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end

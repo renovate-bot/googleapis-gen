@@ -25,7 +25,6 @@ require 'google/ads/googleads/v5/enums/product_condition_pb'
 require 'google/ads/googleads/v5/enums/search_engine_results_page_type_pb'
 require 'google/ads/googleads/v5/enums/search_term_match_type_pb'
 require 'google/ads/googleads/v5/enums/slot_pb'
-require 'google/api/resource_pb'
 require 'google/api/annotations_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("google/ads/googleads/v5/common/segments.proto", :syntax => :proto3) do

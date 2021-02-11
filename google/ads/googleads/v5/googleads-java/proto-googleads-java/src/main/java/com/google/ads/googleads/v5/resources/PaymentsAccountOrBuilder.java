@@ -183,7 +183,7 @@ public interface PaymentsAccountOrBuilder extends
    * Output only. Paying manager of this payment account.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return Whether the payingManagerCustomer field is set.
    */
   boolean hasPayingManagerCustomer();
@@ -192,7 +192,7 @@ public interface PaymentsAccountOrBuilder extends
    * Output only. Paying manager of this payment account.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The payingManagerCustomer.
    */
   com.google.protobuf.StringValue getPayingManagerCustomer();
@@ -201,7 +201,7 @@ public interface PaymentsAccountOrBuilder extends
    * Output only. Paying manager of this payment account.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    */
   com.google.protobuf.StringValueOrBuilder getPayingManagerCustomerOrBuilder();
 }

@@ -33,7 +33,7 @@ public final class PaymentsAccountProto {
       ".v4.resources\032\037google/api/field_behavior" +
       ".proto\032\031google/api/resource.proto\032\036googl" +
       "e/protobuf/wrappers.proto\032\034google/api/an" +
-      "notations.proto\"\274\004\n\017PaymentsAccount\022G\n\rr" +
+      "notations.proto\"\342\004\n\017PaymentsAccount\022G\n\rr" +
       "esource_name\030\001 \001(\tB0\340A\003\372A*\n(googleads.go" +
       "ogleapis.com/PaymentsAccount\022>\n\023payments" +
       "_account_id\030\002 \001(\0132\034.google.protobuf.Stri" +
@@ -43,18 +43,19 @@ public final class PaymentsAccountProto {
       ">\n\023payments_profile_id\030\005 \001(\0132\034.google.pr" +
       "otobuf.StringValueB\003\340A\003\022H\n\035secondary_pay" +
       "ments_profile_id\030\006 \001(\0132\034.google.protobuf" +
-      ".StringValueB\003\340A\003\022B\n\027paying_manager_cust" +
+      ".StringValueB\003\340A\003\022h\n\027paying_manager_cust" +
       "omer\030\007 \001(\0132\034.google.protobuf.StringValue" +
-      "B\003\340A\003:g\352Ad\n(googleads.googleapis.com/Pay" +
-      "mentsAccount\0228customers/{customer}/payme" +
-      "ntsAccounts/{payments_account}B\201\002\n%com.g" +
-      "oogle.ads.googleads.v4.resourcesB\024Paymen" +
-      "tsAccountProtoP\001ZJgoogle.golang.org/genp" +
-      "roto/googleapis/ads/googleads/v4/resourc" +
-      "es;resources\242\002\003GAA\252\002!Google.Ads.GoogleAd" +
-      "s.V4.Resources\312\002!Google\\Ads\\GoogleAds\\V4" +
-      "\\Resources\352\002%Google::Ads::GoogleAds::V4:" +
-      ":Resourcesb\006proto3"
+      "B)\340A\003\372A#\n!googleads.googleapis.com/Custo" +
+      "mer:g\352Ad\n(googleads.googleapis.com/Payme" +
+      "ntsAccount\0228customers/{customer}/payment" +
+      "sAccounts/{payments_account}B\201\002\n%com.goo" +
+      "gle.ads.googleads.v4.resourcesB\024Payments" +
+      "AccountProtoP\001ZJgoogle.golang.org/genpro" +
+      "to/googleapis/ads/googleads/v4/resources" +
+      ";resources\242\002\003GAA\252\002!Google.Ads.GoogleAds." +
+      "V4.Resources\312\002!Google\\Ads\\GoogleAds\\V4\\R" +
+      "esources\352\002%Google::Ads::GoogleAds::V4::R" +
+      "esourcesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

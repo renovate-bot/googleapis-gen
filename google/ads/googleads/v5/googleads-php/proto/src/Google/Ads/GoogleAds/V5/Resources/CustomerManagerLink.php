@@ -26,7 +26,7 @@ class CustomerManagerLink extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The manager customer linked to the customer.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $manager_customer = null;
     /**
@@ -98,7 +98,7 @@ class CustomerManagerLink extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The manager customer linked to the customer.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getManagerCustomer()
@@ -121,7 +121,7 @@ class CustomerManagerLink extends \Google\Protobuf\Internal\Message
 
      * Output only. The manager customer linked to the customer.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getManagerCustomerUnwrapped()
@@ -132,7 +132,7 @@ class CustomerManagerLink extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The manager customer linked to the customer.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -149,7 +149,7 @@ class CustomerManagerLink extends \Google\Protobuf\Internal\Message
 
      * Output only. The manager customer linked to the customer.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */

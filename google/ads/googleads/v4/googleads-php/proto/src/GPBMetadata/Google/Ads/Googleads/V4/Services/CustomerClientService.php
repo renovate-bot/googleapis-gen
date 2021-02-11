@@ -21,12 +21,13 @@ class CustomerClientService
         \GPBMetadata\Google\Api\Client::initOnce();
         $pool->internalAddGeneratedFile(
             '
-„
-7google/ads/googleads/v4/resources/customer_client.proto!google.ads.googleads.v4.resourcesgoogle/api/resource.protogoogle/protobuf/wrappers.protogoogle/api/annotations.proto"†
+â	
+7google/ads/googleads/v4/resources/customer_client.proto!google.ads.googleads.v4.resourcesgoogle/api/resource.protogoogle/protobuf/wrappers.protogoogle/api/annotations.proto"∆
 CustomerClientF
 resource_name (	B/‡A˙A)
-\'googleads.googleapis.com/CustomerClient:
-client_customer (2.google.protobuf.StringValueB‡A/
+\'googleads.googleapis.com/CustomerClient`
+client_customer (2.google.protobuf.StringValueB)‡A˙A#
+!googleads.googleapis.com/Customer/
 hidden (2.google.protobuf.BoolValueB‡A/
 level (2.google.protobuf.Int64ValueB‡A4
 	time_zone (2.google.protobuf.StringValueB‡A5

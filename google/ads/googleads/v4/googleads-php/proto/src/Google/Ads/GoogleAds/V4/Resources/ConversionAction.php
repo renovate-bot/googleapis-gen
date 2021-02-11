@@ -59,7 +59,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * Output only. The resource name of the conversion action owner customer, or null if this
      * is a system-defined conversion action.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $owner_customer = null;
     /**
@@ -449,7 +449,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * Output only. The resource name of the conversion action owner customer, or null if this
      * is a system-defined conversion action.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getOwnerCustomer()
@@ -473,7 +473,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * Output only. The resource name of the conversion action owner customer, or null if this
      * is a system-defined conversion action.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getOwnerCustomerUnwrapped()
@@ -485,7 +485,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * Output only. The resource name of the conversion action owner customer, or null if this
      * is a system-defined conversion action.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -503,7 +503,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * Output only. The resource name of the conversion action owner customer, or null if this
      * is a system-defined conversion action.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */

@@ -33,30 +33,31 @@ public final class CustomerClientProto {
       "v5.resources\032\037google/api/field_behavior." +
       "proto\032\031google/api/resource.proto\032\036google" +
       "/protobuf/wrappers.proto\032\034google/api/ann" +
-      "otations.proto\"\240\005\n\016CustomerClient\022F\n\rres" +
+      "otations.proto\"\306\005\n\016CustomerClient\022F\n\rres" +
       "ource_name\030\001 \001(\tB/\340A\003\372A)\n\'googleads.goog" +
-      "leapis.com/CustomerClient\022:\n\017client_cust" +
+      "leapis.com/CustomerClient\022`\n\017client_cust" +
       "omer\030\003 \001(\0132\034.google.protobuf.StringValue" +
-      "B\003\340A\003\022/\n\006hidden\030\004 \001(\0132\032.google.protobuf." +
-      "BoolValueB\003\340A\003\022/\n\005level\030\005 \001(\0132\033.google.p" +
-      "rotobuf.Int64ValueB\003\340A\003\0224\n\ttime_zone\030\006 \001" +
-      "(\0132\034.google.protobuf.StringValueB\003\340A\003\0225\n" +
-      "\014test_account\030\007 \001(\0132\032.google.protobuf.Bo" +
-      "olValueB\003\340A\003\0220\n\007manager\030\010 \001(\0132\032.google.p" +
-      "rotobuf.BoolValueB\003\340A\003\022;\n\020descriptive_na" +
-      "me\030\t \001(\0132\034.google.protobuf.StringValueB\003" +
-      "\340A\003\0228\n\rcurrency_code\030\n \001(\0132\034.google.prot" +
-      "obuf.StringValueB\003\340A\003\022,\n\002id\030\013 \001(\0132\033.goog" +
-      "le.protobuf.Int64ValueB\003\340A\003:d\352Aa\n\'google" +
-      "ads.googleapis.com/CustomerClient\0226custo" +
-      "mers/{customer}/customerClients/{custome" +
-      "r_client}B\200\002\n%com.google.ads.googleads.v" +
-      "5.resourcesB\023CustomerClientProtoP\001ZJgoog" +
-      "le.golang.org/genproto/googleapis/ads/go" +
-      "ogleads/v5/resources;resources\242\002\003GAA\252\002!G" +
-      "oogle.Ads.GoogleAds.V5.Resources\312\002!Googl" +
-      "e\\Ads\\GoogleAds\\V5\\Resources\352\002%Google::A" +
-      "ds::GoogleAds::V5::Resourcesb\006proto3"
+      "B)\340A\003\372A#\n!googleads.googleapis.com/Custo" +
+      "mer\022/\n\006hidden\030\004 \001(\0132\032.google.protobuf.Bo" +
+      "olValueB\003\340A\003\022/\n\005level\030\005 \001(\0132\033.google.pro" +
+      "tobuf.Int64ValueB\003\340A\003\0224\n\ttime_zone\030\006 \001(\013" +
+      "2\034.google.protobuf.StringValueB\003\340A\003\0225\n\014t" +
+      "est_account\030\007 \001(\0132\032.google.protobuf.Bool" +
+      "ValueB\003\340A\003\0220\n\007manager\030\010 \001(\0132\032.google.pro" +
+      "tobuf.BoolValueB\003\340A\003\022;\n\020descriptive_name" +
+      "\030\t \001(\0132\034.google.protobuf.StringValueB\003\340A" +
+      "\003\0228\n\rcurrency_code\030\n \001(\0132\034.google.protob" +
+      "uf.StringValueB\003\340A\003\022,\n\002id\030\013 \001(\0132\033.google" +
+      ".protobuf.Int64ValueB\003\340A\003:d\352Aa\n\'googlead" +
+      "s.googleapis.com/CustomerClient\0226custome" +
+      "rs/{customer}/customerClients/{customer_" +
+      "client}B\200\002\n%com.google.ads.googleads.v5." +
+      "resourcesB\023CustomerClientProtoP\001ZJgoogle" +
+      ".golang.org/genproto/googleapis/ads/goog" +
+      "leads/v5/resources;resources\242\002\003GAA\252\002!Goo" +
+      "gle.Ads.GoogleAds.V5.Resources\312\002!Google\\" +
+      "Ads\\GoogleAds\\V5\\Resources\352\002%Google::Ads" +
+      "::GoogleAds::V5::Resourcesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

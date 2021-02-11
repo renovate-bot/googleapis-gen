@@ -34,26 +34,27 @@ public final class CustomerClientLinkProto {
       "v5/enums/manager_link_status.proto\032\037goog" +
       "le/api/field_behavior.proto\032\031google/api/" +
       "resource.proto\032\036google/protobuf/wrappers" +
-      ".proto\032\034google/api/annotations.proto\"\316\003\n" +
+      ".proto\032\034google/api/annotations.proto\"\364\003\n" +
       "\022CustomerClientLink\022J\n\rresource_name\030\001 \001" +
       "(\tB3\340A\005\372A-\n+googleads.googleapis.com/Cus" +
-      "tomerClientLink\022:\n\017client_customer\030\003 \001(\013" +
-      "2\034.google.protobuf.StringValueB\003\340A\005\0229\n\017m" +
-      "anager_link_id\030\004 \001(\0132\033.google.protobuf.I" +
-      "nt64ValueB\003\340A\003\022V\n\006status\030\005 \001(\0162F.google." +
-      "ads.googleads.v5.enums.ManagerLinkStatus" +
-      "Enum.ManagerLinkStatus\022*\n\006hidden\030\006 \001(\0132\032" +
-      ".google.protobuf.BoolValue:q\352An\n+googlea" +
-      "ds.googleapis.com/CustomerClientLink\022?cu" +
-      "stomers/{customer}/customerClientLinks/{" +
-      "customer_client_link}B\204\002\n%com.google.ads" +
-      ".googleads.v5.resourcesB\027CustomerClientL" +
-      "inkProtoP\001ZJgoogle.golang.org/genproto/g" +
-      "oogleapis/ads/googleads/v5/resources;res" +
-      "ources\242\002\003GAA\252\002!Google.Ads.GoogleAds.V5.R" +
-      "esources\312\002!Google\\Ads\\GoogleAds\\V5\\Resou" +
-      "rces\352\002%Google::Ads::GoogleAds::V5::Resou" +
-      "rcesb\006proto3"
+      "tomerClientLink\022`\n\017client_customer\030\003 \001(\013" +
+      "2\034.google.protobuf.StringValueB)\340A\005\372A#\n!" +
+      "googleads.googleapis.com/Customer\0229\n\017man" +
+      "ager_link_id\030\004 \001(\0132\033.google.protobuf.Int" +
+      "64ValueB\003\340A\003\022V\n\006status\030\005 \001(\0162F.google.ad" +
+      "s.googleads.v5.enums.ManagerLinkStatusEn" +
+      "um.ManagerLinkStatus\022*\n\006hidden\030\006 \001(\0132\032.g" +
+      "oogle.protobuf.BoolValue:q\352An\n+googleads" +
+      ".googleapis.com/CustomerClientLink\022?cust" +
+      "omers/{customer}/customerClientLinks/{cu" +
+      "stomer_client_link}B\204\002\n%com.google.ads.g" +
+      "oogleads.v5.resourcesB\027CustomerClientLin" +
+      "kProtoP\001ZJgoogle.golang.org/genproto/goo" +
+      "gleapis/ads/googleads/v5/resources;resou" +
+      "rces\242\002\003GAA\252\002!Google.Ads.GoogleAds.V5.Res" +
+      "ources\312\002!Google\\Ads\\GoogleAds\\V5\\Resourc" +
+      "es\352\002%Google::Ads::GoogleAds::V5::Resourc" +
+      "esb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

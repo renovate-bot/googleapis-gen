@@ -154,7 +154,7 @@ public interface ConversionActionOrBuilder extends
    * is a system-defined conversion action.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return Whether the ownerCustomer field is set.
    */
   boolean hasOwnerCustomer();
@@ -164,7 +164,7 @@ public interface ConversionActionOrBuilder extends
    * is a system-defined conversion action.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The ownerCustomer.
    */
   com.google.protobuf.StringValue getOwnerCustomer();
@@ -174,7 +174,7 @@ public interface ConversionActionOrBuilder extends
    * is a system-defined conversion action.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    */
   com.google.protobuf.StringValueOrBuilder getOwnerCustomerOrBuilder();
 

@@ -54,7 +54,7 @@ module Google
               # The mobile ID is malformed.
               INVALID_MOBILE_ID_FORMAT = 8
 
-              # Request is exceeding the maximum number of user identifiers allowed.
+              # Maximum number of user identifiers allowed per request is 100,000.
               TOO_MANY_USER_IDENTIFIERS = 9
 
               # Customer is not on the allow-list for store sales direct data.

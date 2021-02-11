@@ -37,7 +37,7 @@ public interface CustomerLabelOrBuilder extends
    * Read only.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return Whether the customer field is set.
    */
   boolean hasCustomer();
@@ -47,7 +47,7 @@ public interface CustomerLabelOrBuilder extends
    * Read only.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The customer.
    */
   com.google.protobuf.StringValue getCustomer();
@@ -57,7 +57,7 @@ public interface CustomerLabelOrBuilder extends
    * Read only.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    */
   com.google.protobuf.StringValueOrBuilder getCustomerOrBuilder();
 
@@ -68,7 +68,7 @@ public interface CustomerLabelOrBuilder extends
    * validated when creating a new CustomerLabel.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return Whether the label field is set.
    */
   boolean hasLabel();
@@ -79,7 +79,7 @@ public interface CustomerLabelOrBuilder extends
    * validated when creating a new CustomerLabel.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The label.
    */
   com.google.protobuf.StringValue getLabel();
@@ -90,7 +90,7 @@ public interface CustomerLabelOrBuilder extends
    * validated when creating a new CustomerLabel.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    */
   com.google.protobuf.StringValueOrBuilder getLabelOrBuilder();
 }

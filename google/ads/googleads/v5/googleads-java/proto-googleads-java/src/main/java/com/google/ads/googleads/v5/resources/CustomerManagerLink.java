@@ -181,7 +181,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The manager customer linked to the customer.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return Whether the managerCustomer field is set.
    */
   @java.lang.Override
@@ -193,7 +193,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The manager customer linked to the customer.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The managerCustomer.
    */
   @java.lang.Override
@@ -205,7 +205,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The manager customer linked to the customer.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.StringValueOrBuilder getManagerCustomerOrBuilder() {
@@ -773,7 +773,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The manager customer linked to the customer.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return Whether the managerCustomer field is set.
      */
     public boolean hasManagerCustomer() {
@@ -784,7 +784,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The manager customer linked to the customer.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return The managerCustomer.
      */
     public com.google.protobuf.StringValue getManagerCustomer() {
@@ -799,7 +799,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The manager customer linked to the customer.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     public Builder setManagerCustomer(com.google.protobuf.StringValue value) {
       if (managerCustomerBuilder_ == null) {
@@ -819,7 +819,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The manager customer linked to the customer.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     public Builder setManagerCustomer(
         com.google.protobuf.StringValue.Builder builderForValue) {
@@ -837,7 +837,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The manager customer linked to the customer.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     public Builder mergeManagerCustomer(com.google.protobuf.StringValue value) {
       if (managerCustomerBuilder_ == null) {
@@ -859,7 +859,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The manager customer linked to the customer.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     public Builder clearManagerCustomer() {
       if (managerCustomerBuilder_ == null) {
@@ -877,7 +877,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The manager customer linked to the customer.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     public com.google.protobuf.StringValue.Builder getManagerCustomerBuilder() {
       
@@ -889,7 +889,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The manager customer linked to the customer.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     public com.google.protobuf.StringValueOrBuilder getManagerCustomerOrBuilder() {
       if (managerCustomerBuilder_ != null) {
@@ -904,7 +904,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The manager customer linked to the customer.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 

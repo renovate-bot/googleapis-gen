@@ -35,15 +35,20 @@ public final class CampaignProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_ads_googleads_v4_resources_Campaign_DynamicSearchAdsSetting_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_ads_googleads_v4_resources_Campaign_SelectiveOptimization_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_googleads_v4_resources_Campaign_SelectiveOptimization_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_ads_googleads_v4_resources_Campaign_ShoppingSetting_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_ads_googleads_v4_resources_Campaign_ShoppingSetting_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_ads_googleads_v4_resources_Campaign_SelectiveOptimization_descriptor;
+    internal_static_google_ads_googleads_v4_resources_Campaign_LocalCampaignSetting_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_ads_googleads_v4_resources_Campaign_SelectiveOptimization_fieldAccessorTable;
+      internal_static_google_ads_googleads_v4_resources_Campaign_LocalCampaignSetting_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_ads_googleads_v4_resources_Campaign_TrackingSetting_descriptor;
   static final 
@@ -55,25 +60,20 @@ public final class CampaignProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_ads_googleads_v4_resources_Campaign_GeoTargetTypeSetting_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_ads_googleads_v4_resources_Campaign_LocalCampaignSetting_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_ads_googleads_v4_resources_Campaign_LocalCampaignSetting_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_ads_googleads_v4_resources_Campaign_AppCampaignSetting_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_ads_googleads_v4_resources_Campaign_AppCampaignSetting_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_ads_googleads_v4_resources_Campaign_VanityPharma_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_ads_googleads_v4_resources_Campaign_VanityPharma_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_ads_googleads_v4_resources_Campaign_OptimizationGoalSetting_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_ads_googleads_v4_resources_Campaign_OptimizationGoalSetting_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_ads_googleads_v4_resources_Campaign_VanityPharma_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_googleads_v4_resources_Campaign_VanityPharma_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -238,28 +238,28 @@ public final class CampaignProto {
       "e\022:\n\026use_supplied_urls_only\030\003 \001(\0132\032.goog" +
       "le.protobuf.BoolValue\022R\n\005feeds\030\005 \003(\0132\034.g" +
       "oogle.protobuf.StringValueB%\340A\003\372A\037\n\035goog" +
-      "leads.googleapis.com/Feed\032\354\001\n\017ShoppingSe" +
-      "tting\0225\n\013merchant_id\030\001 \001(\0132\033.google.prot" +
-      "obuf.Int64ValueB\003\340A\005\0228\n\rsales_country\030\002 " +
-      "\001(\0132\034.google.protobuf.StringValueB\003\340A\005\0226" +
-      "\n\021campaign_priority\030\003 \001(\0132\033.google.proto" +
-      "buf.Int32Value\0220\n\014enable_local\030\004 \001(\0132\032.g" +
-      "oogle.protobuf.BoolValue\032\201\001\n\025SelectiveOp" +
-      "timization\022h\n\022conversion_actions\030\001 \003(\0132\034" +
-      ".google.protobuf.StringValueB.\372A+\n)googl" +
-      "eads.googleapis.com/ConversionAction\032J\n\017" +
-      "TrackingSetting\0227\n\014tracking_url\030\001 \001(\0132\034." +
-      "google.protobuf.StringValueB\003\340A\003\032\372\001\n\024Geo" +
-      "TargetTypeSetting\022p\n\030positive_geo_target" +
-      "_type\030\001 \001(\0162N.google.ads.googleads.v4.en" +
-      "ums.PositiveGeoTargetTypeEnum.PositiveGe" +
-      "oTargetType\022p\n\030negative_geo_target_type\030" +
-      "\002 \001(\0162N.google.ads.googleads.v4.enums.Ne" +
-      "gativeGeoTargetTypeEnum.NegativeGeoTarge" +
-      "tType\032~\n\024LocalCampaignSetting\022f\n\024locatio" +
-      "n_source_type\030\001 \001(\0162H.google.ads.googlea" +
-      "ds.v4.enums.LocationSourceTypeEnum.Locat" +
-      "ionSourceType\032\272\002\n\022AppCampaignSetting\022\214\001\n" +
+      "leads.googleapis.com/Feed\032\201\001\n\025SelectiveO" +
+      "ptimization\022h\n\022conversion_actions\030\001 \003(\0132" +
+      "\034.google.protobuf.StringValueB.\372A+\n)goog" +
+      "leads.googleapis.com/ConversionAction\032\354\001" +
+      "\n\017ShoppingSetting\0225\n\013merchant_id\030\001 \001(\0132\033" +
+      ".google.protobuf.Int64ValueB\003\340A\005\0228\n\rsale" +
+      "s_country\030\002 \001(\0132\034.google.protobuf.String" +
+      "ValueB\003\340A\005\0226\n\021campaign_priority\030\003 \001(\0132\033." +
+      "google.protobuf.Int32Value\0220\n\014enable_loc" +
+      "al\030\004 \001(\0132\032.google.protobuf.BoolValue\032~\n\024" +
+      "LocalCampaignSetting\022f\n\024location_source_" +
+      "type\030\001 \001(\0162H.google.ads.googleads.v4.enu" +
+      "ms.LocationSourceTypeEnum.LocationSource" +
+      "Type\032J\n\017TrackingSetting\0227\n\014tracking_url\030" +
+      "\001 \001(\0132\034.google.protobuf.StringValueB\003\340A\003" +
+      "\032\372\001\n\024GeoTargetTypeSetting\022p\n\030positive_ge" +
+      "o_target_type\030\001 \001(\0162N.google.ads.googlea" +
+      "ds.v4.enums.PositiveGeoTargetTypeEnum.Po" +
+      "sitiveGeoTargetType\022p\n\030negative_geo_targ" +
+      "et_type\030\002 \001(\0162N.google.ads.googleads.v4." +
+      "enums.NegativeGeoTargetTypeEnum.Negative" +
+      "GeoTargetType\032\272\002\n\022AppCampaignSetting\022\214\001\n" +
       "\032bidding_strategy_goal_type\030\001 \001(\0162h.goog" +
       "le.ads.googleads.v4.enums.AppCampaignBid" +
       "dingStrategyGoalTypeEnum.AppCampaignBidd" +
@@ -267,16 +267,16 @@ public final class CampaignProto {
       "ogle.protobuf.StringValueB\003\340A\005\022b\n\tapp_st" +
       "ore\030\003 \001(\0162J.google.ads.googleads.v4.enum" +
       "s.AppCampaignAppStoreEnum.AppCampaignApp" +
-      "StoreB\003\340A\005\032\363\001\n\014VanityPharma\022\200\001\n\036vanity_p" +
-      "harma_display_url_mode\030\001 \001(\0162X.google.ad" +
-      "s.googleads.v4.enums.VanityPharmaDisplay" +
-      "UrlModeEnum.VanityPharmaDisplayUrlMode\022`" +
-      "\n\022vanity_pharma_text\030\002 \001(\0162D.google.ads." +
-      "googleads.v4.enums.VanityPharmaTextEnum." +
-      "VanityPharmaText\032\210\001\n\027OptimizationGoalSet" +
-      "ting\022m\n\027optimization_goal_types\030\001 \003(\0162L." +
-      "google.ads.googleads.v4.enums.Optimizati" +
-      "onGoalTypeEnum.OptimizationGoalType:Q\352AN" +
+      "StoreB\003\340A\005\032\210\001\n\027OptimizationGoalSetting\022m" +
+      "\n\027optimization_goal_types\030\001 \003(\0162L.google" +
+      ".ads.googleads.v4.enums.OptimizationGoal" +
+      "TypeEnum.OptimizationGoalType\032\363\001\n\014Vanity" +
+      "Pharma\022\200\001\n\036vanity_pharma_display_url_mod" +
+      "e\030\001 \001(\0162X.google.ads.googleads.v4.enums." +
+      "VanityPharmaDisplayUrlModeEnum.VanityPha" +
+      "rmaDisplayUrlMode\022`\n\022vanity_pharma_text\030" +
+      "\002 \001(\0162D.google.ads.googleads.v4.enums.Va" +
+      "nityPharmaTextEnum.VanityPharmaText:Q\352AN" +
       "\n!googleads.googleapis.com/Campaign\022)cus" +
       "tomers/{customer}/campaigns/{campaign}B\033" +
       "\n\031campaign_bidding_strategyB\372\001\n%com.goog" +
@@ -342,54 +342,54 @@ public final class CampaignProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_ads_googleads_v4_resources_Campaign_DynamicSearchAdsSetting_descriptor,
         new java.lang.String[] { "DomainName", "LanguageCode", "UseSuppliedUrlsOnly", "Feeds", });
-    internal_static_google_ads_googleads_v4_resources_Campaign_ShoppingSetting_descriptor =
-      internal_static_google_ads_googleads_v4_resources_Campaign_descriptor.getNestedTypes().get(3);
-    internal_static_google_ads_googleads_v4_resources_Campaign_ShoppingSetting_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_ads_googleads_v4_resources_Campaign_ShoppingSetting_descriptor,
-        new java.lang.String[] { "MerchantId", "SalesCountry", "CampaignPriority", "EnableLocal", });
     internal_static_google_ads_googleads_v4_resources_Campaign_SelectiveOptimization_descriptor =
-      internal_static_google_ads_googleads_v4_resources_Campaign_descriptor.getNestedTypes().get(4);
+      internal_static_google_ads_googleads_v4_resources_Campaign_descriptor.getNestedTypes().get(3);
     internal_static_google_ads_googleads_v4_resources_Campaign_SelectiveOptimization_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_ads_googleads_v4_resources_Campaign_SelectiveOptimization_descriptor,
         new java.lang.String[] { "ConversionActions", });
-    internal_static_google_ads_googleads_v4_resources_Campaign_TrackingSetting_descriptor =
+    internal_static_google_ads_googleads_v4_resources_Campaign_ShoppingSetting_descriptor =
+      internal_static_google_ads_googleads_v4_resources_Campaign_descriptor.getNestedTypes().get(4);
+    internal_static_google_ads_googleads_v4_resources_Campaign_ShoppingSetting_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_ads_googleads_v4_resources_Campaign_ShoppingSetting_descriptor,
+        new java.lang.String[] { "MerchantId", "SalesCountry", "CampaignPriority", "EnableLocal", });
+    internal_static_google_ads_googleads_v4_resources_Campaign_LocalCampaignSetting_descriptor =
       internal_static_google_ads_googleads_v4_resources_Campaign_descriptor.getNestedTypes().get(5);
+    internal_static_google_ads_googleads_v4_resources_Campaign_LocalCampaignSetting_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_ads_googleads_v4_resources_Campaign_LocalCampaignSetting_descriptor,
+        new java.lang.String[] { "LocationSourceType", });
+    internal_static_google_ads_googleads_v4_resources_Campaign_TrackingSetting_descriptor =
+      internal_static_google_ads_googleads_v4_resources_Campaign_descriptor.getNestedTypes().get(6);
     internal_static_google_ads_googleads_v4_resources_Campaign_TrackingSetting_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_ads_googleads_v4_resources_Campaign_TrackingSetting_descriptor,
         new java.lang.String[] { "TrackingUrl", });
     internal_static_google_ads_googleads_v4_resources_Campaign_GeoTargetTypeSetting_descriptor =
-      internal_static_google_ads_googleads_v4_resources_Campaign_descriptor.getNestedTypes().get(6);
+      internal_static_google_ads_googleads_v4_resources_Campaign_descriptor.getNestedTypes().get(7);
     internal_static_google_ads_googleads_v4_resources_Campaign_GeoTargetTypeSetting_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_ads_googleads_v4_resources_Campaign_GeoTargetTypeSetting_descriptor,
         new java.lang.String[] { "PositiveGeoTargetType", "NegativeGeoTargetType", });
-    internal_static_google_ads_googleads_v4_resources_Campaign_LocalCampaignSetting_descriptor =
-      internal_static_google_ads_googleads_v4_resources_Campaign_descriptor.getNestedTypes().get(7);
-    internal_static_google_ads_googleads_v4_resources_Campaign_LocalCampaignSetting_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_ads_googleads_v4_resources_Campaign_LocalCampaignSetting_descriptor,
-        new java.lang.String[] { "LocationSourceType", });
     internal_static_google_ads_googleads_v4_resources_Campaign_AppCampaignSetting_descriptor =
       internal_static_google_ads_googleads_v4_resources_Campaign_descriptor.getNestedTypes().get(8);
     internal_static_google_ads_googleads_v4_resources_Campaign_AppCampaignSetting_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_ads_googleads_v4_resources_Campaign_AppCampaignSetting_descriptor,
         new java.lang.String[] { "BiddingStrategyGoalType", "AppId", "AppStore", });
-    internal_static_google_ads_googleads_v4_resources_Campaign_VanityPharma_descriptor =
-      internal_static_google_ads_googleads_v4_resources_Campaign_descriptor.getNestedTypes().get(9);
-    internal_static_google_ads_googleads_v4_resources_Campaign_VanityPharma_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_ads_googleads_v4_resources_Campaign_VanityPharma_descriptor,
-        new java.lang.String[] { "VanityPharmaDisplayUrlMode", "VanityPharmaText", });
     internal_static_google_ads_googleads_v4_resources_Campaign_OptimizationGoalSetting_descriptor =
-      internal_static_google_ads_googleads_v4_resources_Campaign_descriptor.getNestedTypes().get(10);
+      internal_static_google_ads_googleads_v4_resources_Campaign_descriptor.getNestedTypes().get(9);
     internal_static_google_ads_googleads_v4_resources_Campaign_OptimizationGoalSetting_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_ads_googleads_v4_resources_Campaign_OptimizationGoalSetting_descriptor,
         new java.lang.String[] { "OptimizationGoalTypes", });
+    internal_static_google_ads_googleads_v4_resources_Campaign_VanityPharma_descriptor =
+      internal_static_google_ads_googleads_v4_resources_Campaign_descriptor.getNestedTypes().get(10);
+    internal_static_google_ads_googleads_v4_resources_Campaign_VanityPharma_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_ads_googleads_v4_resources_Campaign_VanityPharma_descriptor,
+        new java.lang.String[] { "VanityPharmaDisplayUrlMode", "VanityPharmaText", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);

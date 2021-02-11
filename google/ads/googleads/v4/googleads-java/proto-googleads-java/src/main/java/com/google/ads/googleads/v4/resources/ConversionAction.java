@@ -4186,7 +4186,7 @@ private static final long serialVersionUID = 0L;
    * is a system-defined conversion action.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return Whether the ownerCustomer field is set.
    */
   @java.lang.Override
@@ -4199,7 +4199,7 @@ private static final long serialVersionUID = 0L;
    * is a system-defined conversion action.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The ownerCustomer.
    */
   @java.lang.Override
@@ -4212,7 +4212,7 @@ private static final long serialVersionUID = 0L;
    * is a system-defined conversion action.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.StringValueOrBuilder getOwnerCustomerOrBuilder() {
@@ -6161,7 +6161,7 @@ private static final long serialVersionUID = 0L;
      * is a system-defined conversion action.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return Whether the ownerCustomer field is set.
      */
     public boolean hasOwnerCustomer() {
@@ -6173,7 +6173,7 @@ private static final long serialVersionUID = 0L;
      * is a system-defined conversion action.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return The ownerCustomer.
      */
     public com.google.protobuf.StringValue getOwnerCustomer() {
@@ -6189,7 +6189,7 @@ private static final long serialVersionUID = 0L;
      * is a system-defined conversion action.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     public Builder setOwnerCustomer(com.google.protobuf.StringValue value) {
       if (ownerCustomerBuilder_ == null) {
@@ -6210,7 +6210,7 @@ private static final long serialVersionUID = 0L;
      * is a system-defined conversion action.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     public Builder setOwnerCustomer(
         com.google.protobuf.StringValue.Builder builderForValue) {
@@ -6229,7 +6229,7 @@ private static final long serialVersionUID = 0L;
      * is a system-defined conversion action.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     public Builder mergeOwnerCustomer(com.google.protobuf.StringValue value) {
       if (ownerCustomerBuilder_ == null) {
@@ -6252,7 +6252,7 @@ private static final long serialVersionUID = 0L;
      * is a system-defined conversion action.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     public Builder clearOwnerCustomer() {
       if (ownerCustomerBuilder_ == null) {
@@ -6271,7 +6271,7 @@ private static final long serialVersionUID = 0L;
      * is a system-defined conversion action.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     public com.google.protobuf.StringValue.Builder getOwnerCustomerBuilder() {
       
@@ -6284,7 +6284,7 @@ private static final long serialVersionUID = 0L;
      * is a system-defined conversion action.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     public com.google.protobuf.StringValueOrBuilder getOwnerCustomerOrBuilder() {
       if (ownerCustomerBuilder_ != null) {
@@ -6300,7 +6300,7 @@ private static final long serialVersionUID = 0L;
      * is a system-defined conversion action.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 

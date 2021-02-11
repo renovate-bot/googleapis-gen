@@ -20,8 +20,8 @@ class PaymentsAccount
         \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Å
-8google/ads/googleads/v4/resources/payments_account.proto!google.ads.googleads.v4.resourcesgoogle/api/resource.protogoogle/protobuf/wrappers.protogoogle/api/annotations.proto"º
+ß
+8google/ads/googleads/v4/resources/payments_account.proto!google.ads.googleads.v4.resourcesgoogle/api/resource.protogoogle/protobuf/wrappers.protogoogle/api/annotations.proto"‚
 PaymentsAccountG
 resource_name (	B0‡A˙A*
 (googleads.googleapis.com/PaymentsAccount>
@@ -29,8 +29,9 @@ class PaymentsAccount
 name (2.google.protobuf.StringValueB‡A8
 currency_code (2.google.protobuf.StringValueB‡A>
 payments_profile_id (2.google.protobuf.StringValueB‡AH
-secondary_payments_profile_id (2.google.protobuf.StringValueB‡AB
-paying_manager_customer (2.google.protobuf.StringValueB‡A:gÍAd
+secondary_payments_profile_id (2.google.protobuf.StringValueB‡Ah
+paying_manager_customer (2.google.protobuf.StringValueB)‡A˙A#
+!googleads.googleapis.com/Customer:gÍAd
 (googleads.googleapis.com/PaymentsAccount8customers/{customer}/paymentsAccounts/{payments_account}BÅ
 %com.google.ads.googleads.v4.resourcesBPaymentsAccountProtoPZJgoogle.golang.org/genproto/googleapis/ads/googleads/v4/resources;resources¢GAA™!Google.Ads.GoogleAds.V4.Resources !Google\\Ads\\GoogleAds\\V4\\ResourcesÍ%Google::Ads::GoogleAds::V4::Resourcesbproto3'
         , true);

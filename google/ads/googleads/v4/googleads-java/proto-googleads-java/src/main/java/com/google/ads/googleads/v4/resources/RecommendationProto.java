@@ -45,15 +45,30 @@ public final class RecommendationProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_ads_googleads_v4_resources_Recommendation_KeywordRecommendation_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_ads_googleads_v4_resources_Recommendation_CalloutExtensionRecommendation_descriptor;
+    internal_static_google_ads_googleads_v4_resources_Recommendation_KeywordMatchTypeRecommendation_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_ads_googleads_v4_resources_Recommendation_CalloutExtensionRecommendation_fieldAccessorTable;
+      internal_static_google_ads_googleads_v4_resources_Recommendation_KeywordMatchTypeRecommendation_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_ads_googleads_v4_resources_Recommendation_TextAdRecommendation_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_ads_googleads_v4_resources_Recommendation_TextAdRecommendation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_ads_googleads_v4_resources_Recommendation_MaximizeConversionsOptInRecommendation_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_googleads_v4_resources_Recommendation_MaximizeConversionsOptInRecommendation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_ads_googleads_v4_resources_Recommendation_MaximizeClicksOptInRecommendation_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_googleads_v4_resources_Recommendation_MaximizeClicksOptInRecommendation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_ads_googleads_v4_resources_Recommendation_CalloutExtensionRecommendation_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_googleads_v4_resources_Recommendation_CalloutExtensionRecommendation_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_ads_googleads_v4_resources_Recommendation_TargetCpaOptInRecommendation_descriptor;
   static final 
@@ -65,50 +80,35 @@ public final class RecommendationProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_ads_googleads_v4_resources_Recommendation_TargetCpaOptInRecommendation_TargetCpaOptInRecommendationOption_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_ads_googleads_v4_resources_Recommendation_OptimizeAdRotationRecommendation_descriptor;
+    internal_static_google_ads_googleads_v4_resources_Recommendation_EnhancedCpcOptInRecommendation_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_ads_googleads_v4_resources_Recommendation_OptimizeAdRotationRecommendation_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_ads_googleads_v4_resources_Recommendation_MoveUnusedBudgetRecommendation_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_ads_googleads_v4_resources_Recommendation_MoveUnusedBudgetRecommendation_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_ads_googleads_v4_resources_Recommendation_MaximizeConversionsOptInRecommendation_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_ads_googleads_v4_resources_Recommendation_MaximizeConversionsOptInRecommendation_fieldAccessorTable;
+      internal_static_google_ads_googleads_v4_resources_Recommendation_EnhancedCpcOptInRecommendation_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_ads_googleads_v4_resources_Recommendation_SearchPartnersOptInRecommendation_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_ads_googleads_v4_resources_Recommendation_SearchPartnersOptInRecommendation_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_ads_googleads_v4_resources_Recommendation_CallExtensionRecommendation_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_ads_googleads_v4_resources_Recommendation_CallExtensionRecommendation_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_ads_googleads_v4_resources_Recommendation_EnhancedCpcOptInRecommendation_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_ads_googleads_v4_resources_Recommendation_EnhancedCpcOptInRecommendation_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_ads_googleads_v4_resources_Recommendation_MaximizeClicksOptInRecommendation_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_ads_googleads_v4_resources_Recommendation_MaximizeClicksOptInRecommendation_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_ads_googleads_v4_resources_Recommendation_SitelinkExtensionRecommendation_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_ads_googleads_v4_resources_Recommendation_SitelinkExtensionRecommendation_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_ads_googleads_v4_resources_Recommendation_KeywordMatchTypeRecommendation_descriptor;
+    internal_static_google_ads_googleads_v4_resources_Recommendation_OptimizeAdRotationRecommendation_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_ads_googleads_v4_resources_Recommendation_KeywordMatchTypeRecommendation_fieldAccessorTable;
+      internal_static_google_ads_googleads_v4_resources_Recommendation_OptimizeAdRotationRecommendation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_ads_googleads_v4_resources_Recommendation_CallExtensionRecommendation_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_googleads_v4_resources_Recommendation_CallExtensionRecommendation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_ads_googleads_v4_resources_Recommendation_MoveUnusedBudgetRecommendation_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_googleads_v4_resources_Recommendation_MoveUnusedBudgetRecommendation_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -223,15 +223,26 @@ public final class RecommendationProto {
       "d\030\001 \001(\0132+.google.ads.googleads.v4.common" +
       ".KeywordInfoB\003\340A\003\022D\n\032recommended_cpc_bid" +
       "_micros\030\002 \001(\0132\033.google.protobuf.Int64Val" +
-      "ueB\003\340A\003\032v\n\036CalloutExtensionRecommendatio" +
-      "n\022T\n\026recommended_extensions\030\001 \003(\0132/.goog" +
-      "le.ads.googleads.v4.common.CalloutFeedIt" +
-      "emB\003\340A\003\032\304\001\n\024TextAdRecommendation\0226\n\002ad\030\001" +
-      " \001(\0132%.google.ads.googleads.v4.resources" +
-      ".AdB\003\340A\003\0228\n\rcreation_date\030\002 \001(\0132\034.google" +
-      ".protobuf.StringValueB\003\340A\003\022:\n\017auto_apply" +
-      "_date\030\003 \001(\0132\034.google.protobuf.StringValu" +
-      "eB\003\340A\003\032\375\004\n\034TargetCpaOptInRecommendation\022" +
+      "ueB\003\340A\003\032\316\001\n\036KeywordMatchTypeRecommendati" +
+      "on\022A\n\007keyword\030\001 \001(\0132+.google.ads.googlea" +
+      "ds.v4.common.KeywordInfoB\003\340A\003\022i\n\026recomme" +
+      "nded_match_type\030\002 \001(\0162D.google.ads.googl" +
+      "eads.v4.enums.KeywordMatchTypeEnum.Keywo" +
+      "rdMatchTypeB\003\340A\003\032\304\001\n\024TextAdRecommendatio" +
+      "n\0226\n\002ad\030\001 \001(\0132%.google.ads.googleads.v4." +
+      "resources.AdB\003\340A\003\0228\n\rcreation_date\030\002 \001(\013" +
+      "2\034.google.protobuf.StringValueB\003\340A\003\022:\n\017a" +
+      "uto_apply_date\030\003 \001(\0132\034.google.protobuf.S" +
+      "tringValueB\003\340A\003\032t\n&MaximizeConversionsOp" +
+      "tInRecommendation\022J\n recommended_budget_" +
+      "amount_micros\030\001 \001(\0132\033.google.protobuf.In" +
+      "t64ValueB\003\340A\003\032o\n!MaximizeClicksOptInReco" +
+      "mmendation\022J\n recommended_budget_amount_" +
+      "micros\030\001 \001(\0132\033.google.protobuf.Int64Valu" +
+      "eB\003\340A\003\032v\n\036CalloutExtensionRecommendation" +
+      "\022T\n\026recommended_extensions\030\001 \003(\0132/.googl" +
+      "e.ads.googleads.v4.common.CalloutFeedIte" +
+      "mB\003\340A\003\032\375\004\n\034TargetCpaOptInRecommendation\022" +
       "\207\001\n\007options\030\001 \003(\0132q.google.ads.googleads" +
       ".v4.resources.Recommendation.TargetCpaOp" +
       "tInRecommendation.TargetCpaOptInRecommen" +
@@ -247,32 +258,21 @@ public final class RecommendationProto {
       "\033.google.protobuf.Int64ValueB\003\340A\003\022[\n\006imp" +
       "act\030\004 \001(\0132F.google.ads.googleads.v4.reso" +
       "urces.Recommendation.RecommendationImpac" +
-      "tB\003\340A\003\032\"\n OptimizeAdRotationRecommendati" +
-      "on\032\327\001\n\036MoveUnusedBudgetRecommendation\022A\n" +
-      "\026excess_campaign_budget\030\001 \001(\0132\034.google.p" +
-      "rotobuf.StringValueB\003\340A\003\022r\n\025budget_recom" +
-      "mendation\030\002 \001(\0132N.google.ads.googleads.v" +
-      "4.resources.Recommendation.CampaignBudge" +
-      "tRecommendationB\003\340A\003\032t\n&MaximizeConversi" +
-      "onsOptInRecommendation\022J\n recommended_bu" +
-      "dget_amount_micros\030\001 \001(\0132\033.google.protob" +
-      "uf.Int64ValueB\003\340A\003\032#\n!SearchPartnersOptI" +
-      "nRecommendation\032p\n\033CallExtensionRecommen" +
-      "dation\022Q\n\026recommended_extensions\030\001 \003(\0132," +
-      ".google.ads.googleads.v4.common.CallFeed" +
-      "ItemB\003\340A\003\032 \n\036EnhancedCpcOptInRecommendat" +
-      "ion\032o\n!MaximizeClicksOptInRecommendation" +
-      "\022J\n recommended_budget_amount_micros\030\001 \001" +
-      "(\0132\033.google.protobuf.Int64ValueB\003\340A\003\032x\n\037" +
-      "SitelinkExtensionRecommendation\022U\n\026recom" +
-      "mended_extensions\030\001 \003(\01320.google.ads.goo" +
-      "gleads.v4.common.SitelinkFeedItemB\003\340A\003\032\316" +
-      "\001\n\036KeywordMatchTypeRecommendation\022A\n\007key" +
-      "word\030\001 \001(\0132+.google.ads.googleads.v4.com" +
-      "mon.KeywordInfoB\003\340A\003\022i\n\026recommended_matc" +
-      "h_type\030\002 \001(\0162D.google.ads.googleads.v4.e" +
-      "nums.KeywordMatchTypeEnum.KeywordMatchTy" +
-      "peB\003\340A\003:c\352A`\n\'googleads.googleapis.com/R" +
+      "tB\003\340A\003\032 \n\036EnhancedCpcOptInRecommendation" +
+      "\032#\n!SearchPartnersOptInRecommendation\032x\n" +
+      "\037SitelinkExtensionRecommendation\022U\n\026reco" +
+      "mmended_extensions\030\001 \003(\01320.google.ads.go" +
+      "ogleads.v4.common.SitelinkFeedItemB\003\340A\003\032" +
+      "\"\n OptimizeAdRotationRecommendation\032p\n\033C" +
+      "allExtensionRecommendation\022Q\n\026recommende" +
+      "d_extensions\030\001 \003(\0132,.google.ads.googlead" +
+      "s.v4.common.CallFeedItemB\003\340A\003\032\327\001\n\036MoveUn" +
+      "usedBudgetRecommendation\022A\n\026excess_campa" +
+      "ign_budget\030\001 \001(\0132\034.google.protobuf.Strin" +
+      "gValueB\003\340A\003\022r\n\025budget_recommendation\030\002 \001" +
+      "(\0132N.google.ads.googleads.v4.resources.R" +
+      "ecommendation.CampaignBudgetRecommendati" +
+      "onB\003\340A\003:c\352A`\n\'googleads.googleapis.com/R" +
       "ecommendation\0225customers/{customer}/reco" +
       "mmendations/{recommendation}B\020\n\016recommen" +
       "dationB\200\002\n%com.google.ads.googleads.v4.r" +
@@ -333,20 +333,38 @@ public final class RecommendationProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_ads_googleads_v4_resources_Recommendation_KeywordRecommendation_descriptor,
         new java.lang.String[] { "Keyword", "RecommendedCpcBidMicros", });
-    internal_static_google_ads_googleads_v4_resources_Recommendation_CalloutExtensionRecommendation_descriptor =
+    internal_static_google_ads_googleads_v4_resources_Recommendation_KeywordMatchTypeRecommendation_descriptor =
       internal_static_google_ads_googleads_v4_resources_Recommendation_descriptor.getNestedTypes().get(4);
-    internal_static_google_ads_googleads_v4_resources_Recommendation_CalloutExtensionRecommendation_fieldAccessorTable = new
+    internal_static_google_ads_googleads_v4_resources_Recommendation_KeywordMatchTypeRecommendation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_ads_googleads_v4_resources_Recommendation_CalloutExtensionRecommendation_descriptor,
-        new java.lang.String[] { "RecommendedExtensions", });
+        internal_static_google_ads_googleads_v4_resources_Recommendation_KeywordMatchTypeRecommendation_descriptor,
+        new java.lang.String[] { "Keyword", "RecommendedMatchType", });
     internal_static_google_ads_googleads_v4_resources_Recommendation_TextAdRecommendation_descriptor =
       internal_static_google_ads_googleads_v4_resources_Recommendation_descriptor.getNestedTypes().get(5);
     internal_static_google_ads_googleads_v4_resources_Recommendation_TextAdRecommendation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_ads_googleads_v4_resources_Recommendation_TextAdRecommendation_descriptor,
         new java.lang.String[] { "Ad", "CreationDate", "AutoApplyDate", });
-    internal_static_google_ads_googleads_v4_resources_Recommendation_TargetCpaOptInRecommendation_descriptor =
+    internal_static_google_ads_googleads_v4_resources_Recommendation_MaximizeConversionsOptInRecommendation_descriptor =
       internal_static_google_ads_googleads_v4_resources_Recommendation_descriptor.getNestedTypes().get(6);
+    internal_static_google_ads_googleads_v4_resources_Recommendation_MaximizeConversionsOptInRecommendation_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_ads_googleads_v4_resources_Recommendation_MaximizeConversionsOptInRecommendation_descriptor,
+        new java.lang.String[] { "RecommendedBudgetAmountMicros", });
+    internal_static_google_ads_googleads_v4_resources_Recommendation_MaximizeClicksOptInRecommendation_descriptor =
+      internal_static_google_ads_googleads_v4_resources_Recommendation_descriptor.getNestedTypes().get(7);
+    internal_static_google_ads_googleads_v4_resources_Recommendation_MaximizeClicksOptInRecommendation_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_ads_googleads_v4_resources_Recommendation_MaximizeClicksOptInRecommendation_descriptor,
+        new java.lang.String[] { "RecommendedBudgetAmountMicros", });
+    internal_static_google_ads_googleads_v4_resources_Recommendation_CalloutExtensionRecommendation_descriptor =
+      internal_static_google_ads_googleads_v4_resources_Recommendation_descriptor.getNestedTypes().get(8);
+    internal_static_google_ads_googleads_v4_resources_Recommendation_CalloutExtensionRecommendation_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_ads_googleads_v4_resources_Recommendation_CalloutExtensionRecommendation_descriptor,
+        new java.lang.String[] { "RecommendedExtensions", });
+    internal_static_google_ads_googleads_v4_resources_Recommendation_TargetCpaOptInRecommendation_descriptor =
+      internal_static_google_ads_googleads_v4_resources_Recommendation_descriptor.getNestedTypes().get(9);
     internal_static_google_ads_googleads_v4_resources_Recommendation_TargetCpaOptInRecommendation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_ads_googleads_v4_resources_Recommendation_TargetCpaOptInRecommendation_descriptor,
@@ -357,60 +375,42 @@ public final class RecommendationProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_ads_googleads_v4_resources_Recommendation_TargetCpaOptInRecommendation_TargetCpaOptInRecommendationOption_descriptor,
         new java.lang.String[] { "Goal", "TargetCpaMicros", "RequiredCampaignBudgetAmountMicros", "Impact", });
-    internal_static_google_ads_googleads_v4_resources_Recommendation_OptimizeAdRotationRecommendation_descriptor =
-      internal_static_google_ads_googleads_v4_resources_Recommendation_descriptor.getNestedTypes().get(7);
-    internal_static_google_ads_googleads_v4_resources_Recommendation_OptimizeAdRotationRecommendation_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_ads_googleads_v4_resources_Recommendation_OptimizeAdRotationRecommendation_descriptor,
-        new java.lang.String[] { });
-    internal_static_google_ads_googleads_v4_resources_Recommendation_MoveUnusedBudgetRecommendation_descriptor =
-      internal_static_google_ads_googleads_v4_resources_Recommendation_descriptor.getNestedTypes().get(8);
-    internal_static_google_ads_googleads_v4_resources_Recommendation_MoveUnusedBudgetRecommendation_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_ads_googleads_v4_resources_Recommendation_MoveUnusedBudgetRecommendation_descriptor,
-        new java.lang.String[] { "ExcessCampaignBudget", "BudgetRecommendation", });
-    internal_static_google_ads_googleads_v4_resources_Recommendation_MaximizeConversionsOptInRecommendation_descriptor =
-      internal_static_google_ads_googleads_v4_resources_Recommendation_descriptor.getNestedTypes().get(9);
-    internal_static_google_ads_googleads_v4_resources_Recommendation_MaximizeConversionsOptInRecommendation_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_ads_googleads_v4_resources_Recommendation_MaximizeConversionsOptInRecommendation_descriptor,
-        new java.lang.String[] { "RecommendedBudgetAmountMicros", });
-    internal_static_google_ads_googleads_v4_resources_Recommendation_SearchPartnersOptInRecommendation_descriptor =
-      internal_static_google_ads_googleads_v4_resources_Recommendation_descriptor.getNestedTypes().get(10);
-    internal_static_google_ads_googleads_v4_resources_Recommendation_SearchPartnersOptInRecommendation_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_ads_googleads_v4_resources_Recommendation_SearchPartnersOptInRecommendation_descriptor,
-        new java.lang.String[] { });
-    internal_static_google_ads_googleads_v4_resources_Recommendation_CallExtensionRecommendation_descriptor =
-      internal_static_google_ads_googleads_v4_resources_Recommendation_descriptor.getNestedTypes().get(11);
-    internal_static_google_ads_googleads_v4_resources_Recommendation_CallExtensionRecommendation_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_ads_googleads_v4_resources_Recommendation_CallExtensionRecommendation_descriptor,
-        new java.lang.String[] { "RecommendedExtensions", });
     internal_static_google_ads_googleads_v4_resources_Recommendation_EnhancedCpcOptInRecommendation_descriptor =
-      internal_static_google_ads_googleads_v4_resources_Recommendation_descriptor.getNestedTypes().get(12);
+      internal_static_google_ads_googleads_v4_resources_Recommendation_descriptor.getNestedTypes().get(10);
     internal_static_google_ads_googleads_v4_resources_Recommendation_EnhancedCpcOptInRecommendation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_ads_googleads_v4_resources_Recommendation_EnhancedCpcOptInRecommendation_descriptor,
         new java.lang.String[] { });
-    internal_static_google_ads_googleads_v4_resources_Recommendation_MaximizeClicksOptInRecommendation_descriptor =
-      internal_static_google_ads_googleads_v4_resources_Recommendation_descriptor.getNestedTypes().get(13);
-    internal_static_google_ads_googleads_v4_resources_Recommendation_MaximizeClicksOptInRecommendation_fieldAccessorTable = new
+    internal_static_google_ads_googleads_v4_resources_Recommendation_SearchPartnersOptInRecommendation_descriptor =
+      internal_static_google_ads_googleads_v4_resources_Recommendation_descriptor.getNestedTypes().get(11);
+    internal_static_google_ads_googleads_v4_resources_Recommendation_SearchPartnersOptInRecommendation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_ads_googleads_v4_resources_Recommendation_MaximizeClicksOptInRecommendation_descriptor,
-        new java.lang.String[] { "RecommendedBudgetAmountMicros", });
+        internal_static_google_ads_googleads_v4_resources_Recommendation_SearchPartnersOptInRecommendation_descriptor,
+        new java.lang.String[] { });
     internal_static_google_ads_googleads_v4_resources_Recommendation_SitelinkExtensionRecommendation_descriptor =
-      internal_static_google_ads_googleads_v4_resources_Recommendation_descriptor.getNestedTypes().get(14);
+      internal_static_google_ads_googleads_v4_resources_Recommendation_descriptor.getNestedTypes().get(12);
     internal_static_google_ads_googleads_v4_resources_Recommendation_SitelinkExtensionRecommendation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_ads_googleads_v4_resources_Recommendation_SitelinkExtensionRecommendation_descriptor,
         new java.lang.String[] { "RecommendedExtensions", });
-    internal_static_google_ads_googleads_v4_resources_Recommendation_KeywordMatchTypeRecommendation_descriptor =
-      internal_static_google_ads_googleads_v4_resources_Recommendation_descriptor.getNestedTypes().get(15);
-    internal_static_google_ads_googleads_v4_resources_Recommendation_KeywordMatchTypeRecommendation_fieldAccessorTable = new
+    internal_static_google_ads_googleads_v4_resources_Recommendation_OptimizeAdRotationRecommendation_descriptor =
+      internal_static_google_ads_googleads_v4_resources_Recommendation_descriptor.getNestedTypes().get(13);
+    internal_static_google_ads_googleads_v4_resources_Recommendation_OptimizeAdRotationRecommendation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_ads_googleads_v4_resources_Recommendation_KeywordMatchTypeRecommendation_descriptor,
-        new java.lang.String[] { "Keyword", "RecommendedMatchType", });
+        internal_static_google_ads_googleads_v4_resources_Recommendation_OptimizeAdRotationRecommendation_descriptor,
+        new java.lang.String[] { });
+    internal_static_google_ads_googleads_v4_resources_Recommendation_CallExtensionRecommendation_descriptor =
+      internal_static_google_ads_googleads_v4_resources_Recommendation_descriptor.getNestedTypes().get(14);
+    internal_static_google_ads_googleads_v4_resources_Recommendation_CallExtensionRecommendation_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_ads_googleads_v4_resources_Recommendation_CallExtensionRecommendation_descriptor,
+        new java.lang.String[] { "RecommendedExtensions", });
+    internal_static_google_ads_googleads_v4_resources_Recommendation_MoveUnusedBudgetRecommendation_descriptor =
+      internal_static_google_ads_googleads_v4_resources_Recommendation_descriptor.getNestedTypes().get(15);
+    internal_static_google_ads_googleads_v4_resources_Recommendation_MoveUnusedBudgetRecommendation_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_ads_googleads_v4_resources_Recommendation_MoveUnusedBudgetRecommendation_descriptor,
+        new java.lang.String[] { "ExcessCampaignBudget", "BudgetRecommendation", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);

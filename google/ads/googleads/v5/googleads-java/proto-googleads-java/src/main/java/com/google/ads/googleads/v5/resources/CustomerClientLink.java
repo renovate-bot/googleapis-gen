@@ -194,7 +194,7 @@ private static final long serialVersionUID = 0L;
    * Immutable. The client customer linked to this customer.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
    * @return Whether the clientCustomer field is set.
    */
   @java.lang.Override
@@ -206,7 +206,7 @@ private static final long serialVersionUID = 0L;
    * Immutable. The client customer linked to this customer.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
    * @return The clientCustomer.
    */
   @java.lang.Override
@@ -218,7 +218,7 @@ private static final long serialVersionUID = 0L;
    * Immutable. The client customer linked to this customer.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.StringValueOrBuilder getClientCustomerOrBuilder() {
@@ -860,7 +860,7 @@ private static final long serialVersionUID = 0L;
      * Immutable. The client customer linked to this customer.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      * @return Whether the clientCustomer field is set.
      */
     public boolean hasClientCustomer() {
@@ -871,7 +871,7 @@ private static final long serialVersionUID = 0L;
      * Immutable. The client customer linked to this customer.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      * @return The clientCustomer.
      */
     public com.google.protobuf.StringValue getClientCustomer() {
@@ -886,7 +886,7 @@ private static final long serialVersionUID = 0L;
      * Immutable. The client customer linked to this customer.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      */
     public Builder setClientCustomer(com.google.protobuf.StringValue value) {
       if (clientCustomerBuilder_ == null) {
@@ -906,7 +906,7 @@ private static final long serialVersionUID = 0L;
      * Immutable. The client customer linked to this customer.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      */
     public Builder setClientCustomer(
         com.google.protobuf.StringValue.Builder builderForValue) {
@@ -924,7 +924,7 @@ private static final long serialVersionUID = 0L;
      * Immutable. The client customer linked to this customer.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      */
     public Builder mergeClientCustomer(com.google.protobuf.StringValue value) {
       if (clientCustomerBuilder_ == null) {
@@ -946,7 +946,7 @@ private static final long serialVersionUID = 0L;
      * Immutable. The client customer linked to this customer.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      */
     public Builder clearClientCustomer() {
       if (clientCustomerBuilder_ == null) {
@@ -964,7 +964,7 @@ private static final long serialVersionUID = 0L;
      * Immutable. The client customer linked to this customer.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      */
     public com.google.protobuf.StringValue.Builder getClientCustomerBuilder() {
       
@@ -976,7 +976,7 @@ private static final long serialVersionUID = 0L;
      * Immutable. The client customer linked to this customer.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      */
     public com.google.protobuf.StringValueOrBuilder getClientCustomerOrBuilder() {
       if (clientCustomerBuilder_ != null) {
@@ -991,7 +991,7 @@ private static final long serialVersionUID = 0L;
      * Immutable. The client customer linked to this customer.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 

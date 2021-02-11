@@ -3717,7 +3717,7 @@ private static final long serialVersionUID = 0L;
    * is a system-defined conversion action.
    * </pre>
    *
-   * <code>string owner_customer = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string owner_customer = 23 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return Whether the ownerCustomer field is set.
    */
   @java.lang.Override
@@ -3730,7 +3730,7 @@ private static final long serialVersionUID = 0L;
    * is a system-defined conversion action.
    * </pre>
    *
-   * <code>string owner_customer = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string owner_customer = 23 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The ownerCustomer.
    */
   @java.lang.Override
@@ -3752,7 +3752,7 @@ private static final long serialVersionUID = 0L;
    * is a system-defined conversion action.
    * </pre>
    *
-   * <code>string owner_customer = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string owner_customer = 23 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for ownerCustomer.
    */
   @java.lang.Override
@@ -5497,7 +5497,7 @@ private static final long serialVersionUID = 0L;
      * is a system-defined conversion action.
      * </pre>
      *
-     * <code>string owner_customer = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string owner_customer = 23 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return Whether the ownerCustomer field is set.
      */
     public boolean hasOwnerCustomer() {
@@ -5509,7 +5509,7 @@ private static final long serialVersionUID = 0L;
      * is a system-defined conversion action.
      * </pre>
      *
-     * <code>string owner_customer = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string owner_customer = 23 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return The ownerCustomer.
      */
     public java.lang.String getOwnerCustomer() {
@@ -5530,7 +5530,7 @@ private static final long serialVersionUID = 0L;
      * is a system-defined conversion action.
      * </pre>
      *
-     * <code>string owner_customer = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string owner_customer = 23 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for ownerCustomer.
      */
     public com.google.protobuf.ByteString
@@ -5552,7 +5552,7 @@ private static final long serialVersionUID = 0L;
      * is a system-defined conversion action.
      * </pre>
      *
-     * <code>string owner_customer = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string owner_customer = 23 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @param value The ownerCustomer to set.
      * @return This builder for chaining.
      */
@@ -5572,7 +5572,7 @@ private static final long serialVersionUID = 0L;
      * is a system-defined conversion action.
      * </pre>
      *
-     * <code>string owner_customer = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string owner_customer = 23 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearOwnerCustomer() {
@@ -5587,7 +5587,7 @@ private static final long serialVersionUID = 0L;
      * is a system-defined conversion action.
      * </pre>
      *
-     * <code>string owner_customer = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string owner_customer = 23 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for ownerCustomer to set.
      * @return This builder for chaining.
      */

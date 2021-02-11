@@ -20,13 +20,15 @@ class CustomerLabel
         \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             '
-á
-6google/ads/googleads/v4/resources/customer_label.proto!google.ads.googleads.v4.resourcesgoogle/api/resource.protogoogle/protobuf/wrappers.protogoogle/api/annotations.proto" 
+ª
+6google/ads/googleads/v4/resources/customer_label.proto!google.ads.googleads.v4.resourcesgoogle/api/resource.protogoogle/protobuf/wrappers.protogoogle/api/annotations.proto"é
 CustomerLabelE
 resource_name (	B.àAúA(
-&googleads.googleapis.com/CustomerLabel3
-customer (2.google.protobuf.StringValueBàA0
-label (2.google.protobuf.StringValueBàA:aêA^
+&googleads.googleapis.com/CustomerLabelY
+customer (2.google.protobuf.StringValueB)àAúA#
+!googleads.googleapis.com/CustomerS
+label (2.google.protobuf.StringValueB&àAúA 
+googleads.googleapis.com/Label:aêA^
 &googleads.googleapis.com/CustomerLabel4customers/{customer}/customerLabels/{customer_label}Bÿ
 %com.google.ads.googleads.v4.resourcesBCustomerLabelProtoPZJgoogle.golang.org/genproto/googleapis/ads/googleads/v4/resources;resources¢GAAª!Google.Ads.GoogleAds.V4.ResourcesÊ!Google\\Ads\\GoogleAds\\V4\\Resourcesê%Google::Ads::GoogleAds::V4::Resourcesbproto3'
         , true);

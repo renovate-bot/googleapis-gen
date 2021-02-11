@@ -5,7 +5,8 @@ package com.google.ads.googleads.v5.resources;
 
 /**
  * <pre>
- * Describes the status of returned resource.
+ * Describes the status of returned resource. ChangeStatus could have up to 3
+ * minutes delay to reflect a new change.
  * </pre>
  *
  * Protobuf type {@code google.ads.googleads.v5.resources.ChangeStatus}
@@ -1154,7 +1155,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Describes the status of returned resource.
+   * Describes the status of returned resource. ChangeStatus could have up to 3
+   * minutes delay to reflect a new change.
    * </pre>
    *
    * Protobuf type {@code google.ads.googleads.v5.resources.ChangeStatus}

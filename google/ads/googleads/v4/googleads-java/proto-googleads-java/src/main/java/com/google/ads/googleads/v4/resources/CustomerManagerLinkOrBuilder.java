@@ -36,7 +36,7 @@ public interface CustomerManagerLinkOrBuilder extends
    * Output only. The manager customer linked to the customer.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return Whether the managerCustomer field is set.
    */
   boolean hasManagerCustomer();
@@ -45,7 +45,7 @@ public interface CustomerManagerLinkOrBuilder extends
    * Output only. The manager customer linked to the customer.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The managerCustomer.
    */
   com.google.protobuf.StringValue getManagerCustomer();
@@ -54,7 +54,7 @@ public interface CustomerManagerLinkOrBuilder extends
    * Output only. The manager customer linked to the customer.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    */
   com.google.protobuf.StringValueOrBuilder getManagerCustomerOrBuilder();
 

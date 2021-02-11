@@ -428,7 +428,7 @@ private static final long serialVersionUID = 0L;
    * Output only. Paying manager of this payment account.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return Whether the payingManagerCustomer field is set.
    */
   @java.lang.Override
@@ -440,7 +440,7 @@ private static final long serialVersionUID = 0L;
    * Output only. Paying manager of this payment account.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The payingManagerCustomer.
    */
   @java.lang.Override
@@ -452,7 +452,7 @@ private static final long serialVersionUID = 0L;
    * Output only. Paying manager of this payment account.
    * </pre>
    *
-   * <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.StringValueOrBuilder getPayingManagerCustomerOrBuilder() {
@@ -1870,7 +1870,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Paying manager of this payment account.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return Whether the payingManagerCustomer field is set.
      */
     public boolean hasPayingManagerCustomer() {
@@ -1881,7 +1881,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Paying manager of this payment account.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      * @return The payingManagerCustomer.
      */
     public com.google.protobuf.StringValue getPayingManagerCustomer() {
@@ -1896,7 +1896,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Paying manager of this payment account.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     public Builder setPayingManagerCustomer(com.google.protobuf.StringValue value) {
       if (payingManagerCustomerBuilder_ == null) {
@@ -1916,7 +1916,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Paying manager of this payment account.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     public Builder setPayingManagerCustomer(
         com.google.protobuf.StringValue.Builder builderForValue) {
@@ -1934,7 +1934,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Paying manager of this payment account.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     public Builder mergePayingManagerCustomer(com.google.protobuf.StringValue value) {
       if (payingManagerCustomerBuilder_ == null) {
@@ -1956,7 +1956,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Paying manager of this payment account.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     public Builder clearPayingManagerCustomer() {
       if (payingManagerCustomerBuilder_ == null) {
@@ -1974,7 +1974,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Paying manager of this payment account.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     public com.google.protobuf.StringValue.Builder getPayingManagerCustomerBuilder() {
       
@@ -1986,7 +1986,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Paying manager of this payment account.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     public com.google.protobuf.StringValueOrBuilder getPayingManagerCustomerOrBuilder() {
       if (payingManagerCustomerBuilder_ != null) {
@@ -2001,7 +2001,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Paying manager of this payment account.
      * </pre>
      *
-     * <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 

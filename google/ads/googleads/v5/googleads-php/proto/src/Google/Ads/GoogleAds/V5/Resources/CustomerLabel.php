@@ -29,7 +29,7 @@ class CustomerLabel extends \Google\Protobuf\Internal\Message
      * Output only. The resource name of the customer to which the label is attached.
      * Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $customer = null;
     /**
@@ -37,7 +37,7 @@ class CustomerLabel extends \Google\Protobuf\Internal\Message
      * Note: the Customer ID portion of the label resource name is not
      * validated when creating a new CustomerLabel.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $label = null;
 
@@ -99,7 +99,7 @@ class CustomerLabel extends \Google\Protobuf\Internal\Message
      * Output only. The resource name of the customer to which the label is attached.
      * Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getCustomer()
@@ -123,7 +123,7 @@ class CustomerLabel extends \Google\Protobuf\Internal\Message
      * Output only. The resource name of the customer to which the label is attached.
      * Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getCustomerUnwrapped()
@@ -135,7 +135,7 @@ class CustomerLabel extends \Google\Protobuf\Internal\Message
      * Output only. The resource name of the customer to which the label is attached.
      * Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -153,7 +153,7 @@ class CustomerLabel extends \Google\Protobuf\Internal\Message
      * Output only. The resource name of the customer to which the label is attached.
      * Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -167,7 +167,7 @@ class CustomerLabel extends \Google\Protobuf\Internal\Message
      * Note: the Customer ID portion of the label resource name is not
      * validated when creating a new CustomerLabel.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getLabel()
@@ -192,7 +192,7 @@ class CustomerLabel extends \Google\Protobuf\Internal\Message
      * Note: the Customer ID portion of the label resource name is not
      * validated when creating a new CustomerLabel.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getLabelUnwrapped()
@@ -205,7 +205,7 @@ class CustomerLabel extends \Google\Protobuf\Internal\Message
      * Note: the Customer ID portion of the label resource name is not
      * validated when creating a new CustomerLabel.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -224,7 +224,7 @@ class CustomerLabel extends \Google\Protobuf\Internal\Message
      * Note: the Customer ID portion of the label resource name is not
      * validated when creating a new CustomerLabel.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */

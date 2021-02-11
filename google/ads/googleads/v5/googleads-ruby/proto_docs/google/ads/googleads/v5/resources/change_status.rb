@@ -22,7 +22,8 @@ module Google
     module GoogleAds
       module V5
         module Resources
-          # Describes the status of returned resource.
+          # Describes the status of returned resource. ChangeStatus could have up to 3
+          # minutes delay to reflect a new change.
           # @!attribute [r] resource_name
           #   @return [::String]
           #     Output only. The resource name of the change status.

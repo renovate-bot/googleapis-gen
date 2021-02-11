@@ -42,6 +42,20 @@ module Google
                 "customers/#{customer}/conversionActions/#{conversion_action}"
               end
 
+              ##
+              # Create a fully-qualified Customer resource string.
+              #
+              # The resource will be in the following format:
+              #
+              # `customers/{customer}`
+              #
+              # @param customer [String]
+              #
+              # @return [::String]
+              def customer_path customer:
+                "customers/#{customer}"
+              end
+
               extend self
             end
           end
