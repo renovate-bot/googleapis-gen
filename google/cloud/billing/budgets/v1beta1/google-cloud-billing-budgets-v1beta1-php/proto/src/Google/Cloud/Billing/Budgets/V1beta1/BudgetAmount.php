@@ -25,9 +25,10 @@ class BudgetAmount extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Type\Money $specified_amount
      *           A specified amount to use as the budget.
-     *           `currency_code` is optional. If specified, it must match the
-     *           currency of the billing account. The `currency_code` is provided on
-     *           output.
+     *           `currency_code` is optional. If specified when creating a budget, it must
+     *           match the currency of the billing account. If specified when updating a
+     *           budget, it must match the existing budget currency_code.
+     *           The `currency_code` is provided on output.
      *     @type \Google\Cloud\Billing\Budgets\V1beta1\LastPeriodAmount $last_period_amount
      *           Use the last period's actual spend as the budget for the present period.
      * }
@@ -39,9 +40,10 @@ class BudgetAmount extends \Google\Protobuf\Internal\Message
 
     /**
      * A specified amount to use as the budget.
-     * `currency_code` is optional. If specified, it must match the
-     * currency of the billing account. The `currency_code` is provided on
-     * output.
+     * `currency_code` is optional. If specified when creating a budget, it must
+     * match the currency of the billing account. If specified when updating a
+     * budget, it must match the existing budget currency_code.
+     * The `currency_code` is provided on output.
      *
      * Generated from protobuf field <code>.google.type.Money specified_amount = 1;</code>
      * @return \Google\Type\Money
@@ -58,9 +60,10 @@ class BudgetAmount extends \Google\Protobuf\Internal\Message
 
     /**
      * A specified amount to use as the budget.
-     * `currency_code` is optional. If specified, it must match the
-     * currency of the billing account. The `currency_code` is provided on
-     * output.
+     * `currency_code` is optional. If specified when creating a budget, it must
+     * match the currency of the billing account. If specified when updating a
+     * budget, it must match the existing budget currency_code.
+     * The `currency_code` is provided on output.
      *
      * Generated from protobuf field <code>.google.type.Money specified_amount = 1;</code>
      * @param \Google\Type\Money $var
