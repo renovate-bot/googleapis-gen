@@ -10,9 +10,10 @@ public interface BudgetAmountOrBuilder extends
   /**
    * <pre>
    * A specified amount to use as the budget.
-   * `currency_code` is optional. If specified, it must match the
-   * currency of the billing account. The `currency_code` is provided on
-   * output.
+   * `currency_code` is optional. If specified when creating a budget, it must
+   * match the currency of the billing account. If specified when updating a
+   * budget, it must match the currency_code of the existing budget.
+   * The `currency_code` is provided on output.
    * </pre>
    *
    * <code>.google.type.Money specified_amount = 1;</code>
@@ -22,9 +23,10 @@ public interface BudgetAmountOrBuilder extends
   /**
    * <pre>
    * A specified amount to use as the budget.
-   * `currency_code` is optional. If specified, it must match the
-   * currency of the billing account. The `currency_code` is provided on
-   * output.
+   * `currency_code` is optional. If specified when creating a budget, it must
+   * match the currency of the billing account. If specified when updating a
+   * budget, it must match the currency_code of the existing budget.
+   * The `currency_code` is provided on output.
    * </pre>
    *
    * <code>.google.type.Money specified_amount = 1;</code>
@@ -34,9 +36,10 @@ public interface BudgetAmountOrBuilder extends
   /**
    * <pre>
    * A specified amount to use as the budget.
-   * `currency_code` is optional. If specified, it must match the
-   * currency of the billing account. The `currency_code` is provided on
-   * output.
+   * `currency_code` is optional. If specified when creating a budget, it must
+   * match the currency of the billing account. If specified when updating a
+   * budget, it must match the currency_code of the existing budget.
+   * The `currency_code` is provided on output.
    * </pre>
    *
    * <code>.google.type.Money specified_amount = 1;</code>

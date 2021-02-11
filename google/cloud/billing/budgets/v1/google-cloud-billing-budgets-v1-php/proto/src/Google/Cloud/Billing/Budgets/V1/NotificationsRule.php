@@ -33,9 +33,12 @@ class NotificationsRule extends \Google\Protobuf\Internal\Message
      */
     protected $pubsub_topic = '';
     /**
-     * Optional. The schema version of the notification sent to `pubsub_topic`.
+     * Optional. Required when
+     * [NotificationsRule.pubsub_topic][google.cloud.billing.budgets.v1.NotificationsRule.pubsub_topic]
+     * is set. The schema version of the notification sent to
+     * [NotificationsRule.pubsub_topic][google.cloud.billing.budgets.v1.NotificationsRule.pubsub_topic].
      * Only "1.0" is accepted. It represents the JSON schema as defined in
-     * https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#notification_format
+     * https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#notification_format.
      *
      * Generated from protobuf field <code>string schema_version = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
@@ -82,9 +85,12 @@ class NotificationsRule extends \Google\Protobuf\Internal\Message
      *           https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications
      *           for more details on Pub/Sub roles and permissions.
      *     @type string $schema_version
-     *           Optional. The schema version of the notification sent to `pubsub_topic`.
+     *           Optional. Required when
+     *           [NotificationsRule.pubsub_topic][google.cloud.billing.budgets.v1.NotificationsRule.pubsub_topic]
+     *           is set. The schema version of the notification sent to
+     *           [NotificationsRule.pubsub_topic][google.cloud.billing.budgets.v1.NotificationsRule.pubsub_topic].
      *           Only "1.0" is accepted. It represents the JSON schema as defined in
-     *           https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#notification_format
+     *           https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#notification_format.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $monitoring_notification_channels
      *           Optional. Targets to send notifications to when a threshold is exceeded.
      *           This is in addition to default recipients who have billing account IAM
@@ -153,9 +159,12 @@ class NotificationsRule extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. The schema version of the notification sent to `pubsub_topic`.
+     * Optional. Required when
+     * [NotificationsRule.pubsub_topic][google.cloud.billing.budgets.v1.NotificationsRule.pubsub_topic]
+     * is set. The schema version of the notification sent to
+     * [NotificationsRule.pubsub_topic][google.cloud.billing.budgets.v1.NotificationsRule.pubsub_topic].
      * Only "1.0" is accepted. It represents the JSON schema as defined in
-     * https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#notification_format
+     * https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#notification_format.
      *
      * Generated from protobuf field <code>string schema_version = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return string
@@ -166,9 +175,12 @@ class NotificationsRule extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. The schema version of the notification sent to `pubsub_topic`.
+     * Optional. Required when
+     * [NotificationsRule.pubsub_topic][google.cloud.billing.budgets.v1.NotificationsRule.pubsub_topic]
+     * is set. The schema version of the notification sent to
+     * [NotificationsRule.pubsub_topic][google.cloud.billing.budgets.v1.NotificationsRule.pubsub_topic].
      * Only "1.0" is accepted. It represents the JSON schema as defined in
-     * https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#notification_format
+     * https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#notification_format.
      *
      * Generated from protobuf field <code>string schema_version = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param string $var
