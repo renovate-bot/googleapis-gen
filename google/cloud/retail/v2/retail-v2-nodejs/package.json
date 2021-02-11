@@ -1,5 +1,5 @@
 {
-  "name": "retail",
+  "name": "@google-cloud/retail",
   "version": "0.1.0",
   "description": "Retail client for Node.js",
   "repository": "googleapis/nodejs-retail",

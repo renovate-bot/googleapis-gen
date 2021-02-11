@@ -463,15 +463,14 @@ class TranslationServiceClient(metaclass=TranslationServiceClientMeta):
                 request.parent = parent
             if target_language_code is not None:
                 request.target_language_code = target_language_code
+            if contents is not None:
+                request.contents = contents
             if model is not None:
                 request.model = model
             if mime_type is not None:
                 request.mime_type = mime_type
             if source_language_code is not None:
                 request.source_language_code = source_language_code
-
-            if contents:
-                request.contents.extend(contents)
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.

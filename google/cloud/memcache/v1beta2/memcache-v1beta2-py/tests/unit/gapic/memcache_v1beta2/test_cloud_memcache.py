@@ -800,6 +800,8 @@ def test_get_instance(transport: str = 'grpc', request_type=cloud_memcache.GetIn
 
             discovery_endpoint='discovery_endpoint_value',
 
+            update_available=True,
+
         )
 
         response = client.get_instance(request)
@@ -832,6 +834,8 @@ def test_get_instance(transport: str = 'grpc', request_type=cloud_memcache.GetIn
 
     assert response.discovery_endpoint == 'discovery_endpoint_value'
 
+    assert response.update_available is True
+
 
 def test_get_instance_from_dict():
     test_get_instance(request_type=dict)
@@ -863,6 +867,7 @@ async def test_get_instance_async(transport: str = 'grpc_asyncio', request_type=
             state=cloud_memcache.Instance.State.CREATING,
             memcache_full_version='memcache_full_version_value',
             discovery_endpoint='discovery_endpoint_value',
+            update_available=True,
         ))
 
         response = await client.get_instance(request)
@@ -893,6 +898,8 @@ async def test_get_instance_async(transport: str = 'grpc_asyncio', request_type=
     assert response.memcache_full_version == 'memcache_full_version_value'
 
     assert response.discovery_endpoint == 'discovery_endpoint_value'
+
+    assert response.update_available is True
 
 
 @pytest.mark.asyncio
@@ -2192,6 +2199,240 @@ async def test_apply_parameters_flattened_error_async():
         )
 
 
+def test_apply_software_update(transport: str = 'grpc', request_type=cloud_memcache.ApplySoftwareUpdateRequest):
+    client = CloudMemcacheClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.apply_software_update),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = operations_pb2.Operation(name='operations/spam')
+
+        response = client.apply_software_update(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloud_memcache.ApplySoftwareUpdateRequest()
+
+    # Establish that the response is the type that we expect.
+    assert isinstance(response, future.Future)
+
+
+def test_apply_software_update_from_dict():
+    test_apply_software_update(request_type=dict)
+
+
+@pytest.mark.asyncio
+async def test_apply_software_update_async(transport: str = 'grpc_asyncio', request_type=cloud_memcache.ApplySoftwareUpdateRequest):
+    client = CloudMemcacheAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.apply_software_update),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
+            operations_pb2.Operation(name='operations/spam')
+        )
+
+        response = await client.apply_software_update(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloud_memcache.ApplySoftwareUpdateRequest()
+
+    # Establish that the response is the type that we expect.
+    assert isinstance(response, future.Future)
+
+
+@pytest.mark.asyncio
+async def test_apply_software_update_async_from_dict():
+    await test_apply_software_update_async(request_type=dict)
+
+
+def test_apply_software_update_field_headers():
+    client = CloudMemcacheClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = cloud_memcache.ApplySoftwareUpdateRequest()
+    request.instance = 'instance/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.apply_software_update),
+            '__call__') as call:
+        call.return_value = operations_pb2.Operation(name='operations/op')
+
+        client.apply_software_update(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'instance=instance/value',
+    ) in kw['metadata']
+
+
+@pytest.mark.asyncio
+async def test_apply_software_update_field_headers_async():
+    client = CloudMemcacheAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = cloud_memcache.ApplySoftwareUpdateRequest()
+    request.instance = 'instance/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.apply_software_update),
+            '__call__') as call:
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
+
+        await client.apply_software_update(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'instance=instance/value',
+    ) in kw['metadata']
+
+
+def test_apply_software_update_flattened():
+    client = CloudMemcacheClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.apply_software_update),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = operations_pb2.Operation(name='operations/op')
+
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        client.apply_software_update(
+            instance='instance_value',
+            node_ids=['node_ids_value'],
+            apply_all=True,
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0].instance == 'instance_value'
+
+        assert args[0].node_ids == ['node_ids_value']
+
+        assert args[0].apply_all == True
+
+
+def test_apply_software_update_flattened_error():
+    client = CloudMemcacheClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        client.apply_software_update(
+            cloud_memcache.ApplySoftwareUpdateRequest(),
+            instance='instance_value',
+            node_ids=['node_ids_value'],
+            apply_all=True,
+        )
+
+
+@pytest.mark.asyncio
+async def test_apply_software_update_flattened_async():
+    client = CloudMemcacheAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.apply_software_update),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = operations_pb2.Operation(name='operations/op')
+
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
+            operations_pb2.Operation(name='operations/spam')
+        )
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        response = await client.apply_software_update(
+            instance='instance_value',
+            node_ids=['node_ids_value'],
+            apply_all=True,
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0].instance == 'instance_value'
+
+        assert args[0].node_ids == ['node_ids_value']
+
+        assert args[0].apply_all == True
+
+
+@pytest.mark.asyncio
+async def test_apply_software_update_flattened_error_async():
+    client = CloudMemcacheAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        await client.apply_software_update(
+            cloud_memcache.ApplySoftwareUpdateRequest(),
+            instance='instance_value',
+            node_ids=['node_ids_value'],
+            apply_all=True,
+        )
+
+
 def test_credentials_transport_error():
     # It is an error to provide credentials and a transport instance.
     transport = transports.CloudMemcacheGrpcTransport(
@@ -2298,6 +2539,7 @@ def test_cloud_memcache_base_transport():
         'update_parameters',
         'delete_instance',
         'apply_parameters',
+        'apply_software_update',
         )
     for method in methods:
         with pytest.raises(NotImplementedError):

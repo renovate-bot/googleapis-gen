@@ -84,7 +84,7 @@ module Google
           #   @return [::String]
           #     The language this GeoTargetConstantSuggestion is currently translated to.
           #     It affects the name of geo target fields. For example, if locale=en, then
-          #     name=Spain. If locale=es, then name=Espaa. The default locale will be
+          #     name=Spain. If locale=es, then name=España. The default locale will be
           #     returned if no translation exists for the locale in the request.
           # @!attribute [rw] reach
           #   @return [::Integer]

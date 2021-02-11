@@ -18,6 +18,7 @@
 from google.cloud.memcache_v1beta2.services.cloud_memcache.async_client import CloudMemcacheAsyncClient
 from google.cloud.memcache_v1beta2.services.cloud_memcache.client import CloudMemcacheClient
 from google.cloud.memcache_v1beta2.types.cloud_memcache import ApplyParametersRequest
+from google.cloud.memcache_v1beta2.types.cloud_memcache import ApplySoftwareUpdateRequest
 from google.cloud.memcache_v1beta2.types.cloud_memcache import CreateInstanceRequest
 from google.cloud.memcache_v1beta2.types.cloud_memcache import DeleteInstanceRequest
 from google.cloud.memcache_v1beta2.types.cloud_memcache import GetInstanceRequest
@@ -34,6 +35,7 @@ from google.cloud.memcache_v1beta2.types.cloud_memcache import ZoneMetadata
 
 __all__ = (
     'ApplyParametersRequest',
+    'ApplySoftwareUpdateRequest',
     'CloudMemcacheAsyncClient',
     'CloudMemcacheClient',
     'CreateInstanceRequest',

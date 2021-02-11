@@ -548,9 +548,8 @@ class PublisherClient(metaclass=PublisherClientMeta):
 
             if topic is not None:
                 request.topic = topic
-
-            if messages:
-                request.messages.extend(messages)
+            if messages is not None:
+                request.messages = messages
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.

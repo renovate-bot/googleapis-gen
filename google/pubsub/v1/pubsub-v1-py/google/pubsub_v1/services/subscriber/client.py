@@ -878,11 +878,10 @@ class SubscriberClient(metaclass=SubscriberClientMeta):
 
             if subscription is not None:
                 request.subscription = subscription
+            if ack_ids is not None:
+                request.ack_ids = ack_ids
             if ack_deadline_seconds is not None:
                 request.ack_deadline_seconds = ack_deadline_seconds
-
-            if ack_ids:
-                request.ack_ids.extend(ack_ids)
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -968,9 +967,8 @@ class SubscriberClient(metaclass=SubscriberClientMeta):
 
             if subscription is not None:
                 request.subscription = subscription
-
-            if ack_ids:
-                request.ack_ids.extend(ack_ids)
+            if ack_ids is not None:
+                request.ack_ids = ack_ids
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.

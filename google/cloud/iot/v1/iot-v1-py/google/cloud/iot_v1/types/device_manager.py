@@ -208,7 +208,8 @@ class GetDeviceRequest(proto.Message):
         field_mask (google.protobuf.field_mask_pb2.FieldMask):
             The fields of the ``Device`` resource to be returned in the
             response. If the field mask is unset or empty, all fields
-            are returned.
+            are returned. Fields have to be provided in snake_case
+            format, for example: ``last_heartbeat_time``.
     """
 
     name = proto.Field(proto.STRING, number=1)
@@ -276,7 +277,8 @@ class ListDevicesRequest(proto.Message):
         field_mask (google.protobuf.field_mask_pb2.FieldMask):
             The fields of the ``Device`` resource to be returned in the
             response. The fields ``id`` and ``num_id`` are always
-            returned, along with any other fields specified.
+            returned, along with any other fields specified in
+            snake_case format, for example: ``last_heartbeat_time``.
         gateway_list_options (google.cloud.iot_v1.types.GatewayListOptions):
             Options related to gateways.
         page_size (int):

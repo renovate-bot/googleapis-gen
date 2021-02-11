@@ -1355,11 +1355,10 @@ class SpannerClient(metaclass=SpannerClientMeta):
                 request.session = session
             if transaction_id is not None:
                 request.transaction_id = transaction_id
+            if mutations is not None:
+                request.mutations = mutations
             if single_use_transaction is not None:
                 request.single_use_transaction = single_use_transaction
-
-            if mutations:
-                request.mutations.extend(mutations)
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.

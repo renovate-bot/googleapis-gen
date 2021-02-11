@@ -94,8 +94,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
     -  As such, Memcached instances are resources of the form:
        ``/projects/{project_id}/locations/{location_id}/instances/{instance_id}``
 
-    Note that location_id must be refering to a GCP ``region``; for
-    example:
+    Note that location_id must be a GCP ``region``; for example:
 
     -  ``projects/my-memcached-project/locations/us-central1/instances/my-memcached``
     """
@@ -357,7 +356,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListInstancesPager:
-        r"""Lists Instances in a given project and location.
+        r"""Lists Instances in a given location.
 
         Args:
             request (google.cloud.memcache_v1beta2.types.ListInstancesRequest):
@@ -473,7 +472,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
 
         Returns:
             google.cloud.memcache_v1beta2.types.Instance:
-
+                A Memorystore for Memcached instance
         """
         # Create or coerce a protobuf request object.
         # Sanity check: If we got a request object, we should *not* have
@@ -529,8 +528,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
-        r"""Creates a new Instance in a given project and
-        location.
+        r"""Creates a new Instance in a given location.
 
         Args:
             request (google.cloud.memcache_v1beta2.types.CreateInstanceRequest):
@@ -554,7 +552,10 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
                 -  Must start with a letter.
                 -  Must be between 1-40 characters.
                 -  Must end with a number or a letter.
-                -  Must be unique within the user project / location
+                -  Must be unique within the user project / location.
+
+                If any of the above are not met, the API raises an
+                invalid argument error.
 
                 This corresponds to the ``instance_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -576,7 +577,8 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
                 An object representing a long-running operation.
 
                 The result type for the operation will be
-                :class:`google.cloud.memcache_v1beta2.types.Instance`
+                :class:`google.cloud.memcache_v1beta2.types.Instance` A
+                Memorystore for Memcached instance
 
         """
         # Create or coerce a protobuf request object.
@@ -678,7 +680,8 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
                 An object representing a long-running operation.
 
                 The result type for the operation will be
-                :class:`google.cloud.memcache_v1beta2.types.Instance`
+                :class:`google.cloud.memcache_v1beta2.types.Instance` A
+                Memorystore for Memcached instance
 
         """
         # Create or coerce a protobuf request object.
@@ -745,10 +748,10 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
-        r"""Updates the defined Memcached Parameters for an
-        existing Instance. This method only stages the
-        parameters, it must be followed by ApplyParameters to
-        apply the parameters to nodes of the Memcached Instance.
+        r"""Updates the defined Memcached parameters for an existing
+        instance. This method only stages the parameters, it must be
+        followed by ``ApplyParameters`` to apply the parameters to nodes
+        of the Memcached instance.
 
         Args:
             request (google.cloud.memcache_v1beta2.types.UpdateParametersRequest):
@@ -786,7 +789,8 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
                 An object representing a long-running operation.
 
                 The result type for the operation will be
-                :class:`google.cloud.memcache_v1beta2.types.Instance`
+                :class:`google.cloud.memcache_v1beta2.types.Instance` A
+                Memorystore for Memcached instance
 
         """
         # Create or coerce a protobuf request object.
@@ -860,7 +864,8 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
                 The request object. Request for
                 [DeleteInstance][google.cloud.memcache.v1beta2.CloudMemcache.DeleteInstance].
             name (str):
-                Memcached instance resource name in the format:
+                Required. Memcached instance resource name in the
+                format:
                 ``projects/{project_id}/locations/{location_id}/instances/{instance_id}``
                 where ``location_id`` refers to a GCP region
 
@@ -955,8 +960,9 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
-        r"""ApplyParameters will update current set of Parameters
-        to the set of specified nodes of the Memcached Instance.
+        r"""``ApplyParameters`` restarts the set of specified nodes in order
+        to update them to the current set of parameters for the
+        Memcached Instance.
 
         Args:
             request (google.cloud.memcache_v1beta2.types.ApplyParametersRequest):
@@ -971,19 +977,17 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
             node_ids (Sequence[str]):
-                Nodes to which we should apply the
-                instance-level parameter group.
+                Nodes to which the instance-level
+                parameter group is applied.
 
                 This corresponds to the ``node_ids`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
             apply_all (bool):
-                Whether to apply instance-level
-                parameter group to all nodes. If set to
-                true, will explicitly restrict users
-                from specifying any nodes, and apply
-                parameter group updates to all nodes
-                within the instance.
+                Whether to apply instance-level parameter group to all
+                nodes. If set to true, users are restricted from
+                specifying individual nodes, and ``ApplyParameters``
+                updates all nodes within the instance.
 
                 This corresponds to the ``apply_all`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -1000,7 +1004,8 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
                 An object representing a long-running operation.
 
                 The result type for the operation will be
-                :class:`google.cloud.memcache_v1beta2.types.Instance`
+                :class:`google.cloud.memcache_v1beta2.types.Instance` A
+                Memorystore for Memcached instance
 
         """
         # Create or coerce a protobuf request object.
@@ -1023,11 +1028,10 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
 
             if name is not None:
                 request.name = name
+            if node_ids is not None:
+                request.node_ids = node_ids
             if apply_all is not None:
                 request.apply_all = apply_all
-
-            if node_ids:
-                request.node_ids.extend(node_ids)
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -1038,6 +1042,122 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
                 ('name', request.name),
+            )),
+        )
+
+        # Send the request.
+        response = rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # Wrap the response in an operation future.
+        response = operation.from_gapic(
+            response,
+            self._transport.operations_client,
+            cloud_memcache.Instance,
+            metadata_type=cloud_memcache.OperationMetadata,
+        )
+
+        # Done; return the response.
+        return response
+
+    def apply_software_update(self,
+            request: cloud_memcache.ApplySoftwareUpdateRequest = None,
+            *,
+            instance: str = None,
+            node_ids: Sequence[str] = None,
+            apply_all: bool = None,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> operation.Operation:
+        r"""Updates software on the selected nodes of the
+        Instance.
+
+        Args:
+            request (google.cloud.memcache_v1beta2.types.ApplySoftwareUpdateRequest):
+                The request object. Request for
+                [ApplySoftwareUpdate][google.cloud.memcache.v1beta2.CloudMemcache.ApplySoftwareUpdate].
+            instance (str):
+                Required. Resource name of the
+                Memcached instance for which software
+                update should be applied.
+
+                This corresponds to the ``instance`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            node_ids (Sequence[str]):
+                Nodes to which we should apply the
+                update to. Note all the selected nodes
+                are updated in parallel.
+
+                This corresponds to the ``node_ids`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            apply_all (bool):
+                Whether to apply the update to all
+                nodes. If set to true, will explicitly
+                restrict users from specifying any
+                nodes, and apply software update to all
+                nodes (where applicable) within the
+                instance.
+
+                This corresponds to the ``apply_all`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.api_core.operation.Operation:
+                An object representing a long-running operation.
+
+                The result type for the operation will be
+                :class:`google.cloud.memcache_v1beta2.types.Instance` A
+                Memorystore for Memcached instance
+
+        """
+        # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([instance, node_ids, apply_all])
+        if request is not None and has_flattened_params:
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a cloud_memcache.ApplySoftwareUpdateRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, cloud_memcache.ApplySoftwareUpdateRequest):
+            request = cloud_memcache.ApplySoftwareUpdateRequest(request)
+
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+
+            if instance is not None:
+                request.instance = instance
+            if node_ids is not None:
+                request.node_ids = node_ids
+            if apply_all is not None:
+                request.apply_all = apply_all
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.apply_software_update]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ('instance', request.instance),
             )),
         )
 

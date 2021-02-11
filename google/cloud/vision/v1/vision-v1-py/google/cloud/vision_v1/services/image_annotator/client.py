@@ -393,8 +393,8 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
 
-            if requests:
-                request.requests.extend(requests)
+            if requests is not None:
+                request.requests = requests
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -470,8 +470,8 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
 
-            if requests:
-                request.requests.extend(requests)
+            if requests is not None:
+                request.requests = requests
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -562,11 +562,10 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
 
+            if requests is not None:
+                request.requests = requests
             if output_config is not None:
                 request.output_config = output_config
-
-            if requests:
-                request.requests.extend(requests)
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -652,8 +651,8 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
 
-            if requests:
-                request.requests.extend(requests)
+            if requests is not None:
+                request.requests = requests
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.

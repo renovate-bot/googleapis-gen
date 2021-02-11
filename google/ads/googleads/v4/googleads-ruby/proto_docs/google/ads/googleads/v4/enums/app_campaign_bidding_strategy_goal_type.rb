@@ -47,7 +47,7 @@ module Google
               # Aim to maximize the long term number of selected in-app conversions from
               # app installs. The cpa bid is the target cost per in-app conversion. Note
               # that the actual cpa may seem higher than the target cpa at first, since
-              # the long term conversions havent happened yet.
+              # the long term conversions haven’t happened yet.
               OPTIMIZE_IN_APP_CONVERSIONS_TARGET_CONVERSION_COST = 4
 
               # Aim to maximize all conversions' value, i.e. install + selected in-app

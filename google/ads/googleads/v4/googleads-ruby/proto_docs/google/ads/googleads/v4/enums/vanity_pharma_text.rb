@@ -54,7 +54,7 @@ module Google
               MEDICAL_DEVICE_WEBSITE_EN = 6
 
               # Medical device website with website content in Spanish (Sitio de
-              # dispositivos mdicos).
+              # dispositivos médicos).
               MEDICAL_DEVICE_WEBSITE_ES = 7
 
               # Preventative treatment website with website content in English.

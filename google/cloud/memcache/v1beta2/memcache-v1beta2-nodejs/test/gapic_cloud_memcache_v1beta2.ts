@@ -989,6 +989,150 @@ describe('v1beta2.CloudMemcacheClient', () => {
         });
     });
 
+    describe('applySoftwareUpdate', () => {
+        it('invokes applySoftwareUpdate without error', async () => {
+            const client = new cloudmemcacheModule.v1beta2.CloudMemcacheClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest());
+            request.instance = '';
+            const expectedHeaderRequestParams = "instance=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = generateSampleMessage(new protos.google.longrunning.Operation());
+            client.innerApiCalls.applySoftwareUpdate = stubLongRunningCall(expectedResponse);
+            const [operation] = await client.applySoftwareUpdate(request);
+            const [response] = await operation.promise();
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.applySoftwareUpdate as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes applySoftwareUpdate without error using callback', async () => {
+            const client = new cloudmemcacheModule.v1beta2.CloudMemcacheClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest());
+            request.instance = '';
+            const expectedHeaderRequestParams = "instance=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = generateSampleMessage(new protos.google.longrunning.Operation());
+            client.innerApiCalls.applySoftwareUpdate = stubLongRunningCallWithCallback(expectedResponse);
+            const promise = new Promise((resolve, reject) => {
+                 client.applySoftwareUpdate(
+                    request,
+                    (err?: Error|null,
+                     result?: LROperation<protos.google.cloud.memcache.v1beta2.IInstance, protos.google.cloud.memcache.v1beta2.IOperationMetadata>|null
+                    ) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(result);
+                        }
+                    });
+            });
+            const operation = await promise as LROperation<protos.google.cloud.memcache.v1beta2.IInstance, protos.google.cloud.memcache.v1beta2.IOperationMetadata>;
+            const [response] = await operation.promise();
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.applySoftwareUpdate as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
+        });
+
+        it('invokes applySoftwareUpdate with call error', async () => {
+            const client = new cloudmemcacheModule.v1beta2.CloudMemcacheClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest());
+            request.instance = '';
+            const expectedHeaderRequestParams = "instance=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedError = new Error('expected');
+            client.innerApiCalls.applySoftwareUpdate = stubLongRunningCall(undefined, expectedError);
+            await assert.rejects(client.applySoftwareUpdate(request), expectedError);
+            assert((client.innerApiCalls.applySoftwareUpdate as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes applySoftwareUpdate with LRO error', async () => {
+            const client = new cloudmemcacheModule.v1beta2.CloudMemcacheClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest());
+            request.instance = '';
+            const expectedHeaderRequestParams = "instance=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedError = new Error('expected');
+            client.innerApiCalls.applySoftwareUpdate = stubLongRunningCall(undefined, undefined, expectedError);
+            const [operation] = await client.applySoftwareUpdate(request);
+            await assert.rejects(operation.promise(), expectedError);
+            assert((client.innerApiCalls.applySoftwareUpdate as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes checkApplySoftwareUpdateProgress without error', async () => {
+            const client = new cloudmemcacheModule.v1beta2.CloudMemcacheClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
+            expectedResponse.name = 'test';
+            expectedResponse.response = {type_url: 'url', value: Buffer.from('')};
+            expectedResponse.metadata = {type_url: 'url', value: Buffer.from('')}
+
+            client.operationsClient.getOperation = stubSimpleCall(expectedResponse);
+            const decodedOperation = await client.checkApplySoftwareUpdateProgress(expectedResponse.name);
+            assert.deepStrictEqual(decodedOperation.name, expectedResponse.name);
+            assert(decodedOperation.metadata);
+            assert((client.operationsClient.getOperation as SinonStub).getCall(0));
+        });
+
+        it('invokes checkApplySoftwareUpdateProgress with error', async () => {
+            const client = new cloudmemcacheModule.v1beta2.CloudMemcacheClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const expectedError = new Error('expected');
+
+            client.operationsClient.getOperation = stubSimpleCall(undefined, expectedError);
+            await assert.rejects(client.checkApplySoftwareUpdateProgress(''), expectedError);
+            assert((client.operationsClient.getOperation as SinonStub)
+                .getCall(0));
+        });
+    });
+
     describe('listInstances', () => {
         it('invokes listInstances without error', async () => {
             const client = new cloudmemcacheModule.v1beta2.CloudMemcacheClient({

@@ -1,5 +1,5 @@
 {
-  "name": "managedidentities",
+  "name": "@google-cloud/managed-identities",
   "version": "0.1.0",
   "description": "Managedidentities client for Node.js",
   "repository": "googleapis/nodejs-managedidentities",

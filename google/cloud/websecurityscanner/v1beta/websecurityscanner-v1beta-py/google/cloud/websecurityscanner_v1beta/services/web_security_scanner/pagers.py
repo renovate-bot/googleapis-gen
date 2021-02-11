@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple
+from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
 
 from google.cloud.websecurityscanner_v1beta.types import crawled_url
 from google.cloud.websecurityscanner_v1beta.types import finding

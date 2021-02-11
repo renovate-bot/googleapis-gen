@@ -215,7 +215,6 @@ class KeyManagementServiceAsyncClient:
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
-                    exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
                 ),
             ),
@@ -315,7 +314,6 @@ class KeyManagementServiceAsyncClient:
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
-                    exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
                 ),
             ),
@@ -416,7 +414,6 @@ class KeyManagementServiceAsyncClient:
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
-                    exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
                 ),
             ),
@@ -516,7 +513,6 @@ class KeyManagementServiceAsyncClient:
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
-                    exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
                 ),
             ),
@@ -614,7 +610,6 @@ class KeyManagementServiceAsyncClient:
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
-                    exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
                 ),
             ),
@@ -711,7 +706,6 @@ class KeyManagementServiceAsyncClient:
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
-                    exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
                 ),
             ),
@@ -812,7 +806,6 @@ class KeyManagementServiceAsyncClient:
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
-                    exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
                 ),
             ),
@@ -907,7 +900,6 @@ class KeyManagementServiceAsyncClient:
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
-                    exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
                 ),
             ),
@@ -1039,7 +1031,6 @@ class KeyManagementServiceAsyncClient:
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
-                    exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
                 ),
             ),
@@ -1149,7 +1140,6 @@ class KeyManagementServiceAsyncClient:
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
-                    exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
                 ),
             ),
@@ -1268,7 +1258,6 @@ class KeyManagementServiceAsyncClient:
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
-                    exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
                 ),
             ),
@@ -1605,7 +1594,6 @@ class KeyManagementServiceAsyncClient:
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
-                    exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
                 ),
             ),
@@ -1708,7 +1696,6 @@ class KeyManagementServiceAsyncClient:
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
-                    exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
                 ),
             ),
@@ -1830,7 +1817,6 @@ class KeyManagementServiceAsyncClient:
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
-                    exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
                 ),
             ),
@@ -1947,7 +1933,6 @@ class KeyManagementServiceAsyncClient:
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
-                    exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
                 ),
             ),
@@ -2050,7 +2035,6 @@ class KeyManagementServiceAsyncClient:
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
-                    exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
                 ),
             ),
@@ -2155,7 +2139,6 @@ class KeyManagementServiceAsyncClient:
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
-                    exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
                 ),
             ),
@@ -2260,7 +2243,6 @@ class KeyManagementServiceAsyncClient:
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
-                    exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
                 ),
             ),
@@ -2368,7 +2350,6 @@ class KeyManagementServiceAsyncClient:
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
-                    exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
                 ),
             ),
@@ -2487,7 +2468,6 @@ class KeyManagementServiceAsyncClient:
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
-                    exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
                 ),
             ),
@@ -2597,7 +2577,6 @@ class KeyManagementServiceAsyncClient:
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
-                    exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
                 ),
             ),

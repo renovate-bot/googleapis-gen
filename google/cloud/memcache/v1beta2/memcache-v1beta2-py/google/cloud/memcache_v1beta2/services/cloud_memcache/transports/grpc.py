@@ -52,8 +52,7 @@ class CloudMemcacheGrpcTransport(CloudMemcacheTransport):
     -  As such, Memcached instances are resources of the form:
        ``/projects/{project_id}/locations/{location_id}/instances/{instance_id}``
 
-    Note that location_id must be refering to a GCP ``region``; for
-    example:
+    Note that location_id must be a GCP ``region``; for example:
 
     -  ``projects/my-memcached-project/locations/us-central1/instances/my-memcached``
 
@@ -279,7 +278,7 @@ class CloudMemcacheGrpcTransport(CloudMemcacheTransport):
             cloud_memcache.ListInstancesResponse]:
         r"""Return a callable for the list instances method over gRPC.
 
-        Lists Instances in a given project and location.
+        Lists Instances in a given location.
 
         Returns:
             Callable[[~.ListInstancesRequest],
@@ -331,8 +330,7 @@ class CloudMemcacheGrpcTransport(CloudMemcacheTransport):
             operations.Operation]:
         r"""Return a callable for the create instance method over gRPC.
 
-        Creates a new Instance in a given project and
-        location.
+        Creates a new Instance in a given location.
 
         Returns:
             Callable[[~.CreateInstanceRequest],
@@ -385,10 +383,10 @@ class CloudMemcacheGrpcTransport(CloudMemcacheTransport):
             operations.Operation]:
         r"""Return a callable for the update parameters method over gRPC.
 
-        Updates the defined Memcached Parameters for an
-        existing Instance. This method only stages the
-        parameters, it must be followed by ApplyParameters to
-        apply the parameters to nodes of the Memcached Instance.
+        Updates the defined Memcached parameters for an existing
+        instance. This method only stages the parameters, it must be
+        followed by ``ApplyParameters`` to apply the parameters to nodes
+        of the Memcached instance.
 
         Returns:
             Callable[[~.UpdateParametersRequest],
@@ -440,8 +438,9 @@ class CloudMemcacheGrpcTransport(CloudMemcacheTransport):
             operations.Operation]:
         r"""Return a callable for the apply parameters method over gRPC.
 
-        ApplyParameters will update current set of Parameters
-        to the set of specified nodes of the Memcached Instance.
+        ``ApplyParameters`` restarts the set of specified nodes in order
+        to update them to the current set of parameters for the
+        Memcached Instance.
 
         Returns:
             Callable[[~.ApplyParametersRequest],
@@ -460,6 +459,33 @@ class CloudMemcacheGrpcTransport(CloudMemcacheTransport):
                 response_deserializer=operations.Operation.FromString,
             )
         return self._stubs['apply_parameters']
+
+    @property
+    def apply_software_update(self) -> Callable[
+            [cloud_memcache.ApplySoftwareUpdateRequest],
+            operations.Operation]:
+        r"""Return a callable for the apply software update method over gRPC.
+
+        Updates software on the selected nodes of the
+        Instance.
+
+        Returns:
+            Callable[[~.ApplySoftwareUpdateRequest],
+                    ~.Operation]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'apply_software_update' not in self._stubs:
+            self._stubs['apply_software_update'] = self.grpc_channel.unary_unary(
+                '/google.cloud.memcache.v1beta2.CloudMemcache/ApplySoftwareUpdate',
+                request_serializer=cloud_memcache.ApplySoftwareUpdateRequest.serialize,
+                response_deserializer=operations.Operation.FromString,
+            )
+        return self._stubs['apply_software_update']
 
 
 __all__ = (

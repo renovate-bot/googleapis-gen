@@ -598,7 +598,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
                 Required. Resource name of the ProductSet to get.
 
                 Format is:
-                ``projects/PROJECT_ID/locations/LOG_ID/productSets/PRODUCT_SET_ID``
+                ``projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID``
 
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -1456,7 +1456,6 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
                 delete.
 
                 Format is:
-
                 ``projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID``
 
                 This corresponds to the ``name`` field
@@ -1631,7 +1630,6 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
                 get.
 
                 Format is:
-
                 ``projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID``.
 
                 This corresponds to the ``name`` field

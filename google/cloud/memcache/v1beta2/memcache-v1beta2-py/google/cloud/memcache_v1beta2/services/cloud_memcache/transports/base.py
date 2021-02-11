@@ -141,6 +141,11 @@ class CloudMemcacheTransport(abc.ABC):
                 default_timeout=1200.0,
                 client_info=client_info,
             ),
+            self.apply_software_update: gapic_v1.method.wrap_method(
+                self.apply_software_update,
+                default_timeout=1200.0,
+                client_info=client_info,
+            ),
 
         }
 
@@ -206,6 +211,15 @@ class CloudMemcacheTransport(abc.ABC):
     @property
     def apply_parameters(self) -> typing.Callable[
             [cloud_memcache.ApplyParametersRequest],
+            typing.Union[
+                operations.Operation,
+                typing.Awaitable[operations.Operation]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def apply_software_update(self) -> typing.Callable[
+            [cloud_memcache.ApplySoftwareUpdateRequest],
             typing.Union[
                 operations.Operation,
                 typing.Awaitable[operations.Operation]

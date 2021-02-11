@@ -66,13 +66,13 @@ module Google
           #     The type of custom audience member, KEYWORD, URL, PLACE_CATEGORY or APP.
           # @!attribute [rw] keyword
           #   @return [::String]
-          #     A keyword or keyword phrase  at most 10 words and 80 characters.
+          #     A keyword or keyword phrase — at most 10 words and 80 characters.
           #     Languages with double-width characters such as Chinese, Japanese,
           #     or Korean, are allowed 40 characters, which describes the user's
           #     interests or actions.
           # @!attribute [rw] url
           #   @return [::String]
-          #     An HTTP URL, protocol-included  at most 2048 characters, which includes
+          #     An HTTP URL, protocol-included — at most 2048 characters, which includes
           #     contents users have interests in.
           # @!attribute [rw] place_category
           #   @return [::Integer]

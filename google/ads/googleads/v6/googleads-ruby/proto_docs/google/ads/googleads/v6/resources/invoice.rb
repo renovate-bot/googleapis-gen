@@ -40,7 +40,7 @@ module Google
           #     Output only. The type of invoice.
           # @!attribute [r] billing_setup
           #   @return [::String]
-          #     Output only. The resource name of this invoices billing setup.
+          #     Output only. The resource name of this invoice’s billing setup.
           #
           #     `customers/{customer_id}/billingSetups/{billing_setup_id}`
           # @!attribute [r] payments_account_id
@@ -146,7 +146,7 @@ module Google
             #     `customers/{customer_id}`
             # @!attribute [r] customer_descriptive_name
             #   @return [::String]
-            #     Output only. The descriptive name of the account budgets customer. It appears on the
+            #     Output only. The descriptive name of the account budget’s customer. It appears on the
             #     invoice PDF as "Account".
             # @!attribute [r] account_budget
             #   @return [::String]

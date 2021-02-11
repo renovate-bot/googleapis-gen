@@ -71,7 +71,7 @@ module Google
               APP_CAMPAIGN = 12
 
               # App Campaign for engagement, focused on driving re-engagement with the
-              # app across several of Googles top properties including Search, YouTube,
+              # app across several of Google’s top properties including Search, YouTube,
               # and the Google Display Network.
               APP_CAMPAIGN_FOR_ENGAGEMENT = 13
 

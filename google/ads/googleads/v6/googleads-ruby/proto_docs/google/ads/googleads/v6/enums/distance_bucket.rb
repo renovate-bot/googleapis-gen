@@ -22,13 +22,13 @@ module Google
     module GoogleAds
       module V6
         module Enums
-          # Container for distance buckets of a users distance from an advertisers
+          # Container for distance buckets of a user’s distance from an advertiser’s
           # location extension.
           class DistanceBucketEnum
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
 
-            # The distance bucket for a users distance from an advertisers location
+            # The distance bucket for a user’s distance from an advertiser’s location
             # extension.
             module DistanceBucket
               # Not specified.

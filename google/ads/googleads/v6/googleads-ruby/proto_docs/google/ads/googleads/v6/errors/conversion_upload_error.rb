@@ -116,7 +116,7 @@ module Google
               # information.
               CONVERSION_TRACKING_NOT_ENABLED_AT_CALL_TIME = 21
 
-              # The callers phone number cannot be parsed. It should be formatted either
+              # The caller’s phone number cannot be parsed. It should be formatted either
               # as E.164 "+16502531234", International "+64 3-331 6005" or US national
               # number "6502531234".
               UNPARSEABLE_CALLERS_PHONE_NUMBER = 22

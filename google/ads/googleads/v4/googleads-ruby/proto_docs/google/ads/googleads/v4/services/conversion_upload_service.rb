@@ -124,7 +124,7 @@ module Google
           #   @return [::Google::Protobuf::StringValue]
           #     The date time at which the conversion occurred. Must be after
           #     the click time. The timezone must be specified. The format is
-          #     "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. 2019-01-01 12:32:45-08:00.
+          #     "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. “2019-01-01 12:32:45-08:00”.
           # @!attribute [rw] conversion_value
           #   @return [::Google::Protobuf::DoubleValue]
           #     The value of the conversion for the advertiser.
@@ -202,7 +202,7 @@ module Google
           # @!attribute [rw] conversion_date_time
           #   @return [::Google::Protobuf::StringValue]
           #     The date time at which the conversion occurred. The format is
-          #     "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. 2019-01-01 12:32:45-08:00.
+          #     "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. “2019-01-01 12:32:45-08:00”.
           class ClickConversionResult
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods

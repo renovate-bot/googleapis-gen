@@ -17,6 +17,7 @@
 
 from .services.cloud_memcache import CloudMemcacheClient
 from .types.cloud_memcache import ApplyParametersRequest
+from .types.cloud_memcache import ApplySoftwareUpdateRequest
 from .types.cloud_memcache import CreateInstanceRequest
 from .types.cloud_memcache import DeleteInstanceRequest
 from .types.cloud_memcache import GetInstanceRequest
@@ -34,6 +35,7 @@ from .types.cloud_memcache import ZoneMetadata
 
 __all__ = (
     'ApplyParametersRequest',
+    'ApplySoftwareUpdateRequest',
     'CreateInstanceRequest',
     'DeleteInstanceRequest',
     'GetInstanceRequest',

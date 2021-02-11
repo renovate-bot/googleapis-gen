@@ -116,7 +116,6 @@ class KeyManagementServiceTransport(abc.ABC):
                     multiplier=1.3,
                     predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
-                        exceptions.InternalServerError,
                         exceptions.ServiceUnavailable,
                     ),
                 ),
@@ -131,7 +130,6 @@ class KeyManagementServiceTransport(abc.ABC):
                     multiplier=1.3,
                     predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
-                        exceptions.InternalServerError,
                         exceptions.ServiceUnavailable,
                     ),
                 ),
@@ -146,7 +144,6 @@ class KeyManagementServiceTransport(abc.ABC):
                     multiplier=1.3,
                     predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
-                        exceptions.InternalServerError,
                         exceptions.ServiceUnavailable,
                     ),
                 ),
@@ -161,7 +158,6 @@ class KeyManagementServiceTransport(abc.ABC):
                     multiplier=1.3,
                     predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
-                        exceptions.InternalServerError,
                         exceptions.ServiceUnavailable,
                     ),
                 ),
@@ -176,7 +172,6 @@ class KeyManagementServiceTransport(abc.ABC):
                     multiplier=1.3,
                     predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
-                        exceptions.InternalServerError,
                         exceptions.ServiceUnavailable,
                     ),
                 ),
@@ -191,7 +186,6 @@ class KeyManagementServiceTransport(abc.ABC):
                     multiplier=1.3,
                     predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
-                        exceptions.InternalServerError,
                         exceptions.ServiceUnavailable,
                     ),
                 ),
@@ -206,7 +200,6 @@ class KeyManagementServiceTransport(abc.ABC):
                     multiplier=1.3,
                     predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
-                        exceptions.InternalServerError,
                         exceptions.ServiceUnavailable,
                     ),
                 ),
@@ -221,7 +214,6 @@ class KeyManagementServiceTransport(abc.ABC):
                     multiplier=1.3,
                     predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
-                        exceptions.InternalServerError,
                         exceptions.ServiceUnavailable,
                     ),
                 ),
@@ -236,7 +228,6 @@ class KeyManagementServiceTransport(abc.ABC):
                     multiplier=1.3,
                     predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
-                        exceptions.InternalServerError,
                         exceptions.ServiceUnavailable,
                     ),
                 ),
@@ -251,7 +242,6 @@ class KeyManagementServiceTransport(abc.ABC):
                     multiplier=1.3,
                     predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
-                        exceptions.InternalServerError,
                         exceptions.ServiceUnavailable,
                     ),
                 ),
@@ -266,7 +256,6 @@ class KeyManagementServiceTransport(abc.ABC):
                     multiplier=1.3,
                     predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
-                        exceptions.InternalServerError,
                         exceptions.ServiceUnavailable,
                     ),
                 ),
@@ -291,7 +280,6 @@ class KeyManagementServiceTransport(abc.ABC):
                     multiplier=1.3,
                     predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
-                        exceptions.InternalServerError,
                         exceptions.ServiceUnavailable,
                     ),
                 ),
@@ -306,7 +294,6 @@ class KeyManagementServiceTransport(abc.ABC):
                     multiplier=1.3,
                     predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
-                        exceptions.InternalServerError,
                         exceptions.ServiceUnavailable,
                     ),
                 ),
@@ -321,7 +308,6 @@ class KeyManagementServiceTransport(abc.ABC):
                     multiplier=1.3,
                     predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
-                        exceptions.InternalServerError,
                         exceptions.ServiceUnavailable,
                     ),
                 ),
@@ -336,7 +322,6 @@ class KeyManagementServiceTransport(abc.ABC):
                     multiplier=1.3,
                     predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
-                        exceptions.InternalServerError,
                         exceptions.ServiceUnavailable,
                     ),
                 ),
@@ -351,7 +336,6 @@ class KeyManagementServiceTransport(abc.ABC):
                     multiplier=1.3,
                     predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
-                        exceptions.InternalServerError,
                         exceptions.ServiceUnavailable,
                     ),
                 ),
@@ -366,7 +350,6 @@ class KeyManagementServiceTransport(abc.ABC):
                     multiplier=1.3,
                     predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
-                        exceptions.InternalServerError,
                         exceptions.ServiceUnavailable,
                     ),
                 ),
@@ -381,7 +364,6 @@ class KeyManagementServiceTransport(abc.ABC):
                     multiplier=1.3,
                     predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
-                        exceptions.InternalServerError,
                         exceptions.ServiceUnavailable,
                     ),
                 ),
@@ -396,7 +378,6 @@ class KeyManagementServiceTransport(abc.ABC):
                     multiplier=1.3,
                     predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
-                        exceptions.InternalServerError,
                         exceptions.ServiceUnavailable,
                     ),
                 ),
@@ -411,7 +392,6 @@ class KeyManagementServiceTransport(abc.ABC):
                     multiplier=1.3,
                     predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
-                        exceptions.InternalServerError,
                         exceptions.ServiceUnavailable,
                     ),
                 ),
@@ -426,7 +406,6 @@ class KeyManagementServiceTransport(abc.ABC):
                     multiplier=1.3,
                     predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
-                        exceptions.InternalServerError,
                         exceptions.ServiceUnavailable,
                     ),
                 ),

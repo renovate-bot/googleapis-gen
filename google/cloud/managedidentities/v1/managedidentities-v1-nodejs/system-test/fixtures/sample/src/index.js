@@ -18,7 +18,7 @@
 
 
 /* eslint-disable node/no-missing-require, no-unused-vars */
-const managedidentities = require('managedidentities');
+const managedidentities = require('@google-cloud/managed-identities');
 
 function main() {
   const managedIdentitiesServiceClient = new managedidentities.ManagedIdentitiesServiceClient();

@@ -1114,9 +1114,8 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
                 request.name = name
             if target_domain_name is not None:
                 request.target_domain_name = target_domain_name
-
-            if target_dns_ip_addresses:
-                request.target_dns_ip_addresses.extend(target_dns_ip_addresses)
+            if target_dns_ip_addresses is not None:
+                request.target_dns_ip_addresses = target_dns_ip_addresses
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
