@@ -1,5 +1,2 @@
-include README.rst LICENSE
-recursive-include google *.json *.proto
-recursive-include tests *
-global-exclude *.py[co]
-global-exclude __pycache__
+recursive-include google/cloud/bigtable_admin *.py
+recursive-include google/cloud/bigtable_admin_v2 *.py

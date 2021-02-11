@@ -1,46 +1,72 @@
 # -*- coding: utf-8 -*-
-#
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#     https://www.apache.org/licenses/LICENSE-2.0
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
-
-from __future__ import absolute_import
 import os
+import shutil
 
-import nox
-
-
-@nox.session
-def default(session):
-    return unit(session)
+import nox  # type: ignore
 
 
-@nox.session(python=['2.7', '3.5', '3.6', '3.7'])
+@nox.session(python=['3.6', '3.7', '3.8', '3.9'])
 def unit(session):
     """Run the unit test suite."""
 
-    # Install all test dependencies, then install this package in-place.
-    session.install('pytest', 'mock')
+    session.install('coverage', 'pytest', 'pytest-cov', 'asyncmock', 'pytest-asyncio')
     session.install('-e', '.')
 
-    # Run py.test against the unit tests.
-    session.run('py.test', '--quiet', os.path.join('tests', 'unit'))
-
-
-@nox.session
-def lint_setup_py(session):
-    """Verify that setup.py is valid (including RST check)."""
-    session.install('docutils', 'pygments')
     session.run(
-        'python', 'setup.py', 'check', '--restructuredtext', '--strict')
+        'py.test',
+        '--quiet',
+        '--cov=google/cloud/bigtable_admin_v2/',
+        '--cov-config=.coveragerc',
+        '--cov-report=term',
+        '--cov-report=html',
+        os.path.join('tests', 'unit', ''.join(session.posargs))
+    )
+
+
+@nox.session(python=['3.6', '3.7'])
+def mypy(session):
+    """Run the type checker."""
+    session.install('mypy')
+    session.install('.')
+    session.run(
+        'mypy',
+        '--explicit-package-bases',
+        'google',
+    )
+
+@nox.session(python='3.6')
+def docs(session):
+    """Build the docs for this library."""
+
+    session.install("-e", ".")
+    session.install("sphinx<3.0.0", "alabaster", "recommonmark")
+
+    shutil.rmtree(os.path.join("docs", "_build"), ignore_errors=True)
+    session.run(
+        "sphinx-build",
+        "-W",  # warnings as errors
+        "-T",  # show full traceback on exception
+        "-N",  # no colors
+        "-b",
+        "html",
+        "-d",
+        os.path.join("docs", "_build", "doctrees", ""),
+        os.path.join("docs", ""),
+        os.path.join("docs", "_build", "html", ""),
+    )
