@@ -1416,6 +1416,44 @@ describe('v6.CampaignLabelServiceClient', () => {
             });
         });
 
+        describe('callView', () => {
+            const fakePath = "/rendered/path/callView";
+            const expectedParameters = {
+                customer_id: "customerIdValue",
+                call_detail_id: "callDetailIdValue",
+            };
+            const client = new campaignlabelserviceModule.v6.CampaignLabelServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            client.pathTemplates.callViewPathTemplate.render =
+                sinon.stub().returns(fakePath);
+            client.pathTemplates.callViewPathTemplate.match =
+                sinon.stub().returns(expectedParameters);
+
+            it('callViewPath', () => {
+                const result = client.callViewPath("customerIdValue", "callDetailIdValue");
+                assert.strictEqual(result, fakePath);
+                assert((client.pathTemplates.callViewPathTemplate.render as SinonStub)
+                    .getCall(-1).calledWith(expectedParameters));
+            });
+
+            it('matchCustomerIdFromCallViewName', () => {
+                const result = client.matchCustomerIdFromCallViewName(fakePath);
+                assert.strictEqual(result, "customerIdValue");
+                assert((client.pathTemplates.callViewPathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+
+            it('matchCallDetailIdFromCallViewName', () => {
+                const result = client.matchCallDetailIdFromCallViewName(fakePath);
+                assert.strictEqual(result, "callDetailIdValue");
+                assert((client.pathTemplates.callViewPathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+        });
+
         describe('campaign', () => {
             const fakePath = "/rendered/path/campaign";
             const expectedParameters = {
@@ -2726,6 +2764,44 @@ describe('v6.CampaignLabelServiceClient', () => {
                 const result = client.matchUserIdFromCustomerUserAccessName(fakePath);
                 assert.strictEqual(result, "userIdValue");
                 assert((client.pathTemplates.customerUserAccessPathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+        });
+
+        describe('customerUserAccessInvitation', () => {
+            const fakePath = "/rendered/path/customerUserAccessInvitation";
+            const expectedParameters = {
+                customer_id: "customerIdValue",
+                invitation_id: "invitationIdValue",
+            };
+            const client = new campaignlabelserviceModule.v6.CampaignLabelServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            client.pathTemplates.customerUserAccessInvitationPathTemplate.render =
+                sinon.stub().returns(fakePath);
+            client.pathTemplates.customerUserAccessInvitationPathTemplate.match =
+                sinon.stub().returns(expectedParameters);
+
+            it('customerUserAccessInvitationPath', () => {
+                const result = client.customerUserAccessInvitationPath("customerIdValue", "invitationIdValue");
+                assert.strictEqual(result, fakePath);
+                assert((client.pathTemplates.customerUserAccessInvitationPathTemplate.render as SinonStub)
+                    .getCall(-1).calledWith(expectedParameters));
+            });
+
+            it('matchCustomerIdFromCustomerUserAccessInvitationName', () => {
+                const result = client.matchCustomerIdFromCustomerUserAccessInvitationName(fakePath);
+                assert.strictEqual(result, "customerIdValue");
+                assert((client.pathTemplates.customerUserAccessInvitationPathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+
+            it('matchInvitationIdFromCustomerUserAccessInvitationName', () => {
+                const result = client.matchInvitationIdFromCustomerUserAccessInvitationName(fakePath);
+                assert.strictEqual(result, "invitationIdValue");
+                assert((client.pathTemplates.customerUserAccessInvitationPathTemplate.match as SinonStub)
                     .getCall(-1).calledWith(fakePath));
             });
         });

@@ -95,6 +95,9 @@ module Google
               # Recommendation to update a campaign to use a Target ROAS bidding
               # strategy.
               TARGET_ROAS_OPT_IN = 17
+
+              # Recommendation to add a new responsive search ad.
+              RESPONSIVE_SEARCH_AD = 18
             end
           end
         end

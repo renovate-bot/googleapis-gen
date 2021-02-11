@@ -78,6 +78,10 @@ module Google
 
               # The developer specified does not have access to the service.
               SERVICE_ACCESS_DENIED = 12
+
+              # The customer (or login customer) isn't in Google Ads. It belongs to
+              # another ads system.
+              ACCESS_DENIED_FOR_ACCOUNT_TYPE = 25
             end
           end
         end

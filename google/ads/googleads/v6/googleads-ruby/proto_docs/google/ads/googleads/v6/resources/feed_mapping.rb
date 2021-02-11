@@ -129,6 +129,9 @@ module Google
           # @!attribute [rw] job_field
           #   @return [::Google::Ads::GoogleAds::V6::Enums::JobPlaceholderFieldEnum::JobPlaceholderField]
           #     Immutable. Job Placeholder Fields
+          # @!attribute [rw] image_field
+          #   @return [::Google::Ads::GoogleAds::V6::Enums::ImagePlaceholderFieldEnum::ImagePlaceholderField]
+          #     Immutable. Image Placeholder Fields
           class AttributeFieldMapping
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods

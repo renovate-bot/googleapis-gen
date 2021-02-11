@@ -63,11 +63,9 @@ module Google
               GOOGLE_ADS_RECOMMENDATIONS = 9
 
               # Changes made through Search Ads 360 Sync.
-              # .
               SEARCH_ADS_360_SYNC = 10
 
               # Changes made through Search Ads 360 Post.
-              # .
               SEARCH_ADS_360_POST = 11
 
               # Changes made through internal tools.

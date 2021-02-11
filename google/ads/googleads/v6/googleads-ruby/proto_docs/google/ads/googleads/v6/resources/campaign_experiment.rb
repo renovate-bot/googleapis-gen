@@ -81,7 +81,7 @@ module Google
           #     Example: 2019-03-14
           # @!attribute [rw] end_date
           #   @return [::String]
-          #     Date when the campaign experiment ends. By default, the experiment ends on
+          #     The last day of the campaign experiment. By default, the experiment ends on
           #     the campaign's end date. If this field is set, then the experiment ends at
           #     the end of the specified date in the customer's time zone.
           #

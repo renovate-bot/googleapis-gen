@@ -890,6 +890,23 @@
  * }
  * }</pre>
  *
+ * <p>======================= CustomerUserAccessInvitationServiceClient =======================
+ *
+ * <p>Service Description: This service manages the access invitation extended to users for a given
+ * customer.
+ *
+ * <p>Sample for CustomerUserAccessInvitationServiceClient:
+ *
+ * <pre>{@code
+ * try (CustomerUserAccessInvitationServiceClient customerUserAccessInvitationServiceClient =
+ *     CustomerUserAccessInvitationServiceClient.create()) {
+ *   CustomerUserAccessInvitationName resourceName =
+ *       CustomerUserAccessInvitationName.of("[CUSTOMER_ID]", "[INVITATION_ID]");
+ *   CustomerUserAccessInvitation response =
+ *       customerUserAccessInvitationServiceClient.getCustomerUserAccessInvitation(resourceName);
+ * }
+ * }</pre>
+ *
  * <p>======================= CustomerUserAccessServiceClient =======================
  *
  * <p>Service Description: This service manages the permissions of a user on a given customer.

@@ -61,10 +61,23 @@ module Google
           # @!attribute [rw] all_conversions_value
           #   @return [::Float]
           #     The value of all conversions.
+          # @!attribute [rw] all_conversions_value_by_conversion_date
+          #   @return [::Float]
+          #     The value of all conversions. When this column is selected with date, the
+          #     values in date column means the conversion date. Details for the
+          #     by_conversion_date columns are available at
+          #     https://support.google.com/google-ads/answer/9549009.
           # @!attribute [rw] all_conversions
           #   @return [::Float]
           #     The total number of conversions. This includes all conversions regardless
           #     of the value of include_in_conversions_metric.
+          # @!attribute [rw] all_conversions_by_conversion_date
+          #   @return [::Float]
+          #     The total number of conversions. This includes all conversions regardless
+          #     of the value of include_in_conversions_metric. When this column is selected
+          #     with date, the values in date column means the conversion date. Details for
+          #     the by_conversion_date columns are available at
+          #     https://support.google.com/google-ads/answer/9549009.
           # @!attribute [rw] all_conversions_value_per_cost
           #   @return [::Float]
           #     The value of all conversions divided by the total cost of ad interactions
@@ -207,6 +220,15 @@ module Google
           #     include_in_conversions_metric attribute is set to true. If you use
           #     conversion-based bidding, your bid strategies will optimize for these
           #     conversions.
+          # @!attribute [rw] conversions_value_by_conversion_date
+          #   @return [::Float]
+          #     The value of conversions. This only includes conversion actions which
+          #     include_in_conversions_metric attribute is set to true. If you use
+          #     conversion-based bidding, your bid strategies will optimize for these
+          #     conversions. When this column is selected with date, the values in date
+          #     column means the conversion date. Details for the by_conversion_date
+          #     columns are available at
+          #     https://support.google.com/google-ads/answer/9549009.
           # @!attribute [rw] conversions_value_per_cost
           #   @return [::Float]
           #     The value of conversions divided by the cost of ad interactions. This only
@@ -226,6 +248,15 @@ module Google
           #     include_in_conversions_metric attribute is set to true. If you use
           #     conversion-based bidding, your bid strategies will optimize for these
           #     conversions.
+          # @!attribute [rw] conversions_by_conversion_date
+          #   @return [::Float]
+          #     The number of conversions. This only includes conversion actions which
+          #     include_in_conversions_metric attribute is set to true. If you use
+          #     conversion-based bidding, your bid strategies will optimize for these
+          #     conversions. When this column is selected with date, the values in date
+          #     column means the conversion date. Details for the by_conversion_date
+          #     columns are available at
+          #     https://support.google.com/google-ads/answer/9549009.
           # @!attribute [rw] cost_micros
           #   @return [::Integer]
           #     The sum of your cost-per-click (CPC) and cost-per-thousand impressions
@@ -508,12 +539,27 @@ module Google
           # @!attribute [rw] value_per_all_conversions
           #   @return [::Float]
           #     The value of all conversions divided by the number of all conversions.
+          # @!attribute [rw] value_per_all_conversions_by_conversion_date
+          #   @return [::Float]
+          #     The value of all conversions divided by the number of all conversions. When
+          #     this column is selected with date, the values in date column means the
+          #     conversion date. Details for the by_conversion_date columns are available
+          #     at https://support.google.com/google-ads/answer/9549009.
           # @!attribute [rw] value_per_conversion
           #   @return [::Float]
           #     The value of conversions divided by the number of conversions. This only
           #     includes conversion actions which include_in_conversions_metric attribute
           #     is set to true. If you use conversion-based bidding, your bid strategies
           #     will optimize for these conversions.
+          # @!attribute [rw] value_per_conversions_by_conversion_date
+          #   @return [::Float]
+          #     The value of conversions divided by the number of conversions. This only
+          #     includes conversion actions which include_in_conversions_metric attribute
+          #     is set to true. If you use conversion-based bidding, your bid strategies
+          #     will optimize for these conversions. When this column is selected with
+          #     date, the values in date column means the conversion date. Details for the
+          #     by_conversion_date columns are available at
+          #     https://support.google.com/google-ads/answer/9549009.
           # @!attribute [rw] value_per_current_model_attributed_conversion
           #   @return [::Float]
           #     The value of current model attributed conversions divided by the number of

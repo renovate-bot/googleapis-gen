@@ -26,6 +26,20 @@ module Google
             # Path helper methods for the CustomerClientLinkService API.
             module Paths
               ##
+              # Create a fully-qualified Customer resource string.
+              #
+              # The resource will be in the following format:
+              #
+              # `customers/{customer_id}`
+              #
+              # @param customer_id [String]
+              #
+              # @return [::String]
+              def customer_path customer_id:
+                "customers/#{customer_id}"
+              end
+
+              ##
               # Create a fully-qualified CustomerClientLink resource string.
               #
               # The resource will be in the following format:

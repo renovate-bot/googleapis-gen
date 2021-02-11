@@ -127,6 +127,9 @@ module Google
 
               # Custom audience
               CUSTOM_AUDIENCE = 32
+
+              # Combined audience
+              COMBINED_AUDIENCE = 33
             end
           end
         end

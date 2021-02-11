@@ -48,6 +48,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "google.ads.googleads.v6.resources.ConversionAction.ThirdPartyAppAnalyticsSettings" do
       proto3_optional :event_name, :string, 2
+      optional :provider_name, :string, 3
     end
     add_message "google.ads.googleads.v6.resources.ConversionAction.FirebaseSettings" do
       proto3_optional :event_name, :string, 3

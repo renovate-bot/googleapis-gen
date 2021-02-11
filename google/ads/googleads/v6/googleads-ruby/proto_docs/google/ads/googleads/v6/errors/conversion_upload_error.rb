@@ -98,7 +98,7 @@ module Google
               # conversion action combination.
               DUPLICATE_ORDER_ID = 16
 
-              # The call occurred too recently. Please try uploading again after 6 hours
+              # The call occurred too recently. Please try uploading again after 12 hours
               # have passed since the call occurred.
               TOO_RECENT_CALL = 17
 

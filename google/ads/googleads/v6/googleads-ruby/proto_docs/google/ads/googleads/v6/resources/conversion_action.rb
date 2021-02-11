@@ -137,6 +137,9 @@ module Google
             # @!attribute [r] event_name
             #   @return [::String]
             #     Output only. The event name of a third-party app analytics conversion.
+            # @!attribute [r] provider_name
+            #   @return [::String]
+            #     Output only. Name of the third-party app analytics provider.
             class ThirdPartyAppAnalyticsSettings
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods

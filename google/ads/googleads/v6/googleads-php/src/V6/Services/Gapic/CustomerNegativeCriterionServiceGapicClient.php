@@ -26,6 +26,7 @@
 
 namespace Google\Ads\GoogleAds\V6\Services\Gapic;
 
+use Google\Ads\GoogleAds\V6\Enums\ResponseContentTypeEnum\ResponseContentType;
 use Google\Ads\GoogleAds\V6\Resources\CustomerNegativeCriterion;
 use Google\Ads\GoogleAds\V6\Services\CustomerNegativeCriterionOperation;
 use Google\Ads\GoogleAds\V6\Services\GetCustomerNegativeCriterionRequest;
@@ -331,6 +332,10 @@ class CustomerNegativeCriterionServiceGapicClient
      *     @type bool $validateOnly
      *          If true, the request is validated but not executed. Only errors are
      *          returned, not results.
+     *     @type int $responseContentType
+     *          The response content type setting. Determines whether the mutable resource
+     *          or just the resource name should be returned post mutation.
+     *          For allowed values, use constants defined on {@see \Google\Ads\GoogleAds\V6\Enums\ResponseContentTypeEnum\ResponseContentType}
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -353,6 +358,9 @@ class CustomerNegativeCriterionServiceGapicClient
         }
         if (isset($optionalArgs['validateOnly'])) {
             $request->setValidateOnly($optionalArgs['validateOnly']);
+        }
+        if (isset($optionalArgs['responseContentType'])) {
+            $request->setResponseContentType($optionalArgs['responseContentType']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([

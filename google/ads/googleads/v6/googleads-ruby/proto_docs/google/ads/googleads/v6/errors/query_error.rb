@@ -208,6 +208,10 @@ module Google
               # issue separate requests against each client account under the manager
               # account.
               REQUESTED_METRICS_FOR_MANAGER = 59
+
+              # The number of values (right-hand-side operands) in a filter exceeds the
+              # limit.
+              FILTER_HAS_TOO_MANY_VALUES = 63
             end
           end
         end

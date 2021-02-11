@@ -169,6 +169,10 @@ module Google
               # The App campaign for engagement cannot be created because the app is
               # sensitive.
               SENSITIVE_CATEGORY_APP = 45
+
+              # Customers with Housing, Employment, or Credit ads must accept updated
+              # personalized ads policy to continue creating campaigns.
+              HEC_AGREEMENT_REQUIRED = 46
             end
           end
         end

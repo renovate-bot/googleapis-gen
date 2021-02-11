@@ -488,6 +488,23 @@ module Google
               end
 
               ##
+              # Create a fully-qualified CallView resource string.
+              #
+              # The resource will be in the following format:
+              #
+              # `customers/{customer_id}/callViews/{call_detail_id}`
+              #
+              # @param customer_id [String]
+              # @param call_detail_id [String]
+              #
+              # @return [::String]
+              def call_view_path customer_id:, call_detail_id:
+                raise ::ArgumentError, "customer_id cannot contain /" if customer_id.to_s.include? "/"
+
+                "customers/#{customer_id}/callViews/#{call_detail_id}"
+              end
+
+              ##
               # Create a fully-qualified Campaign resource string.
               #
               # The resource will be in the following format:
@@ -1043,6 +1060,23 @@ module Google
                 raise ::ArgumentError, "customer_id cannot contain /" if customer_id.to_s.include? "/"
 
                 "customers/#{customer_id}/customerUserAccesses/#{user_id}"
+              end
+
+              ##
+              # Create a fully-qualified CustomerUserAccessInvitation resource string.
+              #
+              # The resource will be in the following format:
+              #
+              # `customers/{customer_id}/customerUserAccessInvitations/{invitation_id}`
+              #
+              # @param customer_id [String]
+              # @param invitation_id [String]
+              #
+              # @return [::String]
+              def customer_user_access_invitation_path customer_id:, invitation_id:
+                raise ::ArgumentError, "customer_id cannot contain /" if customer_id.to_s.include? "/"
+
+                "customers/#{customer_id}/customerUserAccessInvitations/#{invitation_id}"
               end
 
               ##

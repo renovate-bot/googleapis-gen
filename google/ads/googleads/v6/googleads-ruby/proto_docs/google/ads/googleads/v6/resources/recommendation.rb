@@ -50,15 +50,15 @@ module Google
           #     This field will be set for the following recommendation types:
           #     CALL_EXTENSION, CALLOUT_EXTENSION, ENHANCED_CPC_OPT_IN, KEYWORD,
           #     KEYWORD_MATCH_TYPE, MAXIMIZE_CLICKS_OPT_IN, MAXIMIZE_CONVERSIONS_OPT_IN,
-          #     OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN, SITELINK_EXTENSION,
-          #     TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
+          #     OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, SEARCH_PARTNERS_OPT_IN,
+          #     SITELINK_EXTENSION, TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
           # @!attribute [r] ad_group
           #   @return [::String]
           #     Output only. The ad group targeted by this recommendation. This will be set only when
           #     the recommendation affects a single ad group.
           #
           #     This field will be set for the following recommendation types:
-          #     KEYWORD, OPTIMIZE_AD_ROTATION, TEXT_AD
+          #     KEYWORD, OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, TEXT_AD
           # @!attribute [r] dismissed
           #   @return [::Boolean]
           #     Output only. Whether the recommendation is dismissed or not.
@@ -110,6 +110,9 @@ module Google
           # @!attribute [r] target_roas_opt_in_recommendation
           #   @return [::Google::Ads::GoogleAds::V6::Resources::Recommendation::TargetRoasOptInRecommendation]
           #     Output only. The Target ROAS opt-in recommendation.
+          # @!attribute [r] responsive_search_ad_recommendation
+          #   @return [::Google::Ads::GoogleAds::V6::Resources::Recommendation::ResponsiveSearchAdRecommendation]
+          #     Output only. The add responsive search ad recommendation.
           class Recommendation
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -190,21 +193,6 @@ module Google
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
 
-            # The Enhanced Cost-Per-Click Opt-In recommendation.
-            class EnhancedCpcOptInRecommendation
-              include ::Google::Protobuf::MessageExts
-              extend ::Google::Protobuf::MessageExts::ClassMethods
-            end
-
-            # The Call extension recommendation.
-            # @!attribute [r] recommended_extensions
-            #   @return [::Array<::Google::Ads::GoogleAds::V6::Common::CallFeedItem>]
-            #     Output only. Call extensions recommended to be added.
-            class CallExtensionRecommendation
-              include ::Google::Protobuf::MessageExts
-              extend ::Google::Protobuf::MessageExts::ClassMethods
-            end
-
             # The text ad recommendation.
             # @!attribute [r] ad
             #   @return [::Google::Ads::GoogleAds::V6::Resources::Ad]
@@ -223,14 +211,11 @@ module Google
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
 
-            # The keyword match type recommendation.
-            # @!attribute [r] keyword
-            #   @return [::Google::Ads::GoogleAds::V6::Common::KeywordInfo]
-            #     Output only. The existing keyword where the match type should be more broad.
-            # @!attribute [r] recommended_match_type
-            #   @return [::Google::Ads::GoogleAds::V6::Enums::KeywordMatchTypeEnum::KeywordMatchType]
-            #     Output only. The recommended new match type.
-            class KeywordMatchTypeRecommendation
+            # The add responsive search ad recommendation.
+            # @!attribute [r] ad
+            #   @return [::Google::Ads::GoogleAds::V6::Resources::Ad]
+            #     Output only. Recommended ad.
+            class ResponsiveSearchAdRecommendation
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
@@ -278,8 +263,81 @@ module Google
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
 
+            # The Callout extension recommendation.
+            # @!attribute [r] recommended_extensions
+            #   @return [::Array<::Google::Ads::GoogleAds::V6::Common::CalloutFeedItem>]
+            #     Output only. Callout extensions recommended to be added.
+            class CalloutExtensionRecommendation
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
+            # The Enhanced Cost-Per-Click Opt-In recommendation.
+            class EnhancedCpcOptInRecommendation
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
             # The Search Partners Opt-In recommendation.
             class SearchPartnersOptInRecommendation
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
+            # The Maximize Clicks opt-in recommendation.
+            # @!attribute [r] recommended_budget_amount_micros
+            #   @return [::Integer]
+            #     Output only. The recommended new budget amount.
+            #     Only set if the current budget is too high.
+            class MaximizeClicksOptInRecommendation
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
+            # The move unused budget recommendation.
+            # @!attribute [r] excess_campaign_budget
+            #   @return [::String]
+            #     Output only. The excess budget's resource_name.
+            # @!attribute [r] budget_recommendation
+            #   @return [::Google::Ads::GoogleAds::V6::Resources::Recommendation::CampaignBudgetRecommendation]
+            #     Output only. The recommendation for the constrained budget to increase.
+            class MoveUnusedBudgetRecommendation
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
+            # The Optimize Ad Rotation recommendation.
+            class OptimizeAdRotationRecommendation
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
+            # The Sitelink extension recommendation.
+            # @!attribute [r] recommended_extensions
+            #   @return [::Array<::Google::Ads::GoogleAds::V6::Common::SitelinkFeedItem>]
+            #     Output only. Sitelink extensions recommended to be added.
+            class SitelinkExtensionRecommendation
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
+            # The keyword match type recommendation.
+            # @!attribute [r] keyword
+            #   @return [::Google::Ads::GoogleAds::V6::Common::KeywordInfo]
+            #     Output only. The existing keyword where the match type should be more broad.
+            # @!attribute [r] recommended_match_type
+            #   @return [::Google::Ads::GoogleAds::V6::Enums::KeywordMatchTypeEnum::KeywordMatchType]
+            #     Output only. The recommended new match type.
+            class KeywordMatchTypeRecommendation
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
+            # The Call extension recommendation.
+            # @!attribute [r] recommended_extensions
+            #   @return [::Array<::Google::Ads::GoogleAds::V6::Common::CallFeedItem>]
+            #     Output only. Call extensions recommended to be added.
+            class CallExtensionRecommendation
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
@@ -296,52 +354,6 @@ module Google
             #     Amount is specified in micros, where one million is equivalent to one
             #     currency unit.
             class TargetRoasOptInRecommendation
-              include ::Google::Protobuf::MessageExts
-              extend ::Google::Protobuf::MessageExts::ClassMethods
-            end
-
-            # The Maximize Clicks opt-in recommendation.
-            # @!attribute [r] recommended_budget_amount_micros
-            #   @return [::Integer]
-            #     Output only. The recommended new budget amount.
-            #     Only set if the current budget is too high.
-            class MaximizeClicksOptInRecommendation
-              include ::Google::Protobuf::MessageExts
-              extend ::Google::Protobuf::MessageExts::ClassMethods
-            end
-
-            # The Optimize Ad Rotation recommendation.
-            class OptimizeAdRotationRecommendation
-              include ::Google::Protobuf::MessageExts
-              extend ::Google::Protobuf::MessageExts::ClassMethods
-            end
-
-            # The Callout extension recommendation.
-            # @!attribute [r] recommended_extensions
-            #   @return [::Array<::Google::Ads::GoogleAds::V6::Common::CalloutFeedItem>]
-            #     Output only. Callout extensions recommended to be added.
-            class CalloutExtensionRecommendation
-              include ::Google::Protobuf::MessageExts
-              extend ::Google::Protobuf::MessageExts::ClassMethods
-            end
-
-            # The Sitelink extension recommendation.
-            # @!attribute [r] recommended_extensions
-            #   @return [::Array<::Google::Ads::GoogleAds::V6::Common::SitelinkFeedItem>]
-            #     Output only. Sitelink extensions recommended to be added.
-            class SitelinkExtensionRecommendation
-              include ::Google::Protobuf::MessageExts
-              extend ::Google::Protobuf::MessageExts::ClassMethods
-            end
-
-            # The move unused budget recommendation.
-            # @!attribute [r] excess_campaign_budget
-            #   @return [::String]
-            #     Output only. The excess budget's resource_name.
-            # @!attribute [r] budget_recommendation
-            #   @return [::Google::Ads::GoogleAds::V6::Resources::Recommendation::CampaignBudgetRecommendation]
-            #     Output only. The recommendation for the constrained budget to increase.
-            class MoveUnusedBudgetRecommendation
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end

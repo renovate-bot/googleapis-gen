@@ -253,7 +253,7 @@ module Google
           #     Start date of when the promotion is eligible to be redeemed.
           # @!attribute [rw] promotion_end_date
           #   @return [::String]
-          #     End date of when the promotion is eligible to be redeemed.
+          #     Last date when the promotion is eligible to be redeemed.
           # @!attribute [rw] occasion
           #   @return [::Google::Ads::GoogleAds::V6::Enums::PromotionExtensionOccasionEnum::PromotionExtensionOccasion]
           #     The occasion the promotion was intended for.

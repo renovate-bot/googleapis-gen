@@ -192,6 +192,9 @@ module Google
           # @!attribute [rw] billing_setup
           #   @return [::Google::Ads::GoogleAds::V6::Resources::BillingSetup]
           #     The billing setup referenced in the query.
+          # @!attribute [rw] call_view
+          #   @return [::Google::Ads::GoogleAds::V6::Resources::CallView]
+          #     The call view referenced in the query.
           # @!attribute [rw] campaign_budget
           #   @return [::Google::Ads::GoogleAds::V6::Resources::CampaignBudget]
           #     The campaign budget referenced in the query.
@@ -285,6 +288,9 @@ module Google
           # @!attribute [rw] customer_user_access
           #   @return [::Google::Ads::GoogleAds::V6::Resources::CustomerUserAccess]
           #     The CustomerUserAccess referenced in the query.
+          # @!attribute [rw] customer_user_access_invitation
+          #   @return [::Google::Ads::GoogleAds::V6::Resources::CustomerUserAccessInvitation]
+          #     The CustomerUserAccessInvitation referenced in the query.
           # @!attribute [rw] detail_placement_view
           #   @return [::Google::Ads::GoogleAds::V6::Resources::DetailPlacementView]
           #     The detail placement view referenced in the query.

@@ -133,7 +133,7 @@ module Google
           #     The date when campaign started.
           # @!attribute [rw] end_date
           #   @return [::String]
-          #     The date when campaign ended.
+          #     The last day of the campaign.
           # @!attribute [rw] final_url_suffix
           #   @return [::String]
           #     Suffix used to append query parameters to landing pages that are served
@@ -260,15 +260,6 @@ module Google
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
 
-            # Campaign setting for local campaigns.
-            # @!attribute [rw] location_source_type
-            #   @return [::Google::Ads::GoogleAds::V6::Enums::LocationSourceTypeEnum::LocationSourceType]
-            #     The location source type for this local campaign.
-            class LocalCampaignSetting
-              include ::Google::Protobuf::MessageExts
-              extend ::Google::Protobuf::MessageExts::ClassMethods
-            end
-
             # The setting for controlling Dynamic Search Ads (DSA).
             # @!attribute [rw] domain_name
             #   @return [::String]
@@ -288,12 +279,21 @@ module Google
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
 
-            # Optimization goal setting for this campaign, which includes a set of
-            # optimization goal types.
-            # @!attribute [rw] optimization_goal_types
-            #   @return [::Array<::Google::Ads::GoogleAds::V6::Enums::OptimizationGoalTypeEnum::OptimizationGoalType>]
-            #     The list of optimization goal types.
-            class OptimizationGoalSetting
+            # Campaign setting for local campaigns.
+            # @!attribute [rw] location_source_type
+            #   @return [::Google::Ads::GoogleAds::V6::Enums::LocationSourceTypeEnum::LocationSourceType]
+            #     The location source type for this local campaign.
+            class LocalCampaignSetting
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
+            # Selective optimization setting for this campaign, which includes a set of
+            # conversion actions to optimize this campaign towards.
+            # @!attribute [rw] conversion_actions
+            #   @return [::Array<::String>]
+            #     The selected set of conversion actions for optimizing this campaign.
+            class SelectiveOptimization
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
@@ -328,37 +328,6 @@ module Google
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
 
-            # Campaign-level settings for tracking information.
-            # @!attribute [r] tracking_url
-            #   @return [::String]
-            #     Output only. The url used for dynamic tracking.
-            class TrackingSetting
-              include ::Google::Protobuf::MessageExts
-              extend ::Google::Protobuf::MessageExts::ClassMethods
-            end
-
-            # Selective optimization setting for this campaign, which includes a set of
-            # conversion actions to optimize this campaign towards.
-            # @!attribute [rw] conversion_actions
-            #   @return [::Array<::String>]
-            #     The selected set of conversion actions for optimizing this campaign.
-            class SelectiveOptimization
-              include ::Google::Protobuf::MessageExts
-              extend ::Google::Protobuf::MessageExts::ClassMethods
-            end
-
-            # Represents a collection of settings related to ads geotargeting.
-            # @!attribute [rw] positive_geo_target_type
-            #   @return [::Google::Ads::GoogleAds::V6::Enums::PositiveGeoTargetTypeEnum::PositiveGeoTargetType]
-            #     The setting used for positive geotargeting in this particular campaign.
-            # @!attribute [rw] negative_geo_target_type
-            #   @return [::Google::Ads::GoogleAds::V6::Enums::NegativeGeoTargetTypeEnum::NegativeGeoTargetType]
-            #     The setting used for negative geotargeting in this particular campaign.
-            class GeoTargetTypeSetting
-              include ::Google::Protobuf::MessageExts
-              extend ::Google::Protobuf::MessageExts::ClassMethods
-            end
-
             # Campaign-level settings for App Campaigns.
             # @!attribute [rw] bidding_strategy_goal_type
             #   @return [::Google::Ads::GoogleAds::V6::Enums::AppCampaignBiddingStrategyGoalTypeEnum::AppCampaignBiddingStrategyGoalType]
@@ -371,6 +340,37 @@ module Google
             #   @return [::Google::Ads::GoogleAds::V6::Enums::AppCampaignAppStoreEnum::AppCampaignAppStore]
             #     Immutable. The application store that distributes this specific app.
             class AppCampaignSetting
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
+            # Campaign-level settings for tracking information.
+            # @!attribute [r] tracking_url
+            #   @return [::String]
+            #     Output only. The url used for dynamic tracking.
+            class TrackingSetting
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
+            # Optimization goal setting for this campaign, which includes a set of
+            # optimization goal types.
+            # @!attribute [rw] optimization_goal_types
+            #   @return [::Array<::Google::Ads::GoogleAds::V6::Enums::OptimizationGoalTypeEnum::OptimizationGoalType>]
+            #     The list of optimization goal types.
+            class OptimizationGoalSetting
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
+            # Represents a collection of settings related to ads geotargeting.
+            # @!attribute [rw] positive_geo_target_type
+            #   @return [::Google::Ads::GoogleAds::V6::Enums::PositiveGeoTargetTypeEnum::PositiveGeoTargetType]
+            #     The setting used for positive geotargeting in this particular campaign.
+            # @!attribute [rw] negative_geo_target_type
+            #   @return [::Google::Ads::GoogleAds::V6::Enums::NegativeGeoTargetTypeEnum::NegativeGeoTargetType]
+            #     The setting used for negative geotargeting in this particular campaign.
+            class GeoTargetTypeSetting
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end

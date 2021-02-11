@@ -28,7 +28,7 @@ module Google
           # shown externally) in the past 30 days will be shown. The change shows the old
           # values of the changed fields before the change and the new values right after
           # the change. ChangeEvent could have up to 3 minutes delay to reflect a new
-          # change
+          # change.
           # @!attribute [r] resource_name
           #   @return [::String]
           #     Output only. The resource name of the change event.
@@ -69,6 +69,12 @@ module Google
           # @!attribute [r] ad_group
           #   @return [::String]
           #     Output only. The AdGroup affected by this change.
+          # @!attribute [r] feed
+          #   @return [::String]
+          #     Output only. The Feed affected by this change.
+          # @!attribute [r] feed_item
+          #   @return [::String]
+          #     Output only. The FeedItem affected by this change.
           class ChangeEvent
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -96,6 +102,21 @@ module Google
             # @!attribute [r] campaign_criterion
             #   @return [::Google::Ads::GoogleAds::V6::Resources::CampaignCriterion]
             #     Output only. Set if change_resource_type == CAMPAIGN_CRITERION.
+            # @!attribute [r] feed
+            #   @return [::Google::Ads::GoogleAds::V6::Resources::Feed]
+            #     Output only. Set if change_resource_type == FEED.
+            # @!attribute [r] feed_item
+            #   @return [::Google::Ads::GoogleAds::V6::Resources::FeedItem]
+            #     Output only. Set if change_resource_type == FEED_ITEM.
+            # @!attribute [r] campaign_feed
+            #   @return [::Google::Ads::GoogleAds::V6::Resources::CampaignFeed]
+            #     Output only. Set if change_resource_type == CAMPAIGN_FEED.
+            # @!attribute [r] ad_group_feed
+            #   @return [::Google::Ads::GoogleAds::V6::Resources::AdGroupFeed]
+            #     Output only. Set if change_resource_type == AD_GROUP_FEED.
+            # @!attribute [r] ad_group_ad
+            #   @return [::Google::Ads::GoogleAds::V6::Resources::AdGroupAd]
+            #     Output only. Set if change_resource_type == AD_GROUP_AD.
             class ChangedResource
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods

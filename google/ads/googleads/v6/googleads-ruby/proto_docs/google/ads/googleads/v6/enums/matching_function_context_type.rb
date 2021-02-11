@@ -40,6 +40,9 @@ module Google
 
               # The device being used (possible values are 'Desktop' or 'Mobile').
               DEVICE_NAME = 3
+
+              # Feed item set id in the request context.
+              FEED_ITEM_SET_ID = 4
             end
           end
         end

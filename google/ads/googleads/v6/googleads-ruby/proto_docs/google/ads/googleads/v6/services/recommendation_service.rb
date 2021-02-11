@@ -86,6 +86,9 @@ module Google
           # @!attribute [rw] move_unused_budget
           #   @return [::Google::Ads::GoogleAds::V6::Services::ApplyRecommendationOperation::MoveUnusedBudgetParameters]
           #     Parameters to use when applying move unused budget recommendation.
+          # @!attribute [rw] responsive_search_ad
+          #   @return [::Google::Ads::GoogleAds::V6::Services::ApplyRecommendationOperation::ResponsiveSearchAdParameters]
+          #     Parameters to use when applying a responsive search ad recommendation.
           class ApplyRecommendationOperation
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -186,6 +189,15 @@ module Google
             #     Budget amount to move from excess budget to constrained budget. This is
             #     a required field.
             class MoveUnusedBudgetParameters
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
+            # Parameters to use when applying a responsive search ad recommendation.
+            # @!attribute [rw] ad
+            #   @return [::Google::Ads::GoogleAds::V6::Resources::Ad]
+            #     Required. New ad to add to recommended ad group.
+            class ResponsiveSearchAdParameters
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end

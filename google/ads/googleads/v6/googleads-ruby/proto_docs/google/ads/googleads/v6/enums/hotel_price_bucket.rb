@@ -35,6 +35,10 @@ module Google
               # The value is unknown in this version.
               UNKNOWN = 1
 
+              # Uniquely lowest price. Partner has the lowest price, and no other
+              # partners are within a small variance of that price.
+              LOWEST_UNIQUE = 2
+
               # Tied for lowest price. Partner is within a small variance of the lowest
               # price.
               LOWEST_TIED = 3
@@ -42,6 +46,9 @@ module Google
               # Not lowest price. Partner is not within a small variance of the lowest
               # price.
               NOT_LOWEST = 4
+
+              # Partner was the only one shown.
+              ONLY_PARTNER_SHOWN = 5
             end
           end
         end

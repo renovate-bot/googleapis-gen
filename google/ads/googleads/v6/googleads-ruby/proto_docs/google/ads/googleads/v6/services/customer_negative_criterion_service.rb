@@ -50,6 +50,10 @@ module Google
           #   @return [::Boolean]
           #     If true, the request is validated but not executed. Only errors are
           #     returned, not results.
+          # @!attribute [rw] response_content_type
+          #   @return [::Google::Ads::GoogleAds::V6::Enums::ResponseContentTypeEnum::ResponseContentType]
+          #     The response content type setting. Determines whether the mutable resource
+          #     or just the resource name should be returned post mutation.
           class MutateCustomerNegativeCriteriaRequest
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -89,6 +93,10 @@ module Google
           # @!attribute [rw] resource_name
           #   @return [::String]
           #     Returned for successful operations.
+          # @!attribute [rw] customer_negative_criterion
+          #   @return [::Google::Ads::GoogleAds::V6::Resources::CustomerNegativeCriterion]
+          #     The mutated criterion with only mutable fields after mutate. The field will
+          #     only be returned when response_content_type is set to "MUTABLE_RESOURCE".
           class MutateCustomerNegativeCriteriaResult
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods

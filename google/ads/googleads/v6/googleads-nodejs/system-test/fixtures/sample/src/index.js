@@ -75,6 +75,7 @@ function main() {
   const customerManagerLinkServiceClient = new googleads.CustomerManagerLinkServiceClient();
   const customerNegativeCriterionServiceClient = new googleads.CustomerNegativeCriterionServiceClient();
   const customerServiceClient = new googleads.CustomerServiceClient();
+  const customerUserAccessInvitationServiceClient = new googleads.CustomerUserAccessInvitationServiceClient();
   const customerUserAccessServiceClient = new googleads.CustomerUserAccessServiceClient();
   const customInterestServiceClient = new googleads.CustomInterestServiceClient();
   const detailPlacementViewServiceClient = new googleads.DetailPlacementViewServiceClient();

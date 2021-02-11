@@ -27,6 +27,9 @@ module Google
           #   @return [::String]
           #     YouTube video id. This is the 11 character string value used in the
           #     YouTube video URL.
+          # @!attribute [rw] youtube_video_title
+          #   @return [::String]
+          #     YouTube video title.
           class YoutubeVideoAsset
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods

@@ -51,6 +51,9 @@ module Google
           # @!attribute [rw] update_mask
           #   @return [::Google::Protobuf::FieldMask]
           #     FieldMask that determines which resource fields are modified in an update.
+          # @!attribute [rw] policy_validation_parameter
+          #   @return [::Google::Ads::GoogleAds::V6::Common::PolicyValidationParameter]
+          #     Configuration for how policies are validated.
           # @!attribute [rw] update
           #   @return [::Google::Ads::GoogleAds::V6::Resources::Ad]
           #     Update operation: The ad is expected to have a valid resource name

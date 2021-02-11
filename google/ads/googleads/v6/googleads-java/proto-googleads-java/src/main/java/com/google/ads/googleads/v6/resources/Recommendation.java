@@ -330,6 +330,20 @@ private static final long serialVersionUID = 0L;
             dismissed_ = input.readBool();
             break;
           }
+          case 226: {
+            com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation.Builder subBuilder = null;
+            if (recommendationCase_ == 28) {
+              subBuilder = ((com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation) recommendation_).toBuilder();
+            }
+            recommendation_ =
+                input.readMessage(com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation) recommendation_);
+              recommendation_ = subBuilder.buildPartial();
+            }
+            recommendationCase_ = 28;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -5291,1345 +5305,6 @@ private static final long serialVersionUID = 0L;
 
   }
 
-  public interface EnhancedCpcOptInRecommendationOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation)
-      com.google.protobuf.MessageOrBuilder {
-  }
-  /**
-   * <pre>
-   * The Enhanced Cost-Per-Click Opt-In recommendation.
-   * </pre>
-   *
-   * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation}
-   */
-  public static final class EnhancedCpcOptInRecommendation extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation)
-      EnhancedCpcOptInRecommendationOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use EnhancedCpcOptInRecommendation.newBuilder() to construct.
-    private EnhancedCpcOptInRecommendation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private EnhancedCpcOptInRecommendation() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new EnhancedCpcOptInRecommendation();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private EnhancedCpcOptInRecommendation(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_EnhancedCpcOptInRecommendation_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_EnhancedCpcOptInRecommendation_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation.Builder.class);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation)) {
-        return super.equals(obj);
-      }
-      com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation other = (com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation) obj;
-
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * The Enhanced Cost-Per-Click Opt-In recommendation.
-     * </pre>
-     *
-     * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation)
-        com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendationOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_EnhancedCpcOptInRecommendation_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_EnhancedCpcOptInRecommendation_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation.Builder.class);
-      }
-
-      // Construct using com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_EnhancedCpcOptInRecommendation_descriptor;
-      }
-
-      @java.lang.Override
-      public com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation getDefaultInstanceForType() {
-        return com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation build() {
-        com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation buildPartial() {
-        com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation result = new com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation(this);
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation) {
-          return mergeFrom((com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation other) {
-        if (other == com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation.getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation)
-    private static final com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation();
-    }
-
-    public static com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<EnhancedCpcOptInRecommendation>
-        PARSER = new com.google.protobuf.AbstractParser<EnhancedCpcOptInRecommendation>() {
-      @java.lang.Override
-      public EnhancedCpcOptInRecommendation parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EnhancedCpcOptInRecommendation(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<EnhancedCpcOptInRecommendation> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<EnhancedCpcOptInRecommendation> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface CallExtensionRecommendationOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * Output only. Call extensions recommended to be added.
-     * </pre>
-     *
-     * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    java.util.List<com.google.ads.googleads.v6.common.CallFeedItem> 
-        getRecommendedExtensionsList();
-    /**
-     * <pre>
-     * Output only. Call extensions recommended to be added.
-     * </pre>
-     *
-     * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    com.google.ads.googleads.v6.common.CallFeedItem getRecommendedExtensions(int index);
-    /**
-     * <pre>
-     * Output only. Call extensions recommended to be added.
-     * </pre>
-     *
-     * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    int getRecommendedExtensionsCount();
-    /**
-     * <pre>
-     * Output only. Call extensions recommended to be added.
-     * </pre>
-     *
-     * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    java.util.List<? extends com.google.ads.googleads.v6.common.CallFeedItemOrBuilder> 
-        getRecommendedExtensionsOrBuilderList();
-    /**
-     * <pre>
-     * Output only. Call extensions recommended to be added.
-     * </pre>
-     *
-     * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    com.google.ads.googleads.v6.common.CallFeedItemOrBuilder getRecommendedExtensionsOrBuilder(
-        int index);
-  }
-  /**
-   * <pre>
-   * The Call extension recommendation.
-   * </pre>
-   *
-   * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation}
-   */
-  public static final class CallExtensionRecommendation extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation)
-      CallExtensionRecommendationOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use CallExtensionRecommendation.newBuilder() to construct.
-    private CallExtensionRecommendation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private CallExtensionRecommendation() {
-      recommendedExtensions_ = java.util.Collections.emptyList();
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new CallExtensionRecommendation();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private CallExtensionRecommendation(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                recommendedExtensions_ = new java.util.ArrayList<com.google.ads.googleads.v6.common.CallFeedItem>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              recommendedExtensions_.add(
-                  input.readMessage(com.google.ads.googleads.v6.common.CallFeedItem.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          recommendedExtensions_ = java.util.Collections.unmodifiableList(recommendedExtensions_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_CallExtensionRecommendation_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_CallExtensionRecommendation_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation.Builder.class);
-    }
-
-    public static final int RECOMMENDED_EXTENSIONS_FIELD_NUMBER = 1;
-    private java.util.List<com.google.ads.googleads.v6.common.CallFeedItem> recommendedExtensions_;
-    /**
-     * <pre>
-     * Output only. Call extensions recommended to be added.
-     * </pre>
-     *
-     * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    @java.lang.Override
-    public java.util.List<com.google.ads.googleads.v6.common.CallFeedItem> getRecommendedExtensionsList() {
-      return recommendedExtensions_;
-    }
-    /**
-     * <pre>
-     * Output only. Call extensions recommended to be added.
-     * </pre>
-     *
-     * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends com.google.ads.googleads.v6.common.CallFeedItemOrBuilder> 
-        getRecommendedExtensionsOrBuilderList() {
-      return recommendedExtensions_;
-    }
-    /**
-     * <pre>
-     * Output only. Call extensions recommended to be added.
-     * </pre>
-     *
-     * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    @java.lang.Override
-    public int getRecommendedExtensionsCount() {
-      return recommendedExtensions_.size();
-    }
-    /**
-     * <pre>
-     * Output only. Call extensions recommended to be added.
-     * </pre>
-     *
-     * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    @java.lang.Override
-    public com.google.ads.googleads.v6.common.CallFeedItem getRecommendedExtensions(int index) {
-      return recommendedExtensions_.get(index);
-    }
-    /**
-     * <pre>
-     * Output only. Call extensions recommended to be added.
-     * </pre>
-     *
-     * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    @java.lang.Override
-    public com.google.ads.googleads.v6.common.CallFeedItemOrBuilder getRecommendedExtensionsOrBuilder(
-        int index) {
-      return recommendedExtensions_.get(index);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      for (int i = 0; i < recommendedExtensions_.size(); i++) {
-        output.writeMessage(1, recommendedExtensions_.get(i));
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      for (int i = 0; i < recommendedExtensions_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, recommendedExtensions_.get(i));
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation)) {
-        return super.equals(obj);
-      }
-      com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation other = (com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation) obj;
-
-      if (!getRecommendedExtensionsList()
-          .equals(other.getRecommendedExtensionsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (getRecommendedExtensionsCount() > 0) {
-        hash = (37 * hash) + RECOMMENDED_EXTENSIONS_FIELD_NUMBER;
-        hash = (53 * hash) + getRecommendedExtensionsList().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * The Call extension recommendation.
-     * </pre>
-     *
-     * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation)
-        com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendationOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_CallExtensionRecommendation_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_CallExtensionRecommendation_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation.Builder.class);
-      }
-
-      // Construct using com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getRecommendedExtensionsFieldBuilder();
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        if (recommendedExtensionsBuilder_ == null) {
-          recommendedExtensions_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          recommendedExtensionsBuilder_.clear();
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_CallExtensionRecommendation_descriptor;
-      }
-
-      @java.lang.Override
-      public com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation getDefaultInstanceForType() {
-        return com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation build() {
-        com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation buildPartial() {
-        com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation result = new com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation(this);
-        int from_bitField0_ = bitField0_;
-        if (recommendedExtensionsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            recommendedExtensions_ = java.util.Collections.unmodifiableList(recommendedExtensions_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.recommendedExtensions_ = recommendedExtensions_;
-        } else {
-          result.recommendedExtensions_ = recommendedExtensionsBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation) {
-          return mergeFrom((com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation other) {
-        if (other == com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation.getDefaultInstance()) return this;
-        if (recommendedExtensionsBuilder_ == null) {
-          if (!other.recommendedExtensions_.isEmpty()) {
-            if (recommendedExtensions_.isEmpty()) {
-              recommendedExtensions_ = other.recommendedExtensions_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureRecommendedExtensionsIsMutable();
-              recommendedExtensions_.addAll(other.recommendedExtensions_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.recommendedExtensions_.isEmpty()) {
-            if (recommendedExtensionsBuilder_.isEmpty()) {
-              recommendedExtensionsBuilder_.dispose();
-              recommendedExtensionsBuilder_ = null;
-              recommendedExtensions_ = other.recommendedExtensions_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              recommendedExtensionsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getRecommendedExtensionsFieldBuilder() : null;
-            } else {
-              recommendedExtensionsBuilder_.addAllMessages(other.recommendedExtensions_);
-            }
-          }
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private java.util.List<com.google.ads.googleads.v6.common.CallFeedItem> recommendedExtensions_ =
-        java.util.Collections.emptyList();
-      private void ensureRecommendedExtensionsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          recommendedExtensions_ = new java.util.ArrayList<com.google.ads.googleads.v6.common.CallFeedItem>(recommendedExtensions_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.ads.googleads.v6.common.CallFeedItem, com.google.ads.googleads.v6.common.CallFeedItem.Builder, com.google.ads.googleads.v6.common.CallFeedItemOrBuilder> recommendedExtensionsBuilder_;
-
-      /**
-       * <pre>
-       * Output only. Call extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public java.util.List<com.google.ads.googleads.v6.common.CallFeedItem> getRecommendedExtensionsList() {
-        if (recommendedExtensionsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(recommendedExtensions_);
-        } else {
-          return recommendedExtensionsBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <pre>
-       * Output only. Call extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public int getRecommendedExtensionsCount() {
-        if (recommendedExtensionsBuilder_ == null) {
-          return recommendedExtensions_.size();
-        } else {
-          return recommendedExtensionsBuilder_.getCount();
-        }
-      }
-      /**
-       * <pre>
-       * Output only. Call extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public com.google.ads.googleads.v6.common.CallFeedItem getRecommendedExtensions(int index) {
-        if (recommendedExtensionsBuilder_ == null) {
-          return recommendedExtensions_.get(index);
-        } else {
-          return recommendedExtensionsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <pre>
-       * Output only. Call extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public Builder setRecommendedExtensions(
-          int index, com.google.ads.googleads.v6.common.CallFeedItem value) {
-        if (recommendedExtensionsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRecommendedExtensionsIsMutable();
-          recommendedExtensions_.set(index, value);
-          onChanged();
-        } else {
-          recommendedExtensionsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Output only. Call extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public Builder setRecommendedExtensions(
-          int index, com.google.ads.googleads.v6.common.CallFeedItem.Builder builderForValue) {
-        if (recommendedExtensionsBuilder_ == null) {
-          ensureRecommendedExtensionsIsMutable();
-          recommendedExtensions_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          recommendedExtensionsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Output only. Call extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public Builder addRecommendedExtensions(com.google.ads.googleads.v6.common.CallFeedItem value) {
-        if (recommendedExtensionsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRecommendedExtensionsIsMutable();
-          recommendedExtensions_.add(value);
-          onChanged();
-        } else {
-          recommendedExtensionsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Output only. Call extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public Builder addRecommendedExtensions(
-          int index, com.google.ads.googleads.v6.common.CallFeedItem value) {
-        if (recommendedExtensionsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRecommendedExtensionsIsMutable();
-          recommendedExtensions_.add(index, value);
-          onChanged();
-        } else {
-          recommendedExtensionsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Output only. Call extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public Builder addRecommendedExtensions(
-          com.google.ads.googleads.v6.common.CallFeedItem.Builder builderForValue) {
-        if (recommendedExtensionsBuilder_ == null) {
-          ensureRecommendedExtensionsIsMutable();
-          recommendedExtensions_.add(builderForValue.build());
-          onChanged();
-        } else {
-          recommendedExtensionsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Output only. Call extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public Builder addRecommendedExtensions(
-          int index, com.google.ads.googleads.v6.common.CallFeedItem.Builder builderForValue) {
-        if (recommendedExtensionsBuilder_ == null) {
-          ensureRecommendedExtensionsIsMutable();
-          recommendedExtensions_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          recommendedExtensionsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Output only. Call extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public Builder addAllRecommendedExtensions(
-          java.lang.Iterable<? extends com.google.ads.googleads.v6.common.CallFeedItem> values) {
-        if (recommendedExtensionsBuilder_ == null) {
-          ensureRecommendedExtensionsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, recommendedExtensions_);
-          onChanged();
-        } else {
-          recommendedExtensionsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Output only. Call extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public Builder clearRecommendedExtensions() {
-        if (recommendedExtensionsBuilder_ == null) {
-          recommendedExtensions_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          recommendedExtensionsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Output only. Call extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public Builder removeRecommendedExtensions(int index) {
-        if (recommendedExtensionsBuilder_ == null) {
-          ensureRecommendedExtensionsIsMutable();
-          recommendedExtensions_.remove(index);
-          onChanged();
-        } else {
-          recommendedExtensionsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Output only. Call extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public com.google.ads.googleads.v6.common.CallFeedItem.Builder getRecommendedExtensionsBuilder(
-          int index) {
-        return getRecommendedExtensionsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * Output only. Call extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public com.google.ads.googleads.v6.common.CallFeedItemOrBuilder getRecommendedExtensionsOrBuilder(
-          int index) {
-        if (recommendedExtensionsBuilder_ == null) {
-          return recommendedExtensions_.get(index);  } else {
-          return recommendedExtensionsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       * Output only. Call extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public java.util.List<? extends com.google.ads.googleads.v6.common.CallFeedItemOrBuilder> 
-           getRecommendedExtensionsOrBuilderList() {
-        if (recommendedExtensionsBuilder_ != null) {
-          return recommendedExtensionsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(recommendedExtensions_);
-        }
-      }
-      /**
-       * <pre>
-       * Output only. Call extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public com.google.ads.googleads.v6.common.CallFeedItem.Builder addRecommendedExtensionsBuilder() {
-        return getRecommendedExtensionsFieldBuilder().addBuilder(
-            com.google.ads.googleads.v6.common.CallFeedItem.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * Output only. Call extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public com.google.ads.googleads.v6.common.CallFeedItem.Builder addRecommendedExtensionsBuilder(
-          int index) {
-        return getRecommendedExtensionsFieldBuilder().addBuilder(
-            index, com.google.ads.googleads.v6.common.CallFeedItem.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * Output only. Call extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public java.util.List<com.google.ads.googleads.v6.common.CallFeedItem.Builder> 
-           getRecommendedExtensionsBuilderList() {
-        return getRecommendedExtensionsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.ads.googleads.v6.common.CallFeedItem, com.google.ads.googleads.v6.common.CallFeedItem.Builder, com.google.ads.googleads.v6.common.CallFeedItemOrBuilder> 
-          getRecommendedExtensionsFieldBuilder() {
-        if (recommendedExtensionsBuilder_ == null) {
-          recommendedExtensionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.google.ads.googleads.v6.common.CallFeedItem, com.google.ads.googleads.v6.common.CallFeedItem.Builder, com.google.ads.googleads.v6.common.CallFeedItemOrBuilder>(
-                  recommendedExtensions_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
-          recommendedExtensions_ = null;
-        }
-        return recommendedExtensionsBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation)
-    private static final com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation();
-    }
-
-    public static com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<CallExtensionRecommendation>
-        PARSER = new com.google.protobuf.AbstractParser<CallExtensionRecommendation>() {
-      @java.lang.Override
-      public CallExtensionRecommendation parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CallExtensionRecommendation(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<CallExtensionRecommendation> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<CallExtensionRecommendation> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface TextAdRecommendationOrBuilder extends
       // @@protoc_insertion_point(interface_extends:google.ads.googleads.v6.resources.Recommendation.TextAdRecommendation)
       com.google.protobuf.MessageOrBuilder {
@@ -7815,81 +6490,61 @@ private static final long serialVersionUID = 0L;
 
   }
 
-  public interface KeywordMatchTypeRecommendationOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation)
+  public interface ResponsiveSearchAdRecommendationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <pre>
-     * Output only. The existing keyword where the match type should be more broad.
+     * Output only. Recommended ad.
      * </pre>
      *
-     * <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return Whether the keyword field is set.
+     * <code>.google.ads.googleads.v6.resources.Ad ad = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the ad field is set.
      */
-    boolean hasKeyword();
+    boolean hasAd();
     /**
      * <pre>
-     * Output only. The existing keyword where the match type should be more broad.
+     * Output only. Recommended ad.
      * </pre>
      *
-     * <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return The keyword.
+     * <code>.google.ads.googleads.v6.resources.Ad ad = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The ad.
      */
-    com.google.ads.googleads.v6.common.KeywordInfo getKeyword();
+    com.google.ads.googleads.v6.resources.Ad getAd();
     /**
      * <pre>
-     * Output only. The existing keyword where the match type should be more broad.
+     * Output only. Recommended ad.
      * </pre>
      *
-     * <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.ads.googleads.v6.resources.Ad ad = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
-    com.google.ads.googleads.v6.common.KeywordInfoOrBuilder getKeywordOrBuilder();
-
-    /**
-     * <pre>
-     * Output only. The recommended new match type.
-     * </pre>
-     *
-     * <code>.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType recommended_match_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return The enum numeric value on the wire for recommendedMatchType.
-     */
-    int getRecommendedMatchTypeValue();
-    /**
-     * <pre>
-     * Output only. The recommended new match type.
-     * </pre>
-     *
-     * <code>.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType recommended_match_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return The recommendedMatchType.
-     */
-    com.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType getRecommendedMatchType();
+    com.google.ads.googleads.v6.resources.AdOrBuilder getAdOrBuilder();
   }
   /**
    * <pre>
-   * The keyword match type recommendation.
+   * The add responsive search ad recommendation.
    * </pre>
    *
-   * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation}
+   * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation}
    */
-  public static final class KeywordMatchTypeRecommendation extends
+  public static final class ResponsiveSearchAdRecommendation extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation)
-      KeywordMatchTypeRecommendationOrBuilder {
+      // @@protoc_insertion_point(message_implements:google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation)
+      ResponsiveSearchAdRecommendationOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use KeywordMatchTypeRecommendation.newBuilder() to construct.
-    private KeywordMatchTypeRecommendation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ResponsiveSearchAdRecommendation.newBuilder() to construct.
+    private ResponsiveSearchAdRecommendation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private KeywordMatchTypeRecommendation() {
-      recommendedMatchType_ = 0;
+    private ResponsiveSearchAdRecommendation() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new KeywordMatchTypeRecommendation();
+      return new ResponsiveSearchAdRecommendation();
     }
 
     @java.lang.Override
@@ -7897,7 +6552,7 @@ private static final long serialVersionUID = 0L;
     getUnknownFields() {
       return this.unknownFields;
     }
-    private KeywordMatchTypeRecommendation(
+    private ResponsiveSearchAdRecommendation(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7916,22 +6571,16 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 10: {
-              com.google.ads.googleads.v6.common.KeywordInfo.Builder subBuilder = null;
-              if (keyword_ != null) {
-                subBuilder = keyword_.toBuilder();
+              com.google.ads.googleads.v6.resources.Ad.Builder subBuilder = null;
+              if (ad_ != null) {
+                subBuilder = ad_.toBuilder();
               }
-              keyword_ = input.readMessage(com.google.ads.googleads.v6.common.KeywordInfo.parser(), extensionRegistry);
+              ad_ = input.readMessage(com.google.ads.googleads.v6.resources.Ad.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(keyword_);
-                keyword_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(ad_);
+                ad_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 16: {
-              int rawValue = input.readEnum();
-
-              recommendedMatchType_ = rawValue;
               break;
             }
             default: {
@@ -7955,80 +6604,53 @@ private static final long serialVersionUID = 0L;
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_KeywordMatchTypeRecommendation_descriptor;
+      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_ResponsiveSearchAdRecommendation_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_KeywordMatchTypeRecommendation_fieldAccessorTable
+      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_ResponsiveSearchAdRecommendation_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation.Builder.class);
+              com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation.Builder.class);
     }
 
-    public static final int KEYWORD_FIELD_NUMBER = 1;
-    private com.google.ads.googleads.v6.common.KeywordInfo keyword_;
+    public static final int AD_FIELD_NUMBER = 1;
+    private com.google.ads.googleads.v6.resources.Ad ad_;
     /**
      * <pre>
-     * Output only. The existing keyword where the match type should be more broad.
+     * Output only. Recommended ad.
      * </pre>
      *
-     * <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return Whether the keyword field is set.
+     * <code>.google.ads.googleads.v6.resources.Ad ad = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the ad field is set.
      */
     @java.lang.Override
-    public boolean hasKeyword() {
-      return keyword_ != null;
+    public boolean hasAd() {
+      return ad_ != null;
     }
     /**
      * <pre>
-     * Output only. The existing keyword where the match type should be more broad.
+     * Output only. Recommended ad.
      * </pre>
      *
-     * <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return The keyword.
+     * <code>.google.ads.googleads.v6.resources.Ad ad = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The ad.
      */
     @java.lang.Override
-    public com.google.ads.googleads.v6.common.KeywordInfo getKeyword() {
-      return keyword_ == null ? com.google.ads.googleads.v6.common.KeywordInfo.getDefaultInstance() : keyword_;
+    public com.google.ads.googleads.v6.resources.Ad getAd() {
+      return ad_ == null ? com.google.ads.googleads.v6.resources.Ad.getDefaultInstance() : ad_;
     }
     /**
      * <pre>
-     * Output only. The existing keyword where the match type should be more broad.
+     * Output only. Recommended ad.
      * </pre>
      *
-     * <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.ads.googleads.v6.resources.Ad ad = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     @java.lang.Override
-    public com.google.ads.googleads.v6.common.KeywordInfoOrBuilder getKeywordOrBuilder() {
-      return getKeyword();
-    }
-
-    public static final int RECOMMENDED_MATCH_TYPE_FIELD_NUMBER = 2;
-    private int recommendedMatchType_;
-    /**
-     * <pre>
-     * Output only. The recommended new match type.
-     * </pre>
-     *
-     * <code>.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType recommended_match_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return The enum numeric value on the wire for recommendedMatchType.
-     */
-    @java.lang.Override public int getRecommendedMatchTypeValue() {
-      return recommendedMatchType_;
-    }
-    /**
-     * <pre>
-     * Output only. The recommended new match type.
-     * </pre>
-     *
-     * <code>.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType recommended_match_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return The recommendedMatchType.
-     */
-    @java.lang.Override public com.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType getRecommendedMatchType() {
-      @SuppressWarnings("deprecation")
-      com.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType result = com.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType.valueOf(recommendedMatchType_);
-      return result == null ? com.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType.UNRECOGNIZED : result;
+    public com.google.ads.googleads.v6.resources.AdOrBuilder getAdOrBuilder() {
+      return getAd();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -8045,11 +6667,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (keyword_ != null) {
-        output.writeMessage(1, getKeyword());
-      }
-      if (recommendedMatchType_ != com.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType.UNSPECIFIED.getNumber()) {
-        output.writeEnum(2, recommendedMatchType_);
+      if (ad_ != null) {
+        output.writeMessage(1, getAd());
       }
       unknownFields.writeTo(output);
     }
@@ -8060,13 +6679,9 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (keyword_ != null) {
+      if (ad_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getKeyword());
-      }
-      if (recommendedMatchType_ != com.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType.UNSPECIFIED.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(2, recommendedMatchType_);
+          .computeMessageSize(1, getAd());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8078,17 +6693,16 @@ private static final long serialVersionUID = 0L;
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation)) {
+      if (!(obj instanceof com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation)) {
         return super.equals(obj);
       }
-      com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation other = (com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation) obj;
+      com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation other = (com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation) obj;
 
-      if (hasKeyword() != other.hasKeyword()) return false;
-      if (hasKeyword()) {
-        if (!getKeyword()
-            .equals(other.getKeyword())) return false;
+      if (hasAd() != other.hasAd()) return false;
+      if (hasAd()) {
+        if (!getAd()
+            .equals(other.getAd())) return false;
       }
-      if (recommendedMatchType_ != other.recommendedMatchType_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -8100,80 +6714,78 @@ private static final long serialVersionUID = 0L;
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasKeyword()) {
-        hash = (37 * hash) + KEYWORD_FIELD_NUMBER;
-        hash = (53 * hash) + getKeyword().hashCode();
+      if (hasAd()) {
+        hash = (37 * hash) + AD_FIELD_NUMBER;
+        hash = (53 * hash) + getAd().hashCode();
       }
-      hash = (37 * hash) + RECOMMENDED_MATCH_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + recommendedMatchType_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation parseFrom(
+    public static com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation parseFrom(
+    public static com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation parseFrom(
+    public static com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation parseFrom(
+    public static com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation parseFrom(byte[] data)
+    public static com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation parseFrom(
+    public static com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation parseFrom(java.io.InputStream input)
+    public static com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation parseFrom(
+    public static com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation parseDelimitedFrom(java.io.InputStream input)
+    public static com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation parseDelimitedFrom(
+    public static com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation parseFrom(
+    public static com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation parseFrom(
+    public static com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -8186,7 +6798,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation prototype) {
+    public static Builder newBuilder(com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -8203,29 +6815,29 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The keyword match type recommendation.
+     * The add responsive search ad recommendation.
      * </pre>
      *
-     * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation}
+     * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation)
-        com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendationOrBuilder {
+        // @@protoc_insertion_point(builder_implements:google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation)
+        com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendationOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_KeywordMatchTypeRecommendation_descriptor;
+        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_ResponsiveSearchAdRecommendation_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_KeywordMatchTypeRecommendation_fieldAccessorTable
+        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_ResponsiveSearchAdRecommendation_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation.Builder.class);
+                com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation.Builder.class);
       }
 
-      // Construct using com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation.newBuilder()
+      // Construct using com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -8243,31 +6855,29 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (keywordBuilder_ == null) {
-          keyword_ = null;
+        if (adBuilder_ == null) {
+          ad_ = null;
         } else {
-          keyword_ = null;
-          keywordBuilder_ = null;
+          ad_ = null;
+          adBuilder_ = null;
         }
-        recommendedMatchType_ = 0;
-
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_KeywordMatchTypeRecommendation_descriptor;
+        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_ResponsiveSearchAdRecommendation_descriptor;
       }
 
       @java.lang.Override
-      public com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation getDefaultInstanceForType() {
-        return com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation.getDefaultInstance();
+      public com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation getDefaultInstanceForType() {
+        return com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation build() {
-        com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation result = buildPartial();
+      public com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation build() {
+        com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -8275,14 +6885,13 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation buildPartial() {
-        com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation result = new com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation(this);
-        if (keywordBuilder_ == null) {
-          result.keyword_ = keyword_;
+      public com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation buildPartial() {
+        com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation result = new com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation(this);
+        if (adBuilder_ == null) {
+          result.ad_ = ad_;
         } else {
-          result.keyword_ = keywordBuilder_.build();
+          result.ad_ = adBuilder_.build();
         }
-        result.recommendedMatchType_ = recommendedMatchType_;
         onBuilt();
         return result;
       }
@@ -8321,21 +6930,18 @@ private static final long serialVersionUID = 0L;
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation) {
-          return mergeFrom((com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation)other);
+        if (other instanceof com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation) {
+          return mergeFrom((com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation other) {
-        if (other == com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation.getDefaultInstance()) return this;
-        if (other.hasKeyword()) {
-          mergeKeyword(other.getKeyword());
-        }
-        if (other.recommendedMatchType_ != 0) {
-          setRecommendedMatchTypeValue(other.getRecommendedMatchTypeValue());
+      public Builder mergeFrom(com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation other) {
+        if (other == com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation.getDefaultInstance()) return this;
+        if (other.hasAd()) {
+          mergeAd(other.getAd());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -8352,11 +6958,11 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation parsedMessage = null;
+        com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation) e.getUnfinishedMessage();
+          parsedMessage = (com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -8366,233 +6972,159 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      private com.google.ads.googleads.v6.common.KeywordInfo keyword_;
+      private com.google.ads.googleads.v6.resources.Ad ad_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.ads.googleads.v6.common.KeywordInfo, com.google.ads.googleads.v6.common.KeywordInfo.Builder, com.google.ads.googleads.v6.common.KeywordInfoOrBuilder> keywordBuilder_;
+          com.google.ads.googleads.v6.resources.Ad, com.google.ads.googleads.v6.resources.Ad.Builder, com.google.ads.googleads.v6.resources.AdOrBuilder> adBuilder_;
       /**
        * <pre>
-       * Output only. The existing keyword where the match type should be more broad.
+       * Output only. Recommended ad.
        * </pre>
        *
-       * <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       * @return Whether the keyword field is set.
+       * <code>.google.ads.googleads.v6.resources.Ad ad = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return Whether the ad field is set.
        */
-      public boolean hasKeyword() {
-        return keywordBuilder_ != null || keyword_ != null;
+      public boolean hasAd() {
+        return adBuilder_ != null || ad_ != null;
       }
       /**
        * <pre>
-       * Output only. The existing keyword where the match type should be more broad.
+       * Output only. Recommended ad.
        * </pre>
        *
-       * <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       * @return The keyword.
+       * <code>.google.ads.googleads.v6.resources.Ad ad = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return The ad.
        */
-      public com.google.ads.googleads.v6.common.KeywordInfo getKeyword() {
-        if (keywordBuilder_ == null) {
-          return keyword_ == null ? com.google.ads.googleads.v6.common.KeywordInfo.getDefaultInstance() : keyword_;
+      public com.google.ads.googleads.v6.resources.Ad getAd() {
+        if (adBuilder_ == null) {
+          return ad_ == null ? com.google.ads.googleads.v6.resources.Ad.getDefaultInstance() : ad_;
         } else {
-          return keywordBuilder_.getMessage();
+          return adBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * Output only. The existing keyword where the match type should be more broad.
+       * Output only. Recommended ad.
        * </pre>
        *
-       * <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>.google.ads.googleads.v6.resources.Ad ad = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
-      public Builder setKeyword(com.google.ads.googleads.v6.common.KeywordInfo value) {
-        if (keywordBuilder_ == null) {
+      public Builder setAd(com.google.ads.googleads.v6.resources.Ad value) {
+        if (adBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          keyword_ = value;
+          ad_ = value;
           onChanged();
         } else {
-          keywordBuilder_.setMessage(value);
+          adBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * Output only. The existing keyword where the match type should be more broad.
+       * Output only. Recommended ad.
        * </pre>
        *
-       * <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>.google.ads.googleads.v6.resources.Ad ad = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
-      public Builder setKeyword(
-          com.google.ads.googleads.v6.common.KeywordInfo.Builder builderForValue) {
-        if (keywordBuilder_ == null) {
-          keyword_ = builderForValue.build();
+      public Builder setAd(
+          com.google.ads.googleads.v6.resources.Ad.Builder builderForValue) {
+        if (adBuilder_ == null) {
+          ad_ = builderForValue.build();
           onChanged();
         } else {
-          keywordBuilder_.setMessage(builderForValue.build());
+          adBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
        * <pre>
-       * Output only. The existing keyword where the match type should be more broad.
+       * Output only. Recommended ad.
        * </pre>
        *
-       * <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>.google.ads.googleads.v6.resources.Ad ad = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
-      public Builder mergeKeyword(com.google.ads.googleads.v6.common.KeywordInfo value) {
-        if (keywordBuilder_ == null) {
-          if (keyword_ != null) {
-            keyword_ =
-              com.google.ads.googleads.v6.common.KeywordInfo.newBuilder(keyword_).mergeFrom(value).buildPartial();
+      public Builder mergeAd(com.google.ads.googleads.v6.resources.Ad value) {
+        if (adBuilder_ == null) {
+          if (ad_ != null) {
+            ad_ =
+              com.google.ads.googleads.v6.resources.Ad.newBuilder(ad_).mergeFrom(value).buildPartial();
           } else {
-            keyword_ = value;
+            ad_ = value;
           }
           onChanged();
         } else {
-          keywordBuilder_.mergeFrom(value);
+          adBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * Output only. The existing keyword where the match type should be more broad.
+       * Output only. Recommended ad.
        * </pre>
        *
-       * <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>.google.ads.googleads.v6.resources.Ad ad = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
-      public Builder clearKeyword() {
-        if (keywordBuilder_ == null) {
-          keyword_ = null;
+      public Builder clearAd() {
+        if (adBuilder_ == null) {
+          ad_ = null;
           onChanged();
         } else {
-          keyword_ = null;
-          keywordBuilder_ = null;
+          ad_ = null;
+          adBuilder_ = null;
         }
 
         return this;
       }
       /**
        * <pre>
-       * Output only. The existing keyword where the match type should be more broad.
+       * Output only. Recommended ad.
        * </pre>
        *
-       * <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>.google.ads.googleads.v6.resources.Ad ad = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
-      public com.google.ads.googleads.v6.common.KeywordInfo.Builder getKeywordBuilder() {
+      public com.google.ads.googleads.v6.resources.Ad.Builder getAdBuilder() {
         
         onChanged();
-        return getKeywordFieldBuilder().getBuilder();
+        return getAdFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * Output only. The existing keyword where the match type should be more broad.
+       * Output only. Recommended ad.
        * </pre>
        *
-       * <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>.google.ads.googleads.v6.resources.Ad ad = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
-      public com.google.ads.googleads.v6.common.KeywordInfoOrBuilder getKeywordOrBuilder() {
-        if (keywordBuilder_ != null) {
-          return keywordBuilder_.getMessageOrBuilder();
+      public com.google.ads.googleads.v6.resources.AdOrBuilder getAdOrBuilder() {
+        if (adBuilder_ != null) {
+          return adBuilder_.getMessageOrBuilder();
         } else {
-          return keyword_ == null ?
-              com.google.ads.googleads.v6.common.KeywordInfo.getDefaultInstance() : keyword_;
+          return ad_ == null ?
+              com.google.ads.googleads.v6.resources.Ad.getDefaultInstance() : ad_;
         }
       }
       /**
        * <pre>
-       * Output only. The existing keyword where the match type should be more broad.
+       * Output only. Recommended ad.
        * </pre>
        *
-       * <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>.google.ads.googleads.v6.resources.Ad ad = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.ads.googleads.v6.common.KeywordInfo, com.google.ads.googleads.v6.common.KeywordInfo.Builder, com.google.ads.googleads.v6.common.KeywordInfoOrBuilder> 
-          getKeywordFieldBuilder() {
-        if (keywordBuilder_ == null) {
-          keywordBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.ads.googleads.v6.common.KeywordInfo, com.google.ads.googleads.v6.common.KeywordInfo.Builder, com.google.ads.googleads.v6.common.KeywordInfoOrBuilder>(
-                  getKeyword(),
+          com.google.ads.googleads.v6.resources.Ad, com.google.ads.googleads.v6.resources.Ad.Builder, com.google.ads.googleads.v6.resources.AdOrBuilder> 
+          getAdFieldBuilder() {
+        if (adBuilder_ == null) {
+          adBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.ads.googleads.v6.resources.Ad, com.google.ads.googleads.v6.resources.Ad.Builder, com.google.ads.googleads.v6.resources.AdOrBuilder>(
+                  getAd(),
                   getParentForChildren(),
                   isClean());
-          keyword_ = null;
+          ad_ = null;
         }
-        return keywordBuilder_;
-      }
-
-      private int recommendedMatchType_ = 0;
-      /**
-       * <pre>
-       * Output only. The recommended new match type.
-       * </pre>
-       *
-       * <code>.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType recommended_match_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       * @return The enum numeric value on the wire for recommendedMatchType.
-       */
-      @java.lang.Override public int getRecommendedMatchTypeValue() {
-        return recommendedMatchType_;
-      }
-      /**
-       * <pre>
-       * Output only. The recommended new match type.
-       * </pre>
-       *
-       * <code>.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType recommended_match_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       * @param value The enum numeric value on the wire for recommendedMatchType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRecommendedMatchTypeValue(int value) {
-        
-        recommendedMatchType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Output only. The recommended new match type.
-       * </pre>
-       *
-       * <code>.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType recommended_match_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       * @return The recommendedMatchType.
-       */
-      @java.lang.Override
-      public com.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType getRecommendedMatchType() {
-        @SuppressWarnings("deprecation")
-        com.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType result = com.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType.valueOf(recommendedMatchType_);
-        return result == null ? com.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType.UNRECOGNIZED : result;
-      }
-      /**
-       * <pre>
-       * Output only. The recommended new match type.
-       * </pre>
-       *
-       * <code>.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType recommended_match_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       * @param value The recommendedMatchType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRecommendedMatchType(com.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        recommendedMatchType_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Output only. The recommended new match type.
-       * </pre>
-       *
-       * <code>.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType recommended_match_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRecommendedMatchType() {
-        
-        recommendedMatchType_ = 0;
-        onChanged();
-        return this;
+        return adBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -8607,41 +7139,41 @@ private static final long serialVersionUID = 0L;
       }
 
 
-      // @@protoc_insertion_point(builder_scope:google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation)
+      // @@protoc_insertion_point(builder_scope:google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation)
     }
 
-    // @@protoc_insertion_point(class_scope:google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation)
-    private static final com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation)
+    private static final com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation();
+      DEFAULT_INSTANCE = new com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation();
     }
 
-    public static com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation getDefaultInstance() {
+    public static com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<KeywordMatchTypeRecommendation>
-        PARSER = new com.google.protobuf.AbstractParser<KeywordMatchTypeRecommendation>() {
+    private static final com.google.protobuf.Parser<ResponsiveSearchAdRecommendation>
+        PARSER = new com.google.protobuf.AbstractParser<ResponsiveSearchAdRecommendation>() {
       @java.lang.Override
-      public KeywordMatchTypeRecommendation parsePartialFrom(
+      public ResponsiveSearchAdRecommendation parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new KeywordMatchTypeRecommendation(input, extensionRegistry);
+        return new ResponsiveSearchAdRecommendation(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<KeywordMatchTypeRecommendation> parser() {
+    public static com.google.protobuf.Parser<ResponsiveSearchAdRecommendation> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<KeywordMatchTypeRecommendation> getParserForType() {
+    public com.google.protobuf.Parser<ResponsiveSearchAdRecommendation> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation getDefaultInstanceForType() {
+    public com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -11393,2159 +9925,6 @@ private static final long serialVersionUID = 0L;
 
   }
 
-  public interface SearchPartnersOptInRecommendationOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation)
-      com.google.protobuf.MessageOrBuilder {
-  }
-  /**
-   * <pre>
-   * The Search Partners Opt-In recommendation.
-   * </pre>
-   *
-   * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation}
-   */
-  public static final class SearchPartnersOptInRecommendation extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation)
-      SearchPartnersOptInRecommendationOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use SearchPartnersOptInRecommendation.newBuilder() to construct.
-    private SearchPartnersOptInRecommendation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private SearchPartnersOptInRecommendation() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new SearchPartnersOptInRecommendation();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private SearchPartnersOptInRecommendation(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_SearchPartnersOptInRecommendation_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_SearchPartnersOptInRecommendation_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation.Builder.class);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation)) {
-        return super.equals(obj);
-      }
-      com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation other = (com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation) obj;
-
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * The Search Partners Opt-In recommendation.
-     * </pre>
-     *
-     * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation)
-        com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendationOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_SearchPartnersOptInRecommendation_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_SearchPartnersOptInRecommendation_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation.Builder.class);
-      }
-
-      // Construct using com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_SearchPartnersOptInRecommendation_descriptor;
-      }
-
-      @java.lang.Override
-      public com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation getDefaultInstanceForType() {
-        return com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation build() {
-        com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation buildPartial() {
-        com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation result = new com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation(this);
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation) {
-          return mergeFrom((com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation other) {
-        if (other == com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation.getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation)
-    private static final com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation();
-    }
-
-    public static com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<SearchPartnersOptInRecommendation>
-        PARSER = new com.google.protobuf.AbstractParser<SearchPartnersOptInRecommendation>() {
-      @java.lang.Override
-      public SearchPartnersOptInRecommendation parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SearchPartnersOptInRecommendation(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<SearchPartnersOptInRecommendation> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<SearchPartnersOptInRecommendation> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface TargetRoasOptInRecommendationOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * Output only. The recommended target ROAS (revenue per unit of spend).
-     * The value is between 0.01 and 1000.0, inclusive.
-     * </pre>
-     *
-     * <code>double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return Whether the recommendedTargetRoas field is set.
-     */
-    boolean hasRecommendedTargetRoas();
-    /**
-     * <pre>
-     * Output only. The recommended target ROAS (revenue per unit of spend).
-     * The value is between 0.01 and 1000.0, inclusive.
-     * </pre>
-     *
-     * <code>double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return The recommendedTargetRoas.
-     */
-    double getRecommendedTargetRoas();
-
-    /**
-     * <pre>
-     * Output only. The minimum campaign budget, in local currency for the account,
-     * required to achieve the target ROAS.
-     * Amount is specified in micros, where one million is equivalent to one
-     * currency unit.
-     * </pre>
-     *
-     * <code>int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return Whether the requiredCampaignBudgetAmountMicros field is set.
-     */
-    boolean hasRequiredCampaignBudgetAmountMicros();
-    /**
-     * <pre>
-     * Output only. The minimum campaign budget, in local currency for the account,
-     * required to achieve the target ROAS.
-     * Amount is specified in micros, where one million is equivalent to one
-     * currency unit.
-     * </pre>
-     *
-     * <code>int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return The requiredCampaignBudgetAmountMicros.
-     */
-    long getRequiredCampaignBudgetAmountMicros();
-  }
-  /**
-   * <pre>
-   * The Target ROAS opt-in recommendation.
-   * </pre>
-   *
-   * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation}
-   */
-  public static final class TargetRoasOptInRecommendation extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation)
-      TargetRoasOptInRecommendationOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use TargetRoasOptInRecommendation.newBuilder() to construct.
-    private TargetRoasOptInRecommendation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private TargetRoasOptInRecommendation() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new TargetRoasOptInRecommendation();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private TargetRoasOptInRecommendation(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 9: {
-              bitField0_ |= 0x00000001;
-              recommendedTargetRoas_ = input.readDouble();
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              requiredCampaignBudgetAmountMicros_ = input.readInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_TargetRoasOptInRecommendation_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_TargetRoasOptInRecommendation_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int RECOMMENDED_TARGET_ROAS_FIELD_NUMBER = 1;
-    private double recommendedTargetRoas_;
-    /**
-     * <pre>
-     * Output only. The recommended target ROAS (revenue per unit of spend).
-     * The value is between 0.01 and 1000.0, inclusive.
-     * </pre>
-     *
-     * <code>double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return Whether the recommendedTargetRoas field is set.
-     */
-    @java.lang.Override
-    public boolean hasRecommendedTargetRoas() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <pre>
-     * Output only. The recommended target ROAS (revenue per unit of spend).
-     * The value is between 0.01 and 1000.0, inclusive.
-     * </pre>
-     *
-     * <code>double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return The recommendedTargetRoas.
-     */
-    @java.lang.Override
-    public double getRecommendedTargetRoas() {
-      return recommendedTargetRoas_;
-    }
-
-    public static final int REQUIRED_CAMPAIGN_BUDGET_AMOUNT_MICROS_FIELD_NUMBER = 2;
-    private long requiredCampaignBudgetAmountMicros_;
-    /**
-     * <pre>
-     * Output only. The minimum campaign budget, in local currency for the account,
-     * required to achieve the target ROAS.
-     * Amount is specified in micros, where one million is equivalent to one
-     * currency unit.
-     * </pre>
-     *
-     * <code>int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return Whether the requiredCampaignBudgetAmountMicros field is set.
-     */
-    @java.lang.Override
-    public boolean hasRequiredCampaignBudgetAmountMicros() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <pre>
-     * Output only. The minimum campaign budget, in local currency for the account,
-     * required to achieve the target ROAS.
-     * Amount is specified in micros, where one million is equivalent to one
-     * currency unit.
-     * </pre>
-     *
-     * <code>int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return The requiredCampaignBudgetAmountMicros.
-     */
-    @java.lang.Override
-    public long getRequiredCampaignBudgetAmountMicros() {
-      return requiredCampaignBudgetAmountMicros_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeDouble(1, recommendedTargetRoas_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeInt64(2, requiredCampaignBudgetAmountMicros_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(1, recommendedTargetRoas_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, requiredCampaignBudgetAmountMicros_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation)) {
-        return super.equals(obj);
-      }
-      com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation other = (com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation) obj;
-
-      if (hasRecommendedTargetRoas() != other.hasRecommendedTargetRoas()) return false;
-      if (hasRecommendedTargetRoas()) {
-        if (java.lang.Double.doubleToLongBits(getRecommendedTargetRoas())
-            != java.lang.Double.doubleToLongBits(
-                other.getRecommendedTargetRoas())) return false;
-      }
-      if (hasRequiredCampaignBudgetAmountMicros() != other.hasRequiredCampaignBudgetAmountMicros()) return false;
-      if (hasRequiredCampaignBudgetAmountMicros()) {
-        if (getRequiredCampaignBudgetAmountMicros()
-            != other.getRequiredCampaignBudgetAmountMicros()) return false;
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasRecommendedTargetRoas()) {
-        hash = (37 * hash) + RECOMMENDED_TARGET_ROAS_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getRecommendedTargetRoas()));
-      }
-      if (hasRequiredCampaignBudgetAmountMicros()) {
-        hash = (37 * hash) + REQUIRED_CAMPAIGN_BUDGET_AMOUNT_MICROS_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getRequiredCampaignBudgetAmountMicros());
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * The Target ROAS opt-in recommendation.
-     * </pre>
-     *
-     * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation)
-        com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendationOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_TargetRoasOptInRecommendation_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_TargetRoasOptInRecommendation_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation.Builder.class);
-      }
-
-      // Construct using com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        recommendedTargetRoas_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        requiredCampaignBudgetAmountMicros_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_TargetRoasOptInRecommendation_descriptor;
-      }
-
-      @java.lang.Override
-      public com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation getDefaultInstanceForType() {
-        return com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation build() {
-        com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation buildPartial() {
-        com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation result = new com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.recommendedTargetRoas_ = recommendedTargetRoas_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.requiredCampaignBudgetAmountMicros_ = requiredCampaignBudgetAmountMicros_;
-          to_bitField0_ |= 0x00000002;
-        }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation) {
-          return mergeFrom((com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation other) {
-        if (other == com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation.getDefaultInstance()) return this;
-        if (other.hasRecommendedTargetRoas()) {
-          setRecommendedTargetRoas(other.getRecommendedTargetRoas());
-        }
-        if (other.hasRequiredCampaignBudgetAmountMicros()) {
-          setRequiredCampaignBudgetAmountMicros(other.getRequiredCampaignBudgetAmountMicros());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private double recommendedTargetRoas_ ;
-      /**
-       * <pre>
-       * Output only. The recommended target ROAS (revenue per unit of spend).
-       * The value is between 0.01 and 1000.0, inclusive.
-       * </pre>
-       *
-       * <code>double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       * @return Whether the recommendedTargetRoas field is set.
-       */
-      @java.lang.Override
-      public boolean hasRecommendedTargetRoas() {
-        return ((bitField0_ & 0x00000001) != 0);
-      }
-      /**
-       * <pre>
-       * Output only. The recommended target ROAS (revenue per unit of spend).
-       * The value is between 0.01 and 1000.0, inclusive.
-       * </pre>
-       *
-       * <code>double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       * @return The recommendedTargetRoas.
-       */
-      @java.lang.Override
-      public double getRecommendedTargetRoas() {
-        return recommendedTargetRoas_;
-      }
-      /**
-       * <pre>
-       * Output only. The recommended target ROAS (revenue per unit of spend).
-       * The value is between 0.01 and 1000.0, inclusive.
-       * </pre>
-       *
-       * <code>double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       * @param value The recommendedTargetRoas to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRecommendedTargetRoas(double value) {
-        bitField0_ |= 0x00000001;
-        recommendedTargetRoas_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Output only. The recommended target ROAS (revenue per unit of spend).
-       * The value is between 0.01 and 1000.0, inclusive.
-       * </pre>
-       *
-       * <code>double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRecommendedTargetRoas() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        recommendedTargetRoas_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private long requiredCampaignBudgetAmountMicros_ ;
-      /**
-       * <pre>
-       * Output only. The minimum campaign budget, in local currency for the account,
-       * required to achieve the target ROAS.
-       * Amount is specified in micros, where one million is equivalent to one
-       * currency unit.
-       * </pre>
-       *
-       * <code>int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       * @return Whether the requiredCampaignBudgetAmountMicros field is set.
-       */
-      @java.lang.Override
-      public boolean hasRequiredCampaignBudgetAmountMicros() {
-        return ((bitField0_ & 0x00000002) != 0);
-      }
-      /**
-       * <pre>
-       * Output only. The minimum campaign budget, in local currency for the account,
-       * required to achieve the target ROAS.
-       * Amount is specified in micros, where one million is equivalent to one
-       * currency unit.
-       * </pre>
-       *
-       * <code>int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       * @return The requiredCampaignBudgetAmountMicros.
-       */
-      @java.lang.Override
-      public long getRequiredCampaignBudgetAmountMicros() {
-        return requiredCampaignBudgetAmountMicros_;
-      }
-      /**
-       * <pre>
-       * Output only. The minimum campaign budget, in local currency for the account,
-       * required to achieve the target ROAS.
-       * Amount is specified in micros, where one million is equivalent to one
-       * currency unit.
-       * </pre>
-       *
-       * <code>int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       * @param value The requiredCampaignBudgetAmountMicros to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRequiredCampaignBudgetAmountMicros(long value) {
-        bitField0_ |= 0x00000002;
-        requiredCampaignBudgetAmountMicros_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Output only. The minimum campaign budget, in local currency for the account,
-       * required to achieve the target ROAS.
-       * Amount is specified in micros, where one million is equivalent to one
-       * currency unit.
-       * </pre>
-       *
-       * <code>int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRequiredCampaignBudgetAmountMicros() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        requiredCampaignBudgetAmountMicros_ = 0L;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation)
-    private static final com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation();
-    }
-
-    public static com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<TargetRoasOptInRecommendation>
-        PARSER = new com.google.protobuf.AbstractParser<TargetRoasOptInRecommendation>() {
-      @java.lang.Override
-      public TargetRoasOptInRecommendation parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TargetRoasOptInRecommendation(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<TargetRoasOptInRecommendation> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<TargetRoasOptInRecommendation> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface MaximizeClicksOptInRecommendationOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * Output only. The recommended new budget amount.
-     * Only set if the current budget is too high.
-     * </pre>
-     *
-     * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return Whether the recommendedBudgetAmountMicros field is set.
-     */
-    boolean hasRecommendedBudgetAmountMicros();
-    /**
-     * <pre>
-     * Output only. The recommended new budget amount.
-     * Only set if the current budget is too high.
-     * </pre>
-     *
-     * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return The recommendedBudgetAmountMicros.
-     */
-    long getRecommendedBudgetAmountMicros();
-  }
-  /**
-   * <pre>
-   * The Maximize Clicks opt-in recommendation.
-   * </pre>
-   *
-   * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation}
-   */
-  public static final class MaximizeClicksOptInRecommendation extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation)
-      MaximizeClicksOptInRecommendationOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use MaximizeClicksOptInRecommendation.newBuilder() to construct.
-    private MaximizeClicksOptInRecommendation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private MaximizeClicksOptInRecommendation() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new MaximizeClicksOptInRecommendation();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private MaximizeClicksOptInRecommendation(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-              bitField0_ |= 0x00000001;
-              recommendedBudgetAmountMicros_ = input.readInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_MaximizeClicksOptInRecommendation_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_MaximizeClicksOptInRecommendation_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int RECOMMENDED_BUDGET_AMOUNT_MICROS_FIELD_NUMBER = 2;
-    private long recommendedBudgetAmountMicros_;
-    /**
-     * <pre>
-     * Output only. The recommended new budget amount.
-     * Only set if the current budget is too high.
-     * </pre>
-     *
-     * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return Whether the recommendedBudgetAmountMicros field is set.
-     */
-    @java.lang.Override
-    public boolean hasRecommendedBudgetAmountMicros() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <pre>
-     * Output only. The recommended new budget amount.
-     * Only set if the current budget is too high.
-     * </pre>
-     *
-     * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return The recommendedBudgetAmountMicros.
-     */
-    @java.lang.Override
-    public long getRecommendedBudgetAmountMicros() {
-      return recommendedBudgetAmountMicros_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeInt64(2, recommendedBudgetAmountMicros_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, recommendedBudgetAmountMicros_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation)) {
-        return super.equals(obj);
-      }
-      com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation other = (com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation) obj;
-
-      if (hasRecommendedBudgetAmountMicros() != other.hasRecommendedBudgetAmountMicros()) return false;
-      if (hasRecommendedBudgetAmountMicros()) {
-        if (getRecommendedBudgetAmountMicros()
-            != other.getRecommendedBudgetAmountMicros()) return false;
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasRecommendedBudgetAmountMicros()) {
-        hash = (37 * hash) + RECOMMENDED_BUDGET_AMOUNT_MICROS_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getRecommendedBudgetAmountMicros());
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * The Maximize Clicks opt-in recommendation.
-     * </pre>
-     *
-     * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation)
-        com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendationOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_MaximizeClicksOptInRecommendation_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_MaximizeClicksOptInRecommendation_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation.Builder.class);
-      }
-
-      // Construct using com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        recommendedBudgetAmountMicros_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_MaximizeClicksOptInRecommendation_descriptor;
-      }
-
-      @java.lang.Override
-      public com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation getDefaultInstanceForType() {
-        return com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation build() {
-        com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation buildPartial() {
-        com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation result = new com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.recommendedBudgetAmountMicros_ = recommendedBudgetAmountMicros_;
-          to_bitField0_ |= 0x00000001;
-        }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation) {
-          return mergeFrom((com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation other) {
-        if (other == com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation.getDefaultInstance()) return this;
-        if (other.hasRecommendedBudgetAmountMicros()) {
-          setRecommendedBudgetAmountMicros(other.getRecommendedBudgetAmountMicros());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private long recommendedBudgetAmountMicros_ ;
-      /**
-       * <pre>
-       * Output only. The recommended new budget amount.
-       * Only set if the current budget is too high.
-       * </pre>
-       *
-       * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       * @return Whether the recommendedBudgetAmountMicros field is set.
-       */
-      @java.lang.Override
-      public boolean hasRecommendedBudgetAmountMicros() {
-        return ((bitField0_ & 0x00000001) != 0);
-      }
-      /**
-       * <pre>
-       * Output only. The recommended new budget amount.
-       * Only set if the current budget is too high.
-       * </pre>
-       *
-       * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       * @return The recommendedBudgetAmountMicros.
-       */
-      @java.lang.Override
-      public long getRecommendedBudgetAmountMicros() {
-        return recommendedBudgetAmountMicros_;
-      }
-      /**
-       * <pre>
-       * Output only. The recommended new budget amount.
-       * Only set if the current budget is too high.
-       * </pre>
-       *
-       * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       * @param value The recommendedBudgetAmountMicros to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRecommendedBudgetAmountMicros(long value) {
-        bitField0_ |= 0x00000001;
-        recommendedBudgetAmountMicros_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Output only. The recommended new budget amount.
-       * Only set if the current budget is too high.
-       * </pre>
-       *
-       * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRecommendedBudgetAmountMicros() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        recommendedBudgetAmountMicros_ = 0L;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation)
-    private static final com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation();
-    }
-
-    public static com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<MaximizeClicksOptInRecommendation>
-        PARSER = new com.google.protobuf.AbstractParser<MaximizeClicksOptInRecommendation>() {
-      @java.lang.Override
-      public MaximizeClicksOptInRecommendation parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MaximizeClicksOptInRecommendation(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<MaximizeClicksOptInRecommendation> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<MaximizeClicksOptInRecommendation> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface OptimizeAdRotationRecommendationOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation)
-      com.google.protobuf.MessageOrBuilder {
-  }
-  /**
-   * <pre>
-   * The Optimize Ad Rotation recommendation.
-   * </pre>
-   *
-   * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation}
-   */
-  public static final class OptimizeAdRotationRecommendation extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation)
-      OptimizeAdRotationRecommendationOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use OptimizeAdRotationRecommendation.newBuilder() to construct.
-    private OptimizeAdRotationRecommendation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private OptimizeAdRotationRecommendation() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new OptimizeAdRotationRecommendation();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private OptimizeAdRotationRecommendation(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_OptimizeAdRotationRecommendation_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_OptimizeAdRotationRecommendation_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation.Builder.class);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation)) {
-        return super.equals(obj);
-      }
-      com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation other = (com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation) obj;
-
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * The Optimize Ad Rotation recommendation.
-     * </pre>
-     *
-     * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation)
-        com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendationOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_OptimizeAdRotationRecommendation_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_OptimizeAdRotationRecommendation_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation.Builder.class);
-      }
-
-      // Construct using com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_OptimizeAdRotationRecommendation_descriptor;
-      }
-
-      @java.lang.Override
-      public com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation getDefaultInstanceForType() {
-        return com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation build() {
-        com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation buildPartial() {
-        com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation result = new com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation(this);
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation) {
-          return mergeFrom((com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation other) {
-        if (other == com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation.getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation)
-    private static final com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation();
-    }
-
-    public static com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<OptimizeAdRotationRecommendation>
-        PARSER = new com.google.protobuf.AbstractParser<OptimizeAdRotationRecommendation>() {
-      @java.lang.Override
-      public OptimizeAdRotationRecommendation parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new OptimizeAdRotationRecommendation(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<OptimizeAdRotationRecommendation> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<OptimizeAdRotationRecommendation> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface CalloutExtensionRecommendationOrBuilder extends
       // @@protoc_insertion_point(interface_extends:google.ads.googleads.v6.resources.Recommendation.CalloutExtensionRecommendation)
       com.google.protobuf.MessageOrBuilder {
@@ -14459,79 +10838,34 @@ private static final long serialVersionUID = 0L;
 
   }
 
-  public interface SitelinkExtensionRecommendationOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation)
+  public interface EnhancedCpcOptInRecommendationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation)
       com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * Output only. Sitelink extensions recommended to be added.
-     * </pre>
-     *
-     * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    java.util.List<com.google.ads.googleads.v6.common.SitelinkFeedItem> 
-        getRecommendedExtensionsList();
-    /**
-     * <pre>
-     * Output only. Sitelink extensions recommended to be added.
-     * </pre>
-     *
-     * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    com.google.ads.googleads.v6.common.SitelinkFeedItem getRecommendedExtensions(int index);
-    /**
-     * <pre>
-     * Output only. Sitelink extensions recommended to be added.
-     * </pre>
-     *
-     * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    int getRecommendedExtensionsCount();
-    /**
-     * <pre>
-     * Output only. Sitelink extensions recommended to be added.
-     * </pre>
-     *
-     * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    java.util.List<? extends com.google.ads.googleads.v6.common.SitelinkFeedItemOrBuilder> 
-        getRecommendedExtensionsOrBuilderList();
-    /**
-     * <pre>
-     * Output only. Sitelink extensions recommended to be added.
-     * </pre>
-     *
-     * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    com.google.ads.googleads.v6.common.SitelinkFeedItemOrBuilder getRecommendedExtensionsOrBuilder(
-        int index);
   }
   /**
    * <pre>
-   * The Sitelink extension recommendation.
+   * The Enhanced Cost-Per-Click Opt-In recommendation.
    * </pre>
    *
-   * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation}
+   * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation}
    */
-  public static final class SitelinkExtensionRecommendation extends
+  public static final class EnhancedCpcOptInRecommendation extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation)
-      SitelinkExtensionRecommendationOrBuilder {
+      // @@protoc_insertion_point(message_implements:google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation)
+      EnhancedCpcOptInRecommendationOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use SitelinkExtensionRecommendation.newBuilder() to construct.
-    private SitelinkExtensionRecommendation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use EnhancedCpcOptInRecommendation.newBuilder() to construct.
+    private EnhancedCpcOptInRecommendation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private SitelinkExtensionRecommendation() {
-      recommendedExtensions_ = java.util.Collections.emptyList();
+    private EnhancedCpcOptInRecommendation() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new SitelinkExtensionRecommendation();
+      return new EnhancedCpcOptInRecommendation();
     }
 
     @java.lang.Override
@@ -14539,7 +10873,7 @@ private static final long serialVersionUID = 0L;
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SitelinkExtensionRecommendation(
+    private EnhancedCpcOptInRecommendation(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -14547,7 +10881,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -14558,15 +10891,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                recommendedExtensions_ = new java.util.ArrayList<com.google.ads.googleads.v6.common.SitelinkFeedItem>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              recommendedExtensions_.add(
-                  input.readMessage(com.google.ads.googleads.v6.common.SitelinkFeedItem.parser(), extensionRegistry));
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -14582,84 +10906,21 @@ private static final long serialVersionUID = 0L;
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          recommendedExtensions_ = java.util.Collections.unmodifiableList(recommendedExtensions_);
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_SitelinkExtensionRecommendation_descriptor;
+      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_EnhancedCpcOptInRecommendation_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_SitelinkExtensionRecommendation_fieldAccessorTable
+      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_EnhancedCpcOptInRecommendation_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation.Builder.class);
-    }
-
-    public static final int RECOMMENDED_EXTENSIONS_FIELD_NUMBER = 1;
-    private java.util.List<com.google.ads.googleads.v6.common.SitelinkFeedItem> recommendedExtensions_;
-    /**
-     * <pre>
-     * Output only. Sitelink extensions recommended to be added.
-     * </pre>
-     *
-     * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    @java.lang.Override
-    public java.util.List<com.google.ads.googleads.v6.common.SitelinkFeedItem> getRecommendedExtensionsList() {
-      return recommendedExtensions_;
-    }
-    /**
-     * <pre>
-     * Output only. Sitelink extensions recommended to be added.
-     * </pre>
-     *
-     * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends com.google.ads.googleads.v6.common.SitelinkFeedItemOrBuilder> 
-        getRecommendedExtensionsOrBuilderList() {
-      return recommendedExtensions_;
-    }
-    /**
-     * <pre>
-     * Output only. Sitelink extensions recommended to be added.
-     * </pre>
-     *
-     * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    @java.lang.Override
-    public int getRecommendedExtensionsCount() {
-      return recommendedExtensions_.size();
-    }
-    /**
-     * <pre>
-     * Output only. Sitelink extensions recommended to be added.
-     * </pre>
-     *
-     * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    @java.lang.Override
-    public com.google.ads.googleads.v6.common.SitelinkFeedItem getRecommendedExtensions(int index) {
-      return recommendedExtensions_.get(index);
-    }
-    /**
-     * <pre>
-     * Output only. Sitelink extensions recommended to be added.
-     * </pre>
-     *
-     * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    @java.lang.Override
-    public com.google.ads.googleads.v6.common.SitelinkFeedItemOrBuilder getRecommendedExtensionsOrBuilder(
-        int index) {
-      return recommendedExtensions_.get(index);
+              com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -14676,9 +10937,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < recommendedExtensions_.size(); i++) {
-        output.writeMessage(1, recommendedExtensions_.get(i));
-      }
       unknownFields.writeTo(output);
     }
 
@@ -14688,10 +10946,6 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < recommendedExtensions_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, recommendedExtensions_.get(i));
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -14702,13 +10956,11 @@ private static final long serialVersionUID = 0L;
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation)) {
+      if (!(obj instanceof com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation)) {
         return super.equals(obj);
       }
-      com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation other = (com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation) obj;
+      com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation other = (com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation) obj;
 
-      if (!getRecommendedExtensionsList()
-          .equals(other.getRecommendedExtensionsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -14720,78 +10972,74 @@ private static final long serialVersionUID = 0L;
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getRecommendedExtensionsCount() > 0) {
-        hash = (37 * hash) + RECOMMENDED_EXTENSIONS_FIELD_NUMBER;
-        hash = (53 * hash) + getRecommendedExtensionsList().hashCode();
-      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation parseFrom(
+    public static com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation parseFrom(
+    public static com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation parseFrom(
+    public static com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation parseFrom(
+    public static com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation parseFrom(byte[] data)
+    public static com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation parseFrom(
+    public static com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation parseFrom(java.io.InputStream input)
+    public static com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation parseFrom(
+    public static com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation parseDelimitedFrom(java.io.InputStream input)
+    public static com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation parseDelimitedFrom(
+    public static com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation parseFrom(
+    public static com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation parseFrom(
+    public static com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -14804,7 +11052,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation prototype) {
+    public static Builder newBuilder(com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -14821,29 +11069,29 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Sitelink extension recommendation.
+     * The Enhanced Cost-Per-Click Opt-In recommendation.
      * </pre>
      *
-     * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation}
+     * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation)
-        com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendationOrBuilder {
+        // @@protoc_insertion_point(builder_implements:google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation)
+        com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendationOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_SitelinkExtensionRecommendation_descriptor;
+        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_EnhancedCpcOptInRecommendation_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_SitelinkExtensionRecommendation_fieldAccessorTable
+        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_EnhancedCpcOptInRecommendation_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation.Builder.class);
+                com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation.Builder.class);
       }
 
-      // Construct using com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation.newBuilder()
+      // Construct using com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -14856,35 +11104,28 @@ private static final long serialVersionUID = 0L;
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getRecommendedExtensionsFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (recommendedExtensionsBuilder_ == null) {
-          recommendedExtensions_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          recommendedExtensionsBuilder_.clear();
-        }
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_SitelinkExtensionRecommendation_descriptor;
+        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_EnhancedCpcOptInRecommendation_descriptor;
       }
 
       @java.lang.Override
-      public com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation getDefaultInstanceForType() {
-        return com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation.getDefaultInstance();
+      public com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation getDefaultInstanceForType() {
+        return com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation build() {
-        com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation result = buildPartial();
+      public com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation build() {
+        com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -14892,18 +11133,8 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation buildPartial() {
-        com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation result = new com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation(this);
-        int from_bitField0_ = bitField0_;
-        if (recommendedExtensionsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            recommendedExtensions_ = java.util.Collections.unmodifiableList(recommendedExtensions_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.recommendedExtensions_ = recommendedExtensions_;
-        } else {
-          result.recommendedExtensions_ = recommendedExtensionsBuilder_.build();
-        }
+      public com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation buildPartial() {
+        com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation result = new com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation(this);
         onBuilt();
         return result;
       }
@@ -14942,41 +11173,953 @@ private static final long serialVersionUID = 0L;
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation) {
-          return mergeFrom((com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation)other);
+        if (other instanceof com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation) {
+          return mergeFrom((com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation other) {
-        if (other == com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation.getDefaultInstance()) return this;
-        if (recommendedExtensionsBuilder_ == null) {
-          if (!other.recommendedExtensions_.isEmpty()) {
-            if (recommendedExtensions_.isEmpty()) {
-              recommendedExtensions_ = other.recommendedExtensions_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureRecommendedExtensionsIsMutable();
-              recommendedExtensions_.addAll(other.recommendedExtensions_);
-            }
-            onChanged();
+      public Builder mergeFrom(com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation other) {
+        if (other == com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
           }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation)
+    private static final com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation();
+    }
+
+    public static com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<EnhancedCpcOptInRecommendation>
+        PARSER = new com.google.protobuf.AbstractParser<EnhancedCpcOptInRecommendation>() {
+      @java.lang.Override
+      public EnhancedCpcOptInRecommendation parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new EnhancedCpcOptInRecommendation(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<EnhancedCpcOptInRecommendation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EnhancedCpcOptInRecommendation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.ads.googleads.v6.resources.Recommendation.EnhancedCpcOptInRecommendation getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SearchPartnersOptInRecommendationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   * The Search Partners Opt-In recommendation.
+   * </pre>
+   *
+   * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation}
+   */
+  public static final class SearchPartnersOptInRecommendation extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation)
+      SearchPartnersOptInRecommendationOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SearchPartnersOptInRecommendation.newBuilder() to construct.
+    private SearchPartnersOptInRecommendation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SearchPartnersOptInRecommendation() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new SearchPartnersOptInRecommendation();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SearchPartnersOptInRecommendation(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_SearchPartnersOptInRecommendation_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_SearchPartnersOptInRecommendation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation)) {
+        return super.equals(obj);
+      }
+      com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation other = (com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * The Search Partners Opt-In recommendation.
+     * </pre>
+     *
+     * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation)
+        com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_SearchPartnersOptInRecommendation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_SearchPartnersOptInRecommendation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation.Builder.class);
+      }
+
+      // Construct using com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_SearchPartnersOptInRecommendation_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation getDefaultInstanceForType() {
+        return com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation build() {
+        com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation buildPartial() {
+        com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation result = new com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation) {
+          return mergeFrom((com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation)other);
         } else {
-          if (!other.recommendedExtensions_.isEmpty()) {
-            if (recommendedExtensionsBuilder_.isEmpty()) {
-              recommendedExtensionsBuilder_.dispose();
-              recommendedExtensionsBuilder_ = null;
-              recommendedExtensions_ = other.recommendedExtensions_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              recommendedExtensionsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getRecommendedExtensionsFieldBuilder() : null;
-            } else {
-              recommendedExtensionsBuilder_.addAllMessages(other.recommendedExtensions_);
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation other) {
+        if (other == com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation)
+    private static final com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation();
+    }
+
+    public static com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SearchPartnersOptInRecommendation>
+        PARSER = new com.google.protobuf.AbstractParser<SearchPartnersOptInRecommendation>() {
+      @java.lang.Override
+      public SearchPartnersOptInRecommendation parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SearchPartnersOptInRecommendation(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SearchPartnersOptInRecommendation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SearchPartnersOptInRecommendation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.ads.googleads.v6.resources.Recommendation.SearchPartnersOptInRecommendation getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MaximizeClicksOptInRecommendationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Output only. The recommended new budget amount.
+     * Only set if the current budget is too high.
+     * </pre>
+     *
+     * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the recommendedBudgetAmountMicros field is set.
+     */
+    boolean hasRecommendedBudgetAmountMicros();
+    /**
+     * <pre>
+     * Output only. The recommended new budget amount.
+     * Only set if the current budget is too high.
+     * </pre>
+     *
+     * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The recommendedBudgetAmountMicros.
+     */
+    long getRecommendedBudgetAmountMicros();
+  }
+  /**
+   * <pre>
+   * The Maximize Clicks opt-in recommendation.
+   * </pre>
+   *
+   * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation}
+   */
+  public static final class MaximizeClicksOptInRecommendation extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation)
+      MaximizeClicksOptInRecommendationOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MaximizeClicksOptInRecommendation.newBuilder() to construct.
+    private MaximizeClicksOptInRecommendation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MaximizeClicksOptInRecommendation() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MaximizeClicksOptInRecommendation();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MaximizeClicksOptInRecommendation(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
+              bitField0_ |= 0x00000001;
+              recommendedBudgetAmountMicros_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
           }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_MaximizeClicksOptInRecommendation_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_MaximizeClicksOptInRecommendation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int RECOMMENDED_BUDGET_AMOUNT_MICROS_FIELD_NUMBER = 2;
+    private long recommendedBudgetAmountMicros_;
+    /**
+     * <pre>
+     * Output only. The recommended new budget amount.
+     * Only set if the current budget is too high.
+     * </pre>
+     *
+     * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the recommendedBudgetAmountMicros field is set.
+     */
+    @java.lang.Override
+    public boolean hasRecommendedBudgetAmountMicros() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     * Output only. The recommended new budget amount.
+     * Only set if the current budget is too high.
+     * </pre>
+     *
+     * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The recommendedBudgetAmountMicros.
+     */
+    @java.lang.Override
+    public long getRecommendedBudgetAmountMicros() {
+      return recommendedBudgetAmountMicros_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeInt64(2, recommendedBudgetAmountMicros_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, recommendedBudgetAmountMicros_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation)) {
+        return super.equals(obj);
+      }
+      com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation other = (com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation) obj;
+
+      if (hasRecommendedBudgetAmountMicros() != other.hasRecommendedBudgetAmountMicros()) return false;
+      if (hasRecommendedBudgetAmountMicros()) {
+        if (getRecommendedBudgetAmountMicros()
+            != other.getRecommendedBudgetAmountMicros()) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasRecommendedBudgetAmountMicros()) {
+        hash = (37 * hash) + RECOMMENDED_BUDGET_AMOUNT_MICROS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getRecommendedBudgetAmountMicros());
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * The Maximize Clicks opt-in recommendation.
+     * </pre>
+     *
+     * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation)
+        com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_MaximizeClicksOptInRecommendation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_MaximizeClicksOptInRecommendation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation.Builder.class);
+      }
+
+      // Construct using com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        recommendedBudgetAmountMicros_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_MaximizeClicksOptInRecommendation_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation getDefaultInstanceForType() {
+        return com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation build() {
+        com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation buildPartial() {
+        com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation result = new com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.recommendedBudgetAmountMicros_ = recommendedBudgetAmountMicros_;
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation) {
+          return mergeFrom((com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation other) {
+        if (other == com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation.getDefaultInstance()) return this;
+        if (other.hasRecommendedBudgetAmountMicros()) {
+          setRecommendedBudgetAmountMicros(other.getRecommendedBudgetAmountMicros());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -14993,11 +12136,11 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation parsedMessage = null;
+        com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation) e.getUnfinishedMessage();
+          parsedMessage = (com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -15008,316 +12151,63 @@ private static final long serialVersionUID = 0L;
       }
       private int bitField0_;
 
-      private java.util.List<com.google.ads.googleads.v6.common.SitelinkFeedItem> recommendedExtensions_ =
-        java.util.Collections.emptyList();
-      private void ensureRecommendedExtensionsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          recommendedExtensions_ = new java.util.ArrayList<com.google.ads.googleads.v6.common.SitelinkFeedItem>(recommendedExtensions_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.ads.googleads.v6.common.SitelinkFeedItem, com.google.ads.googleads.v6.common.SitelinkFeedItem.Builder, com.google.ads.googleads.v6.common.SitelinkFeedItemOrBuilder> recommendedExtensionsBuilder_;
-
+      private long recommendedBudgetAmountMicros_ ;
       /**
        * <pre>
-       * Output only. Sitelink extensions recommended to be added.
+       * Output only. The recommended new budget amount.
+       * Only set if the current budget is too high.
        * </pre>
        *
-       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return Whether the recommendedBudgetAmountMicros field is set.
        */
-      public java.util.List<com.google.ads.googleads.v6.common.SitelinkFeedItem> getRecommendedExtensionsList() {
-        if (recommendedExtensionsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(recommendedExtensions_);
-        } else {
-          return recommendedExtensionsBuilder_.getMessageList();
-        }
+      @java.lang.Override
+      public boolean hasRecommendedBudgetAmountMicros() {
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <pre>
-       * Output only. Sitelink extensions recommended to be added.
+       * Output only. The recommended new budget amount.
+       * Only set if the current budget is too high.
        * </pre>
        *
-       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return The recommendedBudgetAmountMicros.
        */
-      public int getRecommendedExtensionsCount() {
-        if (recommendedExtensionsBuilder_ == null) {
-          return recommendedExtensions_.size();
-        } else {
-          return recommendedExtensionsBuilder_.getCount();
-        }
+      @java.lang.Override
+      public long getRecommendedBudgetAmountMicros() {
+        return recommendedBudgetAmountMicros_;
       }
       /**
        * <pre>
-       * Output only. Sitelink extensions recommended to be added.
+       * Output only. The recommended new budget amount.
+       * Only set if the current budget is too high.
        * </pre>
        *
-       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @param value The recommendedBudgetAmountMicros to set.
+       * @return This builder for chaining.
        */
-      public com.google.ads.googleads.v6.common.SitelinkFeedItem getRecommendedExtensions(int index) {
-        if (recommendedExtensionsBuilder_ == null) {
-          return recommendedExtensions_.get(index);
-        } else {
-          return recommendedExtensionsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <pre>
-       * Output only. Sitelink extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public Builder setRecommendedExtensions(
-          int index, com.google.ads.googleads.v6.common.SitelinkFeedItem value) {
-        if (recommendedExtensionsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRecommendedExtensionsIsMutable();
-          recommendedExtensions_.set(index, value);
-          onChanged();
-        } else {
-          recommendedExtensionsBuilder_.setMessage(index, value);
-        }
+      public Builder setRecommendedBudgetAmountMicros(long value) {
+        bitField0_ |= 0x00000001;
+        recommendedBudgetAmountMicros_ = value;
+        onChanged();
         return this;
       }
       /**
        * <pre>
-       * Output only. Sitelink extensions recommended to be added.
+       * Output only. The recommended new budget amount.
+       * Only set if the current budget is too high.
        * </pre>
        *
-       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>int64 recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return This builder for chaining.
        */
-      public Builder setRecommendedExtensions(
-          int index, com.google.ads.googleads.v6.common.SitelinkFeedItem.Builder builderForValue) {
-        if (recommendedExtensionsBuilder_ == null) {
-          ensureRecommendedExtensionsIsMutable();
-          recommendedExtensions_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          recommendedExtensionsBuilder_.setMessage(index, builderForValue.build());
-        }
+      public Builder clearRecommendedBudgetAmountMicros() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        recommendedBudgetAmountMicros_ = 0L;
+        onChanged();
         return this;
-      }
-      /**
-       * <pre>
-       * Output only. Sitelink extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public Builder addRecommendedExtensions(com.google.ads.googleads.v6.common.SitelinkFeedItem value) {
-        if (recommendedExtensionsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRecommendedExtensionsIsMutable();
-          recommendedExtensions_.add(value);
-          onChanged();
-        } else {
-          recommendedExtensionsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Output only. Sitelink extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public Builder addRecommendedExtensions(
-          int index, com.google.ads.googleads.v6.common.SitelinkFeedItem value) {
-        if (recommendedExtensionsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRecommendedExtensionsIsMutable();
-          recommendedExtensions_.add(index, value);
-          onChanged();
-        } else {
-          recommendedExtensionsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Output only. Sitelink extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public Builder addRecommendedExtensions(
-          com.google.ads.googleads.v6.common.SitelinkFeedItem.Builder builderForValue) {
-        if (recommendedExtensionsBuilder_ == null) {
-          ensureRecommendedExtensionsIsMutable();
-          recommendedExtensions_.add(builderForValue.build());
-          onChanged();
-        } else {
-          recommendedExtensionsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Output only. Sitelink extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public Builder addRecommendedExtensions(
-          int index, com.google.ads.googleads.v6.common.SitelinkFeedItem.Builder builderForValue) {
-        if (recommendedExtensionsBuilder_ == null) {
-          ensureRecommendedExtensionsIsMutable();
-          recommendedExtensions_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          recommendedExtensionsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Output only. Sitelink extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public Builder addAllRecommendedExtensions(
-          java.lang.Iterable<? extends com.google.ads.googleads.v6.common.SitelinkFeedItem> values) {
-        if (recommendedExtensionsBuilder_ == null) {
-          ensureRecommendedExtensionsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, recommendedExtensions_);
-          onChanged();
-        } else {
-          recommendedExtensionsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Output only. Sitelink extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public Builder clearRecommendedExtensions() {
-        if (recommendedExtensionsBuilder_ == null) {
-          recommendedExtensions_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          recommendedExtensionsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Output only. Sitelink extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public Builder removeRecommendedExtensions(int index) {
-        if (recommendedExtensionsBuilder_ == null) {
-          ensureRecommendedExtensionsIsMutable();
-          recommendedExtensions_.remove(index);
-          onChanged();
-        } else {
-          recommendedExtensionsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Output only. Sitelink extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public com.google.ads.googleads.v6.common.SitelinkFeedItem.Builder getRecommendedExtensionsBuilder(
-          int index) {
-        return getRecommendedExtensionsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * Output only. Sitelink extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public com.google.ads.googleads.v6.common.SitelinkFeedItemOrBuilder getRecommendedExtensionsOrBuilder(
-          int index) {
-        if (recommendedExtensionsBuilder_ == null) {
-          return recommendedExtensions_.get(index);  } else {
-          return recommendedExtensionsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       * Output only. Sitelink extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public java.util.List<? extends com.google.ads.googleads.v6.common.SitelinkFeedItemOrBuilder> 
-           getRecommendedExtensionsOrBuilderList() {
-        if (recommendedExtensionsBuilder_ != null) {
-          return recommendedExtensionsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(recommendedExtensions_);
-        }
-      }
-      /**
-       * <pre>
-       * Output only. Sitelink extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public com.google.ads.googleads.v6.common.SitelinkFeedItem.Builder addRecommendedExtensionsBuilder() {
-        return getRecommendedExtensionsFieldBuilder().addBuilder(
-            com.google.ads.googleads.v6.common.SitelinkFeedItem.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * Output only. Sitelink extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public com.google.ads.googleads.v6.common.SitelinkFeedItem.Builder addRecommendedExtensionsBuilder(
-          int index) {
-        return getRecommendedExtensionsFieldBuilder().addBuilder(
-            index, com.google.ads.googleads.v6.common.SitelinkFeedItem.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * Output only. Sitelink extensions recommended to be added.
-       * </pre>
-       *
-       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       */
-      public java.util.List<com.google.ads.googleads.v6.common.SitelinkFeedItem.Builder> 
-           getRecommendedExtensionsBuilderList() {
-        return getRecommendedExtensionsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.ads.googleads.v6.common.SitelinkFeedItem, com.google.ads.googleads.v6.common.SitelinkFeedItem.Builder, com.google.ads.googleads.v6.common.SitelinkFeedItemOrBuilder> 
-          getRecommendedExtensionsFieldBuilder() {
-        if (recommendedExtensionsBuilder_ == null) {
-          recommendedExtensionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.google.ads.googleads.v6.common.SitelinkFeedItem, com.google.ads.googleads.v6.common.SitelinkFeedItem.Builder, com.google.ads.googleads.v6.common.SitelinkFeedItemOrBuilder>(
-                  recommendedExtensions_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
-          recommendedExtensions_ = null;
-        }
-        return recommendedExtensionsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -15332,41 +12222,41 @@ private static final long serialVersionUID = 0L;
       }
 
 
-      // @@protoc_insertion_point(builder_scope:google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation)
+      // @@protoc_insertion_point(builder_scope:google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation)
     }
 
-    // @@protoc_insertion_point(class_scope:google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation)
-    private static final com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation)
+    private static final com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation();
+      DEFAULT_INSTANCE = new com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation();
     }
 
-    public static com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation getDefaultInstance() {
+    public static com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<SitelinkExtensionRecommendation>
-        PARSER = new com.google.protobuf.AbstractParser<SitelinkExtensionRecommendation>() {
+    private static final com.google.protobuf.Parser<MaximizeClicksOptInRecommendation>
+        PARSER = new com.google.protobuf.AbstractParser<MaximizeClicksOptInRecommendation>() {
       @java.lang.Override
-      public SitelinkExtensionRecommendation parsePartialFrom(
+      public MaximizeClicksOptInRecommendation parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SitelinkExtensionRecommendation(input, extensionRegistry);
+        return new MaximizeClicksOptInRecommendation(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<SitelinkExtensionRecommendation> parser() {
+    public static com.google.protobuf.Parser<MaximizeClicksOptInRecommendation> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<SitelinkExtensionRecommendation> getParserForType() {
+    public com.google.protobuf.Parser<MaximizeClicksOptInRecommendation> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation getDefaultInstanceForType() {
+    public com.google.ads.googleads.v6.resources.Recommendation.MaximizeClicksOptInRecommendation getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -16294,6 +13184,3819 @@ private static final long serialVersionUID = 0L;
 
   }
 
+  public interface OptimizeAdRotationRecommendationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   * The Optimize Ad Rotation recommendation.
+   * </pre>
+   *
+   * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation}
+   */
+  public static final class OptimizeAdRotationRecommendation extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation)
+      OptimizeAdRotationRecommendationOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use OptimizeAdRotationRecommendation.newBuilder() to construct.
+    private OptimizeAdRotationRecommendation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private OptimizeAdRotationRecommendation() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new OptimizeAdRotationRecommendation();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private OptimizeAdRotationRecommendation(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_OptimizeAdRotationRecommendation_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_OptimizeAdRotationRecommendation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation)) {
+        return super.equals(obj);
+      }
+      com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation other = (com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * The Optimize Ad Rotation recommendation.
+     * </pre>
+     *
+     * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation)
+        com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_OptimizeAdRotationRecommendation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_OptimizeAdRotationRecommendation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation.Builder.class);
+      }
+
+      // Construct using com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_OptimizeAdRotationRecommendation_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation getDefaultInstanceForType() {
+        return com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation build() {
+        com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation buildPartial() {
+        com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation result = new com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation) {
+          return mergeFrom((com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation other) {
+        if (other == com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation)
+    private static final com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation();
+    }
+
+    public static com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<OptimizeAdRotationRecommendation>
+        PARSER = new com.google.protobuf.AbstractParser<OptimizeAdRotationRecommendation>() {
+      @java.lang.Override
+      public OptimizeAdRotationRecommendation parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new OptimizeAdRotationRecommendation(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<OptimizeAdRotationRecommendation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<OptimizeAdRotationRecommendation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.ads.googleads.v6.resources.Recommendation.OptimizeAdRotationRecommendation getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SitelinkExtensionRecommendationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Output only. Sitelink extensions recommended to be added.
+     * </pre>
+     *
+     * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    java.util.List<com.google.ads.googleads.v6.common.SitelinkFeedItem> 
+        getRecommendedExtensionsList();
+    /**
+     * <pre>
+     * Output only. Sitelink extensions recommended to be added.
+     * </pre>
+     *
+     * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    com.google.ads.googleads.v6.common.SitelinkFeedItem getRecommendedExtensions(int index);
+    /**
+     * <pre>
+     * Output only. Sitelink extensions recommended to be added.
+     * </pre>
+     *
+     * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    int getRecommendedExtensionsCount();
+    /**
+     * <pre>
+     * Output only. Sitelink extensions recommended to be added.
+     * </pre>
+     *
+     * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    java.util.List<? extends com.google.ads.googleads.v6.common.SitelinkFeedItemOrBuilder> 
+        getRecommendedExtensionsOrBuilderList();
+    /**
+     * <pre>
+     * Output only. Sitelink extensions recommended to be added.
+     * </pre>
+     *
+     * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    com.google.ads.googleads.v6.common.SitelinkFeedItemOrBuilder getRecommendedExtensionsOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   * The Sitelink extension recommendation.
+   * </pre>
+   *
+   * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation}
+   */
+  public static final class SitelinkExtensionRecommendation extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation)
+      SitelinkExtensionRecommendationOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SitelinkExtensionRecommendation.newBuilder() to construct.
+    private SitelinkExtensionRecommendation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SitelinkExtensionRecommendation() {
+      recommendedExtensions_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new SitelinkExtensionRecommendation();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SitelinkExtensionRecommendation(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                recommendedExtensions_ = new java.util.ArrayList<com.google.ads.googleads.v6.common.SitelinkFeedItem>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              recommendedExtensions_.add(
+                  input.readMessage(com.google.ads.googleads.v6.common.SitelinkFeedItem.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          recommendedExtensions_ = java.util.Collections.unmodifiableList(recommendedExtensions_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_SitelinkExtensionRecommendation_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_SitelinkExtensionRecommendation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation.Builder.class);
+    }
+
+    public static final int RECOMMENDED_EXTENSIONS_FIELD_NUMBER = 1;
+    private java.util.List<com.google.ads.googleads.v6.common.SitelinkFeedItem> recommendedExtensions_;
+    /**
+     * <pre>
+     * Output only. Sitelink extensions recommended to be added.
+     * </pre>
+     *
+     * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.ads.googleads.v6.common.SitelinkFeedItem> getRecommendedExtensionsList() {
+      return recommendedExtensions_;
+    }
+    /**
+     * <pre>
+     * Output only. Sitelink extensions recommended to be added.
+     * </pre>
+     *
+     * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.ads.googleads.v6.common.SitelinkFeedItemOrBuilder> 
+        getRecommendedExtensionsOrBuilderList() {
+      return recommendedExtensions_;
+    }
+    /**
+     * <pre>
+     * Output only. Sitelink extensions recommended to be added.
+     * </pre>
+     *
+     * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    @java.lang.Override
+    public int getRecommendedExtensionsCount() {
+      return recommendedExtensions_.size();
+    }
+    /**
+     * <pre>
+     * Output only. Sitelink extensions recommended to be added.
+     * </pre>
+     *
+     * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    @java.lang.Override
+    public com.google.ads.googleads.v6.common.SitelinkFeedItem getRecommendedExtensions(int index) {
+      return recommendedExtensions_.get(index);
+    }
+    /**
+     * <pre>
+     * Output only. Sitelink extensions recommended to be added.
+     * </pre>
+     *
+     * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    @java.lang.Override
+    public com.google.ads.googleads.v6.common.SitelinkFeedItemOrBuilder getRecommendedExtensionsOrBuilder(
+        int index) {
+      return recommendedExtensions_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < recommendedExtensions_.size(); i++) {
+        output.writeMessage(1, recommendedExtensions_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < recommendedExtensions_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, recommendedExtensions_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation)) {
+        return super.equals(obj);
+      }
+      com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation other = (com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation) obj;
+
+      if (!getRecommendedExtensionsList()
+          .equals(other.getRecommendedExtensionsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getRecommendedExtensionsCount() > 0) {
+        hash = (37 * hash) + RECOMMENDED_EXTENSIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getRecommendedExtensionsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * The Sitelink extension recommendation.
+     * </pre>
+     *
+     * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation)
+        com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_SitelinkExtensionRecommendation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_SitelinkExtensionRecommendation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation.Builder.class);
+      }
+
+      // Construct using com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getRecommendedExtensionsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (recommendedExtensionsBuilder_ == null) {
+          recommendedExtensions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          recommendedExtensionsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_SitelinkExtensionRecommendation_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation getDefaultInstanceForType() {
+        return com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation build() {
+        com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation buildPartial() {
+        com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation result = new com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation(this);
+        int from_bitField0_ = bitField0_;
+        if (recommendedExtensionsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            recommendedExtensions_ = java.util.Collections.unmodifiableList(recommendedExtensions_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.recommendedExtensions_ = recommendedExtensions_;
+        } else {
+          result.recommendedExtensions_ = recommendedExtensionsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation) {
+          return mergeFrom((com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation other) {
+        if (other == com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation.getDefaultInstance()) return this;
+        if (recommendedExtensionsBuilder_ == null) {
+          if (!other.recommendedExtensions_.isEmpty()) {
+            if (recommendedExtensions_.isEmpty()) {
+              recommendedExtensions_ = other.recommendedExtensions_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureRecommendedExtensionsIsMutable();
+              recommendedExtensions_.addAll(other.recommendedExtensions_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.recommendedExtensions_.isEmpty()) {
+            if (recommendedExtensionsBuilder_.isEmpty()) {
+              recommendedExtensionsBuilder_.dispose();
+              recommendedExtensionsBuilder_ = null;
+              recommendedExtensions_ = other.recommendedExtensions_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              recommendedExtensionsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getRecommendedExtensionsFieldBuilder() : null;
+            } else {
+              recommendedExtensionsBuilder_.addAllMessages(other.recommendedExtensions_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.google.ads.googleads.v6.common.SitelinkFeedItem> recommendedExtensions_ =
+        java.util.Collections.emptyList();
+      private void ensureRecommendedExtensionsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          recommendedExtensions_ = new java.util.ArrayList<com.google.ads.googleads.v6.common.SitelinkFeedItem>(recommendedExtensions_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.google.ads.googleads.v6.common.SitelinkFeedItem, com.google.ads.googleads.v6.common.SitelinkFeedItem.Builder, com.google.ads.googleads.v6.common.SitelinkFeedItemOrBuilder> recommendedExtensionsBuilder_;
+
+      /**
+       * <pre>
+       * Output only. Sitelink extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public java.util.List<com.google.ads.googleads.v6.common.SitelinkFeedItem> getRecommendedExtensionsList() {
+        if (recommendedExtensionsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(recommendedExtensions_);
+        } else {
+          return recommendedExtensionsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * Output only. Sitelink extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public int getRecommendedExtensionsCount() {
+        if (recommendedExtensionsBuilder_ == null) {
+          return recommendedExtensions_.size();
+        } else {
+          return recommendedExtensionsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * Output only. Sitelink extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public com.google.ads.googleads.v6.common.SitelinkFeedItem getRecommendedExtensions(int index) {
+        if (recommendedExtensionsBuilder_ == null) {
+          return recommendedExtensions_.get(index);
+        } else {
+          return recommendedExtensionsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * Output only. Sitelink extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder setRecommendedExtensions(
+          int index, com.google.ads.googleads.v6.common.SitelinkFeedItem value) {
+        if (recommendedExtensionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRecommendedExtensionsIsMutable();
+          recommendedExtensions_.set(index, value);
+          onChanged();
+        } else {
+          recommendedExtensionsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. Sitelink extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder setRecommendedExtensions(
+          int index, com.google.ads.googleads.v6.common.SitelinkFeedItem.Builder builderForValue) {
+        if (recommendedExtensionsBuilder_ == null) {
+          ensureRecommendedExtensionsIsMutable();
+          recommendedExtensions_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          recommendedExtensionsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. Sitelink extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder addRecommendedExtensions(com.google.ads.googleads.v6.common.SitelinkFeedItem value) {
+        if (recommendedExtensionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRecommendedExtensionsIsMutable();
+          recommendedExtensions_.add(value);
+          onChanged();
+        } else {
+          recommendedExtensionsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. Sitelink extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder addRecommendedExtensions(
+          int index, com.google.ads.googleads.v6.common.SitelinkFeedItem value) {
+        if (recommendedExtensionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRecommendedExtensionsIsMutable();
+          recommendedExtensions_.add(index, value);
+          onChanged();
+        } else {
+          recommendedExtensionsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. Sitelink extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder addRecommendedExtensions(
+          com.google.ads.googleads.v6.common.SitelinkFeedItem.Builder builderForValue) {
+        if (recommendedExtensionsBuilder_ == null) {
+          ensureRecommendedExtensionsIsMutable();
+          recommendedExtensions_.add(builderForValue.build());
+          onChanged();
+        } else {
+          recommendedExtensionsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. Sitelink extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder addRecommendedExtensions(
+          int index, com.google.ads.googleads.v6.common.SitelinkFeedItem.Builder builderForValue) {
+        if (recommendedExtensionsBuilder_ == null) {
+          ensureRecommendedExtensionsIsMutable();
+          recommendedExtensions_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          recommendedExtensionsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. Sitelink extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder addAllRecommendedExtensions(
+          java.lang.Iterable<? extends com.google.ads.googleads.v6.common.SitelinkFeedItem> values) {
+        if (recommendedExtensionsBuilder_ == null) {
+          ensureRecommendedExtensionsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, recommendedExtensions_);
+          onChanged();
+        } else {
+          recommendedExtensionsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. Sitelink extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder clearRecommendedExtensions() {
+        if (recommendedExtensionsBuilder_ == null) {
+          recommendedExtensions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          recommendedExtensionsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. Sitelink extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder removeRecommendedExtensions(int index) {
+        if (recommendedExtensionsBuilder_ == null) {
+          ensureRecommendedExtensionsIsMutable();
+          recommendedExtensions_.remove(index);
+          onChanged();
+        } else {
+          recommendedExtensionsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. Sitelink extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public com.google.ads.googleads.v6.common.SitelinkFeedItem.Builder getRecommendedExtensionsBuilder(
+          int index) {
+        return getRecommendedExtensionsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * Output only. Sitelink extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public com.google.ads.googleads.v6.common.SitelinkFeedItemOrBuilder getRecommendedExtensionsOrBuilder(
+          int index) {
+        if (recommendedExtensionsBuilder_ == null) {
+          return recommendedExtensions_.get(index);  } else {
+          return recommendedExtensionsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * Output only. Sitelink extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public java.util.List<? extends com.google.ads.googleads.v6.common.SitelinkFeedItemOrBuilder> 
+           getRecommendedExtensionsOrBuilderList() {
+        if (recommendedExtensionsBuilder_ != null) {
+          return recommendedExtensionsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(recommendedExtensions_);
+        }
+      }
+      /**
+       * <pre>
+       * Output only. Sitelink extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public com.google.ads.googleads.v6.common.SitelinkFeedItem.Builder addRecommendedExtensionsBuilder() {
+        return getRecommendedExtensionsFieldBuilder().addBuilder(
+            com.google.ads.googleads.v6.common.SitelinkFeedItem.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Output only. Sitelink extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public com.google.ads.googleads.v6.common.SitelinkFeedItem.Builder addRecommendedExtensionsBuilder(
+          int index) {
+        return getRecommendedExtensionsFieldBuilder().addBuilder(
+            index, com.google.ads.googleads.v6.common.SitelinkFeedItem.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Output only. Sitelink extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public java.util.List<com.google.ads.googleads.v6.common.SitelinkFeedItem.Builder> 
+           getRecommendedExtensionsBuilderList() {
+        return getRecommendedExtensionsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.google.ads.googleads.v6.common.SitelinkFeedItem, com.google.ads.googleads.v6.common.SitelinkFeedItem.Builder, com.google.ads.googleads.v6.common.SitelinkFeedItemOrBuilder> 
+          getRecommendedExtensionsFieldBuilder() {
+        if (recommendedExtensionsBuilder_ == null) {
+          recommendedExtensionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.ads.googleads.v6.common.SitelinkFeedItem, com.google.ads.googleads.v6.common.SitelinkFeedItem.Builder, com.google.ads.googleads.v6.common.SitelinkFeedItemOrBuilder>(
+                  recommendedExtensions_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          recommendedExtensions_ = null;
+        }
+        return recommendedExtensionsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation)
+    private static final com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation();
+    }
+
+    public static com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SitelinkExtensionRecommendation>
+        PARSER = new com.google.protobuf.AbstractParser<SitelinkExtensionRecommendation>() {
+      @java.lang.Override
+      public SitelinkExtensionRecommendation parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SitelinkExtensionRecommendation(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SitelinkExtensionRecommendation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SitelinkExtensionRecommendation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.ads.googleads.v6.resources.Recommendation.SitelinkExtensionRecommendation getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface KeywordMatchTypeRecommendationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Output only. The existing keyword where the match type should be more broad.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the keyword field is set.
+     */
+    boolean hasKeyword();
+    /**
+     * <pre>
+     * Output only. The existing keyword where the match type should be more broad.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The keyword.
+     */
+    com.google.ads.googleads.v6.common.KeywordInfo getKeyword();
+    /**
+     * <pre>
+     * Output only. The existing keyword where the match type should be more broad.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    com.google.ads.googleads.v6.common.KeywordInfoOrBuilder getKeywordOrBuilder();
+
+    /**
+     * <pre>
+     * Output only. The recommended new match type.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType recommended_match_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The enum numeric value on the wire for recommendedMatchType.
+     */
+    int getRecommendedMatchTypeValue();
+    /**
+     * <pre>
+     * Output only. The recommended new match type.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType recommended_match_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The recommendedMatchType.
+     */
+    com.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType getRecommendedMatchType();
+  }
+  /**
+   * <pre>
+   * The keyword match type recommendation.
+   * </pre>
+   *
+   * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation}
+   */
+  public static final class KeywordMatchTypeRecommendation extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation)
+      KeywordMatchTypeRecommendationOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use KeywordMatchTypeRecommendation.newBuilder() to construct.
+    private KeywordMatchTypeRecommendation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private KeywordMatchTypeRecommendation() {
+      recommendedMatchType_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new KeywordMatchTypeRecommendation();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private KeywordMatchTypeRecommendation(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.google.ads.googleads.v6.common.KeywordInfo.Builder subBuilder = null;
+              if (keyword_ != null) {
+                subBuilder = keyword_.toBuilder();
+              }
+              keyword_ = input.readMessage(com.google.ads.googleads.v6.common.KeywordInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(keyword_);
+                keyword_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              recommendedMatchType_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_KeywordMatchTypeRecommendation_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_KeywordMatchTypeRecommendation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation.Builder.class);
+    }
+
+    public static final int KEYWORD_FIELD_NUMBER = 1;
+    private com.google.ads.googleads.v6.common.KeywordInfo keyword_;
+    /**
+     * <pre>
+     * Output only. The existing keyword where the match type should be more broad.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the keyword field is set.
+     */
+    @java.lang.Override
+    public boolean hasKeyword() {
+      return keyword_ != null;
+    }
+    /**
+     * <pre>
+     * Output only. The existing keyword where the match type should be more broad.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The keyword.
+     */
+    @java.lang.Override
+    public com.google.ads.googleads.v6.common.KeywordInfo getKeyword() {
+      return keyword_ == null ? com.google.ads.googleads.v6.common.KeywordInfo.getDefaultInstance() : keyword_;
+    }
+    /**
+     * <pre>
+     * Output only. The existing keyword where the match type should be more broad.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    @java.lang.Override
+    public com.google.ads.googleads.v6.common.KeywordInfoOrBuilder getKeywordOrBuilder() {
+      return getKeyword();
+    }
+
+    public static final int RECOMMENDED_MATCH_TYPE_FIELD_NUMBER = 2;
+    private int recommendedMatchType_;
+    /**
+     * <pre>
+     * Output only. The recommended new match type.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType recommended_match_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The enum numeric value on the wire for recommendedMatchType.
+     */
+    @java.lang.Override public int getRecommendedMatchTypeValue() {
+      return recommendedMatchType_;
+    }
+    /**
+     * <pre>
+     * Output only. The recommended new match type.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType recommended_match_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The recommendedMatchType.
+     */
+    @java.lang.Override public com.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType getRecommendedMatchType() {
+      @SuppressWarnings("deprecation")
+      com.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType result = com.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType.valueOf(recommendedMatchType_);
+      return result == null ? com.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (keyword_ != null) {
+        output.writeMessage(1, getKeyword());
+      }
+      if (recommendedMatchType_ != com.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType.UNSPECIFIED.getNumber()) {
+        output.writeEnum(2, recommendedMatchType_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (keyword_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getKeyword());
+      }
+      if (recommendedMatchType_ != com.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType.UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, recommendedMatchType_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation)) {
+        return super.equals(obj);
+      }
+      com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation other = (com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation) obj;
+
+      if (hasKeyword() != other.hasKeyword()) return false;
+      if (hasKeyword()) {
+        if (!getKeyword()
+            .equals(other.getKeyword())) return false;
+      }
+      if (recommendedMatchType_ != other.recommendedMatchType_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasKeyword()) {
+        hash = (37 * hash) + KEYWORD_FIELD_NUMBER;
+        hash = (53 * hash) + getKeyword().hashCode();
+      }
+      hash = (37 * hash) + RECOMMENDED_MATCH_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + recommendedMatchType_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * The keyword match type recommendation.
+     * </pre>
+     *
+     * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation)
+        com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_KeywordMatchTypeRecommendation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_KeywordMatchTypeRecommendation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation.Builder.class);
+      }
+
+      // Construct using com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (keywordBuilder_ == null) {
+          keyword_ = null;
+        } else {
+          keyword_ = null;
+          keywordBuilder_ = null;
+        }
+        recommendedMatchType_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_KeywordMatchTypeRecommendation_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation getDefaultInstanceForType() {
+        return com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation build() {
+        com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation buildPartial() {
+        com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation result = new com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation(this);
+        if (keywordBuilder_ == null) {
+          result.keyword_ = keyword_;
+        } else {
+          result.keyword_ = keywordBuilder_.build();
+        }
+        result.recommendedMatchType_ = recommendedMatchType_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation) {
+          return mergeFrom((com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation other) {
+        if (other == com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation.getDefaultInstance()) return this;
+        if (other.hasKeyword()) {
+          mergeKeyword(other.getKeyword());
+        }
+        if (other.recommendedMatchType_ != 0) {
+          setRecommendedMatchTypeValue(other.getRecommendedMatchTypeValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.ads.googleads.v6.common.KeywordInfo keyword_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.ads.googleads.v6.common.KeywordInfo, com.google.ads.googleads.v6.common.KeywordInfo.Builder, com.google.ads.googleads.v6.common.KeywordInfoOrBuilder> keywordBuilder_;
+      /**
+       * <pre>
+       * Output only. The existing keyword where the match type should be more broad.
+       * </pre>
+       *
+       * <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return Whether the keyword field is set.
+       */
+      public boolean hasKeyword() {
+        return keywordBuilder_ != null || keyword_ != null;
+      }
+      /**
+       * <pre>
+       * Output only. The existing keyword where the match type should be more broad.
+       * </pre>
+       *
+       * <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return The keyword.
+       */
+      public com.google.ads.googleads.v6.common.KeywordInfo getKeyword() {
+        if (keywordBuilder_ == null) {
+          return keyword_ == null ? com.google.ads.googleads.v6.common.KeywordInfo.getDefaultInstance() : keyword_;
+        } else {
+          return keywordBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Output only. The existing keyword where the match type should be more broad.
+       * </pre>
+       *
+       * <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder setKeyword(com.google.ads.googleads.v6.common.KeywordInfo value) {
+        if (keywordBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          keyword_ = value;
+          onChanged();
+        } else {
+          keywordBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. The existing keyword where the match type should be more broad.
+       * </pre>
+       *
+       * <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder setKeyword(
+          com.google.ads.googleads.v6.common.KeywordInfo.Builder builderForValue) {
+        if (keywordBuilder_ == null) {
+          keyword_ = builderForValue.build();
+          onChanged();
+        } else {
+          keywordBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. The existing keyword where the match type should be more broad.
+       * </pre>
+       *
+       * <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder mergeKeyword(com.google.ads.googleads.v6.common.KeywordInfo value) {
+        if (keywordBuilder_ == null) {
+          if (keyword_ != null) {
+            keyword_ =
+              com.google.ads.googleads.v6.common.KeywordInfo.newBuilder(keyword_).mergeFrom(value).buildPartial();
+          } else {
+            keyword_ = value;
+          }
+          onChanged();
+        } else {
+          keywordBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. The existing keyword where the match type should be more broad.
+       * </pre>
+       *
+       * <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder clearKeyword() {
+        if (keywordBuilder_ == null) {
+          keyword_ = null;
+          onChanged();
+        } else {
+          keyword_ = null;
+          keywordBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. The existing keyword where the match type should be more broad.
+       * </pre>
+       *
+       * <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public com.google.ads.googleads.v6.common.KeywordInfo.Builder getKeywordBuilder() {
+        
+        onChanged();
+        return getKeywordFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Output only. The existing keyword where the match type should be more broad.
+       * </pre>
+       *
+       * <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public com.google.ads.googleads.v6.common.KeywordInfoOrBuilder getKeywordOrBuilder() {
+        if (keywordBuilder_ != null) {
+          return keywordBuilder_.getMessageOrBuilder();
+        } else {
+          return keyword_ == null ?
+              com.google.ads.googleads.v6.common.KeywordInfo.getDefaultInstance() : keyword_;
+        }
+      }
+      /**
+       * <pre>
+       * Output only. The existing keyword where the match type should be more broad.
+       * </pre>
+       *
+       * <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.ads.googleads.v6.common.KeywordInfo, com.google.ads.googleads.v6.common.KeywordInfo.Builder, com.google.ads.googleads.v6.common.KeywordInfoOrBuilder> 
+          getKeywordFieldBuilder() {
+        if (keywordBuilder_ == null) {
+          keywordBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.ads.googleads.v6.common.KeywordInfo, com.google.ads.googleads.v6.common.KeywordInfo.Builder, com.google.ads.googleads.v6.common.KeywordInfoOrBuilder>(
+                  getKeyword(),
+                  getParentForChildren(),
+                  isClean());
+          keyword_ = null;
+        }
+        return keywordBuilder_;
+      }
+
+      private int recommendedMatchType_ = 0;
+      /**
+       * <pre>
+       * Output only. The recommended new match type.
+       * </pre>
+       *
+       * <code>.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType recommended_match_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return The enum numeric value on the wire for recommendedMatchType.
+       */
+      @java.lang.Override public int getRecommendedMatchTypeValue() {
+        return recommendedMatchType_;
+      }
+      /**
+       * <pre>
+       * Output only. The recommended new match type.
+       * </pre>
+       *
+       * <code>.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType recommended_match_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @param value The enum numeric value on the wire for recommendedMatchType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRecommendedMatchTypeValue(int value) {
+        
+        recommendedMatchType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. The recommended new match type.
+       * </pre>
+       *
+       * <code>.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType recommended_match_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return The recommendedMatchType.
+       */
+      @java.lang.Override
+      public com.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType getRecommendedMatchType() {
+        @SuppressWarnings("deprecation")
+        com.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType result = com.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType.valueOf(recommendedMatchType_);
+        return result == null ? com.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * Output only. The recommended new match type.
+       * </pre>
+       *
+       * <code>.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType recommended_match_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @param value The recommendedMatchType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRecommendedMatchType(com.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        recommendedMatchType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. The recommended new match type.
+       * </pre>
+       *
+       * <code>.google.ads.googleads.v6.enums.KeywordMatchTypeEnum.KeywordMatchType recommended_match_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRecommendedMatchType() {
+        
+        recommendedMatchType_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation)
+    private static final com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation();
+    }
+
+    public static com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<KeywordMatchTypeRecommendation>
+        PARSER = new com.google.protobuf.AbstractParser<KeywordMatchTypeRecommendation>() {
+      @java.lang.Override
+      public KeywordMatchTypeRecommendation parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new KeywordMatchTypeRecommendation(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<KeywordMatchTypeRecommendation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<KeywordMatchTypeRecommendation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.ads.googleads.v6.resources.Recommendation.KeywordMatchTypeRecommendation getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CallExtensionRecommendationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Output only. Call extensions recommended to be added.
+     * </pre>
+     *
+     * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    java.util.List<com.google.ads.googleads.v6.common.CallFeedItem> 
+        getRecommendedExtensionsList();
+    /**
+     * <pre>
+     * Output only. Call extensions recommended to be added.
+     * </pre>
+     *
+     * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    com.google.ads.googleads.v6.common.CallFeedItem getRecommendedExtensions(int index);
+    /**
+     * <pre>
+     * Output only. Call extensions recommended to be added.
+     * </pre>
+     *
+     * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    int getRecommendedExtensionsCount();
+    /**
+     * <pre>
+     * Output only. Call extensions recommended to be added.
+     * </pre>
+     *
+     * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    java.util.List<? extends com.google.ads.googleads.v6.common.CallFeedItemOrBuilder> 
+        getRecommendedExtensionsOrBuilderList();
+    /**
+     * <pre>
+     * Output only. Call extensions recommended to be added.
+     * </pre>
+     *
+     * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    com.google.ads.googleads.v6.common.CallFeedItemOrBuilder getRecommendedExtensionsOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   * The Call extension recommendation.
+   * </pre>
+   *
+   * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation}
+   */
+  public static final class CallExtensionRecommendation extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation)
+      CallExtensionRecommendationOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CallExtensionRecommendation.newBuilder() to construct.
+    private CallExtensionRecommendation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CallExtensionRecommendation() {
+      recommendedExtensions_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CallExtensionRecommendation();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CallExtensionRecommendation(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                recommendedExtensions_ = new java.util.ArrayList<com.google.ads.googleads.v6.common.CallFeedItem>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              recommendedExtensions_.add(
+                  input.readMessage(com.google.ads.googleads.v6.common.CallFeedItem.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          recommendedExtensions_ = java.util.Collections.unmodifiableList(recommendedExtensions_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_CallExtensionRecommendation_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_CallExtensionRecommendation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation.Builder.class);
+    }
+
+    public static final int RECOMMENDED_EXTENSIONS_FIELD_NUMBER = 1;
+    private java.util.List<com.google.ads.googleads.v6.common.CallFeedItem> recommendedExtensions_;
+    /**
+     * <pre>
+     * Output only. Call extensions recommended to be added.
+     * </pre>
+     *
+     * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.ads.googleads.v6.common.CallFeedItem> getRecommendedExtensionsList() {
+      return recommendedExtensions_;
+    }
+    /**
+     * <pre>
+     * Output only. Call extensions recommended to be added.
+     * </pre>
+     *
+     * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.ads.googleads.v6.common.CallFeedItemOrBuilder> 
+        getRecommendedExtensionsOrBuilderList() {
+      return recommendedExtensions_;
+    }
+    /**
+     * <pre>
+     * Output only. Call extensions recommended to be added.
+     * </pre>
+     *
+     * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    @java.lang.Override
+    public int getRecommendedExtensionsCount() {
+      return recommendedExtensions_.size();
+    }
+    /**
+     * <pre>
+     * Output only. Call extensions recommended to be added.
+     * </pre>
+     *
+     * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    @java.lang.Override
+    public com.google.ads.googleads.v6.common.CallFeedItem getRecommendedExtensions(int index) {
+      return recommendedExtensions_.get(index);
+    }
+    /**
+     * <pre>
+     * Output only. Call extensions recommended to be added.
+     * </pre>
+     *
+     * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    @java.lang.Override
+    public com.google.ads.googleads.v6.common.CallFeedItemOrBuilder getRecommendedExtensionsOrBuilder(
+        int index) {
+      return recommendedExtensions_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < recommendedExtensions_.size(); i++) {
+        output.writeMessage(1, recommendedExtensions_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < recommendedExtensions_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, recommendedExtensions_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation)) {
+        return super.equals(obj);
+      }
+      com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation other = (com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation) obj;
+
+      if (!getRecommendedExtensionsList()
+          .equals(other.getRecommendedExtensionsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getRecommendedExtensionsCount() > 0) {
+        hash = (37 * hash) + RECOMMENDED_EXTENSIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getRecommendedExtensionsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * The Call extension recommendation.
+     * </pre>
+     *
+     * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation)
+        com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_CallExtensionRecommendation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_CallExtensionRecommendation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation.Builder.class);
+      }
+
+      // Construct using com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getRecommendedExtensionsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (recommendedExtensionsBuilder_ == null) {
+          recommendedExtensions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          recommendedExtensionsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_CallExtensionRecommendation_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation getDefaultInstanceForType() {
+        return com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation build() {
+        com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation buildPartial() {
+        com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation result = new com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation(this);
+        int from_bitField0_ = bitField0_;
+        if (recommendedExtensionsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            recommendedExtensions_ = java.util.Collections.unmodifiableList(recommendedExtensions_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.recommendedExtensions_ = recommendedExtensions_;
+        } else {
+          result.recommendedExtensions_ = recommendedExtensionsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation) {
+          return mergeFrom((com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation other) {
+        if (other == com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation.getDefaultInstance()) return this;
+        if (recommendedExtensionsBuilder_ == null) {
+          if (!other.recommendedExtensions_.isEmpty()) {
+            if (recommendedExtensions_.isEmpty()) {
+              recommendedExtensions_ = other.recommendedExtensions_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureRecommendedExtensionsIsMutable();
+              recommendedExtensions_.addAll(other.recommendedExtensions_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.recommendedExtensions_.isEmpty()) {
+            if (recommendedExtensionsBuilder_.isEmpty()) {
+              recommendedExtensionsBuilder_.dispose();
+              recommendedExtensionsBuilder_ = null;
+              recommendedExtensions_ = other.recommendedExtensions_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              recommendedExtensionsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getRecommendedExtensionsFieldBuilder() : null;
+            } else {
+              recommendedExtensionsBuilder_.addAllMessages(other.recommendedExtensions_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.google.ads.googleads.v6.common.CallFeedItem> recommendedExtensions_ =
+        java.util.Collections.emptyList();
+      private void ensureRecommendedExtensionsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          recommendedExtensions_ = new java.util.ArrayList<com.google.ads.googleads.v6.common.CallFeedItem>(recommendedExtensions_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.google.ads.googleads.v6.common.CallFeedItem, com.google.ads.googleads.v6.common.CallFeedItem.Builder, com.google.ads.googleads.v6.common.CallFeedItemOrBuilder> recommendedExtensionsBuilder_;
+
+      /**
+       * <pre>
+       * Output only. Call extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public java.util.List<com.google.ads.googleads.v6.common.CallFeedItem> getRecommendedExtensionsList() {
+        if (recommendedExtensionsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(recommendedExtensions_);
+        } else {
+          return recommendedExtensionsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * Output only. Call extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public int getRecommendedExtensionsCount() {
+        if (recommendedExtensionsBuilder_ == null) {
+          return recommendedExtensions_.size();
+        } else {
+          return recommendedExtensionsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * Output only. Call extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public com.google.ads.googleads.v6.common.CallFeedItem getRecommendedExtensions(int index) {
+        if (recommendedExtensionsBuilder_ == null) {
+          return recommendedExtensions_.get(index);
+        } else {
+          return recommendedExtensionsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * Output only. Call extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder setRecommendedExtensions(
+          int index, com.google.ads.googleads.v6.common.CallFeedItem value) {
+        if (recommendedExtensionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRecommendedExtensionsIsMutable();
+          recommendedExtensions_.set(index, value);
+          onChanged();
+        } else {
+          recommendedExtensionsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. Call extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder setRecommendedExtensions(
+          int index, com.google.ads.googleads.v6.common.CallFeedItem.Builder builderForValue) {
+        if (recommendedExtensionsBuilder_ == null) {
+          ensureRecommendedExtensionsIsMutable();
+          recommendedExtensions_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          recommendedExtensionsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. Call extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder addRecommendedExtensions(com.google.ads.googleads.v6.common.CallFeedItem value) {
+        if (recommendedExtensionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRecommendedExtensionsIsMutable();
+          recommendedExtensions_.add(value);
+          onChanged();
+        } else {
+          recommendedExtensionsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. Call extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder addRecommendedExtensions(
+          int index, com.google.ads.googleads.v6.common.CallFeedItem value) {
+        if (recommendedExtensionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRecommendedExtensionsIsMutable();
+          recommendedExtensions_.add(index, value);
+          onChanged();
+        } else {
+          recommendedExtensionsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. Call extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder addRecommendedExtensions(
+          com.google.ads.googleads.v6.common.CallFeedItem.Builder builderForValue) {
+        if (recommendedExtensionsBuilder_ == null) {
+          ensureRecommendedExtensionsIsMutable();
+          recommendedExtensions_.add(builderForValue.build());
+          onChanged();
+        } else {
+          recommendedExtensionsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. Call extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder addRecommendedExtensions(
+          int index, com.google.ads.googleads.v6.common.CallFeedItem.Builder builderForValue) {
+        if (recommendedExtensionsBuilder_ == null) {
+          ensureRecommendedExtensionsIsMutable();
+          recommendedExtensions_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          recommendedExtensionsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. Call extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder addAllRecommendedExtensions(
+          java.lang.Iterable<? extends com.google.ads.googleads.v6.common.CallFeedItem> values) {
+        if (recommendedExtensionsBuilder_ == null) {
+          ensureRecommendedExtensionsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, recommendedExtensions_);
+          onChanged();
+        } else {
+          recommendedExtensionsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. Call extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder clearRecommendedExtensions() {
+        if (recommendedExtensionsBuilder_ == null) {
+          recommendedExtensions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          recommendedExtensionsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. Call extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder removeRecommendedExtensions(int index) {
+        if (recommendedExtensionsBuilder_ == null) {
+          ensureRecommendedExtensionsIsMutable();
+          recommendedExtensions_.remove(index);
+          onChanged();
+        } else {
+          recommendedExtensionsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. Call extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public com.google.ads.googleads.v6.common.CallFeedItem.Builder getRecommendedExtensionsBuilder(
+          int index) {
+        return getRecommendedExtensionsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * Output only. Call extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public com.google.ads.googleads.v6.common.CallFeedItemOrBuilder getRecommendedExtensionsOrBuilder(
+          int index) {
+        if (recommendedExtensionsBuilder_ == null) {
+          return recommendedExtensions_.get(index);  } else {
+          return recommendedExtensionsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * Output only. Call extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public java.util.List<? extends com.google.ads.googleads.v6.common.CallFeedItemOrBuilder> 
+           getRecommendedExtensionsOrBuilderList() {
+        if (recommendedExtensionsBuilder_ != null) {
+          return recommendedExtensionsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(recommendedExtensions_);
+        }
+      }
+      /**
+       * <pre>
+       * Output only. Call extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public com.google.ads.googleads.v6.common.CallFeedItem.Builder addRecommendedExtensionsBuilder() {
+        return getRecommendedExtensionsFieldBuilder().addBuilder(
+            com.google.ads.googleads.v6.common.CallFeedItem.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Output only. Call extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public com.google.ads.googleads.v6.common.CallFeedItem.Builder addRecommendedExtensionsBuilder(
+          int index) {
+        return getRecommendedExtensionsFieldBuilder().addBuilder(
+            index, com.google.ads.googleads.v6.common.CallFeedItem.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Output only. Call extensions recommended to be added.
+       * </pre>
+       *
+       * <code>repeated .google.ads.googleads.v6.common.CallFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public java.util.List<com.google.ads.googleads.v6.common.CallFeedItem.Builder> 
+           getRecommendedExtensionsBuilderList() {
+        return getRecommendedExtensionsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.google.ads.googleads.v6.common.CallFeedItem, com.google.ads.googleads.v6.common.CallFeedItem.Builder, com.google.ads.googleads.v6.common.CallFeedItemOrBuilder> 
+          getRecommendedExtensionsFieldBuilder() {
+        if (recommendedExtensionsBuilder_ == null) {
+          recommendedExtensionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.ads.googleads.v6.common.CallFeedItem, com.google.ads.googleads.v6.common.CallFeedItem.Builder, com.google.ads.googleads.v6.common.CallFeedItemOrBuilder>(
+                  recommendedExtensions_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          recommendedExtensions_ = null;
+        }
+        return recommendedExtensionsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation)
+    private static final com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation();
+    }
+
+    public static com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CallExtensionRecommendation>
+        PARSER = new com.google.protobuf.AbstractParser<CallExtensionRecommendation>() {
+      @java.lang.Override
+      public CallExtensionRecommendation parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CallExtensionRecommendation(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CallExtensionRecommendation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CallExtensionRecommendation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.ads.googleads.v6.resources.Recommendation.CallExtensionRecommendation getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TargetRoasOptInRecommendationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Output only. The recommended target ROAS (revenue per unit of spend).
+     * The value is between 0.01 and 1000.0, inclusive.
+     * </pre>
+     *
+     * <code>double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the recommendedTargetRoas field is set.
+     */
+    boolean hasRecommendedTargetRoas();
+    /**
+     * <pre>
+     * Output only. The recommended target ROAS (revenue per unit of spend).
+     * The value is between 0.01 and 1000.0, inclusive.
+     * </pre>
+     *
+     * <code>double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The recommendedTargetRoas.
+     */
+    double getRecommendedTargetRoas();
+
+    /**
+     * <pre>
+     * Output only. The minimum campaign budget, in local currency for the account,
+     * required to achieve the target ROAS.
+     * Amount is specified in micros, where one million is equivalent to one
+     * currency unit.
+     * </pre>
+     *
+     * <code>int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the requiredCampaignBudgetAmountMicros field is set.
+     */
+    boolean hasRequiredCampaignBudgetAmountMicros();
+    /**
+     * <pre>
+     * Output only. The minimum campaign budget, in local currency for the account,
+     * required to achieve the target ROAS.
+     * Amount is specified in micros, where one million is equivalent to one
+     * currency unit.
+     * </pre>
+     *
+     * <code>int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The requiredCampaignBudgetAmountMicros.
+     */
+    long getRequiredCampaignBudgetAmountMicros();
+  }
+  /**
+   * <pre>
+   * The Target ROAS opt-in recommendation.
+   * </pre>
+   *
+   * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation}
+   */
+  public static final class TargetRoasOptInRecommendation extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation)
+      TargetRoasOptInRecommendationOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TargetRoasOptInRecommendation.newBuilder() to construct.
+    private TargetRoasOptInRecommendation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TargetRoasOptInRecommendation() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TargetRoasOptInRecommendation();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TargetRoasOptInRecommendation(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 9: {
+              bitField0_ |= 0x00000001;
+              recommendedTargetRoas_ = input.readDouble();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              requiredCampaignBudgetAmountMicros_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_TargetRoasOptInRecommendation_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_TargetRoasOptInRecommendation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int RECOMMENDED_TARGET_ROAS_FIELD_NUMBER = 1;
+    private double recommendedTargetRoas_;
+    /**
+     * <pre>
+     * Output only. The recommended target ROAS (revenue per unit of spend).
+     * The value is between 0.01 and 1000.0, inclusive.
+     * </pre>
+     *
+     * <code>double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the recommendedTargetRoas field is set.
+     */
+    @java.lang.Override
+    public boolean hasRecommendedTargetRoas() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     * Output only. The recommended target ROAS (revenue per unit of spend).
+     * The value is between 0.01 and 1000.0, inclusive.
+     * </pre>
+     *
+     * <code>double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The recommendedTargetRoas.
+     */
+    @java.lang.Override
+    public double getRecommendedTargetRoas() {
+      return recommendedTargetRoas_;
+    }
+
+    public static final int REQUIRED_CAMPAIGN_BUDGET_AMOUNT_MICROS_FIELD_NUMBER = 2;
+    private long requiredCampaignBudgetAmountMicros_;
+    /**
+     * <pre>
+     * Output only. The minimum campaign budget, in local currency for the account,
+     * required to achieve the target ROAS.
+     * Amount is specified in micros, where one million is equivalent to one
+     * currency unit.
+     * </pre>
+     *
+     * <code>int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the requiredCampaignBudgetAmountMicros field is set.
+     */
+    @java.lang.Override
+    public boolean hasRequiredCampaignBudgetAmountMicros() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <pre>
+     * Output only. The minimum campaign budget, in local currency for the account,
+     * required to achieve the target ROAS.
+     * Amount is specified in micros, where one million is equivalent to one
+     * currency unit.
+     * </pre>
+     *
+     * <code>int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The requiredCampaignBudgetAmountMicros.
+     */
+    @java.lang.Override
+    public long getRequiredCampaignBudgetAmountMicros() {
+      return requiredCampaignBudgetAmountMicros_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeDouble(1, recommendedTargetRoas_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeInt64(2, requiredCampaignBudgetAmountMicros_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(1, recommendedTargetRoas_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, requiredCampaignBudgetAmountMicros_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation)) {
+        return super.equals(obj);
+      }
+      com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation other = (com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation) obj;
+
+      if (hasRecommendedTargetRoas() != other.hasRecommendedTargetRoas()) return false;
+      if (hasRecommendedTargetRoas()) {
+        if (java.lang.Double.doubleToLongBits(getRecommendedTargetRoas())
+            != java.lang.Double.doubleToLongBits(
+                other.getRecommendedTargetRoas())) return false;
+      }
+      if (hasRequiredCampaignBudgetAmountMicros() != other.hasRequiredCampaignBudgetAmountMicros()) return false;
+      if (hasRequiredCampaignBudgetAmountMicros()) {
+        if (getRequiredCampaignBudgetAmountMicros()
+            != other.getRequiredCampaignBudgetAmountMicros()) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasRecommendedTargetRoas()) {
+        hash = (37 * hash) + RECOMMENDED_TARGET_ROAS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            java.lang.Double.doubleToLongBits(getRecommendedTargetRoas()));
+      }
+      if (hasRequiredCampaignBudgetAmountMicros()) {
+        hash = (37 * hash) + REQUIRED_CAMPAIGN_BUDGET_AMOUNT_MICROS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getRequiredCampaignBudgetAmountMicros());
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * The Target ROAS opt-in recommendation.
+     * </pre>
+     *
+     * Protobuf type {@code google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation)
+        com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_TargetRoasOptInRecommendation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_TargetRoasOptInRecommendation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation.class, com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation.Builder.class);
+      }
+
+      // Construct using com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        recommendedTargetRoas_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        requiredCampaignBudgetAmountMicros_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.google.ads.googleads.v6.resources.RecommendationProto.internal_static_google_ads_googleads_v6_resources_Recommendation_TargetRoasOptInRecommendation_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation getDefaultInstanceForType() {
+        return com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation build() {
+        com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation buildPartial() {
+        com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation result = new com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.recommendedTargetRoas_ = recommendedTargetRoas_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.requiredCampaignBudgetAmountMicros_ = requiredCampaignBudgetAmountMicros_;
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation) {
+          return mergeFrom((com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation other) {
+        if (other == com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation.getDefaultInstance()) return this;
+        if (other.hasRecommendedTargetRoas()) {
+          setRecommendedTargetRoas(other.getRecommendedTargetRoas());
+        }
+        if (other.hasRequiredCampaignBudgetAmountMicros()) {
+          setRequiredCampaignBudgetAmountMicros(other.getRequiredCampaignBudgetAmountMicros());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private double recommendedTargetRoas_ ;
+      /**
+       * <pre>
+       * Output only. The recommended target ROAS (revenue per unit of spend).
+       * The value is between 0.01 and 1000.0, inclusive.
+       * </pre>
+       *
+       * <code>double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return Whether the recommendedTargetRoas field is set.
+       */
+      @java.lang.Override
+      public boolean hasRecommendedTargetRoas() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <pre>
+       * Output only. The recommended target ROAS (revenue per unit of spend).
+       * The value is between 0.01 and 1000.0, inclusive.
+       * </pre>
+       *
+       * <code>double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return The recommendedTargetRoas.
+       */
+      @java.lang.Override
+      public double getRecommendedTargetRoas() {
+        return recommendedTargetRoas_;
+      }
+      /**
+       * <pre>
+       * Output only. The recommended target ROAS (revenue per unit of spend).
+       * The value is between 0.01 and 1000.0, inclusive.
+       * </pre>
+       *
+       * <code>double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @param value The recommendedTargetRoas to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRecommendedTargetRoas(double value) {
+        bitField0_ |= 0x00000001;
+        recommendedTargetRoas_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. The recommended target ROAS (revenue per unit of spend).
+       * The value is between 0.01 and 1000.0, inclusive.
+       * </pre>
+       *
+       * <code>double recommended_target_roas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRecommendedTargetRoas() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        recommendedTargetRoas_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private long requiredCampaignBudgetAmountMicros_ ;
+      /**
+       * <pre>
+       * Output only. The minimum campaign budget, in local currency for the account,
+       * required to achieve the target ROAS.
+       * Amount is specified in micros, where one million is equivalent to one
+       * currency unit.
+       * </pre>
+       *
+       * <code>int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return Whether the requiredCampaignBudgetAmountMicros field is set.
+       */
+      @java.lang.Override
+      public boolean hasRequiredCampaignBudgetAmountMicros() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       * <pre>
+       * Output only. The minimum campaign budget, in local currency for the account,
+       * required to achieve the target ROAS.
+       * Amount is specified in micros, where one million is equivalent to one
+       * currency unit.
+       * </pre>
+       *
+       * <code>int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return The requiredCampaignBudgetAmountMicros.
+       */
+      @java.lang.Override
+      public long getRequiredCampaignBudgetAmountMicros() {
+        return requiredCampaignBudgetAmountMicros_;
+      }
+      /**
+       * <pre>
+       * Output only. The minimum campaign budget, in local currency for the account,
+       * required to achieve the target ROAS.
+       * Amount is specified in micros, where one million is equivalent to one
+       * currency unit.
+       * </pre>
+       *
+       * <code>int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @param value The requiredCampaignBudgetAmountMicros to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRequiredCampaignBudgetAmountMicros(long value) {
+        bitField0_ |= 0x00000002;
+        requiredCampaignBudgetAmountMicros_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. The minimum campaign budget, in local currency for the account,
+       * required to achieve the target ROAS.
+       * Amount is specified in micros, where one million is equivalent to one
+       * currency unit.
+       * </pre>
+       *
+       * <code>int64 required_campaign_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRequiredCampaignBudgetAmountMicros() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        requiredCampaignBudgetAmountMicros_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation)
+    private static final com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation();
+    }
+
+    public static com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TargetRoasOptInRecommendation>
+        PARSER = new com.google.protobuf.AbstractParser<TargetRoasOptInRecommendation>() {
+      @java.lang.Override
+      public TargetRoasOptInRecommendation parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TargetRoasOptInRecommendation(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TargetRoasOptInRecommendation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TargetRoasOptInRecommendation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private int bitField0_;
   private int recommendationCase_ = 0;
   private java.lang.Object recommendation_;
@@ -16316,6 +17019,7 @@ private static final long serialVersionUID = 0L;
     KEYWORD_MATCH_TYPE_RECOMMENDATION(20),
     MOVE_UNUSED_BUDGET_RECOMMENDATION(21),
     TARGET_ROAS_OPT_IN_RECOMMENDATION(23),
+    RESPONSIVE_SEARCH_AD_RECOMMENDATION(28),
     RECOMMENDATION_NOT_SET(0);
     private final int value;
     private RecommendationCase(int value) {
@@ -16349,6 +17053,7 @@ private static final long serialVersionUID = 0L;
         case 20: return KEYWORD_MATCH_TYPE_RECOMMENDATION;
         case 21: return MOVE_UNUSED_BUDGET_RECOMMENDATION;
         case 23: return TARGET_ROAS_OPT_IN_RECOMMENDATION;
+        case 28: return RESPONSIVE_SEARCH_AD_RECOMMENDATION;
         case 0: return RECOMMENDATION_NOT_SET;
         default: return null;
       }
@@ -16556,8 +17261,8 @@ private static final long serialVersionUID = 0L;
    * This field will be set for the following recommendation types:
    * CALL_EXTENSION, CALLOUT_EXTENSION, ENHANCED_CPC_OPT_IN, KEYWORD,
    * KEYWORD_MATCH_TYPE, MAXIMIZE_CLICKS_OPT_IN, MAXIMIZE_CONVERSIONS_OPT_IN,
-   * OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN, SITELINK_EXTENSION,
-   * TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
+   * OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, SEARCH_PARTNERS_OPT_IN,
+   * SITELINK_EXTENSION, TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
    * </pre>
    *
    * <code>string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
@@ -16574,8 +17279,8 @@ private static final long serialVersionUID = 0L;
    * This field will be set for the following recommendation types:
    * CALL_EXTENSION, CALLOUT_EXTENSION, ENHANCED_CPC_OPT_IN, KEYWORD,
    * KEYWORD_MATCH_TYPE, MAXIMIZE_CLICKS_OPT_IN, MAXIMIZE_CONVERSIONS_OPT_IN,
-   * OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN, SITELINK_EXTENSION,
-   * TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
+   * OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, SEARCH_PARTNERS_OPT_IN,
+   * SITELINK_EXTENSION, TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
    * </pre>
    *
    * <code>string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
@@ -16601,8 +17306,8 @@ private static final long serialVersionUID = 0L;
    * This field will be set for the following recommendation types:
    * CALL_EXTENSION, CALLOUT_EXTENSION, ENHANCED_CPC_OPT_IN, KEYWORD,
    * KEYWORD_MATCH_TYPE, MAXIMIZE_CLICKS_OPT_IN, MAXIMIZE_CONVERSIONS_OPT_IN,
-   * OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN, SITELINK_EXTENSION,
-   * TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
+   * OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, SEARCH_PARTNERS_OPT_IN,
+   * SITELINK_EXTENSION, TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
    * </pre>
    *
    * <code>string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
@@ -16630,7 +17335,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The ad group targeted by this recommendation. This will be set only when
    * the recommendation affects a single ad group.
    * This field will be set for the following recommendation types:
-   * KEYWORD, OPTIMIZE_AD_ROTATION, TEXT_AD
+   * KEYWORD, OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, TEXT_AD
    * </pre>
    *
    * <code>string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
@@ -16645,7 +17350,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The ad group targeted by this recommendation. This will be set only when
    * the recommendation affects a single ad group.
    * This field will be set for the following recommendation types:
-   * KEYWORD, OPTIMIZE_AD_ROTATION, TEXT_AD
+   * KEYWORD, OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, TEXT_AD
    * </pre>
    *
    * <code>string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
@@ -16669,7 +17374,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The ad group targeted by this recommendation. This will be set only when
    * the recommendation affects a single ad group.
    * This field will be set for the following recommendation types:
-   * KEYWORD, OPTIMIZE_AD_ROTATION, TEXT_AD
+   * KEYWORD, OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, TEXT_AD
    * </pre>
    *
    * <code>string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
@@ -17405,6 +18110,49 @@ private static final long serialVersionUID = 0L;
     return com.google.ads.googleads.v6.resources.Recommendation.TargetRoasOptInRecommendation.getDefaultInstance();
   }
 
+  public static final int RESPONSIVE_SEARCH_AD_RECOMMENDATION_FIELD_NUMBER = 28;
+  /**
+   * <pre>
+   * Output only. The add responsive search ad recommendation.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation responsive_search_ad_recommendation = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the responsiveSearchAdRecommendation field is set.
+   */
+  @java.lang.Override
+  public boolean hasResponsiveSearchAdRecommendation() {
+    return recommendationCase_ == 28;
+  }
+  /**
+   * <pre>
+   * Output only. The add responsive search ad recommendation.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation responsive_search_ad_recommendation = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The responsiveSearchAdRecommendation.
+   */
+  @java.lang.Override
+  public com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation getResponsiveSearchAdRecommendation() {
+    if (recommendationCase_ == 28) {
+       return (com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation) recommendation_;
+    }
+    return com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * Output only. The add responsive search ad recommendation.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation responsive_search_ad_recommendation = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+  public com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendationOrBuilder getResponsiveSearchAdRecommendationOrBuilder() {
+    if (recommendationCase_ == 28) {
+       return (com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation) recommendation_;
+    }
+    return com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -17487,6 +18235,9 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeBool(27, dismissed_);
+    }
+    if (recommendationCase_ == 28) {
+      output.writeMessage(28, (com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation) recommendation_);
     }
     unknownFields.writeTo(output);
   }
@@ -17584,6 +18335,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(27, dismissed_);
+    }
+    if (recommendationCase_ == 28) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(28, (com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation) recommendation_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -17694,6 +18449,10 @@ private static final long serialVersionUID = 0L;
         if (!getTargetRoasOptInRecommendation()
             .equals(other.getTargetRoasOptInRecommendation())) return false;
         break;
+      case 28:
+        if (!getResponsiveSearchAdRecommendation()
+            .equals(other.getResponsiveSearchAdRecommendation())) return false;
+        break;
       case 0:
       default:
     }
@@ -17797,6 +18556,10 @@ private static final long serialVersionUID = 0L;
       case 23:
         hash = (37 * hash) + TARGET_ROAS_OPT_IN_RECOMMENDATION_FIELD_NUMBER;
         hash = (53 * hash) + getTargetRoasOptInRecommendation().hashCode();
+        break;
+      case 28:
+        hash = (37 * hash) + RESPONSIVE_SEARCH_AD_RECOMMENDATION_FIELD_NUMBER;
+        hash = (53 * hash) + getResponsiveSearchAdRecommendation().hashCode();
         break;
       case 0:
       default:
@@ -18121,6 +18884,13 @@ private static final long serialVersionUID = 0L;
           result.recommendation_ = targetRoasOptInRecommendationBuilder_.build();
         }
       }
+      if (recommendationCase_ == 28) {
+        if (responsiveSearchAdRecommendationBuilder_ == null) {
+          result.recommendation_ = recommendation_;
+        } else {
+          result.recommendation_ = responsiveSearchAdRecommendationBuilder_.build();
+        }
+      }
       result.bitField0_ = to_bitField0_;
       result.recommendationCase_ = recommendationCase_;
       onBuilt();
@@ -18262,6 +19032,10 @@ private static final long serialVersionUID = 0L;
         }
         case TARGET_ROAS_OPT_IN_RECOMMENDATION: {
           mergeTargetRoasOptInRecommendation(other.getTargetRoasOptInRecommendation());
+          break;
+        }
+        case RESPONSIVE_SEARCH_AD_RECOMMENDATION: {
+          mergeResponsiveSearchAdRecommendation(other.getResponsiveSearchAdRecommendation());
           break;
         }
         case RECOMMENDATION_NOT_SET: {
@@ -18785,8 +19559,8 @@ private static final long serialVersionUID = 0L;
      * This field will be set for the following recommendation types:
      * CALL_EXTENSION, CALLOUT_EXTENSION, ENHANCED_CPC_OPT_IN, KEYWORD,
      * KEYWORD_MATCH_TYPE, MAXIMIZE_CLICKS_OPT_IN, MAXIMIZE_CONVERSIONS_OPT_IN,
-     * OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN, SITELINK_EXTENSION,
-     * TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
+     * OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, SEARCH_PARTNERS_OPT_IN,
+     * SITELINK_EXTENSION, TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
      * </pre>
      *
      * <code>string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
@@ -18802,8 +19576,8 @@ private static final long serialVersionUID = 0L;
      * This field will be set for the following recommendation types:
      * CALL_EXTENSION, CALLOUT_EXTENSION, ENHANCED_CPC_OPT_IN, KEYWORD,
      * KEYWORD_MATCH_TYPE, MAXIMIZE_CLICKS_OPT_IN, MAXIMIZE_CONVERSIONS_OPT_IN,
-     * OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN, SITELINK_EXTENSION,
-     * TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
+     * OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, SEARCH_PARTNERS_OPT_IN,
+     * SITELINK_EXTENSION, TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
      * </pre>
      *
      * <code>string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
@@ -18828,8 +19602,8 @@ private static final long serialVersionUID = 0L;
      * This field will be set for the following recommendation types:
      * CALL_EXTENSION, CALLOUT_EXTENSION, ENHANCED_CPC_OPT_IN, KEYWORD,
      * KEYWORD_MATCH_TYPE, MAXIMIZE_CLICKS_OPT_IN, MAXIMIZE_CONVERSIONS_OPT_IN,
-     * OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN, SITELINK_EXTENSION,
-     * TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
+     * OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, SEARCH_PARTNERS_OPT_IN,
+     * SITELINK_EXTENSION, TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
      * </pre>
      *
      * <code>string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
@@ -18855,8 +19629,8 @@ private static final long serialVersionUID = 0L;
      * This field will be set for the following recommendation types:
      * CALL_EXTENSION, CALLOUT_EXTENSION, ENHANCED_CPC_OPT_IN, KEYWORD,
      * KEYWORD_MATCH_TYPE, MAXIMIZE_CLICKS_OPT_IN, MAXIMIZE_CONVERSIONS_OPT_IN,
-     * OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN, SITELINK_EXTENSION,
-     * TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
+     * OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, SEARCH_PARTNERS_OPT_IN,
+     * SITELINK_EXTENSION, TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
      * </pre>
      *
      * <code>string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
@@ -18880,8 +19654,8 @@ private static final long serialVersionUID = 0L;
      * This field will be set for the following recommendation types:
      * CALL_EXTENSION, CALLOUT_EXTENSION, ENHANCED_CPC_OPT_IN, KEYWORD,
      * KEYWORD_MATCH_TYPE, MAXIMIZE_CLICKS_OPT_IN, MAXIMIZE_CONVERSIONS_OPT_IN,
-     * OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN, SITELINK_EXTENSION,
-     * TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
+     * OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, SEARCH_PARTNERS_OPT_IN,
+     * SITELINK_EXTENSION, TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
      * </pre>
      *
      * <code>string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
@@ -18900,8 +19674,8 @@ private static final long serialVersionUID = 0L;
      * This field will be set for the following recommendation types:
      * CALL_EXTENSION, CALLOUT_EXTENSION, ENHANCED_CPC_OPT_IN, KEYWORD,
      * KEYWORD_MATCH_TYPE, MAXIMIZE_CLICKS_OPT_IN, MAXIMIZE_CONVERSIONS_OPT_IN,
-     * OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN, SITELINK_EXTENSION,
-     * TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
+     * OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, SEARCH_PARTNERS_OPT_IN,
+     * SITELINK_EXTENSION, TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
      * </pre>
      *
      * <code>string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
@@ -18926,7 +19700,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The ad group targeted by this recommendation. This will be set only when
      * the recommendation affects a single ad group.
      * This field will be set for the following recommendation types:
-     * KEYWORD, OPTIMIZE_AD_ROTATION, TEXT_AD
+     * KEYWORD, OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, TEXT_AD
      * </pre>
      *
      * <code>string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
@@ -18940,7 +19714,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The ad group targeted by this recommendation. This will be set only when
      * the recommendation affects a single ad group.
      * This field will be set for the following recommendation types:
-     * KEYWORD, OPTIMIZE_AD_ROTATION, TEXT_AD
+     * KEYWORD, OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, TEXT_AD
      * </pre>
      *
      * <code>string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
@@ -18963,7 +19737,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The ad group targeted by this recommendation. This will be set only when
      * the recommendation affects a single ad group.
      * This field will be set for the following recommendation types:
-     * KEYWORD, OPTIMIZE_AD_ROTATION, TEXT_AD
+     * KEYWORD, OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, TEXT_AD
      * </pre>
      *
      * <code>string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
@@ -18987,7 +19761,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The ad group targeted by this recommendation. This will be set only when
      * the recommendation affects a single ad group.
      * This field will be set for the following recommendation types:
-     * KEYWORD, OPTIMIZE_AD_ROTATION, TEXT_AD
+     * KEYWORD, OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, TEXT_AD
      * </pre>
      *
      * <code>string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
@@ -19009,7 +19783,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The ad group targeted by this recommendation. This will be set only when
      * the recommendation affects a single ad group.
      * This field will be set for the following recommendation types:
-     * KEYWORD, OPTIMIZE_AD_ROTATION, TEXT_AD
+     * KEYWORD, OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, TEXT_AD
      * </pre>
      *
      * <code>string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
@@ -19026,7 +19800,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The ad group targeted by this recommendation. This will be set only when
      * the recommendation affects a single ad group.
      * This field will be set for the following recommendation types:
-     * KEYWORD, OPTIMIZE_AD_ROTATION, TEXT_AD
+     * KEYWORD, OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, TEXT_AD
      * </pre>
      *
      * <code>string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
@@ -21930,6 +22704,183 @@ private static final long serialVersionUID = 0L;
       recommendationCase_ = 23;
       onChanged();;
       return targetRoasOptInRecommendationBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation, com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation.Builder, com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendationOrBuilder> responsiveSearchAdRecommendationBuilder_;
+    /**
+     * <pre>
+     * Output only. The add responsive search ad recommendation.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation responsive_search_ad_recommendation = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the responsiveSearchAdRecommendation field is set.
+     */
+    @java.lang.Override
+    public boolean hasResponsiveSearchAdRecommendation() {
+      return recommendationCase_ == 28;
+    }
+    /**
+     * <pre>
+     * Output only. The add responsive search ad recommendation.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation responsive_search_ad_recommendation = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The responsiveSearchAdRecommendation.
+     */
+    @java.lang.Override
+    public com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation getResponsiveSearchAdRecommendation() {
+      if (responsiveSearchAdRecommendationBuilder_ == null) {
+        if (recommendationCase_ == 28) {
+          return (com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation) recommendation_;
+        }
+        return com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation.getDefaultInstance();
+      } else {
+        if (recommendationCase_ == 28) {
+          return responsiveSearchAdRecommendationBuilder_.getMessage();
+        }
+        return com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The add responsive search ad recommendation.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation responsive_search_ad_recommendation = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setResponsiveSearchAdRecommendation(com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation value) {
+      if (responsiveSearchAdRecommendationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        recommendation_ = value;
+        onChanged();
+      } else {
+        responsiveSearchAdRecommendationBuilder_.setMessage(value);
+      }
+      recommendationCase_ = 28;
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The add responsive search ad recommendation.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation responsive_search_ad_recommendation = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setResponsiveSearchAdRecommendation(
+        com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation.Builder builderForValue) {
+      if (responsiveSearchAdRecommendationBuilder_ == null) {
+        recommendation_ = builderForValue.build();
+        onChanged();
+      } else {
+        responsiveSearchAdRecommendationBuilder_.setMessage(builderForValue.build());
+      }
+      recommendationCase_ = 28;
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The add responsive search ad recommendation.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation responsive_search_ad_recommendation = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder mergeResponsiveSearchAdRecommendation(com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation value) {
+      if (responsiveSearchAdRecommendationBuilder_ == null) {
+        if (recommendationCase_ == 28 &&
+            recommendation_ != com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation.getDefaultInstance()) {
+          recommendation_ = com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation.newBuilder((com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation) recommendation_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          recommendation_ = value;
+        }
+        onChanged();
+      } else {
+        if (recommendationCase_ == 28) {
+          responsiveSearchAdRecommendationBuilder_.mergeFrom(value);
+        }
+        responsiveSearchAdRecommendationBuilder_.setMessage(value);
+      }
+      recommendationCase_ = 28;
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The add responsive search ad recommendation.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation responsive_search_ad_recommendation = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder clearResponsiveSearchAdRecommendation() {
+      if (responsiveSearchAdRecommendationBuilder_ == null) {
+        if (recommendationCase_ == 28) {
+          recommendationCase_ = 0;
+          recommendation_ = null;
+          onChanged();
+        }
+      } else {
+        if (recommendationCase_ == 28) {
+          recommendationCase_ = 0;
+          recommendation_ = null;
+        }
+        responsiveSearchAdRecommendationBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The add responsive search ad recommendation.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation responsive_search_ad_recommendation = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation.Builder getResponsiveSearchAdRecommendationBuilder() {
+      return getResponsiveSearchAdRecommendationFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Output only. The add responsive search ad recommendation.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation responsive_search_ad_recommendation = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    @java.lang.Override
+    public com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendationOrBuilder getResponsiveSearchAdRecommendationOrBuilder() {
+      if ((recommendationCase_ == 28) && (responsiveSearchAdRecommendationBuilder_ != null)) {
+        return responsiveSearchAdRecommendationBuilder_.getMessageOrBuilder();
+      } else {
+        if (recommendationCase_ == 28) {
+          return (com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation) recommendation_;
+        }
+        return com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The add responsive search ad recommendation.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation responsive_search_ad_recommendation = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation, com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation.Builder, com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendationOrBuilder> 
+        getResponsiveSearchAdRecommendationFieldBuilder() {
+      if (responsiveSearchAdRecommendationBuilder_ == null) {
+        if (!(recommendationCase_ == 28)) {
+          recommendation_ = com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation.getDefaultInstance();
+        }
+        responsiveSearchAdRecommendationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation, com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation.Builder, com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendationOrBuilder>(
+                (com.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation) recommendation_,
+                getParentForChildren(),
+                isClean());
+        recommendation_ = null;
+      }
+      recommendationCase_ = 28;
+      onChanged();;
+      return responsiveSearchAdRecommendationBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

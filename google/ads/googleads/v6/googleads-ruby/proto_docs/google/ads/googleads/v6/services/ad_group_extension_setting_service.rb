@@ -61,6 +61,10 @@ module Google
           # @!attribute [rw] update_mask
           #   @return [::Google::Protobuf::FieldMask]
           #     FieldMask that determines which resource fields are modified in an update.
+          # @!attribute [rw] response_content_type
+          #   @return [::Google::Ads::GoogleAds::V6::Enums::ResponseContentTypeEnum::ResponseContentType]
+          #     The response content type setting. Determines whether the mutable resource
+          #     or just the resource name should be returned post mutation.
           # @!attribute [rw] create
           #   @return [::Google::Ads::GoogleAds::V6::Resources::AdGroupExtensionSetting]
           #     Create operation: No resource name is expected for the new ad group
@@ -99,6 +103,11 @@ module Google
           # @!attribute [rw] resource_name
           #   @return [::String]
           #     Returned for successful operations.
+          # @!attribute [rw] ad_group_extension_setting
+          #   @return [::Google::Ads::GoogleAds::V6::Resources::AdGroupExtensionSetting]
+          #     The mutated AdGroupExtensionSetting with only mutable fields after mutate.
+          #     The field will only be returned when response_content_type is set to
+          #     "MUTABLE_RESOURCE".
           class MutateAdGroupExtensionSettingResult
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods

@@ -179,7 +179,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Changes made through Search Ads 360 Sync.
-     * .
      * </pre>
      *
      * <code>SEARCH_ADS_360_SYNC = 10;</code>
@@ -188,7 +187,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Changes made through Search Ads 360 Post.
-     * .
      * </pre>
      *
      * <code>SEARCH_ADS_360_POST = 11;</code>
@@ -301,7 +299,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Changes made through Search Ads 360 Sync.
-     * .
      * </pre>
      *
      * <code>SEARCH_ADS_360_SYNC = 10;</code>
@@ -310,7 +307,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Changes made through Search Ads 360 Post.
-     * .
      * </pre>
      *
      * <code>SEARCH_ADS_360_POST = 11;</code>

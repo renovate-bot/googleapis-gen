@@ -40,6 +40,21 @@ module Google
 
               # Email address already has access to this customer.
               EMAIL_ADDRESS_ALREADY_HAS_ACCESS = 3
+
+              # Invalid invitation status for the operation.
+              INVALID_INVITATION_STATUS = 4
+
+              # Email address cannot be like abc+foo@google.com.
+              GOOGLE_CONSUMER_ACCOUNT_NOT_ALLOWED = 5
+
+              # Invalid invitation id.
+              INVALID_INVITATION_ID = 6
+
+              # Email address already has a pending invitation.
+              EMAIL_ADDRESS_ALREADY_HAS_PENDING_INVITATION = 7
+
+              # Pending invitation limit exceeded for the customer.
+              PENDING_INVITATIONS_LIMIT_EXCEEDED = 8
             end
           end
         end

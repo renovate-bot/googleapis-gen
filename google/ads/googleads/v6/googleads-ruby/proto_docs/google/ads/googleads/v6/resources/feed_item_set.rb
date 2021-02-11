@@ -32,7 +32,8 @@ module Google
           #     `customers/{customer_id}/feedItemSets/{feed_id}~{feed_item_set_id}`
           # @!attribute [rw] feed
           #   @return [::String]
-          #     Immutable. ID of the feed containing the feed items in the set. Immutable. Required.
+          #     Immutable. The resource name of the feed containing the feed items in the set.
+          #     Immutable. Required.
           # @!attribute [r] feed_item_set_id
           #   @return [::Integer]
           #     Output only. ID of the set.

@@ -205,7 +205,7 @@ module Google
           #     Required for creating a data specific rule user list.
           # @!attribute [rw] end_date
           #   @return [::String]
-          #     End date of users visit. If set to 2037-12-30, then the list includes all
+          #     Last date of users visit. If set to 2037-12-30, then the list includes all
           #     users after start_date. The date's format should be YYYY-MM-DD.
           #
           #     Required for creating a data specific rule user list.

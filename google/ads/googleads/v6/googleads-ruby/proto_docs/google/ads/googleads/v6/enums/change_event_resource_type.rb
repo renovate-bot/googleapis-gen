@@ -29,7 +29,6 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
 
             # Enum listing the resource types support by the ChangeEvent resource.
-            # Next Id: 9
             module ChangeEventResourceType
               # No value has been specified.
               UNSPECIFIED = 0
@@ -56,8 +55,23 @@ module Google
               # An AdGroupBidModifier resource change.
               AD_GROUP_BID_MODIFIER = 7
 
-              # An CampaignCriterion resource change.
+              # A CampaignCriterion resource change.
               CAMPAIGN_CRITERION = 8
+
+              # A Feed resource change.
+              FEED = 9
+
+              # A FeedItem resource change.
+              FEED_ITEM = 10
+
+              # A CampaignFeed resource change.
+              CAMPAIGN_FEED = 11
+
+              # An AdGroupFeed resource change.
+              AD_GROUP_FEED = 12
+
+              # An AdGroupAd resource change.
+              AD_GROUP_AD = 13
             end
           end
         end

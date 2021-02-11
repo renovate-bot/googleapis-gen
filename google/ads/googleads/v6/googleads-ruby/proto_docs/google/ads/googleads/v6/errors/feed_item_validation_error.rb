@@ -343,6 +343,30 @@ module Google
 
               # Cannot target provided address.
               ADDRESS_NOT_TARGETABLE = 98
+
+              # The specified asset ID does not exist.
+              INVALID_ASSET_ID = 100
+
+              # The asset type cannot be set for the field.
+              INCOMPATIBLE_ASSET_TYPE = 101
+
+              # The image has unexpected size.
+              IMAGE_ERROR_UNEXPECTED_SIZE = 102
+
+              # The image aspect ratio is not allowed.
+              IMAGE_ERROR_ASPECT_RATIO_NOT_ALLOWED = 103
+
+              # The image file is too large.
+              IMAGE_ERROR_FILE_TOO_LARGE = 104
+
+              # The image format is unsupported.
+              IMAGE_ERROR_FORMAT_NOT_ALLOWED = 105
+
+              # Image violates constraints without more details.
+              IMAGE_ERROR_CONSTRAINTS_VIOLATED = 106
+
+              # An error occurred when validating image.
+              IMAGE_ERROR_SERVER_ERROR = 107
             end
           end
         end

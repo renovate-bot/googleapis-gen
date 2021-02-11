@@ -26,6 +26,20 @@ module Google
             # Path helper methods for the CustomerLabelService API.
             module Paths
               ##
+              # Create a fully-qualified Customer resource string.
+              #
+              # The resource will be in the following format:
+              #
+              # `customers/{customer_id}`
+              #
+              # @param customer_id [String]
+              #
+              # @return [::String]
+              def customer_path customer_id:
+                "customers/#{customer_id}"
+              end
+
+              ##
               # Create a fully-qualified CustomerLabel resource string.
               #
               # The resource will be in the following format:
@@ -40,6 +54,23 @@ module Google
                 raise ::ArgumentError, "customer_id cannot contain /" if customer_id.to_s.include? "/"
 
                 "customers/#{customer_id}/customerLabels/#{label_id}"
+              end
+
+              ##
+              # Create a fully-qualified Label resource string.
+              #
+              # The resource will be in the following format:
+              #
+              # `customers/{customer_id}/labels/{label_id}`
+              #
+              # @param customer_id [String]
+              # @param label_id [String]
+              #
+              # @return [::String]
+              def label_path customer_id:, label_id:
+                raise ::ArgumentError, "customer_id cannot contain /" if customer_id.to_s.include? "/"
+
+                "customers/#{customer_id}/labels/#{label_id}"
               end
 
               extend self
