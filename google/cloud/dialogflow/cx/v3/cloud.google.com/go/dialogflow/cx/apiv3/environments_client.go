@@ -36,7 +36,7 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
-	structpbpb "google.golang.org/protobuf/types/known/structpb"
+	structpb "google.golang.org/protobuf/types/known/structpb"
 )
 
 var newEnvironmentsClientHook clientHook
@@ -444,8 +444,8 @@ func (op *CreateEnvironmentOperation) Poll(ctx context.Context, opts ...gax.Call
 // Metadata itself does not contact the server, but Poll does.
 // To get the latest metadata, call this method after a successful call to Poll.
 // If the metadata is not available, the returned metadata and error are both nil.
-func (op *CreateEnvironmentOperation) Metadata() (*structpbpb.Struct, error) {
-	var meta structpbpb.Struct
+func (op *CreateEnvironmentOperation) Metadata() (*structpb.Struct, error) {
+	var meta structpb.Struct
 	if err := op.lro.Metadata(&meta); err == longrunning.ErrNoMetadata {
 		return nil, nil
 	} else if err != nil {
@@ -513,8 +513,8 @@ func (op *UpdateEnvironmentOperation) Poll(ctx context.Context, opts ...gax.Call
 // Metadata itself does not contact the server, but Poll does.
 // To get the latest metadata, call this method after a successful call to Poll.
 // If the metadata is not available, the returned metadata and error are both nil.
-func (op *UpdateEnvironmentOperation) Metadata() (*structpbpb.Struct, error) {
-	var meta structpbpb.Struct
+func (op *UpdateEnvironmentOperation) Metadata() (*structpb.Struct, error) {
+	var meta structpb.Struct
 	if err := op.lro.Metadata(&meta); err == longrunning.ErrNoMetadata {
 		return nil, nil
 	} else if err != nil {

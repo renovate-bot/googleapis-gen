@@ -31,7 +31,7 @@ import (
 	publishpb "google.golang.org/genproto/googleapis/streetview/publish/v1"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"
-	emptypbpb "google.golang.org/protobuf/types/known/emptypb"
+	emptypb "google.golang.org/protobuf/types/known/emptypb"
 )
 
 var newClientHook clientHook
@@ -173,7 +173,7 @@ func (c *Client) setGoogleClientInfo(keyval ...string) {
 // UploadRef with
 // CreatePhoto
 // to create the [Photo][google.streetview.publish.v1.Photo (at http://google.streetview.publish.v1.Photo)] object entry.
-func (c *Client) StartUpload(ctx context.Context, req *emptypbpb.Empty, opts ...gax.CallOption) (*publishpb.UploadRef, error) {
+func (c *Client) StartUpload(ctx context.Context, req *emptypb.Empty, opts ...gax.CallOption) (*publishpb.UploadRef, error) {
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
 	opts = append(c.CallOptions.StartUpload[0:len(c.CallOptions.StartUpload):len(c.CallOptions.StartUpload)], opts...)
 	var resp *publishpb.UploadRef

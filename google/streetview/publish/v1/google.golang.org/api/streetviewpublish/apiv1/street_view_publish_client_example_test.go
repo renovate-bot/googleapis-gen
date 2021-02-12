@@ -22,7 +22,7 @@ import (
 	"google.golang.org/api/iterator"
 	streetviewpublish "google.golang.org/api/streetviewpublish/apiv1"
 	publishpb "google.golang.org/genproto/googleapis/streetview/publish/v1"
-	emptypbpb "google.golang.org/protobuf/types/known/emptypb"
+	emptypb "google.golang.org/protobuf/types/known/emptypb"
 )
 
 func ExampleNewClient() {
@@ -36,7 +36,7 @@ func ExampleNewClient() {
 }
 
 func ExampleClient_StartUpload() {
-	// import emptypbpb "google.golang.org/protobuf/types/known/emptypb"
+	// import emptypb "google.golang.org/protobuf/types/known/emptypb"
 
 	ctx := context.Background()
 	c, err := streetviewpublish.NewClient(ctx)
@@ -44,7 +44,7 @@ func ExampleClient_StartUpload() {
 		// TODO: Handle error.
 	}
 
-	req := &emptypbpb.Empty{
+	req := &emptypb.Empty{
 		// TODO: Fill request struct fields.
 	}
 	resp, err := c.StartUpload(ctx, req)

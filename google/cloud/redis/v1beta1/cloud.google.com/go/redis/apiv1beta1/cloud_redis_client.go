@@ -35,7 +35,7 @@ import (
 	longrunningpb "google.golang.org/genproto/googleapis/longrunning"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"
-	anypbpb "google.golang.org/protobuf/types/known/anypb"
+	anypb "google.golang.org/protobuf/types/known/anypb"
 )
 
 var newCloudRedisClientHook clientHook
@@ -507,8 +507,8 @@ func (op *CreateInstanceOperation) Poll(ctx context.Context, opts ...gax.CallOpt
 // Metadata itself does not contact the server, but Poll does.
 // To get the latest metadata, call this method after a successful call to Poll.
 // If the metadata is not available, the returned metadata and error are both nil.
-func (op *CreateInstanceOperation) Metadata() (*anypbpb.Any, error) {
-	var meta anypbpb.Any
+func (op *CreateInstanceOperation) Metadata() (*anypb.Any, error) {
+	var meta anypb.Any
 	if err := op.lro.Metadata(&meta); err == longrunning.ErrNoMetadata {
 		return nil, nil
 	} else if err != nil {
@@ -565,8 +565,8 @@ func (op *DeleteInstanceOperation) Poll(ctx context.Context, opts ...gax.CallOpt
 // Metadata itself does not contact the server, but Poll does.
 // To get the latest metadata, call this method after a successful call to Poll.
 // If the metadata is not available, the returned metadata and error are both nil.
-func (op *DeleteInstanceOperation) Metadata() (*anypbpb.Any, error) {
-	var meta anypbpb.Any
+func (op *DeleteInstanceOperation) Metadata() (*anypb.Any, error) {
+	var meta anypb.Any
 	if err := op.lro.Metadata(&meta); err == longrunning.ErrNoMetadata {
 		return nil, nil
 	} else if err != nil {
@@ -634,8 +634,8 @@ func (op *ExportInstanceOperation) Poll(ctx context.Context, opts ...gax.CallOpt
 // Metadata itself does not contact the server, but Poll does.
 // To get the latest metadata, call this method after a successful call to Poll.
 // If the metadata is not available, the returned metadata and error are both nil.
-func (op *ExportInstanceOperation) Metadata() (*anypbpb.Any, error) {
-	var meta anypbpb.Any
+func (op *ExportInstanceOperation) Metadata() (*anypb.Any, error) {
+	var meta anypb.Any
 	if err := op.lro.Metadata(&meta); err == longrunning.ErrNoMetadata {
 		return nil, nil
 	} else if err != nil {
@@ -703,8 +703,8 @@ func (op *FailoverInstanceOperation) Poll(ctx context.Context, opts ...gax.CallO
 // Metadata itself does not contact the server, but Poll does.
 // To get the latest metadata, call this method after a successful call to Poll.
 // If the metadata is not available, the returned metadata and error are both nil.
-func (op *FailoverInstanceOperation) Metadata() (*anypbpb.Any, error) {
-	var meta anypbpb.Any
+func (op *FailoverInstanceOperation) Metadata() (*anypb.Any, error) {
+	var meta anypb.Any
 	if err := op.lro.Metadata(&meta); err == longrunning.ErrNoMetadata {
 		return nil, nil
 	} else if err != nil {
@@ -772,8 +772,8 @@ func (op *ImportInstanceOperation) Poll(ctx context.Context, opts ...gax.CallOpt
 // Metadata itself does not contact the server, but Poll does.
 // To get the latest metadata, call this method after a successful call to Poll.
 // If the metadata is not available, the returned metadata and error are both nil.
-func (op *ImportInstanceOperation) Metadata() (*anypbpb.Any, error) {
-	var meta anypbpb.Any
+func (op *ImportInstanceOperation) Metadata() (*anypb.Any, error) {
+	var meta anypb.Any
 	if err := op.lro.Metadata(&meta); err == longrunning.ErrNoMetadata {
 		return nil, nil
 	} else if err != nil {
@@ -841,8 +841,8 @@ func (op *UpdateInstanceOperation) Poll(ctx context.Context, opts ...gax.CallOpt
 // Metadata itself does not contact the server, but Poll does.
 // To get the latest metadata, call this method after a successful call to Poll.
 // If the metadata is not available, the returned metadata and error are both nil.
-func (op *UpdateInstanceOperation) Metadata() (*anypbpb.Any, error) {
-	var meta anypbpb.Any
+func (op *UpdateInstanceOperation) Metadata() (*anypb.Any, error) {
+	var meta anypb.Any
 	if err := op.lro.Metadata(&meta); err == longrunning.ErrNoMetadata {
 		return nil, nil
 	} else if err != nil {
@@ -910,8 +910,8 @@ func (op *UpgradeInstanceOperation) Poll(ctx context.Context, opts ...gax.CallOp
 // Metadata itself does not contact the server, but Poll does.
 // To get the latest metadata, call this method after a successful call to Poll.
 // If the metadata is not available, the returned metadata and error are both nil.
-func (op *UpgradeInstanceOperation) Metadata() (*anypbpb.Any, error) {
-	var meta anypbpb.Any
+func (op *UpgradeInstanceOperation) Metadata() (*anypb.Any, error) {
+	var meta anypb.Any
 	if err := op.lro.Metadata(&meta); err == longrunning.ErrNoMetadata {
 		return nil, nil
 	} else if err != nil {

@@ -37,7 +37,7 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
-	emptypbpb "google.golang.org/protobuf/types/known/emptypb"
+	emptypb "google.golang.org/protobuf/types/known/emptypb"
 )
 
 var newClientHook clientHook
@@ -835,8 +835,8 @@ func (op *RunAssetDiscoveryOperation) Poll(ctx context.Context, opts ...gax.Call
 // Metadata itself does not contact the server, but Poll does.
 // To get the latest metadata, call this method after a successful call to Poll.
 // If the metadata is not available, the returned metadata and error are both nil.
-func (op *RunAssetDiscoveryOperation) Metadata() (*emptypbpb.Empty, error) {
-	var meta emptypbpb.Empty
+func (op *RunAssetDiscoveryOperation) Metadata() (*emptypb.Empty, error) {
+	var meta emptypb.Empty
 	if err := op.lro.Metadata(&meta); err == longrunning.ErrNoMetadata {
 		return nil, nil
 	} else if err != nil {
