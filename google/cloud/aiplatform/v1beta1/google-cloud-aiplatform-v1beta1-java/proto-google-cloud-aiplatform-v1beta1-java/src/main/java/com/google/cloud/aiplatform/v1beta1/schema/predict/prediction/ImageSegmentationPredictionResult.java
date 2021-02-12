@@ -20,8 +20,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ImageSegmentationPredictionResult() {
-    categoryMask_ = com.google.protobuf.ByteString.EMPTY;
-    confidenceMask_ = com.google.protobuf.ByteString.EMPTY;
+    categoryMask_ = "";
+    confidenceMask_ = "";
   }
 
   @java.lang.Override
@@ -55,13 +55,15 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            categoryMask_ = input.readBytes();
+            categoryMask_ = s;
             break;
           }
           case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            confidenceMask_ = input.readBytes();
+            confidenceMask_ = s;
             break;
           }
           default: {
@@ -97,7 +99,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CATEGORY_MASK_FIELD_NUMBER = 1;
-  private com.google.protobuf.ByteString categoryMask_;
+  private volatile java.lang.Object categoryMask_;
   /**
    * <pre>
    * A PNG image where each pixel in the mask represents the category in which
@@ -108,16 +110,52 @@ private static final long serialVersionUID = 0L;
    * the confidence threshold, the pixel will be marked as background.
    * </pre>
    *
-   * <code>bytes category_mask = 1;</code>
+   * <code>string category_mask = 1;</code>
    * @return The categoryMask.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getCategoryMask() {
-    return categoryMask_;
+  public java.lang.String getCategoryMask() {
+    java.lang.Object ref = categoryMask_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      categoryMask_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * A PNG image where each pixel in the mask represents the category in which
+   * the pixel in the original image was predicted to belong to. The size of
+   * this image will be the same as the original image. The mapping between the
+   * AnntoationSpec and the color can be found in model's metadata. The model
+   * will choose the most likely category and if none of the categories reach
+   * the confidence threshold, the pixel will be marked as background.
+   * </pre>
+   *
+   * <code>string category_mask = 1;</code>
+   * @return The bytes for categoryMask.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCategoryMaskBytes() {
+    java.lang.Object ref = categoryMask_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      categoryMask_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int CONFIDENCE_MASK_FIELD_NUMBER = 2;
-  private com.google.protobuf.ByteString confidenceMask_;
+  private volatile java.lang.Object confidenceMask_;
   /**
    * <pre>
    * A one channel image which is encoded as an 8bit lossless PNG. The size of
@@ -127,12 +165,47 @@ private static final long serialVersionUID = 0L;
    * white means complete confidence.
    * </pre>
    *
-   * <code>bytes confidence_mask = 2;</code>
+   * <code>string confidence_mask = 2;</code>
    * @return The confidenceMask.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getConfidenceMask() {
-    return confidenceMask_;
+  public java.lang.String getConfidenceMask() {
+    java.lang.Object ref = confidenceMask_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      confidenceMask_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * A one channel image which is encoded as an 8bit lossless PNG. The size of
+   * the image will be the same as the original image. For a specific pixel,
+   * darker color means less confidence in correctness of the cateogry in the
+   * categoryMask for the corresponding pixel. Black means no confidence and
+   * white means complete confidence.
+   * </pre>
+   *
+   * <code>string confidence_mask = 2;</code>
+   * @return The bytes for confidenceMask.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getConfidenceMaskBytes() {
+    java.lang.Object ref = confidenceMask_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      confidenceMask_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -149,11 +222,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!categoryMask_.isEmpty()) {
-      output.writeBytes(1, categoryMask_);
+    if (!getCategoryMaskBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, categoryMask_);
     }
-    if (!confidenceMask_.isEmpty()) {
-      output.writeBytes(2, confidenceMask_);
+    if (!getConfidenceMaskBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, confidenceMask_);
     }
     unknownFields.writeTo(output);
   }
@@ -164,13 +237,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!categoryMask_.isEmpty()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(1, categoryMask_);
+    if (!getCategoryMaskBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, categoryMask_);
     }
-    if (!confidenceMask_.isEmpty()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(2, confidenceMask_);
+    if (!getConfidenceMaskBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, confidenceMask_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -343,9 +414,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      categoryMask_ = com.google.protobuf.ByteString.EMPTY;
+      categoryMask_ = "";
 
-      confidenceMask_ = com.google.protobuf.ByteString.EMPTY;
+      confidenceMask_ = "";
 
       return this;
     }
@@ -423,11 +494,13 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.ImageSegmentationPredictionResult other) {
       if (other == com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.ImageSegmentationPredictionResult.getDefaultInstance()) return this;
-      if (other.getCategoryMask() != com.google.protobuf.ByteString.EMPTY) {
-        setCategoryMask(other.getCategoryMask());
+      if (!other.getCategoryMask().isEmpty()) {
+        categoryMask_ = other.categoryMask_;
+        onChanged();
       }
-      if (other.getConfidenceMask() != com.google.protobuf.ByteString.EMPTY) {
-        setConfidenceMask(other.getConfidenceMask());
+      if (!other.getConfidenceMask().isEmpty()) {
+        confidenceMask_ = other.confidenceMask_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -458,7 +531,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.ByteString categoryMask_ = com.google.protobuf.ByteString.EMPTY;
+    private java.lang.Object categoryMask_ = "";
     /**
      * <pre>
      * A PNG image where each pixel in the mask represents the category in which
@@ -469,12 +542,20 @@ private static final long serialVersionUID = 0L;
      * the confidence threshold, the pixel will be marked as background.
      * </pre>
      *
-     * <code>bytes category_mask = 1;</code>
+     * <code>string category_mask = 1;</code>
      * @return The categoryMask.
      */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getCategoryMask() {
-      return categoryMask_;
+    public java.lang.String getCategoryMask() {
+      java.lang.Object ref = categoryMask_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        categoryMask_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
@@ -486,11 +567,38 @@ private static final long serialVersionUID = 0L;
      * the confidence threshold, the pixel will be marked as background.
      * </pre>
      *
-     * <code>bytes category_mask = 1;</code>
+     * <code>string category_mask = 1;</code>
+     * @return The bytes for categoryMask.
+     */
+    public com.google.protobuf.ByteString
+        getCategoryMaskBytes() {
+      java.lang.Object ref = categoryMask_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        categoryMask_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * A PNG image where each pixel in the mask represents the category in which
+     * the pixel in the original image was predicted to belong to. The size of
+     * this image will be the same as the original image. The mapping between the
+     * AnntoationSpec and the color can be found in model's metadata. The model
+     * will choose the most likely category and if none of the categories reach
+     * the confidence threshold, the pixel will be marked as background.
+     * </pre>
+     *
+     * <code>string category_mask = 1;</code>
      * @param value The categoryMask to set.
      * @return This builder for chaining.
      */
-    public Builder setCategoryMask(com.google.protobuf.ByteString value) {
+    public Builder setCategoryMask(
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -509,7 +617,7 @@ private static final long serialVersionUID = 0L;
      * the confidence threshold, the pixel will be marked as background.
      * </pre>
      *
-     * <code>bytes category_mask = 1;</code>
+     * <code>string category_mask = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearCategoryMask() {
@@ -518,8 +626,33 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
+    /**
+     * <pre>
+     * A PNG image where each pixel in the mask represents the category in which
+     * the pixel in the original image was predicted to belong to. The size of
+     * this image will be the same as the original image. The mapping between the
+     * AnntoationSpec and the color can be found in model's metadata. The model
+     * will choose the most likely category and if none of the categories reach
+     * the confidence threshold, the pixel will be marked as background.
+     * </pre>
+     *
+     * <code>string category_mask = 1;</code>
+     * @param value The bytes for categoryMask to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCategoryMaskBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      categoryMask_ = value;
+      onChanged();
+      return this;
+    }
 
-    private com.google.protobuf.ByteString confidenceMask_ = com.google.protobuf.ByteString.EMPTY;
+    private java.lang.Object confidenceMask_ = "";
     /**
      * <pre>
      * A one channel image which is encoded as an 8bit lossless PNG. The size of
@@ -529,12 +662,20 @@ private static final long serialVersionUID = 0L;
      * white means complete confidence.
      * </pre>
      *
-     * <code>bytes confidence_mask = 2;</code>
+     * <code>string confidence_mask = 2;</code>
      * @return The confidenceMask.
      */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getConfidenceMask() {
-      return confidenceMask_;
+    public java.lang.String getConfidenceMask() {
+      java.lang.Object ref = confidenceMask_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        confidenceMask_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
@@ -545,11 +686,37 @@ private static final long serialVersionUID = 0L;
      * white means complete confidence.
      * </pre>
      *
-     * <code>bytes confidence_mask = 2;</code>
+     * <code>string confidence_mask = 2;</code>
+     * @return The bytes for confidenceMask.
+     */
+    public com.google.protobuf.ByteString
+        getConfidenceMaskBytes() {
+      java.lang.Object ref = confidenceMask_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        confidenceMask_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * A one channel image which is encoded as an 8bit lossless PNG. The size of
+     * the image will be the same as the original image. For a specific pixel,
+     * darker color means less confidence in correctness of the cateogry in the
+     * categoryMask for the corresponding pixel. Black means no confidence and
+     * white means complete confidence.
+     * </pre>
+     *
+     * <code>string confidence_mask = 2;</code>
      * @param value The confidenceMask to set.
      * @return This builder for chaining.
      */
-    public Builder setConfidenceMask(com.google.protobuf.ByteString value) {
+    public Builder setConfidenceMask(
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -567,12 +734,36 @@ private static final long serialVersionUID = 0L;
      * white means complete confidence.
      * </pre>
      *
-     * <code>bytes confidence_mask = 2;</code>
+     * <code>string confidence_mask = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearConfidenceMask() {
       
       confidenceMask_ = getDefaultInstance().getConfidenceMask();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * A one channel image which is encoded as an 8bit lossless PNG. The size of
+     * the image will be the same as the original image. For a specific pixel,
+     * darker color means less confidence in correctness of the cateogry in the
+     * categoryMask for the corresponding pixel. Black means no confidence and
+     * white means complete confidence.
+     * </pre>
+     *
+     * <code>string confidence_mask = 2;</code>
+     * @param value The bytes for confidenceMask to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConfidenceMaskBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      confidenceMask_ = value;
       onChanged();
       return this;
     }

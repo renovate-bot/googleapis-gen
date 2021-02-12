@@ -1400,19 +1400,17 @@ def test_parse_dataset_path():
 
 def test_dataset_path():
     project = "squid"
-    location = "clam"
-    dataset = "whelk"
+    dataset = "clam"
 
-    expected = "projects/{project}/locations/{location}/datasets/{dataset}".format(project=project, location=location, dataset=dataset, )
-    actual = MigrationServiceClient.dataset_path(project, location, dataset)
+    expected = "projects/{project}/datasets/{dataset}".format(project=project, dataset=dataset, )
+    actual = MigrationServiceClient.dataset_path(project, dataset)
     assert expected == actual
 
 
 def test_parse_dataset_path():
     expected = {
-    "project": "octopus",
-    "location": "oyster",
-    "dataset": "nudibranch",
+    "project": "whelk",
+    "dataset": "octopus",
 
     }
     path = MigrationServiceClient.dataset_path(**expected)
@@ -1422,17 +1420,19 @@ def test_parse_dataset_path():
     assert expected == actual
 
 def test_dataset_path():
-    project = "cuttlefish"
-    dataset = "mussel"
+    project = "oyster"
+    location = "nudibranch"
+    dataset = "cuttlefish"
 
-    expected = "projects/{project}/datasets/{dataset}".format(project=project, dataset=dataset, )
-    actual = MigrationServiceClient.dataset_path(project, dataset)
+    expected = "projects/{project}/locations/{location}/datasets/{dataset}".format(project=project, location=location, dataset=dataset, )
+    actual = MigrationServiceClient.dataset_path(project, location, dataset)
     assert expected == actual
 
 
 def test_parse_dataset_path():
     expected = {
-    "project": "winkle",
+    "project": "mussel",
+    "location": "winkle",
     "dataset": "nautilus",
 
     }

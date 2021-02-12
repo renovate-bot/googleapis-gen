@@ -267,8 +267,8 @@ private static final long serialVersionUID = 0L;
    * The end, exclusive, of the video's time segment on which to perform
    * the prediction. Expressed as a number of seconds as measured from the
    * start of the video, with "s" appended at the end. Fractions are allowed,
-   * up to a microsecond precision, and "Infinity" is allowed, which means the
-   * end of the video.
+   * up to a microsecond precision, and "inf" or "Infinity" is allowed, which
+   * means the end of the video.
    * </pre>
    *
    * <code>string time_segment_end = 4;</code>
@@ -292,8 +292,8 @@ private static final long serialVersionUID = 0L;
    * The end, exclusive, of the video's time segment on which to perform
    * the prediction. Expressed as a number of seconds as measured from the
    * start of the video, with "s" appended at the end. Fractions are allowed,
-   * up to a microsecond precision, and "Infinity" is allowed, which means the
-   * end of the video.
+   * up to a microsecond precision, and "inf" or "Infinity" is allowed, which
+   * means the end of the video.
    * </pre>
    *
    * <code>string time_segment_end = 4;</code>
@@ -990,8 +990,8 @@ private static final long serialVersionUID = 0L;
      * The end, exclusive, of the video's time segment on which to perform
      * the prediction. Expressed as a number of seconds as measured from the
      * start of the video, with "s" appended at the end. Fractions are allowed,
-     * up to a microsecond precision, and "Infinity" is allowed, which means the
-     * end of the video.
+     * up to a microsecond precision, and "inf" or "Infinity" is allowed, which
+     * means the end of the video.
      * </pre>
      *
      * <code>string time_segment_end = 4;</code>
@@ -1014,8 +1014,8 @@ private static final long serialVersionUID = 0L;
      * The end, exclusive, of the video's time segment on which to perform
      * the prediction. Expressed as a number of seconds as measured from the
      * start of the video, with "s" appended at the end. Fractions are allowed,
-     * up to a microsecond precision, and "Infinity" is allowed, which means the
-     * end of the video.
+     * up to a microsecond precision, and "inf" or "Infinity" is allowed, which
+     * means the end of the video.
      * </pre>
      *
      * <code>string time_segment_end = 4;</code>
@@ -1039,8 +1039,8 @@ private static final long serialVersionUID = 0L;
      * The end, exclusive, of the video's time segment on which to perform
      * the prediction. Expressed as a number of seconds as measured from the
      * start of the video, with "s" appended at the end. Fractions are allowed,
-     * up to a microsecond precision, and "Infinity" is allowed, which means the
-     * end of the video.
+     * up to a microsecond precision, and "inf" or "Infinity" is allowed, which
+     * means the end of the video.
      * </pre>
      *
      * <code>string time_segment_end = 4;</code>
@@ -1062,8 +1062,8 @@ private static final long serialVersionUID = 0L;
      * The end, exclusive, of the video's time segment on which to perform
      * the prediction. Expressed as a number of seconds as measured from the
      * start of the video, with "s" appended at the end. Fractions are allowed,
-     * up to a microsecond precision, and "Infinity" is allowed, which means the
-     * end of the video.
+     * up to a microsecond precision, and "inf" or "Infinity" is allowed, which
+     * means the end of the video.
      * </pre>
      *
      * <code>string time_segment_end = 4;</code>
@@ -1080,8 +1080,8 @@ private static final long serialVersionUID = 0L;
      * The end, exclusive, of the video's time segment on which to perform
      * the prediction. Expressed as a number of seconds as measured from the
      * start of the video, with "s" appended at the end. Fractions are allowed,
-     * up to a microsecond precision, and "Infinity" is allowed, which means the
-     * end of the video.
+     * up to a microsecond precision, and "inf" or "Infinity" is allowed, which
+     * means the end of the video.
      * </pre>
      *
      * <code>string time_segment_end = 4;</code>

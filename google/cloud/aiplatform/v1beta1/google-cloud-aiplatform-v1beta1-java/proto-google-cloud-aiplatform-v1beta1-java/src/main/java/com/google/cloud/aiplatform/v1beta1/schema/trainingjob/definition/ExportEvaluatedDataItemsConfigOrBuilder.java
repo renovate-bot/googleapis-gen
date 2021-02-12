@@ -9,8 +9,10 @@ public interface ExportEvaluatedDataItemsConfigOrBuilder extends
 
   /**
    * <pre>
-   * URI of desired destination BigQuery table. If not specified, then results
-   * are exported to the following auto-created BigQuery table:
+   * URI of desired destination BigQuery table. Expected format:
+   * bq://&lt;project_id&gt;:&lt;dataset_id&gt;:&lt;table&gt;
+   * If not specified, then results are exported to the following auto-created
+   * BigQuery table:
    * &lt;project_id&gt;:export_evaluated_examples_&lt;model_name&gt;_&lt;yyyy_MM_dd'T'HH_mm_ss_SSS'Z'&gt;.evaluated_examples
    * </pre>
    *
@@ -20,8 +22,10 @@ public interface ExportEvaluatedDataItemsConfigOrBuilder extends
   java.lang.String getDestinationBigqueryUri();
   /**
    * <pre>
-   * URI of desired destination BigQuery table. If not specified, then results
-   * are exported to the following auto-created BigQuery table:
+   * URI of desired destination BigQuery table. Expected format:
+   * bq://&lt;project_id&gt;:&lt;dataset_id&gt;:&lt;table&gt;
+   * If not specified, then results are exported to the following auto-created
+   * BigQuery table:
    * &lt;project_id&gt;:export_evaluated_examples_&lt;model_name&gt;_&lt;yyyy_MM_dd'T'HH_mm_ss_SSS'Z'&gt;.evaluated_examples
    * </pre>
    *
@@ -34,9 +38,8 @@ public interface ExportEvaluatedDataItemsConfigOrBuilder extends
   /**
    * <pre>
    * If true and an export destination is specified, then the contents of the
-   * destination will be overwritten. Otherwise, if the export destination
-   * already exists, then the export operation will not trigger and a failure
-   * response is returned.
+   * destination are overwritten. Otherwise, if the export destination already
+   * exists, then the export operation fails.
    * </pre>
    *
    * <code>bool override_existing_table = 2;</code>

@@ -72,21 +72,20 @@ class AutoMlForecastingInputs(proto.Message):
             column should be flattened using "." as the
             delimiter.
         optimization_objective (str):
-            Objective function the model is optimizing
-            towards. The training process creates a model
-            that optimizes the value of the objective
-            function over the validation set.
+            Objective function the model is optimizing towards. The
+            training process creates a model that optimizes the value of
+            the objective function over the validation set.
 
-            The supported optimization objectives:
-              "minimize-rmse" (default) - Minimize root-
-            mean-squared error (RMSE).   "minimize-mae" -
-            Minimize mean-absolute error (MAE).   "minimize-
-            rmsle" - Minimize root-mean-squared log error
-            (RMSLE).   "minimize-rmspe" - Minimize root-
-            mean-squared percentage error (RMSPE).
-            "minimize-wape-mae" - Minimize the combination
-            of weighted absolute     percentage error (WAPE)
-            and mean-absolute-error (MAE).
+            The supported optimization objectives: "minimize-rmse"
+            (default) - Minimize root-mean-squared error (RMSE).
+            "minimize-mae" - Minimize mean-absolute error (MAE).
+            "minimize-rmsle" - Minimize root-mean-squared log error
+            (RMSLE). "minimize-rmspe" - Minimize root-mean-squared
+            percentage error (RMSPE). "minimize-wape-mae" - Minimize the
+            combination of weighted absolute percentage error (WAPE) and
+            mean-absolute-error (MAE). "minimize-quantile-loss" -
+            Minimize the quantile loss at the quantiles defined in
+            ``quantiles``.
         train_budget_milli_node_hours (int):
             Required. The train budget of creating this
             model, expressed in milli node hours i.e. 1,000
@@ -157,6 +156,21 @@ class AutoMlForecastingInputs(proto.Message):
             predictions to a BigQuery table. If this
             configuration is absent, then the export is not
             performed.
+        quantiles (Sequence[float]):
+            Quantiles to use for minimize-quantile-loss
+            ``optimization_objective``. Up to 5 quantiles are allowed of
+            values between 0 and 1, exclusive. Required if the value of
+            optimization_objective is minimize-quantile-loss. Represents
+            the percent quantiles to use for that objective. Quantiles
+            must be unique.
+        validation_options (str):
+            Validation options for the data validation
+            component. The available options are:
+              "fail-pipeline" - default, will validate
+            against the validation and
+            fail the pipeline if it fails.   "ignore-
+            validation" - ignore the results of the
+            validation and continue
     """
     class Transformation(proto.Message):
         r"""
@@ -392,6 +406,7 @@ class AutoMlForecastingInputs(proto.Message):
             unit (str):
                 The time granularity unit of this time
                 period. The supported unit are:
+                 "minute"
                  "hour"
                  "day"
                  "week"
@@ -441,6 +456,10 @@ class AutoMlForecastingInputs(proto.Message):
     export_evaluated_data_items_config = proto.Field(proto.MESSAGE, number=15,
         message=gcastd_export_evaluated_data_items_config.ExportEvaluatedDataItemsConfig,
     )
+
+    quantiles = proto.RepeatedField(proto.DOUBLE, number=16)
+
+    validation_options = proto.Field(proto.STRING, number=17)
 
 
 class AutoMlForecastingMetadata(proto.Message):
