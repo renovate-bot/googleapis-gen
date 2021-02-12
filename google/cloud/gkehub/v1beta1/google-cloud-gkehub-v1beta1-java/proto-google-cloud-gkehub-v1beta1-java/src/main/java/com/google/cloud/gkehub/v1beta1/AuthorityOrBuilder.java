@@ -92,4 +92,16 @@ public interface AuthorityOrBuilder extends
    */
   com.google.protobuf.ByteString
       getIdentityProviderBytes();
+
+  /**
+   * <pre>
+   * Optional. OIDC verification keys for this Membership in JWKS format (RFC 7517).
+   * When this field is set, OIDC discovery will NOT be performed on `issuer`,
+   * and instead OIDC tokens will be validated using this field.
+   * </pre>
+   *
+   * <code>bytes oidc_jwks = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The oidcJwks.
+   */
+  com.google.protobuf.ByteString getOidcJwks();
 }

@@ -69,6 +69,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :issuer, :string, 1
       optional :workload_identity_pool, :string, 2
       optional :identity_provider, :string, 3
+      optional :oidc_jwks, :bytes, 4
     end
     add_message "google.cloud.gkehub.v1beta1.MembershipState" do
       optional :code, :enum, 1, "google.cloud.gkehub.v1beta1.MembershipState.Code"

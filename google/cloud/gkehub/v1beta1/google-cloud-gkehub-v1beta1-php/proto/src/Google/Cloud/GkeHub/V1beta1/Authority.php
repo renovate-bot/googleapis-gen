@@ -48,6 +48,14 @@ class Authority extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string identity_provider = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $identity_provider = '';
+    /**
+     * Optional. OIDC verification keys for this Membership in JWKS format (RFC 7517).
+     * When this field is set, OIDC discovery will NOT be performed on `issuer`,
+     * and instead OIDC tokens will be validated using this field.
+     *
+     * Generated from protobuf field <code>bytes oidc_jwks = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    protected $oidc_jwks = '';
 
     /**
      * Constructor.
@@ -74,6 +82,10 @@ class Authority extends \Google\Protobuf\Internal\Message
      *     @type string $identity_provider
      *           Output only. An identity provider that reflects the `issuer` in the workload identity
      *           pool.
+     *     @type string $oidc_jwks
+     *           Optional. OIDC verification keys for this Membership in JWKS format (RFC 7517).
+     *           When this field is set, OIDC discovery will NOT be performed on `issuer`,
+     *           and instead OIDC tokens will be validated using this field.
      * }
      */
     public function __construct($data = NULL) {
@@ -181,6 +193,36 @@ class Authority extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->identity_provider = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional. OIDC verification keys for this Membership in JWKS format (RFC 7517).
+     * When this field is set, OIDC discovery will NOT be performed on `issuer`,
+     * and instead OIDC tokens will be validated using this field.
+     *
+     * Generated from protobuf field <code>bytes oidc_jwks = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return string
+     */
+    public function getOidcJwks()
+    {
+        return $this->oidc_jwks;
+    }
+
+    /**
+     * Optional. OIDC verification keys for this Membership in JWKS format (RFC 7517).
+     * When this field is set, OIDC discovery will NOT be performed on `issuer`,
+     * and instead OIDC tokens will be validated using this field.
+     *
+     * Generated from protobuf field <code>bytes oidc_jwks = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOidcJwks($var)
+    {
+        GPBUtil::checkString($var, False);
+        $this->oidc_jwks = $var;
 
         return $this;
     }

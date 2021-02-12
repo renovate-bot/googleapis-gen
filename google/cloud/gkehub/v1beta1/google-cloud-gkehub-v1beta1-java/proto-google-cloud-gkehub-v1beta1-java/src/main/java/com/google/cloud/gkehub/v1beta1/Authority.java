@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
     issuer_ = "";
     workloadIdentityPool_ = "";
     identityProvider_ = "";
+    oidcJwks_ = com.google.protobuf.ByteString.EMPTY;
   }
 
   @java.lang.Override
@@ -73,6 +74,11 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             identityProvider_ = s;
+            break;
+          }
+          case 34: {
+
+            oidcJwks_ = input.readBytes();
             break;
           }
           default: {
@@ -271,6 +277,23 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int OIDC_JWKS_FIELD_NUMBER = 4;
+  private com.google.protobuf.ByteString oidcJwks_;
+  /**
+   * <pre>
+   * Optional. OIDC verification keys for this Membership in JWKS format (RFC 7517).
+   * When this field is set, OIDC discovery will NOT be performed on `issuer`,
+   * and instead OIDC tokens will be validated using this field.
+   * </pre>
+   *
+   * <code>bytes oidc_jwks = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The oidcJwks.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getOidcJwks() {
+    return oidcJwks_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -294,6 +317,9 @@ private static final long serialVersionUID = 0L;
     if (!getIdentityProviderBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, identityProvider_);
     }
+    if (!oidcJwks_.isEmpty()) {
+      output.writeBytes(4, oidcJwks_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -311,6 +337,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getIdentityProviderBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, identityProvider_);
+    }
+    if (!oidcJwks_.isEmpty()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBytesSize(4, oidcJwks_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -333,6 +363,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getWorkloadIdentityPool())) return false;
     if (!getIdentityProvider()
         .equals(other.getIdentityProvider())) return false;
+    if (!getOidcJwks()
+        .equals(other.getOidcJwks())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -350,6 +382,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getWorkloadIdentityPool().hashCode();
     hash = (37 * hash) + IDENTITY_PROVIDER_FIELD_NUMBER;
     hash = (53 * hash) + getIdentityProvider().hashCode();
+    hash = (37 * hash) + OIDC_JWKS_FIELD_NUMBER;
+    hash = (53 * hash) + getOidcJwks().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -495,6 +529,8 @@ private static final long serialVersionUID = 0L;
 
       identityProvider_ = "";
 
+      oidcJwks_ = com.google.protobuf.ByteString.EMPTY;
+
       return this;
     }
 
@@ -524,6 +560,7 @@ private static final long serialVersionUID = 0L;
       result.issuer_ = issuer_;
       result.workloadIdentityPool_ = workloadIdentityPool_;
       result.identityProvider_ = identityProvider_;
+      result.oidcJwks_ = oidcJwks_;
       onBuilt();
       return result;
     }
@@ -583,6 +620,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getIdentityProvider().isEmpty()) {
         identityProvider_ = other.identityProvider_;
         onChanged();
+      }
+      if (other.getOidcJwks() != com.google.protobuf.ByteString.EMPTY) {
+        setOidcJwks(other.getOidcJwks());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -962,6 +1002,58 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       identityProvider_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.ByteString oidcJwks_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     * <pre>
+     * Optional. OIDC verification keys for this Membership in JWKS format (RFC 7517).
+     * When this field is set, OIDC discovery will NOT be performed on `issuer`,
+     * and instead OIDC tokens will be validated using this field.
+     * </pre>
+     *
+     * <code>bytes oidc_jwks = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The oidcJwks.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getOidcJwks() {
+      return oidcJwks_;
+    }
+    /**
+     * <pre>
+     * Optional. OIDC verification keys for this Membership in JWKS format (RFC 7517).
+     * When this field is set, OIDC discovery will NOT be performed on `issuer`,
+     * and instead OIDC tokens will be validated using this field.
+     * </pre>
+     *
+     * <code>bytes oidc_jwks = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The oidcJwks to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOidcJwks(com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      oidcJwks_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. OIDC verification keys for this Membership in JWKS format (RFC 7517).
+     * When this field is set, OIDC discovery will NOT be performed on `issuer`,
+     * and instead OIDC tokens will be validated using this field.
+     * </pre>
+     *
+     * <code>bytes oidc_jwks = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOidcJwks() {
+      
+      oidcJwks_ = getDefaultInstance().getOidcJwks();
       onChanged();
       return this;
     }

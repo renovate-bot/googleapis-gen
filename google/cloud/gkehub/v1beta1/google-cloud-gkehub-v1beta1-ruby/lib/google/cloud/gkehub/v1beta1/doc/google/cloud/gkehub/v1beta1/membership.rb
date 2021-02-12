@@ -252,6 +252,12 @@ module Google
         #   @return [String]
         #     Output only. An identity provider that reflects the `issuer` in the workload identity
         #     pool.
+        # @!attribute [rw] oidc_jwks
+        #   @return [String]
+        #     Optional. OIDC verification keys for this Membership in JWKS format (RFC 7517).
+        #
+        #     When this field is set, OIDC discovery will NOT be performed on `issuer`,
+        #     and instead OIDC tokens will be validated using this field.
         class Authority; end
 
         # State of the Membership resource.

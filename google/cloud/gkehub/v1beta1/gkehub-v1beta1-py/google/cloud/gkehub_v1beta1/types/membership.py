@@ -419,6 +419,13 @@ class Authority(proto.Message):
         identity_provider (str):
             Output only. An identity provider that reflects the
             ``issuer`` in the workload identity pool.
+        oidc_jwks (bytes):
+            Optional. OIDC verification keys for this Membership in JWKS
+            format (RFC 7517).
+
+            When this field is set, OIDC discovery will NOT be performed
+            on ``issuer``, and instead OIDC tokens will be validated
+            using this field.
     """
 
     issuer = proto.Field(proto.STRING, number=1)
@@ -426,6 +433,8 @@ class Authority(proto.Message):
     workload_identity_pool = proto.Field(proto.STRING, number=2)
 
     identity_provider = proto.Field(proto.STRING, number=3)
+
+    oidc_jwks = proto.Field(proto.BYTES, number=4)
 
 
 class MembershipState(proto.Message):

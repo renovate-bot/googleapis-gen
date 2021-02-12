@@ -208,116 +208,116 @@ public final class MembershipOuterClass {
       "ode_provider_id\030\002 \001(\tB\003\340A\003\022\027\n\nnode_count" +
       "\030\003 \001(\005B\003\340A\003\022\027\n\nvcpu_count\030\004 \001(\005B\003\340A\003\022\026\n\t" +
       "memory_mb\030\005 \001(\005B\003\340A\003\0224\n\013update_time\030d \001(" +
-      "\0132\032.google.protobuf.TimestampB\003\340A\003\"e\n\tAu" +
+      "\0132\032.google.protobuf.TimestampB\003\340A\003\"}\n\tAu" +
       "thority\022\023\n\006issuer\030\001 \001(\tB\003\340A\001\022#\n\026workload" +
       "_identity_pool\030\002 \001(\tB\003\340A\003\022\036\n\021identity_pr" +
-      "ovider\030\003 \001(\tB\003\340A\003\"\216\002\n\017MembershipState\022D\n" +
-      "\004code\030\001 \001(\01621.google.cloud.gkehub.v1beta" +
-      "1.MembershipState.CodeB\003\340A\003\022\027\n\013descripti" +
-      "on\030\002 \001(\tB\002\030\001\0223\n\013update_time\030\003 \001(\0132\032.goog" +
-      "le.protobuf.TimestampB\002\030\001\"g\n\004Code\022\024\n\020COD" +
-      "E_UNSPECIFIED\020\000\022\014\n\010CREATING\020\001\022\t\n\005READY\020\002" +
-      "\022\014\n\010DELETING\020\003\022\014\n\010UPDATING\020\004\022\024\n\020SERVICE_" +
-      "UPDATING\020\005\"\212\001\n\026ListMembershipsRequest\022\023\n" +
-      "\006parent\030\001 \001(\tB\003\340A\002\022\026\n\tpage_size\030\002 \001(\005B\003\340" +
-      "A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\022\023\n\006filter\030\004 " +
-      "\001(\tB\003\340A\001\022\025\n\010order_by\030\005 \001(\tB\003\340A\001\"\203\001\n\027List" +
-      "MembershipsResponse\022:\n\tresources\030\001 \003(\0132\'" +
-      ".google.cloud.gkehub.v1beta1.Membership\022" +
-      "\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unreachable\030" +
-      "\003 \003(\t\")\n\024GetMembershipRequest\022\021\n\004name\030\001 " +
-      "\001(\tB\003\340A\002\"\212\001\n\027CreateMembershipRequest\022\023\n\006" +
-      "parent\030\001 \001(\tB\003\340A\002\022\032\n\rmembership_id\030\002 \001(\t" +
-      "B\003\340A\002\022>\n\010resource\030\003 \001(\0132\'.google.cloud.g" +
-      "kehub.v1beta1.MembershipB\003\340A\002\",\n\027DeleteM" +
-      "embershipRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\"\242\001\n\027" +
-      "UpdateMembershipRequest\022\021\n\004name\030\001 \001(\tB\003\340" +
-      "A\002\0224\n\013update_mask\030\002 \001(\0132\032.google.protobu" +
-      "f.FieldMaskB\003\340A\002\022>\n\010resource\030\003 \001(\0132\'.goo" +
-      "gle.cloud.gkehub.v1beta1.MembershipB\003\340A\002" +
-      "\"\350\001\n\036GenerateConnectManifestRequest\022\021\n\004n" +
-      "ame\030\001 \001(\tB\003\340A\002\022E\n\rconnect_agent\030\002 \001(\0132)." +
-      "google.cloud.gkehub.v1beta1.ConnectAgent" +
-      "B\003\340A\001\022\024\n\007version\030\003 \001(\tB\003\340A\001\022\027\n\nis_upgrad" +
-      "e\030\004 \001(\010B\003\340A\001\022\025\n\010registry\030\005 \001(\tB\003\340A\001\022&\n\031i" +
-      "mage_pull_secret_content\030\006 \001(\014B\003\340A\001\"f\n\037G" +
-      "enerateConnectManifestResponse\022C\n\010manife" +
-      "st\030\001 \003(\01321.google.cloud.gkehub.v1beta1.C" +
-      "onnectAgentResource\"]\n\024ConnectAgentResou" +
-      "rce\0223\n\004type\030\001 \001(\0132%.google.cloud.gkehub." +
-      "v1beta1.TypeMeta\022\020\n\010manifest\030\002 \001(\t\"-\n\010Ty" +
-      "peMeta\022\014\n\004kind\030\001 \001(\t\022\023\n\013api_version\030\002 \001(" +
-      "\t\"L\n\014ConnectAgent\022\020\n\004name\030\001 \001(\tB\002\030\001\022\022\n\005p" +
-      "roxy\030\002 \001(\014B\003\340A\001\022\026\n\tnamespace\030\003 \001(\tB\003\340A\001\"" +
-      "m\n\032ValidateExclusivityRequest\022\023\n\006parent\030" +
-      "\001 \001(\tB\003\340A\002\022\030\n\013cr_manifest\030\002 \001(\tB\003\340A\001\022 \n\023" +
-      "intended_membership\030\003 \001(\tB\003\340A\002\"A\n\033Valida" +
-      "teExclusivityResponse\022\"\n\006status\030\001 \001(\0132\022." +
-      "google.rpc.Status\"l\n\"GenerateExclusivity" +
-      "ManifestRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\031\n\014cr" +
-      "d_manifest\030\002 \001(\tB\003\340A\001\022\030\n\013cr_manifest\030\003 \001" +
-      "(\tB\003\340A\001\"P\n#GenerateExclusivityManifestRe" +
-      "sponse\022\024\n\014crd_manifest\030\001 \001(\t\022\023\n\013cr_manif" +
-      "est\030\002 \001(\t\"\371\001\n\021OperationMetadata\0224\n\013creat" +
-      "e_time\030\001 \001(\0132\032.google.protobuf.Timestamp" +
-      "B\003\340A\003\0221\n\010end_time\030\002 \001(\0132\032.google.protobu" +
-      "f.TimestampB\003\340A\003\022\023\n\006target\030\003 \001(\tB\003\340A\003\022\021\n" +
-      "\004verb\030\004 \001(\tB\003\340A\003\022\032\n\rstatus_detail\030\005 \001(\tB" +
-      "\003\340A\003\022\035\n\020cancel_requested\030\006 \001(\010B\003\340A\003\022\030\n\013a" +
-      "pi_version\030\007 \001(\tB\003\340A\0032\346\016\n\027GkeHubMembersh" +
-      "ipService\022\303\001\n\017ListMemberships\0223.google.c" +
-      "loud.gkehub.v1beta1.ListMembershipsReque" +
-      "st\0324.google.cloud.gkehub.v1beta1.ListMem" +
-      "bershipsResponse\"E\202\323\344\223\0026\0224/v1beta1/{pare" +
-      "nt=projects/*/locations/*}/memberships\332A" +
-      "\006parent\022\260\001\n\rGetMembership\0221.google.cloud" +
-      ".gkehub.v1beta1.GetMembershipRequest\032\'.g" +
-      "oogle.cloud.gkehub.v1beta1.Membership\"C\202" +
-      "\323\344\223\0026\0224/v1beta1/{name=projects/*/locatio" +
-      "ns/*/memberships/*}\332A\004name\022\362\001\n\020CreateMem" +
-      "bership\0224.google.cloud.gkehub.v1beta1.Cr" +
-      "eateMembershipRequest\032\035.google.longrunni" +
-      "ng.Operation\"\210\001\202\323\344\223\002@\"4/v1beta1/{parent=" +
-      "projects/*/locations/*}/memberships:\010res" +
-      "ource\332A\035parent,resource,membership_id\312A\037" +
-      "\n\nMembership\022\021OperationMetadata\022\331\001\n\020Dele" +
-      "teMembership\0224.google.cloud.gkehub.v1bet" +
-      "a1.DeleteMembershipRequest\032\035.google.long" +
-      "running.Operation\"p\202\323\344\223\0026*4/v1beta1/{nam" +
-      "e=projects/*/locations/*/memberships/*}\332" +
-      "A\004name\312A*\n\025google.protobuf.Empty\022\021Operat" +
-      "ionMetadata\022\356\001\n\020UpdateMembership\0224.googl" +
-      "e.cloud.gkehub.v1beta1.UpdateMembershipR" +
-      "equest\032\035.google.longrunning.Operation\"\204\001" +
-      "\202\323\344\223\002@24/v1beta1/{name=projects/*/locati" +
-      "ons/*/memberships/*}:\010resource\332A\031name,re" +
-      "source,update_mask\312A\037\n\nMembership\022\021Opera" +
-      "tionMetadata\022\352\001\n\027GenerateConnectManifest" +
-      "\022;.google.cloud.gkehub.v1beta1.GenerateC" +
-      "onnectManifestRequest\032<.google.cloud.gke" +
-      "hub.v1beta1.GenerateConnectManifestRespo" +
-      "nse\"T\202\323\344\223\002N\022L/v1beta1/{name=projects/*/l" +
-      "ocations/*/memberships/*}:generateConnec" +
-      "tManifest\022\332\001\n\023ValidateExclusivity\0227.goog" +
-      "le.cloud.gkehub.v1beta1.ValidateExclusiv" +
-      "ityRequest\0328.google.cloud.gkehub.v1beta1" +
-      ".ValidateExclusivityResponse\"P\202\323\344\223\002J\022H/v" +
-      "1beta1/{parent=projects/*/locations/*}/m" +
-      "emberships:validateExclusivity\022\372\001\n\033Gener" +
-      "ateExclusivityManifest\022?.google.cloud.gk" +
-      "ehub.v1beta1.GenerateExclusivityManifest" +
-      "Request\032@.google.cloud.gkehub.v1beta1.Ge" +
-      "nerateExclusivityManifestResponse\"X\202\323\344\223\002" +
-      "R\022P/v1beta1/{name=projects/*/locations/*" +
-      "/memberships/*}:generateExclusivityManif" +
-      "est\032I\312A\025gkehub.googleapis.com\322A.https://" +
-      "www.googleapis.com/auth/cloud-platformB\303" +
-      "\001\n\037com.google.cloud.gkehub.v1beta1P\001ZAgo" +
-      "ogle.golang.org/genproto/googleapis/clou" +
-      "d/gkehub/v1beta1;gkehub\252\002\033Google.Cloud.G" +
-      "keHub.V1Beta1\312\002\033Google\\Cloud\\GkeHub\\V1be" +
-      "ta1\352\002\036Google::Cloud::GkeHub::V1beta1b\006pr" +
-      "oto3"
+      "ovider\030\003 \001(\tB\003\340A\003\022\026\n\toidc_jwks\030\004 \001(\014B\003\340A" +
+      "\001\"\216\002\n\017MembershipState\022D\n\004code\030\001 \001(\01621.go" +
+      "ogle.cloud.gkehub.v1beta1.MembershipStat" +
+      "e.CodeB\003\340A\003\022\027\n\013description\030\002 \001(\tB\002\030\001\0223\n\013" +
+      "update_time\030\003 \001(\0132\032.google.protobuf.Time" +
+      "stampB\002\030\001\"g\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022" +
+      "\014\n\010CREATING\020\001\022\t\n\005READY\020\002\022\014\n\010DELETING\020\003\022\014" +
+      "\n\010UPDATING\020\004\022\024\n\020SERVICE_UPDATING\020\005\"\212\001\n\026L" +
+      "istMembershipsRequest\022\023\n\006parent\030\001 \001(\tB\003\340" +
+      "A\002\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token" +
+      "\030\003 \001(\tB\003\340A\001\022\023\n\006filter\030\004 \001(\tB\003\340A\001\022\025\n\010orde" +
+      "r_by\030\005 \001(\tB\003\340A\001\"\203\001\n\027ListMembershipsRespo" +
+      "nse\022:\n\tresources\030\001 \003(\0132\'.google.cloud.gk" +
+      "ehub.v1beta1.Membership\022\027\n\017next_page_tok" +
+      "en\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\")\n\024GetMemb" +
+      "ershipRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\"\212\001\n\027Cre" +
+      "ateMembershipRequest\022\023\n\006parent\030\001 \001(\tB\003\340A" +
+      "\002\022\032\n\rmembership_id\030\002 \001(\tB\003\340A\002\022>\n\010resourc" +
+      "e\030\003 \001(\0132\'.google.cloud.gkehub.v1beta1.Me" +
+      "mbershipB\003\340A\002\",\n\027DeleteMembershipRequest" +
+      "\022\021\n\004name\030\001 \001(\tB\003\340A\002\"\242\001\n\027UpdateMembership" +
+      "Request\022\021\n\004name\030\001 \001(\tB\003\340A\002\0224\n\013update_mas" +
+      "k\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002" +
+      "\022>\n\010resource\030\003 \001(\0132\'.google.cloud.gkehub" +
+      ".v1beta1.MembershipB\003\340A\002\"\350\001\n\036GenerateCon" +
+      "nectManifestRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\022E" +
+      "\n\rconnect_agent\030\002 \001(\0132).google.cloud.gke" +
+      "hub.v1beta1.ConnectAgentB\003\340A\001\022\024\n\007version" +
+      "\030\003 \001(\tB\003\340A\001\022\027\n\nis_upgrade\030\004 \001(\010B\003\340A\001\022\025\n\010" +
+      "registry\030\005 \001(\tB\003\340A\001\022&\n\031image_pull_secret" +
+      "_content\030\006 \001(\014B\003\340A\001\"f\n\037GenerateConnectMa" +
+      "nifestResponse\022C\n\010manifest\030\001 \003(\01321.googl" +
+      "e.cloud.gkehub.v1beta1.ConnectAgentResou" +
+      "rce\"]\n\024ConnectAgentResource\0223\n\004type\030\001 \001(" +
+      "\0132%.google.cloud.gkehub.v1beta1.TypeMeta" +
+      "\022\020\n\010manifest\030\002 \001(\t\"-\n\010TypeMeta\022\014\n\004kind\030\001" +
+      " \001(\t\022\023\n\013api_version\030\002 \001(\t\"L\n\014ConnectAgen" +
+      "t\022\020\n\004name\030\001 \001(\tB\002\030\001\022\022\n\005proxy\030\002 \001(\014B\003\340A\001\022" +
+      "\026\n\tnamespace\030\003 \001(\tB\003\340A\001\"m\n\032ValidateExclu" +
+      "sivityRequest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022\030\n\013cr" +
+      "_manifest\030\002 \001(\tB\003\340A\001\022 \n\023intended_members" +
+      "hip\030\003 \001(\tB\003\340A\002\"A\n\033ValidateExclusivityRes" +
+      "ponse\022\"\n\006status\030\001 \001(\0132\022.google.rpc.Statu" +
+      "s\"l\n\"GenerateExclusivityManifestRequest\022" +
+      "\021\n\004name\030\001 \001(\tB\003\340A\002\022\031\n\014crd_manifest\030\002 \001(\t" +
+      "B\003\340A\001\022\030\n\013cr_manifest\030\003 \001(\tB\003\340A\001\"P\n#Gener" +
+      "ateExclusivityManifestResponse\022\024\n\014crd_ma" +
+      "nifest\030\001 \001(\t\022\023\n\013cr_manifest\030\002 \001(\t\"\371\001\n\021Op" +
+      "erationMetadata\0224\n\013create_time\030\001 \001(\0132\032.g" +
+      "oogle.protobuf.TimestampB\003\340A\003\0221\n\010end_tim" +
+      "e\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003" +
+      "\022\023\n\006target\030\003 \001(\tB\003\340A\003\022\021\n\004verb\030\004 \001(\tB\003\340A\003" +
+      "\022\032\n\rstatus_detail\030\005 \001(\tB\003\340A\003\022\035\n\020cancel_r" +
+      "equested\030\006 \001(\010B\003\340A\003\022\030\n\013api_version\030\007 \001(\t" +
+      "B\003\340A\0032\346\016\n\027GkeHubMembershipService\022\303\001\n\017Li" +
+      "stMemberships\0223.google.cloud.gkehub.v1be" +
+      "ta1.ListMembershipsRequest\0324.google.clou" +
+      "d.gkehub.v1beta1.ListMembershipsResponse" +
+      "\"E\202\323\344\223\0026\0224/v1beta1/{parent=projects/*/lo" +
+      "cations/*}/memberships\332A\006parent\022\260\001\n\rGetM" +
+      "embership\0221.google.cloud.gkehub.v1beta1." +
+      "GetMembershipRequest\032\'.google.cloud.gkeh" +
+      "ub.v1beta1.Membership\"C\202\323\344\223\0026\0224/v1beta1/" +
+      "{name=projects/*/locations/*/memberships" +
+      "/*}\332A\004name\022\362\001\n\020CreateMembership\0224.google" +
+      ".cloud.gkehub.v1beta1.CreateMembershipRe" +
+      "quest\032\035.google.longrunning.Operation\"\210\001\202" +
+      "\323\344\223\002@\"4/v1beta1/{parent=projects/*/locat" +
+      "ions/*}/memberships:\010resource\332A\035parent,r" +
+      "esource,membership_id\312A\037\n\nMembership\022\021Op" +
+      "erationMetadata\022\331\001\n\020DeleteMembership\0224.g" +
+      "oogle.cloud.gkehub.v1beta1.DeleteMembers" +
+      "hipRequest\032\035.google.longrunning.Operatio" +
+      "n\"p\202\323\344\223\0026*4/v1beta1/{name=projects/*/loc" +
+      "ations/*/memberships/*}\332A\004name\312A*\n\025googl" +
+      "e.protobuf.Empty\022\021OperationMetadata\022\356\001\n\020" +
+      "UpdateMembership\0224.google.cloud.gkehub.v" +
+      "1beta1.UpdateMembershipRequest\032\035.google." +
+      "longrunning.Operation\"\204\001\202\323\344\223\002@24/v1beta1" +
+      "/{name=projects/*/locations/*/membership" +
+      "s/*}:\010resource\332A\031name,resource,update_ma" +
+      "sk\312A\037\n\nMembership\022\021OperationMetadata\022\352\001\n" +
+      "\027GenerateConnectManifest\022;.google.cloud." +
+      "gkehub.v1beta1.GenerateConnectManifestRe" +
+      "quest\032<.google.cloud.gkehub.v1beta1.Gene" +
+      "rateConnectManifestResponse\"T\202\323\344\223\002N\022L/v1" +
+      "beta1/{name=projects/*/locations/*/membe" +
+      "rships/*}:generateConnectManifest\022\332\001\n\023Va" +
+      "lidateExclusivity\0227.google.cloud.gkehub." +
+      "v1beta1.ValidateExclusivityRequest\0328.goo" +
+      "gle.cloud.gkehub.v1beta1.ValidateExclusi" +
+      "vityResponse\"P\202\323\344\223\002J\022H/v1beta1/{parent=p" +
+      "rojects/*/locations/*}/memberships:valid" +
+      "ateExclusivity\022\372\001\n\033GenerateExclusivityMa" +
+      "nifest\022?.google.cloud.gkehub.v1beta1.Gen" +
+      "erateExclusivityManifestRequest\032@.google" +
+      ".cloud.gkehub.v1beta1.GenerateExclusivit" +
+      "yManifestResponse\"X\202\323\344\223\002R\022P/v1beta1/{nam" +
+      "e=projects/*/locations/*/memberships/*}:" +
+      "generateExclusivityManifest\032I\312A\025gkehub.g" +
+      "oogleapis.com\322A.https://www.googleapis.c" +
+      "om/auth/cloud-platformB\303\001\n\037com.google.cl" +
+      "oud.gkehub.v1beta1P\001ZAgoogle.golang.org/" +
+      "genproto/googleapis/cloud/gkehub/v1beta1" +
+      ";gkehub\252\002\033Google.Cloud.GkeHub.V1Beta1\312\002\033" +
+      "Google\\Cloud\\GkeHub\\V1beta1\352\002\036Google::Cl" +
+      "oud::GkeHub::V1beta1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -384,7 +384,7 @@ public final class MembershipOuterClass {
     internal_static_google_cloud_gkehub_v1beta1_Authority_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_gkehub_v1beta1_Authority_descriptor,
-        new java.lang.String[] { "Issuer", "WorkloadIdentityPool", "IdentityProvider", });
+        new java.lang.String[] { "Issuer", "WorkloadIdentityPool", "IdentityProvider", "OidcJwks", });
     internal_static_google_cloud_gkehub_v1beta1_MembershipState_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_gkehub_v1beta1_MembershipState_fieldAccessorTable = new
