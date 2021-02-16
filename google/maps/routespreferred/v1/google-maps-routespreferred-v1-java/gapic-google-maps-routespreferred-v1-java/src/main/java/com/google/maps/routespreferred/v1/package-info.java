@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,31 +15,23 @@
  */
 
 /**
- * A client to Routes Preferred API.
+ * The interfaces provided are listed below, along with usage samples.
  *
- * <p>The interfaces provided are listed below, along with usage samples.
- *
- * <p>===================== RoutesPreferredClient =====================
+ * <p>======================= RoutesPreferredClient =======================
  *
  * <p>Service Description: The Routes Preferred API.
  *
  * <p>Sample for RoutesPreferredClient:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (RoutesPreferredClient routesPreferredClient = RoutesPreferredClient.create()) {
  *   Waypoint origin = Waypoint.newBuilder().build();
  *   Waypoint destination = Waypoint.newBuilder().build();
- *   ComputeRoutesRequest request = ComputeRoutesRequest.newBuilder()
- *     .setOrigin(origin)
- *     .setDestination(destination)
- *     .build();
- *   ComputeRoutesResponse response = routesPreferredClient.computeRoutes(request);
+ *   ComputeRoutesResponse response = routesPreferredClient.computeRoutes(origin, destination);
  * }
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 package com.google.maps.routespreferred.v1;
 
 import javax.annotation.Generated;

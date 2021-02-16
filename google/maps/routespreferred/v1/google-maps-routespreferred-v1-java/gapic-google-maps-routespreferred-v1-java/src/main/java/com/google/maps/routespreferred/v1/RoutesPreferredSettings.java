@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.maps.routespreferred.v1;
 
 import com.google.api.core.ApiFunction;
@@ -24,6 +25,7 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
+import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.maps.routes.v1.ComputeRouteMatrixRequest;
@@ -35,7 +37,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link RoutesPreferredClient}.
  *
@@ -53,23 +55,24 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of computeRoutes to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RoutesPreferredSettings.Builder routesPreferredSettingsBuilder =
  *     RoutesPreferredSettings.newBuilder();
  * routesPreferredSettingsBuilder
  *     .computeRoutesSettings()
  *     .setRetrySettings(
- *         routesPreferredSettingsBuilder.computeRoutesSettings().getRetrySettings().toBuilder()
+ *         routesPreferredSettingsBuilder
+ *             .computeRoutesSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RoutesPreferredSettings routesPreferredSettings = routesPreferredSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class RoutesPreferredSettings extends ClientSettings<RoutesPreferredSettings> {
+
   /** Returns the object with the settings used for calls to computeRoutes. */
   public UnaryCallSettings<ComputeRoutesRequest, ComputeRoutesResponse> computeRoutesSettings() {
     return ((RoutesPreferredStubSettings) getStubSettings()).computeRoutesSettings();
@@ -141,16 +144,13 @@ public class RoutesPreferredSettings extends ClientSettings<RoutesPreferredSetti
 
   /** Builder for RoutesPreferredSettings. */
   public static class Builder extends ClientSettings.Builder<RoutesPreferredSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(RoutesPreferredStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(RoutesPreferredStubSettings.newBuilder());
     }
 
     protected Builder(RoutesPreferredSettings settings) {
@@ -161,11 +161,15 @@ public class RoutesPreferredSettings extends ClientSettings<RoutesPreferredSetti
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(RoutesPreferredStubSettings.newBuilder());
+    }
+
     public RoutesPreferredStubSettings.Builder getStubSettingsBuilder() {
       return ((RoutesPreferredStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.maps.routespreferred.v1;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -28,16 +29,25 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.maps.routes.v1.ComputeRouteMatrixRequest;
 import com.google.maps.routes.v1.ComputeRoutesRequest;
 import com.google.maps.routes.v1.ComputeRoutesResponse;
+import com.google.maps.routes.v1.FallbackInfo;
+import com.google.maps.routes.v1.Route;
+import com.google.maps.routes.v1.RouteMatrixDestination;
 import com.google.maps.routes.v1.RouteMatrixElement;
+import com.google.maps.routes.v1.RouteMatrixOrigin;
+import com.google.maps.routes.v1.RouteTravelAdvisory;
 import com.google.maps.routes.v1.Waypoint;
 import com.google.protobuf.AbstractMessage;
-import io.grpc.Status;
+import com.google.protobuf.Duration;
+import com.google.protobuf.Timestamp;
+import com.google.rpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -45,31 +55,31 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class RoutesPreferredClientTest {
-  private static MockRoutesPreferred mockRoutesPreferred;
-  private static MockServiceHelper serviceHelper;
+  private static MockServiceHelper mockServiceHelper;
   private RoutesPreferredClient client;
   private LocalChannelProvider channelProvider;
+  private static MockRoutesPreferred mockRoutesPreferred;
 
   @BeforeClass
   public static void startStaticServer() {
     mockRoutesPreferred = new MockRoutesPreferred();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockRoutesPreferred));
-    serviceHelper.start();
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     RoutesPreferredSettings settings =
         RoutesPreferredSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -84,22 +94,23 @@ public class RoutesPreferredClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void computeRoutesTest() {
-    ComputeRoutesResponse expectedResponse = ComputeRoutesResponse.newBuilder().build();
+  public void computeRoutesTest() throws Exception {
+    ComputeRoutesResponse expectedResponse =
+        ComputeRoutesResponse.newBuilder()
+            .addAllRoutes(new ArrayList<Route>())
+            .setFallbackInfo(FallbackInfo.newBuilder().build())
+            .build();
     mockRoutesPreferred.addResponse(expectedResponse);
 
     Waypoint origin = Waypoint.newBuilder().build();
     Waypoint destination = Waypoint.newBuilder().build();
-    ComputeRoutesRequest request =
-        ComputeRoutesRequest.newBuilder().setOrigin(origin).setDestination(destination).build();
 
-    ComputeRoutesResponse actualResponse = client.computeRoutes(request);
+    ComputeRoutesResponse actualResponse = client.computeRoutes(origin, destination);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockRoutesPreferred.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ComputeRoutesRequest actualRequest = (ComputeRoutesRequest) actualRequests.get(0);
+    ComputeRoutesRequest actualRequest = ((ComputeRoutesRequest) actualRequests.get(0));
 
     Assert.assertEquals(origin, actualRequest.getOrigin());
     Assert.assertEquals(destination, actualRequest.getDestination());
@@ -110,38 +121,40 @@ public class RoutesPreferredClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void computeRoutesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockRoutesPreferred.addException(exception);
 
     try {
       Waypoint origin = Waypoint.newBuilder().build();
       Waypoint destination = Waypoint.newBuilder().build();
-      ComputeRoutesRequest request =
-          ComputeRoutesRequest.newBuilder().setOrigin(origin).setDestination(destination).build();
-
-      client.computeRoutes(request);
+      client.computeRoutes(origin, destination);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
   public void computeRouteMatrixTest() throws Exception {
-    int originIndex = 2078721657;
-    int destinationIndex = 1296954015;
-    int distanceMeters = 1958857108;
     RouteMatrixElement expectedResponse =
         RouteMatrixElement.newBuilder()
-            .setOriginIndex(originIndex)
-            .setDestinationIndex(destinationIndex)
-            .setDistanceMeters(distanceMeters)
+            .setOriginIndex(2078721657)
+            .setDestinationIndex(-1296954015)
+            .setStatus(Status.newBuilder().build())
+            .setDistanceMeters(1958857108)
+            .setDuration(Duration.newBuilder().build())
+            .setStaticDuration(Duration.newBuilder().build())
+            .setTravelAdvisory(RouteTravelAdvisory.newBuilder().build())
+            .setFallbackInfo(FallbackInfo.newBuilder().build())
             .build();
     mockRoutesPreferred.addResponse(expectedResponse);
-    ComputeRouteMatrixRequest request = ComputeRouteMatrixRequest.newBuilder().build();
+    ComputeRouteMatrixRequest request =
+        ComputeRouteMatrixRequest.newBuilder()
+            .addAllOrigins(new ArrayList<RouteMatrixOrigin>())
+            .addAllDestinations(new ArrayList<RouteMatrixDestination>())
+            .setDepartureTime(Timestamp.newBuilder().build())
+            .build();
 
     MockStreamObserver<RouteMatrixElement> responseObserver = new MockStreamObserver<>();
 
@@ -155,11 +168,15 @@ public class RoutesPreferredClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void computeRouteMatrixExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockRoutesPreferred.addException(exception);
-    ComputeRouteMatrixRequest request = ComputeRouteMatrixRequest.newBuilder().build();
+    ComputeRouteMatrixRequest request =
+        ComputeRouteMatrixRequest.newBuilder()
+            .addAllOrigins(new ArrayList<RouteMatrixOrigin>())
+            .addAllDestinations(new ArrayList<RouteMatrixDestination>())
+            .setDepartureTime(Timestamp.newBuilder().build())
+            .build();
 
     MockStreamObserver<RouteMatrixElement> responseObserver = new MockStreamObserver<>();
 
@@ -172,7 +189,7 @@ public class RoutesPreferredClientTest {
       Assert.fail("No exception thrown");
     } catch (ExecutionException e) {
       Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
