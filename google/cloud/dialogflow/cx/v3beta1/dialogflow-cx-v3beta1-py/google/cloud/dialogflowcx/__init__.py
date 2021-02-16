@@ -189,6 +189,7 @@ from google.cloud.dialogflowcx_v3beta1.types.test_case import TestError
 from google.cloud.dialogflowcx_v3beta1.types.test_case import TestResult
 from google.cloud.dialogflowcx_v3beta1.types.test_case import TestRunDifference
 from google.cloud.dialogflowcx_v3beta1.types.test_case import TransitionCoverage
+from google.cloud.dialogflowcx_v3beta1.types.test_case import TransitionRouteGroupCoverage
 from google.cloud.dialogflowcx_v3beta1.types.test_case import UpdateTestCaseRequest
 from google.cloud.dialogflowcx_v3beta1.types.transition_route_group import CreateTransitionRouteGroupRequest
 from google.cloud.dialogflowcx_v3beta1.types.transition_route_group import DeleteTransitionRouteGroupRequest
@@ -396,6 +397,7 @@ __all__ = (
     'TransitionCoverage',
     'TransitionRoute',
     'TransitionRouteGroup',
+    'TransitionRouteGroupCoverage',
     'TransitionRouteGroupsAsyncClient',
     'TransitionRouteGroupsClient',
     'UpdateAgentRequest',

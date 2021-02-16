@@ -1314,8 +1314,8 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that triggered the response. Only some fields such as
-     * name and displayname will be set.
+     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that triggered the response. Only name and displayName
+     * will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent triggered_intent = 7;</code>
@@ -1324,8 +1324,8 @@ private static final long serialVersionUID = 0L;
     boolean hasTriggeredIntent();
     /**
      * <pre>
-     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that triggered the response. Only some fields such as
-     * name and displayname will be set.
+     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that triggered the response. Only name and displayName
+     * will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent triggered_intent = 7;</code>
@@ -1334,8 +1334,8 @@ private static final long serialVersionUID = 0L;
     com.google.cloud.dialogflow.cx.v3beta1.Intent getTriggeredIntent();
     /**
      * <pre>
-     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that triggered the response. Only some fields such as
-     * name and displayname will be set.
+     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that triggered the response. Only name and displayName
+     * will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent triggered_intent = 7;</code>
@@ -1344,8 +1344,8 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * The [Page][google.cloud.dialogflow.cx.v3beta1.Page] on which the utterance was spoken. Only some fields such as
-     * name and displayname will be set.
+     * The [Page][google.cloud.dialogflow.cx.v3beta1.Page] on which the utterance was spoken. Only name and displayName
+     * will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 8;</code>
@@ -1354,8 +1354,8 @@ private static final long serialVersionUID = 0L;
     boolean hasCurrentPage();
     /**
      * <pre>
-     * The [Page][google.cloud.dialogflow.cx.v3beta1.Page] on which the utterance was spoken. Only some fields such as
-     * name and displayname will be set.
+     * The [Page][google.cloud.dialogflow.cx.v3beta1.Page] on which the utterance was spoken. Only name and displayName
+     * will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 8;</code>
@@ -1364,8 +1364,8 @@ private static final long serialVersionUID = 0L;
     com.google.cloud.dialogflow.cx.v3beta1.Page getCurrentPage();
     /**
      * <pre>
-     * The [Page][google.cloud.dialogflow.cx.v3beta1.Page] on which the utterance was spoken. Only some fields such as
-     * name and displayname will be set.
+     * The [Page][google.cloud.dialogflow.cx.v3beta1.Page] on which the utterance was spoken. Only name and displayName
+     * will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 8;</code>
@@ -1775,8 +1775,8 @@ private static final long serialVersionUID = 0L;
     private com.google.cloud.dialogflow.cx.v3beta1.Intent triggeredIntent_;
     /**
      * <pre>
-     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that triggered the response. Only some fields such as
-     * name and displayname will be set.
+     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that triggered the response. Only name and displayName
+     * will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent triggered_intent = 7;</code>
@@ -1788,8 +1788,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that triggered the response. Only some fields such as
-     * name and displayname will be set.
+     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that triggered the response. Only name and displayName
+     * will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent triggered_intent = 7;</code>
@@ -1801,8 +1801,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that triggered the response. Only some fields such as
-     * name and displayname will be set.
+     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that triggered the response. Only name and displayName
+     * will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent triggered_intent = 7;</code>
@@ -1816,8 +1816,8 @@ private static final long serialVersionUID = 0L;
     private com.google.cloud.dialogflow.cx.v3beta1.Page currentPage_;
     /**
      * <pre>
-     * The [Page][google.cloud.dialogflow.cx.v3beta1.Page] on which the utterance was spoken. Only some fields such as
-     * name and displayname will be set.
+     * The [Page][google.cloud.dialogflow.cx.v3beta1.Page] on which the utterance was spoken. Only name and displayName
+     * will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 8;</code>
@@ -1829,8 +1829,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The [Page][google.cloud.dialogflow.cx.v3beta1.Page] on which the utterance was spoken. Only some fields such as
-     * name and displayname will be set.
+     * The [Page][google.cloud.dialogflow.cx.v3beta1.Page] on which the utterance was spoken. Only name and displayName
+     * will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 8;</code>
@@ -1842,8 +1842,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The [Page][google.cloud.dialogflow.cx.v3beta1.Page] on which the utterance was spoken. Only some fields such as
-     * name and displayname will be set.
+     * The [Page][google.cloud.dialogflow.cx.v3beta1.Page] on which the utterance was spoken. Only name and displayName
+     * will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 8;</code>
@@ -3186,8 +3186,8 @@ private static final long serialVersionUID = 0L;
           com.google.cloud.dialogflow.cx.v3beta1.Intent, com.google.cloud.dialogflow.cx.v3beta1.Intent.Builder, com.google.cloud.dialogflow.cx.v3beta1.IntentOrBuilder> triggeredIntentBuilder_;
       /**
        * <pre>
-       * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that triggered the response. Only some fields such as
-       * name and displayname will be set.
+       * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that triggered the response. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3beta1.Intent triggered_intent = 7;</code>
@@ -3198,8 +3198,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that triggered the response. Only some fields such as
-       * name and displayname will be set.
+       * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that triggered the response. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3beta1.Intent triggered_intent = 7;</code>
@@ -3214,8 +3214,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that triggered the response. Only some fields such as
-       * name and displayname will be set.
+       * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that triggered the response. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3beta1.Intent triggered_intent = 7;</code>
@@ -3235,8 +3235,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that triggered the response. Only some fields such as
-       * name and displayname will be set.
+       * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that triggered the response. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3beta1.Intent triggered_intent = 7;</code>
@@ -3254,8 +3254,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that triggered the response. Only some fields such as
-       * name and displayname will be set.
+       * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that triggered the response. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3beta1.Intent triggered_intent = 7;</code>
@@ -3277,8 +3277,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that triggered the response. Only some fields such as
-       * name and displayname will be set.
+       * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that triggered the response. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3beta1.Intent triggered_intent = 7;</code>
@@ -3296,8 +3296,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that triggered the response. Only some fields such as
-       * name and displayname will be set.
+       * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that triggered the response. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3beta1.Intent triggered_intent = 7;</code>
@@ -3309,8 +3309,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that triggered the response. Only some fields such as
-       * name and displayname will be set.
+       * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that triggered the response. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3beta1.Intent triggered_intent = 7;</code>
@@ -3325,8 +3325,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that triggered the response. Only some fields such as
-       * name and displayname will be set.
+       * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that triggered the response. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3beta1.Intent triggered_intent = 7;</code>
@@ -3350,8 +3350,8 @@ private static final long serialVersionUID = 0L;
           com.google.cloud.dialogflow.cx.v3beta1.Page, com.google.cloud.dialogflow.cx.v3beta1.Page.Builder, com.google.cloud.dialogflow.cx.v3beta1.PageOrBuilder> currentPageBuilder_;
       /**
        * <pre>
-       * The [Page][google.cloud.dialogflow.cx.v3beta1.Page] on which the utterance was spoken. Only some fields such as
-       * name and displayname will be set.
+       * The [Page][google.cloud.dialogflow.cx.v3beta1.Page] on which the utterance was spoken. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 8;</code>
@@ -3362,8 +3362,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The [Page][google.cloud.dialogflow.cx.v3beta1.Page] on which the utterance was spoken. Only some fields such as
-       * name and displayname will be set.
+       * The [Page][google.cloud.dialogflow.cx.v3beta1.Page] on which the utterance was spoken. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 8;</code>
@@ -3378,8 +3378,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The [Page][google.cloud.dialogflow.cx.v3beta1.Page] on which the utterance was spoken. Only some fields such as
-       * name and displayname will be set.
+       * The [Page][google.cloud.dialogflow.cx.v3beta1.Page] on which the utterance was spoken. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 8;</code>
@@ -3399,8 +3399,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The [Page][google.cloud.dialogflow.cx.v3beta1.Page] on which the utterance was spoken. Only some fields such as
-       * name and displayname will be set.
+       * The [Page][google.cloud.dialogflow.cx.v3beta1.Page] on which the utterance was spoken. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 8;</code>
@@ -3418,8 +3418,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The [Page][google.cloud.dialogflow.cx.v3beta1.Page] on which the utterance was spoken. Only some fields such as
-       * name and displayname will be set.
+       * The [Page][google.cloud.dialogflow.cx.v3beta1.Page] on which the utterance was spoken. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 8;</code>
@@ -3441,8 +3441,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The [Page][google.cloud.dialogflow.cx.v3beta1.Page] on which the utterance was spoken. Only some fields such as
-       * name and displayname will be set.
+       * The [Page][google.cloud.dialogflow.cx.v3beta1.Page] on which the utterance was spoken. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 8;</code>
@@ -3460,8 +3460,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The [Page][google.cloud.dialogflow.cx.v3beta1.Page] on which the utterance was spoken. Only some fields such as
-       * name and displayname will be set.
+       * The [Page][google.cloud.dialogflow.cx.v3beta1.Page] on which the utterance was spoken. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 8;</code>
@@ -3473,8 +3473,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The [Page][google.cloud.dialogflow.cx.v3beta1.Page] on which the utterance was spoken. Only some fields such as
-       * name and displayname will be set.
+       * The [Page][google.cloud.dialogflow.cx.v3beta1.Page] on which the utterance was spoken. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 8;</code>
@@ -3489,8 +3489,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The [Page][google.cloud.dialogflow.cx.v3beta1.Page] on which the utterance was spoken. Only some fields such as
-       * name and displayname will be set.
+       * The [Page][google.cloud.dialogflow.cx.v3beta1.Page] on which the utterance was spoken. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 8;</code>

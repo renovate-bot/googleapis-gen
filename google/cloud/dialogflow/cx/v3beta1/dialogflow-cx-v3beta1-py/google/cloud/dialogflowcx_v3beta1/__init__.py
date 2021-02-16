@@ -175,6 +175,7 @@ from .types.test_case import TestError
 from .types.test_case import TestResult
 from .types.test_case import TestRunDifference
 from .types.test_case import TransitionCoverage
+from .types.test_case import TransitionRouteGroupCoverage
 from .types.test_case import UpdateTestCaseRequest
 from .types.transition_route_group import CreateTransitionRouteGroupRequest
 from .types.transition_route_group import DeleteTransitionRouteGroupRequest
@@ -372,6 +373,7 @@ __all__ = (
     'TransitionCoverage',
     'TransitionRoute',
     'TransitionRouteGroup',
+    'TransitionRouteGroupCoverage',
     'TransitionRouteGroupsClient',
     'UpdateAgentRequest',
     'UpdateEntityTypeRequest',

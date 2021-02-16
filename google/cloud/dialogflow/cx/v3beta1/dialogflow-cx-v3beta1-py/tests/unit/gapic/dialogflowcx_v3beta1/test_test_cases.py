@@ -1804,6 +1804,69 @@ async def test_run_test_case_async_from_dict():
     await test_run_test_case_async(request_type=dict)
 
 
+def test_run_test_case_field_headers():
+    client = TestCasesClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = test_case.RunTestCaseRequest()
+    request.name = 'name/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.run_test_case),
+            '__call__') as call:
+        call.return_value = operations_pb2.Operation(name='operations/op')
+
+        client.run_test_case(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'name=name/value',
+    ) in kw['metadata']
+
+
+@pytest.mark.asyncio
+async def test_run_test_case_field_headers_async():
+    client = TestCasesAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = test_case.RunTestCaseRequest()
+    request.name = 'name/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.run_test_case),
+            '__call__') as call:
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
+
+        await client.run_test_case(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'name=name/value',
+    ) in kw['metadata']
+
+
 def test_batch_run_test_cases(transport: str = 'grpc', request_type=test_case.BatchRunTestCasesRequest):
     client = TestCasesClient(
         credentials=credentials.AnonymousCredentials(),

@@ -126,12 +126,12 @@ module Google
             #     output for the turn.
             # @!attribute [rw] triggered_intent
             #   @return [Google::Cloud::Dialogflow::Cx::V3beta1::Intent]
-            #     The {Google::Cloud::Dialogflow::Cx::V3beta1::Intent Intent} that triggered the response. Only some fields such as
-            #     name and displayname will be set.
+            #     The {Google::Cloud::Dialogflow::Cx::V3beta1::Intent Intent} that triggered the response. Only name and displayName
+            #     will be set.
             # @!attribute [rw] current_page
             #   @return [Google::Cloud::Dialogflow::Cx::V3beta1::Page]
-            #     The {Google::Cloud::Dialogflow::Cx::V3beta1::Page Page} on which the utterance was spoken. Only some fields such as
-            #     name and displayname will be set.
+            #     The {Google::Cloud::Dialogflow::Cx::V3beta1::Page Page} on which the utterance was spoken. Only name and displayName
+            #     will be set.
             # @!attribute [rw] text_responses
             #   @return [Array<Google::Cloud::Dialogflow::Cx::V3beta1::ResponseMessage::Text>]
             #     The {Google::Cloud::Dialogflow::Cx::V3beta1::ResponseMessage::Text text} responses from the agent for the turn.
@@ -169,8 +169,9 @@ module Google
             end
           end
 
-          # Transition coverage represents the percentage of all possible transitions
-          # present within any of a parent's test cases.
+          # Transition coverage represents the percentage of all possible page
+          # transitions (page-level transition routes and event handlers, excluding
+          # transition route groups) present within any of a parent's test cases.
           # @!attribute [rw] transitions
           #   @return [Array<Google::Cloud::Dialogflow::Cx::V3beta1::TransitionCoverage::Transition>]
           #     The list of Transitions present in the agent.
@@ -189,7 +190,7 @@ module Google
             #     displayname will be set.
             class TransitionNode; end
 
-            # A transition in the agent's graph.
+            # A transition in a page.
             # @!attribute [rw] source
             #   @return [Google::Cloud::Dialogflow::Cx::V3beta1::TransitionCoverage::TransitionNode]
             #     The start node of a transition.
@@ -210,6 +211,41 @@ module Google
             #   @return [Google::Cloud::Dialogflow::Cx::V3beta1::EventHandler]
             #     Event handler.
             class Transition; end
+          end
+
+          # Transition route group coverage represents the percentage of all possible
+          # transition routes present within any of a parent's test cases. The results
+          # are grouped by the transition route group.
+          # @!attribute [rw] coverages
+          #   @return [Array<Google::Cloud::Dialogflow::Cx::V3beta1::TransitionRouteGroupCoverage::Coverage>]
+          #     Transition route group coverages.
+          # @!attribute [rw] coverage_score
+          #   @return [Float]
+          #     The percent of transition routes in all the transition route groups that
+          #     are covered.
+          class TransitionRouteGroupCoverage
+            # Coverage result message for one transition route group.
+            # @!attribute [rw] route_group
+            #   @return [Google::Cloud::Dialogflow::Cx::V3beta1::TransitionRouteGroup]
+            #     Transition route group metadata. Only name and displayName will be set.
+            # @!attribute [rw] transitions
+            #   @return [Array<Google::Cloud::Dialogflow::Cx::V3beta1::TransitionRouteGroupCoverage::Coverage::Transition>]
+            #     The list of transition routes and coverage in the transition route group.
+            # @!attribute [rw] coverage_score
+            #   @return [Float]
+            #     The percent of transition routes in the transition route group that are
+            #     covered.
+            class Coverage
+              # A transition coverage in a transition route group.
+              # @!attribute [rw] transition_route
+              #   @return [Google::Cloud::Dialogflow::Cx::V3beta1::TransitionRoute]
+              #     Intent route or condition route.
+              # @!attribute [rw] covered
+              #   @return [true, false]
+              #     Whether or not the transition route is covered by at least one of the
+              #     agent's test cases.
+              class Transition; end
+            end
           end
 
           # Intent coverage represents the percentage of all possible intents in the
@@ -249,8 +285,11 @@ module Google
               # Intent coverage.
               INTENT = 1
 
-              # Page transition coverage
+              # Page transition coverage.
               PAGE_TRANSITION = 2
+
+              # Transition route group coverage.
+              TRANSITION_ROUTE_GROUP = 3
             end
           end
 
@@ -264,7 +303,10 @@ module Google
           #     Intent coverage.
           # @!attribute [rw] transition_coverage
           #   @return [Google::Cloud::Dialogflow::Cx::V3beta1::TransitionCoverage]
-          #     Transition coverage.
+          #     Transition (excluding transition route groups) coverage.
+          # @!attribute [rw] route_group_coverage
+          #   @return [Google::Cloud::Dialogflow::Cx::V3beta1::TransitionRouteGroupCoverage]
+          #     Transition route group coverage.
           class CalculateCoverageResponse; end
 
           # The request message for {Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::ListTestCases TestCases::ListTestCases}.

@@ -23,6 +23,7 @@ from google.cloud.dialogflowcx_v3beta1.types import intent as gcdc_intent
 from google.cloud.dialogflowcx_v3beta1.types import page as gcdc_page
 from google.cloud.dialogflowcx_v3beta1.types import response_message
 from google.cloud.dialogflowcx_v3beta1.types import session
+from google.cloud.dialogflowcx_v3beta1.types import transition_route_group
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import struct_pb2 as struct  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
@@ -39,6 +40,7 @@ __protobuf__ = proto.module(
         'ConversationTurn',
         'TestRunDifference',
         'TransitionCoverage',
+        'TransitionRouteGroupCoverage',
         'IntentCoverage',
         'CalculateCoverageRequest',
         'CalculateCoverageResponse',
@@ -251,12 +253,12 @@ class ConversationTurn(proto.Message):
                 output for the turn.
             triggered_intent (google.cloud.dialogflowcx_v3beta1.types.Intent):
                 The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that
-                triggered the response. Only some fields such as name and
-                displayname will be set.
+                triggered the response. Only name and displayName will be
+                set.
             current_page (google.cloud.dialogflowcx_v3beta1.types.Page):
                 The [Page][google.cloud.dialogflow.cx.v3beta1.Page] on which
-                the utterance was spoken. Only some fields such as name and
-                displayname will be set.
+                the utterance was spoken. Only name and displayName will be
+                set.
             text_responses (Sequence[google.cloud.dialogflowcx_v3beta1.types.ResponseMessage.Text]):
                 The
                 [text][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.Text]
@@ -331,7 +333,9 @@ class TestRunDifference(proto.Message):
 
 class TransitionCoverage(proto.Message):
     r"""Transition coverage represents the percentage of all possible
-    transitions present within any of a parent's test cases.
+    page transitions (page-level transition routes and event
+    handlers, excluding transition route groups) present within any
+    of a parent's test cases.
 
     Attributes:
         transitions (Sequence[google.cloud.dialogflowcx_v3beta1.types.TransitionCoverage.Transition]):
@@ -363,7 +367,7 @@ class TransitionCoverage(proto.Message):
         )
 
     class Transition(proto.Message):
-        r"""A transition in the agent's graph.
+        r"""A transition in a page.
 
         Attributes:
             source (google.cloud.dialogflowcx_v3beta1.types.TransitionCoverage.TransitionNode):
@@ -404,6 +408,68 @@ class TransitionCoverage(proto.Message):
 
     transitions = proto.RepeatedField(proto.MESSAGE, number=1,
         message=Transition,
+    )
+
+    coverage_score = proto.Field(proto.FLOAT, number=2)
+
+
+class TransitionRouteGroupCoverage(proto.Message):
+    r"""Transition route group coverage represents the percentage of
+    all possible transition routes present within any of a parent's
+    test cases. The results are grouped by the transition route
+    group.
+
+    Attributes:
+        coverages (Sequence[google.cloud.dialogflowcx_v3beta1.types.TransitionRouteGroupCoverage.Coverage]):
+            Transition route group coverages.
+        coverage_score (float):
+            The percent of transition routes in all the
+            transition route groups that are covered.
+    """
+    class Coverage(proto.Message):
+        r"""Coverage result message for one transition route group.
+
+        Attributes:
+            route_group (google.cloud.dialogflowcx_v3beta1.types.TransitionRouteGroup):
+                Transition route group metadata. Only name
+                and displayName will be set.
+            transitions (Sequence[google.cloud.dialogflowcx_v3beta1.types.TransitionRouteGroupCoverage.Coverage.Transition]):
+                The list of transition routes and coverage in
+                the transition route group.
+            coverage_score (float):
+                The percent of transition routes in the
+                transition route group that are covered.
+        """
+        class Transition(proto.Message):
+            r"""A transition coverage in a transition route group.
+
+            Attributes:
+                transition_route (google.cloud.dialogflowcx_v3beta1.types.TransitionRoute):
+                    Intent route or condition route.
+                covered (bool):
+                    Whether or not the transition route is
+                    covered by at least one of the agent's test
+                    cases.
+            """
+
+            transition_route = proto.Field(proto.MESSAGE, number=1,
+                message=gcdc_page.TransitionRoute,
+            )
+
+            covered = proto.Field(proto.BOOL, number=2)
+
+        route_group = proto.Field(proto.MESSAGE, number=1,
+            message=transition_route_group.TransitionRouteGroup,
+        )
+
+        transitions = proto.RepeatedField(proto.MESSAGE, number=2,
+            message='TransitionRouteGroupCoverage.Coverage.Transition',
+        )
+
+        coverage_score = proto.Field(proto.FLOAT, number=3)
+
+    coverages = proto.RepeatedField(proto.MESSAGE, number=1,
+        message=Coverage,
     )
 
     coverage_score = proto.Field(proto.FLOAT, number=2)
@@ -459,6 +525,7 @@ class CalculateCoverageRequest(proto.Message):
         COVERAGE_TYPE_UNSPECIFIED = 0
         INTENT = 1
         PAGE_TRANSITION = 2
+        TRANSITION_ROUTE_GROUP = 3
 
     agent = proto.Field(proto.STRING, number=3)
 
@@ -478,7 +545,10 @@ class CalculateCoverageResponse(proto.Message):
         intent_coverage (google.cloud.dialogflowcx_v3beta1.types.IntentCoverage):
             Intent coverage.
         transition_coverage (google.cloud.dialogflowcx_v3beta1.types.TransitionCoverage):
-            Transition coverage.
+            Transition (excluding transition route
+            groups) coverage.
+        route_group_coverage (google.cloud.dialogflowcx_v3beta1.types.TransitionRouteGroupCoverage):
+            Transition route group coverage.
     """
 
     agent = proto.Field(proto.STRING, number=5)
@@ -489,6 +559,10 @@ class CalculateCoverageResponse(proto.Message):
 
     transition_coverage = proto.Field(proto.MESSAGE, number=4, oneof='coverage_type',
         message='TransitionCoverage',
+    )
+
+    route_group_coverage = proto.Field(proto.MESSAGE, number=6, oneof='coverage_type',
+        message='TransitionRouteGroupCoverage',
     )
 
 
