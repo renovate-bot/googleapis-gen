@@ -238,32 +238,39 @@ public class GrpcDatastoreAdminStub extends DatastoreAdminStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ExportEntitiesRequest, Operation> exportEntitiesCallable() {
     return exportEntitiesCallable;
   }
 
+  @Override
   public OperationCallable<ExportEntitiesRequest, ExportEntitiesResponse, ExportEntitiesMetadata>
       exportEntitiesOperationCallable() {
     return exportEntitiesOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ImportEntitiesRequest, Operation> importEntitiesCallable() {
     return importEntitiesCallable;
   }
 
+  @Override
   public OperationCallable<ImportEntitiesRequest, Empty, ImportEntitiesMetadata>
       importEntitiesOperationCallable() {
     return importEntitiesOperationCallable;
   }
 
+  @Override
   public UnaryCallable<GetIndexRequest, Index> getIndexCallable() {
     return getIndexCallable;
   }
 
+  @Override
   public UnaryCallable<ListIndexesRequest, ListIndexesResponse> listIndexesCallable() {
     return listIndexesCallable;
   }
 
+  @Override
   public UnaryCallable<ListIndexesRequest, ListIndexesPagedResponse> listIndexesPagedCallable() {
     return listIndexesPagedCallable;
   }

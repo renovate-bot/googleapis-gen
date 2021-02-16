@@ -70,7 +70,13 @@ public class MockConversionActionServiceImpl extends ConversionActionServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetConversionAction, expected %s or %s",
+                  response.getClass().getName(),
+                  ConversionAction.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockConversionActionServiceImpl extends ConversionActionServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateConversionActions, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateConversionActionsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

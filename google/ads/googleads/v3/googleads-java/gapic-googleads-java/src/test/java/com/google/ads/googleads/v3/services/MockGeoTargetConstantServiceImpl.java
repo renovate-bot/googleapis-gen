@@ -70,7 +70,13 @@ public class MockGeoTargetConstantServiceImpl extends GeoTargetConstantServiceIm
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetGeoTargetConstant, expected %s or %s",
+                  response.getClass().getName(),
+                  GeoTargetConstant.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockGeoTargetConstantServiceImpl extends GeoTargetConstantServiceIm
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SuggestGeoTargetConstants, expected %s or %s",
+                  response.getClass().getName(),
+                  SuggestGeoTargetConstantsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

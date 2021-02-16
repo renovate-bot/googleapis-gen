@@ -70,7 +70,13 @@ public class MockCustomerLabelServiceImpl extends CustomerLabelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetCustomerLabel, expected %s or %s",
+                  response.getClass().getName(),
+                  CustomerLabel.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockCustomerLabelServiceImpl extends CustomerLabelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateCustomerLabels, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateCustomerLabelsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

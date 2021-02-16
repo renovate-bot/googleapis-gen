@@ -270,33 +270,40 @@ public class GrpcBatchJobServiceStub extends BatchJobServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<MutateBatchJobRequest, MutateBatchJobResponse> mutateBatchJobCallable() {
     return mutateBatchJobCallable;
   }
 
+  @Override
   public UnaryCallable<GetBatchJobRequest, BatchJob> getBatchJobCallable() {
     return getBatchJobCallable;
   }
 
+  @Override
   public UnaryCallable<ListBatchJobResultsRequest, ListBatchJobResultsResponse>
       listBatchJobResultsCallable() {
     return listBatchJobResultsCallable;
   }
 
+  @Override
   public UnaryCallable<ListBatchJobResultsRequest, ListBatchJobResultsPagedResponse>
       listBatchJobResultsPagedCallable() {
     return listBatchJobResultsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<RunBatchJobRequest, Operation> runBatchJobCallable() {
     return runBatchJobCallable;
   }
 
+  @Override
   public OperationCallable<RunBatchJobRequest, Empty, BatchJob.BatchJobMetadata>
       runBatchJobOperationCallable() {
     return runBatchJobOperationCallable;
   }
 
+  @Override
   public UnaryCallable<AddBatchJobOperationsRequest, AddBatchJobOperationsResponse>
       addBatchJobOperationsCallable() {
     return addBatchJobOperationsCallable;

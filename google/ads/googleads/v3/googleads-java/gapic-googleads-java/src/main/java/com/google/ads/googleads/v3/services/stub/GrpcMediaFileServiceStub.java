@@ -156,10 +156,12 @@ public class GrpcMediaFileServiceStub extends MediaFileServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetMediaFileRequest, MediaFile> getMediaFileCallable() {
     return getMediaFileCallable;
   }
 
+  @Override
   public UnaryCallable<MutateMediaFilesRequest, MutateMediaFilesResponse>
       mutateMediaFilesCallable() {
     return mutateMediaFilesCallable;

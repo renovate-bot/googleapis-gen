@@ -127,6 +127,7 @@ public class GrpcGeographicViewServiceStub extends GeographicViewServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetGeographicViewRequest, GeographicView> getGeographicViewCallable() {
     return getGeographicViewCallable;
   }

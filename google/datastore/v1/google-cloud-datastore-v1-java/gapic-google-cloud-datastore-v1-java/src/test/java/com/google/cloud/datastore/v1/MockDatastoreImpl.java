@@ -82,7 +82,13 @@ public class MockDatastoreImpl extends DatastoreImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method Lookup, expected %s or %s",
+                  response.getClass().getName(),
+                  LookupResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -96,7 +102,13 @@ public class MockDatastoreImpl extends DatastoreImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RunQuery, expected %s or %s",
+                  response.getClass().getName(),
+                  RunQueryResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -111,7 +123,13 @@ public class MockDatastoreImpl extends DatastoreImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BeginTransaction, expected %s or %s",
+                  response.getClass().getName(),
+                  BeginTransactionResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -125,7 +143,13 @@ public class MockDatastoreImpl extends DatastoreImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method Commit, expected %s or %s",
+                  response.getClass().getName(),
+                  CommitResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -139,7 +163,13 @@ public class MockDatastoreImpl extends DatastoreImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method Rollback, expected %s or %s",
+                  response.getClass().getName(),
+                  RollbackResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -154,7 +184,13 @@ public class MockDatastoreImpl extends DatastoreImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AllocateIds, expected %s or %s",
+                  response.getClass().getName(),
+                  AllocateIdsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -169,7 +205,13 @@ public class MockDatastoreImpl extends DatastoreImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ReserveIds, expected %s or %s",
+                  response.getClass().getName(),
+                  ReserveIdsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

@@ -176,11 +176,13 @@ public class GrpcThirdPartyAppAnalyticsLinkServiceStub
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetThirdPartyAppAnalyticsLinkRequest, ThirdPartyAppAnalyticsLink>
       getThirdPartyAppAnalyticsLinkCallable() {
     return getThirdPartyAppAnalyticsLinkCallable;
   }
 
+  @Override
   public UnaryCallable<RegenerateShareableLinkIdRequest, RegenerateShareableLinkIdResponse>
       regenerateShareableLinkIdCallable() {
     return regenerateShareableLinkIdCallable;

@@ -72,7 +72,13 @@ public class MockCustomerUserAccessInvitationServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetCustomerUserAccessInvitation, expected %s or %s",
+                  response.getClass().getName(),
+                  CustomerUserAccessInvitation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -88,7 +94,13 @@ public class MockCustomerUserAccessInvitationServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateCustomerUserAccessInvitation, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateCustomerUserAccessInvitationResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

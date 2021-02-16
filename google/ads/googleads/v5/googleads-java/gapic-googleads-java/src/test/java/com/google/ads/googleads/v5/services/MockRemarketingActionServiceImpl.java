@@ -70,7 +70,13 @@ public class MockRemarketingActionServiceImpl extends RemarketingActionServiceIm
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetRemarketingAction, expected %s or %s",
+                  response.getClass().getName(),
+                  RemarketingAction.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockRemarketingActionServiceImpl extends RemarketingActionServiceIm
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateRemarketingActions, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateRemarketingActionsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

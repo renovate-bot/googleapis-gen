@@ -145,7 +145,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteBucketAccessControl, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -160,7 +166,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetBucketAccessControl, expected %s or %s",
+                  response.getClass().getName(),
+                  BucketAccessControl.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -176,7 +188,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method InsertBucketAccessControl, expected %s or %s",
+                  response.getClass().getName(),
+                  BucketAccessControl.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -192,7 +210,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListBucketAccessControls, expected %s or %s",
+                  response.getClass().getName(),
+                  ListBucketAccessControlsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -208,7 +232,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateBucketAccessControl, expected %s or %s",
+                  response.getClass().getName(),
+                  BucketAccessControl.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -224,7 +254,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method PatchBucketAccessControl, expected %s or %s",
+                  response.getClass().getName(),
+                  BucketAccessControl.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -238,7 +274,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteBucket, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -252,7 +294,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetBucket, expected %s or %s",
+                  response.getClass().getName(),
+                  Bucket.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -266,7 +314,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method InsertBucket, expected %s or %s",
+                  response.getClass().getName(),
+                  Bucket.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -281,7 +335,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListChannels, expected %s or %s",
+                  response.getClass().getName(),
+                  ListChannelsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -296,7 +356,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListBuckets, expected %s or %s",
+                  response.getClass().getName(),
+                  ListBucketsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -311,7 +377,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method LockBucketRetentionPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  Bucket.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -326,7 +398,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetBucketIamPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  Policy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -341,7 +419,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SetBucketIamPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  Policy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -357,7 +441,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method TestBucketIamPermissions, expected %s or %s",
+                  response.getClass().getName(),
+                  TestIamPermissionsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -371,7 +461,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method PatchBucket, expected %s or %s",
+                  response.getClass().getName(),
+                  Bucket.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -385,7 +481,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateBucket, expected %s or %s",
+                  response.getClass().getName(),
+                  Bucket.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -399,7 +501,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method StopChannel, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -414,7 +522,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteDefaultObjectAccessControl, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -430,7 +544,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDefaultObjectAccessControl, expected %s or %s",
+                  response.getClass().getName(),
+                  ObjectAccessControl.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -446,7 +566,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method InsertDefaultObjectAccessControl, expected %s or %s",
+                  response.getClass().getName(),
+                  ObjectAccessControl.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -462,7 +588,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDefaultObjectAccessControls, expected %s or %s",
+                  response.getClass().getName(),
+                  ListObjectAccessControlsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -478,7 +610,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method PatchDefaultObjectAccessControl, expected %s or %s",
+                  response.getClass().getName(),
+                  ObjectAccessControl.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -494,7 +632,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateDefaultObjectAccessControl, expected %s or %s",
+                  response.getClass().getName(),
+                  ObjectAccessControl.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -509,7 +653,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteNotification, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -524,7 +674,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetNotification, expected %s or %s",
+                  response.getClass().getName(),
+                  Notification.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -539,7 +695,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method InsertNotification, expected %s or %s",
+                  response.getClass().getName(),
+                  Notification.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -555,7 +717,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListNotifications, expected %s or %s",
+                  response.getClass().getName(),
+                  ListNotificationsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -570,7 +738,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteObjectAccessControl, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -585,7 +759,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetObjectAccessControl, expected %s or %s",
+                  response.getClass().getName(),
+                  ObjectAccessControl.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -601,7 +781,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method InsertObjectAccessControl, expected %s or %s",
+                  response.getClass().getName(),
+                  ObjectAccessControl.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -617,7 +803,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListObjectAccessControls, expected %s or %s",
+                  response.getClass().getName(),
+                  ListObjectAccessControlsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -633,7 +825,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method PatchObjectAccessControl, expected %s or %s",
+                  response.getClass().getName(),
+                  ObjectAccessControl.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -649,7 +847,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateObjectAccessControl, expected %s or %s",
+                  response.getClass().getName(),
+                  ObjectAccessControl.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -663,7 +867,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ComposeObject, expected %s or %s",
+                  response.getClass().getName(),
+                  Object.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -677,7 +887,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CopyObject, expected %s or %s",
+                  response.getClass().getName(),
+                  Object.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -691,7 +907,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteObject, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -705,7 +927,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetObject, expected %s or %s",
+                  response.getClass().getName(),
+                  Object.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -720,7 +948,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetObjectMedia, expected %s or %s",
+                  response.getClass().getName(),
+                  GetObjectMediaResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -738,7 +972,13 @@ public class MockStorageImpl extends StorageImplBase {
             } else if (response instanceof Exception) {
               responseObserver.onError(((Exception) response));
             } else {
-              responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+              responseObserver.onError(
+                  new IllegalArgumentException(
+                      String.format(
+                          "Unrecognized response type %s for method InsertObject, expected %s or %s",
+                          response.getClass().getName(),
+                          Object.class.getName(),
+                          Exception.class.getName())));
             }
           }
 
@@ -766,7 +1006,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListObjects, expected %s or %s",
+                  response.getClass().getName(),
+                  ListObjectsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -781,7 +1027,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RewriteObject, expected %s or %s",
+                  response.getClass().getName(),
+                  RewriteResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -797,7 +1049,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method StartResumableWrite, expected %s or %s",
+                  response.getClass().getName(),
+                  StartResumableWriteResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -812,7 +1070,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method QueryWriteStatus, expected %s or %s",
+                  response.getClass().getName(),
+                  QueryWriteStatusResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -826,7 +1090,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method PatchObject, expected %s or %s",
+                  response.getClass().getName(),
+                  Object.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -840,7 +1110,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateObject, expected %s or %s",
+                  response.getClass().getName(),
+                  Object.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -855,7 +1131,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetObjectIamPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  Policy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -870,7 +1152,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SetObjectIamPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  Policy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -886,7 +1174,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method TestObjectIamPermissions, expected %s or %s",
+                  response.getClass().getName(),
+                  TestIamPermissionsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -901,7 +1195,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method WatchAllObjects, expected %s or %s",
+                  response.getClass().getName(),
+                  Channel.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -916,7 +1216,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetServiceAccount, expected %s or %s",
+                  response.getClass().getName(),
+                  ServiceAccount.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -931,7 +1237,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateHmacKey, expected %s or %s",
+                  response.getClass().getName(),
+                  CreateHmacKeyResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -945,7 +1257,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteHmacKey, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -960,7 +1278,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetHmacKey, expected %s or %s",
+                  response.getClass().getName(),
+                  HmacKeyMetadata.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -975,7 +1299,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListHmacKeys, expected %s or %s",
+                  response.getClass().getName(),
+                  ListHmacKeysResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -990,7 +1320,13 @@ public class MockStorageImpl extends StorageImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateHmacKey, expected %s or %s",
+                  response.getClass().getName(),
+                  HmacKeyMetadata.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

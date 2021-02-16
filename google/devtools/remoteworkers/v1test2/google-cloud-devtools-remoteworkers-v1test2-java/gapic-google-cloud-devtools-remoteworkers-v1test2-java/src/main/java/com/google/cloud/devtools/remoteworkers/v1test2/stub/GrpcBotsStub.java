@@ -146,10 +146,12 @@ public class GrpcBotsStub extends BotsStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateBotSessionRequest, BotSession> createBotSessionCallable() {
     return createBotSessionCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateBotSessionRequest, BotSession> updateBotSessionCallable() {
     return updateBotSessionCallable;
   }

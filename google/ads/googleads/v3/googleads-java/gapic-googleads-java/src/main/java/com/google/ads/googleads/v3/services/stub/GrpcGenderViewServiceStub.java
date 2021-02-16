@@ -124,6 +124,7 @@ public class GrpcGenderViewServiceStub extends GenderViewServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetGenderViewRequest, GenderView> getGenderViewCallable() {
     return getGenderViewCallable;
   }

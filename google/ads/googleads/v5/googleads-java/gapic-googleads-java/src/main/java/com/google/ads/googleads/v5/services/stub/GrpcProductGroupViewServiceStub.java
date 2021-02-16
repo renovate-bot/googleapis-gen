@@ -130,6 +130,7 @@ public class GrpcProductGroupViewServiceStub extends ProductGroupViewServiceStub
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetProductGroupViewRequest, ProductGroupView> getProductGroupViewCallable() {
     return getProductGroupViewCallable;
   }

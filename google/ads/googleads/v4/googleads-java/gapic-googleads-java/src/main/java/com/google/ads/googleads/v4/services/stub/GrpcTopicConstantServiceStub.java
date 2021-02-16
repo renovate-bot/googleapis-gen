@@ -125,6 +125,7 @@ public class GrpcTopicConstantServiceStub extends TopicConstantServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetTopicConstantRequest, TopicConstant> getTopicConstantCallable() {
     return getTopicConstantCallable;
   }

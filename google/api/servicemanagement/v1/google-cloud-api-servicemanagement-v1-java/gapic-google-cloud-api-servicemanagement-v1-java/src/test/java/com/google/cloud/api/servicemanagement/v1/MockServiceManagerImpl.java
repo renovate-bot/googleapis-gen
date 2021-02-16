@@ -92,7 +92,13 @@ public class MockServiceManagerImpl extends ServiceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListServices, expected %s or %s",
+                  response.getClass().getName(),
+                  ListServicesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -107,7 +113,13 @@ public class MockServiceManagerImpl extends ServiceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetService, expected %s or %s",
+                  response.getClass().getName(),
+                  ManagedService.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -122,7 +134,13 @@ public class MockServiceManagerImpl extends ServiceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateService, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -137,7 +155,13 @@ public class MockServiceManagerImpl extends ServiceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteService, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -152,7 +176,13 @@ public class MockServiceManagerImpl extends ServiceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UndeleteService, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -168,7 +198,13 @@ public class MockServiceManagerImpl extends ServiceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListServiceConfigs, expected %s or %s",
+                  response.getClass().getName(),
+                  ListServiceConfigsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -183,7 +219,13 @@ public class MockServiceManagerImpl extends ServiceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetServiceConfig, expected %s or %s",
+                  response.getClass().getName(),
+                  Service.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -198,7 +240,13 @@ public class MockServiceManagerImpl extends ServiceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateServiceConfig, expected %s or %s",
+                  response.getClass().getName(),
+                  Service.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -213,7 +261,13 @@ public class MockServiceManagerImpl extends ServiceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SubmitConfigSource, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -229,7 +283,13 @@ public class MockServiceManagerImpl extends ServiceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListServiceRollouts, expected %s or %s",
+                  response.getClass().getName(),
+                  ListServiceRolloutsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -244,7 +304,13 @@ public class MockServiceManagerImpl extends ServiceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetServiceRollout, expected %s or %s",
+                  response.getClass().getName(),
+                  Rollout.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -259,7 +325,13 @@ public class MockServiceManagerImpl extends ServiceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateServiceRollout, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -275,7 +347,13 @@ public class MockServiceManagerImpl extends ServiceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateConfigReport, expected %s or %s",
+                  response.getClass().getName(),
+                  GenerateConfigReportResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -290,7 +368,13 @@ public class MockServiceManagerImpl extends ServiceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method EnableService, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -305,7 +389,13 @@ public class MockServiceManagerImpl extends ServiceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DisableService, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

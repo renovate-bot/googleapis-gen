@@ -130,6 +130,7 @@ public class GrpcGroupPlacementViewServiceStub extends GroupPlacementViewService
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetGroupPlacementViewRequest, GroupPlacementView>
       getGroupPlacementViewCallable() {
     return getGroupPlacementViewCallable;

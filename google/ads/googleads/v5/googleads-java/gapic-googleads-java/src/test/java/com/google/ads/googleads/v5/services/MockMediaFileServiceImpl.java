@@ -70,7 +70,13 @@ public class MockMediaFileServiceImpl extends MediaFileServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetMediaFile, expected %s or %s",
+                  response.getClass().getName(),
+                  MediaFile.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -85,7 +91,13 @@ public class MockMediaFileServiceImpl extends MediaFileServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateMediaFiles, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateMediaFilesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

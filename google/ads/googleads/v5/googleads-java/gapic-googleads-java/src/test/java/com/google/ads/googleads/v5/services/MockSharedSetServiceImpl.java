@@ -70,7 +70,13 @@ public class MockSharedSetServiceImpl extends SharedSetServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetSharedSet, expected %s or %s",
+                  response.getClass().getName(),
+                  SharedSet.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -85,7 +91,13 @@ public class MockSharedSetServiceImpl extends SharedSetServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateSharedSets, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateSharedSetsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

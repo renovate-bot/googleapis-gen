@@ -195,15 +195,18 @@ public class GrpcAccountLinkServiceStub extends AccountLinkServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetAccountLinkRequest, AccountLink> getAccountLinkCallable() {
     return getAccountLinkCallable;
   }
 
+  @Override
   public UnaryCallable<CreateAccountLinkRequest, CreateAccountLinkResponse>
       createAccountLinkCallable() {
     return createAccountLinkCallable;
   }
 
+  @Override
   public UnaryCallable<MutateAccountLinkRequest, MutateAccountLinkResponse>
       mutateAccountLinkCallable() {
     return mutateAccountLinkCallable;

@@ -127,6 +127,7 @@ public class GrpcCustomerClientServiceStub extends CustomerClientServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetCustomerClientRequest, CustomerClient> getCustomerClientCallable() {
     return getCustomerClientCallable;
   }

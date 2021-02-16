@@ -68,7 +68,13 @@ public class MockSmartDeviceManagementServiceImpl extends SmartDeviceManagementS
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDevice, expected %s or %s",
+                  response.getClass().getName(),
+                  Device.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -83,7 +89,13 @@ public class MockSmartDeviceManagementServiceImpl extends SmartDeviceManagementS
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDevices, expected %s or %s",
+                  response.getClass().getName(),
+                  ListDevicesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -99,7 +111,13 @@ public class MockSmartDeviceManagementServiceImpl extends SmartDeviceManagementS
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ExecuteDeviceCommand, expected %s or %s",
+                  response.getClass().getName(),
+                  ExecuteDeviceCommandResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -114,7 +132,13 @@ public class MockSmartDeviceManagementServiceImpl extends SmartDeviceManagementS
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetStructure, expected %s or %s",
+                  response.getClass().getName(),
+                  Structure.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -129,7 +153,13 @@ public class MockSmartDeviceManagementServiceImpl extends SmartDeviceManagementS
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListStructures, expected %s or %s",
+                  response.getClass().getName(),
+                  ListStructuresResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -143,7 +173,11 @@ public class MockSmartDeviceManagementServiceImpl extends SmartDeviceManagementS
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetRoom, expected %s or %s",
+                  response.getClass().getName(), Room.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -158,7 +192,13 @@ public class MockSmartDeviceManagementServiceImpl extends SmartDeviceManagementS
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListRooms, expected %s or %s",
+                  response.getClass().getName(),
+                  ListRoomsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

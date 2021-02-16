@@ -130,6 +130,7 @@ public class GrpcParentalStatusViewServiceStub extends ParentalStatusViewService
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetParentalStatusViewRequest, ParentalStatusView>
       getParentalStatusViewCallable() {
     return getParentalStatusViewCallable;

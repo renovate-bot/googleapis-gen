@@ -240,22 +240,27 @@ public class GrpcQuestionServiceStub extends QuestionServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetQuestionRequest, Question> getQuestionCallable() {
     return getQuestionCallable;
   }
 
+  @Override
   public UnaryCallable<CreateQuestionRequest, Question> createQuestionCallable() {
     return createQuestionCallable;
   }
 
+  @Override
   public UnaryCallable<ExecuteQuestionRequest, Question> executeQuestionCallable() {
     return executeQuestionCallable;
   }
 
+  @Override
   public UnaryCallable<GetUserFeedbackRequest, UserFeedback> getUserFeedbackCallable() {
     return getUserFeedbackCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateUserFeedbackRequest, UserFeedback> updateUserFeedbackCallable() {
     return updateUserFeedbackCallable;
   }

@@ -70,7 +70,13 @@ public class MockAgentEndpointServiceImpl extends AgentEndpointServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ReceiveTaskNotification, expected %s or %s",
+                  response.getClass().getName(),
+                  ReceiveTaskNotificationResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -85,7 +91,13 @@ public class MockAgentEndpointServiceImpl extends AgentEndpointServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method StartNextTask, expected %s or %s",
+                  response.getClass().getName(),
+                  StartNextTaskResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -101,7 +113,13 @@ public class MockAgentEndpointServiceImpl extends AgentEndpointServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ReportTaskProgress, expected %s or %s",
+                  response.getClass().getName(),
+                  ReportTaskProgressResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -117,7 +135,13 @@ public class MockAgentEndpointServiceImpl extends AgentEndpointServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ReportTaskComplete, expected %s or %s",
+                  response.getClass().getName(),
+                  ReportTaskCompleteResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -133,7 +157,13 @@ public class MockAgentEndpointServiceImpl extends AgentEndpointServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method LookupEffectiveGuestPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  GuestPolicies.EffectiveGuestPolicy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -148,7 +178,13 @@ public class MockAgentEndpointServiceImpl extends AgentEndpointServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RegisterAgent, expected %s or %s",
+                  response.getClass().getName(),
+                  RegisterAgentResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

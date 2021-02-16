@@ -137,6 +137,7 @@ public class GrpcMobileAppCategoryConstantServiceStub extends MobileAppCategoryC
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetMobileAppCategoryConstantRequest, MobileAppCategoryConstant>
       getMobileAppCategoryConstantCallable() {
     return getMobileAppCategoryConstantCallable;

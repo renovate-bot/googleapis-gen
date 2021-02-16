@@ -72,7 +72,13 @@ public class MockMobileAppCategoryConstantServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetMobileAppCategoryConstant, expected %s or %s",
+                  response.getClass().getName(),
+                  MobileAppCategoryConstant.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

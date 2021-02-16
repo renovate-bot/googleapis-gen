@@ -254,29 +254,35 @@ public class GrpcCampaignDraftServiceStub extends CampaignDraftServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetCampaignDraftRequest, CampaignDraft> getCampaignDraftCallable() {
     return getCampaignDraftCallable;
   }
 
+  @Override
   public UnaryCallable<MutateCampaignDraftsRequest, MutateCampaignDraftsResponse>
       mutateCampaignDraftsCallable() {
     return mutateCampaignDraftsCallable;
   }
 
+  @Override
   public UnaryCallable<PromoteCampaignDraftRequest, Operation> promoteCampaignDraftCallable() {
     return promoteCampaignDraftCallable;
   }
 
+  @Override
   public OperationCallable<PromoteCampaignDraftRequest, Empty, Empty>
       promoteCampaignDraftOperationCallable() {
     return promoteCampaignDraftOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ListCampaignDraftAsyncErrorsRequest, ListCampaignDraftAsyncErrorsResponse>
       listCampaignDraftAsyncErrorsCallable() {
     return listCampaignDraftAsyncErrorsCallable;
   }
 
+  @Override
   public UnaryCallable<
           ListCampaignDraftAsyncErrorsRequest, ListCampaignDraftAsyncErrorsPagedResponse>
       listCampaignDraftAsyncErrorsPagedCallable() {

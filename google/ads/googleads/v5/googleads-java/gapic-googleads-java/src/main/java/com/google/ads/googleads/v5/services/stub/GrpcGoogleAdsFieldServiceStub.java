@@ -163,15 +163,18 @@ public class GrpcGoogleAdsFieldServiceStub extends GoogleAdsFieldServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetGoogleAdsFieldRequest, GoogleAdsField> getGoogleAdsFieldCallable() {
     return getGoogleAdsFieldCallable;
   }
 
+  @Override
   public UnaryCallable<SearchGoogleAdsFieldsRequest, SearchGoogleAdsFieldsResponse>
       searchGoogleAdsFieldsCallable() {
     return searchGoogleAdsFieldsCallable;
   }
 
+  @Override
   public UnaryCallable<SearchGoogleAdsFieldsRequest, SearchGoogleAdsFieldsPagedResponse>
       searchGoogleAdsFieldsPagedCallable() {
     return searchGoogleAdsFieldsPagedCallable;

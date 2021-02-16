@@ -160,10 +160,12 @@ public class GrpcCampaignAssetServiceStub extends CampaignAssetServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetCampaignAssetRequest, CampaignAsset> getCampaignAssetCallable() {
     return getCampaignAssetCallable;
   }
 
+  @Override
   public UnaryCallable<MutateCampaignAssetsRequest, MutateCampaignAssetsResponse>
       mutateCampaignAssetsCallable() {
     return mutateCampaignAssetsCallable;

@@ -70,7 +70,13 @@ public class MockIncomeRangeViewServiceImpl extends IncomeRangeViewServiceImplBa
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetIncomeRangeView, expected %s or %s",
+                  response.getClass().getName(),
+                  IncomeRangeView.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

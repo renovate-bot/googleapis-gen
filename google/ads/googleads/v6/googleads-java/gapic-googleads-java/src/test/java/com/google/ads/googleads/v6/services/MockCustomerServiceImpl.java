@@ -69,7 +69,13 @@ public class MockCustomerServiceImpl extends CustomerServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetCustomer, expected %s or %s",
+                  response.getClass().getName(),
+                  Customer.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -84,7 +90,13 @@ public class MockCustomerServiceImpl extends CustomerServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateCustomer, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateCustomerResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -100,7 +112,13 @@ public class MockCustomerServiceImpl extends CustomerServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAccessibleCustomers, expected %s or %s",
+                  response.getClass().getName(),
+                  ListAccessibleCustomersResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -116,7 +134,13 @@ public class MockCustomerServiceImpl extends CustomerServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateCustomerClient, expected %s or %s",
+                  response.getClass().getName(),
+                  CreateCustomerClientResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

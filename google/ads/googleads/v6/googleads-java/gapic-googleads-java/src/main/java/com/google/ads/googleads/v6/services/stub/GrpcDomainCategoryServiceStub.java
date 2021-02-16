@@ -127,6 +127,7 @@ public class GrpcDomainCategoryServiceStub extends DomainCategoryServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetDomainCategoryRequest, DomainCategory> getDomainCategoryCallable() {
     return getDomainCategoryCallable;
   }

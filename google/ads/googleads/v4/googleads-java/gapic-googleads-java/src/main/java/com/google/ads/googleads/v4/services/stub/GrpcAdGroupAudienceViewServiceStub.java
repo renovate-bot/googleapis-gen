@@ -133,6 +133,7 @@ public class GrpcAdGroupAudienceViewServiceStub extends AdGroupAudienceViewServi
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetAdGroupAudienceViewRequest, AdGroupAudienceView>
       getAdGroupAudienceViewCallable() {
     return getAdGroupAudienceViewCallable;

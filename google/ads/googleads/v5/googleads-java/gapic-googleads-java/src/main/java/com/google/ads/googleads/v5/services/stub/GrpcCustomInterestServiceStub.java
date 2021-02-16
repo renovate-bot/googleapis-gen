@@ -163,10 +163,12 @@ public class GrpcCustomInterestServiceStub extends CustomInterestServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetCustomInterestRequest, CustomInterest> getCustomInterestCallable() {
     return getCustomInterestCallable;
   }
 
+  @Override
   public UnaryCallable<MutateCustomInterestsRequest, MutateCustomInterestsResponse>
       mutateCustomInterestsCallable() {
     return mutateCustomInterestsCallable;

@@ -71,7 +71,13 @@ public class MockBatchJobServiceImpl extends BatchJobServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateBatchJob, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateBatchJobResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -85,7 +91,13 @@ public class MockBatchJobServiceImpl extends BatchJobServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetBatchJob, expected %s or %s",
+                  response.getClass().getName(),
+                  BatchJob.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -101,7 +113,13 @@ public class MockBatchJobServiceImpl extends BatchJobServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListBatchJobResults, expected %s or %s",
+                  response.getClass().getName(),
+                  ListBatchJobResultsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -115,7 +133,13 @@ public class MockBatchJobServiceImpl extends BatchJobServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RunBatchJob, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -131,7 +155,13 @@ public class MockBatchJobServiceImpl extends BatchJobServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AddBatchJobOperations, expected %s or %s",
+                  response.getClass().getName(),
+                  AddBatchJobOperationsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

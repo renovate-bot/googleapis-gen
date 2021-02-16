@@ -160,10 +160,12 @@ public class GrpcCustomerFeedServiceStub extends CustomerFeedServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetCustomerFeedRequest, CustomerFeed> getCustomerFeedCallable() {
     return getCustomerFeedCallable;
   }
 
+  @Override
   public UnaryCallable<MutateCustomerFeedsRequest, MutateCustomerFeedsResponse>
       mutateCustomerFeedsCallable() {
     return mutateCustomerFeedsCallable;

@@ -167,10 +167,12 @@ public class GrpcBiddingStrategyServiceStub extends BiddingStrategyServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetBiddingStrategyRequest, BiddingStrategy> getBiddingStrategyCallable() {
     return getBiddingStrategyCallable;
   }
 
+  @Override
   public UnaryCallable<MutateBiddingStrategiesRequest, MutateBiddingStrategiesResponse>
       mutateBiddingStrategiesCallable() {
     return mutateBiddingStrategiesCallable;

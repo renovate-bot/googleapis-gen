@@ -139,11 +139,13 @@ public class GrpcKeywordPlanIdeaServiceStub extends KeywordPlanIdeaServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GenerateKeywordIdeasRequest, GenerateKeywordIdeaResponse>
       generateKeywordIdeasCallable() {
     return generateKeywordIdeasCallable;
   }
 
+  @Override
   public UnaryCallable<GenerateKeywordIdeasRequest, GenerateKeywordIdeasPagedResponse>
       generateKeywordIdeasPagedCallable() {
     return generateKeywordIdeasPagedCallable;

@@ -172,11 +172,13 @@ public class GrpcCampaignBidModifierServiceStub extends CampaignBidModifierServi
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetCampaignBidModifierRequest, CampaignBidModifier>
       getCampaignBidModifierCallable() {
     return getCampaignBidModifierCallable;
   }
 
+  @Override
   public UnaryCallable<MutateCampaignBidModifiersRequest, MutateCampaignBidModifiersResponse>
       mutateCampaignBidModifiersCallable() {
     return mutateCampaignBidModifiersCallable;

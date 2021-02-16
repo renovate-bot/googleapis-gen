@@ -178,11 +178,13 @@ public class GrpcAdGroupExtensionSettingServiceStub extends AdGroupExtensionSett
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetAdGroupExtensionSettingRequest, AdGroupExtensionSetting>
       getAdGroupExtensionSettingCallable() {
     return getAdGroupExtensionSettingCallable;
   }
 
+  @Override
   public UnaryCallable<
           MutateAdGroupExtensionSettingsRequest, MutateAdGroupExtensionSettingsResponse>
       mutateAdGroupExtensionSettingsCallable() {

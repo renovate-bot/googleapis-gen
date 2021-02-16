@@ -149,10 +149,12 @@ public class GrpcFeedServiceStub extends FeedServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetFeedRequest, Feed> getFeedCallable() {
     return getFeedCallable;
   }
 
+  @Override
   public UnaryCallable<MutateFeedsRequest, MutateFeedsResponse> mutateFeedsCallable() {
     return mutateFeedsCallable;
   }

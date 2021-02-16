@@ -126,6 +126,7 @@ public class GrpcUserDataServiceStub extends UserDataServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<UploadUserDataRequest, UploadUserDataResponse> uploadUserDataCallable() {
     return uploadUserDataCallable;
   }

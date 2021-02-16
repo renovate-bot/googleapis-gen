@@ -56,6 +56,7 @@ import io.grafeas.v1beta1.Resource;
 import io.grafeas.v1beta1.UpdateNoteRequest;
 import io.grafeas.v1beta1.UpdateOccurrenceRequest;
 import io.grafeas.v1beta1.VulnerabilityOccurrencesSummary;
+import io.grafeas.v1beta1.common.NoteKind;
 import io.grafeas.v1beta1.common.RelatedUrl;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -117,6 +118,7 @@ public class GrafeasV1Beta1ClientTest {
             .setName("name3373707")
             .setResource(Resource.newBuilder().build())
             .setNoteName("noteName1580946845")
+            .setKind(NoteKind.forNumber(0))
             .setRemediation("remediation779381797")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -256,6 +258,7 @@ public class GrafeasV1Beta1ClientTest {
             .setName("name3373707")
             .setResource(Resource.newBuilder().build())
             .setNoteName("noteName1580946845")
+            .setKind(NoteKind.forNumber(0))
             .setRemediation("remediation779381797")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -356,6 +359,7 @@ public class GrafeasV1Beta1ClientTest {
             .setName("name3373707")
             .setResource(Resource.newBuilder().build())
             .setNoteName("noteName1580946845")
+            .setKind(NoteKind.forNumber(0))
             .setRemediation("remediation779381797")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -411,6 +415,7 @@ public class GrafeasV1Beta1ClientTest {
             .setName("name3373707")
             .setShortDescription("shortDescription1951089120")
             .setLongDescription("longDescription1763753952")
+            .setKind(NoteKind.forNumber(0))
             .addAllRelatedUrl(new ArrayList<RelatedUrl>())
             .setExpirationTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -458,6 +463,7 @@ public class GrafeasV1Beta1ClientTest {
             .setName("name3373707")
             .setShortDescription("shortDescription1951089120")
             .setLongDescription("longDescription1763753952")
+            .setKind(NoteKind.forNumber(0))
             .addAllRelatedUrl(new ArrayList<RelatedUrl>())
             .setExpirationTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -596,6 +602,7 @@ public class GrafeasV1Beta1ClientTest {
             .setName("name3373707")
             .setShortDescription("shortDescription1951089120")
             .setLongDescription("longDescription1763753952")
+            .setKind(NoteKind.forNumber(0))
             .addAllRelatedUrl(new ArrayList<RelatedUrl>())
             .setExpirationTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -698,6 +705,7 @@ public class GrafeasV1Beta1ClientTest {
             .setName("name3373707")
             .setShortDescription("shortDescription1951089120")
             .setLongDescription("longDescription1763753952")
+            .setKind(NoteKind.forNumber(0))
             .addAllRelatedUrl(new ArrayList<RelatedUrl>())
             .setExpirationTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())

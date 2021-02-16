@@ -160,10 +160,12 @@ public class GrpcAdGroupFeedServiceStub extends AdGroupFeedServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetAdGroupFeedRequest, AdGroupFeed> getAdGroupFeedCallable() {
     return getAdGroupFeedCallable;
   }
 
+  @Override
   public UnaryCallable<MutateAdGroupFeedsRequest, MutateAdGroupFeedsResponse>
       mutateAdGroupFeedsCallable() {
     return mutateAdGroupFeedsCallable;

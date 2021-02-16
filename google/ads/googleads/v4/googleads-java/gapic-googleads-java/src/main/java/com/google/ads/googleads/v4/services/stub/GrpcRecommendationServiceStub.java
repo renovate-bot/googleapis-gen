@@ -198,15 +198,18 @@ public class GrpcRecommendationServiceStub extends RecommendationServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetRecommendationRequest, Recommendation> getRecommendationCallable() {
     return getRecommendationCallable;
   }
 
+  @Override
   public UnaryCallable<ApplyRecommendationRequest, ApplyRecommendationResponse>
       applyRecommendationCallable() {
     return applyRecommendationCallable;
   }
 
+  @Override
   public UnaryCallable<DismissRecommendationRequest, DismissRecommendationResponse>
       dismissRecommendationCallable() {
     return dismissRecommendationCallable;

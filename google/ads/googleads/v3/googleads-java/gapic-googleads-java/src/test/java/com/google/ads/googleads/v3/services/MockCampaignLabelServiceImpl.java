@@ -70,7 +70,13 @@ public class MockCampaignLabelServiceImpl extends CampaignLabelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetCampaignLabel, expected %s or %s",
+                  response.getClass().getName(),
+                  CampaignLabel.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockCampaignLabelServiceImpl extends CampaignLabelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateCampaignLabels, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateCampaignLabelsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

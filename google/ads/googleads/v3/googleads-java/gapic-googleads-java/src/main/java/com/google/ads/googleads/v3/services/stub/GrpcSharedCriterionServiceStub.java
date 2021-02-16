@@ -164,10 +164,12 @@ public class GrpcSharedCriterionServiceStub extends SharedCriterionServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetSharedCriterionRequest, SharedCriterion> getSharedCriterionCallable() {
     return getSharedCriterionCallable;
   }
 
+  @Override
   public UnaryCallable<MutateSharedCriteriaRequest, MutateSharedCriteriaResponse>
       mutateSharedCriteriaCallable() {
     return mutateSharedCriteriaCallable;

@@ -125,6 +125,7 @@ public class GrpcDistanceViewServiceStub extends DistanceViewServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetDistanceViewRequest, DistanceView> getDistanceViewCallable() {
     return getDistanceViewCallable;
   }

@@ -168,10 +168,12 @@ public class GrpcConversionActionServiceStub extends ConversionActionServiceStub
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetConversionActionRequest, ConversionAction> getConversionActionCallable() {
     return getConversionActionCallable;
   }
 
+  @Override
   public UnaryCallable<MutateConversionActionsRequest, MutateConversionActionsResponse>
       mutateConversionActionsCallable() {
     return mutateConversionActionsCallable;

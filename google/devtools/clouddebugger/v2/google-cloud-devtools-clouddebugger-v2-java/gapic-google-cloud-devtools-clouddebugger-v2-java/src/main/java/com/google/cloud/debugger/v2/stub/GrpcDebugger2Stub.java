@@ -236,22 +236,27 @@ public class GrpcDebugger2Stub extends Debugger2Stub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<SetBreakpointRequest, SetBreakpointResponse> setBreakpointCallable() {
     return setBreakpointCallable;
   }
 
+  @Override
   public UnaryCallable<GetBreakpointRequest, GetBreakpointResponse> getBreakpointCallable() {
     return getBreakpointCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteBreakpointRequest, Empty> deleteBreakpointCallable() {
     return deleteBreakpointCallable;
   }
 
+  @Override
   public UnaryCallable<ListBreakpointsRequest, ListBreakpointsResponse> listBreakpointsCallable() {
     return listBreakpointsCallable;
   }
 
+  @Override
   public UnaryCallable<ListDebuggeesRequest, ListDebuggeesResponse> listDebuggeesCallable() {
     return listDebuggeesCallable;
   }

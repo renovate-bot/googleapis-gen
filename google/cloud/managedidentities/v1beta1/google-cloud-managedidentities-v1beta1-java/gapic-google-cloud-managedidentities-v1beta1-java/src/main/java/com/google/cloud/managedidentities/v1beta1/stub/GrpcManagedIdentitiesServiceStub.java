@@ -459,79 +459,97 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateMicrosoftAdDomainRequest, Operation>
       createMicrosoftAdDomainCallable() {
     return createMicrosoftAdDomainCallable;
   }
 
+  @Override
   public OperationCallable<CreateMicrosoftAdDomainRequest, Domain, OpMetadata>
       createMicrosoftAdDomainOperationCallable() {
     return createMicrosoftAdDomainOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ResetAdminPasswordRequest, ResetAdminPasswordResponse>
       resetAdminPasswordCallable() {
     return resetAdminPasswordCallable;
   }
 
+  @Override
   public UnaryCallable<ListDomainsRequest, ListDomainsResponse> listDomainsCallable() {
     return listDomainsCallable;
   }
 
+  @Override
   public UnaryCallable<ListDomainsRequest, ListDomainsPagedResponse> listDomainsPagedCallable() {
     return listDomainsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetDomainRequest, Domain> getDomainCallable() {
     return getDomainCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateDomainRequest, Operation> updateDomainCallable() {
     return updateDomainCallable;
   }
 
+  @Override
   public OperationCallable<UpdateDomainRequest, Domain, OpMetadata>
       updateDomainOperationCallable() {
     return updateDomainOperationCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteDomainRequest, Operation> deleteDomainCallable() {
     return deleteDomainCallable;
   }
 
+  @Override
   public OperationCallable<DeleteDomainRequest, Empty, OpMetadata> deleteDomainOperationCallable() {
     return deleteDomainOperationCallable;
   }
 
+  @Override
   public UnaryCallable<AttachTrustRequest, Operation> attachTrustCallable() {
     return attachTrustCallable;
   }
 
+  @Override
   public OperationCallable<AttachTrustRequest, Domain, OpMetadata> attachTrustOperationCallable() {
     return attachTrustOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ReconfigureTrustRequest, Operation> reconfigureTrustCallable() {
     return reconfigureTrustCallable;
   }
 
+  @Override
   public OperationCallable<ReconfigureTrustRequest, Domain, OpMetadata>
       reconfigureTrustOperationCallable() {
     return reconfigureTrustOperationCallable;
   }
 
+  @Override
   public UnaryCallable<DetachTrustRequest, Operation> detachTrustCallable() {
     return detachTrustCallable;
   }
 
+  @Override
   public OperationCallable<DetachTrustRequest, Domain, OpMetadata> detachTrustOperationCallable() {
     return detachTrustOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ValidateTrustRequest, Operation> validateTrustCallable() {
     return validateTrustCallable;
   }
 
+  @Override
   public OperationCallable<ValidateTrustRequest, Domain, OpMetadata>
       validateTrustOperationCallable() {
     return validateTrustOperationCallable;

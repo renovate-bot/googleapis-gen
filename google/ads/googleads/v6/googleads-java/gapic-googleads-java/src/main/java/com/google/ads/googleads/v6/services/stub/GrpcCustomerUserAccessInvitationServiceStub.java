@@ -187,11 +187,13 @@ public class GrpcCustomerUserAccessInvitationServiceStub
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetCustomerUserAccessInvitationRequest, CustomerUserAccessInvitation>
       getCustomerUserAccessInvitationCallable() {
     return getCustomerUserAccessInvitationCallable;
   }
 
+  @Override
   public UnaryCallable<
           MutateCustomerUserAccessInvitationRequest, MutateCustomerUserAccessInvitationResponse>
       mutateCustomerUserAccessInvitationCallable() {

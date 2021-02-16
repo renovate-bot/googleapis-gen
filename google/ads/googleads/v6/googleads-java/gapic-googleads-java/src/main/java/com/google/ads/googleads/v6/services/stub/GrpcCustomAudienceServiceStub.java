@@ -163,10 +163,12 @@ public class GrpcCustomAudienceServiceStub extends CustomAudienceServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetCustomAudienceRequest, CustomAudience> getCustomAudienceCallable() {
     return getCustomAudienceCallable;
   }
 
+  @Override
   public UnaryCallable<MutateCustomAudiencesRequest, MutateCustomAudiencesResponse>
       mutateCustomAudiencesCallable() {
     return mutateCustomAudiencesCallable;

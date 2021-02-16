@@ -160,10 +160,12 @@ public class GrpcBillingSetupServiceStub extends BillingSetupServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetBillingSetupRequest, BillingSetup> getBillingSetupCallable() {
     return getBillingSetupCallable;
   }
 
+  @Override
   public UnaryCallable<MutateBillingSetupRequest, MutateBillingSetupResponse>
       mutateBillingSetupCallable() {
     return mutateBillingSetupCallable;

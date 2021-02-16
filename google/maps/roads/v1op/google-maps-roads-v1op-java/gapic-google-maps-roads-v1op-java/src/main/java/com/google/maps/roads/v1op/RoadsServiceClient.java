@@ -174,6 +174,7 @@ public class RoadsServiceClient implements BackgroundResource {
    *           .setPath("path3433509")
    *           .setInterpolate(true)
    *           .setAssetId("assetId-704776149")
+   *           .setTravelMode(TravelMode.forNumber(0))
    *           .build();
    *   SnapToRoadsResponse response = roadsServiceClient.snapToRoads(request);
    * }
@@ -201,6 +202,7 @@ public class RoadsServiceClient implements BackgroundResource {
    *           .setPath("path3433509")
    *           .setInterpolate(true)
    *           .setAssetId("assetId-704776149")
+   *           .setTravelMode(TravelMode.forNumber(0))
    *           .build();
    *   ApiFuture<SnapToRoadsResponse> future =
    *       roadsServiceClient.snapToRoadsCallable().futureCall(request);
@@ -247,7 +249,10 @@ public class RoadsServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (RoadsServiceClient roadsServiceClient = RoadsServiceClient.create()) {
    *   ListNearestRoadsRequest request =
-   *       ListNearestRoadsRequest.newBuilder().setPoints("points-982754077").build();
+   *       ListNearestRoadsRequest.newBuilder()
+   *           .setPoints("points-982754077")
+   *           .setTravelMode(TravelMode.forNumber(0))
+   *           .build();
    *   ListNearestRoadsResponse response = roadsServiceClient.listNearestRoads(request);
    * }
    * }</pre>
@@ -269,7 +274,10 @@ public class RoadsServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (RoadsServiceClient roadsServiceClient = RoadsServiceClient.create()) {
    *   ListNearestRoadsRequest request =
-   *       ListNearestRoadsRequest.newBuilder().setPoints("points-982754077").build();
+   *       ListNearestRoadsRequest.newBuilder()
+   *           .setPoints("points-982754077")
+   *           .setTravelMode(TravelMode.forNumber(0))
+   *           .build();
    *   ApiFuture<ListNearestRoadsResponse> future =
    *       roadsServiceClient.listNearestRoadsCallable().futureCall(request);
    *   // Do something.

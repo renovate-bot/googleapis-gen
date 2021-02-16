@@ -180,11 +180,13 @@ public class GrpcCustomerNegativeCriterionServiceStub extends CustomerNegativeCr
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetCustomerNegativeCriterionRequest, CustomerNegativeCriterion>
       getCustomerNegativeCriterionCallable() {
     return getCustomerNegativeCriterionCallable;
   }
 
+  @Override
   public UnaryCallable<
           MutateCustomerNegativeCriteriaRequest, MutateCustomerNegativeCriteriaResponse>
       mutateCustomerNegativeCriteriaCallable() {

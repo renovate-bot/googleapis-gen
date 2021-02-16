@@ -168,11 +168,13 @@ public class GrpcCustomerUserAccessServiceStub extends CustomerUserAccessService
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetCustomerUserAccessRequest, CustomerUserAccess>
       getCustomerUserAccessCallable() {
     return getCustomerUserAccessCallable;
   }
 
+  @Override
   public UnaryCallable<MutateCustomerUserAccessRequest, MutateCustomerUserAccessResponse>
       mutateCustomerUserAccessCallable() {
     return mutateCustomerUserAccessCallable;

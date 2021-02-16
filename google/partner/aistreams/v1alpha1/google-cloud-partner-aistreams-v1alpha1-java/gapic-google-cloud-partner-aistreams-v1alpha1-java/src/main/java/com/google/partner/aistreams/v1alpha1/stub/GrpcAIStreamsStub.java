@@ -436,79 +436,97 @@ public class GrpcAIStreamsStub extends AIStreamsStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable() {
     return listClustersCallable;
   }
 
+  @Override
   public UnaryCallable<ListClustersRequest, ListClustersPagedResponse> listClustersPagedCallable() {
     return listClustersPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetClusterRequest, Cluster> getClusterCallable() {
     return getClusterCallable;
   }
 
+  @Override
   public UnaryCallable<CreateClusterRequest, Operation> createClusterCallable() {
     return createClusterCallable;
   }
 
+  @Override
   public OperationCallable<CreateClusterRequest, Cluster, OperationMetadata>
       createClusterOperationCallable() {
     return createClusterOperationCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateClusterRequest, Operation> updateClusterCallable() {
     return updateClusterCallable;
   }
 
+  @Override
   public OperationCallable<UpdateClusterRequest, Cluster, OperationMetadata>
       updateClusterOperationCallable() {
     return updateClusterOperationCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable() {
     return deleteClusterCallable;
   }
 
+  @Override
   public OperationCallable<DeleteClusterRequest, Empty, OperationMetadata>
       deleteClusterOperationCallable() {
     return deleteClusterOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ListStreamsRequest, ListStreamsResponse> listStreamsCallable() {
     return listStreamsCallable;
   }
 
+  @Override
   public UnaryCallable<ListStreamsRequest, ListStreamsPagedResponse> listStreamsPagedCallable() {
     return listStreamsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetStreamRequest, Stream> getStreamCallable() {
     return getStreamCallable;
   }
 
+  @Override
   public UnaryCallable<CreateStreamRequest, Operation> createStreamCallable() {
     return createStreamCallable;
   }
 
+  @Override
   public OperationCallable<CreateStreamRequest, Stream, OperationMetadata>
       createStreamOperationCallable() {
     return createStreamOperationCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateStreamRequest, Operation> updateStreamCallable() {
     return updateStreamCallable;
   }
 
+  @Override
   public OperationCallable<UpdateStreamRequest, Stream, OperationMetadata>
       updateStreamOperationCallable() {
     return updateStreamOperationCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteStreamRequest, Operation> deleteStreamCallable() {
     return deleteStreamCallable;
   }
 
+  @Override
   public OperationCallable<DeleteStreamRequest, Empty, OperationMetadata>
       deleteStreamOperationCallable() {
     return deleteStreamOperationCallable;

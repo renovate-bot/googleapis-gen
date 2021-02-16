@@ -147,10 +147,12 @@ public class GrpcAdServiceStub extends AdServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetAdRequest, Ad> getAdCallable() {
     return getAdCallable;
   }
 
+  @Override
   public UnaryCallable<MutateAdsRequest, MutateAdsResponse> mutateAdsCallable() {
     return mutateAdsCallable;
   }

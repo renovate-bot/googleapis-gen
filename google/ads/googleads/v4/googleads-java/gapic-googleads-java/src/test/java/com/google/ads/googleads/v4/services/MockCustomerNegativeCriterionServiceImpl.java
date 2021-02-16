@@ -72,7 +72,13 @@ public class MockCustomerNegativeCriterionServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetCustomerNegativeCriterion, expected %s or %s",
+                  response.getClass().getName(),
+                  CustomerNegativeCriterion.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -88,7 +94,13 @@ public class MockCustomerNegativeCriterionServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateCustomerNegativeCriteria, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateCustomerNegativeCriteriaResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

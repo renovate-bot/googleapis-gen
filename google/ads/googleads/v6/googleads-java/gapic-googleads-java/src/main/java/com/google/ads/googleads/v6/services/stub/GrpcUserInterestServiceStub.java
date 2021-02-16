@@ -125,6 +125,7 @@ public class GrpcUserInterestServiceStub extends UserInterestServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetUserInterestRequest, UserInterest> getUserInterestCallable() {
     return getUserInterestCallable;
   }

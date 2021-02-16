@@ -70,7 +70,13 @@ public class MockManagedIdentitiesServiceImpl extends ManagedIdentitiesServiceIm
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateMicrosoftAdDomain, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockManagedIdentitiesServiceImpl extends ManagedIdentitiesServiceIm
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ResetAdminPassword, expected %s or %s",
+                  response.getClass().getName(),
+                  ResetAdminPasswordResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -101,7 +113,13 @@ public class MockManagedIdentitiesServiceImpl extends ManagedIdentitiesServiceIm
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDomains, expected %s or %s",
+                  response.getClass().getName(),
+                  ListDomainsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -115,7 +133,13 @@ public class MockManagedIdentitiesServiceImpl extends ManagedIdentitiesServiceIm
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDomain, expected %s or %s",
+                  response.getClass().getName(),
+                  Domain.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -130,7 +154,13 @@ public class MockManagedIdentitiesServiceImpl extends ManagedIdentitiesServiceIm
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateDomain, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -145,7 +175,13 @@ public class MockManagedIdentitiesServiceImpl extends ManagedIdentitiesServiceIm
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteDomain, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -159,7 +195,13 @@ public class MockManagedIdentitiesServiceImpl extends ManagedIdentitiesServiceIm
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AttachTrust, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -174,7 +216,13 @@ public class MockManagedIdentitiesServiceImpl extends ManagedIdentitiesServiceIm
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ReconfigureTrust, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -188,7 +236,13 @@ public class MockManagedIdentitiesServiceImpl extends ManagedIdentitiesServiceIm
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DetachTrust, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -203,7 +257,13 @@ public class MockManagedIdentitiesServiceImpl extends ManagedIdentitiesServiceIm
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ValidateTrust, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

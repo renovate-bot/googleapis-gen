@@ -70,7 +70,13 @@ public class MockCustomAudienceServiceImpl extends CustomAudienceServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetCustomAudience, expected %s or %s",
+                  response.getClass().getName(),
+                  CustomAudience.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockCustomAudienceServiceImpl extends CustomAudienceServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateCustomAudiences, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateCustomAudiencesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

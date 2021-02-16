@@ -75,7 +75,13 @@ public class MockController2Impl extends Controller2ImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RegisterDebuggee, expected %s or %s",
+                  response.getClass().getName(),
+                  RegisterDebuggeeResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -91,7 +97,13 @@ public class MockController2Impl extends Controller2ImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListActiveBreakpoints, expected %s or %s",
+                  response.getClass().getName(),
+                  ListActiveBreakpointsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -107,7 +119,13 @@ public class MockController2Impl extends Controller2ImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateActiveBreakpoint, expected %s or %s",
+                  response.getClass().getName(),
+                  UpdateActiveBreakpointResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

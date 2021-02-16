@@ -149,10 +149,12 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetAssetRequest, Asset> getAssetCallable() {
     return getAssetCallable;
   }
 
+  @Override
   public UnaryCallable<MutateAssetsRequest, MutateAssetsResponse> mutateAssetsCallable() {
     return mutateAssetsCallable;
   }

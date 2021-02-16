@@ -133,6 +133,7 @@ public class GrpcMobileDeviceConstantServiceStub extends MobileDeviceConstantSer
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetMobileDeviceConstantRequest, MobileDeviceConstant>
       getMobileDeviceConstantCallable() {
     return getMobileDeviceConstantCallable;

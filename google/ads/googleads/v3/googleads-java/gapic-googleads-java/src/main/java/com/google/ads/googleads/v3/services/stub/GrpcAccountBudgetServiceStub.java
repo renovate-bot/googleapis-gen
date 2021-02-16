@@ -125,6 +125,7 @@ public class GrpcAccountBudgetServiceStub extends AccountBudgetServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetAccountBudgetRequest, AccountBudget> getAccountBudgetCallable() {
     return getAccountBudgetCallable;
   }

@@ -138,10 +138,12 @@ public class GrpcRoutesPreferredStub extends RoutesPreferredStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ComputeRoutesRequest, ComputeRoutesResponse> computeRoutesCallable() {
     return computeRoutesCallable;
   }
 
+  @Override
   public ServerStreamingCallable<ComputeRouteMatrixRequest, RouteMatrixElement>
       computeRouteMatrixCallable() {
     return computeRouteMatrixCallable;

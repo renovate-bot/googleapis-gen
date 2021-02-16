@@ -69,7 +69,13 @@ public class MockGoogleAdsServiceImpl extends GoogleAdsServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method Search, expected %s or %s",
+                  response.getClass().getName(),
+                  SearchGoogleAdsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -85,7 +91,13 @@ public class MockGoogleAdsServiceImpl extends GoogleAdsServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SearchStream, expected %s or %s",
+                  response.getClass().getName(),
+                  SearchGoogleAdsStreamResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -100,7 +112,13 @@ public class MockGoogleAdsServiceImpl extends GoogleAdsServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method Mutate, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateGoogleAdsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

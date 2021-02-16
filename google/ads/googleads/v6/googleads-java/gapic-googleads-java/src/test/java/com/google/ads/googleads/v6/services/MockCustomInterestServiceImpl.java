@@ -70,7 +70,13 @@ public class MockCustomInterestServiceImpl extends CustomInterestServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetCustomInterest, expected %s or %s",
+                  response.getClass().getName(),
+                  CustomInterest.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockCustomInterestServiceImpl extends CustomInterestServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateCustomInterests, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateCustomInterestsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

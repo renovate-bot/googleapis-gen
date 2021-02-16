@@ -70,7 +70,13 @@ public class MockCampaignBudgetServiceImpl extends CampaignBudgetServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetCampaignBudget, expected %s or %s",
+                  response.getClass().getName(),
+                  CampaignBudget.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockCampaignBudgetServiceImpl extends CampaignBudgetServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateCampaignBudgets, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateCampaignBudgetsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

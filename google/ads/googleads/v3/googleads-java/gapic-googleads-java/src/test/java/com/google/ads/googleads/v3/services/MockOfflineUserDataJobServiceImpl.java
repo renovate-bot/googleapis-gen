@@ -72,7 +72,13 @@ public class MockOfflineUserDataJobServiceImpl extends OfflineUserDataJobService
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateOfflineUserDataJob, expected %s or %s",
+                  response.getClass().getName(),
+                  CreateOfflineUserDataJobResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -87,7 +93,13 @@ public class MockOfflineUserDataJobServiceImpl extends OfflineUserDataJobService
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetOfflineUserDataJob, expected %s or %s",
+                  response.getClass().getName(),
+                  OfflineUserDataJob.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -103,7 +115,13 @@ public class MockOfflineUserDataJobServiceImpl extends OfflineUserDataJobService
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AddOfflineUserDataJobOperations, expected %s or %s",
+                  response.getClass().getName(),
+                  AddOfflineUserDataJobOperationsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -118,7 +136,13 @@ public class MockOfflineUserDataJobServiceImpl extends OfflineUserDataJobService
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RunOfflineUserDataJob, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

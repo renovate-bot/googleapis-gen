@@ -192,16 +192,19 @@ public class GrpcController2Stub extends Controller2Stub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<RegisterDebuggeeRequest, RegisterDebuggeeResponse>
       registerDebuggeeCallable() {
     return registerDebuggeeCallable;
   }
 
+  @Override
   public UnaryCallable<ListActiveBreakpointsRequest, ListActiveBreakpointsResponse>
       listActiveBreakpointsCallable() {
     return listActiveBreakpointsCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateActiveBreakpointRequest, UpdateActiveBreakpointResponse>
       updateActiveBreakpointCallable() {
     return updateActiveBreakpointCallable;

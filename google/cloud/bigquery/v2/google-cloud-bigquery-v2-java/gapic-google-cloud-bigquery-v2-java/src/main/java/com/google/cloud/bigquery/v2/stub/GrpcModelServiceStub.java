@@ -168,19 +168,23 @@ public class GrpcModelServiceStub extends ModelServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ModelProto.GetModelRequest, ModelProto.Model> getModelCallable() {
     return getModelCallable;
   }
 
+  @Override
   public UnaryCallable<ModelProto.ListModelsRequest, ModelProto.ListModelsResponse>
       listModelsCallable() {
     return listModelsCallable;
   }
 
+  @Override
   public UnaryCallable<ModelProto.PatchModelRequest, ModelProto.Model> patchModelCallable() {
     return patchModelCallable;
   }
 
+  @Override
   public UnaryCallable<ModelProto.DeleteModelRequest, Empty> deleteModelCallable() {
     return deleteModelCallable;
   }

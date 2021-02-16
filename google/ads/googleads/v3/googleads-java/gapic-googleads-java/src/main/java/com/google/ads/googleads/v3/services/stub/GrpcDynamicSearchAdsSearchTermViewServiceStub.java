@@ -143,6 +143,7 @@ public class GrpcDynamicSearchAdsSearchTermViewServiceStub
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetDynamicSearchAdsSearchTermViewRequest, DynamicSearchAdsSearchTermView>
       getDynamicSearchAdsSearchTermViewCallable() {
     return getDynamicSearchAdsSearchTermViewCallable;

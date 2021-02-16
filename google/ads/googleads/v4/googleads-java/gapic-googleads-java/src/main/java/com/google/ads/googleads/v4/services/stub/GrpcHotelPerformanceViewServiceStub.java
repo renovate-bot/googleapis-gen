@@ -133,6 +133,7 @@ public class GrpcHotelPerformanceViewServiceStub extends HotelPerformanceViewSer
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetHotelPerformanceViewRequest, HotelPerformanceView>
       getHotelPerformanceViewCallable() {
     return getHotelPerformanceViewCallable;

@@ -133,6 +133,7 @@ public class GrpcManagedPlacementViewServiceStub extends ManagedPlacementViewSer
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetManagedPlacementViewRequest, ManagedPlacementView>
       getManagedPlacementViewCallable() {
     return getManagedPlacementViewCallable;

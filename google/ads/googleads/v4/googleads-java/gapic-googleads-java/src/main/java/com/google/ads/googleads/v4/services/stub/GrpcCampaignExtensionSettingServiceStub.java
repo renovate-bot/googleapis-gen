@@ -182,11 +182,13 @@ public class GrpcCampaignExtensionSettingServiceStub extends CampaignExtensionSe
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetCampaignExtensionSettingRequest, CampaignExtensionSetting>
       getCampaignExtensionSettingCallable() {
     return getCampaignExtensionSettingCallable;
   }
 
+  @Override
   public UnaryCallable<
           MutateCampaignExtensionSettingsRequest, MutateCampaignExtensionSettingsResponse>
       mutateCampaignExtensionSettingsCallable() {

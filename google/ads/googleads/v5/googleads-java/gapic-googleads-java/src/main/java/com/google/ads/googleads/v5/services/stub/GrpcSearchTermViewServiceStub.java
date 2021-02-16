@@ -127,6 +127,7 @@ public class GrpcSearchTermViewServiceStub extends SearchTermViewServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetSearchTermViewRequest, SearchTermView> getSearchTermViewCallable() {
     return getSearchTermViewCallable;
   }

@@ -130,6 +130,7 @@ public class GrpcAdGroupAdAssetViewServiceStub extends AdGroupAdAssetViewService
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetAdGroupAdAssetViewRequest, AdGroupAdAssetView>
       getAdGroupAdAssetViewCallable() {
     return getAdGroupAdAssetViewCallable;

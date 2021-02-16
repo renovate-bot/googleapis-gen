@@ -69,7 +69,13 @@ public class MockUserListServiceImpl extends UserListServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetUserList, expected %s or %s",
+                  response.getClass().getName(),
+                  UserList.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -84,7 +90,13 @@ public class MockUserListServiceImpl extends UserListServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateUserLists, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateUserListsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

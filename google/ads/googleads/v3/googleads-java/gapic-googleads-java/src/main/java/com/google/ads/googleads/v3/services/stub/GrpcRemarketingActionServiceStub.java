@@ -168,11 +168,13 @@ public class GrpcRemarketingActionServiceStub extends RemarketingActionServiceSt
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetRemarketingActionRequest, RemarketingAction>
       getRemarketingActionCallable() {
     return getRemarketingActionCallable;
   }
 
+  @Override
   public UnaryCallable<MutateRemarketingActionsRequest, MutateRemarketingActionsResponse>
       mutateRemarketingActionsCallable() {
     return mutateRemarketingActionsCallable;

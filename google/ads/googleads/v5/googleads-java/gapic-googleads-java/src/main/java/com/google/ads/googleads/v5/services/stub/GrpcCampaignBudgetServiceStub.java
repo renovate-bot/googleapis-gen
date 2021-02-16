@@ -163,10 +163,12 @@ public class GrpcCampaignBudgetServiceStub extends CampaignBudgetServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetCampaignBudgetRequest, CampaignBudget> getCampaignBudgetCallable() {
     return getCampaignBudgetCallable;
   }
 
+  @Override
   public UnaryCallable<MutateCampaignBudgetsRequest, MutateCampaignBudgetsResponse>
       mutateCampaignBudgetsCallable() {
     return mutateCampaignBudgetsCallable;

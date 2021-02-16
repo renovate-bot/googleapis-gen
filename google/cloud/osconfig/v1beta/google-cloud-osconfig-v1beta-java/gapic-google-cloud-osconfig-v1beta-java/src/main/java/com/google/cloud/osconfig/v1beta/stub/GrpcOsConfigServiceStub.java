@@ -694,30 +694,36 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<PatchJobs.ExecutePatchJobRequest, PatchJobs.PatchJob>
       executePatchJobCallable() {
     return executePatchJobCallable;
   }
 
+  @Override
   public UnaryCallable<PatchJobs.GetPatchJobRequest, PatchJobs.PatchJob> getPatchJobCallable() {
     return getPatchJobCallable;
   }
 
+  @Override
   public UnaryCallable<PatchJobs.CancelPatchJobRequest, PatchJobs.PatchJob>
       cancelPatchJobCallable() {
     return cancelPatchJobCallable;
   }
 
+  @Override
   public UnaryCallable<PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse>
       listPatchJobsCallable() {
     return listPatchJobsCallable;
   }
 
+  @Override
   public UnaryCallable<PatchJobs.ListPatchJobsRequest, ListPatchJobsPagedResponse>
       listPatchJobsPagedCallable() {
     return listPatchJobsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<
           PatchJobs.ListPatchJobInstanceDetailsRequest,
           PatchJobs.ListPatchJobInstanceDetailsResponse>
@@ -725,23 +731,27 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
     return listPatchJobInstanceDetailsCallable;
   }
 
+  @Override
   public UnaryCallable<
           PatchJobs.ListPatchJobInstanceDetailsRequest, ListPatchJobInstanceDetailsPagedResponse>
       listPatchJobInstanceDetailsPagedCallable() {
     return listPatchJobInstanceDetailsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<
           PatchDeployments.CreatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
       createPatchDeploymentCallable() {
     return createPatchDeploymentCallable;
   }
 
+  @Override
   public UnaryCallable<PatchDeployments.GetPatchDeploymentRequest, PatchDeployments.PatchDeployment>
       getPatchDeploymentCallable() {
     return getPatchDeploymentCallable;
   }
 
+  @Override
   public UnaryCallable<
           PatchDeployments.ListPatchDeploymentsRequest,
           PatchDeployments.ListPatchDeploymentsResponse>
@@ -749,47 +759,56 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
     return listPatchDeploymentsCallable;
   }
 
+  @Override
   public UnaryCallable<
           PatchDeployments.ListPatchDeploymentsRequest, ListPatchDeploymentsPagedResponse>
       listPatchDeploymentsPagedCallable() {
     return listPatchDeploymentsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<PatchDeployments.DeletePatchDeploymentRequest, Empty>
       deletePatchDeploymentCallable() {
     return deletePatchDeploymentCallable;
   }
 
+  @Override
   public UnaryCallable<GuestPolicies.CreateGuestPolicyRequest, GuestPolicies.GuestPolicy>
       createGuestPolicyCallable() {
     return createGuestPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<GuestPolicies.GetGuestPolicyRequest, GuestPolicies.GuestPolicy>
       getGuestPolicyCallable() {
     return getGuestPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<
           GuestPolicies.ListGuestPoliciesRequest, GuestPolicies.ListGuestPoliciesResponse>
       listGuestPoliciesCallable() {
     return listGuestPoliciesCallable;
   }
 
+  @Override
   public UnaryCallable<GuestPolicies.ListGuestPoliciesRequest, ListGuestPoliciesPagedResponse>
       listGuestPoliciesPagedCallable() {
     return listGuestPoliciesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GuestPolicies.UpdateGuestPolicyRequest, GuestPolicies.GuestPolicy>
       updateGuestPolicyCallable() {
     return updateGuestPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<GuestPolicies.DeleteGuestPolicyRequest, Empty> deleteGuestPolicyCallable() {
     return deleteGuestPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<
           GuestPolicies.LookupEffectiveGuestPolicyRequest, GuestPolicies.EffectiveGuestPolicy>
       lookupEffectiveGuestPolicyCallable() {

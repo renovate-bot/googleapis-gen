@@ -69,7 +69,13 @@ public class MockProfilerServiceImpl extends ProfilerServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateProfile, expected %s or %s",
+                  response.getClass().getName(),
+                  Profile.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -84,7 +90,13 @@ public class MockProfilerServiceImpl extends ProfilerServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateOfflineProfile, expected %s or %s",
+                  response.getClass().getName(),
+                  Profile.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -99,7 +111,13 @@ public class MockProfilerServiceImpl extends ProfilerServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateProfile, expected %s or %s",
+                  response.getClass().getName(),
+                  Profile.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

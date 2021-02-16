@@ -70,7 +70,13 @@ public class MockKeywordPlanKeywordServiceImpl extends KeywordPlanKeywordService
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetKeywordPlanKeyword, expected %s or %s",
+                  response.getClass().getName(),
+                  KeywordPlanKeyword.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockKeywordPlanKeywordServiceImpl extends KeywordPlanKeywordService
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateKeywordPlanKeywords, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateKeywordPlanKeywordsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

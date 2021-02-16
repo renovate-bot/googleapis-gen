@@ -287,32 +287,39 @@ public class GrpcContainerAnalysisV1Beta1Stub extends ContainerAnalysisV1Beta1St
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
   }
 
+  @Override
   public UnaryCallable<GetScanConfigRequest, ScanConfig> getScanConfigCallable() {
     return getScanConfigCallable;
   }
 
+  @Override
   public UnaryCallable<ListScanConfigsRequest, ListScanConfigsResponse> listScanConfigsCallable() {
     return listScanConfigsCallable;
   }
 
+  @Override
   public UnaryCallable<ListScanConfigsRequest, ListScanConfigsPagedResponse>
       listScanConfigsPagedCallable() {
     return listScanConfigsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateScanConfigRequest, ScanConfig> updateScanConfigCallable() {
     return updateScanConfigCallable;
   }

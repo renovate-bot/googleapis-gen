@@ -70,7 +70,13 @@ public class MockCampaignFeedServiceImpl extends CampaignFeedServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetCampaignFeed, expected %s or %s",
+                  response.getClass().getName(),
+                  CampaignFeed.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockCampaignFeedServiceImpl extends CampaignFeedServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateCampaignFeeds, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateCampaignFeedsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

@@ -130,6 +130,7 @@ public class GrpcUserLocationViewServiceStub extends UserLocationViewServiceStub
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetUserLocationViewRequest, UserLocationView> getUserLocationViewCallable() {
     return getUserLocationViewCallable;
   }

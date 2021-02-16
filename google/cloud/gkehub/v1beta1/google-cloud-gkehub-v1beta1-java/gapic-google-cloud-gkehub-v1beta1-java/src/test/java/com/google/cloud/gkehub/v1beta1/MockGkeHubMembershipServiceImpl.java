@@ -70,7 +70,13 @@ public class MockGkeHubMembershipServiceImpl extends GkeHubMembershipServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListMemberships, expected %s or %s",
+                  response.getClass().getName(),
+                  ListMembershipsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -85,7 +91,13 @@ public class MockGkeHubMembershipServiceImpl extends GkeHubMembershipServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetMembership, expected %s or %s",
+                  response.getClass().getName(),
+                  Membership.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -100,7 +112,13 @@ public class MockGkeHubMembershipServiceImpl extends GkeHubMembershipServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateMembership, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -115,7 +133,13 @@ public class MockGkeHubMembershipServiceImpl extends GkeHubMembershipServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteMembership, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -130,7 +154,13 @@ public class MockGkeHubMembershipServiceImpl extends GkeHubMembershipServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateMembership, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -146,7 +176,13 @@ public class MockGkeHubMembershipServiceImpl extends GkeHubMembershipServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateConnectManifest, expected %s or %s",
+                  response.getClass().getName(),
+                  GenerateConnectManifestResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -162,7 +198,13 @@ public class MockGkeHubMembershipServiceImpl extends GkeHubMembershipServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ValidateExclusivity, expected %s or %s",
+                  response.getClass().getName(),
+                  ValidateExclusivityResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -178,7 +220,13 @@ public class MockGkeHubMembershipServiceImpl extends GkeHubMembershipServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateExclusivityManifest, expected %s or %s",
+                  response.getClass().getName(),
+                  GenerateExclusivityManifestResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

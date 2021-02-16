@@ -195,19 +195,23 @@ public class GrpcGoogleAdsServiceStub extends GoogleAdsServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<SearchGoogleAdsRequest, SearchGoogleAdsResponse> searchCallable() {
     return searchCallable;
   }
 
+  @Override
   public UnaryCallable<SearchGoogleAdsRequest, SearchPagedResponse> searchPagedCallable() {
     return searchPagedCallable;
   }
 
+  @Override
   public ServerStreamingCallable<SearchGoogleAdsStreamRequest, SearchGoogleAdsStreamResponse>
       searchStreamCallable() {
     return searchStreamCallable;
   }
 
+  @Override
   public UnaryCallable<MutateGoogleAdsRequest, MutateGoogleAdsResponse> mutateCallable() {
     return mutateCallable;
   }

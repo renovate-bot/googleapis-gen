@@ -130,6 +130,7 @@ public class GrpcAdGroupSimulationServiceStub extends AdGroupSimulationServiceSt
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetAdGroupSimulationRequest, AdGroupSimulation>
       getAdGroupSimulationCallable() {
     return getAdGroupSimulationCallable;

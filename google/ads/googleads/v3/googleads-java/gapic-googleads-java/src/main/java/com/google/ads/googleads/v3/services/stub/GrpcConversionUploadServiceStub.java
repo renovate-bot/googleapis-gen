@@ -170,11 +170,13 @@ public class GrpcConversionUploadServiceStub extends ConversionUploadServiceStub
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<UploadClickConversionsRequest, UploadClickConversionsResponse>
       uploadClickConversionsCallable() {
     return uploadClickConversionsCallable;
   }
 
+  @Override
   public UnaryCallable<UploadCallConversionsRequest, UploadCallConversionsResponse>
       uploadCallConversionsCallable() {
     return uploadCallConversionsCallable;

@@ -70,7 +70,13 @@ public class MockKeywordPlanServiceImpl extends KeywordPlanServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetKeywordPlan, expected %s or %s",
+                  response.getClass().getName(),
+                  KeywordPlan.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockKeywordPlanServiceImpl extends KeywordPlanServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateKeywordPlans, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateKeywordPlansResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -102,7 +114,13 @@ public class MockKeywordPlanServiceImpl extends KeywordPlanServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateForecastCurve, expected %s or %s",
+                  response.getClass().getName(),
+                  GenerateForecastCurveResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -118,7 +136,13 @@ public class MockKeywordPlanServiceImpl extends KeywordPlanServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateForecastTimeSeries, expected %s or %s",
+                  response.getClass().getName(),
+                  GenerateForecastTimeSeriesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -134,7 +158,13 @@ public class MockKeywordPlanServiceImpl extends KeywordPlanServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateForecastMetrics, expected %s or %s",
+                  response.getClass().getName(),
+                  GenerateForecastMetricsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -150,7 +180,13 @@ public class MockKeywordPlanServiceImpl extends KeywordPlanServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateHistoricalMetrics, expected %s or %s",
+                  response.getClass().getName(),
+                  GenerateHistoricalMetricsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

@@ -70,7 +70,13 @@ public class MockCustomerFeedServiceImpl extends CustomerFeedServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetCustomerFeed, expected %s or %s",
+                  response.getClass().getName(),
+                  CustomerFeed.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockCustomerFeedServiceImpl extends CustomerFeedServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateCustomerFeeds, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateCustomerFeedsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

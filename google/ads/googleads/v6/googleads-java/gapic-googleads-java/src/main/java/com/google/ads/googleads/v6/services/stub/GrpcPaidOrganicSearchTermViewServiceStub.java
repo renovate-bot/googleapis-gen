@@ -137,6 +137,7 @@ public class GrpcPaidOrganicSearchTermViewServiceStub extends PaidOrganicSearchT
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetPaidOrganicSearchTermViewRequest, PaidOrganicSearchTermView>
       getPaidOrganicSearchTermViewCallable() {
     return getPaidOrganicSearchTermViewCallable;

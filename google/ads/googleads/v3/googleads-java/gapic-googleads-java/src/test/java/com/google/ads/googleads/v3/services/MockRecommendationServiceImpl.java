@@ -70,7 +70,13 @@ public class MockRecommendationServiceImpl extends RecommendationServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetRecommendation, expected %s or %s",
+                  response.getClass().getName(),
+                  Recommendation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockRecommendationServiceImpl extends RecommendationServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ApplyRecommendation, expected %s or %s",
+                  response.getClass().getName(),
+                  ApplyRecommendationResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -102,7 +114,13 @@ public class MockRecommendationServiceImpl extends RecommendationServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DismissRecommendation, expected %s or %s",
+                  response.getClass().getName(),
+                  DismissRecommendationResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

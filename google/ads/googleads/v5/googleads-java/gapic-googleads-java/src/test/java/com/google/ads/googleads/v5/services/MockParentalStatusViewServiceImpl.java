@@ -70,7 +70,13 @@ public class MockParentalStatusViewServiceImpl extends ParentalStatusViewService
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetParentalStatusView, expected %s or %s",
+                  response.getClass().getName(),
+                  ParentalStatusView.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

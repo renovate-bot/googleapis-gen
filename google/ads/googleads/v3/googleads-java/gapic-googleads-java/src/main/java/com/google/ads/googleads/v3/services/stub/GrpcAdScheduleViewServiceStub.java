@@ -127,6 +127,7 @@ public class GrpcAdScheduleViewServiceStub extends AdScheduleViewServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetAdScheduleViewRequest, AdScheduleView> getAdScheduleViewCallable() {
     return getAdScheduleViewCallable;
   }

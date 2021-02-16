@@ -70,7 +70,13 @@ public class MockExtensionFeedItemServiceImpl extends ExtensionFeedItemServiceIm
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetExtensionFeedItem, expected %s or %s",
+                  response.getClass().getName(),
+                  ExtensionFeedItem.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockExtensionFeedItemServiceImpl extends ExtensionFeedItemServiceIm
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateExtensionFeedItems, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateExtensionFeedItemsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

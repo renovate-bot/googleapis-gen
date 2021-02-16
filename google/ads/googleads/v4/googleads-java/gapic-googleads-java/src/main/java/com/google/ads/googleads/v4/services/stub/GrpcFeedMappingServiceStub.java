@@ -160,10 +160,12 @@ public class GrpcFeedMappingServiceStub extends FeedMappingServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetFeedMappingRequest, FeedMapping> getFeedMappingCallable() {
     return getFeedMappingCallable;
   }
 
+  @Override
   public UnaryCallable<MutateFeedMappingsRequest, MutateFeedMappingsResponse>
       mutateFeedMappingsCallable() {
     return mutateFeedMappingsCallable;

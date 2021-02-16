@@ -166,10 +166,12 @@ public class GrpcAdGroupCriterionServiceStub extends AdGroupCriterionServiceStub
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetAdGroupCriterionRequest, AdGroupCriterion> getAdGroupCriterionCallable() {
     return getAdGroupCriterionCallable;
   }
 
+  @Override
   public UnaryCallable<MutateAdGroupCriteriaRequest, MutateAdGroupCriteriaResponse>
       mutateAdGroupCriteriaCallable() {
     return mutateAdGroupCriteriaCallable;

@@ -325,44 +325,54 @@ public class GrpcSmartDeviceManagementServiceStub extends SmartDeviceManagementS
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetDeviceRequest, Device> getDeviceCallable() {
     return getDeviceCallable;
   }
 
+  @Override
   public UnaryCallable<ListDevicesRequest, ListDevicesResponse> listDevicesCallable() {
     return listDevicesCallable;
   }
 
+  @Override
   public UnaryCallable<ListDevicesRequest, ListDevicesPagedResponse> listDevicesPagedCallable() {
     return listDevicesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<ExecuteDeviceCommandRequest, ExecuteDeviceCommandResponse>
       executeDeviceCommandCallable() {
     return executeDeviceCommandCallable;
   }
 
+  @Override
   public UnaryCallable<GetStructureRequest, Structure> getStructureCallable() {
     return getStructureCallable;
   }
 
+  @Override
   public UnaryCallable<ListStructuresRequest, ListStructuresResponse> listStructuresCallable() {
     return listStructuresCallable;
   }
 
+  @Override
   public UnaryCallable<ListStructuresRequest, ListStructuresPagedResponse>
       listStructuresPagedCallable() {
     return listStructuresPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetRoomRequest, Room> getRoomCallable() {
     return getRoomCallable;
   }
 
+  @Override
   public UnaryCallable<ListRoomsRequest, ListRoomsResponse> listRoomsCallable() {
     return listRoomsCallable;
   }
 
+  @Override
   public UnaryCallable<ListRoomsRequest, ListRoomsPagedResponse> listRoomsPagedCallable() {
     return listRoomsPagedCallable;
   }

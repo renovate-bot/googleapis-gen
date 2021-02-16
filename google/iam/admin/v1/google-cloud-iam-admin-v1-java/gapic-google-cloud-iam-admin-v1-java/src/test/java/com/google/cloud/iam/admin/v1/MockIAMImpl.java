@@ -104,7 +104,13 @@ public class MockIAMImpl extends IAMImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListServiceAccounts, expected %s or %s",
+                  response.getClass().getName(),
+                  ListServiceAccountsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -119,7 +125,13 @@ public class MockIAMImpl extends IAMImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetServiceAccount, expected %s or %s",
+                  response.getClass().getName(),
+                  ServiceAccount.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -134,7 +146,13 @@ public class MockIAMImpl extends IAMImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateServiceAccount, expected %s or %s",
+                  response.getClass().getName(),
+                  ServiceAccount.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -149,7 +167,13 @@ public class MockIAMImpl extends IAMImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateServiceAccount, expected %s or %s",
+                  response.getClass().getName(),
+                  ServiceAccount.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -164,7 +188,13 @@ public class MockIAMImpl extends IAMImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteServiceAccount, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -180,7 +210,13 @@ public class MockIAMImpl extends IAMImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListServiceAccountKeys, expected %s or %s",
+                  response.getClass().getName(),
+                  ListServiceAccountKeysResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -195,7 +231,13 @@ public class MockIAMImpl extends IAMImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetServiceAccountKey, expected %s or %s",
+                  response.getClass().getName(),
+                  ServiceAccountKey.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -210,7 +252,13 @@ public class MockIAMImpl extends IAMImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateServiceAccountKey, expected %s or %s",
+                  response.getClass().getName(),
+                  ServiceAccountKey.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -225,7 +273,13 @@ public class MockIAMImpl extends IAMImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteServiceAccountKey, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -239,7 +293,13 @@ public class MockIAMImpl extends IAMImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SignBlob, expected %s or %s",
+                  response.getClass().getName(),
+                  SignBlobResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -253,7 +313,13 @@ public class MockIAMImpl extends IAMImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SignJwt, expected %s or %s",
+                  response.getClass().getName(),
+                  SignJwtResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -267,7 +333,13 @@ public class MockIAMImpl extends IAMImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetIamPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  Policy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -281,7 +353,13 @@ public class MockIAMImpl extends IAMImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SetIamPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  Policy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -297,7 +375,13 @@ public class MockIAMImpl extends IAMImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method TestIamPermissions, expected %s or %s",
+                  response.getClass().getName(),
+                  TestIamPermissionsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -313,7 +397,13 @@ public class MockIAMImpl extends IAMImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method QueryGrantableRoles, expected %s or %s",
+                  response.getClass().getName(),
+                  QueryGrantableRolesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -328,7 +418,13 @@ public class MockIAMImpl extends IAMImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListRoles, expected %s or %s",
+                  response.getClass().getName(),
+                  ListRolesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -342,7 +438,11 @@ public class MockIAMImpl extends IAMImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetRole, expected %s or %s",
+                  response.getClass().getName(), Role.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -356,7 +456,11 @@ public class MockIAMImpl extends IAMImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateRole, expected %s or %s",
+                  response.getClass().getName(), Role.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -370,7 +474,11 @@ public class MockIAMImpl extends IAMImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateRole, expected %s or %s",
+                  response.getClass().getName(), Role.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -384,7 +492,11 @@ public class MockIAMImpl extends IAMImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteRole, expected %s or %s",
+                  response.getClass().getName(), Role.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -398,7 +510,11 @@ public class MockIAMImpl extends IAMImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UndeleteRole, expected %s or %s",
+                  response.getClass().getName(), Role.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -414,7 +530,13 @@ public class MockIAMImpl extends IAMImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method QueryTestablePermissions, expected %s or %s",
+                  response.getClass().getName(),
+                  QueryTestablePermissionsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

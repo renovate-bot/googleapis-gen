@@ -174,11 +174,13 @@ public class GrpcAccountBudgetProposalServiceStub extends AccountBudgetProposalS
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetAccountBudgetProposalRequest, AccountBudgetProposal>
       getAccountBudgetProposalCallable() {
     return getAccountBudgetProposalCallable;
   }
 
+  @Override
   public UnaryCallable<MutateAccountBudgetProposalRequest, MutateAccountBudgetProposalResponse>
       mutateAccountBudgetProposalCallable() {
     return mutateAccountBudgetProposalCallable;

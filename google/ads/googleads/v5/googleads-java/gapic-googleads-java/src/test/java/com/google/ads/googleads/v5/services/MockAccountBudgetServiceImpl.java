@@ -70,7 +70,13 @@ public class MockAccountBudgetServiceImpl extends AccountBudgetServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAccountBudget, expected %s or %s",
+                  response.getClass().getName(),
+                  AccountBudget.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

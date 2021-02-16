@@ -182,11 +182,13 @@ public class GrpcKeywordPlanAdGroupKeywordServiceStub extends KeywordPlanAdGroup
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetKeywordPlanAdGroupKeywordRequest, KeywordPlanAdGroupKeyword>
       getKeywordPlanAdGroupKeywordCallable() {
     return getKeywordPlanAdGroupKeywordCallable;
   }
 
+  @Override
   public UnaryCallable<
           MutateKeywordPlanAdGroupKeywordsRequest, MutateKeywordPlanAdGroupKeywordsResponse>
       mutateKeywordPlanAdGroupKeywordsCallable() {

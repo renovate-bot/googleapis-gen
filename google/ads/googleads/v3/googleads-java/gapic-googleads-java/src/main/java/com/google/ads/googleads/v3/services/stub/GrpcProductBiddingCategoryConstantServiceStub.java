@@ -143,6 +143,7 @@ public class GrpcProductBiddingCategoryConstantServiceStub
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetProductBiddingCategoryConstantRequest, ProductBiddingCategoryConstant>
       getProductBiddingCategoryConstantCallable() {
     return getProductBiddingCategoryConstantCallable;

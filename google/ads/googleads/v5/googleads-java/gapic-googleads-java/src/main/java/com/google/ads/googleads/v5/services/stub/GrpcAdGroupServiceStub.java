@@ -153,10 +153,12 @@ public class GrpcAdGroupServiceStub extends AdGroupServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetAdGroupRequest, AdGroup> getAdGroupCallable() {
     return getAdGroupCallable;
   }
 
+  @Override
   public UnaryCallable<MutateAdGroupsRequest, MutateAdGroupsResponse> mutateAdGroupsCallable() {
     return mutateAdGroupsCallable;
   }

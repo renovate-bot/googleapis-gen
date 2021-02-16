@@ -71,7 +71,13 @@ public class MockManagedPlacementViewServiceImpl extends ManagedPlacementViewSer
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetManagedPlacementView, expected %s or %s",
+                  response.getClass().getName(),
+                  ManagedPlacementView.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

@@ -70,7 +70,13 @@ public class MockCampaignAssetServiceImpl extends CampaignAssetServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetCampaignAsset, expected %s or %s",
+                  response.getClass().getName(),
+                  CampaignAsset.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockCampaignAssetServiceImpl extends CampaignAssetServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateCampaignAssets, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateCampaignAssetsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

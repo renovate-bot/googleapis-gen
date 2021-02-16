@@ -172,11 +172,13 @@ public class GrpcKeywordPlanCampaignServiceStub extends KeywordPlanCampaignServi
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetKeywordPlanCampaignRequest, KeywordPlanCampaign>
       getKeywordPlanCampaignCallable() {
     return getKeywordPlanCampaignCallable;
   }
 
+  @Override
   public UnaryCallable<MutateKeywordPlanCampaignsRequest, MutateKeywordPlanCampaignsResponse>
       mutateKeywordPlanCampaignsCallable() {
     return mutateKeywordPlanCampaignsCallable;

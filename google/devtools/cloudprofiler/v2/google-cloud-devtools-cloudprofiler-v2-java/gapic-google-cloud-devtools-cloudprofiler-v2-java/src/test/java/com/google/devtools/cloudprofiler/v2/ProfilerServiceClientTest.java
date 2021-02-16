@@ -85,6 +85,7 @@ public class ProfilerServiceClientTest {
     Profile expectedResponse =
         Profile.newBuilder()
             .setName("name3373707")
+            .setProfileType(ProfileType.forNumber(0))
             .setDeployment(Deployment.newBuilder().build())
             .setDuration(Duration.newBuilder().build())
             .setProfileBytes(ByteString.EMPTY)
@@ -139,6 +140,7 @@ public class ProfilerServiceClientTest {
     Profile expectedResponse =
         Profile.newBuilder()
             .setName("name3373707")
+            .setProfileType(ProfileType.forNumber(0))
             .setDeployment(Deployment.newBuilder().build())
             .setDuration(Duration.newBuilder().build())
             .setProfileBytes(ByteString.EMPTY)
@@ -191,6 +193,7 @@ public class ProfilerServiceClientTest {
     Profile expectedResponse =
         Profile.newBuilder()
             .setName("name3373707")
+            .setProfileType(ProfileType.forNumber(0))
             .setDeployment(Deployment.newBuilder().build())
             .setDuration(Duration.newBuilder().build())
             .setProfileBytes(ByteString.EMPTY)

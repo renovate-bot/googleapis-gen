@@ -70,7 +70,13 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetModel, expected %s or %s",
+                  response.getClass().getName(),
+                  ModelProto.Model.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListModels, expected %s or %s",
+                  response.getClass().getName(),
+                  ModelProto.ListModelsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -101,7 +113,13 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method PatchModel, expected %s or %s",
+                  response.getClass().getName(),
+                  ModelProto.Model.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -116,7 +134,13 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteModel, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

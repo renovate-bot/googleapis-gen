@@ -168,11 +168,13 @@ public class GrpcExtensionFeedItemServiceStub extends ExtensionFeedItemServiceSt
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetExtensionFeedItemRequest, ExtensionFeedItem>
       getExtensionFeedItemCallable() {
     return getExtensionFeedItemCallable;
   }
 
+  @Override
   public UnaryCallable<MutateExtensionFeedItemsRequest, MutateExtensionFeedItemsResponse>
       mutateExtensionFeedItemsCallable() {
     return mutateExtensionFeedItemsCallable;

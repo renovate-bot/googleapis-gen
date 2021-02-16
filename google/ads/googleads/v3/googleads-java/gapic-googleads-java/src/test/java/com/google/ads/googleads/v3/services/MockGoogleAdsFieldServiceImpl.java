@@ -70,7 +70,13 @@ public class MockGoogleAdsFieldServiceImpl extends GoogleAdsFieldServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetGoogleAdsField, expected %s or %s",
+                  response.getClass().getName(),
+                  GoogleAdsField.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockGoogleAdsFieldServiceImpl extends GoogleAdsFieldServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SearchGoogleAdsFields, expected %s or %s",
+                  response.getClass().getName(),
+                  SearchGoogleAdsFieldsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

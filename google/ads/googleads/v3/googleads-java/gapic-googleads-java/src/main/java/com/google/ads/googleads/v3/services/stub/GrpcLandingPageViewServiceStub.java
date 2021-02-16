@@ -129,6 +129,7 @@ public class GrpcLandingPageViewServiceStub extends LandingPageViewServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetLandingPageViewRequest, LandingPageView> getLandingPageViewCallable() {
     return getLandingPageViewCallable;
   }

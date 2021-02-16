@@ -1299,251 +1299,307 @@ public class GrpcStorageStub extends StorageStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<DeleteBucketAccessControlRequest, Empty>
       deleteBucketAccessControlCallable() {
     return deleteBucketAccessControlCallable;
   }
 
+  @Override
   public UnaryCallable<GetBucketAccessControlRequest, BucketAccessControl>
       getBucketAccessControlCallable() {
     return getBucketAccessControlCallable;
   }
 
+  @Override
   public UnaryCallable<InsertBucketAccessControlRequest, BucketAccessControl>
       insertBucketAccessControlCallable() {
     return insertBucketAccessControlCallable;
   }
 
+  @Override
   public UnaryCallable<ListBucketAccessControlsRequest, ListBucketAccessControlsResponse>
       listBucketAccessControlsCallable() {
     return listBucketAccessControlsCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateBucketAccessControlRequest, BucketAccessControl>
       updateBucketAccessControlCallable() {
     return updateBucketAccessControlCallable;
   }
 
+  @Override
   public UnaryCallable<PatchBucketAccessControlRequest, BucketAccessControl>
       patchBucketAccessControlCallable() {
     return patchBucketAccessControlCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteBucketRequest, Empty> deleteBucketCallable() {
     return deleteBucketCallable;
   }
 
+  @Override
   public UnaryCallable<GetBucketRequest, Bucket> getBucketCallable() {
     return getBucketCallable;
   }
 
+  @Override
   public UnaryCallable<InsertBucketRequest, Bucket> insertBucketCallable() {
     return insertBucketCallable;
   }
 
+  @Override
   public UnaryCallable<ListChannelsRequest, ListChannelsResponse> listChannelsCallable() {
     return listChannelsCallable;
   }
 
+  @Override
   public UnaryCallable<ListBucketsRequest, ListBucketsResponse> listBucketsCallable() {
     return listBucketsCallable;
   }
 
+  @Override
   public UnaryCallable<LockRetentionPolicyRequest, Bucket> lockBucketRetentionPolicyCallable() {
     return lockBucketRetentionPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<GetIamPolicyRequest, Policy> getBucketIamPolicyCallable() {
     return getBucketIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<SetIamPolicyRequest, Policy> setBucketIamPolicyCallable() {
     return setBucketIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testBucketIamPermissionsCallable() {
     return testBucketIamPermissionsCallable;
   }
 
+  @Override
   public UnaryCallable<PatchBucketRequest, Bucket> patchBucketCallable() {
     return patchBucketCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateBucketRequest, Bucket> updateBucketCallable() {
     return updateBucketCallable;
   }
 
+  @Override
   public UnaryCallable<StopChannelRequest, Empty> stopChannelCallable() {
     return stopChannelCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteDefaultObjectAccessControlRequest, Empty>
       deleteDefaultObjectAccessControlCallable() {
     return deleteDefaultObjectAccessControlCallable;
   }
 
+  @Override
   public UnaryCallable<GetDefaultObjectAccessControlRequest, ObjectAccessControl>
       getDefaultObjectAccessControlCallable() {
     return getDefaultObjectAccessControlCallable;
   }
 
+  @Override
   public UnaryCallable<InsertDefaultObjectAccessControlRequest, ObjectAccessControl>
       insertDefaultObjectAccessControlCallable() {
     return insertDefaultObjectAccessControlCallable;
   }
 
+  @Override
   public UnaryCallable<ListDefaultObjectAccessControlsRequest, ListObjectAccessControlsResponse>
       listDefaultObjectAccessControlsCallable() {
     return listDefaultObjectAccessControlsCallable;
   }
 
+  @Override
   public UnaryCallable<PatchDefaultObjectAccessControlRequest, ObjectAccessControl>
       patchDefaultObjectAccessControlCallable() {
     return patchDefaultObjectAccessControlCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateDefaultObjectAccessControlRequest, ObjectAccessControl>
       updateDefaultObjectAccessControlCallable() {
     return updateDefaultObjectAccessControlCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteNotificationRequest, Empty> deleteNotificationCallable() {
     return deleteNotificationCallable;
   }
 
+  @Override
   public UnaryCallable<GetNotificationRequest, Notification> getNotificationCallable() {
     return getNotificationCallable;
   }
 
+  @Override
   public UnaryCallable<InsertNotificationRequest, Notification> insertNotificationCallable() {
     return insertNotificationCallable;
   }
 
+  @Override
   public UnaryCallable<ListNotificationsRequest, ListNotificationsResponse>
       listNotificationsCallable() {
     return listNotificationsCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteObjectAccessControlRequest, Empty>
       deleteObjectAccessControlCallable() {
     return deleteObjectAccessControlCallable;
   }
 
+  @Override
   public UnaryCallable<GetObjectAccessControlRequest, ObjectAccessControl>
       getObjectAccessControlCallable() {
     return getObjectAccessControlCallable;
   }
 
+  @Override
   public UnaryCallable<InsertObjectAccessControlRequest, ObjectAccessControl>
       insertObjectAccessControlCallable() {
     return insertObjectAccessControlCallable;
   }
 
+  @Override
   public UnaryCallable<ListObjectAccessControlsRequest, ListObjectAccessControlsResponse>
       listObjectAccessControlsCallable() {
     return listObjectAccessControlsCallable;
   }
 
+  @Override
   public UnaryCallable<PatchObjectAccessControlRequest, ObjectAccessControl>
       patchObjectAccessControlCallable() {
     return patchObjectAccessControlCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateObjectAccessControlRequest, ObjectAccessControl>
       updateObjectAccessControlCallable() {
     return updateObjectAccessControlCallable;
   }
 
+  @Override
   public UnaryCallable<ComposeObjectRequest, Object> composeObjectCallable() {
     return composeObjectCallable;
   }
 
+  @Override
   public UnaryCallable<CopyObjectRequest, Object> copyObjectCallable() {
     return copyObjectCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteObjectRequest, Empty> deleteObjectCallable() {
     return deleteObjectCallable;
   }
 
+  @Override
   public UnaryCallable<GetObjectRequest, Object> getObjectCallable() {
     return getObjectCallable;
   }
 
+  @Override
   public ServerStreamingCallable<GetObjectMediaRequest, GetObjectMediaResponse>
       getObjectMediaCallable() {
     return getObjectMediaCallable;
   }
 
+  @Override
   public ClientStreamingCallable<InsertObjectRequest, Object> insertObjectCallable() {
     return insertObjectCallable;
   }
 
+  @Override
   public UnaryCallable<ListObjectsRequest, ListObjectsResponse> listObjectsCallable() {
     return listObjectsCallable;
   }
 
+  @Override
   public UnaryCallable<RewriteObjectRequest, RewriteResponse> rewriteObjectCallable() {
     return rewriteObjectCallable;
   }
 
+  @Override
   public UnaryCallable<StartResumableWriteRequest, StartResumableWriteResponse>
       startResumableWriteCallable() {
     return startResumableWriteCallable;
   }
 
+  @Override
   public UnaryCallable<QueryWriteStatusRequest, QueryWriteStatusResponse>
       queryWriteStatusCallable() {
     return queryWriteStatusCallable;
   }
 
+  @Override
   public UnaryCallable<PatchObjectRequest, Object> patchObjectCallable() {
     return patchObjectCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateObjectRequest, Object> updateObjectCallable() {
     return updateObjectCallable;
   }
 
+  @Override
   public UnaryCallable<GetIamPolicyRequest, Policy> getObjectIamPolicyCallable() {
     return getObjectIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<SetIamPolicyRequest, Policy> setObjectIamPolicyCallable() {
     return setObjectIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testObjectIamPermissionsCallable() {
     return testObjectIamPermissionsCallable;
   }
 
+  @Override
   public UnaryCallable<WatchAllObjectsRequest, Channel> watchAllObjectsCallable() {
     return watchAllObjectsCallable;
   }
 
+  @Override
   public UnaryCallable<GetProjectServiceAccountRequest, ServiceAccount>
       getServiceAccountCallable() {
     return getServiceAccountCallable;
   }
 
+  @Override
   public UnaryCallable<CreateHmacKeyRequest, CreateHmacKeyResponse> createHmacKeyCallable() {
     return createHmacKeyCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteHmacKeyRequest, Empty> deleteHmacKeyCallable() {
     return deleteHmacKeyCallable;
   }
 
+  @Override
   public UnaryCallable<GetHmacKeyRequest, HmacKeyMetadata> getHmacKeyCallable() {
     return getHmacKeyCallable;
   }
 
+  @Override
   public UnaryCallable<ListHmacKeysRequest, ListHmacKeysResponse> listHmacKeysCallable() {
     return listHmacKeysCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateHmacKeyRequest, HmacKeyMetadata> updateHmacKeyCallable() {
     return updateHmacKeyCallable;
   }

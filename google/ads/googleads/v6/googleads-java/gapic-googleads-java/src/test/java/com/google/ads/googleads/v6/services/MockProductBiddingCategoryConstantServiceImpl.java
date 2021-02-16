@@ -72,7 +72,13 @@ public class MockProductBiddingCategoryConstantServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetProductBiddingCategoryConstant, expected %s or %s",
+                  response.getClass().getName(),
+                  ProductBiddingCategoryConstant.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

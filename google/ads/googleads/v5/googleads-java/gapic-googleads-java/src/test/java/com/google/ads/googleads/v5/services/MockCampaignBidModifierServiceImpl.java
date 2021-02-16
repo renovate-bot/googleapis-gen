@@ -70,7 +70,13 @@ public class MockCampaignBidModifierServiceImpl extends CampaignBidModifierServi
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetCampaignBidModifier, expected %s or %s",
+                  response.getClass().getName(),
+                  CampaignBidModifier.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockCampaignBidModifierServiceImpl extends CampaignBidModifierServi
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateCampaignBidModifiers, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateCampaignBidModifiersResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

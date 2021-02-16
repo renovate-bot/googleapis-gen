@@ -70,7 +70,13 @@ public class MockAdGroupLabelServiceImpl extends AdGroupLabelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAdGroupLabel, expected %s or %s",
+                  response.getClass().getName(),
+                  AdGroupLabel.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockAdGroupLabelServiceImpl extends AdGroupLabelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateAdGroupLabels, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateAdGroupLabelsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

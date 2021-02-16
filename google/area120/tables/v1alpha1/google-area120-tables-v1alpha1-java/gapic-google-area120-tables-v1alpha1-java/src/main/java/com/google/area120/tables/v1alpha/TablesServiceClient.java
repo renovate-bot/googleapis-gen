@@ -340,7 +340,8 @@ public class TablesServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   GetRowRequest request = GetRowRequest.newBuilder().setName("name3373707").build();
+   *   GetRowRequest request =
+   *       GetRowRequest.newBuilder().setName("name3373707").setView(View.forNumber(0)).build();
    *   Row response = tablesServiceClient.getRow(request);
    * }
    * }</pre>
@@ -360,7 +361,8 @@ public class TablesServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   GetRowRequest request = GetRowRequest.newBuilder().setName("name3373707").build();
+   *   GetRowRequest request =
+   *       GetRowRequest.newBuilder().setName("name3373707").setView(View.forNumber(0)).build();
    *   ApiFuture<Row> future = tablesServiceClient.getRowCallable().futureCall(request);
    *   // Do something.
    *   Row response = future.get();
@@ -407,6 +409,7 @@ public class TablesServiceClient implements BackgroundResource {
    *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setView(View.forNumber(0))
    *           .build();
    *   for (Row element : tablesServiceClient.listRows(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -434,6 +437,7 @@ public class TablesServiceClient implements BackgroundResource {
    *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setView(View.forNumber(0))
    *           .build();
    *   ApiFuture<Row> future = tablesServiceClient.listRowsPagedCallable().futureCall(request);
    *   // Do something.
@@ -509,6 +513,7 @@ public class TablesServiceClient implements BackgroundResource {
    *       CreateRowRequest.newBuilder()
    *           .setParent("parent-995424086")
    *           .setRow(Row.newBuilder().build())
+   *           .setView(View.forNumber(0))
    *           .build();
    *   Row response = tablesServiceClient.createRow(request);
    * }
@@ -533,6 +538,7 @@ public class TablesServiceClient implements BackgroundResource {
    *       CreateRowRequest.newBuilder()
    *           .setParent("parent-995424086")
    *           .setRow(Row.newBuilder().build())
+   *           .setView(View.forNumber(0))
    *           .build();
    *   ApiFuture<Row> future = tablesServiceClient.createRowCallable().futureCall(request);
    *   // Do something.
@@ -629,6 +635,7 @@ public class TablesServiceClient implements BackgroundResource {
    *       UpdateRowRequest.newBuilder()
    *           .setRow(Row.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setView(View.forNumber(0))
    *           .build();
    *   Row response = tablesServiceClient.updateRow(request);
    * }
@@ -653,6 +660,7 @@ public class TablesServiceClient implements BackgroundResource {
    *       UpdateRowRequest.newBuilder()
    *           .setRow(Row.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setView(View.forNumber(0))
    *           .build();
    *   ApiFuture<Row> future = tablesServiceClient.updateRowCallable().futureCall(request);
    *   // Do something.

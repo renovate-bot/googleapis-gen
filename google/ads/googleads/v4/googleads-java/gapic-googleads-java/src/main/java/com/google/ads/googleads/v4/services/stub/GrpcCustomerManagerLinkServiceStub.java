@@ -204,16 +204,19 @@ public class GrpcCustomerManagerLinkServiceStub extends CustomerManagerLinkServi
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetCustomerManagerLinkRequest, CustomerManagerLink>
       getCustomerManagerLinkCallable() {
     return getCustomerManagerLinkCallable;
   }
 
+  @Override
   public UnaryCallable<MutateCustomerManagerLinkRequest, MutateCustomerManagerLinkResponse>
       mutateCustomerManagerLinkCallable() {
     return mutateCustomerManagerLinkCallable;
   }
 
+  @Override
   public UnaryCallable<MoveManagerLinkRequest, MoveManagerLinkResponse> moveManagerLinkCallable() {
     return moveManagerLinkCallable;
   }

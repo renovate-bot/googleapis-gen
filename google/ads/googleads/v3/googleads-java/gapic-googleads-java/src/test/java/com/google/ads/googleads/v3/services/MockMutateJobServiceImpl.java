@@ -71,7 +71,13 @@ public class MockMutateJobServiceImpl extends MutateJobServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateMutateJob, expected %s or %s",
+                  response.getClass().getName(),
+                  CreateMutateJobResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockMutateJobServiceImpl extends MutateJobServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetMutateJob, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateJob.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -102,7 +114,13 @@ public class MockMutateJobServiceImpl extends MutateJobServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListMutateJobResults, expected %s or %s",
+                  response.getClass().getName(),
+                  ListMutateJobResultsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -117,7 +135,13 @@ public class MockMutateJobServiceImpl extends MutateJobServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RunMutateJob, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -133,7 +157,13 @@ public class MockMutateJobServiceImpl extends MutateJobServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AddMutateJobOperations, expected %s or %s",
+                  response.getClass().getName(),
+                  AddMutateJobOperationsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

@@ -127,6 +127,7 @@ public class GrpcHotelGroupViewServiceStub extends HotelGroupViewServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetHotelGroupViewRequest, HotelGroupView> getHotelGroupViewCallable() {
     return getHotelGroupViewCallable;
   }

@@ -78,7 +78,13 @@ public class MockContainerAnalysisV1Beta1Impl extends ContainerAnalysisV1Beta1Im
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SetIamPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  Policy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -92,7 +98,13 @@ public class MockContainerAnalysisV1Beta1Impl extends ContainerAnalysisV1Beta1Im
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetIamPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  Policy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -108,7 +120,13 @@ public class MockContainerAnalysisV1Beta1Impl extends ContainerAnalysisV1Beta1Im
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method TestIamPermissions, expected %s or %s",
+                  response.getClass().getName(),
+                  TestIamPermissionsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -123,7 +141,13 @@ public class MockContainerAnalysisV1Beta1Impl extends ContainerAnalysisV1Beta1Im
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetScanConfig, expected %s or %s",
+                  response.getClass().getName(),
+                  ScanConfig.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -138,7 +162,13 @@ public class MockContainerAnalysisV1Beta1Impl extends ContainerAnalysisV1Beta1Im
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListScanConfigs, expected %s or %s",
+                  response.getClass().getName(),
+                  ListScanConfigsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -153,7 +183,13 @@ public class MockContainerAnalysisV1Beta1Impl extends ContainerAnalysisV1Beta1Im
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateScanConfig, expected %s or %s",
+                  response.getClass().getName(),
+                  ScanConfig.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

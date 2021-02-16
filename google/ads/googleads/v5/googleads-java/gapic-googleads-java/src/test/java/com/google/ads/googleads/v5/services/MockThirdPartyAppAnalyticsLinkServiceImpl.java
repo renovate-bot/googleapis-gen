@@ -72,7 +72,13 @@ public class MockThirdPartyAppAnalyticsLinkServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetThirdPartyAppAnalyticsLink, expected %s or %s",
+                  response.getClass().getName(),
+                  ThirdPartyAppAnalyticsLink.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -88,7 +94,13 @@ public class MockThirdPartyAppAnalyticsLinkServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RegenerateShareableLinkId, expected %s or %s",
+                  response.getClass().getName(),
+                  RegenerateShareableLinkIdResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

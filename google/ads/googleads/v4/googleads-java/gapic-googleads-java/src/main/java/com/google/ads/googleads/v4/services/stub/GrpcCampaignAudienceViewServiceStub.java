@@ -133,6 +133,7 @@ public class GrpcCampaignAudienceViewServiceStub extends CampaignAudienceViewSer
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetCampaignAudienceViewRequest, CampaignAudienceView>
       getCampaignAudienceViewCallable() {
     return getCampaignAudienceViewCallable;

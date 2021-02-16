@@ -168,11 +168,13 @@ public class GrpcCustomerClientLinkServiceStub extends CustomerClientLinkService
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetCustomerClientLinkRequest, CustomerClientLink>
       getCustomerClientLinkCallable() {
     return getCustomerClientLinkCallable;
   }
 
+  @Override
   public UnaryCallable<MutateCustomerClientLinkRequest, MutateCustomerClientLinkResponse>
       mutateCustomerClientLinkCallable() {
     return mutateCustomerClientLinkCallable;

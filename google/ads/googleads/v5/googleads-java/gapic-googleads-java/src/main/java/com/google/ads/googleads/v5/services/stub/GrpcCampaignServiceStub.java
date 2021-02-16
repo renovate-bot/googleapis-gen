@@ -154,10 +154,12 @@ public class GrpcCampaignServiceStub extends CampaignServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetCampaignRequest, Campaign> getCampaignCallable() {
     return getCampaignCallable;
   }
 
+  @Override
   public UnaryCallable<MutateCampaignsRequest, MutateCampaignsResponse> mutateCampaignsCallable() {
     return mutateCampaignsCallable;
   }

@@ -243,29 +243,35 @@ public class GrpcAgentEndpointServiceStub extends AgentEndpointServiceStub {
     return operationsStub;
   }
 
+  @Override
   public ServerStreamingCallable<ReceiveTaskNotificationRequest, ReceiveTaskNotificationResponse>
       receiveTaskNotificationCallable() {
     return receiveTaskNotificationCallable;
   }
 
+  @Override
   public UnaryCallable<StartNextTaskRequest, StartNextTaskResponse> startNextTaskCallable() {
     return startNextTaskCallable;
   }
 
+  @Override
   public UnaryCallable<ReportTaskProgressRequest, ReportTaskProgressResponse>
       reportTaskProgressCallable() {
     return reportTaskProgressCallable;
   }
 
+  @Override
   public UnaryCallable<ReportTaskCompleteRequest, ReportTaskCompleteResponse>
       reportTaskCompleteCallable() {
     return reportTaskCompleteCallable;
   }
 
+  @Override
   public UnaryCallable<RegisterAgentRequest, RegisterAgentResponse> registerAgentCallable() {
     return registerAgentCallable;
   }
 
+  @Override
   public UnaryCallable<ReportInventoryRequest, ReportInventoryResponse> reportInventoryCallable() {
     return reportInventoryCallable;
   }

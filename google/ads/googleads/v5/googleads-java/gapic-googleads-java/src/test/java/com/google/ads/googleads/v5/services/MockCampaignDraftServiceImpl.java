@@ -71,7 +71,13 @@ public class MockCampaignDraftServiceImpl extends CampaignDraftServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetCampaignDraft, expected %s or %s",
+                  response.getClass().getName(),
+                  CampaignDraft.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -87,7 +93,13 @@ public class MockCampaignDraftServiceImpl extends CampaignDraftServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateCampaignDrafts, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateCampaignDraftsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -102,7 +114,13 @@ public class MockCampaignDraftServiceImpl extends CampaignDraftServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method PromoteCampaignDraft, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -118,7 +136,13 @@ public class MockCampaignDraftServiceImpl extends CampaignDraftServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListCampaignDraftAsyncErrors, expected %s or %s",
+                  response.getClass().getName(),
+                  ListCampaignDraftAsyncErrorsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

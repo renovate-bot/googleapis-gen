@@ -73,7 +73,13 @@ public class MockPublishBuildEventImpl extends PublishBuildEventImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method PublishLifecycleEvent, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -91,7 +97,13 @@ public class MockPublishBuildEventImpl extends PublishBuildEventImplBase {
             } else if (response instanceof Exception) {
               responseObserver.onError(((Exception) response));
             } else {
-              responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+              responseObserver.onError(
+                  new IllegalArgumentException(
+                      String.format(
+                          "Unrecognized response type %s for method PublishBuildToolEventStream, expected %s or %s",
+                          response.getClass().getName(),
+                          PublishBuildToolEventStreamResponse.class.getName(),
+                          Exception.class.getName())));
             }
           }
 

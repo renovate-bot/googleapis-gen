@@ -149,10 +149,12 @@ public class GrpcLabelServiceStub extends LabelServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetLabelRequest, Label> getLabelCallable() {
     return getLabelCallable;
   }
 
+  @Override
   public UnaryCallable<MutateLabelsRequest, MutateLabelsResponse> mutateLabelsCallable() {
     return mutateLabelsCallable;
   }

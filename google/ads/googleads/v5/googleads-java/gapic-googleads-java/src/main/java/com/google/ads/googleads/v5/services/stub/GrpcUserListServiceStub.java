@@ -154,10 +154,12 @@ public class GrpcUserListServiceStub extends UserListServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetUserListRequest, UserList> getUserListCallable() {
     return getUserListCallable;
   }
 
+  @Override
   public UnaryCallable<MutateUserListsRequest, MutateUserListsResponse> mutateUserListsCallable() {
     return mutateUserListsCallable;
   }

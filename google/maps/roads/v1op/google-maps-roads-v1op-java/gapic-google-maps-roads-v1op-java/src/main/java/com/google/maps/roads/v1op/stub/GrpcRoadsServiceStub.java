@@ -133,10 +133,12 @@ public class GrpcRoadsServiceStub extends RoadsServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<SnapToRoadsRequest, SnapToRoadsResponse> snapToRoadsCallable() {
     return snapToRoadsCallable;
   }
 
+  @Override
   public UnaryCallable<ListNearestRoadsRequest, ListNearestRoadsResponse>
       listNearestRoadsCallable() {
     return listNearestRoadsCallable;

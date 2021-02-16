@@ -168,7 +168,10 @@ public class AgentEndpointServiceClientTest {
 
   @Test
   public void reportTaskProgressTest() throws Exception {
-    ReportTaskProgressResponse expectedResponse = ReportTaskProgressResponse.newBuilder().build();
+    ReportTaskProgressResponse expectedResponse =
+        ReportTaskProgressResponse.newBuilder()
+            .setTaskDirective(TaskDirective.forNumber(0))
+            .build();
     mockAgentEndpointService.addResponse(expectedResponse);
 
     String instanceIdToken = "instanceIdToken55138121";

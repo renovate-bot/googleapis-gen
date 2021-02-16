@@ -130,6 +130,7 @@ public class GrpcCurrencyConstantServiceStub extends CurrencyConstantServiceStub
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetCurrencyConstantRequest, CurrencyConstant> getCurrencyConstantCallable() {
     return getCurrencyConstantCallable;
   }

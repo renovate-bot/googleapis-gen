@@ -135,6 +135,7 @@ public class GrpcShoppingPerformanceViewServiceStub extends ShoppingPerformanceV
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetShoppingPerformanceViewRequest, ShoppingPerformanceView>
       getShoppingPerformanceViewCallable() {
     return getShoppingPerformanceViewCallable;

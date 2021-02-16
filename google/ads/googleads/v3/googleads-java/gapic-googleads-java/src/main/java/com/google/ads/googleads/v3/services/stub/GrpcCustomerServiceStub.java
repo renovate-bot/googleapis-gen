@@ -217,19 +217,23 @@ public class GrpcCustomerServiceStub extends CustomerServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetCustomerRequest, Customer> getCustomerCallable() {
     return getCustomerCallable;
   }
 
+  @Override
   public UnaryCallable<MutateCustomerRequest, MutateCustomerResponse> mutateCustomerCallable() {
     return mutateCustomerCallable;
   }
 
+  @Override
   public UnaryCallable<ListAccessibleCustomersRequest, ListAccessibleCustomersResponse>
       listAccessibleCustomersCallable() {
     return listAccessibleCustomersCallable;
   }
 
+  @Override
   public UnaryCallable<CreateCustomerClientRequest, CreateCustomerClientResponse>
       createCustomerClientCallable() {
     return createCustomerClientCallable;

@@ -71,7 +71,13 @@ public class MockAdGroupExtensionSettingServiceImpl extends AdGroupExtensionSett
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAdGroupExtensionSetting, expected %s or %s",
+                  response.getClass().getName(),
+                  AdGroupExtensionSetting.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -87,7 +93,13 @@ public class MockAdGroupExtensionSettingServiceImpl extends AdGroupExtensionSett
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateAdGroupExtensionSettings, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateAdGroupExtensionSettingsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

@@ -125,6 +125,7 @@ public class GrpcKeywordViewServiceStub extends KeywordViewServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetKeywordViewRequest, KeywordView> getKeywordViewCallable() {
     return getKeywordViewCallable;
   }

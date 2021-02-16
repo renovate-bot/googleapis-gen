@@ -71,7 +71,13 @@ public class MockMerchantCenterLinkServiceImpl extends MerchantCenterLinkService
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListMerchantCenterLinks, expected %s or %s",
+                  response.getClass().getName(),
+                  ListMerchantCenterLinksResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockMerchantCenterLinkServiceImpl extends MerchantCenterLinkService
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetMerchantCenterLink, expected %s or %s",
+                  response.getClass().getName(),
+                  MerchantCenterLink.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -102,7 +114,13 @@ public class MockMerchantCenterLinkServiceImpl extends MerchantCenterLinkService
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateMerchantCenterLink, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateMerchantCenterLinkResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

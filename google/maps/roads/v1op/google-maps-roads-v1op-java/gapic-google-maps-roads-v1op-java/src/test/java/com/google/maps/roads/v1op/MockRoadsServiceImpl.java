@@ -69,7 +69,13 @@ public class MockRoadsServiceImpl extends RoadsServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SnapToRoads, expected %s or %s",
+                  response.getClass().getName(),
+                  SnapToRoadsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -84,7 +90,13 @@ public class MockRoadsServiceImpl extends RoadsServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListNearestRoads, expected %s or %s",
+                  response.getClass().getName(),
+                  ListNearestRoadsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

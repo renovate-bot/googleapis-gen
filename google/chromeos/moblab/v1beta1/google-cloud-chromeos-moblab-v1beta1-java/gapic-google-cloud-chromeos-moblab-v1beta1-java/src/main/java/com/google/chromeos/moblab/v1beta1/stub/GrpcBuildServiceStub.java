@@ -203,23 +203,28 @@ public class GrpcBuildServiceStub extends BuildServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListBuildsRequest, ListBuildsResponse> listBuildsCallable() {
     return listBuildsCallable;
   }
 
+  @Override
   public UnaryCallable<ListBuildsRequest, ListBuildsPagedResponse> listBuildsPagedCallable() {
     return listBuildsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<CheckBuildStageStatusRequest, CheckBuildStageStatusResponse>
       checkBuildStageStatusCallable() {
     return checkBuildStageStatusCallable;
   }
 
+  @Override
   public UnaryCallable<StageBuildRequest, Operation> stageBuildCallable() {
     return stageBuildCallable;
   }
 
+  @Override
   public OperationCallable<StageBuildRequest, StageBuildResponse, StageBuildMetadata>
       stageBuildOperationCallable() {
     return stageBuildOperationCallable;

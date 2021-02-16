@@ -120,6 +120,7 @@ public class GrpcVideoServiceStub extends VideoServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetVideoRequest, Video> getVideoCallable() {
     return getVideoCallable;
   }

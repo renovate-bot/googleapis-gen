@@ -72,7 +72,13 @@ public class MockKeywordPlanNegativeKeywordServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetKeywordPlanNegativeKeyword, expected %s or %s",
+                  response.getClass().getName(),
+                  KeywordPlanNegativeKeyword.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -88,7 +94,13 @@ public class MockKeywordPlanNegativeKeywordServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateKeywordPlanNegativeKeywords, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateKeywordPlanNegativeKeywordsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

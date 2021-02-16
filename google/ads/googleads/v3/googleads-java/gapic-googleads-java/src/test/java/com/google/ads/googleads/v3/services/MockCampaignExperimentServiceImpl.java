@@ -72,7 +72,13 @@ public class MockCampaignExperimentServiceImpl extends CampaignExperimentService
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetCampaignExperiment, expected %s or %s",
+                  response.getClass().getName(),
+                  CampaignExperiment.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -87,7 +93,13 @@ public class MockCampaignExperimentServiceImpl extends CampaignExperimentService
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateCampaignExperiment, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -103,7 +115,13 @@ public class MockCampaignExperimentServiceImpl extends CampaignExperimentService
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateCampaignExperiments, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateCampaignExperimentsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -119,7 +137,13 @@ public class MockCampaignExperimentServiceImpl extends CampaignExperimentService
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GraduateCampaignExperiment, expected %s or %s",
+                  response.getClass().getName(),
+                  GraduateCampaignExperimentResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -134,7 +158,13 @@ public class MockCampaignExperimentServiceImpl extends CampaignExperimentService
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method PromoteCampaignExperiment, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -149,7 +179,13 @@ public class MockCampaignExperimentServiceImpl extends CampaignExperimentService
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method EndCampaignExperiment, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -165,7 +201,13 @@ public class MockCampaignExperimentServiceImpl extends CampaignExperimentService
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListCampaignExperimentAsyncErrors, expected %s or %s",
+                  response.getClass().getName(),
+                  ListCampaignExperimentAsyncErrorsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

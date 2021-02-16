@@ -70,7 +70,13 @@ public class MockAccountLinkServiceImpl extends AccountLinkServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAccountLink, expected %s or %s",
+                  response.getClass().getName(),
+                  AccountLink.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockAccountLinkServiceImpl extends AccountLinkServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateAccountLink, expected %s or %s",
+                  response.getClass().getName(),
+                  CreateAccountLinkResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -102,7 +114,13 @@ public class MockAccountLinkServiceImpl extends AccountLinkServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateAccountLink, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateAccountLinkResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

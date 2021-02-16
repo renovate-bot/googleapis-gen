@@ -140,6 +140,7 @@ public class GrpcConversionAdjustmentUploadServiceStub
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<UploadConversionAdjustmentsRequest, UploadConversionAdjustmentsResponse>
       uploadConversionAdjustmentsCallable() {
     return uploadConversionAdjustmentsCallable;

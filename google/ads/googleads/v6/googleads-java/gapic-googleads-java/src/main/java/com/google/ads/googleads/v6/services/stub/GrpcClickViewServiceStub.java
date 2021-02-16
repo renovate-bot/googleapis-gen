@@ -123,6 +123,7 @@ public class GrpcClickViewServiceStub extends ClickViewServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetClickViewRequest, ClickView> getClickViewCallable() {
     return getClickViewCallable;
   }

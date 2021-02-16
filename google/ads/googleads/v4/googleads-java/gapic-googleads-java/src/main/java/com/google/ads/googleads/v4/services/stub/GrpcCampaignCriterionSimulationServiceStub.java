@@ -138,6 +138,7 @@ public class GrpcCampaignCriterionSimulationServiceStub
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetCampaignCriterionSimulationRequest, CampaignCriterionSimulation>
       getCampaignCriterionSimulationCallable() {
     return getCampaignCriterionSimulationCallable;

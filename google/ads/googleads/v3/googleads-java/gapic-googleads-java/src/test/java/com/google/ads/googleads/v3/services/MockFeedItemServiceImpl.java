@@ -69,7 +69,13 @@ public class MockFeedItemServiceImpl extends FeedItemServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetFeedItem, expected %s or %s",
+                  response.getClass().getName(),
+                  FeedItem.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -84,7 +90,13 @@ public class MockFeedItemServiceImpl extends FeedItemServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateFeedItems, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateFeedItemsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

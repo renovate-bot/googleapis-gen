@@ -72,7 +72,13 @@ public class MockCampaignExtensionSettingServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetCampaignExtensionSetting, expected %s or %s",
+                  response.getClass().getName(),
+                  CampaignExtensionSetting.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -88,7 +94,13 @@ public class MockCampaignExtensionSettingServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateCampaignExtensionSettings, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateCampaignExtensionSettingsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

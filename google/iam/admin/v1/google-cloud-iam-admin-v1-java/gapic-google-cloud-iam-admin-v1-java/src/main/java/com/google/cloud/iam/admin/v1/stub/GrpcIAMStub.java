@@ -754,115 +754,141 @@ public class GrpcIAMStub extends IAMStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListServiceAccountsRequest, ListServiceAccountsResponse>
       listServiceAccountsCallable() {
     return listServiceAccountsCallable;
   }
 
+  @Override
   public UnaryCallable<ListServiceAccountsRequest, ListServiceAccountsPagedResponse>
       listServiceAccountsPagedCallable() {
     return listServiceAccountsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetServiceAccountRequest, ServiceAccount> getServiceAccountCallable() {
     return getServiceAccountCallable;
   }
 
+  @Override
   public UnaryCallable<CreateServiceAccountRequest, ServiceAccount> createServiceAccountCallable() {
     return createServiceAccountCallable;
   }
 
+  @Override
   public UnaryCallable<ServiceAccount, ServiceAccount> updateServiceAccountCallable() {
     return updateServiceAccountCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteServiceAccountRequest, Empty> deleteServiceAccountCallable() {
     return deleteServiceAccountCallable;
   }
 
+  @Override
   public UnaryCallable<ListServiceAccountKeysRequest, ListServiceAccountKeysResponse>
       listServiceAccountKeysCallable() {
     return listServiceAccountKeysCallable;
   }
 
+  @Override
   public UnaryCallable<GetServiceAccountKeyRequest, ServiceAccountKey>
       getServiceAccountKeyCallable() {
     return getServiceAccountKeyCallable;
   }
 
+  @Override
   public UnaryCallable<CreateServiceAccountKeyRequest, ServiceAccountKey>
       createServiceAccountKeyCallable() {
     return createServiceAccountKeyCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteServiceAccountKeyRequest, Empty> deleteServiceAccountKeyCallable() {
     return deleteServiceAccountKeyCallable;
   }
 
+  @Override
   public UnaryCallable<SignBlobRequest, SignBlobResponse> signBlobCallable() {
     return signBlobCallable;
   }
 
+  @Override
   public UnaryCallable<SignJwtRequest, SignJwtResponse> signJwtCallable() {
     return signJwtCallable;
   }
 
+  @Override
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
   }
 
+  @Override
   public UnaryCallable<QueryGrantableRolesRequest, QueryGrantableRolesResponse>
       queryGrantableRolesCallable() {
     return queryGrantableRolesCallable;
   }
 
+  @Override
   public UnaryCallable<QueryGrantableRolesRequest, QueryGrantableRolesPagedResponse>
       queryGrantableRolesPagedCallable() {
     return queryGrantableRolesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<ListRolesRequest, ListRolesResponse> listRolesCallable() {
     return listRolesCallable;
   }
 
+  @Override
   public UnaryCallable<ListRolesRequest, ListRolesPagedResponse> listRolesPagedCallable() {
     return listRolesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetRoleRequest, Role> getRoleCallable() {
     return getRoleCallable;
   }
 
+  @Override
   public UnaryCallable<CreateRoleRequest, Role> createRoleCallable() {
     return createRoleCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateRoleRequest, Role> updateRoleCallable() {
     return updateRoleCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteRoleRequest, Role> deleteRoleCallable() {
     return deleteRoleCallable;
   }
 
+  @Override
   public UnaryCallable<UndeleteRoleRequest, Role> undeleteRoleCallable() {
     return undeleteRoleCallable;
   }
 
+  @Override
   public UnaryCallable<QueryTestablePermissionsRequest, QueryTestablePermissionsResponse>
       queryTestablePermissionsCallable() {
     return queryTestablePermissionsCallable;
   }
 
+  @Override
   public UnaryCallable<QueryTestablePermissionsRequest, QueryTestablePermissionsPagedResponse>
       queryTestablePermissionsPagedCallable() {
     return queryTestablePermissionsPagedCallable;

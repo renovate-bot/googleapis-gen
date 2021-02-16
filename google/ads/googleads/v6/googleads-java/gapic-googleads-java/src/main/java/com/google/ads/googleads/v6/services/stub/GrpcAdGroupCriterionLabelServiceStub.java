@@ -175,11 +175,13 @@ public class GrpcAdGroupCriterionLabelServiceStub extends AdGroupCriterionLabelS
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetAdGroupCriterionLabelRequest, AdGroupCriterionLabel>
       getAdGroupCriterionLabelCallable() {
     return getAdGroupCriterionLabelCallable;
   }
 
+  @Override
   public UnaryCallable<MutateAdGroupCriterionLabelsRequest, MutateAdGroupCriterionLabelsResponse>
       mutateAdGroupCriterionLabelsCallable() {
     return mutateAdGroupCriterionLabelsCallable;

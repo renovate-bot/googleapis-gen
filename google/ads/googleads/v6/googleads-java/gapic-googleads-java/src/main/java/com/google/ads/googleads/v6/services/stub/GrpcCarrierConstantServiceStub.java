@@ -129,6 +129,7 @@ public class GrpcCarrierConstantServiceStub extends CarrierConstantServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetCarrierConstantRequest, CarrierConstant> getCarrierConstantCallable() {
     return getCarrierConstantCallable;
   }

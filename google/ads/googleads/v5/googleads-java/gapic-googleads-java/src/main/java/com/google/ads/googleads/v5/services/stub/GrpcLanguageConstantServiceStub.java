@@ -130,6 +130,7 @@ public class GrpcLanguageConstantServiceStub extends LanguageConstantServiceStub
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetLanguageConstantRequest, LanguageConstant> getLanguageConstantCallable() {
     return getLanguageConstantCallable;
   }

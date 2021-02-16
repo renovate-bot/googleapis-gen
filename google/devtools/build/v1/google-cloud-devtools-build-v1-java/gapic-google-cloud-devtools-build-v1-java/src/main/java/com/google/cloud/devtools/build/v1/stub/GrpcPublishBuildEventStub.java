@@ -168,10 +168,12 @@ public class GrpcPublishBuildEventStub extends PublishBuildEventStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<PublishLifecycleEventRequest, Empty> publishLifecycleEventCallable() {
     return publishLifecycleEventCallable;
   }
 
+  @Override
   public BidiStreamingCallable<
           PublishBuildToolEventStreamRequest, PublishBuildToolEventStreamResponse>
       publishBuildToolEventStreamCallable() {

@@ -125,6 +125,7 @@ public class GrpcAgeRangeViewServiceStub extends AgeRangeViewServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetAgeRangeViewRequest, AgeRangeView> getAgeRangeViewCallable() {
     return getAgeRangeViewCallable;
   }

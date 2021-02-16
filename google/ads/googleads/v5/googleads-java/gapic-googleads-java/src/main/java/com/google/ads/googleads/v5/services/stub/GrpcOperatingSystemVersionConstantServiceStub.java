@@ -143,6 +143,7 @@ public class GrpcOperatingSystemVersionConstantServiceStub
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetOperatingSystemVersionConstantRequest, OperatingSystemVersionConstant>
       getOperatingSystemVersionConstantCallable() {
     return getOperatingSystemVersionConstantCallable;

@@ -130,6 +130,7 @@ public class GrpcCombinedAudienceServiceStub extends CombinedAudienceServiceStub
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetCombinedAudienceRequest, CombinedAudience> getCombinedAudienceCallable() {
     return getCombinedAudienceCallable;
   }

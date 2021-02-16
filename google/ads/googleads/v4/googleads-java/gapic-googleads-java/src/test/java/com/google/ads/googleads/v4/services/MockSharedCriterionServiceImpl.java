@@ -70,7 +70,13 @@ public class MockSharedCriterionServiceImpl extends SharedCriterionServiceImplBa
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetSharedCriterion, expected %s or %s",
+                  response.getClass().getName(),
+                  SharedCriterion.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockSharedCriterionServiceImpl extends SharedCriterionServiceImplBa
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateSharedCriteria, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateSharedCriteriaResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

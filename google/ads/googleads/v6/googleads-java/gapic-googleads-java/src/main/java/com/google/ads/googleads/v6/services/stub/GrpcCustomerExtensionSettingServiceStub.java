@@ -182,11 +182,13 @@ public class GrpcCustomerExtensionSettingServiceStub extends CustomerExtensionSe
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetCustomerExtensionSettingRequest, CustomerExtensionSetting>
       getCustomerExtensionSettingCallable() {
     return getCustomerExtensionSettingCallable;
   }
 
+  @Override
   public UnaryCallable<
           MutateCustomerExtensionSettingsRequest, MutateCustomerExtensionSettingsResponse>
       mutateCustomerExtensionSettingsCallable() {

@@ -53,6 +53,7 @@ import com.google.iam.admin.v1.QueryGrantableRolesResponse;
 import com.google.iam.admin.v1.QueryTestablePermissionsRequest;
 import com.google.iam.admin.v1.QueryTestablePermissionsResponse;
 import com.google.iam.admin.v1.Role;
+import com.google.iam.admin.v1.RoleView;
 import com.google.iam.admin.v1.ServiceAccount;
 import com.google.iam.admin.v1.ServiceAccountKey;
 import com.google.iam.admin.v1.ServiceAccountKeyAlgorithm;
@@ -633,6 +634,8 @@ public class IAMClientTest {
     ServiceAccountKey expectedResponse =
         ServiceAccountKey.newBuilder()
             .setName(KeyName.of("[PROJECT]", "[SERVICE_ACCOUNT]", "[KEY]").toString())
+            .setPrivateKeyType(ServiceAccountPrivateKeyType.forNumber(0))
+            .setKeyAlgorithm(ServiceAccountKeyAlgorithm.forNumber(0))
             .setPrivateKeyData(ByteString.EMPTY)
             .setPublicKeyData(ByteString.EMPTY)
             .setValidAfterTime(Timestamp.newBuilder().build())
@@ -679,6 +682,8 @@ public class IAMClientTest {
     ServiceAccountKey expectedResponse =
         ServiceAccountKey.newBuilder()
             .setName(KeyName.of("[PROJECT]", "[SERVICE_ACCOUNT]", "[KEY]").toString())
+            .setPrivateKeyType(ServiceAccountPrivateKeyType.forNumber(0))
+            .setKeyAlgorithm(ServiceAccountKeyAlgorithm.forNumber(0))
             .setPrivateKeyData(ByteString.EMPTY)
             .setPublicKeyData(ByteString.EMPTY)
             .setValidAfterTime(Timestamp.newBuilder().build())
@@ -725,6 +730,8 @@ public class IAMClientTest {
     ServiceAccountKey expectedResponse =
         ServiceAccountKey.newBuilder()
             .setName(KeyName.of("[PROJECT]", "[SERVICE_ACCOUNT]", "[KEY]").toString())
+            .setPrivateKeyType(ServiceAccountPrivateKeyType.forNumber(0))
+            .setKeyAlgorithm(ServiceAccountKeyAlgorithm.forNumber(0))
             .setPrivateKeyData(ByteString.EMPTY)
             .setPublicKeyData(ByteString.EMPTY)
             .setValidAfterTime(Timestamp.newBuilder().build())
@@ -775,6 +782,8 @@ public class IAMClientTest {
     ServiceAccountKey expectedResponse =
         ServiceAccountKey.newBuilder()
             .setName(KeyName.of("[PROJECT]", "[SERVICE_ACCOUNT]", "[KEY]").toString())
+            .setPrivateKeyType(ServiceAccountPrivateKeyType.forNumber(0))
+            .setKeyAlgorithm(ServiceAccountKeyAlgorithm.forNumber(0))
             .setPrivateKeyData(ByteString.EMPTY)
             .setPublicKeyData(ByteString.EMPTY)
             .setValidAfterTime(Timestamp.newBuilder().build())
@@ -1362,6 +1371,7 @@ public class IAMClientTest {
             .setParent(ProjectName.of("[PROJECT]").toString())
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
+            .setView(RoleView.forNumber(0))
             .setShowDeleted(true)
             .build();
 
@@ -1398,6 +1408,7 @@ public class IAMClientTest {
               .setParent(ProjectName.of("[PROJECT]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setView(RoleView.forNumber(0))
               .setShowDeleted(true)
               .build();
       client.listRoles(request);

@@ -71,7 +71,13 @@ public class MockAccountBudgetProposalServiceImpl extends AccountBudgetProposalS
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAccountBudgetProposal, expected %s or %s",
+                  response.getClass().getName(),
+                  AccountBudgetProposal.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -87,7 +93,13 @@ public class MockAccountBudgetProposalServiceImpl extends AccountBudgetProposalS
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateAccountBudgetProposal, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateAccountBudgetProposalResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

@@ -124,6 +124,7 @@ public class GrpcInvoiceServiceStub extends InvoiceServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListInvoicesRequest, ListInvoicesResponse> listInvoicesCallable() {
     return listInvoicesCallable;
   }

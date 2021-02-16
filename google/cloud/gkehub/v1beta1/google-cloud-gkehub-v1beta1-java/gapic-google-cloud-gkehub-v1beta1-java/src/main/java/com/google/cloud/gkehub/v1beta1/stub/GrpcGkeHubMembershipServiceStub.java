@@ -397,56 +397,68 @@ public class GrpcGkeHubMembershipServiceStub extends GkeHubMembershipServiceStub
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListMembershipsRequest, ListMembershipsResponse> listMembershipsCallable() {
     return listMembershipsCallable;
   }
 
+  @Override
   public UnaryCallable<ListMembershipsRequest, ListMembershipsPagedResponse>
       listMembershipsPagedCallable() {
     return listMembershipsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetMembershipRequest, Membership> getMembershipCallable() {
     return getMembershipCallable;
   }
 
+  @Override
   public UnaryCallable<CreateMembershipRequest, Operation> createMembershipCallable() {
     return createMembershipCallable;
   }
 
+  @Override
   public OperationCallable<CreateMembershipRequest, Membership, OperationMetadata>
       createMembershipOperationCallable() {
     return createMembershipOperationCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteMembershipRequest, Operation> deleteMembershipCallable() {
     return deleteMembershipCallable;
   }
 
+  @Override
   public OperationCallable<DeleteMembershipRequest, Empty, OperationMetadata>
       deleteMembershipOperationCallable() {
     return deleteMembershipOperationCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateMembershipRequest, Operation> updateMembershipCallable() {
     return updateMembershipCallable;
   }
 
+  @Override
   public OperationCallable<UpdateMembershipRequest, Membership, OperationMetadata>
       updateMembershipOperationCallable() {
     return updateMembershipOperationCallable;
   }
 
+  @Override
   public UnaryCallable<GenerateConnectManifestRequest, GenerateConnectManifestResponse>
       generateConnectManifestCallable() {
     return generateConnectManifestCallable;
   }
 
+  @Override
   public UnaryCallable<ValidateExclusivityRequest, ValidateExclusivityResponse>
       validateExclusivityCallable() {
     return validateExclusivityCallable;
   }
 
+  @Override
   public UnaryCallable<GenerateExclusivityManifestRequest, GenerateExclusivityManifestResponse>
       generateExclusivityManifestCallable() {
     return generateExclusivityManifestCallable;

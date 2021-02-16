@@ -70,7 +70,13 @@ public class MockAdParameterServiceImpl extends AdParameterServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAdParameter, expected %s or %s",
+                  response.getClass().getName(),
+                  AdParameter.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockAdParameterServiceImpl extends AdParameterServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateAdParameters, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateAdParametersResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

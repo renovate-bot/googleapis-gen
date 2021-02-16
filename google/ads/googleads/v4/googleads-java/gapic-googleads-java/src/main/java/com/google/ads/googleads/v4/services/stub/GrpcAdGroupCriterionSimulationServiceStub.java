@@ -138,6 +138,7 @@ public class GrpcAdGroupCriterionSimulationServiceStub
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetAdGroupCriterionSimulationRequest, AdGroupCriterionSimulation>
       getAdGroupCriterionSimulationCallable() {
     return getAdGroupCriterionSimulationCallable;

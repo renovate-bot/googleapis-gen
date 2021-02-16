@@ -68,7 +68,13 @@ public class MockQuestionServiceImpl extends QuestionServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetQuestion, expected %s or %s",
+                  response.getClass().getName(),
+                  Question.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -83,7 +89,13 @@ public class MockQuestionServiceImpl extends QuestionServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateQuestion, expected %s or %s",
+                  response.getClass().getName(),
+                  Question.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -98,7 +110,13 @@ public class MockQuestionServiceImpl extends QuestionServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ExecuteQuestion, expected %s or %s",
+                  response.getClass().getName(),
+                  Question.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -113,7 +131,13 @@ public class MockQuestionServiceImpl extends QuestionServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetUserFeedback, expected %s or %s",
+                  response.getClass().getName(),
+                  UserFeedback.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -128,7 +152,13 @@ public class MockQuestionServiceImpl extends QuestionServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateUserFeedback, expected %s or %s",
+                  response.getClass().getName(),
+                  UserFeedback.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

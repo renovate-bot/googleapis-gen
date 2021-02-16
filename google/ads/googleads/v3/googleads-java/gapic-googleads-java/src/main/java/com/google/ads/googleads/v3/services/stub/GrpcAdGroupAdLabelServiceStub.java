@@ -163,10 +163,12 @@ public class GrpcAdGroupAdLabelServiceStub extends AdGroupAdLabelServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetAdGroupAdLabelRequest, AdGroupAdLabel> getAdGroupAdLabelCallable() {
     return getAdGroupAdLabelCallable;
   }
 
+  @Override
   public UnaryCallable<MutateAdGroupAdLabelsRequest, MutateAdGroupAdLabelsResponse>
       mutateAdGroupAdLabelsCallable() {
     return mutateAdGroupAdLabelsCallable;

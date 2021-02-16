@@ -260,6 +260,7 @@ public class GrpcHomeGraphApiServiceStub extends HomeGraphApiServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<
           HomeGraphApiServiceProto.RequestSyncDevicesRequest,
           HomeGraphApiServiceProto.RequestSyncDevicesResponse>
@@ -267,6 +268,7 @@ public class GrpcHomeGraphApiServiceStub extends HomeGraphApiServiceStub {
     return requestSyncDevicesCallable;
   }
 
+  @Override
   public UnaryCallable<
           HomeGraphApiServiceProto.ReportStateAndNotificationRequest,
           HomeGraphApiServiceProto.ReportStateAndNotificationResponse>
@@ -274,17 +276,20 @@ public class GrpcHomeGraphApiServiceStub extends HomeGraphApiServiceStub {
     return reportStateAndNotificationCallable;
   }
 
+  @Override
   public UnaryCallable<HomeGraphApiServiceProto.DeleteAgentUserRequest, Empty>
       deleteAgentUserCallable() {
     return deleteAgentUserCallable;
   }
 
+  @Override
   public UnaryCallable<
           HomeGraphApiServiceProto.QueryRequest, HomeGraphApiServiceProto.QueryResponse>
       queryCallable() {
     return queryCallable;
   }
 
+  @Override
   public UnaryCallable<HomeGraphApiServiceProto.SyncRequest, HomeGraphApiServiceProto.SyncResponse>
       syncCallable() {
     return syncCallable;

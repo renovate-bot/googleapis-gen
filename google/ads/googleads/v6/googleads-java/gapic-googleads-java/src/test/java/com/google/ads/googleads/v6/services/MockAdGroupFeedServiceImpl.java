@@ -70,7 +70,13 @@ public class MockAdGroupFeedServiceImpl extends AdGroupFeedServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAdGroupFeed, expected %s or %s",
+                  response.getClass().getName(),
+                  AdGroupFeed.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockAdGroupFeedServiceImpl extends AdGroupFeedServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateAdGroupFeeds, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateAdGroupFeedsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

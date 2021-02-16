@@ -167,10 +167,12 @@ public class GrpcFeedItemSetLinkServiceStub extends FeedItemSetLinkServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetFeedItemSetLinkRequest, FeedItemSetLink> getFeedItemSetLinkCallable() {
     return getFeedItemSetLinkCallable;
   }
 
+  @Override
   public UnaryCallable<MutateFeedItemSetLinksRequest, MutateFeedItemSetLinksResponse>
       mutateFeedItemSetLinksCallable() {
     return mutateFeedItemSetLinksCallable;

@@ -168,11 +168,13 @@ public class GrpcCampaignSharedSetServiceStub extends CampaignSharedSetServiceSt
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetCampaignSharedSetRequest, CampaignSharedSet>
       getCampaignSharedSetCallable() {
     return getCampaignSharedSetCallable;
   }
 
+  @Override
   public UnaryCallable<MutateCampaignSharedSetsRequest, MutateCampaignSharedSetsResponse>
       mutateCampaignSharedSetsCallable() {
     return mutateCampaignSharedSetsCallable;

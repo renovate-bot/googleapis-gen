@@ -183,14 +183,17 @@ public class GrpcProfilerServiceStub extends ProfilerServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateProfileRequest, Profile> createProfileCallable() {
     return createProfileCallable;
   }
 
+  @Override
   public UnaryCallable<CreateOfflineProfileRequest, Profile> createOfflineProfileCallable() {
     return createOfflineProfileCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateProfileRequest, Profile> updateProfileCallable() {
     return updateProfileCallable;
   }

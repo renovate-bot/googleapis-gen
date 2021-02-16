@@ -367,43 +367,53 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetAuthorizationRequest, Authorization> getAuthorizationCallable() {
     return getAuthorizationCallable;
   }
 
+  @Override
   public UnaryCallable<CreateDeploymentRequest, Deployment> createDeploymentCallable() {
     return createDeploymentCallable;
   }
 
+  @Override
   public UnaryCallable<ReplaceDeploymentRequest, Deployment> replaceDeploymentCallable() {
     return replaceDeploymentCallable;
   }
 
+  @Override
   public UnaryCallable<GetDeploymentRequest, Deployment> getDeploymentCallable() {
     return getDeploymentCallable;
   }
 
+  @Override
   public UnaryCallable<ListDeploymentsRequest, ListDeploymentsResponse> listDeploymentsCallable() {
     return listDeploymentsCallable;
   }
 
+  @Override
   public UnaryCallable<ListDeploymentsRequest, ListDeploymentsPagedResponse>
       listDeploymentsPagedCallable() {
     return listDeploymentsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteDeploymentRequest, Empty> deleteDeploymentCallable() {
     return deleteDeploymentCallable;
   }
 
+  @Override
   public UnaryCallable<InstallDeploymentRequest, Empty> installDeploymentCallable() {
     return installDeploymentCallable;
   }
 
+  @Override
   public UnaryCallable<UninstallDeploymentRequest, Empty> uninstallDeploymentCallable() {
     return uninstallDeploymentCallable;
   }
 
+  @Override
   public UnaryCallable<GetInstallStatusRequest, InstallStatus> getInstallStatusCallable() {
     return getInstallStatusCallable;
   }

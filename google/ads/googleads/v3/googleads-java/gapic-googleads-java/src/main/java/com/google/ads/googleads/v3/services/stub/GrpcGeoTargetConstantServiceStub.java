@@ -159,11 +159,13 @@ public class GrpcGeoTargetConstantServiceStub extends GeoTargetConstantServiceSt
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetGeoTargetConstantRequest, GeoTargetConstant>
       getGeoTargetConstantCallable() {
     return getGeoTargetConstantCallable;
   }
 
+  @Override
   public UnaryCallable<SuggestGeoTargetConstantsRequest, SuggestGeoTargetConstantsResponse>
       suggestGeoTargetConstantsCallable() {
     return suggestGeoTargetConstantsCallable;

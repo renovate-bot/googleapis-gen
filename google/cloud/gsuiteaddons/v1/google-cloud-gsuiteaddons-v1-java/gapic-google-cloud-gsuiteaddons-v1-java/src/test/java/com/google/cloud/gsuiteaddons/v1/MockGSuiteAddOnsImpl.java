@@ -70,7 +70,13 @@ public class MockGSuiteAddOnsImpl extends GSuiteAddOnsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAuthorization, expected %s or %s",
+                  response.getClass().getName(),
+                  Authorization.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -85,7 +91,13 @@ public class MockGSuiteAddOnsImpl extends GSuiteAddOnsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateDeployment, expected %s or %s",
+                  response.getClass().getName(),
+                  Deployment.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -100,7 +112,13 @@ public class MockGSuiteAddOnsImpl extends GSuiteAddOnsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ReplaceDeployment, expected %s or %s",
+                  response.getClass().getName(),
+                  Deployment.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -115,7 +133,13 @@ public class MockGSuiteAddOnsImpl extends GSuiteAddOnsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDeployment, expected %s or %s",
+                  response.getClass().getName(),
+                  Deployment.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -130,7 +154,13 @@ public class MockGSuiteAddOnsImpl extends GSuiteAddOnsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDeployments, expected %s or %s",
+                  response.getClass().getName(),
+                  ListDeploymentsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -145,7 +175,13 @@ public class MockGSuiteAddOnsImpl extends GSuiteAddOnsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteDeployment, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -160,7 +196,13 @@ public class MockGSuiteAddOnsImpl extends GSuiteAddOnsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method InstallDeployment, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -175,7 +217,13 @@ public class MockGSuiteAddOnsImpl extends GSuiteAddOnsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UninstallDeployment, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -190,7 +238,13 @@ public class MockGSuiteAddOnsImpl extends GSuiteAddOnsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetInstallStatus, expected %s or %s",
+                  response.getClass().getName(),
+                  InstallStatus.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

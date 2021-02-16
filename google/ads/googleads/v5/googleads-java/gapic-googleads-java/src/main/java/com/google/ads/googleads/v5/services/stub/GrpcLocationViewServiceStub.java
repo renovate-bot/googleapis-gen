@@ -125,6 +125,7 @@ public class GrpcLocationViewServiceStub extends LocationViewServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetLocationViewRequest, LocationView> getLocationViewCallable() {
     return getLocationViewCallable;
   }

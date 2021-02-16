@@ -133,6 +133,7 @@ public class GrpcFeedPlaceholderViewServiceStub extends FeedPlaceholderViewServi
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetFeedPlaceholderViewRequest, FeedPlaceholderView>
       getFeedPlaceholderViewCallable() {
     return getFeedPlaceholderViewCallable;

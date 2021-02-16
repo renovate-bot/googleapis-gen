@@ -129,6 +129,7 @@ public class GrpcAutoSuggestionServiceStub extends AutoSuggestionServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<SuggestQueriesRequest, SuggestQueriesResponse> suggestQueriesCallable() {
     return suggestQueriesCallable;
   }

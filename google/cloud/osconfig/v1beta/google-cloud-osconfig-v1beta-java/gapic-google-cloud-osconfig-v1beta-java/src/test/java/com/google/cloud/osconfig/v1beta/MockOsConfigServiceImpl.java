@@ -71,7 +71,13 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ExecutePatchJob, expected %s or %s",
+                  response.getClass().getName(),
+                  PatchJobs.PatchJob.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetPatchJob, expected %s or %s",
+                  response.getClass().getName(),
+                  PatchJobs.PatchJob.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -102,7 +114,13 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CancelPatchJob, expected %s or %s",
+                  response.getClass().getName(),
+                  PatchJobs.PatchJob.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -118,7 +136,13 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListPatchJobs, expected %s or %s",
+                  response.getClass().getName(),
+                  PatchJobs.ListPatchJobsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -134,7 +158,13 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListPatchJobInstanceDetails, expected %s or %s",
+                  response.getClass().getName(),
+                  PatchJobs.ListPatchJobInstanceDetailsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -150,7 +180,13 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreatePatchDeployment, expected %s or %s",
+                  response.getClass().getName(),
+                  PatchDeployments.PatchDeployment.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -166,7 +202,13 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetPatchDeployment, expected %s or %s",
+                  response.getClass().getName(),
+                  PatchDeployments.PatchDeployment.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -182,7 +224,13 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListPatchDeployments, expected %s or %s",
+                  response.getClass().getName(),
+                  PatchDeployments.ListPatchDeploymentsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -198,7 +246,13 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeletePatchDeployment, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -214,7 +268,13 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateGuestPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  GuestPolicies.GuestPolicy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -230,7 +290,13 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetGuestPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  GuestPolicies.GuestPolicy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -246,7 +312,13 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListGuestPolicies, expected %s or %s",
+                  response.getClass().getName(),
+                  GuestPolicies.ListGuestPoliciesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -262,7 +334,13 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateGuestPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  GuestPolicies.GuestPolicy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -277,7 +355,13 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteGuestPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -293,7 +377,13 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method LookupEffectiveGuestPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  GuestPolicies.EffectiveGuestPolicy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

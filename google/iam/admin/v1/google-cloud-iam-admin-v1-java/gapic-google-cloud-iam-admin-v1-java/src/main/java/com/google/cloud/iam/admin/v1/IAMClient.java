@@ -902,6 +902,7 @@ public class IAMClient implements BackgroundResource {
    *   GetServiceAccountKeyRequest request =
    *       GetServiceAccountKeyRequest.newBuilder()
    *           .setName(KeyName.of("[PROJECT]", "[SERVICE_ACCOUNT]", "[KEY]").toString())
+   *           .setPublicKeyType(ServiceAccountPublicKeyType.forNumber(0))
    *           .build();
    *   ServiceAccountKey response = iAMClient.getServiceAccountKey(request);
    * }
@@ -925,6 +926,7 @@ public class IAMClient implements BackgroundResource {
    *   GetServiceAccountKeyRequest request =
    *       GetServiceAccountKeyRequest.newBuilder()
    *           .setName(KeyName.of("[PROJECT]", "[SERVICE_ACCOUNT]", "[KEY]").toString())
+   *           .setPublicKeyType(ServiceAccountPublicKeyType.forNumber(0))
    *           .build();
    *   ApiFuture<ServiceAccountKey> future =
    *       iAMClient.getServiceAccountKeyCallable().futureCall(request);
@@ -1027,6 +1029,8 @@ public class IAMClient implements BackgroundResource {
    *   CreateServiceAccountKeyRequest request =
    *       CreateServiceAccountKeyRequest.newBuilder()
    *           .setName(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .setPrivateKeyType(ServiceAccountPrivateKeyType.forNumber(0))
+   *           .setKeyAlgorithm(ServiceAccountKeyAlgorithm.forNumber(0))
    *           .build();
    *   ServiceAccountKey response = iAMClient.createServiceAccountKey(request);
    * }
@@ -1050,6 +1054,8 @@ public class IAMClient implements BackgroundResource {
    *   CreateServiceAccountKeyRequest request =
    *       CreateServiceAccountKeyRequest.newBuilder()
    *           .setName(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .setPrivateKeyType(ServiceAccountPrivateKeyType.forNumber(0))
+   *           .setKeyAlgorithm(ServiceAccountKeyAlgorithm.forNumber(0))
    *           .build();
    *   ApiFuture<ServiceAccountKey> future =
    *       iAMClient.createServiceAccountKeyCallable().futureCall(request);
@@ -1830,6 +1836,7 @@ public class IAMClient implements BackgroundResource {
    *   QueryGrantableRolesRequest request =
    *       QueryGrantableRolesRequest.newBuilder()
    *           .setFullResourceName("fullResourceName-853732376")
+   *           .setView(RoleView.forNumber(0))
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1859,6 +1866,7 @@ public class IAMClient implements BackgroundResource {
    *   QueryGrantableRolesRequest request =
    *       QueryGrantableRolesRequest.newBuilder()
    *           .setFullResourceName("fullResourceName-853732376")
+   *           .setView(RoleView.forNumber(0))
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1918,6 +1926,7 @@ public class IAMClient implements BackgroundResource {
    *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setView(RoleView.forNumber(0))
    *           .setShowDeleted(true)
    *           .build();
    *   for (Role element : iAMClient.listRoles(request).iterateAll()) {
@@ -1946,6 +1955,7 @@ public class IAMClient implements BackgroundResource {
    *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setView(RoleView.forNumber(0))
    *           .setShowDeleted(true)
    *           .build();
    *   ApiFuture<Role> future = iAMClient.listRolesPagedCallable().futureCall(request);

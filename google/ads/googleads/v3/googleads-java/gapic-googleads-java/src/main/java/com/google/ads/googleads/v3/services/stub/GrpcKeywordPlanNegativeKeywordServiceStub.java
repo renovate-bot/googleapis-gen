@@ -184,11 +184,13 @@ public class GrpcKeywordPlanNegativeKeywordServiceStub
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetKeywordPlanNegativeKeywordRequest, KeywordPlanNegativeKeyword>
       getKeywordPlanNegativeKeywordCallable() {
     return getKeywordPlanNegativeKeywordCallable;
   }
 
+  @Override
   public UnaryCallable<
           MutateKeywordPlanNegativeKeywordsRequest, MutateKeywordPlanNegativeKeywordsResponse>
       mutateKeywordPlanNegativeKeywordsCallable() {

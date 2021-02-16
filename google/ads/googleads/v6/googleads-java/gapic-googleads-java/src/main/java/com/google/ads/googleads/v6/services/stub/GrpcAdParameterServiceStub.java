@@ -160,10 +160,12 @@ public class GrpcAdParameterServiceStub extends AdParameterServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetAdParameterRequest, AdParameter> getAdParameterCallable() {
     return getAdParameterCallable;
   }
 
+  @Override
   public UnaryCallable<MutateAdParametersRequest, MutateAdParametersResponse>
       mutateAdParametersCallable() {
     return mutateAdParametersCallable;

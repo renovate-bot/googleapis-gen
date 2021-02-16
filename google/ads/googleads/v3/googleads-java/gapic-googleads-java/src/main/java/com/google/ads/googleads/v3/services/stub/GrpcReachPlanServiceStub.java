@@ -225,21 +225,25 @@ public class GrpcReachPlanServiceStub extends ReachPlanServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListPlannableLocationsRequest, ListPlannableLocationsResponse>
       listPlannableLocationsCallable() {
     return listPlannableLocationsCallable;
   }
 
+  @Override
   public UnaryCallable<ListPlannableProductsRequest, ListPlannableProductsResponse>
       listPlannableProductsCallable() {
     return listPlannableProductsCallable;
   }
 
+  @Override
   public UnaryCallable<GenerateProductMixIdeasRequest, GenerateProductMixIdeasResponse>
       generateProductMixIdeasCallable() {
     return generateProductMixIdeasCallable;
   }
 
+  @Override
   public UnaryCallable<GenerateReachForecastRequest, GenerateReachForecastResponse>
       generateReachForecastCallable() {
     return generateReachForecastCallable;

@@ -25,6 +25,7 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.devtools.remoteworkers.v1test2.BotSession;
 import com.google.devtools.remoteworkers.v1test2.BotSessionName;
+import com.google.devtools.remoteworkers.v1test2.BotStatus;
 import com.google.devtools.remoteworkers.v1test2.CreateBotSessionRequest;
 import com.google.devtools.remoteworkers.v1test2.Lease;
 import com.google.devtools.remoteworkers.v1test2.UpdateBotSessionRequest;
@@ -90,6 +91,7 @@ public class BotsClientTest {
         BotSession.newBuilder()
             .setName(BotSessionName.of("[UNKNOWN_PATH]", "[BOT_SESSION]").toString())
             .setBotId("botId93925698")
+            .setStatus(BotStatus.forNumber(0))
             .setWorker(Worker.newBuilder().build())
             .addAllLeases(new ArrayList<Lease>())
             .setExpireTime(Timestamp.newBuilder().build())
@@ -136,6 +138,7 @@ public class BotsClientTest {
         BotSession.newBuilder()
             .setName(BotSessionName.of("[UNKNOWN_PATH]", "[BOT_SESSION]").toString())
             .setBotId("botId93925698")
+            .setStatus(BotStatus.forNumber(0))
             .setWorker(Worker.newBuilder().build())
             .addAllLeases(new ArrayList<Lease>())
             .setExpireTime(Timestamp.newBuilder().build())
@@ -185,6 +188,7 @@ public class BotsClientTest {
         BotSession.newBuilder()
             .setName(BotSessionName.of("[UNKNOWN_PATH]", "[BOT_SESSION]").toString())
             .setBotId("botId93925698")
+            .setStatus(BotStatus.forNumber(0))
             .setWorker(Worker.newBuilder().build())
             .addAllLeases(new ArrayList<Lease>())
             .setExpireTime(Timestamp.newBuilder().build())

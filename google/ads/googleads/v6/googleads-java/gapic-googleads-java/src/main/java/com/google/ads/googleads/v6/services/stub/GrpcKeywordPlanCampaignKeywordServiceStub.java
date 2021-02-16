@@ -184,11 +184,13 @@ public class GrpcKeywordPlanCampaignKeywordServiceStub
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetKeywordPlanCampaignKeywordRequest, KeywordPlanCampaignKeyword>
       getKeywordPlanCampaignKeywordCallable() {
     return getKeywordPlanCampaignKeywordCallable;
   }
 
+  @Override
   public UnaryCallable<
           MutateKeywordPlanCampaignKeywordsRequest, MutateKeywordPlanCampaignKeywordsResponse>
       mutateKeywordPlanCampaignKeywordsCallable() {

@@ -70,7 +70,13 @@ public class MockCustomerManagerLinkServiceImpl extends CustomerManagerLinkServi
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetCustomerManagerLink, expected %s or %s",
+                  response.getClass().getName(),
+                  CustomerManagerLink.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockCustomerManagerLinkServiceImpl extends CustomerManagerLinkServi
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateCustomerManagerLink, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateCustomerManagerLinkResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -101,7 +113,13 @@ public class MockCustomerManagerLinkServiceImpl extends CustomerManagerLinkServi
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MoveManagerLink, expected %s or %s",
+                  response.getClass().getName(),
+                  MoveManagerLinkResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

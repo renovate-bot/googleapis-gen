@@ -276,33 +276,40 @@ public class GrpcMutateJobServiceStub extends MutateJobServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateMutateJobRequest, CreateMutateJobResponse> createMutateJobCallable() {
     return createMutateJobCallable;
   }
 
+  @Override
   public UnaryCallable<GetMutateJobRequest, MutateJob> getMutateJobCallable() {
     return getMutateJobCallable;
   }
 
+  @Override
   public UnaryCallable<ListMutateJobResultsRequest, ListMutateJobResultsResponse>
       listMutateJobResultsCallable() {
     return listMutateJobResultsCallable;
   }
 
+  @Override
   public UnaryCallable<ListMutateJobResultsRequest, ListMutateJobResultsPagedResponse>
       listMutateJobResultsPagedCallable() {
     return listMutateJobResultsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<RunMutateJobRequest, Operation> runMutateJobCallable() {
     return runMutateJobCallable;
   }
 
+  @Override
   public OperationCallable<RunMutateJobRequest, Empty, MutateJob.MutateJobMetadata>
       runMutateJobOperationCallable() {
     return runMutateJobOperationCallable;
   }
 
+  @Override
   public UnaryCallable<AddMutateJobOperationsRequest, AddMutateJobOperationsResponse>
       addMutateJobOperationsCallable() {
     return addMutateJobOperationsCallable;

@@ -123,6 +123,7 @@ public class GrpcTopicViewServiceStub extends TopicViewServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetTopicViewRequest, TopicView> getTopicViewCallable() {
     return getTopicViewCallable;
   }

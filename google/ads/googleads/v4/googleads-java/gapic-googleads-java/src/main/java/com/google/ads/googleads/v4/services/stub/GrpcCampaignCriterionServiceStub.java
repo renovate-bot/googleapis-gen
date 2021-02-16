@@ -168,11 +168,13 @@ public class GrpcCampaignCriterionServiceStub extends CampaignCriterionServiceSt
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetCampaignCriterionRequest, CampaignCriterion>
       getCampaignCriterionCallable() {
     return getCampaignCriterionCallable;
   }
 
+  @Override
   public UnaryCallable<MutateCampaignCriteriaRequest, MutateCampaignCriteriaResponse>
       mutateCampaignCriteriaCallable() {
     return mutateCampaignCriteriaCallable;

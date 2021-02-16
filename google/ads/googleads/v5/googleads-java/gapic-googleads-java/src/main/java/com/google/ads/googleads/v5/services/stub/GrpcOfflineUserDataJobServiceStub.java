@@ -257,26 +257,31 @@ public class GrpcOfflineUserDataJobServiceStub extends OfflineUserDataJobService
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateOfflineUserDataJobRequest, CreateOfflineUserDataJobResponse>
       createOfflineUserDataJobCallable() {
     return createOfflineUserDataJobCallable;
   }
 
+  @Override
   public UnaryCallable<GetOfflineUserDataJobRequest, OfflineUserDataJob>
       getOfflineUserDataJobCallable() {
     return getOfflineUserDataJobCallable;
   }
 
+  @Override
   public UnaryCallable<
           AddOfflineUserDataJobOperationsRequest, AddOfflineUserDataJobOperationsResponse>
       addOfflineUserDataJobOperationsCallable() {
     return addOfflineUserDataJobOperationsCallable;
   }
 
+  @Override
   public UnaryCallable<RunOfflineUserDataJobRequest, Operation> runOfflineUserDataJobCallable() {
     return runOfflineUserDataJobCallable;
   }
 
+  @Override
   public OperationCallable<RunOfflineUserDataJobRequest, Empty, Empty>
       runOfflineUserDataJobOperationCallable() {
     return runOfflineUserDataJobOperationCallable;

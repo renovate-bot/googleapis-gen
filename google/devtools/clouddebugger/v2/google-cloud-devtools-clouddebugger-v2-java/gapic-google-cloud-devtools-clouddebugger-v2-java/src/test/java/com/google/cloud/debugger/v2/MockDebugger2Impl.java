@@ -79,7 +79,13 @@ public class MockDebugger2Impl extends Debugger2ImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SetBreakpoint, expected %s or %s",
+                  response.getClass().getName(),
+                  SetBreakpointResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -94,7 +100,13 @@ public class MockDebugger2Impl extends Debugger2ImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetBreakpoint, expected %s or %s",
+                  response.getClass().getName(),
+                  GetBreakpointResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -109,7 +121,13 @@ public class MockDebugger2Impl extends Debugger2ImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteBreakpoint, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -124,7 +142,13 @@ public class MockDebugger2Impl extends Debugger2ImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListBreakpoints, expected %s or %s",
+                  response.getClass().getName(),
+                  ListBreakpointsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -139,7 +163,13 @@ public class MockDebugger2Impl extends Debugger2ImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDebuggees, expected %s or %s",
+                  response.getClass().getName(),
+                  ListDebuggeesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

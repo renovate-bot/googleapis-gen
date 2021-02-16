@@ -206,16 +206,19 @@ public class GrpcMerchantCenterLinkServiceStub extends MerchantCenterLinkService
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListMerchantCenterLinksRequest, ListMerchantCenterLinksResponse>
       listMerchantCenterLinksCallable() {
     return listMerchantCenterLinksCallable;
   }
 
+  @Override
   public UnaryCallable<GetMerchantCenterLinkRequest, MerchantCenterLink>
       getMerchantCenterLinkCallable() {
     return getMerchantCenterLinkCallable;
   }
 
+  @Override
   public UnaryCallable<MutateMerchantCenterLinkRequest, MutateMerchantCenterLinkResponse>
       mutateMerchantCenterLinkCallable() {
     return mutateMerchantCenterLinkCallable;

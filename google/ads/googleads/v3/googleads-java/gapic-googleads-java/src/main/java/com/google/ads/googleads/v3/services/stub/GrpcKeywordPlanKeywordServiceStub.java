@@ -168,11 +168,13 @@ public class GrpcKeywordPlanKeywordServiceStub extends KeywordPlanKeywordService
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetKeywordPlanKeywordRequest, KeywordPlanKeyword>
       getKeywordPlanKeywordCallable() {
     return getKeywordPlanKeywordCallable;
   }
 
+  @Override
   public UnaryCallable<MutateKeywordPlanKeywordsRequest, MutateKeywordPlanKeywordsResponse>
       mutateKeywordPlanKeywordsCallable() {
     return mutateKeywordPlanKeywordsCallable;

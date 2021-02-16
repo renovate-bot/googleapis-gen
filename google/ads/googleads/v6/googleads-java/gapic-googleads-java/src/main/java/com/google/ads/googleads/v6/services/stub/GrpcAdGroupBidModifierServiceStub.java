@@ -168,11 +168,13 @@ public class GrpcAdGroupBidModifierServiceStub extends AdGroupBidModifierService
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetAdGroupBidModifierRequest, AdGroupBidModifier>
       getAdGroupBidModifierCallable() {
     return getAdGroupBidModifierCallable;
   }
 
+  @Override
   public UnaryCallable<MutateAdGroupBidModifiersRequest, MutateAdGroupBidModifiersResponse>
       mutateAdGroupBidModifiersCallable() {
     return mutateAdGroupBidModifiersCallable;

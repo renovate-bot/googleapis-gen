@@ -70,7 +70,13 @@ public class MockReachPlanServiceImpl extends ReachPlanServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListPlannableLocations, expected %s or %s",
+                  response.getClass().getName(),
+                  ListPlannableLocationsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockReachPlanServiceImpl extends ReachPlanServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListPlannableProducts, expected %s or %s",
+                  response.getClass().getName(),
+                  ListPlannableProductsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -102,7 +114,13 @@ public class MockReachPlanServiceImpl extends ReachPlanServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateProductMixIdeas, expected %s or %s",
+                  response.getClass().getName(),
+                  GenerateProductMixIdeasResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -118,7 +136,13 @@ public class MockReachPlanServiceImpl extends ReachPlanServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateReachForecast, expected %s or %s",
+                  response.getClass().getName(),
+                  GenerateReachForecastResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

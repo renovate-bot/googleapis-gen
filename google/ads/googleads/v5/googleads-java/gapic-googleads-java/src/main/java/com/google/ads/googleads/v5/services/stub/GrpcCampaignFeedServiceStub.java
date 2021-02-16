@@ -160,10 +160,12 @@ public class GrpcCampaignFeedServiceStub extends CampaignFeedServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetCampaignFeedRequest, CampaignFeed> getCampaignFeedCallable() {
     return getCampaignFeedCallable;
   }
 
+  @Override
   public UnaryCallable<MutateCampaignFeedsRequest, MutateCampaignFeedsResponse>
       mutateCampaignFeedsCallable() {
     return mutateCampaignFeedsCallable;

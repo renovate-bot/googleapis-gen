@@ -614,113 +614,138 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListServicesRequest, ListServicesResponse> listServicesCallable() {
     return listServicesCallable;
   }
 
+  @Override
   public UnaryCallable<ListServicesRequest, ListServicesPagedResponse> listServicesPagedCallable() {
     return listServicesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetServiceRequest, ManagedService> getServiceCallable() {
     return getServiceCallable;
   }
 
+  @Override
   public UnaryCallable<CreateServiceRequest, Operation> createServiceCallable() {
     return createServiceCallable;
   }
 
+  @Override
   public OperationCallable<CreateServiceRequest, ManagedService, OperationMetadata>
       createServiceOperationCallable() {
     return createServiceOperationCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteServiceRequest, Operation> deleteServiceCallable() {
     return deleteServiceCallable;
   }
 
+  @Override
   public OperationCallable<DeleteServiceRequest, Empty, OperationMetadata>
       deleteServiceOperationCallable() {
     return deleteServiceOperationCallable;
   }
 
+  @Override
   public UnaryCallable<UndeleteServiceRequest, Operation> undeleteServiceCallable() {
     return undeleteServiceCallable;
   }
 
+  @Override
   public OperationCallable<UndeleteServiceRequest, UndeleteServiceResponse, OperationMetadata>
       undeleteServiceOperationCallable() {
     return undeleteServiceOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ListServiceConfigsRequest, ListServiceConfigsResponse>
       listServiceConfigsCallable() {
     return listServiceConfigsCallable;
   }
 
+  @Override
   public UnaryCallable<ListServiceConfigsRequest, ListServiceConfigsPagedResponse>
       listServiceConfigsPagedCallable() {
     return listServiceConfigsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetServiceConfigRequest, Service> getServiceConfigCallable() {
     return getServiceConfigCallable;
   }
 
+  @Override
   public UnaryCallable<CreateServiceConfigRequest, Service> createServiceConfigCallable() {
     return createServiceConfigCallable;
   }
 
+  @Override
   public UnaryCallable<SubmitConfigSourceRequest, Operation> submitConfigSourceCallable() {
     return submitConfigSourceCallable;
   }
 
+  @Override
   public OperationCallable<SubmitConfigSourceRequest, SubmitConfigSourceResponse, OperationMetadata>
       submitConfigSourceOperationCallable() {
     return submitConfigSourceOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ListServiceRolloutsRequest, ListServiceRolloutsResponse>
       listServiceRolloutsCallable() {
     return listServiceRolloutsCallable;
   }
 
+  @Override
   public UnaryCallable<ListServiceRolloutsRequest, ListServiceRolloutsPagedResponse>
       listServiceRolloutsPagedCallable() {
     return listServiceRolloutsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetServiceRolloutRequest, Rollout> getServiceRolloutCallable() {
     return getServiceRolloutCallable;
   }
 
+  @Override
   public UnaryCallable<CreateServiceRolloutRequest, Operation> createServiceRolloutCallable() {
     return createServiceRolloutCallable;
   }
 
+  @Override
   public OperationCallable<CreateServiceRolloutRequest, Rollout, OperationMetadata>
       createServiceRolloutOperationCallable() {
     return createServiceRolloutOperationCallable;
   }
 
+  @Override
   public UnaryCallable<GenerateConfigReportRequest, GenerateConfigReportResponse>
       generateConfigReportCallable() {
     return generateConfigReportCallable;
   }
 
+  @Override
   public UnaryCallable<EnableServiceRequest, Operation> enableServiceCallable() {
     return enableServiceCallable;
   }
 
+  @Override
   public OperationCallable<EnableServiceRequest, EnableServiceResponse, OperationMetadata>
       enableServiceOperationCallable() {
     return enableServiceOperationCallable;
   }
 
+  @Override
   public UnaryCallable<DisableServiceRequest, Operation> disableServiceCallable() {
     return disableServiceCallable;
   }
 
+  @Override
   public OperationCallable<DisableServiceRequest, DisableServiceResponse, OperationMetadata>
       disableServiceOperationCallable() {
     return disableServiceOperationCallable;

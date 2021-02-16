@@ -71,7 +71,13 @@ public class MockAdGroupCriterionLabelServiceImpl extends AdGroupCriterionLabelS
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAdGroupCriterionLabel, expected %s or %s",
+                  response.getClass().getName(),
+                  AdGroupCriterionLabel.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -87,7 +93,13 @@ public class MockAdGroupCriterionLabelServiceImpl extends AdGroupCriterionLabelS
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateAdGroupCriterionLabels, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateAdGroupCriterionLabelsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

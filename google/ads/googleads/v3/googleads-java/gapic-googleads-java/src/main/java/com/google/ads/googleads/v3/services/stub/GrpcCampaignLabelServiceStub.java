@@ -160,10 +160,12 @@ public class GrpcCampaignLabelServiceStub extends CampaignLabelServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetCampaignLabelRequest, CampaignLabel> getCampaignLabelCallable() {
     return getCampaignLabelCallable;
   }
 
+  @Override
   public UnaryCallable<MutateCampaignLabelsRequest, MutateCampaignLabelsResponse>
       mutateCampaignLabelsCallable() {
     return mutateCampaignLabelsCallable;

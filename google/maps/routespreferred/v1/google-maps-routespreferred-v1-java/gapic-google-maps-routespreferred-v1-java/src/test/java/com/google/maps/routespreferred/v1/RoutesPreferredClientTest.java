@@ -33,8 +33,11 @@ import com.google.maps.routes.v1.FallbackInfo;
 import com.google.maps.routes.v1.Route;
 import com.google.maps.routes.v1.RouteMatrixDestination;
 import com.google.maps.routes.v1.RouteMatrixElement;
+import com.google.maps.routes.v1.RouteMatrixElementCondition;
 import com.google.maps.routes.v1.RouteMatrixOrigin;
 import com.google.maps.routes.v1.RouteTravelAdvisory;
+import com.google.maps.routes.v1.RouteTravelMode;
+import com.google.maps.routes.v1.RoutingPreference;
 import com.google.maps.routes.v1.Waypoint;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Duration;
@@ -142,6 +145,7 @@ public class RoutesPreferredClientTest {
             .setOriginIndex(2078721657)
             .setDestinationIndex(-1296954015)
             .setStatus(Status.newBuilder().build())
+            .setCondition(RouteMatrixElementCondition.forNumber(0))
             .setDistanceMeters(1958857108)
             .setDuration(Duration.newBuilder().build())
             .setStaticDuration(Duration.newBuilder().build())
@@ -153,6 +157,8 @@ public class RoutesPreferredClientTest {
         ComputeRouteMatrixRequest.newBuilder()
             .addAllOrigins(new ArrayList<RouteMatrixOrigin>())
             .addAllDestinations(new ArrayList<RouteMatrixDestination>())
+            .setTravelMode(RouteTravelMode.forNumber(0))
+            .setRoutingPreference(RoutingPreference.forNumber(0))
             .setDepartureTime(Timestamp.newBuilder().build())
             .build();
 
@@ -175,6 +181,8 @@ public class RoutesPreferredClientTest {
         ComputeRouteMatrixRequest.newBuilder()
             .addAllOrigins(new ArrayList<RouteMatrixOrigin>())
             .addAllDestinations(new ArrayList<RouteMatrixDestination>())
+            .setTravelMode(RouteTravelMode.forNumber(0))
+            .setRoutingPreference(RoutingPreference.forNumber(0))
             .setDepartureTime(Timestamp.newBuilder().build())
             .build();
 

@@ -87,7 +87,13 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListWorkloadIdentityPools, expected %s or %s",
+                  response.getClass().getName(),
+                  ListWorkloadIdentityPoolsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -103,7 +109,13 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetWorkloadIdentityPool, expected %s or %s",
+                  response.getClass().getName(),
+                  WorkloadIdentityPool.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -118,7 +130,13 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateWorkloadIdentityPool, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -133,7 +151,13 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateWorkloadIdentityPool, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -148,7 +172,13 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteWorkloadIdentityPool, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -163,7 +193,13 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UndeleteWorkloadIdentityPool, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -179,7 +215,13 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListWorkloadIdentityPoolProviders, expected %s or %s",
+                  response.getClass().getName(),
+                  ListWorkloadIdentityPoolProvidersResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -195,7 +237,13 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetWorkloadIdentityPoolProvider, expected %s or %s",
+                  response.getClass().getName(),
+                  WorkloadIdentityPoolProvider.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -211,7 +259,13 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateWorkloadIdentityPoolProvider, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -227,7 +281,13 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateWorkloadIdentityPoolProvider, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -243,7 +303,13 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteWorkloadIdentityPoolProvider, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -259,7 +325,13 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UndeleteWorkloadIdentityPoolProvider, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

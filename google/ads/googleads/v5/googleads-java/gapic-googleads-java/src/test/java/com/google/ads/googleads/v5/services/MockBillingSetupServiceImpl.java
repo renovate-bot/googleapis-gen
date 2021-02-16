@@ -70,7 +70,13 @@ public class MockBillingSetupServiceImpl extends BillingSetupServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetBillingSetup, expected %s or %s",
+                  response.getClass().getName(),
+                  BillingSetup.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockBillingSetupServiceImpl extends BillingSetupServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateBillingSetup, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateBillingSetupResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

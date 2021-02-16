@@ -130,6 +130,7 @@ public class GrpcPaymentsAccountServiceStub extends PaymentsAccountServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListPaymentsAccountsRequest, ListPaymentsAccountsResponse>
       listPaymentsAccountsCallable() {
     return listPaymentsAccountsCallable;

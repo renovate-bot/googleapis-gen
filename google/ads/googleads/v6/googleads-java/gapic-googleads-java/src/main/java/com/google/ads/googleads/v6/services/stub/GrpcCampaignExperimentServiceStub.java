@@ -384,51 +384,61 @@ public class GrpcCampaignExperimentServiceStub extends CampaignExperimentService
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetCampaignExperimentRequest, CampaignExperiment>
       getCampaignExperimentCallable() {
     return getCampaignExperimentCallable;
   }
 
+  @Override
   public UnaryCallable<CreateCampaignExperimentRequest, Operation>
       createCampaignExperimentCallable() {
     return createCampaignExperimentCallable;
   }
 
+  @Override
   public OperationCallable<CreateCampaignExperimentRequest, Empty, CreateCampaignExperimentMetadata>
       createCampaignExperimentOperationCallable() {
     return createCampaignExperimentOperationCallable;
   }
 
+  @Override
   public UnaryCallable<MutateCampaignExperimentsRequest, MutateCampaignExperimentsResponse>
       mutateCampaignExperimentsCallable() {
     return mutateCampaignExperimentsCallable;
   }
 
+  @Override
   public UnaryCallable<GraduateCampaignExperimentRequest, GraduateCampaignExperimentResponse>
       graduateCampaignExperimentCallable() {
     return graduateCampaignExperimentCallable;
   }
 
+  @Override
   public UnaryCallable<PromoteCampaignExperimentRequest, Operation>
       promoteCampaignExperimentCallable() {
     return promoteCampaignExperimentCallable;
   }
 
+  @Override
   public OperationCallable<PromoteCampaignExperimentRequest, Empty, Empty>
       promoteCampaignExperimentOperationCallable() {
     return promoteCampaignExperimentOperationCallable;
   }
 
+  @Override
   public UnaryCallable<EndCampaignExperimentRequest, Empty> endCampaignExperimentCallable() {
     return endCampaignExperimentCallable;
   }
 
+  @Override
   public UnaryCallable<
           ListCampaignExperimentAsyncErrorsRequest, ListCampaignExperimentAsyncErrorsResponse>
       listCampaignExperimentAsyncErrorsCallable() {
     return listCampaignExperimentAsyncErrorsCallable;
   }
 
+  @Override
   public UnaryCallable<
           ListCampaignExperimentAsyncErrorsRequest, ListCampaignExperimentAsyncErrorsPagedResponse>
       listCampaignExperimentAsyncErrorsPagedCallable() {

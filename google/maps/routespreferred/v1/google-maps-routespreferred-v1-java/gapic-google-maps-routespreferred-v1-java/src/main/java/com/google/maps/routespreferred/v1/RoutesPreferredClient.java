@@ -247,10 +247,14 @@ public class RoutesPreferredClient implements BackgroundResource {
    *           .setOrigin(Waypoint.newBuilder().build())
    *           .setDestination(Waypoint.newBuilder().build())
    *           .addAllIntermediates(new ArrayList<Waypoint>())
+   *           .setTravelMode(RouteTravelMode.forNumber(0))
+   *           .setRoutingPreference(RoutingPreference.forNumber(0))
+   *           .setPolylineQuality(PolylineQuality.forNumber(0))
    *           .setDepartureTime(Timestamp.newBuilder().build())
    *           .setComputeAlternativeRoutes(true)
    *           .setRouteModifiers(RouteModifiers.newBuilder().build())
    *           .setLanguageCode("languageCode-2092349083")
+   *           .setUnits(Units.forNumber(0))
    *           .build();
    *   ComputeRoutesResponse response = routesPreferredClient.computeRoutes(request);
    * }
@@ -307,10 +311,14 @@ public class RoutesPreferredClient implements BackgroundResource {
    *           .setOrigin(Waypoint.newBuilder().build())
    *           .setDestination(Waypoint.newBuilder().build())
    *           .addAllIntermediates(new ArrayList<Waypoint>())
+   *           .setTravelMode(RouteTravelMode.forNumber(0))
+   *           .setRoutingPreference(RoutingPreference.forNumber(0))
+   *           .setPolylineQuality(PolylineQuality.forNumber(0))
    *           .setDepartureTime(Timestamp.newBuilder().build())
    *           .setComputeAlternativeRoutes(true)
    *           .setRouteModifiers(RouteModifiers.newBuilder().build())
    *           .setLanguageCode("languageCode-2092349083")
+   *           .setUnits(Units.forNumber(0))
    *           .build();
    *   ApiFuture<ComputeRoutesResponse> future =
    *       routesPreferredClient.computeRoutesCallable().futureCall(request);
@@ -369,6 +377,8 @@ public class RoutesPreferredClient implements BackgroundResource {
    *       ComputeRouteMatrixRequest.newBuilder()
    *           .addAllOrigins(new ArrayList<RouteMatrixOrigin>())
    *           .addAllDestinations(new ArrayList<RouteMatrixDestination>())
+   *           .setTravelMode(RouteTravelMode.forNumber(0))
+   *           .setRoutingPreference(RoutingPreference.forNumber(0))
    *           .setDepartureTime(Timestamp.newBuilder().build())
    *           .build();
    *   ServerStream<RouteMatrixElement> stream =

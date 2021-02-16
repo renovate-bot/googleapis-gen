@@ -427,72 +427,88 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListServicesRequest, ListServicesResponse> listServicesCallable() {
     return listServicesCallable;
   }
 
+  @Override
   public UnaryCallable<ListServicesRequest, ListServicesPagedResponse> listServicesPagedCallable() {
     return listServicesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetServiceRequest, Service> getServiceCallable() {
     return getServiceCallable;
   }
 
+  @Override
   public UnaryCallable<CreateServiceRequest, Operation> createServiceCallable() {
     return createServiceCallable;
   }
 
+  @Override
   public OperationCallable<CreateServiceRequest, Service, OperationMetadata>
       createServiceOperationCallable() {
     return createServiceOperationCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateServiceRequest, Operation> updateServiceCallable() {
     return updateServiceCallable;
   }
 
+  @Override
   public OperationCallable<UpdateServiceRequest, Service, OperationMetadata>
       updateServiceOperationCallable() {
     return updateServiceOperationCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteServiceRequest, Operation> deleteServiceCallable() {
     return deleteServiceCallable;
   }
 
+  @Override
   public OperationCallable<DeleteServiceRequest, Empty, OperationMetadata>
       deleteServiceOperationCallable() {
     return deleteServiceOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ListMetadataImportsRequest, ListMetadataImportsResponse>
       listMetadataImportsCallable() {
     return listMetadataImportsCallable;
   }
 
+  @Override
   public UnaryCallable<ListMetadataImportsRequest, ListMetadataImportsPagedResponse>
       listMetadataImportsPagedCallable() {
     return listMetadataImportsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetMetadataImportRequest, MetadataImport> getMetadataImportCallable() {
     return getMetadataImportCallable;
   }
 
+  @Override
   public UnaryCallable<CreateMetadataImportRequest, Operation> createMetadataImportCallable() {
     return createMetadataImportCallable;
   }
 
+  @Override
   public OperationCallable<CreateMetadataImportRequest, MetadataImport, OperationMetadata>
       createMetadataImportOperationCallable() {
     return createMetadataImportOperationCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateMetadataImportRequest, Operation> updateMetadataImportCallable() {
     return updateMetadataImportCallable;
   }
 
+  @Override
   public OperationCallable<UpdateMetadataImportRequest, MetadataImport, OperationMetadata>
       updateMetadataImportOperationCallable() {
     return updateMetadataImportOperationCallable;

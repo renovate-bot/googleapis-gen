@@ -125,6 +125,7 @@ public class GrpcChangeStatusServiceStub extends ChangeStatusServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetChangeStatusRequest, ChangeStatus> getChangeStatusCallable() {
     return getChangeStatusCallable;
   }

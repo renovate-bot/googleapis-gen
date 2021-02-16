@@ -156,10 +156,12 @@ public class GrpcSharedSetServiceStub extends SharedSetServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetSharedSetRequest, SharedSet> getSharedSetCallable() {
     return getSharedSetCallable;
   }
 
+  @Override
   public UnaryCallable<MutateSharedSetsRequest, MutateSharedSetsResponse>
       mutateSharedSetsCallable() {
     return mutateSharedSetsCallable;

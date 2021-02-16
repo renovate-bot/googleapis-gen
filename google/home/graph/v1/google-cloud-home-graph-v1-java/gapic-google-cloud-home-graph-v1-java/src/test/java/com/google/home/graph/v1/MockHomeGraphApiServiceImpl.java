@@ -71,7 +71,13 @@ public class MockHomeGraphApiServiceImpl extends HomeGraphApiServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RequestSyncDevices, expected %s or %s",
+                  response.getClass().getName(),
+                  HomeGraphApiServiceProto.RequestSyncDevicesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -89,7 +95,13 @@ public class MockHomeGraphApiServiceImpl extends HomeGraphApiServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ReportStateAndNotification, expected %s or %s",
+                  response.getClass().getName(),
+                  HomeGraphApiServiceProto.ReportStateAndNotificationResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -105,7 +117,13 @@ public class MockHomeGraphApiServiceImpl extends HomeGraphApiServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteAgentUser, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -121,7 +139,13 @@ public class MockHomeGraphApiServiceImpl extends HomeGraphApiServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method Query, expected %s or %s",
+                  response.getClass().getName(),
+                  HomeGraphApiServiceProto.QueryResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -137,7 +161,13 @@ public class MockHomeGraphApiServiceImpl extends HomeGraphApiServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method Sync, expected %s or %s",
+                  response.getClass().getName(),
+                  HomeGraphApiServiceProto.SyncResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

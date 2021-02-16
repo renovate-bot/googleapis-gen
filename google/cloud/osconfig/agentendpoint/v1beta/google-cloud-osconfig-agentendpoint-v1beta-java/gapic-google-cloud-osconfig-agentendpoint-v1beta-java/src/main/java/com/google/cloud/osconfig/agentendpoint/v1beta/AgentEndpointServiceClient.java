@@ -292,6 +292,7 @@ public class AgentEndpointServiceClient implements BackgroundResource {
    *       ReportTaskProgressRequest.newBuilder()
    *           .setInstanceIdToken("instanceIdToken55138121")
    *           .setTaskId("taskId-880873088")
+   *           .setTaskType(TaskType.forNumber(0))
    *           .build();
    *   ReportTaskProgressResponse response = agentEndpointServiceClient.reportTaskProgress(request);
    * }
@@ -317,6 +318,7 @@ public class AgentEndpointServiceClient implements BackgroundResource {
    *       ReportTaskProgressRequest.newBuilder()
    *           .setInstanceIdToken("instanceIdToken55138121")
    *           .setTaskId("taskId-880873088")
+   *           .setTaskType(TaskType.forNumber(0))
    *           .build();
    *   ApiFuture<ReportTaskProgressResponse> future =
    *       agentEndpointServiceClient.reportTaskProgressCallable().futureCall(request);
@@ -384,6 +386,7 @@ public class AgentEndpointServiceClient implements BackgroundResource {
    *       ReportTaskCompleteRequest.newBuilder()
    *           .setInstanceIdToken("instanceIdToken55138121")
    *           .setTaskId("taskId-880873088")
+   *           .setTaskType(TaskType.forNumber(0))
    *           .setErrorMessage("errorMessage1203236063")
    *           .build();
    *   ReportTaskCompleteResponse response = agentEndpointServiceClient.reportTaskComplete(request);
@@ -410,6 +413,7 @@ public class AgentEndpointServiceClient implements BackgroundResource {
    *       ReportTaskCompleteRequest.newBuilder()
    *           .setInstanceIdToken("instanceIdToken55138121")
    *           .setTaskId("taskId-880873088")
+   *           .setTaskType(TaskType.forNumber(0))
    *           .setErrorMessage("errorMessage1203236063")
    *           .build();
    *   ApiFuture<ReportTaskCompleteResponse> future =

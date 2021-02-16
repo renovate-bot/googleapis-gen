@@ -70,7 +70,13 @@ public class MockLanguageConstantServiceImpl extends LanguageConstantServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetLanguageConstant, expected %s or %s",
+                  response.getClass().getName(),
+                  LanguageConstant.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

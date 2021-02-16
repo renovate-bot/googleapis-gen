@@ -160,10 +160,12 @@ public class GrpcCustomerLabelServiceStub extends CustomerLabelServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetCustomerLabelRequest, CustomerLabel> getCustomerLabelCallable() {
     return getCustomerLabelCallable;
   }
 
+  @Override
   public UnaryCallable<MutateCustomerLabelsRequest, MutateCustomerLabelsResponse>
       mutateCustomerLabelsCallable() {
     return mutateCustomerLabelsCallable;

@@ -350,46 +350,57 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetTableRequest, Table> getTableCallable() {
     return getTableCallable;
   }
 
+  @Override
   public UnaryCallable<ListTablesRequest, ListTablesResponse> listTablesCallable() {
     return listTablesCallable;
   }
 
+  @Override
   public UnaryCallable<ListTablesRequest, ListTablesPagedResponse> listTablesPagedCallable() {
     return listTablesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetRowRequest, Row> getRowCallable() {
     return getRowCallable;
   }
 
+  @Override
   public UnaryCallable<ListRowsRequest, ListRowsResponse> listRowsCallable() {
     return listRowsCallable;
   }
 
+  @Override
   public UnaryCallable<ListRowsRequest, ListRowsPagedResponse> listRowsPagedCallable() {
     return listRowsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<CreateRowRequest, Row> createRowCallable() {
     return createRowCallable;
   }
 
+  @Override
   public UnaryCallable<BatchCreateRowsRequest, BatchCreateRowsResponse> batchCreateRowsCallable() {
     return batchCreateRowsCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateRowRequest, Row> updateRowCallable() {
     return updateRowCallable;
   }
 
+  @Override
   public UnaryCallable<BatchUpdateRowsRequest, BatchUpdateRowsResponse> batchUpdateRowsCallable() {
     return batchUpdateRowsCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteRowRequest, Empty> deleteRowCallable() {
     return deleteRowCallable;
   }

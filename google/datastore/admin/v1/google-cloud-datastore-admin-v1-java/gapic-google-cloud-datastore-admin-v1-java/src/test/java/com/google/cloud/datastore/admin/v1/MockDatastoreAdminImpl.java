@@ -76,7 +76,13 @@ public class MockDatastoreAdminImpl extends DatastoreAdminImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ExportEntities, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -91,7 +97,13 @@ public class MockDatastoreAdminImpl extends DatastoreAdminImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ImportEntities, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -105,7 +117,13 @@ public class MockDatastoreAdminImpl extends DatastoreAdminImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetIndex, expected %s or %s",
+                  response.getClass().getName(),
+                  Index.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -120,7 +138,13 @@ public class MockDatastoreAdminImpl extends DatastoreAdminImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListIndexes, expected %s or %s",
+                  response.getClass().getName(),
+                  ListIndexesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

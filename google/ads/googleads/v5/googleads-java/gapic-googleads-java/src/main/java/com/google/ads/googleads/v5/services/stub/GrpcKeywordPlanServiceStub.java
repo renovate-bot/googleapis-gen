@@ -311,30 +311,36 @@ public class GrpcKeywordPlanServiceStub extends KeywordPlanServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetKeywordPlanRequest, KeywordPlan> getKeywordPlanCallable() {
     return getKeywordPlanCallable;
   }
 
+  @Override
   public UnaryCallable<MutateKeywordPlansRequest, MutateKeywordPlansResponse>
       mutateKeywordPlansCallable() {
     return mutateKeywordPlansCallable;
   }
 
+  @Override
   public UnaryCallable<GenerateForecastCurveRequest, GenerateForecastCurveResponse>
       generateForecastCurveCallable() {
     return generateForecastCurveCallable;
   }
 
+  @Override
   public UnaryCallable<GenerateForecastTimeSeriesRequest, GenerateForecastTimeSeriesResponse>
       generateForecastTimeSeriesCallable() {
     return generateForecastTimeSeriesCallable;
   }
 
+  @Override
   public UnaryCallable<GenerateForecastMetricsRequest, GenerateForecastMetricsResponse>
       generateForecastMetricsCallable() {
     return generateForecastMetricsCallable;
   }
 
+  @Override
   public UnaryCallable<GenerateHistoricalMetricsRequest, GenerateHistoricalMetricsResponse>
       generateHistoricalMetricsCallable() {
     return generateHistoricalMetricsCallable;

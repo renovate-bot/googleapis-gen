@@ -130,6 +130,7 @@ public class GrpcDisplayKeywordViewServiceStub extends DisplayKeywordViewService
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetDisplayKeywordViewRequest, DisplayKeywordView>
       getDisplayKeywordViewCallable() {
     return getDisplayKeywordViewCallable;

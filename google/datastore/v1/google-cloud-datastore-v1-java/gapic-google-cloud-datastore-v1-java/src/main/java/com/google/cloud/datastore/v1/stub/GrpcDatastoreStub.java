@@ -291,31 +291,38 @@ public class GrpcDatastoreStub extends DatastoreStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<LookupRequest, LookupResponse> lookupCallable() {
     return lookupCallable;
   }
 
+  @Override
   public UnaryCallable<RunQueryRequest, RunQueryResponse> runQueryCallable() {
     return runQueryCallable;
   }
 
+  @Override
   public UnaryCallable<BeginTransactionRequest, BeginTransactionResponse>
       beginTransactionCallable() {
     return beginTransactionCallable;
   }
 
+  @Override
   public UnaryCallable<CommitRequest, CommitResponse> commitCallable() {
     return commitCallable;
   }
 
+  @Override
   public UnaryCallable<RollbackRequest, RollbackResponse> rollbackCallable() {
     return rollbackCallable;
   }
 
+  @Override
   public UnaryCallable<AllocateIdsRequest, AllocateIdsResponse> allocateIdsCallable() {
     return allocateIdsCallable;
   }
 
+  @Override
   public UnaryCallable<ReserveIdsRequest, ReserveIdsResponse> reserveIdsCallable() {
     return reserveIdsCallable;
   }

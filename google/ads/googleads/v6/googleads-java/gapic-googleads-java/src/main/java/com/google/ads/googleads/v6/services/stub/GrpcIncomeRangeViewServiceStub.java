@@ -129,6 +129,7 @@ public class GrpcIncomeRangeViewServiceStub extends IncomeRangeViewServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetIncomeRangeViewRequest, IncomeRangeView> getIncomeRangeViewCallable() {
     return getIncomeRangeViewCallable;
   }

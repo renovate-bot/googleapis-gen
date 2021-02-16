@@ -80,7 +80,13 @@ public class MockBigtableImpl extends BigtableImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ReadRows, expected %s or %s",
+                  response.getClass().getName(),
+                  ReadRowsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -95,7 +101,13 @@ public class MockBigtableImpl extends BigtableImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SampleRowKeys, expected %s or %s",
+                  response.getClass().getName(),
+                  SampleRowKeysResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -110,7 +122,13 @@ public class MockBigtableImpl extends BigtableImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateRow, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateRowResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -125,7 +143,13 @@ public class MockBigtableImpl extends BigtableImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MutateRows, expected %s or %s",
+                  response.getClass().getName(),
+                  MutateRowsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -141,7 +165,13 @@ public class MockBigtableImpl extends BigtableImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CheckAndMutateRow, expected %s or %s",
+                  response.getClass().getName(),
+                  CheckAndMutateRowResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -157,7 +187,13 @@ public class MockBigtableImpl extends BigtableImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ReadModifyWriteRow, expected %s or %s",
+                  response.getClass().getName(),
+                  ReadModifyWriteRowResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

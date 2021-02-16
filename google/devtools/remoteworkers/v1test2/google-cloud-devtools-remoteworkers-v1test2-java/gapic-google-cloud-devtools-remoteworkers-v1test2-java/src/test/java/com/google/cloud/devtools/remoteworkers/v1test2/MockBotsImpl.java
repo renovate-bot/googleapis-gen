@@ -72,7 +72,13 @@ public class MockBotsImpl extends BotsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateBotSession, expected %s or %s",
+                  response.getClass().getName(),
+                  BotSession.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -87,7 +93,13 @@ public class MockBotsImpl extends BotsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateBotSession, expected %s or %s",
+                  response.getClass().getName(),
+                  BotSession.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

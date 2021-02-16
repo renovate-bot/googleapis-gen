@@ -133,6 +133,7 @@ public class GrpcDetailPlacementViewServiceStub extends DetailPlacementViewServi
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetDetailPlacementViewRequest, DetailPlacementView>
       getDetailPlacementViewCallable() {
     return getDetailPlacementViewCallable;
