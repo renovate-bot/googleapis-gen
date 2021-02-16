@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.maps.roads.v1op;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -23,12 +24,13 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.protobuf.AbstractMessage;
-import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -36,31 +38,31 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class RoadsServiceClientTest {
+  private static MockServiceHelper mockServiceHelper;
   private static MockRoadsService mockRoadsService;
-  private static MockServiceHelper serviceHelper;
   private RoadsServiceClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
     mockRoadsService = new MockRoadsService();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockRoadsService));
-    serviceHelper.start();
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     RoadsServiceSettings settings =
         RoadsServiceSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -75,22 +77,22 @@ public class RoadsServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void snapToRoadsTest() {
-    String warningMessage = "warningMessage1427438180";
+  public void snapToRoadsTest() throws Exception {
     SnapToRoadsResponse expectedResponse =
-        SnapToRoadsResponse.newBuilder().setWarningMessage(warningMessage).build();
+        SnapToRoadsResponse.newBuilder()
+            .addAllSnappedPoints(new ArrayList<SnappedPoint>())
+            .setWarningMessage("warningMessage341991627")
+            .build();
     mockRoadsService.addResponse(expectedResponse);
 
     String path = "path3433509";
-    SnapToRoadsRequest request = SnapToRoadsRequest.newBuilder().setPath(path).build();
 
-    SnapToRoadsResponse actualResponse = client.snapToRoads(request);
+    SnapToRoadsResponse actualResponse = client.snapToRoads(path);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockRoadsService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    SnapToRoadsRequest actualRequest = (SnapToRoadsRequest) actualRequests.get(0);
+    SnapToRoadsRequest actualRequest = ((SnapToRoadsRequest) actualRequests.get(0));
 
     Assert.assertEquals(path, actualRequest.getPath());
     Assert.assertTrue(
@@ -100,38 +102,35 @@ public class RoadsServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void snapToRoadsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockRoadsService.addException(exception);
 
     try {
       String path = "path3433509";
-      SnapToRoadsRequest request = SnapToRoadsRequest.newBuilder().setPath(path).build();
-
-      client.snapToRoads(request);
+      client.snapToRoads(path);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listNearestRoadsTest() {
-    ListNearestRoadsResponse expectedResponse = ListNearestRoadsResponse.newBuilder().build();
+  public void listNearestRoadsTest() throws Exception {
+    ListNearestRoadsResponse expectedResponse =
+        ListNearestRoadsResponse.newBuilder()
+            .addAllSnappedPoints(new ArrayList<SnappedPoint>())
+            .build();
     mockRoadsService.addResponse(expectedResponse);
 
     String points = "points-982754077";
-    ListNearestRoadsRequest request =
-        ListNearestRoadsRequest.newBuilder().setPoints(points).build();
 
-    ListNearestRoadsResponse actualResponse = client.listNearestRoads(request);
+    ListNearestRoadsResponse actualResponse = client.listNearestRoads(points);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockRoadsService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListNearestRoadsRequest actualRequest = (ListNearestRoadsRequest) actualRequests.get(0);
+    ListNearestRoadsRequest actualRequest = ((ListNearestRoadsRequest) actualRequests.get(0));
 
     Assert.assertEquals(points, actualRequest.getPoints());
     Assert.assertTrue(
@@ -141,20 +140,16 @@ public class RoadsServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listNearestRoadsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockRoadsService.addException(exception);
 
     try {
       String points = "points-982754077";
-      ListNearestRoadsRequest request =
-          ListNearestRoadsRequest.newBuilder().setPoints(points).build();
-
-      client.listNearestRoads(request);
+      client.listNearestRoads(points);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 }

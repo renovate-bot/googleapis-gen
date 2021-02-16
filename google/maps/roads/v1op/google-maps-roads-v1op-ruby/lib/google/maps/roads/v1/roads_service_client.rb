@@ -198,13 +198,10 @@ module Google
           #   require "google/maps/roads"
           #
           #   roads_client = Google::Maps::Roads.new(version: :v1)
-          #
-          #   # TODO: Initialize `path`:
-          #   path = ''
-          #   response = roads_client.snap_to_roads(path)
+          #   response = roads_client.snap_to_roads
 
           def snap_to_roads \
-              path,
+              path: nil,
               interpolate: nil,
               asset_id: nil,
               travel_mode: nil,
@@ -240,13 +237,10 @@ module Google
           #   require "google/maps/roads"
           #
           #   roads_client = Google::Maps::Roads.new(version: :v1)
-          #
-          #   # TODO: Initialize `points`:
-          #   points = ''
-          #   response = roads_client.list_nearest_roads(points)
+          #   response = roads_client.list_nearest_roads
 
           def list_nearest_roads \
-              points,
+              points: nil,
               travel_mode: nil,
               options: nil,
               &block

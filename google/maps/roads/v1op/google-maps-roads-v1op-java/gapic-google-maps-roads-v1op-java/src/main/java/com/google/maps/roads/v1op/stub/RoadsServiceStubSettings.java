@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.maps.roads.v1op.stub;
 
 import com.google.api.core.ApiFunction;
@@ -43,7 +44,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link RoadsServiceStub}.
  *
@@ -60,22 +61,22 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of snapToRoads to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RoadsServiceStubSettings.Builder roadsServiceSettingsBuilder =
  *     RoadsServiceStubSettings.newBuilder();
  * roadsServiceSettingsBuilder
  *     .snapToRoadsSettings()
  *     .setRetrySettings(
- *         roadsServiceSettingsBuilder.snapToRoadsSettings().getRetrySettings().toBuilder()
+ *         roadsServiceSettingsBuilder
+ *             .snapToRoadsSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RoadsServiceStubSettings roadsServiceSettings = roadsServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class RoadsServiceStubSettings extends StubSettings<RoadsServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -102,10 +103,10 @@ public class RoadsServiceStubSettings extends StubSettings<RoadsServiceStubSetti
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcRoadsServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -172,12 +173,10 @@ public class RoadsServiceStubSettings extends StubSettings<RoadsServiceStubSetti
   /** Builder for RoadsServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<RoadsServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<SnapToRoadsRequest, SnapToRoadsResponse>
         snapToRoadsSettings;
     private final UnaryCallSettings.Builder<ListNearestRoadsRequest, ListNearestRoadsResponse>
         listNearestRoadsSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -185,11 +184,10 @@ public class RoadsServiceStubSettings extends StubSettings<RoadsServiceStubSetti
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+                  StatusCode.Code.UNAVAILABLE, StatusCode.Code.UNKNOWN)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -200,58 +198,32 @@ public class RoadsServiceStubSettings extends StubSettings<RoadsServiceStubSetti
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelay(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
               .setInitialRpcTimeout(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       snapToRoadsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listNearestRoadsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               snapToRoadsSettings, listNearestRoadsSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .snapToRoadsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listNearestRoadsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      return builder;
     }
 
     protected Builder(RoadsServiceStubSettings settings) {
@@ -265,7 +237,32 @@ public class RoadsServiceStubSettings extends StubSettings<RoadsServiceStubSetti
               snapToRoadsSettings, listNearestRoadsSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .snapToRoadsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listNearestRoadsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

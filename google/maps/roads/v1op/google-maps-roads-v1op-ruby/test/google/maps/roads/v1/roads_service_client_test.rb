@@ -71,18 +71,13 @@ describe Google::Maps::Roads::V1::RoadsServiceClient do
     custom_error = CustomTestError_v1op.new "Custom test error for Google::Maps::Roads::V1::RoadsServiceClient#snap_to_roads."
 
     it 'invokes snap_to_roads without error' do
-      # Create request parameters
-      path = ''
-
       # Create expected grpc response
       warning_message = "warningMessage1427438180"
       expected_response = { warning_message: warning_message }
       expected_response = Google::Gax::to_proto(expected_response, Google::Maps::Roads::V1op::SnapToRoadsResponse)
 
       # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Maps::Roads::V1op::SnapToRoadsRequest, request)
-        assert_equal(path, request.path)
+      mock_method = proc do
         OpenStruct.new(execute: expected_response)
       end
       mock_stub = MockGrpcClientStub_v1op.new(:snap_to_roads, mock_method)
@@ -95,13 +90,13 @@ describe Google::Maps::Roads::V1::RoadsServiceClient do
           client = Google::Maps::Roads.new(version: :v1op)
 
           # Call method
-          response = client.snap_to_roads(path)
+          response = client.snap_to_roads
 
           # Verify the response
           assert_equal(expected_response, response)
 
           # Call method with block
-          client.snap_to_roads(path) do |response, operation|
+          client.snap_to_roads do |response, operation|
             # Verify the response
             assert_equal(expected_response, response)
             refute_nil(operation)
@@ -111,13 +106,8 @@ describe Google::Maps::Roads::V1::RoadsServiceClient do
     end
 
     it 'invokes snap_to_roads with error' do
-      # Create request parameters
-      path = ''
-
       # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Maps::Roads::V1op::SnapToRoadsRequest, request)
-        assert_equal(path, request.path)
+      mock_method = proc do
         raise custom_error
       end
       mock_stub = MockGrpcClientStub_v1op.new(:snap_to_roads, mock_method)
@@ -131,7 +121,7 @@ describe Google::Maps::Roads::V1::RoadsServiceClient do
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1op do
-            client.snap_to_roads(path)
+            client.snap_to_roads
           end
 
           # Verify the GaxError wrapped the custom error that was raised.
@@ -145,17 +135,12 @@ describe Google::Maps::Roads::V1::RoadsServiceClient do
     custom_error = CustomTestError_v1op.new "Custom test error for Google::Maps::Roads::V1::RoadsServiceClient#list_nearest_roads."
 
     it 'invokes list_nearest_roads without error' do
-      # Create request parameters
-      points = ''
-
       # Create expected grpc response
       expected_response = {}
       expected_response = Google::Gax::to_proto(expected_response, Google::Maps::Roads::V1op::ListNearestRoadsResponse)
 
       # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Maps::Roads::V1op::ListNearestRoadsRequest, request)
-        assert_equal(points, request.points)
+      mock_method = proc do
         OpenStruct.new(execute: expected_response)
       end
       mock_stub = MockGrpcClientStub_v1op.new(:list_nearest_roads, mock_method)
@@ -168,13 +153,13 @@ describe Google::Maps::Roads::V1::RoadsServiceClient do
           client = Google::Maps::Roads.new(version: :v1op)
 
           # Call method
-          response = client.list_nearest_roads(points)
+          response = client.list_nearest_roads
 
           # Verify the response
           assert_equal(expected_response, response)
 
           # Call method with block
-          client.list_nearest_roads(points) do |response, operation|
+          client.list_nearest_roads do |response, operation|
             # Verify the response
             assert_equal(expected_response, response)
             refute_nil(operation)
@@ -184,13 +169,8 @@ describe Google::Maps::Roads::V1::RoadsServiceClient do
     end
 
     it 'invokes list_nearest_roads with error' do
-      # Create request parameters
-      points = ''
-
       # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Maps::Roads::V1op::ListNearestRoadsRequest, request)
-        assert_equal(points, request.points)
+      mock_method = proc do
         raise custom_error
       end
       mock_stub = MockGrpcClientStub_v1op.new(:list_nearest_roads, mock_method)
@@ -204,7 +184,7 @@ describe Google::Maps::Roads::V1::RoadsServiceClient do
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1op do
-            client.list_nearest_roads(points)
+            client.list_nearest_roads
           end
 
           # Verify the GaxError wrapped the custom error that was raised.

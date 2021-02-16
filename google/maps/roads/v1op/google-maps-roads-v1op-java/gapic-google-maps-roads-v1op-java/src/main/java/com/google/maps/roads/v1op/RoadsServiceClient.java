@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.maps.roads.v1op;
 
 import com.google.api.core.BetaApi;
@@ -24,26 +25,19 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description:
+ * This class provides the ability to make remote calls to the backing service through method calls
+ * that map to API methods. Sample code to get started:
  *
- * <p>This class provides the ability to make remote calls to the backing service through method
- * calls that map to API methods. Sample code to get started:
- *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (RoadsServiceClient roadsServiceClient = RoadsServiceClient.create()) {
- *   String path = "";
- *   SnapToRoadsRequest request = SnapToRoadsRequest.newBuilder()
- *     .setPath(path)
- *     .build();
- *   SnapToRoadsResponse response = roadsServiceClient.snapToRoads(request);
+ *   String path = "path3433509";
+ *   SnapToRoadsResponse response = roadsServiceClient.snapToRoads(path);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the roadsServiceClient object to clean up resources such
+ * <p>Note: close() needs to be called on the RoadsServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -71,30 +65,25 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RoadsServiceSettings roadsServiceSettings =
  *     RoadsServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * RoadsServiceClient roadsServiceClient =
- *     RoadsServiceClient.create(roadsServiceSettings);
- * </code>
- * </pre>
+ * RoadsServiceClient roadsServiceClient = RoadsServiceClient.create(roadsServiceSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RoadsServiceSettings roadsServiceSettings =
  *     RoadsServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
- * RoadsServiceClient roadsServiceClient =
- *     RoadsServiceClient.create(roadsServiceSettings);
- * </code>
- * </pre>
+ * RoadsServiceClient roadsServiceClient = RoadsServiceClient.create(roadsServiceSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class RoadsServiceClient implements BackgroundResource {
   private final RoadsServiceSettings settings;
   private final RoadsServiceStub stub;
@@ -114,7 +103,7 @@ public class RoadsServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of RoadsServiceClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use RoadsServiceSettings}.
+   * for advanced usage - prefer using create(RoadsServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RoadsServiceClient create(RoadsServiceStub stub) {
@@ -146,7 +135,7 @@ public class RoadsServiceClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * This method takes a sequence of latitude,longitude points and snaps them to the most likely
    * road segments. Optionally returns additional points giving the full road geometry. Also returns
@@ -154,15 +143,41 @@ public class RoadsServiceClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoadsServiceClient roadsServiceClient = RoadsServiceClient.create()) {
-   *   String path = "";
-   *   SnapToRoadsRequest request = SnapToRoadsRequest.newBuilder()
-   *     .setPath(path)
-   *     .build();
+   *   String path = "path3433509";
+   *   SnapToRoadsResponse response = roadsServiceClient.snapToRoads(path);
+   * }
+   * }</pre>
+   *
+   * @param path The path to be snapped as a series of lat, lng points. Specified as a string of the
+   *     format: lat,lng|lat,lng|...
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SnapToRoadsResponse snapToRoads(String path) {
+    SnapToRoadsRequest request = SnapToRoadsRequest.newBuilder().setPath(path).build();
+    return snapToRoads(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * This method takes a sequence of latitude,longitude points and snaps them to the most likely
+   * road segments. Optionally returns additional points giving the full road geometry. Also returns
+   * a place ID for each snapped point.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RoadsServiceClient roadsServiceClient = RoadsServiceClient.create()) {
+   *   SnapToRoadsRequest request =
+   *       SnapToRoadsRequest.newBuilder()
+   *           .setPath("path3433509")
+   *           .setInterpolate(true)
+   *           .setAssetId("assetId-704776149")
+   *           .build();
    *   SnapToRoadsResponse response = roadsServiceClient.snapToRoads(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -171,7 +186,7 @@ public class RoadsServiceClient implements BackgroundResource {
     return snapToRoadsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * This method takes a sequence of latitude,longitude points and snaps them to the most likely
    * road segments. Optionally returns additional points giving the full road geometry. Also returns
@@ -179,38 +194,63 @@ public class RoadsServiceClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoadsServiceClient roadsServiceClient = RoadsServiceClient.create()) {
-   *   String path = "";
-   *   SnapToRoadsRequest request = SnapToRoadsRequest.newBuilder()
-   *     .setPath(path)
-   *     .build();
-   *   ApiFuture&lt;SnapToRoadsResponse&gt; future = roadsServiceClient.snapToRoadsCallable().futureCall(request);
-   *   // Do something
+   *   SnapToRoadsRequest request =
+   *       SnapToRoadsRequest.newBuilder()
+   *           .setPath("path3433509")
+   *           .setInterpolate(true)
+   *           .setAssetId("assetId-704776149")
+   *           .build();
+   *   ApiFuture<SnapToRoadsResponse> future =
+   *       roadsServiceClient.snapToRoadsCallable().futureCall(request);
+   *   // Do something.
    *   SnapToRoadsResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SnapToRoadsRequest, SnapToRoadsResponse> snapToRoadsCallable() {
     return stub.snapToRoadsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * This method takes a list of latitude,longitude points and snaps them each to their nearest
    * road. Also returns a place ID for each snapped point.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoadsServiceClient roadsServiceClient = RoadsServiceClient.create()) {
-   *   String points = "";
-   *   ListNearestRoadsRequest request = ListNearestRoadsRequest.newBuilder()
-   *     .setPoints(points)
-   *     .build();
+   *   String points = "points-982754077";
+   *   ListNearestRoadsResponse response = roadsServiceClient.listNearestRoads(points);
+   * }
+   * }</pre>
+   *
+   * @param points The points to be snapped as a series of lat, lng points. Specified as a string of
+   *     the format: lat,lng|lat,lng|...
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNearestRoadsResponse listNearestRoads(String points) {
+    ListNearestRoadsRequest request =
+        ListNearestRoadsRequest.newBuilder().setPoints(points).build();
+    return listNearestRoads(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * This method takes a list of latitude,longitude points and snaps them each to their nearest
+   * road. Also returns a place ID for each snapped point.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RoadsServiceClient roadsServiceClient = RoadsServiceClient.create()) {
+   *   ListNearestRoadsRequest request =
+   *       ListNearestRoadsRequest.newBuilder().setPoints("points-982754077").build();
    *   ListNearestRoadsResponse response = roadsServiceClient.listNearestRoads(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -219,24 +259,23 @@ public class RoadsServiceClient implements BackgroundResource {
     return listNearestRoadsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * This method takes a list of latitude,longitude points and snaps them each to their nearest
    * road. Also returns a place ID for each snapped point.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (RoadsServiceClient roadsServiceClient = RoadsServiceClient.create()) {
-   *   String points = "";
-   *   ListNearestRoadsRequest request = ListNearestRoadsRequest.newBuilder()
-   *     .setPoints(points)
-   *     .build();
-   *   ApiFuture&lt;ListNearestRoadsResponse&gt; future = roadsServiceClient.listNearestRoadsCallable().futureCall(request);
-   *   // Do something
+   *   ListNearestRoadsRequest request =
+   *       ListNearestRoadsRequest.newBuilder().setPoints("points-982754077").build();
+   *   ApiFuture<ListNearestRoadsResponse> future =
+   *       roadsServiceClient.listNearestRoadsCallable().futureCall(request);
+   *   // Do something.
    *   ListNearestRoadsResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListNearestRoadsRequest, ListNearestRoadsResponse>
       listNearestRoadsCallable() {

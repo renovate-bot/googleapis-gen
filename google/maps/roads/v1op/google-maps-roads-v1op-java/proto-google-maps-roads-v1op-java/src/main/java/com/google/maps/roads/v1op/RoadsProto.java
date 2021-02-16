@@ -68,16 +68,17 @@ public final class RoadsProto {
       "ed_points\030\001 \003(\0132$.google.maps.roads.v1op" +
       ".SnappedPoint*P\n\nTravelMode\022\033\n\027TRAVEL_MO" +
       "DE_UNSPECIFIED\020\000\022\013\n\007DRIVING\020\001\022\013\n\007CYCLING" +
-      "\020\002\022\013\n\007WALKING\020\0032\212\002\n\014RoadsService\022h\n\013Snap" +
+      "\020\002\022\013\n\007WALKING\020\0032\233\002\n\014RoadsService\022o\n\013Snap" +
       "ToRoads\022*.google.maps.roads.v1op.SnapToR" +
       "oadsRequest\032+.google.maps.roads.v1op.Sna" +
-      "pToRoadsResponse\"\000\022w\n\020ListNearestRoads\022/" +
-      ".google.maps.roads.v1op.ListNearestRoads" +
-      "Request\0320.google.maps.roads.v1op.ListNea" +
-      "restRoadsResponse\"\000\032\027\312A\024roads.googleapis" +
-      ".comBg\n\032com.google.maps.roads.v1opB\nRoad" +
-      "sProtoP\001Z;google.golang.org/genproto/goo" +
-      "gleapis/maps/roads/v1op;roadsb\006proto3"
+      "pToRoadsResponse\"\007\332A\004path\022\200\001\n\020ListNeares" +
+      "tRoads\022/.google.maps.roads.v1op.ListNear" +
+      "estRoadsRequest\0320.google.maps.roads.v1op" +
+      ".ListNearestRoadsResponse\"\t\332A\006points\032\027\312A" +
+      "\024roads.googleapis.comBg\n\032com.google.maps" +
+      ".roads.v1opB\nRoadsProtoP\001Z;google.golang" +
+      ".org/genproto/googleapis/maps/roads/v1op" +
+      ";roadsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -120,6 +121,7 @@ public final class RoadsProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
+    registry.add(com.google.api.ClientProto.methodSignature);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
