@@ -12,6 +12,7 @@ require 'google/cloud/dialogflow/cx/v3/intent_pb'
 require 'google/cloud/dialogflow/cx/v3/page_pb'
 require 'google/cloud/dialogflow/cx/v3/response_message_pb'
 require 'google/cloud/dialogflow/cx/v3/session_pb'
+require 'google/cloud/dialogflow/cx/v3/transition_route_group_pb'
 require 'google/longrunning/operations_pb'
 require 'google/protobuf/empty_pb'
 require 'google/protobuf/field_mask_pb'
@@ -90,6 +91,19 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
         optional :event_handler, :message, 6, "google.cloud.dialogflow.cx.v3.EventHandler"
       end
     end
+    add_message "google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage" do
+      repeated :coverages, :message, 1, "google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.Coverage"
+      optional :coverage_score, :float, 2
+    end
+    add_message "google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.Coverage" do
+      optional :route_group, :message, 1, "google.cloud.dialogflow.cx.v3.TransitionRouteGroup"
+      repeated :transitions, :message, 2, "google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.Coverage.Transition"
+      optional :coverage_score, :float, 3
+    end
+    add_message "google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.Coverage.Transition" do
+      optional :transition_route, :message, 1, "google.cloud.dialogflow.cx.v3.TransitionRoute"
+      optional :covered, :bool, 2
+    end
     add_message "google.cloud.dialogflow.cx.v3.IntentCoverage" do
       repeated :intents, :message, 1, "google.cloud.dialogflow.cx.v3.IntentCoverage.Intent"
       optional :coverage_score, :float, 2
@@ -106,12 +120,14 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :COVERAGE_TYPE_UNSPECIFIED, 0
       value :INTENT, 1
       value :PAGE_TRANSITION, 2
+      value :TRANSITION_ROUTE_GROUP, 3
     end
     add_message "google.cloud.dialogflow.cx.v3.CalculateCoverageResponse" do
       optional :agent, :string, 5
       oneof :coverage_type do
         optional :intent_coverage, :message, 2, "google.cloud.dialogflow.cx.v3.IntentCoverage"
         optional :transition_coverage, :message, 4, "google.cloud.dialogflow.cx.v3.TransitionCoverage"
+        optional :route_group_coverage, :message, 6, "google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage"
       end
     end
     add_message "google.cloud.dialogflow.cx.v3.ListTestCasesRequest" do
@@ -241,6 +257,9 @@ module Google
           TransitionCoverage = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.TransitionCoverage").msgclass
           TransitionCoverage::TransitionNode = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.TransitionCoverage.TransitionNode").msgclass
           TransitionCoverage::Transition = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.TransitionCoverage.Transition").msgclass
+          TransitionRouteGroupCoverage = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage").msgclass
+          TransitionRouteGroupCoverage::Coverage = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.Coverage").msgclass
+          TransitionRouteGroupCoverage::Coverage::Transition = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.Coverage.Transition").msgclass
           IntentCoverage = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.IntentCoverage").msgclass
           IntentCoverage::Intent = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.IntentCoverage.Intent").msgclass
           CalculateCoverageRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.CalculateCoverageRequest").msgclass

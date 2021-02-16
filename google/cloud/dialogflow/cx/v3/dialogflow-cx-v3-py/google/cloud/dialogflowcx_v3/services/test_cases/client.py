@@ -881,6 +881,14 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
         # and friendly error handling.
         rpc = self._transport._wrapped_methods[self._transport.run_test_case]
 
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ('name', request.name),
+            )),
+        )
+
         # Send the request.
         response = rpc(
             request,

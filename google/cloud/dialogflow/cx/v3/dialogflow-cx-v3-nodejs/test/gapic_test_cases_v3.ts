@@ -612,7 +612,15 @@ describe('v3.TestCasesClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.RunTestCaseRequest());
-            const expectedOptions = {};
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
             const expectedResponse = generateSampleMessage(new protos.google.longrunning.Operation());
             client.innerApiCalls.runTestCase = stubLongRunningCall(expectedResponse);
             const [operation] = await client.runTestCase(request);
@@ -629,7 +637,15 @@ describe('v3.TestCasesClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.RunTestCaseRequest());
-            const expectedOptions = {};
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
             const expectedResponse = generateSampleMessage(new protos.google.longrunning.Operation());
             client.innerApiCalls.runTestCase = stubLongRunningCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -659,7 +675,15 @@ describe('v3.TestCasesClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.RunTestCaseRequest());
-            const expectedOptions = {};
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
             const expectedError = new Error('expected');
             client.innerApiCalls.runTestCase = stubLongRunningCall(undefined, expectedError);
             await assert.rejects(client.runTestCase(request), expectedError);
@@ -674,7 +698,15 @@ describe('v3.TestCasesClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.RunTestCaseRequest());
-            const expectedOptions = {};
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
             const expectedError = new Error('expected');
             client.innerApiCalls.runTestCase = stubLongRunningCall(undefined, undefined, expectedError);
             const [operation] = await client.runTestCase(request);

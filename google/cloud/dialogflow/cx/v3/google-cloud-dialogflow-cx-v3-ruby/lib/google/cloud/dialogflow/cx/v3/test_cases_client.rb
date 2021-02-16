@@ -298,7 +298,10 @@ module Google
               @run_test_case = Google::Gax.create_api_call(
                 @test_cases_stub.method(:run_test_case),
                 defaults["run_test_case"],
-                exception_transformer: exception_transformer
+                exception_transformer: exception_transformer,
+                params_extractor: proc do |request|
+                  {'name' => request.name}
+                end
               )
               @batch_run_test_cases = Google::Gax.create_api_call(
                 @test_cases_stub.method(:batch_run_test_cases),
