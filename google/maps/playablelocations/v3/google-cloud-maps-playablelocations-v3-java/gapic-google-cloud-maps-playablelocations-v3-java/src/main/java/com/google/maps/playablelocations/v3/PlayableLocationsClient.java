@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.maps.playablelocations.v3;
 
 import com.google.api.core.BetaApi;
@@ -24,28 +25,26 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The Playable Locations API for v3.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (PlayableLocationsClient playableLocationsClient = PlayableLocationsClient.create()) {
- *   AreaFilter areaFilter = AreaFilter.newBuilder().build();
- *   List&lt;Criterion&gt; criteria = new ArrayList&lt;&gt;();
- *   SamplePlayableLocationsRequest request = SamplePlayableLocationsRequest.newBuilder()
- *     .setAreaFilter(areaFilter)
- *     .addAllCriteria(criteria)
- *     .build();
- *   SamplePlayableLocationsResponse response = playableLocationsClient.samplePlayableLocations(request);
+ *   SamplePlayableLocationsRequest request =
+ *       SamplePlayableLocationsRequest.newBuilder()
+ *           .setAreaFilter(AreaFilter.newBuilder().build())
+ *           .addAllCriteria(new ArrayList<Criterion>())
+ *           .build();
+ *   SamplePlayableLocationsResponse response =
+ *       playableLocationsClient.samplePlayableLocations(request);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the playableLocationsClient object to clean up resources
+ * <p>Note: close() needs to be called on the PlayableLocationsClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -74,30 +73,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * PlayableLocationsSettings playableLocationsSettings =
  *     PlayableLocationsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * PlayableLocationsClient playableLocationsClient =
  *     PlayableLocationsClient.create(playableLocationsSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * PlayableLocationsSettings playableLocationsSettings =
  *     PlayableLocationsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * PlayableLocationsClient playableLocationsClient =
  *     PlayableLocationsClient.create(playableLocationsSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class PlayableLocationsClient implements BackgroundResource {
   private final PlayableLocationsSettings settings;
   private final PlayableLocationsStub stub;
@@ -118,7 +114,7 @@ public class PlayableLocationsClient implements BackgroundResource {
 
   /**
    * Constructs an instance of PlayableLocationsClient, using the given stub for making calls. This
-   * is for advanced usage - prefer to use PlayableLocationsSettings}.
+   * is for advanced usage - prefer using create(PlayableLocationsSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final PlayableLocationsClient create(PlayableLocationsStub stub) {
@@ -150,7 +146,7 @@ public class PlayableLocationsClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a set of playable locations that lie within a specified area, that satisfy optional
    * filter criteria.
@@ -160,17 +156,17 @@ public class PlayableLocationsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (PlayableLocationsClient playableLocationsClient = PlayableLocationsClient.create()) {
-   *   AreaFilter areaFilter = AreaFilter.newBuilder().build();
-   *   List&lt;Criterion&gt; criteria = new ArrayList&lt;&gt;();
-   *   SamplePlayableLocationsRequest request = SamplePlayableLocationsRequest.newBuilder()
-   *     .setAreaFilter(areaFilter)
-   *     .addAllCriteria(criteria)
-   *     .build();
-   *   SamplePlayableLocationsResponse response = playableLocationsClient.samplePlayableLocations(request);
+   *   SamplePlayableLocationsRequest request =
+   *       SamplePlayableLocationsRequest.newBuilder()
+   *           .setAreaFilter(AreaFilter.newBuilder().build())
+   *           .addAllCriteria(new ArrayList<Criterion>())
+   *           .build();
+   *   SamplePlayableLocationsResponse response =
+   *       playableLocationsClient.samplePlayableLocations(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -180,7 +176,7 @@ public class PlayableLocationsClient implements BackgroundResource {
     return samplePlayableLocationsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a set of playable locations that lie within a specified area, that satisfy optional
    * filter criteria.
@@ -190,26 +186,26 @@ public class PlayableLocationsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (PlayableLocationsClient playableLocationsClient = PlayableLocationsClient.create()) {
-   *   AreaFilter areaFilter = AreaFilter.newBuilder().build();
-   *   List&lt;Criterion&gt; criteria = new ArrayList&lt;&gt;();
-   *   SamplePlayableLocationsRequest request = SamplePlayableLocationsRequest.newBuilder()
-   *     .setAreaFilter(areaFilter)
-   *     .addAllCriteria(criteria)
-   *     .build();
-   *   ApiFuture&lt;SamplePlayableLocationsResponse&gt; future = playableLocationsClient.samplePlayableLocationsCallable().futureCall(request);
-   *   // Do something
+   *   SamplePlayableLocationsRequest request =
+   *       SamplePlayableLocationsRequest.newBuilder()
+   *           .setAreaFilter(AreaFilter.newBuilder().build())
+   *           .addAllCriteria(new ArrayList<Criterion>())
+   *           .build();
+   *   ApiFuture<SamplePlayableLocationsResponse> future =
+   *       playableLocationsClient.samplePlayableLocationsCallable().futureCall(request);
+   *   // Do something.
    *   SamplePlayableLocationsResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SamplePlayableLocationsRequest, SamplePlayableLocationsResponse>
       samplePlayableLocationsCallable() {
     return stub.samplePlayableLocationsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Logs bad playable location reports submitted by players.
    *
@@ -218,19 +214,17 @@ public class PlayableLocationsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (PlayableLocationsClient playableLocationsClient = PlayableLocationsClient.create()) {
-   *   List&lt;PlayerReport&gt; playerReports = new ArrayList&lt;&gt;();
-   *   String requestId = "";
-   *   ClientInfo clientInfo = ClientInfo.newBuilder().build();
-   *   LogPlayerReportsRequest request = LogPlayerReportsRequest.newBuilder()
-   *     .addAllPlayerReports(playerReports)
-   *     .setRequestId(requestId)
-   *     .setClientInfo(clientInfo)
-   *     .build();
+   *   LogPlayerReportsRequest request =
+   *       LogPlayerReportsRequest.newBuilder()
+   *           .addAllPlayerReports(new ArrayList<PlayerReport>())
+   *           .setRequestId("requestId693933066")
+   *           .setClientInfo(ClientInfo.newBuilder().build())
+   *           .build();
    *   LogPlayerReportsResponse response = playableLocationsClient.logPlayerReports(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -239,7 +233,7 @@ public class PlayableLocationsClient implements BackgroundResource {
     return logPlayerReportsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Logs bad playable location reports submitted by players.
    *
@@ -248,28 +242,27 @@ public class PlayableLocationsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (PlayableLocationsClient playableLocationsClient = PlayableLocationsClient.create()) {
-   *   List&lt;PlayerReport&gt; playerReports = new ArrayList&lt;&gt;();
-   *   String requestId = "";
-   *   ClientInfo clientInfo = ClientInfo.newBuilder().build();
-   *   LogPlayerReportsRequest request = LogPlayerReportsRequest.newBuilder()
-   *     .addAllPlayerReports(playerReports)
-   *     .setRequestId(requestId)
-   *     .setClientInfo(clientInfo)
-   *     .build();
-   *   ApiFuture&lt;LogPlayerReportsResponse&gt; future = playableLocationsClient.logPlayerReportsCallable().futureCall(request);
-   *   // Do something
+   *   LogPlayerReportsRequest request =
+   *       LogPlayerReportsRequest.newBuilder()
+   *           .addAllPlayerReports(new ArrayList<PlayerReport>())
+   *           .setRequestId("requestId693933066")
+   *           .setClientInfo(ClientInfo.newBuilder().build())
+   *           .build();
+   *   ApiFuture<LogPlayerReportsResponse> future =
+   *       playableLocationsClient.logPlayerReportsCallable().futureCall(request);
+   *   // Do something.
    *   LogPlayerReportsResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<LogPlayerReportsRequest, LogPlayerReportsResponse>
       logPlayerReportsCallable() {
     return stub.logPlayerReportsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Logs new events when playable locations are displayed, and when they are interacted with.
    *
@@ -278,19 +271,17 @@ public class PlayableLocationsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (PlayableLocationsClient playableLocationsClient = PlayableLocationsClient.create()) {
-   *   List&lt;Impression&gt; impressions = new ArrayList&lt;&gt;();
-   *   String requestId = "";
-   *   ClientInfo clientInfo = ClientInfo.newBuilder().build();
-   *   LogImpressionsRequest request = LogImpressionsRequest.newBuilder()
-   *     .addAllImpressions(impressions)
-   *     .setRequestId(requestId)
-   *     .setClientInfo(clientInfo)
-   *     .build();
+   *   LogImpressionsRequest request =
+   *       LogImpressionsRequest.newBuilder()
+   *           .addAllImpressions(new ArrayList<Impression>())
+   *           .setRequestId("requestId693933066")
+   *           .setClientInfo(ClientInfo.newBuilder().build())
+   *           .build();
    *   LogImpressionsResponse response = playableLocationsClient.logImpressions(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -299,7 +290,7 @@ public class PlayableLocationsClient implements BackgroundResource {
     return logImpressionsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Logs new events when playable locations are displayed, and when they are interacted with.
    *
@@ -308,21 +299,20 @@ public class PlayableLocationsClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (PlayableLocationsClient playableLocationsClient = PlayableLocationsClient.create()) {
-   *   List&lt;Impression&gt; impressions = new ArrayList&lt;&gt;();
-   *   String requestId = "";
-   *   ClientInfo clientInfo = ClientInfo.newBuilder().build();
-   *   LogImpressionsRequest request = LogImpressionsRequest.newBuilder()
-   *     .addAllImpressions(impressions)
-   *     .setRequestId(requestId)
-   *     .setClientInfo(clientInfo)
-   *     .build();
-   *   ApiFuture&lt;LogImpressionsResponse&gt; future = playableLocationsClient.logImpressionsCallable().futureCall(request);
-   *   // Do something
+   *   LogImpressionsRequest request =
+   *       LogImpressionsRequest.newBuilder()
+   *           .addAllImpressions(new ArrayList<Impression>())
+   *           .setRequestId("requestId693933066")
+   *           .setClientInfo(ClientInfo.newBuilder().build())
+   *           .build();
+   *   ApiFuture<LogImpressionsResponse> future =
+   *       playableLocationsClient.logImpressionsCallable().futureCall(request);
+   *   // Do something.
    *   LogImpressionsResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<LogImpressionsRequest, LogImpressionsResponse>
       logImpressionsCallable() {
