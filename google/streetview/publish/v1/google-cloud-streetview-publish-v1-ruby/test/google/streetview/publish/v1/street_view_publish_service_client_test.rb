@@ -135,9 +135,6 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
     custom_error = CustomTestError_v1.new "Custom test error for Google::Streetview::Publish::V1::StreetViewPublishServiceClient#create_photo."
 
     it 'invokes create_photo without error' do
-      # Create request parameters
-      photo = {}
-
       # Create expected grpc response
       download_url = "downloadUrl1109408056"
       thumbnail_url = "thumbnailUrl1825632156"
@@ -152,9 +149,7 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
       expected_response = Google::Gax::to_proto(expected_response, Google::Streetview::Publish::V1::Photo)
 
       # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Streetview::Publish::V1::CreatePhotoRequest, request)
-        assert_equal(Google::Gax::to_proto(photo, Google::Streetview::Publish::V1::Photo), request.photo)
+      mock_method = proc do
         OpenStruct.new(execute: expected_response)
       end
       mock_stub = MockGrpcClientStub_v1.new(:create_photo, mock_method)
@@ -167,13 +162,13 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
           client = Google::Streetview::Publish.new(version: :v1)
 
           # Call method
-          response = client.create_photo(photo)
+          response = client.create_photo
 
           # Verify the response
           assert_equal(expected_response, response)
 
           # Call method with block
-          client.create_photo(photo) do |response, operation|
+          client.create_photo do |response, operation|
             # Verify the response
             assert_equal(expected_response, response)
             refute_nil(operation)
@@ -183,13 +178,8 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
     end
 
     it 'invokes create_photo with error' do
-      # Create request parameters
-      photo = {}
-
       # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Streetview::Publish::V1::CreatePhotoRequest, request)
-        assert_equal(Google::Gax::to_proto(photo, Google::Streetview::Publish::V1::Photo), request.photo)
+      mock_method = proc do
         raise custom_error
       end
       mock_stub = MockGrpcClientStub_v1.new(:create_photo, mock_method)
@@ -203,7 +193,7 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
-            client.create_photo(photo)
+            client.create_photo
           end
 
           # Verify the GaxError wrapped the custom error that was raised.
@@ -217,10 +207,6 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
     custom_error = CustomTestError_v1.new "Custom test error for Google::Streetview::Publish::V1::StreetViewPublishServiceClient#get_photo."
 
     it 'invokes get_photo without error' do
-      # Create request parameters
-      photo_id = ''
-      view = :BASIC
-
       # Create expected grpc response
       download_url = "downloadUrl1109408056"
       thumbnail_url = "thumbnailUrl1825632156"
@@ -235,10 +221,7 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
       expected_response = Google::Gax::to_proto(expected_response, Google::Streetview::Publish::V1::Photo)
 
       # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Streetview::Publish::V1::GetPhotoRequest, request)
-        assert_equal(photo_id, request.photo_id)
-        assert_equal(view, request.view)
+      mock_method = proc do
         OpenStruct.new(execute: expected_response)
       end
       mock_stub = MockGrpcClientStub_v1.new(:get_photo, mock_method)
@@ -251,13 +234,13 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
           client = Google::Streetview::Publish.new(version: :v1)
 
           # Call method
-          response = client.get_photo(photo_id, view)
+          response = client.get_photo
 
           # Verify the response
           assert_equal(expected_response, response)
 
           # Call method with block
-          client.get_photo(photo_id, view) do |response, operation|
+          client.get_photo do |response, operation|
             # Verify the response
             assert_equal(expected_response, response)
             refute_nil(operation)
@@ -267,15 +250,8 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
     end
 
     it 'invokes get_photo with error' do
-      # Create request parameters
-      photo_id = ''
-      view = :BASIC
-
       # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Streetview::Publish::V1::GetPhotoRequest, request)
-        assert_equal(photo_id, request.photo_id)
-        assert_equal(view, request.view)
+      mock_method = proc do
         raise custom_error
       end
       mock_stub = MockGrpcClientStub_v1.new(:get_photo, mock_method)
@@ -289,7 +265,7 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
-            client.get_photo(photo_id, view)
+            client.get_photo
           end
 
           # Verify the GaxError wrapped the custom error that was raised.
@@ -303,19 +279,12 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
     custom_error = CustomTestError_v1.new "Custom test error for Google::Streetview::Publish::V1::StreetViewPublishServiceClient#batch_get_photos."
 
     it 'invokes batch_get_photos without error' do
-      # Create request parameters
-      photo_ids = []
-      view = :BASIC
-
       # Create expected grpc response
       expected_response = {}
       expected_response = Google::Gax::to_proto(expected_response, Google::Streetview::Publish::V1::BatchGetPhotosResponse)
 
       # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Streetview::Publish::V1::BatchGetPhotosRequest, request)
-        assert_equal(photo_ids, request.photo_ids)
-        assert_equal(view, request.view)
+      mock_method = proc do
         OpenStruct.new(execute: expected_response)
       end
       mock_stub = MockGrpcClientStub_v1.new(:batch_get_photos, mock_method)
@@ -328,13 +297,13 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
           client = Google::Streetview::Publish.new(version: :v1)
 
           # Call method
-          response = client.batch_get_photos(photo_ids, view)
+          response = client.batch_get_photos
 
           # Verify the response
           assert_equal(expected_response, response)
 
           # Call method with block
-          client.batch_get_photos(photo_ids, view) do |response, operation|
+          client.batch_get_photos do |response, operation|
             # Verify the response
             assert_equal(expected_response, response)
             refute_nil(operation)
@@ -344,15 +313,8 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
     end
 
     it 'invokes batch_get_photos with error' do
-      # Create request parameters
-      photo_ids = []
-      view = :BASIC
-
       # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Streetview::Publish::V1::BatchGetPhotosRequest, request)
-        assert_equal(photo_ids, request.photo_ids)
-        assert_equal(view, request.view)
+      mock_method = proc do
         raise custom_error
       end
       mock_stub = MockGrpcClientStub_v1.new(:batch_get_photos, mock_method)
@@ -366,7 +328,7 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
-            client.batch_get_photos(photo_ids, view)
+            client.batch_get_photos
           end
 
           # Verify the GaxError wrapped the custom error that was raised.
@@ -380,10 +342,6 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
     custom_error = CustomTestError_v1.new "Custom test error for Google::Streetview::Publish::V1::StreetViewPublishServiceClient#list_photos."
 
     it 'invokes list_photos without error' do
-      # Create request parameters
-      view = :BASIC
-      filter = ''
-
       # Create expected grpc response
       next_page_token = ""
       photos_element = {}
@@ -392,10 +350,7 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
       expected_response = Google::Gax::to_proto(expected_response, Google::Streetview::Publish::V1::ListPhotosResponse)
 
       # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Streetview::Publish::V1::ListPhotosRequest, request)
-        assert_equal(view, request.view)
-        assert_equal(filter, request.filter)
+      mock_method = proc do
         OpenStruct.new(execute: expected_response)
       end
       mock_stub = MockGrpcClientStub_v1.new(:list_photos, mock_method)
@@ -408,7 +363,7 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
           client = Google::Streetview::Publish.new(version: :v1)
 
           # Call method
-          response = client.list_photos(view, filter)
+          response = client.list_photos
 
           # Verify the response
           assert(response.instance_of?(Google::Gax::PagedEnumerable))
@@ -420,15 +375,8 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
     end
 
     it 'invokes list_photos with error' do
-      # Create request parameters
-      view = :BASIC
-      filter = ''
-
       # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Streetview::Publish::V1::ListPhotosRequest, request)
-        assert_equal(view, request.view)
-        assert_equal(filter, request.filter)
+      mock_method = proc do
         raise custom_error
       end
       mock_stub = MockGrpcClientStub_v1.new(:list_photos, mock_method)
@@ -442,7 +390,7 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
-            client.list_photos(view, filter)
+            client.list_photos
           end
 
           # Verify the GaxError wrapped the custom error that was raised.
@@ -456,10 +404,6 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
     custom_error = CustomTestError_v1.new "Custom test error for Google::Streetview::Publish::V1::StreetViewPublishServiceClient#update_photo."
 
     it 'invokes update_photo without error' do
-      # Create request parameters
-      photo = {}
-      update_mask = {}
-
       # Create expected grpc response
       download_url = "downloadUrl1109408056"
       thumbnail_url = "thumbnailUrl1825632156"
@@ -474,10 +418,7 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
       expected_response = Google::Gax::to_proto(expected_response, Google::Streetview::Publish::V1::Photo)
 
       # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Streetview::Publish::V1::UpdatePhotoRequest, request)
-        assert_equal(Google::Gax::to_proto(photo, Google::Streetview::Publish::V1::Photo), request.photo)
-        assert_equal(Google::Gax::to_proto(update_mask, Google::Protobuf::FieldMask), request.update_mask)
+      mock_method = proc do
         OpenStruct.new(execute: expected_response)
       end
       mock_stub = MockGrpcClientStub_v1.new(:update_photo, mock_method)
@@ -490,13 +431,13 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
           client = Google::Streetview::Publish.new(version: :v1)
 
           # Call method
-          response = client.update_photo(photo, update_mask)
+          response = client.update_photo
 
           # Verify the response
           assert_equal(expected_response, response)
 
           # Call method with block
-          client.update_photo(photo, update_mask) do |response, operation|
+          client.update_photo do |response, operation|
             # Verify the response
             assert_equal(expected_response, response)
             refute_nil(operation)
@@ -506,15 +447,8 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
     end
 
     it 'invokes update_photo with error' do
-      # Create request parameters
-      photo = {}
-      update_mask = {}
-
       # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Streetview::Publish::V1::UpdatePhotoRequest, request)
-        assert_equal(Google::Gax::to_proto(photo, Google::Streetview::Publish::V1::Photo), request.photo)
-        assert_equal(Google::Gax::to_proto(update_mask, Google::Protobuf::FieldMask), request.update_mask)
+      mock_method = proc do
         raise custom_error
       end
       mock_stub = MockGrpcClientStub_v1.new(:update_photo, mock_method)
@@ -528,7 +462,7 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
-            client.update_photo(photo, update_mask)
+            client.update_photo
           end
 
           # Verify the GaxError wrapped the custom error that was raised.
@@ -542,20 +476,12 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
     custom_error = CustomTestError_v1.new "Custom test error for Google::Streetview::Publish::V1::StreetViewPublishServiceClient#batch_update_photos."
 
     it 'invokes batch_update_photos without error' do
-      # Create request parameters
-      update_photo_requests = []
-
       # Create expected grpc response
       expected_response = {}
       expected_response = Google::Gax::to_proto(expected_response, Google::Streetview::Publish::V1::BatchUpdatePhotosResponse)
 
       # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Streetview::Publish::V1::BatchUpdatePhotosRequest, request)
-        update_photo_requests = update_photo_requests.map do |req|
-          Google::Gax::to_proto(req, Google::Streetview::Publish::V1::UpdatePhotoRequest)
-        end
-        assert_equal(update_photo_requests, request.update_photo_requests)
+      mock_method = proc do
         OpenStruct.new(execute: expected_response)
       end
       mock_stub = MockGrpcClientStub_v1.new(:batch_update_photos, mock_method)
@@ -568,13 +494,13 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
           client = Google::Streetview::Publish.new(version: :v1)
 
           # Call method
-          response = client.batch_update_photos(update_photo_requests)
+          response = client.batch_update_photos
 
           # Verify the response
           assert_equal(expected_response, response)
 
           # Call method with block
-          client.batch_update_photos(update_photo_requests) do |response, operation|
+          client.batch_update_photos do |response, operation|
             # Verify the response
             assert_equal(expected_response, response)
             refute_nil(operation)
@@ -584,16 +510,8 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
     end
 
     it 'invokes batch_update_photos with error' do
-      # Create request parameters
-      update_photo_requests = []
-
       # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Streetview::Publish::V1::BatchUpdatePhotosRequest, request)
-        update_photo_requests = update_photo_requests.map do |req|
-          Google::Gax::to_proto(req, Google::Streetview::Publish::V1::UpdatePhotoRequest)
-        end
-        assert_equal(update_photo_requests, request.update_photo_requests)
+      mock_method = proc do
         raise custom_error
       end
       mock_stub = MockGrpcClientStub_v1.new(:batch_update_photos, mock_method)
@@ -607,7 +525,7 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
-            client.batch_update_photos(update_photo_requests)
+            client.batch_update_photos
           end
 
           # Verify the GaxError wrapped the custom error that was raised.
@@ -621,13 +539,9 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
     custom_error = CustomTestError_v1.new "Custom test error for Google::Streetview::Publish::V1::StreetViewPublishServiceClient#delete_photo."
 
     it 'invokes delete_photo without error' do
-      # Create request parameters
-      photo_id = ''
 
       # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Streetview::Publish::V1::DeletePhotoRequest, request)
-        assert_equal(photo_id, request.photo_id)
+      mock_method = proc do
         OpenStruct.new(execute: nil)
       end
       mock_stub = MockGrpcClientStub_v1.new(:delete_photo, mock_method)
@@ -640,13 +554,13 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
           client = Google::Streetview::Publish.new(version: :v1)
 
           # Call method
-          response = client.delete_photo(photo_id)
+          response = client.delete_photo
 
           # Verify the response
           assert_nil(response)
 
           # Call method with block
-          client.delete_photo(photo_id) do |response, operation|
+          client.delete_photo do |response, operation|
             # Verify the response
             assert_nil(response)
             refute_nil(operation)
@@ -656,13 +570,8 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
     end
 
     it 'invokes delete_photo with error' do
-      # Create request parameters
-      photo_id = ''
-
       # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Streetview::Publish::V1::DeletePhotoRequest, request)
-        assert_equal(photo_id, request.photo_id)
+      mock_method = proc do
         raise custom_error
       end
       mock_stub = MockGrpcClientStub_v1.new(:delete_photo, mock_method)
@@ -676,7 +585,7 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
-            client.delete_photo(photo_id)
+            client.delete_photo
           end
 
           # Verify the GaxError wrapped the custom error that was raised.
@@ -690,17 +599,12 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
     custom_error = CustomTestError_v1.new "Custom test error for Google::Streetview::Publish::V1::StreetViewPublishServiceClient#batch_delete_photos."
 
     it 'invokes batch_delete_photos without error' do
-      # Create request parameters
-      photo_ids = []
-
       # Create expected grpc response
       expected_response = {}
       expected_response = Google::Gax::to_proto(expected_response, Google::Streetview::Publish::V1::BatchDeletePhotosResponse)
 
       # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Streetview::Publish::V1::BatchDeletePhotosRequest, request)
-        assert_equal(photo_ids, request.photo_ids)
+      mock_method = proc do
         OpenStruct.new(execute: expected_response)
       end
       mock_stub = MockGrpcClientStub_v1.new(:batch_delete_photos, mock_method)
@@ -713,13 +617,13 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
           client = Google::Streetview::Publish.new(version: :v1)
 
           # Call method
-          response = client.batch_delete_photos(photo_ids)
+          response = client.batch_delete_photos
 
           # Verify the response
           assert_equal(expected_response, response)
 
           # Call method with block
-          client.batch_delete_photos(photo_ids) do |response, operation|
+          client.batch_delete_photos do |response, operation|
             # Verify the response
             assert_equal(expected_response, response)
             refute_nil(operation)
@@ -729,13 +633,8 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
     end
 
     it 'invokes batch_delete_photos with error' do
-      # Create request parameters
-      photo_ids = []
-
       # Mock Grpc layer
-      mock_method = proc do |request|
-        assert_instance_of(Google::Streetview::Publish::V1::BatchDeletePhotosRequest, request)
-        assert_equal(photo_ids, request.photo_ids)
+      mock_method = proc do
         raise custom_error
       end
       mock_stub = MockGrpcClientStub_v1.new(:batch_delete_photos, mock_method)
@@ -749,7 +648,7 @@ describe Google::Streetview::Publish::V1::StreetViewPublishServiceClient do
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1 do
-            client.batch_delete_photos(photo_ids)
+            client.batch_delete_photos
           end
 
           # Verify the GaxError wrapped the custom error that was raised.

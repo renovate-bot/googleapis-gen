@@ -21,21 +21,20 @@ class StreetviewPublish
         \GPBMetadata\Google\Streetview\Publish\V1\Rpcmessages::initOnce();
         $pool->internalAddGeneratedFile(
             '
-›
-5google/streetview/publish/v1/streetview_publish.protogoogle.streetview.publish.v1google/api/client.protogoogle/protobuf/empty.proto,google/streetview/publish/v1/resources.proto.google/streetview/publish/v1/rpcmessages.proto2‰
-
+⁄
+5google/streetview/publish/v1/streetview_publish.protogoogle.streetview.publish.v1google/api/client.protogoogle/protobuf/empty.proto,google/streetview/publish/v1/resources.proto.google/streetview/publish/v1/rpcmessages.proto2·
 StreetViewPublishServicep
-StartUpload.google.protobuf.Empty\'.google.streetview.publish.v1.UploadRef" Ç”‰ì"/v1/photo:startUpload:*~
-CreatePhoto0.google.streetview.publish.v1.CreatePhotoRequest#.google.streetview.publish.v1.Photo"Ç”‰ì"	/v1/photo:photo|
-GetPhoto-.google.streetview.publish.v1.GetPhotoRequest#.google.streetview.publish.v1.Photo"Ç”‰ì/v1/photo/{photo_id}ò
-BatchGetPhotos3.google.streetview.publish.v1.BatchGetPhotosRequest4.google.streetview.publish.v1.BatchGetPhotosResponse"Ç”‰ì/v1/photos:batchGetÉ
+StartUpload.google.protobuf.Empty\'.google.streetview.publish.v1.UploadRef" Ç”‰ì"/v1/photo:startUpload:*Ü
+CreatePhoto0.google.streetview.publish.v1.CreatePhotoRequest#.google.streetview.publish.v1.Photo" Ç”‰ì"	/v1/photo:photo⁄Aphotoå
+GetPhoto-.google.streetview.publish.v1.GetPhotoRequest#.google.streetview.publish.v1.Photo",Ç”‰ì/v1/photo/{photo_id}⁄Aphoto_id,view©
+BatchGetPhotos3.google.streetview.publish.v1.BatchGetPhotosRequest4.google.streetview.publish.v1.BatchGetPhotosResponse",Ç”‰ì/v1/photos:batchGet⁄Aphoto_ids,viewë
 
-ListPhotos/.google.streetview.publish.v1.ListPhotosRequest0.google.streetview.publish.v1.ListPhotosResponse"Ç”‰ì
-/v1/photosí
-UpdatePhoto0.google.streetview.publish.v1.UpdatePhotoRequest#.google.streetview.publish.v1.Photo",Ç”‰ì&/v1/photo/{photo.photo_id.id}:photoß
-BatchUpdatePhotos6.google.streetview.publish.v1.BatchUpdatePhotosRequest7.google.streetview.publish.v1.BatchUpdatePhotosResponse"!Ç”‰ì"/v1/photos:batchUpdate:*u
-DeletePhoto0.google.streetview.publish.v1.DeletePhotoRequest.google.protobuf.Empty"Ç”‰ì*/v1/photo/{photo_id}ß
-BatchDeletePhotos6.google.streetview.publish.v1.BatchDeletePhotosRequest7.google.streetview.publish.v1.BatchDeletePhotosResponse"!Ç”‰ì"/v1/photos:batchDelete:*W A streetviewpublish.googleapis.com“A1https://www.googleapis.com/auth/streetviewpublishBÇ
+ListPhotos/.google.streetview.publish.v1.ListPhotosRequest0.google.streetview.publish.v1.ListPhotosResponse" Ç”‰ì
+/v1/photos⁄Aview,filter¶
+UpdatePhoto0.google.streetview.publish.v1.UpdatePhotoRequest#.google.streetview.publish.v1.Photo"@Ç”‰ì&/v1/photo/{photo.photo_id.id}:photo⁄Aphoto,update_maskø
+BatchUpdatePhotos6.google.streetview.publish.v1.BatchUpdatePhotosRequest7.google.streetview.publish.v1.BatchUpdatePhotosResponse"9Ç”‰ì"/v1/photos:batchUpdate:*⁄Aupdate_photo_requestsÄ
+DeletePhoto0.google.streetview.publish.v1.DeletePhotoRequest.google.protobuf.Empty"\'Ç”‰ì*/v1/photo/{photo_id}⁄Aphoto_id≥
+BatchDeletePhotos6.google.streetview.publish.v1.BatchDeletePhotosRequest7.google.streetview.publish.v1.BatchDeletePhotosResponse"-Ç”‰ì"/v1/photos:batchDelete:*⁄A	photo_idsW A streetviewpublish.googleapis.com“A1https://www.googleapis.com/auth/streetviewpublishBÇ
 (com.google.geo.ugc.streetview.publish.v1BStreetViewPublishZCgoogle.golang.org/genproto/googleapis/streetview/publish/v1;publishbproto3'
         , true);
 

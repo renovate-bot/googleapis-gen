@@ -44,18 +44,6 @@ module Google
     # $ gem install google-streetview-publish
     # ```
     #
-    # ### Preview
-    # #### StreetViewPublishServiceClient
-    # ```rb
-    # require "google/streetview/publish"
-    #
-    # street_view_publish_client = Google::Streetview::Publish.new
-    #
-    # # TODO: Initialize `photo`:
-    # photo = {}
-    # response = street_view_publish_client.create_photo(photo)
-    # ```
-    #
     # ### Next Steps
     # - Read the [Street View Publish API Product documentation][Product Documentation]
     #   to learn more about the product and see How-to Guides.

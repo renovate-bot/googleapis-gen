@@ -306,13 +306,10 @@ module Google
           #   require "google/streetview/publish"
           #
           #   street_view_publish_client = Google::Streetview::Publish.new(version: :v1)
-          #
-          #   # TODO: Initialize `photo`:
-          #   photo = {}
-          #   response = street_view_publish_client.create_photo(photo)
+          #   response = street_view_publish_client.create_photo
 
           def create_photo \
-              photo,
+              photo: nil,
               options: nil,
               &block
             req = {
@@ -359,17 +356,11 @@ module Google
           #   require "google/streetview/publish"
           #
           #   street_view_publish_client = Google::Streetview::Publish.new(version: :v1)
-          #
-          #   # TODO: Initialize `photo_id`:
-          #   photo_id = ''
-          #
-          #   # TODO: Initialize `view`:
-          #   view = :BASIC
-          #   response = street_view_publish_client.get_photo(photo_id, view)
+          #   response = street_view_publish_client.get_photo
 
           def get_photo \
-              photo_id,
-              view,
+              photo_id: nil,
+              view: nil,
               language_code: nil,
               options: nil,
               &block
@@ -424,17 +415,11 @@ module Google
           #   require "google/streetview/publish"
           #
           #   street_view_publish_client = Google::Streetview::Publish.new(version: :v1)
-          #
-          #   # TODO: Initialize `photo_ids`:
-          #   photo_ids = []
-          #
-          #   # TODO: Initialize `view`:
-          #   view = :BASIC
-          #   response = street_view_publish_client.batch_get_photos(photo_ids, view)
+          #   response = street_view_publish_client.batch_get_photos
 
           def batch_get_photos \
-              photo_ids,
-              view,
+              photo_ids: nil,
+              view: nil,
               language_code: nil,
               options: nil,
               &block
@@ -456,16 +441,16 @@ module Google
           # @param view [Google::Streetview::Publish::V1::PhotoView]
           #   Specifies if a download URL for the photos bytes should be returned in the
           #   Photos response.
-          # @param filter [String]
-          #   The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
-          #
-          #   The only filter supported at the moment is `placeId`.
           # @param page_size [Integer]
           #   The maximum number of resources contained in the underlying API
           #   response. If page streaming is performed per-resource, this
           #   parameter does not affect the return value. If page streaming is
           #   performed per-page, this determines the maximum number of
           #   resources in a page.
+          # @param filter [String]
+          #   The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
+          #
+          #   The only filter supported at the moment is `placeId`.
           # @param language_code [String]
           #   The BCP-47 language code, such as "en-US" or "sr-Latn". For more
           #   information, see
@@ -489,19 +474,13 @@ module Google
           #
           #   street_view_publish_client = Google::Streetview::Publish.new(version: :v1)
           #
-          #   # TODO: Initialize `view`:
-          #   view = :BASIC
-          #
-          #   # TODO: Initialize `filter`:
-          #   filter = ''
-          #
           #   # Iterate over all results.
-          #   street_view_publish_client.list_photos(view, filter).each do |element|
+          #   street_view_publish_client.list_photos.each do |element|
           #     # Process element.
           #   end
           #
           #   # Or iterate over results one page at a time.
-          #   street_view_publish_client.list_photos(view, filter).each_page do |page|
+          #   street_view_publish_client.list_photos.each_page do |page|
           #     # Process each page at a time.
           #     page.each do |element|
           #       # Process element.
@@ -509,16 +488,16 @@ module Google
           #   end
 
           def list_photos \
-              view,
-              filter,
+              view: nil,
               page_size: nil,
+              filter: nil,
               language_code: nil,
               options: nil,
               &block
             req = {
               view: view,
-              filter: filter,
               page_size: page_size,
+              filter: filter,
               language_code: language_code
             }.delete_if { |_, v| v.nil? }
             req = Google::Gax::to_proto(req, Google::Streetview::Publish::V1::ListPhotosRequest)
@@ -592,17 +571,11 @@ module Google
           #   require "google/streetview/publish"
           #
           #   street_view_publish_client = Google::Streetview::Publish.new(version: :v1)
-          #
-          #   # TODO: Initialize `photo`:
-          #   photo = {}
-          #
-          #   # TODO: Initialize `update_mask`:
-          #   update_mask = {}
-          #   response = street_view_publish_client.update_photo(photo, update_mask)
+          #   response = street_view_publish_client.update_photo
 
           def update_photo \
-              photo,
-              update_mask,
+              photo: nil,
+              update_mask: nil,
               options: nil,
               &block
             req = {
@@ -664,13 +637,10 @@ module Google
           #   require "google/streetview/publish"
           #
           #   street_view_publish_client = Google::Streetview::Publish.new(version: :v1)
-          #
-          #   # TODO: Initialize `update_photo_requests`:
-          #   update_photo_requests = []
-          #   response = street_view_publish_client.batch_update_photos(update_photo_requests)
+          #   response = street_view_publish_client.batch_update_photos
 
           def batch_update_photos \
-              update_photo_requests,
+              update_photo_requests: nil,
               options: nil,
               &block
             req = {
@@ -702,13 +672,10 @@ module Google
           #   require "google/streetview/publish"
           #
           #   street_view_publish_client = Google::Streetview::Publish.new(version: :v1)
-          #
-          #   # TODO: Initialize `photo_id`:
-          #   photo_id = ''
-          #   street_view_publish_client.delete_photo(photo_id)
+          #   street_view_publish_client.delete_photo
 
           def delete_photo \
-              photo_id,
+              photo_id: nil,
               options: nil,
               &block
             req = {
@@ -752,13 +719,10 @@ module Google
           #   require "google/streetview/publish"
           #
           #   street_view_publish_client = Google::Streetview::Publish.new(version: :v1)
-          #
-          #   # TODO: Initialize `photo_ids`:
-          #   photo_ids = []
-          #   response = street_view_publish_client.batch_delete_photos(photo_ids)
+          #   response = street_view_publish_client.batch_delete_photos
 
           def batch_delete_photos \
-              photo_ids,
+              photo_ids: nil,
               options: nil,
               &block
             req = {
