@@ -45,10 +45,10 @@ public interface ProcessResponseOrBuilder extends
    * ReviewDocument method.
    * </pre>
    *
-   * <code>string human_review_operation = 2;</code>
+   * <code>string human_review_operation = 2 [deprecated = true];</code>
    * @return The humanReviewOperation.
    */
-  java.lang.String getHumanReviewOperation();
+  @java.lang.Deprecated java.lang.String getHumanReviewOperation();
   /**
    * <pre>
    * The name of the operation triggered by the processed document. If the human
@@ -57,9 +57,36 @@ public interface ProcessResponseOrBuilder extends
    * ReviewDocument method.
    * </pre>
    *
-   * <code>string human_review_operation = 2;</code>
+   * <code>string human_review_operation = 2 [deprecated = true];</code>
    * @return The bytes for humanReviewOperation.
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getHumanReviewOperationBytes();
+
+  /**
+   * <pre>
+   * The status of human review on the processed document.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.HumanReviewStatus human_review_status = 3;</code>
+   * @return Whether the humanReviewStatus field is set.
+   */
+  boolean hasHumanReviewStatus();
+  /**
+   * <pre>
+   * The status of human review on the processed document.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.HumanReviewStatus human_review_status = 3;</code>
+   * @return The humanReviewStatus.
+   */
+  com.google.cloud.documentai.v1beta3.HumanReviewStatus getHumanReviewStatus();
+  /**
+   * <pre>
+   * The status of human review on the processed document.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.HumanReviewStatus human_review_status = 3;</code>
+   */
+  com.google.cloud.documentai.v1beta3.HumanReviewStatusOrBuilder getHumanReviewStatusOrBuilder();
 }

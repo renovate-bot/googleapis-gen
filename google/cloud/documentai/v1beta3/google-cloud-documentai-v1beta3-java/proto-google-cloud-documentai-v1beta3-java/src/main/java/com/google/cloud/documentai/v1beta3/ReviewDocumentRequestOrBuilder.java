@@ -9,6 +9,33 @@ public interface ReviewDocumentRequestOrBuilder extends
 
   /**
    * <pre>
+   * An inline document proto.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+   * @return Whether the inlineDocument field is set.
+   */
+  boolean hasInlineDocument();
+  /**
+   * <pre>
+   * An inline document proto.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+   * @return The inlineDocument.
+   */
+  com.google.cloud.documentai.v1beta3.Document getInlineDocument();
+  /**
+   * <pre>
+   * An inline document proto.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+   */
+  com.google.cloud.documentai.v1beta3.DocumentOrBuilder getInlineDocumentOrBuilder();
+
+  /**
+   * <pre>
    * Required. The resource name of the HumanReviewConfig that the document will be
    * reviewed with.
    * </pre>
@@ -34,25 +61,27 @@ public interface ReviewDocumentRequestOrBuilder extends
    * The document that needs human review.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+   * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    * @return Whether the document field is set.
    */
-  boolean hasDocument();
+  @java.lang.Deprecated boolean hasDocument();
   /**
    * <pre>
    * The document that needs human review.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+   * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    * @return The document.
    */
-  com.google.cloud.documentai.v1beta3.Document getDocument();
+  @java.lang.Deprecated com.google.cloud.documentai.v1beta3.Document getDocument();
   /**
    * <pre>
    * The document that needs human review.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+   * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    */
-  com.google.cloud.documentai.v1beta3.DocumentOrBuilder getDocumentOrBuilder();
+  @java.lang.Deprecated com.google.cloud.documentai.v1beta3.DocumentOrBuilder getDocumentOrBuilder();
+
+  public com.google.cloud.documentai.v1beta3.ReviewDocumentRequest.SourceCase getSourceCase();
 }

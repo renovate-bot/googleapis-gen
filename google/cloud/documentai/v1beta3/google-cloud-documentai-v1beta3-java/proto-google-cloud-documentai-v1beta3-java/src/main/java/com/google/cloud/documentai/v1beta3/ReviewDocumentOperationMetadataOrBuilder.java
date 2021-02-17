@@ -101,4 +101,31 @@ public interface ReviewDocumentOperationMetadataOrBuilder extends
    * <code>.google.protobuf.Timestamp update_time = 4;</code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   * <pre>
+   * The basic metadata of the long running operation.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
+   * @return Whether the commonMetadata field is set.
+   */
+  boolean hasCommonMetadata();
+  /**
+   * <pre>
+   * The basic metadata of the long running operation.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
+   * @return The commonMetadata.
+   */
+  com.google.cloud.documentai.v1beta3.CommonOperationMetadata getCommonMetadata();
+  /**
+   * <pre>
+   * The basic metadata of the long running operation.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
+   */
+  com.google.cloud.documentai.v1beta3.CommonOperationMetadataOrBuilder getCommonMetadataOrBuilder();
 }

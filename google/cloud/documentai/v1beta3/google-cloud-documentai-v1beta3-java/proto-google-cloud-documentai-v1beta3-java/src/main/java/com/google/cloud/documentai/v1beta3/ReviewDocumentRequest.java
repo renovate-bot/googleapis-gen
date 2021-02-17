@@ -72,6 +72,20 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 34: {
+            com.google.cloud.documentai.v1beta3.Document.Builder subBuilder = null;
+            if (sourceCase_ == 4) {
+              subBuilder = ((com.google.cloud.documentai.v1beta3.Document) source_).toBuilder();
+            }
+            source_ =
+                input.readMessage(com.google.cloud.documentai.v1beta3.Document.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.google.cloud.documentai.v1beta3.Document) source_);
+              source_ = subBuilder.buildPartial();
+            }
+            sourceCase_ = 4;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -102,6 +116,88 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.documentai.v1beta3.DocumentAiProcessorService.internal_static_google_cloud_documentai_v1beta3_ReviewDocumentRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.cloud.documentai.v1beta3.ReviewDocumentRequest.class, com.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Builder.class);
+  }
+
+  private int sourceCase_ = 0;
+  private java.lang.Object source_;
+  public enum SourceCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    INLINE_DOCUMENT(4),
+    SOURCE_NOT_SET(0);
+    private final int value;
+    private SourceCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SourceCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static SourceCase forNumber(int value) {
+      switch (value) {
+        case 4: return INLINE_DOCUMENT;
+        case 0: return SOURCE_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public SourceCase
+  getSourceCase() {
+    return SourceCase.forNumber(
+        sourceCase_);
+  }
+
+  public static final int INLINE_DOCUMENT_FIELD_NUMBER = 4;
+  /**
+   * <pre>
+   * An inline document proto.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+   * @return Whether the inlineDocument field is set.
+   */
+  @java.lang.Override
+  public boolean hasInlineDocument() {
+    return sourceCase_ == 4;
+  }
+  /**
+   * <pre>
+   * An inline document proto.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+   * @return The inlineDocument.
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.Document getInlineDocument() {
+    if (sourceCase_ == 4) {
+       return (com.google.cloud.documentai.v1beta3.Document) source_;
+    }
+    return com.google.cloud.documentai.v1beta3.Document.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * An inline document proto.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.DocumentOrBuilder getInlineDocumentOrBuilder() {
+    if (sourceCase_ == 4) {
+       return (com.google.cloud.documentai.v1beta3.Document) source_;
+    }
+    return com.google.cloud.documentai.v1beta3.Document.getDefaultInstance();
   }
 
   public static final int HUMAN_REVIEW_CONFIG_FIELD_NUMBER = 1;
@@ -159,11 +255,11 @@ private static final long serialVersionUID = 0L;
    * The document that needs human review.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+   * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    * @return Whether the document field is set.
    */
   @java.lang.Override
-  public boolean hasDocument() {
+  @java.lang.Deprecated public boolean hasDocument() {
     return document_ != null;
   }
   /**
@@ -171,11 +267,11 @@ private static final long serialVersionUID = 0L;
    * The document that needs human review.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+   * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    * @return The document.
    */
   @java.lang.Override
-  public com.google.cloud.documentai.v1beta3.Document getDocument() {
+  @java.lang.Deprecated public com.google.cloud.documentai.v1beta3.Document getDocument() {
     return document_ == null ? com.google.cloud.documentai.v1beta3.Document.getDefaultInstance() : document_;
   }
   /**
@@ -183,10 +279,10 @@ private static final long serialVersionUID = 0L;
    * The document that needs human review.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+   * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    */
   @java.lang.Override
-  public com.google.cloud.documentai.v1beta3.DocumentOrBuilder getDocumentOrBuilder() {
+  @java.lang.Deprecated public com.google.cloud.documentai.v1beta3.DocumentOrBuilder getDocumentOrBuilder() {
     return getDocument();
   }
 
@@ -210,6 +306,9 @@ private static final long serialVersionUID = 0L;
     if (document_ != null) {
       output.writeMessage(2, getDocument());
     }
+    if (sourceCase_ == 4) {
+      output.writeMessage(4, (com.google.cloud.documentai.v1beta3.Document) source_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -225,6 +324,10 @@ private static final long serialVersionUID = 0L;
     if (document_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getDocument());
+    }
+    if (sourceCase_ == 4) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, (com.google.cloud.documentai.v1beta3.Document) source_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -248,6 +351,15 @@ private static final long serialVersionUID = 0L;
       if (!getDocument()
           .equals(other.getDocument())) return false;
     }
+    if (!getSourceCase().equals(other.getSourceCase())) return false;
+    switch (sourceCase_) {
+      case 4:
+        if (!getInlineDocument()
+            .equals(other.getInlineDocument())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -264,6 +376,14 @@ private static final long serialVersionUID = 0L;
     if (hasDocument()) {
       hash = (37 * hash) + DOCUMENT_FIELD_NUMBER;
       hash = (53 * hash) + getDocument().hashCode();
+    }
+    switch (sourceCase_) {
+      case 4:
+        hash = (37 * hash) + INLINE_DOCUMENT_FIELD_NUMBER;
+        hash = (53 * hash) + getInlineDocument().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -410,6 +530,8 @@ private static final long serialVersionUID = 0L;
         document_ = null;
         documentBuilder_ = null;
       }
+      sourceCase_ = 0;
+      source_ = null;
       return this;
     }
 
@@ -436,12 +558,20 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.cloud.documentai.v1beta3.ReviewDocumentRequest buildPartial() {
       com.google.cloud.documentai.v1beta3.ReviewDocumentRequest result = new com.google.cloud.documentai.v1beta3.ReviewDocumentRequest(this);
+      if (sourceCase_ == 4) {
+        if (inlineDocumentBuilder_ == null) {
+          result.source_ = source_;
+        } else {
+          result.source_ = inlineDocumentBuilder_.build();
+        }
+      }
       result.humanReviewConfig_ = humanReviewConfig_;
       if (documentBuilder_ == null) {
         result.document_ = document_;
       } else {
         result.document_ = documentBuilder_.build();
       }
+      result.sourceCase_ = sourceCase_;
       onBuilt();
       return result;
     }
@@ -497,6 +627,15 @@ private static final long serialVersionUID = 0L;
       if (other.hasDocument()) {
         mergeDocument(other.getDocument());
       }
+      switch (other.getSourceCase()) {
+        case INLINE_DOCUMENT: {
+          mergeInlineDocument(other.getInlineDocument());
+          break;
+        }
+        case SOURCE_NOT_SET: {
+          break;
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -524,6 +663,198 @@ private static final long serialVersionUID = 0L;
         }
       }
       return this;
+    }
+    private int sourceCase_ = 0;
+    private java.lang.Object source_;
+    public SourceCase
+        getSourceCase() {
+      return SourceCase.forNumber(
+          sourceCase_);
+    }
+
+    public Builder clearSource() {
+      sourceCase_ = 0;
+      source_ = null;
+      onChanged();
+      return this;
+    }
+
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.documentai.v1beta3.Document, com.google.cloud.documentai.v1beta3.Document.Builder, com.google.cloud.documentai.v1beta3.DocumentOrBuilder> inlineDocumentBuilder_;
+    /**
+     * <pre>
+     * An inline document proto.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+     * @return Whether the inlineDocument field is set.
+     */
+    @java.lang.Override
+    public boolean hasInlineDocument() {
+      return sourceCase_ == 4;
+    }
+    /**
+     * <pre>
+     * An inline document proto.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+     * @return The inlineDocument.
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.Document getInlineDocument() {
+      if (inlineDocumentBuilder_ == null) {
+        if (sourceCase_ == 4) {
+          return (com.google.cloud.documentai.v1beta3.Document) source_;
+        }
+        return com.google.cloud.documentai.v1beta3.Document.getDefaultInstance();
+      } else {
+        if (sourceCase_ == 4) {
+          return inlineDocumentBuilder_.getMessage();
+        }
+        return com.google.cloud.documentai.v1beta3.Document.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * An inline document proto.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+     */
+    public Builder setInlineDocument(com.google.cloud.documentai.v1beta3.Document value) {
+      if (inlineDocumentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        source_ = value;
+        onChanged();
+      } else {
+        inlineDocumentBuilder_.setMessage(value);
+      }
+      sourceCase_ = 4;
+      return this;
+    }
+    /**
+     * <pre>
+     * An inline document proto.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+     */
+    public Builder setInlineDocument(
+        com.google.cloud.documentai.v1beta3.Document.Builder builderForValue) {
+      if (inlineDocumentBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
+      } else {
+        inlineDocumentBuilder_.setMessage(builderForValue.build());
+      }
+      sourceCase_ = 4;
+      return this;
+    }
+    /**
+     * <pre>
+     * An inline document proto.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+     */
+    public Builder mergeInlineDocument(com.google.cloud.documentai.v1beta3.Document value) {
+      if (inlineDocumentBuilder_ == null) {
+        if (sourceCase_ == 4 &&
+            source_ != com.google.cloud.documentai.v1beta3.Document.getDefaultInstance()) {
+          source_ = com.google.cloud.documentai.v1beta3.Document.newBuilder((com.google.cloud.documentai.v1beta3.Document) source_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 4) {
+          inlineDocumentBuilder_.mergeFrom(value);
+        }
+        inlineDocumentBuilder_.setMessage(value);
+      }
+      sourceCase_ = 4;
+      return this;
+    }
+    /**
+     * <pre>
+     * An inline document proto.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+     */
+    public Builder clearInlineDocument() {
+      if (inlineDocumentBuilder_ == null) {
+        if (sourceCase_ == 4) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 4) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        inlineDocumentBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * An inline document proto.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+     */
+    public com.google.cloud.documentai.v1beta3.Document.Builder getInlineDocumentBuilder() {
+      return getInlineDocumentFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * An inline document proto.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.DocumentOrBuilder getInlineDocumentOrBuilder() {
+      if ((sourceCase_ == 4) && (inlineDocumentBuilder_ != null)) {
+        return inlineDocumentBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceCase_ == 4) {
+          return (com.google.cloud.documentai.v1beta3.Document) source_;
+        }
+        return com.google.cloud.documentai.v1beta3.Document.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * An inline document proto.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.documentai.v1beta3.Document, com.google.cloud.documentai.v1beta3.Document.Builder, com.google.cloud.documentai.v1beta3.DocumentOrBuilder> 
+        getInlineDocumentFieldBuilder() {
+      if (inlineDocumentBuilder_ == null) {
+        if (!(sourceCase_ == 4)) {
+          source_ = com.google.cloud.documentai.v1beta3.Document.getDefaultInstance();
+        }
+        inlineDocumentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.Document, com.google.cloud.documentai.v1beta3.Document.Builder, com.google.cloud.documentai.v1beta3.DocumentOrBuilder>(
+                (com.google.cloud.documentai.v1beta3.Document) source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
+      }
+      sourceCase_ = 4;
+      onChanged();;
+      return inlineDocumentBuilder_;
     }
 
     private java.lang.Object humanReviewConfig_ = "";
@@ -635,10 +966,10 @@ private static final long serialVersionUID = 0L;
      * The document that needs human review.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+     * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      * @return Whether the document field is set.
      */
-    public boolean hasDocument() {
+    @java.lang.Deprecated public boolean hasDocument() {
       return documentBuilder_ != null || document_ != null;
     }
     /**
@@ -646,10 +977,10 @@ private static final long serialVersionUID = 0L;
      * The document that needs human review.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+     * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      * @return The document.
      */
-    public com.google.cloud.documentai.v1beta3.Document getDocument() {
+    @java.lang.Deprecated public com.google.cloud.documentai.v1beta3.Document getDocument() {
       if (documentBuilder_ == null) {
         return document_ == null ? com.google.cloud.documentai.v1beta3.Document.getDefaultInstance() : document_;
       } else {
@@ -661,9 +992,9 @@ private static final long serialVersionUID = 0L;
      * The document that needs human review.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+     * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      */
-    public Builder setDocument(com.google.cloud.documentai.v1beta3.Document value) {
+    @java.lang.Deprecated public Builder setDocument(com.google.cloud.documentai.v1beta3.Document value) {
       if (documentBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -681,9 +1012,9 @@ private static final long serialVersionUID = 0L;
      * The document that needs human review.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+     * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      */
-    public Builder setDocument(
+    @java.lang.Deprecated public Builder setDocument(
         com.google.cloud.documentai.v1beta3.Document.Builder builderForValue) {
       if (documentBuilder_ == null) {
         document_ = builderForValue.build();
@@ -699,9 +1030,9 @@ private static final long serialVersionUID = 0L;
      * The document that needs human review.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+     * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      */
-    public Builder mergeDocument(com.google.cloud.documentai.v1beta3.Document value) {
+    @java.lang.Deprecated public Builder mergeDocument(com.google.cloud.documentai.v1beta3.Document value) {
       if (documentBuilder_ == null) {
         if (document_ != null) {
           document_ =
@@ -721,9 +1052,9 @@ private static final long serialVersionUID = 0L;
      * The document that needs human review.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+     * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      */
-    public Builder clearDocument() {
+    @java.lang.Deprecated public Builder clearDocument() {
       if (documentBuilder_ == null) {
         document_ = null;
         onChanged();
@@ -739,9 +1070,9 @@ private static final long serialVersionUID = 0L;
      * The document that needs human review.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+     * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      */
-    public com.google.cloud.documentai.v1beta3.Document.Builder getDocumentBuilder() {
+    @java.lang.Deprecated public com.google.cloud.documentai.v1beta3.Document.Builder getDocumentBuilder() {
       
       onChanged();
       return getDocumentFieldBuilder().getBuilder();
@@ -751,9 +1082,9 @@ private static final long serialVersionUID = 0L;
      * The document that needs human review.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+     * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      */
-    public com.google.cloud.documentai.v1beta3.DocumentOrBuilder getDocumentOrBuilder() {
+    @java.lang.Deprecated public com.google.cloud.documentai.v1beta3.DocumentOrBuilder getDocumentOrBuilder() {
       if (documentBuilder_ != null) {
         return documentBuilder_.getMessageOrBuilder();
       } else {
@@ -766,7 +1097,7 @@ private static final long serialVersionUID = 0L;
      * The document that needs human review.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+     * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.documentai.v1beta3.Document, com.google.cloud.documentai.v1beta3.Document.Builder, com.google.cloud.documentai.v1beta3.DocumentOrBuilder> 

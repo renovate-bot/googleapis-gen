@@ -40,6 +40,12 @@ class ReviewDocumentOperationMetadata extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 4;</code>
      */
     protected $update_time = null;
+    /**
+     * The basic metadata of the long running operation.
+     *
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
+     */
+    protected $common_metadata = null;
 
     /**
      * Constructor.
@@ -56,6 +62,8 @@ class ReviewDocumentOperationMetadata extends \Google\Protobuf\Internal\Message
      *           The creation time of the operation.
      *     @type \Google\Protobuf\Timestamp $update_time
      *           The last update time of the operation.
+     *     @type \Google\Cloud\DocumentAI\V1beta3\CommonOperationMetadata $common_metadata
+     *           The basic metadata of the long running operation.
      * }
      */
     public function __construct($data = NULL) {
@@ -185,6 +193,42 @@ class ReviewDocumentOperationMetadata extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->update_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * The basic metadata of the long running operation.
+     *
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
+     * @return \Google\Cloud\DocumentAI\V1beta3\CommonOperationMetadata
+     */
+    public function getCommonMetadata()
+    {
+        return isset($this->common_metadata) ? $this->common_metadata : null;
+    }
+
+    public function hasCommonMetadata()
+    {
+        return isset($this->common_metadata);
+    }
+
+    public function clearCommonMetadata()
+    {
+        unset($this->common_metadata);
+    }
+
+    /**
+     * The basic metadata of the long running operation.
+     *
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
+     * @param \Google\Cloud\DocumentAI\V1beta3\CommonOperationMetadata $var
+     * @return $this
+     */
+    public function setCommonMetadata($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\DocumentAI\V1beta3\CommonOperationMetadata::class);
+        $this->common_metadata = $var;
 
         return $this;
     }

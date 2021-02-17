@@ -24,15 +24,34 @@ class BatchProcessRequest extends \Google\Protobuf\Internal\Message
     /**
      * The input config for each single document in the batch process.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];</code>
      */
     private $input_configs;
     /**
      * The overall output config for batch process.
      *
-     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3;</code>
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3 [deprecated = true];</code>
      */
     protected $output_config = null;
+    /**
+     * The input documents for batch process.
+     *
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
+     */
+    protected $input_documents = null;
+    /**
+     * The overall output config for batch process.
+     *
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;</code>
+     */
+    protected $document_output_config = null;
+    /**
+     * Whether Human Review feature should be skipped for this request. Default to
+     * false.
+     *
+     * Generated from protobuf field <code>bool skip_human_review = 4;</code>
+     */
+    protected $skip_human_review = false;
 
     /**
      * Constructor.
@@ -46,6 +65,13 @@ class BatchProcessRequest extends \Google\Protobuf\Internal\Message
      *           The input config for each single document in the batch process.
      *     @type \Google\Cloud\DocumentAI\V1beta3\BatchProcessRequest\BatchOutputConfig $output_config
      *           The overall output config for batch process.
+     *     @type \Google\Cloud\DocumentAI\V1beta3\BatchDocumentsInputConfig $input_documents
+     *           The input documents for batch process.
+     *     @type \Google\Cloud\DocumentAI\V1beta3\DocumentOutputConfig $document_output_config
+     *           The overall output config for batch process.
+     *     @type bool $skip_human_review
+     *           Whether Human Review feature should be skipped for this request. Default to
+     *           false.
      * }
      */
     public function __construct($data = NULL) {
@@ -82,7 +108,7 @@ class BatchProcessRequest extends \Google\Protobuf\Internal\Message
     /**
      * The input config for each single document in the batch process.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getInputConfigs()
@@ -93,7 +119,7 @@ class BatchProcessRequest extends \Google\Protobuf\Internal\Message
     /**
      * The input config for each single document in the batch process.
      *
-     * Generated from protobuf field <code>repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2;</code>
+     * Generated from protobuf field <code>repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];</code>
      * @param \Google\Cloud\DocumentAI\V1beta3\BatchProcessRequest\BatchInputConfig[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -108,7 +134,7 @@ class BatchProcessRequest extends \Google\Protobuf\Internal\Message
     /**
      * The overall output config for batch process.
      *
-     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3;</code>
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3 [deprecated = true];</code>
      * @return \Google\Cloud\DocumentAI\V1beta3\BatchProcessRequest\BatchOutputConfig
      */
     public function getOutputConfig()
@@ -129,7 +155,7 @@ class BatchProcessRequest extends \Google\Protobuf\Internal\Message
     /**
      * The overall output config for batch process.
      *
-     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3;</code>
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3 [deprecated = true];</code>
      * @param \Google\Cloud\DocumentAI\V1beta3\BatchProcessRequest\BatchOutputConfig $var
      * @return $this
      */
@@ -137,6 +163,106 @@ class BatchProcessRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\DocumentAI\V1beta3\BatchProcessRequest\BatchOutputConfig::class);
         $this->output_config = $var;
+
+        return $this;
+    }
+
+    /**
+     * The input documents for batch process.
+     *
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
+     * @return \Google\Cloud\DocumentAI\V1beta3\BatchDocumentsInputConfig
+     */
+    public function getInputDocuments()
+    {
+        return isset($this->input_documents) ? $this->input_documents : null;
+    }
+
+    public function hasInputDocuments()
+    {
+        return isset($this->input_documents);
+    }
+
+    public function clearInputDocuments()
+    {
+        unset($this->input_documents);
+    }
+
+    /**
+     * The input documents for batch process.
+     *
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
+     * @param \Google\Cloud\DocumentAI\V1beta3\BatchDocumentsInputConfig $var
+     * @return $this
+     */
+    public function setInputDocuments($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\DocumentAI\V1beta3\BatchDocumentsInputConfig::class);
+        $this->input_documents = $var;
+
+        return $this;
+    }
+
+    /**
+     * The overall output config for batch process.
+     *
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;</code>
+     * @return \Google\Cloud\DocumentAI\V1beta3\DocumentOutputConfig
+     */
+    public function getDocumentOutputConfig()
+    {
+        return isset($this->document_output_config) ? $this->document_output_config : null;
+    }
+
+    public function hasDocumentOutputConfig()
+    {
+        return isset($this->document_output_config);
+    }
+
+    public function clearDocumentOutputConfig()
+    {
+        unset($this->document_output_config);
+    }
+
+    /**
+     * The overall output config for batch process.
+     *
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;</code>
+     * @param \Google\Cloud\DocumentAI\V1beta3\DocumentOutputConfig $var
+     * @return $this
+     */
+    public function setDocumentOutputConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\DocumentAI\V1beta3\DocumentOutputConfig::class);
+        $this->document_output_config = $var;
+
+        return $this;
+    }
+
+    /**
+     * Whether Human Review feature should be skipped for this request. Default to
+     * false.
+     *
+     * Generated from protobuf field <code>bool skip_human_review = 4;</code>
+     * @return bool
+     */
+    public function getSkipHumanReview()
+    {
+        return $this->skip_human_review;
+    }
+
+    /**
+     * Whether Human Review feature should be skipped for this request. Default to
+     * false.
+     *
+     * Generated from protobuf field <code>bool skip_human_review = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSkipHumanReview($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->skip_human_review = $var;
 
         return $this;
     }

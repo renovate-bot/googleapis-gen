@@ -37,12 +37,15 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
+use Google\Cloud\DocumentAI\V1beta3\BatchDocumentsInputConfig;
 use Google\Cloud\DocumentAI\V1beta3\BatchProcessRequest;
 use Google\Cloud\DocumentAI\V1beta3\BatchProcessRequest\BatchInputConfig;
 use Google\Cloud\DocumentAI\V1beta3\BatchProcessRequest\BatchOutputConfig;
 use Google\Cloud\DocumentAI\V1beta3\Document;
+use Google\Cloud\DocumentAI\V1beta3\DocumentOutputConfig;
 use Google\Cloud\DocumentAI\V1beta3\ProcessRequest;
 use Google\Cloud\DocumentAI\V1beta3\ProcessResponse;
+use Google\Cloud\DocumentAI\V1beta3\RawDocument;
 use Google\Cloud\DocumentAI\V1beta3\ReviewDocumentRequest;
 use Google\LongRunning\Operation;
 
@@ -351,6 +354,10 @@ class DocumentProcessorServiceGapicClient
      * @param array  $optionalArgs {
      *                             Optional.
      *
+     *     @type Document $inlineDocument
+     *          An inline document proto.
+     *     @type RawDocument $rawDocument
+     *          A raw document content (bytes).
      *     @type Document $document
      *          The document payload, the [content] and [mime_type] fields must be set.
      *     @type bool $skipHumanReview
@@ -372,6 +379,12 @@ class DocumentProcessorServiceGapicClient
     {
         $request = new ProcessRequest();
         $request->setName($name);
+        if (isset($optionalArgs['inlineDocument'])) {
+            $request->setInlineDocument($optionalArgs['inlineDocument']);
+        }
+        if (isset($optionalArgs['rawDocument'])) {
+            $request->setRawDocument($optionalArgs['rawDocument']);
+        }
         if (isset($optionalArgs['document'])) {
             $request->setDocument($optionalArgs['document']);
         }
@@ -445,6 +458,13 @@ class DocumentProcessorServiceGapicClient
      *          The input config for each single document in the batch process.
      *     @type BatchOutputConfig $outputConfig
      *          The overall output config for batch process.
+     *     @type BatchDocumentsInputConfig $inputDocuments
+     *          The input documents for batch process.
+     *     @type DocumentOutputConfig $documentOutputConfig
+     *          The overall output config for batch process.
+     *     @type bool $skipHumanReview
+     *          Whether Human Review feature should be skipped for this request. Default to
+     *          false.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -466,6 +486,15 @@ class DocumentProcessorServiceGapicClient
         }
         if (isset($optionalArgs['outputConfig'])) {
             $request->setOutputConfig($optionalArgs['outputConfig']);
+        }
+        if (isset($optionalArgs['inputDocuments'])) {
+            $request->setInputDocuments($optionalArgs['inputDocuments']);
+        }
+        if (isset($optionalArgs['documentOutputConfig'])) {
+            $request->setDocumentOutputConfig($optionalArgs['documentOutputConfig']);
+        }
+        if (isset($optionalArgs['skipHumanReview'])) {
+            $request->setSkipHumanReview($optionalArgs['skipHumanReview']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([
@@ -531,6 +560,8 @@ class DocumentProcessorServiceGapicClient
      * @param array  $optionalArgs      {
      *                                  Optional.
      *
+     *     @type Document $inlineDocument
+     *          An inline document proto.
      *     @type Document $document
      *          The document that needs human review.
      *     @type RetrySettings|array $retrySettings
@@ -549,6 +580,9 @@ class DocumentProcessorServiceGapicClient
     {
         $request = new ReviewDocumentRequest();
         $request->setHumanReviewConfig($humanReviewConfig);
+        if (isset($optionalArgs['inlineDocument'])) {
+            $request->setInlineDocument($optionalArgs['inlineDocument']);
+        }
         if (isset($optionalArgs['document'])) {
             $request->setDocument($optionalArgs['document']);
         }

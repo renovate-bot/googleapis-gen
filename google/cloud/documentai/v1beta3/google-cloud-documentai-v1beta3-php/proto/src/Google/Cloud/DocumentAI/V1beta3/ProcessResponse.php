@@ -28,9 +28,15 @@ class ProcessResponse extends \Google\Protobuf\Internal\Message
      * response type and metadata as the long running operation returned by
      * ReviewDocument method.
      *
-     * Generated from protobuf field <code>string human_review_operation = 2;</code>
+     * Generated from protobuf field <code>string human_review_operation = 2 [deprecated = true];</code>
      */
     protected $human_review_operation = '';
+    /**
+     * The status of human review on the processed document.
+     *
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.HumanReviewStatus human_review_status = 3;</code>
+     */
+    protected $human_review_status = null;
 
     /**
      * Constructor.
@@ -46,6 +52,8 @@ class ProcessResponse extends \Google\Protobuf\Internal\Message
      *           review process is not triggered, this field will be empty. It has the same
      *           response type and metadata as the long running operation returned by
      *           ReviewDocument method.
+     *     @type \Google\Cloud\DocumentAI\V1beta3\HumanReviewStatus $human_review_status
+     *           The status of human review on the processed document.
      * }
      */
     public function __construct($data = NULL) {
@@ -97,7 +105,7 @@ class ProcessResponse extends \Google\Protobuf\Internal\Message
      * response type and metadata as the long running operation returned by
      * ReviewDocument method.
      *
-     * Generated from protobuf field <code>string human_review_operation = 2;</code>
+     * Generated from protobuf field <code>string human_review_operation = 2 [deprecated = true];</code>
      * @return string
      */
     public function getHumanReviewOperation()
@@ -111,7 +119,7 @@ class ProcessResponse extends \Google\Protobuf\Internal\Message
      * response type and metadata as the long running operation returned by
      * ReviewDocument method.
      *
-     * Generated from protobuf field <code>string human_review_operation = 2;</code>
+     * Generated from protobuf field <code>string human_review_operation = 2 [deprecated = true];</code>
      * @param string $var
      * @return $this
      */
@@ -119,6 +127,42 @@ class ProcessResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->human_review_operation = $var;
+
+        return $this;
+    }
+
+    /**
+     * The status of human review on the processed document.
+     *
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.HumanReviewStatus human_review_status = 3;</code>
+     * @return \Google\Cloud\DocumentAI\V1beta3\HumanReviewStatus
+     */
+    public function getHumanReviewStatus()
+    {
+        return isset($this->human_review_status) ? $this->human_review_status : null;
+    }
+
+    public function hasHumanReviewStatus()
+    {
+        return isset($this->human_review_status);
+    }
+
+    public function clearHumanReviewStatus()
+    {
+        unset($this->human_review_status);
+    }
+
+    /**
+     * The status of human review on the processed document.
+     *
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.HumanReviewStatus human_review_status = 3;</code>
+     * @param \Google\Cloud\DocumentAI\V1beta3\HumanReviewStatus $var
+     * @return $this
+     */
+    public function setHumanReviewStatus($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\DocumentAI\V1beta3\HumanReviewStatus::class);
+        $this->human_review_status = $var;
 
         return $this;
     }

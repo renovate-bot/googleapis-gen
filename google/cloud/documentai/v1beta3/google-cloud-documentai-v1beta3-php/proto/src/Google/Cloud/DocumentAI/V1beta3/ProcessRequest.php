@@ -24,7 +24,7 @@ class ProcessRequest extends \Google\Protobuf\Internal\Message
     /**
      * The document payload, the [content] and [mime_type] fields must be set.
      *
-     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      */
     protected $document = null;
     /**
@@ -34,6 +34,7 @@ class ProcessRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool skip_human_review = 3;</code>
      */
     protected $skip_human_review = false;
+    protected $source;
 
     /**
      * Constructor.
@@ -41,6 +42,10 @@ class ProcessRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type \Google\Cloud\DocumentAI\V1beta3\Document $inline_document
+     *           An inline document proto.
+     *     @type \Google\Cloud\DocumentAI\V1beta3\RawDocument $raw_document
+     *           A raw document content (bytes).
      *     @type string $name
      *           Required. The processor resource name.
      *     @type \Google\Cloud\DocumentAI\V1beta3\Document $document
@@ -53,6 +58,68 @@ class ProcessRequest extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Google\Cloud\Documentai\V1Beta3\DocumentProcessorService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * An inline document proto.
+     *
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+     * @return \Google\Cloud\DocumentAI\V1beta3\Document
+     */
+    public function getInlineDocument()
+    {
+        return $this->readOneof(4);
+    }
+
+    public function hasInlineDocument()
+    {
+        return $this->hasOneof(4);
+    }
+
+    /**
+     * An inline document proto.
+     *
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+     * @param \Google\Cloud\DocumentAI\V1beta3\Document $var
+     * @return $this
+     */
+    public function setInlineDocument($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\DocumentAI\V1beta3\Document::class);
+        $this->writeOneof(4, $var);
+
+        return $this;
+    }
+
+    /**
+     * A raw document content (bytes).
+     *
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.RawDocument raw_document = 5;</code>
+     * @return \Google\Cloud\DocumentAI\V1beta3\RawDocument
+     */
+    public function getRawDocument()
+    {
+        return $this->readOneof(5);
+    }
+
+    public function hasRawDocument()
+    {
+        return $this->hasOneof(5);
+    }
+
+    /**
+     * A raw document content (bytes).
+     *
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.RawDocument raw_document = 5;</code>
+     * @param \Google\Cloud\DocumentAI\V1beta3\RawDocument $var
+     * @return $this
+     */
+    public function setRawDocument($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\DocumentAI\V1beta3\RawDocument::class);
+        $this->writeOneof(5, $var);
+
+        return $this;
     }
 
     /**
@@ -84,7 +151,7 @@ class ProcessRequest extends \Google\Protobuf\Internal\Message
     /**
      * The document payload, the [content] and [mime_type] fields must be set.
      *
-     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      * @return \Google\Cloud\DocumentAI\V1beta3\Document
      */
     public function getDocument()
@@ -105,7 +172,7 @@ class ProcessRequest extends \Google\Protobuf\Internal\Message
     /**
      * The document payload, the [content] and [mime_type] fields must be set.
      *
-     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      * @param \Google\Cloud\DocumentAI\V1beta3\Document $var
      * @return $this
      */
@@ -143,6 +210,14 @@ class ProcessRequest extends \Google\Protobuf\Internal\Message
         $this->skip_human_review = $var;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSource()
+    {
+        return $this->whichOneof("source");
     }
 
 }

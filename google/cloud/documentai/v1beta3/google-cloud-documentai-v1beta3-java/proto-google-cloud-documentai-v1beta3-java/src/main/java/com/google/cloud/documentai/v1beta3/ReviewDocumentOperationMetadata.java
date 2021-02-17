@@ -92,6 +92,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 42: {
+            com.google.cloud.documentai.v1beta3.CommonOperationMetadata.Builder subBuilder = null;
+            if (commonMetadata_ != null) {
+              subBuilder = commonMetadata_.toBuilder();
+            }
+            commonMetadata_ = input.readMessage(com.google.cloud.documentai.v1beta3.CommonOperationMetadata.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(commonMetadata_);
+              commonMetadata_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -471,6 +484,44 @@ private static final long serialVersionUID = 0L;
     return getUpdateTime();
   }
 
+  public static final int COMMON_METADATA_FIELD_NUMBER = 5;
+  private com.google.cloud.documentai.v1beta3.CommonOperationMetadata commonMetadata_;
+  /**
+   * <pre>
+   * The basic metadata of the long running operation.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
+   * @return Whether the commonMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasCommonMetadata() {
+    return commonMetadata_ != null;
+  }
+  /**
+   * <pre>
+   * The basic metadata of the long running operation.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
+   * @return The commonMetadata.
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.CommonOperationMetadata getCommonMetadata() {
+    return commonMetadata_ == null ? com.google.cloud.documentai.v1beta3.CommonOperationMetadata.getDefaultInstance() : commonMetadata_;
+  }
+  /**
+   * <pre>
+   * The basic metadata of the long running operation.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.CommonOperationMetadataOrBuilder getCommonMetadataOrBuilder() {
+    return getCommonMetadata();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -497,6 +548,9 @@ private static final long serialVersionUID = 0L;
     if (updateTime_ != null) {
       output.writeMessage(4, getUpdateTime());
     }
+    if (commonMetadata_ != null) {
+      output.writeMessage(5, getCommonMetadata());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -520,6 +574,10 @@ private static final long serialVersionUID = 0L;
     if (updateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getUpdateTime());
+    }
+    if (commonMetadata_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getCommonMetadata());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -549,6 +607,11 @@ private static final long serialVersionUID = 0L;
       if (!getUpdateTime()
           .equals(other.getUpdateTime())) return false;
     }
+    if (hasCommonMetadata() != other.hasCommonMetadata()) return false;
+    if (hasCommonMetadata()) {
+      if (!getCommonMetadata()
+          .equals(other.getCommonMetadata())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -571,6 +634,10 @@ private static final long serialVersionUID = 0L;
     if (hasUpdateTime()) {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
+    }
+    if (hasCommonMetadata()) {
+      hash = (37 * hash) + COMMON_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getCommonMetadata().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -725,6 +792,12 @@ private static final long serialVersionUID = 0L;
         updateTime_ = null;
         updateTimeBuilder_ = null;
       }
+      if (commonMetadataBuilder_ == null) {
+        commonMetadata_ = null;
+      } else {
+        commonMetadata_ = null;
+        commonMetadataBuilder_ = null;
+      }
       return this;
     }
 
@@ -762,6 +835,11 @@ private static final long serialVersionUID = 0L;
         result.updateTime_ = updateTime_;
       } else {
         result.updateTime_ = updateTimeBuilder_.build();
+      }
+      if (commonMetadataBuilder_ == null) {
+        result.commonMetadata_ = commonMetadata_;
+      } else {
+        result.commonMetadata_ = commonMetadataBuilder_.build();
       }
       onBuilt();
       return result;
@@ -823,6 +901,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
+      }
+      if (other.hasCommonMetadata()) {
+        mergeCommonMetadata(other.getCommonMetadata());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1336,6 +1417,161 @@ private static final long serialVersionUID = 0L;
         updateTime_ = null;
       }
       return updateTimeBuilder_;
+    }
+
+    private com.google.cloud.documentai.v1beta3.CommonOperationMetadata commonMetadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.documentai.v1beta3.CommonOperationMetadata, com.google.cloud.documentai.v1beta3.CommonOperationMetadata.Builder, com.google.cloud.documentai.v1beta3.CommonOperationMetadataOrBuilder> commonMetadataBuilder_;
+    /**
+     * <pre>
+     * The basic metadata of the long running operation.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
+     * @return Whether the commonMetadata field is set.
+     */
+    public boolean hasCommonMetadata() {
+      return commonMetadataBuilder_ != null || commonMetadata_ != null;
+    }
+    /**
+     * <pre>
+     * The basic metadata of the long running operation.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
+     * @return The commonMetadata.
+     */
+    public com.google.cloud.documentai.v1beta3.CommonOperationMetadata getCommonMetadata() {
+      if (commonMetadataBuilder_ == null) {
+        return commonMetadata_ == null ? com.google.cloud.documentai.v1beta3.CommonOperationMetadata.getDefaultInstance() : commonMetadata_;
+      } else {
+        return commonMetadataBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The basic metadata of the long running operation.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
+     */
+    public Builder setCommonMetadata(com.google.cloud.documentai.v1beta3.CommonOperationMetadata value) {
+      if (commonMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        commonMetadata_ = value;
+        onChanged();
+      } else {
+        commonMetadataBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The basic metadata of the long running operation.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
+     */
+    public Builder setCommonMetadata(
+        com.google.cloud.documentai.v1beta3.CommonOperationMetadata.Builder builderForValue) {
+      if (commonMetadataBuilder_ == null) {
+        commonMetadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        commonMetadataBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The basic metadata of the long running operation.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
+     */
+    public Builder mergeCommonMetadata(com.google.cloud.documentai.v1beta3.CommonOperationMetadata value) {
+      if (commonMetadataBuilder_ == null) {
+        if (commonMetadata_ != null) {
+          commonMetadata_ =
+            com.google.cloud.documentai.v1beta3.CommonOperationMetadata.newBuilder(commonMetadata_).mergeFrom(value).buildPartial();
+        } else {
+          commonMetadata_ = value;
+        }
+        onChanged();
+      } else {
+        commonMetadataBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The basic metadata of the long running operation.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
+     */
+    public Builder clearCommonMetadata() {
+      if (commonMetadataBuilder_ == null) {
+        commonMetadata_ = null;
+        onChanged();
+      } else {
+        commonMetadata_ = null;
+        commonMetadataBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The basic metadata of the long running operation.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
+     */
+    public com.google.cloud.documentai.v1beta3.CommonOperationMetadata.Builder getCommonMetadataBuilder() {
+      
+      onChanged();
+      return getCommonMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The basic metadata of the long running operation.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
+     */
+    public com.google.cloud.documentai.v1beta3.CommonOperationMetadataOrBuilder getCommonMetadataOrBuilder() {
+      if (commonMetadataBuilder_ != null) {
+        return commonMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return commonMetadata_ == null ?
+            com.google.cloud.documentai.v1beta3.CommonOperationMetadata.getDefaultInstance() : commonMetadata_;
+      }
+    }
+    /**
+     * <pre>
+     * The basic metadata of the long running operation.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.documentai.v1beta3.CommonOperationMetadata, com.google.cloud.documentai.v1beta3.CommonOperationMetadata.Builder, com.google.cloud.documentai.v1beta3.CommonOperationMetadataOrBuilder> 
+        getCommonMetadataFieldBuilder() {
+      if (commonMetadataBuilder_ == null) {
+        commonMetadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.CommonOperationMetadata, com.google.cloud.documentai.v1beta3.CommonOperationMetadata.Builder, com.google.cloud.documentai.v1beta3.CommonOperationMetadataOrBuilder>(
+                getCommonMetadata(),
+                getParentForChildren(),
+                isClean());
+        commonMetadata_ = null;
+      }
+      return commonMetadataBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

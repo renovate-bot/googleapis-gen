@@ -25,9 +25,10 @@ class ReviewDocumentRequest extends \Google\Protobuf\Internal\Message
     /**
      * The document that needs human review.
      *
-     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      */
     protected $document = null;
+    protected $source;
 
     /**
      * Constructor.
@@ -35,6 +36,8 @@ class ReviewDocumentRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type \Google\Cloud\DocumentAI\V1beta3\Document $inline_document
+     *           An inline document proto.
      *     @type string $human_review_config
      *           Required. The resource name of the HumanReviewConfig that the document will be
      *           reviewed with.
@@ -45,6 +48,37 @@ class ReviewDocumentRequest extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Google\Cloud\Documentai\V1Beta3\DocumentProcessorService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * An inline document proto.
+     *
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+     * @return \Google\Cloud\DocumentAI\V1beta3\Document
+     */
+    public function getInlineDocument()
+    {
+        return $this->readOneof(4);
+    }
+
+    public function hasInlineDocument()
+    {
+        return $this->hasOneof(4);
+    }
+
+    /**
+     * An inline document proto.
+     *
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+     * @param \Google\Cloud\DocumentAI\V1beta3\Document $var
+     * @return $this
+     */
+    public function setInlineDocument($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\DocumentAI\V1beta3\Document::class);
+        $this->writeOneof(4, $var);
+
+        return $this;
     }
 
     /**
@@ -78,7 +112,7 @@ class ReviewDocumentRequest extends \Google\Protobuf\Internal\Message
     /**
      * The document that needs human review.
      *
-     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      * @return \Google\Cloud\DocumentAI\V1beta3\Document
      */
     public function getDocument()
@@ -99,7 +133,7 @@ class ReviewDocumentRequest extends \Google\Protobuf\Internal\Message
     /**
      * The document that needs human review.
      *
-     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+     * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      * @param \Google\Cloud\DocumentAI\V1beta3\Document $var
      * @return $this
      */
@@ -109,6 +143,14 @@ class ReviewDocumentRequest extends \Google\Protobuf\Internal\Message
         $this->document = $var;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSource()
+    {
+        return $this->whichOneof("source");
     }
 
 }
