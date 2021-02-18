@@ -1,42 +1,42 @@
 {
-  "schema": "1.0",
-  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods.",
-  "language": "go",
-  "protoPackage": "google.analytics.data.v1beta",
-  "libraryPackage": "google.golang.org/google/analytics/data/v1beta",
-  "services": {
-    "BetaAnalyticsData": {
-      "clients": {
-        "grpc": {
-          "libraryClient": "BetaAnalyticsData",
-          "rpcs": {
-            "BatchRunPivotReports": {
-              "methods": [
+  "schema":  "1.0",
+  "comment":  "This file maps proto services/RPCs to the corresponding library clients/methods.",
+  "language":  "go",
+  "protoPackage":  "google.analytics.data.v1beta",
+  "libraryPackage":  "google.golang.org/google/analytics/data/v1beta",
+  "services":  {
+    "BetaAnalyticsData":  {
+      "clients":  {
+        "grpc":  {
+          "libraryClient":  "BetaAnalyticsData",
+          "rpcs":  {
+            "BatchRunPivotReports":  {
+              "methods":  [
                 "BatchRunPivotReports"
               ]
             },
-            "BatchRunReports": {
-              "methods": [
+            "BatchRunReports":  {
+              "methods":  [
                 "BatchRunReports"
               ]
             },
-            "GetMetadata": {
-              "methods": [
+            "GetMetadata":  {
+              "methods":  [
                 "GetMetadata"
               ]
             },
-            "RunPivotReport": {
-              "methods": [
+            "RunPivotReport":  {
+              "methods":  [
                 "RunPivotReport"
               ]
             },
-            "RunRealtimeReport": {
-              "methods": [
+            "RunRealtimeReport":  {
+              "methods":  [
                 "RunRealtimeReport"
               ]
             },
-            "RunReport": {
-              "methods": [
+            "RunReport":  {
+              "methods":  [
                 "RunReport"
               ]
             }
