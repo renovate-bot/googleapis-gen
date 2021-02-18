@@ -30,7 +30,7 @@ public interface CustomClassOrBuilder extends
   /**
    * <pre>
    * If this custom class is a resource, the custom_class_id is the resource id
-   * of the CustomClass.
+   * of the CustomClass. Case sensitive.
    * </pre>
    *
    * <code>string custom_class_id = 2;</code>
@@ -40,7 +40,7 @@ public interface CustomClassOrBuilder extends
   /**
    * <pre>
    * If this custom class is a resource, the custom_class_id is the resource id
-   * of the CustomClass.
+   * of the CustomClass. Case sensitive.
    * </pre>
    *
    * <code>string custom_class_id = 2;</code>

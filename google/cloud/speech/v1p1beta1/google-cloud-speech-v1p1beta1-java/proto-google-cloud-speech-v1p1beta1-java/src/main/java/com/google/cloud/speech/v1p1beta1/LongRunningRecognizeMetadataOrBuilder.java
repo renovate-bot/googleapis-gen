@@ -74,8 +74,8 @@ public interface LongRunningRecognizeMetadataOrBuilder extends
 
   /**
    * <pre>
-   * The URI of the audio file being transcribed. Empty if the audio was sent
-   * as byte content.
+   * Output only. The URI of the audio file being transcribed. Empty if the
+   * audio was sent as byte content.
    * </pre>
    *
    * <code>string uri = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -84,8 +84,8 @@ public interface LongRunningRecognizeMetadataOrBuilder extends
   java.lang.String getUri();
   /**
    * <pre>
-   * The URI of the audio file being transcribed. Empty if the audio was sent
-   * as byte content.
+   * Output only. The URI of the audio file being transcribed. Empty if the
+   * audio was sent as byte content.
    * </pre>
    *
    * <code>string uri = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

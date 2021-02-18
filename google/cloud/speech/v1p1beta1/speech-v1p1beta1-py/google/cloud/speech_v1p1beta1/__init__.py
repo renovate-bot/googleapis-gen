@@ -15,6 +15,7 @@
 # limitations under the License.
 #
 
+from .services.adaptation import AdaptationClient
 from .services.speech import SpeechClient
 from .types.cloud_speech import LongRunningRecognizeMetadata
 from .types.cloud_speech import LongRunningRecognizeRequest
@@ -33,13 +34,35 @@ from .types.cloud_speech import StreamingRecognitionResult
 from .types.cloud_speech import StreamingRecognizeRequest
 from .types.cloud_speech import StreamingRecognizeResponse
 from .types.cloud_speech import WordInfo
+from .types.cloud_speech_adaptation import CreateCustomClassRequest
+from .types.cloud_speech_adaptation import CreatePhraseSetRequest
+from .types.cloud_speech_adaptation import DeleteCustomClassRequest
+from .types.cloud_speech_adaptation import DeletePhraseSetRequest
+from .types.cloud_speech_adaptation import GetCustomClassRequest
+from .types.cloud_speech_adaptation import GetPhraseSetRequest
+from .types.cloud_speech_adaptation import ListCustomClassesRequest
+from .types.cloud_speech_adaptation import ListCustomClassesResponse
+from .types.cloud_speech_adaptation import ListPhraseSetRequest
+from .types.cloud_speech_adaptation import ListPhraseSetResponse
+from .types.cloud_speech_adaptation import UpdateCustomClassRequest
+from .types.cloud_speech_adaptation import UpdatePhraseSetRequest
 from .types.resource import CustomClass
 from .types.resource import PhraseSet
 from .types.resource import SpeechAdaptation
 
 
 __all__ = (
+    'CreateCustomClassRequest',
+    'CreatePhraseSetRequest',
     'CustomClass',
+    'DeleteCustomClassRequest',
+    'DeletePhraseSetRequest',
+    'GetCustomClassRequest',
+    'GetPhraseSetRequest',
+    'ListCustomClassesRequest',
+    'ListCustomClassesResponse',
+    'ListPhraseSetRequest',
+    'ListPhraseSetResponse',
     'LongRunningRecognizeMetadata',
     'LongRunningRecognizeRequest',
     'LongRunningRecognizeResponse',
@@ -51,6 +74,7 @@ __all__ = (
     'RecognizeResponse',
     'SpeakerDiarizationConfig',
     'SpeechAdaptation',
+    'SpeechClient',
     'SpeechContext',
     'SpeechRecognitionAlternative',
     'SpeechRecognitionResult',
@@ -58,6 +82,8 @@ __all__ = (
     'StreamingRecognitionResult',
     'StreamingRecognizeRequest',
     'StreamingRecognizeResponse',
+    'UpdateCustomClassRequest',
+    'UpdatePhraseSetRequest',
     'WordInfo',
-'SpeechClient',
+'AdaptationClient',
 )

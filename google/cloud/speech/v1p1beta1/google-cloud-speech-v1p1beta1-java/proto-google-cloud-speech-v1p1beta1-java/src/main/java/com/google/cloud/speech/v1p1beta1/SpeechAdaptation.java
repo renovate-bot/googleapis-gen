@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private SpeechAdaptation() {
     phraseSets_ = java.util.Collections.emptyList();
+    phraseSetReferences_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     customClasses_ = java.util.Collections.emptyList();
   }
 
@@ -65,9 +66,18 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-              customClasses_ = new java.util.ArrayList<com.google.cloud.speech.v1p1beta1.CustomClass>();
+              phraseSetReferences_ = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000002;
+            }
+            phraseSetReferences_.add(s);
+            break;
+          }
+          case 26: {
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              customClasses_ = new java.util.ArrayList<com.google.cloud.speech.v1p1beta1.CustomClass>();
+              mutable_bitField0_ |= 0x00000004;
             }
             customClasses_.add(
                 input.readMessage(com.google.cloud.speech.v1p1beta1.CustomClass.parser(), extensionRegistry));
@@ -92,6 +102,9 @@ private static final long serialVersionUID = 0L;
         phraseSets_ = java.util.Collections.unmodifiableList(phraseSets_);
       }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        phraseSetReferences_ = phraseSetReferences_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         customClasses_ = java.util.Collections.unmodifiableList(customClasses_);
       }
       this.unknownFields = unknownFields.build();
@@ -181,7 +194,58 @@ private static final long serialVersionUID = 0L;
     return phraseSets_.get(index);
   }
 
-  public static final int CUSTOM_CLASSES_FIELD_NUMBER = 2;
+  public static final int PHRASE_SET_REFERENCES_FIELD_NUMBER = 2;
+  private com.google.protobuf.LazyStringList phraseSetReferences_;
+  /**
+   * <pre>
+   * A collection of phrase set resource names to use.
+   * </pre>
+   *
+   * <code>repeated string phrase_set_references = 2;</code>
+   * @return A list containing the phraseSetReferences.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getPhraseSetReferencesList() {
+    return phraseSetReferences_;
+  }
+  /**
+   * <pre>
+   * A collection of phrase set resource names to use.
+   * </pre>
+   *
+   * <code>repeated string phrase_set_references = 2;</code>
+   * @return The count of phraseSetReferences.
+   */
+  public int getPhraseSetReferencesCount() {
+    return phraseSetReferences_.size();
+  }
+  /**
+   * <pre>
+   * A collection of phrase set resource names to use.
+   * </pre>
+   *
+   * <code>repeated string phrase_set_references = 2;</code>
+   * @param index The index of the element to return.
+   * @return The phraseSetReferences at the given index.
+   */
+  public java.lang.String getPhraseSetReferences(int index) {
+    return phraseSetReferences_.get(index);
+  }
+  /**
+   * <pre>
+   * A collection of phrase set resource names to use.
+   * </pre>
+   *
+   * <code>repeated string phrase_set_references = 2;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the phraseSetReferences at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getPhraseSetReferencesBytes(int index) {
+    return phraseSetReferences_.getByteString(index);
+  }
+
+  public static final int CUSTOM_CLASSES_FIELD_NUMBER = 3;
   private java.util.List<com.google.cloud.speech.v1p1beta1.CustomClass> customClasses_;
   /**
    * <pre>
@@ -191,7 +255,7 @@ private static final long serialVersionUID = 0L;
    * `custom_class_id`.
    * </pre>
    *
-   * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
+   * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 3;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.speech.v1p1beta1.CustomClass> getCustomClassesList() {
@@ -205,7 +269,7 @@ private static final long serialVersionUID = 0L;
    * `custom_class_id`.
    * </pre>
    *
-   * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
+   * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 3;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.speech.v1p1beta1.CustomClassOrBuilder> 
@@ -220,7 +284,7 @@ private static final long serialVersionUID = 0L;
    * `custom_class_id`.
    * </pre>
    *
-   * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
+   * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 3;</code>
    */
   @java.lang.Override
   public int getCustomClassesCount() {
@@ -234,7 +298,7 @@ private static final long serialVersionUID = 0L;
    * `custom_class_id`.
    * </pre>
    *
-   * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
+   * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 3;</code>
    */
   @java.lang.Override
   public com.google.cloud.speech.v1p1beta1.CustomClass getCustomClasses(int index) {
@@ -248,7 +312,7 @@ private static final long serialVersionUID = 0L;
    * `custom_class_id`.
    * </pre>
    *
-   * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
+   * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 3;</code>
    */
   @java.lang.Override
   public com.google.cloud.speech.v1p1beta1.CustomClassOrBuilder getCustomClassesOrBuilder(
@@ -273,8 +337,11 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < phraseSets_.size(); i++) {
       output.writeMessage(1, phraseSets_.get(i));
     }
+    for (int i = 0; i < phraseSetReferences_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, phraseSetReferences_.getRaw(i));
+    }
     for (int i = 0; i < customClasses_.size(); i++) {
-      output.writeMessage(2, customClasses_.get(i));
+      output.writeMessage(3, customClasses_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -289,9 +356,17 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, phraseSets_.get(i));
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < phraseSetReferences_.size(); i++) {
+        dataSize += computeStringSizeNoTag(phraseSetReferences_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getPhraseSetReferencesList().size();
+    }
     for (int i = 0; i < customClasses_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, customClasses_.get(i));
+        .computeMessageSize(3, customClasses_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -310,6 +385,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getPhraseSetsList()
         .equals(other.getPhraseSetsList())) return false;
+    if (!getPhraseSetReferencesList()
+        .equals(other.getPhraseSetReferencesList())) return false;
     if (!getCustomClassesList()
         .equals(other.getCustomClassesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -326,6 +403,10 @@ private static final long serialVersionUID = 0L;
     if (getPhraseSetsCount() > 0) {
       hash = (37 * hash) + PHRASE_SETS_FIELD_NUMBER;
       hash = (53 * hash) + getPhraseSetsList().hashCode();
+    }
+    if (getPhraseSetReferencesCount() > 0) {
+      hash = (37 * hash) + PHRASE_SET_REFERENCES_FIELD_NUMBER;
+      hash = (53 * hash) + getPhraseSetReferencesList().hashCode();
     }
     if (getCustomClassesCount() > 0) {
       hash = (37 * hash) + CUSTOM_CLASSES_FIELD_NUMBER;
@@ -476,9 +557,11 @@ private static final long serialVersionUID = 0L;
       } else {
         phraseSetsBuilder_.clear();
       }
+      phraseSetReferences_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (customClassesBuilder_ == null) {
         customClasses_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
         customClassesBuilder_.clear();
       }
@@ -518,10 +601,15 @@ private static final long serialVersionUID = 0L;
       } else {
         result.phraseSets_ = phraseSetsBuilder_.build();
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        phraseSetReferences_ = phraseSetReferences_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.phraseSetReferences_ = phraseSetReferences_;
       if (customClassesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           customClasses_ = java.util.Collections.unmodifiableList(customClasses_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.customClasses_ = customClasses_;
       } else {
@@ -601,11 +689,21 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
+      if (!other.phraseSetReferences_.isEmpty()) {
+        if (phraseSetReferences_.isEmpty()) {
+          phraseSetReferences_ = other.phraseSetReferences_;
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ensurePhraseSetReferencesIsMutable();
+          phraseSetReferences_.addAll(other.phraseSetReferences_);
+        }
+        onChanged();
+      }
       if (customClassesBuilder_ == null) {
         if (!other.customClasses_.isEmpty()) {
           if (customClasses_.isEmpty()) {
             customClasses_ = other.customClasses_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureCustomClassesIsMutable();
             customClasses_.addAll(other.customClasses_);
@@ -618,7 +716,7 @@ private static final long serialVersionUID = 0L;
             customClassesBuilder_.dispose();
             customClassesBuilder_ = null;
             customClasses_ = other.customClasses_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             customClassesBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getCustomClassesFieldBuilder() : null;
@@ -1005,12 +1103,158 @@ private static final long serialVersionUID = 0L;
       return phraseSetsBuilder_;
     }
 
+    private com.google.protobuf.LazyStringList phraseSetReferences_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensurePhraseSetReferencesIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        phraseSetReferences_ = new com.google.protobuf.LazyStringArrayList(phraseSetReferences_);
+        bitField0_ |= 0x00000002;
+       }
+    }
+    /**
+     * <pre>
+     * A collection of phrase set resource names to use.
+     * </pre>
+     *
+     * <code>repeated string phrase_set_references = 2;</code>
+     * @return A list containing the phraseSetReferences.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getPhraseSetReferencesList() {
+      return phraseSetReferences_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * A collection of phrase set resource names to use.
+     * </pre>
+     *
+     * <code>repeated string phrase_set_references = 2;</code>
+     * @return The count of phraseSetReferences.
+     */
+    public int getPhraseSetReferencesCount() {
+      return phraseSetReferences_.size();
+    }
+    /**
+     * <pre>
+     * A collection of phrase set resource names to use.
+     * </pre>
+     *
+     * <code>repeated string phrase_set_references = 2;</code>
+     * @param index The index of the element to return.
+     * @return The phraseSetReferences at the given index.
+     */
+    public java.lang.String getPhraseSetReferences(int index) {
+      return phraseSetReferences_.get(index);
+    }
+    /**
+     * <pre>
+     * A collection of phrase set resource names to use.
+     * </pre>
+     *
+     * <code>repeated string phrase_set_references = 2;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the phraseSetReferences at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getPhraseSetReferencesBytes(int index) {
+      return phraseSetReferences_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * A collection of phrase set resource names to use.
+     * </pre>
+     *
+     * <code>repeated string phrase_set_references = 2;</code>
+     * @param index The index to set the value at.
+     * @param value The phraseSetReferences to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPhraseSetReferences(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensurePhraseSetReferencesIsMutable();
+      phraseSetReferences_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * A collection of phrase set resource names to use.
+     * </pre>
+     *
+     * <code>repeated string phrase_set_references = 2;</code>
+     * @param value The phraseSetReferences to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPhraseSetReferences(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensurePhraseSetReferencesIsMutable();
+      phraseSetReferences_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * A collection of phrase set resource names to use.
+     * </pre>
+     *
+     * <code>repeated string phrase_set_references = 2;</code>
+     * @param values The phraseSetReferences to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllPhraseSetReferences(
+        java.lang.Iterable<java.lang.String> values) {
+      ensurePhraseSetReferencesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, phraseSetReferences_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * A collection of phrase set resource names to use.
+     * </pre>
+     *
+     * <code>repeated string phrase_set_references = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPhraseSetReferences() {
+      phraseSetReferences_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * A collection of phrase set resource names to use.
+     * </pre>
+     *
+     * <code>repeated string phrase_set_references = 2;</code>
+     * @param value The bytes of the phraseSetReferences to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPhraseSetReferencesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensurePhraseSetReferencesIsMutable();
+      phraseSetReferences_.add(value);
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.cloud.speech.v1p1beta1.CustomClass> customClasses_ =
       java.util.Collections.emptyList();
     private void ensureCustomClassesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         customClasses_ = new java.util.ArrayList<com.google.cloud.speech.v1p1beta1.CustomClass>(customClasses_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
        }
     }
 
@@ -1025,7 +1269,7 @@ private static final long serialVersionUID = 0L;
      * `custom_class_id`.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 3;</code>
      */
     public java.util.List<com.google.cloud.speech.v1p1beta1.CustomClass> getCustomClassesList() {
       if (customClassesBuilder_ == null) {
@@ -1042,7 +1286,7 @@ private static final long serialVersionUID = 0L;
      * `custom_class_id`.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 3;</code>
      */
     public int getCustomClassesCount() {
       if (customClassesBuilder_ == null) {
@@ -1059,7 +1303,7 @@ private static final long serialVersionUID = 0L;
      * `custom_class_id`.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 3;</code>
      */
     public com.google.cloud.speech.v1p1beta1.CustomClass getCustomClasses(int index) {
       if (customClassesBuilder_ == null) {
@@ -1076,7 +1320,7 @@ private static final long serialVersionUID = 0L;
      * `custom_class_id`.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 3;</code>
      */
     public Builder setCustomClasses(
         int index, com.google.cloud.speech.v1p1beta1.CustomClass value) {
@@ -1100,7 +1344,7 @@ private static final long serialVersionUID = 0L;
      * `custom_class_id`.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 3;</code>
      */
     public Builder setCustomClasses(
         int index, com.google.cloud.speech.v1p1beta1.CustomClass.Builder builderForValue) {
@@ -1121,7 +1365,7 @@ private static final long serialVersionUID = 0L;
      * `custom_class_id`.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 3;</code>
      */
     public Builder addCustomClasses(com.google.cloud.speech.v1p1beta1.CustomClass value) {
       if (customClassesBuilder_ == null) {
@@ -1144,7 +1388,7 @@ private static final long serialVersionUID = 0L;
      * `custom_class_id`.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 3;</code>
      */
     public Builder addCustomClasses(
         int index, com.google.cloud.speech.v1p1beta1.CustomClass value) {
@@ -1168,7 +1412,7 @@ private static final long serialVersionUID = 0L;
      * `custom_class_id`.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 3;</code>
      */
     public Builder addCustomClasses(
         com.google.cloud.speech.v1p1beta1.CustomClass.Builder builderForValue) {
@@ -1189,7 +1433,7 @@ private static final long serialVersionUID = 0L;
      * `custom_class_id`.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 3;</code>
      */
     public Builder addCustomClasses(
         int index, com.google.cloud.speech.v1p1beta1.CustomClass.Builder builderForValue) {
@@ -1210,7 +1454,7 @@ private static final long serialVersionUID = 0L;
      * `custom_class_id`.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 3;</code>
      */
     public Builder addAllCustomClasses(
         java.lang.Iterable<? extends com.google.cloud.speech.v1p1beta1.CustomClass> values) {
@@ -1232,12 +1476,12 @@ private static final long serialVersionUID = 0L;
      * `custom_class_id`.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 3;</code>
      */
     public Builder clearCustomClasses() {
       if (customClassesBuilder_ == null) {
         customClasses_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         customClassesBuilder_.clear();
@@ -1252,7 +1496,7 @@ private static final long serialVersionUID = 0L;
      * `custom_class_id`.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 3;</code>
      */
     public Builder removeCustomClasses(int index) {
       if (customClassesBuilder_ == null) {
@@ -1272,7 +1516,7 @@ private static final long serialVersionUID = 0L;
      * `custom_class_id`.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 3;</code>
      */
     public com.google.cloud.speech.v1p1beta1.CustomClass.Builder getCustomClassesBuilder(
         int index) {
@@ -1286,7 +1530,7 @@ private static final long serialVersionUID = 0L;
      * `custom_class_id`.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 3;</code>
      */
     public com.google.cloud.speech.v1p1beta1.CustomClassOrBuilder getCustomClassesOrBuilder(
         int index) {
@@ -1303,7 +1547,7 @@ private static final long serialVersionUID = 0L;
      * `custom_class_id`.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 3;</code>
      */
     public java.util.List<? extends com.google.cloud.speech.v1p1beta1.CustomClassOrBuilder> 
          getCustomClassesOrBuilderList() {
@@ -1321,7 +1565,7 @@ private static final long serialVersionUID = 0L;
      * `custom_class_id`.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 3;</code>
      */
     public com.google.cloud.speech.v1p1beta1.CustomClass.Builder addCustomClassesBuilder() {
       return getCustomClassesFieldBuilder().addBuilder(
@@ -1335,7 +1579,7 @@ private static final long serialVersionUID = 0L;
      * `custom_class_id`.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 3;</code>
      */
     public com.google.cloud.speech.v1p1beta1.CustomClass.Builder addCustomClassesBuilder(
         int index) {
@@ -1350,7 +1594,7 @@ private static final long serialVersionUID = 0L;
      * `custom_class_id`.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 3;</code>
      */
     public java.util.List<com.google.cloud.speech.v1p1beta1.CustomClass.Builder> 
          getCustomClassesBuilderList() {
@@ -1363,7 +1607,7 @@ private static final long serialVersionUID = 0L;
         customClassesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.speech.v1p1beta1.CustomClass, com.google.cloud.speech.v1p1beta1.CustomClass.Builder, com.google.cloud.speech.v1p1beta1.CustomClassOrBuilder>(
                 customClasses_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         customClasses_ = null;
