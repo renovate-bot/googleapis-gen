@@ -1,70 +1,48 @@
-# Ruby Client for Error Reporting API ([Beta](https://github.com/GoogleCloudPlatform/google-cloud-ruby#versioning))
+# Ruby Client for the Cloud Error Reporting V1beta1 API
 
-[Error Reporting API][Product Documentation]:
-Groups and counts similar errors from cloud services and applications,
-reports new errors, and provides access to error groups and their
-associated errors.
-- [Client Library Documentation][]
-- [Product Documentation][]
+API Client library for the Cloud Error Reporting V1beta1 API
 
-## Quick Start
-In order to use this library, you first need to go through the following
-steps:
+The Error Reporting API provides a simple endpoint to report errors from your running service, and read access to error groups and their associated errors.
+
+https://github.com/googleapis/google-cloud-ruby
+
+## Installation
+
+```
+$ gem install google-cloud-error_reporting-v1beta1
+```
+
+## Before You Begin
+
+In order to use this library, you first need to go through the following steps:
 
 1. [Select or create a Cloud Platform project.](https://console.cloud.google.com/project)
-2. [Enable billing for your project.](https://cloud.google.com/billing/docs/how-to/modify-project#enable_billing_for_a_project)
-3. [Enable the Error Reporting API.](https://console.cloud.google.com/apis/library/devtools-clouderrorreporting.googleapis.com)
-4. [Setup Authentication.](https://googlecloudplatform.github.io/google-cloud-ruby/#/docs/google-cloud/master/guides/authentication)
+1. [Enable billing for your project.](https://cloud.google.com/billing/docs/how-to/modify-project#enable_billing_for_a_project)
+1. [Enable the API.](https://console.cloud.google.com/apis/library/clouderrorreporting.googleapis.com)
+1. {file:AUTHENTICATION.md Set up authentication.}
 
-### Installation
-```
-$ gem install google-cloud-error_reporting
-```
+## Quick Start
 
-### Preview
-#### ReportErrorsServiceClient
-```rb
-require "google/cloud/error_reporting"
+```ruby
+require "google/cloud/error_reporting/v1beta1"
 
-report_errors_client = Google::Cloud::ErrorReporting::ReportErrors.new
-formatted_project_name = Google::Cloud::ErrorReporting::V1beta1::ReportErrorsServiceClient.project_path(project_id)
-message = "[MESSAGE]"
-service = "[SERVICE]"
-service_context = { service: service }
-file_path = "path/to/file.lang"
-line_number = 42
-function_name = "meaningOfLife"
-report_location = {
-  file_path: file_path,
-  line_number: line_number,
-  function_name: function_name
-}
-context = { report_location: report_location }
-event = {
-  message: message,
-  service_context: service_context,
-  context: context
-}
-response = report_errors_client.report_error_event(formatted_project_name, event)
+client = ::Google::Cloud::ErrorReporting::V1beta1::ErrorGroupService::Client.new
+request = my_create_request
+response = client.get_group request
 ```
 
-### Next Steps
-- Read the [Client Library Documentation][] for Error Reporting API
-  to see other available methods on the client.
-- Read the [Error Reporting API Product documentation][Product Documentation]
-  to learn more about the product and see How-to Guides.
-- View this [repository's main README](https://github.com/GoogleCloudPlatform/google-cloud-ruby/blob/master/README.md)
-  to see the full list of Cloud APIs that we cover.
+View the [Client Library Documentation](https://googleapis.dev/ruby/google-cloud-error_reporting-v1beta1/latest)
+for class and method documentation.
 
-[Client Library Documentation]: https://googlecloudplatform.github.io/google-cloud-ruby/#/docs/google-cloud-error_reporting/latest/google/devtools/clouderrorreporting/v1beta1
-[Product Documentation]: https://cloud.google.com/devtools-clouderrorreporting
+See also the [Product Documentation](https://cloud.google.com/error-reporting)
+for general usage information.
 
 ## Enabling Logging
 
 To enable logging for this library, set the logger for the underlying [gRPC](https://github.com/grpc/grpc/tree/master/src/ruby) library.
-The logger that you set may be a Ruby stdlib [`Logger`](https://ruby-doc.org/stdlib-2.5.0/libdoc/logger/rdoc/Logger.html) as shown below,
-or a [`Google::Cloud::Logging::Logger`](https://googlecloudplatform.github.io/google-cloud-ruby/#/docs/google-cloud-logging/latest/google/cloud/logging/logger)
-that will write logs to [Stackdriver Logging](https://cloud.google.com/logging/). See [grpc/logconfig.rb](https://github.com/grpc/grpc/blob/master/src/ruby/lib/grpc/logconfig.rb)
+The logger that you set may be a Ruby stdlib [`Logger`](https://ruby-doc.org/stdlib/libdoc/logger/rdoc/Logger.html) as shown below,
+or a [`Google::Cloud::Logging::Logger`](https://googleapis.dev/ruby/google-cloud-logging/latest)
+that will write logs to [Cloud Logging](https://cloud.google.com/logging/). See [grpc/logconfig.rb](https://github.com/grpc/grpc/blob/master/src/ruby/lib/grpc/logconfig.rb)
 and the gRPC [spec_helper.rb](https://github.com/grpc/grpc/blob/master/src/ruby/spec/spec_helper.rb) for additional information.
 
 Configuring a Ruby stdlib logger:
@@ -87,11 +65,11 @@ end
 
 ## Supported Ruby Versions
 
-This library is supported on Ruby 2.3+.
+This library is supported on Ruby 2.4+.
 
 Google provides official support for Ruby versions that are actively supported
 by Ruby Core—that is, Ruby versions that are either in normal maintenance or
-in security maintenance, and not end of life. Currently, this means Ruby 2.3
+in security maintenance, and not end of life. Currently, this means Ruby 2.4
 and later. Older versions of Ruby _may_ still work, but are unsupported and not
 recommended. See https://www.ruby-lang.org/en/downloads/branches/ for details
 about the Ruby support schedule.
