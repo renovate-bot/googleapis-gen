@@ -96,6 +96,10 @@ module Google
         # * Each Table has a collection of {Google::Area120::Tables::V1alpha1::Row Row}
         #   resources, named `tables/*/rows/*`
         #
+        # * The API has a collection of
+        #   {Google::Area120::Tables::V1alpha1::Workspace Workspace}
+        #   resources, named `workspaces/*`.
+        #
         # @param version [Symbol, String]
         #   The major version of the service to be used. By default :v1alpha1
         #   is used.

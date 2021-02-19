@@ -29,6 +29,9 @@ __protobuf__ = proto.module(
         'GetTableRequest',
         'ListTablesRequest',
         'ListTablesResponse',
+        'GetWorkspaceRequest',
+        'ListWorkspacesRequest',
+        'ListWorkspacesResponse',
         'GetRowRequest',
         'ListRowsRequest',
         'ListRowsResponse',
@@ -39,9 +42,14 @@ __protobuf__ = proto.module(
         'BatchUpdateRowsRequest',
         'BatchUpdateRowsResponse',
         'DeleteRowRequest',
+        'BatchDeleteRowsRequest',
         'Table',
         'ColumnDescription',
+        'LabeledItem',
+        'RelationshipDetails',
+        'LookupDetails',
         'Row',
+        'Workspace',
     },
 )
 
@@ -112,6 +120,65 @@ class ListTablesResponse(proto.Message):
     next_page_token = proto.Field(proto.STRING, number=2)
 
 
+class GetWorkspaceRequest(proto.Message):
+    r"""Request message for TablesService.GetWorkspace.
+
+    Attributes:
+        name (str):
+            Required. The name of the workspace to
+            retrieve. Format: workspaces/{workspace}
+    """
+
+    name = proto.Field(proto.STRING, number=1)
+
+
+class ListWorkspacesRequest(proto.Message):
+    r"""Request message for TablesService.ListWorkspaces.
+
+    Attributes:
+        page_size (int):
+            The maximum number of workspaces to return.
+            The service may return fewer than this value.
+            If unspecified, at most 10 workspaces are
+            returned. The maximum value is 25; values above
+            25 are coerced to 25.
+        page_token (str):
+            A page token, received from a previous ``ListWorkspaces``
+            call. Provide this to retrieve the subsequent page.
+
+            When paginating, all other parameters provided to
+            ``ListWorkspaces`` must match the call that provided the
+            page token.
+    """
+
+    page_size = proto.Field(proto.INT32, number=1)
+
+    page_token = proto.Field(proto.STRING, number=2)
+
+
+class ListWorkspacesResponse(proto.Message):
+    r"""Response message for TablesService.ListWorkspaces.
+
+    Attributes:
+        workspaces (Sequence[google.area120.tables_v1alpha1.types.Workspace]):
+            The list of workspaces.
+        next_page_token (str):
+            A token, which can be sent as ``page_token`` to retrieve the
+            next page. If this field is empty, there are no subsequent
+            pages.
+    """
+
+    @property
+    def raw_page(self):
+        return self
+
+    workspaces = proto.RepeatedField(proto.MESSAGE, number=1,
+        message='Workspace',
+    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
+
+
 class GetRowRequest(proto.Message):
     r"""Request message for TablesService.GetRow.
 
@@ -155,6 +222,11 @@ class ListRowsRequest(proto.Message):
         view (google.area120.tables_v1alpha1.types.View):
             Optional. Column key to use for values in the
             row. Defaults to user entered name.
+        filter (str):
+            Optional. Raw text query to search for in
+            rows of the table. Special characters must be
+            escaped. Logical operators and field specific
+            filtering not supported.
     """
 
     parent = proto.Field(proto.STRING, number=1)
@@ -166,6 +238,8 @@ class ListRowsRequest(proto.Message):
     view = proto.Field(proto.ENUM, number=4,
         enum='View',
     )
+
+    filter = proto.Field(proto.STRING, number=5)
 
 
 class ListRowsResponse(proto.Message):
@@ -322,6 +396,26 @@ class DeleteRowRequest(proto.Message):
     name = proto.Field(proto.STRING, number=1)
 
 
+class BatchDeleteRowsRequest(proto.Message):
+    r"""Request message for TablesService.BatchDeleteRows
+
+    Attributes:
+        parent (str):
+            Required. The parent table shared by all rows
+            being deleted. Format: tables/{table}
+        names (Sequence[str]):
+            Required. The names of the rows to delete.
+            All rows must belong to the parent table or else
+            the entire batch will fail. A maximum of 500
+            rows can be deleted in a batch.
+            Format: tables/{table}/rows/{row}
+    """
+
+    parent = proto.Field(proto.STRING, number=1)
+
+    names = proto.RepeatedField(proto.STRING, number=2)
+
+
 class Table(proto.Message):
     r"""A single table.
 
@@ -352,10 +446,31 @@ class ColumnDescription(proto.Message):
         name (str):
             column name
         data_type (str):
-            Data type of the column Supported types are number, text,
-            boolean, number_list, text_list, boolean_list.
+            Data type of the column Supported types are auto_id,
+            boolean, boolean_list, creator, create_timestamp, date,
+            dropdown, location, integer, integer_list, number,
+            number_list, person, person_list, tags, check_list, text,
+            text_list, update_timestamp, updater, relationship,
+            file_attachment_list. These types directly map to the column
+            types supported on Tables website.
         id (str):
             Internal id for a column.
+        labels (Sequence[google.area120.tables_v1alpha1.types.LabeledItem]):
+            Optional. Range of labeled values for the
+            column. Some columns like tags and drop-downs
+            limit the values to a set of possible values. We
+            return the range of values in such cases to help
+            clients implement better user data validation.
+        relationship_details (google.area120.tables_v1alpha1.types.RelationshipDetails):
+            Optional. Additional details about a relationship column.
+            Specified when data_type is relationship.
+        lookup_details (google.area120.tables_v1alpha1.types.LookupDetails):
+            Optional. Indicates that this is a lookup
+            column whose value is derived from the
+            relationship column specified in the details.
+            Lookup columns can not be updated directly. To
+            change the value you must update the associated
+            relationship column.
     """
 
     name = proto.Field(proto.STRING, number=1)
@@ -363,6 +478,62 @@ class ColumnDescription(proto.Message):
     data_type = proto.Field(proto.STRING, number=2)
 
     id = proto.Field(proto.STRING, number=3)
+
+    labels = proto.RepeatedField(proto.MESSAGE, number=4,
+        message='LabeledItem',
+    )
+
+    relationship_details = proto.Field(proto.MESSAGE, number=5,
+        message='RelationshipDetails',
+    )
+
+    lookup_details = proto.Field(proto.MESSAGE, number=6,
+        message='LookupDetails',
+    )
+
+
+class LabeledItem(proto.Message):
+    r"""A single item in a labeled column.
+
+    Attributes:
+        name (str):
+            Display string as entered by user.
+        id (str):
+            Internal id associated with the item.
+    """
+
+    name = proto.Field(proto.STRING, number=1)
+
+    id = proto.Field(proto.STRING, number=2)
+
+
+class RelationshipDetails(proto.Message):
+    r"""Details about a relationship column.
+
+    Attributes:
+        linked_table (str):
+            The name of the table this relationship is
+            linked to.
+    """
+
+    linked_table = proto.Field(proto.STRING, number=1)
+
+
+class LookupDetails(proto.Message):
+    r"""Details about a lookup column whose value comes from the
+    associated relationship.
+
+    Attributes:
+        relationship_column (str):
+            The name of the relationship column
+            associated with the lookup.
+        relationship_column_id (str):
+            The id of the relationship column.
+    """
+
+    relationship_column = proto.Field(proto.STRING, number=1)
+
+    relationship_column_id = proto.Field(proto.STRING, number=2)
 
 
 class Row(proto.Message):
@@ -384,6 +555,28 @@ class Row(proto.Message):
 
     values = proto.MapField(proto.STRING, proto.MESSAGE, number=2,
         message=struct.Value,
+    )
+
+
+class Workspace(proto.Message):
+    r"""A single workspace.
+
+    Attributes:
+        name (str):
+            The resource name of the workspace. Workspace names have the
+            form ``workspaces/{workspace}``.
+        display_name (str):
+            The human readable title of the workspace.
+        tables (Sequence[google.area120.tables_v1alpha1.types.Table]):
+            The list of tables in the workspace.
+    """
+
+    name = proto.Field(proto.STRING, number=1)
+
+    display_name = proto.Field(proto.STRING, number=2)
+
+    tables = proto.RepeatedField(proto.MESSAGE, number=3,
+        message='Table',
     )
 
 

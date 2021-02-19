@@ -47,6 +47,14 @@ class ListRowsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.area120.tables.v1alpha1.View view = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     protected $view = 0;
+    /**
+     * Optional. Raw text query to search for in rows of the table.
+     * Special characters must be escaped. Logical operators and field specific
+     * filtering not supported.
+     *
+     * Generated from protobuf field <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    protected $filter = '';
 
     /**
      * Constructor.
@@ -70,6 +78,10 @@ class ListRowsRequest extends \Google\Protobuf\Internal\Message
      *     @type int $view
      *           Optional. Column key to use for values in the row.
      *           Defaults to user entered name.
+     *     @type string $filter
+     *           Optional. Raw text query to search for in rows of the table.
+     *           Special characters must be escaped. Logical operators and field specific
+     *           filtering not supported.
      * }
      */
     public function __construct($data = NULL) {
@@ -193,6 +205,36 @@ class ListRowsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Area120\Tables\V1alpha1\View::class);
         $this->view = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional. Raw text query to search for in rows of the table.
+     * Special characters must be escaped. Logical operators and field specific
+     * filtering not supported.
+     *
+     * Generated from protobuf field <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return string
+     */
+    public function getFilter()
+    {
+        return $this->filter;
+    }
+
+    /**
+     * Optional. Raw text query to search for in rows of the table.
+     * Special characters must be escaped. Logical operators and field specific
+     * filtering not supported.
+     *
+     * Generated from protobuf field <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFilter($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->filter = $var;
 
         return $this;
     }

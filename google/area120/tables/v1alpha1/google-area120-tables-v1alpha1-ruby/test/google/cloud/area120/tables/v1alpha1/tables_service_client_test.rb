@@ -72,7 +72,7 @@ describe Google::Cloud::Area120::Tables::V1alpha1::TablesServiceClient do
 
     it 'invokes get_table without error' do
       # Create request parameters
-      name = ''
+      formatted_name = Google::Cloud::Area120::Tables::V1alpha1::TablesServiceClient.table_path("[TABLE]")
 
       # Create expected grpc response
       name_2 = "name2-1052831874"
@@ -83,7 +83,7 @@ describe Google::Cloud::Area120::Tables::V1alpha1::TablesServiceClient do
       # Mock Grpc layer
       mock_method = proc do |request|
         assert_instance_of(Google::Area120::Tables::V1alpha1::GetTableRequest, request)
-        assert_equal(name, request.name)
+        assert_equal(formatted_name, request.name)
         OpenStruct.new(execute: expected_response)
       end
       mock_stub = MockGrpcClientStub_v1alpha1.new(:get_table, mock_method)
@@ -96,13 +96,13 @@ describe Google::Cloud::Area120::Tables::V1alpha1::TablesServiceClient do
           client = Google::Cloud::Area120::Tables.new(version: :v1alpha1)
 
           # Call method
-          response = client.get_table(name)
+          response = client.get_table(formatted_name)
 
           # Verify the response
           assert_equal(expected_response, response)
 
           # Call method with block
-          client.get_table(name) do |response, operation|
+          client.get_table(formatted_name) do |response, operation|
             # Verify the response
             assert_equal(expected_response, response)
             refute_nil(operation)
@@ -113,12 +113,12 @@ describe Google::Cloud::Area120::Tables::V1alpha1::TablesServiceClient do
 
     it 'invokes get_table with error' do
       # Create request parameters
-      name = ''
+      formatted_name = Google::Cloud::Area120::Tables::V1alpha1::TablesServiceClient.table_path("[TABLE]")
 
       # Mock Grpc layer
       mock_method = proc do |request|
         assert_instance_of(Google::Area120::Tables::V1alpha1::GetTableRequest, request)
-        assert_equal(name, request.name)
+        assert_equal(formatted_name, request.name)
         raise custom_error
       end
       mock_stub = MockGrpcClientStub_v1alpha1.new(:get_table, mock_method)
@@ -132,7 +132,7 @@ describe Google::Cloud::Area120::Tables::V1alpha1::TablesServiceClient do
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1alpha1 do
-            client.get_table(name)
+            client.get_table(formatted_name)
           end
 
           # Verify the GaxError wrapped the custom error that was raised.
@@ -204,12 +204,149 @@ describe Google::Cloud::Area120::Tables::V1alpha1::TablesServiceClient do
     end
   end
 
+  describe 'get_workspace' do
+    custom_error = CustomTestError_v1alpha1.new "Custom test error for Google::Cloud::Area120::Tables::V1alpha1::TablesServiceClient#get_workspace."
+
+    it 'invokes get_workspace without error' do
+      # Create request parameters
+      formatted_name = Google::Cloud::Area120::Tables::V1alpha1::TablesServiceClient.workspace_path("[WORKSPACE]")
+
+      # Create expected grpc response
+      name_2 = "name2-1052831874"
+      display_name = "displayName1615086568"
+      expected_response = { name: name_2, display_name: display_name }
+      expected_response = Google::Gax::to_proto(expected_response, Google::Area120::Tables::V1alpha1::Workspace)
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Area120::Tables::V1alpha1::GetWorkspaceRequest, request)
+        assert_equal(formatted_name, request.name)
+        OpenStruct.new(execute: expected_response)
+      end
+      mock_stub = MockGrpcClientStub_v1alpha1.new(:get_workspace, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockTablesServiceCredentials_v1alpha1.new("get_workspace")
+
+      Google::Area120::Tables::V1alpha1::TablesService::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Area120::Tables::V1alpha1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Area120::Tables.new(version: :v1alpha1)
+
+          # Call method
+          response = client.get_workspace(formatted_name)
+
+          # Verify the response
+          assert_equal(expected_response, response)
+
+          # Call method with block
+          client.get_workspace(formatted_name) do |response, operation|
+            # Verify the response
+            assert_equal(expected_response, response)
+            refute_nil(operation)
+          end
+        end
+      end
+    end
+
+    it 'invokes get_workspace with error' do
+      # Create request parameters
+      formatted_name = Google::Cloud::Area120::Tables::V1alpha1::TablesServiceClient.workspace_path("[WORKSPACE]")
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Area120::Tables::V1alpha1::GetWorkspaceRequest, request)
+        assert_equal(formatted_name, request.name)
+        raise custom_error
+      end
+      mock_stub = MockGrpcClientStub_v1alpha1.new(:get_workspace, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockTablesServiceCredentials_v1alpha1.new("get_workspace")
+
+      Google::Area120::Tables::V1alpha1::TablesService::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Area120::Tables::V1alpha1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Area120::Tables.new(version: :v1alpha1)
+
+          # Call method
+          err = assert_raises Google::Gax::GaxError, CustomTestError_v1alpha1 do
+            client.get_workspace(formatted_name)
+          end
+
+          # Verify the GaxError wrapped the custom error that was raised.
+          assert_match(custom_error.message, err.message)
+        end
+      end
+    end
+  end
+
+  describe 'list_workspaces' do
+    custom_error = CustomTestError_v1alpha1.new "Custom test error for Google::Cloud::Area120::Tables::V1alpha1::TablesServiceClient#list_workspaces."
+
+    it 'invokes list_workspaces without error' do
+      # Create expected grpc response
+      next_page_token = ""
+      workspaces_element = {}
+      workspaces = [workspaces_element]
+      expected_response = { next_page_token: next_page_token, workspaces: workspaces }
+      expected_response = Google::Gax::to_proto(expected_response, Google::Area120::Tables::V1alpha1::ListWorkspacesResponse)
+
+      # Mock Grpc layer
+      mock_method = proc do
+        OpenStruct.new(execute: expected_response)
+      end
+      mock_stub = MockGrpcClientStub_v1alpha1.new(:list_workspaces, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockTablesServiceCredentials_v1alpha1.new("list_workspaces")
+
+      Google::Area120::Tables::V1alpha1::TablesService::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Area120::Tables::V1alpha1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Area120::Tables.new(version: :v1alpha1)
+
+          # Call method
+          response = client.list_workspaces
+
+          # Verify the response
+          assert(response.instance_of?(Google::Gax::PagedEnumerable))
+          assert_equal(expected_response, response.page.response)
+          assert_nil(response.next_page)
+          assert_equal(expected_response.workspaces.to_a, response.to_a)
+        end
+      end
+    end
+
+    it 'invokes list_workspaces with error' do
+      # Mock Grpc layer
+      mock_method = proc do
+        raise custom_error
+      end
+      mock_stub = MockGrpcClientStub_v1alpha1.new(:list_workspaces, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockTablesServiceCredentials_v1alpha1.new("list_workspaces")
+
+      Google::Area120::Tables::V1alpha1::TablesService::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Area120::Tables::V1alpha1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Area120::Tables.new(version: :v1alpha1)
+
+          # Call method
+          err = assert_raises Google::Gax::GaxError, CustomTestError_v1alpha1 do
+            client.list_workspaces
+          end
+
+          # Verify the GaxError wrapped the custom error that was raised.
+          assert_match(custom_error.message, err.message)
+        end
+      end
+    end
+  end
+
   describe 'get_row' do
     custom_error = CustomTestError_v1alpha1.new "Custom test error for Google::Cloud::Area120::Tables::V1alpha1::TablesServiceClient#get_row."
 
     it 'invokes get_row without error' do
       # Create request parameters
-      name = ''
+      formatted_name = Google::Cloud::Area120::Tables::V1alpha1::TablesServiceClient.row_path("[TABLE]", "[ROW]")
 
       # Create expected grpc response
       name_2 = "name2-1052831874"
@@ -219,7 +356,7 @@ describe Google::Cloud::Area120::Tables::V1alpha1::TablesServiceClient do
       # Mock Grpc layer
       mock_method = proc do |request|
         assert_instance_of(Google::Area120::Tables::V1alpha1::GetRowRequest, request)
-        assert_equal(name, request.name)
+        assert_equal(formatted_name, request.name)
         OpenStruct.new(execute: expected_response)
       end
       mock_stub = MockGrpcClientStub_v1alpha1.new(:get_row, mock_method)
@@ -232,13 +369,13 @@ describe Google::Cloud::Area120::Tables::V1alpha1::TablesServiceClient do
           client = Google::Cloud::Area120::Tables.new(version: :v1alpha1)
 
           # Call method
-          response = client.get_row(name)
+          response = client.get_row(formatted_name)
 
           # Verify the response
           assert_equal(expected_response, response)
 
           # Call method with block
-          client.get_row(name) do |response, operation|
+          client.get_row(formatted_name) do |response, operation|
             # Verify the response
             assert_equal(expected_response, response)
             refute_nil(operation)
@@ -249,12 +386,12 @@ describe Google::Cloud::Area120::Tables::V1alpha1::TablesServiceClient do
 
     it 'invokes get_row with error' do
       # Create request parameters
-      name = ''
+      formatted_name = Google::Cloud::Area120::Tables::V1alpha1::TablesServiceClient.row_path("[TABLE]", "[ROW]")
 
       # Mock Grpc layer
       mock_method = proc do |request|
         assert_instance_of(Google::Area120::Tables::V1alpha1::GetRowRequest, request)
-        assert_equal(name, request.name)
+        assert_equal(formatted_name, request.name)
         raise custom_error
       end
       mock_stub = MockGrpcClientStub_v1alpha1.new(:get_row, mock_method)
@@ -268,7 +405,7 @@ describe Google::Cloud::Area120::Tables::V1alpha1::TablesServiceClient do
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1alpha1 do
-            client.get_row(name)
+            client.get_row(formatted_name)
           end
 
           # Verify the GaxError wrapped the custom error that was raised.
@@ -728,6 +865,79 @@ describe Google::Cloud::Area120::Tables::V1alpha1::TablesServiceClient do
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v1alpha1 do
             client.delete_row(formatted_name)
+          end
+
+          # Verify the GaxError wrapped the custom error that was raised.
+          assert_match(custom_error.message, err.message)
+        end
+      end
+    end
+  end
+
+  describe 'batch_delete_rows' do
+    custom_error = CustomTestError_v1alpha1.new "Custom test error for Google::Cloud::Area120::Tables::V1alpha1::TablesServiceClient#batch_delete_rows."
+
+    it 'invokes batch_delete_rows without error' do
+      # Create request parameters
+      formatted_parent = Google::Cloud::Area120::Tables::V1alpha1::TablesServiceClient.table_path("[TABLE]")
+      formatted_names = []
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Area120::Tables::V1alpha1::BatchDeleteRowsRequest, request)
+        assert_equal(formatted_parent, request.parent)
+        assert_equal(formatted_names, request.names)
+        OpenStruct.new(execute: nil)
+      end
+      mock_stub = MockGrpcClientStub_v1alpha1.new(:batch_delete_rows, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockTablesServiceCredentials_v1alpha1.new("batch_delete_rows")
+
+      Google::Area120::Tables::V1alpha1::TablesService::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Area120::Tables::V1alpha1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Area120::Tables.new(version: :v1alpha1)
+
+          # Call method
+          response = client.batch_delete_rows(formatted_parent, formatted_names)
+
+          # Verify the response
+          assert_nil(response)
+
+          # Call method with block
+          client.batch_delete_rows(formatted_parent, formatted_names) do |response, operation|
+            # Verify the response
+            assert_nil(response)
+            refute_nil(operation)
+          end
+        end
+      end
+    end
+
+    it 'invokes batch_delete_rows with error' do
+      # Create request parameters
+      formatted_parent = Google::Cloud::Area120::Tables::V1alpha1::TablesServiceClient.table_path("[TABLE]")
+      formatted_names = []
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Area120::Tables::V1alpha1::BatchDeleteRowsRequest, request)
+        assert_equal(formatted_parent, request.parent)
+        assert_equal(formatted_names, request.names)
+        raise custom_error
+      end
+      mock_stub = MockGrpcClientStub_v1alpha1.new(:batch_delete_rows, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockTablesServiceCredentials_v1alpha1.new("batch_delete_rows")
+
+      Google::Area120::Tables::V1alpha1::TablesService::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Area120::Tables::V1alpha1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Area120::Tables.new(version: :v1alpha1)
+
+          # Call method
+          err = assert_raises Google::Gax::GaxError, CustomTestError_v1alpha1 do
+            client.batch_delete_rows(formatted_parent, formatted_names)
           end
 
           # Verify the GaxError wrapped the custom error that was raised.

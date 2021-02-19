@@ -88,6 +88,10 @@ module Google
           # * Each Table has a collection of {Google::Area120::Tables::V1alpha1::Row Row}
           #   resources, named `tables/*/rows/*`
           #
+          # * The API has a collection of
+          #   {Google::Area120::Tables::V1alpha1::Workspace Workspace}
+          #   resources, named `workspaces/*`.
+          #
           # @param credentials [Google::Auth::Credentials, String, Hash, GRPC::Core::Channel, GRPC::Core::ChannelCredentials, Proc]
           #   Provides the means for authenticating requests made by the client. This parameter can
           #   be many types.

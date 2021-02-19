@@ -19,7 +19,7 @@ class GetTableRequest extends \Google\Protobuf\Internal\Message
      * Required. The name of the table to retrieve.
      * Format: tables/{table}
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
     protected $name = '';
 
@@ -43,7 +43,7 @@ class GetTableRequest extends \Google\Protobuf\Internal\Message
      * Required. The name of the table to retrieve.
      * Format: tables/{table}
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getName()
@@ -55,7 +55,7 @@ class GetTableRequest extends \Google\Protobuf\Internal\Message
      * Required. The name of the table to retrieve.
      * Format: tables/{table}
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

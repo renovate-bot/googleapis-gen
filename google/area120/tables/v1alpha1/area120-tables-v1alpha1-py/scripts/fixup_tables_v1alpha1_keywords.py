@@ -42,13 +42,16 @@ class tablesCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
     'batch_create_rows': ('parent', 'requests', ),
+    'batch_delete_rows': ('parent', 'names', ),
     'batch_update_rows': ('parent', 'requests', ),
     'create_row': ('parent', 'row', 'view', ),
     'delete_row': ('name', ),
     'get_row': ('name', 'view', ),
     'get_table': ('name', ),
-    'list_rows': ('parent', 'page_size', 'page_token', 'view', ),
+    'get_workspace': ('name', ),
+    'list_rows': ('parent', 'page_size', 'page_token', 'view', 'filter', ),
     'list_tables': ('page_size', 'page_token', ),
+    'list_workspaces': ('page_size', 'page_token', ),
     'update_row': ('row', 'update_mask', 'view', ),
 
     }

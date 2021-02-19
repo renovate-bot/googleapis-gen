@@ -23,8 +23,12 @@ class ColumnDescription extends \Google\Protobuf\Internal\Message
     protected $name = '';
     /**
      * Data type of the column
-     * Supported types are number, text, boolean, number_list, text_list,
-     * boolean_list.
+     * Supported types are auto_id, boolean, boolean_list, creator,
+     * create_timestamp, date, dropdown, location, integer,
+     * integer_list, number, number_list, person, person_list, tags, check_list,
+     * text, text_list, update_timestamp, updater, relationship,
+     * file_attachment_list.
+     * These types directly map to the column types supported on Tables website.
      *
      * Generated from protobuf field <code>string data_type = 2;</code>
      */
@@ -35,6 +39,31 @@ class ColumnDescription extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string id = 3;</code>
      */
     protected $id = '';
+    /**
+     * Optional. Range of labeled values for the column.
+     * Some columns like tags and drop-downs limit the values to a set of
+     * possible values. We return the range of values in such cases to help
+     * clients implement better user data validation.
+     *
+     * Generated from protobuf field <code>repeated .google.area120.tables.v1alpha1.LabeledItem labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private $labels;
+    /**
+     * Optional. Additional details about a relationship column. Specified when data_type
+     * is relationship.
+     *
+     * Generated from protobuf field <code>.google.area120.tables.v1alpha1.RelationshipDetails relationship_details = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    protected $relationship_details = null;
+    /**
+     * Optional. Indicates that this is a lookup column whose value is derived from the
+     * relationship column specified in the details. Lookup columns can not be
+     * updated directly. To change the value you must update the associated
+     * relationship column.
+     *
+     * Generated from protobuf field <code>.google.area120.tables.v1alpha1.LookupDetails lookup_details = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    protected $lookup_details = null;
 
     /**
      * Constructor.
@@ -46,10 +75,27 @@ class ColumnDescription extends \Google\Protobuf\Internal\Message
      *           column name
      *     @type string $data_type
      *           Data type of the column
-     *           Supported types are number, text, boolean, number_list, text_list,
-     *           boolean_list.
+     *           Supported types are auto_id, boolean, boolean_list, creator,
+     *           create_timestamp, date, dropdown, location, integer,
+     *           integer_list, number, number_list, person, person_list, tags, check_list,
+     *           text, text_list, update_timestamp, updater, relationship,
+     *           file_attachment_list.
+     *           These types directly map to the column types supported on Tables website.
      *     @type string $id
      *           Internal id for a column.
+     *     @type \Google\Area120\Tables\V1alpha1\LabeledItem[]|\Google\Protobuf\Internal\RepeatedField $labels
+     *           Optional. Range of labeled values for the column.
+     *           Some columns like tags and drop-downs limit the values to a set of
+     *           possible values. We return the range of values in such cases to help
+     *           clients implement better user data validation.
+     *     @type \Google\Area120\Tables\V1alpha1\RelationshipDetails $relationship_details
+     *           Optional. Additional details about a relationship column. Specified when data_type
+     *           is relationship.
+     *     @type \Google\Area120\Tables\V1alpha1\LookupDetails $lookup_details
+     *           Optional. Indicates that this is a lookup column whose value is derived from the
+     *           relationship column specified in the details. Lookup columns can not be
+     *           updated directly. To change the value you must update the associated
+     *           relationship column.
      * }
      */
     public function __construct($data = NULL) {
@@ -85,8 +131,12 @@ class ColumnDescription extends \Google\Protobuf\Internal\Message
 
     /**
      * Data type of the column
-     * Supported types are number, text, boolean, number_list, text_list,
-     * boolean_list.
+     * Supported types are auto_id, boolean, boolean_list, creator,
+     * create_timestamp, date, dropdown, location, integer,
+     * integer_list, number, number_list, person, person_list, tags, check_list,
+     * text, text_list, update_timestamp, updater, relationship,
+     * file_attachment_list.
+     * These types directly map to the column types supported on Tables website.
      *
      * Generated from protobuf field <code>string data_type = 2;</code>
      * @return string
@@ -98,8 +148,12 @@ class ColumnDescription extends \Google\Protobuf\Internal\Message
 
     /**
      * Data type of the column
-     * Supported types are number, text, boolean, number_list, text_list,
-     * boolean_list.
+     * Supported types are auto_id, boolean, boolean_list, creator,
+     * create_timestamp, date, dropdown, location, integer,
+     * integer_list, number, number_list, person, person_list, tags, check_list,
+     * text, text_list, update_timestamp, updater, relationship,
+     * file_attachment_list.
+     * These types directly map to the column types supported on Tables website.
      *
      * Generated from protobuf field <code>string data_type = 2;</code>
      * @param string $var
@@ -135,6 +189,118 @@ class ColumnDescription extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional. Range of labeled values for the column.
+     * Some columns like tags and drop-downs limit the values to a set of
+     * possible values. We return the range of values in such cases to help
+     * clients implement better user data validation.
+     *
+     * Generated from protobuf field <code>repeated .google.area120.tables.v1alpha1.LabeledItem labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getLabels()
+    {
+        return $this->labels;
+    }
+
+    /**
+     * Optional. Range of labeled values for the column.
+     * Some columns like tags and drop-downs limit the values to a set of
+     * possible values. We return the range of values in such cases to help
+     * clients implement better user data validation.
+     *
+     * Generated from protobuf field <code>repeated .google.area120.tables.v1alpha1.LabeledItem labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param \Google\Area120\Tables\V1alpha1\LabeledItem[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setLabels($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Area120\Tables\V1alpha1\LabeledItem::class);
+        $this->labels = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Optional. Additional details about a relationship column. Specified when data_type
+     * is relationship.
+     *
+     * Generated from protobuf field <code>.google.area120.tables.v1alpha1.RelationshipDetails relationship_details = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return \Google\Area120\Tables\V1alpha1\RelationshipDetails
+     */
+    public function getRelationshipDetails()
+    {
+        return isset($this->relationship_details) ? $this->relationship_details : null;
+    }
+
+    public function hasRelationshipDetails()
+    {
+        return isset($this->relationship_details);
+    }
+
+    public function clearRelationshipDetails()
+    {
+        unset($this->relationship_details);
+    }
+
+    /**
+     * Optional. Additional details about a relationship column. Specified when data_type
+     * is relationship.
+     *
+     * Generated from protobuf field <code>.google.area120.tables.v1alpha1.RelationshipDetails relationship_details = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param \Google\Area120\Tables\V1alpha1\RelationshipDetails $var
+     * @return $this
+     */
+    public function setRelationshipDetails($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Area120\Tables\V1alpha1\RelationshipDetails::class);
+        $this->relationship_details = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional. Indicates that this is a lookup column whose value is derived from the
+     * relationship column specified in the details. Lookup columns can not be
+     * updated directly. To change the value you must update the associated
+     * relationship column.
+     *
+     * Generated from protobuf field <code>.google.area120.tables.v1alpha1.LookupDetails lookup_details = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return \Google\Area120\Tables\V1alpha1\LookupDetails
+     */
+    public function getLookupDetails()
+    {
+        return isset($this->lookup_details) ? $this->lookup_details : null;
+    }
+
+    public function hasLookupDetails()
+    {
+        return isset($this->lookup_details);
+    }
+
+    public function clearLookupDetails()
+    {
+        unset($this->lookup_details);
+    }
+
+    /**
+     * Optional. Indicates that this is a lookup column whose value is derived from the
+     * relationship column specified in the details. Lookup columns can not be
+     * updated directly. To change the value you must update the associated
+     * relationship column.
+     *
+     * Generated from protobuf field <code>.google.area120.tables.v1alpha1.LookupDetails lookup_details = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param \Google\Area120\Tables\V1alpha1\LookupDetails $var
+     * @return $this
+     */
+    public function setLookupDetails($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Area120\Tables\V1alpha1\LookupDetails::class);
+        $this->lookup_details = $var;
 
         return $this;
     }

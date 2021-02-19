@@ -36,20 +36,25 @@ use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Area120\Tables\V1alpha1\BatchCreateRowsRequest;
 use Google\Area120\Tables\V1alpha1\BatchCreateRowsResponse;
+use Google\Area120\Tables\V1alpha1\BatchDeleteRowsRequest;
 use Google\Area120\Tables\V1alpha1\BatchUpdateRowsRequest;
 use Google\Area120\Tables\V1alpha1\BatchUpdateRowsResponse;
 use Google\Area120\Tables\V1alpha1\CreateRowRequest;
 use Google\Area120\Tables\V1alpha1\DeleteRowRequest;
 use Google\Area120\Tables\V1alpha1\GetRowRequest;
 use Google\Area120\Tables\V1alpha1\GetTableRequest;
+use Google\Area120\Tables\V1alpha1\GetWorkspaceRequest;
 use Google\Area120\Tables\V1alpha1\ListRowsRequest;
 use Google\Area120\Tables\V1alpha1\ListRowsResponse;
 use Google\Area120\Tables\V1alpha1\ListTablesRequest;
 use Google\Area120\Tables\V1alpha1\ListTablesResponse;
+use Google\Area120\Tables\V1alpha1\ListWorkspacesRequest;
+use Google\Area120\Tables\V1alpha1\ListWorkspacesResponse;
 use Google\Area120\Tables\V1alpha1\Row;
 use Google\Area120\Tables\V1alpha1\Table;
 use Google\Area120\Tables\V1alpha1\UpdateRowRequest;
 use Google\Area120\Tables\V1alpha1\View;
+use Google\Area120\Tables\V1alpha1\Workspace;
 use Google\Auth\FetchAuthTokenInterface;
 use Google\Protobuf\FieldMask;
 use Google\Protobuf\GPBEmpty;
@@ -64,14 +69,18 @@ use Google\Protobuf\GPBEmpty;
  * - Each Table has a collection of [Row][google.area120.tables.v1alpha1.Row]
  *   resources, named `tables/&#42;/rows/*`
  *
+ * - The API has a collection of
+ *   [Workspace][google.area120.tables.v1alpha1.Workspace]
+ *   resources, named `workspaces/*`.
+ *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
  * ```
  * $tablesServiceClient = new TablesServiceClient();
  * try {
- *     $name = '';
- *     $response = $tablesServiceClient->getTable($name);
+ *     $formattedName = $tablesServiceClient->tableName('[TABLE]');
+ *     $response = $tablesServiceClient->getTable($formattedName);
  * } finally {
  *     $tablesServiceClient->close();
  * }
@@ -117,8 +126,11 @@ class TablesServiceGapicClient
         'https://www.googleapis.com/auth/drive.readonly',
         'https://www.googleapis.com/auth/spreadsheets',
         'https://www.googleapis.com/auth/spreadsheets.readonly',
+        'https://www.googleapis.com/auth/tables',
     ];
     private static $rowNameTemplate;
+    private static $tableNameTemplate;
+    private static $workspaceNameTemplate;
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
@@ -149,11 +161,31 @@ class TablesServiceGapicClient
         return self::$rowNameTemplate;
     }
 
+    private static function getTableNameTemplate()
+    {
+        if (null == self::$tableNameTemplate) {
+            self::$tableNameTemplate = new PathTemplate('tables/{table}');
+        }
+
+        return self::$tableNameTemplate;
+    }
+
+    private static function getWorkspaceNameTemplate()
+    {
+        if (null == self::$workspaceNameTemplate) {
+            self::$workspaceNameTemplate = new PathTemplate('workspaces/{workspace}');
+        }
+
+        return self::$workspaceNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'row' => self::getRowNameTemplate(),
+                'table' => self::getTableNameTemplate(),
+                'workspace' => self::getWorkspaceNameTemplate(),
             ];
         }
 
@@ -179,10 +211,44 @@ class TablesServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent
+     * a table resource.
+     *
+     * @param string $table
+     *
+     * @return string The formatted table resource.
+     * @experimental
+     */
+    public static function tableName($table)
+    {
+        return self::getTableNameTemplate()->render([
+            'table' => $table,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent
+     * a workspace resource.
+     *
+     * @param string $workspace
+     *
+     * @return string The formatted workspace resource.
+     * @experimental
+     */
+    public static function workspaceName($workspace)
+    {
+        return self::getWorkspaceNameTemplate()->render([
+            'workspace' => $workspace,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
-     * - row: tables/{table}/rows/{row}.
+     * - row: tables/{table}/rows/{row}
+     * - table: tables/{table}
+     * - workspace: workspaces/{workspace}.
      *
      * The optional $template argument can be supplied to specify a particular pattern, and must
      * match one of the templates listed above. If no $template argument is provided, or if the
@@ -284,8 +350,8 @@ class TablesServiceGapicClient
      * ```
      * $tablesServiceClient = new TablesServiceClient();
      * try {
-     *     $name = '';
-     *     $response = $tablesServiceClient->getTable($name);
+     *     $formattedName = $tablesServiceClient->tableName('[TABLE]');
+     *     $response = $tablesServiceClient->getTable($formattedName);
      * } finally {
      *     $tablesServiceClient->close();
      * }
@@ -399,14 +465,135 @@ class TablesServiceGapicClient
     }
 
     /**
+     * Gets a workspace. Returns NOT_FOUND if the workspace does not exist.
+     *
+     * Sample code:
+     * ```
+     * $tablesServiceClient = new TablesServiceClient();
+     * try {
+     *     $formattedName = $tablesServiceClient->workspaceName('[WORKSPACE]');
+     *     $response = $tablesServiceClient->getWorkspace($formattedName);
+     * } finally {
+     *     $tablesServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The name of the workspace to retrieve.
+     *                             Format: workspaces/{workspace}
+     * @param array  $optionalArgs {
+     *                             Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Area120\Tables\V1alpha1\Workspace
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function getWorkspace($name, array $optionalArgs = [])
+    {
+        $request = new GetWorkspaceRequest();
+        $request->setName($name);
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'name' => $request->getName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'GetWorkspace',
+            Workspace::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Lists workspaces for the user.
+     *
+     * Sample code:
+     * ```
+     * $tablesServiceClient = new TablesServiceClient();
+     * try {
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $tablesServiceClient->listWorkspaces();
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *
+     *
+     *     // Alternatively:
+     *
+     *     // Iterate through all elements
+     *     $pagedResponse = $tablesServiceClient->listWorkspaces();
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $tablesServiceClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *                            Optional.
+     *
+     *     @type int $pageSize
+     *          The maximum number of resources contained in the underlying API
+     *          response. The API may return fewer values in a page, even if
+     *          there are additional values to be retrieved.
+     *     @type string $pageToken
+     *          A page token is used to specify a page of values to be returned.
+     *          If no page token is specified (the default), the first page
+     *          of values will be returned. Any page token used here must have
+     *          been generated by a previous call to the API.
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function listWorkspaces(array $optionalArgs = [])
+    {
+        $request = new ListWorkspacesRequest();
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        return $this->getPagedListResponse(
+            'ListWorkspaces',
+            $optionalArgs,
+            ListWorkspacesResponse::class,
+            $request
+        );
+    }
+
+    /**
      * Gets a row. Returns NOT_FOUND if the row does not exist in the table.
      *
      * Sample code:
      * ```
      * $tablesServiceClient = new TablesServiceClient();
      * try {
-     *     $name = '';
-     *     $response = $tablesServiceClient->getRow($name);
+     *     $formattedName = $tablesServiceClient->rowName('[TABLE]', '[ROW]');
+     *     $response = $tablesServiceClient->getRow($formattedName);
      * } finally {
      *     $tablesServiceClient->close();
      * }
@@ -503,6 +690,10 @@ class TablesServiceGapicClient
      *          Optional. Column key to use for values in the row.
      *          Defaults to user entered name.
      *          For allowed values, use constants defined on {@see \Google\Area120\Tables\V1alpha1\View}
+     *     @type string $filter
+     *          Optional. Raw text query to search for in rows of the table.
+     *          Special characters must be escaped. Logical operators and field specific
+     *          filtering not supported.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -527,6 +718,9 @@ class TablesServiceGapicClient
         }
         if (isset($optionalArgs['view'])) {
             $request->setView($optionalArgs['view']);
+        }
+        if (isset($optionalArgs['filter'])) {
+            $request->setFilter($optionalArgs['filter']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([
@@ -822,6 +1016,61 @@ class TablesServiceGapicClient
 
         return $this->startCall(
             'DeleteRow',
+            GPBEmpty::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Deletes multiple rows.
+     *
+     * Sample code:
+     * ```
+     * $tablesServiceClient = new TablesServiceClient();
+     * try {
+     *     $formattedParent = $tablesServiceClient->tableName('[TABLE]');
+     *     $formattedNames = [];
+     *     $tablesServiceClient->batchDeleteRows($formattedParent, $formattedNames);
+     * } finally {
+     *     $tablesServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string   $parent       Required. The parent table shared by all rows being deleted.
+     *                               Format: tables/{table}
+     * @param string[] $names        Required. The names of the rows to delete. All rows must belong to the parent table
+     *                               or else the entire batch will fail. A maximum of 500 rows can be deleted
+     *                               in a batch.
+     *                               Format: tables/{table}/rows/{row}
+     * @param array    $optionalArgs {
+     *                               Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function batchDeleteRows($parent, $names, array $optionalArgs = [])
+    {
+        $request = new BatchDeleteRowsRequest();
+        $request->setParent($parent);
+        $request->setNames($names);
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'parent' => $request->getParent(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startCall(
+            'BatchDeleteRows',
             GPBEmpty::class,
             $optionalArgs,
             $request

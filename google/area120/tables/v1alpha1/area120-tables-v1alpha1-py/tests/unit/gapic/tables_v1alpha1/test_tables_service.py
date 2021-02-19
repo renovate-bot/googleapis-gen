@@ -835,6 +835,497 @@ async def test_list_tables_async_pages():
             assert page_.raw_page.next_page_token == token
 
 
+def test_get_workspace(transport: str = 'grpc', request_type=tables.GetWorkspaceRequest):
+    client = TablesServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_workspace),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = tables.Workspace(
+            name='name_value',
+
+            display_name='display_name_value',
+
+        )
+
+        response = client.get_workspace(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == tables.GetWorkspaceRequest()
+
+    # Establish that the response is the type that we expect.
+
+    assert isinstance(response, tables.Workspace)
+
+    assert response.name == 'name_value'
+
+    assert response.display_name == 'display_name_value'
+
+
+def test_get_workspace_from_dict():
+    test_get_workspace(request_type=dict)
+
+
+@pytest.mark.asyncio
+async def test_get_workspace_async(transport: str = 'grpc_asyncio', request_type=tables.GetWorkspaceRequest):
+    client = TablesServiceAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_workspace),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tables.Workspace(
+            name='name_value',
+            display_name='display_name_value',
+        ))
+
+        response = await client.get_workspace(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == tables.GetWorkspaceRequest()
+
+    # Establish that the response is the type that we expect.
+    assert isinstance(response, tables.Workspace)
+
+    assert response.name == 'name_value'
+
+    assert response.display_name == 'display_name_value'
+
+
+@pytest.mark.asyncio
+async def test_get_workspace_async_from_dict():
+    await test_get_workspace_async(request_type=dict)
+
+
+def test_get_workspace_field_headers():
+    client = TablesServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = tables.GetWorkspaceRequest()
+    request.name = 'name/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_workspace),
+            '__call__') as call:
+        call.return_value = tables.Workspace()
+
+        client.get_workspace(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'name=name/value',
+    ) in kw['metadata']
+
+
+@pytest.mark.asyncio
+async def test_get_workspace_field_headers_async():
+    client = TablesServiceAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = tables.GetWorkspaceRequest()
+    request.name = 'name/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_workspace),
+            '__call__') as call:
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tables.Workspace())
+
+        await client.get_workspace(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'name=name/value',
+    ) in kw['metadata']
+
+
+def test_get_workspace_flattened():
+    client = TablesServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_workspace),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = tables.Workspace()
+
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        client.get_workspace(
+            name='name_value',
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0].name == 'name_value'
+
+
+def test_get_workspace_flattened_error():
+    client = TablesServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        client.get_workspace(
+            tables.GetWorkspaceRequest(),
+            name='name_value',
+        )
+
+
+@pytest.mark.asyncio
+async def test_get_workspace_flattened_async():
+    client = TablesServiceAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_workspace),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = tables.Workspace()
+
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tables.Workspace())
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        response = await client.get_workspace(
+            name='name_value',
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0].name == 'name_value'
+
+
+@pytest.mark.asyncio
+async def test_get_workspace_flattened_error_async():
+    client = TablesServiceAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        await client.get_workspace(
+            tables.GetWorkspaceRequest(),
+            name='name_value',
+        )
+
+
+def test_list_workspaces(transport: str = 'grpc', request_type=tables.ListWorkspacesRequest):
+    client = TablesServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_workspaces),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = tables.ListWorkspacesResponse(
+            next_page_token='next_page_token_value',
+
+        )
+
+        response = client.list_workspaces(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == tables.ListWorkspacesRequest()
+
+    # Establish that the response is the type that we expect.
+
+    assert isinstance(response, pagers.ListWorkspacesPager)
+
+    assert response.next_page_token == 'next_page_token_value'
+
+
+def test_list_workspaces_from_dict():
+    test_list_workspaces(request_type=dict)
+
+
+@pytest.mark.asyncio
+async def test_list_workspaces_async(transport: str = 'grpc_asyncio', request_type=tables.ListWorkspacesRequest):
+    client = TablesServiceAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_workspaces),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(tables.ListWorkspacesResponse(
+            next_page_token='next_page_token_value',
+        ))
+
+        response = await client.list_workspaces(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == tables.ListWorkspacesRequest()
+
+    # Establish that the response is the type that we expect.
+    assert isinstance(response, pagers.ListWorkspacesAsyncPager)
+
+    assert response.next_page_token == 'next_page_token_value'
+
+
+@pytest.mark.asyncio
+async def test_list_workspaces_async_from_dict():
+    await test_list_workspaces_async(request_type=dict)
+
+
+def test_list_workspaces_pager():
+    client = TablesServiceClient(
+        credentials=credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_workspaces),
+            '__call__') as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            tables.ListWorkspacesResponse(
+                workspaces=[
+                    tables.Workspace(),
+                    tables.Workspace(),
+                    tables.Workspace(),
+                ],
+                next_page_token='abc',
+            ),
+            tables.ListWorkspacesResponse(
+                workspaces=[],
+                next_page_token='def',
+            ),
+            tables.ListWorkspacesResponse(
+                workspaces=[
+                    tables.Workspace(),
+                ],
+                next_page_token='ghi',
+            ),
+            tables.ListWorkspacesResponse(
+                workspaces=[
+                    tables.Workspace(),
+                    tables.Workspace(),
+                ],
+            ),
+            RuntimeError,
+        )
+
+        metadata = ()
+        pager = client.list_workspaces(request={})
+
+        assert pager._metadata == metadata
+
+        results = [i for i in pager]
+        assert len(results) == 6
+        assert all(isinstance(i, tables.Workspace)
+                   for i in results)
+
+def test_list_workspaces_pages():
+    client = TablesServiceClient(
+        credentials=credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_workspaces),
+            '__call__') as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            tables.ListWorkspacesResponse(
+                workspaces=[
+                    tables.Workspace(),
+                    tables.Workspace(),
+                    tables.Workspace(),
+                ],
+                next_page_token='abc',
+            ),
+            tables.ListWorkspacesResponse(
+                workspaces=[],
+                next_page_token='def',
+            ),
+            tables.ListWorkspacesResponse(
+                workspaces=[
+                    tables.Workspace(),
+                ],
+                next_page_token='ghi',
+            ),
+            tables.ListWorkspacesResponse(
+                workspaces=[
+                    tables.Workspace(),
+                    tables.Workspace(),
+                ],
+            ),
+            RuntimeError,
+        )
+        pages = list(client.list_workspaces(request={}).pages)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
+
+@pytest.mark.asyncio
+async def test_list_workspaces_async_pager():
+    client = TablesServiceAsyncClient(
+        credentials=credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_workspaces),
+            '__call__', new_callable=mock.AsyncMock) as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            tables.ListWorkspacesResponse(
+                workspaces=[
+                    tables.Workspace(),
+                    tables.Workspace(),
+                    tables.Workspace(),
+                ],
+                next_page_token='abc',
+            ),
+            tables.ListWorkspacesResponse(
+                workspaces=[],
+                next_page_token='def',
+            ),
+            tables.ListWorkspacesResponse(
+                workspaces=[
+                    tables.Workspace(),
+                ],
+                next_page_token='ghi',
+            ),
+            tables.ListWorkspacesResponse(
+                workspaces=[
+                    tables.Workspace(),
+                    tables.Workspace(),
+                ],
+            ),
+            RuntimeError,
+        )
+        async_pager = await client.list_workspaces(request={},)
+        assert async_pager.next_page_token == 'abc'
+        responses = []
+        async for response in async_pager:
+            responses.append(response)
+
+        assert len(responses) == 6
+        assert all(isinstance(i, tables.Workspace)
+                   for i in responses)
+
+@pytest.mark.asyncio
+async def test_list_workspaces_async_pages():
+    client = TablesServiceAsyncClient(
+        credentials=credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_workspaces),
+            '__call__', new_callable=mock.AsyncMock) as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            tables.ListWorkspacesResponse(
+                workspaces=[
+                    tables.Workspace(),
+                    tables.Workspace(),
+                    tables.Workspace(),
+                ],
+                next_page_token='abc',
+            ),
+            tables.ListWorkspacesResponse(
+                workspaces=[],
+                next_page_token='def',
+            ),
+            tables.ListWorkspacesResponse(
+                workspaces=[
+                    tables.Workspace(),
+                ],
+                next_page_token='ghi',
+            ),
+            tables.ListWorkspacesResponse(
+                workspaces=[
+                    tables.Workspace(),
+                    tables.Workspace(),
+                ],
+            ),
+            RuntimeError,
+        )
+        pages = []
+        async for page_ in (await client.list_workspaces(request={})).pages:
+            pages.append(page_)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
+
+
 def test_get_row(transport: str = 'grpc', request_type=tables.GetRowRequest):
     client = TablesServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -2416,6 +2907,137 @@ async def test_delete_row_flattened_error_async():
         )
 
 
+def test_batch_delete_rows(transport: str = 'grpc', request_type=tables.BatchDeleteRowsRequest):
+    client = TablesServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.batch_delete_rows),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = None
+
+        response = client.batch_delete_rows(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == tables.BatchDeleteRowsRequest()
+
+    # Establish that the response is the type that we expect.
+    assert response is None
+
+
+def test_batch_delete_rows_from_dict():
+    test_batch_delete_rows(request_type=dict)
+
+
+@pytest.mark.asyncio
+async def test_batch_delete_rows_async(transport: str = 'grpc_asyncio', request_type=tables.BatchDeleteRowsRequest):
+    client = TablesServiceAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.batch_delete_rows),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
+        response = await client.batch_delete_rows(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == tables.BatchDeleteRowsRequest()
+
+    # Establish that the response is the type that we expect.
+    assert response is None
+
+
+@pytest.mark.asyncio
+async def test_batch_delete_rows_async_from_dict():
+    await test_batch_delete_rows_async(request_type=dict)
+
+
+def test_batch_delete_rows_field_headers():
+    client = TablesServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = tables.BatchDeleteRowsRequest()
+    request.parent = 'parent/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.batch_delete_rows),
+            '__call__') as call:
+        call.return_value = None
+
+        client.batch_delete_rows(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'parent=parent/value',
+    ) in kw['metadata']
+
+
+@pytest.mark.asyncio
+async def test_batch_delete_rows_field_headers_async():
+    client = TablesServiceAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = tables.BatchDeleteRowsRequest()
+    request.parent = 'parent/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.batch_delete_rows),
+            '__call__') as call:
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
+        await client.batch_delete_rows(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'parent=parent/value',
+    ) in kw['metadata']
+
+
 def test_credentials_transport_error():
     # It is an error to provide credentials and a transport instance.
     transport = transports.TablesServiceGrpcTransport(
@@ -2517,6 +3139,8 @@ def test_tables_service_base_transport():
     methods = (
         'get_table',
         'list_tables',
+        'get_workspace',
+        'list_workspaces',
         'get_row',
         'list_rows',
         'create_row',
@@ -2524,6 +3148,7 @@ def test_tables_service_base_transport():
         'update_row',
         'batch_update_rows',
         'delete_row',
+        'batch_delete_rows',
         )
     for method in methods:
         with pytest.raises(NotImplementedError):
@@ -2545,6 +3170,7 @@ def test_tables_service_base_transport_with_credentials_file():
             'https://www.googleapis.com/auth/drive.readonly',
             'https://www.googleapis.com/auth/spreadsheets',
             'https://www.googleapis.com/auth/spreadsheets.readonly',
+            'https://www.googleapis.com/auth/tables',
             ),
             quota_project_id="octopus",
         )
@@ -2569,7 +3195,8 @@ def test_tables_service_auth_adc():
             'https://www.googleapis.com/auth/drive.file',
             'https://www.googleapis.com/auth/drive.readonly',
             'https://www.googleapis.com/auth/spreadsheets',
-            'https://www.googleapis.com/auth/spreadsheets.readonly',),
+            'https://www.googleapis.com/auth/spreadsheets.readonly',
+            'https://www.googleapis.com/auth/tables',),
             quota_project_id=None,
         )
 
@@ -2585,7 +3212,8 @@ def test_tables_service_transport_auth_adc():
             'https://www.googleapis.com/auth/drive.file',
             'https://www.googleapis.com/auth/drive.readonly',
             'https://www.googleapis.com/auth/spreadsheets',
-            'https://www.googleapis.com/auth/spreadsheets.readonly',),
+            'https://www.googleapis.com/auth/spreadsheets.readonly',
+            'https://www.googleapis.com/auth/tables',),
             quota_project_id="octopus",
         )
 
@@ -2614,6 +3242,7 @@ def test_tables_service_grpc_transport_client_cert_source_for_mtls(
                 'https://www.googleapis.com/auth/drive.readonly',
                 'https://www.googleapis.com/auth/spreadsheets',
                 'https://www.googleapis.com/auth/spreadsheets.readonly',
+                'https://www.googleapis.com/auth/tables',
             ),
             ssl_credentials=mock_ssl_channel_creds,
             quota_project_id=None,
@@ -2718,6 +3347,7 @@ def test_tables_service_transport_channel_mtls_with_client_cert_source(
                     'https://www.googleapis.com/auth/drive.readonly',
                     'https://www.googleapis.com/auth/spreadsheets',
                     'https://www.googleapis.com/auth/spreadsheets.readonly',
+                    'https://www.googleapis.com/auth/tables',
                 ),
                 ssl_credentials=mock_ssl_cred,
                 quota_project_id=None,
@@ -2765,6 +3395,7 @@ def test_tables_service_transport_channel_mtls_with_adc(
                     'https://www.googleapis.com/auth/drive.readonly',
                     'https://www.googleapis.com/auth/spreadsheets',
                     'https://www.googleapis.com/auth/spreadsheets.readonly',
+                    'https://www.googleapis.com/auth/tables',
                 ),
                 ssl_credentials=mock_ssl_cred,
                 quota_project_id=None,
@@ -2816,8 +3447,27 @@ def test_parse_table_path():
     actual = TablesServiceClient.parse_table_path(path)
     assert expected == actual
 
+def test_workspace_path():
+    workspace = "cuttlefish"
+
+    expected = "workspaces/{workspace}".format(workspace=workspace, )
+    actual = TablesServiceClient.workspace_path(workspace)
+    assert expected == actual
+
+
+def test_parse_workspace_path():
+    expected = {
+    "workspace": "mussel",
+
+    }
+    path = TablesServiceClient.workspace_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = TablesServiceClient.parse_workspace_path(path)
+    assert expected == actual
+
 def test_common_billing_account_path():
-    billing_account = "cuttlefish"
+    billing_account = "winkle"
 
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = TablesServiceClient.common_billing_account_path(billing_account)
@@ -2826,7 +3476,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "mussel",
+    "billing_account": "nautilus",
 
     }
     path = TablesServiceClient.common_billing_account_path(**expected)
@@ -2836,7 +3486,7 @@ def test_parse_common_billing_account_path():
     assert expected == actual
 
 def test_common_folder_path():
-    folder = "winkle"
+    folder = "scallop"
 
     expected = "folders/{folder}".format(folder=folder, )
     actual = TablesServiceClient.common_folder_path(folder)
@@ -2845,7 +3495,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "nautilus",
+    "folder": "abalone",
 
     }
     path = TablesServiceClient.common_folder_path(**expected)
@@ -2855,7 +3505,7 @@ def test_parse_common_folder_path():
     assert expected == actual
 
 def test_common_organization_path():
-    organization = "scallop"
+    organization = "squid"
 
     expected = "organizations/{organization}".format(organization=organization, )
     actual = TablesServiceClient.common_organization_path(organization)
@@ -2864,7 +3514,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "abalone",
+    "organization": "clam",
 
     }
     path = TablesServiceClient.common_organization_path(**expected)
@@ -2874,7 +3524,7 @@ def test_parse_common_organization_path():
     assert expected == actual
 
 def test_common_project_path():
-    project = "squid"
+    project = "whelk"
 
     expected = "projects/{project}".format(project=project, )
     actual = TablesServiceClient.common_project_path(project)
@@ -2883,7 +3533,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "clam",
+    "project": "octopus",
 
     }
     path = TablesServiceClient.common_project_path(**expected)
@@ -2893,8 +3543,8 @@ def test_parse_common_project_path():
     assert expected == actual
 
 def test_common_location_path():
-    project = "whelk"
-    location = "octopus"
+    project = "oyster"
+    location = "nudibranch"
 
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = TablesServiceClient.common_location_path(project, location)
@@ -2903,8 +3553,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "oyster",
-    "location": "nudibranch",
+    "project": "cuttlefish",
+    "location": "mussel",
 
     }
     path = TablesServiceClient.common_location_path(**expected)

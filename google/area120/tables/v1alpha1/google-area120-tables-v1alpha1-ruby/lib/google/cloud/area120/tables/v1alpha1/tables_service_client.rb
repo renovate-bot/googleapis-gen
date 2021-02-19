@@ -41,6 +41,10 @@ module Google
           # * Each Table has a collection of {Google::Area120::Tables::V1alpha1::Row Row}
           #   resources, named `tables/*/rows/*`
           #
+          # * The API has a collection of
+          #   {Google::Area120::Tables::V1alpha1::Workspace Workspace}
+          #   resources, named `workspaces/*`.
+          #
           # @!attribute [r] tables_service_stub
           #   @return [Google::Area120::Tables::V1alpha1::TablesService::Stub]
           class TablesServiceClient
@@ -62,6 +66,10 @@ module Google
                 "page_token",
                 "next_page_token",
                 "tables"),
+              "list_workspaces" => Google::Gax::PageDescriptor.new(
+                "page_token",
+                "next_page_token",
+                "workspaces"),
               "list_rows" => Google::Gax::PageDescriptor.new(
                 "page_token",
                 "next_page_token",
@@ -77,7 +85,8 @@ module Google
               "https://www.googleapis.com/auth/drive.file",
               "https://www.googleapis.com/auth/drive.readonly",
               "https://www.googleapis.com/auth/spreadsheets",
-              "https://www.googleapis.com/auth/spreadsheets.readonly"
+              "https://www.googleapis.com/auth/spreadsheets.readonly",
+              "https://www.googleapis.com/auth/tables"
             ].freeze
 
 
@@ -87,6 +96,18 @@ module Google
 
             private_constant :ROW_PATH_TEMPLATE
 
+            TABLE_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
+              "tables/{table}"
+            )
+
+            private_constant :TABLE_PATH_TEMPLATE
+
+            WORKSPACE_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
+              "workspaces/{workspace}"
+            )
+
+            private_constant :WORKSPACE_PATH_TEMPLATE
+
             # Returns a fully-qualified row resource name string.
             # @param table [String]
             # @param row [String]
@@ -95,6 +116,24 @@ module Google
               ROW_PATH_TEMPLATE.render(
                 :"table" => table,
                 :"row" => row
+              )
+            end
+
+            # Returns a fully-qualified table resource name string.
+            # @param table [String]
+            # @return [String]
+            def self.table_path table
+              TABLE_PATH_TEMPLATE.render(
+                :"table" => table
+              )
+            end
+
+            # Returns a fully-qualified workspace resource name string.
+            # @param workspace [String]
+            # @return [String]
+            def self.workspace_path workspace
+              WORKSPACE_PATH_TEMPLATE.render(
+                :"workspace" => workspace
               )
             end
 
@@ -217,6 +256,19 @@ module Google
                 defaults["list_tables"],
                 exception_transformer: exception_transformer
               )
+              @get_workspace = Google::Gax.create_api_call(
+                @tables_service_stub.method(:get_workspace),
+                defaults["get_workspace"],
+                exception_transformer: exception_transformer,
+                params_extractor: proc do |request|
+                  {'name' => request.name}
+                end
+              )
+              @list_workspaces = Google::Gax.create_api_call(
+                @tables_service_stub.method(:list_workspaces),
+                defaults["list_workspaces"],
+                exception_transformer: exception_transformer
+              )
               @get_row = Google::Gax.create_api_call(
                 @tables_service_stub.method(:get_row),
                 defaults["get_row"],
@@ -273,6 +325,14 @@ module Google
                   {'name' => request.name}
                 end
               )
+              @batch_delete_rows = Google::Gax.create_api_call(
+                @tables_service_stub.method(:batch_delete_rows),
+                defaults["batch_delete_rows"],
+                exception_transformer: exception_transformer,
+                params_extractor: proc do |request|
+                  {'parent' => request.parent}
+                end
+              )
             end
 
             # Service calls
@@ -294,10 +354,8 @@ module Google
             #   require "google/cloud/area120/tables"
             #
             #   tables_client = Google::Cloud::Area120::Tables.new(version: :v1alpha1)
-            #
-            #   # TODO: Initialize `name`:
-            #   name = ''
-            #   response = tables_client.get_table(name)
+            #   formatted_name = Google::Cloud::Area120::Tables::V1alpha1::TablesServiceClient.table_path("[TABLE]")
+            #   response = tables_client.get_table(formatted_name)
 
             def get_table \
                 name,
@@ -359,6 +417,86 @@ module Google
               @list_tables.call(req, options, &block)
             end
 
+            # Gets a workspace. Returns NOT_FOUND if the workspace does not exist.
+            #
+            # @param name [String]
+            #   Required. The name of the workspace to retrieve.
+            #   Format: workspaces/{workspace}
+            # @param options [Google::Gax::CallOptions]
+            #   Overrides the default settings for this call, e.g, timeout,
+            #   retries, etc.
+            # @yield [result, operation] Access the result along with the RPC operation
+            # @yieldparam result [Google::Area120::Tables::V1alpha1::Workspace]
+            # @yieldparam operation [GRPC::ActiveCall::Operation]
+            # @return [Google::Area120::Tables::V1alpha1::Workspace]
+            # @raise [Google::Gax::GaxError] if the RPC is aborted.
+            # @example
+            #   require "google/cloud/area120/tables"
+            #
+            #   tables_client = Google::Cloud::Area120::Tables.new(version: :v1alpha1)
+            #   formatted_name = Google::Cloud::Area120::Tables::V1alpha1::TablesServiceClient.workspace_path("[WORKSPACE]")
+            #   response = tables_client.get_workspace(formatted_name)
+
+            def get_workspace \
+                name,
+                options: nil,
+                &block
+              req = {
+                name: name
+              }.delete_if { |_, v| v.nil? }
+              req = Google::Gax::to_proto(req, Google::Area120::Tables::V1alpha1::GetWorkspaceRequest)
+              @get_workspace.call(req, options, &block)
+            end
+
+            # Lists workspaces for the user.
+            #
+            # @param page_size [Integer]
+            #   The maximum number of resources contained in the underlying API
+            #   response. If page streaming is performed per-resource, this
+            #   parameter does not affect the return value. If page streaming is
+            #   performed per-page, this determines the maximum number of
+            #   resources in a page.
+            # @param options [Google::Gax::CallOptions]
+            #   Overrides the default settings for this call, e.g, timeout,
+            #   retries, etc.
+            # @yield [result, operation] Access the result along with the RPC operation
+            # @yieldparam result [Google::Gax::PagedEnumerable<Google::Area120::Tables::V1alpha1::Workspace>]
+            # @yieldparam operation [GRPC::ActiveCall::Operation]
+            # @return [Google::Gax::PagedEnumerable<Google::Area120::Tables::V1alpha1::Workspace>]
+            #   An enumerable of Google::Area120::Tables::V1alpha1::Workspace instances.
+            #   See Google::Gax::PagedEnumerable documentation for other
+            #   operations such as per-page iteration or access to the response
+            #   object.
+            # @raise [Google::Gax::GaxError] if the RPC is aborted.
+            # @example
+            #   require "google/cloud/area120/tables"
+            #
+            #   tables_client = Google::Cloud::Area120::Tables.new(version: :v1alpha1)
+            #
+            #   # Iterate over all results.
+            #   tables_client.list_workspaces.each do |element|
+            #     # Process element.
+            #   end
+            #
+            #   # Or iterate over results one page at a time.
+            #   tables_client.list_workspaces.each_page do |page|
+            #     # Process each page at a time.
+            #     page.each do |element|
+            #       # Process element.
+            #     end
+            #   end
+
+            def list_workspaces \
+                page_size: nil,
+                options: nil,
+                &block
+              req = {
+                page_size: page_size
+              }.delete_if { |_, v| v.nil? }
+              req = Google::Gax::to_proto(req, Google::Area120::Tables::V1alpha1::ListWorkspacesRequest)
+              @list_workspaces.call(req, options, &block)
+            end
+
             # Gets a row. Returns NOT_FOUND if the row does not exist in the table.
             #
             # @param name [String]
@@ -379,10 +517,8 @@ module Google
             #   require "google/cloud/area120/tables"
             #
             #   tables_client = Google::Cloud::Area120::Tables.new(version: :v1alpha1)
-            #
-            #   # TODO: Initialize `name`:
-            #   name = ''
-            #   response = tables_client.get_row(name)
+            #   formatted_name = Google::Cloud::Area120::Tables::V1alpha1::TablesServiceClient.row_path("[TABLE]", "[ROW]")
+            #   response = tables_client.get_row(formatted_name)
 
             def get_row \
                 name,
@@ -411,6 +547,10 @@ module Google
             # @param view [Google::Area120::Tables::V1alpha1::View]
             #   Optional. Column key to use for values in the row.
             #   Defaults to user entered name.
+            # @param filter [String]
+            #   Optional. Raw text query to search for in rows of the table.
+            #   Special characters must be escaped. Logical operators and field specific
+            #   filtering not supported.
             # @param options [Google::Gax::CallOptions]
             #   Overrides the default settings for this call, e.g, timeout,
             #   retries, etc.
@@ -448,12 +588,14 @@ module Google
                 parent,
                 page_size: nil,
                 view: nil,
+                filter: nil,
                 options: nil,
                 &block
               req = {
                 parent: parent,
                 page_size: page_size,
-                view: view
+                view: view,
+                filter: filter
               }.delete_if { |_, v| v.nil? }
               req = Google::Gax::to_proto(req, Google::Area120::Tables::V1alpha1::ListRowsRequest)
               @list_rows.call(req, options, &block)
@@ -667,6 +809,47 @@ module Google
               }.delete_if { |_, v| v.nil? }
               req = Google::Gax::to_proto(req, Google::Area120::Tables::V1alpha1::DeleteRowRequest)
               @delete_row.call(req, options, &block)
+              nil
+            end
+
+            # Deletes multiple rows.
+            #
+            # @param parent [String]
+            #   Required. The parent table shared by all rows being deleted.
+            #   Format: tables/{table}
+            # @param names [Array<String>]
+            #   Required. The names of the rows to delete. All rows must belong to the parent table
+            #   or else the entire batch will fail. A maximum of 500 rows can be deleted
+            #   in a batch.
+            #   Format: tables/{table}/rows/{row}
+            # @param options [Google::Gax::CallOptions]
+            #   Overrides the default settings for this call, e.g, timeout,
+            #   retries, etc.
+            # @yield [result, operation] Access the result along with the RPC operation
+            # @yieldparam result []
+            # @yieldparam operation [GRPC::ActiveCall::Operation]
+            # @raise [Google::Gax::GaxError] if the RPC is aborted.
+            # @example
+            #   require "google/cloud/area120/tables"
+            #
+            #   tables_client = Google::Cloud::Area120::Tables.new(version: :v1alpha1)
+            #   formatted_parent = Google::Cloud::Area120::Tables::V1alpha1::TablesServiceClient.table_path("[TABLE]")
+            #
+            #   # TODO: Initialize `formatted_names`:
+            #   formatted_names = []
+            #   tables_client.batch_delete_rows(formatted_parent, formatted_names)
+
+            def batch_delete_rows \
+                parent,
+                names,
+                options: nil,
+                &block
+              req = {
+                parent: parent,
+                names: names
+              }.delete_if { |_, v| v.nil? }
+              req = Google::Gax::to_proto(req, Google::Area120::Tables::V1alpha1::BatchDeleteRowsRequest)
+              @batch_delete_rows.call(req, options, &block)
               nil
             end
           end

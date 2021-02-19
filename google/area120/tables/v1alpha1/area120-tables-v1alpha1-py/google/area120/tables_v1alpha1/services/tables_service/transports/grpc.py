@@ -46,6 +46,10 @@ class TablesServiceGrpcTransport(TablesServiceTransport):
        [Row][google.area120.tables.v1alpha1.Row] resources, named
        ``tables/*/rows/*``
 
+    -  The API has a collection of
+       [Workspace][google.area120.tables.v1alpha1.Workspace] resources,
+       named ``workspaces/*``.
+
     This class defines the same methods as the primary client, so the
     primary client can load the underlying transport implementation
     and call it.
@@ -298,6 +302,59 @@ class TablesServiceGrpcTransport(TablesServiceTransport):
         return self._stubs['list_tables']
 
     @property
+    def get_workspace(self) -> Callable[
+            [tables.GetWorkspaceRequest],
+            tables.Workspace]:
+        r"""Return a callable for the get workspace method over gRPC.
+
+        Gets a workspace. Returns NOT_FOUND if the workspace does not
+        exist.
+
+        Returns:
+            Callable[[~.GetWorkspaceRequest],
+                    ~.Workspace]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'get_workspace' not in self._stubs:
+            self._stubs['get_workspace'] = self.grpc_channel.unary_unary(
+                '/google.area120.tables.v1alpha1.TablesService/GetWorkspace',
+                request_serializer=tables.GetWorkspaceRequest.serialize,
+                response_deserializer=tables.Workspace.deserialize,
+            )
+        return self._stubs['get_workspace']
+
+    @property
+    def list_workspaces(self) -> Callable[
+            [tables.ListWorkspacesRequest],
+            tables.ListWorkspacesResponse]:
+        r"""Return a callable for the list workspaces method over gRPC.
+
+        Lists workspaces for the user.
+
+        Returns:
+            Callable[[~.ListWorkspacesRequest],
+                    ~.ListWorkspacesResponse]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'list_workspaces' not in self._stubs:
+            self._stubs['list_workspaces'] = self.grpc_channel.unary_unary(
+                '/google.area120.tables.v1alpha1.TablesService/ListWorkspaces',
+                request_serializer=tables.ListWorkspacesRequest.serialize,
+                response_deserializer=tables.ListWorkspacesResponse.deserialize,
+            )
+        return self._stubs['list_workspaces']
+
+    @property
     def get_row(self) -> Callable[
             [tables.GetRowRequest],
             tables.Row]:
@@ -480,6 +537,32 @@ class TablesServiceGrpcTransport(TablesServiceTransport):
                 response_deserializer=empty.Empty.FromString,
             )
         return self._stubs['delete_row']
+
+    @property
+    def batch_delete_rows(self) -> Callable[
+            [tables.BatchDeleteRowsRequest],
+            empty.Empty]:
+        r"""Return a callable for the batch delete rows method over gRPC.
+
+        Deletes multiple rows.
+
+        Returns:
+            Callable[[~.BatchDeleteRowsRequest],
+                    ~.Empty]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'batch_delete_rows' not in self._stubs:
+            self._stubs['batch_delete_rows'] = self.grpc_channel.unary_unary(
+                '/google.area120.tables.v1alpha1.TablesService/BatchDeleteRows',
+                request_serializer=tables.BatchDeleteRowsRequest.serialize,
+                response_deserializer=empty.Empty.FromString,
+            )
+        return self._stubs['batch_delete_rows']
 
 
 __all__ = (

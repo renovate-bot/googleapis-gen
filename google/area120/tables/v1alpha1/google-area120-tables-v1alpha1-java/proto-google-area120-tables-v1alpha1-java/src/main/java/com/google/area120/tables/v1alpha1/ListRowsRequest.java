@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     parent_ = "";
     pageToken_ = "";
     view_ = 0;
+    filter_ = "";
   }
 
   @java.lang.Override
@@ -76,6 +77,12 @@ private static final long serialVersionUID = 0L;
             int rawValue = input.readEnum();
 
             view_ = rawValue;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            filter_ = s;
             break;
           }
           default: {
@@ -257,6 +264,56 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.google.area120.tables.v1alpha1.View.UNRECOGNIZED : result;
   }
 
+  public static final int FILTER_FIELD_NUMBER = 5;
+  private volatile java.lang.Object filter_;
+  /**
+   * <pre>
+   * Optional. Raw text query to search for in rows of the table.
+   * Special characters must be escaped. Logical operators and field specific
+   * filtering not supported.
+   * </pre>
+   *
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The filter.
+   */
+  @java.lang.Override
+  public java.lang.String getFilter() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      filter_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Optional. Raw text query to search for in rows of the table.
+   * Special characters must be escaped. Logical operators and field specific
+   * filtering not supported.
+   * </pre>
+   *
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for filter.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getFilterBytes() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      filter_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -283,6 +340,9 @@ private static final long serialVersionUID = 0L;
     if (view_ != com.google.area120.tables.v1alpha1.View.VIEW_UNSPECIFIED.getNumber()) {
       output.writeEnum(4, view_);
     }
+    if (!getFilterBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, filter_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -306,6 +366,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(4, view_);
     }
+    if (!getFilterBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, filter_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -328,6 +391,8 @@ private static final long serialVersionUID = 0L;
     if (!getPageToken()
         .equals(other.getPageToken())) return false;
     if (view_ != other.view_) return false;
+    if (!getFilter()
+        .equals(other.getFilter())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -347,6 +412,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPageToken().hashCode();
     hash = (37 * hash) + VIEW_FIELD_NUMBER;
     hash = (53 * hash) + view_;
+    hash = (37 * hash) + FILTER_FIELD_NUMBER;
+    hash = (53 * hash) + getFilter().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -492,6 +559,8 @@ private static final long serialVersionUID = 0L;
 
       view_ = 0;
 
+      filter_ = "";
+
       return this;
     }
 
@@ -522,6 +591,7 @@ private static final long serialVersionUID = 0L;
       result.pageSize_ = pageSize_;
       result.pageToken_ = pageToken_;
       result.view_ = view_;
+      result.filter_ = filter_;
       onBuilt();
       return result;
     }
@@ -583,6 +653,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.view_ != 0) {
         setViewValue(other.getViewValue());
+      }
+      if (!other.getFilter().isEmpty()) {
+        filter_ = other.filter_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -952,6 +1026,112 @@ private static final long serialVersionUID = 0L;
     public Builder clearView() {
       
       view_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object filter_ = "";
+    /**
+     * <pre>
+     * Optional. Raw text query to search for in rows of the table.
+     * Special characters must be escaped. Logical operators and field specific
+     * filtering not supported.
+     * </pre>
+     *
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The filter.
+     */
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Raw text query to search for in rows of the table.
+     * Special characters must be escaped. Logical operators and field specific
+     * filtering not supported.
+     * </pre>
+     *
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for filter.
+     */
+    public com.google.protobuf.ByteString
+        getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Raw text query to search for in rows of the table.
+     * Special characters must be escaped. Logical operators and field specific
+     * filtering not supported.
+     * </pre>
+     *
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilter(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      filter_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Raw text query to search for in rows of the table.
+     * Special characters must be escaped. Logical operators and field specific
+     * filtering not supported.
+     * </pre>
+     *
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearFilter() {
+      
+      filter_ = getDefaultInstance().getFilter();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Raw text query to search for in rows of the table.
+     * Special characters must be escaped. Logical operators and field specific
+     * filtering not supported.
+     * </pre>
+     *
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilterBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      filter_ = value;
       onChanged();
       return this;
     }

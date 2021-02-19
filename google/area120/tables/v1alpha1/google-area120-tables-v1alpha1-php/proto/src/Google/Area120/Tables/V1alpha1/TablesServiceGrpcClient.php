@@ -2,7 +2,7 @@
 // GENERATED CODE -- DO NOT EDIT!
 
 // Original file comments:
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -27,6 +27,10 @@ namespace Google\Area120\Tables\V1alpha1;
  *
  * - Each Table has a collection of [Row][google.area120.tables.v1alpha1.Row]
  *   resources, named `tables/&#42;/rows/*`
+ *
+ * - The API has a collection of
+ *   [Workspace][google.area120.tables.v1alpha1.Workspace]
+ *   resources, named `workspaces/*`.
  */
 class TablesServiceGrpcClient extends \Grpc\BaseStub {
 
@@ -66,6 +70,36 @@ class TablesServiceGrpcClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/google.area120.tables.v1alpha1.TablesService/ListTables',
         $argument,
         ['\Google\Area120\Tables\V1alpha1\ListTablesResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Gets a workspace. Returns NOT_FOUND if the workspace does not exist.
+     * @param \Google\Area120\Tables\V1alpha1\GetWorkspaceRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetWorkspace(\Google\Area120\Tables\V1alpha1\GetWorkspaceRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.area120.tables.v1alpha1.TablesService/GetWorkspace',
+        $argument,
+        ['\Google\Area120\Tables\V1alpha1\Workspace', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Lists workspaces for the user.
+     * @param \Google\Area120\Tables\V1alpha1\ListWorkspacesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListWorkspaces(\Google\Area120\Tables\V1alpha1\ListWorkspacesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.area120.tables.v1alpha1.TablesService/ListWorkspaces',
+        $argument,
+        ['\Google\Area120\Tables\V1alpha1\ListWorkspacesResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -169,6 +203,21 @@ class TablesServiceGrpcClient extends \Grpc\BaseStub {
     public function DeleteRow(\Google\Area120\Tables\V1alpha1\DeleteRowRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.area120.tables.v1alpha1.TablesService/DeleteRow',
+        $argument,
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Deletes multiple rows.
+     * @param \Google\Area120\Tables\V1alpha1\BatchDeleteRowsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function BatchDeleteRows(\Google\Area120\Tables\V1alpha1\BatchDeleteRowsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.area120.tables.v1alpha1.TablesService/BatchDeleteRows',
         $argument,
         ['\Google\Protobuf\GPBEmpty', 'decode'],
         $metadata, $options);

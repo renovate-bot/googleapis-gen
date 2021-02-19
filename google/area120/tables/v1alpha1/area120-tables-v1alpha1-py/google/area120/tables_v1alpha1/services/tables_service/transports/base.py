@@ -47,6 +47,7 @@ class TablesServiceTransport(abc.ABC):
         'https://www.googleapis.com/auth/drive.readonly',
         'https://www.googleapis.com/auth/spreadsheets',
         'https://www.googleapis.com/auth/spreadsheets.readonly',
+        'https://www.googleapis.com/auth/tables',
     )
 
     def __init__(
@@ -119,6 +120,16 @@ class TablesServiceTransport(abc.ABC):
                 default_timeout=60.0,
                 client_info=client_info,
             ),
+            self.get_workspace: gapic_v1.method.wrap_method(
+                self.get_workspace,
+                default_timeout=60.0,
+                client_info=client_info,
+            ),
+            self.list_workspaces: gapic_v1.method.wrap_method(
+                self.list_workspaces,
+                default_timeout=60.0,
+                client_info=client_info,
+            ),
             self.get_row: gapic_v1.method.wrap_method(
                 self.get_row,
                 default_timeout=60.0,
@@ -154,6 +165,11 @@ class TablesServiceTransport(abc.ABC):
                 default_timeout=60.0,
                 client_info=client_info,
             ),
+            self.batch_delete_rows: gapic_v1.method.wrap_method(
+                self.batch_delete_rows,
+                default_timeout=60.0,
+                client_info=client_info,
+            ),
 
         }
 
@@ -172,6 +188,24 @@ class TablesServiceTransport(abc.ABC):
             typing.Union[
                 tables.ListTablesResponse,
                 typing.Awaitable[tables.ListTablesResponse]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def get_workspace(self) -> typing.Callable[
+            [tables.GetWorkspaceRequest],
+            typing.Union[
+                tables.Workspace,
+                typing.Awaitable[tables.Workspace]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def list_workspaces(self) -> typing.Callable[
+            [tables.ListWorkspacesRequest],
+            typing.Union[
+                tables.ListWorkspacesResponse,
+                typing.Awaitable[tables.ListWorkspacesResponse]
             ]]:
         raise NotImplementedError()
 
@@ -232,6 +266,15 @@ class TablesServiceTransport(abc.ABC):
     @property
     def delete_row(self) -> typing.Callable[
             [tables.DeleteRowRequest],
+            typing.Union[
+                empty.Empty,
+                typing.Awaitable[empty.Empty]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def batch_delete_rows(self) -> typing.Callable[
+            [tables.BatchDeleteRowsRequest],
             typing.Union[
                 empty.Empty,
                 typing.Awaitable[empty.Empty]

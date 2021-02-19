@@ -18,6 +18,21 @@ return [
                 'method' => 'get',
                 'uriTemplate' => '/v1alpha1/tables',
             ],
+            'GetWorkspace' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1alpha1/{name=workspaces/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'ListWorkspaces' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1alpha1/workspaces',
+            ],
             'GetRow' => [
                 'method' => 'get',
                 'uriTemplate' => '/v1alpha1/{name=tables/*/rows/*}',
@@ -96,6 +111,18 @@ return [
                     'name' => [
                         'getters' => [
                             'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'BatchDeleteRows' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1alpha1/{parent=tables/*}/rows:batchDelete',
+                'body' => '*',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
                         ],
                     ],
                 ],

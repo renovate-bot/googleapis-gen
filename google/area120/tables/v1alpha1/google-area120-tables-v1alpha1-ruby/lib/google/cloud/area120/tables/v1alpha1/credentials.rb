@@ -25,7 +25,8 @@ module Google
               "https://www.googleapis.com/auth/drive.file",
               "https://www.googleapis.com/auth/drive.readonly",
               "https://www.googleapis.com/auth/spreadsheets",
-              "https://www.googleapis.com/auth/spreadsheets.readonly"
+              "https://www.googleapis.com/auth/spreadsheets.readonly",
+              "https://www.googleapis.com/auth/tables"
             ].freeze
             PATH_ENV_VARS = %w(AREA120_TABLES_CREDENTIALS
                                AREA120_TABLES_KEYFILE

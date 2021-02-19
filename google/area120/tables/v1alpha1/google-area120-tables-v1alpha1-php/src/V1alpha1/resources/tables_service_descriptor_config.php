@@ -13,6 +13,16 @@ return [
                     'resourcesGetMethod' => 'getTables',
                 ],
             ],
+            'ListWorkspaces' => [
+                'pageStreaming' => [
+                    'requestPageTokenGetMethod' => 'getPageToken',
+                    'requestPageTokenSetMethod' => 'setPageToken',
+                    'requestPageSizeGetMethod' => 'getPageSize',
+                    'requestPageSizeSetMethod' => 'setPageSize',
+                    'responsePageTokenGetMethod' => 'getNextPageToken',
+                    'resourcesGetMethod' => 'getWorkspaces',
+                ],
+            ],
             'ListRows' => [
                 'pageStreaming' => [
                     'requestPageTokenGetMethod' => 'getPageToken',
