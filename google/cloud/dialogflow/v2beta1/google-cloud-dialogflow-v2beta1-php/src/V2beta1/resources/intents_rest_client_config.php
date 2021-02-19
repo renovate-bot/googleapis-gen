@@ -11,6 +11,10 @@ return [
                         'method' => 'get',
                         'uriTemplate' => '/v2beta1/{parent=projects/*/locations/*/agent}/intents',
                     ],
+                    [
+                        'method' => 'get',
+                        'uriTemplate' => '/v2beta1/{parent=projects/*/agent/environments/*}/intents',
+                    ],
                 ],
                 'placeholders' => [
                     'parent' => [

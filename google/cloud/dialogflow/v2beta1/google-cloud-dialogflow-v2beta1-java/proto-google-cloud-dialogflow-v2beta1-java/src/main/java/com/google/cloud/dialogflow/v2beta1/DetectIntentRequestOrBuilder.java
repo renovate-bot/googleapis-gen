@@ -19,7 +19,8 @@ public interface DetectIntentRequestOrBuilder extends
    *   ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
    *   ID&gt;`,
    * If `Location ID` is not specified we assume default 'us' location. If
-   * `Environment ID` is not specified, we assume default 'draft' environment.
+   * `Environment ID` is not specified, we assume default 'draft' environment
+   * (`Environment ID` might be referred to as environment name at some places).
    * If `User ID` is not specified, we are using "-". It's up to the API caller
    * to choose an appropriate `Session ID` and `User Id`. They can be a random
    * number or some type of user and session identifiers (preferably hashed).
@@ -47,7 +48,8 @@ public interface DetectIntentRequestOrBuilder extends
    *   ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
    *   ID&gt;`,
    * If `Location ID` is not specified we assume default 'us' location. If
-   * `Environment ID` is not specified, we assume default 'draft' environment.
+   * `Environment ID` is not specified, we assume default 'draft' environment
+   * (`Environment ID` might be referred to as environment name at some places).
    * If `User ID` is not specified, we are using "-". It's up to the API caller
    * to choose an appropriate `Session ID` and `User Id`. They can be a random
    * number or some type of user and session identifiers (preferably hashed).
