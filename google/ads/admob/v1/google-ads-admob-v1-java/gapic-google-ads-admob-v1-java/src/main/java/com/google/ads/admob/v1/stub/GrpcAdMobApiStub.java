@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,19 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.ads.admob.v1.stub;
 
 import static com.google.ads.admob.v1.AdMobApiClient.ListPublisherAccountsPagedResponse;
 
-import com.google.ads.admob.v1.AdMobApiProto.GenerateMediationReportRequest;
-import com.google.ads.admob.v1.AdMobApiProto.GenerateMediationReportResponse;
-import com.google.ads.admob.v1.AdMobApiProto.GenerateNetworkReportRequest;
-import com.google.ads.admob.v1.AdMobApiProto.GenerateNetworkReportResponse;
-import com.google.ads.admob.v1.AdMobApiProto.GetPublisherAccountRequest;
-import com.google.ads.admob.v1.AdMobApiProto.ListPublisherAccountsRequest;
-import com.google.ads.admob.v1.AdMobApiProto.ListPublisherAccountsResponse;
-import com.google.ads.admob.v1.AdMobResourcesProto.PublisherAccount;
-import com.google.api.core.BetaApi;
+import com.google.ads.admob.v1.AdMobApiProto;
+import com.google.ads.admob.v1.AdMobResourcesProto;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -35,6 +29,7 @@ import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -42,72 +37,100 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for AdMob API.
+ * gRPC stub implementation for the AdMobApi service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcAdMobApiStub extends AdMobApiStub {
-
-  private static final MethodDescriptor<GetPublisherAccountRequest, PublisherAccount>
+  private static final MethodDescriptor<
+          AdMobApiProto.GetPublisherAccountRequest, AdMobResourcesProto.PublisherAccount>
       getPublisherAccountMethodDescriptor =
-          MethodDescriptor.<GetPublisherAccountRequest, PublisherAccount>newBuilder()
+          MethodDescriptor
+              .<AdMobApiProto.GetPublisherAccountRequest, AdMobResourcesProto.PublisherAccount>
+                  newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName("google.ads.admob.v1.AdMobApi/GetPublisherAccount")
               .setRequestMarshaller(
-                  ProtoUtils.marshaller(GetPublisherAccountRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(PublisherAccount.getDefaultInstance()))
+                  ProtoUtils.marshaller(
+                      AdMobApiProto.GetPublisherAccountRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AdMobResourcesProto.PublisherAccount.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<ListPublisherAccountsRequest, ListPublisherAccountsResponse>
+
+  private static final MethodDescriptor<
+          AdMobApiProto.ListPublisherAccountsRequest, AdMobApiProto.ListPublisherAccountsResponse>
       listPublisherAccountsMethodDescriptor =
-          MethodDescriptor.<ListPublisherAccountsRequest, ListPublisherAccountsResponse>newBuilder()
+          MethodDescriptor
+              .<AdMobApiProto.ListPublisherAccountsRequest,
+                  AdMobApiProto.ListPublisherAccountsResponse>
+                  newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName("google.ads.admob.v1.AdMobApi/ListPublisherAccounts")
               .setRequestMarshaller(
-                  ProtoUtils.marshaller(ListPublisherAccountsRequest.getDefaultInstance()))
+                  ProtoUtils.marshaller(
+                      AdMobApiProto.ListPublisherAccountsRequest.getDefaultInstance()))
               .setResponseMarshaller(
-                  ProtoUtils.marshaller(ListPublisherAccountsResponse.getDefaultInstance()))
+                  ProtoUtils.marshaller(
+                      AdMobApiProto.ListPublisherAccountsResponse.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<GenerateNetworkReportRequest, GenerateNetworkReportResponse>
+
+  private static final MethodDescriptor<
+          AdMobApiProto.GenerateNetworkReportRequest, AdMobApiProto.GenerateNetworkReportResponse>
       generateNetworkReportMethodDescriptor =
-          MethodDescriptor.<GenerateNetworkReportRequest, GenerateNetworkReportResponse>newBuilder()
+          MethodDescriptor
+              .<AdMobApiProto.GenerateNetworkReportRequest,
+                  AdMobApiProto.GenerateNetworkReportResponse>
+                  newBuilder()
               .setType(MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName("google.ads.admob.v1.AdMobApi/GenerateNetworkReport")
               .setRequestMarshaller(
-                  ProtoUtils.marshaller(GenerateNetworkReportRequest.getDefaultInstance()))
+                  ProtoUtils.marshaller(
+                      AdMobApiProto.GenerateNetworkReportRequest.getDefaultInstance()))
               .setResponseMarshaller(
-                  ProtoUtils.marshaller(GenerateNetworkReportResponse.getDefaultInstance()))
+                  ProtoUtils.marshaller(
+                      AdMobApiProto.GenerateNetworkReportResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
-          GenerateMediationReportRequest, GenerateMediationReportResponse>
+          AdMobApiProto.GenerateMediationReportRequest,
+          AdMobApiProto.GenerateMediationReportResponse>
       generateMediationReportMethodDescriptor =
           MethodDescriptor
-              .<GenerateMediationReportRequest, GenerateMediationReportResponse>newBuilder()
+              .<AdMobApiProto.GenerateMediationReportRequest,
+                  AdMobApiProto.GenerateMediationReportResponse>
+                  newBuilder()
               .setType(MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName("google.ads.admob.v1.AdMobApi/GenerateMediationReport")
               .setRequestMarshaller(
-                  ProtoUtils.marshaller(GenerateMediationReportRequest.getDefaultInstance()))
+                  ProtoUtils.marshaller(
+                      AdMobApiProto.GenerateMediationReportRequest.getDefaultInstance()))
               .setResponseMarshaller(
-                  ProtoUtils.marshaller(GenerateMediationReportResponse.getDefaultInstance()))
+                  ProtoUtils.marshaller(
+                      AdMobApiProto.GenerateMediationReportResponse.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
-
-  private final UnaryCallable<GetPublisherAccountRequest, PublisherAccount>
+  private final UnaryCallable<
+          AdMobApiProto.GetPublisherAccountRequest, AdMobResourcesProto.PublisherAccount>
       getPublisherAccountCallable;
-  private final UnaryCallable<ListPublisherAccountsRequest, ListPublisherAccountsResponse>
+  private final UnaryCallable<
+          AdMobApiProto.ListPublisherAccountsRequest, AdMobApiProto.ListPublisherAccountsResponse>
       listPublisherAccountsCallable;
-  private final UnaryCallable<ListPublisherAccountsRequest, ListPublisherAccountsPagedResponse>
+  private final UnaryCallable<
+          AdMobApiProto.ListPublisherAccountsRequest, ListPublisherAccountsPagedResponse>
       listPublisherAccountsPagedCallable;
-  private final ServerStreamingCallable<GenerateNetworkReportRequest, GenerateNetworkReportResponse>
+  private final ServerStreamingCallable<
+          AdMobApiProto.GenerateNetworkReportRequest, AdMobApiProto.GenerateNetworkReportResponse>
       generateNetworkReportCallable;
   private final ServerStreamingCallable<
-          GenerateMediationReportRequest, GenerateMediationReportResponse>
+          AdMobApiProto.GenerateMediationReportRequest,
+          AdMobApiProto.GenerateMediationReportResponse>
       generateMediationReportCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcAdMobApiStub create(AdMobApiStubSettings settings) throws IOException {
@@ -143,51 +166,67 @@ public class GrpcAdMobApiStub extends AdMobApiStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
-    GrpcCallSettings<GetPublisherAccountRequest, PublisherAccount>
+    GrpcCallSettings<AdMobApiProto.GetPublisherAccountRequest, AdMobResourcesProto.PublisherAccount>
         getPublisherAccountTransportSettings =
-            GrpcCallSettings.<GetPublisherAccountRequest, PublisherAccount>newBuilder()
+            GrpcCallSettings
+                .<AdMobApiProto.GetPublisherAccountRequest, AdMobResourcesProto.PublisherAccount>
+                    newBuilder()
                 .setMethodDescriptor(getPublisherAccountMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetPublisherAccountRequest>() {
+                    new RequestParamsExtractor<AdMobApiProto.GetPublisherAccountRequest>() {
                       @Override
-                      public Map<String, String> extract(GetPublisherAccountRequest request) {
+                      public Map<String, String> extract(
+                          AdMobApiProto.GetPublisherAccountRequest request) {
                         ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                         params.put("name", String.valueOf(request.getName()));
                         return params.build();
                       }
                     })
                 .build();
-    GrpcCallSettings<ListPublisherAccountsRequest, ListPublisherAccountsResponse>
+    GrpcCallSettings<
+            AdMobApiProto.ListPublisherAccountsRequest, AdMobApiProto.ListPublisherAccountsResponse>
         listPublisherAccountsTransportSettings =
             GrpcCallSettings
-                .<ListPublisherAccountsRequest, ListPublisherAccountsResponse>newBuilder()
+                .<AdMobApiProto.ListPublisherAccountsRequest,
+                    AdMobApiProto.ListPublisherAccountsResponse>
+                    newBuilder()
                 .setMethodDescriptor(listPublisherAccountsMethodDescriptor)
                 .build();
-    GrpcCallSettings<GenerateNetworkReportRequest, GenerateNetworkReportResponse>
+    GrpcCallSettings<
+            AdMobApiProto.GenerateNetworkReportRequest, AdMobApiProto.GenerateNetworkReportResponse>
         generateNetworkReportTransportSettings =
             GrpcCallSettings
-                .<GenerateNetworkReportRequest, GenerateNetworkReportResponse>newBuilder()
+                .<AdMobApiProto.GenerateNetworkReportRequest,
+                    AdMobApiProto.GenerateNetworkReportResponse>
+                    newBuilder()
                 .setMethodDescriptor(generateNetworkReportMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GenerateNetworkReportRequest>() {
+                    new RequestParamsExtractor<AdMobApiProto.GenerateNetworkReportRequest>() {
                       @Override
-                      public Map<String, String> extract(GenerateNetworkReportRequest request) {
+                      public Map<String, String> extract(
+                          AdMobApiProto.GenerateNetworkReportRequest request) {
                         ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                         params.put("parent", String.valueOf(request.getParent()));
                         return params.build();
                       }
                     })
                 .build();
-    GrpcCallSettings<GenerateMediationReportRequest, GenerateMediationReportResponse>
+    GrpcCallSettings<
+            AdMobApiProto.GenerateMediationReportRequest,
+            AdMobApiProto.GenerateMediationReportResponse>
         generateMediationReportTransportSettings =
             GrpcCallSettings
-                .<GenerateMediationReportRequest, GenerateMediationReportResponse>newBuilder()
+                .<AdMobApiProto.GenerateMediationReportRequest,
+                    AdMobApiProto.GenerateMediationReportResponse>
+                    newBuilder()
                 .setMethodDescriptor(generateMediationReportMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GenerateMediationReportRequest>() {
+                    new RequestParamsExtractor<AdMobApiProto.GenerateMediationReportRequest>() {
                       @Override
-                      public Map<String, String> extract(GenerateMediationReportRequest request) {
+                      public Map<String, String> extract(
+                          AdMobApiProto.GenerateMediationReportRequest request) {
                         ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                         params.put("parent", String.valueOf(request.getParent()));
                         return params.build();
@@ -221,29 +260,46 @@ public class GrpcAdMobApiStub extends AdMobApiStub {
             settings.generateMediationReportSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<GetPublisherAccountRequest, PublisherAccount> getPublisherAccountCallable() {
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
+  }
+
+  @Override
+  public UnaryCallable<
+          AdMobApiProto.GetPublisherAccountRequest, AdMobResourcesProto.PublisherAccount>
+      getPublisherAccountCallable() {
     return getPublisherAccountCallable;
   }
 
-  public UnaryCallable<ListPublisherAccountsRequest, ListPublisherAccountsPagedResponse>
-      listPublisherAccountsPagedCallable() {
-    return listPublisherAccountsPagedCallable;
-  }
-
-  public UnaryCallable<ListPublisherAccountsRequest, ListPublisherAccountsResponse>
+  @Override
+  public UnaryCallable<
+          AdMobApiProto.ListPublisherAccountsRequest, AdMobApiProto.ListPublisherAccountsResponse>
       listPublisherAccountsCallable() {
     return listPublisherAccountsCallable;
   }
 
-  public ServerStreamingCallable<GenerateNetworkReportRequest, GenerateNetworkReportResponse>
+  @Override
+  public UnaryCallable<
+          AdMobApiProto.ListPublisherAccountsRequest, ListPublisherAccountsPagedResponse>
+      listPublisherAccountsPagedCallable() {
+    return listPublisherAccountsPagedCallable;
+  }
+
+  @Override
+  public ServerStreamingCallable<
+          AdMobApiProto.GenerateNetworkReportRequest, AdMobApiProto.GenerateNetworkReportResponse>
       generateNetworkReportCallable() {
     return generateNetworkReportCallable;
   }
 
-  public ServerStreamingCallable<GenerateMediationReportRequest, GenerateMediationReportResponse>
+  @Override
+  public ServerStreamingCallable<
+          AdMobApiProto.GenerateMediationReportRequest,
+          AdMobApiProto.GenerateMediationReportResponse>
       generateMediationReportCallable() {
     return generateMediationReportCallable;
   }

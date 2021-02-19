@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,18 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.ads.admob.v1;
 
 import static com.google.ads.admob.v1.AdMobApiClient.ListPublisherAccountsPagedResponse;
 
-import com.google.ads.admob.v1.AdMobApiProto.GenerateMediationReportRequest;
-import com.google.ads.admob.v1.AdMobApiProto.GenerateMediationReportResponse;
-import com.google.ads.admob.v1.AdMobApiProto.GenerateNetworkReportRequest;
-import com.google.ads.admob.v1.AdMobApiProto.GenerateNetworkReportResponse;
-import com.google.ads.admob.v1.AdMobApiProto.GetPublisherAccountRequest;
-import com.google.ads.admob.v1.AdMobApiProto.ListPublisherAccountsRequest;
-import com.google.ads.admob.v1.AdMobApiProto.ListPublisherAccountsResponse;
-import com.google.ads.admob.v1.AdMobResourcesProto.PublisherAccount;
 import com.google.ads.admob.v1.stub.AdMobApiStubSettings;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -36,13 +29,14 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
+import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link AdMobApiClient}.
  *
@@ -59,47 +53,50 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of getPublisherAccount to 30 seconds:
  *
- * <pre>
- * <code>
- * AdMobApiSettings.Builder adMobApiSettingsBuilder =
- *     AdMobApiSettings.newBuilder();
+ * <pre>{@code
+ * AdMobApiSettings.Builder adMobApiSettingsBuilder = AdMobApiSettings.newBuilder();
  * adMobApiSettingsBuilder
  *     .getPublisherAccountSettings()
  *     .setRetrySettings(
- *         adMobApiSettingsBuilder.getPublisherAccountSettings().getRetrySettings().toBuilder()
+ *         adMobApiSettingsBuilder
+ *             .getPublisherAccountSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AdMobApiSettings adMobApiSettings = adMobApiSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class AdMobApiSettings extends ClientSettings<AdMobApiSettings> {
+
   /** Returns the object with the settings used for calls to getPublisherAccount. */
-  public UnaryCallSettings<GetPublisherAccountRequest, PublisherAccount>
+  public UnaryCallSettings<
+          AdMobApiProto.GetPublisherAccountRequest, AdMobResourcesProto.PublisherAccount>
       getPublisherAccountSettings() {
     return ((AdMobApiStubSettings) getStubSettings()).getPublisherAccountSettings();
   }
 
   /** Returns the object with the settings used for calls to listPublisherAccounts. */
   public PagedCallSettings<
-          ListPublisherAccountsRequest,
-          ListPublisherAccountsResponse,
+          AdMobApiProto.ListPublisherAccountsRequest,
+          AdMobApiProto.ListPublisherAccountsResponse,
           ListPublisherAccountsPagedResponse>
       listPublisherAccountsSettings() {
     return ((AdMobApiStubSettings) getStubSettings()).listPublisherAccountsSettings();
   }
 
   /** Returns the object with the settings used for calls to generateNetworkReport. */
-  public ServerStreamingCallSettings<GenerateNetworkReportRequest, GenerateNetworkReportResponse>
+  public ServerStreamingCallSettings<
+          AdMobApiProto.GenerateNetworkReportRequest, AdMobApiProto.GenerateNetworkReportResponse>
       generateNetworkReportSettings() {
     return ((AdMobApiStubSettings) getStubSettings()).generateNetworkReportSettings();
   }
 
   /** Returns the object with the settings used for calls to generateMediationReport. */
   public ServerStreamingCallSettings<
-          GenerateMediationReportRequest, GenerateMediationReportResponse>
+          AdMobApiProto.GenerateMediationReportRequest,
+          AdMobApiProto.GenerateMediationReportResponse>
       generateMediationReportSettings() {
     return ((AdMobApiStubSettings) getStubSettings()).generateMediationReportSettings();
   }
@@ -163,16 +160,13 @@ public class AdMobApiSettings extends ClientSettings<AdMobApiSettings> {
 
   /** Builder for AdMobApiSettings. */
   public static class Builder extends ClientSettings.Builder<AdMobApiSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(AdMobApiStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(AdMobApiStubSettings.newBuilder());
     }
 
     protected Builder(AdMobApiSettings settings) {
@@ -183,11 +177,15 @@ public class AdMobApiSettings extends ClientSettings<AdMobApiSettings> {
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(AdMobApiStubSettings.newBuilder());
+    }
+
     public AdMobApiStubSettings.Builder getStubSettingsBuilder() {
       return ((AdMobApiStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -201,15 +199,16 @@ public class AdMobApiSettings extends ClientSettings<AdMobApiSettings> {
     }
 
     /** Returns the builder for the settings used for calls to getPublisherAccount. */
-    public UnaryCallSettings.Builder<GetPublisherAccountRequest, PublisherAccount>
+    public UnaryCallSettings.Builder<
+            AdMobApiProto.GetPublisherAccountRequest, AdMobResourcesProto.PublisherAccount>
         getPublisherAccountSettings() {
       return getStubSettingsBuilder().getPublisherAccountSettings();
     }
 
     /** Returns the builder for the settings used for calls to listPublisherAccounts. */
     public PagedCallSettings.Builder<
-            ListPublisherAccountsRequest,
-            ListPublisherAccountsResponse,
+            AdMobApiProto.ListPublisherAccountsRequest,
+            AdMobApiProto.ListPublisherAccountsResponse,
             ListPublisherAccountsPagedResponse>
         listPublisherAccountsSettings() {
       return getStubSettingsBuilder().listPublisherAccountsSettings();
@@ -217,14 +216,15 @@ public class AdMobApiSettings extends ClientSettings<AdMobApiSettings> {
 
     /** Returns the builder for the settings used for calls to generateNetworkReport. */
     public ServerStreamingCallSettings.Builder<
-            GenerateNetworkReportRequest, GenerateNetworkReportResponse>
+            AdMobApiProto.GenerateNetworkReportRequest, AdMobApiProto.GenerateNetworkReportResponse>
         generateNetworkReportSettings() {
       return getStubSettingsBuilder().generateNetworkReportSettings();
     }
 
     /** Returns the builder for the settings used for calls to generateMediationReport. */
     public ServerStreamingCallSettings.Builder<
-            GenerateMediationReportRequest, GenerateMediationReportResponse>
+            AdMobApiProto.GenerateMediationReportRequest,
+            AdMobApiProto.GenerateMediationReportResponse>
         generateMediationReportSettings() {
       return getStubSettingsBuilder().generateMediationReportSettings();
     }

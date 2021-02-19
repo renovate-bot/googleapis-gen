@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,18 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.ads.admob.v1.stub;
 
 import static com.google.ads.admob.v1.AdMobApiClient.ListPublisherAccountsPagedResponse;
 
-import com.google.ads.admob.v1.AdMobApiProto.GenerateMediationReportRequest;
-import com.google.ads.admob.v1.AdMobApiProto.GenerateMediationReportResponse;
-import com.google.ads.admob.v1.AdMobApiProto.GenerateNetworkReportRequest;
-import com.google.ads.admob.v1.AdMobApiProto.GenerateNetworkReportResponse;
-import com.google.ads.admob.v1.AdMobApiProto.GetPublisherAccountRequest;
-import com.google.ads.admob.v1.AdMobApiProto.ListPublisherAccountsRequest;
-import com.google.ads.admob.v1.AdMobApiProto.ListPublisherAccountsResponse;
-import com.google.ads.admob.v1.AdMobResourcesProto.PublisherAccount;
+import com.google.ads.admob.v1.AdMobApiProto;
+import com.google.ads.admob.v1.AdMobResourcesProto;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
@@ -57,7 +52,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link AdMobApiStub}.
  *
@@ -74,65 +69,147 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of getPublisherAccount to 30 seconds:
  *
- * <pre>
- * <code>
- * AdMobApiStubSettings.Builder adMobApiSettingsBuilder =
- *     AdMobApiStubSettings.newBuilder();
+ * <pre>{@code
+ * AdMobApiStubSettings.Builder adMobApiSettingsBuilder = AdMobApiStubSettings.newBuilder();
  * adMobApiSettingsBuilder
  *     .getPublisherAccountSettings()
  *     .setRetrySettings(
- *         adMobApiSettingsBuilder.getPublisherAccountSettings().getRetrySettings().toBuilder()
+ *         adMobApiSettingsBuilder
+ *             .getPublisherAccountSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AdMobApiStubSettings adMobApiSettings = adMobApiSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class AdMobApiStubSettings extends StubSettings<AdMobApiStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/admob.report").build();
 
-  private final UnaryCallSettings<GetPublisherAccountRequest, PublisherAccount>
+  private final UnaryCallSettings<
+          AdMobApiProto.GetPublisherAccountRequest, AdMobResourcesProto.PublisherAccount>
       getPublisherAccountSettings;
   private final PagedCallSettings<
-          ListPublisherAccountsRequest,
-          ListPublisherAccountsResponse,
+          AdMobApiProto.ListPublisherAccountsRequest,
+          AdMobApiProto.ListPublisherAccountsResponse,
           ListPublisherAccountsPagedResponse>
       listPublisherAccountsSettings;
   private final ServerStreamingCallSettings<
-          GenerateNetworkReportRequest, GenerateNetworkReportResponse>
+          AdMobApiProto.GenerateNetworkReportRequest, AdMobApiProto.GenerateNetworkReportResponse>
       generateNetworkReportSettings;
   private final ServerStreamingCallSettings<
-          GenerateMediationReportRequest, GenerateMediationReportResponse>
+          AdMobApiProto.GenerateMediationReportRequest,
+          AdMobApiProto.GenerateMediationReportResponse>
       generateMediationReportSettings;
 
+  private static final PagedListDescriptor<
+          AdMobApiProto.ListPublisherAccountsRequest,
+          AdMobApiProto.ListPublisherAccountsResponse,
+          AdMobResourcesProto.PublisherAccount>
+      LIST_PUBLISHER_ACCOUNTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              AdMobApiProto.ListPublisherAccountsRequest,
+              AdMobApiProto.ListPublisherAccountsResponse,
+              AdMobResourcesProto.PublisherAccount>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public AdMobApiProto.ListPublisherAccountsRequest injectToken(
+                AdMobApiProto.ListPublisherAccountsRequest payload, String token) {
+              return AdMobApiProto.ListPublisherAccountsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public AdMobApiProto.ListPublisherAccountsRequest injectPageSize(
+                AdMobApiProto.ListPublisherAccountsRequest payload, int pageSize) {
+              return AdMobApiProto.ListPublisherAccountsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(AdMobApiProto.ListPublisherAccountsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(AdMobApiProto.ListPublisherAccountsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AdMobResourcesProto.PublisherAccount> extractResources(
+                AdMobApiProto.ListPublisherAccountsResponse payload) {
+              return payload.getAccountList() == null
+                  ? ImmutableList.<AdMobResourcesProto.PublisherAccount>of()
+                  : payload.getAccountList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          AdMobApiProto.ListPublisherAccountsRequest,
+          AdMobApiProto.ListPublisherAccountsResponse,
+          ListPublisherAccountsPagedResponse>
+      LIST_PUBLISHER_ACCOUNTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              AdMobApiProto.ListPublisherAccountsRequest,
+              AdMobApiProto.ListPublisherAccountsResponse,
+              ListPublisherAccountsPagedResponse>() {
+            @Override
+            public ApiFuture<ListPublisherAccountsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        AdMobApiProto.ListPublisherAccountsRequest,
+                        AdMobApiProto.ListPublisherAccountsResponse>
+                    callable,
+                AdMobApiProto.ListPublisherAccountsRequest request,
+                ApiCallContext context,
+                ApiFuture<AdMobApiProto.ListPublisherAccountsResponse> futureResponse) {
+              PageContext<
+                      AdMobApiProto.ListPublisherAccountsRequest,
+                      AdMobApiProto.ListPublisherAccountsResponse,
+                      AdMobResourcesProto.PublisherAccount>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_PUBLISHER_ACCOUNTS_PAGE_STR_DESC, request, context);
+              return ListPublisherAccountsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to getPublisherAccount. */
-  public UnaryCallSettings<GetPublisherAccountRequest, PublisherAccount>
+  public UnaryCallSettings<
+          AdMobApiProto.GetPublisherAccountRequest, AdMobResourcesProto.PublisherAccount>
       getPublisherAccountSettings() {
     return getPublisherAccountSettings;
   }
 
   /** Returns the object with the settings used for calls to listPublisherAccounts. */
   public PagedCallSettings<
-          ListPublisherAccountsRequest,
-          ListPublisherAccountsResponse,
+          AdMobApiProto.ListPublisherAccountsRequest,
+          AdMobApiProto.ListPublisherAccountsResponse,
           ListPublisherAccountsPagedResponse>
       listPublisherAccountsSettings() {
     return listPublisherAccountsSettings;
   }
 
   /** Returns the object with the settings used for calls to generateNetworkReport. */
-  public ServerStreamingCallSettings<GenerateNetworkReportRequest, GenerateNetworkReportResponse>
+  public ServerStreamingCallSettings<
+          AdMobApiProto.GenerateNetworkReportRequest, AdMobApiProto.GenerateNetworkReportResponse>
       generateNetworkReportSettings() {
     return generateNetworkReportSettings;
   }
 
   /** Returns the object with the settings used for calls to generateMediationReport. */
   public ServerStreamingCallSettings<
-          GenerateMediationReportRequest, GenerateMediationReportResponse>
+          AdMobApiProto.GenerateMediationReportRequest,
+          AdMobApiProto.GenerateMediationReportResponse>
       generateMediationReportSettings() {
     return generateMediationReportSettings;
   }
@@ -143,10 +220,10 @@ public class AdMobApiStubSettings extends StubSettings<AdMobApiStubSettings> {
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcAdMobApiStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -211,89 +288,24 @@ public class AdMobApiStubSettings extends StubSettings<AdMobApiStubSettings> {
     generateMediationReportSettings = settingsBuilder.generateMediationReportSettings().build();
   }
 
-  private static final PagedListDescriptor<
-          ListPublisherAccountsRequest, ListPublisherAccountsResponse, PublisherAccount>
-      LIST_PUBLISHER_ACCOUNTS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListPublisherAccountsRequest, ListPublisherAccountsResponse, PublisherAccount>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListPublisherAccountsRequest injectToken(
-                ListPublisherAccountsRequest payload, String token) {
-              return ListPublisherAccountsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListPublisherAccountsRequest injectPageSize(
-                ListPublisherAccountsRequest payload, int pageSize) {
-              return ListPublisherAccountsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListPublisherAccountsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListPublisherAccountsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<PublisherAccount> extractResources(
-                ListPublisherAccountsResponse payload) {
-              return payload.getAccountList() != null
-                  ? payload.getAccountList()
-                  : ImmutableList.<PublisherAccount>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListPublisherAccountsRequest,
-          ListPublisherAccountsResponse,
-          ListPublisherAccountsPagedResponse>
-      LIST_PUBLISHER_ACCOUNTS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListPublisherAccountsRequest,
-              ListPublisherAccountsResponse,
-              ListPublisherAccountsPagedResponse>() {
-            @Override
-            public ApiFuture<ListPublisherAccountsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListPublisherAccountsRequest, ListPublisherAccountsResponse> callable,
-                ListPublisherAccountsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListPublisherAccountsResponse> futureResponse) {
-              PageContext<
-                      ListPublisherAccountsRequest, ListPublisherAccountsResponse, PublisherAccount>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_PUBLISHER_ACCOUNTS_PAGE_STR_DESC, request, context);
-              return ListPublisherAccountsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for AdMobApiStubSettings. */
   public static class Builder extends StubSettings.Builder<AdMobApiStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
-    private final UnaryCallSettings.Builder<GetPublisherAccountRequest, PublisherAccount>
+    private final UnaryCallSettings.Builder<
+            AdMobApiProto.GetPublisherAccountRequest, AdMobResourcesProto.PublisherAccount>
         getPublisherAccountSettings;
     private final PagedCallSettings.Builder<
-            ListPublisherAccountsRequest,
-            ListPublisherAccountsResponse,
+            AdMobApiProto.ListPublisherAccountsRequest,
+            AdMobApiProto.ListPublisherAccountsResponse,
             ListPublisherAccountsPagedResponse>
         listPublisherAccountsSettings;
     private final ServerStreamingCallSettings.Builder<
-            GenerateNetworkReportRequest, GenerateNetworkReportResponse>
+            AdMobApiProto.GenerateNetworkReportRequest, AdMobApiProto.GenerateNetworkReportResponse>
         generateNetworkReportSettings;
     private final ServerStreamingCallSettings.Builder<
-            GenerateMediationReportRequest, GenerateMediationReportResponse>
+            AdMobApiProto.GenerateMediationReportRequest,
+            AdMobApiProto.GenerateMediationReportResponse>
         generateMediationReportSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -301,11 +313,8 @@ public class AdMobApiStubSettings extends StubSettings<AdMobApiStubSettings> {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "retry_policy_0_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -316,73 +325,35 @@ public class AdMobApiStubSettings extends StubSettings<AdMobApiStubSettings> {
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelay(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setMaxRetryDelay(Duration.ofMillis(10000L))
+              .setInitialRpcTimeout(Duration.ofMillis(120000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeout(Duration.ofMillis(120000L))
+              .setTotalTimeout(Duration.ofMillis(120000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       getPublisherAccountSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listPublisherAccountsSettings =
           PagedCallSettings.newBuilder(LIST_PUBLISHER_ACCOUNTS_PAGE_STR_FACT);
-
       generateNetworkReportSettings = ServerStreamingCallSettings.newBuilder();
-
       generateMediationReportSettings = ServerStreamingCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               getPublisherAccountSettings, listPublisherAccountsSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .getPublisherAccountSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listPublisherAccountsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .generateNetworkReportSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .generateMediationReportSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      return builder;
     }
 
     protected Builder(AdMobApiStubSettings settings) {
@@ -398,7 +369,42 @@ public class AdMobApiStubSettings extends StubSettings<AdMobApiStubSettings> {
               getPublisherAccountSettings, listPublisherAccountsSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .getPublisherAccountSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listPublisherAccountsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .generateNetworkReportSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .generateMediationReportSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -415,15 +421,16 @@ public class AdMobApiStubSettings extends StubSettings<AdMobApiStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to getPublisherAccount. */
-    public UnaryCallSettings.Builder<GetPublisherAccountRequest, PublisherAccount>
+    public UnaryCallSettings.Builder<
+            AdMobApiProto.GetPublisherAccountRequest, AdMobResourcesProto.PublisherAccount>
         getPublisherAccountSettings() {
       return getPublisherAccountSettings;
     }
 
     /** Returns the builder for the settings used for calls to listPublisherAccounts. */
     public PagedCallSettings.Builder<
-            ListPublisherAccountsRequest,
-            ListPublisherAccountsResponse,
+            AdMobApiProto.ListPublisherAccountsRequest,
+            AdMobApiProto.ListPublisherAccountsResponse,
             ListPublisherAccountsPagedResponse>
         listPublisherAccountsSettings() {
       return listPublisherAccountsSettings;
@@ -431,14 +438,15 @@ public class AdMobApiStubSettings extends StubSettings<AdMobApiStubSettings> {
 
     /** Returns the builder for the settings used for calls to generateNetworkReport. */
     public ServerStreamingCallSettings.Builder<
-            GenerateNetworkReportRequest, GenerateNetworkReportResponse>
+            AdMobApiProto.GenerateNetworkReportRequest, AdMobApiProto.GenerateNetworkReportResponse>
         generateNetworkReportSettings() {
       return generateNetworkReportSettings;
     }
 
     /** Returns the builder for the settings used for calls to generateMediationReport. */
     public ServerStreamingCallSettings.Builder<
-            GenerateMediationReportRequest, GenerateMediationReportResponse>
+            AdMobApiProto.GenerateMediationReportRequest,
+            AdMobApiProto.GenerateMediationReportResponse>
         generateMediationReportSettings() {
       return generateMediationReportSettings;
     }

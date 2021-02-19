@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,27 +15,23 @@
  */
 
 /**
- * A client to AdMob API.
+ * The interfaces provided are listed below, along with usage samples.
  *
- * <p>The interfaces provided are listed below, along with usage samples.
- *
- * <p>============== AdMobApiClient ==============
+ * <p>======================= AdMobApiClient =======================
  *
  * <p>Service Description: The AdMob API allows AdMob publishers programmatically get information
  * about their AdMob account.
  *
  * <p>Sample for AdMobApiClient:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * try (AdMobApiClient adMobApiClient = AdMobApiClient.create()) {
- *   String formattedName = AdMobApiClient.formatAccountName("[ACCOUNT]");
- *   PublisherAccount response = adMobApiClient.getPublisherAccount(formattedName);
+ *   String name = "name3373707";
+ *   AdMobResourcesProto.PublisherAccount response = adMobApiClient.getPublisherAccount(name);
  * }
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 package com.google.ads.admob.v1;
 
 import javax.annotation.Generated;
