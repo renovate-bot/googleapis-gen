@@ -1,0 +1,36 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.osconfig.agentendpoint.v1",
+  "libraryPackage": "com.google.cloud.osconfig.agentendpoint.v1",
+  "services": {
+    "AgentEndpointService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AgentEndpointServiceClient",
+          "rpcs": {
+            "ReceiveTaskNotification": {
+              "methods": ["receiveTaskNotificationCallable"]
+            },
+            "RegisterAgent": {
+              "methods": ["registerAgent", "registerAgent", "registerAgentCallable"]
+            },
+            "ReportInventory": {
+              "methods": ["reportInventory", "reportInventory", "reportInventoryCallable"]
+            },
+            "ReportTaskComplete": {
+              "methods": ["reportTaskComplete", "reportTaskComplete", "reportTaskCompleteCallable"]
+            },
+            "ReportTaskProgress": {
+              "methods": ["reportTaskProgress", "reportTaskProgress", "reportTaskProgressCallable"]
+            },
+            "StartNextTask": {
+              "methods": ["startNextTask", "startNextTask", "startNextTaskCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

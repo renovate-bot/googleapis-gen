@@ -1,0 +1,48 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.managedidentities.v1beta1",
+  "libraryPackage": "com.google.cloud.managedidentities.v1beta1",
+  "services": {
+    "ManagedIdentitiesService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ManagedIdentitiesServiceClient",
+          "rpcs": {
+            "AttachTrust": {
+              "methods": ["attachTrustAsync", "attachTrustOperationCallable", "attachTrustCallable"]
+            },
+            "CreateMicrosoftAdDomain": {
+              "methods": ["createMicrosoftAdDomainAsync", "createMicrosoftAdDomainOperationCallable", "createMicrosoftAdDomainCallable"]
+            },
+            "DeleteDomain": {
+              "methods": ["deleteDomainAsync", "deleteDomainOperationCallable", "deleteDomainCallable"]
+            },
+            "DetachTrust": {
+              "methods": ["detachTrustAsync", "detachTrustOperationCallable", "detachTrustCallable"]
+            },
+            "GetDomain": {
+              "methods": ["getDomain", "getDomainCallable"]
+            },
+            "ListDomains": {
+              "methods": ["listDomains", "listDomainsPagedCallable", "listDomainsCallable"]
+            },
+            "ReconfigureTrust": {
+              "methods": ["reconfigureTrustAsync", "reconfigureTrustOperationCallable", "reconfigureTrustCallable"]
+            },
+            "ResetAdminPassword": {
+              "methods": ["resetAdminPassword", "resetAdminPasswordCallable"]
+            },
+            "UpdateDomain": {
+              "methods": ["updateDomainAsync", "updateDomainOperationCallable", "updateDomainCallable"]
+            },
+            "ValidateTrust": {
+              "methods": ["validateTrustAsync", "validateTrustOperationCallable", "validateTrustCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

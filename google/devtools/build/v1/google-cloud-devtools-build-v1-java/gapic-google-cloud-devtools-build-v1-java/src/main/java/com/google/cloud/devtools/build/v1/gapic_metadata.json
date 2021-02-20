@@ -1,0 +1,24 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.devtools.build.v1",
+  "libraryPackage": "com.google.cloud.devtools.build.v1",
+  "services": {
+    "PublishBuildEvent": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PublishBuildEventClient",
+          "rpcs": {
+            "PublishBuildToolEventStream": {
+              "methods": ["publishBuildToolEventStreamCallable"]
+            },
+            "PublishLifecycleEvent": {
+              "methods": ["publishLifecycleEvent", "publishLifecycleEventCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

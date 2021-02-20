@@ -1,0 +1,45 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.dataqna.v1alpha",
+  "libraryPackage": "com.google.cloud.dataqna.v1alpha",
+  "services": {
+    "AutoSuggestionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AutoSuggestionServiceClient",
+          "rpcs": {
+            "SuggestQueries": {
+              "methods": ["suggestQueries", "suggestQueriesCallable"]
+            }
+          }
+        }
+      }
+    },
+    "QuestionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "QuestionServiceClient",
+          "rpcs": {
+            "CreateQuestion": {
+              "methods": ["createQuestion", "createQuestion", "createQuestion", "createQuestionCallable"]
+            },
+            "ExecuteQuestion": {
+              "methods": ["executeQuestion", "executeQuestion", "executeQuestionCallable"]
+            },
+            "GetQuestion": {
+              "methods": ["getQuestion", "getQuestion", "getQuestion", "getQuestionCallable"]
+            },
+            "GetUserFeedback": {
+              "methods": ["getUserFeedback", "getUserFeedback", "getUserFeedback", "getUserFeedbackCallable"]
+            },
+            "UpdateUserFeedback": {
+              "methods": ["updateUserFeedback", "updateUserFeedback", "updateUserFeedbackCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

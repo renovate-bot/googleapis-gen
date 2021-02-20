@@ -1,0 +1,48 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.partner.aistreams.v1alpha1",
+  "libraryPackage": "com.google.partner.aistreams.v1alpha1",
+  "services": {
+    "AIStreams": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AIStreamsClient",
+          "rpcs": {
+            "CreateCluster": {
+              "methods": ["createClusterAsync", "createClusterAsync", "createClusterAsync", "createClusterOperationCallable", "createClusterCallable"]
+            },
+            "CreateStream": {
+              "methods": ["createStreamAsync", "createStreamAsync", "createStreamAsync", "createStreamOperationCallable", "createStreamCallable"]
+            },
+            "DeleteCluster": {
+              "methods": ["deleteClusterAsync", "deleteClusterAsync", "deleteClusterAsync", "deleteClusterOperationCallable", "deleteClusterCallable"]
+            },
+            "DeleteStream": {
+              "methods": ["deleteStreamAsync", "deleteStreamAsync", "deleteStreamAsync", "deleteStreamOperationCallable", "deleteStreamCallable"]
+            },
+            "GetCluster": {
+              "methods": ["getCluster", "getCluster", "getCluster", "getClusterCallable"]
+            },
+            "GetStream": {
+              "methods": ["getStream", "getStream", "getStream", "getStreamCallable"]
+            },
+            "ListClusters": {
+              "methods": ["listClusters", "listClusters", "listClusters", "listClustersPagedCallable", "listClustersCallable"]
+            },
+            "ListStreams": {
+              "methods": ["listStreams", "listStreams", "listStreams", "listStreamsPagedCallable", "listStreamsCallable"]
+            },
+            "UpdateCluster": {
+              "methods": ["updateClusterAsync", "updateClusterAsync", "updateClusterOperationCallable", "updateClusterCallable"]
+            },
+            "UpdateStream": {
+              "methods": ["updateStreamAsync", "updateStreamAsync", "updateStreamOperationCallable", "updateStreamCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

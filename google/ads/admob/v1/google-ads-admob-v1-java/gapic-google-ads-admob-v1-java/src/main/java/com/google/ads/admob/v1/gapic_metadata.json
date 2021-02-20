@@ -1,0 +1,30 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.ads.admob.v1",
+  "libraryPackage": "com.google.ads.admob.v1",
+  "services": {
+    "AdMobApi": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AdMobApiClient",
+          "rpcs": {
+            "GenerateMediationReport": {
+              "methods": ["generateMediationReportCallable"]
+            },
+            "GenerateNetworkReport": {
+              "methods": ["generateNetworkReportCallable"]
+            },
+            "GetPublisherAccount": {
+              "methods": ["getPublisherAccount", "getPublisherAccount", "getPublisherAccountCallable"]
+            },
+            "ListPublisherAccounts": {
+              "methods": ["listPublisherAccounts", "listPublisherAccountsPagedCallable", "listPublisherAccountsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

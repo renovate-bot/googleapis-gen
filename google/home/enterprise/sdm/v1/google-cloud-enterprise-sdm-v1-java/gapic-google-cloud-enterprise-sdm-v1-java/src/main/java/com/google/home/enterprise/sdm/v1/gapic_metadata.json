@@ -1,0 +1,39 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.home.enterprise.sdm.v1",
+  "libraryPackage": "com.google.home.enterprise.sdm.v1",
+  "services": {
+    "SmartDeviceManagementService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SmartDeviceManagementServiceClient",
+          "rpcs": {
+            "ExecuteDeviceCommand": {
+              "methods": ["executeDeviceCommand", "executeDeviceCommandCallable"]
+            },
+            "GetDevice": {
+              "methods": ["getDevice", "getDeviceCallable"]
+            },
+            "GetRoom": {
+              "methods": ["getRoom", "getRoomCallable"]
+            },
+            "GetStructure": {
+              "methods": ["getStructure", "getStructureCallable"]
+            },
+            "ListDevices": {
+              "methods": ["listDevices", "listDevicesPagedCallable", "listDevicesCallable"]
+            },
+            "ListRooms": {
+              "methods": ["listRooms", "listRoomsPagedCallable", "listRoomsCallable"]
+            },
+            "ListStructures": {
+              "methods": ["listStructures", "listStructuresPagedCallable", "listStructuresCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

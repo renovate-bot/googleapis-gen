@@ -1,0 +1,27 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.maps.playablelocations.v3",
+  "libraryPackage": "com.google.maps.playablelocations.v3",
+  "services": {
+    "PlayableLocations": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PlayableLocationsClient",
+          "rpcs": {
+            "LogImpressions": {
+              "methods": ["logImpressions", "logImpressionsCallable"]
+            },
+            "LogPlayerReports": {
+              "methods": ["logPlayerReports", "logPlayerReportsCallable"]
+            },
+            "SamplePlayableLocations": {
+              "methods": ["samplePlayableLocations", "samplePlayableLocationsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.iam.admin.v1",
+  "libraryPackage": "com.google.cloud.iam.admin.v1",
+  "services": {
+    "IAM": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "IAMClient",
+          "rpcs": {
+            "CreateRole": {
+              "methods": ["createRole", "createRoleCallable"]
+            },
+            "CreateServiceAccount": {
+              "methods": ["createServiceAccount", "createServiceAccount", "createServiceAccount", "createServiceAccountCallable"]
+            },
+            "CreateServiceAccountKey": {
+              "methods": ["createServiceAccountKey", "createServiceAccountKey", "createServiceAccountKey", "createServiceAccountKeyCallable"]
+            },
+            "DeleteRole": {
+              "methods": ["deleteRole", "deleteRoleCallable"]
+            },
+            "DeleteServiceAccount": {
+              "methods": ["deleteServiceAccount", "deleteServiceAccount", "deleteServiceAccount", "deleteServiceAccountCallable"]
+            },
+            "DeleteServiceAccountKey": {
+              "methods": ["deleteServiceAccountKey", "deleteServiceAccountKey", "deleteServiceAccountKey", "deleteServiceAccountKeyCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetRole": {
+              "methods": ["getRole", "getRoleCallable"]
+            },
+            "GetServiceAccount": {
+              "methods": ["getServiceAccount", "getServiceAccount", "getServiceAccount", "getServiceAccountCallable"]
+            },
+            "GetServiceAccountKey": {
+              "methods": ["getServiceAccountKey", "getServiceAccountKey", "getServiceAccountKey", "getServiceAccountKeyCallable"]
+            },
+            "ListRoles": {
+              "methods": ["listRoles", "listRolesPagedCallable", "listRolesCallable"]
+            },
+            "ListServiceAccountKeys": {
+              "methods": ["listServiceAccountKeys", "listServiceAccountKeys", "listServiceAccountKeys", "listServiceAccountKeysCallable"]
+            },
+            "ListServiceAccounts": {
+              "methods": ["listServiceAccounts", "listServiceAccounts", "listServiceAccounts", "listServiceAccountsPagedCallable", "listServiceAccountsCallable"]
+            },
+            "QueryGrantableRoles": {
+              "methods": ["queryGrantableRoles", "queryGrantableRoles", "queryGrantableRolesPagedCallable", "queryGrantableRolesCallable"]
+            },
+            "QueryTestablePermissions": {
+              "methods": ["queryTestablePermissions", "queryTestablePermissionsPagedCallable", "queryTestablePermissionsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "SignBlob": {
+              "methods": ["signBlob", "signBlob", "signBlob", "signBlobCallable"]
+            },
+            "SignJwt": {
+              "methods": ["signJwt", "signJwt", "signJwt", "signJwtCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UndeleteRole": {
+              "methods": ["undeleteRole", "undeleteRoleCallable"]
+            },
+            "UpdateRole": {
+              "methods": ["updateRole", "updateRoleCallable"]
+            },
+            "UpdateServiceAccount": {
+              "methods": ["updateServiceAccount", "updateServiceAccountCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

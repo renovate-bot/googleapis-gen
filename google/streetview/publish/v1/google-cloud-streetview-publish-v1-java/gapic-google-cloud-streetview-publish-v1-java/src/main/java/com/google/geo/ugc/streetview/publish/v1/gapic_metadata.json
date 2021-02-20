@@ -1,0 +1,45 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.streetview.publish.v1",
+  "libraryPackage": "com.google.geo.ugc.streetview.publish.v1",
+  "services": {
+    "StreetViewPublishService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "StreetViewPublishServiceClient",
+          "rpcs": {
+            "BatchDeletePhotos": {
+              "methods": ["batchDeletePhotos", "batchDeletePhotos", "batchDeletePhotosCallable"]
+            },
+            "BatchGetPhotos": {
+              "methods": ["batchGetPhotos", "batchGetPhotos", "batchGetPhotosCallable"]
+            },
+            "BatchUpdatePhotos": {
+              "methods": ["batchUpdatePhotos", "batchUpdatePhotos", "batchUpdatePhotosCallable"]
+            },
+            "CreatePhoto": {
+              "methods": ["createPhoto", "createPhoto", "createPhotoCallable"]
+            },
+            "DeletePhoto": {
+              "methods": ["deletePhoto", "deletePhoto", "deletePhotoCallable"]
+            },
+            "GetPhoto": {
+              "methods": ["getPhoto", "getPhoto", "getPhotoCallable"]
+            },
+            "ListPhotos": {
+              "methods": ["listPhotos", "listPhotos", "listPhotosPagedCallable", "listPhotosCallable"]
+            },
+            "StartUpload": {
+              "methods": ["startUpload", "startUploadCallable"]
+            },
+            "UpdatePhoto": {
+              "methods": ["updatePhoto", "updatePhoto", "updatePhotoCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
