@@ -19,6 +19,7 @@ from google.cloud.spanner_admin_database_v1.services.database_admin.async_client
 from google.cloud.spanner_admin_database_v1.services.database_admin.client import DatabaseAdminClient
 from google.cloud.spanner_admin_database_v1.types.backup import Backup
 from google.cloud.spanner_admin_database_v1.types.backup import BackupInfo
+from google.cloud.spanner_admin_database_v1.types.backup import CreateBackupEncryptionConfig
 from google.cloud.spanner_admin_database_v1.types.backup import CreateBackupMetadata
 from google.cloud.spanner_admin_database_v1.types.backup import CreateBackupRequest
 from google.cloud.spanner_admin_database_v1.types.backup import DeleteBackupRequest
@@ -28,6 +29,8 @@ from google.cloud.spanner_admin_database_v1.types.backup import ListBackupOperat
 from google.cloud.spanner_admin_database_v1.types.backup import ListBackupsRequest
 from google.cloud.spanner_admin_database_v1.types.backup import ListBackupsResponse
 from google.cloud.spanner_admin_database_v1.types.backup import UpdateBackupRequest
+from google.cloud.spanner_admin_database_v1.types.common import EncryptionConfig
+from google.cloud.spanner_admin_database_v1.types.common import EncryptionInfo
 from google.cloud.spanner_admin_database_v1.types.common import OperationProgress
 from google.cloud.spanner_admin_database_v1.types.spanner_database_admin import CreateDatabaseMetadata
 from google.cloud.spanner_admin_database_v1.types.spanner_database_admin import CreateDatabaseRequest
@@ -41,6 +44,7 @@ from google.cloud.spanner_admin_database_v1.types.spanner_database_admin import 
 from google.cloud.spanner_admin_database_v1.types.spanner_database_admin import ListDatabasesRequest
 from google.cloud.spanner_admin_database_v1.types.spanner_database_admin import ListDatabasesResponse
 from google.cloud.spanner_admin_database_v1.types.spanner_database_admin import OptimizeRestoredDatabaseMetadata
+from google.cloud.spanner_admin_database_v1.types.spanner_database_admin import RestoreDatabaseEncryptionConfig
 from google.cloud.spanner_admin_database_v1.types.spanner_database_admin import RestoreDatabaseMetadata
 from google.cloud.spanner_admin_database_v1.types.spanner_database_admin import RestoreDatabaseRequest
 from google.cloud.spanner_admin_database_v1.types.spanner_database_admin import RestoreInfo
@@ -51,6 +55,7 @@ from google.cloud.spanner_admin_database_v1.types.spanner_database_admin import 
 __all__ = (
     'Backup',
     'BackupInfo',
+    'CreateBackupEncryptionConfig',
     'CreateBackupMetadata',
     'CreateBackupRequest',
     'CreateDatabaseMetadata',
@@ -60,6 +65,8 @@ __all__ = (
     'DatabaseAdminClient',
     'DeleteBackupRequest',
     'DropDatabaseRequest',
+    'EncryptionConfig',
+    'EncryptionInfo',
     'GetBackupRequest',
     'GetDatabaseDdlRequest',
     'GetDatabaseDdlResponse',
@@ -74,6 +81,7 @@ __all__ = (
     'ListDatabasesResponse',
     'OperationProgress',
     'OptimizeRestoredDatabaseMetadata',
+    'RestoreDatabaseEncryptionConfig',
     'RestoreDatabaseMetadata',
     'RestoreDatabaseRequest',
     'RestoreInfo',

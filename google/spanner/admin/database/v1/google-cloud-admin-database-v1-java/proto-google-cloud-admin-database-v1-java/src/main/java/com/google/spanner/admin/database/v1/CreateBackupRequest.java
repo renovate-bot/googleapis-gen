@@ -5,7 +5,8 @@ package com.google.spanner.admin.database.v1;
 
 /**
  * <pre>
- * The request for [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup].
+ * The request for
+ * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup].
  * </pre>
  *
  * Protobuf type {@code google.spanner.admin.database.v1.CreateBackupRequest}
@@ -75,6 +76,19 @@ private static final long serialVersionUID = 0L;
             if (subBuilder != null) {
               subBuilder.mergeFrom(backup_);
               backup_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 34: {
+            com.google.spanner.admin.database.v1.CreateBackupEncryptionConfig.Builder subBuilder = null;
+            if (encryptionConfig_ != null) {
+              subBuilder = encryptionConfig_.toBuilder();
+            }
+            encryptionConfig_ = input.readMessage(com.google.spanner.admin.database.v1.CreateBackupEncryptionConfig.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(encryptionConfig_);
+              encryptionConfig_ = subBuilder.buildPartial();
             }
 
             break;
@@ -255,6 +269,56 @@ private static final long serialVersionUID = 0L;
     return getBackup();
   }
 
+  public static final int ENCRYPTION_CONFIG_FIELD_NUMBER = 4;
+  private com.google.spanner.admin.database.v1.CreateBackupEncryptionConfig encryptionConfig_;
+  /**
+   * <pre>
+   * Optional. The encryption configuration used to encrypt the backup. If this
+   * field is not specified, the backup will use the same encryption
+   * configuration as the database by default, namely
+   * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type]
+   * = `USE_DATABASE_ENCRYPTION`.
+   * </pre>
+   *
+   * <code>.google.spanner.admin.database.v1.CreateBackupEncryptionConfig encryption_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the encryptionConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryptionConfig() {
+    return encryptionConfig_ != null;
+  }
+  /**
+   * <pre>
+   * Optional. The encryption configuration used to encrypt the backup. If this
+   * field is not specified, the backup will use the same encryption
+   * configuration as the database by default, namely
+   * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type]
+   * = `USE_DATABASE_ENCRYPTION`.
+   * </pre>
+   *
+   * <code>.google.spanner.admin.database.v1.CreateBackupEncryptionConfig encryption_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The encryptionConfig.
+   */
+  @java.lang.Override
+  public com.google.spanner.admin.database.v1.CreateBackupEncryptionConfig getEncryptionConfig() {
+    return encryptionConfig_ == null ? com.google.spanner.admin.database.v1.CreateBackupEncryptionConfig.getDefaultInstance() : encryptionConfig_;
+  }
+  /**
+   * <pre>
+   * Optional. The encryption configuration used to encrypt the backup. If this
+   * field is not specified, the backup will use the same encryption
+   * configuration as the database by default, namely
+   * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type]
+   * = `USE_DATABASE_ENCRYPTION`.
+   * </pre>
+   *
+   * <code>.google.spanner.admin.database.v1.CreateBackupEncryptionConfig encryption_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.spanner.admin.database.v1.CreateBackupEncryptionConfigOrBuilder getEncryptionConfigOrBuilder() {
+    return getEncryptionConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -278,6 +342,9 @@ private static final long serialVersionUID = 0L;
     if (backup_ != null) {
       output.writeMessage(3, getBackup());
     }
+    if (encryptionConfig_ != null) {
+      output.writeMessage(4, getEncryptionConfig());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -296,6 +363,10 @@ private static final long serialVersionUID = 0L;
     if (backup_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getBackup());
+    }
+    if (encryptionConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getEncryptionConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -321,6 +392,11 @@ private static final long serialVersionUID = 0L;
       if (!getBackup()
           .equals(other.getBackup())) return false;
     }
+    if (hasEncryptionConfig() != other.hasEncryptionConfig()) return false;
+    if (hasEncryptionConfig()) {
+      if (!getEncryptionConfig()
+          .equals(other.getEncryptionConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -339,6 +415,10 @@ private static final long serialVersionUID = 0L;
     if (hasBackup()) {
       hash = (37 * hash) + BACKUP_FIELD_NUMBER;
       hash = (53 * hash) + getBackup().hashCode();
+    }
+    if (hasEncryptionConfig()) {
+      hash = (37 * hash) + ENCRYPTION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -437,7 +517,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The request for [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup].
+   * The request for
+   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup].
    * </pre>
    *
    * Protobuf type {@code google.spanner.admin.database.v1.CreateBackupRequest}
@@ -487,6 +568,12 @@ private static final long serialVersionUID = 0L;
         backup_ = null;
         backupBuilder_ = null;
       }
+      if (encryptionConfigBuilder_ == null) {
+        encryptionConfig_ = null;
+      } else {
+        encryptionConfig_ = null;
+        encryptionConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -519,6 +606,11 @@ private static final long serialVersionUID = 0L;
         result.backup_ = backup_;
       } else {
         result.backup_ = backupBuilder_.build();
+      }
+      if (encryptionConfigBuilder_ == null) {
+        result.encryptionConfig_ = encryptionConfig_;
+      } else {
+        result.encryptionConfig_ = encryptionConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -578,6 +670,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasBackup()) {
         mergeBackup(other.getBackup());
+      }
+      if (other.hasEncryptionConfig()) {
+        mergeEncryptionConfig(other.getEncryptionConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -988,6 +1083,197 @@ private static final long serialVersionUID = 0L;
         backup_ = null;
       }
       return backupBuilder_;
+    }
+
+    private com.google.spanner.admin.database.v1.CreateBackupEncryptionConfig encryptionConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.spanner.admin.database.v1.CreateBackupEncryptionConfig, com.google.spanner.admin.database.v1.CreateBackupEncryptionConfig.Builder, com.google.spanner.admin.database.v1.CreateBackupEncryptionConfigOrBuilder> encryptionConfigBuilder_;
+    /**
+     * <pre>
+     * Optional. The encryption configuration used to encrypt the backup. If this
+     * field is not specified, the backup will use the same encryption
+     * configuration as the database by default, namely
+     * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type]
+     * = `USE_DATABASE_ENCRYPTION`.
+     * </pre>
+     *
+     * <code>.google.spanner.admin.database.v1.CreateBackupEncryptionConfig encryption_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the encryptionConfig field is set.
+     */
+    public boolean hasEncryptionConfig() {
+      return encryptionConfigBuilder_ != null || encryptionConfig_ != null;
+    }
+    /**
+     * <pre>
+     * Optional. The encryption configuration used to encrypt the backup. If this
+     * field is not specified, the backup will use the same encryption
+     * configuration as the database by default, namely
+     * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type]
+     * = `USE_DATABASE_ENCRYPTION`.
+     * </pre>
+     *
+     * <code>.google.spanner.admin.database.v1.CreateBackupEncryptionConfig encryption_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The encryptionConfig.
+     */
+    public com.google.spanner.admin.database.v1.CreateBackupEncryptionConfig getEncryptionConfig() {
+      if (encryptionConfigBuilder_ == null) {
+        return encryptionConfig_ == null ? com.google.spanner.admin.database.v1.CreateBackupEncryptionConfig.getDefaultInstance() : encryptionConfig_;
+      } else {
+        return encryptionConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Optional. The encryption configuration used to encrypt the backup. If this
+     * field is not specified, the backup will use the same encryption
+     * configuration as the database by default, namely
+     * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type]
+     * = `USE_DATABASE_ENCRYPTION`.
+     * </pre>
+     *
+     * <code>.google.spanner.admin.database.v1.CreateBackupEncryptionConfig encryption_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setEncryptionConfig(com.google.spanner.admin.database.v1.CreateBackupEncryptionConfig value) {
+      if (encryptionConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionConfig_ = value;
+        onChanged();
+      } else {
+        encryptionConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. The encryption configuration used to encrypt the backup. If this
+     * field is not specified, the backup will use the same encryption
+     * configuration as the database by default, namely
+     * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type]
+     * = `USE_DATABASE_ENCRYPTION`.
+     * </pre>
+     *
+     * <code>.google.spanner.admin.database.v1.CreateBackupEncryptionConfig encryption_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setEncryptionConfig(
+        com.google.spanner.admin.database.v1.CreateBackupEncryptionConfig.Builder builderForValue) {
+      if (encryptionConfigBuilder_ == null) {
+        encryptionConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        encryptionConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. The encryption configuration used to encrypt the backup. If this
+     * field is not specified, the backup will use the same encryption
+     * configuration as the database by default, namely
+     * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type]
+     * = `USE_DATABASE_ENCRYPTION`.
+     * </pre>
+     *
+     * <code>.google.spanner.admin.database.v1.CreateBackupEncryptionConfig encryption_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder mergeEncryptionConfig(com.google.spanner.admin.database.v1.CreateBackupEncryptionConfig value) {
+      if (encryptionConfigBuilder_ == null) {
+        if (encryptionConfig_ != null) {
+          encryptionConfig_ =
+            com.google.spanner.admin.database.v1.CreateBackupEncryptionConfig.newBuilder(encryptionConfig_).mergeFrom(value).buildPartial();
+        } else {
+          encryptionConfig_ = value;
+        }
+        onChanged();
+      } else {
+        encryptionConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. The encryption configuration used to encrypt the backup. If this
+     * field is not specified, the backup will use the same encryption
+     * configuration as the database by default, namely
+     * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type]
+     * = `USE_DATABASE_ENCRYPTION`.
+     * </pre>
+     *
+     * <code>.google.spanner.admin.database.v1.CreateBackupEncryptionConfig encryption_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearEncryptionConfig() {
+      if (encryptionConfigBuilder_ == null) {
+        encryptionConfig_ = null;
+        onChanged();
+      } else {
+        encryptionConfig_ = null;
+        encryptionConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. The encryption configuration used to encrypt the backup. If this
+     * field is not specified, the backup will use the same encryption
+     * configuration as the database by default, namely
+     * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type]
+     * = `USE_DATABASE_ENCRYPTION`.
+     * </pre>
+     *
+     * <code>.google.spanner.admin.database.v1.CreateBackupEncryptionConfig encryption_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.spanner.admin.database.v1.CreateBackupEncryptionConfig.Builder getEncryptionConfigBuilder() {
+      
+      onChanged();
+      return getEncryptionConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Optional. The encryption configuration used to encrypt the backup. If this
+     * field is not specified, the backup will use the same encryption
+     * configuration as the database by default, namely
+     * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type]
+     * = `USE_DATABASE_ENCRYPTION`.
+     * </pre>
+     *
+     * <code>.google.spanner.admin.database.v1.CreateBackupEncryptionConfig encryption_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.spanner.admin.database.v1.CreateBackupEncryptionConfigOrBuilder getEncryptionConfigOrBuilder() {
+      if (encryptionConfigBuilder_ != null) {
+        return encryptionConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionConfig_ == null ?
+            com.google.spanner.admin.database.v1.CreateBackupEncryptionConfig.getDefaultInstance() : encryptionConfig_;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. The encryption configuration used to encrypt the backup. If this
+     * field is not specified, the backup will use the same encryption
+     * configuration as the database by default, namely
+     * [encryption_type][google.spanner.admin.database.v1.CreateBackupEncryptionConfig.encryption_type]
+     * = `USE_DATABASE_ENCRYPTION`.
+     * </pre>
+     *
+     * <code>.google.spanner.admin.database.v1.CreateBackupEncryptionConfig encryption_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.spanner.admin.database.v1.CreateBackupEncryptionConfig, com.google.spanner.admin.database.v1.CreateBackupEncryptionConfig.Builder, com.google.spanner.admin.database.v1.CreateBackupEncryptionConfigOrBuilder> 
+        getEncryptionConfigFieldBuilder() {
+      if (encryptionConfigBuilder_ == null) {
+        encryptionConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.spanner.admin.database.v1.CreateBackupEncryptionConfig, com.google.spanner.admin.database.v1.CreateBackupEncryptionConfig.Builder, com.google.spanner.admin.database.v1.CreateBackupEncryptionConfigOrBuilder>(
+                getEncryptionConfig(),
+                getParentForChildren(),
+                isClean());
+        encryptionConfig_ = null;
+      }
+      return encryptionConfigBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

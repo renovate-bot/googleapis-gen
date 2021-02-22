@@ -5,7 +5,8 @@ package com.google.spanner.admin.database.v1;
 
 /**
  * <pre>
- * The request for [GetDatabase][google.spanner.admin.database.v1.DatabaseAdmin.GetDatabase].
+ * The request for
+ * [GetDatabase][google.spanner.admin.database.v1.DatabaseAdmin.GetDatabase].
  * </pre>
  *
  * Protobuf type {@code google.spanner.admin.database.v1.GetDatabaseRequest}
@@ -295,7 +296,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The request for [GetDatabase][google.spanner.admin.database.v1.DatabaseAdmin.GetDatabase].
+   * The request for
+   * [GetDatabase][google.spanner.admin.database.v1.DatabaseAdmin.GetDatabase].
    * </pre>
    *
    * Protobuf type {@code google.spanner.admin.database.v1.GetDatabaseRequest}

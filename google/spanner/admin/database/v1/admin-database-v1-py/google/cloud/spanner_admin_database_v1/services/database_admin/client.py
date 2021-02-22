@@ -37,6 +37,7 @@ from google.api_core import operation_async  # type: ignore
 from google.cloud.spanner_admin_database_v1.services.database_admin import pagers
 from google.cloud.spanner_admin_database_v1.types import backup
 from google.cloud.spanner_admin_database_v1.types import backup as gsad_backup
+from google.cloud.spanner_admin_database_v1.types import common
 from google.cloud.spanner_admin_database_v1.types import spanner_database_admin
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as policy  # type: ignore
@@ -180,6 +181,28 @@ class DatabaseAdminClient(metaclass=DatabaseAdminClientMeta):
     def parse_backup_path(path: str) -> Dict[str,str]:
         """Parse a backup path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/instances/(?P<instance>.+?)/backups/(?P<backup>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def crypto_key_path(project: str,location: str,key_ring: str,crypto_key: str,) -> str:
+        """Return a fully-qualified crypto_key string."""
+        return "projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}".format(project=project, location=location, key_ring=key_ring, crypto_key=crypto_key, )
+
+    @staticmethod
+    def parse_crypto_key_path(path: str) -> Dict[str,str]:
+        """Parse a crypto_key path into its component segments."""
+        m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/keyRings/(?P<key_ring>.+?)/cryptoKeys/(?P<crypto_key>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def crypto_key_version_path(project: str,location: str,key_ring: str,crypto_key: str,crypto_key_version: str,) -> str:
+        """Return a fully-qualified crypto_key_version string."""
+        return "projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}".format(project=project, location=location, key_ring=key_ring, crypto_key=crypto_key, crypto_key_version=crypto_key_version, )
+
+    @staticmethod
+    def parse_crypto_key_version_path(path: str) -> Dict[str,str]:
+        """Parse a crypto_key_version path into its component segments."""
+        m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/keyRings/(?P<key_ring>.+?)/cryptoKeys/(?P<crypto_key>.+?)/cryptoKeyVersions/(?P<crypto_key_version>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
@@ -394,7 +417,7 @@ class DatabaseAdminClient(metaclass=DatabaseAdminClientMeta):
         Returns:
             google.cloud.spanner_admin_database_v1.services.database_admin.pagers.ListDatabasesPager:
                 The response for
-                [ListDatabases][google.spanner.admin.database.v1.DatabaseAdmin.ListDatabases].
+                   [ListDatabases][google.spanner.admin.database.v1.DatabaseAdmin.ListDatabases].
 
                 Iterating over this object will yield results and
                 resolve additional pages automatically.
@@ -880,7 +903,7 @@ class DatabaseAdminClient(metaclass=DatabaseAdminClientMeta):
         Returns:
             google.cloud.spanner_admin_database_v1.types.GetDatabaseDdlResponse:
                 The response for
-                [GetDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.GetDatabaseDdl].
+                   [GetDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.GetDatabaseDdl].
 
         """
         # Create or coerce a protobuf request object.
@@ -1707,7 +1730,7 @@ class DatabaseAdminClient(metaclass=DatabaseAdminClientMeta):
         Returns:
             google.cloud.spanner_admin_database_v1.services.database_admin.pagers.ListBackupsPager:
                 The response for
-                [ListBackups][google.spanner.admin.database.v1.DatabaseAdmin.ListBackups].
+                   [ListBackups][google.spanner.admin.database.v1.DatabaseAdmin.ListBackups].
 
                 Iterating over this object will yield results and
                 resolve additional pages automatically.

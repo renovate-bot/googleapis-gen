@@ -5,7 +5,8 @@ package com.google.spanner.admin.database.v1;
 
 /**
  * <pre>
- * The request for [ListBackups][google.spanner.admin.database.v1.DatabaseAdmin.ListBackups].
+ * The request for
+ * [ListBackups][google.spanner.admin.database.v1.DatabaseAdmin.ListBackups].
  * </pre>
  *
  * Protobuf type {@code google.spanner.admin.database.v1.ListBackupsRequest}
@@ -168,12 +169,15 @@ private static final long serialVersionUID = 0L;
    * The value must be a string, a number, or a boolean. The comparison operator
    * must be one of: `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, or `:`.
    * Colon `:` is the contains operator. Filter rules are not case sensitive.
-   * The following fields in the [Backup][google.spanner.admin.database.v1.Backup] are eligible for filtering:
+   * The following fields in the
+   * [Backup][google.spanner.admin.database.v1.Backup] are eligible for
+   * filtering:
    *   * `name`
    *   * `database`
    *   * `state`
-   *   * `create_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
-   *   * `expire_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
+   *   * `create_time`  (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
+   *   * `expire_time`  (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
+   *   * `version_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
    *   * `size_bytes`
    * You can combine multiple expressions by enclosing each expression in
    * parentheses. By default, expressions are combined with AND logic, but
@@ -216,12 +220,15 @@ private static final long serialVersionUID = 0L;
    * The value must be a string, a number, or a boolean. The comparison operator
    * must be one of: `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, or `:`.
    * Colon `:` is the contains operator. Filter rules are not case sensitive.
-   * The following fields in the [Backup][google.spanner.admin.database.v1.Backup] are eligible for filtering:
+   * The following fields in the
+   * [Backup][google.spanner.admin.database.v1.Backup] are eligible for
+   * filtering:
    *   * `name`
    *   * `database`
    *   * `state`
-   *   * `create_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
-   *   * `expire_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
+   *   * `create_time`  (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
+   *   * `expire_time`  (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
+   *   * `version_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
    *   * `size_bytes`
    * You can combine multiple expressions by enclosing each expression in
    * parentheses. By default, expressions are combined with AND logic, but
@@ -279,9 +286,10 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * If non-empty, `page_token` should contain a
-   * [next_page_token][google.spanner.admin.database.v1.ListBackupsResponse.next_page_token] from a
-   * previous [ListBackupsResponse][google.spanner.admin.database.v1.ListBackupsResponse] to the same `parent` and with the same
-   * `filter`.
+   * [next_page_token][google.spanner.admin.database.v1.ListBackupsResponse.next_page_token]
+   * from a previous
+   * [ListBackupsResponse][google.spanner.admin.database.v1.ListBackupsResponse]
+   * to the same `parent` and with the same `filter`.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -303,9 +311,10 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * If non-empty, `page_token` should contain a
-   * [next_page_token][google.spanner.admin.database.v1.ListBackupsResponse.next_page_token] from a
-   * previous [ListBackupsResponse][google.spanner.admin.database.v1.ListBackupsResponse] to the same `parent` and with the same
-   * `filter`.
+   * [next_page_token][google.spanner.admin.database.v1.ListBackupsResponse.next_page_token]
+   * from a previous
+   * [ListBackupsResponse][google.spanner.admin.database.v1.ListBackupsResponse]
+   * to the same `parent` and with the same `filter`.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -513,7 +522,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The request for [ListBackups][google.spanner.admin.database.v1.DatabaseAdmin.ListBackups].
+   * The request for
+   * [ListBackups][google.spanner.admin.database.v1.DatabaseAdmin.ListBackups].
    * </pre>
    *
    * Protobuf type {@code google.spanner.admin.database.v1.ListBackupsRequest}
@@ -793,12 +803,15 @@ private static final long serialVersionUID = 0L;
      * The value must be a string, a number, or a boolean. The comparison operator
      * must be one of: `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, or `:`.
      * Colon `:` is the contains operator. Filter rules are not case sensitive.
-     * The following fields in the [Backup][google.spanner.admin.database.v1.Backup] are eligible for filtering:
+     * The following fields in the
+     * [Backup][google.spanner.admin.database.v1.Backup] are eligible for
+     * filtering:
      *   * `name`
      *   * `database`
      *   * `state`
-     *   * `create_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
-     *   * `expire_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
+     *   * `create_time`  (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
+     *   * `expire_time`  (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
+     *   * `version_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
      *   * `size_bytes`
      * You can combine multiple expressions by enclosing each expression in
      * parentheses. By default, expressions are combined with AND logic, but
@@ -840,12 +853,15 @@ private static final long serialVersionUID = 0L;
      * The value must be a string, a number, or a boolean. The comparison operator
      * must be one of: `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, or `:`.
      * Colon `:` is the contains operator. Filter rules are not case sensitive.
-     * The following fields in the [Backup][google.spanner.admin.database.v1.Backup] are eligible for filtering:
+     * The following fields in the
+     * [Backup][google.spanner.admin.database.v1.Backup] are eligible for
+     * filtering:
      *   * `name`
      *   * `database`
      *   * `state`
-     *   * `create_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
-     *   * `expire_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
+     *   * `create_time`  (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
+     *   * `expire_time`  (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
+     *   * `version_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
      *   * `size_bytes`
      * You can combine multiple expressions by enclosing each expression in
      * parentheses. By default, expressions are combined with AND logic, but
@@ -888,12 +904,15 @@ private static final long serialVersionUID = 0L;
      * The value must be a string, a number, or a boolean. The comparison operator
      * must be one of: `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, or `:`.
      * Colon `:` is the contains operator. Filter rules are not case sensitive.
-     * The following fields in the [Backup][google.spanner.admin.database.v1.Backup] are eligible for filtering:
+     * The following fields in the
+     * [Backup][google.spanner.admin.database.v1.Backup] are eligible for
+     * filtering:
      *   * `name`
      *   * `database`
      *   * `state`
-     *   * `create_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
-     *   * `expire_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
+     *   * `create_time`  (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
+     *   * `expire_time`  (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
+     *   * `version_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
      *   * `size_bytes`
      * You can combine multiple expressions by enclosing each expression in
      * parentheses. By default, expressions are combined with AND logic, but
@@ -934,12 +953,15 @@ private static final long serialVersionUID = 0L;
      * The value must be a string, a number, or a boolean. The comparison operator
      * must be one of: `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, or `:`.
      * Colon `:` is the contains operator. Filter rules are not case sensitive.
-     * The following fields in the [Backup][google.spanner.admin.database.v1.Backup] are eligible for filtering:
+     * The following fields in the
+     * [Backup][google.spanner.admin.database.v1.Backup] are eligible for
+     * filtering:
      *   * `name`
      *   * `database`
      *   * `state`
-     *   * `create_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
-     *   * `expire_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
+     *   * `create_time`  (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
+     *   * `expire_time`  (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
+     *   * `version_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
      *   * `size_bytes`
      * You can combine multiple expressions by enclosing each expression in
      * parentheses. By default, expressions are combined with AND logic, but
@@ -975,12 +997,15 @@ private static final long serialVersionUID = 0L;
      * The value must be a string, a number, or a boolean. The comparison operator
      * must be one of: `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, or `:`.
      * Colon `:` is the contains operator. Filter rules are not case sensitive.
-     * The following fields in the [Backup][google.spanner.admin.database.v1.Backup] are eligible for filtering:
+     * The following fields in the
+     * [Backup][google.spanner.admin.database.v1.Backup] are eligible for
+     * filtering:
      *   * `name`
      *   * `database`
      *   * `state`
-     *   * `create_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
-     *   * `expire_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
+     *   * `create_time`  (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
+     *   * `expire_time`  (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
+     *   * `version_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
      *   * `size_bytes`
      * You can combine multiple expressions by enclosing each expression in
      * parentheses. By default, expressions are combined with AND logic, but
@@ -1065,9 +1090,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If non-empty, `page_token` should contain a
-     * [next_page_token][google.spanner.admin.database.v1.ListBackupsResponse.next_page_token] from a
-     * previous [ListBackupsResponse][google.spanner.admin.database.v1.ListBackupsResponse] to the same `parent` and with the same
-     * `filter`.
+     * [next_page_token][google.spanner.admin.database.v1.ListBackupsResponse.next_page_token]
+     * from a previous
+     * [ListBackupsResponse][google.spanner.admin.database.v1.ListBackupsResponse]
+     * to the same `parent` and with the same `filter`.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1088,9 +1114,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If non-empty, `page_token` should contain a
-     * [next_page_token][google.spanner.admin.database.v1.ListBackupsResponse.next_page_token] from a
-     * previous [ListBackupsResponse][google.spanner.admin.database.v1.ListBackupsResponse] to the same `parent` and with the same
-     * `filter`.
+     * [next_page_token][google.spanner.admin.database.v1.ListBackupsResponse.next_page_token]
+     * from a previous
+     * [ListBackupsResponse][google.spanner.admin.database.v1.ListBackupsResponse]
+     * to the same `parent` and with the same `filter`.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1112,9 +1139,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If non-empty, `page_token` should contain a
-     * [next_page_token][google.spanner.admin.database.v1.ListBackupsResponse.next_page_token] from a
-     * previous [ListBackupsResponse][google.spanner.admin.database.v1.ListBackupsResponse] to the same `parent` and with the same
-     * `filter`.
+     * [next_page_token][google.spanner.admin.database.v1.ListBackupsResponse.next_page_token]
+     * from a previous
+     * [ListBackupsResponse][google.spanner.admin.database.v1.ListBackupsResponse]
+     * to the same `parent` and with the same `filter`.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1134,9 +1162,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If non-empty, `page_token` should contain a
-     * [next_page_token][google.spanner.admin.database.v1.ListBackupsResponse.next_page_token] from a
-     * previous [ListBackupsResponse][google.spanner.admin.database.v1.ListBackupsResponse] to the same `parent` and with the same
-     * `filter`.
+     * [next_page_token][google.spanner.admin.database.v1.ListBackupsResponse.next_page_token]
+     * from a previous
+     * [ListBackupsResponse][google.spanner.admin.database.v1.ListBackupsResponse]
+     * to the same `parent` and with the same `filter`.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1151,9 +1180,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * If non-empty, `page_token` should contain a
-     * [next_page_token][google.spanner.admin.database.v1.ListBackupsResponse.next_page_token] from a
-     * previous [ListBackupsResponse][google.spanner.admin.database.v1.ListBackupsResponse] to the same `parent` and with the same
-     * `filter`.
+     * [next_page_token][google.spanner.admin.database.v1.ListBackupsResponse.next_page_token]
+     * from a previous
+     * [ListBackupsResponse][google.spanner.admin.database.v1.ListBackupsResponse]
+     * to the same `parent` and with the same `filter`.
      * </pre>
      *
      * <code>string page_token = 4;</code>

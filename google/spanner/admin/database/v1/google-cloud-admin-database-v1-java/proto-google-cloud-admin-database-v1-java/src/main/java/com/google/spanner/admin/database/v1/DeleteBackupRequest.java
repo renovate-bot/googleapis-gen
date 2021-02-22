@@ -5,7 +5,8 @@ package com.google.spanner.admin.database.v1;
 
 /**
  * <pre>
- * The request for [DeleteBackup][google.spanner.admin.database.v1.DatabaseAdmin.DeleteBackup].
+ * The request for
+ * [DeleteBackup][google.spanner.admin.database.v1.DatabaseAdmin.DeleteBackup].
  * </pre>
  *
  * Protobuf type {@code google.spanner.admin.database.v1.DeleteBackupRequest}
@@ -297,7 +298,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The request for [DeleteBackup][google.spanner.admin.database.v1.DatabaseAdmin.DeleteBackup].
+   * The request for
+   * [DeleteBackup][google.spanner.admin.database.v1.DatabaseAdmin.DeleteBackup].
    * </pre>
    *
    * Protobuf type {@code google.spanner.admin.database.v1.DeleteBackupRequest}

@@ -9,10 +9,10 @@ public interface BackupOrBuilder extends
 
   /**
    * <pre>
-   * Required for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
-   * Name of the database from which this backup was
-   * created. This needs to be in the same instance as the backup.
-   * Values are of the form
+   * Required for the
+   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+   * operation. Name of the database from which this backup was created. This
+   * needs to be in the same instance as the backup. Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;`.
    * </pre>
    *
@@ -22,10 +22,10 @@ public interface BackupOrBuilder extends
   java.lang.String getDatabase();
   /**
    * <pre>
-   * Required for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
-   * Name of the database from which this backup was
-   * created. This needs to be in the same instance as the backup.
-   * Values are of the form
+   * Required for the
+   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+   * operation. Name of the database from which this backup was created. This
+   * needs to be in the same instance as the backup. Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;`.
    * </pre>
    *
@@ -73,7 +73,8 @@ public interface BackupOrBuilder extends
 
   /**
    * <pre>
-   * Required for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+   * Required for the
+   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
    * operation. The expiration time of the backup, with microseconds
    * granularity that must be at least 6 hours and at most 366 days
    * from the time the CreateBackup request is processed. Once the `expire_time`
@@ -87,7 +88,8 @@ public interface BackupOrBuilder extends
   boolean hasExpireTime();
   /**
    * <pre>
-   * Required for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+   * Required for the
+   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
    * operation. The expiration time of the backup, with microseconds
    * granularity that must be at least 6 hours and at most 366 days
    * from the time the CreateBackup request is processed. Once the `expire_time`
@@ -101,7 +103,8 @@ public interface BackupOrBuilder extends
   com.google.protobuf.Timestamp getExpireTime();
   /**
    * <pre>
-   * Required for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+   * Required for the
+   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
    * operation. The expiration time of the backup, with microseconds
    * granularity that must be at least 6 hours and at most 366 days
    * from the time the CreateBackup request is processed. Once the `expire_time`
@@ -115,8 +118,11 @@ public interface BackupOrBuilder extends
 
   /**
    * <pre>
-   * Output only for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
-   * Required for the [UpdateBackup][google.spanner.admin.database.v1.DatabaseAdmin.UpdateBackup] operation.
+   * Output only for the
+   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+   * operation. Required for the
+   * [UpdateBackup][google.spanner.admin.database.v1.DatabaseAdmin.UpdateBackup]
+   * operation.
    * A globally unique identifier for the backup which cannot be
    * changed. Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/backups/[a-z][a-z0-9_&#92;-]*[a-z0-9]`
@@ -134,8 +140,11 @@ public interface BackupOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Output only for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
-   * Required for the [UpdateBackup][google.spanner.admin.database.v1.DatabaseAdmin.UpdateBackup] operation.
+   * Output only for the
+   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+   * operation. Required for the
+   * [UpdateBackup][google.spanner.admin.database.v1.DatabaseAdmin.UpdateBackup]
+   * operation.
    * A globally unique identifier for the backup which cannot be
    * changed. Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/backups/[a-z][a-z0-9_&#92;-]*[a-z0-9]`
@@ -155,7 +164,8 @@ public interface BackupOrBuilder extends
 
   /**
    * <pre>
-   * Output only. The time the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+   * Output only. The time the
+   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
    * request is received. If the request does not specify `version_time`, the
    * `version_time` of the backup will be equivalent to the `create_time`.
    * </pre>
@@ -166,7 +176,8 @@ public interface BackupOrBuilder extends
   boolean hasCreateTime();
   /**
    * <pre>
-   * Output only. The time the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+   * Output only. The time the
+   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
    * request is received. If the request does not specify `version_time`, the
    * `version_time` of the backup will be equivalent to the `create_time`.
    * </pre>
@@ -177,7 +188,8 @@ public interface BackupOrBuilder extends
   com.google.protobuf.Timestamp getCreateTime();
   /**
    * <pre>
-   * Output only. The time the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+   * Output only. The time the
+   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
    * request is received. If the request does not specify `version_time`, the
    * `version_time` of the backup will be equivalent to the `create_time`.
    * </pre>
@@ -226,7 +238,7 @@ public interface BackupOrBuilder extends
    * to the backup is removed.
    * </pre>
    *
-   * <code>repeated string referencing_databases = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>repeated string referencing_databases = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return A list containing the referencingDatabases.
    */
   java.util.List<java.lang.String>
@@ -242,7 +254,7 @@ public interface BackupOrBuilder extends
    * to the backup is removed.
    * </pre>
    *
-   * <code>repeated string referencing_databases = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>repeated string referencing_databases = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @return The count of referencingDatabases.
    */
   int getReferencingDatabasesCount();
@@ -257,7 +269,7 @@ public interface BackupOrBuilder extends
    * to the backup is removed.
    * </pre>
    *
-   * <code>repeated string referencing_databases = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>repeated string referencing_databases = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @param index The index of the element to return.
    * @return The referencingDatabases at the given index.
    */
@@ -273,10 +285,37 @@ public interface BackupOrBuilder extends
    * to the backup is removed.
    * </pre>
    *
-   * <code>repeated string referencing_databases = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>repeated string referencing_databases = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
    * @param index The index of the value to return.
    * @return The bytes of the referencingDatabases at the given index.
    */
   com.google.protobuf.ByteString
       getReferencingDatabasesBytes(int index);
+
+  /**
+   * <pre>
+   * Output only. The encryption information for the backup.
+   * </pre>
+   *
+   * <code>.google.spanner.admin.database.v1.EncryptionInfo encryption_info = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the encryptionInfo field is set.
+   */
+  boolean hasEncryptionInfo();
+  /**
+   * <pre>
+   * Output only. The encryption information for the backup.
+   * </pre>
+   *
+   * <code>.google.spanner.admin.database.v1.EncryptionInfo encryption_info = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The encryptionInfo.
+   */
+  com.google.spanner.admin.database.v1.EncryptionInfo getEncryptionInfo();
+  /**
+   * <pre>
+   * Output only. The encryption information for the backup.
+   * </pre>
+   *
+   * <code>.google.spanner.admin.database.v1.EncryptionInfo encryption_info = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  com.google.spanner.admin.database.v1.EncryptionInfoOrBuilder getEncryptionInfoOrBuilder();
 }

@@ -5,7 +5,8 @@ package com.google.spanner.admin.database.v1;
 
 /**
  * <pre>
- * The request for [DropDatabase][google.spanner.admin.database.v1.DatabaseAdmin.DropDatabase].
+ * The request for
+ * [DropDatabase][google.spanner.admin.database.v1.DatabaseAdmin.DropDatabase].
  * </pre>
  *
  * Protobuf type {@code google.spanner.admin.database.v1.DropDatabaseRequest}
@@ -293,7 +294,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The request for [DropDatabase][google.spanner.admin.database.v1.DatabaseAdmin.DropDatabase].
+   * The request for
+   * [DropDatabase][google.spanner.admin.database.v1.DatabaseAdmin.DropDatabase].
    * </pre>
    *
    * Protobuf type {@code google.spanner.admin.database.v1.DropDatabaseRequest}

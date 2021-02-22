@@ -222,7 +222,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The progress of the
-   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
+   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+   * operation.
    * </pre>
    *
    * <code>.google.spanner.admin.database.v1.OperationProgress progress = 3;</code>
@@ -235,7 +236,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The progress of the
-   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
+   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+   * operation.
    * </pre>
    *
    * <code>.google.spanner.admin.database.v1.OperationProgress progress = 3;</code>
@@ -248,7 +250,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The progress of the
-   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
+   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+   * operation.
    * </pre>
    *
    * <code>.google.spanner.admin.database.v1.OperationProgress progress = 3;</code>
@@ -271,7 +274,8 @@ private static final long serialVersionUID = 0L;
    * other methods to check whether the cancellation succeeded or whether the
    * operation completed despite cancellation. On successful cancellation,
    * the operation is not deleted; instead, it becomes an operation with
-   * an [Operation.error][] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+   * an [Operation.error][google.longrunning.Operation.error] value with a
+   * [google.rpc.Status.code][google.rpc.Status.code] of 1,
    * corresponding to `Code.CANCELLED`.
    * </pre>
    *
@@ -293,7 +297,8 @@ private static final long serialVersionUID = 0L;
    * other methods to check whether the cancellation succeeded or whether the
    * operation completed despite cancellation. On successful cancellation,
    * the operation is not deleted; instead, it becomes an operation with
-   * an [Operation.error][] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+   * an [Operation.error][google.longrunning.Operation.error] value with a
+   * [google.rpc.Status.code][google.rpc.Status.code] of 1,
    * corresponding to `Code.CANCELLED`.
    * </pre>
    *
@@ -315,7 +320,8 @@ private static final long serialVersionUID = 0L;
    * other methods to check whether the cancellation succeeded or whether the
    * operation completed despite cancellation. On successful cancellation,
    * the operation is not deleted; instead, it becomes an operation with
-   * an [Operation.error][] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+   * an [Operation.error][google.longrunning.Operation.error] value with a
+   * [google.rpc.Status.code][google.rpc.Status.code] of 1,
    * corresponding to `Code.CANCELLED`.
    * </pre>
    *
@@ -908,7 +914,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The progress of the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
+     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * operation.
      * </pre>
      *
      * <code>.google.spanner.admin.database.v1.OperationProgress progress = 3;</code>
@@ -920,7 +927,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The progress of the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
+     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * operation.
      * </pre>
      *
      * <code>.google.spanner.admin.database.v1.OperationProgress progress = 3;</code>
@@ -936,7 +944,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The progress of the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
+     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * operation.
      * </pre>
      *
      * <code>.google.spanner.admin.database.v1.OperationProgress progress = 3;</code>
@@ -957,7 +966,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The progress of the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
+     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * operation.
      * </pre>
      *
      * <code>.google.spanner.admin.database.v1.OperationProgress progress = 3;</code>
@@ -976,7 +986,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The progress of the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
+     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * operation.
      * </pre>
      *
      * <code>.google.spanner.admin.database.v1.OperationProgress progress = 3;</code>
@@ -999,7 +1010,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The progress of the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
+     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * operation.
      * </pre>
      *
      * <code>.google.spanner.admin.database.v1.OperationProgress progress = 3;</code>
@@ -1018,7 +1030,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The progress of the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
+     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * operation.
      * </pre>
      *
      * <code>.google.spanner.admin.database.v1.OperationProgress progress = 3;</code>
@@ -1031,7 +1044,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The progress of the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
+     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * operation.
      * </pre>
      *
      * <code>.google.spanner.admin.database.v1.OperationProgress progress = 3;</code>
@@ -1047,7 +1061,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The progress of the
-     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
+     * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+     * operation.
      * </pre>
      *
      * <code>.google.spanner.admin.database.v1.OperationProgress progress = 3;</code>
@@ -1080,7 +1095,8 @@ private static final long serialVersionUID = 0L;
      * other methods to check whether the cancellation succeeded or whether the
      * operation completed despite cancellation. On successful cancellation,
      * the operation is not deleted; instead, it becomes an operation with
-     * an [Operation.error][] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * an [Operation.error][google.longrunning.Operation.error] value with a
+     * [google.rpc.Status.code][google.rpc.Status.code] of 1,
      * corresponding to `Code.CANCELLED`.
      * </pre>
      *
@@ -1101,7 +1117,8 @@ private static final long serialVersionUID = 0L;
      * other methods to check whether the cancellation succeeded or whether the
      * operation completed despite cancellation. On successful cancellation,
      * the operation is not deleted; instead, it becomes an operation with
-     * an [Operation.error][] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * an [Operation.error][google.longrunning.Operation.error] value with a
+     * [google.rpc.Status.code][google.rpc.Status.code] of 1,
      * corresponding to `Code.CANCELLED`.
      * </pre>
      *
@@ -1126,7 +1143,8 @@ private static final long serialVersionUID = 0L;
      * other methods to check whether the cancellation succeeded or whether the
      * operation completed despite cancellation. On successful cancellation,
      * the operation is not deleted; instead, it becomes an operation with
-     * an [Operation.error][] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * an [Operation.error][google.longrunning.Operation.error] value with a
+     * [google.rpc.Status.code][google.rpc.Status.code] of 1,
      * corresponding to `Code.CANCELLED`.
      * </pre>
      *
@@ -1156,7 +1174,8 @@ private static final long serialVersionUID = 0L;
      * other methods to check whether the cancellation succeeded or whether the
      * operation completed despite cancellation. On successful cancellation,
      * the operation is not deleted; instead, it becomes an operation with
-     * an [Operation.error][] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * an [Operation.error][google.longrunning.Operation.error] value with a
+     * [google.rpc.Status.code][google.rpc.Status.code] of 1,
      * corresponding to `Code.CANCELLED`.
      * </pre>
      *
@@ -1184,7 +1203,8 @@ private static final long serialVersionUID = 0L;
      * other methods to check whether the cancellation succeeded or whether the
      * operation completed despite cancellation. On successful cancellation,
      * the operation is not deleted; instead, it becomes an operation with
-     * an [Operation.error][] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * an [Operation.error][google.longrunning.Operation.error] value with a
+     * [google.rpc.Status.code][google.rpc.Status.code] of 1,
      * corresponding to `Code.CANCELLED`.
      * </pre>
      *
@@ -1216,7 +1236,8 @@ private static final long serialVersionUID = 0L;
      * other methods to check whether the cancellation succeeded or whether the
      * operation completed despite cancellation. On successful cancellation,
      * the operation is not deleted; instead, it becomes an operation with
-     * an [Operation.error][] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * an [Operation.error][google.longrunning.Operation.error] value with a
+     * [google.rpc.Status.code][google.rpc.Status.code] of 1,
      * corresponding to `Code.CANCELLED`.
      * </pre>
      *
@@ -1244,7 +1265,8 @@ private static final long serialVersionUID = 0L;
      * other methods to check whether the cancellation succeeded or whether the
      * operation completed despite cancellation. On successful cancellation,
      * the operation is not deleted; instead, it becomes an operation with
-     * an [Operation.error][] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * an [Operation.error][google.longrunning.Operation.error] value with a
+     * [google.rpc.Status.code][google.rpc.Status.code] of 1,
      * corresponding to `Code.CANCELLED`.
      * </pre>
      *
@@ -1266,7 +1288,8 @@ private static final long serialVersionUID = 0L;
      * other methods to check whether the cancellation succeeded or whether the
      * operation completed despite cancellation. On successful cancellation,
      * the operation is not deleted; instead, it becomes an operation with
-     * an [Operation.error][] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * an [Operation.error][google.longrunning.Operation.error] value with a
+     * [google.rpc.Status.code][google.rpc.Status.code] of 1,
      * corresponding to `Code.CANCELLED`.
      * </pre>
      *
@@ -1291,7 +1314,8 @@ private static final long serialVersionUID = 0L;
      * other methods to check whether the cancellation succeeded or whether the
      * operation completed despite cancellation. On successful cancellation,
      * the operation is not deleted; instead, it becomes an operation with
-     * an [Operation.error][] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * an [Operation.error][google.longrunning.Operation.error] value with a
+     * [google.rpc.Status.code][google.rpc.Status.code] of 1,
      * corresponding to `Code.CANCELLED`.
      * </pre>
      *

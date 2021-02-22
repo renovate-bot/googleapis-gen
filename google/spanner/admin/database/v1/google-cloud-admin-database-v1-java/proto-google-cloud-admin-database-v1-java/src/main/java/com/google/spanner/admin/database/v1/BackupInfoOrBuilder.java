@@ -31,9 +31,9 @@ public interface BackupInfoOrBuilder extends
    * <pre>
    * The backup contains an externally consistent copy of `source_database` at
    * the timestamp specified by `version_time`. If the
-   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] request did not specify
-   * `version_time`, the `version_time` of the backup is equivalent to the
-   * `create_time`.
+   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+   * request did not specify `version_time`, the `version_time` of the backup is
+   * equivalent to the `create_time`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp version_time = 4;</code>
@@ -44,9 +44,9 @@ public interface BackupInfoOrBuilder extends
    * <pre>
    * The backup contains an externally consistent copy of `source_database` at
    * the timestamp specified by `version_time`. If the
-   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] request did not specify
-   * `version_time`, the `version_time` of the backup is equivalent to the
-   * `create_time`.
+   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+   * request did not specify `version_time`, the `version_time` of the backup is
+   * equivalent to the `create_time`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp version_time = 4;</code>
@@ -57,9 +57,9 @@ public interface BackupInfoOrBuilder extends
    * <pre>
    * The backup contains an externally consistent copy of `source_database` at
    * the timestamp specified by `version_time`. If the
-   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] request did not specify
-   * `version_time`, the `version_time` of the backup is equivalent to the
-   * `create_time`.
+   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+   * request did not specify `version_time`, the `version_time` of the backup is
+   * equivalent to the `create_time`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp version_time = 4;</code>
@@ -68,8 +68,9 @@ public interface BackupInfoOrBuilder extends
 
   /**
    * <pre>
-   * The time the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] request was
-   * received.
+   * The time the
+   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+   * request was received.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2;</code>
@@ -78,8 +79,9 @@ public interface BackupInfoOrBuilder extends
   boolean hasCreateTime();
   /**
    * <pre>
-   * The time the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] request was
-   * received.
+   * The time the
+   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+   * request was received.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2;</code>
@@ -88,8 +90,9 @@ public interface BackupInfoOrBuilder extends
   com.google.protobuf.Timestamp getCreateTime();
   /**
    * <pre>
-   * The time the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] request was
-   * received.
+   * The time the
+   * [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+   * request was received.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2;</code>
