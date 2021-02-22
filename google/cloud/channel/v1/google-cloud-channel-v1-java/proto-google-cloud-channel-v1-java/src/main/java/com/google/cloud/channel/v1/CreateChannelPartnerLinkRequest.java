@@ -21,7 +21,6 @@ private static final long serialVersionUID = 0L;
   }
   private CreateChannelPartnerLinkRequest() {
     parent_ = "";
-    domain_ = "";
   }
 
   @java.lang.Override
@@ -71,12 +70,6 @@ private static final long serialVersionUID = 0L;
               channelPartnerLink_ = subBuilder.buildPartial();
             }
 
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            domain_ = s;
             break;
           }
           default: {
@@ -205,56 +198,6 @@ private static final long serialVersionUID = 0L;
     return getChannelPartnerLink();
   }
 
-  public static final int DOMAIN_FIELD_NUMBER = 3;
-  private volatile java.lang.Object domain_;
-  /**
-   * <pre>
-   * Optional. The invited partner's domain. Either domain or
-   * channel_partner_link.reseller_cloud_identity_id can be used to create a
-   * link.
-   * </pre>
-   *
-   * <code>string domain = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The domain.
-   */
-  @java.lang.Override
-  public java.lang.String getDomain() {
-    java.lang.Object ref = domain_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      domain_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Optional. The invited partner's domain. Either domain or
-   * channel_partner_link.reseller_cloud_identity_id can be used to create a
-   * link.
-   * </pre>
-   *
-   * <code>string domain = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for domain.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getDomainBytes() {
-    java.lang.Object ref = domain_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      domain_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -275,9 +218,6 @@ private static final long serialVersionUID = 0L;
     if (channelPartnerLink_ != null) {
       output.writeMessage(2, getChannelPartnerLink());
     }
-    if (!getDomainBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, domain_);
-    }
     unknownFields.writeTo(output);
   }
 
@@ -293,9 +233,6 @@ private static final long serialVersionUID = 0L;
     if (channelPartnerLink_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getChannelPartnerLink());
-    }
-    if (!getDomainBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, domain_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -319,8 +256,6 @@ private static final long serialVersionUID = 0L;
       if (!getChannelPartnerLink()
           .equals(other.getChannelPartnerLink())) return false;
     }
-    if (!getDomain()
-        .equals(other.getDomain())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -338,8 +273,6 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + CHANNEL_PARTNER_LINK_FIELD_NUMBER;
       hash = (53 * hash) + getChannelPartnerLink().hashCode();
     }
-    hash = (37 * hash) + DOMAIN_FIELD_NUMBER;
-    hash = (53 * hash) + getDomain().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -485,8 +418,6 @@ private static final long serialVersionUID = 0L;
         channelPartnerLink_ = null;
         channelPartnerLinkBuilder_ = null;
       }
-      domain_ = "";
-
       return this;
     }
 
@@ -519,7 +450,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.channelPartnerLink_ = channelPartnerLinkBuilder_.build();
       }
-      result.domain_ = domain_;
       onBuilt();
       return result;
     }
@@ -574,10 +504,6 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasChannelPartnerLink()) {
         mergeChannelPartnerLink(other.getChannelPartnerLink());
-      }
-      if (!other.getDomain().isEmpty()) {
-        domain_ = other.domain_;
-        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -885,112 +811,6 @@ private static final long serialVersionUID = 0L;
         channelPartnerLink_ = null;
       }
       return channelPartnerLinkBuilder_;
-    }
-
-    private java.lang.Object domain_ = "";
-    /**
-     * <pre>
-     * Optional. The invited partner's domain. Either domain or
-     * channel_partner_link.reseller_cloud_identity_id can be used to create a
-     * link.
-     * </pre>
-     *
-     * <code>string domain = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The domain.
-     */
-    public java.lang.String getDomain() {
-      java.lang.Object ref = domain_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        domain_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Optional. The invited partner's domain. Either domain or
-     * channel_partner_link.reseller_cloud_identity_id can be used to create a
-     * link.
-     * </pre>
-     *
-     * <code>string domain = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The bytes for domain.
-     */
-    public com.google.protobuf.ByteString
-        getDomainBytes() {
-      java.lang.Object ref = domain_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        domain_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Optional. The invited partner's domain. Either domain or
-     * channel_partner_link.reseller_cloud_identity_id can be used to create a
-     * link.
-     * </pre>
-     *
-     * <code>string domain = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The domain to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDomain(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      domain_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Optional. The invited partner's domain. Either domain or
-     * channel_partner_link.reseller_cloud_identity_id can be used to create a
-     * link.
-     * </pre>
-     *
-     * <code>string domain = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearDomain() {
-      
-      domain_ = getDefaultInstance().getDomain();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Optional. The invited partner's domain. Either domain or
-     * channel_partner_link.reseller_cloud_identity_id can be used to create a
-     * link.
-     * </pre>
-     *
-     * <code>string domain = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The bytes for domain to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDomainBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      domain_ = value;
-      onChanged();
-      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
