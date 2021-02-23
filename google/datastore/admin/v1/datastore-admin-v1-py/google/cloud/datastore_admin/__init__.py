@@ -18,6 +18,8 @@
 from google.cloud.datastore_admin_v1.services.datastore_admin.async_client import DatastoreAdminAsyncClient
 from google.cloud.datastore_admin_v1.services.datastore_admin.client import DatastoreAdminClient
 from google.cloud.datastore_admin_v1.types.datastore_admin import CommonMetadata
+from google.cloud.datastore_admin_v1.types.datastore_admin import CreateIndexRequest
+from google.cloud.datastore_admin_v1.types.datastore_admin import DeleteIndexRequest
 from google.cloud.datastore_admin_v1.types.datastore_admin import EntityFilter
 from google.cloud.datastore_admin_v1.types.datastore_admin import ExportEntitiesMetadata
 from google.cloud.datastore_admin_v1.types.datastore_admin import ExportEntitiesRequest
@@ -34,8 +36,10 @@ from google.cloud.datastore_admin_v1.types.index import Index
 
 __all__ = (
     'CommonMetadata',
+    'CreateIndexRequest',
     'DatastoreAdminAsyncClient',
     'DatastoreAdminClient',
+    'DeleteIndexRequest',
     'EntityFilter',
     'ExportEntitiesMetadata',
     'ExportEntitiesRequest',

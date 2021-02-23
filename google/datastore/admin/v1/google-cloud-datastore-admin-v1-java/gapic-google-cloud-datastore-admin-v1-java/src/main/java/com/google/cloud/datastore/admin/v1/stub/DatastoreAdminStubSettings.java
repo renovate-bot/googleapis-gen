@@ -48,6 +48,8 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.datastore.admin.v1.CreateIndexRequest;
+import com.google.datastore.admin.v1.DeleteIndexRequest;
 import com.google.datastore.admin.v1.ExportEntitiesMetadata;
 import com.google.datastore.admin.v1.ExportEntitiesRequest;
 import com.google.datastore.admin.v1.ExportEntitiesResponse;
@@ -55,6 +57,7 @@ import com.google.datastore.admin.v1.GetIndexRequest;
 import com.google.datastore.admin.v1.ImportEntitiesMetadata;
 import com.google.datastore.admin.v1.ImportEntitiesRequest;
 import com.google.datastore.admin.v1.Index;
+import com.google.datastore.admin.v1.IndexOperationMetadata;
 import com.google.datastore.admin.v1.ListIndexesRequest;
 import com.google.datastore.admin.v1.ListIndexesResponse;
 import com.google.longrunning.Operation;
@@ -112,6 +115,12 @@ public class DatastoreAdminStubSettings extends StubSettings<DatastoreAdminStubS
   private final UnaryCallSettings<ImportEntitiesRequest, Operation> importEntitiesSettings;
   private final OperationCallSettings<ImportEntitiesRequest, Empty, ImportEntitiesMetadata>
       importEntitiesOperationSettings;
+  private final UnaryCallSettings<CreateIndexRequest, Operation> createIndexSettings;
+  private final OperationCallSettings<CreateIndexRequest, Index, IndexOperationMetadata>
+      createIndexOperationSettings;
+  private final UnaryCallSettings<DeleteIndexRequest, Operation> deleteIndexSettings;
+  private final OperationCallSettings<DeleteIndexRequest, Index, IndexOperationMetadata>
+      deleteIndexOperationSettings;
   private final UnaryCallSettings<GetIndexRequest, Index> getIndexSettings;
   private final PagedCallSettings<ListIndexesRequest, ListIndexesResponse, ListIndexesPagedResponse>
       listIndexesSettings;
@@ -190,6 +199,28 @@ public class DatastoreAdminStubSettings extends StubSettings<DatastoreAdminStubS
   public OperationCallSettings<ImportEntitiesRequest, Empty, ImportEntitiesMetadata>
       importEntitiesOperationSettings() {
     return importEntitiesOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createIndex. */
+  public UnaryCallSettings<CreateIndexRequest, Operation> createIndexSettings() {
+    return createIndexSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createIndex. */
+  public OperationCallSettings<CreateIndexRequest, Index, IndexOperationMetadata>
+      createIndexOperationSettings() {
+    return createIndexOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteIndex. */
+  public UnaryCallSettings<DeleteIndexRequest, Operation> deleteIndexSettings() {
+    return deleteIndexSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteIndex. */
+  public OperationCallSettings<DeleteIndexRequest, Index, IndexOperationMetadata>
+      deleteIndexOperationSettings() {
+    return deleteIndexOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to getIndex. */
@@ -276,6 +307,10 @@ public class DatastoreAdminStubSettings extends StubSettings<DatastoreAdminStubS
     exportEntitiesOperationSettings = settingsBuilder.exportEntitiesOperationSettings().build();
     importEntitiesSettings = settingsBuilder.importEntitiesSettings().build();
     importEntitiesOperationSettings = settingsBuilder.importEntitiesOperationSettings().build();
+    createIndexSettings = settingsBuilder.createIndexSettings().build();
+    createIndexOperationSettings = settingsBuilder.createIndexOperationSettings().build();
+    deleteIndexSettings = settingsBuilder.deleteIndexSettings().build();
+    deleteIndexOperationSettings = settingsBuilder.deleteIndexOperationSettings().build();
     getIndexSettings = settingsBuilder.getIndexSettings().build();
     listIndexesSettings = settingsBuilder.listIndexesSettings().build();
   }
@@ -293,6 +328,12 @@ public class DatastoreAdminStubSettings extends StubSettings<DatastoreAdminStubS
     private final OperationCallSettings.Builder<
             ImportEntitiesRequest, Empty, ImportEntitiesMetadata>
         importEntitiesOperationSettings;
+    private final UnaryCallSettings.Builder<CreateIndexRequest, Operation> createIndexSettings;
+    private final OperationCallSettings.Builder<CreateIndexRequest, Index, IndexOperationMetadata>
+        createIndexOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteIndexRequest, Operation> deleteIndexSettings;
+    private final OperationCallSettings.Builder<DeleteIndexRequest, Index, IndexOperationMetadata>
+        deleteIndexOperationSettings;
     private final UnaryCallSettings.Builder<GetIndexRequest, Index> getIndexSettings;
     private final PagedCallSettings.Builder<
             ListIndexesRequest, ListIndexesResponse, ListIndexesPagedResponse>
@@ -351,6 +392,10 @@ public class DatastoreAdminStubSettings extends StubSettings<DatastoreAdminStubS
       exportEntitiesOperationSettings = OperationCallSettings.newBuilder();
       importEntitiesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       importEntitiesOperationSettings = OperationCallSettings.newBuilder();
+      createIndexSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createIndexOperationSettings = OperationCallSettings.newBuilder();
+      deleteIndexSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteIndexOperationSettings = OperationCallSettings.newBuilder();
       getIndexSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listIndexesSettings = PagedCallSettings.newBuilder(LIST_INDEXES_PAGE_STR_FACT);
 
@@ -358,6 +403,8 @@ public class DatastoreAdminStubSettings extends StubSettings<DatastoreAdminStubS
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               exportEntitiesSettings,
               importEntitiesSettings,
+              createIndexSettings,
+              deleteIndexSettings,
               getIndexSettings,
               listIndexesSettings);
       initDefaults(this);
@@ -370,6 +417,10 @@ public class DatastoreAdminStubSettings extends StubSettings<DatastoreAdminStubS
       exportEntitiesOperationSettings = settings.exportEntitiesOperationSettings.toBuilder();
       importEntitiesSettings = settings.importEntitiesSettings.toBuilder();
       importEntitiesOperationSettings = settings.importEntitiesOperationSettings.toBuilder();
+      createIndexSettings = settings.createIndexSettings.toBuilder();
+      createIndexOperationSettings = settings.createIndexOperationSettings.toBuilder();
+      deleteIndexSettings = settings.deleteIndexSettings.toBuilder();
+      deleteIndexOperationSettings = settings.deleteIndexOperationSettings.toBuilder();
       getIndexSettings = settings.getIndexSettings.toBuilder();
       listIndexesSettings = settings.listIndexesSettings.toBuilder();
 
@@ -377,6 +428,8 @@ public class DatastoreAdminStubSettings extends StubSettings<DatastoreAdminStubS
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               exportEntitiesSettings,
               importEntitiesSettings,
+              createIndexSettings,
+              deleteIndexSettings,
               getIndexSettings,
               listIndexesSettings);
     }
@@ -400,6 +453,16 @@ public class DatastoreAdminStubSettings extends StubSettings<DatastoreAdminStubS
 
       builder
           .importEntitiesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .createIndexSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteIndexSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -461,6 +524,52 @@ public class DatastoreAdminStubSettings extends StubSettings<DatastoreAdminStubS
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .createIndexOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<CreateIndexRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Index.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(IndexOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteIndexOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<DeleteIndexRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Index.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(IndexOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -505,6 +614,32 @@ public class DatastoreAdminStubSettings extends StubSettings<DatastoreAdminStubS
     public OperationCallSettings.Builder<ImportEntitiesRequest, Empty, ImportEntitiesMetadata>
         importEntitiesOperationSettings() {
       return importEntitiesOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createIndex. */
+    public UnaryCallSettings.Builder<CreateIndexRequest, Operation> createIndexSettings() {
+      return createIndexSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createIndex. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<CreateIndexRequest, Index, IndexOperationMetadata>
+        createIndexOperationSettings() {
+      return createIndexOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteIndex. */
+    public UnaryCallSettings.Builder<DeleteIndexRequest, Operation> deleteIndexSettings() {
+      return deleteIndexSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteIndex. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteIndexRequest, Index, IndexOperationMetadata>
+        deleteIndexOperationSettings() {
+      return deleteIndexOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to getIndex. */

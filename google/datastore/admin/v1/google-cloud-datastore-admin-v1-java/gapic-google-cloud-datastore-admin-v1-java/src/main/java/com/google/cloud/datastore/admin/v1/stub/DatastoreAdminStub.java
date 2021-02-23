@@ -21,6 +21,8 @@ import static com.google.cloud.datastore.admin.v1.DatastoreAdminClient.ListIndex
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.datastore.admin.v1.CreateIndexRequest;
+import com.google.datastore.admin.v1.DeleteIndexRequest;
 import com.google.datastore.admin.v1.ExportEntitiesMetadata;
 import com.google.datastore.admin.v1.ExportEntitiesRequest;
 import com.google.datastore.admin.v1.ExportEntitiesResponse;
@@ -28,6 +30,7 @@ import com.google.datastore.admin.v1.GetIndexRequest;
 import com.google.datastore.admin.v1.ImportEntitiesMetadata;
 import com.google.datastore.admin.v1.ImportEntitiesRequest;
 import com.google.datastore.admin.v1.Index;
+import com.google.datastore.admin.v1.IndexOperationMetadata;
 import com.google.datastore.admin.v1.ListIndexesRequest;
 import com.google.datastore.admin.v1.ListIndexesResponse;
 import com.google.longrunning.Operation;
@@ -64,6 +67,24 @@ public abstract class DatastoreAdminStub implements BackgroundResource {
 
   public UnaryCallable<ImportEntitiesRequest, Operation> importEntitiesCallable() {
     throw new UnsupportedOperationException("Not implemented: importEntitiesCallable()");
+  }
+
+  public OperationCallable<CreateIndexRequest, Index, IndexOperationMetadata>
+      createIndexOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createIndexOperationCallable()");
+  }
+
+  public UnaryCallable<CreateIndexRequest, Operation> createIndexCallable() {
+    throw new UnsupportedOperationException("Not implemented: createIndexCallable()");
+  }
+
+  public OperationCallable<DeleteIndexRequest, Index, IndexOperationMetadata>
+      deleteIndexOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteIndexOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteIndexRequest, Operation> deleteIndexCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteIndexCallable()");
   }
 
   public UnaryCallable<GetIndexRequest, Index> getIndexCallable() {

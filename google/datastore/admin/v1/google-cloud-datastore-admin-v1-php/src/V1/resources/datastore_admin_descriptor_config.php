@@ -5,8 +5,8 @@ return [
         'google.datastore.admin.v1.DatastoreAdmin' => [
             'ExportEntities' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Datastore\Admin\V1\ExportEntitiesResponse',
-                    'metadataReturnType' => '\Google\Datastore\Admin\V1\ExportEntitiesMetadata',
+                    'operationReturnType' => '\Google\Cloud\Datastore\Admin\V1\ExportEntitiesResponse',
+                    'metadataReturnType' => '\Google\Cloud\Datastore\Admin\V1\ExportEntitiesMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -16,7 +16,27 @@ return [
             'ImportEntities' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Datastore\Admin\V1\ImportEntitiesMetadata',
+                    'metadataReturnType' => '\Google\Cloud\Datastore\Admin\V1\ImportEntitiesMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
+            'CreateIndex' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Cloud\Datastore\Admin\V1\Index',
+                    'metadataReturnType' => '\Google\Cloud\Datastore\Admin\V1\IndexOperationMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
+            'DeleteIndex' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Cloud\Datastore\Admin\V1\Index',
+                    'metadataReturnType' => '\Google\Cloud\Datastore\Admin\V1\IndexOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',

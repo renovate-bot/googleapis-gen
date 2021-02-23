@@ -17,7 +17,9 @@
 package com.google.cloud.datastore.admin.v1;
 
 import com.google.api.core.BetaApi;
+import com.google.datastore.admin.v1.CreateIndexRequest;
 import com.google.datastore.admin.v1.DatastoreAdminGrpc.DatastoreAdminImplBase;
+import com.google.datastore.admin.v1.DeleteIndexRequest;
 import com.google.datastore.admin.v1.ExportEntitiesRequest;
 import com.google.datastore.admin.v1.GetIndexRequest;
 import com.google.datastore.admin.v1.ImportEntitiesRequest;
@@ -101,6 +103,46 @@ public class MockDatastoreAdminImpl extends DatastoreAdminImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ImportEntities, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createIndex(CreateIndexRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateIndex, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteIndex(DeleteIndexRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteIndex, expected %s or %s",
                   response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

@@ -27,6 +27,8 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
+import com.google.datastore.admin.v1.CreateIndexRequest;
+import com.google.datastore.admin.v1.DeleteIndexRequest;
 import com.google.datastore.admin.v1.ExportEntitiesMetadata;
 import com.google.datastore.admin.v1.ExportEntitiesRequest;
 import com.google.datastore.admin.v1.ExportEntitiesResponse;
@@ -34,6 +36,7 @@ import com.google.datastore.admin.v1.GetIndexRequest;
 import com.google.datastore.admin.v1.ImportEntitiesMetadata;
 import com.google.datastore.admin.v1.ImportEntitiesRequest;
 import com.google.datastore.admin.v1.Index;
+import com.google.datastore.admin.v1.IndexOperationMetadata;
 import com.google.datastore.admin.v1.ListIndexesRequest;
 import com.google.datastore.admin.v1.ListIndexesResponse;
 import com.google.longrunning.Operation;
@@ -74,6 +77,22 @@ public class GrpcDatastoreAdminStub extends DatastoreAdminStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<CreateIndexRequest, Operation> createIndexMethodDescriptor =
+      MethodDescriptor.<CreateIndexRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.datastore.admin.v1.DatastoreAdmin/CreateIndex")
+          .setRequestMarshaller(ProtoUtils.marshaller(CreateIndexRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<DeleteIndexRequest, Operation> deleteIndexMethodDescriptor =
+      MethodDescriptor.<DeleteIndexRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.datastore.admin.v1.DatastoreAdmin/DeleteIndex")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteIndexRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+
   private static final MethodDescriptor<GetIndexRequest, Index> getIndexMethodDescriptor =
       MethodDescriptor.<GetIndexRequest, Index>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -99,6 +118,12 @@ public class GrpcDatastoreAdminStub extends DatastoreAdminStub {
   private final UnaryCallable<ImportEntitiesRequest, Operation> importEntitiesCallable;
   private final OperationCallable<ImportEntitiesRequest, Empty, ImportEntitiesMetadata>
       importEntitiesOperationCallable;
+  private final UnaryCallable<CreateIndexRequest, Operation> createIndexCallable;
+  private final OperationCallable<CreateIndexRequest, Index, IndexOperationMetadata>
+      createIndexOperationCallable;
+  private final UnaryCallable<DeleteIndexRequest, Operation> deleteIndexCallable;
+  private final OperationCallable<DeleteIndexRequest, Index, IndexOperationMetadata>
+      deleteIndexOperationCallable;
   private final UnaryCallable<GetIndexRequest, Index> getIndexCallable;
   private final UnaryCallable<ListIndexesRequest, ListIndexesResponse> listIndexesCallable;
   private final UnaryCallable<ListIndexesRequest, ListIndexesPagedResponse>
@@ -174,6 +199,33 @@ public class GrpcDatastoreAdminStub extends DatastoreAdminStub {
                   }
                 })
             .build();
+    GrpcCallSettings<CreateIndexRequest, Operation> createIndexTransportSettings =
+        GrpcCallSettings.<CreateIndexRequest, Operation>newBuilder()
+            .setMethodDescriptor(createIndexMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateIndexRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateIndexRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("project_id", String.valueOf(request.getProjectId()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DeleteIndexRequest, Operation> deleteIndexTransportSettings =
+        GrpcCallSettings.<DeleteIndexRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteIndexMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteIndexRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteIndexRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("index_id", String.valueOf(request.getIndexId()));
+                    params.put("project_id", String.valueOf(request.getProjectId()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<GetIndexRequest, Index> getIndexTransportSettings =
         GrpcCallSettings.<GetIndexRequest, Index>newBuilder()
             .setMethodDescriptor(getIndexMethodDescriptor)
@@ -220,6 +272,24 @@ public class GrpcDatastoreAdminStub extends DatastoreAdminStub {
             settings.importEntitiesOperationSettings(),
             clientContext,
             operationsStub);
+    this.createIndexCallable =
+        callableFactory.createUnaryCallable(
+            createIndexTransportSettings, settings.createIndexSettings(), clientContext);
+    this.createIndexOperationCallable =
+        callableFactory.createOperationCallable(
+            createIndexTransportSettings,
+            settings.createIndexOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteIndexCallable =
+        callableFactory.createUnaryCallable(
+            deleteIndexTransportSettings, settings.deleteIndexSettings(), clientContext);
+    this.deleteIndexOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteIndexTransportSettings,
+            settings.deleteIndexOperationSettings(),
+            clientContext,
+            operationsStub);
     this.getIndexCallable =
         callableFactory.createUnaryCallable(
             getIndexTransportSettings, settings.getIndexSettings(), clientContext);
@@ -258,6 +328,28 @@ public class GrpcDatastoreAdminStub extends DatastoreAdminStub {
   public OperationCallable<ImportEntitiesRequest, Empty, ImportEntitiesMetadata>
       importEntitiesOperationCallable() {
     return importEntitiesOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateIndexRequest, Operation> createIndexCallable() {
+    return createIndexCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateIndexRequest, Index, IndexOperationMetadata>
+      createIndexOperationCallable() {
+    return createIndexOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteIndexRequest, Operation> deleteIndexCallable() {
+    return deleteIndexCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteIndexRequest, Index, IndexOperationMetadata>
+      deleteIndexOperationCallable() {
+    return deleteIndexOperationCallable;
   }
 
   @Override

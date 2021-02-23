@@ -70,6 +70,16 @@ public final class DatastoreAdminProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_datastore_admin_v1_EntityFilter_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_datastore_admin_v1_CreateIndexRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_datastore_admin_v1_CreateIndexRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_datastore_admin_v1_DeleteIndexRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_datastore_admin_v1_DeleteIndexRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_datastore_admin_v1_GetIndexRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -149,49 +159,63 @@ public final class DatastoreAdminProto {
       "v1.Progress\022>\n\rentity_filter\030\004 \001(\0132\'.goo" +
       "gle.datastore.admin.v1.EntityFilter\022\021\n\ti" +
       "nput_url\030\005 \001(\t\"4\n\014EntityFilter\022\r\n\005kinds\030" +
-      "\001 \003(\t\022\025\n\rnamespace_ids\030\002 \003(\t\"7\n\017GetIndex" +
-      "Request\022\022\n\nproject_id\030\001 \001(\t\022\020\n\010index_id\030" +
-      "\003 \001(\t\"_\n\022ListIndexesRequest\022\022\n\nproject_i" +
-      "d\030\001 \001(\t\022\016\n\006filter\030\003 \001(\t\022\021\n\tpage_size\030\004 \001" +
-      "(\005\022\022\n\npage_token\030\005 \001(\t\"a\n\023ListIndexesRes" +
-      "ponse\0221\n\007indexes\030\001 \003(\0132 .google.datastor" +
-      "e.admin.v1.Index\022\027\n\017next_page_token\030\002 \001(" +
-      "\t\"\245\001\n\026IndexOperationMetadata\0229\n\006common\030\001" +
-      " \001(\0132).google.datastore.admin.v1.CommonM" +
-      "etadata\022>\n\021progress_entities\030\002 \001(\0132#.goo" +
-      "gle.datastore.admin.v1.Progress\022\020\n\010index" +
-      "_id\030\003 \001(\t*}\n\rOperationType\022\036\n\032OPERATION_" +
-      "TYPE_UNSPECIFIED\020\000\022\023\n\017EXPORT_ENTITIES\020\001\022" +
-      "\023\n\017IMPORT_ENTITIES\020\002\022\020\n\014CREATE_INDEX\020\003\022\020" +
-      "\n\014DELETE_INDEX\020\0042\234\007\n\016DatastoreAdmin\022\366\001\n\016" +
-      "ExportEntities\0220.google.datastore.admin." +
-      "v1.ExportEntitiesRequest\032\035.google.longru" +
-      "nning.Operation\"\222\001\202\323\344\223\002%\" /v1/projects/{" +
-      "project_id}:export:\001*\332A1project_id,label" +
-      "s,entity_filter,output_url_prefix\312A0\n\026Ex" +
-      "portEntitiesResponse\022\026ExportEntitiesMeta" +
-      "data\022\355\001\n\016ImportEntities\0220.google.datasto" +
-      "re.admin.v1.ImportEntitiesRequest\032\035.goog" +
-      "le.longrunning.Operation\"\211\001\202\323\344\223\002%\" /v1/p" +
-      "rojects/{project_id}:import:\001*\332A)project" +
-      "_id,labels,input_url,entity_filter\312A/\n\025g" +
-      "oogle.protobuf.Empty\022\026ImportEntitiesMeta" +
-      "data\022\216\001\n\010GetIndex\022*.google.datastore.adm" +
-      "in.v1.GetIndexRequest\032 .google.datastore" +
-      ".admin.v1.Index\"4\202\323\344\223\002.\022,/v1/projects/{p" +
-      "roject_id}/indexes/{index_id}\022\227\001\n\013ListIn" +
-      "dexes\022-.google.datastore.admin.v1.ListIn" +
-      "dexesRequest\032..google.datastore.admin.v1" +
-      ".ListIndexesResponse\")\202\323\344\223\002#\022!/v1/projec" +
-      "ts/{project_id}/indexes\032v\312A\030datastore.go" +
-      "ogleapis.com\322AXhttps://www.googleapis.co" +
-      "m/auth/cloud-platform,https://www.google" +
-      "apis.com/auth/datastoreB\276\001\n\035com.google.d" +
-      "atastore.admin.v1B\023DatastoreAdminProtoP\001" +
-      "Z>google.golang.org/genproto/googleapis/" +
-      "datastore/admin/v1;admin\252\002\037Google.Cloud." +
-      "Datastore.Admin.V1\352\002#Google::Cloud::Data" +
-      "store::Admin::V1b\006proto3"
+      "\001 \003(\t\022\025\n\rnamespace_ids\030\002 \003(\t\"Y\n\022CreateIn" +
+      "dexRequest\022\022\n\nproject_id\030\001 \001(\t\022/\n\005index\030" +
+      "\003 \001(\0132 .google.datastore.admin.v1.Index\"" +
+      ":\n\022DeleteIndexRequest\022\022\n\nproject_id\030\001 \001(" +
+      "\t\022\020\n\010index_id\030\003 \001(\t\"7\n\017GetIndexRequest\022\022" +
+      "\n\nproject_id\030\001 \001(\t\022\020\n\010index_id\030\003 \001(\t\"_\n\022" +
+      "ListIndexesRequest\022\022\n\nproject_id\030\001 \001(\t\022\016" +
+      "\n\006filter\030\003 \001(\t\022\021\n\tpage_size\030\004 \001(\005\022\022\n\npag" +
+      "e_token\030\005 \001(\t\"a\n\023ListIndexesResponse\0221\n\007" +
+      "indexes\030\001 \003(\0132 .google.datastore.admin.v" +
+      "1.Index\022\027\n\017next_page_token\030\002 \001(\t\"\245\001\n\026Ind" +
+      "exOperationMetadata\0229\n\006common\030\001 \001(\0132).go" +
+      "ogle.datastore.admin.v1.CommonMetadata\022>" +
+      "\n\021progress_entities\030\002 \001(\0132#.google.datas" +
+      "tore.admin.v1.Progress\022\020\n\010index_id\030\003 \001(\t" +
+      "*}\n\rOperationType\022\036\n\032OPERATION_TYPE_UNSP" +
+      "ECIFIED\020\000\022\023\n\017EXPORT_ENTITIES\020\001\022\023\n\017IMPORT" +
+      "_ENTITIES\020\002\022\020\n\014CREATE_INDEX\020\003\022\020\n\014DELETE_" +
+      "INDEX\020\0042\204\n\n\016DatastoreAdmin\022\366\001\n\016ExportEnt" +
+      "ities\0220.google.datastore.admin.v1.Export" +
+      "EntitiesRequest\032\035.google.longrunning.Ope" +
+      "ration\"\222\001\202\323\344\223\002%\" /v1/projects/{project_i" +
+      "d}:export:\001*\332A1project_id,labels,entity_" +
+      "filter,output_url_prefix\312A0\n\026ExportEntit" +
+      "iesResponse\022\026ExportEntitiesMetadata\022\355\001\n\016" +
+      "ImportEntities\0220.google.datastore.admin." +
+      "v1.ImportEntitiesRequest\032\035.google.longru" +
+      "nning.Operation\"\211\001\202\323\344\223\002%\" /v1/projects/{" +
+      "project_id}:import:\001*\332A)project_id,label" +
+      "s,input_url,entity_filter\312A/\n\025google.pro" +
+      "tobuf.Empty\022\026ImportEntitiesMetadata\022\257\001\n\013" +
+      "CreateIndex\022-.google.datastore.admin.v1." +
+      "CreateIndexRequest\032\035.google.longrunning." +
+      "Operation\"R\202\323\344\223\002*\"!/v1/projects/{project" +
+      "_id}/indexes:\005index\312A\037\n\005Index\022\026IndexOper" +
+      "ationMetadata\022\263\001\n\013DeleteIndex\022-.google.d" +
+      "atastore.admin.v1.DeleteIndexRequest\032\035.g" +
+      "oogle.longrunning.Operation\"V\202\323\344\223\002.*,/v1" +
+      "/projects/{project_id}/indexes/{index_id" +
+      "}\312A\037\n\005Index\022\026IndexOperationMetadata\022\216\001\n\010" +
+      "GetIndex\022*.google.datastore.admin.v1.Get" +
+      "IndexRequest\032 .google.datastore.admin.v1" +
+      ".Index\"4\202\323\344\223\002.\022,/v1/projects/{project_id" +
+      "}/indexes/{index_id}\022\227\001\n\013ListIndexes\022-.g" +
+      "oogle.datastore.admin.v1.ListIndexesRequ" +
+      "est\032..google.datastore.admin.v1.ListInde" +
+      "xesResponse\")\202\323\344\223\002#\022!/v1/projects/{proje" +
+      "ct_id}/indexes\032v\312A\030datastore.googleapis." +
+      "com\322AXhttps://www.googleapis.com/auth/cl" +
+      "oud-platform,https://www.googleapis.com/" +
+      "auth/datastoreB\340\001\n\035com.google.datastore." +
+      "admin.v1B\023DatastoreAdminProtoP\001Z>google." +
+      "golang.org/genproto/googleapis/datastore" +
+      "/admin/v1;admin\252\002\037Google.Cloud.Datastore" +
+      ".Admin.V1\312\002\037Google\\Cloud\\Datastore\\Admin" +
+      "\\V1\352\002#Google::Cloud::Datastore::Admin::V" +
+      "1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -269,26 +293,38 @@ public final class DatastoreAdminProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_datastore_admin_v1_EntityFilter_descriptor,
         new java.lang.String[] { "Kinds", "NamespaceIds", });
-    internal_static_google_datastore_admin_v1_GetIndexRequest_descriptor =
+    internal_static_google_datastore_admin_v1_CreateIndexRequest_descriptor =
       getDescriptor().getMessageTypes().get(8);
+    internal_static_google_datastore_admin_v1_CreateIndexRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_datastore_admin_v1_CreateIndexRequest_descriptor,
+        new java.lang.String[] { "ProjectId", "Index", });
+    internal_static_google_datastore_admin_v1_DeleteIndexRequest_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_google_datastore_admin_v1_DeleteIndexRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_datastore_admin_v1_DeleteIndexRequest_descriptor,
+        new java.lang.String[] { "ProjectId", "IndexId", });
+    internal_static_google_datastore_admin_v1_GetIndexRequest_descriptor =
+      getDescriptor().getMessageTypes().get(10);
     internal_static_google_datastore_admin_v1_GetIndexRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_datastore_admin_v1_GetIndexRequest_descriptor,
         new java.lang.String[] { "ProjectId", "IndexId", });
     internal_static_google_datastore_admin_v1_ListIndexesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_google_datastore_admin_v1_ListIndexesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_datastore_admin_v1_ListIndexesRequest_descriptor,
         new java.lang.String[] { "ProjectId", "Filter", "PageSize", "PageToken", });
     internal_static_google_datastore_admin_v1_ListIndexesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_google_datastore_admin_v1_ListIndexesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_datastore_admin_v1_ListIndexesResponse_descriptor,
         new java.lang.String[] { "Indexes", "NextPageToken", });
     internal_static_google_datastore_admin_v1_IndexOperationMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_google_datastore_admin_v1_IndexOperationMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_datastore_admin_v1_IndexOperationMetadata_descriptor,

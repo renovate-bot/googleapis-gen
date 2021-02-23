@@ -27,6 +27,8 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.common.collect.Lists;
+import com.google.datastore.admin.v1.CreateIndexRequest;
+import com.google.datastore.admin.v1.DeleteIndexRequest;
 import com.google.datastore.admin.v1.EntityFilter;
 import com.google.datastore.admin.v1.ExportEntitiesRequest;
 import com.google.datastore.admin.v1.ExportEntitiesResponse;
@@ -191,6 +193,122 @@ public class DatastoreAdminClientTest {
       String inputUrl = "inputUrl470706501";
       EntityFilter entityFilter = EntityFilter.newBuilder().build();
       client.importEntitiesAsync(projectId, labels, inputUrl, entityFilter).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createIndexTest() throws Exception {
+    Index expectedResponse =
+        Index.newBuilder()
+            .setProjectId("projectId-894832108")
+            .setIndexId("indexId1943291277")
+            .setKind("kind3292052")
+            .addAllProperties(new ArrayList<Index.IndexedProperty>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createIndexTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDatastoreAdmin.addResponse(resultOperation);
+
+    CreateIndexRequest request =
+        CreateIndexRequest.newBuilder()
+            .setProjectId("projectId-894832108")
+            .setIndex(Index.newBuilder().build())
+            .build();
+
+    Index actualResponse = client.createIndexAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDatastoreAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateIndexRequest actualRequest = ((CreateIndexRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getProjectId(), actualRequest.getProjectId());
+    Assert.assertEquals(request.getIndex(), actualRequest.getIndex());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createIndexExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDatastoreAdmin.addException(exception);
+
+    try {
+      CreateIndexRequest request =
+          CreateIndexRequest.newBuilder()
+              .setProjectId("projectId-894832108")
+              .setIndex(Index.newBuilder().build())
+              .build();
+      client.createIndexAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteIndexTest() throws Exception {
+    Index expectedResponse =
+        Index.newBuilder()
+            .setProjectId("projectId-894832108")
+            .setIndexId("indexId1943291277")
+            .setKind("kind3292052")
+            .addAllProperties(new ArrayList<Index.IndexedProperty>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteIndexTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDatastoreAdmin.addResponse(resultOperation);
+
+    DeleteIndexRequest request =
+        DeleteIndexRequest.newBuilder()
+            .setProjectId("projectId-894832108")
+            .setIndexId("indexId1943291277")
+            .build();
+
+    Index actualResponse = client.deleteIndexAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDatastoreAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteIndexRequest actualRequest = ((DeleteIndexRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getProjectId(), actualRequest.getProjectId());
+    Assert.assertEquals(request.getIndexId(), actualRequest.getIndexId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteIndexExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDatastoreAdmin.addException(exception);
+
+    try {
+      DeleteIndexRequest request =
+          DeleteIndexRequest.newBuilder()
+              .setProjectId("projectId-894832108")
+              .setIndexId("indexId1943291277")
+              .build();
+      client.deleteIndexAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

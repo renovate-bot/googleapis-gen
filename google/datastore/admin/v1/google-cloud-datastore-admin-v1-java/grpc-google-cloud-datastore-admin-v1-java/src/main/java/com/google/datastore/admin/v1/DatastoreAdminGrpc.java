@@ -131,6 +131,68 @@ public final class DatastoreAdminGrpc {
     return getImportEntitiesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.google.datastore.admin.v1.CreateIndexRequest,
+      com.google.longrunning.Operation> getCreateIndexMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateIndex",
+      requestType = com.google.datastore.admin.v1.CreateIndexRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.datastore.admin.v1.CreateIndexRequest,
+      com.google.longrunning.Operation> getCreateIndexMethod() {
+    io.grpc.MethodDescriptor<com.google.datastore.admin.v1.CreateIndexRequest, com.google.longrunning.Operation> getCreateIndexMethod;
+    if ((getCreateIndexMethod = DatastoreAdminGrpc.getCreateIndexMethod) == null) {
+      synchronized (DatastoreAdminGrpc.class) {
+        if ((getCreateIndexMethod = DatastoreAdminGrpc.getCreateIndexMethod) == null) {
+          DatastoreAdminGrpc.getCreateIndexMethod = getCreateIndexMethod =
+              io.grpc.MethodDescriptor.<com.google.datastore.admin.v1.CreateIndexRequest, com.google.longrunning.Operation>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateIndex"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.datastore.admin.v1.CreateIndexRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.longrunning.Operation.getDefaultInstance()))
+              .setSchemaDescriptor(new DatastoreAdminMethodDescriptorSupplier("CreateIndex"))
+              .build();
+        }
+      }
+    }
+    return getCreateIndexMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.google.datastore.admin.v1.DeleteIndexRequest,
+      com.google.longrunning.Operation> getDeleteIndexMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteIndex",
+      requestType = com.google.datastore.admin.v1.DeleteIndexRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.datastore.admin.v1.DeleteIndexRequest,
+      com.google.longrunning.Operation> getDeleteIndexMethod() {
+    io.grpc.MethodDescriptor<com.google.datastore.admin.v1.DeleteIndexRequest, com.google.longrunning.Operation> getDeleteIndexMethod;
+    if ((getDeleteIndexMethod = DatastoreAdminGrpc.getDeleteIndexMethod) == null) {
+      synchronized (DatastoreAdminGrpc.class) {
+        if ((getDeleteIndexMethod = DatastoreAdminGrpc.getDeleteIndexMethod) == null) {
+          DatastoreAdminGrpc.getDeleteIndexMethod = getDeleteIndexMethod =
+              io.grpc.MethodDescriptor.<com.google.datastore.admin.v1.DeleteIndexRequest, com.google.longrunning.Operation>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteIndex"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.datastore.admin.v1.DeleteIndexRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.longrunning.Operation.getDefaultInstance()))
+              .setSchemaDescriptor(new DatastoreAdminMethodDescriptorSupplier("DeleteIndex"))
+              .build();
+        }
+      }
+    }
+    return getDeleteIndexMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.google.datastore.admin.v1.GetIndexRequest,
       com.google.datastore.admin.v1.Index> getGetIndexMethod;
 
@@ -316,6 +378,45 @@ public final class DatastoreAdminGrpc {
 
     /**
      * <pre>
+     * Creates the specified index.
+     * A newly created index's initial state is `CREATING`. On completion of the
+     * returned [google.longrunning.Operation][google.longrunning.Operation], the state will be `READY`.
+     * If the index already exists, the call will return an `ALREADY_EXISTS`
+     * status.
+     * During index creation, the process could result in an error, in which
+     * case the index will move to the `ERROR` state. The process can be recovered
+     * by fixing the data that caused the error, removing the index with
+     * [delete][google.datastore.admin.v1.DatastoreAdmin.DeleteIndex], then
+     * re-creating the index with [create]
+     * [google.datastore.admin.v1.DatastoreAdmin.CreateIndex].
+     * Indexes with a single property cannot be created.
+     * </pre>
+     */
+    public void createIndex(com.google.datastore.admin.v1.CreateIndexRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(getCreateIndexMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Deletes an existing index.
+     * An index can only be deleted if it is in a `READY` or `ERROR` state. On
+     * successful execution of the request, the index will be in a `DELETING`
+     * [state][google.datastore.admin.v1.Index.State]. And on completion of the
+     * returned [google.longrunning.Operation][google.longrunning.Operation], the index will be removed.
+     * During index deletion, the process could result in an error, in which
+     * case the index will move to the `ERROR` state. The process can be recovered
+     * by fixing the data that caused the error, followed by calling
+     * [delete][google.datastore.admin.v1.DatastoreAdmin.DeleteIndex] again.
+     * </pre>
+     */
+    public void deleteIndex(com.google.datastore.admin.v1.DeleteIndexRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeleteIndexMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Gets an index.
      * </pre>
      */
@@ -352,6 +453,20 @@ public final class DatastoreAdminGrpc {
                 com.google.datastore.admin.v1.ImportEntitiesRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_IMPORT_ENTITIES)))
+          .addMethod(
+            getCreateIndexMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.datastore.admin.v1.CreateIndexRequest,
+                com.google.longrunning.Operation>(
+                  this, METHODID_CREATE_INDEX)))
+          .addMethod(
+            getDeleteIndexMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.datastore.admin.v1.DeleteIndexRequest,
+                com.google.longrunning.Operation>(
+                  this, METHODID_DELETE_INDEX)))
           .addMethod(
             getGetIndexMethod(),
             asyncUnaryCall(
@@ -457,6 +572,47 @@ public final class DatastoreAdminGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getImportEntitiesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Creates the specified index.
+     * A newly created index's initial state is `CREATING`. On completion of the
+     * returned [google.longrunning.Operation][google.longrunning.Operation], the state will be `READY`.
+     * If the index already exists, the call will return an `ALREADY_EXISTS`
+     * status.
+     * During index creation, the process could result in an error, in which
+     * case the index will move to the `ERROR` state. The process can be recovered
+     * by fixing the data that caused the error, removing the index with
+     * [delete][google.datastore.admin.v1.DatastoreAdmin.DeleteIndex], then
+     * re-creating the index with [create]
+     * [google.datastore.admin.v1.DatastoreAdmin.CreateIndex].
+     * Indexes with a single property cannot be created.
+     * </pre>
+     */
+    public void createIndex(com.google.datastore.admin.v1.CreateIndexRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCreateIndexMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Deletes an existing index.
+     * An index can only be deleted if it is in a `READY` or `ERROR` state. On
+     * successful execution of the request, the index will be in a `DELETING`
+     * [state][google.datastore.admin.v1.Index.State]. And on completion of the
+     * returned [google.longrunning.Operation][google.longrunning.Operation], the index will be removed.
+     * During index deletion, the process could result in an error, in which
+     * case the index will move to the `ERROR` state. The process can be recovered
+     * by fixing the data that caused the error, followed by calling
+     * [delete][google.datastore.admin.v1.DatastoreAdmin.DeleteIndex] again.
+     * </pre>
+     */
+    public void deleteIndex(com.google.datastore.admin.v1.DeleteIndexRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeleteIndexMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -573,6 +729,45 @@ public final class DatastoreAdminGrpc {
 
     /**
      * <pre>
+     * Creates the specified index.
+     * A newly created index's initial state is `CREATING`. On completion of the
+     * returned [google.longrunning.Operation][google.longrunning.Operation], the state will be `READY`.
+     * If the index already exists, the call will return an `ALREADY_EXISTS`
+     * status.
+     * During index creation, the process could result in an error, in which
+     * case the index will move to the `ERROR` state. The process can be recovered
+     * by fixing the data that caused the error, removing the index with
+     * [delete][google.datastore.admin.v1.DatastoreAdmin.DeleteIndex], then
+     * re-creating the index with [create]
+     * [google.datastore.admin.v1.DatastoreAdmin.CreateIndex].
+     * Indexes with a single property cannot be created.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createIndex(com.google.datastore.admin.v1.CreateIndexRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getCreateIndexMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Deletes an existing index.
+     * An index can only be deleted if it is in a `READY` or `ERROR` state. On
+     * successful execution of the request, the index will be in a `DELETING`
+     * [state][google.datastore.admin.v1.Index.State]. And on completion of the
+     * returned [google.longrunning.Operation][google.longrunning.Operation], the index will be removed.
+     * During index deletion, the process could result in an error, in which
+     * case the index will move to the `ERROR` state. The process can be recovered
+     * by fixing the data that caused the error, followed by calling
+     * [delete][google.datastore.admin.v1.DatastoreAdmin.DeleteIndex] again.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteIndex(com.google.datastore.admin.v1.DeleteIndexRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getDeleteIndexMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * Gets an index.
      * </pre>
      */
@@ -685,6 +880,47 @@ public final class DatastoreAdminGrpc {
 
     /**
      * <pre>
+     * Creates the specified index.
+     * A newly created index's initial state is `CREATING`. On completion of the
+     * returned [google.longrunning.Operation][google.longrunning.Operation], the state will be `READY`.
+     * If the index already exists, the call will return an `ALREADY_EXISTS`
+     * status.
+     * During index creation, the process could result in an error, in which
+     * case the index will move to the `ERROR` state. The process can be recovered
+     * by fixing the data that caused the error, removing the index with
+     * [delete][google.datastore.admin.v1.DatastoreAdmin.DeleteIndex], then
+     * re-creating the index with [create]
+     * [google.datastore.admin.v1.DatastoreAdmin.CreateIndex].
+     * Indexes with a single property cannot be created.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> createIndex(
+        com.google.datastore.admin.v1.CreateIndexRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCreateIndexMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Deletes an existing index.
+     * An index can only be deleted if it is in a `READY` or `ERROR` state. On
+     * successful execution of the request, the index will be in a `DELETING`
+     * [state][google.datastore.admin.v1.Index.State]. And on completion of the
+     * returned [google.longrunning.Operation][google.longrunning.Operation], the index will be removed.
+     * During index deletion, the process could result in an error, in which
+     * case the index will move to the `ERROR` state. The process can be recovered
+     * by fixing the data that caused the error, followed by calling
+     * [delete][google.datastore.admin.v1.DatastoreAdmin.DeleteIndex] again.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> deleteIndex(
+        com.google.datastore.admin.v1.DeleteIndexRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeleteIndexMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Gets an index.
      * </pre>
      */
@@ -710,8 +946,10 @@ public final class DatastoreAdminGrpc {
 
   private static final int METHODID_EXPORT_ENTITIES = 0;
   private static final int METHODID_IMPORT_ENTITIES = 1;
-  private static final int METHODID_GET_INDEX = 2;
-  private static final int METHODID_LIST_INDEXES = 3;
+  private static final int METHODID_CREATE_INDEX = 2;
+  private static final int METHODID_DELETE_INDEX = 3;
+  private static final int METHODID_GET_INDEX = 4;
+  private static final int METHODID_LIST_INDEXES = 5;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -736,6 +974,14 @@ public final class DatastoreAdminGrpc {
           break;
         case METHODID_IMPORT_ENTITIES:
           serviceImpl.importEntities((com.google.datastore.admin.v1.ImportEntitiesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CREATE_INDEX:
+          serviceImpl.createIndex((com.google.datastore.admin.v1.CreateIndexRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_INDEX:
+          serviceImpl.deleteIndex((com.google.datastore.admin.v1.DeleteIndexRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_GET_INDEX:
@@ -809,6 +1055,8 @@ public final class DatastoreAdminGrpc {
               .setSchemaDescriptor(new DatastoreAdminFileDescriptorSupplier())
               .addMethod(getExportEntitiesMethod())
               .addMethod(getImportEntitiesMethod())
+              .addMethod(getCreateIndexMethod())
+              .addMethod(getDeleteIndexMethod())
               .addMethod(getGetIndexMethod())
               .addMethod(getListIndexesMethod())
               .build();

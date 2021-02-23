@@ -5,7 +5,7 @@ package com.google.datastore.admin.v1;
 
 /**
  * <pre>
- * A minimal index definition.
+ * Datastore composite index definition.
  * </pre>
  *
  * Protobuf type {@code google.datastore.admin.v1.Index}
@@ -1849,7 +1849,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A minimal index definition.
+   * Datastore composite index definition.
    * </pre>
    *
    * Protobuf type {@code google.datastore.admin.v1.Index}

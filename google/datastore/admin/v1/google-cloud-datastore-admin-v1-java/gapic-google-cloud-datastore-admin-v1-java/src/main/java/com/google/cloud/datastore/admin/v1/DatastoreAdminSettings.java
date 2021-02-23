@@ -32,6 +32,8 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.datastore.admin.v1.stub.DatastoreAdminStubSettings;
+import com.google.datastore.admin.v1.CreateIndexRequest;
+import com.google.datastore.admin.v1.DeleteIndexRequest;
 import com.google.datastore.admin.v1.ExportEntitiesMetadata;
 import com.google.datastore.admin.v1.ExportEntitiesRequest;
 import com.google.datastore.admin.v1.ExportEntitiesResponse;
@@ -39,6 +41,7 @@ import com.google.datastore.admin.v1.GetIndexRequest;
 import com.google.datastore.admin.v1.ImportEntitiesMetadata;
 import com.google.datastore.admin.v1.ImportEntitiesRequest;
 import com.google.datastore.admin.v1.Index;
+import com.google.datastore.admin.v1.IndexOperationMetadata;
 import com.google.datastore.admin.v1.ListIndexesRequest;
 import com.google.datastore.admin.v1.ListIndexesResponse;
 import com.google.longrunning.Operation;
@@ -103,6 +106,28 @@ public class DatastoreAdminSettings extends ClientSettings<DatastoreAdminSetting
   public OperationCallSettings<ImportEntitiesRequest, Empty, ImportEntitiesMetadata>
       importEntitiesOperationSettings() {
     return ((DatastoreAdminStubSettings) getStubSettings()).importEntitiesOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createIndex. */
+  public UnaryCallSettings<CreateIndexRequest, Operation> createIndexSettings() {
+    return ((DatastoreAdminStubSettings) getStubSettings()).createIndexSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createIndex. */
+  public OperationCallSettings<CreateIndexRequest, Index, IndexOperationMetadata>
+      createIndexOperationSettings() {
+    return ((DatastoreAdminStubSettings) getStubSettings()).createIndexOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteIndex. */
+  public UnaryCallSettings<DeleteIndexRequest, Operation> deleteIndexSettings() {
+    return ((DatastoreAdminStubSettings) getStubSettings()).deleteIndexSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteIndex. */
+  public OperationCallSettings<DeleteIndexRequest, Index, IndexOperationMetadata>
+      deleteIndexOperationSettings() {
+    return ((DatastoreAdminStubSettings) getStubSettings()).deleteIndexOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to getIndex. */
@@ -235,6 +260,28 @@ public class DatastoreAdminSettings extends ClientSettings<DatastoreAdminSetting
     public OperationCallSettings.Builder<ImportEntitiesRequest, Empty, ImportEntitiesMetadata>
         importEntitiesOperationSettings() {
       return getStubSettingsBuilder().importEntitiesOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createIndex. */
+    public UnaryCallSettings.Builder<CreateIndexRequest, Operation> createIndexSettings() {
+      return getStubSettingsBuilder().createIndexSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createIndex. */
+    public OperationCallSettings.Builder<CreateIndexRequest, Index, IndexOperationMetadata>
+        createIndexOperationSettings() {
+      return getStubSettingsBuilder().createIndexOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteIndex. */
+    public UnaryCallSettings.Builder<DeleteIndexRequest, Operation> deleteIndexSettings() {
+      return getStubSettingsBuilder().deleteIndexSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteIndex. */
+    public OperationCallSettings.Builder<DeleteIndexRequest, Index, IndexOperationMetadata>
+        deleteIndexOperationSettings() {
+      return getStubSettingsBuilder().deleteIndexOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to getIndex. */

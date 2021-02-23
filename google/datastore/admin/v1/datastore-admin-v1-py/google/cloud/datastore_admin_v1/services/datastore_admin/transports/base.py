@@ -118,6 +118,16 @@ class DatastoreAdminTransport(abc.ABC):
                 default_timeout=60.0,
                 client_info=client_info,
             ),
+            self.create_index: gapic_v1.method.wrap_method(
+                self.create_index,
+                default_timeout=60.0,
+                client_info=client_info,
+            ),
+            self.delete_index: gapic_v1.method.wrap_method(
+                self.delete_index,
+                default_timeout=60.0,
+                client_info=client_info,
+            ),
             self.get_index: gapic_v1.method.wrap_method(
                 self.get_index,
                 default_retry=retries.Retry(
@@ -166,6 +176,24 @@ class DatastoreAdminTransport(abc.ABC):
     @property
     def import_entities(self) -> typing.Callable[
             [datastore_admin.ImportEntitiesRequest],
+            typing.Union[
+                operations.Operation,
+                typing.Awaitable[operations.Operation]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def create_index(self) -> typing.Callable[
+            [datastore_admin.CreateIndexRequest],
+            typing.Union[
+                operations.Operation,
+                typing.Awaitable[operations.Operation]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def delete_index(self) -> typing.Callable[
+            [datastore_admin.DeleteIndexRequest],
             typing.Union[
                 operations.Operation,
                 typing.Awaitable[operations.Operation]

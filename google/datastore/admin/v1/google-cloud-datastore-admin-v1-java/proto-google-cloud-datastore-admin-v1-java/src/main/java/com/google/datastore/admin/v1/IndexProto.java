@@ -51,12 +51,13 @@ public final class IndexProto {
       "ection\022\031\n\025DIRECTION_UNSPECIFIED\020\000\022\r\n\tASC" +
       "ENDING\020\001\022\016\n\nDESCENDING\020\002\"P\n\005State\022\025\n\021STA" +
       "TE_UNSPECIFIED\020\000\022\014\n\010CREATING\020\001\022\t\n\005READY\020" +
-      "\002\022\014\n\010DELETING\020\003\022\t\n\005ERROR\020\004B\265\001\n\035com.googl" +
+      "\002\022\014\n\010DELETING\020\003\022\t\n\005ERROR\020\004B\327\001\n\035com.googl" +
       "e.datastore.admin.v1B\nIndexProtoP\001Z>goog" +
       "le.golang.org/genproto/googleapis/datast" +
       "ore/admin/v1;admin\252\002\037Google.Cloud.Datast" +
-      "ore.Admin.V1\352\002#Google::Cloud::Datastore:" +
-      ":Admin::V1b\006proto3"
+      "ore.Admin.V1\312\002\037Google\\Cloud\\Datastore\\Ad" +
+      "min\\V1\352\002#Google::Cloud::Datastore::Admin" +
+      "::V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
