@@ -203,7 +203,7 @@ class ListEntityTypesRequest(proto.Message):
 
             If not specified, the agent's default language is used.
             `Many
-            languages <https://cloud.google.com/dialogflow/docs/reference/language>`__
+            languages <https://cloud.google.com/dialogflow/cx/docs/reference/language>`__
             are supported. Note: languages must be enabled in the agent
             before they can be used.
         page_size (int):
@@ -266,7 +266,7 @@ class GetEntityTypeRequest(proto.Message):
 
             If not specified, the agent's default language is used.
             `Many
-            languages <https://cloud.google.com/dialogflow/docs/reference/language>`__
+            languages <https://cloud.google.com/dialogflow/cx/docs/reference/language>`__
             are supported. Note: languages must be enabled in the agent
             before they can be used.
     """
@@ -295,7 +295,7 @@ class CreateEntityTypeRequest(proto.Message):
 
             If not specified, the agent's default language is used.
             `Many
-            languages <https://cloud.google.com/dialogflow/docs/reference/language>`__
+            languages <https://cloud.google.com/dialogflow/cx/docs/reference/language>`__
             are supported. Note: languages must be enabled in the agent
             before they can be used.
     """
@@ -325,7 +325,7 @@ class UpdateEntityTypeRequest(proto.Message):
 
             If not specified, the agent's default language is used.
             `Many
-            languages <https://cloud.google.com/dialogflow/docs/reference/language>`__
+            languages <https://cloud.google.com/dialogflow/cx/docs/reference/language>`__
             are supported. Note: languages must be enabled in the agent
             before they can be used.
         update_mask (google.protobuf.field_mask_pb2.FieldMask):

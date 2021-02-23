@@ -39,7 +39,7 @@ class Agent extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The default language of the agent as a language tag.
      * See [Language
-     * Support](https://cloud.google.com/dialogflow/docs/reference/language)
+     * Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
      * for a list of the currently supported language codes.
      * This field cannot be set by the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent] method.
      *
@@ -124,7 +124,7 @@ class Agent extends \Google\Protobuf\Internal\Message
      *     @type string $default_language_code
      *           Immutable. The default language of the agent as a language tag.
      *           See [Language
-     *           Support](https://cloud.google.com/dialogflow/docs/reference/language)
+     *           Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
      *           for a list of the currently supported language codes.
      *           This field cannot be set by the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent] method.
      *     @type string $time_zone
@@ -224,7 +224,7 @@ class Agent extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The default language of the agent as a language tag.
      * See [Language
-     * Support](https://cloud.google.com/dialogflow/docs/reference/language)
+     * Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
      * for a list of the currently supported language codes.
      * This field cannot be set by the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent] method.
      *
@@ -239,7 +239,7 @@ class Agent extends \Google\Protobuf\Internal\Message
     /**
      * Immutable. The default language of the agent as a language tag.
      * See [Language
-     * Support](https://cloud.google.com/dialogflow/docs/reference/language)
+     * Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
      * for a list of the currently supported language codes.
      * This field cannot be set by the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent] method.
      *

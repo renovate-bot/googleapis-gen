@@ -99,7 +99,7 @@ public interface QueryResultOrBuilder extends
    * <pre>
    * The language that was triggered during intent detection.
    * See [Language
-   * Support](https://cloud.google.com/dialogflow/docs/reference/language)
+   * Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
    * for a list of the currently supported language codes.
    * </pre>
    *
@@ -111,7 +111,7 @@ public interface QueryResultOrBuilder extends
    * <pre>
    * The language that was triggered during intent detection.
    * See [Language
-   * Support](https://cloud.google.com/dialogflow/docs/reference/language)
+   * Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
    * for a list of the currently supported language codes.
    * </pre>
    *

@@ -468,7 +468,7 @@ class QueryInput(proto.Message):
             The DTMF event to be handled.
         language_code (str):
             Required. The language of the input. See `Language
-            Support <https://cloud.google.com/dialogflow/docs/reference/language>`__
+            Support <https://cloud.google.com/dialogflow/cx/docs/reference/language>`__
             for a list of the currently supported language codes. Note
             that queries in the same session do not necessarily need to
             specify the same language.
@@ -521,7 +521,7 @@ class QueryResult(proto.Message):
         language_code (str):
             The language that was triggered during intent detection. See
             `Language
-            Support <https://cloud.google.com/dialogflow/docs/reference/language>`__
+            Support <https://cloud.google.com/dialogflow/cx/docs/reference/language>`__
             for a list of the currently supported language codes.
         parameters (google.protobuf.struct_pb2.Struct):
             The collected [session

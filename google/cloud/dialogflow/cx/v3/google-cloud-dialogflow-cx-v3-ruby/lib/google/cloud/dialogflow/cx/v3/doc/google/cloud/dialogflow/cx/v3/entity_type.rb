@@ -158,7 +158,7 @@ module Google
           #
           #     If not specified, the agent's default language is used.
           #     [Many
-          #     languages](https://cloud.google.com/dialogflow/docs/reference/language)
+          #     languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
           #     are supported.
           #     Note: languages must be enabled in the agent before they can be used.
           # @!attribute [rw] page_size
@@ -198,7 +198,7 @@ module Google
           #
           #     If not specified, the agent's default language is used.
           #     [Many
-          #     languages](https://cloud.google.com/dialogflow/docs/reference/language)
+          #     languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
           #     are supported.
           #     Note: languages must be enabled in the agent before they can be used.
           class GetEntityTypeRequest; end
@@ -221,7 +221,7 @@ module Google
           #
           #     If not specified, the agent's default language is used.
           #     [Many
-          #     languages](https://cloud.google.com/dialogflow/docs/reference/language)
+          #     languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
           #     are supported.
           #     Note: languages must be enabled in the agent before they can be used.
           class CreateEntityTypeRequest; end
@@ -240,7 +240,7 @@ module Google
           #
           #     If not specified, the agent's default language is used.
           #     [Many
-          #     languages](https://cloud.google.com/dialogflow/docs/reference/language)
+          #     languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
           #     are supported.
           #     Note: languages must be enabled in the agent before they can be used.
           # @!attribute [rw] update_mask

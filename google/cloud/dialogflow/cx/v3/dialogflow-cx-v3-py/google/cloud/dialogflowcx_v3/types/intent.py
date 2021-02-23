@@ -249,7 +249,7 @@ class ListIntentsRequest(proto.Message):
 
             If not specified, the agent's default language is used.
             `Many
-            languages <https://cloud.google.com/dialogflow/docs/reference/language>`__
+            languages <https://cloud.google.com/dialogflow/cx/docs/reference/language>`__
             are supported. Note: languages must be enabled in the agent
             before they can be used.
         intent_view (google.cloud.dialogflowcx_v3.types.IntentView):
@@ -317,7 +317,7 @@ class GetIntentRequest(proto.Message):
 
             If not specified, the agent's default language is used.
             `Many
-            languages <https://cloud.google.com/dialogflow/docs/reference/language>`__
+            languages <https://cloud.google.com/dialogflow/cx/docs/reference/language>`__
             are supported. Note: languages must be enabled in the agent
             before they can be used.
     """
@@ -344,7 +344,7 @@ class CreateIntentRequest(proto.Message):
 
             If not specified, the agent's default language is used.
             `Many
-            languages <https://cloud.google.com/dialogflow/docs/reference/language>`__
+            languages <https://cloud.google.com/dialogflow/cx/docs/reference/language>`__
             are supported. Note: languages must be enabled in the agent
             before they can be used.
     """
@@ -372,7 +372,7 @@ class UpdateIntentRequest(proto.Message):
 
             If not specified, the agent's default language is used.
             `Many
-            languages <https://cloud.google.com/dialogflow/docs/reference/language>`__
+            languages <https://cloud.google.com/dialogflow/cx/docs/reference/language>`__
             are supported. Note: languages must be enabled in the agent
             before they can be used.
         update_mask (google.protobuf.field_mask_pb2.FieldMask):

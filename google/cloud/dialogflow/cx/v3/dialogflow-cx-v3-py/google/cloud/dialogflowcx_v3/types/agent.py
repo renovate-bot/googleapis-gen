@@ -83,7 +83,7 @@ class Agent(proto.Message):
         default_language_code (str):
             Immutable. The default language of the agent as a language
             tag. See `Language
-            Support <https://cloud.google.com/dialogflow/docs/reference/language>`__
+            Support <https://cloud.google.com/dialogflow/cx/docs/reference/language>`__
             for a list of the currently supported language codes. This
             field cannot be set by the
             [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent]
