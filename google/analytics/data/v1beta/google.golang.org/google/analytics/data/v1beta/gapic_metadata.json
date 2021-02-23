@@ -8,7 +8,7 @@
     "BetaAnalyticsData":  {
       "clients":  {
         "grpc":  {
-          "libraryClient":  "BetaAnalyticsData",
+          "libraryClient":  "BetaAnalyticsDataClient",
           "rpcs":  {
             "BatchRunPivotReports":  {
               "methods":  [
