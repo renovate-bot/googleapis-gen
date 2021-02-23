@@ -9,8 +9,8 @@ public interface TableOrBuilder extends
 
   /**
    * <pre>
-   * Output only. The unique name of the table. Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
+   * The unique name of the table. Values are of the form
+   * `projects/{project}/instances/{instance}/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
    * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
    * </pre>
    *
@@ -20,8 +20,8 @@ public interface TableOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Output only. The unique name of the table. Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
+   * The unique name of the table. Values are of the form
+   * `projects/{project}/instances/{instance}/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
    * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
    * </pre>
    *
@@ -37,7 +37,7 @@ public interface TableOrBuilder extends
    * If it could not be determined whether or not the table has data in a
    * particular cluster (for example, if its zone is unavailable), then
    * there will be an entry for the cluster with UNKNOWN `replication_status`.
-   * Views: `REPLICATION_VIEW`, `FULL`
+   * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -49,7 +49,7 @@ public interface TableOrBuilder extends
    * If it could not be determined whether or not the table has data in a
    * particular cluster (for example, if its zone is unavailable), then
    * there will be an entry for the cluster with UNKNOWN `replication_status`.
-   * Views: `REPLICATION_VIEW`, `FULL`
+   * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -68,7 +68,7 @@ public interface TableOrBuilder extends
    * If it could not be determined whether or not the table has data in a
    * particular cluster (for example, if its zone is unavailable), then
    * there will be an entry for the cluster with UNKNOWN `replication_status`.
-   * Views: `REPLICATION_VIEW`, `FULL`
+   * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -81,7 +81,7 @@ public interface TableOrBuilder extends
    * If it could not be determined whether or not the table has data in a
    * particular cluster (for example, if its zone is unavailable), then
    * there will be an entry for the cluster with UNKNOWN `replication_status`.
-   * Views: `REPLICATION_VIEW`, `FULL`
+   * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -96,7 +96,7 @@ public interface TableOrBuilder extends
    * If it could not be determined whether or not the table has data in a
    * particular cluster (for example, if its zone is unavailable), then
    * there will be an entry for the cluster with UNKNOWN `replication_status`.
-   * Views: `REPLICATION_VIEW`, `FULL`
+   * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>

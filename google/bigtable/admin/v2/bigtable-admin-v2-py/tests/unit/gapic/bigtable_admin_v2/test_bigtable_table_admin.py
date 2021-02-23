@@ -47,9 +47,11 @@ from google.iam.v1 import options_pb2 as options  # type: ignore
 from google.iam.v1 import policy_pb2 as policy  # type: ignore
 from google.longrunning import operations_pb2
 from google.oauth2 import service_account
+from google.protobuf import any_pb2 as gp_any  # type: ignore
 from google.protobuf import duration_pb2 as duration  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+from google.rpc import status_pb2 as status  # type: ignore
 from google.type import expr_pb2 as expr  # type: ignore
 
 
@@ -6337,9 +6339,36 @@ def test_parse_cluster_path():
     actual = BigtableTableAdminClient.parse_cluster_path(path)
     assert expected == actual
 
-def test_instance_path():
+def test_crypto_key_version_path():
     project = "whelk"
-    instance = "octopus"
+    location = "octopus"
+    key_ring = "oyster"
+    crypto_key = "nudibranch"
+    crypto_key_version = "cuttlefish"
+
+    expected = "projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}".format(project=project, location=location, key_ring=key_ring, crypto_key=crypto_key, crypto_key_version=crypto_key_version, )
+    actual = BigtableTableAdminClient.crypto_key_version_path(project, location, key_ring, crypto_key, crypto_key_version)
+    assert expected == actual
+
+
+def test_parse_crypto_key_version_path():
+    expected = {
+    "project": "mussel",
+    "location": "winkle",
+    "key_ring": "nautilus",
+    "crypto_key": "scallop",
+    "crypto_key_version": "abalone",
+
+    }
+    path = BigtableTableAdminClient.crypto_key_version_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = BigtableTableAdminClient.parse_crypto_key_version_path(path)
+    assert expected == actual
+
+def test_instance_path():
+    project = "squid"
+    instance = "clam"
 
     expected = "projects/{project}/instances/{instance}".format(project=project, instance=instance, )
     actual = BigtableTableAdminClient.instance_path(project, instance)
@@ -6348,8 +6377,8 @@ def test_instance_path():
 
 def test_parse_instance_path():
     expected = {
-    "project": "oyster",
-    "instance": "nudibranch",
+    "project": "whelk",
+    "instance": "octopus",
 
     }
     path = BigtableTableAdminClient.instance_path(**expected)
@@ -6359,10 +6388,10 @@ def test_parse_instance_path():
     assert expected == actual
 
 def test_snapshot_path():
-    project = "cuttlefish"
-    instance = "mussel"
-    cluster = "winkle"
-    snapshot = "nautilus"
+    project = "oyster"
+    instance = "nudibranch"
+    cluster = "cuttlefish"
+    snapshot = "mussel"
 
     expected = "projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}".format(project=project, instance=instance, cluster=cluster, snapshot=snapshot, )
     actual = BigtableTableAdminClient.snapshot_path(project, instance, cluster, snapshot)
@@ -6371,10 +6400,10 @@ def test_snapshot_path():
 
 def test_parse_snapshot_path():
     expected = {
-    "project": "scallop",
-    "instance": "abalone",
-    "cluster": "squid",
-    "snapshot": "clam",
+    "project": "winkle",
+    "instance": "nautilus",
+    "cluster": "scallop",
+    "snapshot": "abalone",
 
     }
     path = BigtableTableAdminClient.snapshot_path(**expected)
@@ -6384,9 +6413,9 @@ def test_parse_snapshot_path():
     assert expected == actual
 
 def test_table_path():
-    project = "whelk"
-    instance = "octopus"
-    table = "oyster"
+    project = "squid"
+    instance = "clam"
+    table = "whelk"
 
     expected = "projects/{project}/instances/{instance}/tables/{table}".format(project=project, instance=instance, table=table, )
     actual = BigtableTableAdminClient.table_path(project, instance, table)
@@ -6395,9 +6424,9 @@ def test_table_path():
 
 def test_parse_table_path():
     expected = {
-    "project": "nudibranch",
-    "instance": "cuttlefish",
-    "table": "mussel",
+    "project": "octopus",
+    "instance": "oyster",
+    "table": "nudibranch",
 
     }
     path = BigtableTableAdminClient.table_path(**expected)
@@ -6407,7 +6436,7 @@ def test_parse_table_path():
     assert expected == actual
 
 def test_common_billing_account_path():
-    billing_account = "winkle"
+    billing_account = "cuttlefish"
 
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = BigtableTableAdminClient.common_billing_account_path(billing_account)
@@ -6416,7 +6445,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "nautilus",
+    "billing_account": "mussel",
 
     }
     path = BigtableTableAdminClient.common_billing_account_path(**expected)
@@ -6426,7 +6455,7 @@ def test_parse_common_billing_account_path():
     assert expected == actual
 
 def test_common_folder_path():
-    folder = "scallop"
+    folder = "winkle"
 
     expected = "folders/{folder}".format(folder=folder, )
     actual = BigtableTableAdminClient.common_folder_path(folder)
@@ -6435,7 +6464,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "abalone",
+    "folder": "nautilus",
 
     }
     path = BigtableTableAdminClient.common_folder_path(**expected)
@@ -6445,7 +6474,7 @@ def test_parse_common_folder_path():
     assert expected == actual
 
 def test_common_organization_path():
-    organization = "squid"
+    organization = "scallop"
 
     expected = "organizations/{organization}".format(organization=organization, )
     actual = BigtableTableAdminClient.common_organization_path(organization)
@@ -6454,7 +6483,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "clam",
+    "organization": "abalone",
 
     }
     path = BigtableTableAdminClient.common_organization_path(**expected)
@@ -6464,7 +6493,7 @@ def test_parse_common_organization_path():
     assert expected == actual
 
 def test_common_project_path():
-    project = "whelk"
+    project = "squid"
 
     expected = "projects/{project}".format(project=project, )
     actual = BigtableTableAdminClient.common_project_path(project)
@@ -6473,7 +6502,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "octopus",
+    "project": "clam",
 
     }
     path = BigtableTableAdminClient.common_project_path(**expected)
@@ -6483,8 +6512,8 @@ def test_parse_common_project_path():
     assert expected == actual
 
 def test_common_location_path():
-    project = "oyster"
-    location = "nudibranch"
+    project = "whelk"
+    location = "octopus"
 
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = BigtableTableAdminClient.common_location_path(project, location)
@@ -6493,8 +6522,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "cuttlefish",
-    "location": "mussel",
+    "project": "oyster",
+    "location": "nudibranch",
 
     }
     path = BigtableTableAdminClient.common_location_path(**expected)

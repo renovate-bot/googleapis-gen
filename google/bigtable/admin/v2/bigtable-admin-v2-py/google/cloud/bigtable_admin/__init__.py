@@ -78,6 +78,7 @@ from google.cloud.bigtable_admin_v2.types.instance import Instance
 from google.cloud.bigtable_admin_v2.types.table import Backup
 from google.cloud.bigtable_admin_v2.types.table import BackupInfo
 from google.cloud.bigtable_admin_v2.types.table import ColumnFamily
+from google.cloud.bigtable_admin_v2.types.table import EncryptionInfo
 from google.cloud.bigtable_admin_v2.types.table import GcRule
 from google.cloud.bigtable_admin_v2.types.table import RestoreInfo
 from google.cloud.bigtable_admin_v2.types.table import RestoreSourceType
@@ -113,6 +114,7 @@ __all__ = (
     'DeleteSnapshotRequest',
     'DeleteTableRequest',
     'DropRowRangeRequest',
+    'EncryptionInfo',
     'GcRule',
     'GenerateConsistencyTokenRequest',
     'GenerateConsistencyTokenResponse',

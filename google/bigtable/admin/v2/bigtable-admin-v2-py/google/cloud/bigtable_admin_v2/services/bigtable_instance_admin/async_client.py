@@ -60,6 +60,8 @@ class BigtableInstanceAdminAsyncClient:
     parse_app_profile_path = staticmethod(BigtableInstanceAdminClient.parse_app_profile_path)
     cluster_path = staticmethod(BigtableInstanceAdminClient.cluster_path)
     parse_cluster_path = staticmethod(BigtableInstanceAdminClient.parse_cluster_path)
+    crypto_key_path = staticmethod(BigtableInstanceAdminClient.crypto_key_path)
+    parse_crypto_key_path = staticmethod(BigtableInstanceAdminClient.parse_crypto_key_path)
     instance_path = staticmethod(BigtableInstanceAdminClient.instance_path)
     parse_instance_path = staticmethod(BigtableInstanceAdminClient.parse_instance_path)
 

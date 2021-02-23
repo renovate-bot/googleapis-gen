@@ -328,6 +328,14 @@ private static final long serialVersionUID = 0L;
     REPLICATION_VIEW(3),
     /**
      * <pre>
+     * Only populates 'name' and fields related to the table's encryption state.
+     * </pre>
+     *
+     * <code>ENCRYPTION_VIEW = 5;</code>
+     */
+    ENCRYPTION_VIEW(5),
+    /**
+     * <pre>
      * Populates all fields.
      * </pre>
      *
@@ -372,6 +380,14 @@ private static final long serialVersionUID = 0L;
     public static final int REPLICATION_VIEW_VALUE = 3;
     /**
      * <pre>
+     * Only populates 'name' and fields related to the table's encryption state.
+     * </pre>
+     *
+     * <code>ENCRYPTION_VIEW = 5;</code>
+     */
+    public static final int ENCRYPTION_VIEW_VALUE = 5;
+    /**
+     * <pre>
      * Populates all fields.
      * </pre>
      *
@@ -408,6 +424,7 @@ private static final long serialVersionUID = 0L;
         case 1: return NAME_ONLY;
         case 2: return SCHEMA_VIEW;
         case 3: return REPLICATION_VIEW;
+        case 5: return ENCRYPTION_VIEW;
         case 4: return FULL;
         default: return null;
       }
@@ -487,6 +504,70 @@ private static final long serialVersionUID = 0L;
      * @return The replicationState.
      */
     com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState getReplicationState();
+
+    /**
+     * <pre>
+     * Output only. The encryption information for the table in this cluster.
+     * If the encryption key protecting this resource is customer managed, then
+     * its version can be rotated in Cloud Key Management Service (Cloud KMS).
+     * The primary version of the key and its status will be reflected here when
+     * changes propagate from Cloud KMS.
+     * </pre>
+     *
+     * <code>repeated .google.bigtable.admin.v2.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    java.util.List<com.google.bigtable.admin.v2.EncryptionInfo> 
+        getEncryptionInfoList();
+    /**
+     * <pre>
+     * Output only. The encryption information for the table in this cluster.
+     * If the encryption key protecting this resource is customer managed, then
+     * its version can be rotated in Cloud Key Management Service (Cloud KMS).
+     * The primary version of the key and its status will be reflected here when
+     * changes propagate from Cloud KMS.
+     * </pre>
+     *
+     * <code>repeated .google.bigtable.admin.v2.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    com.google.bigtable.admin.v2.EncryptionInfo getEncryptionInfo(int index);
+    /**
+     * <pre>
+     * Output only. The encryption information for the table in this cluster.
+     * If the encryption key protecting this resource is customer managed, then
+     * its version can be rotated in Cloud Key Management Service (Cloud KMS).
+     * The primary version of the key and its status will be reflected here when
+     * changes propagate from Cloud KMS.
+     * </pre>
+     *
+     * <code>repeated .google.bigtable.admin.v2.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    int getEncryptionInfoCount();
+    /**
+     * <pre>
+     * Output only. The encryption information for the table in this cluster.
+     * If the encryption key protecting this resource is customer managed, then
+     * its version can be rotated in Cloud Key Management Service (Cloud KMS).
+     * The primary version of the key and its status will be reflected here when
+     * changes propagate from Cloud KMS.
+     * </pre>
+     *
+     * <code>repeated .google.bigtable.admin.v2.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    java.util.List<? extends com.google.bigtable.admin.v2.EncryptionInfoOrBuilder> 
+        getEncryptionInfoOrBuilderList();
+    /**
+     * <pre>
+     * Output only. The encryption information for the table in this cluster.
+     * If the encryption key protecting this resource is customer managed, then
+     * its version can be rotated in Cloud Key Management Service (Cloud KMS).
+     * The primary version of the key and its status will be reflected here when
+     * changes propagate from Cloud KMS.
+     * </pre>
+     *
+     * <code>repeated .google.bigtable.admin.v2.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    com.google.bigtable.admin.v2.EncryptionInfoOrBuilder getEncryptionInfoOrBuilder(
+        int index);
   }
   /**
    * <pre>
@@ -506,6 +587,7 @@ private static final long serialVersionUID = 0L;
     }
     private ClusterState() {
       replicationState_ = 0;
+      encryptionInfo_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -528,6 +610,7 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -542,6 +625,15 @@ private static final long serialVersionUID = 0L;
               int rawValue = input.readEnum();
 
               replicationState_ = rawValue;
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                encryptionInfo_ = new java.util.ArrayList<com.google.bigtable.admin.v2.EncryptionInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              encryptionInfo_.add(
+                  input.readMessage(com.google.bigtable.admin.v2.EncryptionInfo.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -559,6 +651,9 @@ private static final long serialVersionUID = 0L;
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          encryptionInfo_ = java.util.Collections.unmodifiableList(encryptionInfo_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -815,6 +910,86 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.UNRECOGNIZED : result;
     }
 
+    public static final int ENCRYPTION_INFO_FIELD_NUMBER = 2;
+    private java.util.List<com.google.bigtable.admin.v2.EncryptionInfo> encryptionInfo_;
+    /**
+     * <pre>
+     * Output only. The encryption information for the table in this cluster.
+     * If the encryption key protecting this resource is customer managed, then
+     * its version can be rotated in Cloud Key Management Service (Cloud KMS).
+     * The primary version of the key and its status will be reflected here when
+     * changes propagate from Cloud KMS.
+     * </pre>
+     *
+     * <code>repeated .google.bigtable.admin.v2.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.bigtable.admin.v2.EncryptionInfo> getEncryptionInfoList() {
+      return encryptionInfo_;
+    }
+    /**
+     * <pre>
+     * Output only. The encryption information for the table in this cluster.
+     * If the encryption key protecting this resource is customer managed, then
+     * its version can be rotated in Cloud Key Management Service (Cloud KMS).
+     * The primary version of the key and its status will be reflected here when
+     * changes propagate from Cloud KMS.
+     * </pre>
+     *
+     * <code>repeated .google.bigtable.admin.v2.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.bigtable.admin.v2.EncryptionInfoOrBuilder> 
+        getEncryptionInfoOrBuilderList() {
+      return encryptionInfo_;
+    }
+    /**
+     * <pre>
+     * Output only. The encryption information for the table in this cluster.
+     * If the encryption key protecting this resource is customer managed, then
+     * its version can be rotated in Cloud Key Management Service (Cloud KMS).
+     * The primary version of the key and its status will be reflected here when
+     * changes propagate from Cloud KMS.
+     * </pre>
+     *
+     * <code>repeated .google.bigtable.admin.v2.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    @java.lang.Override
+    public int getEncryptionInfoCount() {
+      return encryptionInfo_.size();
+    }
+    /**
+     * <pre>
+     * Output only. The encryption information for the table in this cluster.
+     * If the encryption key protecting this resource is customer managed, then
+     * its version can be rotated in Cloud Key Management Service (Cloud KMS).
+     * The primary version of the key and its status will be reflected here when
+     * changes propagate from Cloud KMS.
+     * </pre>
+     *
+     * <code>repeated .google.bigtable.admin.v2.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.EncryptionInfo getEncryptionInfo(int index) {
+      return encryptionInfo_.get(index);
+    }
+    /**
+     * <pre>
+     * Output only. The encryption information for the table in this cluster.
+     * If the encryption key protecting this resource is customer managed, then
+     * its version can be rotated in Cloud Key Management Service (Cloud KMS).
+     * The primary version of the key and its status will be reflected here when
+     * changes propagate from Cloud KMS.
+     * </pre>
+     *
+     * <code>repeated .google.bigtable.admin.v2.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.EncryptionInfoOrBuilder getEncryptionInfoOrBuilder(
+        int index) {
+      return encryptionInfo_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -832,6 +1007,9 @@ private static final long serialVersionUID = 0L;
       if (replicationState_ != com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.STATE_NOT_KNOWN.getNumber()) {
         output.writeEnum(1, replicationState_);
       }
+      for (int i = 0; i < encryptionInfo_.size(); i++) {
+        output.writeMessage(2, encryptionInfo_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -844,6 +1022,10 @@ private static final long serialVersionUID = 0L;
       if (replicationState_ != com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.STATE_NOT_KNOWN.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, replicationState_);
+      }
+      for (int i = 0; i < encryptionInfo_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, encryptionInfo_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -861,6 +1043,8 @@ private static final long serialVersionUID = 0L;
       com.google.bigtable.admin.v2.Table.ClusterState other = (com.google.bigtable.admin.v2.Table.ClusterState) obj;
 
       if (replicationState_ != other.replicationState_) return false;
+      if (!getEncryptionInfoList()
+          .equals(other.getEncryptionInfoList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -874,6 +1058,10 @@ private static final long serialVersionUID = 0L;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + REPLICATION_STATE_FIELD_NUMBER;
       hash = (53 * hash) + replicationState_;
+      if (getEncryptionInfoCount() > 0) {
+        hash = (37 * hash) + ENCRYPTION_INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getEncryptionInfoList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1006,6 +1194,7 @@ private static final long serialVersionUID = 0L;
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getEncryptionInfoFieldBuilder();
         }
       }
       @java.lang.Override
@@ -1013,6 +1202,12 @@ private static final long serialVersionUID = 0L;
         super.clear();
         replicationState_ = 0;
 
+        if (encryptionInfoBuilder_ == null) {
+          encryptionInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          encryptionInfoBuilder_.clear();
+        }
         return this;
       }
 
@@ -1039,7 +1234,17 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public com.google.bigtable.admin.v2.Table.ClusterState buildPartial() {
         com.google.bigtable.admin.v2.Table.ClusterState result = new com.google.bigtable.admin.v2.Table.ClusterState(this);
+        int from_bitField0_ = bitField0_;
         result.replicationState_ = replicationState_;
+        if (encryptionInfoBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            encryptionInfo_ = java.util.Collections.unmodifiableList(encryptionInfo_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.encryptionInfo_ = encryptionInfo_;
+        } else {
+          result.encryptionInfo_ = encryptionInfoBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -1091,6 +1296,32 @@ private static final long serialVersionUID = 0L;
         if (other.replicationState_ != 0) {
           setReplicationStateValue(other.getReplicationStateValue());
         }
+        if (encryptionInfoBuilder_ == null) {
+          if (!other.encryptionInfo_.isEmpty()) {
+            if (encryptionInfo_.isEmpty()) {
+              encryptionInfo_ = other.encryptionInfo_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureEncryptionInfoIsMutable();
+              encryptionInfo_.addAll(other.encryptionInfo_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.encryptionInfo_.isEmpty()) {
+            if (encryptionInfoBuilder_.isEmpty()) {
+              encryptionInfoBuilder_.dispose();
+              encryptionInfoBuilder_ = null;
+              encryptionInfo_ = other.encryptionInfo_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              encryptionInfoBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getEncryptionInfoFieldBuilder() : null;
+            } else {
+              encryptionInfoBuilder_.addAllMessages(other.encryptionInfo_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1119,6 +1350,7 @@ private static final long serialVersionUID = 0L;
         }
         return this;
       }
+      private int bitField0_;
 
       private int replicationState_ = 0;
       /**
@@ -1193,6 +1425,390 @@ private static final long serialVersionUID = 0L;
         onChanged();
         return this;
       }
+
+      private java.util.List<com.google.bigtable.admin.v2.EncryptionInfo> encryptionInfo_ =
+        java.util.Collections.emptyList();
+      private void ensureEncryptionInfoIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          encryptionInfo_ = new java.util.ArrayList<com.google.bigtable.admin.v2.EncryptionInfo>(encryptionInfo_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.google.bigtable.admin.v2.EncryptionInfo, com.google.bigtable.admin.v2.EncryptionInfo.Builder, com.google.bigtable.admin.v2.EncryptionInfoOrBuilder> encryptionInfoBuilder_;
+
+      /**
+       * <pre>
+       * Output only. The encryption information for the table in this cluster.
+       * If the encryption key protecting this resource is customer managed, then
+       * its version can be rotated in Cloud Key Management Service (Cloud KMS).
+       * The primary version of the key and its status will be reflected here when
+       * changes propagate from Cloud KMS.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public java.util.List<com.google.bigtable.admin.v2.EncryptionInfo> getEncryptionInfoList() {
+        if (encryptionInfoBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(encryptionInfo_);
+        } else {
+          return encryptionInfoBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * Output only. The encryption information for the table in this cluster.
+       * If the encryption key protecting this resource is customer managed, then
+       * its version can be rotated in Cloud Key Management Service (Cloud KMS).
+       * The primary version of the key and its status will be reflected here when
+       * changes propagate from Cloud KMS.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public int getEncryptionInfoCount() {
+        if (encryptionInfoBuilder_ == null) {
+          return encryptionInfo_.size();
+        } else {
+          return encryptionInfoBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * Output only. The encryption information for the table in this cluster.
+       * If the encryption key protecting this resource is customer managed, then
+       * its version can be rotated in Cloud Key Management Service (Cloud KMS).
+       * The primary version of the key and its status will be reflected here when
+       * changes propagate from Cloud KMS.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public com.google.bigtable.admin.v2.EncryptionInfo getEncryptionInfo(int index) {
+        if (encryptionInfoBuilder_ == null) {
+          return encryptionInfo_.get(index);
+        } else {
+          return encryptionInfoBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * Output only. The encryption information for the table in this cluster.
+       * If the encryption key protecting this resource is customer managed, then
+       * its version can be rotated in Cloud Key Management Service (Cloud KMS).
+       * The primary version of the key and its status will be reflected here when
+       * changes propagate from Cloud KMS.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder setEncryptionInfo(
+          int index, com.google.bigtable.admin.v2.EncryptionInfo value) {
+        if (encryptionInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEncryptionInfoIsMutable();
+          encryptionInfo_.set(index, value);
+          onChanged();
+        } else {
+          encryptionInfoBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. The encryption information for the table in this cluster.
+       * If the encryption key protecting this resource is customer managed, then
+       * its version can be rotated in Cloud Key Management Service (Cloud KMS).
+       * The primary version of the key and its status will be reflected here when
+       * changes propagate from Cloud KMS.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder setEncryptionInfo(
+          int index, com.google.bigtable.admin.v2.EncryptionInfo.Builder builderForValue) {
+        if (encryptionInfoBuilder_ == null) {
+          ensureEncryptionInfoIsMutable();
+          encryptionInfo_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          encryptionInfoBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. The encryption information for the table in this cluster.
+       * If the encryption key protecting this resource is customer managed, then
+       * its version can be rotated in Cloud Key Management Service (Cloud KMS).
+       * The primary version of the key and its status will be reflected here when
+       * changes propagate from Cloud KMS.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder addEncryptionInfo(com.google.bigtable.admin.v2.EncryptionInfo value) {
+        if (encryptionInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEncryptionInfoIsMutable();
+          encryptionInfo_.add(value);
+          onChanged();
+        } else {
+          encryptionInfoBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. The encryption information for the table in this cluster.
+       * If the encryption key protecting this resource is customer managed, then
+       * its version can be rotated in Cloud Key Management Service (Cloud KMS).
+       * The primary version of the key and its status will be reflected here when
+       * changes propagate from Cloud KMS.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder addEncryptionInfo(
+          int index, com.google.bigtable.admin.v2.EncryptionInfo value) {
+        if (encryptionInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEncryptionInfoIsMutable();
+          encryptionInfo_.add(index, value);
+          onChanged();
+        } else {
+          encryptionInfoBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. The encryption information for the table in this cluster.
+       * If the encryption key protecting this resource is customer managed, then
+       * its version can be rotated in Cloud Key Management Service (Cloud KMS).
+       * The primary version of the key and its status will be reflected here when
+       * changes propagate from Cloud KMS.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder addEncryptionInfo(
+          com.google.bigtable.admin.v2.EncryptionInfo.Builder builderForValue) {
+        if (encryptionInfoBuilder_ == null) {
+          ensureEncryptionInfoIsMutable();
+          encryptionInfo_.add(builderForValue.build());
+          onChanged();
+        } else {
+          encryptionInfoBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. The encryption information for the table in this cluster.
+       * If the encryption key protecting this resource is customer managed, then
+       * its version can be rotated in Cloud Key Management Service (Cloud KMS).
+       * The primary version of the key and its status will be reflected here when
+       * changes propagate from Cloud KMS.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder addEncryptionInfo(
+          int index, com.google.bigtable.admin.v2.EncryptionInfo.Builder builderForValue) {
+        if (encryptionInfoBuilder_ == null) {
+          ensureEncryptionInfoIsMutable();
+          encryptionInfo_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          encryptionInfoBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. The encryption information for the table in this cluster.
+       * If the encryption key protecting this resource is customer managed, then
+       * its version can be rotated in Cloud Key Management Service (Cloud KMS).
+       * The primary version of the key and its status will be reflected here when
+       * changes propagate from Cloud KMS.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder addAllEncryptionInfo(
+          java.lang.Iterable<? extends com.google.bigtable.admin.v2.EncryptionInfo> values) {
+        if (encryptionInfoBuilder_ == null) {
+          ensureEncryptionInfoIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, encryptionInfo_);
+          onChanged();
+        } else {
+          encryptionInfoBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. The encryption information for the table in this cluster.
+       * If the encryption key protecting this resource is customer managed, then
+       * its version can be rotated in Cloud Key Management Service (Cloud KMS).
+       * The primary version of the key and its status will be reflected here when
+       * changes propagate from Cloud KMS.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder clearEncryptionInfo() {
+        if (encryptionInfoBuilder_ == null) {
+          encryptionInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          encryptionInfoBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. The encryption information for the table in this cluster.
+       * If the encryption key protecting this resource is customer managed, then
+       * its version can be rotated in Cloud Key Management Service (Cloud KMS).
+       * The primary version of the key and its status will be reflected here when
+       * changes propagate from Cloud KMS.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder removeEncryptionInfo(int index) {
+        if (encryptionInfoBuilder_ == null) {
+          ensureEncryptionInfoIsMutable();
+          encryptionInfo_.remove(index);
+          onChanged();
+        } else {
+          encryptionInfoBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. The encryption information for the table in this cluster.
+       * If the encryption key protecting this resource is customer managed, then
+       * its version can be rotated in Cloud Key Management Service (Cloud KMS).
+       * The primary version of the key and its status will be reflected here when
+       * changes propagate from Cloud KMS.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public com.google.bigtable.admin.v2.EncryptionInfo.Builder getEncryptionInfoBuilder(
+          int index) {
+        return getEncryptionInfoFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * Output only. The encryption information for the table in this cluster.
+       * If the encryption key protecting this resource is customer managed, then
+       * its version can be rotated in Cloud Key Management Service (Cloud KMS).
+       * The primary version of the key and its status will be reflected here when
+       * changes propagate from Cloud KMS.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public com.google.bigtable.admin.v2.EncryptionInfoOrBuilder getEncryptionInfoOrBuilder(
+          int index) {
+        if (encryptionInfoBuilder_ == null) {
+          return encryptionInfo_.get(index);  } else {
+          return encryptionInfoBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * Output only. The encryption information for the table in this cluster.
+       * If the encryption key protecting this resource is customer managed, then
+       * its version can be rotated in Cloud Key Management Service (Cloud KMS).
+       * The primary version of the key and its status will be reflected here when
+       * changes propagate from Cloud KMS.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public java.util.List<? extends com.google.bigtable.admin.v2.EncryptionInfoOrBuilder> 
+           getEncryptionInfoOrBuilderList() {
+        if (encryptionInfoBuilder_ != null) {
+          return encryptionInfoBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(encryptionInfo_);
+        }
+      }
+      /**
+       * <pre>
+       * Output only. The encryption information for the table in this cluster.
+       * If the encryption key protecting this resource is customer managed, then
+       * its version can be rotated in Cloud Key Management Service (Cloud KMS).
+       * The primary version of the key and its status will be reflected here when
+       * changes propagate from Cloud KMS.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public com.google.bigtable.admin.v2.EncryptionInfo.Builder addEncryptionInfoBuilder() {
+        return getEncryptionInfoFieldBuilder().addBuilder(
+            com.google.bigtable.admin.v2.EncryptionInfo.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Output only. The encryption information for the table in this cluster.
+       * If the encryption key protecting this resource is customer managed, then
+       * its version can be rotated in Cloud Key Management Service (Cloud KMS).
+       * The primary version of the key and its status will be reflected here when
+       * changes propagate from Cloud KMS.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public com.google.bigtable.admin.v2.EncryptionInfo.Builder addEncryptionInfoBuilder(
+          int index) {
+        return getEncryptionInfoFieldBuilder().addBuilder(
+            index, com.google.bigtable.admin.v2.EncryptionInfo.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Output only. The encryption information for the table in this cluster.
+       * If the encryption key protecting this resource is customer managed, then
+       * its version can be rotated in Cloud Key Management Service (Cloud KMS).
+       * The primary version of the key and its status will be reflected here when
+       * changes propagate from Cloud KMS.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.admin.v2.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public java.util.List<com.google.bigtable.admin.v2.EncryptionInfo.Builder> 
+           getEncryptionInfoBuilderList() {
+        return getEncryptionInfoFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.google.bigtable.admin.v2.EncryptionInfo, com.google.bigtable.admin.v2.EncryptionInfo.Builder, com.google.bigtable.admin.v2.EncryptionInfoOrBuilder> 
+          getEncryptionInfoFieldBuilder() {
+        if (encryptionInfoBuilder_ == null) {
+          encryptionInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.bigtable.admin.v2.EncryptionInfo, com.google.bigtable.admin.v2.EncryptionInfo.Builder, com.google.bigtable.admin.v2.EncryptionInfoOrBuilder>(
+                  encryptionInfo_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          encryptionInfo_ = null;
+        }
+        return encryptionInfoBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1250,8 +1866,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * Output only. The unique name of the table. Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
+   * The unique name of the table. Values are of the form
+   * `projects/{project}/instances/{instance}/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
    * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
    * </pre>
    *
@@ -1273,8 +1889,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The unique name of the table. Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
+   * The unique name of the table. Values are of the form
+   * `projects/{project}/instances/{instance}/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
    * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
    * </pre>
    *
@@ -1328,7 +1944,7 @@ private static final long serialVersionUID = 0L;
    * If it could not be determined whether or not the table has data in a
    * particular cluster (for example, if its zone is unavailable), then
    * there will be an entry for the cluster with UNKNOWN `replication_status`.
-   * Views: `REPLICATION_VIEW`, `FULL`
+   * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -1354,7 +1970,7 @@ private static final long serialVersionUID = 0L;
    * If it could not be determined whether or not the table has data in a
    * particular cluster (for example, if its zone is unavailable), then
    * there will be an entry for the cluster with UNKNOWN `replication_status`.
-   * Views: `REPLICATION_VIEW`, `FULL`
+   * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -1370,7 +1986,7 @@ private static final long serialVersionUID = 0L;
    * If it could not be determined whether or not the table has data in a
    * particular cluster (for example, if its zone is unavailable), then
    * there will be an entry for the cluster with UNKNOWN `replication_status`.
-   * Views: `REPLICATION_VIEW`, `FULL`
+   * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -1391,7 +2007,7 @@ private static final long serialVersionUID = 0L;
    * If it could not be determined whether or not the table has data in a
    * particular cluster (for example, if its zone is unavailable), then
    * there will be an entry for the cluster with UNKNOWN `replication_status`.
-   * Views: `REPLICATION_VIEW`, `FULL`
+   * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -2028,8 +2644,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Output only. The unique name of the table. Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
+     * The unique name of the table. Values are of the form
+     * `projects/{project}/instances/{instance}/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
      * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
@@ -2050,8 +2666,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The unique name of the table. Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
+     * The unique name of the table. Values are of the form
+     * `projects/{project}/instances/{instance}/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
      * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
@@ -2073,8 +2689,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The unique name of the table. Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
+     * The unique name of the table. Values are of the form
+     * `projects/{project}/instances/{instance}/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
      * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
@@ -2094,8 +2710,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The unique name of the table. Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
+     * The unique name of the table. Values are of the form
+     * `projects/{project}/instances/{instance}/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
      * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
@@ -2110,8 +2726,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The unique name of the table. Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
+     * The unique name of the table. Values are of the form
+     * `projects/{project}/instances/{instance}/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
      * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
@@ -2163,7 +2779,7 @@ private static final long serialVersionUID = 0L;
      * If it could not be determined whether or not the table has data in a
      * particular cluster (for example, if its zone is unavailable), then
      * there will be an entry for the cluster with UNKNOWN `replication_status`.
-     * Views: `REPLICATION_VIEW`, `FULL`
+     * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
      * </pre>
      *
      * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -2189,7 +2805,7 @@ private static final long serialVersionUID = 0L;
      * If it could not be determined whether or not the table has data in a
      * particular cluster (for example, if its zone is unavailable), then
      * there will be an entry for the cluster with UNKNOWN `replication_status`.
-     * Views: `REPLICATION_VIEW`, `FULL`
+     * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
      * </pre>
      *
      * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -2205,7 +2821,7 @@ private static final long serialVersionUID = 0L;
      * If it could not be determined whether or not the table has data in a
      * particular cluster (for example, if its zone is unavailable), then
      * there will be an entry for the cluster with UNKNOWN `replication_status`.
-     * Views: `REPLICATION_VIEW`, `FULL`
+     * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
      * </pre>
      *
      * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -2226,7 +2842,7 @@ private static final long serialVersionUID = 0L;
      * If it could not be determined whether or not the table has data in a
      * particular cluster (for example, if its zone is unavailable), then
      * there will be an entry for the cluster with UNKNOWN `replication_status`.
-     * Views: `REPLICATION_VIEW`, `FULL`
+     * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
      * </pre>
      *
      * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -2255,7 +2871,7 @@ private static final long serialVersionUID = 0L;
      * If it could not be determined whether or not the table has data in a
      * particular cluster (for example, if its zone is unavailable), then
      * there will be an entry for the cluster with UNKNOWN `replication_status`.
-     * Views: `REPLICATION_VIEW`, `FULL`
+     * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
      * </pre>
      *
      * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -2282,7 +2898,7 @@ private static final long serialVersionUID = 0L;
      * If it could not be determined whether or not the table has data in a
      * particular cluster (for example, if its zone is unavailable), then
      * there will be an entry for the cluster with UNKNOWN `replication_status`.
-     * Views: `REPLICATION_VIEW`, `FULL`
+     * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
      * </pre>
      *
      * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
@@ -2302,7 +2918,7 @@ private static final long serialVersionUID = 0L;
      * If it could not be determined whether or not the table has data in a
      * particular cluster (for example, if its zone is unavailable), then
      * there will be an entry for the cluster with UNKNOWN `replication_status`.
-     * Views: `REPLICATION_VIEW`, `FULL`
+     * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
      * </pre>
      *
      * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>

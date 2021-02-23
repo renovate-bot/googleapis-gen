@@ -1204,6 +1204,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setServeNodes(-1288838783)
    *           .setDefaultStorageType(StorageType.forNumber(0))
+   *           .setEncryptionConfig(Cluster.EncryptionConfig.newBuilder().build())
    *           .build();
    *   Cluster response = baseBigtableInstanceAdminClient.updateClusterAsync(request).get();
    * }
@@ -1231,6 +1232,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setServeNodes(-1288838783)
    *           .setDefaultStorageType(StorageType.forNumber(0))
+   *           .setEncryptionConfig(Cluster.EncryptionConfig.newBuilder().build())
    *           .build();
    *   OperationFuture<Cluster, UpdateClusterMetadata> future =
    *       baseBigtableInstanceAdminClient.updateClusterOperationCallable().futureCall(request);
@@ -1259,6 +1261,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setServeNodes(-1288838783)
    *           .setDefaultStorageType(StorageType.forNumber(0))
+   *           .setEncryptionConfig(Cluster.EncryptionConfig.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
    *       baseBigtableInstanceAdminClient.updateClusterCallable().futureCall(request);

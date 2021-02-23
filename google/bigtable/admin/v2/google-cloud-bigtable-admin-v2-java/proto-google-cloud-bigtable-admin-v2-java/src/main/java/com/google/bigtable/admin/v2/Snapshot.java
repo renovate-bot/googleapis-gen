@@ -309,7 +309,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Output only. The unique name of the snapshot.
    * Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
+   * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -332,7 +332,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Output only. The unique name of the snapshot.
    * Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
+   * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -1021,7 +1021,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. The unique name of the snapshot.
      * Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
+     * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1043,7 +1043,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. The unique name of the snapshot.
      * Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
+     * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1066,7 +1066,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. The unique name of the snapshot.
      * Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
+     * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1087,7 +1087,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. The unique name of the snapshot.
      * Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
+     * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1103,7 +1103,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. The unique name of the snapshot.
      * Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/snapshots/&lt;snapshot&gt;`.
+     * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
      * </pre>
      *
      * <code>string name = 1;</code>
