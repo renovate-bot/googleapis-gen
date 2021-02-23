@@ -21,9 +21,9 @@ class QueryInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The language of the input. See [Language
-     * Support](https://cloud.google.com/dialogflow/docs/reference/language) for a
-     * list of the currently supported language codes. Note that queries in the
-     * same session do not necessarily need to specify the same language.
+     * Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
+     * for a list of the currently supported language codes. Note that queries in
+     * the same session do not necessarily need to specify the same language.
      *
      * Generated from protobuf field <code>string language_code = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -48,9 +48,9 @@ class QueryInput extends \Google\Protobuf\Internal\Message
      *           The DTMF event to be handled.
      *     @type string $language_code
      *           Required. The language of the input. See [Language
-     *           Support](https://cloud.google.com/dialogflow/docs/reference/language) for a
-     *           list of the currently supported language codes. Note that queries in the
-     *           same session do not necessarily need to specify the same language.
+     *           Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
+     *           for a list of the currently supported language codes. Note that queries in
+     *           the same session do not necessarily need to specify the same language.
      * }
      */
     public function __construct($data = NULL) {
@@ -215,9 +215,9 @@ class QueryInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The language of the input. See [Language
-     * Support](https://cloud.google.com/dialogflow/docs/reference/language) for a
-     * list of the currently supported language codes. Note that queries in the
-     * same session do not necessarily need to specify the same language.
+     * Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
+     * for a list of the currently supported language codes. Note that queries in
+     * the same session do not necessarily need to specify the same language.
      *
      * Generated from protobuf field <code>string language_code = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -229,9 +229,9 @@ class QueryInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The language of the input. See [Language
-     * Support](https://cloud.google.com/dialogflow/docs/reference/language) for a
-     * list of the currently supported language codes. Note that queries in the
-     * same session do not necessarily need to specify the same language.
+     * Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
+     * for a list of the currently supported language codes. Note that queries in
+     * the same session do not necessarily need to specify the same language.
      *
      * Generated from protobuf field <code>string language_code = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var

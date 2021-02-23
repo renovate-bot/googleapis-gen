@@ -327,9 +327,9 @@ module Google
           # @!attribute [rw] language_code
           #   @return [String]
           #     Required. The language of the input. See [Language
-          #     Support](https://cloud.google.com/dialogflow/docs/reference/language) for a
-          #     list of the currently supported language codes. Note that queries in the
-          #     same session do not necessarily need to specify the same language.
+          #     Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
+          #     for a list of the currently supported language codes. Note that queries in
+          #     the same session do not necessarily need to specify the same language.
           class QueryInput; end
 
           # Represents the result of a conversational query.
@@ -353,7 +353,7 @@ module Google
           #   @return [String]
           #     The language that was triggered during intent detection.
           #     See [Language
-          #     Support](https://cloud.google.com/dialogflow/docs/reference/language)
+          #     Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
           #     for a list of the currently supported language codes.
           # @!attribute [rw] parameters
           #   @return [Google::Protobuf::Struct]

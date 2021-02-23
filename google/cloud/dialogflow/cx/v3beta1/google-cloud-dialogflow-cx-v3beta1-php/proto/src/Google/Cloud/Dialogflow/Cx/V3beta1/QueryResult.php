@@ -18,7 +18,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
     /**
      * The language that was triggered during intent detection.
      * See [Language
-     * Support](https://cloud.google.com/dialogflow/docs/reference/language)
+     * Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
      * for a list of the currently supported language codes.
      *
      * Generated from protobuf field <code>string language_code = 2;</code>
@@ -138,7 +138,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      *     @type string $language_code
      *           The language that was triggered during intent detection.
      *           See [Language
-     *           Support](https://cloud.google.com/dialogflow/docs/reference/language)
+     *           Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
      *           for a list of the currently supported language codes.
      *     @type \Google\Protobuf\Struct $parameters
      *           The collected [session parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
@@ -333,7 +333,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
     /**
      * The language that was triggered during intent detection.
      * See [Language
-     * Support](https://cloud.google.com/dialogflow/docs/reference/language)
+     * Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
      * for a list of the currently supported language codes.
      *
      * Generated from protobuf field <code>string language_code = 2;</code>
@@ -347,7 +347,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
     /**
      * The language that was triggered during intent detection.
      * See [Language
-     * Support](https://cloud.google.com/dialogflow/docs/reference/language)
+     * Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
      * for a list of the currently supported language codes.
      *
      * Generated from protobuf field <code>string language_code = 2;</code>

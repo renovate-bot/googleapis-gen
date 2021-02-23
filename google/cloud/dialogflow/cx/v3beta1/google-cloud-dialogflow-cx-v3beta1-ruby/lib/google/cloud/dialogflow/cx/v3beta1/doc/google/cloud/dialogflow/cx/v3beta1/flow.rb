@@ -140,7 +140,7 @@ module Google
           #
           #     If not specified, the agent's default language is used.
           #     [Many
-          #     languages](https://cloud.google.com/dialogflow/docs/reference/language)
+          #     languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
           #     are supported.
           #     Note: languages must be enabled in the agent before they can be used.
           class CreateFlowRequest; end
@@ -187,7 +187,7 @@ module Google
           #
           #     If not specified, the agent's default language is used.
           #     [Many
-          #     languages](https://cloud.google.com/dialogflow/docs/reference/language)
+          #     languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
           #     are supported.
           #     Note: languages must be enabled in the agent before they can be used.
           class ListFlowsRequest; end
@@ -219,7 +219,7 @@ module Google
           #
           #     If not specified, the agent's default language is used.
           #     [Many
-          #     languages](https://cloud.google.com/dialogflow/docs/reference/language)
+          #     languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
           #     are supported.
           #     Note: languages must be enabled in the agent before they can be used.
           class GetFlowRequest; end
@@ -241,7 +241,7 @@ module Google
           #
           #     If not specified, the agent's default language is used.
           #     [Many
-          #     languages](https://cloud.google.com/dialogflow/docs/reference/language)
+          #     languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
           #     are supported.
           #     Note: languages must be enabled in the agent before they can be used.
           class UpdateFlowRequest; end
