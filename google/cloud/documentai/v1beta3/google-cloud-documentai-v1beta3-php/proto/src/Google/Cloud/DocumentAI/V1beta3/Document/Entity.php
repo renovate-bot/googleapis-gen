@@ -55,10 +55,10 @@ class Entity extends \Google\Protobuf\Internal\Message
      */
     protected $page_anchor = null;
     /**
-     * Canonical id. This will be a unique value in the entity list
+     * Optional. Canonical id. This will be a unique value in the entity list
      * for this document.
      *
-     * Generated from protobuf field <code>string id = 7;</code>
+     * Generated from protobuf field <code>string id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     protected $id = '';
     /**
@@ -111,7 +111,7 @@ class Entity extends \Google\Protobuf\Internal\Message
      *           Optional. Represents the provenance of this entity wrt. the location on the
      *           page where it was found.
      *     @type string $id
-     *           Canonical id. This will be a unique value in the entity list
+     *           Optional. Canonical id. This will be a unique value in the entity list
      *           for this document.
      *     @type \Google\Cloud\DocumentAI\V1beta3\Document\Entity\NormalizedValue $normalized_value
      *           Optional. Normalized entity value. Absent if the extracted value could not be
@@ -313,10 +313,10 @@ class Entity extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Canonical id. This will be a unique value in the entity list
+     * Optional. Canonical id. This will be a unique value in the entity list
      * for this document.
      *
-     * Generated from protobuf field <code>string id = 7;</code>
+     * Generated from protobuf field <code>string id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return string
      */
     public function getId()
@@ -325,10 +325,10 @@ class Entity extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Canonical id. This will be a unique value in the entity list
+     * Optional. Canonical id. This will be a unique value in the entity list
      * for this document.
      *
-     * Generated from protobuf field <code>string id = 7;</code>
+     * Generated from protobuf field <code>string id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param string $var
      * @return $this
      */

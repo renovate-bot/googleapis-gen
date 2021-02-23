@@ -16,7 +16,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class PageRef extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element
+     * Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element, for example using
+     * [Document.pages][page_refs.page] to locate the related page element.
      *
      * Generated from protobuf field <code>int64 page = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -47,7 +48,8 @@ class PageRef extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $page
-     *           Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element
+     *           Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element, for example using
+     *           [Document.pages][page_refs.page] to locate the related page element.
      *     @type int $layout_type
      *           Optional. The type of the layout element that is being referenced if any.
      *     @type string $layout_id
@@ -62,7 +64,8 @@ class PageRef extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element
+     * Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element, for example using
+     * [Document.pages][page_refs.page] to locate the related page element.
      *
      * Generated from protobuf field <code>int64 page = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return int|string
@@ -73,7 +76,8 @@ class PageRef extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element
+     * Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element, for example using
+     * [Document.pages][page_refs.page] to locate the related page element.
      *
      * Generated from protobuf field <code>int64 page = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param int|string $var

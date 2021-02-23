@@ -50,6 +50,9 @@ class NormalizedValue extends \Google\Protobuf\Internal\Message
      *           Postal address. See also:
      *           https:
      *           github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+     *     @type bool $boolean_value
+     *           Boolean value. Can be used for entities with binary values, or for
+     *           checkboxes.
      *     @type string $text
      *           Required. Normalized entity value stored as a string. This field is populated for
      *           supported document type (e.g. Invoice). For some entity types, one of
@@ -200,6 +203,39 @@ class NormalizedValue extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Type\PostalAddress::class);
         $this->writeOneof(5, $var);
+
+        return $this;
+    }
+
+    /**
+     * Boolean value. Can be used for entities with binary values, or for
+     * checkboxes.
+     *
+     * Generated from protobuf field <code>bool boolean_value = 6;</code>
+     * @return bool
+     */
+    public function getBooleanValue()
+    {
+        return $this->readOneof(6);
+    }
+
+    public function hasBooleanValue()
+    {
+        return $this->hasOneof(6);
+    }
+
+    /**
+     * Boolean value. Can be used for entities with binary values, or for
+     * checkboxes.
+     *
+     * Generated from protobuf field <code>bool boolean_value = 6;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setBooleanValue($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(6, $var);
 
         return $this;
     }

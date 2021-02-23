@@ -29009,21 +29009,21 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Canonical id. This will be a unique value in the entity list
+     * Optional. Canonical id. This will be a unique value in the entity list
      * for this document.
      * </pre>
      *
-     * <code>string id = 7;</code>
+     * <code>string id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The id.
      */
     java.lang.String getId();
     /**
      * <pre>
-     * Canonical id. This will be a unique value in the entity list
+     * Optional. Canonical id. This will be a unique value in the entity list
      * for this document.
      * </pre>
      *
-     * <code>string id = 7;</code>
+     * <code>string id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for id.
      */
     com.google.protobuf.ByteString
@@ -29475,6 +29475,17 @@ private static final long serialVersionUID = 0L;
 
       /**
        * <pre>
+       * Boolean value. Can be used for entities with binary values, or for
+       * checkboxes.
+       * </pre>
+       *
+       * <code>bool boolean_value = 6;</code>
+       * @return The booleanValue.
+       */
+      boolean getBooleanValue();
+
+      /**
+       * <pre>
        * Required. Normalized entity value stored as a string. This field is populated for
        * supported document type (e.g. Invoice). For some entity types, one of
        * respective 'structured_value' fields may also be populated.
@@ -29617,6 +29628,11 @@ private static final long serialVersionUID = 0L;
                 structuredValueCase_ = 5;
                 break;
               }
+              case 48: {
+                structuredValueCase_ = 6;
+                structuredValue_ = input.readBool();
+                break;
+              }
               default: {
                 if (!parseUnknownField(
                     input, unknownFields, extensionRegistry, tag)) {
@@ -29658,6 +29674,7 @@ private static final long serialVersionUID = 0L;
         DATE_VALUE(3),
         DATETIME_VALUE(4),
         ADDRESS_VALUE(5),
+        BOOLEAN_VALUE(6),
         STRUCTUREDVALUE_NOT_SET(0);
         private final int value;
         private StructuredValueCase(int value) {
@@ -29679,6 +29696,7 @@ private static final long serialVersionUID = 0L;
             case 3: return DATE_VALUE;
             case 4: return DATETIME_VALUE;
             case 5: return ADDRESS_VALUE;
+            case 6: return BOOLEAN_VALUE;
             case 0: return STRUCTUREDVALUE_NOT_SET;
             default: return null;
           }
@@ -29890,6 +29908,24 @@ private static final long serialVersionUID = 0L;
         return com.google.type.PostalAddress.getDefaultInstance();
       }
 
+      public static final int BOOLEAN_VALUE_FIELD_NUMBER = 6;
+      /**
+       * <pre>
+       * Boolean value. Can be used for entities with binary values, or for
+       * checkboxes.
+       * </pre>
+       *
+       * <code>bool boolean_value = 6;</code>
+       * @return The booleanValue.
+       */
+      @java.lang.Override
+      public boolean getBooleanValue() {
+        if (structuredValueCase_ == 6) {
+          return (java.lang.Boolean) structuredValue_;
+        }
+        return false;
+      }
+
       public static final int TEXT_FIELD_NUMBER = 1;
       private volatile java.lang.Object text_;
       /**
@@ -29975,6 +30011,10 @@ private static final long serialVersionUID = 0L;
         if (structuredValueCase_ == 5) {
           output.writeMessage(5, (com.google.type.PostalAddress) structuredValue_);
         }
+        if (structuredValueCase_ == 6) {
+          output.writeBool(
+              6, (boolean)((java.lang.Boolean) structuredValue_));
+        }
         unknownFields.writeTo(output);
       }
 
@@ -30002,6 +30042,11 @@ private static final long serialVersionUID = 0L;
         if (structuredValueCase_ == 5) {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(5, (com.google.type.PostalAddress) structuredValue_);
+        }
+        if (structuredValueCase_ == 6) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeBoolSize(
+                6, (boolean)((java.lang.Boolean) structuredValue_));
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -30038,6 +30083,10 @@ private static final long serialVersionUID = 0L;
             if (!getAddressValue()
                 .equals(other.getAddressValue())) return false;
             break;
+          case 6:
+            if (getBooleanValue()
+                != other.getBooleanValue()) return false;
+            break;
           case 0:
           default:
         }
@@ -30070,6 +30119,11 @@ private static final long serialVersionUID = 0L;
           case 5:
             hash = (37 * hash) + ADDRESS_VALUE_FIELD_NUMBER;
             hash = (53 * hash) + getAddressValue().hashCode();
+            break;
+          case 6:
+            hash = (37 * hash) + BOOLEAN_VALUE_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+                getBooleanValue());
             break;
           case 0:
           default:
@@ -30269,6 +30323,9 @@ private static final long serialVersionUID = 0L;
               result.structuredValue_ = addressValueBuilder_.build();
             }
           }
+          if (structuredValueCase_ == 6) {
+            result.structuredValue_ = structuredValue_;
+          }
           result.text_ = text_;
           result.structuredValueCase_ = structuredValueCase_;
           onBuilt();
@@ -30338,6 +30395,10 @@ private static final long serialVersionUID = 0L;
             }
             case ADDRESS_VALUE: {
               mergeAddressValue(other.getAddressValue());
+              break;
+            }
+            case BOOLEAN_VALUE: {
+              setBooleanValue(other.getBooleanValue());
               break;
             }
             case STRUCTUREDVALUE_NOT_SET: {
@@ -31168,6 +31229,55 @@ private static final long serialVersionUID = 0L;
           return addressValueBuilder_;
         }
 
+        /**
+         * <pre>
+         * Boolean value. Can be used for entities with binary values, or for
+         * checkboxes.
+         * </pre>
+         *
+         * <code>bool boolean_value = 6;</code>
+         * @return The booleanValue.
+         */
+        public boolean getBooleanValue() {
+          if (structuredValueCase_ == 6) {
+            return (java.lang.Boolean) structuredValue_;
+          }
+          return false;
+        }
+        /**
+         * <pre>
+         * Boolean value. Can be used for entities with binary values, or for
+         * checkboxes.
+         * </pre>
+         *
+         * <code>bool boolean_value = 6;</code>
+         * @param value The booleanValue to set.
+         * @return This builder for chaining.
+         */
+        public Builder setBooleanValue(boolean value) {
+          structuredValueCase_ = 6;
+          structuredValue_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Boolean value. Can be used for entities with binary values, or for
+         * checkboxes.
+         * </pre>
+         *
+         * <code>bool boolean_value = 6;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearBooleanValue() {
+          if (structuredValueCase_ == 6) {
+            structuredValueCase_ = 0;
+            structuredValue_ = null;
+            onChanged();
+          }
+          return this;
+        }
+
         private java.lang.Object text_ = "";
         /**
          * <pre>
@@ -31580,11 +31690,11 @@ private static final long serialVersionUID = 0L;
     private volatile java.lang.Object id_;
     /**
      * <pre>
-     * Canonical id. This will be a unique value in the entity list
+     * Optional. Canonical id. This will be a unique value in the entity list
      * for this document.
      * </pre>
      *
-     * <code>string id = 7;</code>
+     * <code>string id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The id.
      */
     @java.lang.Override
@@ -31602,11 +31712,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Canonical id. This will be a unique value in the entity list
+     * Optional. Canonical id. This will be a unique value in the entity list
      * for this document.
      * </pre>
      *
-     * <code>string id = 7;</code>
+     * <code>string id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for id.
      */
     @java.lang.Override
@@ -33023,11 +33133,11 @@ private static final long serialVersionUID = 0L;
       private java.lang.Object id_ = "";
       /**
        * <pre>
-       * Canonical id. This will be a unique value in the entity list
+       * Optional. Canonical id. This will be a unique value in the entity list
        * for this document.
        * </pre>
        *
-       * <code>string id = 7;</code>
+       * <code>string id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return The id.
        */
       public java.lang.String getId() {
@@ -33044,11 +33154,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Canonical id. This will be a unique value in the entity list
+       * Optional. Canonical id. This will be a unique value in the entity list
        * for this document.
        * </pre>
        *
-       * <code>string id = 7;</code>
+       * <code>string id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
@@ -33066,11 +33176,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Canonical id. This will be a unique value in the entity list
+       * Optional. Canonical id. This will be a unique value in the entity list
        * for this document.
        * </pre>
        *
-       * <code>string id = 7;</code>
+       * <code>string id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -33086,11 +33196,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Canonical id. This will be a unique value in the entity list
+       * Optional. Canonical id. This will be a unique value in the entity list
        * for this document.
        * </pre>
        *
-       * <code>string id = 7;</code>
+       * <code>string id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
@@ -33101,11 +33211,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Canonical id. This will be a unique value in the entity list
+       * Optional. Canonical id. This will be a unique value in the entity list
        * for this document.
        * </pre>
        *
-       * <code>string id = 7;</code>
+       * <code>string id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @param value The bytes for id to set.
        * @return This builder for chaining.
        */
@@ -38369,7 +38479,8 @@ private static final long serialVersionUID = 0L;
 
       /**
        * <pre>
-       * Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element
+       * Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element, for example using
+       * [Document.pages][page_refs.page] to locate the related page element.
        * </pre>
        *
        * <code>int64 page = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -38790,7 +38901,8 @@ private static final long serialVersionUID = 0L;
       private long page_;
       /**
        * <pre>
-       * Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element
+       * Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element, for example using
+       * [Document.pages][page_refs.page] to locate the related page element.
        * </pre>
        *
        * <code>int64 page = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -39285,7 +39397,8 @@ private static final long serialVersionUID = 0L;
         private long page_ ;
         /**
          * <pre>
-         * Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element
+         * Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element, for example using
+         * [Document.pages][page_refs.page] to locate the related page element.
          * </pre>
          *
          * <code>int64 page = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -39297,7 +39410,8 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element
+         * Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element, for example using
+         * [Document.pages][page_refs.page] to locate the related page element.
          * </pre>
          *
          * <code>int64 page = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -39312,7 +39426,8 @@ private static final long serialVersionUID = 0L;
         }
         /**
          * <pre>
-         * Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element
+         * Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element, for example using
+         * [Document.pages][page_refs.page] to locate the related page element.
          * </pre>
          *
          * <code>int64 page = 1 [(.google.api.field_behavior) = REQUIRED];</code>
