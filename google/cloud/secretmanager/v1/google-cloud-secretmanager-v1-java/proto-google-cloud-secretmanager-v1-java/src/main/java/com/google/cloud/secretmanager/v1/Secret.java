@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
   }
   private Secret() {
     name_ = "";
+    topics_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -102,6 +103,15 @@ private static final long serialVersionUID = 0L;
                 labels__.getKey(), labels__.getValue());
             break;
           }
+          case 42: {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              topics_ = new java.util.ArrayList<com.google.cloud.secretmanager.v1.Topic>();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            topics_.add(
+                input.readMessage(com.google.cloud.secretmanager.v1.Topic.parser(), extensionRegistry));
+            break;
+          }
           case 50: {
             com.google.protobuf.Timestamp.Builder subBuilder = null;
             if (expirationCase_ == 6) {
@@ -145,6 +155,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        topics_ = java.util.Collections.unmodifiableList(topics_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -465,6 +478,71 @@ private static final long serialVersionUID = 0L;
     return map.get(key);
   }
 
+  public static final int TOPICS_FIELD_NUMBER = 5;
+  private java.util.List<com.google.cloud.secretmanager.v1.Topic> topics_;
+  /**
+   * <pre>
+   * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
+   * control plane operations are called on the secret or its versions.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.secretmanager.v1.Topic topics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.secretmanager.v1.Topic> getTopicsList() {
+    return topics_;
+  }
+  /**
+   * <pre>
+   * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
+   * control plane operations are called on the secret or its versions.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.secretmanager.v1.Topic topics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.secretmanager.v1.TopicOrBuilder> 
+      getTopicsOrBuilderList() {
+    return topics_;
+  }
+  /**
+   * <pre>
+   * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
+   * control plane operations are called on the secret or its versions.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.secretmanager.v1.Topic topics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public int getTopicsCount() {
+    return topics_.size();
+  }
+  /**
+   * <pre>
+   * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
+   * control plane operations are called on the secret or its versions.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.secretmanager.v1.Topic topics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.secretmanager.v1.Topic getTopics(int index) {
+    return topics_.get(index);
+  }
+  /**
+   * <pre>
+   * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
+   * control plane operations are called on the secret or its versions.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.secretmanager.v1.Topic topics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.secretmanager.v1.TopicOrBuilder getTopicsOrBuilder(
+      int index) {
+    return topics_.get(index);
+  }
+
   public static final int EXPIRE_TIME_FIELD_NUMBER = 6;
   /**
    * <pre>
@@ -583,6 +661,9 @@ private static final long serialVersionUID = 0L;
         internalGetLabels(),
         LabelsDefaultEntryHolder.defaultEntry,
         4);
+    for (int i = 0; i < topics_.size(); i++) {
+      output.writeMessage(5, topics_.get(i));
+    }
     if (expirationCase_ == 6) {
       output.writeMessage(6, (com.google.protobuf.Timestamp) expiration_);
     }
@@ -618,6 +699,10 @@ private static final long serialVersionUID = 0L;
           .build();
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, labels__);
+    }
+    for (int i = 0; i < topics_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, topics_.get(i));
     }
     if (expirationCase_ == 6) {
       size += com.google.protobuf.CodedOutputStream
@@ -656,6 +741,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!internalGetLabels().equals(
         other.internalGetLabels())) return false;
+    if (!getTopicsList()
+        .equals(other.getTopicsList())) return false;
     if (!getExpirationCase().equals(other.getExpirationCase())) return false;
     switch (expirationCase_) {
       case 6:
@@ -693,6 +780,10 @@ private static final long serialVersionUID = 0L;
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
+    }
+    if (getTopicsCount() > 0) {
+      hash = (37 * hash) + TOPICS_FIELD_NUMBER;
+      hash = (53 * hash) + getTopicsList().hashCode();
     }
     switch (expirationCase_) {
       case 6:
@@ -863,6 +954,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getTopicsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -883,6 +975,12 @@ private static final long serialVersionUID = 0L;
         createTimeBuilder_ = null;
       }
       internalGetMutableLabels().clear();
+      if (topicsBuilder_ == null) {
+        topics_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        topicsBuilder_.clear();
+      }
       expirationCase_ = 0;
       expiration_ = null;
       return this;
@@ -925,6 +1023,15 @@ private static final long serialVersionUID = 0L;
       }
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
+      if (topicsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          topics_ = java.util.Collections.unmodifiableList(topics_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.topics_ = topics_;
+      } else {
+        result.topics_ = topicsBuilder_.build();
+      }
       if (expirationCase_ == 6) {
         if (expireTimeBuilder_ == null) {
           result.expiration_ = expiration_;
@@ -1000,6 +1107,32 @@ private static final long serialVersionUID = 0L;
       }
       internalGetMutableLabels().mergeFrom(
           other.internalGetLabels());
+      if (topicsBuilder_ == null) {
+        if (!other.topics_.isEmpty()) {
+          if (topics_.isEmpty()) {
+            topics_ = other.topics_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureTopicsIsMutable();
+            topics_.addAll(other.topics_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.topics_.isEmpty()) {
+          if (topicsBuilder_.isEmpty()) {
+            topicsBuilder_.dispose();
+            topicsBuilder_ = null;
+            topics_ = other.topics_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            topicsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getTopicsFieldBuilder() : null;
+          } else {
+            topicsBuilder_.addAllMessages(other.topics_);
+          }
+        }
+      }
       switch (other.getExpirationCase()) {
         case EXPIRE_TIME: {
           mergeExpireTime(other.getExpireTime());
@@ -1676,6 +1809,336 @@ private static final long serialVersionUID = 0L;
       internalGetMutableLabels().getMutableMap()
           .putAll(values);
       return this;
+    }
+
+    private java.util.List<com.google.cloud.secretmanager.v1.Topic> topics_ =
+      java.util.Collections.emptyList();
+    private void ensureTopicsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        topics_ = new java.util.ArrayList<com.google.cloud.secretmanager.v1.Topic>(topics_);
+        bitField0_ |= 0x00000002;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.cloud.secretmanager.v1.Topic, com.google.cloud.secretmanager.v1.Topic.Builder, com.google.cloud.secretmanager.v1.TopicOrBuilder> topicsBuilder_;
+
+    /**
+     * <pre>
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
+     * control plane operations are called on the secret or its versions.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.secretmanager.v1.Topic topics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public java.util.List<com.google.cloud.secretmanager.v1.Topic> getTopicsList() {
+      if (topicsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(topics_);
+      } else {
+        return topicsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
+     * control plane operations are called on the secret or its versions.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.secretmanager.v1.Topic topics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public int getTopicsCount() {
+      if (topicsBuilder_ == null) {
+        return topics_.size();
+      } else {
+        return topicsBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
+     * control plane operations are called on the secret or its versions.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.secretmanager.v1.Topic topics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.cloud.secretmanager.v1.Topic getTopics(int index) {
+      if (topicsBuilder_ == null) {
+        return topics_.get(index);
+      } else {
+        return topicsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
+     * control plane operations are called on the secret or its versions.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.secretmanager.v1.Topic topics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setTopics(
+        int index, com.google.cloud.secretmanager.v1.Topic value) {
+      if (topicsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTopicsIsMutable();
+        topics_.set(index, value);
+        onChanged();
+      } else {
+        topicsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
+     * control plane operations are called on the secret or its versions.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.secretmanager.v1.Topic topics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setTopics(
+        int index, com.google.cloud.secretmanager.v1.Topic.Builder builderForValue) {
+      if (topicsBuilder_ == null) {
+        ensureTopicsIsMutable();
+        topics_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        topicsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
+     * control plane operations are called on the secret or its versions.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.secretmanager.v1.Topic topics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder addTopics(com.google.cloud.secretmanager.v1.Topic value) {
+      if (topicsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTopicsIsMutable();
+        topics_.add(value);
+        onChanged();
+      } else {
+        topicsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
+     * control plane operations are called on the secret or its versions.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.secretmanager.v1.Topic topics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder addTopics(
+        int index, com.google.cloud.secretmanager.v1.Topic value) {
+      if (topicsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTopicsIsMutable();
+        topics_.add(index, value);
+        onChanged();
+      } else {
+        topicsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
+     * control plane operations are called on the secret or its versions.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.secretmanager.v1.Topic topics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder addTopics(
+        com.google.cloud.secretmanager.v1.Topic.Builder builderForValue) {
+      if (topicsBuilder_ == null) {
+        ensureTopicsIsMutable();
+        topics_.add(builderForValue.build());
+        onChanged();
+      } else {
+        topicsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
+     * control plane operations are called on the secret or its versions.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.secretmanager.v1.Topic topics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder addTopics(
+        int index, com.google.cloud.secretmanager.v1.Topic.Builder builderForValue) {
+      if (topicsBuilder_ == null) {
+        ensureTopicsIsMutable();
+        topics_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        topicsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
+     * control plane operations are called on the secret or its versions.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.secretmanager.v1.Topic topics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder addAllTopics(
+        java.lang.Iterable<? extends com.google.cloud.secretmanager.v1.Topic> values) {
+      if (topicsBuilder_ == null) {
+        ensureTopicsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, topics_);
+        onChanged();
+      } else {
+        topicsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
+     * control plane operations are called on the secret or its versions.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.secretmanager.v1.Topic topics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearTopics() {
+      if (topicsBuilder_ == null) {
+        topics_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        topicsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
+     * control plane operations are called on the secret or its versions.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.secretmanager.v1.Topic topics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder removeTopics(int index) {
+      if (topicsBuilder_ == null) {
+        ensureTopicsIsMutable();
+        topics_.remove(index);
+        onChanged();
+      } else {
+        topicsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
+     * control plane operations are called on the secret or its versions.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.secretmanager.v1.Topic topics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.cloud.secretmanager.v1.Topic.Builder getTopicsBuilder(
+        int index) {
+      return getTopicsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
+     * control plane operations are called on the secret or its versions.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.secretmanager.v1.Topic topics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.cloud.secretmanager.v1.TopicOrBuilder getTopicsOrBuilder(
+        int index) {
+      if (topicsBuilder_ == null) {
+        return topics_.get(index);  } else {
+        return topicsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
+     * control plane operations are called on the secret or its versions.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.secretmanager.v1.Topic topics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public java.util.List<? extends com.google.cloud.secretmanager.v1.TopicOrBuilder> 
+         getTopicsOrBuilderList() {
+      if (topicsBuilder_ != null) {
+        return topicsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(topics_);
+      }
+    }
+    /**
+     * <pre>
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
+     * control plane operations are called on the secret or its versions.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.secretmanager.v1.Topic topics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.cloud.secretmanager.v1.Topic.Builder addTopicsBuilder() {
+      return getTopicsFieldBuilder().addBuilder(
+          com.google.cloud.secretmanager.v1.Topic.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
+     * control plane operations are called on the secret or its versions.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.secretmanager.v1.Topic topics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.cloud.secretmanager.v1.Topic.Builder addTopicsBuilder(
+        int index) {
+      return getTopicsFieldBuilder().addBuilder(
+          index, com.google.cloud.secretmanager.v1.Topic.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
+     * control plane operations are called on the secret or its versions.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.secretmanager.v1.Topic topics = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public java.util.List<com.google.cloud.secretmanager.v1.Topic.Builder> 
+         getTopicsBuilderList() {
+      return getTopicsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.cloud.secretmanager.v1.Topic, com.google.cloud.secretmanager.v1.Topic.Builder, com.google.cloud.secretmanager.v1.TopicOrBuilder> 
+        getTopicsFieldBuilder() {
+      if (topicsBuilder_ == null) {
+        topicsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.secretmanager.v1.Topic, com.google.cloud.secretmanager.v1.Topic.Builder, com.google.cloud.secretmanager.v1.TopicOrBuilder>(
+                topics_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        topics_ = null;
+      }
+      return topicsBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<

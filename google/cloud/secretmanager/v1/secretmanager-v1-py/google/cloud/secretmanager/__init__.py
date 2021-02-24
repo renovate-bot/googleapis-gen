@@ -24,6 +24,7 @@ from google.cloud.secretmanager_v1.types.resources import ReplicationStatus
 from google.cloud.secretmanager_v1.types.resources import Secret
 from google.cloud.secretmanager_v1.types.resources import SecretPayload
 from google.cloud.secretmanager_v1.types.resources import SecretVersion
+from google.cloud.secretmanager_v1.types.resources import Topic
 from google.cloud.secretmanager_v1.types.service import AccessSecretVersionRequest
 from google.cloud.secretmanager_v1.types.service import AccessSecretVersionResponse
 from google.cloud.secretmanager_v1.types.service import AddSecretVersionRequest
@@ -64,5 +65,6 @@ __all__ = (
     'SecretManagerServiceClient',
     'SecretPayload',
     'SecretVersion',
+    'Topic',
     'UpdateSecretRequest',
 )

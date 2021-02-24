@@ -61,6 +61,8 @@ class SecretManagerServiceAsyncClient:
     parse_secret_path = staticmethod(SecretManagerServiceClient.parse_secret_path)
     secret_version_path = staticmethod(SecretManagerServiceClient.secret_version_path)
     parse_secret_version_path = staticmethod(SecretManagerServiceClient.parse_secret_version_path)
+    topic_path = staticmethod(SecretManagerServiceClient.topic_path)
+    parse_topic_path = staticmethod(SecretManagerServiceClient.parse_topic_path)
 
     common_billing_account_path = staticmethod(SecretManagerServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(SecretManagerServiceClient.parse_common_billing_account_path)
