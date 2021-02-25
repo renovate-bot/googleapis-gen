@@ -82,13 +82,18 @@ def test__get_default_mtls_endpoint():
     assert TestCasesClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_test_cases_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    TestCasesClient,
+    TestCasesAsyncClient,
+])
+def test_test_cases_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = TestCasesClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'dialogflow.googleapis.com:443'
 
@@ -103,9 +108,11 @@ def test_test_cases_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'dialogflow.googleapis.com:443'
 
@@ -396,6 +403,24 @@ def test_list_test_cases(transport: str = 'grpc', request_type=test_case.ListTes
 def test_list_test_cases_from_dict():
     test_list_test_cases(request_type=dict)
 
+
+def test_list_test_cases_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TestCasesClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_test_cases),
+            '__call__') as call:
+        client.list_test_cases()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == test_case.ListTestCasesRequest()
 
 @pytest.mark.asyncio
 async def test_list_test_cases_async(transport: str = 'grpc_asyncio', request_type=test_case.ListTestCasesRequest):
@@ -802,6 +827,24 @@ def test_batch_delete_test_cases_from_dict():
     test_batch_delete_test_cases(request_type=dict)
 
 
+def test_batch_delete_test_cases_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TestCasesClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.batch_delete_test_cases),
+            '__call__') as call:
+        client.batch_delete_test_cases()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == test_case.BatchDeleteTestCasesRequest()
+
 @pytest.mark.asyncio
 async def test_batch_delete_test_cases_async(transport: str = 'grpc_asyncio', request_type=test_case.BatchDeleteTestCasesRequest):
     client = TestCasesAsyncClient(
@@ -1033,6 +1076,24 @@ def test_get_test_case(transport: str = 'grpc', request_type=test_case.GetTestCa
 def test_get_test_case_from_dict():
     test_get_test_case(request_type=dict)
 
+
+def test_get_test_case_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TestCasesClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_test_case),
+            '__call__') as call:
+        client.get_test_case()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == test_case.GetTestCaseRequest()
 
 @pytest.mark.asyncio
 async def test_get_test_case_async(transport: str = 'grpc_asyncio', request_type=test_case.GetTestCaseRequest):
@@ -1278,6 +1339,24 @@ def test_create_test_case(transport: str = 'grpc', request_type=gcdc_test_case.C
 def test_create_test_case_from_dict():
     test_create_test_case(request_type=dict)
 
+
+def test_create_test_case_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TestCasesClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_test_case),
+            '__call__') as call:
+        client.create_test_case()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gcdc_test_case.CreateTestCaseRequest()
 
 @pytest.mark.asyncio
 async def test_create_test_case_async(transport: str = 'grpc_asyncio', request_type=gcdc_test_case.CreateTestCaseRequest):
@@ -1532,6 +1611,24 @@ def test_update_test_case_from_dict():
     test_update_test_case(request_type=dict)
 
 
+def test_update_test_case_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TestCasesClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_test_case),
+            '__call__') as call:
+        client.update_test_case()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gcdc_test_case.UpdateTestCaseRequest()
+
 @pytest.mark.asyncio
 async def test_update_test_case_async(transport: str = 'grpc_asyncio', request_type=gcdc_test_case.UpdateTestCaseRequest):
     client = TestCasesAsyncClient(
@@ -1767,6 +1864,24 @@ def test_run_test_case_from_dict():
     test_run_test_case(request_type=dict)
 
 
+def test_run_test_case_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TestCasesClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.run_test_case),
+            '__call__') as call:
+        client.run_test_case()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == test_case.RunTestCaseRequest()
+
 @pytest.mark.asyncio
 async def test_run_test_case_async(transport: str = 'grpc_asyncio', request_type=test_case.RunTestCaseRequest):
     client = TestCasesAsyncClient(
@@ -1899,6 +2014,24 @@ def test_batch_run_test_cases(transport: str = 'grpc', request_type=test_case.Ba
 def test_batch_run_test_cases_from_dict():
     test_batch_run_test_cases(request_type=dict)
 
+
+def test_batch_run_test_cases_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TestCasesClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.batch_run_test_cases),
+            '__call__') as call:
+        client.batch_run_test_cases()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == test_case.BatchRunTestCasesRequest()
 
 @pytest.mark.asyncio
 async def test_batch_run_test_cases_async(transport: str = 'grpc_asyncio', request_type=test_case.BatchRunTestCasesRequest):
@@ -2040,6 +2173,24 @@ def test_calculate_coverage_from_dict():
     test_calculate_coverage(request_type=dict)
 
 
+def test_calculate_coverage_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TestCasesClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.calculate_coverage),
+            '__call__') as call:
+        client.calculate_coverage()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == test_case.CalculateCoverageRequest()
+
 @pytest.mark.asyncio
 async def test_calculate_coverage_async(transport: str = 'grpc_asyncio', request_type=test_case.CalculateCoverageRequest):
     client = TestCasesAsyncClient(
@@ -2175,6 +2326,24 @@ def test_import_test_cases_from_dict():
     test_import_test_cases(request_type=dict)
 
 
+def test_import_test_cases_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TestCasesClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.import_test_cases),
+            '__call__') as call:
+        client.import_test_cases()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == test_case.ImportTestCasesRequest()
+
 @pytest.mark.asyncio
 async def test_import_test_cases_async(transport: str = 'grpc_asyncio', request_type=test_case.ImportTestCasesRequest):
     client = TestCasesAsyncClient(
@@ -2307,6 +2476,24 @@ def test_export_test_cases(transport: str = 'grpc', request_type=test_case.Expor
 def test_export_test_cases_from_dict():
     test_export_test_cases(request_type=dict)
 
+
+def test_export_test_cases_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TestCasesClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.export_test_cases),
+            '__call__') as call:
+        client.export_test_cases()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == test_case.ExportTestCasesRequest()
 
 @pytest.mark.asyncio
 async def test_export_test_cases_async(transport: str = 'grpc_asyncio', request_type=test_case.ExportTestCasesRequest):
@@ -2446,6 +2633,24 @@ def test_list_test_case_results(transport: str = 'grpc', request_type=test_case.
 def test_list_test_case_results_from_dict():
     test_list_test_case_results(request_type=dict)
 
+
+def test_list_test_case_results_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TestCasesClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_test_case_results),
+            '__call__') as call:
+        client.list_test_case_results()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == test_case.ListTestCaseResultsRequest()
 
 @pytest.mark.asyncio
 async def test_list_test_case_results_async(transport: str = 'grpc_asyncio', request_type=test_case.ListTestCaseResultsRequest):

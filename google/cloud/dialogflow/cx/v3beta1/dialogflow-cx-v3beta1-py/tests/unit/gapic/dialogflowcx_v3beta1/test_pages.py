@@ -71,13 +71,18 @@ def test__get_default_mtls_endpoint():
     assert PagesClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_pages_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    PagesClient,
+    PagesAsyncClient,
+])
+def test_pages_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = PagesClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'dialogflow.googleapis.com:443'
 
@@ -92,9 +97,11 @@ def test_pages_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'dialogflow.googleapis.com:443'
 
@@ -385,6 +392,24 @@ def test_list_pages(transport: str = 'grpc', request_type=page.ListPagesRequest)
 def test_list_pages_from_dict():
     test_list_pages(request_type=dict)
 
+
+def test_list_pages_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = PagesClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_pages),
+            '__call__') as call:
+        client.list_pages()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == page.ListPagesRequest()
 
 @pytest.mark.asyncio
 async def test_list_pages_async(transport: str = 'grpc_asyncio', request_type=page.ListPagesRequest):
@@ -805,6 +830,24 @@ def test_get_page_from_dict():
     test_get_page(request_type=dict)
 
 
+def test_get_page_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = PagesClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_page),
+            '__call__') as call:
+        client.get_page()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == page.GetPageRequest()
+
 @pytest.mark.asyncio
 async def test_get_page_async(transport: str = 'grpc_asyncio', request_type=page.GetPageRequest):
     client = PagesAsyncClient(
@@ -1042,6 +1085,24 @@ def test_create_page(transport: str = 'grpc', request_type=gcdc_page.CreatePageR
 def test_create_page_from_dict():
     test_create_page(request_type=dict)
 
+
+def test_create_page_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = PagesClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_page),
+            '__call__') as call:
+        client.create_page()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gcdc_page.CreatePageRequest()
 
 @pytest.mark.asyncio
 async def test_create_page_async(transport: str = 'grpc_asyncio', request_type=gcdc_page.CreatePageRequest):
@@ -1289,6 +1350,24 @@ def test_update_page_from_dict():
     test_update_page(request_type=dict)
 
 
+def test_update_page_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = PagesClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_page),
+            '__call__') as call:
+        client.update_page()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gcdc_page.UpdatePageRequest()
+
 @pytest.mark.asyncio
 async def test_update_page_async(transport: str = 'grpc_asyncio', request_type=gcdc_page.UpdatePageRequest):
     client = PagesAsyncClient(
@@ -1520,6 +1599,24 @@ def test_delete_page(transport: str = 'grpc', request_type=page.DeletePageReques
 def test_delete_page_from_dict():
     test_delete_page(request_type=dict)
 
+
+def test_delete_page_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = PagesClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_page),
+            '__call__') as call:
+        client.delete_page()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == page.DeletePageRequest()
 
 @pytest.mark.asyncio
 async def test_delete_page_async(transport: str = 'grpc_asyncio', request_type=page.DeletePageRequest):
