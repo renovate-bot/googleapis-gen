@@ -6,7 +6,7 @@ buildscript {
 
 apply plugin: 'java'
 
-description = 'GRPC library for grpc-google-cloud-analytics-data-v1beta-java'
+description = 'PROTO library for proto-google-analytics-data-v1beta-java'
 group = 'com.google.api.grpc'
 version = (findProperty('version') == 'unspecified') ? '0.0.0-SNAPSHOT' : version
 sourceCompatibility = 1.7
@@ -18,13 +18,17 @@ repositories {
 }
 
 dependencies {
-  compile 'io.grpc:grpc-stub:1.30.0'
-  compile 'io.grpc:grpc-protobuf:1.30.0'
-  compile project(':proto-google-cloud-analytics-data-v1beta-java')
+  compile 'com.google.protobuf:protobuf-java:3.12.2'
+  compile 'com.google.api:api-common:1.9.3'
+  compile 'com.google.api.grpc:proto-google-common-protos:1.17.0'
+  
 }
 
 sourceSets {
   main {
+    resources {
+      srcDir 'src/main/proto'
+    }
     java {
       srcDir 'src/main/java'
     }
