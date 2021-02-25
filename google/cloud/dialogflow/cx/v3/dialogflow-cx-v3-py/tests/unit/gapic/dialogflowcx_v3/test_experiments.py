@@ -70,13 +70,18 @@ def test__get_default_mtls_endpoint():
     assert ExperimentsClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_experiments_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    ExperimentsClient,
+    ExperimentsAsyncClient,
+])
+def test_experiments_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = ExperimentsClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'dialogflow.googleapis.com:443'
 
@@ -91,9 +96,11 @@ def test_experiments_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'dialogflow.googleapis.com:443'
 
@@ -384,6 +391,24 @@ def test_list_experiments(transport: str = 'grpc', request_type=experiment.ListE
 def test_list_experiments_from_dict():
     test_list_experiments(request_type=dict)
 
+
+def test_list_experiments_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ExperimentsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_experiments),
+            '__call__') as call:
+        client.list_experiments()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == experiment.ListExperimentsRequest()
 
 @pytest.mark.asyncio
 async def test_list_experiments_async(transport: str = 'grpc_asyncio', request_type=experiment.ListExperimentsRequest):
@@ -808,6 +833,24 @@ def test_get_experiment_from_dict():
     test_get_experiment(request_type=dict)
 
 
+def test_get_experiment_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ExperimentsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_experiment),
+            '__call__') as call:
+        client.get_experiment()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == experiment.GetExperimentRequest()
+
 @pytest.mark.asyncio
 async def test_get_experiment_async(transport: str = 'grpc_asyncio', request_type=experiment.GetExperimentRequest):
     client = ExperimentsAsyncClient(
@@ -1052,6 +1095,24 @@ def test_create_experiment(transport: str = 'grpc', request_type=gcdc_experiment
 def test_create_experiment_from_dict():
     test_create_experiment(request_type=dict)
 
+
+def test_create_experiment_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ExperimentsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_experiment),
+            '__call__') as call:
+        client.create_experiment()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gcdc_experiment.CreateExperimentRequest()
 
 @pytest.mark.asyncio
 async def test_create_experiment_async(transport: str = 'grpc_asyncio', request_type=gcdc_experiment.CreateExperimentRequest):
@@ -1306,6 +1367,24 @@ def test_update_experiment_from_dict():
     test_update_experiment(request_type=dict)
 
 
+def test_update_experiment_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ExperimentsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_experiment),
+            '__call__') as call:
+        client.update_experiment()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gcdc_experiment.UpdateExperimentRequest()
+
 @pytest.mark.asyncio
 async def test_update_experiment_async(transport: str = 'grpc_asyncio', request_type=gcdc_experiment.UpdateExperimentRequest):
     client = ExperimentsAsyncClient(
@@ -1541,6 +1620,24 @@ def test_delete_experiment_from_dict():
     test_delete_experiment(request_type=dict)
 
 
+def test_delete_experiment_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ExperimentsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_experiment),
+            '__call__') as call:
+        client.delete_experiment()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == experiment.DeleteExperimentRequest()
+
 @pytest.mark.asyncio
 async def test_delete_experiment_async(transport: str = 'grpc_asyncio', request_type=experiment.DeleteExperimentRequest):
     client = ExperimentsAsyncClient(
@@ -1772,6 +1869,24 @@ def test_start_experiment(transport: str = 'grpc', request_type=experiment.Start
 def test_start_experiment_from_dict():
     test_start_experiment(request_type=dict)
 
+
+def test_start_experiment_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ExperimentsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.start_experiment),
+            '__call__') as call:
+        client.start_experiment()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == experiment.StartExperimentRequest()
 
 @pytest.mark.asyncio
 async def test_start_experiment_async(transport: str = 'grpc_asyncio', request_type=experiment.StartExperimentRequest):
@@ -2017,6 +2132,24 @@ def test_stop_experiment(transport: str = 'grpc', request_type=experiment.StopEx
 def test_stop_experiment_from_dict():
     test_stop_experiment(request_type=dict)
 
+
+def test_stop_experiment_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ExperimentsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.stop_experiment),
+            '__call__') as call:
+        client.stop_experiment()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == experiment.StopExperimentRequest()
 
 @pytest.mark.asyncio
 async def test_stop_experiment_async(transport: str = 'grpc_asyncio', request_type=experiment.StopExperimentRequest):

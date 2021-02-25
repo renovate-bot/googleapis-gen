@@ -68,13 +68,18 @@ def test__get_default_mtls_endpoint():
     assert AdMobApiClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_ad_mob_api_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    AdMobApiClient,
+    AdMobApiAsyncClient,
+])
+def test_ad_mob_api_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = AdMobApiClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'admob.googleapis.com:443'
 
@@ -89,9 +94,11 @@ def test_ad_mob_api_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'admob.googleapis.com:443'
 
@@ -395,6 +402,24 @@ def test_get_publisher_account_from_dict():
     test_get_publisher_account(request_type=dict)
 
 
+def test_get_publisher_account_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AdMobApiClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_publisher_account),
+            '__call__') as call:
+        client.get_publisher_account()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == admob_api.GetPublisherAccountRequest()
+
 @pytest.mark.asyncio
 async def test_get_publisher_account_async(transport: str = 'grpc_asyncio', request_type=admob_api.GetPublisherAccountRequest):
     client = AdMobApiAsyncClient(
@@ -627,6 +652,24 @@ def test_list_publisher_accounts(transport: str = 'grpc', request_type=admob_api
 def test_list_publisher_accounts_from_dict():
     test_list_publisher_accounts(request_type=dict)
 
+
+def test_list_publisher_accounts_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AdMobApiClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_publisher_accounts),
+            '__call__') as call:
+        client.list_publisher_accounts()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == admob_api.ListPublisherAccountsRequest()
 
 @pytest.mark.asyncio
 async def test_list_publisher_accounts_async(transport: str = 'grpc_asyncio', request_type=admob_api.ListPublisherAccountsRequest):
@@ -883,6 +926,24 @@ def test_generate_network_report_from_dict():
     test_generate_network_report(request_type=dict)
 
 
+def test_generate_network_report_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AdMobApiClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.generate_network_report),
+            '__call__') as call:
+        client.generate_network_report()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == admob_api.GenerateNetworkReportRequest()
+
 @pytest.mark.asyncio
 async def test_generate_network_report_async(transport: str = 'grpc_asyncio', request_type=admob_api.GenerateNetworkReportRequest):
     client = AdMobApiAsyncClient(
@@ -1017,6 +1078,24 @@ def test_generate_mediation_report(transport: str = 'grpc', request_type=admob_a
 def test_generate_mediation_report_from_dict():
     test_generate_mediation_report(request_type=dict)
 
+
+def test_generate_mediation_report_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AdMobApiClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.generate_mediation_report),
+            '__call__') as call:
+        client.generate_mediation_report()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == admob_api.GenerateMediationReportRequest()
 
 @pytest.mark.asyncio
 async def test_generate_mediation_report_async(transport: str = 'grpc_asyncio', request_type=admob_api.GenerateMediationReportRequest):

@@ -83,13 +83,18 @@ def test__get_default_mtls_endpoint():
     assert ArtifactRegistryClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_artifact_registry_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    ArtifactRegistryClient,
+    ArtifactRegistryAsyncClient,
+])
+def test_artifact_registry_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = ArtifactRegistryClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'artifactregistry.googleapis.com:443'
 
@@ -104,9 +109,11 @@ def test_artifact_registry_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'artifactregistry.googleapis.com:443'
 
@@ -397,6 +404,24 @@ def test_list_repositories(transport: str = 'grpc', request_type=repository.List
 def test_list_repositories_from_dict():
     test_list_repositories(request_type=dict)
 
+
+def test_list_repositories_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ArtifactRegistryClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_repositories),
+            '__call__') as call:
+        client.list_repositories()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == repository.ListRepositoriesRequest()
 
 @pytest.mark.asyncio
 async def test_list_repositories_async(transport: str = 'grpc_asyncio', request_type=repository.ListRepositoriesRequest):
@@ -821,6 +846,24 @@ def test_get_repository_from_dict():
     test_get_repository(request_type=dict)
 
 
+def test_get_repository_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ArtifactRegistryClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_repository),
+            '__call__') as call:
+        client.get_repository()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == repository.GetRepositoryRequest()
+
 @pytest.mark.asyncio
 async def test_get_repository_async(transport: str = 'grpc_asyncio', request_type=repository.GetRepositoryRequest):
     client = ArtifactRegistryAsyncClient(
@@ -1047,6 +1090,24 @@ def test_create_repository(transport: str = 'grpc', request_type=gda_repository.
 def test_create_repository_from_dict():
     test_create_repository(request_type=dict)
 
+
+def test_create_repository_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ArtifactRegistryClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_repository),
+            '__call__') as call:
+        client.create_repository()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gda_repository.CreateRepositoryRequest()
 
 @pytest.mark.asyncio
 async def test_create_repository_async(transport: str = 'grpc_asyncio', request_type=gda_repository.CreateRepositoryRequest):
@@ -1300,6 +1361,24 @@ def test_update_repository_from_dict():
     test_update_repository(request_type=dict)
 
 
+def test_update_repository_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ArtifactRegistryClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_repository),
+            '__call__') as call:
+        client.update_repository()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gda_repository.UpdateRepositoryRequest()
+
 @pytest.mark.asyncio
 async def test_update_repository_async(transport: str = 'grpc_asyncio', request_type=gda_repository.UpdateRepositoryRequest):
     client = ArtifactRegistryAsyncClient(
@@ -1535,6 +1614,24 @@ def test_delete_repository_from_dict():
     test_delete_repository(request_type=dict)
 
 
+def test_delete_repository_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ArtifactRegistryClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_repository),
+            '__call__') as call:
+        client.delete_repository()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == repository.DeleteRepositoryRequest()
+
 @pytest.mark.asyncio
 async def test_delete_repository_async(transport: str = 'grpc_asyncio', request_type=repository.DeleteRepositoryRequest):
     client = ArtifactRegistryAsyncClient(
@@ -1758,6 +1855,24 @@ def test_list_packages(transport: str = 'grpc', request_type=package.ListPackage
 def test_list_packages_from_dict():
     test_list_packages(request_type=dict)
 
+
+def test_list_packages_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ArtifactRegistryClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_packages),
+            '__call__') as call:
+        client.list_packages()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == package.ListPackagesRequest()
 
 @pytest.mark.asyncio
 async def test_list_packages_async(transport: str = 'grpc_asyncio', request_type=package.ListPackagesRequest):
@@ -2174,6 +2289,24 @@ def test_get_package_from_dict():
     test_get_package(request_type=dict)
 
 
+def test_get_package_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ArtifactRegistryClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_package),
+            '__call__') as call:
+        client.get_package()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == package.GetPackageRequest()
+
 @pytest.mark.asyncio
 async def test_get_package_async(transport: str = 'grpc_asyncio', request_type=package.GetPackageRequest):
     client = ArtifactRegistryAsyncClient(
@@ -2394,6 +2527,24 @@ def test_delete_package(transport: str = 'grpc', request_type=package.DeletePack
 def test_delete_package_from_dict():
     test_delete_package(request_type=dict)
 
+
+def test_delete_package_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ArtifactRegistryClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_package),
+            '__call__') as call:
+        client.delete_package()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == package.DeletePackageRequest()
 
 @pytest.mark.asyncio
 async def test_delete_package_async(transport: str = 'grpc_asyncio', request_type=package.DeletePackageRequest):
@@ -2618,6 +2769,24 @@ def test_list_versions(transport: str = 'grpc', request_type=version.ListVersion
 def test_list_versions_from_dict():
     test_list_versions(request_type=dict)
 
+
+def test_list_versions_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ArtifactRegistryClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_versions),
+            '__call__') as call:
+        client.list_versions()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == version.ListVersionsRequest()
 
 @pytest.mark.asyncio
 async def test_list_versions_async(transport: str = 'grpc_asyncio', request_type=version.ListVersionsRequest):
@@ -3034,6 +3203,24 @@ def test_get_version_from_dict():
     test_get_version(request_type=dict)
 
 
+def test_get_version_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ArtifactRegistryClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_version),
+            '__call__') as call:
+        client.get_version()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == version.GetVersionRequest()
+
 @pytest.mark.asyncio
 async def test_get_version_async(transport: str = 'grpc_asyncio', request_type=version.GetVersionRequest):
     client = ArtifactRegistryAsyncClient(
@@ -3254,6 +3441,24 @@ def test_delete_version(transport: str = 'grpc', request_type=version.DeleteVers
 def test_delete_version_from_dict():
     test_delete_version(request_type=dict)
 
+
+def test_delete_version_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ArtifactRegistryClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_version),
+            '__call__') as call:
+        client.delete_version()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == version.DeleteVersionRequest()
 
 @pytest.mark.asyncio
 async def test_delete_version_async(transport: str = 'grpc_asyncio', request_type=version.DeleteVersionRequest):
@@ -3478,6 +3683,24 @@ def test_list_files(transport: str = 'grpc', request_type=file.ListFilesRequest)
 def test_list_files_from_dict():
     test_list_files(request_type=dict)
 
+
+def test_list_files_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ArtifactRegistryClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_files),
+            '__call__') as call:
+        client.list_files()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == file.ListFilesRequest()
 
 @pytest.mark.asyncio
 async def test_list_files_async(transport: str = 'grpc_asyncio', request_type=file.ListFilesRequest):
@@ -3898,6 +4121,24 @@ def test_get_file_from_dict():
     test_get_file(request_type=dict)
 
 
+def test_get_file_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ArtifactRegistryClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_file),
+            '__call__') as call:
+        client.get_file()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == file.GetFileRequest()
+
 @pytest.mark.asyncio
 async def test_get_file_async(transport: str = 'grpc_asyncio', request_type=file.GetFileRequest):
     client = ArtifactRegistryAsyncClient(
@@ -4127,6 +4368,24 @@ def test_list_tags(transport: str = 'grpc', request_type=tag.ListTagsRequest):
 def test_list_tags_from_dict():
     test_list_tags(request_type=dict)
 
+
+def test_list_tags_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ArtifactRegistryClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_tags),
+            '__call__') as call:
+        client.list_tags()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == tag.ListTagsRequest()
 
 @pytest.mark.asyncio
 async def test_list_tags_async(transport: str = 'grpc_asyncio', request_type=tag.ListTagsRequest):
@@ -4543,6 +4802,24 @@ def test_get_tag_from_dict():
     test_get_tag(request_type=dict)
 
 
+def test_get_tag_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ArtifactRegistryClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_tag),
+            '__call__') as call:
+        client.get_tag()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == tag.GetTagRequest()
+
 @pytest.mark.asyncio
 async def test_get_tag_async(transport: str = 'grpc_asyncio', request_type=tag.GetTagRequest):
     client = ArtifactRegistryAsyncClient(
@@ -4773,6 +5050,24 @@ def test_create_tag(transport: str = 'grpc', request_type=gda_tag.CreateTagReque
 def test_create_tag_from_dict():
     test_create_tag(request_type=dict)
 
+
+def test_create_tag_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ArtifactRegistryClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_tag),
+            '__call__') as call:
+        client.create_tag()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gda_tag.CreateTagRequest()
 
 @pytest.mark.asyncio
 async def test_create_tag_async(transport: str = 'grpc_asyncio', request_type=gda_tag.CreateTagRequest):
@@ -5021,6 +5316,24 @@ def test_update_tag_from_dict():
     test_update_tag(request_type=dict)
 
 
+def test_update_tag_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ArtifactRegistryClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_tag),
+            '__call__') as call:
+        client.update_tag()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gda_tag.UpdateTagRequest()
+
 @pytest.mark.asyncio
 async def test_update_tag_async(transport: str = 'grpc_asyncio', request_type=gda_tag.UpdateTagRequest):
     client = ArtifactRegistryAsyncClient(
@@ -5250,6 +5563,24 @@ def test_delete_tag_from_dict():
     test_delete_tag(request_type=dict)
 
 
+def test_delete_tag_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ArtifactRegistryClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_tag),
+            '__call__') as call:
+        client.delete_tag()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == tag.DeleteTagRequest()
+
 @pytest.mark.asyncio
 async def test_delete_tag_async(transport: str = 'grpc_asyncio', request_type=tag.DeleteTagRequest):
     client = ArtifactRegistryAsyncClient(
@@ -5474,6 +5805,24 @@ def test_set_iam_policy_from_dict():
     test_set_iam_policy(request_type=dict)
 
 
+def test_set_iam_policy_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ArtifactRegistryClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.set_iam_policy),
+            '__call__') as call:
+        client.set_iam_policy()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam_policy.SetIamPolicyRequest()
+
 @pytest.mark.asyncio
 async def test_set_iam_policy_async(transport: str = 'grpc_asyncio', request_type=iam_policy.SetIamPolicyRequest):
     client = ArtifactRegistryAsyncClient(
@@ -5641,6 +5990,24 @@ def test_get_iam_policy_from_dict():
     test_get_iam_policy(request_type=dict)
 
 
+def test_get_iam_policy_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ArtifactRegistryClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_iam_policy),
+            '__call__') as call:
+        client.get_iam_policy()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam_policy.GetIamPolicyRequest()
+
 @pytest.mark.asyncio
 async def test_get_iam_policy_async(transport: str = 'grpc_asyncio', request_type=iam_policy.GetIamPolicyRequest):
     client = ArtifactRegistryAsyncClient(
@@ -5803,6 +6170,24 @@ def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy.T
 def test_test_iam_permissions_from_dict():
     test_test_iam_permissions(request_type=dict)
 
+
+def test_test_iam_permissions_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ArtifactRegistryClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.test_iam_permissions),
+            '__call__') as call:
+        client.test_iam_permissions()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam_policy.TestIamPermissionsRequest()
 
 @pytest.mark.asyncio
 async def test_test_iam_permissions_async(transport: str = 'grpc_asyncio', request_type=iam_policy.TestIamPermissionsRequest):

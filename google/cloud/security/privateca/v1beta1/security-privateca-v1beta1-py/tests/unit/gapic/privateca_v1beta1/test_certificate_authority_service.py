@@ -75,13 +75,18 @@ def test__get_default_mtls_endpoint():
     assert CertificateAuthorityServiceClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_certificate_authority_service_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    CertificateAuthorityServiceClient,
+    CertificateAuthorityServiceAsyncClient,
+])
+def test_certificate_authority_service_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = CertificateAuthorityServiceClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'privateca.googleapis.com:443'
 
@@ -96,9 +101,11 @@ def test_certificate_authority_service_client_from_service_account_file(client_c
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'privateca.googleapis.com:443'
 
@@ -399,6 +406,24 @@ def test_create_certificate_from_dict():
     test_create_certificate(request_type=dict)
 
 
+def test_create_certificate_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CertificateAuthorityServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_certificate),
+            '__call__') as call:
+        client.create_certificate()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.CreateCertificateRequest()
+
 @pytest.mark.asyncio
 async def test_create_certificate_async(transport: str = 'grpc_asyncio', request_type=service.CreateCertificateRequest):
     client = CertificateAuthorityServiceAsyncClient(
@@ -654,6 +679,24 @@ def test_get_certificate_from_dict():
     test_get_certificate(request_type=dict)
 
 
+def test_get_certificate_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CertificateAuthorityServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_certificate),
+            '__call__') as call:
+        client.get_certificate()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.GetCertificateRequest()
+
 @pytest.mark.asyncio
 async def test_get_certificate_async(transport: str = 'grpc_asyncio', request_type=service.GetCertificateRequest):
     client = CertificateAuthorityServiceAsyncClient(
@@ -887,6 +930,24 @@ def test_list_certificates(transport: str = 'grpc', request_type=service.ListCer
 def test_list_certificates_from_dict():
     test_list_certificates(request_type=dict)
 
+
+def test_list_certificates_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CertificateAuthorityServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_certificates),
+            '__call__') as call:
+        client.list_certificates()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.ListCertificatesRequest()
 
 @pytest.mark.asyncio
 async def test_list_certificates_async(transport: str = 'grpc_asyncio', request_type=service.ListCertificatesRequest):
@@ -1311,6 +1372,24 @@ def test_revoke_certificate_from_dict():
     test_revoke_certificate(request_type=dict)
 
 
+def test_revoke_certificate_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CertificateAuthorityServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.revoke_certificate),
+            '__call__') as call:
+        client.revoke_certificate()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.RevokeCertificateRequest()
+
 @pytest.mark.asyncio
 async def test_revoke_certificate_async(transport: str = 'grpc_asyncio', request_type=service.RevokeCertificateRequest):
     client = CertificateAuthorityServiceAsyncClient(
@@ -1550,6 +1629,24 @@ def test_update_certificate_from_dict():
     test_update_certificate(request_type=dict)
 
 
+def test_update_certificate_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CertificateAuthorityServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_certificate),
+            '__call__') as call:
+        client.update_certificate()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.UpdateCertificateRequest()
+
 @pytest.mark.asyncio
 async def test_update_certificate_async(transport: str = 'grpc_asyncio', request_type=service.UpdateCertificateRequest):
     client = CertificateAuthorityServiceAsyncClient(
@@ -1782,6 +1879,24 @@ def test_activate_certificate_authority_from_dict():
     test_activate_certificate_authority(request_type=dict)
 
 
+def test_activate_certificate_authority_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CertificateAuthorityServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.activate_certificate_authority),
+            '__call__') as call:
+        client.activate_certificate_authority()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.ActivateCertificateAuthorityRequest()
+
 @pytest.mark.asyncio
 async def test_activate_certificate_authority_async(transport: str = 'grpc_asyncio', request_type=service.ActivateCertificateAuthorityRequest):
     client = CertificateAuthorityServiceAsyncClient(
@@ -1999,6 +2114,24 @@ def test_create_certificate_authority(transport: str = 'grpc', request_type=serv
 def test_create_certificate_authority_from_dict():
     test_create_certificate_authority(request_type=dict)
 
+
+def test_create_certificate_authority_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CertificateAuthorityServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_certificate_authority),
+            '__call__') as call:
+        client.create_certificate_authority()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.CreateCertificateAuthorityRequest()
 
 @pytest.mark.asyncio
 async def test_create_certificate_authority_async(transport: str = 'grpc_asyncio', request_type=service.CreateCertificateAuthorityRequest):
@@ -2234,6 +2367,24 @@ def test_disable_certificate_authority_from_dict():
     test_disable_certificate_authority(request_type=dict)
 
 
+def test_disable_certificate_authority_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CertificateAuthorityServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.disable_certificate_authority),
+            '__call__') as call:
+        client.disable_certificate_authority()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.DisableCertificateAuthorityRequest()
+
 @pytest.mark.asyncio
 async def test_disable_certificate_authority_async(transport: str = 'grpc_asyncio', request_type=service.DisableCertificateAuthorityRequest):
     client = CertificateAuthorityServiceAsyncClient(
@@ -2451,6 +2602,24 @@ def test_enable_certificate_authority(transport: str = 'grpc', request_type=serv
 def test_enable_certificate_authority_from_dict():
     test_enable_certificate_authority(request_type=dict)
 
+
+def test_enable_certificate_authority_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CertificateAuthorityServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.enable_certificate_authority),
+            '__call__') as call:
+        client.enable_certificate_authority()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.EnableCertificateAuthorityRequest()
 
 @pytest.mark.asyncio
 async def test_enable_certificate_authority_async(transport: str = 'grpc_asyncio', request_type=service.EnableCertificateAuthorityRequest):
@@ -2675,6 +2844,24 @@ def test_fetch_certificate_authority_csr(transport: str = 'grpc', request_type=s
 def test_fetch_certificate_authority_csr_from_dict():
     test_fetch_certificate_authority_csr(request_type=dict)
 
+
+def test_fetch_certificate_authority_csr_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CertificateAuthorityServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.fetch_certificate_authority_csr),
+            '__call__') as call:
+        client.fetch_certificate_authority_csr()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.FetchCertificateAuthorityCsrRequest()
 
 @pytest.mark.asyncio
 async def test_fetch_certificate_authority_csr_async(transport: str = 'grpc_asyncio', request_type=service.FetchCertificateAuthorityCsrRequest):
@@ -2920,6 +3107,24 @@ def test_get_certificate_authority_from_dict():
     test_get_certificate_authority(request_type=dict)
 
 
+def test_get_certificate_authority_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CertificateAuthorityServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_certificate_authority),
+            '__call__') as call:
+        client.get_certificate_authority()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.GetCertificateAuthorityRequest()
+
 @pytest.mark.asyncio
 async def test_get_certificate_authority_async(transport: str = 'grpc_asyncio', request_type=service.GetCertificateAuthorityRequest):
     client = CertificateAuthorityServiceAsyncClient(
@@ -3162,6 +3367,24 @@ def test_list_certificate_authorities(transport: str = 'grpc', request_type=serv
 def test_list_certificate_authorities_from_dict():
     test_list_certificate_authorities(request_type=dict)
 
+
+def test_list_certificate_authorities_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CertificateAuthorityServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_certificate_authorities),
+            '__call__') as call:
+        client.list_certificate_authorities()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.ListCertificateAuthoritiesRequest()
 
 @pytest.mark.asyncio
 async def test_list_certificate_authorities_async(transport: str = 'grpc_asyncio', request_type=service.ListCertificateAuthoritiesRequest):
@@ -3571,6 +3794,24 @@ def test_restore_certificate_authority_from_dict():
     test_restore_certificate_authority(request_type=dict)
 
 
+def test_restore_certificate_authority_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CertificateAuthorityServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.restore_certificate_authority),
+            '__call__') as call:
+        client.restore_certificate_authority()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.RestoreCertificateAuthorityRequest()
+
 @pytest.mark.asyncio
 async def test_restore_certificate_authority_async(transport: str = 'grpc_asyncio', request_type=service.RestoreCertificateAuthorityRequest):
     client = CertificateAuthorityServiceAsyncClient(
@@ -3789,6 +4030,24 @@ def test_schedule_delete_certificate_authority_from_dict():
     test_schedule_delete_certificate_authority(request_type=dict)
 
 
+def test_schedule_delete_certificate_authority_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CertificateAuthorityServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.schedule_delete_certificate_authority),
+            '__call__') as call:
+        client.schedule_delete_certificate_authority()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.ScheduleDeleteCertificateAuthorityRequest()
+
 @pytest.mark.asyncio
 async def test_schedule_delete_certificate_authority_async(transport: str = 'grpc_asyncio', request_type=service.ScheduleDeleteCertificateAuthorityRequest):
     client = CertificateAuthorityServiceAsyncClient(
@@ -4006,6 +4265,24 @@ def test_update_certificate_authority(transport: str = 'grpc', request_type=serv
 def test_update_certificate_authority_from_dict():
     test_update_certificate_authority(request_type=dict)
 
+
+def test_update_certificate_authority_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CertificateAuthorityServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_certificate_authority),
+            '__call__') as call:
+        client.update_certificate_authority()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.UpdateCertificateAuthorityRequest()
 
 @pytest.mark.asyncio
 async def test_update_certificate_authority_async(transport: str = 'grpc_asyncio', request_type=service.UpdateCertificateAuthorityRequest):
@@ -4255,6 +4532,24 @@ def test_get_certificate_revocation_list_from_dict():
     test_get_certificate_revocation_list(request_type=dict)
 
 
+def test_get_certificate_revocation_list_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CertificateAuthorityServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_certificate_revocation_list),
+            '__call__') as call:
+        client.get_certificate_revocation_list()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.GetCertificateRevocationListRequest()
+
 @pytest.mark.asyncio
 async def test_get_certificate_revocation_list_async(transport: str = 'grpc_asyncio', request_type=service.GetCertificateRevocationListRequest):
     client = CertificateAuthorityServiceAsyncClient(
@@ -4494,6 +4789,24 @@ def test_list_certificate_revocation_lists(transport: str = 'grpc', request_type
 def test_list_certificate_revocation_lists_from_dict():
     test_list_certificate_revocation_lists(request_type=dict)
 
+
+def test_list_certificate_revocation_lists_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CertificateAuthorityServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_certificate_revocation_lists),
+            '__call__') as call:
+        client.list_certificate_revocation_lists()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.ListCertificateRevocationListsRequest()
 
 @pytest.mark.asyncio
 async def test_list_certificate_revocation_lists_async(transport: str = 'grpc_asyncio', request_type=service.ListCertificateRevocationListsRequest):
@@ -4903,6 +5216,24 @@ def test_update_certificate_revocation_list_from_dict():
     test_update_certificate_revocation_list(request_type=dict)
 
 
+def test_update_certificate_revocation_list_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CertificateAuthorityServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_certificate_revocation_list),
+            '__call__') as call:
+        client.update_certificate_revocation_list()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.UpdateCertificateRevocationListRequest()
+
 @pytest.mark.asyncio
 async def test_update_certificate_revocation_list_async(transport: str = 'grpc_asyncio', request_type=service.UpdateCertificateRevocationListRequest):
     client = CertificateAuthorityServiceAsyncClient(
@@ -5139,6 +5470,24 @@ def test_get_reusable_config_from_dict():
     test_get_reusable_config(request_type=dict)
 
 
+def test_get_reusable_config_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CertificateAuthorityServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_reusable_config),
+            '__call__') as call:
+        client.get_reusable_config()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.GetReusableConfigRequest()
+
 @pytest.mark.asyncio
 async def test_get_reusable_config_async(transport: str = 'grpc_asyncio', request_type=service.GetReusableConfigRequest):
     client = CertificateAuthorityServiceAsyncClient(
@@ -5369,6 +5718,24 @@ def test_list_reusable_configs(transport: str = 'grpc', request_type=service.Lis
 def test_list_reusable_configs_from_dict():
     test_list_reusable_configs(request_type=dict)
 
+
+def test_list_reusable_configs_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CertificateAuthorityServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_reusable_configs),
+            '__call__') as call:
+        client.list_reusable_configs()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.ListReusableConfigsRequest()
 
 @pytest.mark.asyncio
 async def test_list_reusable_configs_async(transport: str = 'grpc_asyncio', request_type=service.ListReusableConfigsRequest):

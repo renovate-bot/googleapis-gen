@@ -74,13 +74,18 @@ def test__get_default_mtls_endpoint():
     assert StorageClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_storage_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    StorageClient,
+    StorageAsyncClient,
+])
+def test_storage_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = StorageClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'storage.googleapis.com:443'
 
@@ -95,9 +100,11 @@ def test_storage_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'storage.googleapis.com:443'
 
@@ -383,6 +390,24 @@ def test_delete_bucket_access_control_from_dict():
     test_delete_bucket_access_control(request_type=dict)
 
 
+def test_delete_bucket_access_control_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_bucket_access_control),
+            '__call__') as call:
+        client.delete_bucket_access_control()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.DeleteBucketAccessControlRequest()
+
 @pytest.mark.asyncio
 async def test_delete_bucket_access_control_async(transport: str = 'grpc_asyncio', request_type=storage.DeleteBucketAccessControlRequest):
     client = StorageAsyncClient(
@@ -484,6 +509,24 @@ def test_get_bucket_access_control(transport: str = 'grpc', request_type=storage
 def test_get_bucket_access_control_from_dict():
     test_get_bucket_access_control(request_type=dict)
 
+
+def test_get_bucket_access_control_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_bucket_access_control),
+            '__call__') as call:
+        client.get_bucket_access_control()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.GetBucketAccessControlRequest()
 
 @pytest.mark.asyncio
 async def test_get_bucket_access_control_async(transport: str = 'grpc_asyncio', request_type=storage.GetBucketAccessControlRequest):
@@ -612,6 +655,24 @@ def test_insert_bucket_access_control_from_dict():
     test_insert_bucket_access_control(request_type=dict)
 
 
+def test_insert_bucket_access_control_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.insert_bucket_access_control),
+            '__call__') as call:
+        client.insert_bucket_access_control()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.InsertBucketAccessControlRequest()
+
 @pytest.mark.asyncio
 async def test_insert_bucket_access_control_async(transport: str = 'grpc_asyncio', request_type=storage.InsertBucketAccessControlRequest):
     client = StorageAsyncClient(
@@ -706,6 +767,24 @@ def test_list_bucket_access_controls(transport: str = 'grpc', request_type=stora
 def test_list_bucket_access_controls_from_dict():
     test_list_bucket_access_controls(request_type=dict)
 
+
+def test_list_bucket_access_controls_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_bucket_access_controls),
+            '__call__') as call:
+        client.list_bucket_access_controls()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.ListBucketAccessControlsRequest()
 
 @pytest.mark.asyncio
 async def test_list_bucket_access_controls_async(transport: str = 'grpc_asyncio', request_type=storage.ListBucketAccessControlsRequest):
@@ -809,6 +888,24 @@ def test_update_bucket_access_control(transport: str = 'grpc', request_type=stor
 def test_update_bucket_access_control_from_dict():
     test_update_bucket_access_control(request_type=dict)
 
+
+def test_update_bucket_access_control_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_bucket_access_control),
+            '__call__') as call:
+        client.update_bucket_access_control()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.UpdateBucketAccessControlRequest()
 
 @pytest.mark.asyncio
 async def test_update_bucket_access_control_async(transport: str = 'grpc_asyncio', request_type=storage.UpdateBucketAccessControlRequest):
@@ -937,6 +1034,24 @@ def test_patch_bucket_access_control_from_dict():
     test_patch_bucket_access_control(request_type=dict)
 
 
+def test_patch_bucket_access_control_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.patch_bucket_access_control),
+            '__call__') as call:
+        client.patch_bucket_access_control()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.PatchBucketAccessControlRequest()
+
 @pytest.mark.asyncio
 async def test_patch_bucket_access_control_async(transport: str = 'grpc_asyncio', request_type=storage.PatchBucketAccessControlRequest):
     client = StorageAsyncClient(
@@ -1029,6 +1144,24 @@ def test_delete_bucket(transport: str = 'grpc', request_type=storage.DeleteBucke
 def test_delete_bucket_from_dict():
     test_delete_bucket(request_type=dict)
 
+
+def test_delete_bucket_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_bucket),
+            '__call__') as call:
+        client.delete_bucket()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.DeleteBucketRequest()
 
 @pytest.mark.asyncio
 async def test_delete_bucket_async(transport: str = 'grpc_asyncio', request_type=storage.DeleteBucketRequest):
@@ -1139,6 +1272,24 @@ def test_get_bucket(transport: str = 'grpc', request_type=storage.GetBucketReque
 def test_get_bucket_from_dict():
     test_get_bucket(request_type=dict)
 
+
+def test_get_bucket_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_bucket),
+            '__call__') as call:
+        client.get_bucket()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.GetBucketRequest()
 
 @pytest.mark.asyncio
 async def test_get_bucket_async(transport: str = 'grpc_asyncio', request_type=storage.GetBucketRequest):
@@ -1281,6 +1432,24 @@ def test_insert_bucket_from_dict():
     test_insert_bucket(request_type=dict)
 
 
+def test_insert_bucket_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.insert_bucket),
+            '__call__') as call:
+        client.insert_bucket()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.InsertBucketRequest()
+
 @pytest.mark.asyncio
 async def test_insert_bucket_async(transport: str = 'grpc_asyncio', request_type=storage.InsertBucketRequest):
     client = StorageAsyncClient(
@@ -1382,6 +1551,24 @@ def test_list_channels_from_dict():
     test_list_channels(request_type=dict)
 
 
+def test_list_channels_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_channels),
+            '__call__') as call:
+        client.list_channels()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.ListChannelsRequest()
+
 @pytest.mark.asyncio
 async def test_list_channels_async(transport: str = 'grpc_asyncio', request_type=storage.ListChannelsRequest):
     client = StorageAsyncClient(
@@ -1456,6 +1643,24 @@ def test_list_buckets(transport: str = 'grpc', request_type=storage.ListBucketsR
 def test_list_buckets_from_dict():
     test_list_buckets(request_type=dict)
 
+
+def test_list_buckets_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_buckets),
+            '__call__') as call:
+        client.list_buckets()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.ListBucketsRequest()
 
 @pytest.mark.asyncio
 async def test_list_buckets_async(transport: str = 'grpc_asyncio', request_type=storage.ListBucketsRequest):
@@ -1753,6 +1958,24 @@ def test_lock_bucket_retention_policy_from_dict():
     test_lock_bucket_retention_policy(request_type=dict)
 
 
+def test_lock_bucket_retention_policy_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.lock_bucket_retention_policy),
+            '__call__') as call:
+        client.lock_bucket_retention_policy()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.LockRetentionPolicyRequest()
+
 @pytest.mark.asyncio
 async def test_lock_bucket_retention_policy_async(transport: str = 'grpc_asyncio', request_type=storage.LockRetentionPolicyRequest):
     client = StorageAsyncClient(
@@ -1862,6 +2085,24 @@ def test_get_bucket_iam_policy_from_dict():
     test_get_bucket_iam_policy(request_type=dict)
 
 
+def test_get_bucket_iam_policy_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_bucket_iam_policy),
+            '__call__') as call:
+        client.get_bucket_iam_policy()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.GetIamPolicyRequest()
+
 @pytest.mark.asyncio
 async def test_get_bucket_iam_policy_async(transport: str = 'grpc_asyncio', request_type=storage.GetIamPolicyRequest):
     client = StorageAsyncClient(
@@ -1947,6 +2188,24 @@ def test_set_bucket_iam_policy_from_dict():
     test_set_bucket_iam_policy(request_type=dict)
 
 
+def test_set_bucket_iam_policy_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.set_bucket_iam_policy),
+            '__call__') as call:
+        client.set_bucket_iam_policy()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.SetIamPolicyRequest()
+
 @pytest.mark.asyncio
 async def test_set_bucket_iam_policy_async(transport: str = 'grpc_asyncio', request_type=storage.SetIamPolicyRequest):
     client = StorageAsyncClient(
@@ -2027,6 +2286,24 @@ def test_test_bucket_iam_permissions(transport: str = 'grpc', request_type=stora
 def test_test_bucket_iam_permissions_from_dict():
     test_test_bucket_iam_permissions(request_type=dict)
 
+
+def test_test_bucket_iam_permissions_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.test_bucket_iam_permissions),
+            '__call__') as call:
+        client.test_bucket_iam_permissions()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.TestIamPermissionsRequest()
 
 @pytest.mark.asyncio
 async def test_test_bucket_iam_permissions_async(transport: str = 'grpc_asyncio', request_type=storage.TestIamPermissionsRequest):
@@ -2141,6 +2418,24 @@ def test_patch_bucket(transport: str = 'grpc', request_type=storage.PatchBucketR
 def test_patch_bucket_from_dict():
     test_patch_bucket(request_type=dict)
 
+
+def test_patch_bucket_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.patch_bucket),
+            '__call__') as call:
+        client.patch_bucket()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.PatchBucketRequest()
 
 @pytest.mark.asyncio
 async def test_patch_bucket_async(transport: str = 'grpc_asyncio', request_type=storage.PatchBucketRequest):
@@ -2283,6 +2578,24 @@ def test_update_bucket_from_dict():
     test_update_bucket(request_type=dict)
 
 
+def test_update_bucket_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_bucket),
+            '__call__') as call:
+        client.update_bucket()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.UpdateBucketRequest()
+
 @pytest.mark.asyncio
 async def test_update_bucket_async(transport: str = 'grpc_asyncio', request_type=storage.UpdateBucketRequest):
     client = StorageAsyncClient(
@@ -2382,6 +2695,24 @@ def test_stop_channel_from_dict():
     test_stop_channel(request_type=dict)
 
 
+def test_stop_channel_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.stop_channel),
+            '__call__') as call:
+        client.stop_channel()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.StopChannelRequest()
+
 @pytest.mark.asyncio
 async def test_stop_channel_async(transport: str = 'grpc_asyncio', request_type=storage.StopChannelRequest):
     client = StorageAsyncClient(
@@ -2449,6 +2780,24 @@ def test_delete_default_object_access_control(transport: str = 'grpc', request_t
 def test_delete_default_object_access_control_from_dict():
     test_delete_default_object_access_control(request_type=dict)
 
+
+def test_delete_default_object_access_control_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_default_object_access_control),
+            '__call__') as call:
+        client.delete_default_object_access_control()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.DeleteDefaultObjectAccessControlRequest()
 
 @pytest.mark.asyncio
 async def test_delete_default_object_access_control_async(transport: str = 'grpc_asyncio', request_type=storage.DeleteDefaultObjectAccessControlRequest):
@@ -2559,6 +2908,24 @@ def test_get_default_object_access_control(transport: str = 'grpc', request_type
 def test_get_default_object_access_control_from_dict():
     test_get_default_object_access_control(request_type=dict)
 
+
+def test_get_default_object_access_control_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_default_object_access_control),
+            '__call__') as call:
+        client.get_default_object_access_control()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.GetDefaultObjectAccessControlRequest()
 
 @pytest.mark.asyncio
 async def test_get_default_object_access_control_async(transport: str = 'grpc_asyncio', request_type=storage.GetDefaultObjectAccessControlRequest):
@@ -2701,6 +3068,24 @@ def test_insert_default_object_access_control_from_dict():
     test_insert_default_object_access_control(request_type=dict)
 
 
+def test_insert_default_object_access_control_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.insert_default_object_access_control),
+            '__call__') as call:
+        client.insert_default_object_access_control()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.InsertDefaultObjectAccessControlRequest()
+
 @pytest.mark.asyncio
 async def test_insert_default_object_access_control_async(transport: str = 'grpc_asyncio', request_type=storage.InsertDefaultObjectAccessControlRequest):
     client = StorageAsyncClient(
@@ -2801,6 +3186,24 @@ def test_list_default_object_access_controls(transport: str = 'grpc', request_ty
 def test_list_default_object_access_controls_from_dict():
     test_list_default_object_access_controls(request_type=dict)
 
+
+def test_list_default_object_access_controls_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_default_object_access_controls),
+            '__call__') as call:
+        client.list_default_object_access_controls()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.ListDefaultObjectAccessControlsRequest()
 
 @pytest.mark.asyncio
 async def test_list_default_object_access_controls_async(transport: str = 'grpc_asyncio', request_type=storage.ListDefaultObjectAccessControlsRequest):
@@ -2912,6 +3315,24 @@ def test_patch_default_object_access_control(transport: str = 'grpc', request_ty
 def test_patch_default_object_access_control_from_dict():
     test_patch_default_object_access_control(request_type=dict)
 
+
+def test_patch_default_object_access_control_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.patch_default_object_access_control),
+            '__call__') as call:
+        client.patch_default_object_access_control()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.PatchDefaultObjectAccessControlRequest()
 
 @pytest.mark.asyncio
 async def test_patch_default_object_access_control_async(transport: str = 'grpc_asyncio', request_type=storage.PatchDefaultObjectAccessControlRequest):
@@ -3054,6 +3475,24 @@ def test_update_default_object_access_control_from_dict():
     test_update_default_object_access_control(request_type=dict)
 
 
+def test_update_default_object_access_control_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_default_object_access_control),
+            '__call__') as call:
+        client.update_default_object_access_control()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.UpdateDefaultObjectAccessControlRequest()
+
 @pytest.mark.asyncio
 async def test_update_default_object_access_control_async(transport: str = 'grpc_asyncio', request_type=storage.UpdateDefaultObjectAccessControlRequest):
     client = StorageAsyncClient(
@@ -3153,6 +3592,24 @@ def test_delete_notification_from_dict():
     test_delete_notification(request_type=dict)
 
 
+def test_delete_notification_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_notification),
+            '__call__') as call:
+        client.delete_notification()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.DeleteNotificationRequest()
+
 @pytest.mark.asyncio
 async def test_delete_notification_async(transport: str = 'grpc_asyncio', request_type=storage.DeleteNotificationRequest):
     client = StorageAsyncClient(
@@ -3246,6 +3703,24 @@ def test_get_notification(transport: str = 'grpc', request_type=storage.GetNotif
 def test_get_notification_from_dict():
     test_get_notification(request_type=dict)
 
+
+def test_get_notification_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_notification),
+            '__call__') as call:
+        client.get_notification()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.GetNotificationRequest()
 
 @pytest.mark.asyncio
 async def test_get_notification_async(transport: str = 'grpc_asyncio', request_type=storage.GetNotificationRequest):
@@ -3360,6 +3835,24 @@ def test_insert_notification_from_dict():
     test_insert_notification(request_type=dict)
 
 
+def test_insert_notification_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.insert_notification),
+            '__call__') as call:
+        client.insert_notification()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.InsertNotificationRequest()
+
 @pytest.mark.asyncio
 async def test_insert_notification_async(transport: str = 'grpc_asyncio', request_type=storage.InsertNotificationRequest):
     client = StorageAsyncClient(
@@ -3449,6 +3942,24 @@ def test_list_notifications_from_dict():
     test_list_notifications(request_type=dict)
 
 
+def test_list_notifications_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_notifications),
+            '__call__') as call:
+        client.list_notifications()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.ListNotificationsRequest()
+
 @pytest.mark.asyncio
 async def test_list_notifications_async(transport: str = 'grpc_asyncio', request_type=storage.ListNotificationsRequest):
     client = StorageAsyncClient(
@@ -3517,6 +4028,24 @@ def test_delete_object_access_control(transport: str = 'grpc', request_type=stor
 def test_delete_object_access_control_from_dict():
     test_delete_object_access_control(request_type=dict)
 
+
+def test_delete_object_access_control_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_object_access_control),
+            '__call__') as call:
+        client.delete_object_access_control()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.DeleteObjectAccessControlRequest()
 
 @pytest.mark.asyncio
 async def test_delete_object_access_control_async(transport: str = 'grpc_asyncio', request_type=storage.DeleteObjectAccessControlRequest):
@@ -3627,6 +4156,24 @@ def test_get_object_access_control(transport: str = 'grpc', request_type=storage
 def test_get_object_access_control_from_dict():
     test_get_object_access_control(request_type=dict)
 
+
+def test_get_object_access_control_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_object_access_control),
+            '__call__') as call:
+        client.get_object_access_control()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.GetObjectAccessControlRequest()
 
 @pytest.mark.asyncio
 async def test_get_object_access_control_async(transport: str = 'grpc_asyncio', request_type=storage.GetObjectAccessControlRequest):
@@ -3769,6 +4316,24 @@ def test_insert_object_access_control_from_dict():
     test_insert_object_access_control(request_type=dict)
 
 
+def test_insert_object_access_control_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.insert_object_access_control),
+            '__call__') as call:
+        client.insert_object_access_control()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.InsertObjectAccessControlRequest()
+
 @pytest.mark.asyncio
 async def test_insert_object_access_control_async(transport: str = 'grpc_asyncio', request_type=storage.InsertObjectAccessControlRequest):
     client = StorageAsyncClient(
@@ -3869,6 +4434,24 @@ def test_list_object_access_controls(transport: str = 'grpc', request_type=stora
 def test_list_object_access_controls_from_dict():
     test_list_object_access_controls(request_type=dict)
 
+
+def test_list_object_access_controls_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_object_access_controls),
+            '__call__') as call:
+        client.list_object_access_controls()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.ListObjectAccessControlsRequest()
 
 @pytest.mark.asyncio
 async def test_list_object_access_controls_async(transport: str = 'grpc_asyncio', request_type=storage.ListObjectAccessControlsRequest):
@@ -3980,6 +4563,24 @@ def test_patch_object_access_control(transport: str = 'grpc', request_type=stora
 def test_patch_object_access_control_from_dict():
     test_patch_object_access_control(request_type=dict)
 
+
+def test_patch_object_access_control_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.patch_object_access_control),
+            '__call__') as call:
+        client.patch_object_access_control()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.PatchObjectAccessControlRequest()
 
 @pytest.mark.asyncio
 async def test_patch_object_access_control_async(transport: str = 'grpc_asyncio', request_type=storage.PatchObjectAccessControlRequest):
@@ -4121,6 +4722,24 @@ def test_update_object_access_control(transport: str = 'grpc', request_type=stor
 def test_update_object_access_control_from_dict():
     test_update_object_access_control(request_type=dict)
 
+
+def test_update_object_access_control_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_object_access_control),
+            '__call__') as call:
+        client.update_object_access_control()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.UpdateObjectAccessControlRequest()
 
 @pytest.mark.asyncio
 async def test_update_object_access_control_async(transport: str = 'grpc_asyncio', request_type=storage.UpdateObjectAccessControlRequest):
@@ -4290,6 +4909,24 @@ def test_compose_object(transport: str = 'grpc', request_type=storage.ComposeObj
 def test_compose_object_from_dict():
     test_compose_object(request_type=dict)
 
+
+def test_compose_object_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.compose_object),
+            '__call__') as call:
+        client.compose_object()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.ComposeObjectRequest()
 
 @pytest.mark.asyncio
 async def test_compose_object_async(transport: str = 'grpc_asyncio', request_type=storage.ComposeObjectRequest):
@@ -4481,6 +5118,24 @@ def test_copy_object_from_dict():
     test_copy_object(request_type=dict)
 
 
+def test_copy_object_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.copy_object),
+            '__call__') as call:
+        client.copy_object()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.CopyObjectRequest()
+
 @pytest.mark.asyncio
 async def test_copy_object_async(transport: str = 'grpc_asyncio', request_type=storage.CopyObjectRequest):
     client = StorageAsyncClient(
@@ -4600,6 +5255,24 @@ def test_delete_object(transport: str = 'grpc', request_type=storage.DeleteObjec
 def test_delete_object_from_dict():
     test_delete_object(request_type=dict)
 
+
+def test_delete_object_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_object),
+            '__call__') as call:
+        client.delete_object()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.DeleteObjectRequest()
 
 @pytest.mark.asyncio
 async def test_delete_object_async(transport: str = 'grpc_asyncio', request_type=storage.DeleteObjectRequest):
@@ -4739,6 +5412,24 @@ def test_get_object_from_dict():
     test_get_object(request_type=dict)
 
 
+def test_get_object_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_object),
+            '__call__') as call:
+        client.get_object()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.GetObjectRequest()
+
 @pytest.mark.asyncio
 async def test_get_object_async(transport: str = 'grpc_asyncio', request_type=storage.GetObjectRequest):
     client = StorageAsyncClient(
@@ -4859,6 +5550,24 @@ def test_get_object_media(transport: str = 'grpc', request_type=storage.GetObjec
 def test_get_object_media_from_dict():
     test_get_object_media(request_type=dict)
 
+
+def test_get_object_media_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_object_media),
+            '__call__') as call:
+        client.get_object_media()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.GetObjectMediaRequest()
 
 @pytest.mark.asyncio
 async def test_get_object_media_async(transport: str = 'grpc_asyncio', request_type=storage.GetObjectMediaRequest):
@@ -5133,6 +5842,24 @@ def test_list_objects(transport: str = 'grpc', request_type=storage.ListObjectsR
 def test_list_objects_from_dict():
     test_list_objects(request_type=dict)
 
+
+def test_list_objects_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_objects),
+            '__call__') as call:
+        client.list_objects()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.ListObjectsRequest()
 
 @pytest.mark.asyncio
 async def test_list_objects_async(transport: str = 'grpc_asyncio', request_type=storage.ListObjectsRequest):
@@ -5409,6 +6136,24 @@ def test_rewrite_object_from_dict():
     test_rewrite_object(request_type=dict)
 
 
+def test_rewrite_object_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.rewrite_object),
+            '__call__') as call:
+        client.rewrite_object()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.RewriteObjectRequest()
+
 @pytest.mark.asyncio
 async def test_rewrite_object_async(transport: str = 'grpc_asyncio', request_type=storage.RewriteObjectRequest):
     client = StorageAsyncClient(
@@ -5496,6 +6241,24 @@ def test_start_resumable_write_from_dict():
     test_start_resumable_write(request_type=dict)
 
 
+def test_start_resumable_write_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.start_resumable_write),
+            '__call__') as call:
+        client.start_resumable_write()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.StartResumableWriteRequest()
+
 @pytest.mark.asyncio
 async def test_start_resumable_write_async(transport: str = 'grpc_asyncio', request_type=storage.StartResumableWriteRequest):
     client = StorageAsyncClient(
@@ -5577,6 +6340,24 @@ def test_query_write_status(transport: str = 'grpc', request_type=storage.QueryW
 def test_query_write_status_from_dict():
     test_query_write_status(request_type=dict)
 
+
+def test_query_write_status_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.query_write_status),
+            '__call__') as call:
+        client.query_write_status()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.QueryWriteStatusRequest()
 
 @pytest.mark.asyncio
 async def test_query_write_status_async(transport: str = 'grpc_asyncio', request_type=storage.QueryWriteStatusRequest):
@@ -5722,6 +6503,24 @@ def test_patch_object(transport: str = 'grpc', request_type=storage.PatchObjectR
 def test_patch_object_from_dict():
     test_patch_object(request_type=dict)
 
+
+def test_patch_object_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.patch_object),
+            '__call__') as call:
+        client.patch_object()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.PatchObjectRequest()
 
 @pytest.mark.asyncio
 async def test_patch_object_async(transport: str = 'grpc_asyncio', request_type=storage.PatchObjectRequest):
@@ -5913,6 +6712,24 @@ def test_update_object_from_dict():
     test_update_object(request_type=dict)
 
 
+def test_update_object_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_object),
+            '__call__') as call:
+        client.update_object()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.UpdateObjectRequest()
+
 @pytest.mark.asyncio
 async def test_update_object_async(transport: str = 'grpc_asyncio', request_type=storage.UpdateObjectRequest):
     client = StorageAsyncClient(
@@ -6043,6 +6860,24 @@ def test_get_object_iam_policy_from_dict():
     test_get_object_iam_policy(request_type=dict)
 
 
+def test_get_object_iam_policy_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_object_iam_policy),
+            '__call__') as call:
+        client.get_object_iam_policy()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.GetIamPolicyRequest()
+
 @pytest.mark.asyncio
 async def test_get_object_iam_policy_async(transport: str = 'grpc_asyncio', request_type=storage.GetIamPolicyRequest):
     client = StorageAsyncClient(
@@ -6128,6 +6963,24 @@ def test_set_object_iam_policy_from_dict():
     test_set_object_iam_policy(request_type=dict)
 
 
+def test_set_object_iam_policy_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.set_object_iam_policy),
+            '__call__') as call:
+        client.set_object_iam_policy()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.SetIamPolicyRequest()
+
 @pytest.mark.asyncio
 async def test_set_object_iam_policy_async(transport: str = 'grpc_asyncio', request_type=storage.SetIamPolicyRequest):
     client = StorageAsyncClient(
@@ -6208,6 +7061,24 @@ def test_test_object_iam_permissions(transport: str = 'grpc', request_type=stora
 def test_test_object_iam_permissions_from_dict():
     test_test_object_iam_permissions(request_type=dict)
 
+
+def test_test_object_iam_permissions_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.test_object_iam_permissions),
+            '__call__') as call:
+        client.test_object_iam_permissions()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.TestIamPermissionsRequest()
 
 @pytest.mark.asyncio
 async def test_test_object_iam_permissions_async(transport: str = 'grpc_asyncio', request_type=storage.TestIamPermissionsRequest):
@@ -6311,6 +7182,24 @@ def test_watch_all_objects_from_dict():
     test_watch_all_objects(request_type=dict)
 
 
+def test_watch_all_objects_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.watch_all_objects),
+            '__call__') as call:
+        client.watch_all_objects()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.WatchAllObjectsRequest()
+
 @pytest.mark.asyncio
 async def test_watch_all_objects_async(transport: str = 'grpc_asyncio', request_type=storage.WatchAllObjectsRequest):
     client = StorageAsyncClient(
@@ -6407,6 +7296,24 @@ def test_get_service_account_from_dict():
     test_get_service_account(request_type=dict)
 
 
+def test_get_service_account_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_service_account),
+            '__call__') as call:
+        client.get_service_account()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.GetProjectServiceAccountRequest()
+
 @pytest.mark.asyncio
 async def test_get_service_account_async(transport: str = 'grpc_asyncio', request_type=storage.GetProjectServiceAccountRequest):
     client = StorageAsyncClient(
@@ -6485,6 +7392,24 @@ def test_create_hmac_key_from_dict():
     test_create_hmac_key(request_type=dict)
 
 
+def test_create_hmac_key_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_hmac_key),
+            '__call__') as call:
+        client.create_hmac_key()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.CreateHmacKeyRequest()
+
 @pytest.mark.asyncio
 async def test_create_hmac_key_async(transport: str = 'grpc_asyncio', request_type=storage.CreateHmacKeyRequest):
     client = StorageAsyncClient(
@@ -6556,6 +7481,24 @@ def test_delete_hmac_key(transport: str = 'grpc', request_type=storage.DeleteHma
 def test_delete_hmac_key_from_dict():
     test_delete_hmac_key(request_type=dict)
 
+
+def test_delete_hmac_key_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_hmac_key),
+            '__call__') as call:
+        client.delete_hmac_key()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.DeleteHmacKeyRequest()
 
 @pytest.mark.asyncio
 async def test_delete_hmac_key_async(transport: str = 'grpc_asyncio', request_type=storage.DeleteHmacKeyRequest):
@@ -6651,6 +7594,24 @@ def test_get_hmac_key_from_dict():
     test_get_hmac_key(request_type=dict)
 
 
+def test_get_hmac_key_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_hmac_key),
+            '__call__') as call:
+        client.get_hmac_key()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.GetHmacKeyRequest()
+
 @pytest.mark.asyncio
 async def test_get_hmac_key_async(transport: str = 'grpc_asyncio', request_type=storage.GetHmacKeyRequest):
     client = StorageAsyncClient(
@@ -6743,6 +7704,24 @@ def test_list_hmac_keys(transport: str = 'grpc', request_type=storage.ListHmacKe
 def test_list_hmac_keys_from_dict():
     test_list_hmac_keys(request_type=dict)
 
+
+def test_list_hmac_keys_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_hmac_keys),
+            '__call__') as call:
+        client.list_hmac_keys()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.ListHmacKeysRequest()
 
 @pytest.mark.asyncio
 async def test_list_hmac_keys_async(transport: str = 'grpc_asyncio', request_type=storage.ListHmacKeysRequest):
@@ -7023,6 +8002,24 @@ def test_update_hmac_key(transport: str = 'grpc', request_type=storage.UpdateHma
 def test_update_hmac_key_from_dict():
     test_update_hmac_key(request_type=dict)
 
+
+def test_update_hmac_key_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StorageClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_hmac_key),
+            '__call__') as call:
+        client.update_hmac_key()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == storage.UpdateHmacKeyRequest()
 
 @pytest.mark.asyncio
 async def test_update_hmac_key_async(transport: str = 'grpc_asyncio', request_type=storage.UpdateHmacKeyRequest):

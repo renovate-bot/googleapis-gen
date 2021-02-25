@@ -69,13 +69,18 @@ def test__get_default_mtls_endpoint():
     assert Controller2Client._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_controller2_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    Controller2Client,
+    Controller2AsyncClient,
+])
+def test_controller2_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = Controller2Client.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'clouddebugger.googleapis.com:443'
 
@@ -90,9 +95,11 @@ def test_controller2_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'clouddebugger.googleapis.com:443'
 
@@ -380,6 +387,24 @@ def test_register_debuggee_from_dict():
     test_register_debuggee(request_type=dict)
 
 
+def test_register_debuggee_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = Controller2Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.register_debuggee),
+            '__call__') as call:
+        client.register_debuggee()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == controller.RegisterDebuggeeRequest()
+
 @pytest.mark.asyncio
 async def test_register_debuggee_async(transport: str = 'grpc_asyncio', request_type=controller.RegisterDebuggeeRequest):
     client = Controller2AsyncClient(
@@ -542,6 +567,24 @@ def test_list_active_breakpoints_from_dict():
     test_list_active_breakpoints(request_type=dict)
 
 
+def test_list_active_breakpoints_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = Controller2Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_active_breakpoints),
+            '__call__') as call:
+        client.list_active_breakpoints()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == controller.ListActiveBreakpointsRequest()
+
 @pytest.mark.asyncio
 async def test_list_active_breakpoints_async(transport: str = 'grpc_asyncio', request_type=controller.ListActiveBreakpointsRequest):
     client = Controller2AsyncClient(
@@ -701,6 +744,24 @@ def test_update_active_breakpoint(transport: str = 'grpc', request_type=controll
 def test_update_active_breakpoint_from_dict():
     test_update_active_breakpoint(request_type=dict)
 
+
+def test_update_active_breakpoint_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = Controller2Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_active_breakpoint),
+            '__call__') as call:
+        client.update_active_breakpoint()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == controller.UpdateActiveBreakpointRequest()
 
 @pytest.mark.asyncio
 async def test_update_active_breakpoint_async(transport: str = 'grpc_asyncio', request_type=controller.UpdateActiveBreakpointRequest):

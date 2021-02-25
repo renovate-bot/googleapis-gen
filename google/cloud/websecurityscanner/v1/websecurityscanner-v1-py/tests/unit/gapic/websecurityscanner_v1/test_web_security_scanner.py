@@ -76,13 +76,18 @@ def test__get_default_mtls_endpoint():
     assert WebSecurityScannerClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_web_security_scanner_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    WebSecurityScannerClient,
+    WebSecurityScannerAsyncClient,
+])
+def test_web_security_scanner_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = WebSecurityScannerClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'websecurityscanner.googleapis.com:443'
 
@@ -97,9 +102,11 @@ def test_web_security_scanner_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'websecurityscanner.googleapis.com:443'
 
@@ -427,6 +434,24 @@ def test_create_scan_config_from_dict():
     test_create_scan_config(request_type=dict)
 
 
+def test_create_scan_config_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = WebSecurityScannerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_scan_config),
+            '__call__') as call:
+        client.create_scan_config()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == web_security_scanner.CreateScanConfigRequest()
+
 @pytest.mark.asyncio
 async def test_create_scan_config_async(transport: str = 'grpc_asyncio', request_type=web_security_scanner.CreateScanConfigRequest):
     client = WebSecurityScannerAsyncClient(
@@ -588,6 +613,24 @@ def test_delete_scan_config(transport: str = 'grpc', request_type=web_security_s
 def test_delete_scan_config_from_dict():
     test_delete_scan_config(request_type=dict)
 
+
+def test_delete_scan_config_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = WebSecurityScannerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_scan_config),
+            '__call__') as call:
+        client.delete_scan_config()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == web_security_scanner.DeleteScanConfigRequest()
 
 @pytest.mark.asyncio
 async def test_delete_scan_config_async(transport: str = 'grpc_asyncio', request_type=web_security_scanner.DeleteScanConfigRequest):
@@ -762,6 +805,24 @@ def test_get_scan_config_from_dict():
     test_get_scan_config(request_type=dict)
 
 
+def test_get_scan_config_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = WebSecurityScannerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_scan_config),
+            '__call__') as call:
+        client.get_scan_config()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == web_security_scanner.GetScanConfigRequest()
+
 @pytest.mark.asyncio
 async def test_get_scan_config_async(transport: str = 'grpc_asyncio', request_type=web_security_scanner.GetScanConfigRequest):
     client = WebSecurityScannerAsyncClient(
@@ -929,6 +990,24 @@ def test_list_scan_configs(transport: str = 'grpc', request_type=web_security_sc
 def test_list_scan_configs_from_dict():
     test_list_scan_configs(request_type=dict)
 
+
+def test_list_scan_configs_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = WebSecurityScannerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_scan_configs),
+            '__call__') as call:
+        client.list_scan_configs()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == web_security_scanner.ListScanConfigsRequest()
 
 @pytest.mark.asyncio
 async def test_list_scan_configs_async(transport: str = 'grpc_asyncio', request_type=web_security_scanner.ListScanConfigsRequest):
@@ -1294,6 +1373,24 @@ def test_update_scan_config_from_dict():
     test_update_scan_config(request_type=dict)
 
 
+def test_update_scan_config_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = WebSecurityScannerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_scan_config),
+            '__call__') as call:
+        client.update_scan_config()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == web_security_scanner.UpdateScanConfigRequest()
+
 @pytest.mark.asyncio
 async def test_update_scan_config_async(transport: str = 'grpc_asyncio', request_type=web_security_scanner.UpdateScanConfigRequest):
     client = WebSecurityScannerAsyncClient(
@@ -1486,6 +1583,24 @@ def test_start_scan_run_from_dict():
     test_start_scan_run(request_type=dict)
 
 
+def test_start_scan_run_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = WebSecurityScannerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.start_scan_run),
+            '__call__') as call:
+        client.start_scan_run()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == web_security_scanner.StartScanRunRequest()
+
 @pytest.mark.asyncio
 async def test_start_scan_run_async(transport: str = 'grpc_asyncio', request_type=web_security_scanner.StartScanRunRequest):
     client = WebSecurityScannerAsyncClient(
@@ -1669,6 +1784,24 @@ def test_get_scan_run_from_dict():
     test_get_scan_run(request_type=dict)
 
 
+def test_get_scan_run_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = WebSecurityScannerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_scan_run),
+            '__call__') as call:
+        client.get_scan_run()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == web_security_scanner.GetScanRunRequest()
+
 @pytest.mark.asyncio
 async def test_get_scan_run_async(transport: str = 'grpc_asyncio', request_type=web_security_scanner.GetScanRunRequest):
     client = WebSecurityScannerAsyncClient(
@@ -1827,6 +1960,24 @@ def test_list_scan_runs(transport: str = 'grpc', request_type=web_security_scann
 def test_list_scan_runs_from_dict():
     test_list_scan_runs(request_type=dict)
 
+
+def test_list_scan_runs_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = WebSecurityScannerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_scan_runs),
+            '__call__') as call:
+        client.list_scan_runs()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == web_security_scanner.ListScanRunsRequest()
 
 @pytest.mark.asyncio
 async def test_list_scan_runs_async(transport: str = 'grpc_asyncio', request_type=web_security_scanner.ListScanRunsRequest):
@@ -2180,6 +2331,24 @@ def test_stop_scan_run_from_dict():
     test_stop_scan_run(request_type=dict)
 
 
+def test_stop_scan_run_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = WebSecurityScannerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.stop_scan_run),
+            '__call__') as call:
+        client.stop_scan_run()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == web_security_scanner.StopScanRunRequest()
+
 @pytest.mark.asyncio
 async def test_stop_scan_run_async(transport: str = 'grpc_asyncio', request_type=web_security_scanner.StopScanRunRequest):
     client = WebSecurityScannerAsyncClient(
@@ -2338,6 +2507,24 @@ def test_list_crawled_urls(transport: str = 'grpc', request_type=web_security_sc
 def test_list_crawled_urls_from_dict():
     test_list_crawled_urls(request_type=dict)
 
+
+def test_list_crawled_urls_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = WebSecurityScannerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_crawled_urls),
+            '__call__') as call:
+        client.list_crawled_urls()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == web_security_scanner.ListCrawledUrlsRequest()
 
 @pytest.mark.asyncio
 async def test_list_crawled_urls_async(transport: str = 'grpc_asyncio', request_type=web_security_scanner.ListCrawledUrlsRequest):
@@ -2707,6 +2894,24 @@ def test_get_finding_from_dict():
     test_get_finding(request_type=dict)
 
 
+def test_get_finding_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = WebSecurityScannerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_finding),
+            '__call__') as call:
+        client.get_finding()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == web_security_scanner.GetFindingRequest()
+
 @pytest.mark.asyncio
 async def test_get_finding_async(transport: str = 'grpc_asyncio', request_type=web_security_scanner.GetFindingRequest):
     client = WebSecurityScannerAsyncClient(
@@ -2877,6 +3082,24 @@ def test_list_findings(transport: str = 'grpc', request_type=web_security_scanne
 def test_list_findings_from_dict():
     test_list_findings(request_type=dict)
 
+
+def test_list_findings_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = WebSecurityScannerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_findings),
+            '__call__') as call:
+        client.list_findings()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == web_security_scanner.ListFindingsRequest()
 
 @pytest.mark.asyncio
 async def test_list_findings_async(transport: str = 'grpc_asyncio', request_type=web_security_scanner.ListFindingsRequest):
@@ -3201,6 +3424,24 @@ def test_list_finding_type_stats(transport: str = 'grpc', request_type=web_secur
 def test_list_finding_type_stats_from_dict():
     test_list_finding_type_stats(request_type=dict)
 
+
+def test_list_finding_type_stats_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = WebSecurityScannerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_finding_type_stats),
+            '__call__') as call:
+        client.list_finding_type_stats()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == web_security_scanner.ListFindingTypeStatsRequest()
 
 @pytest.mark.asyncio
 async def test_list_finding_type_stats_async(transport: str = 'grpc_asyncio', request_type=web_security_scanner.ListFindingTypeStatsRequest):

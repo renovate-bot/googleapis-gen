@@ -71,13 +71,18 @@ def test__get_default_mtls_endpoint():
     assert GroupServiceClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_group_service_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    GroupServiceClient,
+    GroupServiceAsyncClient,
+])
+def test_group_service_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = GroupServiceClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'monitoring.googleapis.com:443'
 
@@ -92,9 +97,11 @@ def test_group_service_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'monitoring.googleapis.com:443'
 
@@ -385,6 +392,24 @@ def test_list_groups(transport: str = 'grpc', request_type=group_service.ListGro
 def test_list_groups_from_dict():
     test_list_groups(request_type=dict)
 
+
+def test_list_groups_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GroupServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_groups),
+            '__call__') as call:
+        client.list_groups()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == group_service.ListGroupsRequest()
 
 @pytest.mark.asyncio
 async def test_list_groups_async(transport: str = 'grpc_asyncio', request_type=group_service.ListGroupsRequest):
@@ -813,6 +838,24 @@ def test_get_group_from_dict():
     test_get_group(request_type=dict)
 
 
+def test_get_group_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GroupServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_group),
+            '__call__') as call:
+        client.get_group()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == group_service.GetGroupRequest()
+
 @pytest.mark.asyncio
 async def test_get_group_async(transport: str = 'grpc_asyncio', request_type=group_service.GetGroupRequest):
     client = GroupServiceAsyncClient(
@@ -1064,6 +1107,24 @@ def test_create_group(transport: str = 'grpc', request_type=group_service.Create
 def test_create_group_from_dict():
     test_create_group(request_type=dict)
 
+
+def test_create_group_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GroupServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_group),
+            '__call__') as call:
+        client.create_group()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == group_service.CreateGroupRequest()
 
 @pytest.mark.asyncio
 async def test_create_group_async(transport: str = 'grpc_asyncio', request_type=group_service.CreateGroupRequest):
@@ -1325,6 +1386,24 @@ def test_update_group_from_dict():
     test_update_group(request_type=dict)
 
 
+def test_update_group_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GroupServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_group),
+            '__call__') as call:
+        client.update_group()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == group_service.UpdateGroupRequest()
+
 @pytest.mark.asyncio
 async def test_update_group_async(transport: str = 'grpc_asyncio', request_type=group_service.UpdateGroupRequest):
     client = GroupServiceAsyncClient(
@@ -1555,6 +1634,24 @@ def test_delete_group_from_dict():
     test_delete_group(request_type=dict)
 
 
+def test_delete_group_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GroupServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_group),
+            '__call__') as call:
+        client.delete_group()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == group_service.DeleteGroupRequest()
+
 @pytest.mark.asyncio
 async def test_delete_group_async(transport: str = 'grpc_asyncio', request_type=group_service.DeleteGroupRequest):
     client = GroupServiceAsyncClient(
@@ -1778,6 +1875,24 @@ def test_list_group_members(transport: str = 'grpc', request_type=group_service.
 def test_list_group_members_from_dict():
     test_list_group_members(request_type=dict)
 
+
+def test_list_group_members_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GroupServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_group_members),
+            '__call__') as call:
+        client.list_group_members()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == group_service.ListGroupMembersRequest()
 
 @pytest.mark.asyncio
 async def test_list_group_members_async(transport: str = 'grpc_asyncio', request_type=group_service.ListGroupMembersRequest):

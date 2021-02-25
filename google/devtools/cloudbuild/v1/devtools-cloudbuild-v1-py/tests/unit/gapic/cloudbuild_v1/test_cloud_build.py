@@ -72,13 +72,18 @@ def test__get_default_mtls_endpoint():
     assert CloudBuildClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_cloud_build_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    CloudBuildClient,
+    CloudBuildAsyncClient,
+])
+def test_cloud_build_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = CloudBuildClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'cloudbuild.googleapis.com:443'
 
@@ -93,9 +98,11 @@ def test_cloud_build_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'cloudbuild.googleapis.com:443'
 
@@ -381,6 +388,24 @@ def test_create_build_from_dict():
     test_create_build(request_type=dict)
 
 
+def test_create_build_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudBuildClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_build),
+            '__call__') as call:
+        client.create_build()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloudbuild.CreateBuildRequest()
+
 @pytest.mark.asyncio
 async def test_create_build_async(transport: str = 'grpc_asyncio', request_type=cloudbuild.CreateBuildRequest):
     client = CloudBuildAsyncClient(
@@ -590,6 +615,24 @@ def test_get_build_from_dict():
     test_get_build(request_type=dict)
 
 
+def test_get_build_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudBuildClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_build),
+            '__call__') as call:
+        client.get_build()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloudbuild.GetBuildRequest()
+
 @pytest.mark.asyncio
 async def test_get_build_async(transport: str = 'grpc_asyncio', request_type=cloudbuild.GetBuildRequest):
     client = CloudBuildAsyncClient(
@@ -788,6 +831,24 @@ def test_list_builds(transport: str = 'grpc', request_type=cloudbuild.ListBuilds
 def test_list_builds_from_dict():
     test_list_builds(request_type=dict)
 
+
+def test_list_builds_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudBuildClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_builds),
+            '__call__') as call:
+        client.list_builds()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloudbuild.ListBuildsRequest()
 
 @pytest.mark.asyncio
 async def test_list_builds_async(transport: str = 'grpc_asyncio', request_type=cloudbuild.ListBuildsRequest):
@@ -1180,6 +1241,24 @@ def test_cancel_build_from_dict():
     test_cancel_build(request_type=dict)
 
 
+def test_cancel_build_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudBuildClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.cancel_build),
+            '__call__') as call:
+        client.cancel_build()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloudbuild.CancelBuildRequest()
+
 @pytest.mark.asyncio
 async def test_cancel_build_async(transport: str = 'grpc_asyncio', request_type=cloudbuild.CancelBuildRequest):
     client = CloudBuildAsyncClient(
@@ -1372,6 +1451,24 @@ def test_retry_build(transport: str = 'grpc', request_type=cloudbuild.RetryBuild
 def test_retry_build_from_dict():
     test_retry_build(request_type=dict)
 
+
+def test_retry_build_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudBuildClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.retry_build),
+            '__call__') as call:
+        client.retry_build()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloudbuild.RetryBuildRequest()
 
 @pytest.mark.asyncio
 async def test_retry_build_async(transport: str = 'grpc_asyncio', request_type=cloudbuild.RetryBuildRequest):
@@ -1566,6 +1663,24 @@ def test_create_build_trigger(transport: str = 'grpc', request_type=cloudbuild.C
 def test_create_build_trigger_from_dict():
     test_create_build_trigger(request_type=dict)
 
+
+def test_create_build_trigger_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudBuildClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_build_trigger),
+            '__call__') as call:
+        client.create_build_trigger()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloudbuild.CreateBuildTriggerRequest()
 
 @pytest.mark.asyncio
 async def test_create_build_trigger_async(transport: str = 'grpc_asyncio', request_type=cloudbuild.CreateBuildTriggerRequest):
@@ -1779,6 +1894,24 @@ def test_get_build_trigger_from_dict():
     test_get_build_trigger(request_type=dict)
 
 
+def test_get_build_trigger_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudBuildClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_build_trigger),
+            '__call__') as call:
+        client.get_build_trigger()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloudbuild.GetBuildTriggerRequest()
+
 @pytest.mark.asyncio
 async def test_get_build_trigger_async(transport: str = 'grpc_asyncio', request_type=cloudbuild.GetBuildTriggerRequest):
     client = CloudBuildAsyncClient(
@@ -1965,6 +2098,24 @@ def test_list_build_triggers(transport: str = 'grpc', request_type=cloudbuild.Li
 def test_list_build_triggers_from_dict():
     test_list_build_triggers(request_type=dict)
 
+
+def test_list_build_triggers_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudBuildClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_build_triggers),
+            '__call__') as call:
+        client.list_build_triggers()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloudbuild.ListBuildTriggersRequest()
 
 @pytest.mark.asyncio
 async def test_list_build_triggers_async(transport: str = 'grpc_asyncio', request_type=cloudbuild.ListBuildTriggersRequest):
@@ -2303,6 +2454,24 @@ def test_delete_build_trigger_from_dict():
     test_delete_build_trigger(request_type=dict)
 
 
+def test_delete_build_trigger_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudBuildClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_build_trigger),
+            '__call__') as call:
+        client.delete_build_trigger()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloudbuild.DeleteBuildTriggerRequest()
+
 @pytest.mark.asyncio
 async def test_delete_build_trigger_async(transport: str = 'grpc_asyncio', request_type=cloudbuild.DeleteBuildTriggerRequest):
     client = CloudBuildAsyncClient(
@@ -2493,6 +2662,24 @@ def test_update_build_trigger_from_dict():
     test_update_build_trigger(request_type=dict)
 
 
+def test_update_build_trigger_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudBuildClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_build_trigger),
+            '__call__') as call:
+        client.update_build_trigger()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloudbuild.UpdateBuildTriggerRequest()
+
 @pytest.mark.asyncio
 async def test_update_build_trigger_async(transport: str = 'grpc_asyncio', request_type=cloudbuild.UpdateBuildTriggerRequest):
     client = CloudBuildAsyncClient(
@@ -2681,6 +2868,24 @@ def test_run_build_trigger(transport: str = 'grpc', request_type=cloudbuild.RunB
 def test_run_build_trigger_from_dict():
     test_run_build_trigger(request_type=dict)
 
+
+def test_run_build_trigger_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudBuildClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.run_build_trigger),
+            '__call__') as call:
+        client.run_build_trigger()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloudbuild.RunBuildTriggerRequest()
 
 @pytest.mark.asyncio
 async def test_run_build_trigger_async(transport: str = 'grpc_asyncio', request_type=cloudbuild.RunBuildTriggerRequest):
@@ -2879,6 +3084,24 @@ def test_create_worker_pool_from_dict():
     test_create_worker_pool(request_type=dict)
 
 
+def test_create_worker_pool_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudBuildClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_worker_pool),
+            '__call__') as call:
+        client.create_worker_pool()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloudbuild.CreateWorkerPoolRequest()
+
 @pytest.mark.asyncio
 async def test_create_worker_pool_async(transport: str = 'grpc_asyncio', request_type=cloudbuild.CreateWorkerPoolRequest):
     client = CloudBuildAsyncClient(
@@ -2992,6 +3215,24 @@ def test_get_worker_pool_from_dict():
     test_get_worker_pool(request_type=dict)
 
 
+def test_get_worker_pool_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudBuildClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_worker_pool),
+            '__call__') as call:
+        client.get_worker_pool()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloudbuild.GetWorkerPoolRequest()
+
 @pytest.mark.asyncio
 async def test_get_worker_pool_async(transport: str = 'grpc_asyncio', request_type=cloudbuild.GetWorkerPoolRequest):
     client = CloudBuildAsyncClient(
@@ -3078,6 +3319,24 @@ def test_delete_worker_pool(transport: str = 'grpc', request_type=cloudbuild.Del
 def test_delete_worker_pool_from_dict():
     test_delete_worker_pool(request_type=dict)
 
+
+def test_delete_worker_pool_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudBuildClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_worker_pool),
+            '__call__') as call:
+        client.delete_worker_pool()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloudbuild.DeleteWorkerPoolRequest()
 
 @pytest.mark.asyncio
 async def test_delete_worker_pool_async(transport: str = 'grpc_asyncio', request_type=cloudbuild.DeleteWorkerPoolRequest):
@@ -3173,6 +3432,24 @@ def test_update_worker_pool_from_dict():
     test_update_worker_pool(request_type=dict)
 
 
+def test_update_worker_pool_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudBuildClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_worker_pool),
+            '__call__') as call:
+        client.update_worker_pool()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloudbuild.UpdateWorkerPoolRequest()
+
 @pytest.mark.asyncio
 async def test_update_worker_pool_async(transport: str = 'grpc_asyncio', request_type=cloudbuild.UpdateWorkerPoolRequest):
     client = CloudBuildAsyncClient(
@@ -3261,6 +3538,24 @@ def test_list_worker_pools(transport: str = 'grpc', request_type=cloudbuild.List
 def test_list_worker_pools_from_dict():
     test_list_worker_pools(request_type=dict)
 
+
+def test_list_worker_pools_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudBuildClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_worker_pools),
+            '__call__') as call:
+        client.list_worker_pools()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloudbuild.ListWorkerPoolsRequest()
 
 @pytest.mark.asyncio
 async def test_list_worker_pools_async(transport: str = 'grpc_asyncio', request_type=cloudbuild.ListWorkerPoolsRequest):

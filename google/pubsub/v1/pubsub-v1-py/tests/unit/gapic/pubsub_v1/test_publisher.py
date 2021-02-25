@@ -72,13 +72,18 @@ def test__get_default_mtls_endpoint():
     assert PublisherClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_publisher_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    PublisherClient,
+    PublisherAsyncClient,
+])
+def test_publisher_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = PublisherClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'pubsub.googleapis.com:443'
 
@@ -93,9 +98,11 @@ def test_publisher_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'pubsub.googleapis.com:443'
 
@@ -395,6 +402,24 @@ def test_create_topic_from_dict():
     test_create_topic(request_type=dict)
 
 
+def test_create_topic_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = PublisherClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_topic),
+            '__call__') as call:
+        client.create_topic()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == pubsub.Topic()
+
 @pytest.mark.asyncio
 async def test_create_topic_async(transport: str = 'grpc_asyncio', request_type=pubsub.Topic):
     client = PublisherAsyncClient(
@@ -633,6 +658,24 @@ def test_update_topic_from_dict():
     test_update_topic(request_type=dict)
 
 
+def test_update_topic_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = PublisherClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_topic),
+            '__call__') as call:
+        client.update_topic()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == pubsub.UpdateTopicRequest()
+
 @pytest.mark.asyncio
 async def test_update_topic_async(transport: str = 'grpc_asyncio', request_type=pubsub.UpdateTopicRequest):
     client = PublisherAsyncClient(
@@ -779,6 +822,24 @@ def test_publish(transport: str = 'grpc', request_type=pubsub.PublishRequest):
 def test_publish_from_dict():
     test_publish(request_type=dict)
 
+
+def test_publish_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = PublisherClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.publish),
+            '__call__') as call:
+        client.publish()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == pubsub.PublishRequest()
 
 @pytest.mark.asyncio
 async def test_publish_async(transport: str = 'grpc_asyncio', request_type=pubsub.PublishRequest):
@@ -1020,6 +1081,24 @@ def test_get_topic_from_dict():
     test_get_topic(request_type=dict)
 
 
+def test_get_topic_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = PublisherClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_topic),
+            '__call__') as call:
+        client.get_topic()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == pubsub.GetTopicRequest()
+
 @pytest.mark.asyncio
 async def test_get_topic_async(transport: str = 'grpc_asyncio', request_type=pubsub.GetTopicRequest):
     client = PublisherAsyncClient(
@@ -1249,6 +1328,24 @@ def test_list_topics(transport: str = 'grpc', request_type=pubsub.ListTopicsRequ
 def test_list_topics_from_dict():
     test_list_topics(request_type=dict)
 
+
+def test_list_topics_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = PublisherClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_topics),
+            '__call__') as call:
+        client.list_topics()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == pubsub.ListTopicsRequest()
 
 @pytest.mark.asyncio
 async def test_list_topics_async(transport: str = 'grpc_asyncio', request_type=pubsub.ListTopicsRequest):
@@ -1664,6 +1761,24 @@ def test_list_topic_subscriptions(transport: str = 'grpc', request_type=pubsub.L
 def test_list_topic_subscriptions_from_dict():
     test_list_topic_subscriptions(request_type=dict)
 
+
+def test_list_topic_subscriptions_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = PublisherClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_topic_subscriptions),
+            '__call__') as call:
+        client.list_topic_subscriptions()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == pubsub.ListTopicSubscriptionsRequest()
 
 @pytest.mark.asyncio
 async def test_list_topic_subscriptions_async(transport: str = 'grpc_asyncio', request_type=pubsub.ListTopicSubscriptionsRequest):
@@ -2083,6 +2198,24 @@ def test_list_topic_snapshots_from_dict():
     test_list_topic_snapshots(request_type=dict)
 
 
+def test_list_topic_snapshots_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = PublisherClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_topic_snapshots),
+            '__call__') as call:
+        client.list_topic_snapshots()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == pubsub.ListTopicSnapshotsRequest()
+
 @pytest.mark.asyncio
 async def test_list_topic_snapshots_async(transport: str = 'grpc_asyncio', request_type=pubsub.ListTopicSnapshotsRequest):
     client = PublisherAsyncClient(
@@ -2491,6 +2624,24 @@ def test_delete_topic_from_dict():
     test_delete_topic(request_type=dict)
 
 
+def test_delete_topic_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = PublisherClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_topic),
+            '__call__') as call:
+        client.delete_topic()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == pubsub.DeleteTopicRequest()
+
 @pytest.mark.asyncio
 async def test_delete_topic_async(transport: str = 'grpc_asyncio', request_type=pubsub.DeleteTopicRequest):
     client = PublisherAsyncClient(
@@ -2706,6 +2857,24 @@ def test_detach_subscription(transport: str = 'grpc', request_type=pubsub.Detach
 def test_detach_subscription_from_dict():
     test_detach_subscription(request_type=dict)
 
+
+def test_detach_subscription_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = PublisherClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.detach_subscription),
+            '__call__') as call:
+        client.detach_subscription()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == pubsub.DetachSubscriptionRequest()
 
 @pytest.mark.asyncio
 async def test_detach_subscription_async(transport: str = 'grpc_asyncio', request_type=pubsub.DetachSubscriptionRequest):

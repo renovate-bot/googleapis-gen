@@ -74,13 +74,18 @@ def test__get_default_mtls_endpoint():
     assert AgentsClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_agents_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    AgentsClient,
+    AgentsAsyncClient,
+])
+def test_agents_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = AgentsClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'dialogflow.googleapis.com:443'
 
@@ -95,9 +100,11 @@ def test_agents_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'dialogflow.googleapis.com:443'
 
@@ -433,6 +440,24 @@ def test_get_agent_from_dict():
     test_get_agent(request_type=dict)
 
 
+def test_get_agent_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AgentsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_agent),
+            '__call__') as call:
+        client.get_agent()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == agent.GetAgentRequest()
+
 @pytest.mark.asyncio
 async def test_get_agent_async(transport: str = 'grpc_asyncio', request_type=agent.GetAgentRequest):
     client = AgentsAsyncClient(
@@ -734,6 +759,24 @@ def test_set_agent_from_dict():
     test_set_agent(request_type=dict)
 
 
+def test_set_agent_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AgentsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.set_agent),
+            '__call__') as call:
+        client.set_agent()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gcd_agent.SetAgentRequest()
+
 @pytest.mark.asyncio
 async def test_set_agent_async(transport: str = 'grpc_asyncio', request_type=gcd_agent.SetAgentRequest):
     client = AgentsAsyncClient(
@@ -985,6 +1028,24 @@ def test_delete_agent_from_dict():
     test_delete_agent(request_type=dict)
 
 
+def test_delete_agent_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AgentsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_agent),
+            '__call__') as call:
+        client.delete_agent()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == agent.DeleteAgentRequest()
+
 @pytest.mark.asyncio
 async def test_delete_agent_async(transport: str = 'grpc_asyncio', request_type=agent.DeleteAgentRequest):
     client = AgentsAsyncClient(
@@ -1204,6 +1265,24 @@ def test_search_agents(transport: str = 'grpc', request_type=agent.SearchAgentsR
 def test_search_agents_from_dict():
     test_search_agents(request_type=dict)
 
+
+def test_search_agents_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AgentsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.search_agents),
+            '__call__') as call:
+        client.search_agents()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == agent.SearchAgentsRequest()
 
 @pytest.mark.asyncio
 async def test_search_agents_async(transport: str = 'grpc_asyncio', request_type=agent.SearchAgentsRequest):
@@ -1610,6 +1689,24 @@ def test_train_agent_from_dict():
     test_train_agent(request_type=dict)
 
 
+def test_train_agent_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AgentsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.train_agent),
+            '__call__') as call:
+        client.train_agent()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == agent.TrainAgentRequest()
+
 @pytest.mark.asyncio
 async def test_train_agent_async(transport: str = 'grpc_asyncio', request_type=agent.TrainAgentRequest):
     client = AgentsAsyncClient(
@@ -1827,6 +1924,24 @@ def test_export_agent(transport: str = 'grpc', request_type=agent.ExportAgentReq
 def test_export_agent_from_dict():
     test_export_agent(request_type=dict)
 
+
+def test_export_agent_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AgentsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.export_agent),
+            '__call__') as call:
+        client.export_agent()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == agent.ExportAgentRequest()
 
 @pytest.mark.asyncio
 async def test_export_agent_async(transport: str = 'grpc_asyncio', request_type=agent.ExportAgentRequest):
@@ -2046,6 +2161,24 @@ def test_import_agent_from_dict():
     test_import_agent(request_type=dict)
 
 
+def test_import_agent_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AgentsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.import_agent),
+            '__call__') as call:
+        client.import_agent()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == agent.ImportAgentRequest()
+
 @pytest.mark.asyncio
 async def test_import_agent_async(transport: str = 'grpc_asyncio', request_type=agent.ImportAgentRequest):
     client = AgentsAsyncClient(
@@ -2178,6 +2311,24 @@ def test_restore_agent(transport: str = 'grpc', request_type=agent.RestoreAgentR
 def test_restore_agent_from_dict():
     test_restore_agent(request_type=dict)
 
+
+def test_restore_agent_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AgentsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.restore_agent),
+            '__call__') as call:
+        client.restore_agent()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == agent.RestoreAgentRequest()
 
 @pytest.mark.asyncio
 async def test_restore_agent_async(transport: str = 'grpc_asyncio', request_type=agent.RestoreAgentRequest):
@@ -2313,6 +2464,24 @@ def test_get_validation_result(transport: str = 'grpc', request_type=agent.GetVa
 def test_get_validation_result_from_dict():
     test_get_validation_result(request_type=dict)
 
+
+def test_get_validation_result_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AgentsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_validation_result),
+            '__call__') as call:
+        client.get_validation_result()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == agent.GetValidationResultRequest()
 
 @pytest.mark.asyncio
 async def test_get_validation_result_async(transport: str = 'grpc_asyncio', request_type=agent.GetValidationResultRequest):

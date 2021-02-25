@@ -69,13 +69,18 @@ def test__get_default_mtls_endpoint():
     assert WebhooksClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_webhooks_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    WebhooksClient,
+    WebhooksAsyncClient,
+])
+def test_webhooks_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = WebhooksClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'dialogflow.googleapis.com:443'
 
@@ -90,9 +95,11 @@ def test_webhooks_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'dialogflow.googleapis.com:443'
 
@@ -383,6 +390,24 @@ def test_list_webhooks(transport: str = 'grpc', request_type=webhook.ListWebhook
 def test_list_webhooks_from_dict():
     test_list_webhooks(request_type=dict)
 
+
+def test_list_webhooks_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = WebhooksClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_webhooks),
+            '__call__') as call:
+        client.list_webhooks()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == webhook.ListWebhooksRequest()
 
 @pytest.mark.asyncio
 async def test_list_webhooks_async(transport: str = 'grpc_asyncio', request_type=webhook.ListWebhooksRequest):
@@ -804,6 +829,24 @@ def test_get_webhook_from_dict():
     test_get_webhook(request_type=dict)
 
 
+def test_get_webhook_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = WebhooksClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_webhook),
+            '__call__') as call:
+        client.get_webhook()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == webhook.GetWebhookRequest()
+
 @pytest.mark.asyncio
 async def test_get_webhook_async(transport: str = 'grpc_asyncio', request_type=webhook.GetWebhookRequest):
     client = WebhooksAsyncClient(
@@ -1042,6 +1085,24 @@ def test_create_webhook(transport: str = 'grpc', request_type=gcdc_webhook.Creat
 def test_create_webhook_from_dict():
     test_create_webhook(request_type=dict)
 
+
+def test_create_webhook_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = WebhooksClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_webhook),
+            '__call__') as call:
+        client.create_webhook()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gcdc_webhook.CreateWebhookRequest()
 
 @pytest.mark.asyncio
 async def test_create_webhook_async(transport: str = 'grpc_asyncio', request_type=gcdc_webhook.CreateWebhookRequest):
@@ -1290,6 +1351,24 @@ def test_update_webhook_from_dict():
     test_update_webhook(request_type=dict)
 
 
+def test_update_webhook_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = WebhooksClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_webhook),
+            '__call__') as call:
+        client.update_webhook()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gcdc_webhook.UpdateWebhookRequest()
+
 @pytest.mark.asyncio
 async def test_update_webhook_async(transport: str = 'grpc_asyncio', request_type=gcdc_webhook.UpdateWebhookRequest):
     client = WebhooksAsyncClient(
@@ -1521,6 +1600,24 @@ def test_delete_webhook(transport: str = 'grpc', request_type=webhook.DeleteWebh
 def test_delete_webhook_from_dict():
     test_delete_webhook(request_type=dict)
 
+
+def test_delete_webhook_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = WebhooksClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_webhook),
+            '__call__') as call:
+        client.delete_webhook()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == webhook.DeleteWebhookRequest()
 
 @pytest.mark.asyncio
 async def test_delete_webhook_async(transport: str = 'grpc_asyncio', request_type=webhook.DeleteWebhookRequest):

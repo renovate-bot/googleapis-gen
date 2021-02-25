@@ -72,13 +72,18 @@ def test__get_default_mtls_endpoint():
     assert AIStreamsClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_ai_streams_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    AIStreamsClient,
+    AIStreamsAsyncClient,
+])
+def test_ai_streams_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = AIStreamsClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'aistreams.googleapis.com:443'
 
@@ -93,9 +98,11 @@ def test_ai_streams_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'aistreams.googleapis.com:443'
 
@@ -390,6 +397,24 @@ def test_list_clusters(transport: str = 'grpc', request_type=aistreams.ListClust
 def test_list_clusters_from_dict():
     test_list_clusters(request_type=dict)
 
+
+def test_list_clusters_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AIStreamsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_clusters),
+            '__call__') as call:
+        client.list_clusters()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == aistreams.ListClustersRequest()
 
 @pytest.mark.asyncio
 async def test_list_clusters_async(transport: str = 'grpc_asyncio', request_type=aistreams.ListClustersRequest):
@@ -813,6 +838,24 @@ def test_get_cluster_from_dict():
     test_get_cluster(request_type=dict)
 
 
+def test_get_cluster_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AIStreamsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_cluster),
+            '__call__') as call:
+        client.get_cluster()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == aistreams.GetClusterRequest()
+
 @pytest.mark.asyncio
 async def test_get_cluster_async(transport: str = 'grpc_asyncio', request_type=aistreams.GetClusterRequest):
     client = AIStreamsAsyncClient(
@@ -1036,6 +1079,24 @@ def test_create_cluster(transport: str = 'grpc', request_type=aistreams.CreateCl
 def test_create_cluster_from_dict():
     test_create_cluster(request_type=dict)
 
+
+def test_create_cluster_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AIStreamsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_cluster),
+            '__call__') as call:
+        client.create_cluster()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == aistreams.CreateClusterRequest()
 
 @pytest.mark.asyncio
 async def test_create_cluster_async(transport: str = 'grpc_asyncio', request_type=aistreams.CreateClusterRequest):
@@ -1271,6 +1332,24 @@ def test_update_cluster_from_dict():
     test_update_cluster(request_type=dict)
 
 
+def test_update_cluster_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AIStreamsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_cluster),
+            '__call__') as call:
+        client.update_cluster()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == aistreams.UpdateClusterRequest()
+
 @pytest.mark.asyncio
 async def test_update_cluster_async(transport: str = 'grpc_asyncio', request_type=aistreams.UpdateClusterRequest):
     client = AIStreamsAsyncClient(
@@ -1496,6 +1575,24 @@ def test_delete_cluster(transport: str = 'grpc', request_type=aistreams.DeleteCl
 def test_delete_cluster_from_dict():
     test_delete_cluster(request_type=dict)
 
+
+def test_delete_cluster_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AIStreamsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_cluster),
+            '__call__') as call:
+        client.delete_cluster()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == aistreams.DeleteClusterRequest()
 
 @pytest.mark.asyncio
 async def test_delete_cluster_async(transport: str = 'grpc_asyncio', request_type=aistreams.DeleteClusterRequest):
@@ -1724,6 +1821,24 @@ def test_list_streams(transport: str = 'grpc', request_type=aistreams.ListStream
 def test_list_streams_from_dict():
     test_list_streams(request_type=dict)
 
+
+def test_list_streams_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AIStreamsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_streams),
+            '__call__') as call:
+        client.list_streams()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == aistreams.ListStreamsRequest()
 
 @pytest.mark.asyncio
 async def test_list_streams_async(transport: str = 'grpc_asyncio', request_type=aistreams.ListStreamsRequest):
@@ -2139,6 +2254,24 @@ def test_get_stream_from_dict():
     test_get_stream(request_type=dict)
 
 
+def test_get_stream_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AIStreamsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_stream),
+            '__call__') as call:
+        client.get_stream()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == aistreams.GetStreamRequest()
+
 @pytest.mark.asyncio
 async def test_get_stream_async(transport: str = 'grpc_asyncio', request_type=aistreams.GetStreamRequest):
     client = AIStreamsAsyncClient(
@@ -2356,6 +2489,24 @@ def test_create_stream(transport: str = 'grpc', request_type=aistreams.CreateStr
 def test_create_stream_from_dict():
     test_create_stream(request_type=dict)
 
+
+def test_create_stream_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AIStreamsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_stream),
+            '__call__') as call:
+        client.create_stream()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == aistreams.CreateStreamRequest()
 
 @pytest.mark.asyncio
 async def test_create_stream_async(transport: str = 'grpc_asyncio', request_type=aistreams.CreateStreamRequest):
@@ -2591,6 +2742,24 @@ def test_update_stream_from_dict():
     test_update_stream(request_type=dict)
 
 
+def test_update_stream_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AIStreamsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_stream),
+            '__call__') as call:
+        client.update_stream()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == aistreams.UpdateStreamRequest()
+
 @pytest.mark.asyncio
 async def test_update_stream_async(transport: str = 'grpc_asyncio', request_type=aistreams.UpdateStreamRequest):
     client = AIStreamsAsyncClient(
@@ -2816,6 +2985,24 @@ def test_delete_stream(transport: str = 'grpc', request_type=aistreams.DeleteStr
 def test_delete_stream_from_dict():
     test_delete_stream(request_type=dict)
 
+
+def test_delete_stream_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AIStreamsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_stream),
+            '__call__') as call:
+        client.delete_stream()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == aistreams.DeleteStreamRequest()
 
 @pytest.mark.asyncio
 async def test_delete_stream_async(transport: str = 'grpc_asyncio', request_type=aistreams.DeleteStreamRequest):

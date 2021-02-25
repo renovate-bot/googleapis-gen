@@ -72,13 +72,18 @@ def test__get_default_mtls_endpoint():
     assert IAMClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_iam_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    IAMClient,
+    IAMAsyncClient,
+])
+def test_iam_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = IAMClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'iam.googleapis.com:443'
 
@@ -93,9 +98,11 @@ def test_iam_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'iam.googleapis.com:443'
 
@@ -386,6 +393,24 @@ def test_list_service_accounts(transport: str = 'grpc', request_type=iam.ListSer
 def test_list_service_accounts_from_dict():
     test_list_service_accounts(request_type=dict)
 
+
+def test_list_service_accounts_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_service_accounts),
+            '__call__') as call:
+        client.list_service_accounts()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.ListServiceAccountsRequest()
 
 @pytest.mark.asyncio
 async def test_list_service_accounts_async(transport: str = 'grpc_asyncio', request_type=iam.ListServiceAccountsRequest):
@@ -822,6 +847,24 @@ def test_get_service_account_from_dict():
     test_get_service_account(request_type=dict)
 
 
+def test_get_service_account_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_service_account),
+            '__call__') as call:
+        client.get_service_account()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.GetServiceAccountRequest()
+
 @pytest.mark.asyncio
 async def test_get_service_account_async(transport: str = 'grpc_asyncio', request_type=iam.GetServiceAccountRequest):
     client = IAMAsyncClient(
@@ -1087,6 +1130,24 @@ def test_create_service_account(transport: str = 'grpc', request_type=iam.Create
 def test_create_service_account_from_dict():
     test_create_service_account(request_type=dict)
 
+
+def test_create_service_account_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_service_account),
+            '__call__') as call:
+        client.create_service_account()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.CreateServiceAccountRequest()
 
 @pytest.mark.asyncio
 async def test_create_service_account_async(transport: str = 'grpc_asyncio', request_type=iam.CreateServiceAccountRequest):
@@ -1370,6 +1431,24 @@ def test_update_service_account_from_dict():
     test_update_service_account(request_type=dict)
 
 
+def test_update_service_account_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_service_account),
+            '__call__') as call:
+        client.update_service_account()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.ServiceAccount()
+
 @pytest.mark.asyncio
 async def test_update_service_account_async(transport: str = 'grpc_asyncio', request_type=iam.ServiceAccount):
     client = IAMAsyncClient(
@@ -1522,6 +1601,24 @@ def test_delete_service_account(transport: str = 'grpc', request_type=iam.Delete
 def test_delete_service_account_from_dict():
     test_delete_service_account(request_type=dict)
 
+
+def test_delete_service_account_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_service_account),
+            '__call__') as call:
+        client.delete_service_account()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.DeleteServiceAccountRequest()
 
 @pytest.mark.asyncio
 async def test_delete_service_account_async(transport: str = 'grpc_asyncio', request_type=iam.DeleteServiceAccountRequest):
@@ -1738,6 +1835,24 @@ def test_list_service_account_keys(transport: str = 'grpc', request_type=iam.Lis
 def test_list_service_account_keys_from_dict():
     test_list_service_account_keys(request_type=dict)
 
+
+def test_list_service_account_keys_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_service_account_keys),
+            '__call__') as call:
+        client.list_service_account_keys()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.ListServiceAccountKeysRequest()
 
 @pytest.mark.asyncio
 async def test_list_service_account_keys_async(transport: str = 'grpc_asyncio', request_type=iam.ListServiceAccountKeysRequest):
@@ -1983,6 +2098,24 @@ def test_get_service_account_key(transport: str = 'grpc', request_type=iam.GetSe
 def test_get_service_account_key_from_dict():
     test_get_service_account_key(request_type=dict)
 
+
+def test_get_service_account_key_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_service_account_key),
+            '__call__') as call:
+        client.get_service_account_key()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.GetServiceAccountKeyRequest()
 
 @pytest.mark.asyncio
 async def test_get_service_account_key_async(transport: str = 'grpc_asyncio', request_type=iam.GetServiceAccountKeyRequest):
@@ -2244,6 +2377,24 @@ def test_create_service_account_key_from_dict():
     test_create_service_account_key(request_type=dict)
 
 
+def test_create_service_account_key_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_service_account_key),
+            '__call__') as call:
+        client.create_service_account_key()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.CreateServiceAccountKeyRequest()
+
 @pytest.mark.asyncio
 async def test_create_service_account_key_async(transport: str = 'grpc_asyncio', request_type=iam.CreateServiceAccountKeyRequest):
     client = IAMAsyncClient(
@@ -2490,6 +2641,24 @@ def test_delete_service_account_key_from_dict():
     test_delete_service_account_key(request_type=dict)
 
 
+def test_delete_service_account_key_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_service_account_key),
+            '__call__') as call:
+        client.delete_service_account_key()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.DeleteServiceAccountKeyRequest()
+
 @pytest.mark.asyncio
 async def test_delete_service_account_key_async(transport: str = 'grpc_asyncio', request_type=iam.DeleteServiceAccountKeyRequest):
     client = IAMAsyncClient(
@@ -2713,6 +2882,24 @@ def test_sign_blob(transport: str = 'grpc', request_type=iam.SignBlobRequest):
 def test_sign_blob_from_dict():
     test_sign_blob(request_type=dict)
 
+
+def test_sign_blob_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.sign_blob),
+            '__call__') as call:
+        client.sign_blob()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.SignBlobRequest()
 
 @pytest.mark.asyncio
 async def test_sign_blob_async(transport: str = 'grpc_asyncio', request_type=iam.SignBlobRequest):
@@ -2953,6 +3140,24 @@ def test_sign_jwt_from_dict():
     test_sign_jwt(request_type=dict)
 
 
+def test_sign_jwt_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.sign_jwt),
+            '__call__') as call:
+        client.sign_jwt()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.SignJwtRequest()
+
 @pytest.mark.asyncio
 async def test_sign_jwt_async(transport: str = 'grpc_asyncio', request_type=iam.SignJwtRequest):
     client = IAMAsyncClient(
@@ -3191,6 +3396,24 @@ def test_get_iam_policy(transport: str = 'grpc', request_type=iam_policy.GetIamP
 def test_get_iam_policy_from_dict():
     test_get_iam_policy(request_type=dict)
 
+
+def test_get_iam_policy_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_iam_policy),
+            '__call__') as call:
+        client.get_iam_policy()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam_policy.GetIamPolicyRequest()
 
 @pytest.mark.asyncio
 async def test_get_iam_policy_async(transport: str = 'grpc_asyncio', request_type=iam_policy.GetIamPolicyRequest):
@@ -3442,6 +3665,24 @@ def test_set_iam_policy_from_dict():
     test_set_iam_policy(request_type=dict)
 
 
+def test_set_iam_policy_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.set_iam_policy),
+            '__call__') as call:
+        client.set_iam_policy()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam_policy.SetIamPolicyRequest()
+
 @pytest.mark.asyncio
 async def test_set_iam_policy_async(transport: str = 'grpc_asyncio', request_type=iam_policy.SetIamPolicyRequest):
     client = IAMAsyncClient(
@@ -3687,6 +3928,24 @@ def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy.T
 def test_test_iam_permissions_from_dict():
     test_test_iam_permissions(request_type=dict)
 
+
+def test_test_iam_permissions_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.test_iam_permissions),
+            '__call__') as call:
+        client.test_iam_permissions()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam_policy.TestIamPermissionsRequest()
 
 @pytest.mark.asyncio
 async def test_test_iam_permissions_async(transport: str = 'grpc_asyncio', request_type=iam_policy.TestIamPermissionsRequest):
@@ -3938,6 +4197,24 @@ def test_query_grantable_roles(transport: str = 'grpc', request_type=iam.QueryGr
 def test_query_grantable_roles_from_dict():
     test_query_grantable_roles(request_type=dict)
 
+
+def test_query_grantable_roles_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.query_grantable_roles),
+            '__call__') as call:
+        client.query_grantable_roles()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.QueryGrantableRolesRequest()
 
 @pytest.mark.asyncio
 async def test_query_grantable_roles_async(transport: str = 'grpc_asyncio', request_type=iam.QueryGrantableRolesRequest):
@@ -4282,6 +4559,24 @@ def test_list_roles_from_dict():
     test_list_roles(request_type=dict)
 
 
+def test_list_roles_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_roles),
+            '__call__') as call:
+        client.list_roles()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.ListRolesRequest()
+
 @pytest.mark.asyncio
 async def test_list_roles_async(transport: str = 'grpc_asyncio', request_type=iam.ListRolesRequest):
     client = IAMAsyncClient(
@@ -4566,6 +4861,24 @@ def test_get_role_from_dict():
     test_get_role(request_type=dict)
 
 
+def test_get_role_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_role),
+            '__call__') as call:
+        client.get_role()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.GetRoleRequest()
+
 @pytest.mark.asyncio
 async def test_get_role_async(transport: str = 'grpc_asyncio', request_type=iam.GetRoleRequest):
     client = IAMAsyncClient(
@@ -4748,6 +5061,24 @@ def test_create_role(transport: str = 'grpc', request_type=iam.CreateRoleRequest
 def test_create_role_from_dict():
     test_create_role(request_type=dict)
 
+
+def test_create_role_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_role),
+            '__call__') as call:
+        client.create_role()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.CreateRoleRequest()
 
 @pytest.mark.asyncio
 async def test_create_role_async(transport: str = 'grpc_asyncio', request_type=iam.CreateRoleRequest):
@@ -4932,6 +5263,24 @@ def test_update_role_from_dict():
     test_update_role(request_type=dict)
 
 
+def test_update_role_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_role),
+            '__call__') as call:
+        client.update_role()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.UpdateRoleRequest()
+
 @pytest.mark.asyncio
 async def test_update_role_async(transport: str = 'grpc_asyncio', request_type=iam.UpdateRoleRequest):
     client = IAMAsyncClient(
@@ -5114,6 +5463,24 @@ def test_delete_role(transport: str = 'grpc', request_type=iam.DeleteRoleRequest
 def test_delete_role_from_dict():
     test_delete_role(request_type=dict)
 
+
+def test_delete_role_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_role),
+            '__call__') as call:
+        client.delete_role()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.DeleteRoleRequest()
 
 @pytest.mark.asyncio
 async def test_delete_role_async(transport: str = 'grpc_asyncio', request_type=iam.DeleteRoleRequest):
@@ -5298,6 +5665,24 @@ def test_undelete_role_from_dict():
     test_undelete_role(request_type=dict)
 
 
+def test_undelete_role_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.undelete_role),
+            '__call__') as call:
+        client.undelete_role()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.UndeleteRoleRequest()
+
 @pytest.mark.asyncio
 async def test_undelete_role_async(transport: str = 'grpc_asyncio', request_type=iam.UndeleteRoleRequest):
     client = IAMAsyncClient(
@@ -5456,6 +5841,24 @@ def test_query_testable_permissions(transport: str = 'grpc', request_type=iam.Qu
 def test_query_testable_permissions_from_dict():
     test_query_testable_permissions(request_type=dict)
 
+
+def test_query_testable_permissions_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = IAMClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.query_testable_permissions),
+            '__call__') as call:
+        client.query_testable_permissions()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam.QueryTestablePermissionsRequest()
 
 @pytest.mark.asyncio
 async def test_query_testable_permissions_async(transport: str = 'grpc_asyncio', request_type=iam.QueryTestablePermissionsRequest):

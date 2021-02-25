@@ -77,13 +77,18 @@ def test__get_default_mtls_endpoint():
     assert GSuiteAddOnsClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_g_suite_add_ons_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    GSuiteAddOnsClient,
+    GSuiteAddOnsAsyncClient,
+])
+def test_g_suite_add_ons_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = GSuiteAddOnsClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'gsuiteaddons.googleapis.com:443'
 
@@ -98,9 +103,11 @@ def test_g_suite_add_ons_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'gsuiteaddons.googleapis.com:443'
 
@@ -400,6 +407,24 @@ def test_get_authorization_from_dict():
     test_get_authorization(request_type=dict)
 
 
+def test_get_authorization_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GSuiteAddOnsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_authorization),
+            '__call__') as call:
+        client.get_authorization()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gsuiteaddons.GetAuthorizationRequest()
+
 @pytest.mark.asyncio
 async def test_get_authorization_async(transport: str = 'grpc_asyncio', request_type=gsuiteaddons.GetAuthorizationRequest):
     client = GSuiteAddOnsAsyncClient(
@@ -637,6 +662,24 @@ def test_create_deployment(transport: str = 'grpc', request_type=gsuiteaddons.Cr
 def test_create_deployment_from_dict():
     test_create_deployment(request_type=dict)
 
+
+def test_create_deployment_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GSuiteAddOnsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_deployment),
+            '__call__') as call:
+        client.create_deployment()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gsuiteaddons.CreateDeploymentRequest()
 
 @pytest.mark.asyncio
 async def test_create_deployment_async(transport: str = 'grpc_asyncio', request_type=gsuiteaddons.CreateDeploymentRequest):
@@ -892,6 +935,24 @@ def test_replace_deployment_from_dict():
     test_replace_deployment(request_type=dict)
 
 
+def test_replace_deployment_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GSuiteAddOnsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.replace_deployment),
+            '__call__') as call:
+        client.replace_deployment()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gsuiteaddons.ReplaceDeploymentRequest()
+
 @pytest.mark.asyncio
 async def test_replace_deployment_async(transport: str = 'grpc_asyncio', request_type=gsuiteaddons.ReplaceDeploymentRequest):
     client = GSuiteAddOnsAsyncClient(
@@ -1130,6 +1191,24 @@ def test_get_deployment_from_dict():
     test_get_deployment(request_type=dict)
 
 
+def test_get_deployment_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GSuiteAddOnsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_deployment),
+            '__call__') as call:
+        client.get_deployment()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gsuiteaddons.GetDeploymentRequest()
+
 @pytest.mark.asyncio
 async def test_get_deployment_async(transport: str = 'grpc_asyncio', request_type=gsuiteaddons.GetDeploymentRequest):
     client = GSuiteAddOnsAsyncClient(
@@ -1359,6 +1438,24 @@ def test_list_deployments(transport: str = 'grpc', request_type=gsuiteaddons.Lis
 def test_list_deployments_from_dict():
     test_list_deployments(request_type=dict)
 
+
+def test_list_deployments_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GSuiteAddOnsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_deployments),
+            '__call__') as call:
+        client.list_deployments()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gsuiteaddons.ListDeploymentsRequest()
 
 @pytest.mark.asyncio
 async def test_list_deployments_async(transport: str = 'grpc_asyncio', request_type=gsuiteaddons.ListDeploymentsRequest):
@@ -1765,6 +1862,24 @@ def test_delete_deployment_from_dict():
     test_delete_deployment(request_type=dict)
 
 
+def test_delete_deployment_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GSuiteAddOnsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_deployment),
+            '__call__') as call:
+        client.delete_deployment()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gsuiteaddons.DeleteDeploymentRequest()
+
 @pytest.mark.asyncio
 async def test_delete_deployment_async(transport: str = 'grpc_asyncio', request_type=gsuiteaddons.DeleteDeploymentRequest):
     client = GSuiteAddOnsAsyncClient(
@@ -1979,6 +2094,24 @@ def test_install_deployment_from_dict():
     test_install_deployment(request_type=dict)
 
 
+def test_install_deployment_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GSuiteAddOnsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.install_deployment),
+            '__call__') as call:
+        client.install_deployment()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gsuiteaddons.InstallDeploymentRequest()
+
 @pytest.mark.asyncio
 async def test_install_deployment_async(transport: str = 'grpc_asyncio', request_type=gsuiteaddons.InstallDeploymentRequest):
     client = GSuiteAddOnsAsyncClient(
@@ -2192,6 +2325,24 @@ def test_uninstall_deployment(transport: str = 'grpc', request_type=gsuiteaddons
 def test_uninstall_deployment_from_dict():
     test_uninstall_deployment(request_type=dict)
 
+
+def test_uninstall_deployment_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GSuiteAddOnsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.uninstall_deployment),
+            '__call__') as call:
+        client.uninstall_deployment()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gsuiteaddons.UninstallDeploymentRequest()
 
 @pytest.mark.asyncio
 async def test_uninstall_deployment_async(transport: str = 'grpc_asyncio', request_type=gsuiteaddons.UninstallDeploymentRequest):
@@ -2412,6 +2563,24 @@ def test_get_install_status(transport: str = 'grpc', request_type=gsuiteaddons.G
 def test_get_install_status_from_dict():
     test_get_install_status(request_type=dict)
 
+
+def test_get_install_status_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GSuiteAddOnsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_install_status),
+            '__call__') as call:
+        client.get_install_status()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gsuiteaddons.GetInstallStatusRequest()
 
 @pytest.mark.asyncio
 async def test_get_install_status_async(transport: str = 'grpc_asyncio', request_type=gsuiteaddons.GetInstallStatusRequest):

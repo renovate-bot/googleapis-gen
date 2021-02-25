@@ -65,13 +65,18 @@ def test__get_default_mtls_endpoint():
     assert TextToSpeechClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_text_to_speech_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    TextToSpeechClient,
+    TextToSpeechAsyncClient,
+])
+def test_text_to_speech_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = TextToSpeechClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'texttospeech.googleapis.com:443'
 
@@ -86,9 +91,11 @@ def test_text_to_speech_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'texttospeech.googleapis.com:443'
 
@@ -376,6 +383,24 @@ def test_list_voices_from_dict():
     test_list_voices(request_type=dict)
 
 
+def test_list_voices_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TextToSpeechClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_voices),
+            '__call__') as call:
+        client.list_voices()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloud_tts.ListVoicesRequest()
+
 @pytest.mark.asyncio
 async def test_list_voices_async(transport: str = 'grpc_asyncio', request_type=cloud_tts.ListVoicesRequest):
     client = TextToSpeechAsyncClient(
@@ -533,6 +558,24 @@ def test_synthesize_speech(transport: str = 'grpc', request_type=cloud_tts.Synth
 def test_synthesize_speech_from_dict():
     test_synthesize_speech(request_type=dict)
 
+
+def test_synthesize_speech_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TextToSpeechClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.synthesize_speech),
+            '__call__') as call:
+        client.synthesize_speech()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloud_tts.SynthesizeSpeechRequest()
 
 @pytest.mark.asyncio
 async def test_synthesize_speech_async(transport: str = 'grpc_asyncio', request_type=cloud_tts.SynthesizeSpeechRequest):

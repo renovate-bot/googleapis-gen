@@ -67,13 +67,18 @@ def test__get_default_mtls_endpoint():
     assert CloudCatalogClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_cloud_catalog_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    CloudCatalogClient,
+    CloudCatalogAsyncClient,
+])
+def test_cloud_catalog_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = CloudCatalogClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'cloudbilling.googleapis.com:443'
 
@@ -88,9 +93,11 @@ def test_cloud_catalog_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'cloudbilling.googleapis.com:443'
 
@@ -382,6 +389,24 @@ def test_list_services_from_dict():
     test_list_services(request_type=dict)
 
 
+def test_list_services_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudCatalogClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_services),
+            '__call__') as call:
+        client.list_services()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloud_catalog.ListServicesRequest()
+
 @pytest.mark.asyncio
 async def test_list_services_async(transport: str = 'grpc_asyncio', request_type=cloud_catalog.ListServicesRequest):
     client = CloudCatalogAsyncClient(
@@ -641,6 +666,24 @@ def test_list_skus(transport: str = 'grpc', request_type=cloud_catalog.ListSkusR
 def test_list_skus_from_dict():
     test_list_skus(request_type=dict)
 
+
+def test_list_skus_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudCatalogClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_skus),
+            '__call__') as call:
+        client.list_skus()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloud_catalog.ListSkusRequest()
 
 @pytest.mark.asyncio
 async def test_list_skus_async(transport: str = 'grpc_asyncio', request_type=cloud_catalog.ListSkusRequest):

@@ -68,13 +68,18 @@ def test__get_default_mtls_endpoint():
     assert AdaptationClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_adaptation_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    AdaptationClient,
+    AdaptationAsyncClient,
+])
+def test_adaptation_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = AdaptationClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'speech.googleapis.com:443'
 
@@ -89,9 +94,11 @@ def test_adaptation_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'speech.googleapis.com:443'
 
@@ -387,6 +394,24 @@ def test_create_phrase_set_from_dict():
     test_create_phrase_set(request_type=dict)
 
 
+def test_create_phrase_set_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AdaptationClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_phrase_set),
+            '__call__') as call:
+        client.create_phrase_set()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloud_speech_adaptation.CreatePhraseSetRequest()
+
 @pytest.mark.asyncio
 async def test_create_phrase_set_async(transport: str = 'grpc_asyncio', request_type=cloud_speech_adaptation.CreatePhraseSetRequest):
     client = AdaptationAsyncClient(
@@ -634,6 +659,24 @@ def test_get_phrase_set_from_dict():
     test_get_phrase_set(request_type=dict)
 
 
+def test_get_phrase_set_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AdaptationClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_phrase_set),
+            '__call__') as call:
+        client.get_phrase_set()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloud_speech_adaptation.GetPhraseSetRequest()
+
 @pytest.mark.asyncio
 async def test_get_phrase_set_async(transport: str = 'grpc_asyncio', request_type=cloud_speech_adaptation.GetPhraseSetRequest):
     client = AdaptationAsyncClient(
@@ -860,6 +903,24 @@ def test_list_phrase_set(transport: str = 'grpc', request_type=cloud_speech_adap
 def test_list_phrase_set_from_dict():
     test_list_phrase_set(request_type=dict)
 
+
+def test_list_phrase_set_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AdaptationClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_phrase_set),
+            '__call__') as call:
+        client.list_phrase_set()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloud_speech_adaptation.ListPhraseSetRequest()
 
 @pytest.mark.asyncio
 async def test_list_phrase_set_async(transport: str = 'grpc_asyncio', request_type=cloud_speech_adaptation.ListPhraseSetRequest):
@@ -1276,6 +1337,24 @@ def test_update_phrase_set_from_dict():
     test_update_phrase_set(request_type=dict)
 
 
+def test_update_phrase_set_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AdaptationClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_phrase_set),
+            '__call__') as call:
+        client.update_phrase_set()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloud_speech_adaptation.UpdatePhraseSetRequest()
+
 @pytest.mark.asyncio
 async def test_update_phrase_set_async(transport: str = 'grpc_asyncio', request_type=cloud_speech_adaptation.UpdatePhraseSetRequest):
     client = AdaptationAsyncClient(
@@ -1413,6 +1492,24 @@ def test_delete_phrase_set(transport: str = 'grpc', request_type=cloud_speech_ad
 def test_delete_phrase_set_from_dict():
     test_delete_phrase_set(request_type=dict)
 
+
+def test_delete_phrase_set_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AdaptationClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_phrase_set),
+            '__call__') as call:
+        client.delete_phrase_set()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloud_speech_adaptation.DeletePhraseSetRequest()
 
 @pytest.mark.asyncio
 async def test_delete_phrase_set_async(transport: str = 'grpc_asyncio', request_type=cloud_speech_adaptation.DeletePhraseSetRequest):
@@ -1637,6 +1734,24 @@ def test_create_custom_class(transport: str = 'grpc', request_type=cloud_speech_
 def test_create_custom_class_from_dict():
     test_create_custom_class(request_type=dict)
 
+
+def test_create_custom_class_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AdaptationClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_custom_class),
+            '__call__') as call:
+        client.create_custom_class()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloud_speech_adaptation.CreateCustomClassRequest()
 
 @pytest.mark.asyncio
 async def test_create_custom_class_async(transport: str = 'grpc_asyncio', request_type=cloud_speech_adaptation.CreateCustomClassRequest):
@@ -1885,6 +2000,24 @@ def test_get_custom_class_from_dict():
     test_get_custom_class(request_type=dict)
 
 
+def test_get_custom_class_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AdaptationClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_custom_class),
+            '__call__') as call:
+        client.get_custom_class()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloud_speech_adaptation.GetCustomClassRequest()
+
 @pytest.mark.asyncio
 async def test_get_custom_class_async(transport: str = 'grpc_asyncio', request_type=cloud_speech_adaptation.GetCustomClassRequest):
     client = AdaptationAsyncClient(
@@ -2111,6 +2244,24 @@ def test_list_custom_classes(transport: str = 'grpc', request_type=cloud_speech_
 def test_list_custom_classes_from_dict():
     test_list_custom_classes(request_type=dict)
 
+
+def test_list_custom_classes_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AdaptationClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_custom_classes),
+            '__call__') as call:
+        client.list_custom_classes()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloud_speech_adaptation.ListCustomClassesRequest()
 
 @pytest.mark.asyncio
 async def test_list_custom_classes_async(transport: str = 'grpc_asyncio', request_type=cloud_speech_adaptation.ListCustomClassesRequest):
@@ -2527,6 +2678,24 @@ def test_update_custom_class_from_dict():
     test_update_custom_class(request_type=dict)
 
 
+def test_update_custom_class_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AdaptationClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_custom_class),
+            '__call__') as call:
+        client.update_custom_class()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloud_speech_adaptation.UpdateCustomClassRequest()
+
 @pytest.mark.asyncio
 async def test_update_custom_class_async(transport: str = 'grpc_asyncio', request_type=cloud_speech_adaptation.UpdateCustomClassRequest):
     client = AdaptationAsyncClient(
@@ -2664,6 +2833,24 @@ def test_delete_custom_class(transport: str = 'grpc', request_type=cloud_speech_
 def test_delete_custom_class_from_dict():
     test_delete_custom_class(request_type=dict)
 
+
+def test_delete_custom_class_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AdaptationClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_custom_class),
+            '__call__') as call:
+        client.delete_custom_class()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloud_speech_adaptation.DeleteCustomClassRequest()
 
 @pytest.mark.asyncio
 async def test_delete_custom_class_async(transport: str = 'grpc_asyncio', request_type=cloud_speech_adaptation.DeleteCustomClassRequest):

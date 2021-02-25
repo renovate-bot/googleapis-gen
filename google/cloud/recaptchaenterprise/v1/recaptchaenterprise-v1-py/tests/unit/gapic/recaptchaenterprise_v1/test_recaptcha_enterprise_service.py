@@ -68,13 +68,18 @@ def test__get_default_mtls_endpoint():
     assert RecaptchaEnterpriseServiceClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_recaptcha_enterprise_service_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    RecaptchaEnterpriseServiceClient,
+    RecaptchaEnterpriseServiceAsyncClient,
+])
+def test_recaptcha_enterprise_service_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = RecaptchaEnterpriseServiceClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'recaptchaenterprise.googleapis.com:443'
 
@@ -89,9 +94,11 @@ def test_recaptcha_enterprise_service_client_from_service_account_file(client_cl
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'recaptchaenterprise.googleapis.com:443'
 
@@ -383,6 +390,24 @@ def test_create_assessment_from_dict():
     test_create_assessment(request_type=dict)
 
 
+def test_create_assessment_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = RecaptchaEnterpriseServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_assessment),
+            '__call__') as call:
+        client.create_assessment()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == recaptchaenterprise.CreateAssessmentRequest()
+
 @pytest.mark.asyncio
 async def test_create_assessment_async(transport: str = 'grpc_asyncio', request_type=recaptchaenterprise.CreateAssessmentRequest):
     client = RecaptchaEnterpriseServiceAsyncClient(
@@ -610,6 +635,24 @@ def test_annotate_assessment(transport: str = 'grpc', request_type=recaptchaente
 def test_annotate_assessment_from_dict():
     test_annotate_assessment(request_type=dict)
 
+
+def test_annotate_assessment_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = RecaptchaEnterpriseServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.annotate_assessment),
+            '__call__') as call:
+        client.annotate_assessment()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == recaptchaenterprise.AnnotateAssessmentRequest()
 
 @pytest.mark.asyncio
 async def test_annotate_assessment_async(transport: str = 'grpc_asyncio', request_type=recaptchaenterprise.AnnotateAssessmentRequest):
@@ -845,6 +888,24 @@ def test_create_key_from_dict():
     test_create_key(request_type=dict)
 
 
+def test_create_key_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = RecaptchaEnterpriseServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_key),
+            '__call__') as call:
+        client.create_key()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == recaptchaenterprise.CreateKeyRequest()
+
 @pytest.mark.asyncio
 async def test_create_key_async(transport: str = 'grpc_asyncio', request_type=recaptchaenterprise.CreateKeyRequest):
     client = RecaptchaEnterpriseServiceAsyncClient(
@@ -988,6 +1049,24 @@ def test_list_keys(transport: str = 'grpc', request_type=recaptchaenterprise.Lis
 def test_list_keys_from_dict():
     test_list_keys(request_type=dict)
 
+
+def test_list_keys_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = RecaptchaEnterpriseServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_keys),
+            '__call__') as call:
+        client.list_keys()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == recaptchaenterprise.ListKeysRequest()
 
 @pytest.mark.asyncio
 async def test_list_keys_async(transport: str = 'grpc_asyncio', request_type=recaptchaenterprise.ListKeysRequest):
@@ -1322,6 +1401,24 @@ def test_get_key_from_dict():
     test_get_key(request_type=dict)
 
 
+def test_get_key_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = RecaptchaEnterpriseServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_key),
+            '__call__') as call:
+        client.get_key()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == recaptchaenterprise.GetKeyRequest()
+
 @pytest.mark.asyncio
 async def test_get_key_async(transport: str = 'grpc_asyncio', request_type=recaptchaenterprise.GetKeyRequest):
     client = RecaptchaEnterpriseServiceAsyncClient(
@@ -1471,6 +1568,24 @@ def test_update_key_from_dict():
     test_update_key(request_type=dict)
 
 
+def test_update_key_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = RecaptchaEnterpriseServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_key),
+            '__call__') as call:
+        client.update_key()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == recaptchaenterprise.UpdateKeyRequest()
+
 @pytest.mark.asyncio
 async def test_update_key_async(transport: str = 'grpc_asyncio', request_type=recaptchaenterprise.UpdateKeyRequest):
     client = RecaptchaEnterpriseServiceAsyncClient(
@@ -1608,6 +1723,24 @@ def test_delete_key(transport: str = 'grpc', request_type=recaptchaenterprise.De
 def test_delete_key_from_dict():
     test_delete_key(request_type=dict)
 
+
+def test_delete_key_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = RecaptchaEnterpriseServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_key),
+            '__call__') as call:
+        client.delete_key()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == recaptchaenterprise.DeleteKeyRequest()
 
 @pytest.mark.asyncio
 async def test_delete_key_async(transport: str = 'grpc_asyncio', request_type=recaptchaenterprise.DeleteKeyRequest):

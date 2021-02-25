@@ -70,13 +70,18 @@ def test__get_default_mtls_endpoint():
     assert TraceServiceClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_trace_service_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    TraceServiceClient,
+    TraceServiceAsyncClient,
+])
+def test_trace_service_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = TraceServiceClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'cloudtrace.googleapis.com:443'
 
@@ -91,9 +96,11 @@ def test_trace_service_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'cloudtrace.googleapis.com:443'
 
@@ -379,6 +386,24 @@ def test_batch_write_spans_from_dict():
     test_batch_write_spans(request_type=dict)
 
 
+def test_batch_write_spans_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TraceServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.batch_write_spans),
+            '__call__') as call:
+        client.batch_write_spans()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == tracing.BatchWriteSpansRequest()
+
 @pytest.mark.asyncio
 async def test_batch_write_spans_async(transport: str = 'grpc_asyncio', request_type=tracing.BatchWriteSpansRequest):
     client = TraceServiceAsyncClient(
@@ -618,6 +643,24 @@ def test_create_span(transport: str = 'grpc', request_type=trace.Span):
 def test_create_span_from_dict():
     test_create_span(request_type=dict)
 
+
+def test_create_span_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TraceServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_span),
+            '__call__') as call:
+        client.create_span()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == trace.Span()
 
 @pytest.mark.asyncio
 async def test_create_span_async(transport: str = 'grpc_asyncio', request_type=trace.Span):

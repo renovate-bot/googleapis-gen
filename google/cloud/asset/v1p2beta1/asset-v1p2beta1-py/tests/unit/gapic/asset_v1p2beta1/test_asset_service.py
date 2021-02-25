@@ -66,13 +66,18 @@ def test__get_default_mtls_endpoint():
     assert AssetServiceClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_asset_service_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    AssetServiceClient,
+    AssetServiceAsyncClient,
+])
+def test_asset_service_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = AssetServiceClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'cloudasset.googleapis.com:443'
 
@@ -87,9 +92,11 @@ def test_asset_service_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'cloudasset.googleapis.com:443'
 
@@ -393,6 +400,24 @@ def test_create_feed_from_dict():
     test_create_feed(request_type=dict)
 
 
+def test_create_feed_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AssetServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_feed),
+            '__call__') as call:
+        client.create_feed()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == asset_service.CreateFeedRequest()
+
 @pytest.mark.asyncio
 async def test_create_feed_async(transport: str = 'grpc_asyncio', request_type=asset_service.CreateFeedRequest):
     client = AssetServiceAsyncClient(
@@ -638,6 +663,24 @@ def test_get_feed_from_dict():
     test_get_feed(request_type=dict)
 
 
+def test_get_feed_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AssetServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_feed),
+            '__call__') as call:
+        client.get_feed()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == asset_service.GetFeedRequest()
+
 @pytest.mark.asyncio
 async def test_get_feed_async(transport: str = 'grpc_asyncio', request_type=asset_service.GetFeedRequest):
     client = AssetServiceAsyncClient(
@@ -866,6 +909,24 @@ def test_list_feeds(transport: str = 'grpc', request_type=asset_service.ListFeed
 def test_list_feeds_from_dict():
     test_list_feeds(request_type=dict)
 
+
+def test_list_feeds_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AssetServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_feeds),
+            '__call__') as call:
+        client.list_feeds()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == asset_service.ListFeedsRequest()
 
 @pytest.mark.asyncio
 async def test_list_feeds_async(transport: str = 'grpc_asyncio', request_type=asset_service.ListFeedsRequest):
@@ -1100,6 +1161,24 @@ def test_update_feed_from_dict():
     test_update_feed(request_type=dict)
 
 
+def test_update_feed_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AssetServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_feed),
+            '__call__') as call:
+        client.update_feed()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == asset_service.UpdateFeedRequest()
+
 @pytest.mark.asyncio
 async def test_update_feed_async(transport: str = 'grpc_asyncio', request_type=asset_service.UpdateFeedRequest):
     client = AssetServiceAsyncClient(
@@ -1326,6 +1405,24 @@ def test_delete_feed(transport: str = 'grpc', request_type=asset_service.DeleteF
 def test_delete_feed_from_dict():
     test_delete_feed(request_type=dict)
 
+
+def test_delete_feed_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AssetServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_feed),
+            '__call__') as call:
+        client.delete_feed()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == asset_service.DeleteFeedRequest()
 
 @pytest.mark.asyncio
 async def test_delete_feed_async(transport: str = 'grpc_asyncio', request_type=asset_service.DeleteFeedRequest):

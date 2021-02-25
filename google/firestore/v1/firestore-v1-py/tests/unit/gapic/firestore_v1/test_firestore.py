@@ -76,13 +76,18 @@ def test__get_default_mtls_endpoint():
     assert FirestoreClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_firestore_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    FirestoreClient,
+    FirestoreAsyncClient,
+])
+def test_firestore_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = FirestoreClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'firestore.googleapis.com:443'
 
@@ -97,9 +102,11 @@ def test_firestore_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'firestore.googleapis.com:443'
 
@@ -391,6 +398,24 @@ def test_get_document_from_dict():
     test_get_document(request_type=dict)
 
 
+def test_get_document_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = FirestoreClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_document),
+            '__call__') as call:
+        client.get_document()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == firestore.GetDocumentRequest()
+
 @pytest.mark.asyncio
 async def test_get_document_async(transport: str = 'grpc_asyncio', request_type=firestore.GetDocumentRequest):
     client = FirestoreAsyncClient(
@@ -531,6 +556,24 @@ def test_list_documents(transport: str = 'grpc', request_type=firestore.ListDocu
 def test_list_documents_from_dict():
     test_list_documents(request_type=dict)
 
+
+def test_list_documents_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = FirestoreClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_documents),
+            '__call__') as call:
+        client.list_documents()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == firestore.ListDocumentsRequest()
 
 @pytest.mark.asyncio
 async def test_list_documents_async(transport: str = 'grpc_asyncio', request_type=firestore.ListDocumentsRequest):
@@ -860,6 +903,24 @@ def test_update_document_from_dict():
     test_update_document(request_type=dict)
 
 
+def test_update_document_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = FirestoreClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_document),
+            '__call__') as call:
+        client.update_document()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == firestore.UpdateDocumentRequest()
+
 @pytest.mark.asyncio
 async def test_update_document_async(transport: str = 'grpc_asyncio', request_type=firestore.UpdateDocumentRequest):
     client = FirestoreAsyncClient(
@@ -1086,6 +1147,24 @@ def test_delete_document_from_dict():
     test_delete_document(request_type=dict)
 
 
+def test_delete_document_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = FirestoreClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_document),
+            '__call__') as call:
+        client.delete_document()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == firestore.DeleteDocumentRequest()
+
 @pytest.mark.asyncio
 async def test_delete_document_async(transport: str = 'grpc_asyncio', request_type=firestore.DeleteDocumentRequest):
     client = FirestoreAsyncClient(
@@ -1301,6 +1380,24 @@ def test_batch_get_documents_from_dict():
     test_batch_get_documents(request_type=dict)
 
 
+def test_batch_get_documents_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = FirestoreClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.batch_get_documents),
+            '__call__') as call:
+        client.batch_get_documents()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == firestore.BatchGetDocumentsRequest()
+
 @pytest.mark.asyncio
 async def test_batch_get_documents_async(transport: str = 'grpc_asyncio', request_type=firestore.BatchGetDocumentsRequest):
     client = FirestoreAsyncClient(
@@ -1440,6 +1537,24 @@ def test_begin_transaction(transport: str = 'grpc', request_type=firestore.Begin
 def test_begin_transaction_from_dict():
     test_begin_transaction(request_type=dict)
 
+
+def test_begin_transaction_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = FirestoreClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.begin_transaction),
+            '__call__') as call:
+        client.begin_transaction()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == firestore.BeginTransactionRequest()
 
 @pytest.mark.asyncio
 async def test_begin_transaction_async(transport: str = 'grpc_asyncio', request_type=firestore.BeginTransactionRequest):
@@ -1660,6 +1775,24 @@ def test_commit(transport: str = 'grpc', request_type=firestore.CommitRequest):
 def test_commit_from_dict():
     test_commit(request_type=dict)
 
+
+def test_commit_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = FirestoreClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.commit),
+            '__call__') as call:
+        client.commit()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == firestore.CommitRequest()
 
 @pytest.mark.asyncio
 async def test_commit_async(transport: str = 'grpc_asyncio', request_type=firestore.CommitRequest):
@@ -1884,6 +2017,24 @@ def test_rollback_from_dict():
     test_rollback(request_type=dict)
 
 
+def test_rollback_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = FirestoreClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.rollback),
+            '__call__') as call:
+        client.rollback()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == firestore.RollbackRequest()
+
 @pytest.mark.asyncio
 async def test_rollback_async(transport: str = 'grpc_asyncio', request_type=firestore.RollbackRequest):
     client = FirestoreAsyncClient(
@@ -2107,6 +2258,24 @@ def test_run_query_from_dict():
     test_run_query(request_type=dict)
 
 
+def test_run_query_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = FirestoreClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.run_query),
+            '__call__') as call:
+        client.run_query()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == firestore.RunQueryRequest()
+
 @pytest.mark.asyncio
 async def test_run_query_async(transport: str = 'grpc_asyncio', request_type=firestore.RunQueryRequest):
     client = FirestoreAsyncClient(
@@ -2246,6 +2415,24 @@ def test_partition_query(transport: str = 'grpc', request_type=firestore.Partiti
 def test_partition_query_from_dict():
     test_partition_query(request_type=dict)
 
+
+def test_partition_query_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = FirestoreClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.partition_query),
+            '__call__') as call:
+        client.partition_query()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == firestore.PartitionQueryRequest()
 
 @pytest.mark.asyncio
 async def test_partition_query_async(transport: str = 'grpc_asyncio', request_type=firestore.PartitionQueryRequest):
@@ -2729,6 +2916,24 @@ def test_list_collection_ids_from_dict():
     test_list_collection_ids(request_type=dict)
 
 
+def test_list_collection_ids_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = FirestoreClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_collection_ids),
+            '__call__') as call:
+        client.list_collection_ids()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == firestore.ListCollectionIdsRequest()
+
 @pytest.mark.asyncio
 async def test_list_collection_ids_async(transport: str = 'grpc_asyncio', request_type=firestore.ListCollectionIdsRequest):
     client = FirestoreAsyncClient(
@@ -3139,6 +3344,24 @@ def test_batch_write_from_dict():
     test_batch_write(request_type=dict)
 
 
+def test_batch_write_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = FirestoreClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.batch_write),
+            '__call__') as call:
+        client.batch_write()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == firestore.BatchWriteRequest()
+
 @pytest.mark.asyncio
 async def test_batch_write_async(transport: str = 'grpc_asyncio', request_type=firestore.BatchWriteRequest):
     client = FirestoreAsyncClient(
@@ -3276,6 +3499,24 @@ def test_create_document(transport: str = 'grpc', request_type=firestore.CreateD
 def test_create_document_from_dict():
     test_create_document(request_type=dict)
 
+
+def test_create_document_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = FirestoreClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_document),
+            '__call__') as call:
+        client.create_document()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == firestore.CreateDocumentRequest()
 
 @pytest.mark.asyncio
 async def test_create_document_async(transport: str = 'grpc_asyncio', request_type=firestore.CreateDocumentRequest):

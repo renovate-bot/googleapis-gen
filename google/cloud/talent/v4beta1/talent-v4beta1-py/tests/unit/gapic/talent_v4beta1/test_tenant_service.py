@@ -69,13 +69,18 @@ def test__get_default_mtls_endpoint():
     assert TenantServiceClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_tenant_service_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    TenantServiceClient,
+    TenantServiceAsyncClient,
+])
+def test_tenant_service_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = TenantServiceClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'jobs.googleapis.com:443'
 
@@ -90,9 +95,11 @@ def test_tenant_service_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'jobs.googleapis.com:443'
 
@@ -396,6 +403,24 @@ def test_create_tenant_from_dict():
     test_create_tenant(request_type=dict)
 
 
+def test_create_tenant_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TenantServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_tenant),
+            '__call__') as call:
+        client.create_tenant()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == tenant_service.CreateTenantRequest()
+
 @pytest.mark.asyncio
 async def test_create_tenant_async(transport: str = 'grpc_asyncio', request_type=tenant_service.CreateTenantRequest):
     client = TenantServiceAsyncClient(
@@ -649,6 +674,24 @@ def test_get_tenant_from_dict():
     test_get_tenant(request_type=dict)
 
 
+def test_get_tenant_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TenantServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_tenant),
+            '__call__') as call:
+        client.get_tenant()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == tenant_service.GetTenantRequest()
+
 @pytest.mark.asyncio
 async def test_get_tenant_async(transport: str = 'grpc_asyncio', request_type=tenant_service.GetTenantRequest):
     client = TenantServiceAsyncClient(
@@ -894,6 +937,24 @@ def test_update_tenant_from_dict():
     test_update_tenant(request_type=dict)
 
 
+def test_update_tenant_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TenantServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_tenant),
+            '__call__') as call:
+        client.update_tenant()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == tenant_service.UpdateTenantRequest()
+
 @pytest.mark.asyncio
 async def test_update_tenant_async(transport: str = 'grpc_asyncio', request_type=tenant_service.UpdateTenantRequest):
     client = TenantServiceAsyncClient(
@@ -1121,6 +1182,24 @@ def test_delete_tenant_from_dict():
     test_delete_tenant(request_type=dict)
 
 
+def test_delete_tenant_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TenantServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_tenant),
+            '__call__') as call:
+        client.delete_tenant()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == tenant_service.DeleteTenantRequest()
+
 @pytest.mark.asyncio
 async def test_delete_tenant_async(transport: str = 'grpc_asyncio', request_type=tenant_service.DeleteTenantRequest):
     client = TenantServiceAsyncClient(
@@ -1340,6 +1419,24 @@ def test_list_tenants(transport: str = 'grpc', request_type=tenant_service.ListT
 def test_list_tenants_from_dict():
     test_list_tenants(request_type=dict)
 
+
+def test_list_tenants_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TenantServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_tenants),
+            '__call__') as call:
+        client.list_tenants()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == tenant_service.ListTenantsRequest()
 
 @pytest.mark.asyncio
 async def test_list_tenants_async(transport: str = 'grpc_asyncio', request_type=tenant_service.ListTenantsRequest):

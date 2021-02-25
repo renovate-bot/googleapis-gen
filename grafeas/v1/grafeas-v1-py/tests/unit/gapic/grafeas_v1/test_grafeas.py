@@ -81,13 +81,18 @@ def test__get_default_mtls_endpoint():
     assert GrafeasClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_grafeas_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    GrafeasClient,
+    GrafeasAsyncClient,
+])
+def test_grafeas_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = GrafeasClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'containeranalysis.googleapis.com:443'
 
@@ -102,9 +107,11 @@ def test_grafeas_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'containeranalysis.googleapis.com:443'
 
@@ -413,6 +420,24 @@ def test_get_occurrence_from_dict():
     test_get_occurrence(request_type=dict)
 
 
+def test_get_occurrence_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GrafeasClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_occurrence),
+            '__call__') as call:
+        client.get_occurrence()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == grafeas.GetOccurrenceRequest()
+
 @pytest.mark.asyncio
 async def test_get_occurrence_async(transport: str = 'grpc_asyncio', request_type=grafeas.GetOccurrenceRequest):
     client = GrafeasAsyncClient(
@@ -648,6 +673,24 @@ def test_list_occurrences(transport: str = 'grpc', request_type=grafeas.ListOccu
 def test_list_occurrences_from_dict():
     test_list_occurrences(request_type=dict)
 
+
+def test_list_occurrences_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GrafeasClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_occurrences),
+            '__call__') as call:
+        client.list_occurrences()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == grafeas.ListOccurrencesRequest()
 
 @pytest.mark.asyncio
 async def test_list_occurrences_async(transport: str = 'grpc_asyncio', request_type=grafeas.ListOccurrencesRequest):
@@ -1062,6 +1105,24 @@ def test_delete_occurrence_from_dict():
     test_delete_occurrence(request_type=dict)
 
 
+def test_delete_occurrence_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GrafeasClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_occurrence),
+            '__call__') as call:
+        client.delete_occurrence()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == grafeas.DeleteOccurrenceRequest()
+
 @pytest.mark.asyncio
 async def test_delete_occurrence_async(transport: str = 'grpc_asyncio', request_type=grafeas.DeleteOccurrenceRequest):
     client = GrafeasAsyncClient(
@@ -1298,6 +1359,24 @@ def test_create_occurrence(transport: str = 'grpc', request_type=grafeas.CreateO
 def test_create_occurrence_from_dict():
     test_create_occurrence(request_type=dict)
 
+
+def test_create_occurrence_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GrafeasClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_occurrence),
+            '__call__') as call:
+        client.create_occurrence()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == grafeas.CreateOccurrenceRequest()
 
 @pytest.mark.asyncio
 async def test_create_occurrence_async(transport: str = 'grpc_asyncio', request_type=grafeas.CreateOccurrenceRequest):
@@ -1538,6 +1617,24 @@ def test_batch_create_occurrences(transport: str = 'grpc', request_type=grafeas.
 def test_batch_create_occurrences_from_dict():
     test_batch_create_occurrences(request_type=dict)
 
+
+def test_batch_create_occurrences_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GrafeasClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.batch_create_occurrences),
+            '__call__') as call:
+        client.batch_create_occurrences()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == grafeas.BatchCreateOccurrencesRequest()
 
 @pytest.mark.asyncio
 async def test_batch_create_occurrences_async(transport: str = 'grpc_asyncio', request_type=grafeas.BatchCreateOccurrencesRequest):
@@ -1784,6 +1881,24 @@ def test_update_occurrence(transport: str = 'grpc', request_type=grafeas.UpdateO
 def test_update_occurrence_from_dict():
     test_update_occurrence(request_type=dict)
 
+
+def test_update_occurrence_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GrafeasClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_occurrence),
+            '__call__') as call:
+        client.update_occurrence()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == grafeas.UpdateOccurrenceRequest()
 
 @pytest.mark.asyncio
 async def test_update_occurrence_async(transport: str = 'grpc_asyncio', request_type=grafeas.UpdateOccurrenceRequest):
@@ -2054,6 +2169,24 @@ def test_get_occurrence_note_from_dict():
     test_get_occurrence_note(request_type=dict)
 
 
+def test_get_occurrence_note_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GrafeasClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_occurrence_note),
+            '__call__') as call:
+        client.get_occurrence_note()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == grafeas.GetOccurrenceNoteRequest()
+
 @pytest.mark.asyncio
 async def test_get_occurrence_note_async(transport: str = 'grpc_asyncio', request_type=grafeas.GetOccurrenceNoteRequest):
     client = GrafeasAsyncClient(
@@ -2307,6 +2440,24 @@ def test_get_note_from_dict():
     test_get_note(request_type=dict)
 
 
+def test_get_note_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GrafeasClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_note),
+            '__call__') as call:
+        client.get_note()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == grafeas.GetNoteRequest()
+
 @pytest.mark.asyncio
 async def test_get_note_async(transport: str = 'grpc_asyncio', request_type=grafeas.GetNoteRequest):
     client = GrafeasAsyncClient(
@@ -2542,6 +2693,24 @@ def test_list_notes(transport: str = 'grpc', request_type=grafeas.ListNotesReque
 def test_list_notes_from_dict():
     test_list_notes(request_type=dict)
 
+
+def test_list_notes_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GrafeasClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_notes),
+            '__call__') as call:
+        client.list_notes()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == grafeas.ListNotesRequest()
 
 @pytest.mark.asyncio
 async def test_list_notes_async(transport: str = 'grpc_asyncio', request_type=grafeas.ListNotesRequest):
@@ -2956,6 +3125,24 @@ def test_delete_note_from_dict():
     test_delete_note(request_type=dict)
 
 
+def test_delete_note_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GrafeasClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_note),
+            '__call__') as call:
+        client.delete_note()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == grafeas.DeleteNoteRequest()
+
 @pytest.mark.asyncio
 async def test_delete_note_async(transport: str = 'grpc_asyncio', request_type=grafeas.DeleteNoteRequest):
     client = GrafeasAsyncClient(
@@ -3192,6 +3379,24 @@ def test_create_note(transport: str = 'grpc', request_type=grafeas.CreateNoteReq
 def test_create_note_from_dict():
     test_create_note(request_type=dict)
 
+
+def test_create_note_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GrafeasClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_note),
+            '__call__') as call:
+        client.create_note()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == grafeas.CreateNoteRequest()
 
 @pytest.mark.asyncio
 async def test_create_note_async(transport: str = 'grpc_asyncio', request_type=grafeas.CreateNoteRequest):
@@ -3441,6 +3646,24 @@ def test_batch_create_notes_from_dict():
     test_batch_create_notes(request_type=dict)
 
 
+def test_batch_create_notes_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GrafeasClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.batch_create_notes),
+            '__call__') as call:
+        client.batch_create_notes()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == grafeas.BatchCreateNotesRequest()
+
 @pytest.mark.asyncio
 async def test_batch_create_notes_async(transport: str = 'grpc_asyncio', request_type=grafeas.BatchCreateNotesRequest):
     client = GrafeasAsyncClient(
@@ -3686,6 +3909,24 @@ def test_update_note(transport: str = 'grpc', request_type=grafeas.UpdateNoteReq
 def test_update_note_from_dict():
     test_update_note(request_type=dict)
 
+
+def test_update_note_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GrafeasClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_note),
+            '__call__') as call:
+        client.update_note()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == grafeas.UpdateNoteRequest()
 
 @pytest.mark.asyncio
 async def test_update_note_async(transport: str = 'grpc_asyncio', request_type=grafeas.UpdateNoteRequest):
@@ -3938,6 +4179,24 @@ def test_list_note_occurrences(transport: str = 'grpc', request_type=grafeas.Lis
 def test_list_note_occurrences_from_dict():
     test_list_note_occurrences(request_type=dict)
 
+
+def test_list_note_occurrences_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GrafeasClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_note_occurrences),
+            '__call__') as call:
+        client.list_note_occurrences()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == grafeas.ListNoteOccurrencesRequest()
 
 @pytest.mark.asyncio
 async def test_list_note_occurrences_async(transport: str = 'grpc_asyncio', request_type=grafeas.ListNoteOccurrencesRequest):

@@ -66,13 +66,18 @@ def test__get_default_mtls_endpoint():
     assert HomeGraphApiServiceClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_home_graph_api_service_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    HomeGraphApiServiceClient,
+    HomeGraphApiServiceAsyncClient,
+])
+def test_home_graph_api_service_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = HomeGraphApiServiceClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'homegraph.googleapis.com:443'
 
@@ -87,9 +92,11 @@ def test_home_graph_api_service_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'homegraph.googleapis.com:443'
 
@@ -377,6 +384,24 @@ def test_request_sync_devices_from_dict():
     test_request_sync_devices(request_type=dict)
 
 
+def test_request_sync_devices_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = HomeGraphApiServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.request_sync_devices),
+            '__call__') as call:
+        client.request_sync_devices()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == homegraph.RequestSyncDevicesRequest()
+
 @pytest.mark.asyncio
 async def test_request_sync_devices_async(transport: str = 'grpc_asyncio', request_type=homegraph.RequestSyncDevicesRequest):
     client = HomeGraphApiServiceAsyncClient(
@@ -534,6 +559,24 @@ def test_report_state_and_notification(transport: str = 'grpc', request_type=hom
 def test_report_state_and_notification_from_dict():
     test_report_state_and_notification(request_type=dict)
 
+
+def test_report_state_and_notification_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = HomeGraphApiServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.report_state_and_notification),
+            '__call__') as call:
+        client.report_state_and_notification()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == homegraph.ReportStateAndNotificationRequest()
 
 @pytest.mark.asyncio
 async def test_report_state_and_notification_async(transport: str = 'grpc_asyncio', request_type=homegraph.ReportStateAndNotificationRequest):
@@ -713,6 +756,24 @@ def test_delete_agent_user(transport: str = 'grpc', request_type=homegraph.Delet
 def test_delete_agent_user_from_dict():
     test_delete_agent_user(request_type=dict)
 
+
+def test_delete_agent_user_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = HomeGraphApiServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_agent_user),
+            '__call__') as call:
+        client.delete_agent_user()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == homegraph.DeleteAgentUserRequest()
 
 @pytest.mark.asyncio
 async def test_delete_agent_user_async(transport: str = 'grpc_asyncio', request_type=homegraph.DeleteAgentUserRequest):
@@ -942,6 +1003,24 @@ def test_query_from_dict():
     test_query(request_type=dict)
 
 
+def test_query_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = HomeGraphApiServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.query),
+            '__call__') as call:
+        client.query()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == homegraph.QueryRequest()
+
 @pytest.mark.asyncio
 async def test_query_async(transport: str = 'grpc_asyncio', request_type=homegraph.QueryRequest):
     client = HomeGraphApiServiceAsyncClient(
@@ -1118,6 +1197,24 @@ def test_sync(transport: str = 'grpc', request_type=homegraph.SyncRequest):
 def test_sync_from_dict():
     test_sync(request_type=dict)
 
+
+def test_sync_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = HomeGraphApiServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.sync),
+            '__call__') as call:
+        client.sync()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == homegraph.SyncRequest()
 
 @pytest.mark.asyncio
 async def test_sync_async(transport: str = 'grpc_asyncio', request_type=homegraph.SyncRequest):

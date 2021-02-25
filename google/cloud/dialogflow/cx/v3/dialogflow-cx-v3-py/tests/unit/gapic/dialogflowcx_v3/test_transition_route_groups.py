@@ -72,13 +72,18 @@ def test__get_default_mtls_endpoint():
     assert TransitionRouteGroupsClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_transition_route_groups_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    TransitionRouteGroupsClient,
+    TransitionRouteGroupsAsyncClient,
+])
+def test_transition_route_groups_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = TransitionRouteGroupsClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'dialogflow.googleapis.com:443'
 
@@ -93,9 +98,11 @@ def test_transition_route_groups_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'dialogflow.googleapis.com:443'
 
@@ -386,6 +393,24 @@ def test_list_transition_route_groups(transport: str = 'grpc', request_type=tran
 def test_list_transition_route_groups_from_dict():
     test_list_transition_route_groups(request_type=dict)
 
+
+def test_list_transition_route_groups_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TransitionRouteGroupsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_transition_route_groups),
+            '__call__') as call:
+        client.list_transition_route_groups()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == transition_route_group.ListTransitionRouteGroupsRequest()
 
 @pytest.mark.asyncio
 async def test_list_transition_route_groups_async(transport: str = 'grpc_asyncio', request_type=transition_route_group.ListTransitionRouteGroupsRequest):
@@ -802,6 +827,24 @@ def test_get_transition_route_group_from_dict():
     test_get_transition_route_group(request_type=dict)
 
 
+def test_get_transition_route_group_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TransitionRouteGroupsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_transition_route_group),
+            '__call__') as call:
+        client.get_transition_route_group()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == transition_route_group.GetTransitionRouteGroupRequest()
+
 @pytest.mark.asyncio
 async def test_get_transition_route_group_async(transport: str = 'grpc_asyncio', request_type=transition_route_group.GetTransitionRouteGroupRequest):
     client = TransitionRouteGroupsAsyncClient(
@@ -1032,6 +1075,24 @@ def test_create_transition_route_group(transport: str = 'grpc', request_type=gcd
 def test_create_transition_route_group_from_dict():
     test_create_transition_route_group(request_type=dict)
 
+
+def test_create_transition_route_group_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TransitionRouteGroupsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_transition_route_group),
+            '__call__') as call:
+        client.create_transition_route_group()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gcdc_transition_route_group.CreateTransitionRouteGroupRequest()
 
 @pytest.mark.asyncio
 async def test_create_transition_route_group_async(transport: str = 'grpc_asyncio', request_type=gcdc_transition_route_group.CreateTransitionRouteGroupRequest):
@@ -1272,6 +1333,24 @@ def test_update_transition_route_group_from_dict():
     test_update_transition_route_group(request_type=dict)
 
 
+def test_update_transition_route_group_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TransitionRouteGroupsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_transition_route_group),
+            '__call__') as call:
+        client.update_transition_route_group()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gcdc_transition_route_group.UpdateTransitionRouteGroupRequest()
+
 @pytest.mark.asyncio
 async def test_update_transition_route_group_async(transport: str = 'grpc_asyncio', request_type=gcdc_transition_route_group.UpdateTransitionRouteGroupRequest):
     client = TransitionRouteGroupsAsyncClient(
@@ -1500,6 +1579,24 @@ def test_delete_transition_route_group(transport: str = 'grpc', request_type=tra
 def test_delete_transition_route_group_from_dict():
     test_delete_transition_route_group(request_type=dict)
 
+
+def test_delete_transition_route_group_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TransitionRouteGroupsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_transition_route_group),
+            '__call__') as call:
+        client.delete_transition_route_group()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == transition_route_group.DeleteTransitionRouteGroupRequest()
 
 @pytest.mark.asyncio
 async def test_delete_transition_route_group_async(transport: str = 'grpc_asyncio', request_type=transition_route_group.DeleteTransitionRouteGroupRequest):

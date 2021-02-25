@@ -73,13 +73,18 @@ def test__get_default_mtls_endpoint():
     assert MetricsServiceV2Client._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_metrics_service_v2_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    MetricsServiceV2Client,
+    MetricsServiceV2AsyncClient,
+])
+def test_metrics_service_v2_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = MetricsServiceV2Client.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'logging.googleapis.com:443'
 
@@ -94,9 +99,11 @@ def test_metrics_service_v2_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'logging.googleapis.com:443'
 
@@ -387,6 +394,24 @@ def test_list_log_metrics(transport: str = 'grpc', request_type=logging_metrics.
 def test_list_log_metrics_from_dict():
     test_list_log_metrics(request_type=dict)
 
+
+def test_list_log_metrics_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = MetricsServiceV2Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_log_metrics),
+            '__call__') as call:
+        client.list_log_metrics()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == logging_metrics.ListLogMetricsRequest()
 
 @pytest.mark.asyncio
 async def test_list_log_metrics_async(transport: str = 'grpc_asyncio', request_type=logging_metrics.ListLogMetricsRequest):
@@ -815,6 +840,24 @@ def test_get_log_metric_from_dict():
     test_get_log_metric(request_type=dict)
 
 
+def test_get_log_metric_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = MetricsServiceV2Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_log_metric),
+            '__call__') as call:
+        client.get_log_metric()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == logging_metrics.GetLogMetricRequest()
+
 @pytest.mark.asyncio
 async def test_get_log_metric_async(transport: str = 'grpc_asyncio', request_type=logging_metrics.GetLogMetricRequest):
     client = MetricsServiceV2AsyncClient(
@@ -1066,6 +1109,24 @@ def test_create_log_metric(transport: str = 'grpc', request_type=logging_metrics
 def test_create_log_metric_from_dict():
     test_create_log_metric(request_type=dict)
 
+
+def test_create_log_metric_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = MetricsServiceV2Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_log_metric),
+            '__call__') as call:
+        client.create_log_metric()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == logging_metrics.CreateLogMetricRequest()
 
 @pytest.mark.asyncio
 async def test_create_log_metric_async(transport: str = 'grpc_asyncio', request_type=logging_metrics.CreateLogMetricRequest):
@@ -1327,6 +1388,24 @@ def test_update_log_metric_from_dict():
     test_update_log_metric(request_type=dict)
 
 
+def test_update_log_metric_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = MetricsServiceV2Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_log_metric),
+            '__call__') as call:
+        client.update_log_metric()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == logging_metrics.UpdateLogMetricRequest()
+
 @pytest.mark.asyncio
 async def test_update_log_metric_async(transport: str = 'grpc_asyncio', request_type=logging_metrics.UpdateLogMetricRequest):
     client = MetricsServiceV2AsyncClient(
@@ -1564,6 +1643,24 @@ def test_delete_log_metric(transport: str = 'grpc', request_type=logging_metrics
 def test_delete_log_metric_from_dict():
     test_delete_log_metric(request_type=dict)
 
+
+def test_delete_log_metric_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = MetricsServiceV2Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_log_metric),
+            '__call__') as call:
+        client.delete_log_metric()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == logging_metrics.DeleteLogMetricRequest()
 
 @pytest.mark.asyncio
 async def test_delete_log_metric_async(transport: str = 'grpc_asyncio', request_type=logging_metrics.DeleteLogMetricRequest):

@@ -71,13 +71,18 @@ def test__get_default_mtls_endpoint():
     assert StreetViewPublishServiceClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_street_view_publish_service_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    StreetViewPublishServiceClient,
+    StreetViewPublishServiceAsyncClient,
+])
+def test_street_view_publish_service_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = StreetViewPublishServiceClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'streetviewpublish.googleapis.com:443'
 
@@ -92,9 +97,11 @@ def test_street_view_publish_service_client_from_service_account_file(client_cla
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'streetviewpublish.googleapis.com:443'
 
@@ -386,6 +393,24 @@ def test_start_upload_from_dict():
     test_start_upload(request_type=dict)
 
 
+def test_start_upload_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StreetViewPublishServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.start_upload),
+            '__call__') as call:
+        client.start_upload()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == empty.Empty()
+
 @pytest.mark.asyncio
 async def test_start_upload_async(transport: str = 'grpc_asyncio', request_type=empty.Empty):
     client = StreetViewPublishServiceAsyncClient(
@@ -500,6 +525,24 @@ def test_create_photo(transport: str = 'grpc', request_type=rpcmessages.CreatePh
 def test_create_photo_from_dict():
     test_create_photo(request_type=dict)
 
+
+def test_create_photo_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StreetViewPublishServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_photo),
+            '__call__') as call:
+        client.create_photo()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == rpcmessages.CreatePhotoRequest()
 
 @pytest.mark.asyncio
 async def test_create_photo_async(transport: str = 'grpc_asyncio', request_type=rpcmessages.CreatePhotoRequest):
@@ -697,6 +740,24 @@ def test_get_photo_from_dict():
     test_get_photo(request_type=dict)
 
 
+def test_get_photo_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StreetViewPublishServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_photo),
+            '__call__') as call:
+        client.get_photo()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == rpcmessages.GetPhotoRequest()
+
 @pytest.mark.asyncio
 async def test_get_photo_async(transport: str = 'grpc_asyncio', request_type=rpcmessages.GetPhotoRequest):
     client = StreetViewPublishServiceAsyncClient(
@@ -877,6 +938,24 @@ def test_batch_get_photos_from_dict():
     test_batch_get_photos(request_type=dict)
 
 
+def test_batch_get_photos_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StreetViewPublishServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.batch_get_photos),
+            '__call__') as call:
+        client.batch_get_photos()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == rpcmessages.BatchGetPhotosRequest()
+
 @pytest.mark.asyncio
 async def test_batch_get_photos_async(transport: str = 'grpc_asyncio', request_type=rpcmessages.BatchGetPhotosRequest):
     client = StreetViewPublishServiceAsyncClient(
@@ -1042,6 +1121,24 @@ def test_list_photos(transport: str = 'grpc', request_type=rpcmessages.ListPhoto
 def test_list_photos_from_dict():
     test_list_photos(request_type=dict)
 
+
+def test_list_photos_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StreetViewPublishServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_photos),
+            '__call__') as call:
+        client.list_photos()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == rpcmessages.ListPhotosRequest()
 
 @pytest.mark.asyncio
 async def test_list_photos_async(transport: str = 'grpc_asyncio', request_type=rpcmessages.ListPhotosRequest):
@@ -1414,6 +1511,24 @@ def test_update_photo_from_dict():
     test_update_photo(request_type=dict)
 
 
+def test_update_photo_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StreetViewPublishServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_photo),
+            '__call__') as call:
+        client.update_photo()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == rpcmessages.UpdatePhotoRequest()
+
 @pytest.mark.asyncio
 async def test_update_photo_async(transport: str = 'grpc_asyncio', request_type=rpcmessages.UpdatePhotoRequest):
     client = StreetViewPublishServiceAsyncClient(
@@ -1594,6 +1709,24 @@ def test_batch_update_photos_from_dict():
     test_batch_update_photos(request_type=dict)
 
 
+def test_batch_update_photos_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StreetViewPublishServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.batch_update_photos),
+            '__call__') as call:
+        client.batch_update_photos()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == rpcmessages.BatchUpdatePhotosRequest()
+
 @pytest.mark.asyncio
 async def test_batch_update_photos_async(transport: str = 'grpc_asyncio', request_type=rpcmessages.BatchUpdatePhotosRequest):
     client = StreetViewPublishServiceAsyncClient(
@@ -1745,6 +1878,24 @@ def test_delete_photo(transport: str = 'grpc', request_type=rpcmessages.DeletePh
 def test_delete_photo_from_dict():
     test_delete_photo(request_type=dict)
 
+
+def test_delete_photo_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StreetViewPublishServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_photo),
+            '__call__') as call:
+        client.delete_photo()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == rpcmessages.DeletePhotoRequest()
 
 @pytest.mark.asyncio
 async def test_delete_photo_async(transport: str = 'grpc_asyncio', request_type=rpcmessages.DeletePhotoRequest):
@@ -1898,6 +2049,24 @@ def test_batch_delete_photos(transport: str = 'grpc', request_type=rpcmessages.B
 def test_batch_delete_photos_from_dict():
     test_batch_delete_photos(request_type=dict)
 
+
+def test_batch_delete_photos_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = StreetViewPublishServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.batch_delete_photos),
+            '__call__') as call:
+        client.batch_delete_photos()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == rpcmessages.BatchDeletePhotosRequest()
 
 @pytest.mark.asyncio
 async def test_batch_delete_photos_async(transport: str = 'grpc_asyncio', request_type=rpcmessages.BatchDeletePhotosRequest):

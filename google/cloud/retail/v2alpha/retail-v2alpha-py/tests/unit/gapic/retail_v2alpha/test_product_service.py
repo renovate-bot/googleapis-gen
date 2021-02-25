@@ -76,13 +76,18 @@ def test__get_default_mtls_endpoint():
     assert ProductServiceClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_product_service_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    ProductServiceClient,
+    ProductServiceAsyncClient,
+])
+def test_product_service_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = ProductServiceClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'retail.googleapis.com:443'
 
@@ -97,9 +102,11 @@ def test_product_service_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'retail.googleapis.com:443'
 
@@ -427,6 +434,24 @@ def test_create_product_from_dict():
     test_create_product(request_type=dict)
 
 
+def test_create_product_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ProductServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_product),
+            '__call__') as call:
+        client.create_product()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == product_service.CreateProductRequest()
+
 @pytest.mark.asyncio
 async def test_create_product_async(transport: str = 'grpc_asyncio', request_type=product_service.CreateProductRequest):
     client = ProductServiceAsyncClient(
@@ -730,6 +755,24 @@ def test_get_product_from_dict():
     test_get_product(request_type=dict)
 
 
+def test_get_product_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ProductServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_product),
+            '__call__') as call:
+        client.get_product()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == product_service.GetProductRequest()
+
 @pytest.mark.asyncio
 async def test_get_product_async(transport: str = 'grpc_asyncio', request_type=product_service.GetProductRequest):
     client = ProductServiceAsyncClient(
@@ -1017,6 +1060,24 @@ def test_update_product_from_dict():
     test_update_product(request_type=dict)
 
 
+def test_update_product_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ProductServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_product),
+            '__call__') as call:
+        client.update_product()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == product_service.UpdateProductRequest()
+
 @pytest.mark.asyncio
 async def test_update_product_async(transport: str = 'grpc_asyncio', request_type=product_service.UpdateProductRequest):
     client = ProductServiceAsyncClient(
@@ -1270,6 +1331,24 @@ def test_delete_product_from_dict():
     test_delete_product(request_type=dict)
 
 
+def test_delete_product_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ProductServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_product),
+            '__call__') as call:
+        client.delete_product()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == product_service.DeleteProductRequest()
+
 @pytest.mark.asyncio
 async def test_delete_product_async(transport: str = 'grpc_asyncio', request_type=product_service.DeleteProductRequest):
     client = ProductServiceAsyncClient(
@@ -1483,6 +1562,24 @@ def test_import_products(transport: str = 'grpc', request_type=import_config.Imp
 def test_import_products_from_dict():
     test_import_products(request_type=dict)
 
+
+def test_import_products_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ProductServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.import_products),
+            '__call__') as call:
+        client.import_products()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == import_config.ImportProductsRequest()
 
 @pytest.mark.asyncio
 async def test_import_products_async(transport: str = 'grpc_asyncio', request_type=import_config.ImportProductsRequest):

@@ -69,13 +69,18 @@ def test__get_default_mtls_endpoint():
     assert AdminServiceClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_admin_service_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    AdminServiceClient,
+    AdminServiceAsyncClient,
+])
+def test_admin_service_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = AdminServiceClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'pubsublite.googleapis.com:443'
 
@@ -90,9 +95,11 @@ def test_admin_service_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'pubsublite.googleapis.com:443'
 
@@ -384,6 +391,24 @@ def test_create_topic_from_dict():
     test_create_topic(request_type=dict)
 
 
+def test_create_topic_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AdminServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_topic),
+            '__call__') as call:
+        client.create_topic()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == admin.CreateTopicRequest()
+
 @pytest.mark.asyncio
 async def test_create_topic_async(transport: str = 'grpc_asyncio', request_type=admin.CreateTopicRequest):
     client = AdminServiceAsyncClient(
@@ -624,6 +649,24 @@ def test_get_topic_from_dict():
     test_get_topic(request_type=dict)
 
 
+def test_get_topic_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AdminServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_topic),
+            '__call__') as call:
+        client.get_topic()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == admin.GetTopicRequest()
+
 @pytest.mark.asyncio
 async def test_get_topic_async(transport: str = 'grpc_asyncio', request_type=admin.GetTopicRequest):
     client = AdminServiceAsyncClient(
@@ -848,6 +891,24 @@ def test_get_topic_partitions_from_dict():
     test_get_topic_partitions(request_type=dict)
 
 
+def test_get_topic_partitions_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AdminServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_topic_partitions),
+            '__call__') as call:
+        client.get_topic_partitions()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == admin.GetTopicPartitionsRequest()
+
 @pytest.mark.asyncio
 async def test_get_topic_partitions_async(transport: str = 'grpc_asyncio', request_type=admin.GetTopicPartitionsRequest):
     client = AdminServiceAsyncClient(
@@ -1071,6 +1132,24 @@ def test_list_topics(transport: str = 'grpc', request_type=admin.ListTopicsReque
 def test_list_topics_from_dict():
     test_list_topics(request_type=dict)
 
+
+def test_list_topics_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AdminServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_topics),
+            '__call__') as call:
+        client.list_topics()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == admin.ListTopicsRequest()
 
 @pytest.mark.asyncio
 async def test_list_topics_async(transport: str = 'grpc_asyncio', request_type=admin.ListTopicsRequest):
@@ -1483,6 +1562,24 @@ def test_update_topic_from_dict():
     test_update_topic(request_type=dict)
 
 
+def test_update_topic_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AdminServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_topic),
+            '__call__') as call:
+        client.update_topic()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == admin.UpdateTopicRequest()
+
 @pytest.mark.asyncio
 async def test_update_topic_async(transport: str = 'grpc_asyncio', request_type=admin.UpdateTopicRequest):
     client = AdminServiceAsyncClient(
@@ -1709,6 +1806,24 @@ def test_delete_topic_from_dict():
     test_delete_topic(request_type=dict)
 
 
+def test_delete_topic_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AdminServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_topic),
+            '__call__') as call:
+        client.delete_topic()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == admin.DeleteTopicRequest()
+
 @pytest.mark.asyncio
 async def test_delete_topic_async(transport: str = 'grpc_asyncio', request_type=admin.DeleteTopicRequest):
     client = AdminServiceAsyncClient(
@@ -1932,6 +2047,24 @@ def test_list_topic_subscriptions(transport: str = 'grpc', request_type=admin.Li
 def test_list_topic_subscriptions_from_dict():
     test_list_topic_subscriptions(request_type=dict)
 
+
+def test_list_topic_subscriptions_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AdminServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_topic_subscriptions),
+            '__call__') as call:
+        client.list_topic_subscriptions()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == admin.ListTopicSubscriptionsRequest()
 
 @pytest.mark.asyncio
 async def test_list_topic_subscriptions_async(transport: str = 'grpc_asyncio', request_type=admin.ListTopicSubscriptionsRequest):
@@ -2351,6 +2484,24 @@ def test_create_subscription_from_dict():
     test_create_subscription(request_type=dict)
 
 
+def test_create_subscription_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AdminServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_subscription),
+            '__call__') as call:
+        client.create_subscription()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == admin.CreateSubscriptionRequest()
+
 @pytest.mark.asyncio
 async def test_create_subscription_async(transport: str = 'grpc_asyncio', request_type=admin.CreateSubscriptionRequest):
     client = AdminServiceAsyncClient(
@@ -2598,6 +2749,24 @@ def test_get_subscription_from_dict():
     test_get_subscription(request_type=dict)
 
 
+def test_get_subscription_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AdminServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_subscription),
+            '__call__') as call:
+        client.get_subscription()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == admin.GetSubscriptionRequest()
+
 @pytest.mark.asyncio
 async def test_get_subscription_async(transport: str = 'grpc_asyncio', request_type=admin.GetSubscriptionRequest):
     client = AdminServiceAsyncClient(
@@ -2824,6 +2993,24 @@ def test_list_subscriptions(transport: str = 'grpc', request_type=admin.ListSubs
 def test_list_subscriptions_from_dict():
     test_list_subscriptions(request_type=dict)
 
+
+def test_list_subscriptions_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AdminServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_subscriptions),
+            '__call__') as call:
+        client.list_subscriptions()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == admin.ListSubscriptionsRequest()
 
 @pytest.mark.asyncio
 async def test_list_subscriptions_async(transport: str = 'grpc_asyncio', request_type=admin.ListSubscriptionsRequest):
@@ -3240,6 +3427,24 @@ def test_update_subscription_from_dict():
     test_update_subscription(request_type=dict)
 
 
+def test_update_subscription_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AdminServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_subscription),
+            '__call__') as call:
+        client.update_subscription()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == admin.UpdateSubscriptionRequest()
+
 @pytest.mark.asyncio
 async def test_update_subscription_async(transport: str = 'grpc_asyncio', request_type=admin.UpdateSubscriptionRequest):
     client = AdminServiceAsyncClient(
@@ -3468,6 +3673,24 @@ def test_delete_subscription(transport: str = 'grpc', request_type=admin.DeleteS
 def test_delete_subscription_from_dict():
     test_delete_subscription(request_type=dict)
 
+
+def test_delete_subscription_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AdminServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_subscription),
+            '__call__') as call:
+        client.delete_subscription()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == admin.DeleteSubscriptionRequest()
 
 @pytest.mark.asyncio
 async def test_delete_subscription_async(transport: str = 'grpc_asyncio', request_type=admin.DeleteSubscriptionRequest):

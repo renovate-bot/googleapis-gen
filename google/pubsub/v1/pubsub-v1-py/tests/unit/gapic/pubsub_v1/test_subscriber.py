@@ -72,13 +72,18 @@ def test__get_default_mtls_endpoint():
     assert SubscriberClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_subscriber_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    SubscriberClient,
+    SubscriberAsyncClient,
+])
+def test_subscriber_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = SubscriberClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'pubsub.googleapis.com:443'
 
@@ -93,9 +98,11 @@ def test_subscriber_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'pubsub.googleapis.com:443'
 
@@ -411,6 +418,24 @@ def test_create_subscription_from_dict():
     test_create_subscription(request_type=dict)
 
 
+def test_create_subscription_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = SubscriberClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_subscription),
+            '__call__') as call:
+        client.create_subscription()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == pubsub.Subscription()
+
 @pytest.mark.asyncio
 async def test_create_subscription_async(transport: str = 'grpc_asyncio', request_type=pubsub.Subscription):
     client = SubscriberAsyncClient(
@@ -701,6 +726,24 @@ def test_get_subscription_from_dict():
     test_get_subscription(request_type=dict)
 
 
+def test_get_subscription_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = SubscriberClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_subscription),
+            '__call__') as call:
+        client.get_subscription()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == pubsub.GetSubscriptionRequest()
+
 @pytest.mark.asyncio
 async def test_get_subscription_async(transport: str = 'grpc_asyncio', request_type=pubsub.GetSubscriptionRequest):
     client = SubscriberAsyncClient(
@@ -967,6 +1010,24 @@ def test_update_subscription_from_dict():
     test_update_subscription(request_type=dict)
 
 
+def test_update_subscription_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = SubscriberClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_subscription),
+            '__call__') as call:
+        client.update_subscription()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == pubsub.UpdateSubscriptionRequest()
+
 @pytest.mark.asyncio
 async def test_update_subscription_async(transport: str = 'grpc_asyncio', request_type=pubsub.UpdateSubscriptionRequest):
     client = SubscriberAsyncClient(
@@ -1125,6 +1186,24 @@ def test_list_subscriptions(transport: str = 'grpc', request_type=pubsub.ListSub
 def test_list_subscriptions_from_dict():
     test_list_subscriptions(request_type=dict)
 
+
+def test_list_subscriptions_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = SubscriberClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_subscriptions),
+            '__call__') as call:
+        client.list_subscriptions()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == pubsub.ListSubscriptionsRequest()
 
 @pytest.mark.asyncio
 async def test_list_subscriptions_async(transport: str = 'grpc_asyncio', request_type=pubsub.ListSubscriptionsRequest):
@@ -1531,6 +1610,24 @@ def test_delete_subscription_from_dict():
     test_delete_subscription(request_type=dict)
 
 
+def test_delete_subscription_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = SubscriberClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_subscription),
+            '__call__') as call:
+        client.delete_subscription()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == pubsub.DeleteSubscriptionRequest()
+
 @pytest.mark.asyncio
 async def test_delete_subscription_async(transport: str = 'grpc_asyncio', request_type=pubsub.DeleteSubscriptionRequest):
     client = SubscriberAsyncClient(
@@ -1744,6 +1841,24 @@ def test_modify_ack_deadline(transport: str = 'grpc', request_type=pubsub.Modify
 def test_modify_ack_deadline_from_dict():
     test_modify_ack_deadline(request_type=dict)
 
+
+def test_modify_ack_deadline_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = SubscriberClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.modify_ack_deadline),
+            '__call__') as call:
+        client.modify_ack_deadline()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == pubsub.ModifyAckDeadlineRequest()
 
 @pytest.mark.asyncio
 async def test_modify_ack_deadline_async(transport: str = 'grpc_asyncio', request_type=pubsub.ModifyAckDeadlineRequest):
@@ -1975,6 +2090,24 @@ def test_acknowledge_from_dict():
     test_acknowledge(request_type=dict)
 
 
+def test_acknowledge_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = SubscriberClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.acknowledge),
+            '__call__') as call:
+        client.acknowledge()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == pubsub.AcknowledgeRequest()
+
 @pytest.mark.asyncio
 async def test_acknowledge_async(transport: str = 'grpc_asyncio', request_type=pubsub.AcknowledgeRequest):
     client = SubscriberAsyncClient(
@@ -2198,6 +2331,24 @@ def test_pull(transport: str = 'grpc', request_type=pubsub.PullRequest):
 def test_pull_from_dict():
     test_pull(request_type=dict)
 
+
+def test_pull_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = SubscriberClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.pull),
+            '__call__') as call:
+        client.pull()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == pubsub.PullRequest()
 
 @pytest.mark.asyncio
 async def test_pull_async(transport: str = 'grpc_asyncio', request_type=pubsub.PullRequest):
@@ -2505,6 +2656,24 @@ def test_modify_push_config_from_dict():
     test_modify_push_config(request_type=dict)
 
 
+def test_modify_push_config_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = SubscriberClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.modify_push_config),
+            '__call__') as call:
+        client.modify_push_config()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == pubsub.ModifyPushConfigRequest()
+
 @pytest.mark.asyncio
 async def test_modify_push_config_async(transport: str = 'grpc_asyncio', request_type=pubsub.ModifyPushConfigRequest):
     client = SubscriberAsyncClient(
@@ -2737,6 +2906,24 @@ def test_get_snapshot_from_dict():
     test_get_snapshot(request_type=dict)
 
 
+def test_get_snapshot_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = SubscriberClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_snapshot),
+            '__call__') as call:
+        client.get_snapshot()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == pubsub.GetSnapshotRequest()
+
 @pytest.mark.asyncio
 async def test_get_snapshot_async(transport: str = 'grpc_asyncio', request_type=pubsub.GetSnapshotRequest):
     client = SubscriberAsyncClient(
@@ -2963,6 +3150,24 @@ def test_list_snapshots(transport: str = 'grpc', request_type=pubsub.ListSnapsho
 def test_list_snapshots_from_dict():
     test_list_snapshots(request_type=dict)
 
+
+def test_list_snapshots_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = SubscriberClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_snapshots),
+            '__call__') as call:
+        client.list_snapshots()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == pubsub.ListSnapshotsRequest()
 
 @pytest.mark.asyncio
 async def test_list_snapshots_async(transport: str = 'grpc_asyncio', request_type=pubsub.ListSnapshotsRequest):
@@ -3379,6 +3584,24 @@ def test_create_snapshot_from_dict():
     test_create_snapshot(request_type=dict)
 
 
+def test_create_snapshot_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = SubscriberClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_snapshot),
+            '__call__') as call:
+        client.create_snapshot()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == pubsub.CreateSnapshotRequest()
+
 @pytest.mark.asyncio
 async def test_create_snapshot_async(transport: str = 'grpc_asyncio', request_type=pubsub.CreateSnapshotRequest):
     client = SubscriberAsyncClient(
@@ -3618,6 +3841,24 @@ def test_update_snapshot_from_dict():
     test_update_snapshot(request_type=dict)
 
 
+def test_update_snapshot_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = SubscriberClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_snapshot),
+            '__call__') as call:
+        client.update_snapshot()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == pubsub.UpdateSnapshotRequest()
+
 @pytest.mark.asyncio
 async def test_update_snapshot_async(transport: str = 'grpc_asyncio', request_type=pubsub.UpdateSnapshotRequest):
     client = SubscriberAsyncClient(
@@ -3755,6 +3996,24 @@ def test_delete_snapshot(transport: str = 'grpc', request_type=pubsub.DeleteSnap
 def test_delete_snapshot_from_dict():
     test_delete_snapshot(request_type=dict)
 
+
+def test_delete_snapshot_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = SubscriberClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_snapshot),
+            '__call__') as call:
+        client.delete_snapshot()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == pubsub.DeleteSnapshotRequest()
 
 @pytest.mark.asyncio
 async def test_delete_snapshot_async(transport: str = 'grpc_asyncio', request_type=pubsub.DeleteSnapshotRequest):
@@ -3971,6 +4230,24 @@ def test_seek(transport: str = 'grpc', request_type=pubsub.SeekRequest):
 def test_seek_from_dict():
     test_seek(request_type=dict)
 
+
+def test_seek_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = SubscriberClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.seek),
+            '__call__') as call:
+        client.seek()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == pubsub.SeekRequest()
 
 @pytest.mark.asyncio
 async def test_seek_async(transport: str = 'grpc_asyncio', request_type=pubsub.SeekRequest):

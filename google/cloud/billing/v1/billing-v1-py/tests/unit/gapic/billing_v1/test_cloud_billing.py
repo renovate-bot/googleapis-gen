@@ -71,13 +71,18 @@ def test__get_default_mtls_endpoint():
     assert CloudBillingClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_cloud_billing_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    CloudBillingClient,
+    CloudBillingAsyncClient,
+])
+def test_cloud_billing_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = CloudBillingClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'cloudbilling.googleapis.com:443'
 
@@ -92,9 +97,11 @@ def test_cloud_billing_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'cloudbilling.googleapis.com:443'
 
@@ -398,6 +405,24 @@ def test_get_billing_account_from_dict():
     test_get_billing_account(request_type=dict)
 
 
+def test_get_billing_account_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudBillingClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_billing_account),
+            '__call__') as call:
+        client.get_billing_account()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloud_billing.GetBillingAccountRequest()
+
 @pytest.mark.asyncio
 async def test_get_billing_account_async(transport: str = 'grpc_asyncio', request_type=cloud_billing.GetBillingAccountRequest):
     client = CloudBillingAsyncClient(
@@ -630,6 +655,24 @@ def test_list_billing_accounts(transport: str = 'grpc', request_type=cloud_billi
 def test_list_billing_accounts_from_dict():
     test_list_billing_accounts(request_type=dict)
 
+
+def test_list_billing_accounts_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudBillingClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_billing_accounts),
+            '__call__') as call:
+        client.list_billing_accounts()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloud_billing.ListBillingAccountsRequest()
 
 @pytest.mark.asyncio
 async def test_list_billing_accounts_async(transport: str = 'grpc_asyncio', request_type=cloud_billing.ListBillingAccountsRequest):
@@ -903,6 +946,24 @@ def test_update_billing_account_from_dict():
     test_update_billing_account(request_type=dict)
 
 
+def test_update_billing_account_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudBillingClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_billing_account),
+            '__call__') as call:
+        client.update_billing_account()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloud_billing.UpdateBillingAccountRequest()
+
 @pytest.mark.asyncio
 async def test_update_billing_account_async(transport: str = 'grpc_asyncio', request_type=cloud_billing.UpdateBillingAccountRequest):
     client = CloudBillingAsyncClient(
@@ -1156,6 +1217,24 @@ def test_create_billing_account_from_dict():
     test_create_billing_account(request_type=dict)
 
 
+def test_create_billing_account_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudBillingClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_billing_account),
+            '__call__') as call:
+        client.create_billing_account()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloud_billing.CreateBillingAccountRequest()
+
 @pytest.mark.asyncio
 async def test_create_billing_account_async(transport: str = 'grpc_asyncio', request_type=cloud_billing.CreateBillingAccountRequest):
     client = CloudBillingAsyncClient(
@@ -1325,6 +1404,24 @@ def test_list_project_billing_info(transport: str = 'grpc', request_type=cloud_b
 def test_list_project_billing_info_from_dict():
     test_list_project_billing_info(request_type=dict)
 
+
+def test_list_project_billing_info_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudBillingClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_project_billing_info),
+            '__call__') as call:
+        client.list_project_billing_info()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloud_billing.ListProjectBillingInfoRequest()
 
 @pytest.mark.asyncio
 async def test_list_project_billing_info_async(transport: str = 'grpc_asyncio', request_type=cloud_billing.ListProjectBillingInfoRequest):
@@ -1749,6 +1846,24 @@ def test_get_project_billing_info_from_dict():
     test_get_project_billing_info(request_type=dict)
 
 
+def test_get_project_billing_info_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudBillingClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_project_billing_info),
+            '__call__') as call:
+        client.get_project_billing_info()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloud_billing.GetProjectBillingInfoRequest()
+
 @pytest.mark.asyncio
 async def test_get_project_billing_info_async(transport: str = 'grpc_asyncio', request_type=cloud_billing.GetProjectBillingInfoRequest):
     client = CloudBillingAsyncClient(
@@ -1994,6 +2109,24 @@ def test_update_project_billing_info_from_dict():
     test_update_project_billing_info(request_type=dict)
 
 
+def test_update_project_billing_info_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudBillingClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_project_billing_info),
+            '__call__') as call:
+        client.update_project_billing_info()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloud_billing.UpdateProjectBillingInfoRequest()
+
 @pytest.mark.asyncio
 async def test_update_project_billing_info_async(transport: str = 'grpc_asyncio', request_type=cloud_billing.UpdateProjectBillingInfoRequest):
     client = CloudBillingAsyncClient(
@@ -2238,6 +2371,24 @@ def test_get_iam_policy(transport: str = 'grpc', request_type=iam_policy.GetIamP
 def test_get_iam_policy_from_dict():
     test_get_iam_policy(request_type=dict)
 
+
+def test_get_iam_policy_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudBillingClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_iam_policy),
+            '__call__') as call:
+        client.get_iam_policy()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam_policy.GetIamPolicyRequest()
 
 @pytest.mark.asyncio
 async def test_get_iam_policy_async(transport: str = 'grpc_asyncio', request_type=iam_policy.GetIamPolicyRequest):
@@ -2489,6 +2640,24 @@ def test_set_iam_policy_from_dict():
     test_set_iam_policy(request_type=dict)
 
 
+def test_set_iam_policy_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudBillingClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.set_iam_policy),
+            '__call__') as call:
+        client.set_iam_policy()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam_policy.SetIamPolicyRequest()
+
 @pytest.mark.asyncio
 async def test_set_iam_policy_async(transport: str = 'grpc_asyncio', request_type=iam_policy.SetIamPolicyRequest):
     client = CloudBillingAsyncClient(
@@ -2734,6 +2903,24 @@ def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy.T
 def test_test_iam_permissions_from_dict():
     test_test_iam_permissions(request_type=dict)
 
+
+def test_test_iam_permissions_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudBillingClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.test_iam_permissions),
+            '__call__') as call:
+        client.test_iam_permissions()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam_policy.TestIamPermissionsRequest()
 
 @pytest.mark.asyncio
 async def test_test_iam_permissions_async(transport: str = 'grpc_asyncio', request_type=iam_policy.TestIamPermissionsRequest):

@@ -68,13 +68,18 @@ def test__get_default_mtls_endpoint():
     assert BinauthzManagementServiceV1Beta1Client._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_binauthz_management_service_v1_beta1_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    BinauthzManagementServiceV1Beta1Client,
+    BinauthzManagementServiceV1Beta1AsyncClient,
+])
+def test_binauthz_management_service_v1_beta1_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = BinauthzManagementServiceV1Beta1Client.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'binaryauthorization.googleapis.com:443'
 
@@ -89,9 +94,11 @@ def test_binauthz_management_service_v1_beta1_client_from_service_account_file(c
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'binaryauthorization.googleapis.com:443'
 
@@ -391,6 +398,24 @@ def test_get_policy_from_dict():
     test_get_policy(request_type=dict)
 
 
+def test_get_policy_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = BinauthzManagementServiceV1Beta1Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_policy),
+            '__call__') as call:
+        client.get_policy()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.GetPolicyRequest()
+
 @pytest.mark.asyncio
 async def test_get_policy_async(transport: str = 'grpc_asyncio', request_type=service.GetPolicyRequest):
     client = BinauthzManagementServiceV1Beta1AsyncClient(
@@ -629,6 +654,24 @@ def test_update_policy_from_dict():
     test_update_policy(request_type=dict)
 
 
+def test_update_policy_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = BinauthzManagementServiceV1Beta1Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_policy),
+            '__call__') as call:
+        client.update_policy()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.UpdatePolicyRequest()
+
 @pytest.mark.asyncio
 async def test_update_policy_async(transport: str = 'grpc_asyncio', request_type=service.UpdatePolicyRequest):
     client = BinauthzManagementServiceV1Beta1AsyncClient(
@@ -863,6 +906,24 @@ def test_create_attestor(transport: str = 'grpc', request_type=service.CreateAtt
 def test_create_attestor_from_dict():
     test_create_attestor(request_type=dict)
 
+
+def test_create_attestor_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = BinauthzManagementServiceV1Beta1Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_attestor),
+            '__call__') as call:
+        client.create_attestor()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.CreateAttestorRequest()
 
 @pytest.mark.asyncio
 async def test_create_attestor_async(transport: str = 'grpc_asyncio', request_type=service.CreateAttestorRequest):
@@ -1112,6 +1173,24 @@ def test_get_attestor_from_dict():
     test_get_attestor(request_type=dict)
 
 
+def test_get_attestor_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = BinauthzManagementServiceV1Beta1Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_attestor),
+            '__call__') as call:
+        client.get_attestor()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.GetAttestorRequest()
+
 @pytest.mark.asyncio
 async def test_get_attestor_async(transport: str = 'grpc_asyncio', request_type=service.GetAttestorRequest):
     client = BinauthzManagementServiceV1Beta1AsyncClient(
@@ -1344,6 +1423,24 @@ def test_update_attestor_from_dict():
     test_update_attestor(request_type=dict)
 
 
+def test_update_attestor_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = BinauthzManagementServiceV1Beta1Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_attestor),
+            '__call__') as call:
+        client.update_attestor()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.UpdateAttestorRequest()
+
 @pytest.mark.asyncio
 async def test_update_attestor_async(transport: str = 'grpc_asyncio', request_type=service.UpdateAttestorRequest):
     client = BinauthzManagementServiceV1Beta1AsyncClient(
@@ -1570,6 +1667,24 @@ def test_list_attestors(transport: str = 'grpc', request_type=service.ListAttest
 def test_list_attestors_from_dict():
     test_list_attestors(request_type=dict)
 
+
+def test_list_attestors_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = BinauthzManagementServiceV1Beta1Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_attestors),
+            '__call__') as call:
+        client.list_attestors()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.ListAttestorsRequest()
 
 @pytest.mark.asyncio
 async def test_list_attestors_async(transport: str = 'grpc_asyncio', request_type=service.ListAttestorsRequest):
@@ -1975,6 +2090,24 @@ def test_delete_attestor(transport: str = 'grpc', request_type=service.DeleteAtt
 def test_delete_attestor_from_dict():
     test_delete_attestor(request_type=dict)
 
+
+def test_delete_attestor_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = BinauthzManagementServiceV1Beta1Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_attestor),
+            '__call__') as call:
+        client.delete_attestor()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.DeleteAttestorRequest()
 
 @pytest.mark.asyncio
 async def test_delete_attestor_async(transport: str = 'grpc_asyncio', request_type=service.DeleteAttestorRequest):

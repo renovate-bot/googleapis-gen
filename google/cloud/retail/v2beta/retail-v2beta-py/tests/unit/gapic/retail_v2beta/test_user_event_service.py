@@ -78,13 +78,18 @@ def test__get_default_mtls_endpoint():
     assert UserEventServiceClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_user_event_service_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    UserEventServiceClient,
+    UserEventServiceAsyncClient,
+])
+def test_user_event_service_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = UserEventServiceClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'retail.googleapis.com:443'
 
@@ -99,9 +104,11 @@ def test_user_event_service_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'retail.googleapis.com:443'
 
@@ -429,6 +436,24 @@ def test_write_user_event_from_dict():
     test_write_user_event(request_type=dict)
 
 
+def test_write_user_event_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = UserEventServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.write_user_event),
+            '__call__') as call:
+        client.write_user_event()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == user_event_service.WriteUserEventRequest()
+
 @pytest.mark.asyncio
 async def test_write_user_event_async(transport: str = 'grpc_asyncio', request_type=user_event_service.WriteUserEventRequest):
     client = UserEventServiceAsyncClient(
@@ -601,6 +626,24 @@ def test_collect_user_event_from_dict():
     test_collect_user_event(request_type=dict)
 
 
+def test_collect_user_event_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = UserEventServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.collect_user_event),
+            '__call__') as call:
+        client.collect_user_event()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == user_event_service.CollectUserEventRequest()
+
 @pytest.mark.asyncio
 async def test_collect_user_event_async(transport: str = 'grpc_asyncio', request_type=user_event_service.CollectUserEventRequest):
     client = UserEventServiceAsyncClient(
@@ -739,6 +782,24 @@ def test_purge_user_events_from_dict():
     test_purge_user_events(request_type=dict)
 
 
+def test_purge_user_events_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = UserEventServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.purge_user_events),
+            '__call__') as call:
+        client.purge_user_events()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == purge_config.PurgeUserEventsRequest()
+
 @pytest.mark.asyncio
 async def test_purge_user_events_async(transport: str = 'grpc_asyncio', request_type=purge_config.PurgeUserEventsRequest):
     client = UserEventServiceAsyncClient(
@@ -872,6 +933,24 @@ def test_import_user_events_from_dict():
     test_import_user_events(request_type=dict)
 
 
+def test_import_user_events_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = UserEventServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.import_user_events),
+            '__call__') as call:
+        client.import_user_events()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == import_config.ImportUserEventsRequest()
+
 @pytest.mark.asyncio
 async def test_import_user_events_async(transport: str = 'grpc_asyncio', request_type=import_config.ImportUserEventsRequest):
     client = UserEventServiceAsyncClient(
@@ -1004,6 +1083,24 @@ def test_rejoin_user_events(transport: str = 'grpc', request_type=user_event_ser
 def test_rejoin_user_events_from_dict():
     test_rejoin_user_events(request_type=dict)
 
+
+def test_rejoin_user_events_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = UserEventServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.rejoin_user_events),
+            '__call__') as call:
+        client.rejoin_user_events()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == user_event_service.RejoinUserEventsRequest()
 
 @pytest.mark.asyncio
 async def test_rejoin_user_events_async(transport: str = 'grpc_asyncio', request_type=user_event_service.RejoinUserEventsRequest):

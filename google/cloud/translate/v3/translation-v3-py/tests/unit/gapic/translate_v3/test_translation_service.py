@@ -71,13 +71,18 @@ def test__get_default_mtls_endpoint():
     assert TranslationServiceClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_translation_service_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    TranslationServiceClient,
+    TranslationServiceAsyncClient,
+])
+def test_translation_service_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = TranslationServiceClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'translate.googleapis.com:443'
 
@@ -92,9 +97,11 @@ def test_translation_service_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'translate.googleapis.com:443'
 
@@ -382,6 +389,24 @@ def test_translate_text_from_dict():
     test_translate_text(request_type=dict)
 
 
+def test_translate_text_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TranslationServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.translate_text),
+            '__call__') as call:
+        client.translate_text()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == translation_service.TranslateTextRequest()
+
 @pytest.mark.asyncio
 async def test_translate_text_async(transport: str = 'grpc_asyncio', request_type=translation_service.TranslateTextRequest):
     client = TranslationServiceAsyncClient(
@@ -639,6 +664,24 @@ def test_detect_language_from_dict():
     test_detect_language(request_type=dict)
 
 
+def test_detect_language_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TranslationServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.detect_language),
+            '__call__') as call:
+        client.detect_language()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == translation_service.DetectLanguageRequest()
+
 @pytest.mark.asyncio
 async def test_detect_language_async(transport: str = 'grpc_asyncio', request_type=translation_service.DetectLanguageRequest):
     client = TranslationServiceAsyncClient(
@@ -880,6 +923,24 @@ def test_get_supported_languages_from_dict():
     test_get_supported_languages(request_type=dict)
 
 
+def test_get_supported_languages_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TranslationServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_supported_languages),
+            '__call__') as call:
+        client.get_supported_languages()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == translation_service.GetSupportedLanguagesRequest()
+
 @pytest.mark.asyncio
 async def test_get_supported_languages_async(transport: str = 'grpc_asyncio', request_type=translation_service.GetSupportedLanguagesRequest):
     client = TranslationServiceAsyncClient(
@@ -1111,6 +1172,24 @@ def test_batch_translate_text_from_dict():
     test_batch_translate_text(request_type=dict)
 
 
+def test_batch_translate_text_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TranslationServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.batch_translate_text),
+            '__call__') as call:
+        client.batch_translate_text()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == translation_service.BatchTranslateTextRequest()
+
 @pytest.mark.asyncio
 async def test_batch_translate_text_async(transport: str = 'grpc_asyncio', request_type=translation_service.BatchTranslateTextRequest):
     client = TranslationServiceAsyncClient(
@@ -1243,6 +1322,24 @@ def test_create_glossary(transport: str = 'grpc', request_type=translation_servi
 def test_create_glossary_from_dict():
     test_create_glossary(request_type=dict)
 
+
+def test_create_glossary_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TranslationServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_glossary),
+            '__call__') as call:
+        client.create_glossary()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == translation_service.CreateGlossaryRequest()
 
 @pytest.mark.asyncio
 async def test_create_glossary_async(transport: str = 'grpc_asyncio', request_type=translation_service.CreateGlossaryRequest):
@@ -1475,6 +1572,24 @@ def test_list_glossaries(transport: str = 'grpc', request_type=translation_servi
 def test_list_glossaries_from_dict():
     test_list_glossaries(request_type=dict)
 
+
+def test_list_glossaries_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TranslationServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_glossaries),
+            '__call__') as call:
+        client.list_glossaries()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == translation_service.ListGlossariesRequest()
 
 @pytest.mark.asyncio
 async def test_list_glossaries_async(transport: str = 'grpc_asyncio', request_type=translation_service.ListGlossariesRequest):
@@ -1892,6 +2007,24 @@ def test_get_glossary_from_dict():
     test_get_glossary(request_type=dict)
 
 
+def test_get_glossary_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TranslationServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_glossary),
+            '__call__') as call:
+        client.get_glossary()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == translation_service.GetGlossaryRequest()
+
 @pytest.mark.asyncio
 async def test_get_glossary_async(transport: str = 'grpc_asyncio', request_type=translation_service.GetGlossaryRequest):
     client = TranslationServiceAsyncClient(
@@ -2112,6 +2245,24 @@ def test_delete_glossary(transport: str = 'grpc', request_type=translation_servi
 def test_delete_glossary_from_dict():
     test_delete_glossary(request_type=dict)
 
+
+def test_delete_glossary_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TranslationServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_glossary),
+            '__call__') as call:
+        client.delete_glossary()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == translation_service.DeleteGlossaryRequest()
 
 @pytest.mark.asyncio
 async def test_delete_glossary_async(transport: str = 'grpc_asyncio', request_type=translation_service.DeleteGlossaryRequest):

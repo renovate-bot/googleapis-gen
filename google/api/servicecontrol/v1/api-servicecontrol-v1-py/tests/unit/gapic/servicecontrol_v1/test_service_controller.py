@@ -76,13 +76,18 @@ def test__get_default_mtls_endpoint():
     assert ServiceControllerClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_service_controller_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    ServiceControllerClient,
+    ServiceControllerAsyncClient,
+])
+def test_service_controller_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = ServiceControllerClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'servicecontrol.googleapis.com:443'
 
@@ -97,9 +102,11 @@ def test_service_controller_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'servicecontrol.googleapis.com:443'
 
@@ -399,6 +406,24 @@ def test_check_from_dict():
     test_check(request_type=dict)
 
 
+def test_check_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ServiceControllerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.check),
+            '__call__') as call:
+        client.check()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service_controller.CheckRequest()
+
 @pytest.mark.asyncio
 async def test_check_async(transport: str = 'grpc_asyncio', request_type=service_controller.CheckRequest):
     client = ServiceControllerAsyncClient(
@@ -486,6 +511,24 @@ def test_report(transport: str = 'grpc', request_type=service_controller.ReportR
 def test_report_from_dict():
     test_report(request_type=dict)
 
+
+def test_report_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ServiceControllerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.report),
+            '__call__') as call:
+        client.report()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service_controller.ReportRequest()
 
 @pytest.mark.asyncio
 async def test_report_async(transport: str = 'grpc_asyncio', request_type=service_controller.ReportRequest):

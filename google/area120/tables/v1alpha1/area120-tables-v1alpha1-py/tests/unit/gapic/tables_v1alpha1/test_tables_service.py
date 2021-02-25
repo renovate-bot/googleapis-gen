@@ -68,13 +68,18 @@ def test__get_default_mtls_endpoint():
     assert TablesServiceClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_tables_service_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    TablesServiceClient,
+    TablesServiceAsyncClient,
+])
+def test_tables_service_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = TablesServiceClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'area120tables.googleapis.com:443'
 
@@ -89,9 +94,11 @@ def test_tables_service_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'area120tables.googleapis.com:443'
 
@@ -387,6 +394,24 @@ def test_get_table_from_dict():
     test_get_table(request_type=dict)
 
 
+def test_get_table_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TablesServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_table),
+            '__call__') as call:
+        client.get_table()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == tables.GetTableRequest()
+
 @pytest.mark.asyncio
 async def test_get_table_async(transport: str = 'grpc_asyncio', request_type=tables.GetTableRequest):
     client = TablesServiceAsyncClient(
@@ -613,6 +638,24 @@ def test_list_tables(transport: str = 'grpc', request_type=tables.ListTablesRequ
 def test_list_tables_from_dict():
     test_list_tables(request_type=dict)
 
+
+def test_list_tables_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TablesServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_tables),
+            '__call__') as call:
+        client.list_tables()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == tables.ListTablesRequest()
 
 @pytest.mark.asyncio
 async def test_list_tables_async(transport: str = 'grpc_asyncio', request_type=tables.ListTablesRequest):
@@ -878,6 +921,24 @@ def test_get_workspace_from_dict():
     test_get_workspace(request_type=dict)
 
 
+def test_get_workspace_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TablesServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_workspace),
+            '__call__') as call:
+        client.get_workspace()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == tables.GetWorkspaceRequest()
+
 @pytest.mark.asyncio
 async def test_get_workspace_async(transport: str = 'grpc_asyncio', request_type=tables.GetWorkspaceRequest):
     client = TablesServiceAsyncClient(
@@ -1104,6 +1165,24 @@ def test_list_workspaces(transport: str = 'grpc', request_type=tables.ListWorksp
 def test_list_workspaces_from_dict():
     test_list_workspaces(request_type=dict)
 
+
+def test_list_workspaces_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TablesServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_workspaces),
+            '__call__') as call:
+        client.list_workspaces()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == tables.ListWorkspacesRequest()
 
 @pytest.mark.asyncio
 async def test_list_workspaces_async(transport: str = 'grpc_asyncio', request_type=tables.ListWorkspacesRequest):
@@ -1365,6 +1444,24 @@ def test_get_row_from_dict():
     test_get_row(request_type=dict)
 
 
+def test_get_row_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TablesServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_row),
+            '__call__') as call:
+        client.get_row()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == tables.GetRowRequest()
+
 @pytest.mark.asyncio
 async def test_get_row_async(transport: str = 'grpc_asyncio', request_type=tables.GetRowRequest):
     client = TablesServiceAsyncClient(
@@ -1588,6 +1685,24 @@ def test_list_rows(transport: str = 'grpc', request_type=tables.ListRowsRequest)
 def test_list_rows_from_dict():
     test_list_rows(request_type=dict)
 
+
+def test_list_rows_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TablesServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_rows),
+            '__call__') as call:
+        client.list_rows()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == tables.ListRowsRequest()
 
 @pytest.mark.asyncio
 async def test_list_rows_async(transport: str = 'grpc_asyncio', request_type=tables.ListRowsRequest):
@@ -2000,6 +2115,24 @@ def test_create_row_from_dict():
     test_create_row(request_type=dict)
 
 
+def test_create_row_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TablesServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_row),
+            '__call__') as call:
+        client.create_row()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == tables.CreateRowRequest()
+
 @pytest.mark.asyncio
 async def test_create_row_async(transport: str = 'grpc_asyncio', request_type=tables.CreateRowRequest):
     client = TablesServiceAsyncClient(
@@ -2228,6 +2361,24 @@ def test_batch_create_rows_from_dict():
     test_batch_create_rows(request_type=dict)
 
 
+def test_batch_create_rows_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TablesServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.batch_create_rows),
+            '__call__') as call:
+        client.batch_create_rows()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == tables.BatchCreateRowsRequest()
+
 @pytest.mark.asyncio
 async def test_batch_create_rows_async(transport: str = 'grpc_asyncio', request_type=tables.BatchCreateRowsRequest):
     client = TablesServiceAsyncClient(
@@ -2365,6 +2516,24 @@ def test_update_row(transport: str = 'grpc', request_type=tables.UpdateRowReques
 def test_update_row_from_dict():
     test_update_row(request_type=dict)
 
+
+def test_update_row_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TablesServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_row),
+            '__call__') as call:
+        client.update_row()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == tables.UpdateRowRequest()
 
 @pytest.mark.asyncio
 async def test_update_row_async(transport: str = 'grpc_asyncio', request_type=tables.UpdateRowRequest):
@@ -2594,6 +2763,24 @@ def test_batch_update_rows_from_dict():
     test_batch_update_rows(request_type=dict)
 
 
+def test_batch_update_rows_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TablesServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.batch_update_rows),
+            '__call__') as call:
+        client.batch_update_rows()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == tables.BatchUpdateRowsRequest()
+
 @pytest.mark.asyncio
 async def test_batch_update_rows_async(transport: str = 'grpc_asyncio', request_type=tables.BatchUpdateRowsRequest):
     client = TablesServiceAsyncClient(
@@ -2725,6 +2912,24 @@ def test_delete_row(transport: str = 'grpc', request_type=tables.DeleteRowReques
 def test_delete_row_from_dict():
     test_delete_row(request_type=dict)
 
+
+def test_delete_row_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TablesServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_row),
+            '__call__') as call:
+        client.delete_row()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == tables.DeleteRowRequest()
 
 @pytest.mark.asyncio
 async def test_delete_row_async(transport: str = 'grpc_asyncio', request_type=tables.DeleteRowRequest):
@@ -2939,6 +3144,24 @@ def test_batch_delete_rows(transport: str = 'grpc', request_type=tables.BatchDel
 def test_batch_delete_rows_from_dict():
     test_batch_delete_rows(request_type=dict)
 
+
+def test_batch_delete_rows_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = TablesServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.batch_delete_rows),
+            '__call__') as call:
+        client.batch_delete_rows()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == tables.BatchDeleteRowsRequest()
 
 @pytest.mark.asyncio
 async def test_batch_delete_rows_async(transport: str = 'grpc_asyncio', request_type=tables.BatchDeleteRowsRequest):

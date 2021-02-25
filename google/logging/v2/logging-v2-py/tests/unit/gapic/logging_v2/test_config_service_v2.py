@@ -68,13 +68,18 @@ def test__get_default_mtls_endpoint():
     assert ConfigServiceV2Client._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_config_service_v2_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    ConfigServiceV2Client,
+    ConfigServiceV2AsyncClient,
+])
+def test_config_service_v2_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = ConfigServiceV2Client.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'logging.googleapis.com:443'
 
@@ -89,9 +94,11 @@ def test_config_service_v2_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'logging.googleapis.com:443'
 
@@ -382,6 +389,24 @@ def test_list_buckets(transport: str = 'grpc', request_type=logging_config.ListB
 def test_list_buckets_from_dict():
     test_list_buckets(request_type=dict)
 
+
+def test_list_buckets_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ConfigServiceV2Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_buckets),
+            '__call__') as call:
+        client.list_buckets()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == logging_config.ListBucketsRequest()
 
 @pytest.mark.asyncio
 async def test_list_buckets_async(transport: str = 'grpc_asyncio', request_type=logging_config.ListBucketsRequest):
@@ -810,6 +835,24 @@ def test_get_bucket_from_dict():
     test_get_bucket(request_type=dict)
 
 
+def test_get_bucket_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ConfigServiceV2Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_bucket),
+            '__call__') as call:
+        client.get_bucket()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == logging_config.GetBucketRequest()
+
 @pytest.mark.asyncio
 async def test_get_bucket_async(transport: str = 'grpc_asyncio', request_type=logging_config.GetBucketRequest):
     client = ConfigServiceV2AsyncClient(
@@ -978,6 +1021,24 @@ def test_create_bucket(transport: str = 'grpc', request_type=logging_config.Crea
 def test_create_bucket_from_dict():
     test_create_bucket(request_type=dict)
 
+
+def test_create_bucket_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ConfigServiceV2Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_bucket),
+            '__call__') as call:
+        client.create_bucket()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == logging_config.CreateBucketRequest()
 
 @pytest.mark.asyncio
 async def test_create_bucket_async(transport: str = 'grpc_asyncio', request_type=logging_config.CreateBucketRequest):
@@ -1148,6 +1209,24 @@ def test_update_bucket_from_dict():
     test_update_bucket(request_type=dict)
 
 
+def test_update_bucket_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ConfigServiceV2Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_bucket),
+            '__call__') as call:
+        client.update_bucket()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == logging_config.UpdateBucketRequest()
+
 @pytest.mark.asyncio
 async def test_update_bucket_async(transport: str = 'grpc_asyncio', request_type=logging_config.UpdateBucketRequest):
     client = ConfigServiceV2AsyncClient(
@@ -1295,6 +1374,24 @@ def test_delete_bucket_from_dict():
     test_delete_bucket(request_type=dict)
 
 
+def test_delete_bucket_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ConfigServiceV2Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_bucket),
+            '__call__') as call:
+        client.delete_bucket()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == logging_config.DeleteBucketRequest()
+
 @pytest.mark.asyncio
 async def test_delete_bucket_async(transport: str = 'grpc_asyncio', request_type=logging_config.DeleteBucketRequest):
     client = ConfigServiceV2AsyncClient(
@@ -1425,6 +1522,24 @@ def test_undelete_bucket(transport: str = 'grpc', request_type=logging_config.Un
 def test_undelete_bucket_from_dict():
     test_undelete_bucket(request_type=dict)
 
+
+def test_undelete_bucket_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ConfigServiceV2Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.undelete_bucket),
+            '__call__') as call:
+        client.undelete_bucket()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == logging_config.UndeleteBucketRequest()
 
 @pytest.mark.asyncio
 async def test_undelete_bucket_async(transport: str = 'grpc_asyncio', request_type=logging_config.UndeleteBucketRequest):
@@ -1562,6 +1677,24 @@ def test_list_views(transport: str = 'grpc', request_type=logging_config.ListVie
 def test_list_views_from_dict():
     test_list_views(request_type=dict)
 
+
+def test_list_views_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ConfigServiceV2Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_views),
+            '__call__') as call:
+        client.list_views()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == logging_config.ListViewsRequest()
 
 @pytest.mark.asyncio
 async def test_list_views_async(transport: str = 'grpc_asyncio', request_type=logging_config.ListViewsRequest):
@@ -1982,6 +2115,24 @@ def test_get_view_from_dict():
     test_get_view(request_type=dict)
 
 
+def test_get_view_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ConfigServiceV2Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_view),
+            '__call__') as call:
+        client.get_view()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == logging_config.GetViewRequest()
+
 @pytest.mark.asyncio
 async def test_get_view_async(transport: str = 'grpc_asyncio', request_type=logging_config.GetViewRequest):
     client = ConfigServiceV2AsyncClient(
@@ -2136,6 +2287,24 @@ def test_create_view(transport: str = 'grpc', request_type=logging_config.Create
 def test_create_view_from_dict():
     test_create_view(request_type=dict)
 
+
+def test_create_view_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ConfigServiceV2Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_view),
+            '__call__') as call:
+        client.create_view()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == logging_config.CreateViewRequest()
 
 @pytest.mark.asyncio
 async def test_create_view_async(transport: str = 'grpc_asyncio', request_type=logging_config.CreateViewRequest):
@@ -2292,6 +2461,24 @@ def test_update_view_from_dict():
     test_update_view(request_type=dict)
 
 
+def test_update_view_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ConfigServiceV2Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_view),
+            '__call__') as call:
+        client.update_view()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == logging_config.UpdateViewRequest()
+
 @pytest.mark.asyncio
 async def test_update_view_async(transport: str = 'grpc_asyncio', request_type=logging_config.UpdateViewRequest):
     client = ConfigServiceV2AsyncClient(
@@ -2433,6 +2620,24 @@ def test_delete_view_from_dict():
     test_delete_view(request_type=dict)
 
 
+def test_delete_view_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ConfigServiceV2Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_view),
+            '__call__') as call:
+        client.delete_view()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == logging_config.DeleteViewRequest()
+
 @pytest.mark.asyncio
 async def test_delete_view_async(transport: str = 'grpc_asyncio', request_type=logging_config.DeleteViewRequest):
     client = ConfigServiceV2AsyncClient(
@@ -2569,6 +2774,24 @@ def test_list_sinks(transport: str = 'grpc', request_type=logging_config.ListSin
 def test_list_sinks_from_dict():
     test_list_sinks(request_type=dict)
 
+
+def test_list_sinks_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ConfigServiceV2Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_sinks),
+            '__call__') as call:
+        client.list_sinks()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == logging_config.ListSinksRequest()
 
 @pytest.mark.asyncio
 async def test_list_sinks_async(transport: str = 'grpc_asyncio', request_type=logging_config.ListSinksRequest):
@@ -3010,6 +3233,24 @@ def test_get_sink_from_dict():
     test_get_sink(request_type=dict)
 
 
+def test_get_sink_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ConfigServiceV2Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_sink),
+            '__call__') as call:
+        client.get_sink()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == logging_config.GetSinkRequest()
+
 @pytest.mark.asyncio
 async def test_get_sink_async(transport: str = 'grpc_asyncio', request_type=logging_config.GetSinkRequest):
     client = ConfigServiceV2AsyncClient(
@@ -3283,6 +3524,24 @@ def test_create_sink(transport: str = 'grpc', request_type=logging_config.Create
 def test_create_sink_from_dict():
     test_create_sink(request_type=dict)
 
+
+def test_create_sink_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ConfigServiceV2Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_sink),
+            '__call__') as call:
+        client.create_sink()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == logging_config.CreateSinkRequest()
 
 @pytest.mark.asyncio
 async def test_create_sink_async(transport: str = 'grpc_asyncio', request_type=logging_config.CreateSinkRequest):
@@ -3566,6 +3825,24 @@ def test_update_sink_from_dict():
     test_update_sink(request_type=dict)
 
 
+def test_update_sink_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ConfigServiceV2Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_sink),
+            '__call__') as call:
+        client.update_sink()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == logging_config.UpdateSinkRequest()
+
 @pytest.mark.asyncio
 async def test_update_sink_async(transport: str = 'grpc_asyncio', request_type=logging_config.UpdateSinkRequest):
     client = ConfigServiceV2AsyncClient(
@@ -3821,6 +4098,24 @@ def test_delete_sink_from_dict():
     test_delete_sink(request_type=dict)
 
 
+def test_delete_sink_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ConfigServiceV2Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_sink),
+            '__call__') as call:
+        client.delete_sink()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == logging_config.DeleteSinkRequest()
+
 @pytest.mark.asyncio
 async def test_delete_sink_async(transport: str = 'grpc_asyncio', request_type=logging_config.DeleteSinkRequest):
     client = ConfigServiceV2AsyncClient(
@@ -4040,6 +4335,24 @@ def test_list_exclusions(transport: str = 'grpc', request_type=logging_config.Li
 def test_list_exclusions_from_dict():
     test_list_exclusions(request_type=dict)
 
+
+def test_list_exclusions_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ConfigServiceV2Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_exclusions),
+            '__call__') as call:
+        client.list_exclusions()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == logging_config.ListExclusionsRequest()
 
 @pytest.mark.asyncio
 async def test_list_exclusions_async(transport: str = 'grpc_asyncio', request_type=logging_config.ListExclusionsRequest):
@@ -4464,6 +4777,24 @@ def test_get_exclusion_from_dict():
     test_get_exclusion(request_type=dict)
 
 
+def test_get_exclusion_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ConfigServiceV2Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_exclusion),
+            '__call__') as call:
+        client.get_exclusion()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == logging_config.GetExclusionRequest()
+
 @pytest.mark.asyncio
 async def test_get_exclusion_async(transport: str = 'grpc_asyncio', request_type=logging_config.GetExclusionRequest):
     client = ConfigServiceV2AsyncClient(
@@ -4708,6 +5039,24 @@ def test_create_exclusion(transport: str = 'grpc', request_type=logging_config.C
 def test_create_exclusion_from_dict():
     test_create_exclusion(request_type=dict)
 
+
+def test_create_exclusion_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ConfigServiceV2Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_exclusion),
+            '__call__') as call:
+        client.create_exclusion()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == logging_config.CreateExclusionRequest()
 
 @pytest.mark.asyncio
 async def test_create_exclusion_async(transport: str = 'grpc_asyncio', request_type=logging_config.CreateExclusionRequest):
@@ -4962,6 +5311,24 @@ def test_update_exclusion_from_dict():
     test_update_exclusion(request_type=dict)
 
 
+def test_update_exclusion_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ConfigServiceV2Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_exclusion),
+            '__call__') as call:
+        client.update_exclusion()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == logging_config.UpdateExclusionRequest()
+
 @pytest.mark.asyncio
 async def test_update_exclusion_async(transport: str = 'grpc_asyncio', request_type=logging_config.UpdateExclusionRequest):
     client = ConfigServiceV2AsyncClient(
@@ -5205,6 +5572,24 @@ def test_delete_exclusion_from_dict():
     test_delete_exclusion(request_type=dict)
 
 
+def test_delete_exclusion_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ConfigServiceV2Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_exclusion),
+            '__call__') as call:
+        client.delete_exclusion()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == logging_config.DeleteExclusionRequest()
+
 @pytest.mark.asyncio
 async def test_delete_exclusion_async(transport: str = 'grpc_asyncio', request_type=logging_config.DeleteExclusionRequest):
     client = ConfigServiceV2AsyncClient(
@@ -5433,6 +5818,24 @@ def test_get_cmek_settings_from_dict():
     test_get_cmek_settings(request_type=dict)
 
 
+def test_get_cmek_settings_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ConfigServiceV2Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_cmek_settings),
+            '__call__') as call:
+        client.get_cmek_settings()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == logging_config.GetCmekSettingsRequest()
+
 @pytest.mark.asyncio
 async def test_get_cmek_settings_async(transport: str = 'grpc_asyncio', request_type=logging_config.GetCmekSettingsRequest):
     client = ConfigServiceV2AsyncClient(
@@ -5587,6 +5990,24 @@ def test_update_cmek_settings(transport: str = 'grpc', request_type=logging_conf
 def test_update_cmek_settings_from_dict():
     test_update_cmek_settings(request_type=dict)
 
+
+def test_update_cmek_settings_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ConfigServiceV2Client(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_cmek_settings),
+            '__call__') as call:
+        client.update_cmek_settings()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == logging_config.UpdateCmekSettingsRequest()
 
 @pytest.mark.asyncio
 async def test_update_cmek_settings_async(transport: str = 'grpc_asyncio', request_type=logging_config.UpdateCmekSettingsRequest):

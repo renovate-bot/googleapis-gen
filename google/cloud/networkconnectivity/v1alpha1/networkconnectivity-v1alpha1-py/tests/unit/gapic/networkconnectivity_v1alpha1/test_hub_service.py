@@ -74,13 +74,18 @@ def test__get_default_mtls_endpoint():
     assert HubServiceClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_hub_service_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    HubServiceClient,
+    HubServiceAsyncClient,
+])
+def test_hub_service_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = HubServiceClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'networkconnectivity.googleapis.com:443'
 
@@ -95,9 +100,11 @@ def test_hub_service_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'networkconnectivity.googleapis.com:443'
 
@@ -392,6 +399,24 @@ def test_list_hubs(transport: str = 'grpc', request_type=hub.ListHubsRequest):
 def test_list_hubs_from_dict():
     test_list_hubs(request_type=dict)
 
+
+def test_list_hubs_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = HubServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_hubs),
+            '__call__') as call:
+        client.list_hubs()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == hub.ListHubsRequest()
 
 @pytest.mark.asyncio
 async def test_list_hubs_async(transport: str = 'grpc_asyncio', request_type=hub.ListHubsRequest):
@@ -823,6 +848,24 @@ def test_get_hub_from_dict():
     test_get_hub(request_type=dict)
 
 
+def test_get_hub_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = HubServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_hub),
+            '__call__') as call:
+        client.get_hub()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == hub.GetHubRequest()
+
 @pytest.mark.asyncio
 async def test_get_hub_async(transport: str = 'grpc_asyncio', request_type=hub.GetHubRequest):
     client = HubServiceAsyncClient(
@@ -1052,6 +1095,24 @@ def test_create_hub(transport: str = 'grpc', request_type=gcn_hub.CreateHubReque
 def test_create_hub_from_dict():
     test_create_hub(request_type=dict)
 
+
+def test_create_hub_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = HubServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_hub),
+            '__call__') as call:
+        client.create_hub()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gcn_hub.CreateHubRequest()
 
 @pytest.mark.asyncio
 async def test_create_hub_async(transport: str = 'grpc_asyncio', request_type=gcn_hub.CreateHubRequest):
@@ -1287,6 +1348,24 @@ def test_update_hub_from_dict():
     test_update_hub(request_type=dict)
 
 
+def test_update_hub_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = HubServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_hub),
+            '__call__') as call:
+        client.update_hub()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gcn_hub.UpdateHubRequest()
+
 @pytest.mark.asyncio
 async def test_update_hub_async(transport: str = 'grpc_asyncio', request_type=gcn_hub.UpdateHubRequest):
     client = HubServiceAsyncClient(
@@ -1512,6 +1591,24 @@ def test_delete_hub(transport: str = 'grpc', request_type=hub.DeleteHubRequest):
 def test_delete_hub_from_dict():
     test_delete_hub(request_type=dict)
 
+
+def test_delete_hub_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = HubServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_hub),
+            '__call__') as call:
+        client.delete_hub()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == hub.DeleteHubRequest()
 
 @pytest.mark.asyncio
 async def test_delete_hub_async(transport: str = 'grpc_asyncio', request_type=hub.DeleteHubRequest):
@@ -1740,6 +1837,24 @@ def test_list_spokes(transport: str = 'grpc', request_type=hub.ListSpokesRequest
 def test_list_spokes_from_dict():
     test_list_spokes(request_type=dict)
 
+
+def test_list_spokes_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = HubServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_spokes),
+            '__call__') as call:
+        client.list_spokes()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == hub.ListSpokesRequest()
 
 @pytest.mark.asyncio
 async def test_list_spokes_async(transport: str = 'grpc_asyncio', request_type=hub.ListSpokesRequest):
@@ -2179,6 +2294,24 @@ def test_get_spoke_from_dict():
     test_get_spoke(request_type=dict)
 
 
+def test_get_spoke_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = HubServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_spoke),
+            '__call__') as call:
+        client.get_spoke()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == hub.GetSpokeRequest()
+
 @pytest.mark.asyncio
 async def test_get_spoke_async(transport: str = 'grpc_asyncio', request_type=hub.GetSpokeRequest):
     client = HubServiceAsyncClient(
@@ -2415,6 +2548,24 @@ def test_create_spoke_from_dict():
     test_create_spoke(request_type=dict)
 
 
+def test_create_spoke_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = HubServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_spoke),
+            '__call__') as call:
+        client.create_spoke()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == hub.CreateSpokeRequest()
+
 @pytest.mark.asyncio
 async def test_create_spoke_async(transport: str = 'grpc_asyncio', request_type=hub.CreateSpokeRequest):
     client = HubServiceAsyncClient(
@@ -2649,6 +2800,24 @@ def test_update_spoke_from_dict():
     test_update_spoke(request_type=dict)
 
 
+def test_update_spoke_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = HubServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_spoke),
+            '__call__') as call:
+        client.update_spoke()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == hub.UpdateSpokeRequest()
+
 @pytest.mark.asyncio
 async def test_update_spoke_async(transport: str = 'grpc_asyncio', request_type=hub.UpdateSpokeRequest):
     client = HubServiceAsyncClient(
@@ -2874,6 +3043,24 @@ def test_delete_spoke(transport: str = 'grpc', request_type=hub.DeleteSpokeReque
 def test_delete_spoke_from_dict():
     test_delete_spoke(request_type=dict)
 
+
+def test_delete_spoke_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = HubServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_spoke),
+            '__call__') as call:
+        client.delete_spoke()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == hub.DeleteSpokeRequest()
 
 @pytest.mark.asyncio
 async def test_delete_spoke_async(transport: str = 'grpc_asyncio', request_type=hub.DeleteSpokeRequest):

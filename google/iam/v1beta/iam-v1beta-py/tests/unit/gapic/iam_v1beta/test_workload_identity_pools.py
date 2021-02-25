@@ -72,13 +72,18 @@ def test__get_default_mtls_endpoint():
     assert WorkloadIdentityPoolsClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_workload_identity_pools_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    WorkloadIdentityPoolsClient,
+    WorkloadIdentityPoolsAsyncClient,
+])
+def test_workload_identity_pools_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = WorkloadIdentityPoolsClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'iam.googleapis.com:443'
 
@@ -93,9 +98,11 @@ def test_workload_identity_pools_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'iam.googleapis.com:443'
 
@@ -386,6 +393,24 @@ def test_list_workload_identity_pools(transport: str = 'grpc', request_type=work
 def test_list_workload_identity_pools_from_dict():
     test_list_workload_identity_pools(request_type=dict)
 
+
+def test_list_workload_identity_pools_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = WorkloadIdentityPoolsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_workload_identity_pools),
+            '__call__') as call:
+        client.list_workload_identity_pools()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == workload_identity_pool.ListWorkloadIdentityPoolsRequest()
 
 @pytest.mark.asyncio
 async def test_list_workload_identity_pools_async(transport: str = 'grpc_asyncio', request_type=workload_identity_pool.ListWorkloadIdentityPoolsRequest):
@@ -814,6 +839,24 @@ def test_get_workload_identity_pool_from_dict():
     test_get_workload_identity_pool(request_type=dict)
 
 
+def test_get_workload_identity_pool_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = WorkloadIdentityPoolsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_workload_identity_pool),
+            '__call__') as call:
+        client.get_workload_identity_pool()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == workload_identity_pool.GetWorkloadIdentityPoolRequest()
+
 @pytest.mark.asyncio
 async def test_get_workload_identity_pool_async(transport: str = 'grpc_asyncio', request_type=workload_identity_pool.GetWorkloadIdentityPoolRequest):
     client = WorkloadIdentityPoolsAsyncClient(
@@ -1043,6 +1086,24 @@ def test_create_workload_identity_pool(transport: str = 'grpc', request_type=gi_
 def test_create_workload_identity_pool_from_dict():
     test_create_workload_identity_pool(request_type=dict)
 
+
+def test_create_workload_identity_pool_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = WorkloadIdentityPoolsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_workload_identity_pool),
+            '__call__') as call:
+        client.create_workload_identity_pool()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gi_workload_identity_pool.CreateWorkloadIdentityPoolRequest()
 
 @pytest.mark.asyncio
 async def test_create_workload_identity_pool_async(transport: str = 'grpc_asyncio', request_type=gi_workload_identity_pool.CreateWorkloadIdentityPoolRequest):
@@ -1278,6 +1339,24 @@ def test_update_workload_identity_pool_from_dict():
     test_update_workload_identity_pool(request_type=dict)
 
 
+def test_update_workload_identity_pool_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = WorkloadIdentityPoolsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_workload_identity_pool),
+            '__call__') as call:
+        client.update_workload_identity_pool()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gi_workload_identity_pool.UpdateWorkloadIdentityPoolRequest()
+
 @pytest.mark.asyncio
 async def test_update_workload_identity_pool_async(transport: str = 'grpc_asyncio', request_type=gi_workload_identity_pool.UpdateWorkloadIdentityPoolRequest):
     client = WorkloadIdentityPoolsAsyncClient(
@@ -1504,6 +1583,24 @@ def test_delete_workload_identity_pool_from_dict():
     test_delete_workload_identity_pool(request_type=dict)
 
 
+def test_delete_workload_identity_pool_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = WorkloadIdentityPoolsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_workload_identity_pool),
+            '__call__') as call:
+        client.delete_workload_identity_pool()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == workload_identity_pool.DeleteWorkloadIdentityPoolRequest()
+
 @pytest.mark.asyncio
 async def test_delete_workload_identity_pool_async(transport: str = 'grpc_asyncio', request_type=workload_identity_pool.DeleteWorkloadIdentityPoolRequest):
     client = WorkloadIdentityPoolsAsyncClient(
@@ -1721,6 +1818,24 @@ def test_undelete_workload_identity_pool(transport: str = 'grpc', request_type=w
 def test_undelete_workload_identity_pool_from_dict():
     test_undelete_workload_identity_pool(request_type=dict)
 
+
+def test_undelete_workload_identity_pool_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = WorkloadIdentityPoolsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.undelete_workload_identity_pool),
+            '__call__') as call:
+        client.undelete_workload_identity_pool()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == workload_identity_pool.UndeleteWorkloadIdentityPoolRequest()
 
 @pytest.mark.asyncio
 async def test_undelete_workload_identity_pool_async(transport: str = 'grpc_asyncio', request_type=workload_identity_pool.UndeleteWorkloadIdentityPoolRequest):
@@ -1945,6 +2060,24 @@ def test_list_workload_identity_pool_providers(transport: str = 'grpc', request_
 def test_list_workload_identity_pool_providers_from_dict():
     test_list_workload_identity_pool_providers(request_type=dict)
 
+
+def test_list_workload_identity_pool_providers_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = WorkloadIdentityPoolsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_workload_identity_pool_providers),
+            '__call__') as call:
+        client.list_workload_identity_pool_providers()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == workload_identity_pool.ListWorkloadIdentityPoolProvidersRequest()
 
 @pytest.mark.asyncio
 async def test_list_workload_identity_pool_providers_async(transport: str = 'grpc_asyncio', request_type=workload_identity_pool.ListWorkloadIdentityPoolProvidersRequest):
@@ -2378,6 +2511,24 @@ def test_get_workload_identity_pool_provider_from_dict():
     test_get_workload_identity_pool_provider(request_type=dict)
 
 
+def test_get_workload_identity_pool_provider_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = WorkloadIdentityPoolsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_workload_identity_pool_provider),
+            '__call__') as call:
+        client.get_workload_identity_pool_provider()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == workload_identity_pool.GetWorkloadIdentityPoolProviderRequest()
+
 @pytest.mark.asyncio
 async def test_get_workload_identity_pool_provider_async(transport: str = 'grpc_asyncio', request_type=workload_identity_pool.GetWorkloadIdentityPoolProviderRequest):
     client = WorkloadIdentityPoolsAsyncClient(
@@ -2610,6 +2761,24 @@ def test_create_workload_identity_pool_provider(transport: str = 'grpc', request
 def test_create_workload_identity_pool_provider_from_dict():
     test_create_workload_identity_pool_provider(request_type=dict)
 
+
+def test_create_workload_identity_pool_provider_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = WorkloadIdentityPoolsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_workload_identity_pool_provider),
+            '__call__') as call:
+        client.create_workload_identity_pool_provider()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == workload_identity_pool.CreateWorkloadIdentityPoolProviderRequest()
 
 @pytest.mark.asyncio
 async def test_create_workload_identity_pool_provider_async(transport: str = 'grpc_asyncio', request_type=workload_identity_pool.CreateWorkloadIdentityPoolProviderRequest):
@@ -2845,6 +3014,24 @@ def test_update_workload_identity_pool_provider_from_dict():
     test_update_workload_identity_pool_provider(request_type=dict)
 
 
+def test_update_workload_identity_pool_provider_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = WorkloadIdentityPoolsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_workload_identity_pool_provider),
+            '__call__') as call:
+        client.update_workload_identity_pool_provider()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == workload_identity_pool.UpdateWorkloadIdentityPoolProviderRequest()
+
 @pytest.mark.asyncio
 async def test_update_workload_identity_pool_provider_async(transport: str = 'grpc_asyncio', request_type=workload_identity_pool.UpdateWorkloadIdentityPoolProviderRequest):
     client = WorkloadIdentityPoolsAsyncClient(
@@ -3071,6 +3258,24 @@ def test_delete_workload_identity_pool_provider_from_dict():
     test_delete_workload_identity_pool_provider(request_type=dict)
 
 
+def test_delete_workload_identity_pool_provider_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = WorkloadIdentityPoolsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_workload_identity_pool_provider),
+            '__call__') as call:
+        client.delete_workload_identity_pool_provider()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == workload_identity_pool.DeleteWorkloadIdentityPoolProviderRequest()
+
 @pytest.mark.asyncio
 async def test_delete_workload_identity_pool_provider_async(transport: str = 'grpc_asyncio', request_type=workload_identity_pool.DeleteWorkloadIdentityPoolProviderRequest):
     client = WorkloadIdentityPoolsAsyncClient(
@@ -3288,6 +3493,24 @@ def test_undelete_workload_identity_pool_provider(transport: str = 'grpc', reque
 def test_undelete_workload_identity_pool_provider_from_dict():
     test_undelete_workload_identity_pool_provider(request_type=dict)
 
+
+def test_undelete_workload_identity_pool_provider_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = WorkloadIdentityPoolsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.undelete_workload_identity_pool_provider),
+            '__call__') as call:
+        client.undelete_workload_identity_pool_provider()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == workload_identity_pool.UndeleteWorkloadIdentityPoolProviderRequest()
 
 @pytest.mark.asyncio
 async def test_undelete_workload_identity_pool_provider_async(transport: str = 'grpc_asyncio', request_type=workload_identity_pool.UndeleteWorkloadIdentityPoolProviderRequest):

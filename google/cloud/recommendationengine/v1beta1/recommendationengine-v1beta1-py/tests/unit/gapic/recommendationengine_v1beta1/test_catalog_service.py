@@ -76,13 +76,18 @@ def test__get_default_mtls_endpoint():
     assert CatalogServiceClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_catalog_service_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    CatalogServiceClient,
+    CatalogServiceAsyncClient,
+])
+def test_catalog_service_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = CatalogServiceClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'recommendationengine.googleapis.com:443'
 
@@ -97,9 +102,11 @@ def test_catalog_service_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'recommendationengine.googleapis.com:443'
 
@@ -412,6 +419,24 @@ def test_create_catalog_item_from_dict():
     test_create_catalog_item(request_type=dict)
 
 
+def test_create_catalog_item_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CatalogServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_catalog_item),
+            '__call__') as call:
+        client.create_catalog_item()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == catalog_service.CreateCatalogItemRequest()
+
 @pytest.mark.asyncio
 async def test_create_catalog_item_async(transport: str = 'grpc_asyncio', request_type=catalog_service.CreateCatalogItemRequest):
     client = CatalogServiceAsyncClient(
@@ -680,6 +705,24 @@ def test_get_catalog_item_from_dict():
     test_get_catalog_item(request_type=dict)
 
 
+def test_get_catalog_item_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CatalogServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_catalog_item),
+            '__call__') as call:
+        client.get_catalog_item()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == catalog_service.GetCatalogItemRequest()
+
 @pytest.mark.asyncio
 async def test_get_catalog_item_async(transport: str = 'grpc_asyncio', request_type=catalog_service.GetCatalogItemRequest):
     client = CatalogServiceAsyncClient(
@@ -918,6 +961,24 @@ def test_list_catalog_items(transport: str = 'grpc', request_type=catalog_servic
 def test_list_catalog_items_from_dict():
     test_list_catalog_items(request_type=dict)
 
+
+def test_list_catalog_items_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CatalogServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_catalog_items),
+            '__call__') as call:
+        client.list_catalog_items()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == catalog_service.ListCatalogItemsRequest()
 
 @pytest.mark.asyncio
 async def test_list_catalog_items_async(transport: str = 'grpc_asyncio', request_type=catalog_service.ListCatalogItemsRequest):
@@ -1359,6 +1420,24 @@ def test_update_catalog_item_from_dict():
     test_update_catalog_item(request_type=dict)
 
 
+def test_update_catalog_item_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CatalogServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_catalog_item),
+            '__call__') as call:
+        client.update_catalog_item()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == catalog_service.UpdateCatalogItemRequest()
+
 @pytest.mark.asyncio
 async def test_update_catalog_item_async(transport: str = 'grpc_asyncio', request_type=catalog_service.UpdateCatalogItemRequest):
     client = CatalogServiceAsyncClient(
@@ -1608,6 +1687,24 @@ def test_delete_catalog_item_from_dict():
     test_delete_catalog_item(request_type=dict)
 
 
+def test_delete_catalog_item_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CatalogServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_catalog_item),
+            '__call__') as call:
+        client.delete_catalog_item()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == catalog_service.DeleteCatalogItemRequest()
+
 @pytest.mark.asyncio
 async def test_delete_catalog_item_async(transport: str = 'grpc_asyncio', request_type=catalog_service.DeleteCatalogItemRequest):
     client = CatalogServiceAsyncClient(
@@ -1821,6 +1918,24 @@ def test_import_catalog_items(transport: str = 'grpc', request_type=import_.Impo
 def test_import_catalog_items_from_dict():
     test_import_catalog_items(request_type=dict)
 
+
+def test_import_catalog_items_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CatalogServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.import_catalog_items),
+            '__call__') as call:
+        client.import_catalog_items()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == import_.ImportCatalogItemsRequest()
 
 @pytest.mark.asyncio
 async def test_import_catalog_items_async(transport: str = 'grpc_asyncio', request_type=import_.ImportCatalogItemsRequest):

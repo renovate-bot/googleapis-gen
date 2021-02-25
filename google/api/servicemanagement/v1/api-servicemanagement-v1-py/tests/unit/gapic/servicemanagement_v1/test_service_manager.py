@@ -98,13 +98,18 @@ def test__get_default_mtls_endpoint():
     assert ServiceManagerClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_service_manager_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    ServiceManagerClient,
+    ServiceManagerAsyncClient,
+])
+def test_service_manager_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = ServiceManagerClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'servicemanagement.googleapis.com:443'
 
@@ -119,9 +124,11 @@ def test_service_manager_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'servicemanagement.googleapis.com:443'
 
@@ -412,6 +419,24 @@ def test_list_services(transport: str = 'grpc', request_type=servicemanager.List
 def test_list_services_from_dict():
     test_list_services(request_type=dict)
 
+
+def test_list_services_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ServiceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_services),
+            '__call__') as call:
+        client.list_services()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == servicemanager.ListServicesRequest()
 
 @pytest.mark.asyncio
 async def test_list_services_async(transport: str = 'grpc_asyncio', request_type=servicemanager.ListServicesRequest):
@@ -768,6 +793,24 @@ def test_get_service_from_dict():
     test_get_service(request_type=dict)
 
 
+def test_get_service_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ServiceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_service),
+            '__call__') as call:
+        client.get_service()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == servicemanager.GetServiceRequest()
+
 @pytest.mark.asyncio
 async def test_get_service_async(transport: str = 'grpc_asyncio', request_type=servicemanager.GetServiceRequest):
     client = ServiceManagerAsyncClient(
@@ -926,6 +969,24 @@ def test_create_service_from_dict():
     test_create_service(request_type=dict)
 
 
+def test_create_service_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ServiceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_service),
+            '__call__') as call:
+        client.create_service()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == servicemanager.CreateServiceRequest()
+
 @pytest.mark.asyncio
 async def test_create_service_async(transport: str = 'grpc_asyncio', request_type=servicemanager.CreateServiceRequest):
     client = ServiceManagerAsyncClient(
@@ -1081,6 +1142,24 @@ def test_delete_service_from_dict():
     test_delete_service(request_type=dict)
 
 
+def test_delete_service_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ServiceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_service),
+            '__call__') as call:
+        client.delete_service()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == servicemanager.DeleteServiceRequest()
+
 @pytest.mark.asyncio
 async def test_delete_service_async(transport: str = 'grpc_asyncio', request_type=servicemanager.DeleteServiceRequest):
     client = ServiceManagerAsyncClient(
@@ -1235,6 +1314,24 @@ def test_undelete_service(transport: str = 'grpc', request_type=servicemanager.U
 def test_undelete_service_from_dict():
     test_undelete_service(request_type=dict)
 
+
+def test_undelete_service_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ServiceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.undelete_service),
+            '__call__') as call:
+        client.undelete_service()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == servicemanager.UndeleteServiceRequest()
 
 @pytest.mark.asyncio
 async def test_undelete_service_async(transport: str = 'grpc_asyncio', request_type=servicemanager.UndeleteServiceRequest):
@@ -1396,6 +1493,24 @@ def test_list_service_configs(transport: str = 'grpc', request_type=servicemanag
 def test_list_service_configs_from_dict():
     test_list_service_configs(request_type=dict)
 
+
+def test_list_service_configs_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ServiceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_service_configs),
+            '__call__') as call:
+        client.list_service_configs()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == servicemanager.ListServiceConfigsRequest()
 
 @pytest.mark.asyncio
 async def test_list_service_configs_async(transport: str = 'grpc_asyncio', request_type=servicemanager.ListServiceConfigsRequest):
@@ -1752,6 +1867,24 @@ def test_get_service_config_from_dict():
     test_get_service_config(request_type=dict)
 
 
+def test_get_service_config_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ServiceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_service_config),
+            '__call__') as call:
+        client.get_service_config()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == servicemanager.GetServiceConfigRequest()
+
 @pytest.mark.asyncio
 async def test_get_service_config_async(transport: str = 'grpc_asyncio', request_type=servicemanager.GetServiceConfigRequest):
     client = ServiceManagerAsyncClient(
@@ -1950,6 +2083,24 @@ def test_create_service_config_from_dict():
     test_create_service_config(request_type=dict)
 
 
+def test_create_service_config_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ServiceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_service_config),
+            '__call__') as call:
+        client.create_service_config()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == servicemanager.CreateServiceConfigRequest()
+
 @pytest.mark.asyncio
 async def test_create_service_config_async(transport: str = 'grpc_asyncio', request_type=servicemanager.CreateServiceConfigRequest):
     client = ServiceManagerAsyncClient(
@@ -2121,6 +2272,24 @@ def test_submit_config_source(transport: str = 'grpc', request_type=servicemanag
 def test_submit_config_source_from_dict():
     test_submit_config_source(request_type=dict)
 
+
+def test_submit_config_source_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ServiceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.submit_config_source),
+            '__call__') as call:
+        client.submit_config_source()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == servicemanager.SubmitConfigSourceRequest()
 
 @pytest.mark.asyncio
 async def test_submit_config_source_async(transport: str = 'grpc_asyncio', request_type=servicemanager.SubmitConfigSourceRequest):
@@ -2298,6 +2467,24 @@ def test_list_service_rollouts(transport: str = 'grpc', request_type=servicemana
 def test_list_service_rollouts_from_dict():
     test_list_service_rollouts(request_type=dict)
 
+
+def test_list_service_rollouts_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ServiceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_service_rollouts),
+            '__call__') as call:
+        client.list_service_rollouts()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == servicemanager.ListServiceRolloutsRequest()
 
 @pytest.mark.asyncio
 async def test_list_service_rollouts_async(transport: str = 'grpc_asyncio', request_type=servicemanager.ListServiceRolloutsRequest):
@@ -2663,6 +2850,24 @@ def test_get_service_rollout_from_dict():
     test_get_service_rollout(request_type=dict)
 
 
+def test_get_service_rollout_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ServiceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_service_rollout),
+            '__call__') as call:
+        client.get_service_rollout()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == servicemanager.GetServiceRolloutRequest()
+
 @pytest.mark.asyncio
 async def test_get_service_rollout_async(transport: str = 'grpc_asyncio', request_type=servicemanager.GetServiceRolloutRequest):
     client = ServiceManagerAsyncClient(
@@ -2834,6 +3039,24 @@ def test_create_service_rollout(transport: str = 'grpc', request_type=serviceman
 def test_create_service_rollout_from_dict():
     test_create_service_rollout(request_type=dict)
 
+
+def test_create_service_rollout_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ServiceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_service_rollout),
+            '__call__') as call:
+        client.create_service_rollout()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == servicemanager.CreateServiceRolloutRequest()
 
 @pytest.mark.asyncio
 async def test_create_service_rollout_async(transport: str = 'grpc_asyncio', request_type=servicemanager.CreateServiceRolloutRequest):
@@ -3008,6 +3231,24 @@ def test_generate_config_report_from_dict():
     test_generate_config_report(request_type=dict)
 
 
+def test_generate_config_report_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ServiceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.generate_config_report),
+            '__call__') as call:
+        client.generate_config_report()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == servicemanager.GenerateConfigReportRequest()
+
 @pytest.mark.asyncio
 async def test_generate_config_report_async(transport: str = 'grpc_asyncio', request_type=servicemanager.GenerateConfigReportRequest):
     client = ServiceManagerAsyncClient(
@@ -3174,6 +3415,24 @@ def test_enable_service_from_dict():
     test_enable_service(request_type=dict)
 
 
+def test_enable_service_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ServiceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.enable_service),
+            '__call__') as call:
+        client.enable_service()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == servicemanager.EnableServiceRequest()
+
 @pytest.mark.asyncio
 async def test_enable_service_async(transport: str = 'grpc_asyncio', request_type=servicemanager.EnableServiceRequest):
     client = ServiceManagerAsyncClient(
@@ -3336,6 +3595,24 @@ def test_disable_service(transport: str = 'grpc', request_type=servicemanager.Di
 def test_disable_service_from_dict():
     test_disable_service(request_type=dict)
 
+
+def test_disable_service_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ServiceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.disable_service),
+            '__call__') as call:
+        client.disable_service()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == servicemanager.DisableServiceRequest()
 
 @pytest.mark.asyncio
 async def test_disable_service_async(transport: str = 'grpc_asyncio', request_type=servicemanager.DisableServiceRequest):

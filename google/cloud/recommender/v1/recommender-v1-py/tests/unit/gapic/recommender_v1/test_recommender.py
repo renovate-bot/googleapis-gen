@@ -71,13 +71,18 @@ def test__get_default_mtls_endpoint():
     assert RecommenderClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_recommender_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    RecommenderClient,
+    RecommenderAsyncClient,
+])
+def test_recommender_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = RecommenderClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'recommender.googleapis.com:443'
 
@@ -92,9 +97,11 @@ def test_recommender_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'recommender.googleapis.com:443'
 
@@ -385,6 +392,24 @@ def test_list_insights(transport: str = 'grpc', request_type=recommender_service
 def test_list_insights_from_dict():
     test_list_insights(request_type=dict)
 
+
+def test_list_insights_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = RecommenderClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_insights),
+            '__call__') as call:
+        client.list_insights()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == recommender_service.ListInsightsRequest()
 
 @pytest.mark.asyncio
 async def test_list_insights_async(transport: str = 'grpc_asyncio', request_type=recommender_service.ListInsightsRequest):
@@ -817,6 +842,24 @@ def test_get_insight_from_dict():
     test_get_insight(request_type=dict)
 
 
+def test_get_insight_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = RecommenderClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_insight),
+            '__call__') as call:
+        client.get_insight()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == recommender_service.GetInsightRequest()
+
 @pytest.mark.asyncio
 async def test_get_insight_async(transport: str = 'grpc_asyncio', request_type=recommender_service.GetInsightRequest):
     client = RecommenderAsyncClient(
@@ -1076,6 +1119,24 @@ def test_mark_insight_accepted_from_dict():
     test_mark_insight_accepted(request_type=dict)
 
 
+def test_mark_insight_accepted_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = RecommenderClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.mark_insight_accepted),
+            '__call__') as call:
+        client.mark_insight_accepted()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == recommender_service.MarkInsightAcceptedRequest()
+
 @pytest.mark.asyncio
 async def test_mark_insight_accepted_async(transport: str = 'grpc_asyncio', request_type=recommender_service.MarkInsightAcceptedRequest):
     client = RecommenderAsyncClient(
@@ -1330,6 +1391,24 @@ def test_list_recommendations(transport: str = 'grpc', request_type=recommender_
 def test_list_recommendations_from_dict():
     test_list_recommendations(request_type=dict)
 
+
+def test_list_recommendations_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = RecommenderClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_recommendations),
+            '__call__') as call:
+        client.list_recommendations()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == recommender_service.ListRecommendationsRequest()
 
 @pytest.mark.asyncio
 async def test_list_recommendations_async(transport: str = 'grpc_asyncio', request_type=recommender_service.ListRecommendationsRequest):
@@ -1762,6 +1841,24 @@ def test_get_recommendation_from_dict():
     test_get_recommendation(request_type=dict)
 
 
+def test_get_recommendation_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = RecommenderClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_recommendation),
+            '__call__') as call:
+        client.get_recommendation()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == recommender_service.GetRecommendationRequest()
+
 @pytest.mark.asyncio
 async def test_get_recommendation_async(transport: str = 'grpc_asyncio', request_type=recommender_service.GetRecommendationRequest):
     client = RecommenderAsyncClient(
@@ -2006,6 +2103,24 @@ def test_mark_recommendation_claimed(transport: str = 'grpc', request_type=recom
 def test_mark_recommendation_claimed_from_dict():
     test_mark_recommendation_claimed(request_type=dict)
 
+
+def test_mark_recommendation_claimed_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = RecommenderClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.mark_recommendation_claimed),
+            '__call__') as call:
+        client.mark_recommendation_claimed()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == recommender_service.MarkRecommendationClaimedRequest()
 
 @pytest.mark.asyncio
 async def test_mark_recommendation_claimed_async(transport: str = 'grpc_asyncio', request_type=recommender_service.MarkRecommendationClaimedRequest):
@@ -2268,6 +2383,24 @@ def test_mark_recommendation_succeeded_from_dict():
     test_mark_recommendation_succeeded(request_type=dict)
 
 
+def test_mark_recommendation_succeeded_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = RecommenderClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.mark_recommendation_succeeded),
+            '__call__') as call:
+        client.mark_recommendation_succeeded()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == recommender_service.MarkRecommendationSucceededRequest()
+
 @pytest.mark.asyncio
 async def test_mark_recommendation_succeeded_async(transport: str = 'grpc_asyncio', request_type=recommender_service.MarkRecommendationSucceededRequest):
     client = RecommenderAsyncClient(
@@ -2528,6 +2661,24 @@ def test_mark_recommendation_failed(transport: str = 'grpc', request_type=recomm
 def test_mark_recommendation_failed_from_dict():
     test_mark_recommendation_failed(request_type=dict)
 
+
+def test_mark_recommendation_failed_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = RecommenderClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.mark_recommendation_failed),
+            '__call__') as call:
+        client.mark_recommendation_failed()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == recommender_service.MarkRecommendationFailedRequest()
 
 @pytest.mark.asyncio
 async def test_mark_recommendation_failed_async(transport: str = 'grpc_asyncio', request_type=recommender_service.MarkRecommendationFailedRequest):

@@ -66,13 +66,18 @@ def test__get_default_mtls_endpoint():
     assert AlphaAnalyticsDataClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_alpha_analytics_data_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    AlphaAnalyticsDataClient,
+    AlphaAnalyticsDataAsyncClient,
+])
+def test_alpha_analytics_data_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = AlphaAnalyticsDataClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'analyticsdata.googleapis.com:443'
 
@@ -87,9 +92,11 @@ def test_alpha_analytics_data_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'analyticsdata.googleapis.com:443'
 
@@ -381,6 +388,24 @@ def test_run_report_from_dict():
     test_run_report(request_type=dict)
 
 
+def test_run_report_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AlphaAnalyticsDataClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.run_report),
+            '__call__') as call:
+        client.run_report()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == analytics_data_api.RunReportRequest()
+
 @pytest.mark.asyncio
 async def test_run_report_async(transport: str = 'grpc_asyncio', request_type=analytics_data_api.RunReportRequest):
     client = AlphaAnalyticsDataAsyncClient(
@@ -455,6 +480,24 @@ def test_run_pivot_report_from_dict():
     test_run_pivot_report(request_type=dict)
 
 
+def test_run_pivot_report_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AlphaAnalyticsDataClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.run_pivot_report),
+            '__call__') as call:
+        client.run_pivot_report()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == analytics_data_api.RunPivotReportRequest()
+
 @pytest.mark.asyncio
 async def test_run_pivot_report_async(transport: str = 'grpc_asyncio', request_type=analytics_data_api.RunPivotReportRequest):
     client = AlphaAnalyticsDataAsyncClient(
@@ -526,6 +569,24 @@ def test_batch_run_reports_from_dict():
     test_batch_run_reports(request_type=dict)
 
 
+def test_batch_run_reports_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AlphaAnalyticsDataClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.batch_run_reports),
+            '__call__') as call:
+        client.batch_run_reports()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == analytics_data_api.BatchRunReportsRequest()
+
 @pytest.mark.asyncio
 async def test_batch_run_reports_async(transport: str = 'grpc_asyncio', request_type=analytics_data_api.BatchRunReportsRequest):
     client = AlphaAnalyticsDataAsyncClient(
@@ -596,6 +657,24 @@ def test_batch_run_pivot_reports(transport: str = 'grpc', request_type=analytics
 def test_batch_run_pivot_reports_from_dict():
     test_batch_run_pivot_reports(request_type=dict)
 
+
+def test_batch_run_pivot_reports_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AlphaAnalyticsDataClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.batch_run_pivot_reports),
+            '__call__') as call:
+        client.batch_run_pivot_reports()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == analytics_data_api.BatchRunPivotReportsRequest()
 
 @pytest.mark.asyncio
 async def test_batch_run_pivot_reports_async(transport: str = 'grpc_asyncio', request_type=analytics_data_api.BatchRunPivotReportsRequest):
@@ -671,6 +750,24 @@ def test_get_metadata(transport: str = 'grpc', request_type=analytics_data_api.G
 def test_get_metadata_from_dict():
     test_get_metadata(request_type=dict)
 
+
+def test_get_metadata_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AlphaAnalyticsDataClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_metadata),
+            '__call__') as call:
+        client.get_metadata()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == analytics_data_api.GetMetadataRequest()
 
 @pytest.mark.asyncio
 async def test_get_metadata_async(transport: str = 'grpc_asyncio', request_type=analytics_data_api.GetMetadataRequest):
@@ -895,6 +992,24 @@ def test_run_realtime_report(transport: str = 'grpc', request_type=analytics_dat
 def test_run_realtime_report_from_dict():
     test_run_realtime_report(request_type=dict)
 
+
+def test_run_realtime_report_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = AlphaAnalyticsDataClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.run_realtime_report),
+            '__call__') as call:
+        client.run_realtime_report()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == analytics_data_api.RunRealtimeReportRequest()
 
 @pytest.mark.asyncio
 async def test_run_realtime_report_async(transport: str = 'grpc_asyncio', request_type=analytics_data_api.RunRealtimeReportRequest):

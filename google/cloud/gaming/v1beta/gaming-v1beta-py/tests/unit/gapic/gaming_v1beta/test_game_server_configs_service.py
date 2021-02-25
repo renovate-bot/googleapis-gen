@@ -73,13 +73,18 @@ def test__get_default_mtls_endpoint():
     assert GameServerConfigsServiceClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_game_server_configs_service_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    GameServerConfigsServiceClient,
+    GameServerConfigsServiceAsyncClient,
+])
+def test_game_server_configs_service_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = GameServerConfigsServiceClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'gameservices.googleapis.com:443'
 
@@ -94,9 +99,11 @@ def test_game_server_configs_service_client_from_service_account_file(client_cla
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'gameservices.googleapis.com:443'
 
@@ -391,6 +398,24 @@ def test_list_game_server_configs(transport: str = 'grpc', request_type=game_ser
 def test_list_game_server_configs_from_dict():
     test_list_game_server_configs(request_type=dict)
 
+
+def test_list_game_server_configs_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GameServerConfigsServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_game_server_configs),
+            '__call__') as call:
+        client.list_game_server_configs()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == game_server_configs.ListGameServerConfigsRequest()
 
 @pytest.mark.asyncio
 async def test_list_game_server_configs_async(transport: str = 'grpc_asyncio', request_type=game_server_configs.ListGameServerConfigsRequest):
@@ -810,6 +835,24 @@ def test_get_game_server_config_from_dict():
     test_get_game_server_config(request_type=dict)
 
 
+def test_get_game_server_config_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GameServerConfigsServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_game_server_config),
+            '__call__') as call:
+        client.get_game_server_config()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == game_server_configs.GetGameServerConfigRequest()
+
 @pytest.mark.asyncio
 async def test_get_game_server_config_async(transport: str = 'grpc_asyncio', request_type=game_server_configs.GetGameServerConfigRequest):
     client = GameServerConfigsServiceAsyncClient(
@@ -1030,6 +1073,24 @@ def test_create_game_server_config(transport: str = 'grpc', request_type=game_se
 def test_create_game_server_config_from_dict():
     test_create_game_server_config(request_type=dict)
 
+
+def test_create_game_server_config_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GameServerConfigsServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_game_server_config),
+            '__call__') as call:
+        client.create_game_server_config()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == game_server_configs.CreateGameServerConfigRequest()
 
 @pytest.mark.asyncio
 async def test_create_game_server_config_async(transport: str = 'grpc_asyncio', request_type=game_server_configs.CreateGameServerConfigRequest):
@@ -1256,6 +1317,24 @@ def test_delete_game_server_config(transport: str = 'grpc', request_type=game_se
 def test_delete_game_server_config_from_dict():
     test_delete_game_server_config(request_type=dict)
 
+
+def test_delete_game_server_config_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GameServerConfigsServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_game_server_config),
+            '__call__') as call:
+        client.delete_game_server_config()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == game_server_configs.DeleteGameServerConfigRequest()
 
 @pytest.mark.asyncio
 async def test_delete_game_server_config_async(transport: str = 'grpc_asyncio', request_type=game_server_configs.DeleteGameServerConfigRequest):

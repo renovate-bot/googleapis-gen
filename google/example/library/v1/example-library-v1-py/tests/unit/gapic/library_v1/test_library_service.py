@@ -66,13 +66,18 @@ def test__get_default_mtls_endpoint():
     assert LibraryServiceClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_library_service_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    LibraryServiceClient,
+    LibraryServiceAsyncClient,
+])
+def test_library_service_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = LibraryServiceClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'library-example.googleapis.com:443'
 
@@ -87,9 +92,11 @@ def test_library_service_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'library-example.googleapis.com:443'
 
@@ -385,6 +392,24 @@ def test_create_shelf_from_dict():
     test_create_shelf(request_type=dict)
 
 
+def test_create_shelf_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = LibraryServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_shelf),
+            '__call__') as call:
+        client.create_shelf()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == library.CreateShelfRequest()
+
 @pytest.mark.asyncio
 async def test_create_shelf_async(transport: str = 'grpc_asyncio', request_type=library.CreateShelfRequest):
     client = LibraryServiceAsyncClient(
@@ -552,6 +577,24 @@ def test_get_shelf(transport: str = 'grpc', request_type=library.GetShelfRequest
 def test_get_shelf_from_dict():
     test_get_shelf(request_type=dict)
 
+
+def test_get_shelf_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = LibraryServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_shelf),
+            '__call__') as call:
+        client.get_shelf()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == library.GetShelfRequest()
 
 @pytest.mark.asyncio
 async def test_get_shelf_async(transport: str = 'grpc_asyncio', request_type=library.GetShelfRequest):
@@ -779,6 +822,24 @@ def test_list_shelves(transport: str = 'grpc', request_type=library.ListShelvesR
 def test_list_shelves_from_dict():
     test_list_shelves(request_type=dict)
 
+
+def test_list_shelves_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = LibraryServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_shelves),
+            '__call__') as call:
+        client.list_shelves()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == library.ListShelvesRequest()
 
 @pytest.mark.asyncio
 async def test_list_shelves_async(transport: str = 'grpc_asyncio', request_type=library.ListShelvesRequest):
@@ -1034,6 +1095,24 @@ def test_delete_shelf_from_dict():
     test_delete_shelf(request_type=dict)
 
 
+def test_delete_shelf_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = LibraryServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_shelf),
+            '__call__') as call:
+        client.delete_shelf()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == library.DeleteShelfRequest()
+
 @pytest.mark.asyncio
 async def test_delete_shelf_async(transport: str = 'grpc_asyncio', request_type=library.DeleteShelfRequest):
     client = LibraryServiceAsyncClient(
@@ -1257,6 +1336,24 @@ def test_merge_shelves(transport: str = 'grpc', request_type=library.MergeShelve
 def test_merge_shelves_from_dict():
     test_merge_shelves(request_type=dict)
 
+
+def test_merge_shelves_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = LibraryServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.merge_shelves),
+            '__call__') as call:
+        client.merge_shelves()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == library.MergeShelvesRequest()
 
 @pytest.mark.asyncio
 async def test_merge_shelves_async(transport: str = 'grpc_asyncio', request_type=library.MergeShelvesRequest):
@@ -1504,6 +1601,24 @@ def test_create_book(transport: str = 'grpc', request_type=library.CreateBookReq
 def test_create_book_from_dict():
     test_create_book(request_type=dict)
 
+
+def test_create_book_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = LibraryServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_book),
+            '__call__') as call:
+        client.create_book()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == library.CreateBookRequest()
 
 @pytest.mark.asyncio
 async def test_create_book_async(transport: str = 'grpc_asyncio', request_type=library.CreateBookRequest):
@@ -1758,6 +1873,24 @@ def test_get_book_from_dict():
     test_get_book(request_type=dict)
 
 
+def test_get_book_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = LibraryServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_book),
+            '__call__') as call:
+        client.get_book()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == library.GetBookRequest()
+
 @pytest.mark.asyncio
 async def test_get_book_async(transport: str = 'grpc_asyncio', request_type=library.GetBookRequest):
     client = LibraryServiceAsyncClient(
@@ -1990,6 +2123,24 @@ def test_list_books(transport: str = 'grpc', request_type=library.ListBooksReque
 def test_list_books_from_dict():
     test_list_books(request_type=dict)
 
+
+def test_list_books_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = LibraryServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_books),
+            '__call__') as call:
+        client.list_books()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == library.ListBooksRequest()
 
 @pytest.mark.asyncio
 async def test_list_books_async(transport: str = 'grpc_asyncio', request_type=library.ListBooksRequest):
@@ -2396,6 +2547,24 @@ def test_delete_book_from_dict():
     test_delete_book(request_type=dict)
 
 
+def test_delete_book_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = LibraryServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_book),
+            '__call__') as call:
+        client.delete_book()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == library.DeleteBookRequest()
+
 @pytest.mark.asyncio
 async def test_delete_book_async(transport: str = 'grpc_asyncio', request_type=library.DeleteBookRequest):
     client = LibraryServiceAsyncClient(
@@ -2544,6 +2713,24 @@ def test_update_book(transport: str = 'grpc', request_type=library.UpdateBookReq
 def test_update_book_from_dict():
     test_update_book(request_type=dict)
 
+
+def test_update_book_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = LibraryServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_book),
+            '__call__') as call:
+        client.update_book()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == library.UpdateBookRequest()
 
 @pytest.mark.asyncio
 async def test_update_book_async(transport: str = 'grpc_asyncio', request_type=library.UpdateBookRequest):
@@ -2789,6 +2976,24 @@ def test_move_book(transport: str = 'grpc', request_type=library.MoveBookRequest
 def test_move_book_from_dict():
     test_move_book(request_type=dict)
 
+
+def test_move_book_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = LibraryServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.move_book),
+            '__call__') as call:
+        client.move_book()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == library.MoveBookRequest()
 
 @pytest.mark.asyncio
 async def test_move_book_async(transport: str = 'grpc_asyncio', request_type=library.MoveBookRequest):

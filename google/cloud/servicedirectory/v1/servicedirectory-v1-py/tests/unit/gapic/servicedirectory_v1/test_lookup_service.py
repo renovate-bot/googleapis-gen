@@ -66,13 +66,18 @@ def test__get_default_mtls_endpoint():
     assert LookupServiceClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_lookup_service_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    LookupServiceClient,
+    LookupServiceAsyncClient,
+])
+def test_lookup_service_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = LookupServiceClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'servicedirectory.googleapis.com:443'
 
@@ -87,9 +92,11 @@ def test_lookup_service_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'servicedirectory.googleapis.com:443'
 
@@ -376,6 +383,24 @@ def test_resolve_service(transport: str = 'grpc', request_type=lookup_service.Re
 def test_resolve_service_from_dict():
     test_resolve_service(request_type=dict)
 
+
+def test_resolve_service_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = LookupServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.resolve_service),
+            '__call__') as call:
+        client.resolve_service()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == lookup_service.ResolveServiceRequest()
 
 @pytest.mark.asyncio
 async def test_resolve_service_async(transport: str = 'grpc_asyncio', request_type=lookup_service.ResolveServiceRequest):

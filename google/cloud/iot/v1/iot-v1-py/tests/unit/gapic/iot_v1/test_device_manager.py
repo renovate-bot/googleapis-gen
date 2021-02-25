@@ -75,13 +75,18 @@ def test__get_default_mtls_endpoint():
     assert DeviceManagerClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_device_manager_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    DeviceManagerClient,
+    DeviceManagerAsyncClient,
+])
+def test_device_manager_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = DeviceManagerClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'cloudiot.googleapis.com:443'
 
@@ -96,9 +101,11 @@ def test_device_manager_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'cloudiot.googleapis.com:443'
 
@@ -398,6 +405,24 @@ def test_create_device_registry_from_dict():
     test_create_device_registry(request_type=dict)
 
 
+def test_create_device_registry_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DeviceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_device_registry),
+            '__call__') as call:
+        client.create_device_registry()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == device_manager.CreateDeviceRegistryRequest()
+
 @pytest.mark.asyncio
 async def test_create_device_registry_async(transport: str = 'grpc_asyncio', request_type=device_manager.CreateDeviceRegistryRequest):
     client = DeviceManagerAsyncClient(
@@ -644,6 +669,24 @@ def test_get_device_registry_from_dict():
     test_get_device_registry(request_type=dict)
 
 
+def test_get_device_registry_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DeviceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_device_registry),
+            '__call__') as call:
+        client.get_device_registry()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == device_manager.GetDeviceRegistryRequest()
+
 @pytest.mark.asyncio
 async def test_get_device_registry_async(transport: str = 'grpc_asyncio', request_type=device_manager.GetDeviceRegistryRequest):
     client = DeviceManagerAsyncClient(
@@ -882,6 +925,24 @@ def test_update_device_registry_from_dict():
     test_update_device_registry(request_type=dict)
 
 
+def test_update_device_registry_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DeviceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_device_registry),
+            '__call__') as call:
+        client.update_device_registry()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == device_manager.UpdateDeviceRegistryRequest()
+
 @pytest.mark.asyncio
 async def test_update_device_registry_async(transport: str = 'grpc_asyncio', request_type=device_manager.UpdateDeviceRegistryRequest):
     client = DeviceManagerAsyncClient(
@@ -1114,6 +1175,24 @@ def test_delete_device_registry_from_dict():
     test_delete_device_registry(request_type=dict)
 
 
+def test_delete_device_registry_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DeviceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_device_registry),
+            '__call__') as call:
+        client.delete_device_registry()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == device_manager.DeleteDeviceRegistryRequest()
+
 @pytest.mark.asyncio
 async def test_delete_device_registry_async(transport: str = 'grpc_asyncio', request_type=device_manager.DeleteDeviceRegistryRequest):
     client = DeviceManagerAsyncClient(
@@ -1333,6 +1412,24 @@ def test_list_device_registries(transport: str = 'grpc', request_type=device_man
 def test_list_device_registries_from_dict():
     test_list_device_registries(request_type=dict)
 
+
+def test_list_device_registries_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DeviceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_device_registries),
+            '__call__') as call:
+        client.list_device_registries()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == device_manager.ListDeviceRegistriesRequest()
 
 @pytest.mark.asyncio
 async def test_list_device_registries_async(transport: str = 'grpc_asyncio', request_type=device_manager.ListDeviceRegistriesRequest):
@@ -1761,6 +1858,24 @@ def test_create_device_from_dict():
     test_create_device(request_type=dict)
 
 
+def test_create_device_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DeviceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_device),
+            '__call__') as call:
+        client.create_device()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == device_manager.CreateDeviceRequest()
+
 @pytest.mark.asyncio
 async def test_create_device_async(transport: str = 'grpc_asyncio', request_type=device_manager.CreateDeviceRequest):
     client = DeviceManagerAsyncClient(
@@ -2021,6 +2136,24 @@ def test_get_device_from_dict():
     test_get_device(request_type=dict)
 
 
+def test_get_device_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DeviceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_device),
+            '__call__') as call:
+        client.get_device()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == device_manager.GetDeviceRequest()
+
 @pytest.mark.asyncio
 async def test_get_device_async(transport: str = 'grpc_asyncio', request_type=device_manager.GetDeviceRequest):
     client = DeviceManagerAsyncClient(
@@ -2273,6 +2406,24 @@ def test_update_device_from_dict():
     test_update_device(request_type=dict)
 
 
+def test_update_device_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DeviceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_device),
+            '__call__') as call:
+        client.update_device()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == device_manager.UpdateDeviceRequest()
+
 @pytest.mark.asyncio
 async def test_update_device_async(transport: str = 'grpc_asyncio', request_type=device_manager.UpdateDeviceRequest):
     client = DeviceManagerAsyncClient(
@@ -2511,6 +2662,24 @@ def test_delete_device_from_dict():
     test_delete_device(request_type=dict)
 
 
+def test_delete_device_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DeviceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_device),
+            '__call__') as call:
+        client.delete_device()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == device_manager.DeleteDeviceRequest()
+
 @pytest.mark.asyncio
 async def test_delete_device_async(transport: str = 'grpc_asyncio', request_type=device_manager.DeleteDeviceRequest):
     client = DeviceManagerAsyncClient(
@@ -2730,6 +2899,24 @@ def test_list_devices(transport: str = 'grpc', request_type=device_manager.ListD
 def test_list_devices_from_dict():
     test_list_devices(request_type=dict)
 
+
+def test_list_devices_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DeviceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_devices),
+            '__call__') as call:
+        client.list_devices()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == device_manager.ListDevicesRequest()
 
 @pytest.mark.asyncio
 async def test_list_devices_async(transport: str = 'grpc_asyncio', request_type=device_manager.ListDevicesRequest):
@@ -3146,6 +3333,24 @@ def test_modify_cloud_to_device_config_from_dict():
     test_modify_cloud_to_device_config(request_type=dict)
 
 
+def test_modify_cloud_to_device_config_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DeviceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.modify_cloud_to_device_config),
+            '__call__') as call:
+        client.modify_cloud_to_device_config()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == device_manager.ModifyCloudToDeviceConfigRequest()
+
 @pytest.mark.asyncio
 async def test_modify_cloud_to_device_config_async(transport: str = 'grpc_asyncio', request_type=device_manager.ModifyCloudToDeviceConfigRequest):
     client = DeviceManagerAsyncClient(
@@ -3377,6 +3582,24 @@ def test_list_device_config_versions_from_dict():
     test_list_device_config_versions(request_type=dict)
 
 
+def test_list_device_config_versions_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DeviceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_device_config_versions),
+            '__call__') as call:
+        client.list_device_config_versions()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == device_manager.ListDeviceConfigVersionsRequest()
+
 @pytest.mark.asyncio
 async def test_list_device_config_versions_async(transport: str = 'grpc_asyncio', request_type=device_manager.ListDeviceConfigVersionsRequest):
     client = DeviceManagerAsyncClient(
@@ -3593,6 +3816,24 @@ def test_list_device_states(transport: str = 'grpc', request_type=device_manager
 def test_list_device_states_from_dict():
     test_list_device_states(request_type=dict)
 
+
+def test_list_device_states_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DeviceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_device_states),
+            '__call__') as call:
+        client.list_device_states()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == device_manager.ListDeviceStatesRequest()
 
 @pytest.mark.asyncio
 async def test_list_device_states_async(transport: str = 'grpc_asyncio', request_type=device_manager.ListDeviceStatesRequest):
@@ -3818,6 +4059,24 @@ def test_set_iam_policy(transport: str = 'grpc', request_type=iam_policy.SetIamP
 def test_set_iam_policy_from_dict():
     test_set_iam_policy(request_type=dict)
 
+
+def test_set_iam_policy_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DeviceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.set_iam_policy),
+            '__call__') as call:
+        client.set_iam_policy()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam_policy.SetIamPolicyRequest()
 
 @pytest.mark.asyncio
 async def test_set_iam_policy_async(transport: str = 'grpc_asyncio', request_type=iam_policy.SetIamPolicyRequest):
@@ -4069,6 +4328,24 @@ def test_get_iam_policy_from_dict():
     test_get_iam_policy(request_type=dict)
 
 
+def test_get_iam_policy_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DeviceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_iam_policy),
+            '__call__') as call:
+        client.get_iam_policy()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam_policy.GetIamPolicyRequest()
+
 @pytest.mark.asyncio
 async def test_get_iam_policy_async(transport: str = 'grpc_asyncio', request_type=iam_policy.GetIamPolicyRequest):
     client = DeviceManagerAsyncClient(
@@ -4314,6 +4591,24 @@ def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy.T
 def test_test_iam_permissions_from_dict():
     test_test_iam_permissions(request_type=dict)
 
+
+def test_test_iam_permissions_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DeviceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.test_iam_permissions),
+            '__call__') as call:
+        client.test_iam_permissions()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam_policy.TestIamPermissionsRequest()
 
 @pytest.mark.asyncio
 async def test_test_iam_permissions_async(transport: str = 'grpc_asyncio', request_type=iam_policy.TestIamPermissionsRequest):
@@ -4562,6 +4857,24 @@ def test_send_command_to_device_from_dict():
     test_send_command_to_device(request_type=dict)
 
 
+def test_send_command_to_device_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DeviceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.send_command_to_device),
+            '__call__') as call:
+        client.send_command_to_device()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == device_manager.SendCommandToDeviceRequest()
+
 @pytest.mark.asyncio
 async def test_send_command_to_device_async(transport: str = 'grpc_asyncio', request_type=device_manager.SendCommandToDeviceRequest):
     client = DeviceManagerAsyncClient(
@@ -4795,6 +5108,24 @@ def test_bind_device_to_gateway_from_dict():
     test_bind_device_to_gateway(request_type=dict)
 
 
+def test_bind_device_to_gateway_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DeviceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.bind_device_to_gateway),
+            '__call__') as call:
+        client.bind_device_to_gateway()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == device_manager.BindDeviceToGatewayRequest()
+
 @pytest.mark.asyncio
 async def test_bind_device_to_gateway_async(transport: str = 'grpc_asyncio', request_type=device_manager.BindDeviceToGatewayRequest):
     client = DeviceManagerAsyncClient(
@@ -5027,6 +5358,24 @@ def test_unbind_device_from_gateway(transport: str = 'grpc', request_type=device
 def test_unbind_device_from_gateway_from_dict():
     test_unbind_device_from_gateway(request_type=dict)
 
+
+def test_unbind_device_from_gateway_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DeviceManagerClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.unbind_device_from_gateway),
+            '__call__') as call:
+        client.unbind_device_from_gateway()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == device_manager.UnbindDeviceFromGatewayRequest()
 
 @pytest.mark.asyncio
 async def test_unbind_device_from_gateway_async(transport: str = 'grpc_asyncio', request_type=device_manager.UnbindDeviceFromGatewayRequest):

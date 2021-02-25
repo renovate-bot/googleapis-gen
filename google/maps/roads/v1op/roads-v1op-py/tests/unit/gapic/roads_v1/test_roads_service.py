@@ -65,13 +65,18 @@ def test__get_default_mtls_endpoint():
     assert RoadsServiceClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_roads_service_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    RoadsServiceClient,
+    RoadsServiceAsyncClient,
+])
+def test_roads_service_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = RoadsServiceClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'roads.googleapis.com:443'
 
@@ -86,9 +91,11 @@ def test_roads_service_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'roads.googleapis.com:443'
 
@@ -380,6 +387,24 @@ def test_snap_to_roads_from_dict():
     test_snap_to_roads(request_type=dict)
 
 
+def test_snap_to_roads_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = RoadsServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.snap_to_roads),
+            '__call__') as call:
+        client.snap_to_roads()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == roads.SnapToRoadsRequest()
+
 @pytest.mark.asyncio
 async def test_snap_to_roads_async(transport: str = 'grpc_asyncio', request_type=roads.SnapToRoadsRequest):
     client = RoadsServiceAsyncClient(
@@ -536,6 +561,24 @@ def test_list_nearest_roads(transport: str = 'grpc', request_type=roads.ListNear
 def test_list_nearest_roads_from_dict():
     test_list_nearest_roads(request_type=dict)
 
+
+def test_list_nearest_roads_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = RoadsServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_nearest_roads),
+            '__call__') as call:
+        client.list_nearest_roads()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == roads.ListNearestRoadsRequest()
 
 @pytest.mark.asyncio
 async def test_list_nearest_roads_async(transport: str = 'grpc_asyncio', request_type=roads.ListNearestRoadsRequest):

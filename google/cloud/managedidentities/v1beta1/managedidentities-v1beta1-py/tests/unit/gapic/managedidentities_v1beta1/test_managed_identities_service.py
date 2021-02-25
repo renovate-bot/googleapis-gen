@@ -73,13 +73,18 @@ def test__get_default_mtls_endpoint():
     assert ManagedIdentitiesServiceClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_managed_identities_service_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    ManagedIdentitiesServiceClient,
+    ManagedIdentitiesServiceAsyncClient,
+])
+def test_managed_identities_service_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = ManagedIdentitiesServiceClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'managedidentities.googleapis.com:443'
 
@@ -94,9 +99,11 @@ def test_managed_identities_service_client_from_service_account_file(client_clas
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'managedidentities.googleapis.com:443'
 
@@ -382,6 +389,24 @@ def test_create_microsoft_ad_domain_from_dict():
     test_create_microsoft_ad_domain(request_type=dict)
 
 
+def test_create_microsoft_ad_domain_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ManagedIdentitiesServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_microsoft_ad_domain),
+            '__call__') as call:
+        client.create_microsoft_ad_domain()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == managed_identities_service.CreateMicrosoftAdDomainRequest()
+
 @pytest.mark.asyncio
 async def test_create_microsoft_ad_domain_async(transport: str = 'grpc_asyncio', request_type=managed_identities_service.CreateMicrosoftAdDomainRequest):
     client = ManagedIdentitiesServiceAsyncClient(
@@ -520,6 +545,24 @@ def test_reset_admin_password(transport: str = 'grpc', request_type=managed_iden
 def test_reset_admin_password_from_dict():
     test_reset_admin_password(request_type=dict)
 
+
+def test_reset_admin_password_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ManagedIdentitiesServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.reset_admin_password),
+            '__call__') as call:
+        client.reset_admin_password()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == managed_identities_service.ResetAdminPasswordRequest()
 
 @pytest.mark.asyncio
 async def test_reset_admin_password_async(transport: str = 'grpc_asyncio', request_type=managed_identities_service.ResetAdminPasswordRequest):
@@ -665,6 +708,24 @@ def test_list_domains(transport: str = 'grpc', request_type=managed_identities_s
 def test_list_domains_from_dict():
     test_list_domains(request_type=dict)
 
+
+def test_list_domains_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ManagedIdentitiesServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_domains),
+            '__call__') as call:
+        client.list_domains()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == managed_identities_service.ListDomainsRequest()
 
 @pytest.mark.asyncio
 async def test_list_domains_async(transport: str = 'grpc_asyncio', request_type=managed_identities_service.ListDomainsRequest):
@@ -1025,6 +1086,24 @@ def test_get_domain_from_dict():
     test_get_domain(request_type=dict)
 
 
+def test_get_domain_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ManagedIdentitiesServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_domain),
+            '__call__') as call:
+        client.get_domain()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == managed_identities_service.GetDomainRequest()
+
 @pytest.mark.asyncio
 async def test_get_domain_async(transport: str = 'grpc_asyncio', request_type=managed_identities_service.GetDomainRequest):
     client = ManagedIdentitiesServiceAsyncClient(
@@ -1181,6 +1260,24 @@ def test_update_domain_from_dict():
     test_update_domain(request_type=dict)
 
 
+def test_update_domain_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ManagedIdentitiesServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_domain),
+            '__call__') as call:
+        client.update_domain()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == managed_identities_service.UpdateDomainRequest()
+
 @pytest.mark.asyncio
 async def test_update_domain_async(transport: str = 'grpc_asyncio', request_type=managed_identities_service.UpdateDomainRequest):
     client = ManagedIdentitiesServiceAsyncClient(
@@ -1313,6 +1410,24 @@ def test_delete_domain(transport: str = 'grpc', request_type=managed_identities_
 def test_delete_domain_from_dict():
     test_delete_domain(request_type=dict)
 
+
+def test_delete_domain_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ManagedIdentitiesServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_domain),
+            '__call__') as call:
+        client.delete_domain()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == managed_identities_service.DeleteDomainRequest()
 
 @pytest.mark.asyncio
 async def test_delete_domain_async(transport: str = 'grpc_asyncio', request_type=managed_identities_service.DeleteDomainRequest):
@@ -1447,6 +1562,24 @@ def test_attach_trust_from_dict():
     test_attach_trust(request_type=dict)
 
 
+def test_attach_trust_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ManagedIdentitiesServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.attach_trust),
+            '__call__') as call:
+        client.attach_trust()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == managed_identities_service.AttachTrustRequest()
+
 @pytest.mark.asyncio
 async def test_attach_trust_async(transport: str = 'grpc_asyncio', request_type=managed_identities_service.AttachTrustRequest):
     client = ManagedIdentitiesServiceAsyncClient(
@@ -1579,6 +1712,24 @@ def test_reconfigure_trust(transport: str = 'grpc', request_type=managed_identit
 def test_reconfigure_trust_from_dict():
     test_reconfigure_trust(request_type=dict)
 
+
+def test_reconfigure_trust_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ManagedIdentitiesServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.reconfigure_trust),
+            '__call__') as call:
+        client.reconfigure_trust()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == managed_identities_service.ReconfigureTrustRequest()
 
 @pytest.mark.asyncio
 async def test_reconfigure_trust_async(transport: str = 'grpc_asyncio', request_type=managed_identities_service.ReconfigureTrustRequest):
@@ -1713,6 +1864,24 @@ def test_detach_trust_from_dict():
     test_detach_trust(request_type=dict)
 
 
+def test_detach_trust_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ManagedIdentitiesServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.detach_trust),
+            '__call__') as call:
+        client.detach_trust()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == managed_identities_service.DetachTrustRequest()
+
 @pytest.mark.asyncio
 async def test_detach_trust_async(transport: str = 'grpc_asyncio', request_type=managed_identities_service.DetachTrustRequest):
     client = ManagedIdentitiesServiceAsyncClient(
@@ -1845,6 +2014,24 @@ def test_validate_trust(transport: str = 'grpc', request_type=managed_identities
 def test_validate_trust_from_dict():
     test_validate_trust(request_type=dict)
 
+
+def test_validate_trust_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ManagedIdentitiesServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.validate_trust),
+            '__call__') as call:
+        client.validate_trust()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == managed_identities_service.ValidateTrustRequest()
 
 @pytest.mark.asyncio
 async def test_validate_trust_async(transport: str = 'grpc_asyncio', request_type=managed_identities_service.ValidateTrustRequest):

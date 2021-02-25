@@ -73,13 +73,18 @@ def test__get_default_mtls_endpoint():
     assert GameServerClustersServiceClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_game_server_clusters_service_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    GameServerClustersServiceClient,
+    GameServerClustersServiceAsyncClient,
+])
+def test_game_server_clusters_service_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = GameServerClustersServiceClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'gameservices.googleapis.com:443'
 
@@ -94,9 +99,11 @@ def test_game_server_clusters_service_client_from_service_account_file(client_cl
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'gameservices.googleapis.com:443'
 
@@ -391,6 +398,24 @@ def test_list_game_server_clusters(transport: str = 'grpc', request_type=game_se
 def test_list_game_server_clusters_from_dict():
     test_list_game_server_clusters(request_type=dict)
 
+
+def test_list_game_server_clusters_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GameServerClustersServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_game_server_clusters),
+            '__call__') as call:
+        client.list_game_server_clusters()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == game_server_clusters.ListGameServerClustersRequest()
 
 @pytest.mark.asyncio
 async def test_list_game_server_clusters_async(transport: str = 'grpc_asyncio', request_type=game_server_clusters.ListGameServerClustersRequest):
@@ -814,6 +839,24 @@ def test_get_game_server_cluster_from_dict():
     test_get_game_server_cluster(request_type=dict)
 
 
+def test_get_game_server_cluster_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GameServerClustersServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_game_server_cluster),
+            '__call__') as call:
+        client.get_game_server_cluster()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == game_server_clusters.GetGameServerClusterRequest()
+
 @pytest.mark.asyncio
 async def test_get_game_server_cluster_async(transport: str = 'grpc_asyncio', request_type=game_server_clusters.GetGameServerClusterRequest):
     client = GameServerClustersServiceAsyncClient(
@@ -1037,6 +1080,24 @@ def test_create_game_server_cluster(transport: str = 'grpc', request_type=game_s
 def test_create_game_server_cluster_from_dict():
     test_create_game_server_cluster(request_type=dict)
 
+
+def test_create_game_server_cluster_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GameServerClustersServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_game_server_cluster),
+            '__call__') as call:
+        client.create_game_server_cluster()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == game_server_clusters.CreateGameServerClusterRequest()
 
 @pytest.mark.asyncio
 async def test_create_game_server_cluster_async(transport: str = 'grpc_asyncio', request_type=game_server_clusters.CreateGameServerClusterRequest):
@@ -1278,6 +1339,24 @@ def test_preview_create_game_server_cluster_from_dict():
     test_preview_create_game_server_cluster(request_type=dict)
 
 
+def test_preview_create_game_server_cluster_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GameServerClustersServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.preview_create_game_server_cluster),
+            '__call__') as call:
+        client.preview_create_game_server_cluster()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == game_server_clusters.PreviewCreateGameServerClusterRequest()
+
 @pytest.mark.asyncio
 async def test_preview_create_game_server_cluster_async(transport: str = 'grpc_asyncio', request_type=game_server_clusters.PreviewCreateGameServerClusterRequest):
     client = GameServerClustersServiceAsyncClient(
@@ -1412,6 +1491,24 @@ def test_delete_game_server_cluster(transport: str = 'grpc', request_type=game_s
 def test_delete_game_server_cluster_from_dict():
     test_delete_game_server_cluster(request_type=dict)
 
+
+def test_delete_game_server_cluster_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GameServerClustersServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_game_server_cluster),
+            '__call__') as call:
+        client.delete_game_server_cluster()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == game_server_clusters.DeleteGameServerClusterRequest()
 
 @pytest.mark.asyncio
 async def test_delete_game_server_cluster_async(transport: str = 'grpc_asyncio', request_type=game_server_clusters.DeleteGameServerClusterRequest):
@@ -1637,6 +1734,24 @@ def test_preview_delete_game_server_cluster_from_dict():
     test_preview_delete_game_server_cluster(request_type=dict)
 
 
+def test_preview_delete_game_server_cluster_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GameServerClustersServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.preview_delete_game_server_cluster),
+            '__call__') as call:
+        client.preview_delete_game_server_cluster()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == game_server_clusters.PreviewDeleteGameServerClusterRequest()
+
 @pytest.mark.asyncio
 async def test_preview_delete_game_server_cluster_async(transport: str = 'grpc_asyncio', request_type=game_server_clusters.PreviewDeleteGameServerClusterRequest):
     client = GameServerClustersServiceAsyncClient(
@@ -1771,6 +1886,24 @@ def test_update_game_server_cluster(transport: str = 'grpc', request_type=game_s
 def test_update_game_server_cluster_from_dict():
     test_update_game_server_cluster(request_type=dict)
 
+
+def test_update_game_server_cluster_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GameServerClustersServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_game_server_cluster),
+            '__call__') as call:
+        client.update_game_server_cluster()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == game_server_clusters.UpdateGameServerClusterRequest()
 
 @pytest.mark.asyncio
 async def test_update_game_server_cluster_async(transport: str = 'grpc_asyncio', request_type=game_server_clusters.UpdateGameServerClusterRequest):
@@ -2003,6 +2136,24 @@ def test_preview_update_game_server_cluster(transport: str = 'grpc', request_typ
 def test_preview_update_game_server_cluster_from_dict():
     test_preview_update_game_server_cluster(request_type=dict)
 
+
+def test_preview_update_game_server_cluster_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = GameServerClustersServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.preview_update_game_server_cluster),
+            '__call__') as call:
+        client.preview_update_game_server_cluster()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == game_server_clusters.PreviewUpdateGameServerClusterRequest()
 
 @pytest.mark.asyncio
 async def test_preview_update_game_server_cluster_async(transport: str = 'grpc_asyncio', request_type=game_server_clusters.PreviewUpdateGameServerClusterRequest):

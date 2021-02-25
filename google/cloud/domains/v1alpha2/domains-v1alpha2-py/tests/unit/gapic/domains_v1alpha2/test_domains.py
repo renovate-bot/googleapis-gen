@@ -74,13 +74,18 @@ def test__get_default_mtls_endpoint():
     assert DomainsClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_domains_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    DomainsClient,
+    DomainsAsyncClient,
+])
+def test_domains_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = DomainsClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'domains.googleapis.com:443'
 
@@ -95,9 +100,11 @@ def test_domains_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'domains.googleapis.com:443'
 
@@ -385,6 +392,24 @@ def test_search_domains_from_dict():
     test_search_domains(request_type=dict)
 
 
+def test_search_domains_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DomainsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.search_domains),
+            '__call__') as call:
+        client.search_domains()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == domains.SearchDomainsRequest()
+
 @pytest.mark.asyncio
 async def test_search_domains_async(transport: str = 'grpc_asyncio', request_type=domains.SearchDomainsRequest):
     client = DomainsAsyncClient(
@@ -610,6 +635,24 @@ def test_retrieve_register_parameters_from_dict():
     test_retrieve_register_parameters(request_type=dict)
 
 
+def test_retrieve_register_parameters_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DomainsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.retrieve_register_parameters),
+            '__call__') as call:
+        client.retrieve_register_parameters()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == domains.RetrieveRegisterParametersRequest()
+
 @pytest.mark.asyncio
 async def test_retrieve_register_parameters_async(transport: str = 'grpc_asyncio', request_type=domains.RetrieveRegisterParametersRequest):
     client = DomainsAsyncClient(
@@ -832,6 +875,24 @@ def test_register_domain(transport: str = 'grpc', request_type=domains.RegisterD
 def test_register_domain_from_dict():
     test_register_domain(request_type=dict)
 
+
+def test_register_domain_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DomainsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.register_domain),
+            '__call__') as call:
+        client.register_domain()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == domains.RegisterDomainRequest()
 
 @pytest.mark.asyncio
 async def test_register_domain_async(transport: str = 'grpc_asyncio', request_type=domains.RegisterDomainRequest):
@@ -1072,6 +1133,24 @@ def test_list_registrations(transport: str = 'grpc', request_type=domains.ListRe
 def test_list_registrations_from_dict():
     test_list_registrations(request_type=dict)
 
+
+def test_list_registrations_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DomainsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_registrations),
+            '__call__') as call:
+        client.list_registrations()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == domains.ListRegistrationsRequest()
 
 @pytest.mark.asyncio
 async def test_list_registrations_async(transport: str = 'grpc_asyncio', request_type=domains.ListRegistrationsRequest):
@@ -1500,6 +1579,24 @@ def test_get_registration_from_dict():
     test_get_registration(request_type=dict)
 
 
+def test_get_registration_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DomainsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_registration),
+            '__call__') as call:
+        client.get_registration()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == domains.GetRegistrationRequest()
+
 @pytest.mark.asyncio
 async def test_get_registration_async(transport: str = 'grpc_asyncio', request_type=domains.GetRegistrationRequest):
     client = DomainsAsyncClient(
@@ -1730,6 +1827,24 @@ def test_update_registration_from_dict():
     test_update_registration(request_type=dict)
 
 
+def test_update_registration_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DomainsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_registration),
+            '__call__') as call:
+        client.update_registration()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == domains.UpdateRegistrationRequest()
+
 @pytest.mark.asyncio
 async def test_update_registration_async(transport: str = 'grpc_asyncio', request_type=domains.UpdateRegistrationRequest):
     client = DomainsAsyncClient(
@@ -1955,6 +2070,24 @@ def test_configure_management_settings(transport: str = 'grpc', request_type=dom
 def test_configure_management_settings_from_dict():
     test_configure_management_settings(request_type=dict)
 
+
+def test_configure_management_settings_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DomainsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.configure_management_settings),
+            '__call__') as call:
+        client.configure_management_settings()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == domains.ConfigureManagementSettingsRequest()
 
 @pytest.mark.asyncio
 async def test_configure_management_settings_async(transport: str = 'grpc_asyncio', request_type=domains.ConfigureManagementSettingsRequest):
@@ -2190,6 +2323,24 @@ def test_configure_dns_settings_from_dict():
     test_configure_dns_settings(request_type=dict)
 
 
+def test_configure_dns_settings_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DomainsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.configure_dns_settings),
+            '__call__') as call:
+        client.configure_dns_settings()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == domains.ConfigureDnsSettingsRequest()
+
 @pytest.mark.asyncio
 async def test_configure_dns_settings_async(transport: str = 'grpc_asyncio', request_type=domains.ConfigureDnsSettingsRequest):
     client = DomainsAsyncClient(
@@ -2423,6 +2574,24 @@ def test_configure_contact_settings(transport: str = 'grpc', request_type=domain
 def test_configure_contact_settings_from_dict():
     test_configure_contact_settings(request_type=dict)
 
+
+def test_configure_contact_settings_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DomainsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.configure_contact_settings),
+            '__call__') as call:
+        client.configure_contact_settings()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == domains.ConfigureContactSettingsRequest()
 
 @pytest.mark.asyncio
 async def test_configure_contact_settings_async(transport: str = 'grpc_asyncio', request_type=domains.ConfigureContactSettingsRequest):
@@ -2658,6 +2827,24 @@ def test_export_registration_from_dict():
     test_export_registration(request_type=dict)
 
 
+def test_export_registration_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DomainsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.export_registration),
+            '__call__') as call:
+        client.export_registration()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == domains.ExportRegistrationRequest()
+
 @pytest.mark.asyncio
 async def test_export_registration_async(transport: str = 'grpc_asyncio', request_type=domains.ExportRegistrationRequest):
     client = DomainsAsyncClient(
@@ -2875,6 +3062,24 @@ def test_delete_registration(transport: str = 'grpc', request_type=domains.Delet
 def test_delete_registration_from_dict():
     test_delete_registration(request_type=dict)
 
+
+def test_delete_registration_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DomainsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_registration),
+            '__call__') as call:
+        client.delete_registration()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == domains.DeleteRegistrationRequest()
 
 @pytest.mark.asyncio
 async def test_delete_registration_async(transport: str = 'grpc_asyncio', request_type=domains.DeleteRegistrationRequest):
@@ -3100,6 +3305,24 @@ def test_retrieve_authorization_code_from_dict():
     test_retrieve_authorization_code(request_type=dict)
 
 
+def test_retrieve_authorization_code_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DomainsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.retrieve_authorization_code),
+            '__call__') as call:
+        client.retrieve_authorization_code()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == domains.RetrieveAuthorizationCodeRequest()
+
 @pytest.mark.asyncio
 async def test_retrieve_authorization_code_async(transport: str = 'grpc_asyncio', request_type=domains.RetrieveAuthorizationCodeRequest):
     client = DomainsAsyncClient(
@@ -3323,6 +3546,24 @@ def test_reset_authorization_code(transport: str = 'grpc', request_type=domains.
 def test_reset_authorization_code_from_dict():
     test_reset_authorization_code(request_type=dict)
 
+
+def test_reset_authorization_code_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DomainsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.reset_authorization_code),
+            '__call__') as call:
+        client.reset_authorization_code()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == domains.ResetAuthorizationCodeRequest()
 
 @pytest.mark.asyncio
 async def test_reset_authorization_code_async(transport: str = 'grpc_asyncio', request_type=domains.ResetAuthorizationCodeRequest):

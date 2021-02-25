@@ -72,13 +72,18 @@ def test__get_default_mtls_endpoint():
     assert DataTransferServiceClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_data_transfer_service_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    DataTransferServiceClient,
+    DataTransferServiceAsyncClient,
+])
+def test_data_transfer_service_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = DataTransferServiceClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'bigquerydatatransfer.googleapis.com:443'
 
@@ -93,9 +98,11 @@ def test_data_transfer_service_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'bigquerydatatransfer.googleapis.com:443'
 
@@ -447,6 +454,24 @@ def test_get_data_source_from_dict():
     test_get_data_source(request_type=dict)
 
 
+def test_get_data_source_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DataTransferServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_data_source),
+            '__call__') as call:
+        client.get_data_source()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == datatransfer.GetDataSourceRequest()
+
 @pytest.mark.asyncio
 async def test_get_data_source_async(transport: str = 'grpc_asyncio', request_type=datatransfer.GetDataSourceRequest):
     client = DataTransferServiceAsyncClient(
@@ -715,6 +740,24 @@ def test_list_data_sources(transport: str = 'grpc', request_type=datatransfer.Li
 def test_list_data_sources_from_dict():
     test_list_data_sources(request_type=dict)
 
+
+def test_list_data_sources_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DataTransferServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_data_sources),
+            '__call__') as call:
+        client.list_data_sources()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == datatransfer.ListDataSourcesRequest()
 
 @pytest.mark.asyncio
 async def test_list_data_sources_async(transport: str = 'grpc_asyncio', request_type=datatransfer.ListDataSourcesRequest):
@@ -1164,6 +1207,24 @@ def test_create_transfer_config_from_dict():
     test_create_transfer_config(request_type=dict)
 
 
+def test_create_transfer_config_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DataTransferServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_transfer_config),
+            '__call__') as call:
+        client.create_transfer_config()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == datatransfer.CreateTransferConfigRequest()
+
 @pytest.mark.asyncio
 async def test_create_transfer_config_async(transport: str = 'grpc_asyncio', request_type=datatransfer.CreateTransferConfigRequest):
     client = DataTransferServiceAsyncClient(
@@ -1460,6 +1521,24 @@ def test_update_transfer_config_from_dict():
     test_update_transfer_config(request_type=dict)
 
 
+def test_update_transfer_config_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DataTransferServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_transfer_config),
+            '__call__') as call:
+        client.update_transfer_config()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == datatransfer.UpdateTransferConfigRequest()
+
 @pytest.mark.asyncio
 async def test_update_transfer_config_async(transport: str = 'grpc_asyncio', request_type=datatransfer.UpdateTransferConfigRequest):
     client = DataTransferServiceAsyncClient(
@@ -1712,6 +1791,24 @@ def test_delete_transfer_config(transport: str = 'grpc', request_type=datatransf
 def test_delete_transfer_config_from_dict():
     test_delete_transfer_config(request_type=dict)
 
+
+def test_delete_transfer_config_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DataTransferServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_transfer_config),
+            '__call__') as call:
+        client.delete_transfer_config()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == datatransfer.DeleteTransferConfigRequest()
 
 @pytest.mark.asyncio
 async def test_delete_transfer_config_async(transport: str = 'grpc_asyncio', request_type=datatransfer.DeleteTransferConfigRequest):
@@ -1970,6 +2067,24 @@ def test_get_transfer_config_from_dict():
     test_get_transfer_config(request_type=dict)
 
 
+def test_get_transfer_config_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DataTransferServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_transfer_config),
+            '__call__') as call:
+        client.get_transfer_config()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == datatransfer.GetTransferConfigRequest()
+
 @pytest.mark.asyncio
 async def test_get_transfer_config_async(transport: str = 'grpc_asyncio', request_type=datatransfer.GetTransferConfigRequest):
     client = DataTransferServiceAsyncClient(
@@ -2220,6 +2335,24 @@ def test_list_transfer_configs(transport: str = 'grpc', request_type=datatransfe
 def test_list_transfer_configs_from_dict():
     test_list_transfer_configs(request_type=dict)
 
+
+def test_list_transfer_configs_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DataTransferServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_transfer_configs),
+            '__call__') as call:
+        client.list_transfer_configs()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == datatransfer.ListTransferConfigsRequest()
 
 @pytest.mark.asyncio
 async def test_list_transfer_configs_async(transport: str = 'grpc_asyncio', request_type=datatransfer.ListTransferConfigsRequest):
@@ -2628,6 +2761,24 @@ def test_schedule_transfer_runs_from_dict():
     test_schedule_transfer_runs(request_type=dict)
 
 
+def test_schedule_transfer_runs_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DataTransferServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.schedule_transfer_runs),
+            '__call__') as call:
+        client.schedule_transfer_runs()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == datatransfer.ScheduleTransferRunsRequest()
+
 @pytest.mark.asyncio
 async def test_schedule_transfer_runs_async(transport: str = 'grpc_asyncio', request_type=datatransfer.ScheduleTransferRunsRequest):
     client = DataTransferServiceAsyncClient(
@@ -2861,6 +3012,24 @@ def test_start_manual_transfer_runs_from_dict():
     test_start_manual_transfer_runs(request_type=dict)
 
 
+def test_start_manual_transfer_runs_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DataTransferServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.start_manual_transfer_runs),
+            '__call__') as call:
+        client.start_manual_transfer_runs()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == datatransfer.StartManualTransferRunsRequest()
+
 @pytest.mark.asyncio
 async def test_start_manual_transfer_runs_async(transport: str = 'grpc_asyncio', request_type=datatransfer.StartManualTransferRunsRequest):
     client = DataTransferServiceAsyncClient(
@@ -3019,6 +3188,24 @@ def test_get_transfer_run(transport: str = 'grpc', request_type=datatransfer.Get
 def test_get_transfer_run_from_dict():
     test_get_transfer_run(request_type=dict)
 
+
+def test_get_transfer_run_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DataTransferServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_transfer_run),
+            '__call__') as call:
+        client.get_transfer_run()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == datatransfer.GetTransferRunRequest()
 
 @pytest.mark.asyncio
 async def test_get_transfer_run_async(transport: str = 'grpc_asyncio', request_type=datatransfer.GetTransferRunRequest):
@@ -3253,6 +3440,24 @@ def test_delete_transfer_run_from_dict():
     test_delete_transfer_run(request_type=dict)
 
 
+def test_delete_transfer_run_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DataTransferServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_transfer_run),
+            '__call__') as call:
+        client.delete_transfer_run()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == datatransfer.DeleteTransferRunRequest()
+
 @pytest.mark.asyncio
 async def test_delete_transfer_run_async(transport: str = 'grpc_asyncio', request_type=datatransfer.DeleteTransferRunRequest):
     client = DataTransferServiceAsyncClient(
@@ -3472,6 +3677,24 @@ def test_list_transfer_runs(transport: str = 'grpc', request_type=datatransfer.L
 def test_list_transfer_runs_from_dict():
     test_list_transfer_runs(request_type=dict)
 
+
+def test_list_transfer_runs_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DataTransferServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_transfer_runs),
+            '__call__') as call:
+        client.list_transfer_runs()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == datatransfer.ListTransferRunsRequest()
 
 @pytest.mark.asyncio
 async def test_list_transfer_runs_async(transport: str = 'grpc_asyncio', request_type=datatransfer.ListTransferRunsRequest):
@@ -3884,6 +4107,24 @@ def test_list_transfer_logs_from_dict():
     test_list_transfer_logs(request_type=dict)
 
 
+def test_list_transfer_logs_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DataTransferServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_transfer_logs),
+            '__call__') as call:
+        client.list_transfer_logs()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == datatransfer.ListTransferLogsRequest()
+
 @pytest.mark.asyncio
 async def test_list_transfer_logs_async(transport: str = 'grpc_asyncio', request_type=datatransfer.ListTransferLogsRequest):
     client = DataTransferServiceAsyncClient(
@@ -4294,6 +4535,24 @@ def test_check_valid_creds(transport: str = 'grpc', request_type=datatransfer.Ch
 def test_check_valid_creds_from_dict():
     test_check_valid_creds(request_type=dict)
 
+
+def test_check_valid_creds_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DataTransferServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.check_valid_creds),
+            '__call__') as call:
+        client.check_valid_creds()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == datatransfer.CheckValidCredsRequest()
 
 @pytest.mark.asyncio
 async def test_check_valid_creds_async(transport: str = 'grpc_asyncio', request_type=datatransfer.CheckValidCredsRequest):

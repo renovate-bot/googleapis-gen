@@ -67,13 +67,18 @@ def test__get_default_mtls_endpoint():
     assert ExecutionsClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_executions_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    ExecutionsClient,
+    ExecutionsAsyncClient,
+])
+def test_executions_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = ExecutionsClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'workflowexecutions.googleapis.com:443'
 
@@ -88,9 +93,11 @@ def test_executions_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'workflowexecutions.googleapis.com:443'
 
@@ -381,6 +388,24 @@ def test_list_executions(transport: str = 'grpc', request_type=executions.ListEx
 def test_list_executions_from_dict():
     test_list_executions(request_type=dict)
 
+
+def test_list_executions_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ExecutionsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_executions),
+            '__call__') as call:
+        client.list_executions()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == executions.ListExecutionsRequest()
 
 @pytest.mark.asyncio
 async def test_list_executions_async(transport: str = 'grpc_asyncio', request_type=executions.ListExecutionsRequest):
@@ -809,6 +834,24 @@ def test_create_execution_from_dict():
     test_create_execution(request_type=dict)
 
 
+def test_create_execution_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ExecutionsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_execution),
+            '__call__') as call:
+        client.create_execution()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == executions.CreateExecutionRequest()
+
 @pytest.mark.asyncio
 async def test_create_execution_async(transport: str = 'grpc_asyncio', request_type=executions.CreateExecutionRequest):
     client = ExecutionsAsyncClient(
@@ -1069,6 +1112,24 @@ def test_get_execution_from_dict():
     test_get_execution(request_type=dict)
 
 
+def test_get_execution_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ExecutionsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_execution),
+            '__call__') as call:
+        client.get_execution()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == executions.GetExecutionRequest()
+
 @pytest.mark.asyncio
 async def test_get_execution_async(transport: str = 'grpc_asyncio', request_type=executions.GetExecutionRequest):
     client = ExecutionsAsyncClient(
@@ -1320,6 +1381,24 @@ def test_cancel_execution(transport: str = 'grpc', request_type=executions.Cance
 def test_cancel_execution_from_dict():
     test_cancel_execution(request_type=dict)
 
+
+def test_cancel_execution_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = ExecutionsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.cancel_execution),
+            '__call__') as call:
+        client.cancel_execution()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == executions.CancelExecutionRequest()
 
 @pytest.mark.asyncio
 async def test_cancel_execution_async(transport: str = 'grpc_asyncio', request_type=executions.CancelExecutionRequest):

@@ -74,13 +74,18 @@ def test__get_default_mtls_endpoint():
     assert EnvironmentsClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_environments_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    EnvironmentsClient,
+    EnvironmentsAsyncClient,
+])
+def test_environments_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = EnvironmentsClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'dialogflow.googleapis.com:443'
 
@@ -95,9 +100,11 @@ def test_environments_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'dialogflow.googleapis.com:443'
 
@@ -388,6 +395,24 @@ def test_list_environments(transport: str = 'grpc', request_type=environment.Lis
 def test_list_environments_from_dict():
     test_list_environments(request_type=dict)
 
+
+def test_list_environments_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = EnvironmentsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_environments),
+            '__call__') as call:
+        client.list_environments()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == environment.ListEnvironmentsRequest()
 
 @pytest.mark.asyncio
 async def test_list_environments_async(transport: str = 'grpc_asyncio', request_type=environment.ListEnvironmentsRequest):
@@ -808,6 +833,24 @@ def test_get_environment_from_dict():
     test_get_environment(request_type=dict)
 
 
+def test_get_environment_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = EnvironmentsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_environment),
+            '__call__') as call:
+        client.get_environment()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == environment.GetEnvironmentRequest()
+
 @pytest.mark.asyncio
 async def test_get_environment_async(transport: str = 'grpc_asyncio', request_type=environment.GetEnvironmentRequest):
     client = EnvironmentsAsyncClient(
@@ -1031,6 +1074,24 @@ def test_create_environment(transport: str = 'grpc', request_type=gcdc_environme
 def test_create_environment_from_dict():
     test_create_environment(request_type=dict)
 
+
+def test_create_environment_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = EnvironmentsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_environment),
+            '__call__') as call:
+        client.create_environment()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gcdc_environment.CreateEnvironmentRequest()
 
 @pytest.mark.asyncio
 async def test_create_environment_async(transport: str = 'grpc_asyncio', request_type=gcdc_environment.CreateEnvironmentRequest):
@@ -1258,6 +1319,24 @@ def test_update_environment_from_dict():
     test_update_environment(request_type=dict)
 
 
+def test_update_environment_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = EnvironmentsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_environment),
+            '__call__') as call:
+        client.update_environment()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gcdc_environment.UpdateEnvironmentRequest()
+
 @pytest.mark.asyncio
 async def test_update_environment_async(transport: str = 'grpc_asyncio', request_type=gcdc_environment.UpdateEnvironmentRequest):
     client = EnvironmentsAsyncClient(
@@ -1484,6 +1563,24 @@ def test_delete_environment_from_dict():
     test_delete_environment(request_type=dict)
 
 
+def test_delete_environment_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = EnvironmentsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_environment),
+            '__call__') as call:
+        client.delete_environment()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == environment.DeleteEnvironmentRequest()
+
 @pytest.mark.asyncio
 async def test_delete_environment_async(transport: str = 'grpc_asyncio', request_type=environment.DeleteEnvironmentRequest):
     client = EnvironmentsAsyncClient(
@@ -1703,6 +1800,24 @@ def test_lookup_environment_history(transport: str = 'grpc', request_type=enviro
 def test_lookup_environment_history_from_dict():
     test_lookup_environment_history(request_type=dict)
 
+
+def test_lookup_environment_history_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = EnvironmentsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.lookup_environment_history),
+            '__call__') as call:
+        client.lookup_environment_history()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == environment.LookupEnvironmentHistoryRequest()
 
 @pytest.mark.asyncio
 async def test_lookup_environment_history_async(transport: str = 'grpc_asyncio', request_type=environment.LookupEnvironmentHistoryRequest):

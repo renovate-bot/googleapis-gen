@@ -76,13 +76,18 @@ def test__get_default_mtls_endpoint():
     assert InstanceAdminClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_instance_admin_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    InstanceAdminClient,
+    InstanceAdminAsyncClient,
+])
+def test_instance_admin_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = InstanceAdminClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'spanner.googleapis.com:443'
 
@@ -97,9 +102,11 @@ def test_instance_admin_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'spanner.googleapis.com:443'
 
@@ -390,6 +397,24 @@ def test_list_instance_configs(transport: str = 'grpc', request_type=spanner_ins
 def test_list_instance_configs_from_dict():
     test_list_instance_configs(request_type=dict)
 
+
+def test_list_instance_configs_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = InstanceAdminClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_instance_configs),
+            '__call__') as call:
+        client.list_instance_configs()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == spanner_instance_admin.ListInstanceConfigsRequest()
 
 @pytest.mark.asyncio
 async def test_list_instance_configs_async(transport: str = 'grpc_asyncio', request_type=spanner_instance_admin.ListInstanceConfigsRequest):
@@ -806,6 +831,24 @@ def test_get_instance_config_from_dict():
     test_get_instance_config(request_type=dict)
 
 
+def test_get_instance_config_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = InstanceAdminClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_instance_config),
+            '__call__') as call:
+        client.get_instance_config()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == spanner_instance_admin.GetInstanceConfigRequest()
+
 @pytest.mark.asyncio
 async def test_get_instance_config_async(transport: str = 'grpc_asyncio', request_type=spanner_instance_admin.GetInstanceConfigRequest):
     client = InstanceAdminAsyncClient(
@@ -1032,6 +1075,24 @@ def test_list_instances(transport: str = 'grpc', request_type=spanner_instance_a
 def test_list_instances_from_dict():
     test_list_instances(request_type=dict)
 
+
+def test_list_instances_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = InstanceAdminClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_instances),
+            '__call__') as call:
+        client.list_instances()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == spanner_instance_admin.ListInstancesRequest()
 
 @pytest.mark.asyncio
 async def test_list_instances_async(transport: str = 'grpc_asyncio', request_type=spanner_instance_admin.ListInstancesRequest):
@@ -1464,6 +1525,24 @@ def test_get_instance_from_dict():
     test_get_instance(request_type=dict)
 
 
+def test_get_instance_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = InstanceAdminClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_instance),
+            '__call__') as call:
+        client.get_instance()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == spanner_instance_admin.GetInstanceRequest()
+
 @pytest.mark.asyncio
 async def test_get_instance_async(transport: str = 'grpc_asyncio', request_type=spanner_instance_admin.GetInstanceRequest):
     client = InstanceAdminAsyncClient(
@@ -1696,6 +1775,24 @@ def test_create_instance(transport: str = 'grpc', request_type=spanner_instance_
 def test_create_instance_from_dict():
     test_create_instance(request_type=dict)
 
+
+def test_create_instance_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = InstanceAdminClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_instance),
+            '__call__') as call:
+        client.create_instance()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == spanner_instance_admin.CreateInstanceRequest()
 
 @pytest.mark.asyncio
 async def test_create_instance_async(transport: str = 'grpc_asyncio', request_type=spanner_instance_admin.CreateInstanceRequest):
@@ -1931,6 +2028,24 @@ def test_update_instance_from_dict():
     test_update_instance(request_type=dict)
 
 
+def test_update_instance_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = InstanceAdminClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_instance),
+            '__call__') as call:
+        client.update_instance()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == spanner_instance_admin.UpdateInstanceRequest()
+
 @pytest.mark.asyncio
 async def test_update_instance_async(transport: str = 'grpc_asyncio', request_type=spanner_instance_admin.UpdateInstanceRequest):
     client = InstanceAdminAsyncClient(
@@ -2157,6 +2272,24 @@ def test_delete_instance_from_dict():
     test_delete_instance(request_type=dict)
 
 
+def test_delete_instance_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = InstanceAdminClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_instance),
+            '__call__') as call:
+        client.delete_instance()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == spanner_instance_admin.DeleteInstanceRequest()
+
 @pytest.mark.asyncio
 async def test_delete_instance_async(transport: str = 'grpc_asyncio', request_type=spanner_instance_admin.DeleteInstanceRequest):
     client = InstanceAdminAsyncClient(
@@ -2380,6 +2513,24 @@ def test_set_iam_policy(transport: str = 'grpc', request_type=iam_policy.SetIamP
 def test_set_iam_policy_from_dict():
     test_set_iam_policy(request_type=dict)
 
+
+def test_set_iam_policy_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = InstanceAdminClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.set_iam_policy),
+            '__call__') as call:
+        client.set_iam_policy()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam_policy.SetIamPolicyRequest()
 
 @pytest.mark.asyncio
 async def test_set_iam_policy_async(transport: str = 'grpc_asyncio', request_type=iam_policy.SetIamPolicyRequest):
@@ -2631,6 +2782,24 @@ def test_get_iam_policy_from_dict():
     test_get_iam_policy(request_type=dict)
 
 
+def test_get_iam_policy_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = InstanceAdminClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_iam_policy),
+            '__call__') as call:
+        client.get_iam_policy()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam_policy.GetIamPolicyRequest()
+
 @pytest.mark.asyncio
 async def test_get_iam_policy_async(transport: str = 'grpc_asyncio', request_type=iam_policy.GetIamPolicyRequest):
     client = InstanceAdminAsyncClient(
@@ -2876,6 +3045,24 @@ def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy.T
 def test_test_iam_permissions_from_dict():
     test_test_iam_permissions(request_type=dict)
 
+
+def test_test_iam_permissions_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = InstanceAdminClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.test_iam_permissions),
+            '__call__') as call:
+        client.test_iam_permissions()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == iam_policy.TestIamPermissionsRequest()
 
 @pytest.mark.asyncio
 async def test_test_iam_permissions_async(transport: str = 'grpc_asyncio', request_type=iam_policy.TestIamPermissionsRequest):

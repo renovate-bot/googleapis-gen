@@ -74,13 +74,18 @@ def test__get_default_mtls_endpoint():
     assert KeyManagementServiceClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_key_management_service_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    KeyManagementServiceClient,
+    KeyManagementServiceAsyncClient,
+])
+def test_key_management_service_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = KeyManagementServiceClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'cloudkms.googleapis.com:443'
 
@@ -95,9 +100,11 @@ def test_key_management_service_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'cloudkms.googleapis.com:443'
 
@@ -392,6 +399,24 @@ def test_list_key_rings(transport: str = 'grpc', request_type=service.ListKeyRin
 def test_list_key_rings_from_dict():
     test_list_key_rings(request_type=dict)
 
+
+def test_list_key_rings_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = KeyManagementServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_key_rings),
+            '__call__') as call:
+        client.list_key_rings()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.ListKeyRingsRequest()
 
 @pytest.mark.asyncio
 async def test_list_key_rings_async(transport: str = 'grpc_asyncio', request_type=service.ListKeyRingsRequest):
@@ -811,6 +836,24 @@ def test_list_crypto_keys_from_dict():
     test_list_crypto_keys(request_type=dict)
 
 
+def test_list_crypto_keys_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = KeyManagementServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_crypto_keys),
+            '__call__') as call:
+        client.list_crypto_keys()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.ListCryptoKeysRequest()
+
 @pytest.mark.asyncio
 async def test_list_crypto_keys_async(transport: str = 'grpc_asyncio', request_type=service.ListCryptoKeysRequest):
     client = KeyManagementServiceAsyncClient(
@@ -1228,6 +1271,24 @@ def test_list_crypto_key_versions(transport: str = 'grpc', request_type=service.
 def test_list_crypto_key_versions_from_dict():
     test_list_crypto_key_versions(request_type=dict)
 
+
+def test_list_crypto_key_versions_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = KeyManagementServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_crypto_key_versions),
+            '__call__') as call:
+        client.list_crypto_key_versions()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.ListCryptoKeyVersionsRequest()
 
 @pytest.mark.asyncio
 async def test_list_crypto_key_versions_async(transport: str = 'grpc_asyncio', request_type=service.ListCryptoKeyVersionsRequest):
@@ -1647,6 +1708,24 @@ def test_list_import_jobs_from_dict():
     test_list_import_jobs(request_type=dict)
 
 
+def test_list_import_jobs_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = KeyManagementServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_import_jobs),
+            '__call__') as call:
+        client.list_import_jobs()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.ListImportJobsRequest()
+
 @pytest.mark.asyncio
 async def test_list_import_jobs_async(transport: str = 'grpc_asyncio', request_type=service.ListImportJobsRequest):
     client = KeyManagementServiceAsyncClient(
@@ -2061,6 +2140,24 @@ def test_get_key_ring_from_dict():
     test_get_key_ring(request_type=dict)
 
 
+def test_get_key_ring_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = KeyManagementServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_key_ring),
+            '__call__') as call:
+        client.get_key_ring()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.GetKeyRingRequest()
+
 @pytest.mark.asyncio
 async def test_get_key_ring_async(transport: str = 'grpc_asyncio', request_type=service.GetKeyRingRequest):
     client = KeyManagementServiceAsyncClient(
@@ -2289,6 +2386,24 @@ def test_get_crypto_key(transport: str = 'grpc', request_type=service.GetCryptoK
 def test_get_crypto_key_from_dict():
     test_get_crypto_key(request_type=dict)
 
+
+def test_get_crypto_key_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = KeyManagementServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_crypto_key),
+            '__call__') as call:
+        client.get_crypto_key()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.GetCryptoKeyRequest()
 
 @pytest.mark.asyncio
 async def test_get_crypto_key_async(transport: str = 'grpc_asyncio', request_type=service.GetCryptoKeyRequest):
@@ -2537,6 +2652,24 @@ def test_get_crypto_key_version_from_dict():
     test_get_crypto_key_version(request_type=dict)
 
 
+def test_get_crypto_key_version_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = KeyManagementServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_crypto_key_version),
+            '__call__') as call:
+        client.get_crypto_key_version()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.GetCryptoKeyVersionRequest()
+
 @pytest.mark.asyncio
 async def test_get_crypto_key_version_async(transport: str = 'grpc_asyncio', request_type=service.GetCryptoKeyVersionRequest):
     client = KeyManagementServiceAsyncClient(
@@ -2784,6 +2917,24 @@ def test_get_public_key_from_dict():
     test_get_public_key(request_type=dict)
 
 
+def test_get_public_key_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = KeyManagementServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_public_key),
+            '__call__') as call:
+        client.get_public_key()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.GetPublicKeyRequest()
+
 @pytest.mark.asyncio
 async def test_get_public_key_async(transport: str = 'grpc_asyncio', request_type=service.GetPublicKeyRequest):
     client = KeyManagementServiceAsyncClient(
@@ -3026,6 +3177,24 @@ def test_get_import_job_from_dict():
     test_get_import_job(request_type=dict)
 
 
+def test_get_import_job_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = KeyManagementServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_import_job),
+            '__call__') as call:
+        client.get_import_job()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.GetImportJobRequest()
+
 @pytest.mark.asyncio
 async def test_get_import_job_async(transport: str = 'grpc_asyncio', request_type=service.GetImportJobRequest):
     client = KeyManagementServiceAsyncClient(
@@ -3258,6 +3427,24 @@ def test_create_key_ring(transport: str = 'grpc', request_type=service.CreateKey
 def test_create_key_ring_from_dict():
     test_create_key_ring(request_type=dict)
 
+
+def test_create_key_ring_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = KeyManagementServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_key_ring),
+            '__call__') as call:
+        client.create_key_ring()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.CreateKeyRingRequest()
 
 @pytest.mark.asyncio
 async def test_create_key_ring_async(transport: str = 'grpc_asyncio', request_type=service.CreateKeyRingRequest):
@@ -3503,6 +3690,24 @@ def test_create_crypto_key(transport: str = 'grpc', request_type=service.CreateC
 def test_create_crypto_key_from_dict():
     test_create_crypto_key(request_type=dict)
 
+
+def test_create_crypto_key_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = KeyManagementServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_crypto_key),
+            '__call__') as call:
+        client.create_crypto_key()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.CreateCryptoKeyRequest()
 
 @pytest.mark.asyncio
 async def test_create_crypto_key_async(transport: str = 'grpc_asyncio', request_type=service.CreateCryptoKeyRequest):
@@ -3766,6 +3971,24 @@ def test_create_crypto_key_version(transport: str = 'grpc', request_type=service
 def test_create_crypto_key_version_from_dict():
     test_create_crypto_key_version(request_type=dict)
 
+
+def test_create_crypto_key_version_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = KeyManagementServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_crypto_key_version),
+            '__call__') as call:
+        client.create_crypto_key_version()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.CreateCryptoKeyVersionRequest()
 
 @pytest.mark.asyncio
 async def test_create_crypto_key_version_async(transport: str = 'grpc_asyncio', request_type=service.CreateCryptoKeyVersionRequest):
@@ -4034,6 +4257,24 @@ def test_import_crypto_key_version_from_dict():
     test_import_crypto_key_version(request_type=dict)
 
 
+def test_import_crypto_key_version_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = KeyManagementServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.import_crypto_key_version),
+            '__call__') as call:
+        client.import_crypto_key_version()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.ImportCryptoKeyVersionRequest()
+
 @pytest.mark.asyncio
 async def test_import_crypto_key_version_async(transport: str = 'grpc_asyncio', request_type=service.ImportCryptoKeyVersionRequest):
     client = KeyManagementServiceAsyncClient(
@@ -4201,6 +4442,24 @@ def test_create_import_job(transport: str = 'grpc', request_type=service.CreateI
 def test_create_import_job_from_dict():
     test_create_import_job(request_type=dict)
 
+
+def test_create_import_job_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = KeyManagementServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_import_job),
+            '__call__') as call:
+        client.create_import_job()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.CreateImportJobRequest()
 
 @pytest.mark.asyncio
 async def test_create_import_job_async(transport: str = 'grpc_asyncio', request_type=service.CreateImportJobRequest):
@@ -4456,6 +4715,24 @@ def test_update_crypto_key_from_dict():
     test_update_crypto_key(request_type=dict)
 
 
+def test_update_crypto_key_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = KeyManagementServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_crypto_key),
+            '__call__') as call:
+        client.update_crypto_key()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.UpdateCryptoKeyRequest()
+
 @pytest.mark.asyncio
 async def test_update_crypto_key_async(transport: str = 'grpc_asyncio', request_type=service.UpdateCryptoKeyRequest):
     client = KeyManagementServiceAsyncClient(
@@ -4710,6 +4987,24 @@ def test_update_crypto_key_version(transport: str = 'grpc', request_type=service
 def test_update_crypto_key_version_from_dict():
     test_update_crypto_key_version(request_type=dict)
 
+
+def test_update_crypto_key_version_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = KeyManagementServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_crypto_key_version),
+            '__call__') as call:
+        client.update_crypto_key_version()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.UpdateCryptoKeyVersionRequest()
 
 @pytest.mark.asyncio
 async def test_update_crypto_key_version_async(transport: str = 'grpc_asyncio', request_type=service.UpdateCryptoKeyVersionRequest):
@@ -4970,6 +5265,24 @@ def test_encrypt_from_dict():
     test_encrypt(request_type=dict)
 
 
+def test_encrypt_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = KeyManagementServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.encrypt),
+            '__call__') as call:
+        client.encrypt()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.EncryptRequest()
+
 @pytest.mark.asyncio
 async def test_encrypt_async(transport: str = 'grpc_asyncio', request_type=service.EncryptRequest):
     client = KeyManagementServiceAsyncClient(
@@ -5211,6 +5524,24 @@ def test_decrypt_from_dict():
     test_decrypt(request_type=dict)
 
 
+def test_decrypt_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = KeyManagementServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.decrypt),
+            '__call__') as call:
+        client.decrypt()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.DecryptRequest()
+
 @pytest.mark.asyncio
 async def test_decrypt_async(transport: str = 'grpc_asyncio', request_type=service.DecryptRequest):
     client = KeyManagementServiceAsyncClient(
@@ -5450,6 +5781,24 @@ def test_asymmetric_sign(transport: str = 'grpc', request_type=service.Asymmetri
 def test_asymmetric_sign_from_dict():
     test_asymmetric_sign(request_type=dict)
 
+
+def test_asymmetric_sign_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = KeyManagementServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.asymmetric_sign),
+            '__call__') as call:
+        client.asymmetric_sign()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.AsymmetricSignRequest()
 
 @pytest.mark.asyncio
 async def test_asymmetric_sign_async(transport: str = 'grpc_asyncio', request_type=service.AsymmetricSignRequest):
@@ -5693,6 +6042,24 @@ def test_asymmetric_decrypt_from_dict():
     test_asymmetric_decrypt(request_type=dict)
 
 
+def test_asymmetric_decrypt_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = KeyManagementServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.asymmetric_decrypt),
+            '__call__') as call:
+        client.asymmetric_decrypt()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.AsymmetricDecryptRequest()
+
 @pytest.mark.asyncio
 async def test_asymmetric_decrypt_async(transport: str = 'grpc_asyncio', request_type=service.AsymmetricDecryptRequest):
     client = KeyManagementServiceAsyncClient(
@@ -5932,6 +6299,24 @@ def test_update_crypto_key_primary_version(transport: str = 'grpc', request_type
 def test_update_crypto_key_primary_version_from_dict():
     test_update_crypto_key_primary_version(request_type=dict)
 
+
+def test_update_crypto_key_primary_version_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = KeyManagementServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_crypto_key_primary_version),
+            '__call__') as call:
+        client.update_crypto_key_primary_version()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.UpdateCryptoKeyPrimaryVersionRequest()
 
 @pytest.mark.asyncio
 async def test_update_crypto_key_primary_version_async(transport: str = 'grpc_asyncio', request_type=service.UpdateCryptoKeyPrimaryVersionRequest):
@@ -6187,6 +6572,24 @@ def test_destroy_crypto_key_version(transport: str = 'grpc', request_type=servic
 def test_destroy_crypto_key_version_from_dict():
     test_destroy_crypto_key_version(request_type=dict)
 
+
+def test_destroy_crypto_key_version_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = KeyManagementServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.destroy_crypto_key_version),
+            '__call__') as call:
+        client.destroy_crypto_key_version()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.DestroyCryptoKeyVersionRequest()
 
 @pytest.mark.asyncio
 async def test_destroy_crypto_key_version_async(transport: str = 'grpc_asyncio', request_type=service.DestroyCryptoKeyVersionRequest):
@@ -6446,6 +6849,24 @@ def test_restore_crypto_key_version(transport: str = 'grpc', request_type=servic
 def test_restore_crypto_key_version_from_dict():
     test_restore_crypto_key_version(request_type=dict)
 
+
+def test_restore_crypto_key_version_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = KeyManagementServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.restore_crypto_key_version),
+            '__call__') as call:
+        client.restore_crypto_key_version()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == service.RestoreCryptoKeyVersionRequest()
 
 @pytest.mark.asyncio
 async def test_restore_crypto_key_version_async(transport: str = 'grpc_asyncio', request_type=service.RestoreCryptoKeyVersionRequest):

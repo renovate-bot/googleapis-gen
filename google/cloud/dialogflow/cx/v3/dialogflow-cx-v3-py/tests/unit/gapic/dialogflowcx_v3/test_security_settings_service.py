@@ -68,13 +68,18 @@ def test__get_default_mtls_endpoint():
     assert SecuritySettingsServiceClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_security_settings_service_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    SecuritySettingsServiceClient,
+    SecuritySettingsServiceAsyncClient,
+])
+def test_security_settings_service_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = SecuritySettingsServiceClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'dialogflow.googleapis.com:443'
 
@@ -89,9 +94,11 @@ def test_security_settings_service_client_from_service_account_file(client_class
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'dialogflow.googleapis.com:443'
 
@@ -404,6 +411,24 @@ def test_create_security_settings_from_dict():
     test_create_security_settings(request_type=dict)
 
 
+def test_create_security_settings_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = SecuritySettingsServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_security_settings),
+            '__call__') as call:
+        client.create_security_settings()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gcdc_security_settings.CreateSecuritySettingsRequest()
+
 @pytest.mark.asyncio
 async def test_create_security_settings_async(transport: str = 'grpc_asyncio', request_type=gcdc_security_settings.CreateSecuritySettingsRequest):
     client = SecuritySettingsServiceAsyncClient(
@@ -672,6 +697,24 @@ def test_get_security_settings_from_dict():
     test_get_security_settings(request_type=dict)
 
 
+def test_get_security_settings_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = SecuritySettingsServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_security_settings),
+            '__call__') as call:
+        client.get_security_settings()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == security_settings.GetSecuritySettingsRequest()
+
 @pytest.mark.asyncio
 async def test_get_security_settings_async(transport: str = 'grpc_asyncio', request_type=security_settings.GetSecuritySettingsRequest):
     client = SecuritySettingsServiceAsyncClient(
@@ -932,6 +975,24 @@ def test_update_security_settings_from_dict():
     test_update_security_settings(request_type=dict)
 
 
+def test_update_security_settings_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = SecuritySettingsServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_security_settings),
+            '__call__') as call:
+        client.update_security_settings()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gcdc_security_settings.UpdateSecuritySettingsRequest()
+
 @pytest.mark.asyncio
 async def test_update_security_settings_async(transport: str = 'grpc_asyncio', request_type=gcdc_security_settings.UpdateSecuritySettingsRequest):
     client = SecuritySettingsServiceAsyncClient(
@@ -1178,6 +1239,24 @@ def test_list_security_settings(transport: str = 'grpc', request_type=security_s
 def test_list_security_settings_from_dict():
     test_list_security_settings(request_type=dict)
 
+
+def test_list_security_settings_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = SecuritySettingsServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_security_settings),
+            '__call__') as call:
+        client.list_security_settings()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == security_settings.ListSecuritySettingsRequest()
 
 @pytest.mark.asyncio
 async def test_list_security_settings_async(transport: str = 'grpc_asyncio', request_type=security_settings.ListSecuritySettingsRequest):
@@ -1583,6 +1662,24 @@ def test_delete_security_settings(transport: str = 'grpc', request_type=security
 def test_delete_security_settings_from_dict():
     test_delete_security_settings(request_type=dict)
 
+
+def test_delete_security_settings_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = SecuritySettingsServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_security_settings),
+            '__call__') as call:
+        client.delete_security_settings()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == security_settings.DeleteSecuritySettingsRequest()
 
 @pytest.mark.asyncio
 async def test_delete_security_settings_async(transport: str = 'grpc_asyncio', request_type=security_settings.DeleteSecuritySettingsRequest):

@@ -72,13 +72,18 @@ def test__get_default_mtls_endpoint():
     assert CloudMemcacheClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_cloud_memcache_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    CloudMemcacheClient,
+    CloudMemcacheAsyncClient,
+])
+def test_cloud_memcache_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = CloudMemcacheClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'memcache.googleapis.com:443'
 
@@ -93,9 +98,11 @@ def test_cloud_memcache_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'memcache.googleapis.com:443'
 
@@ -390,6 +397,24 @@ def test_list_instances(transport: str = 'grpc', request_type=cloud_memcache.Lis
 def test_list_instances_from_dict():
     test_list_instances(request_type=dict)
 
+
+def test_list_instances_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudMemcacheClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_instances),
+            '__call__') as call:
+        client.list_instances()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloud_memcache.ListInstancesRequest()
 
 @pytest.mark.asyncio
 async def test_list_instances_async(transport: str = 'grpc_asyncio', request_type=cloud_memcache.ListInstancesRequest):
@@ -841,6 +866,24 @@ def test_get_instance_from_dict():
     test_get_instance(request_type=dict)
 
 
+def test_get_instance_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudMemcacheClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_instance),
+            '__call__') as call:
+        client.get_instance()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloud_memcache.GetInstanceRequest()
+
 @pytest.mark.asyncio
 async def test_get_instance_async(transport: str = 'grpc_asyncio', request_type=cloud_memcache.GetInstanceRequest):
     client = CloudMemcacheAsyncClient(
@@ -1086,6 +1129,24 @@ def test_create_instance_from_dict():
     test_create_instance(request_type=dict)
 
 
+def test_create_instance_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudMemcacheClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_instance),
+            '__call__') as call:
+        client.create_instance()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloud_memcache.CreateInstanceRequest()
+
 @pytest.mark.asyncio
 async def test_create_instance_async(transport: str = 'grpc_asyncio', request_type=cloud_memcache.CreateInstanceRequest):
     client = CloudMemcacheAsyncClient(
@@ -1320,6 +1381,24 @@ def test_update_instance_from_dict():
     test_update_instance(request_type=dict)
 
 
+def test_update_instance_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudMemcacheClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_instance),
+            '__call__') as call:
+        client.update_instance()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloud_memcache.UpdateInstanceRequest()
+
 @pytest.mark.asyncio
 async def test_update_instance_async(transport: str = 'grpc_asyncio', request_type=cloud_memcache.UpdateInstanceRequest):
     client = CloudMemcacheAsyncClient(
@@ -1545,6 +1624,24 @@ def test_update_parameters(transport: str = 'grpc', request_type=cloud_memcache.
 def test_update_parameters_from_dict():
     test_update_parameters(request_type=dict)
 
+
+def test_update_parameters_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudMemcacheClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_parameters),
+            '__call__') as call:
+        client.update_parameters()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloud_memcache.UpdateParametersRequest()
 
 @pytest.mark.asyncio
 async def test_update_parameters_async(transport: str = 'grpc_asyncio', request_type=cloud_memcache.UpdateParametersRequest):
@@ -1780,6 +1877,24 @@ def test_delete_instance_from_dict():
     test_delete_instance(request_type=dict)
 
 
+def test_delete_instance_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudMemcacheClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_instance),
+            '__call__') as call:
+        client.delete_instance()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloud_memcache.DeleteInstanceRequest()
+
 @pytest.mark.asyncio
 async def test_delete_instance_async(transport: str = 'grpc_asyncio', request_type=cloud_memcache.DeleteInstanceRequest):
     client = CloudMemcacheAsyncClient(
@@ -1997,6 +2112,24 @@ def test_apply_parameters(transport: str = 'grpc', request_type=cloud_memcache.A
 def test_apply_parameters_from_dict():
     test_apply_parameters(request_type=dict)
 
+
+def test_apply_parameters_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudMemcacheClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.apply_parameters),
+            '__call__') as call:
+        client.apply_parameters()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloud_memcache.ApplyParametersRequest()
 
 @pytest.mark.asyncio
 async def test_apply_parameters_async(transport: str = 'grpc_asyncio', request_type=cloud_memcache.ApplyParametersRequest):
@@ -2231,6 +2364,24 @@ def test_apply_software_update(transport: str = 'grpc', request_type=cloud_memca
 def test_apply_software_update_from_dict():
     test_apply_software_update(request_type=dict)
 
+
+def test_apply_software_update_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudMemcacheClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.apply_software_update),
+            '__call__') as call:
+        client.apply_software_update()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloud_memcache.ApplySoftwareUpdateRequest()
 
 @pytest.mark.asyncio
 async def test_apply_software_update_async(transport: str = 'grpc_asyncio', request_type=cloud_memcache.ApplySoftwareUpdateRequest):

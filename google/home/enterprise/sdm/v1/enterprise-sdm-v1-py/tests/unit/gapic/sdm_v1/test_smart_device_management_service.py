@@ -69,13 +69,18 @@ def test__get_default_mtls_endpoint():
     assert SmartDeviceManagementServiceClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_smart_device_management_service_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    SmartDeviceManagementServiceClient,
+    SmartDeviceManagementServiceAsyncClient,
+])
+def test_smart_device_management_service_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = SmartDeviceManagementServiceClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'smartdevicemanagement.googleapis.com:443'
 
@@ -90,9 +95,11 @@ def test_smart_device_management_service_client_from_service_account_file(client
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'smartdevicemanagement.googleapis.com:443'
 
@@ -388,6 +395,24 @@ def test_get_device_from_dict():
     test_get_device(request_type=dict)
 
 
+def test_get_device_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = SmartDeviceManagementServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_device),
+            '__call__') as call:
+        client.get_device()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == smart_device_management_service.GetDeviceRequest()
+
 @pytest.mark.asyncio
 async def test_get_device_async(transport: str = 'grpc_asyncio', request_type=smart_device_management_service.GetDeviceRequest):
     client = SmartDeviceManagementServiceAsyncClient(
@@ -531,6 +556,24 @@ def test_list_devices(transport: str = 'grpc', request_type=smart_device_managem
 def test_list_devices_from_dict():
     test_list_devices(request_type=dict)
 
+
+def test_list_devices_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = SmartDeviceManagementServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_devices),
+            '__call__') as call:
+        client.list_devices()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == smart_device_management_service.ListDevicesRequest()
 
 @pytest.mark.asyncio
 async def test_list_devices_async(transport: str = 'grpc_asyncio', request_type=smart_device_management_service.ListDevicesRequest):
@@ -856,6 +899,24 @@ def test_execute_device_command_from_dict():
     test_execute_device_command(request_type=dict)
 
 
+def test_execute_device_command_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = SmartDeviceManagementServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.execute_device_command),
+            '__call__') as call:
+        client.execute_device_command()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == smart_device_management_service.ExecuteDeviceCommandRequest()
+
 @pytest.mark.asyncio
 async def test_execute_device_command_async(transport: str = 'grpc_asyncio', request_type=smart_device_management_service.ExecuteDeviceCommandRequest):
     client = SmartDeviceManagementServiceAsyncClient(
@@ -993,6 +1054,24 @@ def test_get_structure(transport: str = 'grpc', request_type=smart_device_manage
 def test_get_structure_from_dict():
     test_get_structure(request_type=dict)
 
+
+def test_get_structure_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = SmartDeviceManagementServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_structure),
+            '__call__') as call:
+        client.get_structure()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == smart_device_management_service.GetStructureRequest()
 
 @pytest.mark.asyncio
 async def test_get_structure_async(transport: str = 'grpc_asyncio', request_type=smart_device_management_service.GetStructureRequest):
@@ -1134,6 +1213,24 @@ def test_list_structures(transport: str = 'grpc', request_type=smart_device_mana
 def test_list_structures_from_dict():
     test_list_structures(request_type=dict)
 
+
+def test_list_structures_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = SmartDeviceManagementServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_structures),
+            '__call__') as call:
+        client.list_structures()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == smart_device_management_service.ListStructuresRequest()
 
 @pytest.mark.asyncio
 async def test_list_structures_async(transport: str = 'grpc_asyncio', request_type=smart_device_management_service.ListStructuresRequest):
@@ -1463,6 +1560,24 @@ def test_get_room_from_dict():
     test_get_room(request_type=dict)
 
 
+def test_get_room_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = SmartDeviceManagementServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_room),
+            '__call__') as call:
+        client.get_room()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == smart_device_management_service.GetRoomRequest()
+
 @pytest.mark.asyncio
 async def test_get_room_async(transport: str = 'grpc_asyncio', request_type=smart_device_management_service.GetRoomRequest):
     client = SmartDeviceManagementServiceAsyncClient(
@@ -1603,6 +1718,24 @@ def test_list_rooms(transport: str = 'grpc', request_type=smart_device_managemen
 def test_list_rooms_from_dict():
     test_list_rooms(request_type=dict)
 
+
+def test_list_rooms_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = SmartDeviceManagementServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_rooms),
+            '__call__') as call:
+        client.list_rooms()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == smart_device_management_service.ListRoomsRequest()
 
 @pytest.mark.asyncio
 async def test_list_rooms_async(transport: str = 'grpc_asyncio', request_type=smart_device_management_service.ListRoomsRequest):

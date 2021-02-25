@@ -15,12 +15,22 @@
 # limitations under the License.
 #
 
+import io
+import os
 import setuptools  # type: ignore
 
+version = '0.1.0'
+
+package_root = os.path.abspath(os.path.dirname(__file__))
+
+readme_filename = os.path.join(package_root, 'README.rst')
+with io.open(readme_filename, encoding='utf-8') as readme_file:
+    readme = readme_file.read()
 
 setuptools.setup(
     name='google-cloud-kms',
-    version='0.0.1',
+    version=version,
+    long_description=readme,
     packages=setuptools.PEP420PackageFinder.find(),
     namespace_packages=('google', 'google.cloud'),
     platforms='Posix; MacOS X; Windows',
@@ -32,9 +42,6 @@ setuptools.setup(
         'grpc-google-iam-v1',
     ),
     python_requires='>=3.6',
-    scripts=[
-        'scripts/fixup_kms_v1_keywords.py',
-    ],
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',

@@ -72,13 +72,18 @@ def test__get_default_mtls_endpoint():
     assert DataprocMetastoreClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_dataproc_metastore_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    DataprocMetastoreClient,
+    DataprocMetastoreAsyncClient,
+])
+def test_dataproc_metastore_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = DataprocMetastoreClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'metastore.googleapis.com:443'
 
@@ -93,9 +98,11 @@ def test_dataproc_metastore_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'metastore.googleapis.com:443'
 
@@ -390,6 +397,24 @@ def test_list_services(transport: str = 'grpc', request_type=metastore.ListServi
 def test_list_services_from_dict():
     test_list_services(request_type=dict)
 
+
+def test_list_services_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DataprocMetastoreClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_services),
+            '__call__') as call:
+        client.list_services()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == metastore.ListServicesRequest()
 
 @pytest.mark.asyncio
 async def test_list_services_async(transport: str = 'grpc_asyncio', request_type=metastore.ListServicesRequest):
@@ -834,6 +859,24 @@ def test_get_service_from_dict():
     test_get_service(request_type=dict)
 
 
+def test_get_service_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DataprocMetastoreClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_service),
+            '__call__') as call:
+        client.get_service()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == metastore.GetServiceRequest()
+
 @pytest.mark.asyncio
 async def test_get_service_async(transport: str = 'grpc_asyncio', request_type=metastore.GetServiceRequest):
     client = DataprocMetastoreAsyncClient(
@@ -1073,6 +1116,24 @@ def test_create_service_from_dict():
     test_create_service(request_type=dict)
 
 
+def test_create_service_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DataprocMetastoreClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_service),
+            '__call__') as call:
+        client.create_service()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == metastore.CreateServiceRequest()
+
 @pytest.mark.asyncio
 async def test_create_service_async(transport: str = 'grpc_asyncio', request_type=metastore.CreateServiceRequest):
     client = DataprocMetastoreAsyncClient(
@@ -1307,6 +1368,24 @@ def test_update_service_from_dict():
     test_update_service(request_type=dict)
 
 
+def test_update_service_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DataprocMetastoreClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_service),
+            '__call__') as call:
+        client.update_service()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == metastore.UpdateServiceRequest()
+
 @pytest.mark.asyncio
 async def test_update_service_async(transport: str = 'grpc_asyncio', request_type=metastore.UpdateServiceRequest):
     client = DataprocMetastoreAsyncClient(
@@ -1532,6 +1611,24 @@ def test_delete_service(transport: str = 'grpc', request_type=metastore.DeleteSe
 def test_delete_service_from_dict():
     test_delete_service(request_type=dict)
 
+
+def test_delete_service_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DataprocMetastoreClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_service),
+            '__call__') as call:
+        client.delete_service()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == metastore.DeleteServiceRequest()
 
 @pytest.mark.asyncio
 async def test_delete_service_async(transport: str = 'grpc_asyncio', request_type=metastore.DeleteServiceRequest):
@@ -1760,6 +1857,24 @@ def test_list_metadata_imports(transport: str = 'grpc', request_type=metastore.L
 def test_list_metadata_imports_from_dict():
     test_list_metadata_imports(request_type=dict)
 
+
+def test_list_metadata_imports_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DataprocMetastoreClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_metadata_imports),
+            '__call__') as call:
+        client.list_metadata_imports()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == metastore.ListMetadataImportsRequest()
 
 @pytest.mark.asyncio
 async def test_list_metadata_imports_async(transport: str = 'grpc_asyncio', request_type=metastore.ListMetadataImportsRequest):
@@ -2184,6 +2299,24 @@ def test_get_metadata_import_from_dict():
     test_get_metadata_import(request_type=dict)
 
 
+def test_get_metadata_import_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DataprocMetastoreClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_metadata_import),
+            '__call__') as call:
+        client.get_metadata_import()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == metastore.GetMetadataImportRequest()
+
 @pytest.mark.asyncio
 async def test_get_metadata_import_async(transport: str = 'grpc_asyncio', request_type=metastore.GetMetadataImportRequest):
     client = DataprocMetastoreAsyncClient(
@@ -2407,6 +2540,24 @@ def test_create_metadata_import(transport: str = 'grpc', request_type=metastore.
 def test_create_metadata_import_from_dict():
     test_create_metadata_import(request_type=dict)
 
+
+def test_create_metadata_import_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DataprocMetastoreClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_metadata_import),
+            '__call__') as call:
+        client.create_metadata_import()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == metastore.CreateMetadataImportRequest()
 
 @pytest.mark.asyncio
 async def test_create_metadata_import_async(transport: str = 'grpc_asyncio', request_type=metastore.CreateMetadataImportRequest):
@@ -2641,6 +2792,24 @@ def test_update_metadata_import(transport: str = 'grpc', request_type=metastore.
 def test_update_metadata_import_from_dict():
     test_update_metadata_import(request_type=dict)
 
+
+def test_update_metadata_import_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = DataprocMetastoreClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_metadata_import),
+            '__call__') as call:
+        client.update_metadata_import()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == metastore.UpdateMetadataImportRequest()
 
 @pytest.mark.asyncio
 async def test_update_metadata_import_async(transport: str = 'grpc_asyncio', request_type=metastore.UpdateMetadataImportRequest):

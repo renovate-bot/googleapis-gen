@@ -70,13 +70,18 @@ def test__get_default_mtls_endpoint():
     assert UptimeCheckServiceClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_uptime_check_service_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    UptimeCheckServiceClient,
+    UptimeCheckServiceAsyncClient,
+])
+def test_uptime_check_service_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = UptimeCheckServiceClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'monitoring.googleapis.com:443'
 
@@ -91,9 +96,11 @@ def test_uptime_check_service_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'monitoring.googleapis.com:443'
 
@@ -388,6 +395,24 @@ def test_list_uptime_check_configs(transport: str = 'grpc', request_type=uptime_
 def test_list_uptime_check_configs_from_dict():
     test_list_uptime_check_configs(request_type=dict)
 
+
+def test_list_uptime_check_configs_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = UptimeCheckServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_uptime_check_configs),
+            '__call__') as call:
+        client.list_uptime_check_configs()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == uptime_service.ListUptimeCheckConfigsRequest()
 
 @pytest.mark.asyncio
 async def test_list_uptime_check_configs_async(transport: str = 'grpc_asyncio', request_type=uptime_service.ListUptimeCheckConfigsRequest):
@@ -818,6 +843,24 @@ def test_get_uptime_check_config_from_dict():
     test_get_uptime_check_config(request_type=dict)
 
 
+def test_get_uptime_check_config_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = UptimeCheckServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_uptime_check_config),
+            '__call__') as call:
+        client.get_uptime_check_config()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == uptime_service.GetUptimeCheckConfigRequest()
+
 @pytest.mark.asyncio
 async def test_get_uptime_check_config_async(transport: str = 'grpc_asyncio', request_type=uptime_service.GetUptimeCheckConfigRequest):
     client = UptimeCheckServiceAsyncClient(
@@ -1065,6 +1108,24 @@ def test_create_uptime_check_config(transport: str = 'grpc', request_type=uptime
 def test_create_uptime_check_config_from_dict():
     test_create_uptime_check_config(request_type=dict)
 
+
+def test_create_uptime_check_config_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = UptimeCheckServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_uptime_check_config),
+            '__call__') as call:
+        client.create_uptime_check_config()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == uptime_service.CreateUptimeCheckConfigRequest()
 
 @pytest.mark.asyncio
 async def test_create_uptime_check_config_async(transport: str = 'grpc_asyncio', request_type=uptime_service.CreateUptimeCheckConfigRequest):
@@ -1322,6 +1383,24 @@ def test_update_uptime_check_config_from_dict():
     test_update_uptime_check_config(request_type=dict)
 
 
+def test_update_uptime_check_config_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = UptimeCheckServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_uptime_check_config),
+            '__call__') as call:
+        client.update_uptime_check_config()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == uptime_service.UpdateUptimeCheckConfigRequest()
+
 @pytest.mark.asyncio
 async def test_update_uptime_check_config_async(transport: str = 'grpc_asyncio', request_type=uptime_service.UpdateUptimeCheckConfigRequest):
     client = UptimeCheckServiceAsyncClient(
@@ -1549,6 +1628,24 @@ def test_delete_uptime_check_config_from_dict():
     test_delete_uptime_check_config(request_type=dict)
 
 
+def test_delete_uptime_check_config_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = UptimeCheckServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_uptime_check_config),
+            '__call__') as call:
+        client.delete_uptime_check_config()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == uptime_service.DeleteUptimeCheckConfigRequest()
+
 @pytest.mark.asyncio
 async def test_delete_uptime_check_config_async(transport: str = 'grpc_asyncio', request_type=uptime_service.DeleteUptimeCheckConfigRequest):
     client = UptimeCheckServiceAsyncClient(
@@ -1768,6 +1865,24 @@ def test_list_uptime_check_ips(transport: str = 'grpc', request_type=uptime_serv
 def test_list_uptime_check_ips_from_dict():
     test_list_uptime_check_ips(request_type=dict)
 
+
+def test_list_uptime_check_ips_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = UptimeCheckServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_uptime_check_ips),
+            '__call__') as call:
+        client.list_uptime_check_ips()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == uptime_service.ListUptimeCheckIpsRequest()
 
 @pytest.mark.asyncio
 async def test_list_uptime_check_ips_async(transport: str = 'grpc_asyncio', request_type=uptime_service.ListUptimeCheckIpsRequest):

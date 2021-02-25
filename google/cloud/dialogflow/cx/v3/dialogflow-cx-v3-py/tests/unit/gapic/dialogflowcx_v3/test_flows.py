@@ -78,13 +78,18 @@ def test__get_default_mtls_endpoint():
     assert FlowsClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_flows_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    FlowsClient,
+    FlowsAsyncClient,
+])
+def test_flows_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = FlowsClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'dialogflow.googleapis.com:443'
 
@@ -99,9 +104,11 @@ def test_flows_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'dialogflow.googleapis.com:443'
 
@@ -401,6 +408,24 @@ def test_create_flow_from_dict():
     test_create_flow(request_type=dict)
 
 
+def test_create_flow_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = FlowsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_flow),
+            '__call__') as call:
+        client.create_flow()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gcdc_flow.CreateFlowRequest()
+
 @pytest.mark.asyncio
 async def test_create_flow_async(transport: str = 'grpc_asyncio', request_type=gcdc_flow.CreateFlowRequest):
     client = FlowsAsyncClient(
@@ -633,6 +658,24 @@ def test_delete_flow_from_dict():
     test_delete_flow(request_type=dict)
 
 
+def test_delete_flow_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = FlowsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_flow),
+            '__call__') as call:
+        client.delete_flow()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == flow.DeleteFlowRequest()
+
 @pytest.mark.asyncio
 async def test_delete_flow_async(transport: str = 'grpc_asyncio', request_type=flow.DeleteFlowRequest):
     client = FlowsAsyncClient(
@@ -852,6 +895,24 @@ def test_list_flows(transport: str = 'grpc', request_type=flow.ListFlowsRequest)
 def test_list_flows_from_dict():
     test_list_flows(request_type=dict)
 
+
+def test_list_flows_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = FlowsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_flows),
+            '__call__') as call:
+        client.list_flows()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == flow.ListFlowsRequest()
 
 @pytest.mark.asyncio
 async def test_list_flows_async(transport: str = 'grpc_asyncio', request_type=flow.ListFlowsRequest):
@@ -1272,6 +1333,24 @@ def test_get_flow_from_dict():
     test_get_flow(request_type=dict)
 
 
+def test_get_flow_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = FlowsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_flow),
+            '__call__') as call:
+        client.get_flow()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == flow.GetFlowRequest()
+
 @pytest.mark.asyncio
 async def test_get_flow_async(transport: str = 'grpc_asyncio', request_type=flow.GetFlowRequest):
     client = FlowsAsyncClient(
@@ -1510,6 +1589,24 @@ def test_update_flow_from_dict():
     test_update_flow(request_type=dict)
 
 
+def test_update_flow_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = FlowsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_flow),
+            '__call__') as call:
+        client.update_flow()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == gcdc_flow.UpdateFlowRequest()
+
 @pytest.mark.asyncio
 async def test_update_flow_async(transport: str = 'grpc_asyncio', request_type=gcdc_flow.UpdateFlowRequest):
     client = FlowsAsyncClient(
@@ -1742,6 +1839,24 @@ def test_train_flow_from_dict():
     test_train_flow(request_type=dict)
 
 
+def test_train_flow_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = FlowsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.train_flow),
+            '__call__') as call:
+        client.train_flow()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == flow.TrainFlowRequest()
+
 @pytest.mark.asyncio
 async def test_train_flow_async(transport: str = 'grpc_asyncio', request_type=flow.TrainFlowRequest):
     client = FlowsAsyncClient(
@@ -1966,6 +2081,24 @@ def test_validate_flow_from_dict():
     test_validate_flow(request_type=dict)
 
 
+def test_validate_flow_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = FlowsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.validate_flow),
+            '__call__') as call:
+        client.validate_flow()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == flow.ValidateFlowRequest()
+
 @pytest.mark.asyncio
 async def test_validate_flow_async(transport: str = 'grpc_asyncio', request_type=flow.ValidateFlowRequest):
     client = FlowsAsyncClient(
@@ -2106,6 +2239,24 @@ def test_get_flow_validation_result(transport: str = 'grpc', request_type=flow.G
 def test_get_flow_validation_result_from_dict():
     test_get_flow_validation_result(request_type=dict)
 
+
+def test_get_flow_validation_result_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = FlowsClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_flow_validation_result),
+            '__call__') as call:
+        client.get_flow_validation_result()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == flow.GetFlowValidationResultRequest()
 
 @pytest.mark.asyncio
 async def test_get_flow_validation_result_async(transport: str = 'grpc_asyncio', request_type=flow.GetFlowValidationResultRequest):
