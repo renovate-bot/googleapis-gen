@@ -695,7 +695,8 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
             update_mask (google.protobuf.field_mask_pb2.FieldMask):
-                Required. The list of fields to be updated. Omitted
+                Required. The list of fields to be updated. Field names
+                must be in snake case (e.g., "field_to_update"). Omitted
                 fields will not be updated. To replace the entire
                 entity, use one path with the string "*" to match all
                 fields.
@@ -1197,7 +1198,8 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
             update_mask (google.protobuf.field_mask_pb2.FieldMask):
-                Required. The list of fields to be updated. Omitted
+                Required. The list of fields to be updated. Field names
+                must be in snake case (e.g., "field_to_update"). Omitted
                 fields will not be updated. To replace the entire
                 entity, use one path with the string "*" to match all
                 fields.
@@ -2161,7 +2163,8 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
             update_mask (google.protobuf.field_mask_pb2.FieldMask):
-                Required. The list of fields to be updated. Omitted
+                Required. The list of fields to be updated. Field names
+                must be in snake case (e.g., "field_to_update"). Omitted
                 fields will not be updated. To replace the entire
                 entity, use one path with the string "*" to match all
                 fields.
@@ -2587,7 +2590,8 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
             update_mask (google.protobuf.field_mask_pb2.FieldMask):
-                Required. The list of fields to be updated. Omitted
+                Required. The list of fields to be updated. Field names
+                must be in snake case (e.g., "field_to_update"). Omitted
                 fields will not be updated. To replace the entire
                 entity, use one path with the string "*" to match all
                 fields.
@@ -2663,8 +2667,16 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.IosAppDataStream:
-        r"""Creates an iOS app data stream with the specified
-        location and attributes.
+        r"""Creates an iOS app stream with the specified location
+        and attributes.
+        Note that an iOS app stream must be linked to a Firebase
+        app to receive traffic.
+
+        To create a working app stream, make sure your property
+        is linked to a Firebase project. Then, use the Firebase
+        API to create a Firebase app, which will also create an
+        appropriate data stream in Analytics (may take up to 24
+        hours).
 
         Args:
             request (google.analytics.admin_v1alpha.types.CreateIosAppDataStreamRequest):
@@ -3015,7 +3027,8 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
             update_mask (google.protobuf.field_mask_pb2.FieldMask):
-                Required. The list of fields to be updated. Omitted
+                Required. The list of fields to be updated. Field names
+                must be in snake case (e.g., "field_to_update"). Omitted
                 fields will not be updated. To replace the entire
                 entity, use one path with the string "*" to match all
                 fields.
@@ -3091,8 +3104,16 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> resources.AndroidAppDataStream:
-        r"""Creates an android app stream with the specified
+        r"""Creates an Android app stream with the specified
         location and attributes.
+        Note that an Android app stream must be linked to a
+        Firebase app to receive traffic.
+
+        To create a working app stream, make sure your property
+        is linked to a Firebase project. Then, use the Firebase
+        API to create a Firebase app, which will also create an
+        appropriate data stream in Analytics (may take up to 24
+        hours).
 
         Args:
             request (google.analytics.admin_v1alpha.types.CreateAndroidAppDataStreamRequest):
@@ -3377,7 +3398,8 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
             update_mask (google.protobuf.field_mask_pb2.FieldMask):
-                Required. The list of fields to be updated. Omitted
+                Required. The list of fields to be updated. Field names
+                must be in snake case (e.g., "field_to_update"). Omitted
                 fields will not be updated. To replace the entire
                 entity, use one path with the string "*" to match all
                 fields.
@@ -3558,7 +3580,8 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
             update_mask (google.protobuf.field_mask_pb2.FieldMask):
-                Required. The list of fields to be updated. Omitted
+                Required. The list of fields to be updated. Field names
+                must be in snake case (e.g., "field_to_update"). Omitted
                 fields will not be updated. To replace the entire
                 entity, use one path with the string "*" to match all
                 fields.
@@ -3979,7 +4002,8 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
             update_mask (google.protobuf.field_mask_pb2.FieldMask):
-                Required. The list of fields to be updated. Omitted
+                Required. The list of fields to be updated. Field names
+                must be in snake case (e.g., "field_to_update"). Omitted
                 fields will not be updated. To replace the entire
                 entity, use one path with the string "*" to match all
                 fields.

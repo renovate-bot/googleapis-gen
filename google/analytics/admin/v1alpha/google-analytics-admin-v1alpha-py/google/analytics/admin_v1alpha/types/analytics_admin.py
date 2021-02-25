@@ -179,7 +179,8 @@ class UpdateAccountRequest(proto.Message):
             Required. The account to update. The account's ``name``
             field is used to identify the account.
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
-            Required. The list of fields to be updated. Omitted fields
+            Required. The list of fields to be updated. Field names must
+            be in snake case (e.g., "field_to_update"). Omitted fields
             will not be updated. To replace the entire entity, use one
             path with the string "*" to match all fields.
     """
@@ -315,7 +316,8 @@ class UpdatePropertyRequest(proto.Message):
             Required. The property to update. The property's ``name``
             field is used to identify the property to be updated.
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
-            Required. The list of fields to be updated. Omitted fields
+            Required. The list of fields to be updated. Field names must
+            be in snake case (e.g., "field_to_update"). Omitted fields
             will not be updated. To replace the entire entity, use one
             path with the string "*" to match all fields.
     """
@@ -697,7 +699,8 @@ class UpdateWebDataStreamRequest(proto.Message):
             Required. The web stream to update. The ``name`` field is
             used to identify the web stream to be updated.
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
-            Required. The list of fields to be updated. Omitted fields
+            Required. The list of fields to be updated. Field names must
+            be in snake case (e.g., "field_to_update"). Omitted fields
             will not be updated. To replace the entire entity, use one
             path with the string "*" to match all fields.
     """
@@ -818,7 +821,8 @@ class UpdateIosAppDataStreamRequest(proto.Message):
             Required. The iOS app stream to update. The ``name`` field
             is used to identify the iOS app stream to be updated.
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
-            Required. The list of fields to be updated. Omitted fields
+            Required. The list of fields to be updated. Field names must
+            be in snake case (e.g., "field_to_update"). Omitted fields
             will not be updated. To replace the entire entity, use one
             path with the string "*" to match all fields.
     """
@@ -940,7 +944,8 @@ class UpdateAndroidAppDataStreamRequest(proto.Message):
             field is used to identify the android app stream to be
             updated.
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
-            Required. The list of fields to be updated. Omitted fields
+            Required. The list of fields to be updated. Field names must
+            be in snake case (e.g., "field_to_update"). Omitted fields
             will not be updated. To replace the entire entity, use one
             path with the string "*" to match all fields.
     """
@@ -1046,7 +1051,8 @@ class UpdateEnhancedMeasurementSettingsRequest(proto.Message):
             Required. The settings to update. The ``name`` field is used
             to identify the settings to be updated.
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
-            Required. The list of fields to be updated. Omitted fields
+            Required. The list of fields to be updated. Field names must
+            be in snake case (e.g., "field_to_update"). Omitted fields
             will not be updated. To replace the entire entity, use one
             path with the string "*" to match all fields.
     """
@@ -1085,7 +1091,8 @@ class UpdateFirebaseLinkRequest(proto.Message):
         firebase_link (google.analytics.admin_v1alpha.types.FirebaseLink):
             Required. The Firebase link to update.
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
-            Required. The list of fields to be updated. Omitted fields
+            Required. The list of fields to be updated. Field names must
+            be in snake case (e.g., "field_to_update"). Omitted fields
             will not be updated. To replace the entire entity, use one
             path with the string "*" to match all fields.
     """
@@ -1204,7 +1211,8 @@ class UpdateGoogleAdsLinkRequest(proto.Message):
         google_ads_link (google.analytics.admin_v1alpha.types.GoogleAdsLink):
             The GoogleAdsLink to update
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
-            Required. The list of fields to be updated. Omitted fields
+            Required. The list of fields to be updated. Field names must
+            be in snake case (e.g., "field_to_update"). Omitted fields
             will not be updated. To replace the entire entity, use one
             path with the string "*" to match all fields.
     """

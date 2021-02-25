@@ -903,9 +903,9 @@ module Google
           #   A hash of the same form as `Google::Analytics::Admin::V1alpha::Account`
           #   can also be provided.
           # @param update_mask [Google::Protobuf::FieldMask | Hash]
-          #   Required. The list of fields to be updated. Omitted fields will not be updated.
-          #   To replace the entire entity, use one path with the string "*" to match
-          #   all fields.
+          #   Required. The list of fields to be updated. Field names must be in snake case
+          #   (e.g., "field_to_update"). Omitted fields will not be updated. To replace
+          #   the entire entity, use one path with the string "*" to match all fields.
           #   A hash of the same form as `Google::Protobuf::FieldMask`
           #   can also be provided.
           # @param options [Google::Gax::CallOptions]
@@ -1223,9 +1223,9 @@ module Google
           #   A hash of the same form as `Google::Analytics::Admin::V1alpha::Property`
           #   can also be provided.
           # @param update_mask [Google::Protobuf::FieldMask | Hash]
-          #   Required. The list of fields to be updated. Omitted fields will not be updated.
-          #   To replace the entire entity, use one path with the string "*" to match
-          #   all fields.
+          #   Required. The list of fields to be updated. Field names must be in snake case
+          #   (e.g., "field_to_update"). Omitted fields will not be updated. To replace
+          #   the entire entity, use one path with the string "*" to match all fields.
           #   A hash of the same form as `Google::Protobuf::FieldMask`
           #   can also be provided.
           # @param options [Google::Gax::CallOptions]
@@ -1775,9 +1775,9 @@ module Google
           #   A hash of the same form as `Google::Analytics::Admin::V1alpha::WebDataStream`
           #   can also be provided.
           # @param update_mask [Google::Protobuf::FieldMask | Hash]
-          #   Required. The list of fields to be updated. Omitted fields will not be updated.
-          #   To replace the entire entity, use one path with the string "*" to match
-          #   all fields.
+          #   Required. The list of fields to be updated. Field names must be in snake case
+          #   (e.g., "field_to_update"). Omitted fields will not be updated. To replace
+          #   the entire entity, use one path with the string "*" to match all fields.
           #   A hash of the same form as `Google::Protobuf::FieldMask`
           #   can also be provided.
           # @param options [Google::Gax::CallOptions]
@@ -1984,9 +1984,9 @@ module Google
           #   A hash of the same form as `Google::Analytics::Admin::V1alpha::IosAppDataStream`
           #   can also be provided.
           # @param update_mask [Google::Protobuf::FieldMask | Hash]
-          #   Required. The list of fields to be updated. Omitted fields will not be updated.
-          #   To replace the entire entity, use one path with the string "*" to match
-          #   all fields.
+          #   Required. The list of fields to be updated. Field names must be in snake case
+          #   (e.g., "field_to_update"). Omitted fields will not be updated. To replace
+          #   the entire entity, use one path with the string "*" to match all fields.
           #   A hash of the same form as `Google::Protobuf::FieldMask`
           #   can also be provided.
           # @param options [Google::Gax::CallOptions]
@@ -2022,7 +2022,15 @@ module Google
             @update_ios_app_data_stream.call(req, options, &block)
           end
 
-          # Creates an iOS app data stream with the specified location and attributes.
+          # Creates an iOS app stream with the specified location and attributes.
+          #
+          # Note that an iOS app stream must be linked to a Firebase app to receive
+          # traffic.
+          #
+          # To create a working app stream, make sure your property is linked to a
+          # Firebase project. Then, use the Firebase API to create a Firebase app,
+          # which will also create an appropriate data stream in Analytics (may take up
+          # to 24 hours).
           #
           # @param ios_app_data_stream [Google::Analytics::Admin::V1alpha::IosAppDataStream | Hash]
           #   Required. The iOS app data stream to create.
@@ -2193,9 +2201,9 @@ module Google
           #   A hash of the same form as `Google::Analytics::Admin::V1alpha::AndroidAppDataStream`
           #   can also be provided.
           # @param update_mask [Google::Protobuf::FieldMask | Hash]
-          #   Required. The list of fields to be updated. Omitted fields will not be updated.
-          #   To replace the entire entity, use one path with the string "*" to match
-          #   all fields.
+          #   Required. The list of fields to be updated. Field names must be in snake case
+          #   (e.g., "field_to_update"). Omitted fields will not be updated. To replace
+          #   the entire entity, use one path with the string "*" to match all fields.
           #   A hash of the same form as `Google::Protobuf::FieldMask`
           #   can also be provided.
           # @param options [Google::Gax::CallOptions]
@@ -2231,7 +2239,15 @@ module Google
             @update_android_app_data_stream.call(req, options, &block)
           end
 
-          # Creates an android app stream with the specified location and attributes.
+          # Creates an Android app stream with the specified location and attributes.
+          #
+          # Note that an Android app stream must be linked to a Firebase app to receive
+          # traffic.
+          #
+          # To create a working app stream, make sure your property is linked to a
+          # Firebase project. Then, use the Firebase API to create a Firebase app,
+          # which will also create an appropriate data stream in Analytics (may take up
+          # to 24 hours).
           #
           # @param android_app_data_stream [Google::Analytics::Admin::V1alpha::AndroidAppDataStream | Hash]
           #   Required. The android app stream to create.
@@ -2375,9 +2391,9 @@ module Google
           #   A hash of the same form as `Google::Analytics::Admin::V1alpha::EnhancedMeasurementSettings`
           #   can also be provided.
           # @param update_mask [Google::Protobuf::FieldMask | Hash]
-          #   Required. The list of fields to be updated. Omitted fields will not be updated.
-          #   To replace the entire entity, use one path with the string "*" to match
-          #   all fields.
+          #   Required. The list of fields to be updated. Field names must be in snake case
+          #   (e.g., "field_to_update"). Omitted fields will not be updated. To replace
+          #   the entire entity, use one path with the string "*" to match all fields.
           #   A hash of the same form as `Google::Protobuf::FieldMask`
           #   can also be provided.
           # @param options [Google::Gax::CallOptions]
@@ -2462,9 +2478,9 @@ module Google
           #   A hash of the same form as `Google::Analytics::Admin::V1alpha::FirebaseLink`
           #   can also be provided.
           # @param update_mask [Google::Protobuf::FieldMask | Hash]
-          #   Required. The list of fields to be updated. Omitted fields will not be updated.
-          #   To replace the entire entity, use one path with the string "*" to match
-          #   all fields.
+          #   Required. The list of fields to be updated. Field names must be in snake case
+          #   (e.g., "field_to_update"). Omitted fields will not be updated. To replace
+          #   the entire entity, use one path with the string "*" to match all fields.
           #   A hash of the same form as `Google::Protobuf::FieldMask`
           #   can also be provided.
           # @param options [Google::Gax::CallOptions]
@@ -2663,9 +2679,9 @@ module Google
           # Updates a GoogleAdsLink on a property
           #
           # @param update_mask [Google::Protobuf::FieldMask | Hash]
-          #   Required. The list of fields to be updated. Omitted fields will not be updated.
-          #   To replace the entire entity, use one path with the string "*" to match
-          #   all fields.
+          #   Required. The list of fields to be updated. Field names must be in snake case
+          #   (e.g., "field_to_update"). Omitted fields will not be updated. To replace
+          #   the entire entity, use one path with the string "*" to match all fields.
           #   A hash of the same form as `Google::Protobuf::FieldMask`
           #   can also be provided.
           # @param google_ads_link [Google::Analytics::Admin::V1alpha::GoogleAdsLink | Hash]
