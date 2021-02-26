@@ -1,0 +1,2 @@
+recursive-include ccc/hosted/marketplace *.py
+recursive-include ccc/hosted/marketplace_v2 *.py

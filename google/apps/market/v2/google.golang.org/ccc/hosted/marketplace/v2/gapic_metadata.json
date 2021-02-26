@@ -1,0 +1,51 @@
+{
+  "schema":  "1.0",
+  "comment":  "This file maps proto services/RPCs to the corresponding library clients/methods.",
+  "language":  "go",
+  "protoPackage":  "ccc.hosted.marketplace.v2",
+  "libraryPackage":  "google.golang.org/ccc/hosted/marketplace/v2",
+  "services":  {
+    "CustomerLicenseService":  {
+      "clients":  {
+        "grpc":  {
+          "libraryClient":  "CustomerLicenseClient",
+          "rpcs":  {
+            "Get":  {
+              "methods":  [
+                "Get"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "LicenseNotificationService":  {
+      "clients":  {
+        "grpc":  {
+          "libraryClient":  "LicenseNotificationClient",
+          "rpcs":  {
+            "List":  {
+              "methods":  [
+                "List"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "UserLicenseService":  {
+      "clients":  {
+        "grpc":  {
+          "libraryClient":  "UserLicenseClient",
+          "rpcs":  {
+            "Get":  {
+              "methods":  [
+                "Get"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

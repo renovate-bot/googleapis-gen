@@ -1,0 +1,45 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "ccc.hosted.marketplace.v2",
+  "libraryPackage": "com.google.ccc.hosted.marketplace.v2",
+  "services": {
+    "CustomerLicenseService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CustomerLicenseServiceClient",
+          "rpcs": {
+            "Get": {
+              "methods": ["get", "getCallable"]
+            }
+          }
+        }
+      }
+    },
+    "LicenseNotificationService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LicenseNotificationServiceClient",
+          "rpcs": {
+            "List": {
+              "methods": ["list", "listCallable"]
+            }
+          }
+        }
+      }
+    },
+    "UserLicenseService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "UserLicenseServiceClient",
+          "rpcs": {
+            "Get": {
+              "methods": ["get", "getCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
