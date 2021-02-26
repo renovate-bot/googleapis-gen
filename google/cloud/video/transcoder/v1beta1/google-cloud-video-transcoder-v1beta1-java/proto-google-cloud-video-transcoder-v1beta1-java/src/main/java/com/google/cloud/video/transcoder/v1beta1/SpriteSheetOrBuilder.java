@@ -169,6 +169,17 @@ public interface SpriteSheetOrBuilder extends
    * </pre>
    *
    * <code>int32 total_count = 9;</code>
+   * @return Whether the totalCount field is set.
+   */
+  boolean hasTotalCount();
+  /**
+   * <pre>
+   * Total number of sprites. Create the specified number of sprites
+   * distributed evenly across the timeline of the output media. The default
+   * is 100.
+   * </pre>
+   *
+   * <code>int32 total_count = 9;</code>
    * @return The totalCount.
    */
   int getTotalCount();

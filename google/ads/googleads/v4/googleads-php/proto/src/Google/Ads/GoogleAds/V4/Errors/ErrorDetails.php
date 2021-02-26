@@ -87,7 +87,7 @@ class ErrorDetails extends \Google\Protobuf\Internal\Message
      * Describes an ad policy violation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.errors.PolicyViolationDetails policy_violation_details = 2;</code>
-     * @return \Google\Ads\GoogleAds\V4\Errors\PolicyViolationDetails
+     * @return \Google\Ads\GoogleAds\V4\Errors\PolicyViolationDetails|null
      */
     public function getPolicyViolationDetails()
     {
@@ -123,7 +123,7 @@ class ErrorDetails extends \Google\Protobuf\Internal\Message
      * Describes policy violation findings.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.errors.PolicyFindingDetails policy_finding_details = 3;</code>
-     * @return \Google\Ads\GoogleAds\V4\Errors\PolicyFindingDetails
+     * @return \Google\Ads\GoogleAds\V4\Errors\PolicyFindingDetails|null
      */
     public function getPolicyFindingDetails()
     {

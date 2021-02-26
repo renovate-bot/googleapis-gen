@@ -275,6 +275,18 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 remove_target = 3;</code>
+   * @return Whether the removeTarget field is set.
+   */
+  @java.lang.Override
+  public boolean hasRemoveTarget() {
+    return targetChangeCase_ == 3;
+  }
+  /**
+   * <pre>
+   * The ID of a target to remove from this stream.
+   * </pre>
+   *
+   * <code>int32 remove_target = 3;</code>
    * @return The removeTarget.
    */
   @java.lang.Override
@@ -1099,6 +1111,17 @@ private static final long serialVersionUID = 0L;
       return addTargetBuilder_;
     }
 
+    /**
+     * <pre>
+     * The ID of a target to remove from this stream.
+     * </pre>
+     *
+     * <code>int32 remove_target = 3;</code>
+     * @return Whether the removeTarget field is set.
+     */
+    public boolean hasRemoveTarget() {
+      return targetChangeCase_ == 3;
+    }
     /**
      * <pre>
      * The ID of a target to remove from this stream.

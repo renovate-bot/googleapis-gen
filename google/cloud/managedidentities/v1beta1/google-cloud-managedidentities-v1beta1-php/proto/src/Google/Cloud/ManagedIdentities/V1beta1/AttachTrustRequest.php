@@ -80,7 +80,7 @@ class AttachTrustRequest extends \Google\Protobuf\Internal\Message
      * The domain trust resource.
      *
      * Generated from protobuf field <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2;</code>
-     * @return \Google\Cloud\ManagedIdentities\V1beta1\Trust
+     * @return \Google\Cloud\ManagedIdentities\V1beta1\Trust|null
      */
     public function getTrust()
     {

@@ -39,7 +39,7 @@ class GameServerConfigOverride extends \Google\Protobuf\Internal\Message
      * Selector for choosing applicable realms.
      *
      * Generated from protobuf field <code>.google.cloud.gaming.v1beta.RealmSelector realms_selector = 1;</code>
-     * @return \Google\Cloud\Gaming\V1beta\RealmSelector
+     * @return \Google\Cloud\Gaming\V1beta\RealmSelector|null
      */
     public function getRealmsSelector()
     {

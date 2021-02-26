@@ -449,6 +449,19 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string degree_description = 6;</code>
+   * @return Whether the degreeDescription field is set.
+   */
+  public boolean hasDegreeDescription() {
+    return degreeCase_ == 6;
+  }
+  /**
+   * <pre>
+   * The full description of the degree.
+   * For example, "Master of Science in Computer Science", "B.S in Math".
+   * Number of characters allowed is 100.
+   * </pre>
+   *
+   * <code>string degree_description = 6;</code>
    * @return The degreeDescription.
    */
   public java.lang.String getDegreeDescription() {
@@ -2040,6 +2053,20 @@ private static final long serialVersionUID = 0L;
       return addressBuilder_;
     }
 
+    /**
+     * <pre>
+     * The full description of the degree.
+     * For example, "Master of Science in Computer Science", "B.S in Math".
+     * Number of characters allowed is 100.
+     * </pre>
+     *
+     * <code>string degree_description = 6;</code>
+     * @return Whether the degreeDescription field is set.
+     */
+    @java.lang.Override
+    public boolean hasDegreeDescription() {
+      return degreeCase_ == 6;
+    }
     /**
      * <pre>
      * The full description of the degree.

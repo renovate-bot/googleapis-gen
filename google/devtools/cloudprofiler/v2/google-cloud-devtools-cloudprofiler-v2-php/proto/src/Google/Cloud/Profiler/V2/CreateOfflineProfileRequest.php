@@ -76,7 +76,7 @@ class CreateOfflineProfileRequest extends \Google\Protobuf\Internal\Message
      * Contents of the profile to create.
      *
      * Generated from protobuf field <code>.google.devtools.cloudprofiler.v2.Profile profile = 2;</code>
-     * @return \Google\Cloud\Profiler\V2\Profile
+     * @return \Google\Cloud\Profiler\V2\Profile|null
      */
     public function getProfile()
     {

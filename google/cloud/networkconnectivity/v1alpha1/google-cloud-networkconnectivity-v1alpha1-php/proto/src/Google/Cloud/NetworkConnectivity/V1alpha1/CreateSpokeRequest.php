@@ -137,7 +137,7 @@ class CreateSpokeRequest extends \Google\Protobuf\Internal\Message
      * Required. Initial values for a new Hub.
      *
      * Generated from protobuf field <code>.google.cloud.networkconnectivity.v1alpha1.Spoke spoke = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\NetworkConnectivity\V1alpha1\Spoke
+     * @return \Google\Cloud\NetworkConnectivity\V1alpha1\Spoke|null
      */
     public function getSpoke()
     {

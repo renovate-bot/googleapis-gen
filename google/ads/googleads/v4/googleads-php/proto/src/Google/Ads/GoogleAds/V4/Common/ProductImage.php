@@ -63,7 +63,7 @@ class ProductImage extends \Google\Protobuf\Internal\Message
      * must be 1:1 (+-1%).
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_image = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getProductImage()
     {
@@ -132,7 +132,7 @@ class ProductImage extends \Google\Protobuf\Internal\Message
      * Description of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDescription()
     {
@@ -195,7 +195,7 @@ class ProductImage extends \Google\Protobuf\Internal\Message
      * Display-call-to-action of the product image.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.DisplayCallToAction display_call_to_action = 3;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\DisplayCallToAction
+     * @return \Google\Ads\GoogleAds\V4\Common\DisplayCallToAction|null
      */
     public function getDisplayCallToAction()
     {

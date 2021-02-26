@@ -57,7 +57,7 @@ class OAuthInfo extends \Google\Protobuf\Internal\Message
      * The HTTP method used to obtain authorization.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue http_method = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getHttpMethod()
     {
@@ -120,7 +120,7 @@ class OAuthInfo extends \Google\Protobuf\Internal\Message
      * The HTTP request URL used to obtain authorization.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue http_request_url = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getHttpRequestUrl()
     {
@@ -183,7 +183,7 @@ class OAuthInfo extends \Google\Protobuf\Internal\Message
      * The HTTP authorization header used to obtain authorization.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue http_authorization_header = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getHttpAuthorizationHeader()
     {

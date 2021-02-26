@@ -42,7 +42,7 @@ class VideoNonSkippableInStreamAdInfo extends \Google\Protobuf\Internal\Message
      * The MediaFile resource name of the companion banner used with the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue companion_banner = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCompanionBanner()
     {

@@ -253,7 +253,7 @@ class BotSession extends \Google\Protobuf\Internal\Message
      * information). Otherwise, this field is input-only.
      *
      * Generated from protobuf field <code>.google.devtools.remoteworkers.v1test2.Worker worker = 4;</code>
-     * @return \Google\Devtools\Remoteworkers\V1test2\Worker
+     * @return \Google\Devtools\Remoteworkers\V1test2\Worker|null
      */
     public function getWorker()
     {
@@ -324,7 +324,7 @@ class BotSession extends \Google\Protobuf\Internal\Message
      * UpdateBotSession again. Output only.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp expire_time = 6;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getExpireTime()
     {

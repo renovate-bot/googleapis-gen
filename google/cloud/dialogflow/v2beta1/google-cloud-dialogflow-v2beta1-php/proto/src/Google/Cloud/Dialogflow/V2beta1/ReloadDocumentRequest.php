@@ -90,7 +90,7 @@ class ReloadDocumentRequest extends \Google\Protobuf\Internal\Message
      * If not provided, the Document's existing source will be reloaded.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.GcsSource gcs_source = 3;</code>
-     * @return \Google\Cloud\Dialogflow\V2beta1\GcsSource
+     * @return \Google\Cloud\Dialogflow\V2beta1\GcsSource|null
      */
     public function getGcsSource()
     {

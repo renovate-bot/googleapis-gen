@@ -68,7 +68,7 @@ class GlossaryInputConfig extends \Google\Protobuf\Internal\Message
      *   glossary](https://support.google.com/translatortoolkit/answer/6306379?hl=en).
      *
      * Generated from protobuf field <code>.google.cloud.translation.v3beta1.GcsSource gcs_source = 1;</code>
-     * @return \Google\Cloud\Translate\V3beta1\GcsSource
+     * @return \Google\Cloud\Translate\V3beta1\GcsSource|null
      */
     public function getGcsSource()
     {

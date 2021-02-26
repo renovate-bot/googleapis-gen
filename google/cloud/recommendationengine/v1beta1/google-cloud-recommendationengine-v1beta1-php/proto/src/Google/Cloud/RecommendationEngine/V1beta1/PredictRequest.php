@@ -288,7 +288,7 @@ class PredictRequest extends \Google\Protobuf\Internal\Message
      * request is required for event logging.
      *
      * Generated from protobuf field <code>.google.cloud.recommendationengine.v1beta1.UserEvent user_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\RecommendationEngine\V1beta1\UserEvent
+     * @return \Google\Cloud\RecommendationEngine\V1beta1\UserEvent|null
      */
     public function getUserEvent()
     {

@@ -176,7 +176,7 @@ class ApprovalRequest extends \Google\Protobuf\Internal\Message
      * Properties related to the resource represented by requested_resource_name.
      *
      * Generated from protobuf field <code>.google.cloud.accessapproval.v1.ResourceProperties requested_resource_properties = 9;</code>
-     * @return \Google\Cloud\AccessApproval\V1\ResourceProperties
+     * @return \Google\Cloud\AccessApproval\V1\ResourceProperties|null
      */
     public function getRequestedResourceProperties()
     {
@@ -212,7 +212,7 @@ class ApprovalRequest extends \Google\Protobuf\Internal\Message
      * The justification for which approval is being requested.
      *
      * Generated from protobuf field <code>.google.cloud.accessapproval.v1.AccessReason requested_reason = 3;</code>
-     * @return \Google\Cloud\AccessApproval\V1\AccessReason
+     * @return \Google\Cloud\AccessApproval\V1\AccessReason|null
      */
     public function getRequestedReason()
     {
@@ -248,7 +248,7 @@ class ApprovalRequest extends \Google\Protobuf\Internal\Message
      * The locations for which approval is being requested.
      *
      * Generated from protobuf field <code>.google.cloud.accessapproval.v1.AccessLocations requested_locations = 4;</code>
-     * @return \Google\Cloud\AccessApproval\V1\AccessLocations
+     * @return \Google\Cloud\AccessApproval\V1\AccessLocations|null
      */
     public function getRequestedLocations()
     {
@@ -284,7 +284,7 @@ class ApprovalRequest extends \Google\Protobuf\Internal\Message
      * The time at which approval was requested.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp request_time = 5;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getRequestTime()
     {
@@ -321,7 +321,7 @@ class ApprovalRequest extends \Google\Protobuf\Internal\Message
      * access will be granted from the time of approval until the expiration time.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp requested_expiration = 6;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getRequestedExpiration()
     {
@@ -358,7 +358,7 @@ class ApprovalRequest extends \Google\Protobuf\Internal\Message
      * Access was approved.
      *
      * Generated from protobuf field <code>.google.cloud.accessapproval.v1.ApproveDecision approve = 7;</code>
-     * @return \Google\Cloud\AccessApproval\V1\ApproveDecision
+     * @return \Google\Cloud\AccessApproval\V1\ApproveDecision|null
      */
     public function getApprove()
     {
@@ -389,7 +389,7 @@ class ApprovalRequest extends \Google\Protobuf\Internal\Message
      * The request was dismissed.
      *
      * Generated from protobuf field <code>.google.cloud.accessapproval.v1.DismissDecision dismiss = 8;</code>
-     * @return \Google\Cloud\AccessApproval\V1\DismissDecision
+     * @return \Google\Cloud\AccessApproval\V1\DismissDecision|null
      */
     public function getDismiss()
     {

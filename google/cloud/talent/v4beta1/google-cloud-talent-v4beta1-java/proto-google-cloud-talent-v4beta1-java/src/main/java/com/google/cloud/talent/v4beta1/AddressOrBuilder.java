@@ -35,6 +35,18 @@ public interface AddressOrBuilder extends
    * </pre>
    *
    * <code>string unstructured_address = 2;</code>
+   * @return Whether the unstructuredAddress field is set.
+   */
+  boolean hasUnstructuredAddress();
+  /**
+   * <pre>
+   * Unstructured address.
+   * For example, "1600 Amphitheatre Pkwy, Mountain View, CA 94043",
+   * "Sunnyvale, California".
+   * Number of characters allowed is 100.
+   * </pre>
+   *
+   * <code>string unstructured_address = 2;</code>
    * @return The unstructuredAddress.
    */
   java.lang.String getUnstructuredAddress();

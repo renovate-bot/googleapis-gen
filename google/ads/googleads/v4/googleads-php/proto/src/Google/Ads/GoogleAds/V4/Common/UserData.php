@@ -78,7 +78,7 @@ class UserData extends \Google\Protobuf\Internal\Message
      * Required when updating store sales data.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.TransactionAttribute transaction_attribute = 2;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\TransactionAttribute
+     * @return \Google\Ads\GoogleAds\V4\Common\TransactionAttribute|null
      */
     public function getTransactionAttribute()
     {

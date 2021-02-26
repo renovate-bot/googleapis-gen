@@ -64,7 +64,7 @@ class CallReportingSetting extends \Google\Protobuf\Internal\Message
      * System.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue call_reporting_enabled = 1;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getCallReportingEnabled()
     {
@@ -130,7 +130,7 @@ class CallReportingSetting extends \Google\Protobuf\Internal\Message
      * Whether to enable call conversion reporting.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue call_conversion_reporting_enabled = 2;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getCallConversionReportingEnabled()
     {
@@ -195,7 +195,7 @@ class CallReportingSetting extends \Google\Protobuf\Internal\Message
      * call_conversion_reporting_enabled is set to true.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue call_conversion_action = 9 [(.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCallConversionAction()
     {

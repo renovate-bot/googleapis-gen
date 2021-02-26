@@ -83,7 +83,7 @@ class CreateDashboardRequest extends \Google\Protobuf\Internal\Message
      * Required. The initial dashboard specification.
      *
      * Generated from protobuf field <code>.google.monitoring.dashboard.v1.Dashboard dashboard = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Monitoring\Dashboard\V1\Dashboard
+     * @return \Google\Monitoring\Dashboard\V1\Dashboard|null
      */
     public function getDashboard()
     {

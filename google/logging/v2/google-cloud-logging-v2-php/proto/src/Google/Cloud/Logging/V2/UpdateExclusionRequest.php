@@ -116,7 +116,7 @@ class UpdateExclusionRequest extends \Google\Protobuf\Internal\Message
      * `update_mask` are relevant.
      *
      * Generated from protobuf field <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Logging\V2\LogExclusion
+     * @return \Google\Cloud\Logging\V2\LogExclusion|null
      */
     public function getExclusion()
     {
@@ -158,7 +158,7 @@ class UpdateExclusionRequest extends \Google\Protobuf\Internal\Message
      * specify an `update_mask` of `"filter,description"`.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

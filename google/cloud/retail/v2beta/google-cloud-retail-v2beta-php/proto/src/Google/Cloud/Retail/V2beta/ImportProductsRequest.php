@@ -105,7 +105,7 @@ class ImportProductsRequest extends \Google\Protobuf\Internal\Message
      * Required. The desired input location of the data.
      *
      * Generated from protobuf field <code>.google.cloud.retail.v2beta.ProductInputConfig input_config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Retail\V2beta\ProductInputConfig
+     * @return \Google\Cloud\Retail\V2beta\ProductInputConfig|null
      */
     public function getInputConfig()
     {
@@ -141,7 +141,7 @@ class ImportProductsRequest extends \Google\Protobuf\Internal\Message
      * The desired location of errors incurred during the Import.
      *
      * Generated from protobuf field <code>.google.cloud.retail.v2beta.ImportErrorsConfig errors_config = 3;</code>
-     * @return \Google\Cloud\Retail\V2beta\ImportErrorsConfig
+     * @return \Google\Cloud\Retail\V2beta\ImportErrorsConfig|null
      */
     public function getErrorsConfig()
     {
@@ -178,7 +178,7 @@ class ImportProductsRequest extends \Google\Protobuf\Internal\Message
      * not set, will by default update all fields.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 4;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

@@ -42,7 +42,7 @@ class CampaignSharedSetOperation extends \Google\Protobuf\Internal\Message
      * shared set.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.CampaignSharedSet create = 1;</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\CampaignSharedSet
+     * @return \Google\Ads\GoogleAds\V4\Resources\CampaignSharedSet|null
      */
     public function getCreate()
     {

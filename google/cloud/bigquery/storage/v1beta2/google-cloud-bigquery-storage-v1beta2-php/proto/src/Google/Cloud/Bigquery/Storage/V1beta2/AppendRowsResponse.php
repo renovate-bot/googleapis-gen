@@ -62,7 +62,7 @@ class AppendRowsResponse extends \Google\Protobuf\Internal\Message
      * Result if the append is successful.
      *
      * Generated from protobuf field <code>.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult append_result = 1;</code>
-     * @return \Google\Cloud\Bigquery\Storage\V1beta2\AppendRowsResponse\AppendResult
+     * @return \Google\Cloud\Bigquery\Storage\V1beta2\AppendRowsResponse\AppendResult|null
      */
     public function getAppendResult()
     {
@@ -105,7 +105,7 @@ class AppendRowsResponse extends \Google\Protobuf\Internal\Message
      * INTERNAL: server side errors that can be retried.
      *
      * Generated from protobuf field <code>.google.rpc.Status error = 2;</code>
-     * @return \Google\Rpc\Status
+     * @return \Google\Rpc\Status|null
      */
     public function getError()
     {
@@ -150,7 +150,7 @@ class AppendRowsResponse extends \Google\Protobuf\Internal\Message
      * schema updates.
      *
      * Generated from protobuf field <code>.google.cloud.bigquery.storage.v1beta2.TableSchema updated_schema = 3;</code>
-     * @return \Google\Cloud\Bigquery\Storage\V1beta2\TableSchema
+     * @return \Google\Cloud\Bigquery\Storage\V1beta2\TableSchema|null
      */
     public function getUpdatedSchema()
     {

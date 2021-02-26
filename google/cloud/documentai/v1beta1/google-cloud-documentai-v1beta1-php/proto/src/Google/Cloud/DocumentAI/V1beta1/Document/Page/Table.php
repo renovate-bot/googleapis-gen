@@ -68,7 +68,7 @@ class Table extends \Google\Protobuf\Internal\Message
      * [Table][google.cloud.documentai.v1beta1.Document.Page.Table].
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta1.Document.Page.Layout layout = 1;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta1\Document\Page\Layout
+     * @return \Google\Cloud\DocumentAI\V1beta1\Document\Page\Layout|null
      */
     public function getLayout()
     {

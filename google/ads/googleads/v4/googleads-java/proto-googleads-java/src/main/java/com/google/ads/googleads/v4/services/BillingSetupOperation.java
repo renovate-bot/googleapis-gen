@@ -202,6 +202,20 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string remove = 1;</code>
+   * @return Whether the remove field is set.
+   */
+  public boolean hasRemove() {
+    return operationCase_ == 1;
+  }
+  /**
+   * <pre>
+   * Resource name of the billing setup to remove. A setup cannot be
+   * removed unless it is in a pending state or its scheduled start time is in
+   * the future. The resource name looks like
+   * `customers/{customer_id}/billingSetups/{billing_id}`.
+   * </pre>
+   *
+   * <code>string remove = 1;</code>
    * @return The remove.
    */
   public java.lang.String getRemove() {
@@ -808,6 +822,21 @@ private static final long serialVersionUID = 0L;
       return createBuilder_;
     }
 
+    /**
+     * <pre>
+     * Resource name of the billing setup to remove. A setup cannot be
+     * removed unless it is in a pending state or its scheduled start time is in
+     * the future. The resource name looks like
+     * `customers/{customer_id}/billingSetups/{billing_id}`.
+     * </pre>
+     *
+     * <code>string remove = 1;</code>
+     * @return Whether the remove field is set.
+     */
+    @java.lang.Override
+    public boolean hasRemove() {
+      return operationCase_ == 1;
+    }
     /**
      * <pre>
      * Resource name of the billing setup to remove. A setup cannot be

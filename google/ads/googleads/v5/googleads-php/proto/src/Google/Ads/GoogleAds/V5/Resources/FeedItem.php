@@ -175,7 +175,7 @@ class FeedItem extends \Google\Protobuf\Internal\Message
      * Immutable. The feed to which this feed item belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getFeed()
     {
@@ -238,7 +238,7 @@ class FeedItem extends \Google\Protobuf\Internal\Message
      * Output only. The ID of this feed item.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -304,7 +304,7 @@ class FeedItem extends \Google\Protobuf\Internal\Message
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue start_date_time = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getStartDateTime()
     {
@@ -379,7 +379,7 @@ class FeedItem extends \Google\Protobuf\Internal\Message
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue end_date_time = 5;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getEndDateTime()
     {

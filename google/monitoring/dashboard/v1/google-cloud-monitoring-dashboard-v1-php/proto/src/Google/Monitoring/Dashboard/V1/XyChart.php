@@ -119,7 +119,7 @@ class XyChart extends \Google\Protobuf\Internal\Message
      * data sets of LINE plot type.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration timeshift_duration = 4;</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getTimeshiftDuration()
     {
@@ -185,7 +185,7 @@ class XyChart extends \Google\Protobuf\Internal\Message
      * The properties applied to the X axis.
      *
      * Generated from protobuf field <code>.google.monitoring.dashboard.v1.XyChart.Axis x_axis = 6;</code>
-     * @return \Google\Monitoring\Dashboard\V1\XyChart\Axis
+     * @return \Google\Monitoring\Dashboard\V1\XyChart\Axis|null
      */
     public function getXAxis()
     {
@@ -221,7 +221,7 @@ class XyChart extends \Google\Protobuf\Internal\Message
      * The properties applied to the Y axis.
      *
      * Generated from protobuf field <code>.google.monitoring.dashboard.v1.XyChart.Axis y_axis = 7;</code>
-     * @return \Google\Monitoring\Dashboard\V1\XyChart\Axis
+     * @return \Google\Monitoring\Dashboard\V1\XyChart\Axis|null
      */
     public function getYAxis()
     {
@@ -257,7 +257,7 @@ class XyChart extends \Google\Protobuf\Internal\Message
      * Display options for the chart.
      *
      * Generated from protobuf field <code>.google.monitoring.dashboard.v1.ChartOptions chart_options = 8;</code>
-     * @return \Google\Monitoring\Dashboard\V1\ChartOptions
+     * @return \Google\Monitoring\Dashboard\V1\ChartOptions|null
      */
     public function getChartOptions()
     {

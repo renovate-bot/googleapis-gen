@@ -2783,10 +2783,28 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>double ratio = 2;</code>
+       * @return Whether the ratio field is set.
+       */
+      boolean hasRatio();
+      /**
+       * <pre>
+       * Ratio value of a metric.
+       * </pre>
+       *
+       * <code>double ratio = 2;</code>
        * @return The ratio.
        */
       double getRatio();
 
+      /**
+       * <pre>
+       * Count value of a metric.
+       * </pre>
+       *
+       * <code>double count = 4;</code>
+       * @return Whether the count field is set.
+       */
+      boolean hasCount();
       /**
        * <pre>
        * Count value of a metric.
@@ -3053,6 +3071,18 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>double ratio = 2;</code>
+       * @return Whether the ratio field is set.
+       */
+      @java.lang.Override
+      public boolean hasRatio() {
+        return valueCase_ == 2;
+      }
+      /**
+       * <pre>
+       * Ratio value of a metric.
+       * </pre>
+       *
+       * <code>double ratio = 2;</code>
        * @return The ratio.
        */
       @java.lang.Override
@@ -3064,6 +3094,18 @@ private static final long serialVersionUID = 0L;
       }
 
       public static final int COUNT_FIELD_NUMBER = 4;
+      /**
+       * <pre>
+       * Count value of a metric.
+       * </pre>
+       *
+       * <code>double count = 4;</code>
+       * @return Whether the count field is set.
+       */
+      @java.lang.Override
+      public boolean hasCount() {
+        return valueCase_ == 4;
+      }
       /**
        * <pre>
        * Count value of a metric.
@@ -3720,6 +3762,17 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>double ratio = 2;</code>
+         * @return Whether the ratio field is set.
+         */
+        public boolean hasRatio() {
+          return valueCase_ == 2;
+        }
+        /**
+         * <pre>
+         * Ratio value of a metric.
+         * </pre>
+         *
+         * <code>double ratio = 2;</code>
          * @return The ratio.
          */
         public double getRatio() {
@@ -3760,6 +3813,17 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        /**
+         * <pre>
+         * Count value of a metric.
+         * </pre>
+         *
+         * <code>double count = 4;</code>
+         * @return Whether the count field is set.
+         */
+        public boolean hasCount() {
+          return valueCase_ == 4;
+        }
         /**
          * <pre>
          * Count value of a metric.

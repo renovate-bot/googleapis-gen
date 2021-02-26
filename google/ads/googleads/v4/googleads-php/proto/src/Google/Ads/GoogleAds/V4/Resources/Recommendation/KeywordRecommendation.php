@@ -49,7 +49,7 @@ class KeywordRecommendation extends \Google\Protobuf\Internal\Message
      * Output only. The recommended keyword.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\KeywordInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\KeywordInfo|null
      */
     public function getKeyword()
     {
@@ -85,7 +85,7 @@ class KeywordRecommendation extends \Google\Protobuf\Internal\Message
      * Output only. The recommended CPC (cost-per-click) bid.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_cpc_bid_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getRecommendedCpcBidMicros()
     {

@@ -101,7 +101,7 @@ class CreateWorkflowRequest extends \Google\Protobuf\Internal\Message
      * Required. Workflow to be created.
      *
      * Generated from protobuf field <code>.google.cloud.workflows.v1.Workflow workflow = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Workflows\V1\Workflow
+     * @return \Google\Cloud\Workflows\V1\Workflow|null
      */
     public function getWorkflow()
     {

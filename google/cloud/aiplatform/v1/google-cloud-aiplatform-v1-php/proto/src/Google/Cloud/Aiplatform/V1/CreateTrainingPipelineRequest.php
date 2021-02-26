@@ -79,7 +79,7 @@ class CreateTrainingPipelineRequest extends \Google\Protobuf\Internal\Message
      * Required. The TrainingPipeline to create.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.TrainingPipeline training_pipeline = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Aiplatform\V1\TrainingPipeline
+     * @return \Google\Cloud\Aiplatform\V1\TrainingPipeline|null
      */
     public function getTrainingPipeline()
     {

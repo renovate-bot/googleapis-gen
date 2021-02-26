@@ -76,7 +76,7 @@ class GenerateAccessTokenResponse extends \Google\Protobuf\Internal\Message
      * The expiration time is always set.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp expire_time = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getExpireTime()
     {

@@ -20,6 +20,7 @@ class WorkloadIdentityConfig extends \Google\Protobuf\Internal\Message
      * IAM Identity Namespace to attach all Kubernetes Service Accounts to.
      *
      * Generated from protobuf field <code>string identity_namespace = 1 [deprecated = true];</code>
+     * @deprecated
      */
     protected $identity_namespace = '';
     /**
@@ -59,9 +60,11 @@ class WorkloadIdentityConfig extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string identity_namespace = 1 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getIdentityNamespace()
     {
+        @trigger_error('identity_namespace is deprecated.', E_USER_DEPRECATED);
         return $this->identity_namespace;
     }
 
@@ -71,9 +74,11 @@ class WorkloadIdentityConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string identity_namespace = 1 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setIdentityNamespace($var)
     {
+        @trigger_error('identity_namespace is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->identity_namespace = $var;
 

@@ -61,7 +61,7 @@ class UpdateDatasetRequest extends \Google\Protobuf\Internal\Message
      * Required. The Dataset which replaces the resource on the server.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.Dataset dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Aiplatform\V1\Dataset
+     * @return \Google\Cloud\Aiplatform\V1\Dataset|null
      */
     public function getDataset()
     {
@@ -103,7 +103,7 @@ class UpdateDatasetRequest extends \Google\Protobuf\Internal\Message
      *   * `labels`
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

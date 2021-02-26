@@ -636,6 +636,15 @@ public interface ExtensionFeedItemOrBuilder extends
    * </pre>
    *
    * <code>string targeted_campaign = 28 [(.google.api.resource_reference) = { ... }</code>
+   * @return Whether the targetedCampaign field is set.
+   */
+  boolean hasTargetedCampaign();
+  /**
+   * <pre>
+   * The targeted campaign.
+   * </pre>
+   *
+   * <code>string targeted_campaign = 28 [(.google.api.resource_reference) = { ... }</code>
    * @return The targetedCampaign.
    */
   java.lang.String getTargetedCampaign();
@@ -650,6 +659,15 @@ public interface ExtensionFeedItemOrBuilder extends
   com.google.protobuf.ByteString
       getTargetedCampaignBytes();
 
+  /**
+   * <pre>
+   * The targeted ad group.
+   * </pre>
+   *
+   * <code>string targeted_ad_group = 29 [(.google.api.resource_reference) = { ... }</code>
+   * @return Whether the targetedAdGroup field is set.
+   */
+  boolean hasTargetedAdGroup();
   /**
    * <pre>
    * The targeted ad group.

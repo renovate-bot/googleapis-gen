@@ -67,7 +67,7 @@ class DestinationNotWorking extends \Google\Protobuf\Internal\Message
      * The full URL that didn't work.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue expanded_url = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getExpandedUrl()
     {
@@ -158,7 +158,7 @@ class DestinationNotWorking extends \Google\Protobuf\Internal\Message
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue last_checked_date_time = 5;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getLastCheckedDateTime()
     {
@@ -258,7 +258,7 @@ class DestinationNotWorking extends \Google\Protobuf\Internal\Message
      * The HTTP error code.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value http_error_code = 2;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getHttpErrorCode()
     {

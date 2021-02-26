@@ -49,7 +49,7 @@ class VideoEventAnnotation extends \Google\Protobuf\Internal\Message
      * Label of the event in this annotation.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\AnnotationSpec
+     * @return \Google\Cloud\DataLabeling\V1beta1\AnnotationSpec|null
      */
     public function getAnnotationSpec()
     {
@@ -85,7 +85,7 @@ class VideoEventAnnotation extends \Google\Protobuf\Internal\Message
      * The time segment of the video to which the annotation applies.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.TimeSegment time_segment = 2;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\TimeSegment
+     * @return \Google\Cloud\DataLabeling\V1beta1\TimeSegment|null
      */
     public function getTimeSegment()
     {

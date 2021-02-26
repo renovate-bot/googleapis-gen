@@ -83,7 +83,7 @@ class CheckInfo extends \Google\Protobuf\Internal\Message
      * Consumer info of this check.
      *
      * Generated from protobuf field <code>.google.api.servicecontrol.v1.CheckResponse.ConsumerInfo consumer_info = 2;</code>
-     * @return \Google\Cloud\ServiceControl\V1\CheckResponse\ConsumerInfo
+     * @return \Google\Cloud\ServiceControl\V1\CheckResponse\ConsumerInfo|null
      */
     public function getConsumerInfo()
     {

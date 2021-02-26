@@ -355,7 +355,7 @@ class CloudFunction extends \Google\Protobuf\Internal\Message
      * The source repository where a function is hosted.
      *
      * Generated from protobuf field <code>.google.cloud.functions.v1.SourceRepository source_repository = 4;</code>
-     * @return \Google\Cloud\Functions\V1\SourceRepository
+     * @return \Google\Cloud\Functions\V1\SourceRepository|null
      */
     public function getSourceRepository()
     {
@@ -420,7 +420,7 @@ class CloudFunction extends \Google\Protobuf\Internal\Message
      * An HTTPS endpoint type of source that can be triggered via URL.
      *
      * Generated from protobuf field <code>.google.cloud.functions.v1.HttpsTrigger https_trigger = 5;</code>
-     * @return \Google\Cloud\Functions\V1\HttpsTrigger
+     * @return \Google\Cloud\Functions\V1\HttpsTrigger|null
      */
     public function getHttpsTrigger()
     {
@@ -451,7 +451,7 @@ class CloudFunction extends \Google\Protobuf\Internal\Message
      * A source that fires events in response to a condition in another service.
      *
      * Generated from protobuf field <code>.google.cloud.functions.v1.EventTrigger event_trigger = 6;</code>
-     * @return \Google\Cloud\Functions\V1\EventTrigger
+     * @return \Google\Cloud\Functions\V1\EventTrigger|null
      */
     public function getEventTrigger()
     {
@@ -580,7 +580,7 @@ class CloudFunction extends \Google\Protobuf\Internal\Message
      * timeout period. Defaults to 60 seconds.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration timeout = 9;</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getTimeout()
     {
@@ -674,7 +674,7 @@ class CloudFunction extends \Google\Protobuf\Internal\Message
      * Output only. The last update timestamp of a Cloud Function.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {

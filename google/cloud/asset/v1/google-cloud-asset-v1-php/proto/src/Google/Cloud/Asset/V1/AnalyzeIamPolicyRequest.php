@@ -63,7 +63,7 @@ class AnalyzeIamPolicyRequest extends \Google\Protobuf\Internal\Message
      * Required. The request query.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1.IamPolicyAnalysisQuery analysis_query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Asset\V1\IamPolicyAnalysisQuery
+     * @return \Google\Cloud\Asset\V1\IamPolicyAnalysisQuery|null
      */
     public function getAnalysisQuery()
     {
@@ -106,7 +106,7 @@ class AnalyzeIamPolicyRequest extends \Google\Protobuf\Internal\Message
      * Default is empty.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration execution_timeout = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getExecutionTimeout()
     {

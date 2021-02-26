@@ -136,7 +136,7 @@ class UpgradeEvent extends \Google\Protobuf\Internal\Message
      * Required. The time when the operation was started.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp operation_start_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getOperationStartTime()
     {

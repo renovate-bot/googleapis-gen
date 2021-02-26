@@ -95,7 +95,7 @@ class CriterionCategoryLocaleAvailability extends \Google\Protobuf\Internal\Mess
      * Code of the country.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCountryCode()
     {
@@ -158,7 +158,7 @@ class CriterionCategoryLocaleAvailability extends \Google\Protobuf\Internal\Mess
      * Code of the language.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getLanguageCode()
     {

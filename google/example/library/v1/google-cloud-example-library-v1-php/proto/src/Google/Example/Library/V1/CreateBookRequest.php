@@ -75,7 +75,7 @@ class CreateBookRequest extends \Google\Protobuf\Internal\Message
      * The book to create.
      *
      * Generated from protobuf field <code>.google.example.library.v1.Book book = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Example\Library\V1\Book
+     * @return \Google\Example\Library\V1\Book|null
      */
     public function getBook()
     {

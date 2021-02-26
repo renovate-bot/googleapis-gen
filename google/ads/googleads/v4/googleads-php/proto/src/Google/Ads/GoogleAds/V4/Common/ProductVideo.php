@@ -41,7 +41,7 @@ class ProductVideo extends \Google\Protobuf\Internal\Message
      * The MediaFile resource name of a video which must be hosted on YouTube.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_video = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getProductVideo()
     {

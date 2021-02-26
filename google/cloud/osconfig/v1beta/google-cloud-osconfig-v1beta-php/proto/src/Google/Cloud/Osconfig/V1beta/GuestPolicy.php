@@ -194,7 +194,7 @@ class GuestPolicy extends \Google\Protobuf\Internal\Message
      * Output only. Time this guest policy was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -230,7 +230,7 @@ class GuestPolicy extends \Google\Protobuf\Internal\Message
      * Output only. Last time this guest policy was updated.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {
@@ -273,7 +273,7 @@ class GuestPolicy extends \Google\Protobuf\Internal\Message
      * conflicts](/compute/docs/os-config-management/create-guest-policy#handle-conflicts).
      *
      * Generated from protobuf field <code>.google.cloud.osconfig.v1beta.Assignment assignment = 6 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Osconfig\V1beta\Assignment
+     * @return \Google\Cloud\Osconfig\V1beta\Assignment|null
      */
     public function getAssignment()
     {

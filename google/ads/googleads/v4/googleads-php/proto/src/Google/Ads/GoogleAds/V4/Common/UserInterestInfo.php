@@ -41,7 +41,7 @@ class UserInterestInfo extends \Google\Protobuf\Internal\Message
      * The UserInterest resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue user_interest_category = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getUserInterestCategory()
     {

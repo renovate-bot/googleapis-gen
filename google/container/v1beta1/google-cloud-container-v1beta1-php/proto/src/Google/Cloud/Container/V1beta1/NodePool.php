@@ -86,6 +86,7 @@ class NodePool extends \Google\Protobuf\Internal\Message
      * node pool instance, if available.
      *
      * Generated from protobuf field <code>string status_message = 104 [deprecated = true];</code>
+     * @deprecated
      */
     protected $status_message = '';
     /**
@@ -216,7 +217,7 @@ class NodePool extends \Google\Protobuf\Internal\Message
      * The node configuration of the pool.
      *
      * Generated from protobuf field <code>.google.container.v1beta1.NodeConfig config = 2;</code>
-     * @return \Google\Cloud\Container\V1beta1\NodeConfig
+     * @return \Google\Cloud\Container\V1beta1\NodeConfig|null
      */
     public function getConfig()
     {
@@ -435,9 +436,11 @@ class NodePool extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string status_message = 104 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getStatusMessage()
     {
+        @trigger_error('status_message is deprecated.', E_USER_DEPRECATED);
         return $this->status_message;
     }
 
@@ -449,9 +452,11 @@ class NodePool extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string status_message = 104 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setStatusMessage($var)
     {
+        @trigger_error('status_message is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->status_message = $var;
 
@@ -463,7 +468,7 @@ class NodePool extends \Google\Protobuf\Internal\Message
      * only if a valid configuration is present.
      *
      * Generated from protobuf field <code>.google.container.v1beta1.NodePoolAutoscaling autoscaling = 4;</code>
-     * @return \Google\Cloud\Container\V1beta1\NodePoolAutoscaling
+     * @return \Google\Cloud\Container\V1beta1\NodePoolAutoscaling|null
      */
     public function getAutoscaling()
     {
@@ -500,7 +505,7 @@ class NodePool extends \Google\Protobuf\Internal\Message
      * NodeManagement configuration for this NodePool.
      *
      * Generated from protobuf field <code>.google.container.v1beta1.NodeManagement management = 5;</code>
-     * @return \Google\Cloud\Container\V1beta1\NodeManagement
+     * @return \Google\Cloud\Container\V1beta1\NodeManagement|null
      */
     public function getManagement()
     {
@@ -537,7 +542,7 @@ class NodePool extends \Google\Protobuf\Internal\Message
      * simultaneously on a node in the node pool.
      *
      * Generated from protobuf field <code>.google.container.v1beta1.MaxPodsConstraint max_pods_constraint = 6;</code>
-     * @return \Google\Cloud\Container\V1beta1\MaxPodsConstraint
+     * @return \Google\Cloud\Container\V1beta1\MaxPodsConstraint|null
      */
     public function getMaxPodsConstraint()
     {
@@ -626,7 +631,7 @@ class NodePool extends \Google\Protobuf\Internal\Message
      * Upgrade settings control disruption and speed of the upgrade.
      *
      * Generated from protobuf field <code>.google.container.v1beta1.NodePool.UpgradeSettings upgrade_settings = 107;</code>
-     * @return \Google\Cloud\Container\V1beta1\NodePool\UpgradeSettings
+     * @return \Google\Cloud\Container\V1beta1\NodePool\UpgradeSettings|null
      */
     public function getUpgradeSettings()
     {

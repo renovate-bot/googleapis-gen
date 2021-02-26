@@ -75,7 +75,7 @@ class FeedAttributeOperation extends \Google\Protobuf\Internal\Message
      * Output only. The feed attribute being added to the list.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.resources.FeedAttribute value = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V5\Resources\FeedAttribute
+     * @return \Google\Ads\GoogleAds\V5\Resources\FeedAttribute|null
      */
     public function getValue()
     {

@@ -51,7 +51,7 @@ class Commission extends \Google\Protobuf\Internal\Message
      * rate of 0.106 (10.6%).
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value commission_rate_micros = 1;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCommissionRateMicros()
     {

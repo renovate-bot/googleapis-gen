@@ -159,7 +159,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * The simulated bid modifier upon which projected metrics are based.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue bid_modifier = 1;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getBidModifier()
     {
@@ -223,7 +223,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions = 2;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getBiddableConversions()
     {
@@ -290,7 +290,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions_value = 3;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getBiddableConversionsValue()
     {
@@ -356,7 +356,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Projected number of clicks.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value clicks = 4;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getClicks()
     {
@@ -419,7 +419,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Projected cost in micros.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 5;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCostMicros()
     {
@@ -482,7 +482,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Projected number of impressions.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value impressions = 6;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getImpressions()
     {
@@ -546,7 +546,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value top_slot_impressions = 7;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getTopSlotImpressions()
     {
@@ -613,7 +613,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue parent_biddable_conversions = 8;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getParentBiddableConversions()
     {
@@ -680,7 +680,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue parent_biddable_conversions_value = 9;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getParentBiddableConversionsValue()
     {
@@ -746,7 +746,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Projected number of clicks for the parent resource.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value parent_clicks = 10;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getParentClicks()
     {
@@ -809,7 +809,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Projected cost in micros for the parent resource.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value parent_cost_micros = 11;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getParentCostMicros()
     {
@@ -872,7 +872,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Projected number of impressions for the parent resource.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value parent_impressions = 12;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getParentImpressions()
     {
@@ -936,7 +936,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value parent_top_slot_impressions = 13;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getParentTopSlotImpressions()
     {
@@ -1003,7 +1003,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * resource to realize this simulation.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value parent_required_budget_micros = 14;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getParentRequiredBudgetMicros()
     {

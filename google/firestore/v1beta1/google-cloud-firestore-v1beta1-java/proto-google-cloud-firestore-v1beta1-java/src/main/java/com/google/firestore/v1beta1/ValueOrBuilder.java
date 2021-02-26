@@ -13,6 +13,15 @@ public interface ValueOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.NullValue null_value = 11;</code>
+   * @return Whether the nullValue field is set.
+   */
+  boolean hasNullValue();
+  /**
+   * <pre>
+   * A null value.
+   * </pre>
+   *
+   * <code>.google.protobuf.NullValue null_value = 11;</code>
    * @return The enum numeric value on the wire for nullValue.
    */
   int getNullValueValue();
@@ -32,6 +41,15 @@ public interface ValueOrBuilder extends
    * </pre>
    *
    * <code>bool boolean_value = 1;</code>
+   * @return Whether the booleanValue field is set.
+   */
+  boolean hasBooleanValue();
+  /**
+   * <pre>
+   * A boolean value.
+   * </pre>
+   *
+   * <code>bool boolean_value = 1;</code>
    * @return The booleanValue.
    */
   boolean getBooleanValue();
@@ -42,10 +60,28 @@ public interface ValueOrBuilder extends
    * </pre>
    *
    * <code>int64 integer_value = 2;</code>
+   * @return Whether the integerValue field is set.
+   */
+  boolean hasIntegerValue();
+  /**
+   * <pre>
+   * An integer value.
+   * </pre>
+   *
+   * <code>int64 integer_value = 2;</code>
    * @return The integerValue.
    */
   long getIntegerValue();
 
+  /**
+   * <pre>
+   * A double value.
+   * </pre>
+   *
+   * <code>double double_value = 3;</code>
+   * @return Whether the doubleValue field is set.
+   */
+  boolean hasDoubleValue();
   /**
    * <pre>
    * A double value.
@@ -98,6 +134,18 @@ public interface ValueOrBuilder extends
    * </pre>
    *
    * <code>string string_value = 17;</code>
+   * @return Whether the stringValue field is set.
+   */
+  boolean hasStringValue();
+  /**
+   * <pre>
+   * A string value.
+   * The string, represented as UTF-8, must not exceed 1 MiB - 89 bytes.
+   * Only the first 1,500 bytes of the UTF-8 representation are considered by
+   * queries.
+   * </pre>
+   *
+   * <code>string string_value = 17;</code>
    * @return The stringValue.
    */
   java.lang.String getStringValue();
@@ -123,10 +171,31 @@ public interface ValueOrBuilder extends
    * </pre>
    *
    * <code>bytes bytes_value = 18;</code>
+   * @return Whether the bytesValue field is set.
+   */
+  boolean hasBytesValue();
+  /**
+   * <pre>
+   * A bytes value.
+   * Must not exceed 1 MiB - 89 bytes.
+   * Only the first 1,500 bytes are considered by queries.
+   * </pre>
+   *
+   * <code>bytes bytes_value = 18;</code>
    * @return The bytesValue.
    */
   com.google.protobuf.ByteString getBytesValue();
 
+  /**
+   * <pre>
+   * A reference to a document. For example:
+   * `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
+   * </pre>
+   *
+   * <code>string reference_value = 5;</code>
+   * @return Whether the referenceValue field is set.
+   */
+  boolean hasReferenceValue();
   /**
    * <pre>
    * A reference to a document. For example:

@@ -71,7 +71,7 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
      * Output only. The duration of the Video in milliseconds.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value ad_duration_millis = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getAdDurationMillis()
     {
@@ -134,7 +134,7 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
      * Immutable. The YouTube video ID (as seen in YouTube URLs).
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue youtube_video_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getYoutubeVideoId()
     {
@@ -199,7 +199,7 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
      * television commercials.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue advertising_id_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAdvertisingIdCode()
     {
@@ -269,7 +269,7 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
      * mainly for television commercials.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue isci_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getIsciCode()
     {

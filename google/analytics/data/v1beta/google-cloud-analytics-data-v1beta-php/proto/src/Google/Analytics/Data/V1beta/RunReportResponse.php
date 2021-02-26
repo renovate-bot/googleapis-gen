@@ -369,7 +369,7 @@ class RunReportResponse extends \Google\Protobuf\Internal\Message
      * Metadata for the report.
      *
      * Generated from protobuf field <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 9;</code>
-     * @return \Google\Analytics\Data\V1beta\ResponseMetaData
+     * @return \Google\Analytics\Data\V1beta\ResponseMetaData|null
      */
     public function getMetadata()
     {
@@ -405,7 +405,7 @@ class RunReportResponse extends \Google\Protobuf\Internal\Message
      * This Analytics Property's quota state including this request.
      *
      * Generated from protobuf field <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 10;</code>
-     * @return \Google\Analytics\Data\V1beta\PropertyQuota
+     * @return \Google\Analytics\Data\V1beta\PropertyQuota|null
      */
     public function getPropertyQuota()
     {

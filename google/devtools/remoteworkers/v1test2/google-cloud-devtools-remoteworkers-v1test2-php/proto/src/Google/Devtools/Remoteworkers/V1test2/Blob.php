@@ -49,7 +49,7 @@ class Blob extends \Google\Protobuf\Internal\Message
      * The digest of the blob. This should be verified by the receiver.
      *
      * Generated from protobuf field <code>.google.devtools.remoteworkers.v1test2.Digest digest = 1;</code>
-     * @return \Google\Devtools\Remoteworkers\V1test2\Digest
+     * @return \Google\Devtools\Remoteworkers\V1test2\Digest|null
      */
     public function getDigest()
     {

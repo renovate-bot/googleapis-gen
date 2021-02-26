@@ -62,6 +62,15 @@ public interface ListenRequestOrBuilder extends
    * </pre>
    *
    * <code>int32 remove_target = 3;</code>
+   * @return Whether the removeTarget field is set.
+   */
+  boolean hasRemoveTarget();
+  /**
+   * <pre>
+   * The ID of a target to remove from this stream.
+   * </pre>
+   *
+   * <code>int32 remove_target = 3;</code>
    * @return The removeTarget.
    */
   int getRemoveTarget();

@@ -55,7 +55,7 @@ class UpdateProfileRequest extends \Google\Protobuf\Internal\Message
      * Profile to update
      *
      * Generated from protobuf field <code>.google.devtools.cloudprofiler.v2.Profile profile = 1;</code>
-     * @return \Google\Cloud\Profiler\V2\Profile
+     * @return \Google\Cloud\Profiler\V2\Profile|null
      */
     public function getProfile()
     {
@@ -94,7 +94,7 @@ class UpdateProfileRequest extends \Google\Protobuf\Internal\Message
      * fields are overwritten.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

@@ -88,7 +88,7 @@ class ImportUserEventsResponse extends \Google\Protobuf\Internal\Message
      * the request.
      *
      * Generated from protobuf field <code>.google.cloud.recommendationengine.v1beta1.ImportErrorsConfig errors_config = 2;</code>
-     * @return \Google\Cloud\RecommendationEngine\V1beta1\ImportErrorsConfig
+     * @return \Google\Cloud\RecommendationEngine\V1beta1\ImportErrorsConfig|null
      */
     public function getErrorsConfig()
     {
@@ -125,7 +125,7 @@ class ImportUserEventsResponse extends \Google\Protobuf\Internal\Message
      * Aggregated statistics of user event import status.
      *
      * Generated from protobuf field <code>.google.cloud.recommendationengine.v1beta1.UserEventImportSummary import_summary = 3;</code>
-     * @return \Google\Cloud\RecommendationEngine\V1beta1\UserEventImportSummary
+     * @return \Google\Cloud\RecommendationEngine\V1beta1\UserEventImportSummary|null
      */
     public function getImportSummary()
     {

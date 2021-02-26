@@ -75,7 +75,7 @@ class BigQueryTableSpec extends \Google\Protobuf\Internal\Message
      * `table_source_type` is `BIGQUERY_VIEW`.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1beta1.ViewSpec view_spec = 2;</code>
-     * @return \Google\Cloud\DataCatalog\V1beta1\ViewSpec
+     * @return \Google\Cloud\DataCatalog\V1beta1\ViewSpec|null
      */
     public function getViewSpec()
     {
@@ -108,7 +108,7 @@ class BigQueryTableSpec extends \Google\Protobuf\Internal\Message
      * `table_source_type` is `BIGQUERY_TABLE`.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>
-     * @return \Google\Cloud\DataCatalog\V1beta1\TableSpec
+     * @return \Google\Cloud\DataCatalog\V1beta1\TableSpec|null
      */
     public function getTableSpec()
     {

@@ -59,7 +59,7 @@ class PlannedProduct extends \Google\Protobuf\Internal\Message
      * To list the available plannable product codes use ListPlannableProducts.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue plannable_product_code = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPlannableProductCode()
     {
@@ -130,7 +130,7 @@ class PlannedProduct extends \Google\Protobuf\Internal\Message
      * E.g. 1 000 000$ = 1 000 000 000 000 micros.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value budget_micros = 2;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getBudgetMicros()
     {

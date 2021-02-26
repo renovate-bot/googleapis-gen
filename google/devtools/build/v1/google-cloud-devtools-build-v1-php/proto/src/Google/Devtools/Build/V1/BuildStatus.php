@@ -124,7 +124,7 @@ class BuildStatus extends \Google\Protobuf\Internal\Message
      * Might not be available in some cases, e.g., a build timeout.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value build_tool_exit_code = 4;</code>
-     * @return \Google\Protobuf\Int32Value
+     * @return \Google\Protobuf\Int32Value|null
      */
     public function getBuildToolExitCode()
     {
@@ -190,7 +190,7 @@ class BuildStatus extends \Google\Protobuf\Internal\Message
      * Fine-grained diagnostic information to complement the status.
      *
      * Generated from protobuf field <code>.google.protobuf.Any details = 2;</code>
-     * @return \Google\Protobuf\Any
+     * @return \Google\Protobuf\Any|null
      */
     public function getDetails()
     {

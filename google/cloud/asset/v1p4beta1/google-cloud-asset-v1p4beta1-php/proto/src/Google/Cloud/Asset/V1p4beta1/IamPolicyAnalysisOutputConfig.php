@@ -36,7 +36,7 @@ class IamPolicyAnalysisOutputConfig extends \Google\Protobuf\Internal\Message
      * Destination on Cloud Storage.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1p4beta1.IamPolicyAnalysisOutputConfig.GcsDestination gcs_destination = 1;</code>
-     * @return \Google\Cloud\Asset\V1p4beta1\IamPolicyAnalysisOutputConfig\GcsDestination
+     * @return \Google\Cloud\Asset\V1p4beta1\IamPolicyAnalysisOutputConfig\GcsDestination|null
      */
     public function getGcsDestination()
     {

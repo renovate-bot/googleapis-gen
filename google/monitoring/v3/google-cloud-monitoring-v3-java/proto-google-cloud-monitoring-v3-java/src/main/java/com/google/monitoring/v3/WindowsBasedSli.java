@@ -2275,6 +2275,19 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string good_bad_metric_filter = 5;</code>
+   * @return Whether the goodBadMetricFilter field is set.
+   */
+  public boolean hasGoodBadMetricFilter() {
+    return windowCriterionCase_ == 5;
+  }
+  /**
+   * <pre>
+   * A [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
+   * specifying a `TimeSeries` with `ValueType = BOOL`. The window is good if
+   * any `true` values appear in the window.
+   * </pre>
+   *
+   * <code>string good_bad_metric_filter = 5;</code>
    * @return The goodBadMetricFilter.
    */
   public java.lang.String getGoodBadMetricFilter() {
@@ -2953,6 +2966,20 @@ private static final long serialVersionUID = 0L;
     }
 
 
+    /**
+     * <pre>
+     * A [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
+     * specifying a `TimeSeries` with `ValueType = BOOL`. The window is good if
+     * any `true` values appear in the window.
+     * </pre>
+     *
+     * <code>string good_bad_metric_filter = 5;</code>
+     * @return Whether the goodBadMetricFilter field is set.
+     */
+    @java.lang.Override
+    public boolean hasGoodBadMetricFilter() {
+      return windowCriterionCase_ == 5;
+    }
     /**
      * <pre>
      * A [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)

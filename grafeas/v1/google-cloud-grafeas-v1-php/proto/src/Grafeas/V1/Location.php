@@ -88,7 +88,7 @@ class Location extends \Google\Protobuf\Internal\Message
      * The version installed at this location.
      *
      * Generated from protobuf field <code>.grafeas.v1.Version version = 2;</code>
-     * @return \Grafeas\V1\Version
+     * @return \Grafeas\V1\Version|null
      */
     public function getVersion()
     {

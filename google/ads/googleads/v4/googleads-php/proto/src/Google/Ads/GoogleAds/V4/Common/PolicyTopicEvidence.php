@@ -49,7 +49,7 @@ class PolicyTopicEvidence extends \Google\Protobuf\Internal\Message
      * List of websites linked with this resource.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.PolicyTopicEvidence.WebsiteList website_list = 3;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\PolicyTopicEvidence\WebsiteList
+     * @return \Google\Ads\GoogleAds\V4\Common\PolicyTopicEvidence\WebsiteList|null
      */
     public function getWebsiteList()
     {
@@ -80,7 +80,7 @@ class PolicyTopicEvidence extends \Google\Protobuf\Internal\Message
      * List of evidence found in the text of a resource.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.PolicyTopicEvidence.TextList text_list = 4;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\PolicyTopicEvidence\TextList
+     * @return \Google\Ads\GoogleAds\V4\Common\PolicyTopicEvidence\TextList|null
      */
     public function getTextList()
     {
@@ -112,7 +112,7 @@ class PolicyTopicEvidence extends \Google\Protobuf\Internal\Message
      * This is an IETF language tag such as "en-US".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 5;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getLanguageCode()
     {
@@ -174,7 +174,7 @@ class PolicyTopicEvidence extends \Google\Protobuf\Internal\Message
      * finding.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.PolicyTopicEvidence.DestinationTextList destination_text_list = 6;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\PolicyTopicEvidence\DestinationTextList
+     * @return \Google\Ads\GoogleAds\V4\Common\PolicyTopicEvidence\DestinationTextList|null
      */
     public function getDestinationTextList()
     {
@@ -206,7 +206,7 @@ class PolicyTopicEvidence extends \Google\Protobuf\Internal\Message
      * Mismatch between the destinations of a resource's URLs.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.PolicyTopicEvidence.DestinationMismatch destination_mismatch = 7;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\PolicyTopicEvidence\DestinationMismatch
+     * @return \Google\Ads\GoogleAds\V4\Common\PolicyTopicEvidence\DestinationMismatch|null
      */
     public function getDestinationMismatch()
     {
@@ -238,7 +238,7 @@ class PolicyTopicEvidence extends \Google\Protobuf\Internal\Message
      * functional in all locations for commonly used devices.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.PolicyTopicEvidence.DestinationNotWorking destination_not_working = 8;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\PolicyTopicEvidence\DestinationNotWorking
+     * @return \Google\Ads\GoogleAds\V4\Common\PolicyTopicEvidence\DestinationNotWorking|null
      */
     public function getDestinationNotWorking()
     {

@@ -73,7 +73,7 @@ class UpdateComponentSettingsRequest extends \Google\Protobuf\Internal\Message
      *  * `projects/{project}/zones/{zone}/clusters/{cluster}/components/{component}/settings`
      *
      * Generated from protobuf field <code>.google.cloud.securitycenter.settings.v1beta1.ComponentSettings component_settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\SecurityCenter\Settings\V1beta1\ComponentSettings
+     * @return \Google\Cloud\SecurityCenter\Settings\V1beta1\ComponentSettings|null
      */
     public function getComponentSettings()
     {
@@ -117,7 +117,7 @@ class UpdateComponentSettingsRequest extends \Google\Protobuf\Internal\Message
      * The list of fields to be updated on the component settings resource.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

@@ -63,7 +63,7 @@ class DisplayCallToAction extends \Google\Protobuf\Internal\Message
      * Text for the display-call-to-action.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue text = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getText()
     {
@@ -127,7 +127,7 @@ class DisplayCallToAction extends \Google\Protobuf\Internal\Message
      * white.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue text_color = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getTextColor()
     {
@@ -194,7 +194,7 @@ class DisplayCallToAction extends \Google\Protobuf\Internal\Message
      * the url defaults to final_url.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue url_collection_id = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getUrlCollectionId()
     {

@@ -99,7 +99,7 @@ class CustomerManagerLink extends \Google\Protobuf\Internal\Message
      * Output only. The manager customer linked to the customer.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue manager_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getManagerCustomer()
     {
@@ -162,7 +162,7 @@ class CustomerManagerLink extends \Google\Protobuf\Internal\Message
      * Output only. ID of the customer-manager link. This field is read only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value manager_link_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getManagerLinkId()
     {

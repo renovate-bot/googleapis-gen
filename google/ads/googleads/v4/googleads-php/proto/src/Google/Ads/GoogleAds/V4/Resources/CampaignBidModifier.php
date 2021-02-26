@@ -104,7 +104,7 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
      * Output only. The campaign to which this criterion belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCampaign()
     {
@@ -168,7 +168,7 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
      * This field is ignored for mutates.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCriterionId()
     {
@@ -234,7 +234,7 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
      * The modifier for the bid when the criterion matches.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue bid_modifier = 4;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getBidModifier()
     {
@@ -297,7 +297,7 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
      * Immutable. Criterion for interaction type. Only supported for search campaigns.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.InteractionTypeInfo interaction_type = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\InteractionTypeInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\InteractionTypeInfo|null
      */
     public function getInteractionType()
     {

@@ -86,7 +86,7 @@ class Preferences extends \Google\Protobuf\Internal\Message
      * If not set, default is any value.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue is_skippable = 1;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getIsSkippable()
     {
@@ -153,7 +153,7 @@ class Preferences extends \Google\Protobuf\Internal\Message
      * If not set, default is any value.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue starts_with_sound = 2;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getStartsWithSound()
     {
@@ -248,7 +248,7 @@ class Preferences extends \Google\Protobuf\Internal\Message
      * If not set, default is false.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue top_content_only = 4;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getTopContentOnly()
     {
@@ -316,7 +316,7 @@ class Preferences extends \Google\Protobuf\Internal\Message
      * If not set, default is any value.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue has_guaranteed_price = 5;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getHasGuaranteedPrice()
     {

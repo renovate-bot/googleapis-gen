@@ -115,7 +115,7 @@ class CreateAttestorRequest extends \Google\Protobuf\Internal\Message
      * in the format `projects/&#42;&#47;attestors/&#42;`.
      *
      * Generated from protobuf field <code>.google.cloud.binaryauthorization.v1beta1.Attestor attestor = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\BinaryAuthorization\V1beta1\Attestor
+     * @return \Google\Cloud\BinaryAuthorization\V1beta1\Attestor|null
      */
     public function getAttestor()
     {

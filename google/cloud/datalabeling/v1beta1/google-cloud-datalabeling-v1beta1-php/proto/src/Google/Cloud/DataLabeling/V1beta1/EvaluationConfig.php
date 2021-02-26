@@ -41,7 +41,7 @@ class EvaluationConfig extends \Google\Protobuf\Internal\Message
      * bounding boxes.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions bounding_box_evaluation_options = 1;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\BoundingBoxEvaluationOptions
+     * @return \Google\Cloud\DataLabeling\V1beta1\BoundingBoxEvaluationOptions|null
      */
     public function getBoundingBoxEvaluationOptions()
     {

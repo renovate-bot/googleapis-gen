@@ -129,7 +129,7 @@ class Match extends \Google\Protobuf\Internal\Message
      * filled for [`INTENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 1;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Intent
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Intent|null
      */
     public function getIntent()
     {
@@ -208,7 +208,7 @@ class Match extends \Google\Protobuf\Internal\Message
      *     -   Else: parameter value
      *
      * Generated from protobuf field <code>.google.protobuf.Struct parameters = 2;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getParameters()
     {

@@ -63,7 +63,7 @@ class TextAdRecommendation extends \Google\Protobuf\Internal\Message
      * Output only. Recommended ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.resources.Ad ad = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V5\Resources\Ad
+     * @return \Google\Ads\GoogleAds\V5\Resources\Ad|null
      */
     public function getAd()
     {
@@ -100,7 +100,7 @@ class TextAdRecommendation extends \Google\Protobuf\Internal\Message
      * YYYY-MM-DD format, e.g., 2018-04-17.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue creation_date = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCreationDate()
     {
@@ -168,7 +168,7 @@ class TextAdRecommendation extends \Google\Protobuf\Internal\Message
      * YYYY-MM-DD format, e.g., 2018-04-17.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue auto_apply_date = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAutoApplyDate()
     {

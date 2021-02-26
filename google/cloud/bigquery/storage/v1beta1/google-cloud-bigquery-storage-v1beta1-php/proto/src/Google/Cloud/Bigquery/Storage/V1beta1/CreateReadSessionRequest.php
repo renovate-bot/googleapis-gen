@@ -106,7 +106,7 @@ class CreateReadSessionRequest extends \Google\Protobuf\Internal\Message
      * Required. Reference to the table to read.
      *
      * Generated from protobuf field <code>.google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Bigquery\Storage\V1beta1\TableReference
+     * @return \Google\Cloud\Bigquery\Storage\V1beta1\TableReference|null
      */
     public function getTableReference()
     {
@@ -172,7 +172,7 @@ class CreateReadSessionRequest extends \Google\Protobuf\Internal\Message
      * Any modifiers to the Table (e.g. snapshot timestamp).
      *
      * Generated from protobuf field <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 2;</code>
-     * @return \Google\Cloud\Bigquery\Storage\V1beta1\TableModifiers
+     * @return \Google\Cloud\Bigquery\Storage\V1beta1\TableModifiers|null
      */
     public function getTableModifiers()
     {
@@ -244,7 +244,7 @@ class CreateReadSessionRequest extends \Google\Protobuf\Internal\Message
      * Read options for this session (e.g. column selection, filters).
      *
      * Generated from protobuf field <code>.google.cloud.bigquery.storage.v1beta1.TableReadOptions read_options = 4;</code>
-     * @return \Google\Cloud\Bigquery\Storage\V1beta1\TableReadOptions
+     * @return \Google\Cloud\Bigquery\Storage\V1beta1\TableReadOptions|null
      */
     public function getReadOptions()
     {

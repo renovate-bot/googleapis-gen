@@ -53,7 +53,7 @@ class UpdateRegistrationRequest extends \Google\Protobuf\Internal\Message
      * Fields of the `Registration` to update.
      *
      * Generated from protobuf field <code>.google.cloud.domains.v1beta1.Registration registration = 1;</code>
-     * @return \Google\Cloud\Domains\V1beta1\Registration
+     * @return \Google\Cloud\Domains\V1beta1\Registration|null
      */
     public function getRegistration()
     {
@@ -91,7 +91,7 @@ class UpdateRegistrationRequest extends \Google\Protobuf\Internal\Message
      * be `"labels"`.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

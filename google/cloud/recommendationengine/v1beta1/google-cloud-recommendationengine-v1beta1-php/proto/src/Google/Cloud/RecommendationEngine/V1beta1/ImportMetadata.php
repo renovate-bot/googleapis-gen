@@ -140,7 +140,7 @@ class ImportMetadata extends \Google\Protobuf\Internal\Message
      * Operation create time.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 4;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -229,7 +229,7 @@ class ImportMetadata extends \Google\Protobuf\Internal\Message
      * finish time.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 6;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {

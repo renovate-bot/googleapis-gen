@@ -2000,6 +2000,18 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string formatted_name = 1;</code>
+   * @return Whether the formattedName field is set.
+   */
+  public boolean hasFormattedName() {
+    return personNameCase_ == 1;
+  }
+  /**
+   * <pre>
+   * A string represents a person's full name. For example, "Dr. John Smith".
+   * Number of characters allowed is 100.
+   * </pre>
+   *
+   * <code>string formatted_name = 1;</code>
    * @return The formattedName.
    */
   public java.lang.String getFormattedName() {
@@ -2530,6 +2542,19 @@ private static final long serialVersionUID = 0L;
     }
 
 
+    /**
+     * <pre>
+     * A string represents a person's full name. For example, "Dr. John Smith".
+     * Number of characters allowed is 100.
+     * </pre>
+     *
+     * <code>string formatted_name = 1;</code>
+     * @return Whether the formattedName field is set.
+     */
+    @java.lang.Override
+    public boolean hasFormattedName() {
+      return personNameCase_ == 1;
+    }
     /**
      * <pre>
      * A string represents a person's full name. For example, "Dr. John Smith".

@@ -102,7 +102,7 @@ class UpgradeOccurrence extends \Google\Protobuf\Internal\Message
      * human readable form.
      *
      * Generated from protobuf field <code>.grafeas.v1.Version parsed_version = 3;</code>
-     * @return \Grafeas\V1\Version
+     * @return \Grafeas\V1\Version|null
      */
     public function getParsedVersion()
     {
@@ -141,7 +141,7 @@ class UpgradeOccurrence extends \Google\Protobuf\Internal\Message
      * making it easier to use the occurrence.
      *
      * Generated from protobuf field <code>.grafeas.v1.UpgradeDistribution distribution = 4;</code>
-     * @return \Grafeas\V1\UpgradeDistribution
+     * @return \Grafeas\V1\UpgradeDistribution|null
      */
     public function getDistribution()
     {
@@ -179,7 +179,7 @@ class UpgradeOccurrence extends \Google\Protobuf\Internal\Message
      * Required for Windows OS. Represents the metadata about the Windows update.
      *
      * Generated from protobuf field <code>.grafeas.v1.WindowsUpdate windows_update = 5;</code>
-     * @return \Grafeas\V1\WindowsUpdate
+     * @return \Grafeas\V1\WindowsUpdate|null
      */
     public function getWindowsUpdate()
     {

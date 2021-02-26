@@ -53,7 +53,7 @@ class UpdateKnowledgeBaseRequest extends \Google\Protobuf\Internal\Message
      * Required. The knowledge base to update.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Dialogflow\V2beta1\KnowledgeBase
+     * @return \Google\Cloud\Dialogflow\V2beta1\KnowledgeBase|null
      */
     public function getKnowledgeBase()
     {
@@ -91,7 +91,7 @@ class UpdateKnowledgeBaseRequest extends \Google\Protobuf\Internal\Message
      * returned for attempting to update other fields.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

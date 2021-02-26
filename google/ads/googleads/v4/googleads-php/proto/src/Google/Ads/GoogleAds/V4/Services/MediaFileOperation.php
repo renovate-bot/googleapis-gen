@@ -36,7 +36,7 @@ class MediaFileOperation extends \Google\Protobuf\Internal\Message
      * Create operation: No resource name is expected for the new media file.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.MediaFile create = 1;</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\MediaFile
+     * @return \Google\Ads\GoogleAds\V4\Resources\MediaFile|null
      */
     public function getCreate()
     {

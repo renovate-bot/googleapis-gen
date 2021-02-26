@@ -45,6 +45,17 @@ public interface FeedItemSetLinkOperationOrBuilder extends
    * </pre>
    *
    * <code>string remove = 2;</code>
+   * @return Whether the remove field is set.
+   */
+  boolean hasRemove();
+  /**
+   * <pre>
+   * Remove operation: A resource name for the removed feed item set link is
+   * expected, in this format:
+   * `customers/{customer_id}/feedItemSetLinks/{feed_id}_{feed_item_set_id}_{feed_item_id}`
+   * </pre>
+   *
+   * <code>string remove = 2;</code>
    * @return The remove.
    */
   java.lang.String getRemove();

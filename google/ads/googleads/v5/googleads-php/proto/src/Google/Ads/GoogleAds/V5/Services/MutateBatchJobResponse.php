@@ -41,7 +41,7 @@ class MutateBatchJobResponse extends \Google\Protobuf\Internal\Message
      * The result for the mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.services.MutateBatchJobResult result = 1;</code>
-     * @return \Google\Ads\GoogleAds\V5\Services\MutateBatchJobResult
+     * @return \Google\Ads\GoogleAds\V5\Services\MutateBatchJobResult|null
      */
     public function getResult()
     {

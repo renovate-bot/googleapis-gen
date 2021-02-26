@@ -252,6 +252,18 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string delete = 2;</code>
+   * @return Whether the delete field is set.
+   */
+  public boolean hasDelete() {
+    return operationCase_ == 2;
+  }
+  /**
+   * <pre>
+   * A document name to delete. In the format:
+   * `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
+   * </pre>
+   *
+   * <code>string delete = 2;</code>
    * @return The delete.
    */
   public java.lang.String getDelete() {
@@ -1210,6 +1222,19 @@ private static final long serialVersionUID = 0L;
       return updateBuilder_;
     }
 
+    /**
+     * <pre>
+     * A document name to delete. In the format:
+     * `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
+     * </pre>
+     *
+     * <code>string delete = 2;</code>
+     * @return Whether the delete field is set.
+     */
+    @java.lang.Override
+    public boolean hasDelete() {
+      return operationCase_ == 2;
+    }
     /**
      * <pre>
      * A document name to delete. In the format:

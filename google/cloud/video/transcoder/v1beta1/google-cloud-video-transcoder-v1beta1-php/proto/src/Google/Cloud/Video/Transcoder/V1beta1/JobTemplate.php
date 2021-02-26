@@ -83,7 +83,7 @@ class JobTemplate extends \Google\Protobuf\Internal\Message
      * The configuration for this template.
      *
      * Generated from protobuf field <code>.google.cloud.video.transcoder.v1beta1.JobConfig config = 2;</code>
-     * @return \Google\Cloud\Video\Transcoder\V1beta1\JobConfig
+     * @return \Google\Cloud\Video\Transcoder\V1beta1\JobConfig|null
      */
     public function getConfig()
     {

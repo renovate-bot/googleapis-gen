@@ -14,6 +14,16 @@ public interface ReadOptionsOrBuilder extends
    * </pre>
    *
    * <code>.google.datastore.v1.ReadOptions.ReadConsistency read_consistency = 1;</code>
+   * @return Whether the readConsistency field is set.
+   */
+  boolean hasReadConsistency();
+  /**
+   * <pre>
+   * The non-transactional read consistency to use.
+   * Cannot be set to `STRONG` for global queries.
+   * </pre>
+   *
+   * <code>.google.datastore.v1.ReadOptions.ReadConsistency read_consistency = 1;</code>
    * @return The enum numeric value on the wire for readConsistency.
    */
   int getReadConsistencyValue();
@@ -28,6 +38,17 @@ public interface ReadOptionsOrBuilder extends
    */
   com.google.datastore.v1.ReadOptions.ReadConsistency getReadConsistency();
 
+  /**
+   * <pre>
+   * The identifier of the transaction in which to read. A
+   * transaction identifier is returned by a call to
+   * [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction].
+   * </pre>
+   *
+   * <code>bytes transaction = 2;</code>
+   * @return Whether the transaction field is set.
+   */
+  boolean hasTransaction();
   /**
    * <pre>
    * The identifier of the transaction in which to read. A

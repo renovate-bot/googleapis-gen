@@ -84,7 +84,7 @@ class UpdateSpecialistPoolOperationMetadata extends \Google\Protobuf\Internal\Me
      * The operation generic information.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 2;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\GenericOperationMetadata
+     * @return \Google\Cloud\Aiplatform\V1beta1\GenericOperationMetadata|null
      */
     public function getGenericMetadata()
     {

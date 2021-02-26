@@ -141,7 +141,7 @@ class ImportUserEventsRequest extends \Google\Protobuf\Internal\Message
      * Required. The desired input location of the data.
      *
      * Generated from protobuf field <code>.google.cloud.recommendationengine.v1beta1.InputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\RecommendationEngine\V1beta1\InputConfig
+     * @return \Google\Cloud\RecommendationEngine\V1beta1\InputConfig|null
      */
     public function getInputConfig()
     {
@@ -177,7 +177,7 @@ class ImportUserEventsRequest extends \Google\Protobuf\Internal\Message
      * Optional. The desired location of errors incurred during the Import.
      *
      * Generated from protobuf field <code>.google.cloud.recommendationengine.v1beta1.ImportErrorsConfig errors_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\RecommendationEngine\V1beta1\ImportErrorsConfig
+     * @return \Google\Cloud\RecommendationEngine\V1beta1\ImportErrorsConfig|null
      */
     public function getErrorsConfig()
     {

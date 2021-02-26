@@ -349,6 +349,19 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string remove = 3;</code>
+   * @return Whether the remove field is set.
+   */
+  public boolean hasRemove() {
+    return operationCase_ == 3;
+  }
+  /**
+   * <pre>
+   * Remove operation: A resource name for the removed ad group extension
+   * setting is expected, in this format:
+   * `customers/{customer_id}/adGroupExtensionSettings/{ad_group_id}~{extension_type}`
+   * </pre>
+   *
+   * <code>string remove = 3;</code>
    * @return The remove.
    */
   public java.lang.String getRemove() {
@@ -1445,6 +1458,20 @@ private static final long serialVersionUID = 0L;
       return updateBuilder_;
     }
 
+    /**
+     * <pre>
+     * Remove operation: A resource name for the removed ad group extension
+     * setting is expected, in this format:
+     * `customers/{customer_id}/adGroupExtensionSettings/{ad_group_id}~{extension_type}`
+     * </pre>
+     *
+     * <code>string remove = 3;</code>
+     * @return Whether the remove field is set.
+     */
+    @java.lang.Override
+    public boolean hasRemove() {
+      return operationCase_ == 3;
+    }
     /**
      * <pre>
      * Remove operation: A resource name for the removed ad group extension

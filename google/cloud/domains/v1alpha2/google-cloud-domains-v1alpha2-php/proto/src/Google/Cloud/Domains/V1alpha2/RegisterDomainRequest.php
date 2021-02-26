@@ -125,7 +125,7 @@ class RegisterDomainRequest extends \Google\Protobuf\Internal\Message
      * Required. The complete `Registration` resource to be created.
      *
      * Generated from protobuf field <code>.google.cloud.domains.v1alpha2.Registration registration = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Domains\V1alpha2\Registration
+     * @return \Google\Cloud\Domains\V1alpha2\Registration|null
      */
     public function getRegistration()
     {
@@ -221,7 +221,7 @@ class RegisterDomainRequest extends \Google\Protobuf\Internal\Message
      * RetrieveRegisterParameters or SearchDomains calls.
      *
      * Generated from protobuf field <code>.google.type.Money yearly_price = 5 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Type\Money
+     * @return \Google\Type\Money|null
      */
     public function getYearlyPrice()
     {

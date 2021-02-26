@@ -142,7 +142,7 @@ class Distribution extends \Google\Protobuf\Internal\Message
      * The latest available version of this package in this distribution channel.
      *
      * Generated from protobuf field <code>.grafeas.v1.Version latest_version = 3;</code>
-     * @return \Grafeas\V1\Version
+     * @return \Grafeas\V1\Version|null
      */
     public function getLatestVersion()
     {

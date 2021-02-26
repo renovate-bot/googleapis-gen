@@ -79,7 +79,7 @@ class CreateTestCaseRequest extends \Google\Protobuf\Internal\Message
      * Required. The test case to create.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.TestCase test_case = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\TestCase
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\TestCase|null
      */
     public function getTestCase()
     {

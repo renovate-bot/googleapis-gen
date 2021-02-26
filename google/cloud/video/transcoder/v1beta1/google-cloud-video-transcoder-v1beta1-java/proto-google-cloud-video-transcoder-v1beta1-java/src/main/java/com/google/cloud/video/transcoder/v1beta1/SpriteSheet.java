@@ -461,6 +461,20 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 total_count = 9;</code>
+   * @return Whether the totalCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasTotalCount() {
+    return extractionStrategyCase_ == 9;
+  }
+  /**
+   * <pre>
+   * Total number of sprites. Create the specified number of sprites
+   * distributed evenly across the timeline of the output media. The default
+   * is 100.
+   * </pre>
+   *
+   * <code>int32 total_count = 9;</code>
    * @return The totalCount.
    */
   @java.lang.Override
@@ -1780,6 +1794,19 @@ private static final long serialVersionUID = 0L;
       return endTimeOffsetBuilder_;
     }
 
+    /**
+     * <pre>
+     * Total number of sprites. Create the specified number of sprites
+     * distributed evenly across the timeline of the output media. The default
+     * is 100.
+     * </pre>
+     *
+     * <code>int32 total_count = 9;</code>
+     * @return Whether the totalCount field is set.
+     */
+    public boolean hasTotalCount() {
+      return extractionStrategyCase_ == 9;
+    }
     /**
      * <pre>
      * Total number of sprites. Create the specified number of sprites

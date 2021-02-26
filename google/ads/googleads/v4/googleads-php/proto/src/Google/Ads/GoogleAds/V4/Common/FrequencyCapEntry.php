@@ -53,7 +53,7 @@ class FrequencyCapEntry extends \Google\Protobuf\Internal\Message
      * than one frequency cap with the same key.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.FrequencyCapKey key = 1;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\FrequencyCapKey
+     * @return \Google\Ads\GoogleAds\V4\Common\FrequencyCapKey|null
      */
     public function getKey()
     {
@@ -90,7 +90,7 @@ class FrequencyCapEntry extends \Google\Protobuf\Internal\Message
      * Maximum number of events allowed during the time range by this cap.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value cap = 2;</code>
-     * @return \Google\Protobuf\Int32Value
+     * @return \Google\Protobuf\Int32Value|null
      */
     public function getCap()
     {

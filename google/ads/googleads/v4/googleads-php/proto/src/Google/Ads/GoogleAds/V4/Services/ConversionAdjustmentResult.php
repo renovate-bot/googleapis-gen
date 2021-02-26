@@ -68,7 +68,7 @@ class ConversionAdjustmentResult extends \Google\Protobuf\Internal\Message
      * adjustment.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getConversionAction()
     {
@@ -135,7 +135,7 @@ class ConversionAdjustmentResult extends \Google\Protobuf\Internal\Message
      * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue adjustment_date_time = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAdjustmentDateTime()
     {
@@ -228,7 +228,7 @@ class ConversionAdjustmentResult extends \Google\Protobuf\Internal\Message
      * specified.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.GclidDateTimePair gclid_date_time_pair = 1;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\GclidDateTimePair
+     * @return \Google\Ads\GoogleAds\V4\Services\GclidDateTimePair|null
      */
     public function getGclidDateTimePair()
     {
@@ -260,7 +260,7 @@ class ConversionAdjustmentResult extends \Google\Protobuf\Internal\Message
      * The order ID of the conversion that was adjusted.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue order_id = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getOrderId()
     {

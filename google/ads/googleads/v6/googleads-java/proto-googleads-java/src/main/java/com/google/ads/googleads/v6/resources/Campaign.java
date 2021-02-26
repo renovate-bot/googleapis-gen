@@ -11234,6 +11234,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string bidding_strategy = 67 [(.google.api.resource_reference) = { ... }</code>
+   * @return Whether the biddingStrategy field is set.
+   */
+  public boolean hasBiddingStrategy() {
+    return campaignBiddingStrategyCase_ == 67;
+  }
+  /**
+   * <pre>
+   * Portfolio bidding strategy used by campaign.
+   * </pre>
+   *
+   * <code>string bidding_strategy = 67 [(.google.api.resource_reference) = { ... }</code>
    * @return The biddingStrategy.
    */
   public java.lang.String getBiddingStrategy() {
@@ -18021,6 +18032,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Portfolio bidding strategy used by campaign.
+     * </pre>
+     *
+     * <code>string bidding_strategy = 67 [(.google.api.resource_reference) = { ... }</code>
+     * @return Whether the biddingStrategy field is set.
+     */
+    @java.lang.Override
+    public boolean hasBiddingStrategy() {
+      return campaignBiddingStrategyCase_ == 67;
+    }
     /**
      * <pre>
      * Portfolio bidding strategy used by campaign.

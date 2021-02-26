@@ -151,7 +151,7 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
      * Scheduling options for a CustomJob.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.Scheduling scheduling = 3;</code>
-     * @return \Google\Cloud\Aiplatform\V1\Scheduling
+     * @return \Google\Cloud\Aiplatform\V1\Scheduling|null
      */
     public function getScheduling()
     {
@@ -276,7 +276,7 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
      *   * AIP_TENSORBOARD_LOG_DIR = `<base_output_directory>/<trial_id>/logs/`
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.GcsDestination base_output_directory = 6;</code>
-     * @return \Google\Cloud\Aiplatform\V1\GcsDestination
+     * @return \Google\Cloud\Aiplatform\V1\GcsDestination|null
      */
     public function getBaseOutputDirectory()
     {

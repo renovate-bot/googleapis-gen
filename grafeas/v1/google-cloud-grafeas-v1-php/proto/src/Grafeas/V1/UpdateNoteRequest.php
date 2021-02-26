@@ -87,7 +87,7 @@ class UpdateNoteRequest extends \Google\Protobuf\Internal\Message
      * The updated note.
      *
      * Generated from protobuf field <code>.grafeas.v1.Note note = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Grafeas\V1\Note
+     * @return \Grafeas\V1\Note|null
      */
     public function getNote()
     {
@@ -123,7 +123,7 @@ class UpdateNoteRequest extends \Google\Protobuf\Internal\Message
      * The fields to update.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 3;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

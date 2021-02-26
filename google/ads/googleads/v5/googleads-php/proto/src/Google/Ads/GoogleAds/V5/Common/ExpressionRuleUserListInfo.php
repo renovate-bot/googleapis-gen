@@ -53,7 +53,7 @@ class ExpressionRuleUserListInfo extends \Google\Protobuf\Internal\Message
      * Required for creating an expression rule user list.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.UserListRuleInfo rule = 1;</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\UserListRuleInfo
+     * @return \Google\Ads\GoogleAds\V5\Common\UserListRuleInfo|null
      */
     public function getRule()
     {

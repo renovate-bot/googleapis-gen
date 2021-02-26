@@ -359,6 +359,18 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.IntegratedSystem integrated_system = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the integratedSystem field is set.
+   */
+  public boolean hasIntegratedSystem() {
+    return systemCase_ == 8;
+  }
+  /**
+   * <pre>
+   * Output only. This field indicates the entry's source system that Data Catalog
+   * integrates with, such as BigQuery or Cloud Pub/Sub.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.IntegratedSystem integrated_system = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The enum numeric value on the wire for integratedSystem.
    */
   public int getIntegratedSystemValue() {
@@ -387,6 +399,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int USER_SPECIFIED_SYSTEM_FIELD_NUMBER = 9;
+  /**
+   * <pre>
+   * This field indicates the entry's source system that Data Catalog does not
+   * integrate with.
+   * </pre>
+   *
+   * <code>string user_specified_system = 9;</code>
+   * @return Whether the userSpecifiedSystem field is set.
+   */
+  public boolean hasUserSpecifiedSystem() {
+    return systemCase_ == 9;
+  }
   /**
    * <pre>
    * This field indicates the entry's source system that Data Catalog does not
@@ -1294,6 +1318,19 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.IntegratedSystem integrated_system = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the integratedSystem field is set.
+     */
+    @java.lang.Override
+    public boolean hasIntegratedSystem() {
+      return systemCase_ == 8;
+    }
+    /**
+     * <pre>
+     * Output only. This field indicates the entry's source system that Data Catalog
+     * integrates with, such as BigQuery or Cloud Pub/Sub.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.IntegratedSystem integrated_system = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The enum numeric value on the wire for integratedSystem.
      */
     @java.lang.Override
@@ -1375,6 +1412,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * This field indicates the entry's source system that Data Catalog does not
+     * integrate with.
+     * </pre>
+     *
+     * <code>string user_specified_system = 9;</code>
+     * @return Whether the userSpecifiedSystem field is set.
+     */
+    @java.lang.Override
+    public boolean hasUserSpecifiedSystem() {
+      return systemCase_ == 9;
+    }
     /**
      * <pre>
      * This field indicates the entry's source system that Data Catalog does not

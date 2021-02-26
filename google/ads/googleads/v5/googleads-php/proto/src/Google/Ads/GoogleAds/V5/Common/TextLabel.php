@@ -57,7 +57,7 @@ class TextLabel extends \Google\Protobuf\Internal\Message
      * Note: The background color may not be visible for manager accounts.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue background_color = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getBackgroundColor()
     {
@@ -127,7 +127,7 @@ class TextLabel extends \Google\Protobuf\Internal\Message
      * characters.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDescription()
     {

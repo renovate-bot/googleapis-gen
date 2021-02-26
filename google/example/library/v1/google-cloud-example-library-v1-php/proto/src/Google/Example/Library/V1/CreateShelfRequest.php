@@ -41,7 +41,7 @@ class CreateShelfRequest extends \Google\Protobuf\Internal\Message
      * The shelf to create.
      *
      * Generated from protobuf field <code>.google.example.library.v1.Shelf shelf = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Example\Library\V1\Shelf
+     * @return \Google\Example\Library\V1\Shelf|null
      */
     public function getShelf()
     {

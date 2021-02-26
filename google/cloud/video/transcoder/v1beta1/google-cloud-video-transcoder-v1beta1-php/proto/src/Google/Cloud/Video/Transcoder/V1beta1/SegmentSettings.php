@@ -49,7 +49,7 @@ class SegmentSettings extends \Google\Protobuf\Internal\Message
      * Duration of the segments in seconds. The default is `"6.0s"`.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration segment_duration = 1;</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getSegmentDuration()
     {

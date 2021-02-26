@@ -79,7 +79,7 @@ class CreateServiceConfigRequest extends \Google\Protobuf\Internal\Message
      * Required. The service configuration resource.
      *
      * Generated from protobuf field <code>.google.api.Service service_config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Api\Service
+     * @return \Google\Api\Service|null
      */
     public function getServiceConfig()
     {

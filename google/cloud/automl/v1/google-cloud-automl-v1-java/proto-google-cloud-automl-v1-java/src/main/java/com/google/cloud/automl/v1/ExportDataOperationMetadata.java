@@ -108,6 +108,16 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string gcs_output_directory = 1;</code>
+     * @return Whether the gcsOutputDirectory field is set.
+     */
+    boolean hasGcsOutputDirectory();
+    /**
+     * <pre>
+     * The full path of the Google Cloud Storage directory created, into which
+     * the exported data is written.
+     * </pre>
+     *
+     * <code>string gcs_output_directory = 1;</code>
      * @return The gcsOutputDirectory.
      */
     java.lang.String getGcsOutputDirectory();
@@ -254,6 +264,18 @@ private static final long serialVersionUID = 0L;
     }
 
     public static final int GCS_OUTPUT_DIRECTORY_FIELD_NUMBER = 1;
+    /**
+     * <pre>
+     * The full path of the Google Cloud Storage directory created, into which
+     * the exported data is written.
+     * </pre>
+     *
+     * <code>string gcs_output_directory = 1;</code>
+     * @return Whether the gcsOutputDirectory field is set.
+     */
+    public boolean hasGcsOutputDirectory() {
+      return outputLocationCase_ == 1;
+    }
     /**
      * <pre>
      * The full path of the Google Cloud Storage directory created, into which
@@ -654,6 +676,19 @@ private static final long serialVersionUID = 0L;
       }
 
 
+      /**
+       * <pre>
+       * The full path of the Google Cloud Storage directory created, into which
+       * the exported data is written.
+       * </pre>
+       *
+       * <code>string gcs_output_directory = 1;</code>
+       * @return Whether the gcsOutputDirectory field is set.
+       */
+      @java.lang.Override
+      public boolean hasGcsOutputDirectory() {
+        return outputLocationCase_ == 1;
+      }
       /**
        * <pre>
        * The full path of the Google Cloud Storage directory created, into which

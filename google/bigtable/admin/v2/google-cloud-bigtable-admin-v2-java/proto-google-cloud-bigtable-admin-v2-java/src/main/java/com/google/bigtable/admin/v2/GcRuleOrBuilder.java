@@ -13,6 +13,15 @@ public interface GcRuleOrBuilder extends
    * </pre>
    *
    * <code>int32 max_num_versions = 1;</code>
+   * @return Whether the maxNumVersions field is set.
+   */
+  boolean hasMaxNumVersions();
+  /**
+   * <pre>
+   * Delete all cells in a column except the most recent N.
+   * </pre>
+   *
+   * <code>int32 max_num_versions = 1;</code>
    * @return The maxNumVersions.
    */
   int getMaxNumVersions();

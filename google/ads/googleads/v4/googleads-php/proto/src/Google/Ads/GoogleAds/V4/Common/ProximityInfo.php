@@ -71,7 +71,7 @@ class ProximityInfo extends \Google\Protobuf\Internal\Message
      * Latitude and longitude.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.GeoPointInfo geo_point = 1;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\GeoPointInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\GeoPointInfo|null
      */
     public function getGeoPoint()
     {
@@ -107,7 +107,7 @@ class ProximityInfo extends \Google\Protobuf\Internal\Message
      * The radius of the proximity.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue radius = 2;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getRadius()
     {
@@ -196,7 +196,7 @@ class ProximityInfo extends \Google\Protobuf\Internal\Message
      * Full address.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.AddressInfo address = 4;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\AddressInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\AddressInfo|null
      */
     public function getAddress()
     {

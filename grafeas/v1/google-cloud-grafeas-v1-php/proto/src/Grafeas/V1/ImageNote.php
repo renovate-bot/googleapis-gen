@@ -83,7 +83,7 @@ class ImageNote extends \Google\Protobuf\Internal\Message
      * Required. Immutable. The fingerprint of the base image.
      *
      * Generated from protobuf field <code>.grafeas.v1.Fingerprint fingerprint = 2;</code>
-     * @return \Grafeas\V1\Fingerprint
+     * @return \Grafeas\V1\Fingerprint|null
      */
     public function getFingerprint()
     {

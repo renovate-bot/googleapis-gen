@@ -298,7 +298,7 @@ class Distribution extends \Google\Protobuf\Internal\Message
      * Buckets with constant width.
      *
      * Generated from protobuf field <code>.google.api.servicecontrol.v1.Distribution.LinearBuckets linear_buckets = 7;</code>
-     * @return \Google\Cloud\ServiceControl\V1\Distribution\LinearBuckets
+     * @return \Google\Cloud\ServiceControl\V1\Distribution\LinearBuckets|null
      */
     public function getLinearBuckets()
     {
@@ -329,7 +329,7 @@ class Distribution extends \Google\Protobuf\Internal\Message
      * Buckets with exponentially growing width.
      *
      * Generated from protobuf field <code>.google.api.servicecontrol.v1.Distribution.ExponentialBuckets exponential_buckets = 8;</code>
-     * @return \Google\Cloud\ServiceControl\V1\Distribution\ExponentialBuckets
+     * @return \Google\Cloud\ServiceControl\V1\Distribution\ExponentialBuckets|null
      */
     public function getExponentialBuckets()
     {
@@ -360,7 +360,7 @@ class Distribution extends \Google\Protobuf\Internal\Message
      * Buckets with arbitrary user-provided width.
      *
      * Generated from protobuf field <code>.google.api.servicecontrol.v1.Distribution.ExplicitBuckets explicit_buckets = 9;</code>
-     * @return \Google\Cloud\ServiceControl\V1\Distribution\ExplicitBuckets
+     * @return \Google\Cloud\ServiceControl\V1\Distribution\ExplicitBuckets|null
      */
     public function getExplicitBuckets()
     {

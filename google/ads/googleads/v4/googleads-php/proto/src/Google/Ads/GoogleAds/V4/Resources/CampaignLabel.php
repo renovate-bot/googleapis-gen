@@ -91,7 +91,7 @@ class CampaignLabel extends \Google\Protobuf\Internal\Message
      * Immutable. The campaign to which the label is attached.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCampaign()
     {
@@ -154,7 +154,7 @@ class CampaignLabel extends \Google\Protobuf\Internal\Message
      * Immutable. The label assigned to the campaign.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getLabel()
     {

@@ -244,7 +244,7 @@ class PatchJob extends \Google\Protobuf\Internal\Message
      * Time this patch job was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -280,7 +280,7 @@ class PatchJob extends \Google\Protobuf\Internal\Message
      * Last time this patch job was updated.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 4;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {
@@ -342,7 +342,7 @@ class PatchJob extends \Google\Protobuf\Internal\Message
      * Instances to patch.
      *
      * Generated from protobuf field <code>.google.cloud.osconfig.v1beta.PatchInstanceFilter instance_filter = 13;</code>
-     * @return \Google\Cloud\Osconfig\V1beta\PatchInstanceFilter
+     * @return \Google\Cloud\Osconfig\V1beta\PatchInstanceFilter|null
      */
     public function getInstanceFilter()
     {
@@ -378,7 +378,7 @@ class PatchJob extends \Google\Protobuf\Internal\Message
      * Patch configuration being applied.
      *
      * Generated from protobuf field <code>.google.cloud.osconfig.v1beta.PatchConfig patch_config = 7;</code>
-     * @return \Google\Cloud\Osconfig\V1beta\PatchConfig
+     * @return \Google\Cloud\Osconfig\V1beta\PatchConfig|null
      */
     public function getPatchConfig()
     {
@@ -415,7 +415,7 @@ class PatchJob extends \Google\Protobuf\Internal\Message
      * patch job times out.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration duration = 8;</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getDuration()
     {
@@ -452,7 +452,7 @@ class PatchJob extends \Google\Protobuf\Internal\Message
      * Summary of instance details.
      *
      * Generated from protobuf field <code>.google.cloud.osconfig.v1beta.PatchJob.InstanceDetailsSummary instance_details_summary = 9;</code>
-     * @return \Google\Cloud\Osconfig\V1beta\PatchJob\InstanceDetailsSummary
+     * @return \Google\Cloud\Osconfig\V1beta\PatchJob\InstanceDetailsSummary|null
      */
     public function getInstanceDetailsSummary()
     {

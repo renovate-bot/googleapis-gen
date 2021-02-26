@@ -59,7 +59,7 @@ class UpdateScanConfigRequest extends \Google\Protobuf\Internal\Message
      * will be ignored.
      *
      * Generated from protobuf field <code>.google.cloud.websecurityscanner.v1.ScanConfig scan_config = 2;</code>
-     * @return \Google\Cloud\WebSecurityScanner\V1\ScanConfig
+     * @return \Google\Cloud\WebSecurityScanner\V1\ScanConfig|null
      */
     public function getScanConfig()
     {
@@ -99,7 +99,7 @@ class UpdateScanConfigRequest extends \Google\Protobuf\Internal\Message
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 3;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

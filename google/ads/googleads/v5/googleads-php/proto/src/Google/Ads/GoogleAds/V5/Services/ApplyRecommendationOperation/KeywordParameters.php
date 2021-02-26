@@ -59,7 +59,7 @@ class KeywordParameters extends \Google\Protobuf\Internal\Message
      * The ad group resource to add keyword to. This is a required field.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAdGroup()
     {
@@ -149,7 +149,7 @@ class KeywordParameters extends \Google\Protobuf\Internal\Message
      * bid based on bidding strategy used by target ad group.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_micros = 3;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCpcBidMicros()
     {

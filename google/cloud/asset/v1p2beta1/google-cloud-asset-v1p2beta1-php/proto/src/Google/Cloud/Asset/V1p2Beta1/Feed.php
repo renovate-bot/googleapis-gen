@@ -260,7 +260,7 @@ class Feed extends \Google\Protobuf\Internal\Message
      * published to.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Asset\V1p2Beta1\FeedOutputConfig
+     * @return \Google\Cloud\Asset\V1p2Beta1\FeedOutputConfig|null
      */
     public function getFeedOutputConfig()
     {

@@ -585,7 +585,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      * Call reporting setting for a customer.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.resources.CallReportingSetting call_reporting_setting = 10;</code>
-     * @return \Google\Ads\GoogleAds\V5\Resources\CallReportingSetting
+     * @return \Google\Ads\GoogleAds\V5\Resources\CallReportingSetting|null
      */
     public function getCallReportingSetting()
     {
@@ -621,7 +621,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      * Output only. Conversion tracking setting for a customer.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.resources.ConversionTrackingSetting conversion_tracking_setting = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V5\Resources\ConversionTrackingSetting
+     * @return \Google\Ads\GoogleAds\V5\Resources\ConversionTrackingSetting|null
      */
     public function getConversionTrackingSetting()
     {
@@ -657,7 +657,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      * Output only. Remarketing setting for a customer.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.resources.RemarketingSetting remarketing_setting = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V5\Resources\RemarketingSetting
+     * @return \Google\Ads\GoogleAds\V5\Resources\RemarketingSetting|null
      */
     public function getRemarketingSetting()
     {

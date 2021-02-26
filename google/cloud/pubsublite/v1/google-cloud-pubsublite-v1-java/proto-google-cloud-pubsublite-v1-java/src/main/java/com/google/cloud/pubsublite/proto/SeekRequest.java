@@ -304,6 +304,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.pubsublite.v1.SeekRequest.NamedTarget named_target = 1;</code>
+   * @return Whether the namedTarget field is set.
+   */
+  public boolean hasNamedTarget() {
+    return targetCase_ == 1;
+  }
+  /**
+   * <pre>
+   * A named target.
+   * </pre>
+   *
+   * <code>.google.cloud.pubsublite.v1.SeekRequest.NamedTarget named_target = 1;</code>
    * @return The enum numeric value on the wire for namedTarget.
    */
   public int getNamedTargetValue() {
@@ -748,6 +759,18 @@ private static final long serialVersionUID = 0L;
     }
 
 
+    /**
+     * <pre>
+     * A named target.
+     * </pre>
+     *
+     * <code>.google.cloud.pubsublite.v1.SeekRequest.NamedTarget named_target = 1;</code>
+     * @return Whether the namedTarget field is set.
+     */
+    @java.lang.Override
+    public boolean hasNamedTarget() {
+      return targetCase_ == 1;
+    }
     /**
      * <pre>
      * A named target.

@@ -50,7 +50,7 @@ class ConnectAgentResource extends \Google\Protobuf\Internal\Message
      * Kubernetes type of the resource.
      *
      * Generated from protobuf field <code>.google.cloud.gkehub.v1beta1.TypeMeta type = 1;</code>
-     * @return \Google\Cloud\GkeHub\V1beta1\TypeMeta
+     * @return \Google\Cloud\GkeHub\V1beta1\TypeMeta|null
      */
     public function getType()
     {

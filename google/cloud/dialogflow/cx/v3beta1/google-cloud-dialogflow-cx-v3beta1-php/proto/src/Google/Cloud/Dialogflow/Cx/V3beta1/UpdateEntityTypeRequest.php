@@ -73,7 +73,7 @@ class UpdateEntityTypeRequest extends \Google\Protobuf\Internal\Message
      * Required. The entity type to update.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.EntityType entity_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\EntityType
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\EntityType|null
      */
     public function getEntityType()
     {
@@ -151,7 +151,7 @@ class UpdateEntityTypeRequest extends \Google\Protobuf\Internal\Message
      * The mask to control which fields get updated.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 3;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

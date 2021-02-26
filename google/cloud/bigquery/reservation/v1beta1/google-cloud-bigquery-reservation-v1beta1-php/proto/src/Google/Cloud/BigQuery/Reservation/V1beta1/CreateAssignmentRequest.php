@@ -82,7 +82,7 @@ class CreateAssignmentRequest extends \Google\Protobuf\Internal\Message
      * Assignment resource to create.
      *
      * Generated from protobuf field <code>.google.cloud.bigquery.reservation.v1beta1.Assignment assignment = 2;</code>
-     * @return \Google\Cloud\BigQuery\Reservation\V1beta1\Assignment
+     * @return \Google\Cloud\BigQuery\Reservation\V1beta1\Assignment|null
      */
     public function getAssignment()
     {

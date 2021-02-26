@@ -85,7 +85,7 @@ class UpdateBotSessionRequest extends \Google\Protobuf\Internal\Message
      * Required. The bot session resource to update.
      *
      * Generated from protobuf field <code>.google.devtools.remoteworkers.v1test2.BotSession bot_session = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Devtools\Remoteworkers\V1test2\BotSession
+     * @return \Google\Devtools\Remoteworkers\V1test2\BotSession|null
      */
     public function getBotSession()
     {
@@ -122,7 +122,7 @@ class UpdateBotSessionRequest extends \Google\Protobuf\Internal\Message
      * for which fields are updatable by which caller.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

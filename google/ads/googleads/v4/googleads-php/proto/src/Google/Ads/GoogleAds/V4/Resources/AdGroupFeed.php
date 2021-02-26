@@ -123,7 +123,7 @@ class AdGroupFeed extends \Google\Protobuf\Internal\Message
      * Immutable. The feed being linked to the ad group.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getFeed()
     {
@@ -186,7 +186,7 @@ class AdGroupFeed extends \Google\Protobuf\Internal\Message
      * Immutable. The ad group being linked to the feed.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAdGroup()
     {
@@ -279,7 +279,7 @@ class AdGroupFeed extends \Google\Protobuf\Internal\Message
      * Required.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.MatchingFunction matching_function = 5;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\MatchingFunction
+     * @return \Google\Ads\GoogleAds\V4\Common\MatchingFunction|null
      */
     public function getMatchingFunction()
     {

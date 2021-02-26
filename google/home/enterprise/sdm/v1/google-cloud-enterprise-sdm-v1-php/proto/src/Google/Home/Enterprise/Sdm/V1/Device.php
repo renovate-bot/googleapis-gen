@@ -134,7 +134,7 @@ class Device extends \Google\Protobuf\Internal\Message
      * Output only. Device traits.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct traits = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getTraits()
     {

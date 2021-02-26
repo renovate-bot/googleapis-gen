@@ -49,7 +49,7 @@ class ProductTypeInfo extends \Google\Protobuf\Internal\Message
      * Value of the type.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue value = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getValue()
     {

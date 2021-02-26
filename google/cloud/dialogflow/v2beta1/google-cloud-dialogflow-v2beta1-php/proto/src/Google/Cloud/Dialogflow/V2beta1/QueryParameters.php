@@ -197,7 +197,7 @@ class QueryParameters extends \Google\Protobuf\Internal\Message
      * The geo location of this conversational query.
      *
      * Generated from protobuf field <code>.google.type.LatLng geo_location = 2;</code>
-     * @return \Google\Type\LatLng
+     * @return \Google\Type\LatLng|null
      */
     public function getGeoLocation()
     {
@@ -323,7 +323,7 @@ class QueryParameters extends \Google\Protobuf\Internal\Message
      * field sent to your webhook.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct payload = 6;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getPayload()
     {
@@ -396,7 +396,7 @@ class QueryParameters extends \Google\Protobuf\Internal\Message
      * agents.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;</code>
-     * @return \Google\Cloud\Dialogflow\V2beta1\SentimentAnalysisRequestConfig
+     * @return \Google\Cloud\Dialogflow\V2beta1\SentimentAnalysisRequestConfig|null
      */
     public function getSentimentAnalysisRequestConfig()
     {

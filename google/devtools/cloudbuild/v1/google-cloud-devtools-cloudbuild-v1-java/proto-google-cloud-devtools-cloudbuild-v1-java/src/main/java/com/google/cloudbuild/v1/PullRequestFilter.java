@@ -281,6 +281,19 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string branch = 2;</code>
+   * @return Whether the branch field is set.
+   */
+  public boolean hasBranch() {
+    return gitRefCase_ == 2;
+  }
+  /**
+   * <pre>
+   * Regex of branches to match.
+   * The syntax of the regular expressions accepted is the syntax accepted by
+   * RE2 and described at https://github.com/google/re2/wiki/Syntax
+   * </pre>
+   *
+   * <code>string branch = 2;</code>
    * @return The branch.
    */
   public java.lang.String getBranch() {
@@ -752,6 +765,20 @@ private static final long serialVersionUID = 0L;
     }
 
 
+    /**
+     * <pre>
+     * Regex of branches to match.
+     * The syntax of the regular expressions accepted is the syntax accepted by
+     * RE2 and described at https://github.com/google/re2/wiki/Syntax
+     * </pre>
+     *
+     * <code>string branch = 2;</code>
+     * @return Whether the branch field is set.
+     */
+    @java.lang.Override
+    public boolean hasBranch() {
+      return gitRefCase_ == 2;
+    }
     /**
      * <pre>
      * Regex of branches to match.

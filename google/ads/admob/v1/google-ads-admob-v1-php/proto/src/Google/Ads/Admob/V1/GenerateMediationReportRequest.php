@@ -79,7 +79,7 @@ class GenerateMediationReportRequest extends \Google\Protobuf\Internal\Message
      * Network report specification.
      *
      * Generated from protobuf field <code>.google.ads.admob.v1.MediationReportSpec report_spec = 2;</code>
-     * @return \Google\Ads\Admob\V1\MediationReportSpec
+     * @return \Google\Ads\Admob\V1\MediationReportSpec|null
      */
     public function getReportSpec()
     {

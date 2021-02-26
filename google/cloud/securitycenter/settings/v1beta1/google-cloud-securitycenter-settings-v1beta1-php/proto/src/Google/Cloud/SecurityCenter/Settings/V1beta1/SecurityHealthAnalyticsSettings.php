@@ -49,7 +49,7 @@ class SecurityHealthAnalyticsSettings extends \Google\Protobuf\Internal\Message
      * Settings for "NON_ORG_IAM_MEMBER" scanner.
      *
      * Generated from protobuf field <code>.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings.NonOrgIamMemberSettings non_org_iam_member_settings = 1;</code>
-     * @return \Google\Cloud\SecurityCenter\Settings\V1beta1\SecurityHealthAnalyticsSettings\NonOrgIamMemberSettings
+     * @return \Google\Cloud\SecurityCenter\Settings\V1beta1\SecurityHealthAnalyticsSettings\NonOrgIamMemberSettings|null
      */
     public function getNonOrgIamMemberSettings()
     {
@@ -85,7 +85,7 @@ class SecurityHealthAnalyticsSettings extends \Google\Protobuf\Internal\Message
      * Settings for "ADMIN_SERVICE_ACCOUNT" scanner.
      *
      * Generated from protobuf field <code>.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings.AdminServiceAccountSettings admin_service_account_settings = 2;</code>
-     * @return \Google\Cloud\SecurityCenter\Settings\V1beta1\SecurityHealthAnalyticsSettings\AdminServiceAccountSettings
+     * @return \Google\Cloud\SecurityCenter\Settings\V1beta1\SecurityHealthAnalyticsSettings\AdminServiceAccountSettings|null
      */
     public function getAdminServiceAccountSettings()
     {

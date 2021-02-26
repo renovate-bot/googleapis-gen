@@ -136,6 +136,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string value = 1;</code>
+   * @return Whether the value field is set.
+   */
+  public boolean hasValue() {
+    return oneValueCase_ == 1;
+  }
+  /**
+   * <pre>
+   * Value as a string if the dimension type is a string.
+   * </pre>
+   *
+   * <code>string value = 1;</code>
    * @return The value.
    */
   public java.lang.String getValue() {
@@ -526,6 +537,18 @@ private static final long serialVersionUID = 0L;
     }
 
 
+    /**
+     * <pre>
+     * Value as a string if the dimension type is a string.
+     * </pre>
+     *
+     * <code>string value = 1;</code>
+     * @return Whether the value field is set.
+     */
+    @java.lang.Override
+    public boolean hasValue() {
+      return oneValueCase_ == 1;
+    }
     /**
      * <pre>
      * Value as a string if the dimension type is a string.

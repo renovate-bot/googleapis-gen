@@ -244,6 +244,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.NullValue null_value = 11;</code>
+   * @return Whether the nullValue field is set.
+   */
+  public boolean hasNullValue() {
+    return valueTypeCase_ == 11;
+  }
+  /**
+   * <pre>
+   * A null value.
+   * </pre>
+   *
+   * <code>.google.protobuf.NullValue null_value = 11;</code>
    * @return The enum numeric value on the wire for nullValue.
    */
   public int getNullValueValue() {
@@ -277,6 +288,18 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool boolean_value = 1;</code>
+   * @return Whether the booleanValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasBooleanValue() {
+    return valueTypeCase_ == 1;
+  }
+  /**
+   * <pre>
+   * A boolean value.
+   * </pre>
+   *
+   * <code>bool boolean_value = 1;</code>
    * @return The booleanValue.
    */
   @java.lang.Override
@@ -294,6 +317,18 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 integer_value = 2;</code>
+   * @return Whether the integerValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasIntegerValue() {
+    return valueTypeCase_ == 2;
+  }
+  /**
+   * <pre>
+   * An integer value.
+   * </pre>
+   *
+   * <code>int64 integer_value = 2;</code>
    * @return The integerValue.
    */
   @java.lang.Override
@@ -305,6 +340,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DOUBLE_VALUE_FIELD_NUMBER = 3;
+  /**
+   * <pre>
+   * A double value.
+   * </pre>
+   *
+   * <code>double double_value = 3;</code>
+   * @return Whether the doubleValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasDoubleValue() {
+    return valueTypeCase_ == 3;
+  }
   /**
    * <pre>
    * A double value.
@@ -380,6 +427,20 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string string_value = 17;</code>
+   * @return Whether the stringValue field is set.
+   */
+  public boolean hasStringValue() {
+    return valueTypeCase_ == 17;
+  }
+  /**
+   * <pre>
+   * A string value.
+   * The string, represented as UTF-8, must not exceed 1 MiB - 89 bytes.
+   * Only the first 1,500 bytes of the UTF-8 representation are considered by
+   * queries.
+   * </pre>
+   *
+   * <code>string string_value = 17;</code>
    * @return The stringValue.
    */
   public java.lang.String getStringValue() {
@@ -438,6 +499,20 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes bytes_value = 18;</code>
+   * @return Whether the bytesValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasBytesValue() {
+    return valueTypeCase_ == 18;
+  }
+  /**
+   * <pre>
+   * A bytes value.
+   * Must not exceed 1 MiB - 89 bytes.
+   * Only the first 1,500 bytes are considered by queries.
+   * </pre>
+   *
+   * <code>bytes bytes_value = 18;</code>
    * @return The bytesValue.
    */
   @java.lang.Override
@@ -449,6 +524,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int REFERENCE_VALUE_FIELD_NUMBER = 5;
+  /**
+   * <pre>
+   * A reference to a document. For example:
+   * `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
+   * </pre>
+   *
+   * <code>string reference_value = 5;</code>
+   * @return Whether the referenceValue field is set.
+   */
+  public boolean hasReferenceValue() {
+    return valueTypeCase_ == 5;
+  }
   /**
    * <pre>
    * A reference to a document. For example:
@@ -1237,6 +1324,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.NullValue null_value = 11;</code>
+     * @return Whether the nullValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasNullValue() {
+      return valueTypeCase_ == 11;
+    }
+    /**
+     * <pre>
+     * A null value.
+     * </pre>
+     *
+     * <code>.google.protobuf.NullValue null_value = 11;</code>
      * @return The enum numeric value on the wire for nullValue.
      */
     @java.lang.Override
@@ -1320,6 +1419,17 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool boolean_value = 1;</code>
+     * @return Whether the booleanValue field is set.
+     */
+    public boolean hasBooleanValue() {
+      return valueTypeCase_ == 1;
+    }
+    /**
+     * <pre>
+     * A boolean value.
+     * </pre>
+     *
+     * <code>bool boolean_value = 1;</code>
      * @return The booleanValue.
      */
     public boolean getBooleanValue() {
@@ -1366,6 +1476,17 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 integer_value = 2;</code>
+     * @return Whether the integerValue field is set.
+     */
+    public boolean hasIntegerValue() {
+      return valueTypeCase_ == 2;
+    }
+    /**
+     * <pre>
+     * An integer value.
+     * </pre>
+     *
+     * <code>int64 integer_value = 2;</code>
      * @return The integerValue.
      */
     public long getIntegerValue() {
@@ -1406,6 +1527,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * A double value.
+     * </pre>
+     *
+     * <code>double double_value = 3;</code>
+     * @return Whether the doubleValue field is set.
+     */
+    public boolean hasDoubleValue() {
+      return valueTypeCase_ == 3;
+    }
     /**
      * <pre>
      * A double value.
@@ -1656,6 +1788,21 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string string_value = 17;</code>
+     * @return Whether the stringValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasStringValue() {
+      return valueTypeCase_ == 17;
+    }
+    /**
+     * <pre>
+     * A string value.
+     * The string, represented as UTF-8, must not exceed 1 MiB - 89 bytes.
+     * Only the first 1,500 bytes of the UTF-8 representation are considered by
+     * queries.
+     * </pre>
+     *
+     * <code>string string_value = 17;</code>
      * @return The stringValue.
      */
     @java.lang.Override
@@ -1779,6 +1926,19 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes bytes_value = 18;</code>
+     * @return Whether the bytesValue field is set.
+     */
+    public boolean hasBytesValue() {
+      return valueTypeCase_ == 18;
+    }
+    /**
+     * <pre>
+     * A bytes value.
+     * Must not exceed 1 MiB - 89 bytes.
+     * Only the first 1,500 bytes are considered by queries.
+     * </pre>
+     *
+     * <code>bytes bytes_value = 18;</code>
      * @return The bytesValue.
      */
     public com.google.protobuf.ByteString getBytesValue() {
@@ -1826,6 +1986,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * A reference to a document. For example:
+     * `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
+     * </pre>
+     *
+     * <code>string reference_value = 5;</code>
+     * @return Whether the referenceValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasReferenceValue() {
+      return valueTypeCase_ == 5;
+    }
     /**
      * <pre>
      * A reference to a document. For example:

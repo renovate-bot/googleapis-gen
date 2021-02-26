@@ -51,7 +51,7 @@ class UpdateGuestPolicyRequest extends \Google\Protobuf\Internal\Message
      * Required. The updated GuestPolicy.
      *
      * Generated from protobuf field <code>.google.cloud.osconfig.v1beta.GuestPolicy guest_policy = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Osconfig\V1beta\GuestPolicy
+     * @return \Google\Cloud\Osconfig\V1beta\GuestPolicy|null
      */
     public function getGuestPolicy()
     {
@@ -88,7 +88,7 @@ class UpdateGuestPolicyRequest extends \Google\Protobuf\Internal\Message
      * updated.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

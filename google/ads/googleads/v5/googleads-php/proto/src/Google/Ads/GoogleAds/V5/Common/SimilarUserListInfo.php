@@ -42,7 +42,7 @@ class SimilarUserListInfo extends \Google\Protobuf\Internal\Message
      * Seed UserList from which this list is derived.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue seed_user_list = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getSeedUserList()
     {

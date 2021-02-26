@@ -191,6 +191,16 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool redact_all_text = 2;</code>
+     * @return Whether the redactAllText field is set.
+     */
+    boolean hasRedactAllText();
+    /**
+     * <pre>
+     * If true, all text found in the image, regardless whether it matches an
+     * info_type, is redacted. Only one should be provided.
+     * </pre>
+     *
+     * <code>bool redact_all_text = 2;</code>
      * @return The redactAllText.
      */
     boolean getRedactAllText();
@@ -434,6 +444,19 @@ private static final long serialVersionUID = 0L;
     }
 
     public static final int REDACT_ALL_TEXT_FIELD_NUMBER = 2;
+    /**
+     * <pre>
+     * If true, all text found in the image, regardless whether it matches an
+     * info_type, is redacted. Only one should be provided.
+     * </pre>
+     *
+     * <code>bool redact_all_text = 2;</code>
+     * @return Whether the redactAllText field is set.
+     */
+    @java.lang.Override
+    public boolean hasRedactAllText() {
+      return targetCase_ == 2;
+    }
     /**
      * <pre>
      * If true, all text found in the image, regardless whether it matches an
@@ -1098,6 +1121,18 @@ private static final long serialVersionUID = 0L;
         return infoTypeBuilder_;
       }
 
+      /**
+       * <pre>
+       * If true, all text found in the image, regardless whether it matches an
+       * info_type, is redacted. Only one should be provided.
+       * </pre>
+       *
+       * <code>bool redact_all_text = 2;</code>
+       * @return Whether the redactAllText field is set.
+       */
+      public boolean hasRedactAllText() {
+        return targetCase_ == 2;
+      }
       /**
        * <pre>
        * If true, all text found in the image, regardless whether it matches an

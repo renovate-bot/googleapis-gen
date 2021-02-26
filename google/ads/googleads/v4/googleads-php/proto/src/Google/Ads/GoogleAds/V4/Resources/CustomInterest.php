@@ -135,7 +135,7 @@ class CustomInterest extends \Google\Protobuf\Internal\Message
      * Output only. Id of the custom interest.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -228,7 +228,7 @@ class CustomInterest extends \Google\Protobuf\Internal\Message
      * This field is required for create operations.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {
@@ -325,7 +325,7 @@ class CustomInterest extends \Google\Protobuf\Internal\Message
      * Description of this custom interest audience.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 6;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDescription()
     {

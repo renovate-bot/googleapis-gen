@@ -225,7 +225,7 @@ class AnnotateVideoRequest extends \Google\Protobuf\Internal\Message
      * Additional video context and/or feature-specific parameters.
      *
      * Generated from protobuf field <code>.google.cloud.videointelligence.v1p3beta1.VideoContext video_context = 3;</code>
-     * @return \Google\Cloud\VideoIntelligence\V1p3beta1\VideoContext
+     * @return \Google\Cloud\VideoIntelligence\V1p3beta1\VideoContext|null
      */
     public function getVideoContext()
     {

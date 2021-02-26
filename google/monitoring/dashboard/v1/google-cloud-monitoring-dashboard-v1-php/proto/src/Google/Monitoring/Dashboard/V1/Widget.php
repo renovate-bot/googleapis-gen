@@ -77,7 +77,7 @@ class Widget extends \Google\Protobuf\Internal\Message
      * A chart of time series data.
      *
      * Generated from protobuf field <code>.google.monitoring.dashboard.v1.XyChart xy_chart = 2;</code>
-     * @return \Google\Monitoring\Dashboard\V1\XyChart
+     * @return \Google\Monitoring\Dashboard\V1\XyChart|null
      */
     public function getXyChart()
     {
@@ -108,7 +108,7 @@ class Widget extends \Google\Protobuf\Internal\Message
      * A scorecard summarizing time series data.
      *
      * Generated from protobuf field <code>.google.monitoring.dashboard.v1.Scorecard scorecard = 3;</code>
-     * @return \Google\Monitoring\Dashboard\V1\Scorecard
+     * @return \Google\Monitoring\Dashboard\V1\Scorecard|null
      */
     public function getScorecard()
     {
@@ -139,7 +139,7 @@ class Widget extends \Google\Protobuf\Internal\Message
      * A raw string or markdown displaying textual content.
      *
      * Generated from protobuf field <code>.google.monitoring.dashboard.v1.Text text = 4;</code>
-     * @return \Google\Monitoring\Dashboard\V1\Text
+     * @return \Google\Monitoring\Dashboard\V1\Text|null
      */
     public function getText()
     {
@@ -170,7 +170,7 @@ class Widget extends \Google\Protobuf\Internal\Message
      * A blank space.
      *
      * Generated from protobuf field <code>.google.protobuf.Empty blank = 5;</code>
-     * @return \Google\Protobuf\GPBEmpty
+     * @return \Google\Protobuf\GPBEmpty|null
      */
     public function getBlank()
     {

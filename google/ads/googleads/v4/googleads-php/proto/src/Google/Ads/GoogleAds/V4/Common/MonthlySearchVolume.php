@@ -61,7 +61,7 @@ class MonthlySearchVolume extends \Google\Protobuf\Internal\Message
      * The year of the search volume (e.g. 2020).
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value year = 1;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getYear()
     {
@@ -152,7 +152,7 @@ class MonthlySearchVolume extends \Google\Protobuf\Internal\Message
      * that month.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value monthly_searches = 3;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getMonthlySearches()
     {

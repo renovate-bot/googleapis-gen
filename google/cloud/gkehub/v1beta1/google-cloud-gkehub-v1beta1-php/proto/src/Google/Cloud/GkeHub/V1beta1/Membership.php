@@ -266,7 +266,7 @@ class Membership extends \Google\Protobuf\Internal\Message
      * Optional. Endpoint information to reach this member.
      *
      * Generated from protobuf field <code>.google.cloud.gkehub.v1beta1.MembershipEndpoint endpoint = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\GkeHub\V1beta1\MembershipEndpoint
+     * @return \Google\Cloud\GkeHub\V1beta1\MembershipEndpoint|null
      */
     public function getEndpoint()
     {
@@ -297,7 +297,7 @@ class Membership extends \Google\Protobuf\Internal\Message
      * Output only. State of the Membership resource.
      *
      * Generated from protobuf field <code>.google.cloud.gkehub.v1beta1.MembershipState state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Cloud\GkeHub\V1beta1\MembershipState
+     * @return \Google\Cloud\GkeHub\V1beta1\MembershipState|null
      */
     public function getState()
     {
@@ -335,7 +335,7 @@ class Membership extends \Google\Protobuf\Internal\Message
      * https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity
      *
      * Generated from protobuf field <code>.google.cloud.gkehub.v1beta1.Authority authority = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\GkeHub\V1beta1\Authority
+     * @return \Google\Cloud\GkeHub\V1beta1\Authority|null
      */
     public function getAuthority()
     {
@@ -373,7 +373,7 @@ class Membership extends \Google\Protobuf\Internal\Message
      * Output only. When the Membership was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -409,7 +409,7 @@ class Membership extends \Google\Protobuf\Internal\Message
      * Output only. When the Membership was last updated.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {
@@ -445,7 +445,7 @@ class Membership extends \Google\Protobuf\Internal\Message
      * Output only. When the Membership was deleted.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getDeleteTime()
     {
@@ -520,7 +520,7 @@ class Membership extends \Google\Protobuf\Internal\Message
      * never connected successfully, this field will be unset.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp last_connection_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getLastConnectionTime()
     {

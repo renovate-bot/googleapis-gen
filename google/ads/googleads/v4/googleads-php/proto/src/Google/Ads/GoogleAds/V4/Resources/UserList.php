@@ -279,7 +279,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * Output only. Id of the user list.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -345,7 +345,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue read_only = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getReadOnly()
     {
@@ -418,7 +418,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * may not be unique (e.g. if access_reason=SHARED)
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {
@@ -484,7 +484,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * Description of this user list.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 5;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDescription()
     {
@@ -578,7 +578,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * IDs on their systems.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue integration_code = 7;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getIntegrationCode()
     {
@@ -648,7 +648,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * It'll be ignored for logical_user_list.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value membership_life_span = 8;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getMembershipLifeSpan()
     {
@@ -725,7 +725,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value size_for_display = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getSizeForDisplay()
     {
@@ -827,7 +827,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value size_for_search = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getSizeForSearch()
     {
@@ -1047,7 +1047,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * Indicates if this user list is eligible for Google Search Network.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue eligible_for_search = 17;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getEligibleForSearch()
     {
@@ -1111,7 +1111,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue eligible_for_display = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getEligibleForDisplay()
     {
@@ -1177,7 +1177,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * User list of CRM users provided by the advertiser.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.CrmBasedUserListInfo crm_based_user_list = 19;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\CrmBasedUserListInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\CrmBasedUserListInfo|null
      */
     public function getCrmBasedUserList()
     {
@@ -1209,7 +1209,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * These lists are readonly and automatically created by google.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.SimilarUserListInfo similar_user_list = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\SimilarUserListInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\SimilarUserListInfo|null
      */
     public function getSimilarUserList()
     {
@@ -1241,7 +1241,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * User list generated by a rule.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.RuleBasedUserListInfo rule_based_user_list = 21;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\RuleBasedUserListInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\RuleBasedUserListInfo|null
      */
     public function getRuleBasedUserList()
     {
@@ -1272,7 +1272,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * User list that is a custom combination of user lists and user interests.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.LogicalUserListInfo logical_user_list = 22;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\LogicalUserListInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\LogicalUserListInfo|null
      */
     public function getLogicalUserList()
     {
@@ -1303,7 +1303,7 @@ class UserList extends \Google\Protobuf\Internal\Message
      * User list targeting as a collection of conversion or remarketing actions.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.BasicUserListInfo basic_user_list = 23;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\BasicUserListInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\BasicUserListInfo|null
      */
     public function getBasicUserList()
     {

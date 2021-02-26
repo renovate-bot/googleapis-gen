@@ -159,7 +159,7 @@ class ProcessDocumentRequest extends \Google\Protobuf\Internal\Message
      * Required. Information about the input file.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta2.InputConfig input_config = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\DocumentAI\V1beta2\InputConfig
+     * @return \Google\Cloud\DocumentAI\V1beta2\InputConfig|null
      */
     public function getInputConfig()
     {
@@ -196,7 +196,7 @@ class ProcessDocumentRequest extends \Google\Protobuf\Internal\Message
      * BatchProcessDocumentsRequest.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta2.OutputConfig output_config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\DocumentAI\V1beta2\OutputConfig
+     * @return \Google\Cloud\DocumentAI\V1beta2\OutputConfig|null
      */
     public function getOutputConfig()
     {
@@ -264,7 +264,7 @@ class ProcessDocumentRequest extends \Google\Protobuf\Internal\Message
      * decide reasonable defaults.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta2.TableExtractionParams table_extraction_params = 4;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta2\TableExtractionParams
+     * @return \Google\Cloud\DocumentAI\V1beta2\TableExtractionParams|null
      */
     public function getTableExtractionParams()
     {
@@ -302,7 +302,7 @@ class ProcessDocumentRequest extends \Google\Protobuf\Internal\Message
      * decide reasonable defaults.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta2.FormExtractionParams form_extraction_params = 5;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta2\FormExtractionParams
+     * @return \Google\Cloud\DocumentAI\V1beta2\FormExtractionParams|null
      */
     public function getFormExtractionParams()
     {
@@ -340,7 +340,7 @@ class ProcessDocumentRequest extends \Google\Protobuf\Internal\Message
      * decide reasonable defaults.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta2.EntityExtractionParams entity_extraction_params = 6;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta2\EntityExtractionParams
+     * @return \Google\Cloud\DocumentAI\V1beta2\EntityExtractionParams|null
      */
     public function getEntityExtractionParams()
     {
@@ -378,7 +378,7 @@ class ProcessDocumentRequest extends \Google\Protobuf\Internal\Message
      * defaults.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta2.OcrParams ocr_params = 7;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta2\OcrParams
+     * @return \Google\Cloud\DocumentAI\V1beta2\OcrParams|null
      */
     public function getOcrParams()
     {
@@ -416,7 +416,7 @@ class ProcessDocumentRequest extends \Google\Protobuf\Internal\Message
      * together with other Params.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta2.AutoMlParams automl_params = 8;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta2\AutoMlParams
+     * @return \Google\Cloud\DocumentAI\V1beta2\AutoMlParams|null
      */
     public function getAutomlParams()
     {

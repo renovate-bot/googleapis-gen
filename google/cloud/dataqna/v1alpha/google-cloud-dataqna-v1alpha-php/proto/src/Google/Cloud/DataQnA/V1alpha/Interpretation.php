@@ -183,7 +183,7 @@ class Interpretation extends \Google\Protobuf\Internal\Message
      * Human readable representation of the query.
      *
      * Generated from protobuf field <code>.google.cloud.dataqna.v1alpha.HumanReadable human_readable = 4;</code>
-     * @return \Google\Cloud\DataQnA\V1alpha\HumanReadable
+     * @return \Google\Cloud\DataQnA\V1alpha\HumanReadable|null
      */
     public function getHumanReadable()
     {
@@ -220,7 +220,7 @@ class Interpretation extends \Google\Protobuf\Internal\Message
      * visualize the response.
      *
      * Generated from protobuf field <code>.google.cloud.dataqna.v1alpha.InterpretationStructure interpretation_structure = 5;</code>
-     * @return \Google\Cloud\DataQnA\V1alpha\InterpretationStructure
+     * @return \Google\Cloud\DataQnA\V1alpha\InterpretationStructure|null
      */
     public function getInterpretationStructure()
     {
@@ -257,7 +257,7 @@ class Interpretation extends \Google\Protobuf\Internal\Message
      * Representation of the data query to be sent to the backend.
      *
      * Generated from protobuf field <code>.google.cloud.dataqna.v1alpha.DataQuery data_query = 6;</code>
-     * @return \Google\Cloud\DataQnA\V1alpha\DataQuery
+     * @return \Google\Cloud\DataQnA\V1alpha\DataQuery|null
      */
     public function getDataQuery()
     {
@@ -294,7 +294,7 @@ class Interpretation extends \Google\Protobuf\Internal\Message
      * of an interpretation was requested.
      *
      * Generated from protobuf field <code>.google.cloud.dataqna.v1alpha.ExecutionInfo execution_info = 7;</code>
-     * @return \Google\Cloud\DataQnA\V1alpha\ExecutionInfo
+     * @return \Google\Cloud\DataQnA\V1alpha\ExecutionInfo|null
      */
     public function getExecutionInfo()
     {

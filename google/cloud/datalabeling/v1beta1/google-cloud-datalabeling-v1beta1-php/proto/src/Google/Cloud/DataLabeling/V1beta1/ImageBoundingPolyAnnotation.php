@@ -43,7 +43,7 @@ class ImageBoundingPolyAnnotation extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 2;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\BoundingPoly
+     * @return \Google\Cloud\DataLabeling\V1beta1\BoundingPoly|null
      */
     public function getBoundingPoly()
     {
@@ -70,7 +70,7 @@ class ImageBoundingPolyAnnotation extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\NormalizedBoundingPoly
+     * @return \Google\Cloud\DataLabeling\V1beta1\NormalizedBoundingPoly|null
      */
     public function getNormalizedBoundingPoly()
     {
@@ -99,7 +99,7 @@ class ImageBoundingPolyAnnotation extends \Google\Protobuf\Internal\Message
      * Label of object in this bounding polygon.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\AnnotationSpec
+     * @return \Google\Cloud\DataLabeling\V1beta1\AnnotationSpec|null
      */
     public function getAnnotationSpec()
     {

@@ -49,7 +49,7 @@ class KeywordInfo extends \Google\Protobuf\Internal\Message
      * The text of the keyword (at most 80 characters and 10 words).
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue text = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getText()
     {

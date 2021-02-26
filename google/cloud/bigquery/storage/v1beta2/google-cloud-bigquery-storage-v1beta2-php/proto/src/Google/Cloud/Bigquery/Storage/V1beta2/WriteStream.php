@@ -144,7 +144,7 @@ class WriteStream extends \Google\Protobuf\Internal\Message
      * creation_time of the table.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -184,7 +184,7 @@ class WriteStream extends \Google\Protobuf\Internal\Message
      * means it is not committed.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp commit_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCommitTime()
     {
@@ -226,7 +226,7 @@ class WriteStream extends \Google\Protobuf\Internal\Message
      * The table schema could go out of date during the life time of the stream.
      *
      * Generated from protobuf field <code>.google.cloud.bigquery.storage.v1beta2.TableSchema table_schema = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Cloud\Bigquery\Storage\V1beta2\TableSchema
+     * @return \Google\Cloud\Bigquery\Storage\V1beta2\TableSchema|null
      */
     public function getTableSchema()
     {

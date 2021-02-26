@@ -74,7 +74,7 @@ class FeedAttribute extends \Google\Protobuf\Internal\Message
      * ID of the attribute.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -137,7 +137,7 @@ class FeedAttribute extends \Google\Protobuf\Internal\Message
      * The name of the attribute. Required.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {
@@ -229,7 +229,7 @@ class FeedAttribute extends \Google\Protobuf\Internal\Message
      * FeedItems must be referenced by their feed_item_id.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue is_part_of_key = 4;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getIsPartOfKey()
     {

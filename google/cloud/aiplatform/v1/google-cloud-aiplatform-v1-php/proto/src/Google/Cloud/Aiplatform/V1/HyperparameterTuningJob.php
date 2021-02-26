@@ -249,7 +249,7 @@ class HyperparameterTuningJob extends \Google\Protobuf\Internal\Message
      * Required. Study configuration of the HyperparameterTuningJob.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.StudySpec study_spec = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Aiplatform\V1\StudySpec
+     * @return \Google\Cloud\Aiplatform\V1\StudySpec|null
      */
     public function getStudySpec()
     {
@@ -370,7 +370,7 @@ class HyperparameterTuningJob extends \Google\Protobuf\Internal\Message
      * in all the trials.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.CustomJobSpec trial_job_spec = 8 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Aiplatform\V1\CustomJobSpec
+     * @return \Google\Cloud\Aiplatform\V1\CustomJobSpec|null
      */
     public function getTrialJobSpec()
     {
@@ -459,7 +459,7 @@ class HyperparameterTuningJob extends \Google\Protobuf\Internal\Message
      * Output only. Time when the HyperparameterTuningJob was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -496,7 +496,7 @@ class HyperparameterTuningJob extends \Google\Protobuf\Internal\Message
      * `JOB_STATE_RUNNING` state.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartTime()
     {
@@ -534,7 +534,7 @@ class HyperparameterTuningJob extends \Google\Protobuf\Internal\Message
      * `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getEndTime()
     {
@@ -571,7 +571,7 @@ class HyperparameterTuningJob extends \Google\Protobuf\Internal\Message
      * Output only. Time when the HyperparameterTuningJob was most recently updated.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {
@@ -608,7 +608,7 @@ class HyperparameterTuningJob extends \Google\Protobuf\Internal\Message
      * JOB_STATE_CANCELLED.
      *
      * Generated from protobuf field <code>.google.rpc.Status error = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Rpc\Status
+     * @return \Google\Rpc\Status|null
      */
     public function getError()
     {
@@ -681,7 +681,7 @@ class HyperparameterTuningJob extends \Google\Protobuf\Internal\Message
      * will be encrypted with the provided encryption key.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 17;</code>
-     * @return \Google\Cloud\Aiplatform\V1\EncryptionSpec
+     * @return \Google\Cloud\Aiplatform\V1\EncryptionSpec|null
      */
     public function getEncryptionSpec()
     {

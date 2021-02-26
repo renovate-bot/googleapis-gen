@@ -297,14 +297,17 @@ class Document extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string content = 6 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getContent()
     {
+        @trigger_error('content is deprecated.', E_USER_DEPRECATED);
         return $this->readOneof(6);
     }
 
     public function hasContent()
     {
+        @trigger_error('content is deprecated.', E_USER_DEPRECATED);
         return $this->hasOneof(6);
     }
 
@@ -317,9 +320,11 @@ class Document extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string content = 6 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setContent($var)
     {
+        @trigger_error('content is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->writeOneof(6, $var);
 
@@ -415,7 +420,7 @@ class Document extends \Google\Protobuf\Internal\Message
      * and may not have succeeded.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.Document.ReloadStatus latest_reload_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Cloud\Dialogflow\V2beta1\Document\ReloadStatus
+     * @return \Google\Cloud\Dialogflow\V2beta1\Document\ReloadStatus|null
      */
     public function getLatestReloadStatus()
     {

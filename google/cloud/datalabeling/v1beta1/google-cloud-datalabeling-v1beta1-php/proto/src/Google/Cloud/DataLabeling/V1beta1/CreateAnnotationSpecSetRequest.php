@@ -85,7 +85,7 @@ class CreateAnnotationSpecSetRequest extends \Google\Protobuf\Internal\Message
      * display_name.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.AnnotationSpecSet annotation_spec_set = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\AnnotationSpecSet
+     * @return \Google\Cloud\DataLabeling\V1beta1\AnnotationSpecSet|null
      */
     public function getAnnotationSpecSet()
     {

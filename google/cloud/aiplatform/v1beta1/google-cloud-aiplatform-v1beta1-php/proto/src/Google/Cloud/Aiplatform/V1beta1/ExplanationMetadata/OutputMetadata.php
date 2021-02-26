@@ -70,7 +70,7 @@ class OutputMetadata extends \Google\Protobuf\Internal\Message
      * mapping with [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
      *
      * Generated from protobuf field <code>.google.protobuf.Value index_display_name_mapping = 1;</code>
-     * @return \Google\Protobuf\Value
+     * @return \Google\Protobuf\Value|null
      */
     public function getIndexDisplayNameMapping()
     {

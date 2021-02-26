@@ -75,7 +75,7 @@ class SourcedSoftwareRecipe extends \Google\Protobuf\Internal\Message
      * A software recipe to configure on the VM instance.
      *
      * Generated from protobuf field <code>.google.cloud.osconfig.v1beta.SoftwareRecipe software_recipe = 2;</code>
-     * @return \Google\Cloud\Osconfig\V1beta\SoftwareRecipe
+     * @return \Google\Cloud\Osconfig\V1beta\SoftwareRecipe|null
      */
     public function getSoftwareRecipe()
     {

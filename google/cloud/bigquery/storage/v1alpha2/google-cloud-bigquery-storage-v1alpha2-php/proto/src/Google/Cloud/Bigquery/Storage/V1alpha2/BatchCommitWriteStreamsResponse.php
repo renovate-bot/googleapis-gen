@@ -41,7 +41,7 @@ class BatchCommitWriteStreamsResponse extends \Google\Protobuf\Internal\Message
      * The time at which streams were committed in microseconds granularity.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp commit_time = 1;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCommitTime()
     {

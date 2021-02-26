@@ -123,7 +123,7 @@ class MatchIntentRequest extends \Google\Protobuf\Internal\Message
      * The parameters of this query.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.QueryParameters query_params = 2;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\QueryParameters
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\QueryParameters|null
      */
     public function getQueryParams()
     {
@@ -159,7 +159,7 @@ class MatchIntentRequest extends \Google\Protobuf\Internal\Message
      * Required. The input specification.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\QueryInput
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\QueryInput|null
      */
     public function getQueryInput()
     {

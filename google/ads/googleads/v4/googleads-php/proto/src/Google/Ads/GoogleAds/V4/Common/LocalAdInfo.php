@@ -302,7 +302,7 @@ class LocalAdInfo extends \Google\Protobuf\Internal\Message
      * in the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue path1 = 7;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPath1()
     {
@@ -369,7 +369,7 @@ class LocalAdInfo extends \Google\Protobuf\Internal\Message
      * in the ad. This field can only be set when path1 is also set.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue path2 = 8;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPath2()
     {

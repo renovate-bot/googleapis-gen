@@ -165,7 +165,7 @@ class Service extends \Google\Protobuf\Internal\Message
      * Output only. The time when the metastore service was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -201,7 +201,7 @@ class Service extends \Google\Protobuf\Internal\Message
      * Output only. The time when the metastore service was last updated.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {
@@ -264,7 +264,7 @@ class Service extends \Google\Protobuf\Internal\Message
      * software as the metastore service.
      *
      * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
-     * @return \Google\Cloud\Metastore\V1alpha\HiveMetastoreConfig
+     * @return \Google\Cloud\Metastore\V1alpha\HiveMetastoreConfig|null
      */
     public function getHiveMetastoreConfig()
     {

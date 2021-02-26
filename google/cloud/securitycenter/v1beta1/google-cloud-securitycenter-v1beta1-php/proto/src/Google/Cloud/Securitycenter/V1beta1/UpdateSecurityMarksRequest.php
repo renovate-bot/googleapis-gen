@@ -57,7 +57,7 @@ class UpdateSecurityMarksRequest extends \Google\Protobuf\Internal\Message
      * Required. The security marks resource to update.
      *
      * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Securitycenter\V1beta1\SecurityMarks
+     * @return \Google\Cloud\Securitycenter\V1beta1\SecurityMarks|null
      */
     public function getSecurityMarks()
     {
@@ -93,7 +93,7 @@ class UpdateSecurityMarksRequest extends \Google\Protobuf\Internal\Message
      * The FieldMask to use when updating the security marks resource.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {
@@ -129,7 +129,7 @@ class UpdateSecurityMarksRequest extends \Google\Protobuf\Internal\Message
      * The time at which the updated SecurityMarks take effect.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartTime()
     {

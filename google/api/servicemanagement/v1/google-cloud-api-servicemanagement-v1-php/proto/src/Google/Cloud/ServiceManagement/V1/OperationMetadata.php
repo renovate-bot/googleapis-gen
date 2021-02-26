@@ -147,7 +147,7 @@ class OperationMetadata extends \Google\Protobuf\Internal\Message
      * The start time of the operation.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 4;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartTime()
     {

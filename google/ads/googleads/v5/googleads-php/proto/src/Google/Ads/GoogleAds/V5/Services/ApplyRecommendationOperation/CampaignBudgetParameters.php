@@ -44,7 +44,7 @@ class CampaignBudgetParameters extends \Google\Protobuf\Internal\Message
      * field.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value new_budget_amount_micros = 1;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getNewBudgetAmountMicros()
     {

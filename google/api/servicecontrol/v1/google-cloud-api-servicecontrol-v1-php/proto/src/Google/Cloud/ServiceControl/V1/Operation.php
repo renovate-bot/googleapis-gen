@@ -307,7 +307,7 @@ class Operation extends \Google\Protobuf\Internal\Message
      * Required. Start time of the operation.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 4;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartTime()
     {
@@ -345,7 +345,7 @@ class Operation extends \Google\Protobuf\Internal\Message
      * but optional when the operation is used in [ServiceController.Check][google.api.servicecontrol.v1.ServiceController.Check].
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 5;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getEndTime()
     {

@@ -223,6 +223,18 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes transaction_id = 2;</code>
+   * @return Whether the transactionId field is set.
+   */
+  @java.lang.Override
+  public boolean hasTransactionId() {
+    return transactionCase_ == 2;
+  }
+  /**
+   * <pre>
+   * Commit a previously-started transaction.
+   * </pre>
+   *
+   * <code>bytes transaction_id = 2;</code>
    * @return The transactionId.
    */
   @java.lang.Override
@@ -946,6 +958,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Commit a previously-started transaction.
+     * </pre>
+     *
+     * <code>bytes transaction_id = 2;</code>
+     * @return Whether the transactionId field is set.
+     */
+    public boolean hasTransactionId() {
+      return transactionCase_ == 2;
+    }
     /**
      * <pre>
      * Commit a previously-started transaction.

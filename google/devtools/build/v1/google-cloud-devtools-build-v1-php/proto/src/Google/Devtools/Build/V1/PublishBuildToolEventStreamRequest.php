@@ -70,7 +70,7 @@ class PublishBuildToolEventStreamRequest extends \Google\Protobuf\Internal\Messa
      * New publishing clients should use this field rather than the 3 above.
      *
      * Generated from protobuf field <code>.google.devtools.build.v1.OrderedBuildEvent ordered_build_event = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Devtools\Build\V1\OrderedBuildEvent
+     * @return \Google\Devtools\Build\V1\OrderedBuildEvent|null
      */
     public function getOrderedBuildEvent()
     {

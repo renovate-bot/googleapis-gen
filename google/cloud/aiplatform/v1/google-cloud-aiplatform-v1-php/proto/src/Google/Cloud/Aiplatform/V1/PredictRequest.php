@@ -158,7 +158,7 @@ class PredictRequest extends \Google\Protobuf\Internal\Message
      * [parameters_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.parameters_schema_uri].
      *
      * Generated from protobuf field <code>.google.protobuf.Value parameters = 3;</code>
-     * @return \Google\Protobuf\Value
+     * @return \Google\Protobuf\Value|null
      */
     public function getParameters()
     {

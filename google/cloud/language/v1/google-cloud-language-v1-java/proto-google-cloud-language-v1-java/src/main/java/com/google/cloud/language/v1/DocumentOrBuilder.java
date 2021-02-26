@@ -35,6 +35,16 @@ public interface DocumentOrBuilder extends
    * </pre>
    *
    * <code>string content = 2;</code>
+   * @return Whether the content field is set.
+   */
+  boolean hasContent();
+  /**
+   * <pre>
+   * The content of the input in string format.
+   * Cloud audit logging exempt since it is based on user data.
+   * </pre>
+   *
+   * <code>string content = 2;</code>
    * @return The content.
    */
   java.lang.String getContent();
@@ -50,6 +60,18 @@ public interface DocumentOrBuilder extends
   com.google.protobuf.ByteString
       getContentBytes();
 
+  /**
+   * <pre>
+   * The Google Cloud Storage URI where the file content is located.
+   * This URI must be of the form: gs://bucket_name/object_name. For more
+   * details, see https://cloud.google.com/storage/docs/reference-uris.
+   * NOTE: Cloud Storage object versioning is not supported.
+   * </pre>
+   *
+   * <code>string gcs_content_uri = 3;</code>
+   * @return Whether the gcsContentUri field is set.
+   */
+  boolean hasGcsContentUri();
   /**
    * <pre>
    * The Google Cloud Storage URI where the file content is located.

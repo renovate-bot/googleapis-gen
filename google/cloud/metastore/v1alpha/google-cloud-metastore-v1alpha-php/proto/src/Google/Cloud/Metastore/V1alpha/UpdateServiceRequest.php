@@ -90,7 +90,7 @@ class UpdateServiceRequest extends \Google\Protobuf\Internal\Message
      * to the full request). A field is overwritten if it is in the mask.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {
@@ -132,7 +132,7 @@ class UpdateServiceRequest extends \Google\Protobuf\Internal\Message
      * service to be updated.
      *
      * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.Service service = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Metastore\V1alpha\Service
+     * @return \Google\Cloud\Metastore\V1alpha\Service|null
      */
     public function getService()
     {

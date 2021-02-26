@@ -113,7 +113,7 @@ class CreateGameServerConfigRequest extends \Google\Protobuf\Internal\Message
      * Required. The game server config resource to be created.
      *
      * Generated from protobuf field <code>.google.cloud.gaming.v1beta.GameServerConfig game_server_config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Gaming\V1beta\GameServerConfig
+     * @return \Google\Cloud\Gaming\V1beta\GameServerConfig|null
      */
     public function getGameServerConfig()
     {

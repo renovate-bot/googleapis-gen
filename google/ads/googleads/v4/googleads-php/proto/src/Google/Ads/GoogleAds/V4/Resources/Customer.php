@@ -217,7 +217,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the customer.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -280,7 +280,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      * Optional, non-unique descriptive name of the customer.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue descriptive_name = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDescriptiveName()
     {
@@ -345,7 +345,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      * supported.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCurrencyCode()
     {
@@ -414,7 +414,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      * Immutable. The local timezone ID of the customer.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue time_zone = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getTimeZone()
     {
@@ -477,7 +477,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      * The URL template for constructing a tracking URL out of parameters.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 7;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getTrackingUrlTemplate()
     {
@@ -540,7 +540,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      * The URL template for appending params to the final URL
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 11;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getFinalUrlSuffix()
     {
@@ -603,7 +603,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      * Whether auto-tagging is enabled for the customer.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue auto_tagging_enabled = 8;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getAutoTaggingEnabled()
     {
@@ -668,7 +668,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      * information, see https://support.google.com/partners/answer/3125774.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue has_partners_badge = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getHasPartnersBadge()
     {
@@ -737,7 +737,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      * Output only. Whether the customer is a manager.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue manager = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getManager()
     {
@@ -800,7 +800,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      * Output only. Whether the customer is a test account.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue test_account = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getTestAccount()
     {
@@ -863,7 +863,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      * Call reporting setting for a customer.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.CallReportingSetting call_reporting_setting = 10;</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\CallReportingSetting
+     * @return \Google\Ads\GoogleAds\V4\Resources\CallReportingSetting|null
      */
     public function getCallReportingSetting()
     {
@@ -899,7 +899,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      * Output only. Conversion tracking setting for a customer.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.ConversionTrackingSetting conversion_tracking_setting = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\ConversionTrackingSetting
+     * @return \Google\Ads\GoogleAds\V4\Resources\ConversionTrackingSetting|null
      */
     public function getConversionTrackingSetting()
     {
@@ -935,7 +935,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      * Output only. Remarketing setting for a customer.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.RemarketingSetting remarketing_setting = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\RemarketingSetting
+     * @return \Google\Ads\GoogleAds\V4\Resources\RemarketingSetting|null
      */
     public function getRemarketingSetting()
     {
@@ -1005,7 +1005,7 @@ class Customer extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue optimization_score = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getOptimizationScore()
     {

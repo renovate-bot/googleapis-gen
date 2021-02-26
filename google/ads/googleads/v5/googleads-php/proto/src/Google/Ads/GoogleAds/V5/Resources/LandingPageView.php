@@ -84,7 +84,7 @@ class LandingPageView extends \Google\Protobuf\Internal\Message
      * Output only. The advertiser-specified final URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue unexpanded_final_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getUnexpandedFinalUrl()
     {

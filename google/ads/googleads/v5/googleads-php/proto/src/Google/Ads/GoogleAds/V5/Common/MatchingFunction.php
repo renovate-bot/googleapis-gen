@@ -105,7 +105,7 @@ class MatchingFunction extends \Google\Protobuf\Internal\Message
      * mutate request.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue function_string = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getFunctionString()
     {

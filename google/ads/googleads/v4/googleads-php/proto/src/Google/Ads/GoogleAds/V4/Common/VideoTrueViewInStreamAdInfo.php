@@ -67,7 +67,7 @@ class VideoTrueViewInStreamAdInfo extends \Google\Protobuf\Internal\Message
      * Required for TrueView for action campaigns, optional otherwise.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue action_button_label = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getActionButtonLabel()
     {
@@ -137,7 +137,7 @@ class VideoTrueViewInStreamAdInfo extends \Google\Protobuf\Internal\Message
      * context and encourage clicking on the button.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue action_headline = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getActionHeadline()
     {
@@ -203,7 +203,7 @@ class VideoTrueViewInStreamAdInfo extends \Google\Protobuf\Internal\Message
      * The MediaFile resource name of the companion banner used with the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue companion_banner = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCompanionBanner()
     {

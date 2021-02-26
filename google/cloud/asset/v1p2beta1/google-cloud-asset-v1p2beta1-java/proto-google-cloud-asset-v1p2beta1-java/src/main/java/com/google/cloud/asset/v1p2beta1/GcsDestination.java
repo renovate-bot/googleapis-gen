@@ -140,6 +140,21 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string uri = 1;</code>
+   * @return Whether the uri field is set.
+   */
+  public boolean hasUri() {
+    return objectUriCase_ == 1;
+  }
+  /**
+   * <pre>
+   * The uri of the Cloud Storage object. It's the same uri that is used by
+   * gsutil. For example: "gs://bucket_name/object_name". See [Viewing and
+   * Editing Object
+   * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
+   * for more information.
+   * </pre>
+   *
+   * <code>string uri = 1;</code>
    * @return The uri.
    */
   public java.lang.String getUri() {
@@ -534,6 +549,22 @@ private static final long serialVersionUID = 0L;
     }
 
 
+    /**
+     * <pre>
+     * The uri of the Cloud Storage object. It's the same uri that is used by
+     * gsutil. For example: "gs://bucket_name/object_name". See [Viewing and
+     * Editing Object
+     * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
+     * for more information.
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     * @return Whether the uri field is set.
+     */
+    @java.lang.Override
+    public boolean hasUri() {
+      return objectUriCase_ == 1;
+    }
     /**
      * <pre>
      * The uri of the Cloud Storage object. It's the same uri that is used by

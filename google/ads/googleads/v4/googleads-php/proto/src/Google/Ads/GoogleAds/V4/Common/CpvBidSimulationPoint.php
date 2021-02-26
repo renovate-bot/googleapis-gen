@@ -65,7 +65,7 @@ class CpvBidSimulationPoint extends \Google\Protobuf\Internal\Message
      * The simulated CPV bid upon which projected metrics are based.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpv_bid_micros = 1;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCpvBidMicros()
     {
@@ -128,7 +128,7 @@ class CpvBidSimulationPoint extends \Google\Protobuf\Internal\Message
      * Projected cost in micros.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 2;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCostMicros()
     {
@@ -191,7 +191,7 @@ class CpvBidSimulationPoint extends \Google\Protobuf\Internal\Message
      * Projected number of impressions.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value impressions = 3;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getImpressions()
     {
@@ -254,7 +254,7 @@ class CpvBidSimulationPoint extends \Google\Protobuf\Internal\Message
      * Projected number of views.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value views = 4;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getViews()
     {

@@ -157,7 +157,7 @@ class Profile extends \Google\Protobuf\Internal\Message
      * Deployment this profile corresponds to.
      *
      * Generated from protobuf field <code>.google.devtools.cloudprofiler.v2.Deployment deployment = 3;</code>
-     * @return \Google\Cloud\Profiler\V2\Deployment
+     * @return \Google\Cloud\Profiler\V2\Deployment|null
      */
     public function getDeployment()
     {
@@ -198,7 +198,7 @@ class Profile extends \Google\Protobuf\Internal\Message
      * stopping the profiling is handled asynchronously).
      *
      * Generated from protobuf field <code>.google.protobuf.Duration duration = 4;</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getDuration()
     {

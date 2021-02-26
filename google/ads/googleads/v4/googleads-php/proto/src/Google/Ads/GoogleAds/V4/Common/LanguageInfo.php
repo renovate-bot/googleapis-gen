@@ -41,7 +41,7 @@ class LanguageInfo extends \Google\Protobuf\Internal\Message
      * The language constant resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue language_constant = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getLanguageConstant()
     {

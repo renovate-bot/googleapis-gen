@@ -41,7 +41,7 @@ class HotelCityInfo extends \Google\Protobuf\Internal\Message
      * The Geo Target Constant resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue city_criterion = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCityCriterion()
     {

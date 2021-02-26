@@ -41,7 +41,7 @@ class OperatingSystemVersionInfo extends \Google\Protobuf\Internal\Message
      * The operating system version constant resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue operating_system_version_constant = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getOperatingSystemVersionConstant()
     {

@@ -1032,6 +1032,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.RequestErrorEnum.RequestError request_error = 1;</code>
+   * @return Whether the requestError field is set.
+   */
+  public boolean hasRequestError() {
+    return errorCodeCase_ == 1;
+  }
+  /**
+   * <pre>
+   * An error caused by the request
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.RequestErrorEnum.RequestError request_error = 1;</code>
    * @return The enum numeric value on the wire for requestError.
    */
   public int getRequestErrorValue() {
@@ -1059,6 +1070,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int BIDDING_STRATEGY_ERROR_FIELD_NUMBER = 2;
+  /**
+   * <pre>
+   * An error with a Bidding Strategy mutate.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.BiddingStrategyErrorEnum.BiddingStrategyError bidding_strategy_error = 2;</code>
+   * @return Whether the biddingStrategyError field is set.
+   */
+  public boolean hasBiddingStrategyError() {
+    return errorCodeCase_ == 2;
+  }
   /**
    * <pre>
    * An error with a Bidding Strategy mutate.
@@ -1098,6 +1120,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.UrlFieldErrorEnum.UrlFieldError url_field_error = 3;</code>
+   * @return Whether the urlFieldError field is set.
+   */
+  public boolean hasUrlFieldError() {
+    return errorCodeCase_ == 3;
+  }
+  /**
+   * <pre>
+   * An error with a URL field mutate.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.UrlFieldErrorEnum.UrlFieldError url_field_error = 3;</code>
    * @return The enum numeric value on the wire for urlFieldError.
    */
   public int getUrlFieldErrorValue() {
@@ -1125,6 +1158,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LIST_OPERATION_ERROR_FIELD_NUMBER = 4;
+  /**
+   * <pre>
+   * An error with a list operation.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.ListOperationErrorEnum.ListOperationError list_operation_error = 4;</code>
+   * @return Whether the listOperationError field is set.
+   */
+  public boolean hasListOperationError() {
+    return errorCodeCase_ == 4;
+  }
   /**
    * <pre>
    * An error with a list operation.
@@ -1164,6 +1208,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.QueryErrorEnum.QueryError query_error = 5;</code>
+   * @return Whether the queryError field is set.
+   */
+  public boolean hasQueryError() {
+    return errorCodeCase_ == 5;
+  }
+  /**
+   * <pre>
+   * An error with an AWQL query
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.QueryErrorEnum.QueryError query_error = 5;</code>
    * @return The enum numeric value on the wire for queryError.
    */
   public int getQueryErrorValue() {
@@ -1191,6 +1246,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int MUTATE_ERROR_FIELD_NUMBER = 7;
+  /**
+   * <pre>
+   * An error with a mutate
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.MutateErrorEnum.MutateError mutate_error = 7;</code>
+   * @return Whether the mutateError field is set.
+   */
+  public boolean hasMutateError() {
+    return errorCodeCase_ == 7;
+  }
   /**
    * <pre>
    * An error with a mutate
@@ -1230,6 +1296,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.FieldMaskErrorEnum.FieldMaskError field_mask_error = 8;</code>
+   * @return Whether the fieldMaskError field is set.
+   */
+  public boolean hasFieldMaskError() {
+    return errorCodeCase_ == 8;
+  }
+  /**
+   * <pre>
+   * An error with a field mask
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.FieldMaskErrorEnum.FieldMaskError field_mask_error = 8;</code>
    * @return The enum numeric value on the wire for fieldMaskError.
    */
   public int getFieldMaskErrorValue() {
@@ -1257,6 +1334,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int AUTHORIZATION_ERROR_FIELD_NUMBER = 9;
+  /**
+   * <pre>
+   * An error encountered when trying to authorize a user.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.AuthorizationErrorEnum.AuthorizationError authorization_error = 9;</code>
+   * @return Whether the authorizationError field is set.
+   */
+  public boolean hasAuthorizationError() {
+    return errorCodeCase_ == 9;
+  }
   /**
    * <pre>
    * An error encountered when trying to authorize a user.
@@ -1296,6 +1384,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.InternalErrorEnum.InternalError internal_error = 10;</code>
+   * @return Whether the internalError field is set.
+   */
+  public boolean hasInternalError() {
+    return errorCodeCase_ == 10;
+  }
+  /**
+   * <pre>
+   * An unexpected server-side error.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.InternalErrorEnum.InternalError internal_error = 10;</code>
    * @return The enum numeric value on the wire for internalError.
    */
   public int getInternalErrorValue() {
@@ -1323,6 +1422,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int QUOTA_ERROR_FIELD_NUMBER = 11;
+  /**
+   * <pre>
+   * An error with the amonut of quota remaining.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.QuotaErrorEnum.QuotaError quota_error = 11;</code>
+   * @return Whether the quotaError field is set.
+   */
+  public boolean hasQuotaError() {
+    return errorCodeCase_ == 11;
+  }
   /**
    * <pre>
    * An error with the amonut of quota remaining.
@@ -1362,6 +1472,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.AdErrorEnum.AdError ad_error = 12;</code>
+   * @return Whether the adError field is set.
+   */
+  public boolean hasAdError() {
+    return errorCodeCase_ == 12;
+  }
+  /**
+   * <pre>
+   * An error with an Ad Group Ad mutate.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.AdErrorEnum.AdError ad_error = 12;</code>
    * @return The enum numeric value on the wire for adError.
    */
   public int getAdErrorValue() {
@@ -1389,6 +1510,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int AD_GROUP_ERROR_FIELD_NUMBER = 13;
+  /**
+   * <pre>
+   * An error with an Ad Group mutate.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.AdGroupErrorEnum.AdGroupError ad_group_error = 13;</code>
+   * @return Whether the adGroupError field is set.
+   */
+  public boolean hasAdGroupError() {
+    return errorCodeCase_ == 13;
+  }
   /**
    * <pre>
    * An error with an Ad Group mutate.
@@ -1428,6 +1560,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.CampaignBudgetErrorEnum.CampaignBudgetError campaign_budget_error = 14;</code>
+   * @return Whether the campaignBudgetError field is set.
+   */
+  public boolean hasCampaignBudgetError() {
+    return errorCodeCase_ == 14;
+  }
+  /**
+   * <pre>
+   * An error with a Campaign Budget mutate.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.CampaignBudgetErrorEnum.CampaignBudgetError campaign_budget_error = 14;</code>
    * @return The enum numeric value on the wire for campaignBudgetError.
    */
   public int getCampaignBudgetErrorValue() {
@@ -1455,6 +1598,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CAMPAIGN_ERROR_FIELD_NUMBER = 15;
+  /**
+   * <pre>
+   * An error with a Campaign mutate.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.CampaignErrorEnum.CampaignError campaign_error = 15;</code>
+   * @return Whether the campaignError field is set.
+   */
+  public boolean hasCampaignError() {
+    return errorCodeCase_ == 15;
+  }
   /**
    * <pre>
    * An error with a Campaign mutate.
@@ -1494,6 +1648,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.AuthenticationErrorEnum.AuthenticationError authentication_error = 17;</code>
+   * @return Whether the authenticationError field is set.
+   */
+  public boolean hasAuthenticationError() {
+    return errorCodeCase_ == 17;
+  }
+  /**
+   * <pre>
+   * Indicates failure to properly authenticate user.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.AuthenticationErrorEnum.AuthenticationError authentication_error = 17;</code>
    * @return The enum numeric value on the wire for authenticationError.
    */
   public int getAuthenticationErrorValue() {
@@ -1521,6 +1686,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int AD_GROUP_CRITERION_ERROR_FIELD_NUMBER = 18;
+  /**
+   * <pre>
+   * Indicates failure to properly authenticate user.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.AdGroupCriterionErrorEnum.AdGroupCriterionError ad_group_criterion_error = 18;</code>
+   * @return Whether the adGroupCriterionError field is set.
+   */
+  public boolean hasAdGroupCriterionError() {
+    return errorCodeCase_ == 18;
+  }
   /**
    * <pre>
    * Indicates failure to properly authenticate user.
@@ -1560,6 +1736,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.AdCustomizerErrorEnum.AdCustomizerError ad_customizer_error = 19;</code>
+   * @return Whether the adCustomizerError field is set.
+   */
+  public boolean hasAdCustomizerError() {
+    return errorCodeCase_ == 19;
+  }
+  /**
+   * <pre>
+   * The reasons for the ad customizer error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.AdCustomizerErrorEnum.AdCustomizerError ad_customizer_error = 19;</code>
    * @return The enum numeric value on the wire for adCustomizerError.
    */
   public int getAdCustomizerErrorValue() {
@@ -1587,6 +1774,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int AD_GROUP_AD_ERROR_FIELD_NUMBER = 21;
+  /**
+   * <pre>
+   * The reasons for the ad group ad error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.AdGroupAdErrorEnum.AdGroupAdError ad_group_ad_error = 21;</code>
+   * @return Whether the adGroupAdError field is set.
+   */
+  public boolean hasAdGroupAdError() {
+    return errorCodeCase_ == 21;
+  }
   /**
    * <pre>
    * The reasons for the ad group ad error
@@ -1626,6 +1824,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.AdSharingErrorEnum.AdSharingError ad_sharing_error = 24;</code>
+   * @return Whether the adSharingError field is set.
+   */
+  public boolean hasAdSharingError() {
+    return errorCodeCase_ == 24;
+  }
+  /**
+   * <pre>
+   * The reasons for the ad sharing error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.AdSharingErrorEnum.AdSharingError ad_sharing_error = 24;</code>
    * @return The enum numeric value on the wire for adSharingError.
    */
   public int getAdSharingErrorValue() {
@@ -1653,6 +1862,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ADX_ERROR_FIELD_NUMBER = 25;
+  /**
+   * <pre>
+   * The reasons for the adx error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.AdxErrorEnum.AdxError adx_error = 25;</code>
+   * @return Whether the adxError field is set.
+   */
+  public boolean hasAdxError() {
+    return errorCodeCase_ == 25;
+  }
   /**
    * <pre>
    * The reasons for the adx error
@@ -1692,6 +1912,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.AssetErrorEnum.AssetError asset_error = 107;</code>
+   * @return Whether the assetError field is set.
+   */
+  public boolean hasAssetError() {
+    return errorCodeCase_ == 107;
+  }
+  /**
+   * <pre>
+   * The reasons for the asset error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.AssetErrorEnum.AssetError asset_error = 107;</code>
    * @return The enum numeric value on the wire for assetError.
    */
   public int getAssetErrorValue() {
@@ -1719,6 +1950,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int BIDDING_ERROR_FIELD_NUMBER = 26;
+  /**
+   * <pre>
+   * The reasons for the bidding errors
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.BiddingErrorEnum.BiddingError bidding_error = 26;</code>
+   * @return Whether the biddingError field is set.
+   */
+  public boolean hasBiddingError() {
+    return errorCodeCase_ == 26;
+  }
   /**
    * <pre>
    * The reasons for the bidding errors
@@ -1758,6 +2000,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.CampaignCriterionErrorEnum.CampaignCriterionError campaign_criterion_error = 29;</code>
+   * @return Whether the campaignCriterionError field is set.
+   */
+  public boolean hasCampaignCriterionError() {
+    return errorCodeCase_ == 29;
+  }
+  /**
+   * <pre>
+   * The reasons for the campaign criterion error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.CampaignCriterionErrorEnum.CampaignCriterionError campaign_criterion_error = 29;</code>
    * @return The enum numeric value on the wire for campaignCriterionError.
    */
   public int getCampaignCriterionErrorValue() {
@@ -1785,6 +2038,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int COLLECTION_SIZE_ERROR_FIELD_NUMBER = 31;
+  /**
+   * <pre>
+   * The reasons for the collection size error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.CollectionSizeErrorEnum.CollectionSizeError collection_size_error = 31;</code>
+   * @return Whether the collectionSizeError field is set.
+   */
+  public boolean hasCollectionSizeError() {
+    return errorCodeCase_ == 31;
+  }
   /**
    * <pre>
    * The reasons for the collection size error
@@ -1824,6 +2088,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.CountryCodeErrorEnum.CountryCodeError country_code_error = 109;</code>
+   * @return Whether the countryCodeError field is set.
+   */
+  public boolean hasCountryCodeError() {
+    return errorCodeCase_ == 109;
+  }
+  /**
+   * <pre>
+   * The reasons for the country code error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.CountryCodeErrorEnum.CountryCodeError country_code_error = 109;</code>
    * @return The enum numeric value on the wire for countryCodeError.
    */
   public int getCountryCodeErrorValue() {
@@ -1851,6 +2126,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CRITERION_ERROR_FIELD_NUMBER = 32;
+  /**
+   * <pre>
+   * The reasons for the criterion error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.CriterionErrorEnum.CriterionError criterion_error = 32;</code>
+   * @return Whether the criterionError field is set.
+   */
+  public boolean hasCriterionError() {
+    return errorCodeCase_ == 32;
+  }
   /**
    * <pre>
    * The reasons for the criterion error
@@ -1890,6 +2176,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.CustomerErrorEnum.CustomerError customer_error = 90;</code>
+   * @return Whether the customerError field is set.
+   */
+  public boolean hasCustomerError() {
+    return errorCodeCase_ == 90;
+  }
+  /**
+   * <pre>
+   * The reasons for the customer error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.CustomerErrorEnum.CustomerError customer_error = 90;</code>
    * @return The enum numeric value on the wire for customerError.
    */
   public int getCustomerErrorValue() {
@@ -1917,6 +2214,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DATE_ERROR_FIELD_NUMBER = 33;
+  /**
+   * <pre>
+   * The reasons for the date error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.DateErrorEnum.DateError date_error = 33;</code>
+   * @return Whether the dateError field is set.
+   */
+  public boolean hasDateError() {
+    return errorCodeCase_ == 33;
+  }
   /**
    * <pre>
    * The reasons for the date error
@@ -1956,6 +2264,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.DateRangeErrorEnum.DateRangeError date_range_error = 34;</code>
+   * @return Whether the dateRangeError field is set.
+   */
+  public boolean hasDateRangeError() {
+    return errorCodeCase_ == 34;
+  }
+  /**
+   * <pre>
+   * The reasons for the date range error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.DateRangeErrorEnum.DateRangeError date_range_error = 34;</code>
    * @return The enum numeric value on the wire for dateRangeError.
    */
   public int getDateRangeErrorValue() {
@@ -1983,6 +2302,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DISTINCT_ERROR_FIELD_NUMBER = 35;
+  /**
+   * <pre>
+   * The reasons for the distinct error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.DistinctErrorEnum.DistinctError distinct_error = 35;</code>
+   * @return Whether the distinctError field is set.
+   */
+  public boolean hasDistinctError() {
+    return errorCodeCase_ == 35;
+  }
   /**
    * <pre>
    * The reasons for the distinct error
@@ -2022,6 +2352,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.FeedAttributeReferenceErrorEnum.FeedAttributeReferenceError feed_attribute_reference_error = 36;</code>
+   * @return Whether the feedAttributeReferenceError field is set.
+   */
+  public boolean hasFeedAttributeReferenceError() {
+    return errorCodeCase_ == 36;
+  }
+  /**
+   * <pre>
+   * The reasons for the feed attribute reference error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.FeedAttributeReferenceErrorEnum.FeedAttributeReferenceError feed_attribute_reference_error = 36;</code>
    * @return The enum numeric value on the wire for feedAttributeReferenceError.
    */
   public int getFeedAttributeReferenceErrorValue() {
@@ -2049,6 +2390,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int FUNCTION_ERROR_FIELD_NUMBER = 37;
+  /**
+   * <pre>
+   * The reasons for the function error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.FunctionErrorEnum.FunctionError function_error = 37;</code>
+   * @return Whether the functionError field is set.
+   */
+  public boolean hasFunctionError() {
+    return errorCodeCase_ == 37;
+  }
   /**
    * <pre>
    * The reasons for the function error
@@ -2088,6 +2440,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.FunctionParsingErrorEnum.FunctionParsingError function_parsing_error = 38;</code>
+   * @return Whether the functionParsingError field is set.
+   */
+  public boolean hasFunctionParsingError() {
+    return errorCodeCase_ == 38;
+  }
+  /**
+   * <pre>
+   * The reasons for the function parsing error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.FunctionParsingErrorEnum.FunctionParsingError function_parsing_error = 38;</code>
    * @return The enum numeric value on the wire for functionParsingError.
    */
   public int getFunctionParsingErrorValue() {
@@ -2115,6 +2478,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ID_ERROR_FIELD_NUMBER = 39;
+  /**
+   * <pre>
+   * The reasons for the id error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.IdErrorEnum.IdError id_error = 39;</code>
+   * @return Whether the idError field is set.
+   */
+  public boolean hasIdError() {
+    return errorCodeCase_ == 39;
+  }
   /**
    * <pre>
    * The reasons for the id error
@@ -2154,6 +2528,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.ImageErrorEnum.ImageError image_error = 40;</code>
+   * @return Whether the imageError field is set.
+   */
+  public boolean hasImageError() {
+    return errorCodeCase_ == 40;
+  }
+  /**
+   * <pre>
+   * The reasons for the image error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.ImageErrorEnum.ImageError image_error = 40;</code>
    * @return The enum numeric value on the wire for imageError.
    */
   public int getImageErrorValue() {
@@ -2181,6 +2566,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LANGUAGE_CODE_ERROR_FIELD_NUMBER = 110;
+  /**
+   * <pre>
+   * The reasons for the language code error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.LanguageCodeErrorEnum.LanguageCodeError language_code_error = 110;</code>
+   * @return Whether the languageCodeError field is set.
+   */
+  public boolean hasLanguageCodeError() {
+    return errorCodeCase_ == 110;
+  }
   /**
    * <pre>
    * The reasons for the language code error
@@ -2220,6 +2616,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.MediaBundleErrorEnum.MediaBundleError media_bundle_error = 42;</code>
+   * @return Whether the mediaBundleError field is set.
+   */
+  public boolean hasMediaBundleError() {
+    return errorCodeCase_ == 42;
+  }
+  /**
+   * <pre>
+   * The reasons for the media bundle error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.MediaBundleErrorEnum.MediaBundleError media_bundle_error = 42;</code>
    * @return The enum numeric value on the wire for mediaBundleError.
    */
   public int getMediaBundleErrorValue() {
@@ -2247,6 +2654,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int MEDIA_UPLOAD_ERROR_FIELD_NUMBER = 116;
+  /**
+   * <pre>
+   * The reasons for media uploading errors.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.MediaUploadErrorEnum.MediaUploadError media_upload_error = 116;</code>
+   * @return Whether the mediaUploadError field is set.
+   */
+  public boolean hasMediaUploadError() {
+    return errorCodeCase_ == 116;
+  }
   /**
    * <pre>
    * The reasons for media uploading errors.
@@ -2286,6 +2704,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.MediaFileErrorEnum.MediaFileError media_file_error = 86;</code>
+   * @return Whether the mediaFileError field is set.
+   */
+  public boolean hasMediaFileError() {
+    return errorCodeCase_ == 86;
+  }
+  /**
+   * <pre>
+   * The reasons for the media file error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.MediaFileErrorEnum.MediaFileError media_file_error = 86;</code>
    * @return The enum numeric value on the wire for mediaFileError.
    */
   public int getMediaFileErrorValue() {
@@ -2313,6 +2742,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int MULTIPLIER_ERROR_FIELD_NUMBER = 44;
+  /**
+   * <pre>
+   * The reasons for the multiplier error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.MultiplierErrorEnum.MultiplierError multiplier_error = 44;</code>
+   * @return Whether the multiplierError field is set.
+   */
+  public boolean hasMultiplierError() {
+    return errorCodeCase_ == 44;
+  }
   /**
    * <pre>
    * The reasons for the multiplier error
@@ -2352,6 +2792,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.NewResourceCreationErrorEnum.NewResourceCreationError new_resource_creation_error = 45;</code>
+   * @return Whether the newResourceCreationError field is set.
+   */
+  public boolean hasNewResourceCreationError() {
+    return errorCodeCase_ == 45;
+  }
+  /**
+   * <pre>
+   * The reasons for the new resource creation error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.NewResourceCreationErrorEnum.NewResourceCreationError new_resource_creation_error = 45;</code>
    * @return The enum numeric value on the wire for newResourceCreationError.
    */
   public int getNewResourceCreationErrorValue() {
@@ -2379,6 +2830,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int NOT_EMPTY_ERROR_FIELD_NUMBER = 46;
+  /**
+   * <pre>
+   * The reasons for the not empty error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.NotEmptyErrorEnum.NotEmptyError not_empty_error = 46;</code>
+   * @return Whether the notEmptyError field is set.
+   */
+  public boolean hasNotEmptyError() {
+    return errorCodeCase_ == 46;
+  }
   /**
    * <pre>
    * The reasons for the not empty error
@@ -2418,6 +2880,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.NullErrorEnum.NullError null_error = 47;</code>
+   * @return Whether the nullError field is set.
+   */
+  public boolean hasNullError() {
+    return errorCodeCase_ == 47;
+  }
+  /**
+   * <pre>
+   * The reasons for the null error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.NullErrorEnum.NullError null_error = 47;</code>
    * @return The enum numeric value on the wire for nullError.
    */
   public int getNullErrorValue() {
@@ -2445,6 +2918,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int OPERATOR_ERROR_FIELD_NUMBER = 48;
+  /**
+   * <pre>
+   * The reasons for the operator error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.OperatorErrorEnum.OperatorError operator_error = 48;</code>
+   * @return Whether the operatorError field is set.
+   */
+  public boolean hasOperatorError() {
+    return errorCodeCase_ == 48;
+  }
   /**
    * <pre>
    * The reasons for the operator error
@@ -2484,6 +2968,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.RangeErrorEnum.RangeError range_error = 49;</code>
+   * @return Whether the rangeError field is set.
+   */
+  public boolean hasRangeError() {
+    return errorCodeCase_ == 49;
+  }
+  /**
+   * <pre>
+   * The reasons for the range error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.RangeErrorEnum.RangeError range_error = 49;</code>
    * @return The enum numeric value on the wire for rangeError.
    */
   public int getRangeErrorValue() {
@@ -2511,6 +3006,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int RECOMMENDATION_ERROR_FIELD_NUMBER = 58;
+  /**
+   * <pre>
+   * The reasons for error in applying a recommendation
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.RecommendationErrorEnum.RecommendationError recommendation_error = 58;</code>
+   * @return Whether the recommendationError field is set.
+   */
+  public boolean hasRecommendationError() {
+    return errorCodeCase_ == 58;
+  }
   /**
    * <pre>
    * The reasons for error in applying a recommendation
@@ -2550,6 +3056,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.RegionCodeErrorEnum.RegionCodeError region_code_error = 51;</code>
+   * @return Whether the regionCodeError field is set.
+   */
+  public boolean hasRegionCodeError() {
+    return errorCodeCase_ == 51;
+  }
+  /**
+   * <pre>
+   * The reasons for the region code error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.RegionCodeErrorEnum.RegionCodeError region_code_error = 51;</code>
    * @return The enum numeric value on the wire for regionCodeError.
    */
   public int getRegionCodeErrorValue() {
@@ -2577,6 +3094,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int SETTING_ERROR_FIELD_NUMBER = 52;
+  /**
+   * <pre>
+   * The reasons for the setting error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.SettingErrorEnum.SettingError setting_error = 52;</code>
+   * @return Whether the settingError field is set.
+   */
+  public boolean hasSettingError() {
+    return errorCodeCase_ == 52;
+  }
   /**
    * <pre>
    * The reasons for the setting error
@@ -2616,6 +3144,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.StringFormatErrorEnum.StringFormatError string_format_error = 53;</code>
+   * @return Whether the stringFormatError field is set.
+   */
+  public boolean hasStringFormatError() {
+    return errorCodeCase_ == 53;
+  }
+  /**
+   * <pre>
+   * The reasons for the string format error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.StringFormatErrorEnum.StringFormatError string_format_error = 53;</code>
    * @return The enum numeric value on the wire for stringFormatError.
    */
   public int getStringFormatErrorValue() {
@@ -2643,6 +3182,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int STRING_LENGTH_ERROR_FIELD_NUMBER = 54;
+  /**
+   * <pre>
+   * The reasons for the string length error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.StringLengthErrorEnum.StringLengthError string_length_error = 54;</code>
+   * @return Whether the stringLengthError field is set.
+   */
+  public boolean hasStringLengthError() {
+    return errorCodeCase_ == 54;
+  }
   /**
    * <pre>
    * The reasons for the string length error
@@ -2682,6 +3232,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.OperationAccessDeniedErrorEnum.OperationAccessDeniedError operation_access_denied_error = 55;</code>
+   * @return Whether the operationAccessDeniedError field is set.
+   */
+  public boolean hasOperationAccessDeniedError() {
+    return errorCodeCase_ == 55;
+  }
+  /**
+   * <pre>
+   * The reasons for the operation access denied error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.OperationAccessDeniedErrorEnum.OperationAccessDeniedError operation_access_denied_error = 55;</code>
    * @return The enum numeric value on the wire for operationAccessDeniedError.
    */
   public int getOperationAccessDeniedErrorValue() {
@@ -2709,6 +3270,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int RESOURCE_ACCESS_DENIED_ERROR_FIELD_NUMBER = 56;
+  /**
+   * <pre>
+   * The reasons for the resource access denied error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.ResourceAccessDeniedErrorEnum.ResourceAccessDeniedError resource_access_denied_error = 56;</code>
+   * @return Whether the resourceAccessDeniedError field is set.
+   */
+  public boolean hasResourceAccessDeniedError() {
+    return errorCodeCase_ == 56;
+  }
   /**
    * <pre>
    * The reasons for the resource access denied error
@@ -2748,6 +3320,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.ResourceCountLimitExceededErrorEnum.ResourceCountLimitExceededError resource_count_limit_exceeded_error = 57;</code>
+   * @return Whether the resourceCountLimitExceededError field is set.
+   */
+  public boolean hasResourceCountLimitExceededError() {
+    return errorCodeCase_ == 57;
+  }
+  /**
+   * <pre>
+   * The reasons for the resource count limit exceeded error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.ResourceCountLimitExceededErrorEnum.ResourceCountLimitExceededError resource_count_limit_exceeded_error = 57;</code>
    * @return The enum numeric value on the wire for resourceCountLimitExceededError.
    */
   public int getResourceCountLimitExceededErrorValue() {
@@ -2775,6 +3358,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int YOUTUBE_VIDEO_REGISTRATION_ERROR_FIELD_NUMBER = 117;
+  /**
+   * <pre>
+   * The reasons for YouTube video registration errors.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.YoutubeVideoRegistrationErrorEnum.YoutubeVideoRegistrationError youtube_video_registration_error = 117;</code>
+   * @return Whether the youtubeVideoRegistrationError field is set.
+   */
+  public boolean hasYoutubeVideoRegistrationError() {
+    return errorCodeCase_ == 117;
+  }
   /**
    * <pre>
    * The reasons for YouTube video registration errors.
@@ -2814,6 +3408,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.AdGroupBidModifierErrorEnum.AdGroupBidModifierError ad_group_bid_modifier_error = 59;</code>
+   * @return Whether the adGroupBidModifierError field is set.
+   */
+  public boolean hasAdGroupBidModifierError() {
+    return errorCodeCase_ == 59;
+  }
+  /**
+   * <pre>
+   * The reasons for the ad group bid modifier error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.AdGroupBidModifierErrorEnum.AdGroupBidModifierError ad_group_bid_modifier_error = 59;</code>
    * @return The enum numeric value on the wire for adGroupBidModifierError.
    */
   public int getAdGroupBidModifierErrorValue() {
@@ -2841,6 +3446,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CONTEXT_ERROR_FIELD_NUMBER = 60;
+  /**
+   * <pre>
+   * The reasons for the context error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.ContextErrorEnum.ContextError context_error = 60;</code>
+   * @return Whether the contextError field is set.
+   */
+  public boolean hasContextError() {
+    return errorCodeCase_ == 60;
+  }
   /**
    * <pre>
    * The reasons for the context error
@@ -2880,6 +3496,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.FieldErrorEnum.FieldError field_error = 61;</code>
+   * @return Whether the fieldError field is set.
+   */
+  public boolean hasFieldError() {
+    return errorCodeCase_ == 61;
+  }
+  /**
+   * <pre>
+   * The reasons for the field error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.FieldErrorEnum.FieldError field_error = 61;</code>
    * @return The enum numeric value on the wire for fieldError.
    */
   public int getFieldErrorValue() {
@@ -2907,6 +3534,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int SHARED_SET_ERROR_FIELD_NUMBER = 62;
+  /**
+   * <pre>
+   * The reasons for the shared set error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.SharedSetErrorEnum.SharedSetError shared_set_error = 62;</code>
+   * @return Whether the sharedSetError field is set.
+   */
+  public boolean hasSharedSetError() {
+    return errorCodeCase_ == 62;
+  }
   /**
    * <pre>
    * The reasons for the shared set error
@@ -2946,6 +3584,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.SharedCriterionErrorEnum.SharedCriterionError shared_criterion_error = 63;</code>
+   * @return Whether the sharedCriterionError field is set.
+   */
+  public boolean hasSharedCriterionError() {
+    return errorCodeCase_ == 63;
+  }
+  /**
+   * <pre>
+   * The reasons for the shared criterion error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.SharedCriterionErrorEnum.SharedCriterionError shared_criterion_error = 63;</code>
    * @return The enum numeric value on the wire for sharedCriterionError.
    */
   public int getSharedCriterionErrorValue() {
@@ -2973,6 +3622,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CAMPAIGN_SHARED_SET_ERROR_FIELD_NUMBER = 64;
+  /**
+   * <pre>
+   * The reasons for the campaign shared set error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.CampaignSharedSetErrorEnum.CampaignSharedSetError campaign_shared_set_error = 64;</code>
+   * @return Whether the campaignSharedSetError field is set.
+   */
+  public boolean hasCampaignSharedSetError() {
+    return errorCodeCase_ == 64;
+  }
   /**
    * <pre>
    * The reasons for the campaign shared set error
@@ -3012,6 +3672,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.ConversionActionErrorEnum.ConversionActionError conversion_action_error = 65;</code>
+   * @return Whether the conversionActionError field is set.
+   */
+  public boolean hasConversionActionError() {
+    return errorCodeCase_ == 65;
+  }
+  /**
+   * <pre>
+   * The reasons for the conversion action error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.ConversionActionErrorEnum.ConversionActionError conversion_action_error = 65;</code>
    * @return The enum numeric value on the wire for conversionActionError.
    */
   public int getConversionActionErrorValue() {
@@ -3039,6 +3710,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CONVERSION_ADJUSTMENT_UPLOAD_ERROR_FIELD_NUMBER = 115;
+  /**
+   * <pre>
+   * The reasons for the conversion adjustment upload error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.ConversionAdjustmentUploadErrorEnum.ConversionAdjustmentUploadError conversion_adjustment_upload_error = 115;</code>
+   * @return Whether the conversionAdjustmentUploadError field is set.
+   */
+  public boolean hasConversionAdjustmentUploadError() {
+    return errorCodeCase_ == 115;
+  }
   /**
    * <pre>
    * The reasons for the conversion adjustment upload error
@@ -3078,6 +3760,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.ConversionUploadErrorEnum.ConversionUploadError conversion_upload_error = 111;</code>
+   * @return Whether the conversionUploadError field is set.
+   */
+  public boolean hasConversionUploadError() {
+    return errorCodeCase_ == 111;
+  }
+  /**
+   * <pre>
+   * The reasons for the conversion upload error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.ConversionUploadErrorEnum.ConversionUploadError conversion_upload_error = 111;</code>
    * @return The enum numeric value on the wire for conversionUploadError.
    */
   public int getConversionUploadErrorValue() {
@@ -3105,6 +3798,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int HEADER_ERROR_FIELD_NUMBER = 66;
+  /**
+   * <pre>
+   * The reasons for the header error.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.HeaderErrorEnum.HeaderError header_error = 66;</code>
+   * @return Whether the headerError field is set.
+   */
+  public boolean hasHeaderError() {
+    return errorCodeCase_ == 66;
+  }
   /**
    * <pre>
    * The reasons for the header error.
@@ -3144,6 +3848,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.DatabaseErrorEnum.DatabaseError database_error = 67;</code>
+   * @return Whether the databaseError field is set.
+   */
+  public boolean hasDatabaseError() {
+    return errorCodeCase_ == 67;
+  }
+  /**
+   * <pre>
+   * The reasons for the database error.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.DatabaseErrorEnum.DatabaseError database_error = 67;</code>
    * @return The enum numeric value on the wire for databaseError.
    */
   public int getDatabaseErrorValue() {
@@ -3171,6 +3886,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int POLICY_FINDING_ERROR_FIELD_NUMBER = 68;
+  /**
+   * <pre>
+   * The reasons for the policy finding error.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.PolicyFindingErrorEnum.PolicyFindingError policy_finding_error = 68;</code>
+   * @return Whether the policyFindingError field is set.
+   */
+  public boolean hasPolicyFindingError() {
+    return errorCodeCase_ == 68;
+  }
   /**
    * <pre>
    * The reasons for the policy finding error.
@@ -3210,6 +3936,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.EnumErrorEnum.EnumError enum_error = 70;</code>
+   * @return Whether the enumError field is set.
+   */
+  public boolean hasEnumError() {
+    return errorCodeCase_ == 70;
+  }
+  /**
+   * <pre>
+   * The reason for enum error.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.EnumErrorEnum.EnumError enum_error = 70;</code>
    * @return The enum numeric value on the wire for enumError.
    */
   public int getEnumErrorValue() {
@@ -3237,6 +3974,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int KEYWORD_PLAN_ERROR_FIELD_NUMBER = 71;
+  /**
+   * <pre>
+   * The reason for keyword plan error.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.KeywordPlanErrorEnum.KeywordPlanError keyword_plan_error = 71;</code>
+   * @return Whether the keywordPlanError field is set.
+   */
+  public boolean hasKeywordPlanError() {
+    return errorCodeCase_ == 71;
+  }
   /**
    * <pre>
    * The reason for keyword plan error.
@@ -3276,6 +4024,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.KeywordPlanCampaignErrorEnum.KeywordPlanCampaignError keyword_plan_campaign_error = 72;</code>
+   * @return Whether the keywordPlanCampaignError field is set.
+   */
+  public boolean hasKeywordPlanCampaignError() {
+    return errorCodeCase_ == 72;
+  }
+  /**
+   * <pre>
+   * The reason for keyword plan campaign error.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.KeywordPlanCampaignErrorEnum.KeywordPlanCampaignError keyword_plan_campaign_error = 72;</code>
    * @return The enum numeric value on the wire for keywordPlanCampaignError.
    */
   public int getKeywordPlanCampaignErrorValue() {
@@ -3303,6 +4062,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int KEYWORD_PLAN_CAMPAIGN_KEYWORD_ERROR_FIELD_NUMBER = 132;
+  /**
+   * <pre>
+   * The reason for keyword plan campaign keyword error.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.KeywordPlanCampaignKeywordErrorEnum.KeywordPlanCampaignKeywordError keyword_plan_campaign_keyword_error = 132;</code>
+   * @return Whether the keywordPlanCampaignKeywordError field is set.
+   */
+  public boolean hasKeywordPlanCampaignKeywordError() {
+    return errorCodeCase_ == 132;
+  }
   /**
    * <pre>
    * The reason for keyword plan campaign keyword error.
@@ -3342,6 +4112,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.KeywordPlanAdGroupErrorEnum.KeywordPlanAdGroupError keyword_plan_ad_group_error = 74;</code>
+   * @return Whether the keywordPlanAdGroupError field is set.
+   */
+  public boolean hasKeywordPlanAdGroupError() {
+    return errorCodeCase_ == 74;
+  }
+  /**
+   * <pre>
+   * The reason for keyword plan ad group error.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.KeywordPlanAdGroupErrorEnum.KeywordPlanAdGroupError keyword_plan_ad_group_error = 74;</code>
    * @return The enum numeric value on the wire for keywordPlanAdGroupError.
    */
   public int getKeywordPlanAdGroupErrorValue() {
@@ -3369,6 +4150,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int KEYWORD_PLAN_AD_GROUP_KEYWORD_ERROR_FIELD_NUMBER = 133;
+  /**
+   * <pre>
+   * The reason for keyword plan ad group keyword error.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.KeywordPlanAdGroupKeywordErrorEnum.KeywordPlanAdGroupKeywordError keyword_plan_ad_group_keyword_error = 133;</code>
+   * @return Whether the keywordPlanAdGroupKeywordError field is set.
+   */
+  public boolean hasKeywordPlanAdGroupKeywordError() {
+    return errorCodeCase_ == 133;
+  }
   /**
    * <pre>
    * The reason for keyword plan ad group keyword error.
@@ -3408,6 +4200,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.KeywordPlanIdeaErrorEnum.KeywordPlanIdeaError keyword_plan_idea_error = 76;</code>
+   * @return Whether the keywordPlanIdeaError field is set.
+   */
+  public boolean hasKeywordPlanIdeaError() {
+    return errorCodeCase_ == 76;
+  }
+  /**
+   * <pre>
+   * The reason for keyword idea error.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.KeywordPlanIdeaErrorEnum.KeywordPlanIdeaError keyword_plan_idea_error = 76;</code>
    * @return The enum numeric value on the wire for keywordPlanIdeaError.
    */
   public int getKeywordPlanIdeaErrorValue() {
@@ -3435,6 +4238,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ACCOUNT_BUDGET_PROPOSAL_ERROR_FIELD_NUMBER = 77;
+  /**
+   * <pre>
+   * The reasons for account budget proposal errors.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.AccountBudgetProposalErrorEnum.AccountBudgetProposalError account_budget_proposal_error = 77;</code>
+   * @return Whether the accountBudgetProposalError field is set.
+   */
+  public boolean hasAccountBudgetProposalError() {
+    return errorCodeCase_ == 77;
+  }
   /**
    * <pre>
    * The reasons for account budget proposal errors.
@@ -3474,6 +4288,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.UserListErrorEnum.UserListError user_list_error = 78;</code>
+   * @return Whether the userListError field is set.
+   */
+  public boolean hasUserListError() {
+    return errorCodeCase_ == 78;
+  }
+  /**
+   * <pre>
+   * The reasons for the user list error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.UserListErrorEnum.UserListError user_list_error = 78;</code>
    * @return The enum numeric value on the wire for userListError.
    */
   public int getUserListErrorValue() {
@@ -3501,6 +4326,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CHANGE_STATUS_ERROR_FIELD_NUMBER = 79;
+  /**
+   * <pre>
+   * The reasons for the change status error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.ChangeStatusErrorEnum.ChangeStatusError change_status_error = 79;</code>
+   * @return Whether the changeStatusError field is set.
+   */
+  public boolean hasChangeStatusError() {
+    return errorCodeCase_ == 79;
+  }
   /**
    * <pre>
    * The reasons for the change status error
@@ -3540,6 +4376,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.FeedErrorEnum.FeedError feed_error = 80;</code>
+   * @return Whether the feedError field is set.
+   */
+  public boolean hasFeedError() {
+    return errorCodeCase_ == 80;
+  }
+  /**
+   * <pre>
+   * The reasons for the feed error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.FeedErrorEnum.FeedError feed_error = 80;</code>
    * @return The enum numeric value on the wire for feedError.
    */
   public int getFeedErrorValue() {
@@ -3567,6 +4414,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int GEO_TARGET_CONSTANT_SUGGESTION_ERROR_FIELD_NUMBER = 81;
+  /**
+   * <pre>
+   * The reasons for the geo target constant suggestion error.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.GeoTargetConstantSuggestionErrorEnum.GeoTargetConstantSuggestionError geo_target_constant_suggestion_error = 81;</code>
+   * @return Whether the geoTargetConstantSuggestionError field is set.
+   */
+  public boolean hasGeoTargetConstantSuggestionError() {
+    return errorCodeCase_ == 81;
+  }
   /**
    * <pre>
    * The reasons for the geo target constant suggestion error.
@@ -3606,6 +4464,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.CampaignDraftErrorEnum.CampaignDraftError campaign_draft_error = 82;</code>
+   * @return Whether the campaignDraftError field is set.
+   */
+  public boolean hasCampaignDraftError() {
+    return errorCodeCase_ == 82;
+  }
+  /**
+   * <pre>
+   * The reasons for the campaign draft error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.CampaignDraftErrorEnum.CampaignDraftError campaign_draft_error = 82;</code>
    * @return The enum numeric value on the wire for campaignDraftError.
    */
   public int getCampaignDraftErrorValue() {
@@ -3633,6 +4502,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int FEED_ITEM_ERROR_FIELD_NUMBER = 83;
+  /**
+   * <pre>
+   * The reasons for the feed item error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.FeedItemErrorEnum.FeedItemError feed_item_error = 83;</code>
+   * @return Whether the feedItemError field is set.
+   */
+  public boolean hasFeedItemError() {
+    return errorCodeCase_ == 83;
+  }
   /**
    * <pre>
    * The reasons for the feed item error
@@ -3672,6 +4552,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.LabelErrorEnum.LabelError label_error = 84;</code>
+   * @return Whether the labelError field is set.
+   */
+  public boolean hasLabelError() {
+    return errorCodeCase_ == 84;
+  }
+  /**
+   * <pre>
+   * The reason for the label error.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.LabelErrorEnum.LabelError label_error = 84;</code>
    * @return The enum numeric value on the wire for labelError.
    */
   public int getLabelErrorValue() {
@@ -3699,6 +4590,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int BILLING_SETUP_ERROR_FIELD_NUMBER = 87;
+  /**
+   * <pre>
+   * The reasons for the billing setup error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.BillingSetupErrorEnum.BillingSetupError billing_setup_error = 87;</code>
+   * @return Whether the billingSetupError field is set.
+   */
+  public boolean hasBillingSetupError() {
+    return errorCodeCase_ == 87;
+  }
   /**
    * <pre>
    * The reasons for the billing setup error
@@ -3738,6 +4640,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.CustomerClientLinkErrorEnum.CustomerClientLinkError customer_client_link_error = 88;</code>
+   * @return Whether the customerClientLinkError field is set.
+   */
+  public boolean hasCustomerClientLinkError() {
+    return errorCodeCase_ == 88;
+  }
+  /**
+   * <pre>
+   * The reasons for the customer client link error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.CustomerClientLinkErrorEnum.CustomerClientLinkError customer_client_link_error = 88;</code>
    * @return The enum numeric value on the wire for customerClientLinkError.
    */
   public int getCustomerClientLinkErrorValue() {
@@ -3765,6 +4678,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CUSTOMER_MANAGER_LINK_ERROR_FIELD_NUMBER = 91;
+  /**
+   * <pre>
+   * The reasons for the customer manager link error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.CustomerManagerLinkErrorEnum.CustomerManagerLinkError customer_manager_link_error = 91;</code>
+   * @return Whether the customerManagerLinkError field is set.
+   */
+  public boolean hasCustomerManagerLinkError() {
+    return errorCodeCase_ == 91;
+  }
   /**
    * <pre>
    * The reasons for the customer manager link error
@@ -3804,6 +4728,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.FeedMappingErrorEnum.FeedMappingError feed_mapping_error = 92;</code>
+   * @return Whether the feedMappingError field is set.
+   */
+  public boolean hasFeedMappingError() {
+    return errorCodeCase_ == 92;
+  }
+  /**
+   * <pre>
+   * The reasons for the feed mapping error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.FeedMappingErrorEnum.FeedMappingError feed_mapping_error = 92;</code>
    * @return The enum numeric value on the wire for feedMappingError.
    */
   public int getFeedMappingErrorValue() {
@@ -3831,6 +4766,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CUSTOMER_FEED_ERROR_FIELD_NUMBER = 93;
+  /**
+   * <pre>
+   * The reasons for the customer feed error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.CustomerFeedErrorEnum.CustomerFeedError customer_feed_error = 93;</code>
+   * @return Whether the customerFeedError field is set.
+   */
+  public boolean hasCustomerFeedError() {
+    return errorCodeCase_ == 93;
+  }
   /**
    * <pre>
    * The reasons for the customer feed error
@@ -3870,6 +4816,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.AdGroupFeedErrorEnum.AdGroupFeedError ad_group_feed_error = 94;</code>
+   * @return Whether the adGroupFeedError field is set.
+   */
+  public boolean hasAdGroupFeedError() {
+    return errorCodeCase_ == 94;
+  }
+  /**
+   * <pre>
+   * The reasons for the ad group feed error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.AdGroupFeedErrorEnum.AdGroupFeedError ad_group_feed_error = 94;</code>
    * @return The enum numeric value on the wire for adGroupFeedError.
    */
   public int getAdGroupFeedErrorValue() {
@@ -3897,6 +4854,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CAMPAIGN_FEED_ERROR_FIELD_NUMBER = 96;
+  /**
+   * <pre>
+   * The reasons for the campaign feed error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.CampaignFeedErrorEnum.CampaignFeedError campaign_feed_error = 96;</code>
+   * @return Whether the campaignFeedError field is set.
+   */
+  public boolean hasCampaignFeedError() {
+    return errorCodeCase_ == 96;
+  }
   /**
    * <pre>
    * The reasons for the campaign feed error
@@ -3936,6 +4904,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.CustomInterestErrorEnum.CustomInterestError custom_interest_error = 97;</code>
+   * @return Whether the customInterestError field is set.
+   */
+  public boolean hasCustomInterestError() {
+    return errorCodeCase_ == 97;
+  }
+  /**
+   * <pre>
+   * The reasons for the custom interest error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.CustomInterestErrorEnum.CustomInterestError custom_interest_error = 97;</code>
    * @return The enum numeric value on the wire for customInterestError.
    */
   public int getCustomInterestErrorValue() {
@@ -3963,6 +4942,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CAMPAIGN_EXPERIMENT_ERROR_FIELD_NUMBER = 98;
+  /**
+   * <pre>
+   * The reasons for the campaign experiment error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.CampaignExperimentErrorEnum.CampaignExperimentError campaign_experiment_error = 98;</code>
+   * @return Whether the campaignExperimentError field is set.
+   */
+  public boolean hasCampaignExperimentError() {
+    return errorCodeCase_ == 98;
+  }
   /**
    * <pre>
    * The reasons for the campaign experiment error
@@ -4002,6 +4992,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.ExtensionFeedItemErrorEnum.ExtensionFeedItemError extension_feed_item_error = 100;</code>
+   * @return Whether the extensionFeedItemError field is set.
+   */
+  public boolean hasExtensionFeedItemError() {
+    return errorCodeCase_ == 100;
+  }
+  /**
+   * <pre>
+   * The reasons for the extension feed item error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.ExtensionFeedItemErrorEnum.ExtensionFeedItemError extension_feed_item_error = 100;</code>
    * @return The enum numeric value on the wire for extensionFeedItemError.
    */
   public int getExtensionFeedItemErrorValue() {
@@ -4029,6 +5030,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int AD_PARAMETER_ERROR_FIELD_NUMBER = 101;
+  /**
+   * <pre>
+   * The reasons for the ad parameter error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.AdParameterErrorEnum.AdParameterError ad_parameter_error = 101;</code>
+   * @return Whether the adParameterError field is set.
+   */
+  public boolean hasAdParameterError() {
+    return errorCodeCase_ == 101;
+  }
   /**
    * <pre>
    * The reasons for the ad parameter error
@@ -4068,6 +5080,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.FeedItemValidationErrorEnum.FeedItemValidationError feed_item_validation_error = 102;</code>
+   * @return Whether the feedItemValidationError field is set.
+   */
+  public boolean hasFeedItemValidationError() {
+    return errorCodeCase_ == 102;
+  }
+  /**
+   * <pre>
+   * The reasons for the feed item validation error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.FeedItemValidationErrorEnum.FeedItemValidationError feed_item_validation_error = 102;</code>
    * @return The enum numeric value on the wire for feedItemValidationError.
    */
   public int getFeedItemValidationErrorValue() {
@@ -4095,6 +5118,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int EXTENSION_SETTING_ERROR_FIELD_NUMBER = 103;
+  /**
+   * <pre>
+   * The reasons for the extension setting error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.ExtensionSettingErrorEnum.ExtensionSettingError extension_setting_error = 103;</code>
+   * @return Whether the extensionSettingError field is set.
+   */
+  public boolean hasExtensionSettingError() {
+    return errorCodeCase_ == 103;
+  }
   /**
    * <pre>
    * The reasons for the extension setting error
@@ -4134,6 +5168,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.FeedItemTargetErrorEnum.FeedItemTargetError feed_item_target_error = 104;</code>
+   * @return Whether the feedItemTargetError field is set.
+   */
+  public boolean hasFeedItemTargetError() {
+    return errorCodeCase_ == 104;
+  }
+  /**
+   * <pre>
+   * The reasons for the feed item target error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.FeedItemTargetErrorEnum.FeedItemTargetError feed_item_target_error = 104;</code>
    * @return The enum numeric value on the wire for feedItemTargetError.
    */
   public int getFeedItemTargetErrorValue() {
@@ -4161,6 +5206,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int POLICY_VIOLATION_ERROR_FIELD_NUMBER = 105;
+  /**
+   * <pre>
+   * The reasons for the policy violation error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.PolicyViolationErrorEnum.PolicyViolationError policy_violation_error = 105;</code>
+   * @return Whether the policyViolationError field is set.
+   */
+  public boolean hasPolicyViolationError() {
+    return errorCodeCase_ == 105;
+  }
   /**
    * <pre>
    * The reasons for the policy violation error
@@ -4200,6 +5256,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.PartialFailureErrorEnum.PartialFailureError partial_failure_error = 112;</code>
+   * @return Whether the partialFailureError field is set.
+   */
+  public boolean hasPartialFailureError() {
+    return errorCodeCase_ == 112;
+  }
+  /**
+   * <pre>
+   * The reasons for the mutate job error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.PartialFailureErrorEnum.PartialFailureError partial_failure_error = 112;</code>
    * @return The enum numeric value on the wire for partialFailureError.
    */
   public int getPartialFailureErrorValue() {
@@ -4227,6 +5294,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int POLICY_VALIDATION_PARAMETER_ERROR_FIELD_NUMBER = 114;
+  /**
+   * <pre>
+   * The reasons for the policy validation parameter error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.PolicyValidationParameterErrorEnum.PolicyValidationParameterError policy_validation_parameter_error = 114;</code>
+   * @return Whether the policyValidationParameterError field is set.
+   */
+  public boolean hasPolicyValidationParameterError() {
+    return errorCodeCase_ == 114;
+  }
   /**
    * <pre>
    * The reasons for the policy validation parameter error
@@ -4266,6 +5344,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.SizeLimitErrorEnum.SizeLimitError size_limit_error = 118;</code>
+   * @return Whether the sizeLimitError field is set.
+   */
+  public boolean hasSizeLimitError() {
+    return errorCodeCase_ == 118;
+  }
+  /**
+   * <pre>
+   * The reasons for the size limit error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.SizeLimitErrorEnum.SizeLimitError size_limit_error = 118;</code>
    * @return The enum numeric value on the wire for sizeLimitError.
    */
   public int getSizeLimitErrorValue() {
@@ -4293,6 +5382,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int OFFLINE_USER_DATA_JOB_ERROR_FIELD_NUMBER = 119;
+  /**
+   * <pre>
+   * The reasons for the offline user data job error.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.OfflineUserDataJobErrorEnum.OfflineUserDataJobError offline_user_data_job_error = 119;</code>
+   * @return Whether the offlineUserDataJobError field is set.
+   */
+  public boolean hasOfflineUserDataJobError() {
+    return errorCodeCase_ == 119;
+  }
   /**
    * <pre>
    * The reasons for the offline user data job error.
@@ -4332,6 +5432,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.NotAllowlistedErrorEnum.NotAllowlistedError not_allowlisted_error = 137;</code>
+   * @return Whether the notAllowlistedError field is set.
+   */
+  public boolean hasNotAllowlistedError() {
+    return errorCodeCase_ == 137;
+  }
+  /**
+   * <pre>
+   * The reasons for the not allowlisted error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.NotAllowlistedErrorEnum.NotAllowlistedError not_allowlisted_error = 137;</code>
    * @return The enum numeric value on the wire for notAllowlistedError.
    */
   public int getNotAllowlistedErrorValue() {
@@ -4359,6 +5470,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int MANAGER_LINK_ERROR_FIELD_NUMBER = 121;
+  /**
+   * <pre>
+   * The reasons for the manager link error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.ManagerLinkErrorEnum.ManagerLinkError manager_link_error = 121;</code>
+   * @return Whether the managerLinkError field is set.
+   */
+  public boolean hasManagerLinkError() {
+    return errorCodeCase_ == 121;
+  }
   /**
    * <pre>
    * The reasons for the manager link error
@@ -4398,6 +5520,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.CurrencyCodeErrorEnum.CurrencyCodeError currency_code_error = 122;</code>
+   * @return Whether the currencyCodeError field is set.
+   */
+  public boolean hasCurrencyCodeError() {
+    return errorCodeCase_ == 122;
+  }
+  /**
+   * <pre>
+   * The reasons for the currency code error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.CurrencyCodeErrorEnum.CurrencyCodeError currency_code_error = 122;</code>
    * @return The enum numeric value on the wire for currencyCodeError.
    */
   public int getCurrencyCodeErrorValue() {
@@ -4425,6 +5558,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ACCESS_INVITATION_ERROR_FIELD_NUMBER = 124;
+  /**
+   * <pre>
+   * The reasons for the access invitation error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.AccessInvitationErrorEnum.AccessInvitationError access_invitation_error = 124;</code>
+   * @return Whether the accessInvitationError field is set.
+   */
+  public boolean hasAccessInvitationError() {
+    return errorCodeCase_ == 124;
+  }
   /**
    * <pre>
    * The reasons for the access invitation error
@@ -4464,6 +5608,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.ReachPlanErrorEnum.ReachPlanError reach_plan_error = 125;</code>
+   * @return Whether the reachPlanError field is set.
+   */
+  public boolean hasReachPlanError() {
+    return errorCodeCase_ == 125;
+  }
+  /**
+   * <pre>
+   * The reasons for the reach plan error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.ReachPlanErrorEnum.ReachPlanError reach_plan_error = 125;</code>
    * @return The enum numeric value on the wire for reachPlanError.
    */
   public int getReachPlanErrorValue() {
@@ -4491,6 +5646,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int INVOICE_ERROR_FIELD_NUMBER = 126;
+  /**
+   * <pre>
+   * The reasons for the invoice error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.InvoiceErrorEnum.InvoiceError invoice_error = 126;</code>
+   * @return Whether the invoiceError field is set.
+   */
+  public boolean hasInvoiceError() {
+    return errorCodeCase_ == 126;
+  }
   /**
    * <pre>
    * The reasons for the invoice error
@@ -4530,6 +5696,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.PaymentsAccountErrorEnum.PaymentsAccountError payments_account_error = 127;</code>
+   * @return Whether the paymentsAccountError field is set.
+   */
+  public boolean hasPaymentsAccountError() {
+    return errorCodeCase_ == 127;
+  }
+  /**
+   * <pre>
+   * The reasons for errors in payments accounts service
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.PaymentsAccountErrorEnum.PaymentsAccountError payments_account_error = 127;</code>
    * @return The enum numeric value on the wire for paymentsAccountError.
    */
   public int getPaymentsAccountErrorValue() {
@@ -4557,6 +5734,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TIME_ZONE_ERROR_FIELD_NUMBER = 128;
+  /**
+   * <pre>
+   * The reasons for the time zone error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.TimeZoneErrorEnum.TimeZoneError time_zone_error = 128;</code>
+   * @return Whether the timeZoneError field is set.
+   */
+  public boolean hasTimeZoneError() {
+    return errorCodeCase_ == 128;
+  }
   /**
    * <pre>
    * The reasons for the time zone error
@@ -4596,6 +5784,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.AssetLinkErrorEnum.AssetLinkError asset_link_error = 129;</code>
+   * @return Whether the assetLinkError field is set.
+   */
+  public boolean hasAssetLinkError() {
+    return errorCodeCase_ == 129;
+  }
+  /**
+   * <pre>
+   * The reasons for the asset link error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.AssetLinkErrorEnum.AssetLinkError asset_link_error = 129;</code>
    * @return The enum numeric value on the wire for assetLinkError.
    */
   public int getAssetLinkErrorValue() {
@@ -4623,6 +5822,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int USER_DATA_ERROR_FIELD_NUMBER = 130;
+  /**
+   * <pre>
+   * The reasons for the user data error.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.UserDataErrorEnum.UserDataError user_data_error = 130;</code>
+   * @return Whether the userDataError field is set.
+   */
+  public boolean hasUserDataError() {
+    return errorCodeCase_ == 130;
+  }
   /**
    * <pre>
    * The reasons for the user data error.
@@ -4662,6 +5872,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.BatchJobErrorEnum.BatchJobError batch_job_error = 131;</code>
+   * @return Whether the batchJobError field is set.
+   */
+  public boolean hasBatchJobError() {
+    return errorCodeCase_ == 131;
+  }
+  /**
+   * <pre>
+   * The reasons for the batch job error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.BatchJobErrorEnum.BatchJobError batch_job_error = 131;</code>
    * @return The enum numeric value on the wire for batchJobError.
    */
   public int getBatchJobErrorValue() {
@@ -4695,6 +5916,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.errors.AccountLinkErrorEnum.AccountLinkError account_link_error = 134;</code>
+   * @return Whether the accountLinkError field is set.
+   */
+  public boolean hasAccountLinkError() {
+    return errorCodeCase_ == 134;
+  }
+  /**
+   * <pre>
+   * The reasons for the account link status change error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.AccountLinkErrorEnum.AccountLinkError account_link_error = 134;</code>
    * @return The enum numeric value on the wire for accountLinkError.
    */
   public int getAccountLinkErrorValue() {
@@ -4722,6 +5954,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int THIRD_PARTY_APP_ANALYTICS_LINK_ERROR_FIELD_NUMBER = 135;
+  /**
+   * <pre>
+   * The reasons for the third party app analytics link mutate error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.errors.ThirdPartyAppAnalyticsLinkErrorEnum.ThirdPartyAppAnalyticsLinkError third_party_app_analytics_link_error = 135;</code>
+   * @return Whether the thirdPartyAppAnalyticsLinkError field is set.
+   */
+  public boolean hasThirdPartyAppAnalyticsLinkError() {
+    return errorCodeCase_ == 135;
+  }
   /**
    * <pre>
    * The reasons for the third party app analytics link mutate error
@@ -7567,6 +8810,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.RequestErrorEnum.RequestError request_error = 1;</code>
+     * @return Whether the requestError field is set.
+     */
+    @java.lang.Override
+    public boolean hasRequestError() {
+      return errorCodeCase_ == 1;
+    }
+    /**
+     * <pre>
+     * An error caused by the request
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.RequestErrorEnum.RequestError request_error = 1;</code>
      * @return The enum numeric value on the wire for requestError.
      */
     @java.lang.Override
@@ -7644,6 +8899,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * An error with a Bidding Strategy mutate.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.BiddingStrategyErrorEnum.BiddingStrategyError bidding_strategy_error = 2;</code>
+     * @return Whether the biddingStrategyError field is set.
+     */
+    @java.lang.Override
+    public boolean hasBiddingStrategyError() {
+      return errorCodeCase_ == 2;
+    }
     /**
      * <pre>
      * An error with a Bidding Strategy mutate.
@@ -7733,6 +9000,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.UrlFieldErrorEnum.UrlFieldError url_field_error = 3;</code>
+     * @return Whether the urlFieldError field is set.
+     */
+    @java.lang.Override
+    public boolean hasUrlFieldError() {
+      return errorCodeCase_ == 3;
+    }
+    /**
+     * <pre>
+     * An error with a URL field mutate.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.UrlFieldErrorEnum.UrlFieldError url_field_error = 3;</code>
      * @return The enum numeric value on the wire for urlFieldError.
      */
     @java.lang.Override
@@ -7810,6 +9089,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * An error with a list operation.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.ListOperationErrorEnum.ListOperationError list_operation_error = 4;</code>
+     * @return Whether the listOperationError field is set.
+     */
+    @java.lang.Override
+    public boolean hasListOperationError() {
+      return errorCodeCase_ == 4;
+    }
     /**
      * <pre>
      * An error with a list operation.
@@ -7899,6 +9190,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.QueryErrorEnum.QueryError query_error = 5;</code>
+     * @return Whether the queryError field is set.
+     */
+    @java.lang.Override
+    public boolean hasQueryError() {
+      return errorCodeCase_ == 5;
+    }
+    /**
+     * <pre>
+     * An error with an AWQL query
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.QueryErrorEnum.QueryError query_error = 5;</code>
      * @return The enum numeric value on the wire for queryError.
      */
     @java.lang.Override
@@ -7976,6 +9279,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * An error with a mutate
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.MutateErrorEnum.MutateError mutate_error = 7;</code>
+     * @return Whether the mutateError field is set.
+     */
+    @java.lang.Override
+    public boolean hasMutateError() {
+      return errorCodeCase_ == 7;
+    }
     /**
      * <pre>
      * An error with a mutate
@@ -8065,6 +9380,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.FieldMaskErrorEnum.FieldMaskError field_mask_error = 8;</code>
+     * @return Whether the fieldMaskError field is set.
+     */
+    @java.lang.Override
+    public boolean hasFieldMaskError() {
+      return errorCodeCase_ == 8;
+    }
+    /**
+     * <pre>
+     * An error with a field mask
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.FieldMaskErrorEnum.FieldMaskError field_mask_error = 8;</code>
      * @return The enum numeric value on the wire for fieldMaskError.
      */
     @java.lang.Override
@@ -8142,6 +9469,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * An error encountered when trying to authorize a user.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.AuthorizationErrorEnum.AuthorizationError authorization_error = 9;</code>
+     * @return Whether the authorizationError field is set.
+     */
+    @java.lang.Override
+    public boolean hasAuthorizationError() {
+      return errorCodeCase_ == 9;
+    }
     /**
      * <pre>
      * An error encountered when trying to authorize a user.
@@ -8231,6 +9570,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.InternalErrorEnum.InternalError internal_error = 10;</code>
+     * @return Whether the internalError field is set.
+     */
+    @java.lang.Override
+    public boolean hasInternalError() {
+      return errorCodeCase_ == 10;
+    }
+    /**
+     * <pre>
+     * An unexpected server-side error.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.InternalErrorEnum.InternalError internal_error = 10;</code>
      * @return The enum numeric value on the wire for internalError.
      */
     @java.lang.Override
@@ -8308,6 +9659,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * An error with the amonut of quota remaining.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.QuotaErrorEnum.QuotaError quota_error = 11;</code>
+     * @return Whether the quotaError field is set.
+     */
+    @java.lang.Override
+    public boolean hasQuotaError() {
+      return errorCodeCase_ == 11;
+    }
     /**
      * <pre>
      * An error with the amonut of quota remaining.
@@ -8397,6 +9760,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.AdErrorEnum.AdError ad_error = 12;</code>
+     * @return Whether the adError field is set.
+     */
+    @java.lang.Override
+    public boolean hasAdError() {
+      return errorCodeCase_ == 12;
+    }
+    /**
+     * <pre>
+     * An error with an Ad Group Ad mutate.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.AdErrorEnum.AdError ad_error = 12;</code>
      * @return The enum numeric value on the wire for adError.
      */
     @java.lang.Override
@@ -8474,6 +9849,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * An error with an Ad Group mutate.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.AdGroupErrorEnum.AdGroupError ad_group_error = 13;</code>
+     * @return Whether the adGroupError field is set.
+     */
+    @java.lang.Override
+    public boolean hasAdGroupError() {
+      return errorCodeCase_ == 13;
+    }
     /**
      * <pre>
      * An error with an Ad Group mutate.
@@ -8563,6 +9950,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.CampaignBudgetErrorEnum.CampaignBudgetError campaign_budget_error = 14;</code>
+     * @return Whether the campaignBudgetError field is set.
+     */
+    @java.lang.Override
+    public boolean hasCampaignBudgetError() {
+      return errorCodeCase_ == 14;
+    }
+    /**
+     * <pre>
+     * An error with a Campaign Budget mutate.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.CampaignBudgetErrorEnum.CampaignBudgetError campaign_budget_error = 14;</code>
      * @return The enum numeric value on the wire for campaignBudgetError.
      */
     @java.lang.Override
@@ -8640,6 +10039,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * An error with a Campaign mutate.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.CampaignErrorEnum.CampaignError campaign_error = 15;</code>
+     * @return Whether the campaignError field is set.
+     */
+    @java.lang.Override
+    public boolean hasCampaignError() {
+      return errorCodeCase_ == 15;
+    }
     /**
      * <pre>
      * An error with a Campaign mutate.
@@ -8729,6 +10140,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.AuthenticationErrorEnum.AuthenticationError authentication_error = 17;</code>
+     * @return Whether the authenticationError field is set.
+     */
+    @java.lang.Override
+    public boolean hasAuthenticationError() {
+      return errorCodeCase_ == 17;
+    }
+    /**
+     * <pre>
+     * Indicates failure to properly authenticate user.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.AuthenticationErrorEnum.AuthenticationError authentication_error = 17;</code>
      * @return The enum numeric value on the wire for authenticationError.
      */
     @java.lang.Override
@@ -8806,6 +10229,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Indicates failure to properly authenticate user.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.AdGroupCriterionErrorEnum.AdGroupCriterionError ad_group_criterion_error = 18;</code>
+     * @return Whether the adGroupCriterionError field is set.
+     */
+    @java.lang.Override
+    public boolean hasAdGroupCriterionError() {
+      return errorCodeCase_ == 18;
+    }
     /**
      * <pre>
      * Indicates failure to properly authenticate user.
@@ -8895,6 +10330,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.AdCustomizerErrorEnum.AdCustomizerError ad_customizer_error = 19;</code>
+     * @return Whether the adCustomizerError field is set.
+     */
+    @java.lang.Override
+    public boolean hasAdCustomizerError() {
+      return errorCodeCase_ == 19;
+    }
+    /**
+     * <pre>
+     * The reasons for the ad customizer error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.AdCustomizerErrorEnum.AdCustomizerError ad_customizer_error = 19;</code>
      * @return The enum numeric value on the wire for adCustomizerError.
      */
     @java.lang.Override
@@ -8972,6 +10419,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the ad group ad error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.AdGroupAdErrorEnum.AdGroupAdError ad_group_ad_error = 21;</code>
+     * @return Whether the adGroupAdError field is set.
+     */
+    @java.lang.Override
+    public boolean hasAdGroupAdError() {
+      return errorCodeCase_ == 21;
+    }
     /**
      * <pre>
      * The reasons for the ad group ad error
@@ -9061,6 +10520,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.AdSharingErrorEnum.AdSharingError ad_sharing_error = 24;</code>
+     * @return Whether the adSharingError field is set.
+     */
+    @java.lang.Override
+    public boolean hasAdSharingError() {
+      return errorCodeCase_ == 24;
+    }
+    /**
+     * <pre>
+     * The reasons for the ad sharing error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.AdSharingErrorEnum.AdSharingError ad_sharing_error = 24;</code>
      * @return The enum numeric value on the wire for adSharingError.
      */
     @java.lang.Override
@@ -9138,6 +10609,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the adx error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.AdxErrorEnum.AdxError adx_error = 25;</code>
+     * @return Whether the adxError field is set.
+     */
+    @java.lang.Override
+    public boolean hasAdxError() {
+      return errorCodeCase_ == 25;
+    }
     /**
      * <pre>
      * The reasons for the adx error
@@ -9227,6 +10710,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.AssetErrorEnum.AssetError asset_error = 107;</code>
+     * @return Whether the assetError field is set.
+     */
+    @java.lang.Override
+    public boolean hasAssetError() {
+      return errorCodeCase_ == 107;
+    }
+    /**
+     * <pre>
+     * The reasons for the asset error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.AssetErrorEnum.AssetError asset_error = 107;</code>
      * @return The enum numeric value on the wire for assetError.
      */
     @java.lang.Override
@@ -9304,6 +10799,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the bidding errors
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.BiddingErrorEnum.BiddingError bidding_error = 26;</code>
+     * @return Whether the biddingError field is set.
+     */
+    @java.lang.Override
+    public boolean hasBiddingError() {
+      return errorCodeCase_ == 26;
+    }
     /**
      * <pre>
      * The reasons for the bidding errors
@@ -9393,6 +10900,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.CampaignCriterionErrorEnum.CampaignCriterionError campaign_criterion_error = 29;</code>
+     * @return Whether the campaignCriterionError field is set.
+     */
+    @java.lang.Override
+    public boolean hasCampaignCriterionError() {
+      return errorCodeCase_ == 29;
+    }
+    /**
+     * <pre>
+     * The reasons for the campaign criterion error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.CampaignCriterionErrorEnum.CampaignCriterionError campaign_criterion_error = 29;</code>
      * @return The enum numeric value on the wire for campaignCriterionError.
      */
     @java.lang.Override
@@ -9470,6 +10989,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the collection size error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.CollectionSizeErrorEnum.CollectionSizeError collection_size_error = 31;</code>
+     * @return Whether the collectionSizeError field is set.
+     */
+    @java.lang.Override
+    public boolean hasCollectionSizeError() {
+      return errorCodeCase_ == 31;
+    }
     /**
      * <pre>
      * The reasons for the collection size error
@@ -9559,6 +11090,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.CountryCodeErrorEnum.CountryCodeError country_code_error = 109;</code>
+     * @return Whether the countryCodeError field is set.
+     */
+    @java.lang.Override
+    public boolean hasCountryCodeError() {
+      return errorCodeCase_ == 109;
+    }
+    /**
+     * <pre>
+     * The reasons for the country code error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.CountryCodeErrorEnum.CountryCodeError country_code_error = 109;</code>
      * @return The enum numeric value on the wire for countryCodeError.
      */
     @java.lang.Override
@@ -9636,6 +11179,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the criterion error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.CriterionErrorEnum.CriterionError criterion_error = 32;</code>
+     * @return Whether the criterionError field is set.
+     */
+    @java.lang.Override
+    public boolean hasCriterionError() {
+      return errorCodeCase_ == 32;
+    }
     /**
      * <pre>
      * The reasons for the criterion error
@@ -9725,6 +11280,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.CustomerErrorEnum.CustomerError customer_error = 90;</code>
+     * @return Whether the customerError field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomerError() {
+      return errorCodeCase_ == 90;
+    }
+    /**
+     * <pre>
+     * The reasons for the customer error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.CustomerErrorEnum.CustomerError customer_error = 90;</code>
      * @return The enum numeric value on the wire for customerError.
      */
     @java.lang.Override
@@ -9802,6 +11369,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the date error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.DateErrorEnum.DateError date_error = 33;</code>
+     * @return Whether the dateError field is set.
+     */
+    @java.lang.Override
+    public boolean hasDateError() {
+      return errorCodeCase_ == 33;
+    }
     /**
      * <pre>
      * The reasons for the date error
@@ -9891,6 +11470,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.DateRangeErrorEnum.DateRangeError date_range_error = 34;</code>
+     * @return Whether the dateRangeError field is set.
+     */
+    @java.lang.Override
+    public boolean hasDateRangeError() {
+      return errorCodeCase_ == 34;
+    }
+    /**
+     * <pre>
+     * The reasons for the date range error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.DateRangeErrorEnum.DateRangeError date_range_error = 34;</code>
      * @return The enum numeric value on the wire for dateRangeError.
      */
     @java.lang.Override
@@ -9968,6 +11559,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the distinct error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.DistinctErrorEnum.DistinctError distinct_error = 35;</code>
+     * @return Whether the distinctError field is set.
+     */
+    @java.lang.Override
+    public boolean hasDistinctError() {
+      return errorCodeCase_ == 35;
+    }
     /**
      * <pre>
      * The reasons for the distinct error
@@ -10057,6 +11660,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.FeedAttributeReferenceErrorEnum.FeedAttributeReferenceError feed_attribute_reference_error = 36;</code>
+     * @return Whether the feedAttributeReferenceError field is set.
+     */
+    @java.lang.Override
+    public boolean hasFeedAttributeReferenceError() {
+      return errorCodeCase_ == 36;
+    }
+    /**
+     * <pre>
+     * The reasons for the feed attribute reference error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.FeedAttributeReferenceErrorEnum.FeedAttributeReferenceError feed_attribute_reference_error = 36;</code>
      * @return The enum numeric value on the wire for feedAttributeReferenceError.
      */
     @java.lang.Override
@@ -10134,6 +11749,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the function error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.FunctionErrorEnum.FunctionError function_error = 37;</code>
+     * @return Whether the functionError field is set.
+     */
+    @java.lang.Override
+    public boolean hasFunctionError() {
+      return errorCodeCase_ == 37;
+    }
     /**
      * <pre>
      * The reasons for the function error
@@ -10223,6 +11850,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.FunctionParsingErrorEnum.FunctionParsingError function_parsing_error = 38;</code>
+     * @return Whether the functionParsingError field is set.
+     */
+    @java.lang.Override
+    public boolean hasFunctionParsingError() {
+      return errorCodeCase_ == 38;
+    }
+    /**
+     * <pre>
+     * The reasons for the function parsing error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.FunctionParsingErrorEnum.FunctionParsingError function_parsing_error = 38;</code>
      * @return The enum numeric value on the wire for functionParsingError.
      */
     @java.lang.Override
@@ -10300,6 +11939,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the id error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.IdErrorEnum.IdError id_error = 39;</code>
+     * @return Whether the idError field is set.
+     */
+    @java.lang.Override
+    public boolean hasIdError() {
+      return errorCodeCase_ == 39;
+    }
     /**
      * <pre>
      * The reasons for the id error
@@ -10389,6 +12040,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.ImageErrorEnum.ImageError image_error = 40;</code>
+     * @return Whether the imageError field is set.
+     */
+    @java.lang.Override
+    public boolean hasImageError() {
+      return errorCodeCase_ == 40;
+    }
+    /**
+     * <pre>
+     * The reasons for the image error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.ImageErrorEnum.ImageError image_error = 40;</code>
      * @return The enum numeric value on the wire for imageError.
      */
     @java.lang.Override
@@ -10466,6 +12129,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the language code error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.LanguageCodeErrorEnum.LanguageCodeError language_code_error = 110;</code>
+     * @return Whether the languageCodeError field is set.
+     */
+    @java.lang.Override
+    public boolean hasLanguageCodeError() {
+      return errorCodeCase_ == 110;
+    }
     /**
      * <pre>
      * The reasons for the language code error
@@ -10555,6 +12230,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.MediaBundleErrorEnum.MediaBundleError media_bundle_error = 42;</code>
+     * @return Whether the mediaBundleError field is set.
+     */
+    @java.lang.Override
+    public boolean hasMediaBundleError() {
+      return errorCodeCase_ == 42;
+    }
+    /**
+     * <pre>
+     * The reasons for the media bundle error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.MediaBundleErrorEnum.MediaBundleError media_bundle_error = 42;</code>
      * @return The enum numeric value on the wire for mediaBundleError.
      */
     @java.lang.Override
@@ -10632,6 +12319,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for media uploading errors.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.MediaUploadErrorEnum.MediaUploadError media_upload_error = 116;</code>
+     * @return Whether the mediaUploadError field is set.
+     */
+    @java.lang.Override
+    public boolean hasMediaUploadError() {
+      return errorCodeCase_ == 116;
+    }
     /**
      * <pre>
      * The reasons for media uploading errors.
@@ -10721,6 +12420,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.MediaFileErrorEnum.MediaFileError media_file_error = 86;</code>
+     * @return Whether the mediaFileError field is set.
+     */
+    @java.lang.Override
+    public boolean hasMediaFileError() {
+      return errorCodeCase_ == 86;
+    }
+    /**
+     * <pre>
+     * The reasons for the media file error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.MediaFileErrorEnum.MediaFileError media_file_error = 86;</code>
      * @return The enum numeric value on the wire for mediaFileError.
      */
     @java.lang.Override
@@ -10798,6 +12509,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the multiplier error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.MultiplierErrorEnum.MultiplierError multiplier_error = 44;</code>
+     * @return Whether the multiplierError field is set.
+     */
+    @java.lang.Override
+    public boolean hasMultiplierError() {
+      return errorCodeCase_ == 44;
+    }
     /**
      * <pre>
      * The reasons for the multiplier error
@@ -10887,6 +12610,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.NewResourceCreationErrorEnum.NewResourceCreationError new_resource_creation_error = 45;</code>
+     * @return Whether the newResourceCreationError field is set.
+     */
+    @java.lang.Override
+    public boolean hasNewResourceCreationError() {
+      return errorCodeCase_ == 45;
+    }
+    /**
+     * <pre>
+     * The reasons for the new resource creation error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.NewResourceCreationErrorEnum.NewResourceCreationError new_resource_creation_error = 45;</code>
      * @return The enum numeric value on the wire for newResourceCreationError.
      */
     @java.lang.Override
@@ -10964,6 +12699,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the not empty error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.NotEmptyErrorEnum.NotEmptyError not_empty_error = 46;</code>
+     * @return Whether the notEmptyError field is set.
+     */
+    @java.lang.Override
+    public boolean hasNotEmptyError() {
+      return errorCodeCase_ == 46;
+    }
     /**
      * <pre>
      * The reasons for the not empty error
@@ -11053,6 +12800,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.NullErrorEnum.NullError null_error = 47;</code>
+     * @return Whether the nullError field is set.
+     */
+    @java.lang.Override
+    public boolean hasNullError() {
+      return errorCodeCase_ == 47;
+    }
+    /**
+     * <pre>
+     * The reasons for the null error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.NullErrorEnum.NullError null_error = 47;</code>
      * @return The enum numeric value on the wire for nullError.
      */
     @java.lang.Override
@@ -11130,6 +12889,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the operator error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.OperatorErrorEnum.OperatorError operator_error = 48;</code>
+     * @return Whether the operatorError field is set.
+     */
+    @java.lang.Override
+    public boolean hasOperatorError() {
+      return errorCodeCase_ == 48;
+    }
     /**
      * <pre>
      * The reasons for the operator error
@@ -11219,6 +12990,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.RangeErrorEnum.RangeError range_error = 49;</code>
+     * @return Whether the rangeError field is set.
+     */
+    @java.lang.Override
+    public boolean hasRangeError() {
+      return errorCodeCase_ == 49;
+    }
+    /**
+     * <pre>
+     * The reasons for the range error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.RangeErrorEnum.RangeError range_error = 49;</code>
      * @return The enum numeric value on the wire for rangeError.
      */
     @java.lang.Override
@@ -11296,6 +13079,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for error in applying a recommendation
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.RecommendationErrorEnum.RecommendationError recommendation_error = 58;</code>
+     * @return Whether the recommendationError field is set.
+     */
+    @java.lang.Override
+    public boolean hasRecommendationError() {
+      return errorCodeCase_ == 58;
+    }
     /**
      * <pre>
      * The reasons for error in applying a recommendation
@@ -11385,6 +13180,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.RegionCodeErrorEnum.RegionCodeError region_code_error = 51;</code>
+     * @return Whether the regionCodeError field is set.
+     */
+    @java.lang.Override
+    public boolean hasRegionCodeError() {
+      return errorCodeCase_ == 51;
+    }
+    /**
+     * <pre>
+     * The reasons for the region code error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.RegionCodeErrorEnum.RegionCodeError region_code_error = 51;</code>
      * @return The enum numeric value on the wire for regionCodeError.
      */
     @java.lang.Override
@@ -11462,6 +13269,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the setting error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.SettingErrorEnum.SettingError setting_error = 52;</code>
+     * @return Whether the settingError field is set.
+     */
+    @java.lang.Override
+    public boolean hasSettingError() {
+      return errorCodeCase_ == 52;
+    }
     /**
      * <pre>
      * The reasons for the setting error
@@ -11551,6 +13370,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.StringFormatErrorEnum.StringFormatError string_format_error = 53;</code>
+     * @return Whether the stringFormatError field is set.
+     */
+    @java.lang.Override
+    public boolean hasStringFormatError() {
+      return errorCodeCase_ == 53;
+    }
+    /**
+     * <pre>
+     * The reasons for the string format error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.StringFormatErrorEnum.StringFormatError string_format_error = 53;</code>
      * @return The enum numeric value on the wire for stringFormatError.
      */
     @java.lang.Override
@@ -11628,6 +13459,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the string length error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.StringLengthErrorEnum.StringLengthError string_length_error = 54;</code>
+     * @return Whether the stringLengthError field is set.
+     */
+    @java.lang.Override
+    public boolean hasStringLengthError() {
+      return errorCodeCase_ == 54;
+    }
     /**
      * <pre>
      * The reasons for the string length error
@@ -11717,6 +13560,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.OperationAccessDeniedErrorEnum.OperationAccessDeniedError operation_access_denied_error = 55;</code>
+     * @return Whether the operationAccessDeniedError field is set.
+     */
+    @java.lang.Override
+    public boolean hasOperationAccessDeniedError() {
+      return errorCodeCase_ == 55;
+    }
+    /**
+     * <pre>
+     * The reasons for the operation access denied error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.OperationAccessDeniedErrorEnum.OperationAccessDeniedError operation_access_denied_error = 55;</code>
      * @return The enum numeric value on the wire for operationAccessDeniedError.
      */
     @java.lang.Override
@@ -11794,6 +13649,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the resource access denied error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.ResourceAccessDeniedErrorEnum.ResourceAccessDeniedError resource_access_denied_error = 56;</code>
+     * @return Whether the resourceAccessDeniedError field is set.
+     */
+    @java.lang.Override
+    public boolean hasResourceAccessDeniedError() {
+      return errorCodeCase_ == 56;
+    }
     /**
      * <pre>
      * The reasons for the resource access denied error
@@ -11883,6 +13750,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.ResourceCountLimitExceededErrorEnum.ResourceCountLimitExceededError resource_count_limit_exceeded_error = 57;</code>
+     * @return Whether the resourceCountLimitExceededError field is set.
+     */
+    @java.lang.Override
+    public boolean hasResourceCountLimitExceededError() {
+      return errorCodeCase_ == 57;
+    }
+    /**
+     * <pre>
+     * The reasons for the resource count limit exceeded error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.ResourceCountLimitExceededErrorEnum.ResourceCountLimitExceededError resource_count_limit_exceeded_error = 57;</code>
      * @return The enum numeric value on the wire for resourceCountLimitExceededError.
      */
     @java.lang.Override
@@ -11960,6 +13839,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for YouTube video registration errors.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.YoutubeVideoRegistrationErrorEnum.YoutubeVideoRegistrationError youtube_video_registration_error = 117;</code>
+     * @return Whether the youtubeVideoRegistrationError field is set.
+     */
+    @java.lang.Override
+    public boolean hasYoutubeVideoRegistrationError() {
+      return errorCodeCase_ == 117;
+    }
     /**
      * <pre>
      * The reasons for YouTube video registration errors.
@@ -12049,6 +13940,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.AdGroupBidModifierErrorEnum.AdGroupBidModifierError ad_group_bid_modifier_error = 59;</code>
+     * @return Whether the adGroupBidModifierError field is set.
+     */
+    @java.lang.Override
+    public boolean hasAdGroupBidModifierError() {
+      return errorCodeCase_ == 59;
+    }
+    /**
+     * <pre>
+     * The reasons for the ad group bid modifier error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.AdGroupBidModifierErrorEnum.AdGroupBidModifierError ad_group_bid_modifier_error = 59;</code>
      * @return The enum numeric value on the wire for adGroupBidModifierError.
      */
     @java.lang.Override
@@ -12126,6 +14029,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the context error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.ContextErrorEnum.ContextError context_error = 60;</code>
+     * @return Whether the contextError field is set.
+     */
+    @java.lang.Override
+    public boolean hasContextError() {
+      return errorCodeCase_ == 60;
+    }
     /**
      * <pre>
      * The reasons for the context error
@@ -12215,6 +14130,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.FieldErrorEnum.FieldError field_error = 61;</code>
+     * @return Whether the fieldError field is set.
+     */
+    @java.lang.Override
+    public boolean hasFieldError() {
+      return errorCodeCase_ == 61;
+    }
+    /**
+     * <pre>
+     * The reasons for the field error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.FieldErrorEnum.FieldError field_error = 61;</code>
      * @return The enum numeric value on the wire for fieldError.
      */
     @java.lang.Override
@@ -12292,6 +14219,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the shared set error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.SharedSetErrorEnum.SharedSetError shared_set_error = 62;</code>
+     * @return Whether the sharedSetError field is set.
+     */
+    @java.lang.Override
+    public boolean hasSharedSetError() {
+      return errorCodeCase_ == 62;
+    }
     /**
      * <pre>
      * The reasons for the shared set error
@@ -12381,6 +14320,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.SharedCriterionErrorEnum.SharedCriterionError shared_criterion_error = 63;</code>
+     * @return Whether the sharedCriterionError field is set.
+     */
+    @java.lang.Override
+    public boolean hasSharedCriterionError() {
+      return errorCodeCase_ == 63;
+    }
+    /**
+     * <pre>
+     * The reasons for the shared criterion error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.SharedCriterionErrorEnum.SharedCriterionError shared_criterion_error = 63;</code>
      * @return The enum numeric value on the wire for sharedCriterionError.
      */
     @java.lang.Override
@@ -12458,6 +14409,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the campaign shared set error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.CampaignSharedSetErrorEnum.CampaignSharedSetError campaign_shared_set_error = 64;</code>
+     * @return Whether the campaignSharedSetError field is set.
+     */
+    @java.lang.Override
+    public boolean hasCampaignSharedSetError() {
+      return errorCodeCase_ == 64;
+    }
     /**
      * <pre>
      * The reasons for the campaign shared set error
@@ -12547,6 +14510,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.ConversionActionErrorEnum.ConversionActionError conversion_action_error = 65;</code>
+     * @return Whether the conversionActionError field is set.
+     */
+    @java.lang.Override
+    public boolean hasConversionActionError() {
+      return errorCodeCase_ == 65;
+    }
+    /**
+     * <pre>
+     * The reasons for the conversion action error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.ConversionActionErrorEnum.ConversionActionError conversion_action_error = 65;</code>
      * @return The enum numeric value on the wire for conversionActionError.
      */
     @java.lang.Override
@@ -12624,6 +14599,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the conversion adjustment upload error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.ConversionAdjustmentUploadErrorEnum.ConversionAdjustmentUploadError conversion_adjustment_upload_error = 115;</code>
+     * @return Whether the conversionAdjustmentUploadError field is set.
+     */
+    @java.lang.Override
+    public boolean hasConversionAdjustmentUploadError() {
+      return errorCodeCase_ == 115;
+    }
     /**
      * <pre>
      * The reasons for the conversion adjustment upload error
@@ -12713,6 +14700,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.ConversionUploadErrorEnum.ConversionUploadError conversion_upload_error = 111;</code>
+     * @return Whether the conversionUploadError field is set.
+     */
+    @java.lang.Override
+    public boolean hasConversionUploadError() {
+      return errorCodeCase_ == 111;
+    }
+    /**
+     * <pre>
+     * The reasons for the conversion upload error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.ConversionUploadErrorEnum.ConversionUploadError conversion_upload_error = 111;</code>
      * @return The enum numeric value on the wire for conversionUploadError.
      */
     @java.lang.Override
@@ -12790,6 +14789,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the header error.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.HeaderErrorEnum.HeaderError header_error = 66;</code>
+     * @return Whether the headerError field is set.
+     */
+    @java.lang.Override
+    public boolean hasHeaderError() {
+      return errorCodeCase_ == 66;
+    }
     /**
      * <pre>
      * The reasons for the header error.
@@ -12879,6 +14890,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.DatabaseErrorEnum.DatabaseError database_error = 67;</code>
+     * @return Whether the databaseError field is set.
+     */
+    @java.lang.Override
+    public boolean hasDatabaseError() {
+      return errorCodeCase_ == 67;
+    }
+    /**
+     * <pre>
+     * The reasons for the database error.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.DatabaseErrorEnum.DatabaseError database_error = 67;</code>
      * @return The enum numeric value on the wire for databaseError.
      */
     @java.lang.Override
@@ -12956,6 +14979,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the policy finding error.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.PolicyFindingErrorEnum.PolicyFindingError policy_finding_error = 68;</code>
+     * @return Whether the policyFindingError field is set.
+     */
+    @java.lang.Override
+    public boolean hasPolicyFindingError() {
+      return errorCodeCase_ == 68;
+    }
     /**
      * <pre>
      * The reasons for the policy finding error.
@@ -13045,6 +15080,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.EnumErrorEnum.EnumError enum_error = 70;</code>
+     * @return Whether the enumError field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnumError() {
+      return errorCodeCase_ == 70;
+    }
+    /**
+     * <pre>
+     * The reason for enum error.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.EnumErrorEnum.EnumError enum_error = 70;</code>
      * @return The enum numeric value on the wire for enumError.
      */
     @java.lang.Override
@@ -13122,6 +15169,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reason for keyword plan error.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.KeywordPlanErrorEnum.KeywordPlanError keyword_plan_error = 71;</code>
+     * @return Whether the keywordPlanError field is set.
+     */
+    @java.lang.Override
+    public boolean hasKeywordPlanError() {
+      return errorCodeCase_ == 71;
+    }
     /**
      * <pre>
      * The reason for keyword plan error.
@@ -13211,6 +15270,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.KeywordPlanCampaignErrorEnum.KeywordPlanCampaignError keyword_plan_campaign_error = 72;</code>
+     * @return Whether the keywordPlanCampaignError field is set.
+     */
+    @java.lang.Override
+    public boolean hasKeywordPlanCampaignError() {
+      return errorCodeCase_ == 72;
+    }
+    /**
+     * <pre>
+     * The reason for keyword plan campaign error.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.KeywordPlanCampaignErrorEnum.KeywordPlanCampaignError keyword_plan_campaign_error = 72;</code>
      * @return The enum numeric value on the wire for keywordPlanCampaignError.
      */
     @java.lang.Override
@@ -13288,6 +15359,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reason for keyword plan campaign keyword error.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.KeywordPlanCampaignKeywordErrorEnum.KeywordPlanCampaignKeywordError keyword_plan_campaign_keyword_error = 132;</code>
+     * @return Whether the keywordPlanCampaignKeywordError field is set.
+     */
+    @java.lang.Override
+    public boolean hasKeywordPlanCampaignKeywordError() {
+      return errorCodeCase_ == 132;
+    }
     /**
      * <pre>
      * The reason for keyword plan campaign keyword error.
@@ -13377,6 +15460,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.KeywordPlanAdGroupErrorEnum.KeywordPlanAdGroupError keyword_plan_ad_group_error = 74;</code>
+     * @return Whether the keywordPlanAdGroupError field is set.
+     */
+    @java.lang.Override
+    public boolean hasKeywordPlanAdGroupError() {
+      return errorCodeCase_ == 74;
+    }
+    /**
+     * <pre>
+     * The reason for keyword plan ad group error.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.KeywordPlanAdGroupErrorEnum.KeywordPlanAdGroupError keyword_plan_ad_group_error = 74;</code>
      * @return The enum numeric value on the wire for keywordPlanAdGroupError.
      */
     @java.lang.Override
@@ -13454,6 +15549,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reason for keyword plan ad group keyword error.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.KeywordPlanAdGroupKeywordErrorEnum.KeywordPlanAdGroupKeywordError keyword_plan_ad_group_keyword_error = 133;</code>
+     * @return Whether the keywordPlanAdGroupKeywordError field is set.
+     */
+    @java.lang.Override
+    public boolean hasKeywordPlanAdGroupKeywordError() {
+      return errorCodeCase_ == 133;
+    }
     /**
      * <pre>
      * The reason for keyword plan ad group keyword error.
@@ -13543,6 +15650,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.KeywordPlanIdeaErrorEnum.KeywordPlanIdeaError keyword_plan_idea_error = 76;</code>
+     * @return Whether the keywordPlanIdeaError field is set.
+     */
+    @java.lang.Override
+    public boolean hasKeywordPlanIdeaError() {
+      return errorCodeCase_ == 76;
+    }
+    /**
+     * <pre>
+     * The reason for keyword idea error.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.KeywordPlanIdeaErrorEnum.KeywordPlanIdeaError keyword_plan_idea_error = 76;</code>
      * @return The enum numeric value on the wire for keywordPlanIdeaError.
      */
     @java.lang.Override
@@ -13620,6 +15739,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for account budget proposal errors.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.AccountBudgetProposalErrorEnum.AccountBudgetProposalError account_budget_proposal_error = 77;</code>
+     * @return Whether the accountBudgetProposalError field is set.
+     */
+    @java.lang.Override
+    public boolean hasAccountBudgetProposalError() {
+      return errorCodeCase_ == 77;
+    }
     /**
      * <pre>
      * The reasons for account budget proposal errors.
@@ -13709,6 +15840,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.UserListErrorEnum.UserListError user_list_error = 78;</code>
+     * @return Whether the userListError field is set.
+     */
+    @java.lang.Override
+    public boolean hasUserListError() {
+      return errorCodeCase_ == 78;
+    }
+    /**
+     * <pre>
+     * The reasons for the user list error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.UserListErrorEnum.UserListError user_list_error = 78;</code>
      * @return The enum numeric value on the wire for userListError.
      */
     @java.lang.Override
@@ -13786,6 +15929,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the change status error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.ChangeStatusErrorEnum.ChangeStatusError change_status_error = 79;</code>
+     * @return Whether the changeStatusError field is set.
+     */
+    @java.lang.Override
+    public boolean hasChangeStatusError() {
+      return errorCodeCase_ == 79;
+    }
     /**
      * <pre>
      * The reasons for the change status error
@@ -13875,6 +16030,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.FeedErrorEnum.FeedError feed_error = 80;</code>
+     * @return Whether the feedError field is set.
+     */
+    @java.lang.Override
+    public boolean hasFeedError() {
+      return errorCodeCase_ == 80;
+    }
+    /**
+     * <pre>
+     * The reasons for the feed error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.FeedErrorEnum.FeedError feed_error = 80;</code>
      * @return The enum numeric value on the wire for feedError.
      */
     @java.lang.Override
@@ -13952,6 +16119,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the geo target constant suggestion error.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.GeoTargetConstantSuggestionErrorEnum.GeoTargetConstantSuggestionError geo_target_constant_suggestion_error = 81;</code>
+     * @return Whether the geoTargetConstantSuggestionError field is set.
+     */
+    @java.lang.Override
+    public boolean hasGeoTargetConstantSuggestionError() {
+      return errorCodeCase_ == 81;
+    }
     /**
      * <pre>
      * The reasons for the geo target constant suggestion error.
@@ -14041,6 +16220,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.CampaignDraftErrorEnum.CampaignDraftError campaign_draft_error = 82;</code>
+     * @return Whether the campaignDraftError field is set.
+     */
+    @java.lang.Override
+    public boolean hasCampaignDraftError() {
+      return errorCodeCase_ == 82;
+    }
+    /**
+     * <pre>
+     * The reasons for the campaign draft error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.CampaignDraftErrorEnum.CampaignDraftError campaign_draft_error = 82;</code>
      * @return The enum numeric value on the wire for campaignDraftError.
      */
     @java.lang.Override
@@ -14118,6 +16309,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the feed item error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.FeedItemErrorEnum.FeedItemError feed_item_error = 83;</code>
+     * @return Whether the feedItemError field is set.
+     */
+    @java.lang.Override
+    public boolean hasFeedItemError() {
+      return errorCodeCase_ == 83;
+    }
     /**
      * <pre>
      * The reasons for the feed item error
@@ -14207,6 +16410,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.LabelErrorEnum.LabelError label_error = 84;</code>
+     * @return Whether the labelError field is set.
+     */
+    @java.lang.Override
+    public boolean hasLabelError() {
+      return errorCodeCase_ == 84;
+    }
+    /**
+     * <pre>
+     * The reason for the label error.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.LabelErrorEnum.LabelError label_error = 84;</code>
      * @return The enum numeric value on the wire for labelError.
      */
     @java.lang.Override
@@ -14284,6 +16499,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the billing setup error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.BillingSetupErrorEnum.BillingSetupError billing_setup_error = 87;</code>
+     * @return Whether the billingSetupError field is set.
+     */
+    @java.lang.Override
+    public boolean hasBillingSetupError() {
+      return errorCodeCase_ == 87;
+    }
     /**
      * <pre>
      * The reasons for the billing setup error
@@ -14373,6 +16600,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.CustomerClientLinkErrorEnum.CustomerClientLinkError customer_client_link_error = 88;</code>
+     * @return Whether the customerClientLinkError field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomerClientLinkError() {
+      return errorCodeCase_ == 88;
+    }
+    /**
+     * <pre>
+     * The reasons for the customer client link error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.CustomerClientLinkErrorEnum.CustomerClientLinkError customer_client_link_error = 88;</code>
      * @return The enum numeric value on the wire for customerClientLinkError.
      */
     @java.lang.Override
@@ -14450,6 +16689,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the customer manager link error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.CustomerManagerLinkErrorEnum.CustomerManagerLinkError customer_manager_link_error = 91;</code>
+     * @return Whether the customerManagerLinkError field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomerManagerLinkError() {
+      return errorCodeCase_ == 91;
+    }
     /**
      * <pre>
      * The reasons for the customer manager link error
@@ -14539,6 +16790,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.FeedMappingErrorEnum.FeedMappingError feed_mapping_error = 92;</code>
+     * @return Whether the feedMappingError field is set.
+     */
+    @java.lang.Override
+    public boolean hasFeedMappingError() {
+      return errorCodeCase_ == 92;
+    }
+    /**
+     * <pre>
+     * The reasons for the feed mapping error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.FeedMappingErrorEnum.FeedMappingError feed_mapping_error = 92;</code>
      * @return The enum numeric value on the wire for feedMappingError.
      */
     @java.lang.Override
@@ -14616,6 +16879,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the customer feed error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.CustomerFeedErrorEnum.CustomerFeedError customer_feed_error = 93;</code>
+     * @return Whether the customerFeedError field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomerFeedError() {
+      return errorCodeCase_ == 93;
+    }
     /**
      * <pre>
      * The reasons for the customer feed error
@@ -14705,6 +16980,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.AdGroupFeedErrorEnum.AdGroupFeedError ad_group_feed_error = 94;</code>
+     * @return Whether the adGroupFeedError field is set.
+     */
+    @java.lang.Override
+    public boolean hasAdGroupFeedError() {
+      return errorCodeCase_ == 94;
+    }
+    /**
+     * <pre>
+     * The reasons for the ad group feed error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.AdGroupFeedErrorEnum.AdGroupFeedError ad_group_feed_error = 94;</code>
      * @return The enum numeric value on the wire for adGroupFeedError.
      */
     @java.lang.Override
@@ -14782,6 +17069,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the campaign feed error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.CampaignFeedErrorEnum.CampaignFeedError campaign_feed_error = 96;</code>
+     * @return Whether the campaignFeedError field is set.
+     */
+    @java.lang.Override
+    public boolean hasCampaignFeedError() {
+      return errorCodeCase_ == 96;
+    }
     /**
      * <pre>
      * The reasons for the campaign feed error
@@ -14871,6 +17170,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.CustomInterestErrorEnum.CustomInterestError custom_interest_error = 97;</code>
+     * @return Whether the customInterestError field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomInterestError() {
+      return errorCodeCase_ == 97;
+    }
+    /**
+     * <pre>
+     * The reasons for the custom interest error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.CustomInterestErrorEnum.CustomInterestError custom_interest_error = 97;</code>
      * @return The enum numeric value on the wire for customInterestError.
      */
     @java.lang.Override
@@ -14948,6 +17259,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the campaign experiment error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.CampaignExperimentErrorEnum.CampaignExperimentError campaign_experiment_error = 98;</code>
+     * @return Whether the campaignExperimentError field is set.
+     */
+    @java.lang.Override
+    public boolean hasCampaignExperimentError() {
+      return errorCodeCase_ == 98;
+    }
     /**
      * <pre>
      * The reasons for the campaign experiment error
@@ -15037,6 +17360,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.ExtensionFeedItemErrorEnum.ExtensionFeedItemError extension_feed_item_error = 100;</code>
+     * @return Whether the extensionFeedItemError field is set.
+     */
+    @java.lang.Override
+    public boolean hasExtensionFeedItemError() {
+      return errorCodeCase_ == 100;
+    }
+    /**
+     * <pre>
+     * The reasons for the extension feed item error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.ExtensionFeedItemErrorEnum.ExtensionFeedItemError extension_feed_item_error = 100;</code>
      * @return The enum numeric value on the wire for extensionFeedItemError.
      */
     @java.lang.Override
@@ -15114,6 +17449,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the ad parameter error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.AdParameterErrorEnum.AdParameterError ad_parameter_error = 101;</code>
+     * @return Whether the adParameterError field is set.
+     */
+    @java.lang.Override
+    public boolean hasAdParameterError() {
+      return errorCodeCase_ == 101;
+    }
     /**
      * <pre>
      * The reasons for the ad parameter error
@@ -15203,6 +17550,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.FeedItemValidationErrorEnum.FeedItemValidationError feed_item_validation_error = 102;</code>
+     * @return Whether the feedItemValidationError field is set.
+     */
+    @java.lang.Override
+    public boolean hasFeedItemValidationError() {
+      return errorCodeCase_ == 102;
+    }
+    /**
+     * <pre>
+     * The reasons for the feed item validation error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.FeedItemValidationErrorEnum.FeedItemValidationError feed_item_validation_error = 102;</code>
      * @return The enum numeric value on the wire for feedItemValidationError.
      */
     @java.lang.Override
@@ -15280,6 +17639,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the extension setting error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.ExtensionSettingErrorEnum.ExtensionSettingError extension_setting_error = 103;</code>
+     * @return Whether the extensionSettingError field is set.
+     */
+    @java.lang.Override
+    public boolean hasExtensionSettingError() {
+      return errorCodeCase_ == 103;
+    }
     /**
      * <pre>
      * The reasons for the extension setting error
@@ -15369,6 +17740,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.FeedItemTargetErrorEnum.FeedItemTargetError feed_item_target_error = 104;</code>
+     * @return Whether the feedItemTargetError field is set.
+     */
+    @java.lang.Override
+    public boolean hasFeedItemTargetError() {
+      return errorCodeCase_ == 104;
+    }
+    /**
+     * <pre>
+     * The reasons for the feed item target error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.FeedItemTargetErrorEnum.FeedItemTargetError feed_item_target_error = 104;</code>
      * @return The enum numeric value on the wire for feedItemTargetError.
      */
     @java.lang.Override
@@ -15446,6 +17829,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the policy violation error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.PolicyViolationErrorEnum.PolicyViolationError policy_violation_error = 105;</code>
+     * @return Whether the policyViolationError field is set.
+     */
+    @java.lang.Override
+    public boolean hasPolicyViolationError() {
+      return errorCodeCase_ == 105;
+    }
     /**
      * <pre>
      * The reasons for the policy violation error
@@ -15535,6 +17930,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.PartialFailureErrorEnum.PartialFailureError partial_failure_error = 112;</code>
+     * @return Whether the partialFailureError field is set.
+     */
+    @java.lang.Override
+    public boolean hasPartialFailureError() {
+      return errorCodeCase_ == 112;
+    }
+    /**
+     * <pre>
+     * The reasons for the mutate job error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.PartialFailureErrorEnum.PartialFailureError partial_failure_error = 112;</code>
      * @return The enum numeric value on the wire for partialFailureError.
      */
     @java.lang.Override
@@ -15612,6 +18019,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the policy validation parameter error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.PolicyValidationParameterErrorEnum.PolicyValidationParameterError policy_validation_parameter_error = 114;</code>
+     * @return Whether the policyValidationParameterError field is set.
+     */
+    @java.lang.Override
+    public boolean hasPolicyValidationParameterError() {
+      return errorCodeCase_ == 114;
+    }
     /**
      * <pre>
      * The reasons for the policy validation parameter error
@@ -15701,6 +18120,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.SizeLimitErrorEnum.SizeLimitError size_limit_error = 118;</code>
+     * @return Whether the sizeLimitError field is set.
+     */
+    @java.lang.Override
+    public boolean hasSizeLimitError() {
+      return errorCodeCase_ == 118;
+    }
+    /**
+     * <pre>
+     * The reasons for the size limit error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.SizeLimitErrorEnum.SizeLimitError size_limit_error = 118;</code>
      * @return The enum numeric value on the wire for sizeLimitError.
      */
     @java.lang.Override
@@ -15778,6 +18209,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the offline user data job error.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.OfflineUserDataJobErrorEnum.OfflineUserDataJobError offline_user_data_job_error = 119;</code>
+     * @return Whether the offlineUserDataJobError field is set.
+     */
+    @java.lang.Override
+    public boolean hasOfflineUserDataJobError() {
+      return errorCodeCase_ == 119;
+    }
     /**
      * <pre>
      * The reasons for the offline user data job error.
@@ -15867,6 +18310,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.NotAllowlistedErrorEnum.NotAllowlistedError not_allowlisted_error = 137;</code>
+     * @return Whether the notAllowlistedError field is set.
+     */
+    @java.lang.Override
+    public boolean hasNotAllowlistedError() {
+      return errorCodeCase_ == 137;
+    }
+    /**
+     * <pre>
+     * The reasons for the not allowlisted error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.NotAllowlistedErrorEnum.NotAllowlistedError not_allowlisted_error = 137;</code>
      * @return The enum numeric value on the wire for notAllowlistedError.
      */
     @java.lang.Override
@@ -15944,6 +18399,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the manager link error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.ManagerLinkErrorEnum.ManagerLinkError manager_link_error = 121;</code>
+     * @return Whether the managerLinkError field is set.
+     */
+    @java.lang.Override
+    public boolean hasManagerLinkError() {
+      return errorCodeCase_ == 121;
+    }
     /**
      * <pre>
      * The reasons for the manager link error
@@ -16033,6 +18500,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.CurrencyCodeErrorEnum.CurrencyCodeError currency_code_error = 122;</code>
+     * @return Whether the currencyCodeError field is set.
+     */
+    @java.lang.Override
+    public boolean hasCurrencyCodeError() {
+      return errorCodeCase_ == 122;
+    }
+    /**
+     * <pre>
+     * The reasons for the currency code error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.CurrencyCodeErrorEnum.CurrencyCodeError currency_code_error = 122;</code>
      * @return The enum numeric value on the wire for currencyCodeError.
      */
     @java.lang.Override
@@ -16110,6 +18589,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the access invitation error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.AccessInvitationErrorEnum.AccessInvitationError access_invitation_error = 124;</code>
+     * @return Whether the accessInvitationError field is set.
+     */
+    @java.lang.Override
+    public boolean hasAccessInvitationError() {
+      return errorCodeCase_ == 124;
+    }
     /**
      * <pre>
      * The reasons for the access invitation error
@@ -16199,6 +18690,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.ReachPlanErrorEnum.ReachPlanError reach_plan_error = 125;</code>
+     * @return Whether the reachPlanError field is set.
+     */
+    @java.lang.Override
+    public boolean hasReachPlanError() {
+      return errorCodeCase_ == 125;
+    }
+    /**
+     * <pre>
+     * The reasons for the reach plan error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.ReachPlanErrorEnum.ReachPlanError reach_plan_error = 125;</code>
      * @return The enum numeric value on the wire for reachPlanError.
      */
     @java.lang.Override
@@ -16276,6 +18779,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the invoice error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.InvoiceErrorEnum.InvoiceError invoice_error = 126;</code>
+     * @return Whether the invoiceError field is set.
+     */
+    @java.lang.Override
+    public boolean hasInvoiceError() {
+      return errorCodeCase_ == 126;
+    }
     /**
      * <pre>
      * The reasons for the invoice error
@@ -16365,6 +18880,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.PaymentsAccountErrorEnum.PaymentsAccountError payments_account_error = 127;</code>
+     * @return Whether the paymentsAccountError field is set.
+     */
+    @java.lang.Override
+    public boolean hasPaymentsAccountError() {
+      return errorCodeCase_ == 127;
+    }
+    /**
+     * <pre>
+     * The reasons for errors in payments accounts service
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.PaymentsAccountErrorEnum.PaymentsAccountError payments_account_error = 127;</code>
      * @return The enum numeric value on the wire for paymentsAccountError.
      */
     @java.lang.Override
@@ -16442,6 +18969,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the time zone error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.TimeZoneErrorEnum.TimeZoneError time_zone_error = 128;</code>
+     * @return Whether the timeZoneError field is set.
+     */
+    @java.lang.Override
+    public boolean hasTimeZoneError() {
+      return errorCodeCase_ == 128;
+    }
     /**
      * <pre>
      * The reasons for the time zone error
@@ -16531,6 +19070,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.AssetLinkErrorEnum.AssetLinkError asset_link_error = 129;</code>
+     * @return Whether the assetLinkError field is set.
+     */
+    @java.lang.Override
+    public boolean hasAssetLinkError() {
+      return errorCodeCase_ == 129;
+    }
+    /**
+     * <pre>
+     * The reasons for the asset link error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.AssetLinkErrorEnum.AssetLinkError asset_link_error = 129;</code>
      * @return The enum numeric value on the wire for assetLinkError.
      */
     @java.lang.Override
@@ -16608,6 +19159,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the user data error.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.UserDataErrorEnum.UserDataError user_data_error = 130;</code>
+     * @return Whether the userDataError field is set.
+     */
+    @java.lang.Override
+    public boolean hasUserDataError() {
+      return errorCodeCase_ == 130;
+    }
     /**
      * <pre>
      * The reasons for the user data error.
@@ -16697,6 +19260,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.BatchJobErrorEnum.BatchJobError batch_job_error = 131;</code>
+     * @return Whether the batchJobError field is set.
+     */
+    @java.lang.Override
+    public boolean hasBatchJobError() {
+      return errorCodeCase_ == 131;
+    }
+    /**
+     * <pre>
+     * The reasons for the batch job error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.BatchJobErrorEnum.BatchJobError batch_job_error = 131;</code>
      * @return The enum numeric value on the wire for batchJobError.
      */
     @java.lang.Override
@@ -16780,6 +19355,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.errors.AccountLinkErrorEnum.AccountLinkError account_link_error = 134;</code>
+     * @return Whether the accountLinkError field is set.
+     */
+    @java.lang.Override
+    public boolean hasAccountLinkError() {
+      return errorCodeCase_ == 134;
+    }
+    /**
+     * <pre>
+     * The reasons for the account link status change error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.AccountLinkErrorEnum.AccountLinkError account_link_error = 134;</code>
      * @return The enum numeric value on the wire for accountLinkError.
      */
     @java.lang.Override
@@ -16857,6 +19444,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The reasons for the third party app analytics link mutate error
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.errors.ThirdPartyAppAnalyticsLinkErrorEnum.ThirdPartyAppAnalyticsLinkError third_party_app_analytics_link_error = 135;</code>
+     * @return Whether the thirdPartyAppAnalyticsLinkError field is set.
+     */
+    @java.lang.Override
+    public boolean hasThirdPartyAppAnalyticsLinkError() {
+      return errorCodeCase_ == 135;
+    }
     /**
      * <pre>
      * The reasons for the third party app analytics link mutate error

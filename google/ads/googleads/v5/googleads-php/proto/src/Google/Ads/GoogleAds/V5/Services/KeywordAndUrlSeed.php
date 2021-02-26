@@ -49,7 +49,7 @@ class KeywordAndUrlSeed extends \Google\Protobuf\Internal\Message
      * The URL to crawl in order to generate keyword ideas.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue url = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getUrl()
     {

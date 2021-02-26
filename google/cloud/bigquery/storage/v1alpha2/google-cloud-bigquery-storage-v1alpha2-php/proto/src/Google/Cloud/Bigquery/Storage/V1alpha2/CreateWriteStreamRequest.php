@@ -79,7 +79,7 @@ class CreateWriteStreamRequest extends \Google\Protobuf\Internal\Message
      * Required. Stream to be created.
      *
      * Generated from protobuf field <code>.google.cloud.bigquery.storage.v1alpha2.WriteStream write_stream = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Bigquery\Storage\V1alpha2\WriteStream
+     * @return \Google\Cloud\Bigquery\Storage\V1alpha2\WriteStream|null
      */
     public function getWriteStream()
     {

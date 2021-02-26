@@ -43,7 +43,7 @@ class ExportIamPolicyAnalysisResponse extends \Google\Protobuf\Internal\Message
      * Output configuration indicating where the results were output to.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1p4beta1.IamPolicyAnalysisOutputConfig output_config = 1;</code>
-     * @return \Google\Cloud\Asset\V1p4beta1\IamPolicyAnalysisOutputConfig
+     * @return \Google\Cloud\Asset\V1p4beta1\IamPolicyAnalysisOutputConfig|null
      */
     public function getOutputConfig()
     {

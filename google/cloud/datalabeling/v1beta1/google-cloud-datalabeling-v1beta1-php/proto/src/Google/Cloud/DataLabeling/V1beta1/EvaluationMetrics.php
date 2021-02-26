@@ -32,7 +32,7 @@ class EvaluationMetrics extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.ClassificationMetrics classification_metrics = 1;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\ClassificationMetrics
+     * @return \Google\Cloud\DataLabeling\V1beta1\ClassificationMetrics|null
      */
     public function getClassificationMetrics()
     {
@@ -59,7 +59,7 @@ class EvaluationMetrics extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics object_detection_metrics = 2;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\ObjectDetectionMetrics
+     * @return \Google\Cloud\DataLabeling\V1beta1\ObjectDetectionMetrics|null
      */
     public function getObjectDetectionMetrics()
     {

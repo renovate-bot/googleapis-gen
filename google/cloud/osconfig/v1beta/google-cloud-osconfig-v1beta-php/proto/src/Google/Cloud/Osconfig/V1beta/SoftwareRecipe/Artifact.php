@@ -92,7 +92,7 @@ class Artifact extends \Google\Protobuf\Internal\Message
      * A generic remote artifact.
      *
      * Generated from protobuf field <code>.google.cloud.osconfig.v1beta.SoftwareRecipe.Artifact.Remote remote = 2;</code>
-     * @return \Google\Cloud\Osconfig\V1beta\SoftwareRecipe\Artifact\Remote
+     * @return \Google\Cloud\Osconfig\V1beta\SoftwareRecipe\Artifact\Remote|null
      */
     public function getRemote()
     {
@@ -123,7 +123,7 @@ class Artifact extends \Google\Protobuf\Internal\Message
      * A Google Cloud Storage artifact.
      *
      * Generated from protobuf field <code>.google.cloud.osconfig.v1beta.SoftwareRecipe.Artifact.Gcs gcs = 3;</code>
-     * @return \Google\Cloud\Osconfig\V1beta\SoftwareRecipe\Artifact\Gcs
+     * @return \Google\Cloud\Osconfig\V1beta\SoftwareRecipe\Artifact\Gcs|null
      */
     public function getGcs()
     {

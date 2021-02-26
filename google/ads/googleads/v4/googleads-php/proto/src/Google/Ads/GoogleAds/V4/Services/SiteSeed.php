@@ -44,7 +44,7 @@ class SiteSeed extends \Google\Protobuf\Internal\Message
      * own the site provided only public information is returned.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue site = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getSite()
     {

@@ -356,7 +356,7 @@ class Endpoint extends \Google\Protobuf\Internal\Message
      * Output only. Timestamp when this Endpoint was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -392,7 +392,7 @@ class Endpoint extends \Google\Protobuf\Internal\Message
      * Output only. Timestamp when this Endpoint was last updated.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {
@@ -430,7 +430,7 @@ class Endpoint extends \Google\Protobuf\Internal\Message
      * this key.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 10;</code>
-     * @return \Google\Cloud\Aiplatform\V1\EncryptionSpec
+     * @return \Google\Cloud\Aiplatform\V1\EncryptionSpec|null
      */
     public function getEncryptionSpec()
     {

@@ -103,7 +103,7 @@ class ImageContext extends \Google\Protobuf\Internal\Message
      * Not used.
      *
      * Generated from protobuf field <code>.google.cloud.vision.v1p4beta1.LatLongRect lat_long_rect = 1;</code>
-     * @return \Google\Cloud\Vision\V1p4beta1\LatLongRect
+     * @return \Google\Cloud\Vision\V1p4beta1\LatLongRect|null
      */
     public function getLatLongRect()
     {
@@ -179,7 +179,7 @@ class ImageContext extends \Google\Protobuf\Internal\Message
      * Parameters for crop hints annotation request.
      *
      * Generated from protobuf field <code>.google.cloud.vision.v1p4beta1.CropHintsParams crop_hints_params = 4;</code>
-     * @return \Google\Cloud\Vision\V1p4beta1\CropHintsParams
+     * @return \Google\Cloud\Vision\V1p4beta1\CropHintsParams|null
      */
     public function getCropHintsParams()
     {
@@ -215,7 +215,7 @@ class ImageContext extends \Google\Protobuf\Internal\Message
      * Parameters for face recognition.
      *
      * Generated from protobuf field <code>.google.cloud.vision.v1p4beta1.FaceRecognitionParams face_recognition_params = 10;</code>
-     * @return \Google\Cloud\Vision\V1p4beta1\FaceRecognitionParams
+     * @return \Google\Cloud\Vision\V1p4beta1\FaceRecognitionParams|null
      */
     public function getFaceRecognitionParams()
     {
@@ -251,7 +251,7 @@ class ImageContext extends \Google\Protobuf\Internal\Message
      * Parameters for product search.
      *
      * Generated from protobuf field <code>.google.cloud.vision.v1p4beta1.ProductSearchParams product_search_params = 5;</code>
-     * @return \Google\Cloud\Vision\V1p4beta1\ProductSearchParams
+     * @return \Google\Cloud\Vision\V1p4beta1\ProductSearchParams|null
      */
     public function getProductSearchParams()
     {
@@ -287,7 +287,7 @@ class ImageContext extends \Google\Protobuf\Internal\Message
      * Parameters for web detection.
      *
      * Generated from protobuf field <code>.google.cloud.vision.v1p4beta1.WebDetectionParams web_detection_params = 6;</code>
-     * @return \Google\Cloud\Vision\V1p4beta1\WebDetectionParams
+     * @return \Google\Cloud\Vision\V1p4beta1\WebDetectionParams|null
      */
     public function getWebDetectionParams()
     {
@@ -323,7 +323,7 @@ class ImageContext extends \Google\Protobuf\Internal\Message
      * Parameters for text detection and document text detection.
      *
      * Generated from protobuf field <code>.google.cloud.vision.v1p4beta1.TextDetectionParams text_detection_params = 12;</code>
-     * @return \Google\Cloud\Vision\V1p4beta1\TextDetectionParams
+     * @return \Google\Cloud\Vision\V1p4beta1\TextDetectionParams|null
      */
     public function getTextDetectionParams()
     {

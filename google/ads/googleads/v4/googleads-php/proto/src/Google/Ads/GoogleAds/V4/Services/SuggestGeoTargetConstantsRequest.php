@@ -61,7 +61,7 @@ class SuggestGeoTargetConstantsRequest extends \Google\Protobuf\Internal\Message
      * targets.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue locale = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getLocale()
     {
@@ -130,7 +130,7 @@ class SuggestGeoTargetConstantsRequest extends \Google\Protobuf\Internal\Message
      * Returned geo targets are restricted to this country code.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 5;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCountryCode()
     {
@@ -193,7 +193,7 @@ class SuggestGeoTargetConstantsRequest extends \Google\Protobuf\Internal\Message
      * The location names to search by. At most 25 names can be set.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.SuggestGeoTargetConstantsRequest.LocationNames location_names = 1;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\SuggestGeoTargetConstantsRequest\LocationNames
+     * @return \Google\Ads\GoogleAds\V4\Services\SuggestGeoTargetConstantsRequest\LocationNames|null
      */
     public function getLocationNames()
     {
@@ -224,7 +224,7 @@ class SuggestGeoTargetConstantsRequest extends \Google\Protobuf\Internal\Message
      * The geo target constant resource names to filter by.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.SuggestGeoTargetConstantsRequest.GeoTargets geo_targets = 2;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\SuggestGeoTargetConstantsRequest\GeoTargets
+     * @return \Google\Ads\GoogleAds\V4\Services\SuggestGeoTargetConstantsRequest\GeoTargets|null
      */
     public function getGeoTargets()
     {

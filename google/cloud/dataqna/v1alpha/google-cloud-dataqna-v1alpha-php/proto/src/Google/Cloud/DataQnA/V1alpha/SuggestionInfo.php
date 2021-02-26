@@ -52,7 +52,7 @@ class SuggestionInfo extends \Google\Protobuf\Internal\Message
      * of the suggestion corresponds to what semantic meaning (e.g. a metric).
      *
      * Generated from protobuf field <code>.google.cloud.dataqna.v1alpha.AnnotatedString annotated_suggestion = 1;</code>
-     * @return \Google\Cloud\DataQnA\V1alpha\AnnotatedString
+     * @return \Google\Cloud\DataQnA\V1alpha\AnnotatedString|null
      */
     public function getAnnotatedSuggestion()
     {

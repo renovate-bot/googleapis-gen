@@ -53,7 +53,7 @@ class CloudWorkspaceId extends \Google\Protobuf\Internal\Message
      * The ID of the repo containing the workspace.
      *
      * Generated from protobuf field <code>.google.devtools.source.v1.RepoId repo_id = 1;</code>
-     * @return \Google\Cloud\DevTools\Source\V1\RepoId
+     * @return \Google\Cloud\DevTools\Source\V1\RepoId|null
      */
     public function getRepoId()
     {

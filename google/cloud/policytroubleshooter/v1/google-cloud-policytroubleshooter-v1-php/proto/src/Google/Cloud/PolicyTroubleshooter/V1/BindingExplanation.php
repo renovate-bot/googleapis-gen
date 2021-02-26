@@ -359,7 +359,7 @@ class BindingExplanation extends \Google\Protobuf\Internal\Message
      * http://cloud.google.com/iam/help/conditions/overview.
      *
      * Generated from protobuf field <code>.google.type.Expr condition = 7;</code>
-     * @return \Google\Type\Expr
+     * @return \Google\Type\Expr|null
      */
     public function getCondition()
     {

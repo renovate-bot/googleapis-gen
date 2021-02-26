@@ -159,7 +159,7 @@ class ListSpecialistPoolsRequest extends \Google\Protobuf\Internal\Message
      * Mask specifying which fields to read. FieldMask represents a set of
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask read_mask = 4;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getReadMask()
     {

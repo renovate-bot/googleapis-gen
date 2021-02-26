@@ -78,7 +78,7 @@ class CalculateCoverageResponse extends \Google\Protobuf\Internal\Message
      * Intent coverage.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.IntentCoverage intent_coverage = 2;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\IntentCoverage
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\IntentCoverage|null
      */
     public function getIntentCoverage()
     {
@@ -109,7 +109,7 @@ class CalculateCoverageResponse extends \Google\Protobuf\Internal\Message
      * Transition (excluding transition route groups) coverage.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.TransitionCoverage transition_coverage = 4;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\TransitionCoverage
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\TransitionCoverage|null
      */
     public function getTransitionCoverage()
     {
@@ -140,7 +140,7 @@ class CalculateCoverageResponse extends \Google\Protobuf\Internal\Message
      * Transition route group coverage.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroupCoverage route_group_coverage = 6;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\TransitionRouteGroupCoverage
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\TransitionRouteGroupCoverage|null
      */
     public function getRouteGroupCoverage()
     {

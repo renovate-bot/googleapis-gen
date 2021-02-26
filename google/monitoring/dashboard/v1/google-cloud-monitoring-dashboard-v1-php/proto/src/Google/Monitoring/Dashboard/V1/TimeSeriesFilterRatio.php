@@ -65,7 +65,7 @@ class TimeSeriesFilterRatio extends \Google\Protobuf\Internal\Message
      * The numerator of the ratio.
      *
      * Generated from protobuf field <code>.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPart numerator = 1;</code>
-     * @return \Google\Monitoring\Dashboard\V1\TimeSeriesFilterRatio\RatioPart
+     * @return \Google\Monitoring\Dashboard\V1\TimeSeriesFilterRatio\RatioPart|null
      */
     public function getNumerator()
     {
@@ -101,7 +101,7 @@ class TimeSeriesFilterRatio extends \Google\Protobuf\Internal\Message
      * The denominator of the ratio.
      *
      * Generated from protobuf field <code>.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPart denominator = 2;</code>
-     * @return \Google\Monitoring\Dashboard\V1\TimeSeriesFilterRatio\RatioPart
+     * @return \Google\Monitoring\Dashboard\V1\TimeSeriesFilterRatio\RatioPart|null
      */
     public function getDenominator()
     {
@@ -137,7 +137,7 @@ class TimeSeriesFilterRatio extends \Google\Protobuf\Internal\Message
      * Apply a second aggregation after the ratio is computed.
      *
      * Generated from protobuf field <code>.google.monitoring.dashboard.v1.Aggregation secondary_aggregation = 3;</code>
-     * @return \Google\Monitoring\Dashboard\V1\Aggregation
+     * @return \Google\Monitoring\Dashboard\V1\Aggregation|null
      */
     public function getSecondaryAggregation()
     {
@@ -173,7 +173,7 @@ class TimeSeriesFilterRatio extends \Google\Protobuf\Internal\Message
      * Ranking based time series filter.
      *
      * Generated from protobuf field <code>.google.monitoring.dashboard.v1.PickTimeSeriesFilter pick_time_series_filter = 4;</code>
-     * @return \Google\Monitoring\Dashboard\V1\PickTimeSeriesFilter
+     * @return \Google\Monitoring\Dashboard\V1\PickTimeSeriesFilter|null
      */
     public function getPickTimeSeriesFilter()
     {
@@ -205,15 +205,18 @@ class TimeSeriesFilterRatio extends \Google\Protobuf\Internal\Message
      * Note: This field is deprecated and completely ignored by the API.
      *
      * Generated from protobuf field <code>.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];</code>
-     * @return \Google\Monitoring\Dashboard\V1\StatisticalTimeSeriesFilter
+     * @return \Google\Monitoring\Dashboard\V1\StatisticalTimeSeriesFilter|null
+     * @deprecated
      */
     public function getStatisticalTimeSeriesFilter()
     {
+        @trigger_error('statistical_time_series_filter is deprecated.', E_USER_DEPRECATED);
         return $this->readOneof(5);
     }
 
     public function hasStatisticalTimeSeriesFilter()
     {
+        @trigger_error('statistical_time_series_filter is deprecated.', E_USER_DEPRECATED);
         return $this->hasOneof(5);
     }
 
@@ -224,9 +227,11 @@ class TimeSeriesFilterRatio extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];</code>
      * @param \Google\Monitoring\Dashboard\V1\StatisticalTimeSeriesFilter $var
      * @return $this
+     * @deprecated
      */
     public function setStatisticalTimeSeriesFilter($var)
     {
+        @trigger_error('statistical_time_series_filter is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Google\Monitoring\Dashboard\V1\StatisticalTimeSeriesFilter::class);
         $this->writeOneof(5, $var);
 

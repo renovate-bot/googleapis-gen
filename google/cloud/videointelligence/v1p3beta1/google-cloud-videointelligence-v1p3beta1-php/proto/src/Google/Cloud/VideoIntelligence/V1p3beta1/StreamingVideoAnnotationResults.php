@@ -118,7 +118,7 @@ class StreamingVideoAnnotationResults extends \Google\Protobuf\Internal\Message
      * Explicit content annotation results.
      *
      * Generated from protobuf field <code>.google.cloud.videointelligence.v1p3beta1.ExplicitContentAnnotation explicit_annotation = 3;</code>
-     * @return \Google\Cloud\VideoIntelligence\V1p3beta1\ExplicitContentAnnotation
+     * @return \Google\Cloud\VideoIntelligence\V1p3beta1\ExplicitContentAnnotation|null
      */
     public function getExplicitAnnotation()
     {

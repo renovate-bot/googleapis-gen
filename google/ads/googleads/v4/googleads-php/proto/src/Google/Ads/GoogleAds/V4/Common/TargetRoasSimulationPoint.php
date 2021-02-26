@@ -91,7 +91,7 @@ class TargetRoasSimulationPoint extends \Google\Protobuf\Internal\Message
      * The simulated target ROAS upon which projected metrics are based.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue target_roas = 1;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getTargetRoas()
     {
@@ -154,7 +154,7 @@ class TargetRoasSimulationPoint extends \Google\Protobuf\Internal\Message
      * Projected number of biddable conversions.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions = 2;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getBiddableConversions()
     {
@@ -217,7 +217,7 @@ class TargetRoasSimulationPoint extends \Google\Protobuf\Internal\Message
      * Projected total value of biddable conversions.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions_value = 3;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getBiddableConversionsValue()
     {
@@ -280,7 +280,7 @@ class TargetRoasSimulationPoint extends \Google\Protobuf\Internal\Message
      * Projected number of clicks.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value clicks = 4;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getClicks()
     {
@@ -343,7 +343,7 @@ class TargetRoasSimulationPoint extends \Google\Protobuf\Internal\Message
      * Projected cost in micros.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 5;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCostMicros()
     {
@@ -406,7 +406,7 @@ class TargetRoasSimulationPoint extends \Google\Protobuf\Internal\Message
      * Projected number of impressions.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value impressions = 6;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getImpressions()
     {
@@ -470,7 +470,7 @@ class TargetRoasSimulationPoint extends \Google\Protobuf\Internal\Message
      * Only Search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value top_slot_impressions = 7;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getTopSlotImpressions()
     {

@@ -49,7 +49,7 @@ class CountryConstraintList extends \Google\Protobuf\Internal\Message
      * Total number of countries targeted by the resource.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value total_targeted_countries = 1;</code>
-     * @return \Google\Protobuf\Int32Value
+     * @return \Google\Protobuf\Int32Value|null
      */
     public function getTotalTargetedCountries()
     {

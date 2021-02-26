@@ -98,7 +98,7 @@ class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      * conversion action id as the sole identifier of the conversion action.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getConversionAction()
     {
@@ -172,7 +172,7 @@ class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue adjustment_date_time = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAdjustmentDateTime()
     {
@@ -273,7 +273,7 @@ class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      * and ignored.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.RestatementValue restatement_value = 6;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\RestatementValue
+     * @return \Google\Ads\GoogleAds\V4\Services\RestatementValue|null
      */
     public function getRestatementValue()
     {
@@ -316,7 +316,7 @@ class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      * specified.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.GclidDateTimePair gclid_date_time_pair = 1;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\GclidDateTimePair
+     * @return \Google\Ads\GoogleAds\V4\Services\GclidDateTimePair|null
      */
     public function getGclidDateTimePair()
     {
@@ -350,7 +350,7 @@ class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      * identifier here.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue order_id = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getOrderId()
     {

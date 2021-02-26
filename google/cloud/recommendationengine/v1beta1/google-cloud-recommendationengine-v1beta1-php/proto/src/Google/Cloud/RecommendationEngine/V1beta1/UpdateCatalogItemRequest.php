@@ -92,7 +92,7 @@ class UpdateCatalogItemRequest extends \Google\Protobuf\Internal\Message
      * has to match that in the 'name'.
      *
      * Generated from protobuf field <code>.google.cloud.recommendationengine.v1beta1.CatalogItem catalog_item = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\RecommendationEngine\V1beta1\CatalogItem
+     * @return \Google\Cloud\RecommendationEngine\V1beta1\CatalogItem|null
      */
     public function getCatalogItem()
     {
@@ -130,7 +130,7 @@ class UpdateCatalogItemRequest extends \Google\Protobuf\Internal\Message
      * set, will by default update all fields.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 3;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

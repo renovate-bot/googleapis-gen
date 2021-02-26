@@ -89,7 +89,7 @@ class OfflineUserAddressInfo extends \Google\Protobuf\Internal\Message
      * between).
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue hashed_first_name = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getHashedFirstName()
     {
@@ -159,7 +159,7 @@ class OfflineUserAddressInfo extends \Google\Protobuf\Internal\Message
      * case only and no punctuation).
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue hashed_last_name = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getHashedLastName()
     {
@@ -225,7 +225,7 @@ class OfflineUserAddressInfo extends \Google\Protobuf\Internal\Message
      * City of the address. Only accepted for Store Sales Direct data.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue city = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCity()
     {
@@ -288,7 +288,7 @@ class OfflineUserAddressInfo extends \Google\Protobuf\Internal\Message
      * State code of the address. Only accepted for Store Sales Direct data.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue state = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getState()
     {
@@ -351,7 +351,7 @@ class OfflineUserAddressInfo extends \Google\Protobuf\Internal\Message
      * 2-letter country code in ISO-3166-1 alpha-2 of the user's address.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 5;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCountryCode()
     {
@@ -414,7 +414,7 @@ class OfflineUserAddressInfo extends \Google\Protobuf\Internal\Message
      * Postal code of the user's address.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue postal_code = 6;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPostalCode()
     {

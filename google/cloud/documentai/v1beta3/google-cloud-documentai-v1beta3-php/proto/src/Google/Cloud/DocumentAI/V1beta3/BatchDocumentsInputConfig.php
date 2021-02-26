@@ -38,7 +38,7 @@ class BatchDocumentsInputConfig extends \Google\Protobuf\Internal\Message
      * The set of documents that match the specified Cloud Storage [gcs_prefix].
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.GcsPrefix gcs_prefix = 1;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta3\GcsPrefix
+     * @return \Google\Cloud\DocumentAI\V1beta3\GcsPrefix|null
      */
     public function getGcsPrefix()
     {
@@ -69,7 +69,7 @@ class BatchDocumentsInputConfig extends \Google\Protobuf\Internal\Message
      * The set of documents individually specified on Cloud Storage.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.GcsDocuments gcs_documents = 2;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta3\GcsDocuments
+     * @return \Google\Cloud\DocumentAI\V1beta3\GcsDocuments|null
      */
     public function getGcsDocuments()
     {

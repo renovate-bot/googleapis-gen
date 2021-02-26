@@ -50,7 +50,7 @@ class ExtendedSourceContext extends \Google\Protobuf\Internal\Message
      * Any source context.
      *
      * Generated from protobuf field <code>.google.devtools.source.v1.SourceContext context = 1;</code>
-     * @return \Google\Cloud\DevTools\Source\V1\SourceContext
+     * @return \Google\Cloud\DevTools\Source\V1\SourceContext|null
      */
     public function getContext()
     {

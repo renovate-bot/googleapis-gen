@@ -52,7 +52,7 @@ class KeywordPlanCampaignForecastCurve extends \Google\Protobuf\Internal\Message
      * `customers/{customer_id}/keywordPlanCampaigns/{keyword_plan_campaign_id}`
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan_campaign = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getKeywordPlanCampaign()
     {
@@ -118,7 +118,7 @@ class KeywordPlanCampaignForecastCurve extends \Google\Protobuf\Internal\Message
      * The max cpc bid forecast curve for the campaign.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.KeywordPlanMaxCpcBidForecastCurve max_cpc_bid_forecast_curve = 2;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\KeywordPlanMaxCpcBidForecastCurve
+     * @return \Google\Ads\GoogleAds\V4\Services\KeywordPlanMaxCpcBidForecastCurve|null
      */
     public function getMaxCpcBidForecastCurve()
     {

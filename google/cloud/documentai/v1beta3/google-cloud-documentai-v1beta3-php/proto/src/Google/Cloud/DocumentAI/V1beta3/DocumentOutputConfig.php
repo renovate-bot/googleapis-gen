@@ -37,7 +37,7 @@ class DocumentOutputConfig extends \Google\Protobuf\Internal\Message
      * Output config to write the results to Cloud Storage.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig.GcsOutputConfig gcs_output_config = 1;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta3\DocumentOutputConfig\GcsOutputConfig
+     * @return \Google\Cloud\DocumentAI\V1beta3\DocumentOutputConfig\GcsOutputConfig|null
      */
     public function getGcsOutputConfig()
     {

@@ -79,7 +79,7 @@ class CreatePredictionApiKeyRegistrationRequest extends \Google\Protobuf\Interna
      * Required. The prediction API key registration.
      *
      * Generated from protobuf field <code>.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration prediction_api_key_registration = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\RecommendationEngine\V1beta1\PredictionApiKeyRegistration
+     * @return \Google\Cloud\RecommendationEngine\V1beta1\PredictionApiKeyRegistration|null
      */
     public function getPredictionApiKeyRegistration()
     {

@@ -169,7 +169,7 @@ class Environment extends \Google\Protobuf\Internal\Message
      * Use a Compute Engine VM image to start the notebook instance.
      *
      * Generated from protobuf field <code>.google.cloud.notebooks.v1beta1.VmImage vm_image = 6;</code>
-     * @return \Google\Cloud\Notebooks\V1Beta1\VmImage
+     * @return \Google\Cloud\Notebooks\V1Beta1\VmImage|null
      */
     public function getVmImage()
     {
@@ -200,7 +200,7 @@ class Environment extends \Google\Protobuf\Internal\Message
      * Use a container image to start the notebook instance.
      *
      * Generated from protobuf field <code>.google.cloud.notebooks.v1beta1.ContainerImage container_image = 7;</code>
-     * @return \Google\Cloud\Notebooks\V1Beta1\ContainerImage
+     * @return \Google\Cloud\Notebooks\V1Beta1\ContainerImage|null
      */
     public function getContainerImage()
     {
@@ -261,7 +261,7 @@ class Environment extends \Google\Protobuf\Internal\Message
      * Output only. The time at which this environment was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {

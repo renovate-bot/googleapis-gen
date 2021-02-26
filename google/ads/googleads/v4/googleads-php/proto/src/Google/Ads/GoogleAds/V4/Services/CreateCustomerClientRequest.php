@@ -98,7 +98,7 @@ class CreateCustomerClientRequest extends \Google\Protobuf\Internal\Message
      * will be ignored.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Customer customer_client = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Customer
+     * @return \Google\Ads\GoogleAds\V4\Resources\Customer|null
      */
     public function getCustomerClient()
     {
@@ -136,7 +136,7 @@ class CreateCustomerClientRequest extends \Google\Protobuf\Internal\Message
      * customer. Accessible only to customers on the allow-list.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue email_address = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getEmailAddress()
     {

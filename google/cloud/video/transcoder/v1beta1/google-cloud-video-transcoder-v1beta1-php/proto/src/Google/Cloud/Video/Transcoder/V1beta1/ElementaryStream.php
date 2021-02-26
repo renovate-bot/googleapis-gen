@@ -76,7 +76,7 @@ class ElementaryStream extends \Google\Protobuf\Internal\Message
      * Encoding of a video stream.
      *
      * Generated from protobuf field <code>.google.cloud.video.transcoder.v1beta1.VideoStream video_stream = 1;</code>
-     * @return \Google\Cloud\Video\Transcoder\V1beta1\VideoStream
+     * @return \Google\Cloud\Video\Transcoder\V1beta1\VideoStream|null
      */
     public function getVideoStream()
     {
@@ -107,7 +107,7 @@ class ElementaryStream extends \Google\Protobuf\Internal\Message
      * Encoding of an audio stream.
      *
      * Generated from protobuf field <code>.google.cloud.video.transcoder.v1beta1.AudioStream audio_stream = 2;</code>
-     * @return \Google\Cloud\Video\Transcoder\V1beta1\AudioStream
+     * @return \Google\Cloud\Video\Transcoder\V1beta1\AudioStream|null
      */
     public function getAudioStream()
     {
@@ -138,7 +138,7 @@ class ElementaryStream extends \Google\Protobuf\Internal\Message
      * Encoding of a text stream. For example, closed captions or subtitles.
      *
      * Generated from protobuf field <code>.google.cloud.video.transcoder.v1beta1.TextStream text_stream = 3;</code>
-     * @return \Google\Cloud\Video\Transcoder\V1beta1\TextStream
+     * @return \Google\Cloud\Video\Transcoder\V1beta1\TextStream|null
      */
     public function getTextStream()
     {

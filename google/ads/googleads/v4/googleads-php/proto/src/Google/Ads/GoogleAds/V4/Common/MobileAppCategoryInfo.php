@@ -41,7 +41,7 @@ class MobileAppCategoryInfo extends \Google\Protobuf\Internal\Message
      * The mobile app category constant resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue mobile_app_category_constant = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getMobileAppCategoryConstant()
     {

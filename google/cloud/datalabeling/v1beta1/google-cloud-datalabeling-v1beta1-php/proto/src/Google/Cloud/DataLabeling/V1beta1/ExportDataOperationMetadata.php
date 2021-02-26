@@ -121,7 +121,7 @@ class ExportDataOperationMetadata extends \Google\Protobuf\Internal\Message
      * Output only. Timestamp when export dataset request was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {

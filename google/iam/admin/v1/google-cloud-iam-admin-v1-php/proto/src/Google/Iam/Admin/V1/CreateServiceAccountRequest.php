@@ -131,7 +131,7 @@ class CreateServiceAccountRequest extends \Google\Protobuf\Internal\Message
      * `display_name` and `description`.
      *
      * Generated from protobuf field <code>.google.iam.admin.v1.ServiceAccount service_account = 3;</code>
-     * @return \Google\Iam\Admin\V1\ServiceAccount
+     * @return \Google\Iam\Admin\V1\ServiceAccount|null
      */
     public function getServiceAccount()
     {

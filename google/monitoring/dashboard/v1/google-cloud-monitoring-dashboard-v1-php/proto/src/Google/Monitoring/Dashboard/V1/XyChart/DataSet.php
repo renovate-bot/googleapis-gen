@@ -80,7 +80,7 @@ class DataSet extends \Google\Protobuf\Internal\Message
      * Stackdriver metrics API.
      *
      * Generated from protobuf field <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Monitoring\Dashboard\V1\TimeSeriesQuery
+     * @return \Google\Monitoring\Dashboard\V1\TimeSeriesQuery|null
      */
     public function getTimeSeriesQuery()
     {
@@ -177,7 +177,7 @@ class DataSet extends \Google\Protobuf\Internal\Message
      * make sense to fetch and align data at one minute intervals.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration min_alignment_period = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getMinAlignmentPeriod()
     {

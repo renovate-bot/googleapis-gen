@@ -45,7 +45,7 @@ class IpBlockInfo extends \Google\Protobuf\Internal\Message
      * The IP address of this IP block.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ip_address = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getIpAddress()
     {

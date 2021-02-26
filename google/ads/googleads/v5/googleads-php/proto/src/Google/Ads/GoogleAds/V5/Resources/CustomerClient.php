@@ -160,7 +160,7 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
      * the given customer. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getClientCustomer()
     {
@@ -228,7 +228,7 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
      * Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue hidden = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getHidden()
     {
@@ -298,7 +298,7 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
      * will be 0. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value level = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getLevel()
     {
@@ -365,7 +365,7 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
      * time zone of the client, e.g. America/Los_Angeles. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue time_zone = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getTimeZone()
     {
@@ -431,7 +431,7 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
      * Output only. Identifies if the client is a test account. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue test_account = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getTestAccount()
     {
@@ -494,7 +494,7 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
      * Output only. Identifies if the client is a manager. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue manager = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getManager()
     {
@@ -557,7 +557,7 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
      * Output only. Descriptive name for the client. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue descriptive_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDescriptiveName()
     {
@@ -620,7 +620,7 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
      * Output only. Currency code (e.g. 'USD', 'EUR') for the client. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCurrencyCode()
     {
@@ -683,7 +683,7 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the client customer. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {

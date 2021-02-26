@@ -75,7 +75,7 @@ class SetParameterAction extends \Google\Protobuf\Internal\Message
      * The new value of the parameter. A null value clears the parameter.
      *
      * Generated from protobuf field <code>.google.protobuf.Value value = 2;</code>
-     * @return \Google\Protobuf\Value
+     * @return \Google\Protobuf\Value|null
      */
     public function getValue()
     {

@@ -131,6 +131,17 @@ public interface ServiceLevelObjectiveOrBuilder extends
    * </pre>
    *
    * <code>.google.type.CalendarPeriod calendar_period = 6;</code>
+   * @return Whether the calendarPeriod field is set.
+   */
+  boolean hasCalendarPeriod();
+  /**
+   * <pre>
+   * A calendar period, semantically "since the start of the current
+   * `&lt;calendar_period&gt;`". At this time, only `DAY`, `WEEK`, `FORTNIGHT`, and
+   * `MONTH` are supported.
+   * </pre>
+   *
+   * <code>.google.type.CalendarPeriod calendar_period = 6;</code>
    * @return The enum numeric value on the wire for calendarPeriod.
    */
   int getCalendarPeriodValue();

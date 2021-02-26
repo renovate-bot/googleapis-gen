@@ -117,7 +117,7 @@ class ExecuteDeviceCommandRequest extends \Google\Protobuf\Internal\Message
      * The command message to execute, represented as a Struct.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct params = 3;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getParams()
     {

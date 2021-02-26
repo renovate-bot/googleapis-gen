@@ -341,6 +341,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string characters_to_skip = 1;</code>
+   * @return Whether the charactersToSkip field is set.
+   */
+  public boolean hasCharactersToSkip() {
+    return charactersCase_ == 1;
+  }
+  /**
+   * <pre>
+   * Characters to not transform when masking.
+   * </pre>
+   *
+   * <code>string characters_to_skip = 1;</code>
    * @return The charactersToSkip.
    */
   public java.lang.String getCharactersToSkip() {
@@ -388,6 +399,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int COMMON_CHARACTERS_TO_IGNORE_FIELD_NUMBER = 2;
+  /**
+   * <pre>
+   * Common characters to not transform when masking. Useful to avoid removing
+   * punctuation.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;</code>
+   * @return Whether the commonCharactersToIgnore field is set.
+   */
+  public boolean hasCommonCharactersToIgnore() {
+    return charactersCase_ == 2;
+  }
   /**
    * <pre>
    * Common characters to not transform when masking. Useful to avoid removing
@@ -795,6 +818,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string characters_to_skip = 1;</code>
+     * @return Whether the charactersToSkip field is set.
+     */
+    @java.lang.Override
+    public boolean hasCharactersToSkip() {
+      return charactersCase_ == 1;
+    }
+    /**
+     * <pre>
+     * Characters to not transform when masking.
+     * </pre>
+     *
+     * <code>string characters_to_skip = 1;</code>
      * @return The charactersToSkip.
      */
     @java.lang.Override
@@ -898,6 +933,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Common characters to not transform when masking. Useful to avoid removing
+     * punctuation.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;</code>
+     * @return Whether the commonCharactersToIgnore field is set.
+     */
+    @java.lang.Override
+    public boolean hasCommonCharactersToIgnore() {
+      return charactersCase_ == 2;
+    }
     /**
      * <pre>
      * Common characters to not transform when masking. Useful to avoid removing

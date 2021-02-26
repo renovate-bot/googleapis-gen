@@ -456,6 +456,15 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string end_date_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the endDateTime field is set.
+     */
+    boolean hasEndDateTime();
+    /**
+     * <pre>
+     * Output only. The end time in yyyy-MM-dd HH:mm:ss format.
+     * </pre>
+     *
+     * <code>string end_date_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The endDateTime.
      */
     java.lang.String getEndDateTime();
@@ -470,6 +479,15 @@ private static final long serialVersionUID = 0L;
     com.google.protobuf.ByteString
         getEndDateTimeBytes();
 
+    /**
+     * <pre>
+     * Output only. The end time as a well-defined type, e.g. FOREVER.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType end_time_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the endTimeType field is set.
+     */
+    boolean hasEndTimeType();
     /**
      * <pre>
      * Output only. The end time as a well-defined type, e.g. FOREVER.
@@ -496,10 +514,29 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 spending_limit_micros = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the spendingLimitMicros field is set.
+     */
+    boolean hasSpendingLimitMicros();
+    /**
+     * <pre>
+     * Output only. The spending limit in micros.  One million is equivalent to
+     * one unit.
+     * </pre>
+     *
+     * <code>int64 spending_limit_micros = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The spendingLimitMicros.
      */
     long getSpendingLimitMicros();
 
+    /**
+     * <pre>
+     * Output only. The spending limit as a well-defined type, e.g. INFINITE.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.enums.SpendingLimitTypeEnum.SpendingLimitType spending_limit_type = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the spendingLimitType field is set.
+     */
+    boolean hasSpendingLimitType();
     /**
      * <pre>
      * Output only. The spending limit as a well-defined type, e.g. INFINITE.
@@ -1157,6 +1194,17 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string end_date_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the endDateTime field is set.
+     */
+    public boolean hasEndDateTime() {
+      return endTimeCase_ == 15;
+    }
+    /**
+     * <pre>
+     * Output only. The end time in yyyy-MM-dd HH:mm:ss format.
+     * </pre>
+     *
+     * <code>string end_date_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The endDateTime.
      */
     public java.lang.String getEndDateTime() {
@@ -1210,6 +1258,17 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType end_time_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the endTimeType field is set.
+     */
+    public boolean hasEndTimeType() {
+      return endTimeCase_ == 6;
+    }
+    /**
+     * <pre>
+     * Output only. The end time as a well-defined type, e.g. FOREVER.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType end_time_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The enum numeric value on the wire for endTimeType.
      */
     public int getEndTimeTypeValue() {
@@ -1244,6 +1303,19 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 spending_limit_micros = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the spendingLimitMicros field is set.
+     */
+    @java.lang.Override
+    public boolean hasSpendingLimitMicros() {
+      return spendingLimitCase_ == 16;
+    }
+    /**
+     * <pre>
+     * Output only. The spending limit in micros.  One million is equivalent to
+     * one unit.
+     * </pre>
+     *
+     * <code>int64 spending_limit_micros = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The spendingLimitMicros.
      */
     @java.lang.Override
@@ -1255,6 +1327,17 @@ private static final long serialVersionUID = 0L;
     }
 
     public static final int SPENDING_LIMIT_TYPE_FIELD_NUMBER = 8;
+    /**
+     * <pre>
+     * Output only. The spending limit as a well-defined type, e.g. INFINITE.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.enums.SpendingLimitTypeEnum.SpendingLimitType spending_limit_type = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the spendingLimitType field is set.
+     */
+    public boolean hasSpendingLimitType() {
+      return spendingLimitCase_ == 8;
+    }
     /**
      * <pre>
      * Output only. The spending limit as a well-defined type, e.g. INFINITE.
@@ -2660,6 +2743,18 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string end_date_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return Whether the endDateTime field is set.
+       */
+      @java.lang.Override
+      public boolean hasEndDateTime() {
+        return endTimeCase_ == 15;
+      }
+      /**
+       * <pre>
+       * Output only. The end time in yyyy-MM-dd HH:mm:ss format.
+       * </pre>
+       *
+       * <code>string end_date_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The endDateTime.
        */
       @java.lang.Override
@@ -2769,6 +2864,18 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType end_time_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return Whether the endTimeType field is set.
+       */
+      @java.lang.Override
+      public boolean hasEndTimeType() {
+        return endTimeCase_ == 6;
+      }
+      /**
+       * <pre>
+       * Output only. The end time as a well-defined type, e.g. FOREVER.
+       * </pre>
+       *
+       * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType end_time_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The enum numeric value on the wire for endTimeType.
        */
       @java.lang.Override
@@ -2853,6 +2960,18 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 spending_limit_micros = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return Whether the spendingLimitMicros field is set.
+       */
+      public boolean hasSpendingLimitMicros() {
+        return spendingLimitCase_ == 16;
+      }
+      /**
+       * <pre>
+       * Output only. The spending limit in micros.  One million is equivalent to
+       * one unit.
+       * </pre>
+       *
+       * <code>int64 spending_limit_micros = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The spendingLimitMicros.
        */
       public long getSpendingLimitMicros() {
@@ -2895,6 +3014,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      /**
+       * <pre>
+       * Output only. The spending limit as a well-defined type, e.g. INFINITE.
+       * </pre>
+       *
+       * <code>.google.ads.googleads.v5.enums.SpendingLimitTypeEnum.SpendingLimitType spending_limit_type = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return Whether the spendingLimitType field is set.
+       */
+      @java.lang.Override
+      public boolean hasSpendingLimitType() {
+        return spendingLimitCase_ == 8;
+      }
       /**
        * <pre>
        * Output only. The spending limit as a well-defined type, e.g. INFINITE.
@@ -3790,6 +3921,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string proposed_end_date_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the proposedEndDateTime field is set.
+   */
+  public boolean hasProposedEndDateTime() {
+    return proposedEndTimeCase_ == 28;
+  }
+  /**
+   * <pre>
+   * Output only. The proposed end time in yyyy-MM-dd HH:mm:ss format.
+   * </pre>
+   *
+   * <code>string proposed_end_date_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The proposedEndDateTime.
    */
   public java.lang.String getProposedEndDateTime() {
@@ -3843,6 +3985,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType proposed_end_time_type = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the proposedEndTimeType field is set.
+   */
+  public boolean hasProposedEndTimeType() {
+    return proposedEndTimeCase_ == 9;
+  }
+  /**
+   * <pre>
+   * Output only. The proposed end time as a well-defined type, e.g. FOREVER.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType proposed_end_time_type = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The enum numeric value on the wire for proposedEndTimeType.
    */
   public int getProposedEndTimeTypeValue() {
@@ -3870,6 +4023,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int APPROVED_END_DATE_TIME_FIELD_NUMBER = 29;
+  /**
+   * <pre>
+   * Output only. The approved end time in yyyy-MM-dd HH:mm:ss format.
+   * </pre>
+   *
+   * <code>string approved_end_date_time = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the approvedEndDateTime field is set.
+   */
+  public boolean hasApprovedEndDateTime() {
+    return approvedEndTimeCase_ == 29;
+  }
   /**
    * <pre>
    * Output only. The approved end time in yyyy-MM-dd HH:mm:ss format.
@@ -3929,6 +4093,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType approved_end_time_type = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the approvedEndTimeType field is set.
+   */
+  public boolean hasApprovedEndTimeType() {
+    return approvedEndTimeCase_ == 11;
+  }
+  /**
+   * <pre>
+   * Output only. The approved end time as a well-defined type, e.g. FOREVER.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType approved_end_time_type = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The enum numeric value on the wire for approvedEndTimeType.
    */
   public int getApprovedEndTimeTypeValue() {
@@ -3963,6 +4138,19 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 proposed_spending_limit_micros = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the proposedSpendingLimitMicros field is set.
+   */
+  @java.lang.Override
+  public boolean hasProposedSpendingLimitMicros() {
+    return proposedSpendingLimitCase_ == 30;
+  }
+  /**
+   * <pre>
+   * Output only. The proposed spending limit in micros.  One million is equivalent to
+   * one unit.
+   * </pre>
+   *
+   * <code>int64 proposed_spending_limit_micros = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The proposedSpendingLimitMicros.
    */
   @java.lang.Override
@@ -3974,6 +4162,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PROPOSED_SPENDING_LIMIT_TYPE_FIELD_NUMBER = 13;
+  /**
+   * <pre>
+   * Output only. The proposed spending limit as a well-defined type, e.g. INFINITE.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.enums.SpendingLimitTypeEnum.SpendingLimitType proposed_spending_limit_type = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the proposedSpendingLimitType field is set.
+   */
+  public boolean hasProposedSpendingLimitType() {
+    return proposedSpendingLimitCase_ == 13;
+  }
   /**
    * <pre>
    * Output only. The proposed spending limit as a well-defined type, e.g. INFINITE.
@@ -4016,6 +4215,21 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 approved_spending_limit_micros = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the approvedSpendingLimitMicros field is set.
+   */
+  @java.lang.Override
+  public boolean hasApprovedSpendingLimitMicros() {
+    return approvedSpendingLimitCase_ == 31;
+  }
+  /**
+   * <pre>
+   * Output only. The approved spending limit in micros.  One million is equivalent to
+   * one unit.  This will only be populated if the proposed spending limit
+   * is finite, and will always be greater than or equal to the
+   * proposed spending limit.
+   * </pre>
+   *
+   * <code>int64 approved_spending_limit_micros = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The approvedSpendingLimitMicros.
    */
   @java.lang.Override
@@ -4027,6 +4241,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int APPROVED_SPENDING_LIMIT_TYPE_FIELD_NUMBER = 15;
+  /**
+   * <pre>
+   * Output only. The approved spending limit as a well-defined type, e.g. INFINITE.  This
+   * will only be populated if the approved spending limit is INFINITE.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.enums.SpendingLimitTypeEnum.SpendingLimitType approved_spending_limit_type = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the approvedSpendingLimitType field is set.
+   */
+  public boolean hasApprovedSpendingLimitType() {
+    return approvedSpendingLimitCase_ == 15;
+  }
   /**
    * <pre>
    * Output only. The approved spending limit as a well-defined type, e.g. INFINITE.  This
@@ -4076,6 +4302,26 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 adjusted_spending_limit_micros = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the adjustedSpendingLimitMicros field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdjustedSpendingLimitMicros() {
+    return adjustedSpendingLimitCase_ == 32;
+  }
+  /**
+   * <pre>
+   * Output only. The adjusted spending limit in micros.  One million is equivalent to
+   * one unit.
+   * If the approved spending limit is finite, the adjusted
+   * spending limit may vary depending on the types of adjustments applied
+   * to this budget, if applicable.
+   * The different kinds of adjustments are described here:
+   * https://support.google.com/google-ads/answer/1704323
+   * For example, a debit adjustment reduces how much the account is
+   * allowed to spend.
+   * </pre>
+   *
+   * <code>int64 adjusted_spending_limit_micros = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The adjustedSpendingLimitMicros.
    */
   @java.lang.Override
@@ -4087,6 +4333,20 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ADJUSTED_SPENDING_LIMIT_TYPE_FIELD_NUMBER = 17;
+  /**
+   * <pre>
+   * Output only. The adjusted spending limit as a well-defined type, e.g. INFINITE.
+   * This will only be populated if the adjusted spending limit is INFINITE,
+   * which is guaranteed to be true if the approved spending limit is
+   * INFINITE.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.enums.SpendingLimitTypeEnum.SpendingLimitType adjusted_spending_limit_type = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the adjustedSpendingLimitType field is set.
+   */
+  public boolean hasAdjustedSpendingLimitType() {
+    return adjustedSpendingLimitCase_ == 17;
+  }
   /**
    * <pre>
    * Output only. The adjusted spending limit as a well-defined type, e.g. INFINITE.
@@ -6284,6 +6544,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string proposed_end_date_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the proposedEndDateTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasProposedEndDateTime() {
+      return proposedEndTimeCase_ == 28;
+    }
+    /**
+     * <pre>
+     * Output only. The proposed end time in yyyy-MM-dd HH:mm:ss format.
+     * </pre>
+     *
+     * <code>string proposed_end_date_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The proposedEndDateTime.
      */
     @java.lang.Override
@@ -6393,6 +6665,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType proposed_end_time_type = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the proposedEndTimeType field is set.
+     */
+    @java.lang.Override
+    public boolean hasProposedEndTimeType() {
+      return proposedEndTimeCase_ == 9;
+    }
+    /**
+     * <pre>
+     * Output only. The proposed end time as a well-defined type, e.g. FOREVER.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType proposed_end_time_type = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The enum numeric value on the wire for proposedEndTimeType.
      */
     @java.lang.Override
@@ -6470,6 +6754,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Output only. The approved end time in yyyy-MM-dd HH:mm:ss format.
+     * </pre>
+     *
+     * <code>string approved_end_date_time = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the approvedEndDateTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasApprovedEndDateTime() {
+      return approvedEndTimeCase_ == 29;
+    }
     /**
      * <pre>
      * Output only. The approved end time in yyyy-MM-dd HH:mm:ss format.
@@ -6585,6 +6881,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType approved_end_time_type = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the approvedEndTimeType field is set.
+     */
+    @java.lang.Override
+    public boolean hasApprovedEndTimeType() {
+      return approvedEndTimeCase_ == 11;
+    }
+    /**
+     * <pre>
+     * Output only. The approved end time as a well-defined type, e.g. FOREVER.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType approved_end_time_type = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The enum numeric value on the wire for approvedEndTimeType.
      */
     @java.lang.Override
@@ -6669,6 +6977,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 proposed_spending_limit_micros = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the proposedSpendingLimitMicros field is set.
+     */
+    public boolean hasProposedSpendingLimitMicros() {
+      return proposedSpendingLimitCase_ == 30;
+    }
+    /**
+     * <pre>
+     * Output only. The proposed spending limit in micros.  One million is equivalent to
+     * one unit.
+     * </pre>
+     *
+     * <code>int64 proposed_spending_limit_micros = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The proposedSpendingLimitMicros.
      */
     public long getProposedSpendingLimitMicros() {
@@ -6711,6 +7031,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Output only. The proposed spending limit as a well-defined type, e.g. INFINITE.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.enums.SpendingLimitTypeEnum.SpendingLimitType proposed_spending_limit_type = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the proposedSpendingLimitType field is set.
+     */
+    @java.lang.Override
+    public boolean hasProposedSpendingLimitType() {
+      return proposedSpendingLimitCase_ == 13;
+    }
     /**
      * <pre>
      * Output only. The proposed spending limit as a well-defined type, e.g. INFINITE.
@@ -6803,6 +7135,20 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 approved_spending_limit_micros = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the approvedSpendingLimitMicros field is set.
+     */
+    public boolean hasApprovedSpendingLimitMicros() {
+      return approvedSpendingLimitCase_ == 31;
+    }
+    /**
+     * <pre>
+     * Output only. The approved spending limit in micros.  One million is equivalent to
+     * one unit.  This will only be populated if the proposed spending limit
+     * is finite, and will always be greater than or equal to the
+     * proposed spending limit.
+     * </pre>
+     *
+     * <code>int64 approved_spending_limit_micros = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The approvedSpendingLimitMicros.
      */
     public long getApprovedSpendingLimitMicros() {
@@ -6849,6 +7195,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Output only. The approved spending limit as a well-defined type, e.g. INFINITE.  This
+     * will only be populated if the approved spending limit is INFINITE.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.enums.SpendingLimitTypeEnum.SpendingLimitType approved_spending_limit_type = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the approvedSpendingLimitType field is set.
+     */
+    @java.lang.Override
+    public boolean hasApprovedSpendingLimitType() {
+      return approvedSpendingLimitCase_ == 15;
+    }
     /**
      * <pre>
      * Output only. The approved spending limit as a well-defined type, e.g. INFINITE.  This
@@ -6951,6 +7310,25 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 adjusted_spending_limit_micros = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the adjustedSpendingLimitMicros field is set.
+     */
+    public boolean hasAdjustedSpendingLimitMicros() {
+      return adjustedSpendingLimitCase_ == 32;
+    }
+    /**
+     * <pre>
+     * Output only. The adjusted spending limit in micros.  One million is equivalent to
+     * one unit.
+     * If the approved spending limit is finite, the adjusted
+     * spending limit may vary depending on the types of adjustments applied
+     * to this budget, if applicable.
+     * The different kinds of adjustments are described here:
+     * https://support.google.com/google-ads/answer/1704323
+     * For example, a debit adjustment reduces how much the account is
+     * allowed to spend.
+     * </pre>
+     *
+     * <code>int64 adjusted_spending_limit_micros = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The adjustedSpendingLimitMicros.
      */
     public long getAdjustedSpendingLimitMicros() {
@@ -7007,6 +7385,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Output only. The adjusted spending limit as a well-defined type, e.g. INFINITE.
+     * This will only be populated if the adjusted spending limit is INFINITE,
+     * which is guaranteed to be true if the approved spending limit is
+     * INFINITE.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.enums.SpendingLimitTypeEnum.SpendingLimitType adjusted_spending_limit_type = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the adjustedSpendingLimitType field is set.
+     */
+    @java.lang.Override
+    public boolean hasAdjustedSpendingLimitType() {
+      return adjustedSpendingLimitCase_ == 17;
+    }
     /**
      * <pre>
      * Output only. The adjusted spending limit as a well-defined type, e.g. INFINITE.

@@ -2009,6 +2009,18 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 max_num_versions = 1;</code>
+   * @return Whether the maxNumVersions field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxNumVersions() {
+    return ruleCase_ == 1;
+  }
+  /**
+   * <pre>
+   * Delete all cells in a column except the most recent N.
+   * </pre>
+   *
+   * <code>int32 max_num_versions = 1;</code>
    * @return The maxNumVersions.
    */
   @java.lang.Override
@@ -2577,6 +2589,17 @@ private static final long serialVersionUID = 0L;
     }
 
 
+    /**
+     * <pre>
+     * Delete all cells in a column except the most recent N.
+     * </pre>
+     *
+     * <code>int32 max_num_versions = 1;</code>
+     * @return Whether the maxNumVersions field is set.
+     */
+    public boolean hasMaxNumVersions() {
+      return ruleCase_ == 1;
+    }
     /**
      * <pre>
      * Delete all cells in a column except the most recent N.

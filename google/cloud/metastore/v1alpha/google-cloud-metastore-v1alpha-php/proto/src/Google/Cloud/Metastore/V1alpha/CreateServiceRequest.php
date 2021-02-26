@@ -165,7 +165,7 @@ class CreateServiceRequest extends \Google\Protobuf\Internal\Message
      * the request's `service_id` field.
      *
      * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.Service service = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Metastore\V1alpha\Service
+     * @return \Google\Cloud\Metastore\V1alpha\Service|null
      */
     public function getService()
     {

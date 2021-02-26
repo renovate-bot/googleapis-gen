@@ -41,7 +41,7 @@ class ThirdPartyAppAnalyticsSettings extends \Google\Protobuf\Internal\Message
      * Output only. The event name of a third-party app analytics conversion.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue event_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getEventName()
     {

@@ -116,7 +116,7 @@ class FeedMapping extends \Google\Protobuf\Internal\Message
      * Immutable. The feed of this feed mapping.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getFeed()
     {

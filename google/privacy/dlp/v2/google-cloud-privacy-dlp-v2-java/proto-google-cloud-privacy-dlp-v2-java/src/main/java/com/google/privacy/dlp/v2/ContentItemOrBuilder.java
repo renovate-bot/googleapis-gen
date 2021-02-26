@@ -13,6 +13,15 @@ public interface ContentItemOrBuilder extends
    * </pre>
    *
    * <code>string value = 3;</code>
+   * @return Whether the value field is set.
+   */
+  boolean hasValue();
+  /**
+   * <pre>
+   * String data to inspect or redact.
+   * </pre>
+   *
+   * <code>string value = 3;</code>
    * @return The value.
    */
   java.lang.String getValue();

@@ -65,7 +65,7 @@ class ReportHeader extends \Google\Protobuf\Internal\Message
      * range specified in the report request.
      *
      * Generated from protobuf field <code>.google.ads.admob.v1.DateRange date_range = 1;</code>
-     * @return \Google\Ads\Admob\V1\DateRange
+     * @return \Google\Ads\Admob\V1\DateRange|null
      */
     public function getDateRange()
     {
@@ -103,7 +103,7 @@ class ReportHeader extends \Google\Protobuf\Internal\Message
      * in the report request.
      *
      * Generated from protobuf field <code>.google.ads.admob.v1.LocalizationSettings localization_settings = 2;</code>
-     * @return \Google\Ads\Admob\V1\LocalizationSettings
+     * @return \Google\Ads\Admob\V1\LocalizationSettings|null
      */
     public function getLocalizationSettings()
     {

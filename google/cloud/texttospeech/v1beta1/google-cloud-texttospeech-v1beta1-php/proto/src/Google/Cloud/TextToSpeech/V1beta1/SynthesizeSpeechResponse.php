@@ -129,7 +129,7 @@ class SynthesizeSpeechResponse extends \Google\Protobuf\Internal\Message
      * The audio metadata of `audio_content`.
      *
      * Generated from protobuf field <code>.google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 4;</code>
-     * @return \Google\Cloud\TextToSpeech\V1beta1\AudioConfig
+     * @return \Google\Cloud\TextToSpeech\V1beta1\AudioConfig|null
      */
     public function getAudioConfig()
     {

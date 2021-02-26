@@ -302,7 +302,7 @@ class PredictRequest extends \Google\Protobuf\Internal\Message
      * request is required for event logging.
      *
      * Generated from protobuf field <code>.google.cloud.retail.v2alpha.UserEvent user_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Retail\V2alpha\UserEvent
+     * @return \Google\Cloud\Retail\V2alpha\UserEvent|null
      */
     public function getUserEvent()
     {

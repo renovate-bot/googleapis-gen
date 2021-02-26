@@ -62,7 +62,7 @@ class WorkerPoolSpec extends \Google\Protobuf\Internal\Message
      * The custom container task.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.ContainerSpec container_spec = 6;</code>
-     * @return \Google\Cloud\Aiplatform\V1\ContainerSpec
+     * @return \Google\Cloud\Aiplatform\V1\ContainerSpec|null
      */
     public function getContainerSpec()
     {
@@ -93,7 +93,7 @@ class WorkerPoolSpec extends \Google\Protobuf\Internal\Message
      * The Python packaged task.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.PythonPackageSpec python_package_spec = 7;</code>
-     * @return \Google\Cloud\Aiplatform\V1\PythonPackageSpec
+     * @return \Google\Cloud\Aiplatform\V1\PythonPackageSpec|null
      */
     public function getPythonPackageSpec()
     {
@@ -124,7 +124,7 @@ class WorkerPoolSpec extends \Google\Protobuf\Internal\Message
      * Optional. Immutable. The specification of a single machine.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Cloud\Aiplatform\V1\MachineSpec
+     * @return \Google\Cloud\Aiplatform\V1\MachineSpec|null
      */
     public function getMachineSpec()
     {
@@ -186,7 +186,7 @@ class WorkerPoolSpec extends \Google\Protobuf\Internal\Message
      * Disk spec.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.DiskSpec disk_spec = 5;</code>
-     * @return \Google\Cloud\Aiplatform\V1\DiskSpec
+     * @return \Google\Cloud\Aiplatform\V1\DiskSpec|null
      */
     public function getDiskSpec()
     {

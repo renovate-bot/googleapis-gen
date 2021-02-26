@@ -112,7 +112,7 @@ class GroupPlacementView extends \Google\Protobuf\Internal\Message
      * app ID, or a YouTube channel ID.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue placement = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPlacement()
     {
@@ -178,7 +178,7 @@ class GroupPlacementView extends \Google\Protobuf\Internal\Message
      * Output only. Domain name for websites and YouTube channel name for YouTube channels.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue display_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDisplayName()
     {
@@ -242,7 +242,7 @@ class GroupPlacementView extends \Google\Protobuf\Internal\Message
      * app store, or a YouTube channel URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue target_url = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getTargetUrl()
     {

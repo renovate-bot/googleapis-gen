@@ -125,7 +125,7 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the geo target constant.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -188,7 +188,7 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
      * Output only. Geo target constant English name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {
@@ -251,7 +251,7 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
      * Output only. The ISO-3166-1 alpha-2 country code that is associated with the target.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCountryCode()
     {
@@ -314,7 +314,7 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
      * Output only. Geo target constant target type.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue target_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getTargetType()
     {
@@ -404,7 +404,7 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
      * of its parent and country.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue canonical_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCanonicalName()
     {

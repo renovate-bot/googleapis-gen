@@ -134,7 +134,7 @@ class AdGroupCriterionSimulation extends \Google\Protobuf\Internal\Message
      * Output only. AdGroup ID of the simulation.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value ad_group_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getAdGroupId()
     {
@@ -197,7 +197,7 @@ class AdGroupCriterionSimulation extends \Google\Protobuf\Internal\Message
      * Output only. Criterion ID of the simulation.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCriterionId()
     {
@@ -312,7 +312,7 @@ class AdGroupCriterionSimulation extends \Google\Protobuf\Internal\Message
      * Output only. First day on which the simulation is based, in YYYY-MM-DD format.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getStartDate()
     {
@@ -375,7 +375,7 @@ class AdGroupCriterionSimulation extends \Google\Protobuf\Internal\Message
      * Output only. Last day on which the simulation is based, in YYYY-MM-DD format.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getEndDate()
     {
@@ -438,7 +438,7 @@ class AdGroupCriterionSimulation extends \Google\Protobuf\Internal\Message
      * Output only. Simulation points if the simulation type is CPC_BID.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.CpcBidSimulationPointList cpc_bid_point_list = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\CpcBidSimulationPointList
+     * @return \Google\Ads\GoogleAds\V4\Common\CpcBidSimulationPointList|null
      */
     public function getCpcBidPointList()
     {

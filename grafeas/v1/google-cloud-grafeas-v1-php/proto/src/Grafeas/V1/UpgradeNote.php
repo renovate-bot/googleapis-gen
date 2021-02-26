@@ -97,7 +97,7 @@ class UpgradeNote extends \Google\Protobuf\Internal\Message
      * readable form.
      *
      * Generated from protobuf field <code>.grafeas.v1.Version version = 2;</code>
-     * @return \Grafeas\V1\Version
+     * @return \Grafeas\V1\Version|null
      */
     public function getVersion()
     {
@@ -160,7 +160,7 @@ class UpgradeNote extends \Google\Protobuf\Internal\Message
      * Required for Windows OS. Represents the metadata about the Windows update.
      *
      * Generated from protobuf field <code>.grafeas.v1.WindowsUpdate windows_update = 4;</code>
-     * @return \Grafeas\V1\WindowsUpdate
+     * @return \Grafeas\V1\WindowsUpdate|null
      */
     public function getWindowsUpdate()
     {

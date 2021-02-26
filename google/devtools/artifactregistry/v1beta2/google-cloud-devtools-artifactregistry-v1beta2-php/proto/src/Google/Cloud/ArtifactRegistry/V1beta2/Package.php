@@ -123,7 +123,7 @@ class Package extends \Google\Protobuf\Internal\Message
      * The time when the package was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 5;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -160,7 +160,7 @@ class Package extends \Google\Protobuf\Internal\Message
      * version of the package.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 6;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {

@@ -174,7 +174,7 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
      * same value as `[Streaming]DetectIntentResponse.query_result`.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.QueryResult query_result = 2;</code>
-     * @return \Google\Cloud\Dialogflow\V2beta1\QueryResult
+     * @return \Google\Cloud\Dialogflow\V2beta1\QueryResult|null
      */
     public function getQueryResult()
     {
@@ -238,7 +238,7 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
      * `[Streaming]DetectIntent` call.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest original_detect_intent_request = 3;</code>
-     * @return \Google\Cloud\Dialogflow\V2beta1\OriginalDetectIntentRequest
+     * @return \Google\Cloud\Dialogflow\V2beta1\OriginalDetectIntentRequest|null
      */
     public function getOriginalDetectIntentRequest()
     {

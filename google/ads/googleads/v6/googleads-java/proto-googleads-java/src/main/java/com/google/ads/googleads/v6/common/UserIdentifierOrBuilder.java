@@ -34,6 +34,15 @@ public interface UserIdentifierOrBuilder extends
    * </pre>
    *
    * <code>string hashed_email = 7;</code>
+   * @return Whether the hashedEmail field is set.
+   */
+  boolean hasHashedEmail();
+  /**
+   * <pre>
+   * Hashed email address using SHA-256 hash function after normalization.
+   * </pre>
+   *
+   * <code>string hashed_email = 7;</code>
    * @return The hashedEmail.
    */
   java.lang.String getHashedEmail();
@@ -48,6 +57,16 @@ public interface UserIdentifierOrBuilder extends
   com.google.protobuf.ByteString
       getHashedEmailBytes();
 
+  /**
+   * <pre>
+   * Hashed phone number using SHA-256 hash function after normalization
+   * (E164 standard).
+   * </pre>
+   *
+   * <code>string hashed_phone_number = 8;</code>
+   * @return Whether the hashedPhoneNumber field is set.
+   */
+  boolean hasHashedPhoneNumber();
   /**
    * <pre>
    * Hashed phone number using SHA-256 hash function after normalization
@@ -76,6 +95,15 @@ public interface UserIdentifierOrBuilder extends
    * </pre>
    *
    * <code>string mobile_id = 9;</code>
+   * @return Whether the mobileId field is set.
+   */
+  boolean hasMobileId();
+  /**
+   * <pre>
+   * Mobile device ID (advertising ID/IDFA).
+   * </pre>
+   *
+   * <code>string mobile_id = 9;</code>
    * @return The mobileId.
    */
   java.lang.String getMobileId();
@@ -90,6 +118,16 @@ public interface UserIdentifierOrBuilder extends
   com.google.protobuf.ByteString
       getMobileIdBytes();
 
+  /**
+   * <pre>
+   * Advertiser-assigned user ID for Customer Match upload, or
+   * third-party-assigned user ID for SSD.
+   * </pre>
+   *
+   * <code>string third_party_user_id = 10;</code>
+   * @return Whether the thirdPartyUserId field is set.
+   */
+  boolean hasThirdPartyUserId();
   /**
    * <pre>
    * Advertiser-assigned user ID for Customer Match upload, or

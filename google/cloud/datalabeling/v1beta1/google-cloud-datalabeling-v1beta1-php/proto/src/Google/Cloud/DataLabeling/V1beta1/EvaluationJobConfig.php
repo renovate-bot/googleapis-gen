@@ -196,7 +196,7 @@ class EvaluationJobConfig extends \Google\Protobuf\Internal\Message
      * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\ImageClassificationConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\ImageClassificationConfig|null
      */
     public function getImageClassificationConfig()
     {
@@ -235,7 +235,7 @@ class EvaluationJobConfig extends \Google\Protobuf\Internal\Message
      * [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\BoundingPolyConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\BoundingPolyConfig|null
      */
     public function getBoundingPolyConfig()
     {
@@ -273,7 +273,7 @@ class EvaluationJobConfig extends \Google\Protobuf\Internal\Message
      * `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 8;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\TextClassificationConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\TextClassificationConfig|null
      */
     public function getTextClassificationConfig()
     {
@@ -316,7 +316,7 @@ class EvaluationJobConfig extends \Google\Protobuf\Internal\Message
      * * You must specify `bigquerySource` (not `gcsSource`).
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 1;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\InputConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\InputConfig|null
      */
     public function getInputConfig()
     {
@@ -364,7 +364,7 @@ class EvaluationJobConfig extends \Google\Protobuf\Internal\Message
      * configuration.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.EvaluationConfig evaluation_config = 2;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\EvaluationConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\EvaluationConfig|null
      */
     public function getEvaluationConfig()
     {
@@ -410,7 +410,7 @@ class EvaluationJobConfig extends \Google\Protobuf\Internal\Message
      * `instruction` field within this configuration.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 3;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\HumanAnnotationConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\HumanAnnotationConfig|null
      */
     public function getHumanAnnotationConfig()
     {
@@ -574,7 +574,7 @@ class EvaluationJobConfig extends \Google\Protobuf\Internal\Message
      * your predictions have low mean average precision during a run.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfig evaluation_job_alert_config = 13;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\EvaluationJobAlertConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\EvaluationJobAlertConfig|null
      */
     public function getEvaluationJobAlertConfig()
     {

@@ -774,7 +774,7 @@ class VideoStream extends \Google\Protobuf\Internal\Message
      * `"3s"`.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration gop_duration = 16;</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getGopDuration()
     {

@@ -67,7 +67,7 @@ class UpdateSessionEntityTypeRequest extends \Google\Protobuf\Internal\Message
      * environment.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.SessionEntityType session_entity_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\SessionEntityType
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\SessionEntityType|null
      */
     public function getSessionEntityType()
     {
@@ -109,7 +109,7 @@ class UpdateSessionEntityTypeRequest extends \Google\Protobuf\Internal\Message
      * The mask to control which fields get updated.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

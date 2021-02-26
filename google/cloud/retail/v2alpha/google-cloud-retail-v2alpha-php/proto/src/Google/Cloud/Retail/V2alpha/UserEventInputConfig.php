@@ -40,7 +40,7 @@ class UserEventInputConfig extends \Google\Protobuf\Internal\Message
      * Required. The Inline source for the input content for UserEvents.
      *
      * Generated from protobuf field <code>.google.cloud.retail.v2alpha.UserEventInlineSource user_event_inline_source = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Retail\V2alpha\UserEventInlineSource
+     * @return \Google\Cloud\Retail\V2alpha\UserEventInlineSource|null
      */
     public function getUserEventInlineSource()
     {
@@ -71,7 +71,7 @@ class UserEventInputConfig extends \Google\Protobuf\Internal\Message
      * Required. Google Cloud Storage location for the input content.
      *
      * Generated from protobuf field <code>.google.cloud.retail.v2alpha.GcsSource gcs_source = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Retail\V2alpha\GcsSource
+     * @return \Google\Cloud\Retail\V2alpha\GcsSource|null
      */
     public function getGcsSource()
     {
@@ -102,7 +102,7 @@ class UserEventInputConfig extends \Google\Protobuf\Internal\Message
      * Required. BigQuery input source.
      *
      * Generated from protobuf field <code>.google.cloud.retail.v2alpha.BigQuerySource big_query_source = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Retail\V2alpha\BigQuerySource
+     * @return \Google\Cloud\Retail\V2alpha\BigQuerySource|null
      */
     public function getBigQuerySource()
     {

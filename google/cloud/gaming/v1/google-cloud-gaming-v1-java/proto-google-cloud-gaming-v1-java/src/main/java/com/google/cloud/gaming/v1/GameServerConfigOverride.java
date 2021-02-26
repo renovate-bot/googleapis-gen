@@ -232,6 +232,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string config_version = 100;</code>
+   * @return Whether the configVersion field is set.
+   */
+  public boolean hasConfigVersion() {
+    return changeCase_ == 100;
+  }
+  /**
+   * <pre>
+   * The game server config for this override.
+   * </pre>
+   *
+   * <code>string config_version = 100;</code>
    * @return The configVersion.
    */
   public java.lang.String getConfigVersion() {
@@ -857,6 +868,18 @@ private static final long serialVersionUID = 0L;
       return realmsSelectorBuilder_;
     }
 
+    /**
+     * <pre>
+     * The game server config for this override.
+     * </pre>
+     *
+     * <code>string config_version = 100;</code>
+     * @return Whether the configVersion field is set.
+     */
+    @java.lang.Override
+    public boolean hasConfigVersion() {
+      return changeCase_ == 100;
+    }
     /**
      * <pre>
      * The game server config for this override.

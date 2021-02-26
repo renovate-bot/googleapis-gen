@@ -145,7 +145,7 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
      * that need a higher degree of manual configuration.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.DedicatedResources dedicated_resources = 7;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\DedicatedResources
+     * @return \Google\Cloud\Aiplatform\V1beta1\DedicatedResources|null
      */
     public function getDedicatedResources()
     {
@@ -178,7 +178,7 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
      * Platform, and require only a modest additional configuration.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.AutomaticResources automatic_resources = 8;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\AutomaticResources
+     * @return \Google\Cloud\Aiplatform\V1beta1\AutomaticResources|null
      */
     public function getAutomaticResources()
     {
@@ -292,7 +292,7 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
      * Output only. Timestamp when the DeployedModel was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -335,7 +335,7 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
      * this Model is not allowed.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 9;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\ExplanationSpec
+     * @return \Google\Cloud\Aiplatform\V1beta1\ExplanationSpec|null
      */
     public function getExplanationSpec()
     {

@@ -51,7 +51,7 @@ class PartialResult extends \Google\Protobuf\Internal\Message
      * The error result of the migration request in case of failure.
      *
      * Generated from protobuf field <code>.google.rpc.Status error = 2;</code>
-     * @return \Google\Rpc\Status
+     * @return \Google\Rpc\Status|null
      */
     public function getError()
     {
@@ -145,7 +145,7 @@ class PartialResult extends \Google\Protobuf\Internal\Message
      * [MigrateResourceRequest.migrate_resource_requests][].
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.MigrateResourceRequest request = 1;</code>
-     * @return \Google\Cloud\Aiplatform\V1\MigrateResourceRequest
+     * @return \Google\Cloud\Aiplatform\V1\MigrateResourceRequest|null
      */
     public function getRequest()
     {

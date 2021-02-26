@@ -279,7 +279,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the invoice. It appears on the invoice PDF as "Invoice number".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getId()
     {
@@ -369,7 +369,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * `customers/{customer_id}/billingSetups/{billing_setup_id}`
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue billing_setup = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getBillingSetup()
     {
@@ -437,7 +437,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * "Billing Account Number".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue payments_account_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPaymentsAccountId()
     {
@@ -508,7 +508,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * "Billing ID".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue payments_profile_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPaymentsProfileId()
     {
@@ -578,7 +578,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * either "Issue date" or "Invoice date".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue issue_date = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getIssueDate()
     {
@@ -644,7 +644,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * Output only. The due date in yyyy-mm-dd format.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue due_date = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDueDate()
     {
@@ -707,7 +707,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * Output only. The service period date range of this invoice. The end date is inclusive.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.DateRange service_date_range = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\DateRange
+     * @return \Google\Ads\GoogleAds\V4\Common\DateRange|null
      */
     public function getServiceDateRange()
     {
@@ -744,7 +744,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * currency codes derived from the ISO 4217 standard is supported.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCurrencyCode()
     {
@@ -811,7 +811,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * on the invoice, not on a specific account budget.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value invoice_level_adjustments_micros = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getInvoiceLevelAdjustmentsMicros()
     {
@@ -882,7 +882,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * longer included.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value subtotal_amount_micros = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getSubtotalAmountMicros()
     {
@@ -962,7 +962,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * account budget.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value tax_amount_micros = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getTaxAmountMicros()
     {
@@ -1035,7 +1035,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * Invoice.tax_amount_micros.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value total_amount_micros = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getTotalAmountMicros()
     {
@@ -1114,7 +1114,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * `customers/{customer_id}/invoices/{invoice_id}`
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue corrected_invoice = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCorrectedInvoice()
     {
@@ -1228,7 +1228,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * token to request the PDF with this URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue pdf_url = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPdfUrl()
     {

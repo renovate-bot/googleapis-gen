@@ -141,7 +141,7 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      * Immutable. The ad group to which the ad belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAdGroup()
     {
@@ -204,7 +204,7 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      * Immutable. The ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Ad ad = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Ad
+     * @return \Google\Ads\GoogleAds\V4\Resources\Ad|null
      */
     public function getAd()
     {
@@ -240,7 +240,7 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      * Output only. Policy information for the ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.AdGroupAdPolicySummary policy_summary = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\AdGroupAdPolicySummary
+     * @return \Google\Ads\GoogleAds\V4\Resources\AdGroupAdPolicySummary|null
      */
     public function getPolicySummary()
     {

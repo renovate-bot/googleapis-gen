@@ -41,7 +41,7 @@ class UndeleteServiceResponse extends \Google\Protobuf\Internal\Message
      * Revived service resource.
      *
      * Generated from protobuf field <code>.google.api.servicemanagement.v1.ManagedService service = 1;</code>
-     * @return \Google\Cloud\ServiceManagement\V1\ManagedService
+     * @return \Google\Cloud\ServiceManagement\V1\ManagedService|null
      */
     public function getService()
     {

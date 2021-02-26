@@ -96,7 +96,7 @@ class UpdatePhotoRequest extends \Google\Protobuf\Internal\Message
      * new metadata.
      *
      * Generated from protobuf field <code>.google.streetview.publish.v1.Photo photo = 1;</code>
-     * @return \Google\Streetview\Publish\V1\Photo
+     * @return \Google\Streetview\Publish\V1\Photo|null
      */
     public function getPhoto()
     {
@@ -154,7 +154,7 @@ class UpdatePhotoRequest extends \Google\Protobuf\Internal\Message
      * all connections are removed.</aside>
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

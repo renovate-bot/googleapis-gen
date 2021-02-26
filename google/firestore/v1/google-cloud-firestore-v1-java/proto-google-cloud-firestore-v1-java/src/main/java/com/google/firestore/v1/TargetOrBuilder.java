@@ -68,6 +68,16 @@ public interface TargetOrBuilder extends
    * </pre>
    *
    * <code>bytes resume_token = 4;</code>
+   * @return Whether the resumeToken field is set.
+   */
+  boolean hasResumeToken();
+  /**
+   * <pre>
+   * A resume token from a prior [TargetChange][google.firestore.v1.TargetChange] for an identical target.
+   * Using a resume token with a different target is unsupported and may fail.
+   * </pre>
+   *
+   * <code>bytes resume_token = 4;</code>
    * @return The resumeToken.
    */
   com.google.protobuf.ByteString getResumeToken();

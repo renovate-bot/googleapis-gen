@@ -81,7 +81,7 @@ class MutateExtensionFeedItemResult extends \Google\Protobuf\Internal\Message
      * "MUTABLE_RESOURCE".
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.resources.ExtensionFeedItem extension_feed_item = 2;</code>
-     * @return \Google\Ads\GoogleAds\V5\Resources\ExtensionFeedItem
+     * @return \Google\Ads\GoogleAds\V5\Resources\ExtensionFeedItem|null
      */
     public function getExtensionFeedItem()
     {

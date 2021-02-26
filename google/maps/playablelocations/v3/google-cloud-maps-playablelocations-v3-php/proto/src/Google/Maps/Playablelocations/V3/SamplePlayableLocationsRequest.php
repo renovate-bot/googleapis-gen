@@ -68,7 +68,7 @@ class SamplePlayableLocationsRequest extends \Google\Protobuf\Internal\Message
      * Required. Specifies the area to search within for playable locations.
      *
      * Generated from protobuf field <code>.google.maps.playablelocations.v3.sample.AreaFilter area_filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Maps\Playablelocations\V3\Sample\AreaFilter
+     * @return \Google\Maps\Playablelocations\V3\Sample\AreaFilter|null
      */
     public function getAreaFilter()
     {

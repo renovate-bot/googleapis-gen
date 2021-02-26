@@ -51,7 +51,7 @@ class StreamingAnnotateVideoRequest extends \Google\Protobuf\Internal\Message
      * contain a `video_config` message.
      *
      * Generated from protobuf field <code>.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig video_config = 1;</code>
-     * @return \Google\Cloud\VideoIntelligence\V1p3beta1\StreamingVideoConfig
+     * @return \Google\Cloud\VideoIntelligence\V1p3beta1\StreamingVideoConfig|null
      */
     public function getVideoConfig()
     {

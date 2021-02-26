@@ -144,6 +144,18 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string agent_uri = 1;</code>
+   * @return Whether the agentUri field is set.
+   */
+  public boolean hasAgentUri() {
+    return agentCase_ == 1;
+  }
+  /**
+   * <pre>
+   * The URI to a file containing the exported agent. This field is populated
+   * only if `agent_uri` is specified in [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
+   * </pre>
+   *
+   * <code>string agent_uri = 1;</code>
    * @return The agentUri.
    */
   public java.lang.String getAgentUri() {
@@ -192,6 +204,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int AGENT_CONTENT_FIELD_NUMBER = 2;
+  /**
+   * <pre>
+   * Uncompressed raw byte content for agent.
+   * </pre>
+   *
+   * <code>bytes agent_content = 2;</code>
+   * @return Whether the agentContent field is set.
+   */
+  @java.lang.Override
+  public boolean hasAgentContent() {
+    return agentCase_ == 2;
+  }
   /**
    * <pre>
    * Uncompressed raw byte content for agent.
@@ -583,6 +607,19 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string agent_uri = 1;</code>
+     * @return Whether the agentUri field is set.
+     */
+    @java.lang.Override
+    public boolean hasAgentUri() {
+      return agentCase_ == 1;
+    }
+    /**
+     * <pre>
+     * The URI to a file containing the exported agent. This field is populated
+     * only if `agent_uri` is specified in [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
+     * </pre>
+     *
+     * <code>string agent_uri = 1;</code>
      * @return The agentUri.
      */
     @java.lang.Override
@@ -690,6 +727,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Uncompressed raw byte content for agent.
+     * </pre>
+     *
+     * <code>bytes agent_content = 2;</code>
+     * @return Whether the agentContent field is set.
+     */
+    public boolean hasAgentContent() {
+      return agentCase_ == 2;
+    }
     /**
      * <pre>
      * Uncompressed raw byte content for agent.

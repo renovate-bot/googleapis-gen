@@ -59,7 +59,7 @@ class CampaignBudgetRecommendation extends \Google\Protobuf\Internal\Message
      * Output only. The current budget amount in micros.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value current_budget_amount_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCurrentBudgetAmountMicros()
     {
@@ -122,7 +122,7 @@ class CampaignBudgetRecommendation extends \Google\Protobuf\Internal\Message
      * Output only. The recommended budget amount in micros.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getRecommendedBudgetAmountMicros()
     {

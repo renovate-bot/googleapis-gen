@@ -79,7 +79,7 @@ class UpdateConnectionCredentialRequest extends \Google\Protobuf\Internal\Messag
      * Required. Credential to use with the connection.
      *
      * Generated from protobuf field <code>.google.cloud.bigquery.connection.v1beta1.ConnectionCredential credential = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\BigQuery\Connection\V1beta1\ConnectionCredential
+     * @return \Google\Cloud\BigQuery\Connection\V1beta1\ConnectionCredential|null
      */
     public function getCredential()
     {

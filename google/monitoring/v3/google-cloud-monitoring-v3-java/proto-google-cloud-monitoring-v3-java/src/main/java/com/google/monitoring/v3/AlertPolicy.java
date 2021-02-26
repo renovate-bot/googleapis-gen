@@ -1525,10 +1525,30 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int32 count = 1;</code>
+       * @return Whether the count field is set.
+       */
+      boolean hasCount();
+      /**
+       * <pre>
+       * The absolute number of time series that must fail
+       * the predicate for the condition to be triggered.
+       * </pre>
+       *
+       * <code>int32 count = 1;</code>
        * @return The count.
        */
       int getCount();
 
+      /**
+       * <pre>
+       * The percentage of time series that must fail the
+       * predicate for the condition to be triggered.
+       * </pre>
+       *
+       * <code>double percent = 2;</code>
+       * @return Whether the percent field is set.
+       */
+      boolean hasPercent();
       /**
        * <pre>
        * The percentage of time series that must fail the
@@ -1683,6 +1703,19 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int32 count = 1;</code>
+       * @return Whether the count field is set.
+       */
+      @java.lang.Override
+      public boolean hasCount() {
+        return typeCase_ == 1;
+      }
+      /**
+       * <pre>
+       * The absolute number of time series that must fail
+       * the predicate for the condition to be triggered.
+       * </pre>
+       *
+       * <code>int32 count = 1;</code>
        * @return The count.
        */
       @java.lang.Override
@@ -1694,6 +1727,19 @@ private static final long serialVersionUID = 0L;
       }
 
       public static final int PERCENT_FIELD_NUMBER = 2;
+      /**
+       * <pre>
+       * The percentage of time series that must fail the
+       * predicate for the condition to be triggered.
+       * </pre>
+       *
+       * <code>double percent = 2;</code>
+       * @return Whether the percent field is set.
+       */
+      @java.lang.Override
+      public boolean hasPercent() {
+        return typeCase_ == 2;
+      }
       /**
        * <pre>
        * The percentage of time series that must fail the
@@ -2090,6 +2136,18 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>int32 count = 1;</code>
+         * @return Whether the count field is set.
+         */
+        public boolean hasCount() {
+          return typeCase_ == 1;
+        }
+        /**
+         * <pre>
+         * The absolute number of time series that must fail
+         * the predicate for the condition to be triggered.
+         * </pre>
+         *
+         * <code>int32 count = 1;</code>
          * @return The count.
          */
         public int getCount() {
@@ -2132,6 +2190,18 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        /**
+         * <pre>
+         * The percentage of time series that must fail the
+         * predicate for the condition to be triggered.
+         * </pre>
+         *
+         * <code>double percent = 2;</code>
+         * @return Whether the percent field is set.
+         */
+        public boolean hasPercent() {
+          return typeCase_ == 2;
+        }
         /**
          * <pre>
          * The percentage of time series that must fail the

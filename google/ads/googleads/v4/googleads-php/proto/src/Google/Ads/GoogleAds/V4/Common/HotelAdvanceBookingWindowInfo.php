@@ -49,7 +49,7 @@ class HotelAdvanceBookingWindowInfo extends \Google\Protobuf\Internal\Message
      * Low end of the number of days prior to the stay.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value min_days = 1;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getMinDays()
     {
@@ -112,7 +112,7 @@ class HotelAdvanceBookingWindowInfo extends \Google\Protobuf\Internal\Message
      * High end of the number of days prior to the stay.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value max_days = 2;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getMaxDays()
     {

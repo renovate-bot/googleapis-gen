@@ -165,7 +165,7 @@ class CreateMetadataImportRequest extends \Google\Protobuf\Internal\Message
      * `metadata_import_id` field.
      *
      * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.MetadataImport metadata_import = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Metastore\V1alpha\MetadataImport
+     * @return \Google\Cloud\Metastore\V1alpha\MetadataImport|null
      */
     public function getMetadataImport()
     {

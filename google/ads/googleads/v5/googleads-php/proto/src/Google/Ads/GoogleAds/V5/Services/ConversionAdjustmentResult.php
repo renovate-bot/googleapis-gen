@@ -170,7 +170,7 @@ class ConversionAdjustmentResult extends \Google\Protobuf\Internal\Message
      * specified.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.services.GclidDateTimePair gclid_date_time_pair = 1;</code>
-     * @return \Google\Ads\GoogleAds\V5\Services\GclidDateTimePair
+     * @return \Google\Ads\GoogleAds\V5\Services\GclidDateTimePair|null
      */
     public function getGclidDateTimePair()
     {

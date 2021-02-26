@@ -151,6 +151,19 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string branch = 2;</code>
+   * @return Whether the branch field is set.
+   */
+  public boolean hasBranch() {
+    return gitRefCase_ == 2;
+  }
+  /**
+   * <pre>
+   * Regexes matching branches to build.
+   * The syntax of the regular expressions accepted is the syntax accepted by
+   * RE2 and described at https://github.com/google/re2/wiki/Syntax
+   * </pre>
+   *
+   * <code>string branch = 2;</code>
    * @return The branch.
    */
   public java.lang.String getBranch() {
@@ -200,6 +213,19 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TAG_FIELD_NUMBER = 3;
+  /**
+   * <pre>
+   * Regexes matching tags to build.
+   * The syntax of the regular expressions accepted is the syntax accepted by
+   * RE2 and described at https://github.com/google/re2/wiki/Syntax
+   * </pre>
+   *
+   * <code>string tag = 3;</code>
+   * @return Whether the tag field is set.
+   */
+  public boolean hasTag() {
+    return gitRefCase_ == 3;
+  }
   /**
    * <pre>
    * Regexes matching tags to build.
@@ -665,6 +691,20 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string branch = 2;</code>
+     * @return Whether the branch field is set.
+     */
+    @java.lang.Override
+    public boolean hasBranch() {
+      return gitRefCase_ == 2;
+    }
+    /**
+     * <pre>
+     * Regexes matching branches to build.
+     * The syntax of the regular expressions accepted is the syntax accepted by
+     * RE2 and described at https://github.com/google/re2/wiki/Syntax
+     * </pre>
+     *
+     * <code>string branch = 2;</code>
      * @return The branch.
      */
     @java.lang.Override
@@ -776,6 +816,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Regexes matching tags to build.
+     * The syntax of the regular expressions accepted is the syntax accepted by
+     * RE2 and described at https://github.com/google/re2/wiki/Syntax
+     * </pre>
+     *
+     * <code>string tag = 3;</code>
+     * @return Whether the tag field is set.
+     */
+    @java.lang.Override
+    public boolean hasTag() {
+      return gitRefCase_ == 3;
+    }
     /**
      * <pre>
      * Regexes matching tags to build.

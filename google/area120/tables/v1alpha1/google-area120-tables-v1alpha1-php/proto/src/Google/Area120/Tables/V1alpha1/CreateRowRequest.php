@@ -89,7 +89,7 @@ class CreateRowRequest extends \Google\Protobuf\Internal\Message
      * Required. The row to create.
      *
      * Generated from protobuf field <code>.google.area120.tables.v1alpha1.Row row = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Area120\Tables\V1alpha1\Row
+     * @return \Google\Area120\Tables\V1alpha1\Row|null
      */
     public function getRow()
     {

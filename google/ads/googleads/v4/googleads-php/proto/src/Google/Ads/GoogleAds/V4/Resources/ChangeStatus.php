@@ -184,7 +184,7 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * Output only. Time at which the most recent change has occurred on this resource.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue last_change_date_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getLastChangeDateTime()
     {
@@ -277,7 +277,7 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * Output only. The Campaign affected by this change.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCampaign()
     {
@@ -340,7 +340,7 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * Output only. The AdGroup affected by this change.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAdGroup()
     {
@@ -429,7 +429,7 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * Output only. The AdGroupAd affected by this change.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAdGroupAd()
     {
@@ -492,7 +492,7 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * Output only. The AdGroupCriterion affected by this change.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAdGroupCriterion()
     {
@@ -555,7 +555,7 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * Output only. The CampaignCriterion affected by this change.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign_criterion = 11 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCampaignCriterion()
     {
@@ -618,7 +618,7 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * Output only. The Feed affected by this change.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue feed = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getFeed()
     {
@@ -681,7 +681,7 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * Output only. The FeedItem affected by this change.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 13 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getFeedItem()
     {
@@ -744,7 +744,7 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * Output only. The AdGroupFeed affected by this change.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_feed = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAdGroupFeed()
     {
@@ -807,7 +807,7 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * Output only. The CampaignFeed affected by this change.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign_feed = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCampaignFeed()
     {
@@ -870,7 +870,7 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * Output only. The AdGroupBidModifier affected by this change.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_bid_modifier = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAdGroupBidModifier()
     {

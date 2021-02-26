@@ -113,7 +113,7 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
      * be between 1 and 25, inclusive.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue link_text = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getLinkText()
     {
@@ -183,7 +183,7 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
      * This string must not be empty.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAppId()
     {
@@ -331,7 +331,7 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
      * URL template for constructing a tracking URL. Default value is "{lpurl}".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 6;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getTrackingUrlTemplate()
     {
@@ -423,7 +423,7 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
      * tracking.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 8;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getFinalUrlSuffix()
     {

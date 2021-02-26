@@ -41,7 +41,7 @@ class LocationInfo extends \Google\Protobuf\Internal\Message
      * The geo target constant resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_constant = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getGeoTargetConstant()
     {

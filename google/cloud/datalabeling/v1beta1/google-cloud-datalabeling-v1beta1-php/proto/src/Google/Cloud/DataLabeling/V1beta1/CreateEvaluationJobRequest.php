@@ -79,7 +79,7 @@ class CreateEvaluationJobRequest extends \Google\Protobuf\Internal\Message
      * Required. The evaluation job to create.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.EvaluationJob job = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\EvaluationJob
+     * @return \Google\Cloud\DataLabeling\V1beta1\EvaluationJob|null
      */
     public function getJob()
     {

@@ -46,7 +46,7 @@ class AdOperation extends \Google\Protobuf\Internal\Message
      * FieldMask that determines which resource fields are modified in an update.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {
@@ -84,7 +84,7 @@ class AdOperation extends \Google\Protobuf\Internal\Message
      * `customers/{customer_id}/ads/{ad_id}`
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Ad update = 1;</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Ad
+     * @return \Google\Ads\GoogleAds\V4\Resources\Ad|null
      */
     public function getUpdate()
     {

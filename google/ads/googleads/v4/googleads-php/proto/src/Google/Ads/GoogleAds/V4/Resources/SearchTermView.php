@@ -102,7 +102,7 @@ class SearchTermView extends \Google\Protobuf\Internal\Message
      * Output only. The search term.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getSearchTerm()
     {
@@ -165,7 +165,7 @@ class SearchTermView extends \Google\Protobuf\Internal\Message
      * Output only. The ad group the search term served in.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAdGroup()
     {

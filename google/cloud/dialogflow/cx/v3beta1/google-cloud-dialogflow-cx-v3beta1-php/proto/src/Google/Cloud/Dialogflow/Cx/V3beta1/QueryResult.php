@@ -79,6 +79,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      * This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match] instead.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
+     * @deprecated
      */
     protected $intent = null;
     /**
@@ -91,6 +92,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      * This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match] instead.
      *
      * Generated from protobuf field <code>float intent_detection_confidence = 9 [deprecated = true];</code>
+     * @deprecated
      */
     protected $intent_detection_confidence = 0.0;
     /**
@@ -379,7 +381,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      *     -   Else: parameter value
      *
      * Generated from protobuf field <code>.google.protobuf.Struct parameters = 3;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getParameters()
     {
@@ -515,7 +517,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      * including but not limited to `name` and `display_name`.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 7;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Page
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Page|null
      */
     public function getCurrentPage()
     {
@@ -555,20 +557,24 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      * This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match] instead.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Intent
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Intent|null
+     * @deprecated
      */
     public function getIntent()
     {
+        @trigger_error('intent is deprecated.', E_USER_DEPRECATED);
         return isset($this->intent) ? $this->intent : null;
     }
 
     public function hasIntent()
     {
+        @trigger_error('intent is deprecated.', E_USER_DEPRECATED);
         return isset($this->intent);
     }
 
     public function clearIntent()
     {
+        @trigger_error('intent is deprecated.', E_USER_DEPRECATED);
         unset($this->intent);
     }
 
@@ -581,9 +587,11 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
      * @param \Google\Cloud\Dialogflow\Cx\V3beta1\Intent $var
      * @return $this
+     * @deprecated
      */
     public function setIntent($var)
     {
+        @trigger_error('intent is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Google\Cloud\Dialogflow\Cx\V3beta1\Intent::class);
         $this->intent = $var;
 
@@ -601,9 +609,11 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>float intent_detection_confidence = 9 [deprecated = true];</code>
      * @return float
+     * @deprecated
      */
     public function getIntentDetectionConfidence()
     {
+        @trigger_error('intent_detection_confidence is deprecated.', E_USER_DEPRECATED);
         return $this->intent_detection_confidence;
     }
 
@@ -619,9 +629,11 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>float intent_detection_confidence = 9 [deprecated = true];</code>
      * @param float $var
      * @return $this
+     * @deprecated
      */
     public function setIntentDetectionConfidence($var)
     {
+        @trigger_error('intent_detection_confidence is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkFloat($var);
         $this->intent_detection_confidence = $var;
 
@@ -632,7 +644,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      * Intent match result, could be an intent or an event.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.Match match = 15;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Match
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Match|null
      */
     public function getMatch()
     {
@@ -670,7 +682,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      * without notice.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct diagnostic_info = 10;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getDiagnosticInfo()
     {
@@ -710,7 +722,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      * [google.cloud.dialogflow.cx.v3beta1.QueryParameters.analyze_query_text_sentiment], specified in the request.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult sentiment_analysis_result = 17;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\SentimentAnalysisResult
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\SentimentAnalysisResult|null
      */
     public function getSentimentAnalysisResult()
     {

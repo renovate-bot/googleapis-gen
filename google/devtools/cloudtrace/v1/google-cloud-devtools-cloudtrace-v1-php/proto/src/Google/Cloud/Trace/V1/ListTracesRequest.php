@@ -295,7 +295,7 @@ class ListTracesRequest extends \Google\Protobuf\Internal\Message
      * collected from the application.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 5;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartTime()
     {
@@ -333,7 +333,7 @@ class ListTracesRequest extends \Google\Protobuf\Internal\Message
      * collected from the application.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 6;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getEndTime()
     {

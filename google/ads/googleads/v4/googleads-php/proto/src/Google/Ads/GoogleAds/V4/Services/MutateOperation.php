@@ -124,7 +124,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * An ad group ad label mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.AdGroupAdLabelOperation ad_group_ad_label_operation = 17;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\AdGroupAdLabelOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\AdGroupAdLabelOperation|null
      */
     public function getAdGroupAdLabelOperation()
     {
@@ -155,7 +155,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * An ad group ad mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.AdGroupAdOperation ad_group_ad_operation = 1;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\AdGroupAdOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\AdGroupAdOperation|null
      */
     public function getAdGroupAdOperation()
     {
@@ -186,7 +186,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * An ad group bid modifier mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.AdGroupBidModifierOperation ad_group_bid_modifier_operation = 2;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\AdGroupBidModifierOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\AdGroupBidModifierOperation|null
      */
     public function getAdGroupBidModifierOperation()
     {
@@ -217,7 +217,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * An ad group criterion label mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.AdGroupCriterionLabelOperation ad_group_criterion_label_operation = 18;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\AdGroupCriterionLabelOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\AdGroupCriterionLabelOperation|null
      */
     public function getAdGroupCriterionLabelOperation()
     {
@@ -248,7 +248,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * An ad group criterion mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.AdGroupCriterionOperation ad_group_criterion_operation = 3;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\AdGroupCriterionOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\AdGroupCriterionOperation|null
      */
     public function getAdGroupCriterionOperation()
     {
@@ -279,7 +279,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * An ad group extension setting mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.AdGroupExtensionSettingOperation ad_group_extension_setting_operation = 19;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\AdGroupExtensionSettingOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\AdGroupExtensionSettingOperation|null
      */
     public function getAdGroupExtensionSettingOperation()
     {
@@ -310,7 +310,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * An ad group feed mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.AdGroupFeedOperation ad_group_feed_operation = 20;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\AdGroupFeedOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\AdGroupFeedOperation|null
      */
     public function getAdGroupFeedOperation()
     {
@@ -341,7 +341,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * An ad group label mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.AdGroupLabelOperation ad_group_label_operation = 21;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\AdGroupLabelOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\AdGroupLabelOperation|null
      */
     public function getAdGroupLabelOperation()
     {
@@ -372,7 +372,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * An ad group mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.AdGroupOperation ad_group_operation = 5;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\AdGroupOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\AdGroupOperation|null
      */
     public function getAdGroupOperation()
     {
@@ -403,7 +403,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * An ad mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.AdOperation ad_operation = 49;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\AdOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\AdOperation|null
      */
     public function getAdOperation()
     {
@@ -434,7 +434,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * An ad parameter mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.AdParameterOperation ad_parameter_operation = 22;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\AdParameterOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\AdParameterOperation|null
      */
     public function getAdParameterOperation()
     {
@@ -465,7 +465,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * An asset mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.AssetOperation asset_operation = 23;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\AssetOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\AssetOperation|null
      */
     public function getAssetOperation()
     {
@@ -496,7 +496,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A bidding strategy mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.BiddingStrategyOperation bidding_strategy_operation = 6;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\BiddingStrategyOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\BiddingStrategyOperation|null
      */
     public function getBiddingStrategyOperation()
     {
@@ -527,7 +527,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A campaign bid modifier mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.CampaignBidModifierOperation campaign_bid_modifier_operation = 7;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\CampaignBidModifierOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\CampaignBidModifierOperation|null
      */
     public function getCampaignBidModifierOperation()
     {
@@ -558,7 +558,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A campaign budget mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.CampaignBudgetOperation campaign_budget_operation = 8;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\CampaignBudgetOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\CampaignBudgetOperation|null
      */
     public function getCampaignBudgetOperation()
     {
@@ -589,7 +589,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A campaign criterion mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.CampaignCriterionOperation campaign_criterion_operation = 13;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\CampaignCriterionOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\CampaignCriterionOperation|null
      */
     public function getCampaignCriterionOperation()
     {
@@ -620,7 +620,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A campaign draft mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.CampaignDraftOperation campaign_draft_operation = 24;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\CampaignDraftOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\CampaignDraftOperation|null
      */
     public function getCampaignDraftOperation()
     {
@@ -651,7 +651,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A campaign experiment mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.CampaignExperimentOperation campaign_experiment_operation = 25;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\CampaignExperimentOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\CampaignExperimentOperation|null
      */
     public function getCampaignExperimentOperation()
     {
@@ -682,7 +682,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A campaign extension setting mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.CampaignExtensionSettingOperation campaign_extension_setting_operation = 26;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\CampaignExtensionSettingOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\CampaignExtensionSettingOperation|null
      */
     public function getCampaignExtensionSettingOperation()
     {
@@ -713,7 +713,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A campaign feed mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.CampaignFeedOperation campaign_feed_operation = 27;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\CampaignFeedOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\CampaignFeedOperation|null
      */
     public function getCampaignFeedOperation()
     {
@@ -744,7 +744,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A campaign label mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.CampaignLabelOperation campaign_label_operation = 28;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\CampaignLabelOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\CampaignLabelOperation|null
      */
     public function getCampaignLabelOperation()
     {
@@ -775,7 +775,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A campaign mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.CampaignOperation campaign_operation = 10;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\CampaignOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\CampaignOperation|null
      */
     public function getCampaignOperation()
     {
@@ -806,7 +806,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A campaign shared set mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.CampaignSharedSetOperation campaign_shared_set_operation = 11;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\CampaignSharedSetOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\CampaignSharedSetOperation|null
      */
     public function getCampaignSharedSetOperation()
     {
@@ -837,7 +837,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A conversion action mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.ConversionActionOperation conversion_action_operation = 12;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\ConversionActionOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\ConversionActionOperation|null
      */
     public function getConversionActionOperation()
     {
@@ -868,7 +868,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A customer extension setting mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.CustomerExtensionSettingOperation customer_extension_setting_operation = 30;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\CustomerExtensionSettingOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\CustomerExtensionSettingOperation|null
      */
     public function getCustomerExtensionSettingOperation()
     {
@@ -899,7 +899,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A customer feed mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.CustomerFeedOperation customer_feed_operation = 31;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\CustomerFeedOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\CustomerFeedOperation|null
      */
     public function getCustomerFeedOperation()
     {
@@ -930,7 +930,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A customer label mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.CustomerLabelOperation customer_label_operation = 32;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\CustomerLabelOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\CustomerLabelOperation|null
      */
     public function getCustomerLabelOperation()
     {
@@ -961,7 +961,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A customer negative criterion mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.CustomerNegativeCriterionOperation customer_negative_criterion_operation = 34;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\CustomerNegativeCriterionOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\CustomerNegativeCriterionOperation|null
      */
     public function getCustomerNegativeCriterionOperation()
     {
@@ -992,7 +992,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A customer mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.CustomerOperation customer_operation = 35;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\CustomerOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\CustomerOperation|null
      */
     public function getCustomerOperation()
     {
@@ -1023,7 +1023,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * An extension feed item mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.ExtensionFeedItemOperation extension_feed_item_operation = 36;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\ExtensionFeedItemOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\ExtensionFeedItemOperation|null
      */
     public function getExtensionFeedItemOperation()
     {
@@ -1054,7 +1054,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A feed item mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.FeedItemOperation feed_item_operation = 37;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\FeedItemOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\FeedItemOperation|null
      */
     public function getFeedItemOperation()
     {
@@ -1085,7 +1085,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A feed item target mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.FeedItemTargetOperation feed_item_target_operation = 38;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\FeedItemTargetOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\FeedItemTargetOperation|null
      */
     public function getFeedItemTargetOperation()
     {
@@ -1116,7 +1116,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A feed mapping mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.FeedMappingOperation feed_mapping_operation = 39;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\FeedMappingOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\FeedMappingOperation|null
      */
     public function getFeedMappingOperation()
     {
@@ -1147,7 +1147,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A feed mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.FeedOperation feed_operation = 40;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\FeedOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\FeedOperation|null
      */
     public function getFeedOperation()
     {
@@ -1178,7 +1178,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A keyword plan ad group operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.KeywordPlanAdGroupOperation keyword_plan_ad_group_operation = 44;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\KeywordPlanAdGroupOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\KeywordPlanAdGroupOperation|null
      */
     public function getKeywordPlanAdGroupOperation()
     {
@@ -1209,7 +1209,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A keyword plan ad group keyword operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.KeywordPlanAdGroupKeywordOperation keyword_plan_ad_group_keyword_operation = 50;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\KeywordPlanAdGroupKeywordOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\KeywordPlanAdGroupKeywordOperation|null
      */
     public function getKeywordPlanAdGroupKeywordOperation()
     {
@@ -1240,7 +1240,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A keyword plan campaign keyword operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.KeywordPlanCampaignKeywordOperation keyword_plan_campaign_keyword_operation = 51;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\KeywordPlanCampaignKeywordOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\KeywordPlanCampaignKeywordOperation|null
      */
     public function getKeywordPlanCampaignKeywordOperation()
     {
@@ -1271,7 +1271,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A keyword plan campaign operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.KeywordPlanCampaignOperation keyword_plan_campaign_operation = 45;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\KeywordPlanCampaignOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\KeywordPlanCampaignOperation|null
      */
     public function getKeywordPlanCampaignOperation()
     {
@@ -1302,7 +1302,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A keyword plan operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.KeywordPlanOperation keyword_plan_operation = 48;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\KeywordPlanOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\KeywordPlanOperation|null
      */
     public function getKeywordPlanOperation()
     {
@@ -1333,7 +1333,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A label mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.LabelOperation label_operation = 41;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\LabelOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\LabelOperation|null
      */
     public function getLabelOperation()
     {
@@ -1364,7 +1364,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A media file mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.MediaFileOperation media_file_operation = 42;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\MediaFileOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\MediaFileOperation|null
      */
     public function getMediaFileOperation()
     {
@@ -1395,7 +1395,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A remarketing action mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.RemarketingActionOperation remarketing_action_operation = 43;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\RemarketingActionOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\RemarketingActionOperation|null
      */
     public function getRemarketingActionOperation()
     {
@@ -1426,7 +1426,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A shared criterion mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.SharedCriterionOperation shared_criterion_operation = 14;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\SharedCriterionOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\SharedCriterionOperation|null
      */
     public function getSharedCriterionOperation()
     {
@@ -1457,7 +1457,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A shared set mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.SharedSetOperation shared_set_operation = 15;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\SharedSetOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\SharedSetOperation|null
      */
     public function getSharedSetOperation()
     {
@@ -1488,7 +1488,7 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * A user list mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.UserListOperation user_list_operation = 16;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\UserListOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\UserListOperation|null
      */
     public function getUserListOperation()
     {

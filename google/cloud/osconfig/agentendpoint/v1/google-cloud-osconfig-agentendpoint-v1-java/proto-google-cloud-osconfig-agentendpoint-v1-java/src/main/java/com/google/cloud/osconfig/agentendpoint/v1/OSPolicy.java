@@ -591,6 +591,15 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string local_path = 3;</code>
+       * @return Whether the localPath field is set.
+       */
+      boolean hasLocalPath();
+      /**
+       * <pre>
+       * A local path to use.
+       * </pre>
+       *
+       * <code>string local_path = 3;</code>
        * @return The localPath.
        */
       java.lang.String getLocalPath();
@@ -2572,6 +2581,17 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string local_path = 3;</code>
+       * @return Whether the localPath field is set.
+       */
+      public boolean hasLocalPath() {
+        return typeCase_ == 3;
+      }
+      /**
+       * <pre>
+       * A local path to use.
+       * </pre>
+       *
+       * <code>string local_path = 3;</code>
        * @return The localPath.
        */
       public java.lang.String getLocalPath() {
@@ -3404,6 +3424,18 @@ private static final long serialVersionUID = 0L;
           return gcsBuilder_;
         }
 
+        /**
+         * <pre>
+         * A local path to use.
+         * </pre>
+         *
+         * <code>string local_path = 3;</code>
+         * @return Whether the localPath field is set.
+         */
+        @java.lang.Override
+        public boolean hasLocalPath() {
+          return typeCase_ == 3;
+        }
         /**
          * <pre>
          * A local path to use.
@@ -18395,6 +18427,15 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>string script = 2;</code>
+         * @return Whether the script field is set.
+         */
+        boolean hasScript();
+        /**
+         * <pre>
+         * An inline script.
+         * </pre>
+         *
+         * <code>string script = 2;</code>
          * @return The script.
          */
         java.lang.String getScript();
@@ -18850,6 +18891,17 @@ private static final long serialVersionUID = 0L;
         }
 
         public static final int SCRIPT_FIELD_NUMBER = 2;
+        /**
+         * <pre>
+         * An inline script.
+         * </pre>
+         *
+         * <code>string script = 2;</code>
+         * @return Whether the script field is set.
+         */
+        public boolean hasScript() {
+          return sourceCase_ == 2;
+        }
         /**
          * <pre>
          * An inline script.
@@ -19579,6 +19631,18 @@ private static final long serialVersionUID = 0L;
             return fileBuilder_;
           }
 
+          /**
+           * <pre>
+           * An inline script.
+           * </pre>
+           *
+           * <code>string script = 2;</code>
+           * @return Whether the script field is set.
+           */
+          @java.lang.Override
+          public boolean hasScript() {
+            return sourceCase_ == 2;
+          }
           /**
            * <pre>
            * An inline script.
@@ -20844,6 +20908,15 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string content = 2;</code>
+       * @return Whether the content field is set.
+       */
+      boolean hasContent();
+      /**
+       * <pre>
+       * A a file with this content.
+       * </pre>
+       *
+       * <code>string content = 2;</code>
        * @return The content.
        */
       java.lang.String getContent();
@@ -21312,6 +21385,17 @@ private static final long serialVersionUID = 0L;
       }
 
       public static final int CONTENT_FIELD_NUMBER = 2;
+      /**
+       * <pre>
+       * A a file with this content.
+       * </pre>
+       *
+       * <code>string content = 2;</code>
+       * @return Whether the content field is set.
+       */
+      public boolean hasContent() {
+        return sourceCase_ == 2;
+      }
       /**
        * <pre>
        * A a file with this content.
@@ -22102,6 +22186,18 @@ private static final long serialVersionUID = 0L;
           return fileBuilder_;
         }
 
+        /**
+         * <pre>
+         * A a file with this content.
+         * </pre>
+         *
+         * <code>string content = 2;</code>
+         * @return Whether the content field is set.
+         */
+        @java.lang.Override
+        public boolean hasContent() {
+          return sourceCase_ == 2;
+        }
         /**
          * <pre>
          * A a file with this content.

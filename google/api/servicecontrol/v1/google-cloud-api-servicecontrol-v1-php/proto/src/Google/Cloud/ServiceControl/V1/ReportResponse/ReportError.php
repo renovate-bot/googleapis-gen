@@ -75,7 +75,7 @@ class ReportError extends \Google\Protobuf\Internal\Message
      * Details of the error when processing the [Operation][google.api.servicecontrol.v1.Operation].
      *
      * Generated from protobuf field <code>.google.rpc.Status status = 2;</code>
-     * @return \Google\Rpc\Status
+     * @return \Google\Rpc\Status|null
      */
     public function getStatus()
     {

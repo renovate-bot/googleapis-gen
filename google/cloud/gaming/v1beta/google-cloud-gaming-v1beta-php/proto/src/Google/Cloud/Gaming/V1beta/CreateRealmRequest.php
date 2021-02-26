@@ -113,7 +113,7 @@ class CreateRealmRequest extends \Google\Protobuf\Internal\Message
      * Required. The realm resource to be created.
      *
      * Generated from protobuf field <code>.google.cloud.gaming.v1beta.Realm realm = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Gaming\V1beta\Realm
+     * @return \Google\Cloud\Gaming\V1beta\Realm|null
      */
     public function getRealm()
     {

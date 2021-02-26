@@ -52,7 +52,7 @@ class UploadUserDataResponse extends \Google\Protobuf\Internal\Message
      * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue upload_date_time = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getUploadDateTime()
     {
@@ -118,7 +118,7 @@ class UploadUserDataResponse extends \Google\Protobuf\Internal\Message
      * Number of upload data operations received by API.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value received_operations_count = 2;</code>
-     * @return \Google\Protobuf\Int32Value
+     * @return \Google\Protobuf\Int32Value|null
      */
     public function getReceivedOperationsCount()
     {

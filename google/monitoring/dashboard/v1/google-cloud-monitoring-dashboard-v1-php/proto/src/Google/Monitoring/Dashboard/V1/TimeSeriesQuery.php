@@ -57,7 +57,7 @@ class TimeSeriesQuery extends \Google\Protobuf\Internal\Message
      * Filter parameters to fetch time series.
      *
      * Generated from protobuf field <code>.google.monitoring.dashboard.v1.TimeSeriesFilter time_series_filter = 1;</code>
-     * @return \Google\Monitoring\Dashboard\V1\TimeSeriesFilter
+     * @return \Google\Monitoring\Dashboard\V1\TimeSeriesFilter|null
      */
     public function getTimeSeriesFilter()
     {
@@ -88,7 +88,7 @@ class TimeSeriesQuery extends \Google\Protobuf\Internal\Message
      * Parameters to fetch a ratio between two time series filters.
      *
      * Generated from protobuf field <code>.google.monitoring.dashboard.v1.TimeSeriesFilterRatio time_series_filter_ratio = 2;</code>
-     * @return \Google\Monitoring\Dashboard\V1\TimeSeriesFilterRatio
+     * @return \Google\Monitoring\Dashboard\V1\TimeSeriesFilterRatio|null
      */
     public function getTimeSeriesFilterRatio()
     {

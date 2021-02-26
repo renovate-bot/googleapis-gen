@@ -73,7 +73,7 @@ class LegacyAppInstallAdInfo extends \Google\Protobuf\Internal\Message
      * The id of the mobile app.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAppId()
     {
@@ -162,7 +162,7 @@ class LegacyAppInstallAdInfo extends \Google\Protobuf\Internal\Message
      * The headline of the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue headline = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getHeadline()
     {
@@ -225,7 +225,7 @@ class LegacyAppInstallAdInfo extends \Google\Protobuf\Internal\Message
      * The first description line of the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description1 = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDescription1()
     {
@@ -288,7 +288,7 @@ class LegacyAppInstallAdInfo extends \Google\Protobuf\Internal\Message
      * The second description line of the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description2 = 5;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDescription2()
     {

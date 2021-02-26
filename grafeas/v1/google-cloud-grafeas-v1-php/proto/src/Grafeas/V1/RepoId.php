@@ -38,7 +38,7 @@ class RepoId extends \Google\Protobuf\Internal\Message
      * A combination of a project ID and a repo name.
      *
      * Generated from protobuf field <code>.grafeas.v1.ProjectRepoId project_repo_id = 1;</code>
-     * @return \Grafeas\V1\ProjectRepoId
+     * @return \Grafeas\V1\ProjectRepoId|null
      */
     public function getProjectRepoId()
     {

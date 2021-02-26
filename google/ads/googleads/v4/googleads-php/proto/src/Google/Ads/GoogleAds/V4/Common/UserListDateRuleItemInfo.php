@@ -101,7 +101,7 @@ class UserListDateRuleItemInfo extends \Google\Protobuf\Internal\Message
      * Times are reported in the customer's time zone.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue value = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getValue()
     {
@@ -172,7 +172,7 @@ class UserListDateRuleItemInfo extends \Google\Protobuf\Internal\Message
      * present.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value offset_in_days = 3;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getOffsetInDays()
     {

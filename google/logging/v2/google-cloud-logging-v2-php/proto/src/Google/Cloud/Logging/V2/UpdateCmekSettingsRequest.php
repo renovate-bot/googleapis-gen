@@ -136,7 +136,7 @@ class UpdateCmekSettingsRequest extends \Google\Protobuf\Internal\Message
      * for more information.
      *
      * Generated from protobuf field <code>.google.logging.v2.CmekSettings cmek_settings = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Logging\V2\CmekSettings
+     * @return \Google\Cloud\Logging\V2\CmekSettings|null
      */
     public function getCmekSettings()
     {
@@ -179,7 +179,7 @@ class UpdateCmekSettingsRequest extends \Google\Protobuf\Internal\Message
      * Example: `"updateMask=kmsKeyName"`
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

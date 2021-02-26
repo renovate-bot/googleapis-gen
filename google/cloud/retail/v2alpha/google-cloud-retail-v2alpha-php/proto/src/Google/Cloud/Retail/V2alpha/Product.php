@@ -776,7 +776,7 @@ class Product extends \Google\Protobuf\Internal\Message
      * [price](https://support.google.com/merchants/answer/6324371).
      *
      * Generated from protobuf field <code>.google.cloud.retail.v2alpha.PriceInfo price_info = 14;</code>
-     * @return \Google\Cloud\Retail\V2alpha\PriceInfo
+     * @return \Google\Cloud\Retail\V2alpha\PriceInfo|null
      */
     public function getPriceInfo()
     {
@@ -815,7 +815,7 @@ class Product extends \Google\Protobuf\Internal\Message
      * becomes available recommendation and search.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp available_time = 18;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getAvailableTime()
     {
@@ -888,7 +888,7 @@ class Product extends \Google\Protobuf\Internal\Message
      * The available quantity of the item.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value available_quantity = 20;</code>
-     * @return \Google\Protobuf\Int32Value
+     * @return \Google\Protobuf\Int32Value|null
      */
     public function getAvailableQuantity()
     {

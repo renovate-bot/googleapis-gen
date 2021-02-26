@@ -387,6 +387,20 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes transaction = 1;</code>
+   * @return Whether the transaction field is set.
+   */
+  @java.lang.Override
+  public boolean hasTransaction() {
+    return transactionSelectorCase_ == 1;
+  }
+  /**
+   * <pre>
+   * The identifier of the transaction associated with the commit. A
+   * transaction identifier is returned by a call to
+   * [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction].
+   * </pre>
+   *
+   * <code>bytes transaction = 1;</code>
    * @return The transaction.
    */
   @java.lang.Override
@@ -1107,6 +1121,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The identifier of the transaction associated with the commit. A
+     * transaction identifier is returned by a call to
+     * [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction].
+     * </pre>
+     *
+     * <code>bytes transaction = 1;</code>
+     * @return Whether the transaction field is set.
+     */
+    public boolean hasTransaction() {
+      return transactionSelectorCase_ == 1;
+    }
     /**
      * <pre>
      * The identifier of the transaction associated with the commit. A

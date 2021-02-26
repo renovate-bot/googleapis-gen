@@ -75,7 +75,7 @@ class MutateBatchJobRequest extends \Google\Protobuf\Internal\Message
      * Required. The operation to perform on an individual batch job.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.services.BatchJobOperation operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Ads\GoogleAds\V5\Services\BatchJobOperation
+     * @return \Google\Ads\GoogleAds\V5\Services\BatchJobOperation|null
      */
     public function getOperation()
     {

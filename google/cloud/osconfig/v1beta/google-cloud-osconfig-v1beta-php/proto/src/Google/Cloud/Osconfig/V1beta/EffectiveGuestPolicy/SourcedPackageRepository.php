@@ -75,7 +75,7 @@ class SourcedPackageRepository extends \Google\Protobuf\Internal\Message
      * A software package repository to configure on the VM instance.
      *
      * Generated from protobuf field <code>.google.cloud.osconfig.v1beta.PackageRepository package_repository = 2;</code>
-     * @return \Google\Cloud\Osconfig\V1beta\PackageRepository
+     * @return \Google\Cloud\Osconfig\V1beta\PackageRepository|null
      */
     public function getPackageRepository()
     {

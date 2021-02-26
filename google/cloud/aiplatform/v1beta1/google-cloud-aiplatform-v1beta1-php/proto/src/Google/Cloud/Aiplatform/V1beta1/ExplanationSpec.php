@@ -49,7 +49,7 @@ class ExplanationSpec extends \Google\Protobuf\Internal\Message
      * Required. Parameters that configure explaining of the Model's predictions.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ExplanationParameters parameters = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\ExplanationParameters
+     * @return \Google\Cloud\Aiplatform\V1beta1\ExplanationParameters|null
      */
     public function getParameters()
     {
@@ -85,7 +85,7 @@ class ExplanationSpec extends \Google\Protobuf\Internal\Message
      * Required. Metadata describing the Model's input and output for explanation.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\ExplanationMetadata
+     * @return \Google\Cloud\Aiplatform\V1beta1\ExplanationMetadata|null
      */
     public function getMetadata()
     {

@@ -49,7 +49,7 @@ class AnalyzeIamPolicyRequest extends \Google\Protobuf\Internal\Message
      * Required. The request query.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1p4beta1.IamPolicyAnalysisQuery analysis_query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Asset\V1p4beta1\IamPolicyAnalysisQuery
+     * @return \Google\Cloud\Asset\V1p4beta1\IamPolicyAnalysisQuery|null
      */
     public function getAnalysisQuery()
     {
@@ -85,7 +85,7 @@ class AnalyzeIamPolicyRequest extends \Google\Protobuf\Internal\Message
      * Optional. The request options.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1p4beta1.AnalyzeIamPolicyRequest.Options options = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\Asset\V1p4beta1\AnalyzeIamPolicyRequest\Options
+     * @return \Google\Cloud\Asset\V1p4beta1\AnalyzeIamPolicyRequest\Options|null
      */
     public function getOptions()
     {

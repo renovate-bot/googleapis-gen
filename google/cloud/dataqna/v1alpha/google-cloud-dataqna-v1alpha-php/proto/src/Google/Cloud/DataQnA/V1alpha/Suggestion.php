@@ -61,7 +61,7 @@ class Suggestion extends \Google\Protobuf\Internal\Message
      * Detailed information about the suggestion.
      *
      * Generated from protobuf field <code>.google.cloud.dataqna.v1alpha.SuggestionInfo suggestion_info = 1;</code>
-     * @return \Google\Cloud\DataQnA\V1alpha\SuggestionInfo
+     * @return \Google\Cloud\DataQnA\V1alpha\SuggestionInfo|null
      */
     public function getSuggestionInfo()
     {

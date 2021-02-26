@@ -58,7 +58,7 @@ class GenerateKeywordIdeaResult extends \Google\Protobuf\Internal\Message
      * See KeywordPlanKeywordHistoricalMetrics message in KeywordPlanService.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue text = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getText()
     {
@@ -130,7 +130,7 @@ class GenerateKeywordIdeaResult extends \Google\Protobuf\Internal\Message
      * The historical metrics for the keyword
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.KeywordPlanHistoricalMetrics keyword_idea_metrics = 3;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\KeywordPlanHistoricalMetrics
+     * @return \Google\Ads\GoogleAds\V4\Common\KeywordPlanHistoricalMetrics|null
      */
     public function getKeywordIdeaMetrics()
     {

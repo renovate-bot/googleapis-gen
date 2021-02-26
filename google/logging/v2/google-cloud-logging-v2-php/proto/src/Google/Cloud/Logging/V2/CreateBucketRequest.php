@@ -131,7 +131,7 @@ class CreateBucketRequest extends \Google\Protobuf\Internal\Message
      * ignored.
      *
      * Generated from protobuf field <code>.google.logging.v2.LogBucket bucket = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Logging\V2\LogBucket
+     * @return \Google\Cloud\Logging\V2\LogBucket|null
      */
     public function getBucket()
     {

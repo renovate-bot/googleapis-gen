@@ -197,6 +197,15 @@ public interface BillingSetupOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType start_time_type = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the startTimeType field is set.
+   */
+  boolean hasStartTimeType();
+  /**
+   * <pre>
+   * Immutable. The start time as a type. Only NOW is allowed.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType start_time_type = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The enum numeric value on the wire for startTimeType.
    */
   int getStartTimeTypeValue();
@@ -237,6 +246,15 @@ public interface BillingSetupOrBuilder extends
    */
   com.google.protobuf.StringValueOrBuilder getEndDateTimeOrBuilder();
 
+  /**
+   * <pre>
+   * Output only. The end time as a type.  The only possible value is FOREVER.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType end_time_type = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the endTimeType field is set.
+   */
+  boolean hasEndTimeType();
   /**
    * <pre>
    * Output only. The end time as a type.  The only possible value is FOREVER.

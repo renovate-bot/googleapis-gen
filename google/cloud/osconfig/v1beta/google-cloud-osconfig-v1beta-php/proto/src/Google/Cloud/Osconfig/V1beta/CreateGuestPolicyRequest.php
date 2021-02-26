@@ -137,7 +137,7 @@ class CreateGuestPolicyRequest extends \Google\Protobuf\Internal\Message
      * Required. The GuestPolicy to create.
      *
      * Generated from protobuf field <code>.google.cloud.osconfig.v1beta.GuestPolicy guest_policy = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Osconfig\V1beta\GuestPolicy
+     * @return \Google\Cloud\Osconfig\V1beta\GuestPolicy|null
      */
     public function getGuestPolicy()
     {

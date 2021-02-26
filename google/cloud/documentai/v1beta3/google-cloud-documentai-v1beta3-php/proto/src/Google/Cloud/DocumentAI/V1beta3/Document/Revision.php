@@ -198,7 +198,7 @@ class Revision extends \Google\Protobuf\Internal\Message
      * The time that the revision was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -234,7 +234,7 @@ class Revision extends \Google\Protobuf\Internal\Message
      * Human Review information of this revision.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document.Revision.HumanReview human_review = 6;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta3\Document\Revision\HumanReview
+     * @return \Google\Cloud\DocumentAI\V1beta3\Document\Revision\HumanReview|null
      */
     public function getHumanReview()
     {

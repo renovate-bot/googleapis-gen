@@ -182,6 +182,17 @@ public interface ConversionAdjustmentOrBuilder extends
    * </pre>
    *
    * <code>string order_id = 7;</code>
+   * @return Whether the orderId field is set.
+   */
+  boolean hasOrderId();
+  /**
+   * <pre>
+   * The order ID of the conversion to be adjusted. If the conversion was
+   * reported with an order ID specified, that order ID must be used as the
+   * identifier here.
+   * </pre>
+   *
+   * <code>string order_id = 7;</code>
    * @return The orderId.
    */
   java.lang.String getOrderId();

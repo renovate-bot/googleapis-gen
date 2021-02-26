@@ -142,6 +142,18 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 int64_value = 1;</code>
+   * @return Whether the int64Value field is set.
+   */
+  @java.lang.Override
+  public boolean hasInt64Value() {
+    return oneValueCase_ == 1;
+  }
+  /**
+   * <pre>
+   * Integer value
+   * </pre>
+   *
+   * <code>int64 int64_value = 1;</code>
    * @return The int64Value.
    */
   @java.lang.Override
@@ -153,6 +165,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DOUBLE_VALUE_FIELD_NUMBER = 2;
+  /**
+   * <pre>
+   * Double value
+   * </pre>
+   *
+   * <code>double double_value = 2;</code>
+   * @return Whether the doubleValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasDoubleValue() {
+    return oneValueCase_ == 2;
+  }
   /**
    * <pre>
    * Double value
@@ -547,6 +571,17 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 int64_value = 1;</code>
+     * @return Whether the int64Value field is set.
+     */
+    public boolean hasInt64Value() {
+      return oneValueCase_ == 1;
+    }
+    /**
+     * <pre>
+     * Integer value
+     * </pre>
+     *
+     * <code>int64 int64_value = 1;</code>
      * @return The int64Value.
      */
     public long getInt64Value() {
@@ -587,6 +622,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Double value
+     * </pre>
+     *
+     * <code>double double_value = 2;</code>
+     * @return Whether the doubleValue field is set.
+     */
+    public boolean hasDoubleValue() {
+      return oneValueCase_ == 2;
+    }
     /**
      * <pre>
      * Double value

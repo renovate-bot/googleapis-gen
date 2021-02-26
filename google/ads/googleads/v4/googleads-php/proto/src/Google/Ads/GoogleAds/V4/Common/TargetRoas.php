@@ -65,7 +65,7 @@ class TargetRoas extends \Google\Protobuf\Internal\Message
      * Value must be between 0.01 and 1000.0, inclusive.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue target_roas = 1;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getTargetRoas()
     {
@@ -132,7 +132,7 @@ class TargetRoas extends \Google\Protobuf\Internal\Message
      * The limit applies to all keywords managed by the strategy.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_ceiling_micros = 2;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCpcBidCeilingMicros()
     {
@@ -199,7 +199,7 @@ class TargetRoas extends \Google\Protobuf\Internal\Message
      * The limit applies to all keywords managed by the strategy.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_floor_micros = 3;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCpcBidFloorMicros()
     {

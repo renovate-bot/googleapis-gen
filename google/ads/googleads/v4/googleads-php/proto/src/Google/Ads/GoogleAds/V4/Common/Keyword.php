@@ -49,7 +49,7 @@ class Keyword extends \Google\Protobuf\Internal\Message
      * The AdGroupCriterion resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAdGroupCriterion()
     {
@@ -112,7 +112,7 @@ class Keyword extends \Google\Protobuf\Internal\Message
      * Keyword info.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.KeywordInfo info = 2;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\KeywordInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\KeywordInfo|null
      */
     public function getInfo()
     {

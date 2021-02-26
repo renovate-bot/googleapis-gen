@@ -108,7 +108,7 @@ class ModelEvaluationSlice extends \Google\Protobuf\Internal\Message
      * Output only. The slice of the test data that is used to evaluate the Model.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice slice = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Cloud\Aiplatform\V1\ModelEvaluationSlice\Slice
+     * @return \Google\Cloud\Aiplatform\V1\ModelEvaluationSlice\Slice|null
      */
     public function getSlice()
     {
@@ -177,7 +177,7 @@ class ModelEvaluationSlice extends \Google\Protobuf\Internal\Message
      * in [metrics_schema_uri][google.cloud.aiplatform.v1.ModelEvaluationSlice.metrics_schema_uri]
      *
      * Generated from protobuf field <code>.google.protobuf.Value metrics = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Value
+     * @return \Google\Protobuf\Value|null
      */
     public function getMetrics()
     {
@@ -214,7 +214,7 @@ class ModelEvaluationSlice extends \Google\Protobuf\Internal\Message
      * Output only. Timestamp when this ModelEvaluationSlice was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {

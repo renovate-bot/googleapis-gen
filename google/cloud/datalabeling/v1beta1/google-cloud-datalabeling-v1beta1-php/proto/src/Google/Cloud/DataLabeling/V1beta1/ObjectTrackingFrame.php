@@ -42,7 +42,7 @@ class ObjectTrackingFrame extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 1;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\BoundingPoly
+     * @return \Google\Cloud\DataLabeling\V1beta1\BoundingPoly|null
      */
     public function getBoundingPoly()
     {
@@ -69,7 +69,7 @@ class ObjectTrackingFrame extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 2;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\NormalizedBoundingPoly
+     * @return \Google\Cloud\DataLabeling\V1beta1\NormalizedBoundingPoly|null
      */
     public function getNormalizedBoundingPoly()
     {
@@ -98,7 +98,7 @@ class ObjectTrackingFrame extends \Google\Protobuf\Internal\Message
      * The time offset of this frame relative to the beginning of the video.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration time_offset = 3;</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getTimeOffset()
     {

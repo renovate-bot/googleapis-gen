@@ -98,7 +98,7 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
      * Immutable. Feed attribute from which to map.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value feed_attribute_id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getFeedAttributeId()
     {
@@ -164,7 +164,7 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value field_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getFieldId()
     {

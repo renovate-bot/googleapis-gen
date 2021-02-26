@@ -42,6 +42,7 @@ class InstantiateWorkflowTemplateRequest extends \Google\Protobuf\Internal\Messa
      * Deprecated. Please use `request_id` field instead.
      *
      * Generated from protobuf field <code>string instance_id = 3 [deprecated = true];</code>
+     * @deprecated
      */
     protected $instance_id = '';
     /**
@@ -184,9 +185,11 @@ class InstantiateWorkflowTemplateRequest extends \Google\Protobuf\Internal\Messa
      *
      * Generated from protobuf field <code>string instance_id = 3 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getInstanceId()
     {
+        @trigger_error('instance_id is deprecated.', E_USER_DEPRECATED);
         return $this->instance_id;
     }
 
@@ -196,9 +199,11 @@ class InstantiateWorkflowTemplateRequest extends \Google\Protobuf\Internal\Messa
      * Generated from protobuf field <code>string instance_id = 3 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setInstanceId($var)
     {
+        @trigger_error('instance_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->instance_id = $var;
 

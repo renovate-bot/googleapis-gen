@@ -407,6 +407,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v4.enums.SitelinkPlaceholderFieldEnum.SitelinkPlaceholderField sitelink_field = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the sitelinkField field is set.
+   */
+  public boolean hasSitelinkField() {
+    return fieldCase_ == 3;
+  }
+  /**
+   * <pre>
+   * Immutable. Sitelink Placeholder Fields.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.SitelinkPlaceholderFieldEnum.SitelinkPlaceholderField sitelink_field = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The enum numeric value on the wire for sitelinkField.
    */
   public int getSitelinkFieldValue() {
@@ -434,6 +445,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CALL_FIELD_FIELD_NUMBER = 4;
+  /**
+   * <pre>
+   * Immutable. Call Placeholder Fields.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.CallPlaceholderFieldEnum.CallPlaceholderField call_field = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the callField field is set.
+   */
+  public boolean hasCallField() {
+    return fieldCase_ == 4;
+  }
   /**
    * <pre>
    * Immutable. Call Placeholder Fields.
@@ -473,6 +495,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v4.enums.AppPlaceholderFieldEnum.AppPlaceholderField app_field = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the appField field is set.
+   */
+  public boolean hasAppField() {
+    return fieldCase_ == 5;
+  }
+  /**
+   * <pre>
+   * Immutable. App Placeholder Fields.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.AppPlaceholderFieldEnum.AppPlaceholderField app_field = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The enum numeric value on the wire for appField.
    */
   public int getAppFieldValue() {
@@ -500,6 +533,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LOCATION_FIELD_FIELD_NUMBER = 6;
+  /**
+   * <pre>
+   * Output only. Location Placeholder Fields. This field is read-only.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.LocationPlaceholderFieldEnum.LocationPlaceholderField location_field = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the locationField field is set.
+   */
+  public boolean hasLocationField() {
+    return fieldCase_ == 6;
+  }
   /**
    * <pre>
    * Output only. Location Placeholder Fields. This field is read-only.
@@ -539,6 +583,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v4.enums.AffiliateLocationPlaceholderFieldEnum.AffiliateLocationPlaceholderField affiliate_location_field = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the affiliateLocationField field is set.
+   */
+  public boolean hasAffiliateLocationField() {
+    return fieldCase_ == 7;
+  }
+  /**
+   * <pre>
+   * Output only. Affiliate Location Placeholder Fields. This field is read-only.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.AffiliateLocationPlaceholderFieldEnum.AffiliateLocationPlaceholderField affiliate_location_field = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The enum numeric value on the wire for affiliateLocationField.
    */
   public int getAffiliateLocationFieldValue() {
@@ -566,6 +621,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CALLOUT_FIELD_FIELD_NUMBER = 8;
+  /**
+   * <pre>
+   * Immutable. Callout Placeholder Fields.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.CalloutPlaceholderFieldEnum.CalloutPlaceholderField callout_field = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the calloutField field is set.
+   */
+  public boolean hasCalloutField() {
+    return fieldCase_ == 8;
+  }
   /**
    * <pre>
    * Immutable. Callout Placeholder Fields.
@@ -605,6 +671,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v4.enums.StructuredSnippetPlaceholderFieldEnum.StructuredSnippetPlaceholderField structured_snippet_field = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the structuredSnippetField field is set.
+   */
+  public boolean hasStructuredSnippetField() {
+    return fieldCase_ == 9;
+  }
+  /**
+   * <pre>
+   * Immutable. Structured Snippet Placeholder Fields.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.StructuredSnippetPlaceholderFieldEnum.StructuredSnippetPlaceholderField structured_snippet_field = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The enum numeric value on the wire for structuredSnippetField.
    */
   public int getStructuredSnippetFieldValue() {
@@ -632,6 +709,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int MESSAGE_FIELD_FIELD_NUMBER = 10;
+  /**
+   * <pre>
+   * Immutable. Message Placeholder Fields.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.MessagePlaceholderFieldEnum.MessagePlaceholderField message_field = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the messageField field is set.
+   */
+  public boolean hasMessageField() {
+    return fieldCase_ == 10;
+  }
   /**
    * <pre>
    * Immutable. Message Placeholder Fields.
@@ -671,6 +759,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v4.enums.PricePlaceholderFieldEnum.PricePlaceholderField price_field = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the priceField field is set.
+   */
+  public boolean hasPriceField() {
+    return fieldCase_ == 11;
+  }
+  /**
+   * <pre>
+   * Immutable. Price Placeholder Fields.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.PricePlaceholderFieldEnum.PricePlaceholderField price_field = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The enum numeric value on the wire for priceField.
    */
   public int getPriceFieldValue() {
@@ -698,6 +797,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PROMOTION_FIELD_FIELD_NUMBER = 12;
+  /**
+   * <pre>
+   * Immutable. Promotion Placeholder Fields.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.PromotionPlaceholderFieldEnum.PromotionPlaceholderField promotion_field = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the promotionField field is set.
+   */
+  public boolean hasPromotionField() {
+    return fieldCase_ == 12;
+  }
   /**
    * <pre>
    * Immutable. Promotion Placeholder Fields.
@@ -737,6 +847,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v4.enums.AdCustomizerPlaceholderFieldEnum.AdCustomizerPlaceholderField ad_customizer_field = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the adCustomizerField field is set.
+   */
+  public boolean hasAdCustomizerField() {
+    return fieldCase_ == 13;
+  }
+  /**
+   * <pre>
+   * Immutable. Ad Customizer Placeholder Fields
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.AdCustomizerPlaceholderFieldEnum.AdCustomizerPlaceholderField ad_customizer_field = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The enum numeric value on the wire for adCustomizerField.
    */
   public int getAdCustomizerFieldValue() {
@@ -764,6 +885,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DSA_PAGE_FEED_FIELD_FIELD_NUMBER = 14;
+  /**
+   * <pre>
+   * Immutable. Dynamic Search Ad Page Feed Fields.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.DsaPageFeedCriterionFieldEnum.DsaPageFeedCriterionField dsa_page_feed_field = 14 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the dsaPageFeedField field is set.
+   */
+  public boolean hasDsaPageFeedField() {
+    return fieldCase_ == 14;
+  }
   /**
    * <pre>
    * Immutable. Dynamic Search Ad Page Feed Fields.
@@ -803,6 +935,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v4.enums.LocationExtensionTargetingCriterionFieldEnum.LocationExtensionTargetingCriterionField location_extension_targeting_field = 15 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the locationExtensionTargetingField field is set.
+   */
+  public boolean hasLocationExtensionTargetingField() {
+    return fieldCase_ == 15;
+  }
+  /**
+   * <pre>
+   * Immutable. Location Target Fields.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.LocationExtensionTargetingCriterionFieldEnum.LocationExtensionTargetingCriterionField location_extension_targeting_field = 15 [(.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The enum numeric value on the wire for locationExtensionTargetingField.
    */
   public int getLocationExtensionTargetingFieldValue() {
@@ -830,6 +973,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int EDUCATION_FIELD_FIELD_NUMBER = 16;
+  /**
+   * <pre>
+   * Immutable. Education Placeholder Fields
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.EducationPlaceholderFieldEnum.EducationPlaceholderField education_field = 16 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the educationField field is set.
+   */
+  public boolean hasEducationField() {
+    return fieldCase_ == 16;
+  }
   /**
    * <pre>
    * Immutable. Education Placeholder Fields
@@ -869,6 +1023,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v4.enums.FlightPlaceholderFieldEnum.FlightPlaceholderField flight_field = 17 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the flightField field is set.
+   */
+  public boolean hasFlightField() {
+    return fieldCase_ == 17;
+  }
+  /**
+   * <pre>
+   * Immutable. Flight Placeholder Fields
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.FlightPlaceholderFieldEnum.FlightPlaceholderField flight_field = 17 [(.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The enum numeric value on the wire for flightField.
    */
   public int getFlightFieldValue() {
@@ -896,6 +1061,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CUSTOM_FIELD_FIELD_NUMBER = 18;
+  /**
+   * <pre>
+   * Immutable. Custom Placeholder Fields
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.CustomPlaceholderFieldEnum.CustomPlaceholderField custom_field = 18 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the customField field is set.
+   */
+  public boolean hasCustomField() {
+    return fieldCase_ == 18;
+  }
   /**
    * <pre>
    * Immutable. Custom Placeholder Fields
@@ -935,6 +1111,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v4.enums.HotelPlaceholderFieldEnum.HotelPlaceholderField hotel_field = 19 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the hotelField field is set.
+   */
+  public boolean hasHotelField() {
+    return fieldCase_ == 19;
+  }
+  /**
+   * <pre>
+   * Immutable. Hotel Placeholder Fields
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.HotelPlaceholderFieldEnum.HotelPlaceholderField hotel_field = 19 [(.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The enum numeric value on the wire for hotelField.
    */
   public int getHotelFieldValue() {
@@ -962,6 +1149,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int REAL_ESTATE_FIELD_FIELD_NUMBER = 20;
+  /**
+   * <pre>
+   * Immutable. Real Estate Placeholder Fields
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.RealEstatePlaceholderFieldEnum.RealEstatePlaceholderField real_estate_field = 20 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the realEstateField field is set.
+   */
+  public boolean hasRealEstateField() {
+    return fieldCase_ == 20;
+  }
   /**
    * <pre>
    * Immutable. Real Estate Placeholder Fields
@@ -1001,6 +1199,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v4.enums.TravelPlaceholderFieldEnum.TravelPlaceholderField travel_field = 21 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the travelField field is set.
+   */
+  public boolean hasTravelField() {
+    return fieldCase_ == 21;
+  }
+  /**
+   * <pre>
+   * Immutable. Travel Placeholder Fields
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.TravelPlaceholderFieldEnum.TravelPlaceholderField travel_field = 21 [(.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The enum numeric value on the wire for travelField.
    */
   public int getTravelFieldValue() {
@@ -1034,6 +1243,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v4.enums.LocalPlaceholderFieldEnum.LocalPlaceholderField local_field = 22 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the localField field is set.
+   */
+  public boolean hasLocalField() {
+    return fieldCase_ == 22;
+  }
+  /**
+   * <pre>
+   * Immutable. Local Placeholder Fields
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.LocalPlaceholderFieldEnum.LocalPlaceholderField local_field = 22 [(.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The enum numeric value on the wire for localField.
    */
   public int getLocalFieldValue() {
@@ -1061,6 +1281,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int JOB_FIELD_FIELD_NUMBER = 23;
+  /**
+   * <pre>
+   * Immutable. Job Placeholder Fields
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.JobPlaceholderFieldEnum.JobPlaceholderField job_field = 23 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the jobField field is set.
+   */
+  public boolean hasJobField() {
+    return fieldCase_ == 23;
+  }
   /**
    * <pre>
    * Immutable. Job Placeholder Fields
@@ -2279,6 +2510,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v4.enums.SitelinkPlaceholderFieldEnum.SitelinkPlaceholderField sitelink_field = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return Whether the sitelinkField field is set.
+     */
+    @java.lang.Override
+    public boolean hasSitelinkField() {
+      return fieldCase_ == 3;
+    }
+    /**
+     * <pre>
+     * Immutable. Sitelink Placeholder Fields.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.SitelinkPlaceholderFieldEnum.SitelinkPlaceholderField sitelink_field = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The enum numeric value on the wire for sitelinkField.
      */
     @java.lang.Override
@@ -2356,6 +2599,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Immutable. Call Placeholder Fields.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.CallPlaceholderFieldEnum.CallPlaceholderField call_field = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return Whether the callField field is set.
+     */
+    @java.lang.Override
+    public boolean hasCallField() {
+      return fieldCase_ == 4;
+    }
     /**
      * <pre>
      * Immutable. Call Placeholder Fields.
@@ -2445,6 +2700,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v4.enums.AppPlaceholderFieldEnum.AppPlaceholderField app_field = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return Whether the appField field is set.
+     */
+    @java.lang.Override
+    public boolean hasAppField() {
+      return fieldCase_ == 5;
+    }
+    /**
+     * <pre>
+     * Immutable. App Placeholder Fields.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.AppPlaceholderFieldEnum.AppPlaceholderField app_field = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The enum numeric value on the wire for appField.
      */
     @java.lang.Override
@@ -2522,6 +2789,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Output only. Location Placeholder Fields. This field is read-only.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.LocationPlaceholderFieldEnum.LocationPlaceholderField location_field = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the locationField field is set.
+     */
+    @java.lang.Override
+    public boolean hasLocationField() {
+      return fieldCase_ == 6;
+    }
     /**
      * <pre>
      * Output only. Location Placeholder Fields. This field is read-only.
@@ -2611,6 +2890,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v4.enums.AffiliateLocationPlaceholderFieldEnum.AffiliateLocationPlaceholderField affiliate_location_field = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the affiliateLocationField field is set.
+     */
+    @java.lang.Override
+    public boolean hasAffiliateLocationField() {
+      return fieldCase_ == 7;
+    }
+    /**
+     * <pre>
+     * Output only. Affiliate Location Placeholder Fields. This field is read-only.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.AffiliateLocationPlaceholderFieldEnum.AffiliateLocationPlaceholderField affiliate_location_field = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The enum numeric value on the wire for affiliateLocationField.
      */
     @java.lang.Override
@@ -2688,6 +2979,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Immutable. Callout Placeholder Fields.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.CalloutPlaceholderFieldEnum.CalloutPlaceholderField callout_field = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return Whether the calloutField field is set.
+     */
+    @java.lang.Override
+    public boolean hasCalloutField() {
+      return fieldCase_ == 8;
+    }
     /**
      * <pre>
      * Immutable. Callout Placeholder Fields.
@@ -2777,6 +3080,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v4.enums.StructuredSnippetPlaceholderFieldEnum.StructuredSnippetPlaceholderField structured_snippet_field = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return Whether the structuredSnippetField field is set.
+     */
+    @java.lang.Override
+    public boolean hasStructuredSnippetField() {
+      return fieldCase_ == 9;
+    }
+    /**
+     * <pre>
+     * Immutable. Structured Snippet Placeholder Fields.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.StructuredSnippetPlaceholderFieldEnum.StructuredSnippetPlaceholderField structured_snippet_field = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The enum numeric value on the wire for structuredSnippetField.
      */
     @java.lang.Override
@@ -2854,6 +3169,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Immutable. Message Placeholder Fields.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.MessagePlaceholderFieldEnum.MessagePlaceholderField message_field = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return Whether the messageField field is set.
+     */
+    @java.lang.Override
+    public boolean hasMessageField() {
+      return fieldCase_ == 10;
+    }
     /**
      * <pre>
      * Immutable. Message Placeholder Fields.
@@ -2943,6 +3270,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v4.enums.PricePlaceholderFieldEnum.PricePlaceholderField price_field = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return Whether the priceField field is set.
+     */
+    @java.lang.Override
+    public boolean hasPriceField() {
+      return fieldCase_ == 11;
+    }
+    /**
+     * <pre>
+     * Immutable. Price Placeholder Fields.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.PricePlaceholderFieldEnum.PricePlaceholderField price_field = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The enum numeric value on the wire for priceField.
      */
     @java.lang.Override
@@ -3020,6 +3359,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Immutable. Promotion Placeholder Fields.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.PromotionPlaceholderFieldEnum.PromotionPlaceholderField promotion_field = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return Whether the promotionField field is set.
+     */
+    @java.lang.Override
+    public boolean hasPromotionField() {
+      return fieldCase_ == 12;
+    }
     /**
      * <pre>
      * Immutable. Promotion Placeholder Fields.
@@ -3109,6 +3460,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v4.enums.AdCustomizerPlaceholderFieldEnum.AdCustomizerPlaceholderField ad_customizer_field = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return Whether the adCustomizerField field is set.
+     */
+    @java.lang.Override
+    public boolean hasAdCustomizerField() {
+      return fieldCase_ == 13;
+    }
+    /**
+     * <pre>
+     * Immutable. Ad Customizer Placeholder Fields
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.AdCustomizerPlaceholderFieldEnum.AdCustomizerPlaceholderField ad_customizer_field = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The enum numeric value on the wire for adCustomizerField.
      */
     @java.lang.Override
@@ -3186,6 +3549,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Immutable. Dynamic Search Ad Page Feed Fields.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.DsaPageFeedCriterionFieldEnum.DsaPageFeedCriterionField dsa_page_feed_field = 14 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return Whether the dsaPageFeedField field is set.
+     */
+    @java.lang.Override
+    public boolean hasDsaPageFeedField() {
+      return fieldCase_ == 14;
+    }
     /**
      * <pre>
      * Immutable. Dynamic Search Ad Page Feed Fields.
@@ -3275,6 +3650,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v4.enums.LocationExtensionTargetingCriterionFieldEnum.LocationExtensionTargetingCriterionField location_extension_targeting_field = 15 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return Whether the locationExtensionTargetingField field is set.
+     */
+    @java.lang.Override
+    public boolean hasLocationExtensionTargetingField() {
+      return fieldCase_ == 15;
+    }
+    /**
+     * <pre>
+     * Immutable. Location Target Fields.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.LocationExtensionTargetingCriterionFieldEnum.LocationExtensionTargetingCriterionField location_extension_targeting_field = 15 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The enum numeric value on the wire for locationExtensionTargetingField.
      */
     @java.lang.Override
@@ -3352,6 +3739,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Immutable. Education Placeholder Fields
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.EducationPlaceholderFieldEnum.EducationPlaceholderField education_field = 16 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return Whether the educationField field is set.
+     */
+    @java.lang.Override
+    public boolean hasEducationField() {
+      return fieldCase_ == 16;
+    }
     /**
      * <pre>
      * Immutable. Education Placeholder Fields
@@ -3441,6 +3840,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v4.enums.FlightPlaceholderFieldEnum.FlightPlaceholderField flight_field = 17 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return Whether the flightField field is set.
+     */
+    @java.lang.Override
+    public boolean hasFlightField() {
+      return fieldCase_ == 17;
+    }
+    /**
+     * <pre>
+     * Immutable. Flight Placeholder Fields
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.FlightPlaceholderFieldEnum.FlightPlaceholderField flight_field = 17 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The enum numeric value on the wire for flightField.
      */
     @java.lang.Override
@@ -3518,6 +3929,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Immutable. Custom Placeholder Fields
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.CustomPlaceholderFieldEnum.CustomPlaceholderField custom_field = 18 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return Whether the customField field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomField() {
+      return fieldCase_ == 18;
+    }
     /**
      * <pre>
      * Immutable. Custom Placeholder Fields
@@ -3607,6 +4030,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v4.enums.HotelPlaceholderFieldEnum.HotelPlaceholderField hotel_field = 19 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return Whether the hotelField field is set.
+     */
+    @java.lang.Override
+    public boolean hasHotelField() {
+      return fieldCase_ == 19;
+    }
+    /**
+     * <pre>
+     * Immutable. Hotel Placeholder Fields
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.HotelPlaceholderFieldEnum.HotelPlaceholderField hotel_field = 19 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The enum numeric value on the wire for hotelField.
      */
     @java.lang.Override
@@ -3684,6 +4119,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Immutable. Real Estate Placeholder Fields
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.RealEstatePlaceholderFieldEnum.RealEstatePlaceholderField real_estate_field = 20 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return Whether the realEstateField field is set.
+     */
+    @java.lang.Override
+    public boolean hasRealEstateField() {
+      return fieldCase_ == 20;
+    }
     /**
      * <pre>
      * Immutable. Real Estate Placeholder Fields
@@ -3773,6 +4220,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v4.enums.TravelPlaceholderFieldEnum.TravelPlaceholderField travel_field = 21 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return Whether the travelField field is set.
+     */
+    @java.lang.Override
+    public boolean hasTravelField() {
+      return fieldCase_ == 21;
+    }
+    /**
+     * <pre>
+     * Immutable. Travel Placeholder Fields
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.TravelPlaceholderFieldEnum.TravelPlaceholderField travel_field = 21 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The enum numeric value on the wire for travelField.
      */
     @java.lang.Override
@@ -3856,6 +4315,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v4.enums.LocalPlaceholderFieldEnum.LocalPlaceholderField local_field = 22 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return Whether the localField field is set.
+     */
+    @java.lang.Override
+    public boolean hasLocalField() {
+      return fieldCase_ == 22;
+    }
+    /**
+     * <pre>
+     * Immutable. Local Placeholder Fields
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.LocalPlaceholderFieldEnum.LocalPlaceholderField local_field = 22 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The enum numeric value on the wire for localField.
      */
     @java.lang.Override
@@ -3933,6 +4404,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Immutable. Job Placeholder Fields
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.JobPlaceholderFieldEnum.JobPlaceholderField job_field = 23 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return Whether the jobField field is set.
+     */
+    @java.lang.Override
+    public boolean hasJobField() {
+      return fieldCase_ == 23;
+    }
     /**
      * <pre>
      * Immutable. Job Placeholder Fields

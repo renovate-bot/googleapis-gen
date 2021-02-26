@@ -86,7 +86,7 @@ class DeleteGlossaryResponse extends \Google\Protobuf\Internal\Message
      * The time when the operation was submitted to the server.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp submit_time = 2;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getSubmitTime()
     {
@@ -123,7 +123,7 @@ class DeleteGlossaryResponse extends \Google\Protobuf\Internal\Message
      * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getEndTime()
     {

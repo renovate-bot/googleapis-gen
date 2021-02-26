@@ -142,7 +142,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * Immutable. The ad group to which this criterion belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAdGroup()
     {
@@ -206,7 +206,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * This field is ignored for mutates.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCriterionId()
     {
@@ -274,7 +274,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * Use 0 to opt out of a Device type.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue bid_modifier = 4;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getBidModifier()
     {
@@ -347,7 +347,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * This field is readonly.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue base_ad_group = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getBaseAdGroup()
     {
@@ -448,7 +448,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * Immutable. Criterion for hotel date selection (default dates vs. user selected).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.HotelDateSelectionTypeInfo hotel_date_selection_type = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\HotelDateSelectionTypeInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\HotelDateSelectionTypeInfo|null
      */
     public function getHotelDateSelectionType()
     {
@@ -479,7 +479,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * Immutable. Criterion for number of days prior to the stay the booking is being made.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.HotelAdvanceBookingWindowInfo hotel_advance_booking_window = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\HotelAdvanceBookingWindowInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\HotelAdvanceBookingWindowInfo|null
      */
     public function getHotelAdvanceBookingWindow()
     {
@@ -510,7 +510,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * Immutable. Criterion for length of hotel stay in nights.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.HotelLengthOfStayInfo hotel_length_of_stay = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\HotelLengthOfStayInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\HotelLengthOfStayInfo|null
      */
     public function getHotelLengthOfStay()
     {
@@ -541,7 +541,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * Immutable. Criterion for day of the week the booking is for.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.HotelCheckInDayInfo hotel_check_in_day = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\HotelCheckInDayInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\HotelCheckInDayInfo|null
      */
     public function getHotelCheckInDay()
     {
@@ -572,7 +572,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * Immutable. A device criterion.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.DeviceInfo device = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\DeviceInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\DeviceInfo|null
      */
     public function getDevice()
     {
@@ -603,7 +603,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * Immutable. A preferred content criterion.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.PreferredContentInfo preferred_content = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\PreferredContentInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\PreferredContentInfo|null
      */
     public function getPreferredContent()
     {

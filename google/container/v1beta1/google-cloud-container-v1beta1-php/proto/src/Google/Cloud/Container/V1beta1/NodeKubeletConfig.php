@@ -140,7 +140,7 @@ class NodeKubeletConfig extends \Google\Protobuf\Internal\Message
      * The default value is 'true' if unspecified.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue cpu_cfs_quota = 2;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getCpuCfsQuota()
     {

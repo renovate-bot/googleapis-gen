@@ -37,7 +37,7 @@ class FailurePolicy extends \Google\Protobuf\Internal\Message
      * If specified, then the function will be retried in case of a failure.
      *
      * Generated from protobuf field <code>.google.cloud.functions.v1.FailurePolicy.Retry retry = 1;</code>
-     * @return \Google\Cloud\Functions\V1\FailurePolicy\Retry
+     * @return \Google\Cloud\Functions\V1\FailurePolicy\Retry|null
      */
     public function getRetry()
     {

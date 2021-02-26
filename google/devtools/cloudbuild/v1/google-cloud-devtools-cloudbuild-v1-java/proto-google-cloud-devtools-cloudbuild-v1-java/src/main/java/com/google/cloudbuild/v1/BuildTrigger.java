@@ -618,6 +618,18 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string filename = 8;</code>
+   * @return Whether the filename field is set.
+   */
+  public boolean hasFilename() {
+    return buildTemplateCase_ == 8;
+  }
+  /**
+   * <pre>
+   * Path, from the source root, to a file whose contents is used for the
+   * template.
+   * </pre>
+   *
+   * <code>string filename = 8;</code>
    * @return The filename.
    */
   public java.lang.String getFilename() {
@@ -2647,6 +2659,19 @@ private static final long serialVersionUID = 0L;
       return buildBuilder_;
     }
 
+    /**
+     * <pre>
+     * Path, from the source root, to a file whose contents is used for the
+     * template.
+     * </pre>
+     *
+     * <code>string filename = 8;</code>
+     * @return Whether the filename field is set.
+     */
+    @java.lang.Override
+    public boolean hasFilename() {
+      return buildTemplateCase_ == 8;
+    }
     /**
      * <pre>
      * Path, from the source root, to a file whose contents is used for the

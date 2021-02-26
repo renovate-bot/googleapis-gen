@@ -55,7 +55,7 @@ class AdTextAsset extends \Google\Protobuf\Internal\Message
      * Asset text.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue text = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getText()
     {

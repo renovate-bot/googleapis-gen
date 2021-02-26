@@ -330,7 +330,7 @@ class ProductEventDetail extends \Google\Protobuf\Internal\Message
      * events. Other event types should not set this field.
      *
      * Generated from protobuf field <code>.google.cloud.recommendationengine.v1beta1.PurchaseTransaction purchase_transaction = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\RecommendationEngine\V1beta1\PurchaseTransaction
+     * @return \Google\Cloud\RecommendationEngine\V1beta1\PurchaseTransaction|null
      */
     public function getPurchaseTransaction()
     {

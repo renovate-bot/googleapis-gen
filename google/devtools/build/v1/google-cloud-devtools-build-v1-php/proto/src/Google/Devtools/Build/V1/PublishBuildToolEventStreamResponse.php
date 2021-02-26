@@ -50,7 +50,7 @@ class PublishBuildToolEventStreamResponse extends \Google\Protobuf\Internal\Mess
      * The stream that contains this event.
      *
      * Generated from protobuf field <code>.google.devtools.build.v1.StreamId stream_id = 1;</code>
-     * @return \Google\Devtools\Build\V1\StreamId
+     * @return \Google\Devtools\Build\V1\StreamId|null
      */
     public function getStreamId()
     {

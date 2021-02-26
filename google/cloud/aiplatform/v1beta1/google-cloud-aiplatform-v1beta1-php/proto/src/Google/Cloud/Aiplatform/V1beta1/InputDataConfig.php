@@ -161,7 +161,7 @@ class InputDataConfig extends \Google\Protobuf\Internal\Message
      * Split based on fractions defining the size of each set.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.FractionSplit fraction_split = 2;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\FractionSplit
+     * @return \Google\Cloud\Aiplatform\V1beta1\FractionSplit|null
      */
     public function getFractionSplit()
     {
@@ -192,7 +192,7 @@ class InputDataConfig extends \Google\Protobuf\Internal\Message
      * Split based on the provided filters for each set.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.FilterSplit filter_split = 3;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\FilterSplit
+     * @return \Google\Cloud\Aiplatform\V1beta1\FilterSplit|null
      */
     public function getFilterSplit()
     {
@@ -224,7 +224,7 @@ class InputDataConfig extends \Google\Protobuf\Internal\Message
      * Split based on a predefined key.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.PredefinedSplit predefined_split = 4;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\PredefinedSplit
+     * @return \Google\Cloud\Aiplatform\V1beta1\PredefinedSplit|null
      */
     public function getPredefinedSplit()
     {
@@ -257,7 +257,7 @@ class InputDataConfig extends \Google\Protobuf\Internal\Message
      * Split based on the timestamp of the input data pieces.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.TimestampSplit timestamp_split = 5;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\TimestampSplit
+     * @return \Google\Cloud\Aiplatform\V1beta1\TimestampSplit|null
      */
     public function getTimestampSplit()
     {
@@ -304,7 +304,7 @@ class InputDataConfig extends \Google\Protobuf\Internal\Message
      * "gcs_destination/dataset-<dataset-id>-<annotation-type>-<time>/test-*.${AIP_DATA_FORMAT}"
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.GcsDestination gcs_destination = 8;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\GcsDestination
+     * @return \Google\Cloud\Aiplatform\V1beta1\GcsDestination|null
      */
     public function getGcsDestination()
     {
@@ -364,7 +364,7 @@ class InputDataConfig extends \Google\Protobuf\Internal\Message
      * "bigquery_destination.dataset_<dataset-id>_<annotation-type>_<time>.test"
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination bigquery_destination = 10;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\BigQueryDestination
+     * @return \Google\Cloud\Aiplatform\V1beta1\BigQueryDestination|null
      */
     public function getBigqueryDestination()
     {

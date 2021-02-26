@@ -49,7 +49,7 @@ class TestCaseError extends \Google\Protobuf\Internal\Message
      * The test case.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.TestCase test_case = 1;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\TestCase
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\TestCase|null
      */
     public function getTestCase()
     {
@@ -85,7 +85,7 @@ class TestCaseError extends \Google\Protobuf\Internal\Message
      * The status associated with the test case.
      *
      * Generated from protobuf field <code>.google.rpc.Status status = 2;</code>
-     * @return \Google\Rpc\Status
+     * @return \Google\Rpc\Status|null
      */
     public function getStatus()
     {

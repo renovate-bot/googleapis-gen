@@ -13,6 +13,15 @@ public interface ListTransferableOffersRequestOrBuilder extends
    * </pre>
    *
    * <code>string cloud_identity_id = 4;</code>
+   * @return Whether the cloudIdentityId field is set.
+   */
+  boolean hasCloudIdentityId();
+  /**
+   * <pre>
+   * Customer's Cloud Identity ID
+   * </pre>
+   *
+   * <code>string cloud_identity_id = 4;</code>
    * @return The cloudIdentityId.
    */
   java.lang.String getCloudIdentityId();
@@ -27,6 +36,16 @@ public interface ListTransferableOffersRequestOrBuilder extends
   com.google.protobuf.ByteString
       getCloudIdentityIdBytes();
 
+  /**
+   * <pre>
+   * A reseller should create a customer and use the resource name of
+   * the created customer here.
+   * </pre>
+   *
+   * <code>string customer_name = 5;</code>
+   * @return Whether the customerName field is set.
+   */
+  boolean hasCustomerName();
   /**
    * <pre>
    * A reseller should create a customer and use the resource name of

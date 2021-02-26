@@ -87,7 +87,7 @@ class AppCampaignSetting extends \Google\Protobuf\Internal\Message
      * Immutable. A string that uniquely identifies a mobile application.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAppId()
     {

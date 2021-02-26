@@ -58,7 +58,7 @@ class UpdateUserFeedbackRequest extends \Google\Protobuf\Internal\Message
      * corresponding question) to update.
      *
      * Generated from protobuf field <code>.google.cloud.dataqna.v1alpha.UserFeedback user_feedback = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\DataQnA\V1alpha\UserFeedback
+     * @return \Google\Cloud\DataQnA\V1alpha\UserFeedback|null
      */
     public function getUserFeedback()
     {
@@ -97,7 +97,7 @@ class UpdateUserFeedbackRequest extends \Google\Protobuf\Internal\Message
      * The list of fields to be updated.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

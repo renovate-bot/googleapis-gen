@@ -41,6 +41,16 @@ public interface BatchGetDocumentsResponseOrBuilder extends
    * </pre>
    *
    * <code>string missing = 2;</code>
+   * @return Whether the missing field is set.
+   */
+  boolean hasMissing();
+  /**
+   * <pre>
+   * A document name that was requested but does not exist. In the format:
+   * `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
+   * </pre>
+   *
+   * <code>string missing = 2;</code>
    * @return The missing.
    */
   java.lang.String getMissing();

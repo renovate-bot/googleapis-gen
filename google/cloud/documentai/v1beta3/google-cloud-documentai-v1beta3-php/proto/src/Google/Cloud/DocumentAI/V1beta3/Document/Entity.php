@@ -137,7 +137,7 @@ class Entity extends \Google\Protobuf\Internal\Message
      * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta3\Document\TextAnchor
+     * @return \Google\Cloud\DocumentAI\V1beta3\Document\TextAnchor|null
      */
     public function getTextAnchor()
     {
@@ -279,7 +279,7 @@ class Entity extends \Google\Protobuf\Internal\Message
      * page where it was found.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document.PageAnchor page_anchor = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\DocumentAI\V1beta3\Document\PageAnchor
+     * @return \Google\Cloud\DocumentAI\V1beta3\Document\PageAnchor|null
      */
     public function getPageAnchor()
     {
@@ -347,7 +347,7 @@ class Entity extends \Google\Protobuf\Internal\Message
      * types.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document.Entity.NormalizedValue normalized_value = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\DocumentAI\V1beta3\Document\Entity\NormalizedValue
+     * @return \Google\Cloud\DocumentAI\V1beta3\Document\Entity\NormalizedValue|null
      */
     public function getNormalizedValue()
     {
@@ -414,7 +414,7 @@ class Entity extends \Google\Protobuf\Internal\Message
      * Optional. The history of this annotation.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\DocumentAI\V1beta3\Document\Provenance
+     * @return \Google\Cloud\DocumentAI\V1beta3\Document\Provenance|null
      */
     public function getProvenance()
     {

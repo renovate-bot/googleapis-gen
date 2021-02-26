@@ -69,7 +69,7 @@ class GenerateConfigReportRequest extends \Google\Protobuf\Internal\Message
      * and [google.api.Service][google.api.Service]
      *
      * Generated from protobuf field <code>.google.protobuf.Any new_config = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Any
+     * @return \Google\Protobuf\Any|null
      */
     public function getNewConfig()
     {
@@ -113,7 +113,7 @@ class GenerateConfigReportRequest extends \Google\Protobuf\Internal\Message
      * and [google.api.Service][google.api.Service]
      *
      * Generated from protobuf field <code>.google.protobuf.Any old_config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\Any
+     * @return \Google\Protobuf\Any|null
      */
     public function getOldConfig()
     {

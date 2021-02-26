@@ -112,7 +112,7 @@ class Encryption extends \Google\Protobuf\Internal\Message
      * Configuration for AES-128 encryption.
      *
      * Generated from protobuf field <code>.google.cloud.video.transcoder.v1beta1.Encryption.Aes128Encryption aes_128 = 3;</code>
-     * @return \Google\Cloud\Video\Transcoder\V1beta1\Encryption\Aes128Encryption
+     * @return \Google\Cloud\Video\Transcoder\V1beta1\Encryption\Aes128Encryption|null
      */
     public function getAes128()
     {
@@ -143,7 +143,7 @@ class Encryption extends \Google\Protobuf\Internal\Message
      * Configuration for SAMPLE-AES encryption.
      *
      * Generated from protobuf field <code>.google.cloud.video.transcoder.v1beta1.Encryption.SampleAesEncryption sample_aes = 4;</code>
-     * @return \Google\Cloud\Video\Transcoder\V1beta1\Encryption\SampleAesEncryption
+     * @return \Google\Cloud\Video\Transcoder\V1beta1\Encryption\SampleAesEncryption|null
      */
     public function getSampleAes()
     {
@@ -174,7 +174,7 @@ class Encryption extends \Google\Protobuf\Internal\Message
      * Configuration for MPEG Common Encryption (MPEG-CENC).
      *
      * Generated from protobuf field <code>.google.cloud.video.transcoder.v1beta1.Encryption.MpegCommonEncryption mpeg_cenc = 5;</code>
-     * @return \Google\Cloud\Video\Transcoder\V1beta1\Encryption\MpegCommonEncryption
+     * @return \Google\Cloud\Video\Transcoder\V1beta1\Encryption\MpegCommonEncryption|null
      */
     public function getMpegCenc()
     {

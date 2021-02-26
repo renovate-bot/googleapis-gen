@@ -79,7 +79,7 @@ class Forecast extends \Google\Protobuf\Internal\Message
      * matches the Targeting.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value on_target_reach = 1;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getOnTargetReach()
     {
@@ -150,7 +150,7 @@ class Forecast extends \Google\Protobuf\Internal\Message
      * people that may fall outside the specified Targeting.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value total_reach = 2;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getTotalReach()
     {
@@ -219,7 +219,7 @@ class Forecast extends \Google\Protobuf\Internal\Message
      * Number of ad impressions that exactly matches the Targeting.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value on_target_impressions = 3;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getOnTargetImpressions()
     {
@@ -284,7 +284,7 @@ class Forecast extends \Google\Protobuf\Internal\Message
      * signed-in users.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value total_impressions = 4;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getTotalImpressions()
     {

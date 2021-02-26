@@ -98,7 +98,7 @@ class Image extends \Google\Protobuf\Internal\Message
      * both `x` and `y` to `0.0`.
      *
      * Generated from protobuf field <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate resolution = 2;</code>
-     * @return \Google\Cloud\Video\Transcoder\V1beta1\Overlay\NormalizedCoordinate
+     * @return \Google\Cloud\Video\Transcoder\V1beta1\Overlay\NormalizedCoordinate|null
      */
     public function getResolution()
     {

@@ -314,7 +314,7 @@ class Flow extends \Google\Protobuf\Internal\Message
      * NLU related settings of the flow.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.NluSettings nlu_settings = 11;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\NluSettings
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\NluSettings|null
      */
     public function getNluSettings()
     {

@@ -453,7 +453,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the campaign.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -520,7 +520,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * (code point 0xA) or carriage return (code point 0xD) characters.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {
@@ -743,7 +743,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * The URL template for constructing a tracking URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 11;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getTrackingUrlTemplate()
     {
@@ -835,7 +835,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * targeting the Ad Exchange network.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.RealTimeBiddingSetting real_time_bidding_setting = 39;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\RealTimeBiddingSetting
+     * @return \Google\Ads\GoogleAds\V4\Common\RealTimeBiddingSetting|null
      */
     public function getRealTimeBiddingSetting()
     {
@@ -872,7 +872,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * The network settings for the campaign.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Campaign.NetworkSettings network_settings = 14;</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Campaign\NetworkSettings
+     * @return \Google\Ads\GoogleAds\V4\Resources\Campaign\NetworkSettings|null
      */
     public function getNetworkSettings()
     {
@@ -908,7 +908,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Immutable. The hotel setting for the campaign.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Campaign.HotelSettingInfo hotel_setting = 32 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Campaign\HotelSettingInfo
+     * @return \Google\Ads\GoogleAds\V4\Resources\Campaign\HotelSettingInfo|null
      */
     public function getHotelSetting()
     {
@@ -944,7 +944,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * The setting for controlling Dynamic Search Ads (DSA).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Campaign.DynamicSearchAdsSetting dynamic_search_ads_setting = 33;</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Campaign\DynamicSearchAdsSetting
+     * @return \Google\Ads\GoogleAds\V4\Resources\Campaign\DynamicSearchAdsSetting|null
      */
     public function getDynamicSearchAdsSetting()
     {
@@ -980,7 +980,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * The setting for controlling Shopping campaigns.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Campaign.ShoppingSetting shopping_setting = 36;</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Campaign\ShoppingSetting
+     * @return \Google\Ads\GoogleAds\V4\Resources\Campaign\ShoppingSetting|null
      */
     public function getShoppingSetting()
     {
@@ -1016,7 +1016,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Setting for targeting related features.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.TargetingSetting targeting_setting = 43;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\TargetingSetting
+     * @return \Google\Ads\GoogleAds\V4\Common\TargetingSetting|null
      */
     public function getTargetingSetting()
     {
@@ -1052,7 +1052,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * The setting for ads geotargeting.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Campaign.GeoTargetTypeSetting geo_target_type_setting = 47;</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Campaign\GeoTargetTypeSetting
+     * @return \Google\Ads\GoogleAds\V4\Resources\Campaign\GeoTargetTypeSetting|null
      */
     public function getGeoTargetTypeSetting()
     {
@@ -1088,7 +1088,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * The setting for local campaign.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Campaign.LocalCampaignSetting local_campaign_setting = 50;</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Campaign\LocalCampaignSetting
+     * @return \Google\Ads\GoogleAds\V4\Resources\Campaign\LocalCampaignSetting|null
      */
     public function getLocalCampaignSetting()
     {
@@ -1124,7 +1124,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * The setting related to App Campaign.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Campaign.AppCampaignSetting app_campaign_setting = 51;</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Campaign\AppCampaignSetting
+     * @return \Google\Ads\GoogleAds\V4\Resources\Campaign\AppCampaignSetting|null
      */
     public function getAppCampaignSetting()
     {
@@ -1214,7 +1214,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue base_campaign = 28 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getBaseCampaign()
     {
@@ -1283,7 +1283,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * The budget of the campaign.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign_budget = 6 [(.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCampaignBudget()
     {
@@ -1381,7 +1381,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * This field must not be used in WHERE clauses.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 19;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getStartDate()
     {
@@ -1448,7 +1448,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * This field must not be used in WHERE clauses.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 20;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getEndDate()
     {
@@ -1515,7 +1515,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * with parallel tracking.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 38;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getFinalUrlSuffix()
     {
@@ -1633,7 +1633,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Describes how unbranded pharma ads will be displayed.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Campaign.VanityPharma vanity_pharma = 44;</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Campaign\VanityPharma
+     * @return \Google\Ads\GoogleAds\V4\Resources\Campaign\VanityPharma|null
      */
     public function getVanityPharma()
     {
@@ -1670,7 +1670,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * conversion actions to optimize this campaign towards.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Campaign.SelectiveOptimization selective_optimization = 45;</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Campaign\SelectiveOptimization
+     * @return \Google\Ads\GoogleAds\V4\Resources\Campaign\SelectiveOptimization|null
      */
     public function getSelectiveOptimization()
     {
@@ -1708,7 +1708,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * optimization goal types.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Campaign.OptimizationGoalSetting optimization_goal_setting = 54;</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Campaign\OptimizationGoalSetting
+     * @return \Google\Ads\GoogleAds\V4\Resources\Campaign\OptimizationGoalSetting|null
      */
     public function getOptimizationGoalSetting()
     {
@@ -1745,7 +1745,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Output only. Campaign-level settings for tracking information.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Campaign.TrackingSetting tracking_setting = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Campaign\TrackingSetting
+     * @return \Google\Ads\GoogleAds\V4\Resources\Campaign\TrackingSetting|null
      */
     public function getTrackingSetting()
     {
@@ -1814,7 +1814,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue optimization_score = 55 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getOptimizationScore()
     {
@@ -1898,7 +1898,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Portfolio bidding strategy used by campaign.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue bidding_strategy = 23 [(.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getBiddingStrategy()
     {
@@ -1957,7 +1957,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * a certain portion of the conversion value.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.Commission commission = 49;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\Commission
+     * @return \Google\Ads\GoogleAds\V4\Common\Commission|null
      */
     public function getCommission()
     {
@@ -1990,7 +1990,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Manual click-based bidding where user pays per click.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.ManualCpc manual_cpc = 24;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\ManualCpc
+     * @return \Google\Ads\GoogleAds\V4\Common\ManualCpc|null
      */
     public function getManualCpc()
     {
@@ -2024,7 +2024,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * impressions.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.ManualCpm manual_cpm = 25;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\ManualCpm
+     * @return \Google\Ads\GoogleAds\V4\Common\ManualCpm|null
      */
     public function getManualCpm()
     {
@@ -2057,7 +2057,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Output only. A bidding strategy that pays a configurable amount per video view.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.ManualCpv manual_cpv = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\ManualCpv
+     * @return \Google\Ads\GoogleAds\V4\Common\ManualCpv|null
      */
     public function getManualCpv()
     {
@@ -2089,7 +2089,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * maximizes number of conversions while spending your budget.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.MaximizeConversions maximize_conversions = 30;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\MaximizeConversions
+     * @return \Google\Ads\GoogleAds\V4\Common\MaximizeConversions|null
      */
     public function getMaximizeConversions()
     {
@@ -2122,7 +2122,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * sets bids to maximize revenue while spending your budget.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.MaximizeConversionValue maximize_conversion_value = 31;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\MaximizeConversionValue
+     * @return \Google\Ads\GoogleAds\V4\Common\MaximizeConversionValue|null
      */
     public function getMaximizeConversionValue()
     {
@@ -2156,7 +2156,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * cost-per-acquisition (CPA) you set.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.TargetCpa target_cpa = 26;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\TargetCpa
+     * @return \Google\Ads\GoogleAds\V4\Common\TargetCpa|null
      */
     public function getTargetCpa()
     {
@@ -2190,7 +2190,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * that sets bids to achieve a desired percentage of impressions.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.TargetImpressionShare target_impression_share = 48;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\TargetImpressionShare
+     * @return \Google\Ads\GoogleAds\V4\Common\TargetImpressionShare|null
      */
     public function getTargetImpressionShare()
     {
@@ -2223,7 +2223,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * revenue while averaging a specific target return on ad spend (ROAS).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.TargetRoas target_roas = 29;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\TargetRoas
+     * @return \Google\Ads\GoogleAds\V4\Common\TargetRoas|null
      */
     public function getTargetRoas()
     {
@@ -2256,7 +2256,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * to help get as many clicks as possible within your budget.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.TargetSpend target_spend = 27;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\TargetSpend
+     * @return \Google\Ads\GoogleAds\V4\Common\TargetSpend|null
      */
     public function getTargetSpend()
     {
@@ -2289,7 +2289,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * advertised price for some good or service.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.PercentCpc percent_cpc = 34;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\PercentCpc
+     * @return \Google\Ads\GoogleAds\V4\Common\PercentCpc|null
      */
     public function getPercentCpc()
     {
@@ -2322,7 +2322,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * impressions.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.TargetCpm target_cpm = 41;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\TargetCpm
+     * @return \Google\Ads\GoogleAds\V4\Common\TargetCpm|null
      */
     public function getTargetCpm()
     {

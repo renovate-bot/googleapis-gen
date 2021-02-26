@@ -709,6 +709,19 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 gop_frame_count = 15;</code>
+   * @return Whether the gopFrameCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasGopFrameCount() {
+    return gopModeCase_ == 15;
+  }
+  /**
+   * <pre>
+   * Select the GOP size based on the specified frame count. Must be greater
+   * than zero.
+   * </pre>
+   *
+   * <code>int32 gop_frame_count = 15;</code>
    * @return The gopFrameCount.
    */
   @java.lang.Override
@@ -2660,6 +2673,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Select the GOP size based on the specified frame count. Must be greater
+     * than zero.
+     * </pre>
+     *
+     * <code>int32 gop_frame_count = 15;</code>
+     * @return Whether the gopFrameCount field is set.
+     */
+    public boolean hasGopFrameCount() {
+      return gopModeCase_ == 15;
+    }
     /**
      * <pre>
      * Select the GOP size based on the specified frame count. Must be greater

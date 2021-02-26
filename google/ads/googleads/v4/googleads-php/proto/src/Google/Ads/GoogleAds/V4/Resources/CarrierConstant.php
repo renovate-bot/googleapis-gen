@@ -101,7 +101,7 @@ class CarrierConstant extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the carrier criterion.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -164,7 +164,7 @@ class CarrierConstant extends \Google\Protobuf\Internal\Message
      * Output only. The full name of the carrier in English.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {
@@ -228,7 +228,7 @@ class CarrierConstant extends \Google\Protobuf\Internal\Message
      * "FR", etc.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCountryCode()
     {

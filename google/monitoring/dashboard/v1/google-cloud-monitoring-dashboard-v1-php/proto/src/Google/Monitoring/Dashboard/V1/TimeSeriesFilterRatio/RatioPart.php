@@ -90,7 +90,7 @@ class RatioPart extends \Google\Protobuf\Internal\Message
      * data.
      *
      * Generated from protobuf field <code>.google.monitoring.dashboard.v1.Aggregation aggregation = 2;</code>
-     * @return \Google\Monitoring\Dashboard\V1\Aggregation
+     * @return \Google\Monitoring\Dashboard\V1\Aggregation|null
      */
     public function getAggregation()
     {

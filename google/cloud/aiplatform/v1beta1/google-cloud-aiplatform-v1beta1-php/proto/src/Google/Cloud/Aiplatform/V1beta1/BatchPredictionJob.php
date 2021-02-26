@@ -410,7 +410,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      * [instance_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri].
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig input_config = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\BatchPredictionJob\InputConfig
+     * @return \Google\Cloud\Aiplatform\V1beta1\BatchPredictionJob\InputConfig|null
      */
     public function getInputConfig()
     {
@@ -453,7 +453,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      * [parameters_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.parameters_schema_uri].
      *
      * Generated from protobuf field <code>.google.protobuf.Value model_parameters = 5;</code>
-     * @return \Google\Protobuf\Value
+     * @return \Google\Protobuf\Value|null
      */
     public function getModelParameters()
     {
@@ -499,7 +499,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      * [prediction_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.prediction_schema_uri].
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.BatchPredictionJob.OutputConfig output_config = 6 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\BatchPredictionJob\OutputConfig
+     * @return \Google\Cloud\Aiplatform\V1beta1\BatchPredictionJob\OutputConfig|null
      */
     public function getOutputConfig()
     {
@@ -546,7 +546,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      * must be provided.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.BatchDedicatedResources dedicated_resources = 7;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\BatchDedicatedResources
+     * @return \Google\Cloud\Aiplatform\V1beta1\BatchDedicatedResources|null
      */
     public function getDedicatedResources()
     {
@@ -588,7 +588,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      * the tuning itself).
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ManualBatchTuningParameters manual_batch_tuning_parameters = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\ManualBatchTuningParameters
+     * @return \Google\Cloud\Aiplatform\V1beta1\ManualBatchTuningParameters|null
      */
     public function getManualBatchTuningParameters()
     {
@@ -679,7 +679,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      * the [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] object is inherited.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 25;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\ExplanationSpec
+     * @return \Google\Cloud\Aiplatform\V1beta1\ExplanationSpec|null
      */
     public function getExplanationSpec()
     {
@@ -720,7 +720,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      * Output only. Information further describing the output of this job.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.BatchPredictionJob.OutputInfo output_info = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\BatchPredictionJob\OutputInfo
+     * @return \Google\Cloud\Aiplatform\V1beta1\BatchPredictionJob\OutputInfo|null
      */
     public function getOutputInfo()
     {
@@ -783,7 +783,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      * JOB_STATE_CANCELLED.
      *
      * Generated from protobuf field <code>.google.rpc.Status error = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Rpc\Status
+     * @return \Google\Rpc\Status|null
      */
     public function getError()
     {
@@ -856,7 +856,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      * use AutoML Models.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ResourcesConsumed resources_consumed = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\ResourcesConsumed
+     * @return \Google\Cloud\Aiplatform\V1beta1\ResourcesConsumed|null
      */
     public function getResourcesConsumed()
     {
@@ -896,7 +896,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      * Output only. Statistics on completed and failed prediction instances.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.CompletionStats completion_stats = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\CompletionStats
+     * @return \Google\Cloud\Aiplatform\V1beta1\CompletionStats|null
      */
     public function getCompletionStats()
     {
@@ -932,7 +932,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      * Output only. Time when the BatchPredictionJob was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -969,7 +969,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      * `JOB_STATE_RUNNING` state.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartTime()
     {
@@ -1007,7 +1007,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      * `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getEndTime()
     {
@@ -1044,7 +1044,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      * Output only. Time when the BatchPredictionJob was most recently updated.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {
@@ -1116,7 +1116,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      * encrypted with the provided encryption key.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 24;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\EncryptionSpec
+     * @return \Google\Cloud\Aiplatform\V1beta1\EncryptionSpec|null
      */
     public function getEncryptionSpec()
     {

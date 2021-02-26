@@ -101,7 +101,7 @@ class RunQueryRequest extends \Google\Protobuf\Internal\Message
      * A structured query.
      *
      * Generated from protobuf field <code>.google.firestore.v1beta1.StructuredQuery structured_query = 2;</code>
-     * @return \Google\Cloud\Firestore\V1beta1\StructuredQuery
+     * @return \Google\Cloud\Firestore\V1beta1\StructuredQuery|null
      */
     public function getStructuredQuery()
     {
@@ -166,7 +166,7 @@ class RunQueryRequest extends \Google\Protobuf\Internal\Message
      * stream.
      *
      * Generated from protobuf field <code>.google.firestore.v1beta1.TransactionOptions new_transaction = 6;</code>
-     * @return \Google\Cloud\Firestore\V1beta1\TransactionOptions
+     * @return \Google\Cloud\Firestore\V1beta1\TransactionOptions|null
      */
     public function getNewTransaction()
     {
@@ -201,7 +201,7 @@ class RunQueryRequest extends \Google\Protobuf\Internal\Message
      * This may not be older than 60 seconds.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp read_time = 7;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getReadTime()
     {

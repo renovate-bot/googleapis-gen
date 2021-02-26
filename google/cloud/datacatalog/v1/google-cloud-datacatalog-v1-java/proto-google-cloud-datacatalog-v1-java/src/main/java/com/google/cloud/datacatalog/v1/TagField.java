@@ -853,6 +853,18 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>double double_value = 2;</code>
+   * @return Whether the doubleValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasDoubleValue() {
+    return kindCase_ == 2;
+  }
+  /**
+   * <pre>
+   * Holds the value for a tag field with double type.
+   * </pre>
+   *
+   * <code>double double_value = 2;</code>
    * @return The doubleValue.
    */
   @java.lang.Override
@@ -864,6 +876,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int STRING_VALUE_FIELD_NUMBER = 3;
+  /**
+   * <pre>
+   * Holds the value for a tag field with string type.
+   * </pre>
+   *
+   * <code>string string_value = 3;</code>
+   * @return Whether the stringValue field is set.
+   */
+  public boolean hasStringValue() {
+    return kindCase_ == 3;
+  }
   /**
    * <pre>
    * Holds the value for a tag field with string type.
@@ -917,6 +940,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int BOOL_VALUE_FIELD_NUMBER = 4;
+  /**
+   * <pre>
+   * Holds the value for a tag field with boolean type.
+   * </pre>
+   *
+   * <code>bool bool_value = 4;</code>
+   * @return Whether the boolValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasBoolValue() {
+    return kindCase_ == 4;
+  }
   /**
    * <pre>
    * Holds the value for a tag field with boolean type.
@@ -1625,6 +1660,17 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>double double_value = 2;</code>
+     * @return Whether the doubleValue field is set.
+     */
+    public boolean hasDoubleValue() {
+      return kindCase_ == 2;
+    }
+    /**
+     * <pre>
+     * Holds the value for a tag field with double type.
+     * </pre>
+     *
+     * <code>double double_value = 2;</code>
      * @return The doubleValue.
      */
     public double getDoubleValue() {
@@ -1665,6 +1711,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Holds the value for a tag field with string type.
+     * </pre>
+     *
+     * <code>string string_value = 3;</code>
+     * @return Whether the stringValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasStringValue() {
+      return kindCase_ == 3;
+    }
     /**
      * <pre>
      * Holds the value for a tag field with string type.
@@ -1774,6 +1832,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Holds the value for a tag field with boolean type.
+     * </pre>
+     *
+     * <code>bool bool_value = 4;</code>
+     * @return Whether the boolValue field is set.
+     */
+    public boolean hasBoolValue() {
+      return kindCase_ == 4;
+    }
     /**
      * <pre>
      * Holds the value for a tag field with boolean type.

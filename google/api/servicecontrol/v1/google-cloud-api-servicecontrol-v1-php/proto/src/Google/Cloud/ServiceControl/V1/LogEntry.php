@@ -166,7 +166,7 @@ class LogEntry extends \Google\Protobuf\Internal\Message
      * omitted, defaults to operation start time.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp timestamp = 11;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getTimestamp()
     {
@@ -232,7 +232,7 @@ class LogEntry extends \Google\Protobuf\Internal\Message
      * log entry, if applicable.
      *
      * Generated from protobuf field <code>.google.api.servicecontrol.v1.HttpRequest http_request = 14;</code>
-     * @return \Google\Cloud\ServiceControl\V1\HttpRequest
+     * @return \Google\Cloud\ServiceControl\V1\HttpRequest|null
      */
     public function getHttpRequest()
     {
@@ -359,7 +359,7 @@ class LogEntry extends \Google\Protobuf\Internal\Message
      * [AuditLog][google.cloud.audit.AuditLog].
      *
      * Generated from protobuf field <code>.google.protobuf.Any proto_payload = 2;</code>
-     * @return \Google\Protobuf\Any
+     * @return \Google\Protobuf\Any|null
      */
     public function getProtoPayload()
     {
@@ -424,7 +424,7 @@ class LogEntry extends \Google\Protobuf\Internal\Message
      * is expressed as a JSON object.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct struct_payload = 6;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getStructPayload()
     {
@@ -457,7 +457,7 @@ class LogEntry extends \Google\Protobuf\Internal\Message
      * applicable.
      *
      * Generated from protobuf field <code>.google.api.servicecontrol.v1.LogEntryOperation operation = 16;</code>
-     * @return \Google\Cloud\ServiceControl\V1\LogEntryOperation
+     * @return \Google\Cloud\ServiceControl\V1\LogEntryOperation|null
      */
     public function getOperation()
     {
@@ -495,7 +495,7 @@ class LogEntry extends \Google\Protobuf\Internal\Message
      * if any.
      *
      * Generated from protobuf field <code>.google.api.servicecontrol.v1.LogEntrySourceLocation source_location = 17;</code>
-     * @return \Google\Cloud\ServiceControl\V1\LogEntrySourceLocation
+     * @return \Google\Cloud\ServiceControl\V1\LogEntrySourceLocation|null
      */
     public function getSourceLocation()
     {

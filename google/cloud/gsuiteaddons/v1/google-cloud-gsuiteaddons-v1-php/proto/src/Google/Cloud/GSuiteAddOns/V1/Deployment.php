@@ -129,7 +129,7 @@ class Deployment extends \Google\Protobuf\Internal\Message
      * The Google Workspace Add-on configuration.
      *
      * Generated from protobuf field <code>.google.cloud.gsuiteaddons.v1.AddOns add_ons = 3;</code>
-     * @return \Google\Cloud\GSuiteAddOns\V1\AddOns
+     * @return \Google\Cloud\GSuiteAddOns\V1\AddOns|null
      */
     public function getAddOns()
     {

@@ -197,6 +197,16 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool drop = 4;</code>
+     * @return Whether the drop field is set.
+     */
+    boolean hasDrop();
+    /**
+     * <pre>
+     * Drop (delete) the column family with the given ID, or fail if no such
+     * family exists.
+     * </pre>
+     *
+     * <code>bool drop = 4;</code>
      * @return The drop.
      */
     boolean getDrop();
@@ -506,6 +516,19 @@ private static final long serialVersionUID = 0L;
     }
 
     public static final int DROP_FIELD_NUMBER = 4;
+    /**
+     * <pre>
+     * Drop (delete) the column family with the given ID, or fail if no such
+     * family exists.
+     * </pre>
+     *
+     * <code>bool drop = 4;</code>
+     * @return Whether the drop field is set.
+     */
+    @java.lang.Override
+    public boolean hasDrop() {
+      return modCase_ == 4;
+    }
     /**
      * <pre>
      * Drop (delete) the column family with the given ID, or fail if no such
@@ -1406,6 +1429,18 @@ private static final long serialVersionUID = 0L;
         return updateBuilder_;
       }
 
+      /**
+       * <pre>
+       * Drop (delete) the column family with the given ID, or fail if no such
+       * family exists.
+       * </pre>
+       *
+       * <code>bool drop = 4;</code>
+       * @return Whether the drop field is set.
+       */
+      public boolean hasDrop() {
+        return modCase_ == 4;
+      }
       /**
        * <pre>
        * Drop (delete) the column family with the given ID, or fail if no such

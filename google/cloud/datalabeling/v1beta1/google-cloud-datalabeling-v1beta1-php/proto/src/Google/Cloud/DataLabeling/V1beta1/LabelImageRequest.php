@@ -78,7 +78,7 @@ class LabelImageRequest extends \Google\Protobuf\Internal\Message
      * polyline_config and segmentation_config are required.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\ImageClassificationConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\ImageClassificationConfig|null
      */
     public function getImageClassificationConfig()
     {
@@ -113,7 +113,7 @@ class LabelImageRequest extends \Google\Protobuf\Internal\Message
      * polyline_config and segmentation_config are required.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\BoundingPolyConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\BoundingPolyConfig|null
      */
     public function getBoundingPolyConfig()
     {
@@ -148,7 +148,7 @@ class LabelImageRequest extends \Google\Protobuf\Internal\Message
      * polyline_config and segmentation_config are required.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.PolylineConfig polyline_config = 6;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\PolylineConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\PolylineConfig|null
      */
     public function getPolylineConfig()
     {
@@ -183,7 +183,7 @@ class LabelImageRequest extends \Google\Protobuf\Internal\Message
      * polyline_config and segmentation_config are required.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.SegmentationConfig segmentation_config = 7;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\SegmentationConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\SegmentationConfig|null
      */
     public function getSegmentationConfig()
     {
@@ -244,7 +244,7 @@ class LabelImageRequest extends \Google\Protobuf\Internal\Message
      * Required. Basic human annotation config.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\HumanAnnotationConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\HumanAnnotationConfig|null
      */
     public function getBasicConfig()
     {

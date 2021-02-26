@@ -154,7 +154,7 @@ class CreateMicrosoftAdDomainRequest extends \Google\Protobuf\Internal\Message
      * Required. A Managed Identity domain resource.
      *
      * Generated from protobuf field <code>.google.cloud.managedidentities.v1.Domain domain = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\ManagedIdentities\V1\Domain
+     * @return \Google\Cloud\ManagedIdentities\V1\Domain|null
      */
     public function getDomain()
     {

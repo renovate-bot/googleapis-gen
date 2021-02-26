@@ -166,7 +166,7 @@ class CheckError extends \Google\Protobuf\Internal\Message
      * error.
      *
      * Generated from protobuf field <code>.google.rpc.Status status = 3;</code>
-     * @return \Google\Rpc\Status
+     * @return \Google\Rpc\Status|null
      */
     public function getStatus()
     {

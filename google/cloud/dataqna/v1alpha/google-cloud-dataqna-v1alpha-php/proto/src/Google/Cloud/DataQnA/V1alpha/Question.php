@@ -272,7 +272,7 @@ class Question extends \Google\Protobuf\Internal\Message
      * present the error to the user so the user can rephrase the question.
      *
      * Generated from protobuf field <code>.google.cloud.dataqna.v1alpha.InterpretError interpret_error = 5;</code>
-     * @return \Google\Cloud\DataQnA\V1alpha\InterpretError
+     * @return \Google\Cloud\DataQnA\V1alpha\InterpretError|null
      */
     public function getInterpretError()
     {
@@ -339,7 +339,7 @@ class Question extends \Google\Protobuf\Internal\Message
      * Time when the question was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 7;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -401,7 +401,7 @@ class Question extends \Google\Protobuf\Internal\Message
      * Input only. Immutable. Flags to request additional information for debugging purposes.
      *
      * Generated from protobuf field <code>.google.cloud.dataqna.v1alpha.DebugFlags debug_flags = 9 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = INPUT_ONLY];</code>
-     * @return \Google\Cloud\DataQnA\V1alpha\DebugFlags
+     * @return \Google\Cloud\DataQnA\V1alpha\DebugFlags|null
      */
     public function getDebugFlags()
     {
@@ -440,7 +440,7 @@ class Question extends \Google\Protobuf\Internal\Message
      * inside the debug message.
      *
      * Generated from protobuf field <code>.google.protobuf.Any debug_info = 10;</code>
-     * @return \Google\Protobuf\Any
+     * @return \Google\Protobuf\Any|null
      */
     public function getDebugInfo()
     {

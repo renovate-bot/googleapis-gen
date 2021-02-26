@@ -13,6 +13,15 @@ public interface ValueOrBuilder extends
    * </pre>
    *
    * <code>int64 integer_value = 1;</code>
+   * @return Whether the integerValue field is set.
+   */
+  boolean hasIntegerValue();
+  /**
+   * <pre>
+   * integer
+   * </pre>
+   *
+   * <code>int64 integer_value = 1;</code>
    * @return The integerValue.
    */
   long getIntegerValue();
@@ -23,10 +32,28 @@ public interface ValueOrBuilder extends
    * </pre>
    *
    * <code>double float_value = 2;</code>
+   * @return Whether the floatValue field is set.
+   */
+  boolean hasFloatValue();
+  /**
+   * <pre>
+   * float
+   * </pre>
+   *
+   * <code>double float_value = 2;</code>
    * @return The floatValue.
    */
   double getFloatValue();
 
+  /**
+   * <pre>
+   * string
+   * </pre>
+   *
+   * <code>string string_value = 3;</code>
+   * @return Whether the stringValue field is set.
+   */
+  boolean hasStringValue();
   /**
    * <pre>
    * string
@@ -47,6 +74,15 @@ public interface ValueOrBuilder extends
   com.google.protobuf.ByteString
       getStringValueBytes();
 
+  /**
+   * <pre>
+   * boolean
+   * </pre>
+   *
+   * <code>bool boolean_value = 4;</code>
+   * @return Whether the booleanValue field is set.
+   */
+  boolean hasBooleanValue();
   /**
    * <pre>
    * boolean
@@ -138,6 +174,15 @@ public interface ValueOrBuilder extends
    */
   com.google.type.DateOrBuilder getDateValueOrBuilder();
 
+  /**
+   * <pre>
+   * day of week
+   * </pre>
+   *
+   * <code>.google.type.DayOfWeek day_of_week_value = 8;</code>
+   * @return Whether the dayOfWeekValue field is set.
+   */
+  boolean hasDayOfWeekValue();
   /**
    * <pre>
    * day of week

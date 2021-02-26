@@ -65,7 +65,7 @@ class Token extends \Google\Protobuf\Internal\Message
      * [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] for [Token][google.cloud.documentai.v1beta3.Document.Page.Token].
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document.Page.Layout layout = 1;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta3\Document\Page\Layout
+     * @return \Google\Cloud\DocumentAI\V1beta3\Document\Page\Layout|null
      */
     public function getLayout()
     {
@@ -101,7 +101,7 @@ class Token extends \Google\Protobuf\Internal\Message
      * Detected break at the end of a [Token][google.cloud.documentai.v1beta3.Document.Page.Token].
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document.Page.Token.DetectedBreak detected_break = 2;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta3\Document\Page\Token\DetectedBreak
+     * @return \Google\Cloud\DocumentAI\V1beta3\Document\Page\Token\DetectedBreak|null
      */
     public function getDetectedBreak()
     {
@@ -163,7 +163,7 @@ class Token extends \Google\Protobuf\Internal\Message
      * The  history of this annotation.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 4;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta3\Document\Provenance
+     * @return \Google\Cloud\DocumentAI\V1beta3\Document\Provenance|null
      */
     public function getProvenance()
     {

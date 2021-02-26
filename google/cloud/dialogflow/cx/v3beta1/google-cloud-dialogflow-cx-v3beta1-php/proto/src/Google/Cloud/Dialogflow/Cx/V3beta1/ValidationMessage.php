@@ -25,6 +25,7 @@ class ValidationMessage extends \Google\Protobuf\Internal\Message
      * The names of the resources where the message is found.
      *
      * Generated from protobuf field <code>repeated string resources = 2 [deprecated = true];</code>
+     * @deprecated
      */
     private $resources;
     /**
@@ -100,9 +101,11 @@ class ValidationMessage extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>repeated string resources = 2 [deprecated = true];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
+     * @deprecated
      */
     public function getResources()
     {
+        @trigger_error('resources is deprecated.', E_USER_DEPRECATED);
         return $this->resources;
     }
 
@@ -112,9 +115,11 @@ class ValidationMessage extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string resources = 2 [deprecated = true];</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
+     * @deprecated
      */
     public function setResources($var)
     {
+        @trigger_error('resources is deprecated.', E_USER_DEPRECATED);
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->resources = $arr;
 

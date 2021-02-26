@@ -52,7 +52,7 @@ class AdGroupExtensionSettingOperation extends \Google\Protobuf\Internal\Message
      * FieldMask that determines which resource fields are modified in an update.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 4;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {
@@ -89,7 +89,7 @@ class AdGroupExtensionSettingOperation extends \Google\Protobuf\Internal\Message
      * extension setting.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.resources.AdGroupExtensionSetting create = 1;</code>
-     * @return \Google\Ads\GoogleAds\V5\Resources\AdGroupExtensionSetting
+     * @return \Google\Ads\GoogleAds\V5\Resources\AdGroupExtensionSetting|null
      */
     public function getCreate()
     {
@@ -122,7 +122,7 @@ class AdGroupExtensionSettingOperation extends \Google\Protobuf\Internal\Message
      * valid resource name.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.resources.AdGroupExtensionSetting update = 2;</code>
-     * @return \Google\Ads\GoogleAds\V5\Resources\AdGroupExtensionSetting
+     * @return \Google\Ads\GoogleAds\V5\Resources\AdGroupExtensionSetting|null
      */
     public function getUpdate()
     {

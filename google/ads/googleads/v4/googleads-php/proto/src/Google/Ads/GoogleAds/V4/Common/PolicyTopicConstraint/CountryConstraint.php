@@ -45,7 +45,7 @@ class CountryConstraint extends \Google\Protobuf\Internal\Message
      * constrained.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_criterion = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCountryCriterion()
     {

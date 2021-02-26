@@ -173,6 +173,18 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool bool_value = 1;</code>
+   * @return Whether the boolValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasBoolValue() {
+    return valueCase_ == 1;
+  }
+  /**
+   * <pre>
+   * A Boolean value: `true` or `false`.
+   * </pre>
+   *
+   * <code>bool bool_value = 1;</code>
    * @return The boolValue.
    */
   @java.lang.Override
@@ -184,6 +196,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int INT64_VALUE_FIELD_NUMBER = 2;
+  /**
+   * <pre>
+   * A 64-bit integer. Its range is approximately &amp;plusmn;9.2x10&lt;sup&gt;18&lt;/sup&gt;.
+   * </pre>
+   *
+   * <code>int64 int64_value = 2;</code>
+   * @return Whether the int64Value field is set.
+   */
+  @java.lang.Override
+  public boolean hasInt64Value() {
+    return valueCase_ == 2;
+  }
   /**
    * <pre>
    * A 64-bit integer. Its range is approximately &amp;plusmn;9.2x10&lt;sup&gt;18&lt;/sup&gt;.
@@ -209,6 +233,20 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>double double_value = 3;</code>
+   * @return Whether the doubleValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasDoubleValue() {
+    return valueCase_ == 3;
+  }
+  /**
+   * <pre>
+   * A 64-bit double-precision floating-point number. Its magnitude
+   * is approximately &amp;plusmn;10&lt;sup&gt;&amp;plusmn;300&lt;/sup&gt; and it has 16
+   * significant digits of precision.
+   * </pre>
+   *
+   * <code>double double_value = 3;</code>
    * @return The doubleValue.
    */
   @java.lang.Override
@@ -220,6 +258,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int STRING_VALUE_FIELD_NUMBER = 4;
+  /**
+   * <pre>
+   * A variable-length string value.
+   * </pre>
+   *
+   * <code>string string_value = 4;</code>
+   * @return Whether the stringValue field is set.
+   */
+  public boolean hasStringValue() {
+    return valueCase_ == 4;
+  }
   /**
    * <pre>
    * A variable-length string value.
@@ -767,6 +816,17 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool bool_value = 1;</code>
+     * @return Whether the boolValue field is set.
+     */
+    public boolean hasBoolValue() {
+      return valueCase_ == 1;
+    }
+    /**
+     * <pre>
+     * A Boolean value: `true` or `false`.
+     * </pre>
+     *
+     * <code>bool bool_value = 1;</code>
      * @return The boolValue.
      */
     public boolean getBoolValue() {
@@ -807,6 +867,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * A 64-bit integer. Its range is approximately &amp;plusmn;9.2x10&lt;sup&gt;18&lt;/sup&gt;.
+     * </pre>
+     *
+     * <code>int64 int64_value = 2;</code>
+     * @return Whether the int64Value field is set.
+     */
+    public boolean hasInt64Value() {
+      return valueCase_ == 2;
+    }
     /**
      * <pre>
      * A 64-bit integer. Its range is approximately &amp;plusmn;9.2x10&lt;sup&gt;18&lt;/sup&gt;.
@@ -861,6 +932,19 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>double double_value = 3;</code>
+     * @return Whether the doubleValue field is set.
+     */
+    public boolean hasDoubleValue() {
+      return valueCase_ == 3;
+    }
+    /**
+     * <pre>
+     * A 64-bit double-precision floating-point number. Its magnitude
+     * is approximately &amp;plusmn;10&lt;sup&gt;&amp;plusmn;300&lt;/sup&gt; and it has 16
+     * significant digits of precision.
+     * </pre>
+     *
+     * <code>double double_value = 3;</code>
      * @return The doubleValue.
      */
     public double getDoubleValue() {
@@ -905,6 +989,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * A variable-length string value.
+     * </pre>
+     *
+     * <code>string string_value = 4;</code>
+     * @return Whether the stringValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasStringValue() {
+      return valueCase_ == 4;
+    }
     /**
      * <pre>
      * A variable-length string value.

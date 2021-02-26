@@ -132,7 +132,7 @@ class MetadataImport extends \Google\Protobuf\Internal\Message
      * Output only. The time when the metadata import was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -168,7 +168,7 @@ class MetadataImport extends \Google\Protobuf\Internal\Message
      * Output only. The time when the metadata import was last updated.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {
@@ -230,7 +230,7 @@ class MetadataImport extends \Google\Protobuf\Internal\Message
      * Immutable. A database dump from a pre-existing metastore's database.
      *
      * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Cloud\Metastore\V1alpha\MetadataImport\DatabaseDump
+     * @return \Google\Cloud\Metastore\V1alpha\MetadataImport\DatabaseDump|null
      */
     public function getDatabaseDump()
     {

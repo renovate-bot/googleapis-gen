@@ -77,6 +77,7 @@ class Intent extends \Google\Protobuf\Internal\Message
      *   ml_enabled = true / ml_disabled = false.
      *
      * Generated from protobuf field <code>bool ml_enabled = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
+     * @deprecated
      */
     protected $ml_enabled = false;
     /**
@@ -469,9 +470,11 @@ class Intent extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>bool ml_enabled = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      * @return bool
+     * @deprecated
      */
     public function getMlEnabled()
     {
+        @trigger_error('ml_enabled is deprecated.', E_USER_DEPRECATED);
         return $this->ml_enabled;
     }
 
@@ -491,9 +494,11 @@ class Intent extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool ml_enabled = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      * @param bool $var
      * @return $this
+     * @deprecated
      */
     public function setMlEnabled($var)
     {
+        @trigger_error('ml_enabled is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkBool($var);
         $this->ml_enabled = $var;
 

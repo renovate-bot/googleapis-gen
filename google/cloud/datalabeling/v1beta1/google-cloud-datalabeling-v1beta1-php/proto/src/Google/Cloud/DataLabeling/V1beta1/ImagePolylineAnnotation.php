@@ -42,7 +42,7 @@ class ImagePolylineAnnotation extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.Polyline polyline = 2;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\Polyline
+     * @return \Google\Cloud\DataLabeling\V1beta1\Polyline|null
      */
     public function getPolyline()
     {
@@ -69,7 +69,7 @@ class ImagePolylineAnnotation extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.NormalizedPolyline normalized_polyline = 3;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\NormalizedPolyline
+     * @return \Google\Cloud\DataLabeling\V1beta1\NormalizedPolyline|null
      */
     public function getNormalizedPolyline()
     {
@@ -98,7 +98,7 @@ class ImagePolylineAnnotation extends \Google\Protobuf\Internal\Message
      * Label of this polyline.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\AnnotationSpec
+     * @return \Google\Cloud\DataLabeling\V1beta1\AnnotationSpec|null
      */
     public function getAnnotationSpec()
     {

@@ -227,7 +227,7 @@ class MatchIntentResponse extends \Google\Protobuf\Internal\Message
      * including but not limited to `name` and `display_name`.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 5;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Page
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Page|null
      */
     public function getCurrentPage()
     {

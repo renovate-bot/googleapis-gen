@@ -99,7 +99,7 @@ class SamplePlayableLocationsResponse extends \Google\Protobuf\Internal\Message
      * business might have closed permanently).
      *
      * Generated from protobuf field <code>.google.protobuf.Duration ttl = 9;</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getTtl()
     {

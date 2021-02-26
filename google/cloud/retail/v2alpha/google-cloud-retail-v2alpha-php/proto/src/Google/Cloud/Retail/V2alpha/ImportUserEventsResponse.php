@@ -88,7 +88,7 @@ class ImportUserEventsResponse extends \Google\Protobuf\Internal\Message
      * the request.
      *
      * Generated from protobuf field <code>.google.cloud.retail.v2alpha.ImportErrorsConfig errors_config = 2;</code>
-     * @return \Google\Cloud\Retail\V2alpha\ImportErrorsConfig
+     * @return \Google\Cloud\Retail\V2alpha\ImportErrorsConfig|null
      */
     public function getErrorsConfig()
     {
@@ -125,7 +125,7 @@ class ImportUserEventsResponse extends \Google\Protobuf\Internal\Message
      * Aggregated statistics of user event import status.
      *
      * Generated from protobuf field <code>.google.cloud.retail.v2alpha.UserEventImportSummary import_summary = 3;</code>
-     * @return \Google\Cloud\Retail\V2alpha\UserEventImportSummary
+     * @return \Google\Cloud\Retail\V2alpha\UserEventImportSummary|null
      */
     public function getImportSummary()
     {

@@ -79,7 +79,7 @@ class CreateBatchPredictionJobRequest extends \Google\Protobuf\Internal\Message
      * Required. The BatchPredictionJob to create.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.BatchPredictionJob batch_prediction_job = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\BatchPredictionJob
+     * @return \Google\Cloud\Aiplatform\V1beta1\BatchPredictionJob|null
      */
     public function getBatchPredictionJob()
     {

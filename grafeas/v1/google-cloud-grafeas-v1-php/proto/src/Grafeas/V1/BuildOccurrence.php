@@ -67,7 +67,7 @@ class BuildOccurrence extends \Google\Protobuf\Internal\Message
      * Required. The actual provenance for the build.
      *
      * Generated from protobuf field <code>.grafeas.v1.BuildProvenance provenance = 1;</code>
-     * @return \Grafeas\V1\BuildProvenance
+     * @return \Grafeas\V1\BuildProvenance|null
      */
     public function getProvenance()
     {

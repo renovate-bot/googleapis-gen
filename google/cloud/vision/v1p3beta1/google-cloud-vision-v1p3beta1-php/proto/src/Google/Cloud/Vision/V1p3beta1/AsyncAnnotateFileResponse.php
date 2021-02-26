@@ -41,7 +41,7 @@ class AsyncAnnotateFileResponse extends \Google\Protobuf\Internal\Message
      * The output location and metadata from AsyncAnnotateFileRequest.
      *
      * Generated from protobuf field <code>.google.cloud.vision.v1p3beta1.OutputConfig output_config = 1;</code>
-     * @return \Google\Cloud\Vision\V1p3beta1\OutputConfig
+     * @return \Google\Cloud\Vision\V1p3beta1\OutputConfig|null
      */
     public function getOutputConfig()
     {

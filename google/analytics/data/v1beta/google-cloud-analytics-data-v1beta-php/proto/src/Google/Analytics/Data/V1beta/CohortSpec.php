@@ -106,7 +106,7 @@ class CohortSpec extends \Google\Protobuf\Internal\Message
      * range specifies an offset duration to follow the cohorts over.
      *
      * Generated from protobuf field <code>.google.analytics.data.v1beta.CohortsRange cohorts_range = 2;</code>
-     * @return \Google\Analytics\Data\V1beta\CohortsRange
+     * @return \Google\Analytics\Data\V1beta\CohortsRange|null
      */
     public function getCohortsRange()
     {
@@ -143,7 +143,7 @@ class CohortSpec extends \Google\Protobuf\Internal\Message
      * Optional settings for a cohort report.
      *
      * Generated from protobuf field <code>.google.analytics.data.v1beta.CohortReportSettings cohort_report_settings = 3;</code>
-     * @return \Google\Analytics\Data\V1beta\CohortReportSettings
+     * @return \Google\Analytics\Data\V1beta\CohortReportSettings|null
      */
     public function getCohortReportSettings()
     {

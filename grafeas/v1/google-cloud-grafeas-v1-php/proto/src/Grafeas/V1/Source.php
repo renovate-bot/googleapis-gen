@@ -147,7 +147,7 @@ class Source extends \Google\Protobuf\Internal\Message
      * If provided, the source code used for the build came from this location.
      *
      * Generated from protobuf field <code>.grafeas.v1.SourceContext context = 3;</code>
-     * @return \Grafeas\V1\SourceContext
+     * @return \Grafeas\V1\SourceContext|null
      */
     public function getContext()
     {

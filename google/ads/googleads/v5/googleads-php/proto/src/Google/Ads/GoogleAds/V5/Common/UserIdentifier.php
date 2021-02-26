@@ -46,7 +46,7 @@ class UserIdentifier extends \Google\Protobuf\Internal\Message
      * Hashed email address using SHA-256 hash function after normalization.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue hashed_email = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getHashedEmail()
     {
@@ -105,7 +105,7 @@ class UserIdentifier extends \Google\Protobuf\Internal\Message
      * (E164 standard).
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue hashed_phone_number = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getHashedPhoneNumber()
     {
@@ -166,7 +166,7 @@ class UserIdentifier extends \Google\Protobuf\Internal\Message
      * Mobile device ID (advertising ID/IDFA).
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue mobile_id = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getMobileId()
     {
@@ -225,7 +225,7 @@ class UserIdentifier extends \Google\Protobuf\Internal\Message
      * third-party-assigned user ID for SSD.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue third_party_user_id = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getThirdPartyUserId()
     {
@@ -286,7 +286,7 @@ class UserIdentifier extends \Google\Protobuf\Internal\Message
      * Address information.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.OfflineUserAddressInfo address_info = 5;</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\OfflineUserAddressInfo
+     * @return \Google\Ads\GoogleAds\V5\Common\OfflineUserAddressInfo|null
      */
     public function getAddressInfo()
     {

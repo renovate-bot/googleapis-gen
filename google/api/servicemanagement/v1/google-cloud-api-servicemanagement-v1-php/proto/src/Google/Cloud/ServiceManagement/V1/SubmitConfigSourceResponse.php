@@ -41,7 +41,7 @@ class SubmitConfigSourceResponse extends \Google\Protobuf\Internal\Message
      * The generated service configuration.
      *
      * Generated from protobuf field <code>.google.api.Service service_config = 1;</code>
-     * @return \Google\Api\Service
+     * @return \Google\Api\Service|null
      */
     public function getServiceConfig()
     {

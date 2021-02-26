@@ -79,7 +79,7 @@ class GetQuestionRequest extends \Google\Protobuf\Internal\Message
      * The list of fields to be retrieved.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask read_mask = 2;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getReadMask()
     {

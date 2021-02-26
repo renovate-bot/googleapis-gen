@@ -79,7 +79,7 @@ class CreateEndpointRequest extends \Google\Protobuf\Internal\Message
      * Required. The Endpoint to create.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.Endpoint endpoint = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Aiplatform\V1\Endpoint
+     * @return \Google\Cloud\Aiplatform\V1\Endpoint|null
      */
     public function getEndpoint()
     {

@@ -116,7 +116,7 @@ class KeywordPlanAdGroup extends \Google\Protobuf\Internal\Message
      * The keyword plan campaign to which this ad group belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan_campaign = 2 [(.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getKeywordPlanCampaign()
     {
@@ -179,7 +179,7 @@ class KeywordPlanAdGroup extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the keyword plan ad group.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -244,7 +244,7 @@ class KeywordPlanAdGroup extends \Google\Protobuf\Internal\Message
      * ad group.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {
@@ -315,7 +315,7 @@ class KeywordPlanAdGroup extends \Google\Protobuf\Internal\Message
      * If not set, will inherit from parent campaign.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_micros = 5;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCpcBidMicros()
     {

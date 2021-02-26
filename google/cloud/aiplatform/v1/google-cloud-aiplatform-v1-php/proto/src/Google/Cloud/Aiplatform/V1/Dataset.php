@@ -231,7 +231,7 @@ class Dataset extends \Google\Protobuf\Internal\Message
      * Required. Additional information about the Dataset.
      *
      * Generated from protobuf field <code>.google.protobuf.Value metadata = 8 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Value
+     * @return \Google\Protobuf\Value|null
      */
     public function getMetadata()
     {
@@ -267,7 +267,7 @@ class Dataset extends \Google\Protobuf\Internal\Message
      * Output only. Timestamp when this Dataset was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -303,7 +303,7 @@ class Dataset extends \Google\Protobuf\Internal\Message
      * Output only. Timestamp when this Dataset was last updated.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {
@@ -414,7 +414,7 @@ class Dataset extends \Google\Protobuf\Internal\Message
      * and all sub-resources of this Dataset will be secured by this key.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 11;</code>
-     * @return \Google\Cloud\Aiplatform\V1\EncryptionSpec
+     * @return \Google\Cloud\Aiplatform\V1\EncryptionSpec|null
      */
     public function getEncryptionSpec()
     {

@@ -7532,6 +7532,19 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name_mapping_key = 2;</code>
+     * @return Whether the displayNameMappingKey field is set.
+     */
+    boolean hasDisplayNameMappingKey();
+    /**
+     * <pre>
+     * Specify a field name in the prediction to look for the display name.
+     * Use this if the prediction contains the display names for the outputs.
+     * The display names in the prediction must have the same shape of the
+     * outputs, so that it can be located by [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] for
+     * a specific output.
+     * </pre>
+     *
+     * <code>string display_name_mapping_key = 2;</code>
      * @return The displayNameMappingKey.
      */
     java.lang.String getDisplayNameMappingKey();
@@ -7794,6 +7807,21 @@ private static final long serialVersionUID = 0L;
     }
 
     public static final int DISPLAY_NAME_MAPPING_KEY_FIELD_NUMBER = 2;
+    /**
+     * <pre>
+     * Specify a field name in the prediction to look for the display name.
+     * Use this if the prediction contains the display names for the outputs.
+     * The display names in the prediction must have the same shape of the
+     * outputs, so that it can be located by [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] for
+     * a specific output.
+     * </pre>
+     *
+     * <code>string display_name_mapping_key = 2;</code>
+     * @return Whether the displayNameMappingKey field is set.
+     */
+    public boolean hasDisplayNameMappingKey() {
+      return displayNameMappingCase_ == 2;
+    }
     /**
      * <pre>
      * Specify a field name in the prediction to look for the display name.
@@ -8547,6 +8575,22 @@ private static final long serialVersionUID = 0L;
         return indexDisplayNameMappingBuilder_;
       }
 
+      /**
+       * <pre>
+       * Specify a field name in the prediction to look for the display name.
+       * Use this if the prediction contains the display names for the outputs.
+       * The display names in the prediction must have the same shape of the
+       * outputs, so that it can be located by [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] for
+       * a specific output.
+       * </pre>
+       *
+       * <code>string display_name_mapping_key = 2;</code>
+       * @return Whether the displayNameMappingKey field is set.
+       */
+      @java.lang.Override
+      public boolean hasDisplayNameMappingKey() {
+        return displayNameMappingCase_ == 2;
+      }
       /**
        * <pre>
        * Specify a field name in the prediction to look for the display name.

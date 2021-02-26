@@ -202,6 +202,20 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string unstructured_address = 2;</code>
+   * @return Whether the unstructuredAddress field is set.
+   */
+  public boolean hasUnstructuredAddress() {
+    return addressCase_ == 2;
+  }
+  /**
+   * <pre>
+   * Unstructured address.
+   * For example, "1600 Amphitheatre Pkwy, Mountain View, CA 94043",
+   * "Sunnyvale, California".
+   * Number of characters allowed is 100.
+   * </pre>
+   *
+   * <code>string unstructured_address = 2;</code>
    * @return The unstructuredAddress.
    */
   public java.lang.String getUnstructuredAddress() {
@@ -825,6 +839,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Unstructured address.
+     * For example, "1600 Amphitheatre Pkwy, Mountain View, CA 94043",
+     * "Sunnyvale, California".
+     * Number of characters allowed is 100.
+     * </pre>
+     *
+     * <code>string unstructured_address = 2;</code>
+     * @return Whether the unstructuredAddress field is set.
+     */
+    @java.lang.Override
+    public boolean hasUnstructuredAddress() {
+      return addressCase_ == 2;
+    }
     /**
      * <pre>
      * Unstructured address.

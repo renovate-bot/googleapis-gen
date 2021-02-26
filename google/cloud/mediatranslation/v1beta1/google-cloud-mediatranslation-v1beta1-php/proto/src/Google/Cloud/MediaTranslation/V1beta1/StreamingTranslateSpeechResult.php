@@ -51,7 +51,7 @@ class StreamingTranslateSpeechResult extends \Google\Protobuf\Internal\Message
      * Text translation result.
      *
      * Generated from protobuf field <code>.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult.TextTranslationResult text_translation_result = 1;</code>
-     * @return \Google\Cloud\MediaTranslation\V1beta1\StreamingTranslateSpeechResult\TextTranslationResult
+     * @return \Google\Cloud\MediaTranslation\V1beta1\StreamingTranslateSpeechResult\TextTranslationResult|null
      */
     public function getTextTranslationResult()
     {

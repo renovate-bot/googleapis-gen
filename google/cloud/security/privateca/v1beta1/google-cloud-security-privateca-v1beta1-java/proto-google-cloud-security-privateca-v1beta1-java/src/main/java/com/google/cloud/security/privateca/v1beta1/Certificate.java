@@ -1151,6 +1151,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string pem_csr = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the pemCsr field is set.
+   */
+  public boolean hasPemCsr() {
+    return certificateConfigCase_ == 2;
+  }
+  /**
+   * <pre>
+   * Immutable. A pem-encoded X.509 certificate signing request (CSR).
+   * </pre>
+   *
+   * <code>string pem_csr = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The pemCsr.
    */
   public java.lang.String getPemCsr() {
@@ -2384,6 +2395,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Immutable. A pem-encoded X.509 certificate signing request (CSR).
+     * </pre>
+     *
+     * <code>string pem_csr = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return Whether the pemCsr field is set.
+     */
+    @java.lang.Override
+    public boolean hasPemCsr() {
+      return certificateConfigCase_ == 2;
+    }
     /**
      * <pre>
      * Immutable. A pem-encoded X.509 certificate signing request (CSR).

@@ -33,6 +33,15 @@ public interface CommitRequestOrBuilder extends
    * </pre>
    *
    * <code>bytes transaction_id = 2;</code>
+   * @return Whether the transactionId field is set.
+   */
+  boolean hasTransactionId();
+  /**
+   * <pre>
+   * Commit a previously-started transaction.
+   * </pre>
+   *
+   * <code>bytes transaction_id = 2;</code>
    * @return The transactionId.
    */
   com.google.protobuf.ByteString getTransactionId();

@@ -375,6 +375,17 @@ public interface PromotionFeedItemOrBuilder extends
    * </pre>
    *
    * <code>int64 percent_off = 17;</code>
+   * @return Whether the percentOff field is set.
+   */
+  boolean hasPercentOff();
+  /**
+   * <pre>
+   * Percentage off discount in the promotion in micros.
+   * One million is equivalent to one percent.
+   * Either this or money_off_amount is required.
+   * </pre>
+   *
+   * <code>int64 percent_off = 17;</code>
    * @return The percentOff.
    */
   long getPercentOff();
@@ -409,6 +420,15 @@ public interface PromotionFeedItemOrBuilder extends
    */
   com.google.ads.googleads.v6.common.MoneyOrBuilder getMoneyAmountOffOrBuilder();
 
+  /**
+   * <pre>
+   * A code the user should use in order to be eligible for the promotion.
+   * </pre>
+   *
+   * <code>string promotion_code = 18;</code>
+   * @return Whether the promotionCode field is set.
+   */
+  boolean hasPromotionCode();
   /**
    * <pre>
    * A code the user should use in order to be eligible for the promotion.

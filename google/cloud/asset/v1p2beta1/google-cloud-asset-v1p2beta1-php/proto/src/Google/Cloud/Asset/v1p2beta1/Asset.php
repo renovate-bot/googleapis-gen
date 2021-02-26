@@ -152,7 +152,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      * Representation of the resource.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1p2beta1.Resource resource = 3;</code>
-     * @return \Google\Cloud\Asset\v1p2beta1\Resource
+     * @return \Google\Cloud\Asset\v1p2beta1\Resource|null
      */
     public function getResource()
     {
@@ -189,7 +189,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      * each resource, there must be at most one Cloud IAM policy set on it.
      *
      * Generated from protobuf field <code>.google.iam.v1.Policy iam_policy = 4;</code>
-     * @return \Google\Cloud\Iam\V1\Policy
+     * @return \Google\Cloud\Iam\V1\Policy|null
      */
     public function getIamPolicy()
     {

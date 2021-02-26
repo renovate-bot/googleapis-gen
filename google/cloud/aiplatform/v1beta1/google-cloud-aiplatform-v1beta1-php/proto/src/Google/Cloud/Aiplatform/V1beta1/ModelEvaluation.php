@@ -169,7 +169,7 @@ class ModelEvaluation extends \Google\Protobuf\Internal\Message
      * [metrics_schema_uri][google.cloud.aiplatform.v1beta1.ModelEvaluation.metrics_schema_uri]
      *
      * Generated from protobuf field <code>.google.protobuf.Value metrics = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Value
+     * @return \Google\Protobuf\Value|null
      */
     public function getMetrics()
     {
@@ -206,7 +206,7 @@ class ModelEvaluation extends \Google\Protobuf\Internal\Message
      * Output only. Timestamp when this ModelEvaluation was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -276,7 +276,7 @@ class ModelEvaluation extends \Google\Protobuf\Internal\Message
      * is evaluated with explanations, and only for AutoML tabular Models.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\ModelExplanation
+     * @return \Google\Cloud\Aiplatform\V1beta1\ModelExplanation|null
      */
     public function getModelExplanation()
     {

@@ -288,7 +288,7 @@ class Feed extends \Google\Protobuf\Internal\Message
      * published to.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1.FeedOutputConfig feed_output_config = 5 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Asset\V1\FeedOutputConfig
+     * @return \Google\Cloud\Asset\V1\FeedOutputConfig|null
      */
     public function getFeedOutputConfig()
     {
@@ -335,7 +335,7 @@ class Feed extends \Google\Protobuf\Internal\Message
      * for detailed instructions.
      *
      * Generated from protobuf field <code>.google.type.Expr condition = 6;</code>
-     * @return \Google\Type\Expr
+     * @return \Google\Type\Expr|null
      */
     public function getCondition()
     {

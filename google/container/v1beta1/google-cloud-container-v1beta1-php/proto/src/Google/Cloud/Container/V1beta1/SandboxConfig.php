@@ -19,6 +19,7 @@ class SandboxConfig extends \Google\Protobuf\Internal\Message
      * Type of the sandbox to use for the node (e.g. 'gvisor')
      *
      * Generated from protobuf field <code>string sandbox_type = 1 [deprecated = true];</code>
+     * @deprecated
      */
     protected $sandbox_type = '';
     /**
@@ -50,9 +51,11 @@ class SandboxConfig extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string sandbox_type = 1 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getSandboxType()
     {
+        @trigger_error('sandbox_type is deprecated.', E_USER_DEPRECATED);
         return $this->sandbox_type;
     }
 
@@ -62,9 +65,11 @@ class SandboxConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string sandbox_type = 1 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setSandboxType($var)
     {
+        @trigger_error('sandbox_type is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->sandbox_type = $var;
 

@@ -109,7 +109,7 @@ class ContactSettings extends \Google\Protobuf\Internal\Message
      * suspension.*
      *
      * Generated from protobuf field <code>.google.cloud.domains.v1alpha2.ContactSettings.Contact registrant_contact = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Domains\V1alpha2\ContactSettings\Contact
+     * @return \Google\Cloud\Domains\V1alpha2\ContactSettings\Contact|null
      */
     public function getRegistrantContact()
     {
@@ -150,7 +150,7 @@ class ContactSettings extends \Google\Protobuf\Internal\Message
      * Required. The administrative contact for the `Registration`.
      *
      * Generated from protobuf field <code>.google.cloud.domains.v1alpha2.ContactSettings.Contact admin_contact = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Domains\V1alpha2\ContactSettings\Contact
+     * @return \Google\Cloud\Domains\V1alpha2\ContactSettings\Contact|null
      */
     public function getAdminContact()
     {
@@ -186,7 +186,7 @@ class ContactSettings extends \Google\Protobuf\Internal\Message
      * Required. The technical contact for the `Registration`.
      *
      * Generated from protobuf field <code>.google.cloud.domains.v1alpha2.ContactSettings.Contact technical_contact = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Domains\V1alpha2\ContactSettings\Contact
+     * @return \Google\Cloud\Domains\V1alpha2\ContactSettings\Contact|null
      */
     public function getTechnicalContact()
     {

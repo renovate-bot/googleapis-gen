@@ -110,7 +110,7 @@ class CampaignSharedSet extends \Google\Protobuf\Internal\Message
      * Immutable. The campaign to which the campaign shared set belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCampaign()
     {
@@ -178,7 +178,7 @@ class CampaignSharedSet extends \Google\Protobuf\Internal\Message
      * with Display mobile app campaigns.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue shared_set = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getSharedSet()
     {

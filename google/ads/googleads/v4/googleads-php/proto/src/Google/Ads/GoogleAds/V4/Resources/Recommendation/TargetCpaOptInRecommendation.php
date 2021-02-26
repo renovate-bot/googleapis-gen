@@ -78,7 +78,7 @@ class TargetCpaOptInRecommendation extends \Google\Protobuf\Internal\Message
      * of using this recommendation in options list.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_target_cpa_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getRecommendedTargetCpaMicros()
     {

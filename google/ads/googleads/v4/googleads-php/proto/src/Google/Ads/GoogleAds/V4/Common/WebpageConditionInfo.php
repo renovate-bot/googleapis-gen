@@ -109,7 +109,7 @@ class WebpageConditionInfo extends \Google\Protobuf\Internal\Message
      * Argument of webpage targeting condition.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue argument = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getArgument()
     {

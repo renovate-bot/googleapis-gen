@@ -166,7 +166,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * Three-character ISO 4217 currency code.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCurrencyCode()
     {
@@ -232,7 +232,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * Required. Campaign duration.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.services.CampaignDuration campaign_duration = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Ads\GoogleAds\V5\Services\CampaignDuration
+     * @return \Google\Ads\GoogleAds\V5\Services\CampaignDuration|null
      */
     public function getCampaignDuration()
     {
@@ -274,7 +274,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * Please use cookie_frequency_cap_setting instead.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value cookie_frequency_cap = 4;</code>
-     * @return \Google\Protobuf\Int32Value
+     * @return \Google\Protobuf\Int32Value|null
      */
     public function getCookieFrequencyCap()
     {
@@ -360,7 +360,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * This field replaces the deprecated cookie_frequency_cap field.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.services.FrequencyCap cookie_frequency_cap_setting = 8;</code>
-     * @return \Google\Ads\GoogleAds\V5\Services\FrequencyCap
+     * @return \Google\Ads\GoogleAds\V5\Services\FrequencyCap|null
      */
     public function getCookieFrequencyCapSetting()
     {
@@ -404,7 +404,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * If not specified, a default of 1 is applied.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value min_effective_frequency = 5;</code>
-     * @return \Google\Protobuf\Int32Value
+     * @return \Google\Protobuf\Int32Value|null
      */
     public function getMinEffectiveFrequency()
     {
@@ -481,7 +481,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * PlannedProduct.advanced_product_targeting field.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.services.Targeting targeting = 6;</code>
-     * @return \Google\Ads\GoogleAds\V5\Services\Targeting
+     * @return \Google\Ads\GoogleAds\V5\Services\Targeting|null
      */
     public function getTargeting()
     {

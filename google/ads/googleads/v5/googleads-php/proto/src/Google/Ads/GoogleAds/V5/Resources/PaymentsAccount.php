@@ -131,7 +131,7 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
      * Output only. A 16 digit ID used to identify a payments account.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue payments_account_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPaymentsAccountId()
     {
@@ -194,7 +194,7 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
      * Output only. The name of the payments account.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {
@@ -259,7 +259,7 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
      * supported.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCurrencyCode()
     {
@@ -329,7 +329,7 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
      * payments account.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue payments_profile_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPaymentsProfileId()
     {
@@ -396,7 +396,7 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
      * when a sequential liability agreement has been arranged.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue secondary_payments_profile_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getSecondaryPaymentsProfileId()
     {
@@ -462,7 +462,7 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
      * Output only. Paying manager of this payment account.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPayingManagerCustomer()
     {

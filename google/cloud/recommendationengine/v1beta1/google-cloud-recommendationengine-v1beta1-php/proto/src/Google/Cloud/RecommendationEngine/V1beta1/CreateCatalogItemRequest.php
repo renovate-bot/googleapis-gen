@@ -79,7 +79,7 @@ class CreateCatalogItemRequest extends \Google\Protobuf\Internal\Message
      * Required. The catalog item to create.
      *
      * Generated from protobuf field <code>.google.cloud.recommendationengine.v1beta1.CatalogItem catalog_item = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\RecommendationEngine\V1beta1\CatalogItem
+     * @return \Google\Cloud\RecommendationEngine\V1beta1\CatalogItem|null
      */
     public function getCatalogItem()
     {

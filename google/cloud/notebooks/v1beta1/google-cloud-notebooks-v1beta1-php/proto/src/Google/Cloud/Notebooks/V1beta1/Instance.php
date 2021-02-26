@@ -338,7 +338,7 @@ class Instance extends \Google\Protobuf\Internal\Message
      * Use a Compute Engine VM image to start the notebook instance.
      *
      * Generated from protobuf field <code>.google.cloud.notebooks.v1beta1.VmImage vm_image = 2;</code>
-     * @return \Google\Cloud\Notebooks\V1Beta1\VmImage
+     * @return \Google\Cloud\Notebooks\V1Beta1\VmImage|null
      */
     public function getVmImage()
     {
@@ -369,7 +369,7 @@ class Instance extends \Google\Protobuf\Internal\Message
      * Use a container image to start the notebook instance.
      *
      * Generated from protobuf field <code>.google.cloud.notebooks.v1beta1.ContainerImage container_image = 3;</code>
-     * @return \Google\Cloud\Notebooks\V1Beta1\ContainerImage
+     * @return \Google\Cloud\Notebooks\V1Beta1\ContainerImage|null
      */
     public function getContainerImage()
     {
@@ -557,7 +557,7 @@ class Instance extends \Google\Protobuf\Internal\Message
      * have selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
      *
      * Generated from protobuf field <code>.google.cloud.notebooks.v1beta1.Instance.AcceleratorConfig accelerator_config = 9;</code>
-     * @return \Google\Cloud\Notebooks\V1beta1\Instance\AcceleratorConfig
+     * @return \Google\Cloud\Notebooks\V1beta1\Instance\AcceleratorConfig|null
      */
     public function getAcceleratorConfig()
     {
@@ -1052,7 +1052,7 @@ class Instance extends \Google\Protobuf\Internal\Message
      * Output only. Instance creation time.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -1088,7 +1088,7 @@ class Instance extends \Google\Protobuf\Internal\Message
      * Output only. Instance update time.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {

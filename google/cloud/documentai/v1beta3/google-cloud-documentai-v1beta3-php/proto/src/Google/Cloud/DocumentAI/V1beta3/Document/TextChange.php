@@ -69,7 +69,7 @@ class TextChange extends \Google\Protobuf\Internal\Message
      * before that index.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta3\Document\TextAnchor
+     * @return \Google\Cloud\DocumentAI\V1beta3\Document\TextAnchor|null
      */
     public function getTextAnchor()
     {

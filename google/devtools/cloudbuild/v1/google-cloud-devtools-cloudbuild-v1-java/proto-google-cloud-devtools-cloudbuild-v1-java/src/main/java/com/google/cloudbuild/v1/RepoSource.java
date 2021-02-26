@@ -300,6 +300,19 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string branch_name = 3;</code>
+   * @return Whether the branchName field is set.
+   */
+  public boolean hasBranchName() {
+    return revisionCase_ == 3;
+  }
+  /**
+   * <pre>
+   * Regex matching branches to build.
+   * The syntax of the regular expressions accepted is the syntax accepted by
+   * RE2 and described at https://github.com/google/re2/wiki/Syntax
+   * </pre>
+   *
+   * <code>string branch_name = 3;</code>
    * @return The branchName.
    */
   public java.lang.String getBranchName() {
@@ -357,6 +370,19 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string tag_name = 4;</code>
+   * @return Whether the tagName field is set.
+   */
+  public boolean hasTagName() {
+    return revisionCase_ == 4;
+  }
+  /**
+   * <pre>
+   * Regex matching tags to build.
+   * The syntax of the regular expressions accepted is the syntax accepted by
+   * RE2 and described at https://github.com/google/re2/wiki/Syntax
+   * </pre>
+   *
+   * <code>string tag_name = 4;</code>
    * @return The tagName.
    */
   public java.lang.String getTagName() {
@@ -406,6 +432,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int COMMIT_SHA_FIELD_NUMBER = 5;
+  /**
+   * <pre>
+   * Explicit commit SHA to build.
+   * </pre>
+   *
+   * <code>string commit_sha = 5;</code>
+   * @return Whether the commitSha field is set.
+   */
+  public boolean hasCommitSha() {
+    return revisionCase_ == 5;
+  }
   /**
    * <pre>
    * Explicit commit SHA to build.
@@ -1340,6 +1377,20 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string branch_name = 3;</code>
+     * @return Whether the branchName field is set.
+     */
+    @java.lang.Override
+    public boolean hasBranchName() {
+      return revisionCase_ == 3;
+    }
+    /**
+     * <pre>
+     * Regex matching branches to build.
+     * The syntax of the regular expressions accepted is the syntax accepted by
+     * RE2 and described at https://github.com/google/re2/wiki/Syntax
+     * </pre>
+     *
+     * <code>string branch_name = 3;</code>
      * @return The branchName.
      */
     @java.lang.Override
@@ -1459,6 +1510,20 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string tag_name = 4;</code>
+     * @return Whether the tagName field is set.
+     */
+    @java.lang.Override
+    public boolean hasTagName() {
+      return revisionCase_ == 4;
+    }
+    /**
+     * <pre>
+     * Regex matching tags to build.
+     * The syntax of the regular expressions accepted is the syntax accepted by
+     * RE2 and described at https://github.com/google/re2/wiki/Syntax
+     * </pre>
+     *
+     * <code>string tag_name = 4;</code>
      * @return The tagName.
      */
     @java.lang.Override
@@ -1570,6 +1635,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Explicit commit SHA to build.
+     * </pre>
+     *
+     * <code>string commit_sha = 5;</code>
+     * @return Whether the commitSha field is set.
+     */
+    @java.lang.Override
+    public boolean hasCommitSha() {
+      return revisionCase_ == 5;
+    }
     /**
      * <pre>
      * Explicit commit SHA to build.

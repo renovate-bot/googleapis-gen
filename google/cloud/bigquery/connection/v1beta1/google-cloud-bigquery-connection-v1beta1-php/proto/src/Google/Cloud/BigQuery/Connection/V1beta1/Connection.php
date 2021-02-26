@@ -167,7 +167,7 @@ class Connection extends \Google\Protobuf\Internal\Message
      * Cloud SQL properties.
      *
      * Generated from protobuf field <code>.google.cloud.bigquery.connection.v1beta1.CloudSqlProperties cloud_sql = 4;</code>
-     * @return \Google\Cloud\BigQuery\Connection\V1beta1\CloudSqlProperties
+     * @return \Google\Cloud\BigQuery\Connection\V1beta1\CloudSqlProperties|null
      */
     public function getCloudSql()
     {

@@ -113,7 +113,7 @@ class CreateInstanceRequest extends \Google\Protobuf\Internal\Message
      * Required. The instance to be created.
      *
      * Generated from protobuf field <code>.google.cloud.notebooks.v1beta1.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Notebooks\V1beta1\Instance
+     * @return \Google\Cloud\Notebooks\V1beta1\Instance|null
      */
     public function getInstance()
     {

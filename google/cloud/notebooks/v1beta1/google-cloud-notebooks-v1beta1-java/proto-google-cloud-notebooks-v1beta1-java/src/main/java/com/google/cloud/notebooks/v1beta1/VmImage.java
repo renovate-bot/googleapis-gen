@@ -200,6 +200,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string image_name = 2;</code>
+   * @return Whether the imageName field is set.
+   */
+  public boolean hasImageName() {
+    return imageCase_ == 2;
+  }
+  /**
+   * <pre>
+   * Use VM image name to find the image.
+   * </pre>
+   *
+   * <code>string image_name = 2;</code>
    * @return The imageName.
    */
   public java.lang.String getImageName() {
@@ -247,6 +258,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int IMAGE_FAMILY_FIELD_NUMBER = 3;
+  /**
+   * <pre>
+   * Use this VM image family to find the image; the newest image in this
+   * family will be used.
+   * </pre>
+   *
+   * <code>string image_family = 3;</code>
+   * @return Whether the imageFamily field is set.
+   */
+  public boolean hasImageFamily() {
+    return imageCase_ == 3;
+  }
   /**
    * <pre>
    * Use this VM image family to find the image; the newest image in this
@@ -793,6 +816,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string image_name = 2;</code>
+     * @return Whether the imageName field is set.
+     */
+    @java.lang.Override
+    public boolean hasImageName() {
+      return imageCase_ == 2;
+    }
+    /**
+     * <pre>
+     * Use VM image name to find the image.
+     * </pre>
+     *
+     * <code>string image_name = 2;</code>
      * @return The imageName.
      */
     @java.lang.Override
@@ -896,6 +931,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Use this VM image family to find the image; the newest image in this
+     * family will be used.
+     * </pre>
+     *
+     * <code>string image_family = 3;</code>
+     * @return Whether the imageFamily field is set.
+     */
+    @java.lang.Override
+    public boolean hasImageFamily() {
+      return imageCase_ == 3;
+    }
     /**
      * <pre>
      * Use this VM image family to find the image; the newest image in this

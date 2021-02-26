@@ -512,6 +512,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string media_file = 12;</code>
+   * @return Whether the mediaFile field is set.
+   */
+  public boolean hasMediaFile() {
+    return imageCase_ == 12;
+  }
+  /**
+   * <pre>
+   * The MediaFile resource to use for the image.
+   * </pre>
+   *
+   * <code>string media_file = 12;</code>
    * @return The mediaFile.
    */
   public java.lang.String getMediaFile() {
@@ -565,6 +576,18 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes data = 13;</code>
+   * @return Whether the data field is set.
+   */
+  @java.lang.Override
+  public boolean hasData() {
+    return imageCase_ == 13;
+  }
+  /**
+   * <pre>
+   * Raw image data as bytes.
+   * </pre>
+   *
+   * <code>bytes data = 13;</code>
    * @return The data.
    */
   @java.lang.Override
@@ -576,6 +599,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int AD_ID_TO_COPY_IMAGE_FROM_FIELD_NUMBER = 14;
+  /**
+   * <pre>
+   * An ad ID to copy the image from.
+   * </pre>
+   *
+   * <code>int64 ad_id_to_copy_image_from = 14;</code>
+   * @return Whether the adIdToCopyImageFrom field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdIdToCopyImageFrom() {
+    return imageCase_ == 14;
+  }
   /**
    * <pre>
    * An ad ID to copy the image from.
@@ -1814,6 +1849,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string media_file = 12;</code>
+     * @return Whether the mediaFile field is set.
+     */
+    @java.lang.Override
+    public boolean hasMediaFile() {
+      return imageCase_ == 12;
+    }
+    /**
+     * <pre>
+     * The MediaFile resource to use for the image.
+     * </pre>
+     *
+     * <code>string media_file = 12;</code>
      * @return The mediaFile.
      */
     @java.lang.Override
@@ -1923,6 +1970,17 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes data = 13;</code>
+     * @return Whether the data field is set.
+     */
+    public boolean hasData() {
+      return imageCase_ == 13;
+    }
+    /**
+     * <pre>
+     * Raw image data as bytes.
+     * </pre>
+     *
+     * <code>bytes data = 13;</code>
      * @return The data.
      */
     public com.google.protobuf.ByteString getData() {
@@ -1966,6 +2024,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * An ad ID to copy the image from.
+     * </pre>
+     *
+     * <code>int64 ad_id_to_copy_image_from = 14;</code>
+     * @return Whether the adIdToCopyImageFrom field is set.
+     */
+    public boolean hasAdIdToCopyImageFrom() {
+      return imageCase_ == 14;
+    }
     /**
      * <pre>
      * An ad ID to copy the image from.

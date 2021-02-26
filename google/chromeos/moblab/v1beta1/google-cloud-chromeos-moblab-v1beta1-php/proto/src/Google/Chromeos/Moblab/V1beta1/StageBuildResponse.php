@@ -41,7 +41,7 @@ class StageBuildResponse extends \Google\Protobuf\Internal\Message
      * The staged build in the destination bucket.
      *
      * Generated from protobuf field <code>.google.chromeos.moblab.v1beta1.BuildArtifact staged_build_artifact = 1;</code>
-     * @return \Google\Chromeos\Moblab\V1beta1\BuildArtifact
+     * @return \Google\Chromeos\Moblab\V1beta1\BuildArtifact|null
      */
     public function getStagedBuildArtifact()
     {

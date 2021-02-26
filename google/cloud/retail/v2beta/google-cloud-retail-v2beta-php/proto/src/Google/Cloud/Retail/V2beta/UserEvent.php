@@ -394,7 +394,7 @@ class UserEvent extends \Google\Protobuf\Internal\Message
      * method. Timestamp of when the user event happened.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp event_time = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getEventTime()
     {
@@ -642,7 +642,7 @@ class UserEvent extends \Google\Protobuf\Internal\Message
      * this field. Otherwise, an INVALID_ARGUMENT error is returned.
      *
      * Generated from protobuf field <code>.google.cloud.retail.v2beta.PurchaseTransaction purchase_transaction = 9;</code>
-     * @return \Google\Cloud\Retail\V2beta\PurchaseTransaction
+     * @return \Google\Cloud\Retail\V2beta\PurchaseTransaction|null
      */
     public function getPurchaseTransaction()
     {
@@ -756,7 +756,7 @@ class UserEvent extends \Google\Protobuf\Internal\Message
      * User information.
      *
      * Generated from protobuf field <code>.google.cloud.retail.v2beta.UserInfo user_info = 12;</code>
-     * @return \Google\Cloud\Retail\V2beta\UserInfo
+     * @return \Google\Cloud\Retail\V2beta\UserInfo|null
      */
     public function getUserInfo()
     {

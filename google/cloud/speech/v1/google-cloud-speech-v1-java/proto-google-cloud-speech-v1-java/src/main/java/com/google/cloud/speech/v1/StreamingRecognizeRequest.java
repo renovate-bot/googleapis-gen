@@ -211,6 +211,25 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes audio_content = 2;</code>
+   * @return Whether the audioContent field is set.
+   */
+  @java.lang.Override
+  public boolean hasAudioContent() {
+    return streamingRequestCase_ == 2;
+  }
+  /**
+   * <pre>
+   * The audio data to be recognized. Sequential chunks of audio data are sent
+   * in sequential `StreamingRecognizeRequest` messages. The first
+   * `StreamingRecognizeRequest` message must not contain `audio_content` data
+   * and all subsequent `StreamingRecognizeRequest` messages must contain
+   * `audio_content` data. The audio bytes must be encoded as specified in
+   * `RecognitionConfig`. Note: as with all bytes fields, proto buffers use a
+   * pure binary representation (not base64). See
+   * [content limits](https://cloud.google.com/speech-to-text/quotas#content).
+   * </pre>
+   *
+   * <code>bytes audio_content = 2;</code>
    * @return The audioContent.
    */
   @java.lang.Override
@@ -791,6 +810,24 @@ private static final long serialVersionUID = 0L;
       return streamingConfigBuilder_;
     }
 
+    /**
+     * <pre>
+     * The audio data to be recognized. Sequential chunks of audio data are sent
+     * in sequential `StreamingRecognizeRequest` messages. The first
+     * `StreamingRecognizeRequest` message must not contain `audio_content` data
+     * and all subsequent `StreamingRecognizeRequest` messages must contain
+     * `audio_content` data. The audio bytes must be encoded as specified in
+     * `RecognitionConfig`. Note: as with all bytes fields, proto buffers use a
+     * pure binary representation (not base64). See
+     * [content limits](https://cloud.google.com/speech-to-text/quotas#content).
+     * </pre>
+     *
+     * <code>bytes audio_content = 2;</code>
+     * @return Whether the audioContent field is set.
+     */
+    public boolean hasAudioContent() {
+      return streamingRequestCase_ == 2;
+    }
     /**
      * <pre>
      * The audio data to be recognized. Sequential chunks of audio data are sent

@@ -64,7 +64,7 @@ class AnnotatedDatasetMetadata extends \Google\Protobuf\Internal\Message
      * Configuration for image classification task.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 2;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\ImageClassificationConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\ImageClassificationConfig|null
      */
     public function getImageClassificationConfig()
     {
@@ -95,7 +95,7 @@ class AnnotatedDatasetMetadata extends \Google\Protobuf\Internal\Message
      * Configuration for image bounding box and bounding poly task.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 3;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\BoundingPolyConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\BoundingPolyConfig|null
      */
     public function getBoundingPolyConfig()
     {
@@ -126,7 +126,7 @@ class AnnotatedDatasetMetadata extends \Google\Protobuf\Internal\Message
      * Configuration for image polyline task.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.PolylineConfig polyline_config = 4;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\PolylineConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\PolylineConfig|null
      */
     public function getPolylineConfig()
     {
@@ -157,7 +157,7 @@ class AnnotatedDatasetMetadata extends \Google\Protobuf\Internal\Message
      * Configuration for image segmentation task.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.SegmentationConfig segmentation_config = 5;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\SegmentationConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\SegmentationConfig|null
      */
     public function getSegmentationConfig()
     {
@@ -188,7 +188,7 @@ class AnnotatedDatasetMetadata extends \Google\Protobuf\Internal\Message
      * Configuration for video classification task.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 6;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\VideoClassificationConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\VideoClassificationConfig|null
      */
     public function getVideoClassificationConfig()
     {
@@ -219,7 +219,7 @@ class AnnotatedDatasetMetadata extends \Google\Protobuf\Internal\Message
      * Configuration for video object detection task.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 7;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\ObjectDetectionConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\ObjectDetectionConfig|null
      */
     public function getObjectDetectionConfig()
     {
@@ -250,7 +250,7 @@ class AnnotatedDatasetMetadata extends \Google\Protobuf\Internal\Message
      * Configuration for video object tracking task.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 8;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\ObjectTrackingConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\ObjectTrackingConfig|null
      */
     public function getObjectTrackingConfig()
     {
@@ -281,7 +281,7 @@ class AnnotatedDatasetMetadata extends \Google\Protobuf\Internal\Message
      * Configuration for video event labeling task.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.EventConfig event_config = 9;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\EventConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\EventConfig|null
      */
     public function getEventConfig()
     {
@@ -312,7 +312,7 @@ class AnnotatedDatasetMetadata extends \Google\Protobuf\Internal\Message
      * Configuration for text classification task.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 10;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\TextClassificationConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\TextClassificationConfig|null
      */
     public function getTextClassificationConfig()
     {
@@ -343,7 +343,7 @@ class AnnotatedDatasetMetadata extends \Google\Protobuf\Internal\Message
      * Configuration for text entity extraction task.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.TextEntityExtractionConfig text_entity_extraction_config = 11;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\TextEntityExtractionConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\TextEntityExtractionConfig|null
      */
     public function getTextEntityExtractionConfig()
     {
@@ -375,7 +375,7 @@ class AnnotatedDatasetMetadata extends \Google\Protobuf\Internal\Message
      * AnnotatedDataset.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 1;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\HumanAnnotationConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\HumanAnnotationConfig|null
      */
     public function getHumanAnnotationConfig()
     {

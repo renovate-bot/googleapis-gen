@@ -57,7 +57,7 @@ class ImageDimension extends \Google\Protobuf\Internal\Message
      * Height of the image.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value height_pixels = 1;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getHeightPixels()
     {
@@ -120,7 +120,7 @@ class ImageDimension extends \Google\Protobuf\Internal\Message
      * Width of the image.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value width_pixels = 2;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getWidthPixels()
     {
@@ -183,7 +183,7 @@ class ImageDimension extends \Google\Protobuf\Internal\Message
      * A URL that returns the image with this height and width.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue url = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getUrl()
     {

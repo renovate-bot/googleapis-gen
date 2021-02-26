@@ -13,6 +13,15 @@ public interface FieldTypeOrBuilder extends
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.FieldType.PrimitiveType primitive_type = 1;</code>
+   * @return Whether the primitiveType field is set.
+   */
+  boolean hasPrimitiveType();
+  /**
+   * <pre>
+   * Represents primitive types - string, bool etc.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.FieldType.PrimitiveType primitive_type = 1;</code>
    * @return The enum numeric value on the wire for primitiveType.
    */
   int getPrimitiveTypeValue();

@@ -32,6 +32,7 @@ class PullRequest extends \Google\Protobuf\Internal\Message
      * not set this field.
      *
      * Generated from protobuf field <code>bool return_immediately = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
+     * @deprecated
      */
     protected $return_immediately = false;
     /**
@@ -110,9 +111,11 @@ class PullRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>bool return_immediately = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      * @return bool
+     * @deprecated
      */
     public function getReturnImmediately()
     {
+        @trigger_error('return_immediately is deprecated.', E_USER_DEPRECATED);
         return $this->return_immediately;
     }
 
@@ -128,9 +131,11 @@ class PullRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool return_immediately = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      * @param bool $var
      * @return $this
+     * @deprecated
      */
     public function setReturnImmediately($var)
     {
+        @trigger_error('return_immediately is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkBool($var);
         $this->return_immediately = $var;
 

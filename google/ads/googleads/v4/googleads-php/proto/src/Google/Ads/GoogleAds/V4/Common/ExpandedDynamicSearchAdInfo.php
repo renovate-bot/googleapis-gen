@@ -49,7 +49,7 @@ class ExpandedDynamicSearchAdInfo extends \Google\Protobuf\Internal\Message
      * The description of the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDescription()
     {
@@ -112,7 +112,7 @@ class ExpandedDynamicSearchAdInfo extends \Google\Protobuf\Internal\Message
      * The second description of the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description2 = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDescription2()
     {

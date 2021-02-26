@@ -190,6 +190,21 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 max_attempts = 1;</code>
+   * @return Whether the maxAttempts field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxAttempts() {
+    return numAttemptsCase_ == 1;
+  }
+  /**
+   * <pre>
+   * The maximum number of attempts for a task.
+   * Cloud Tasks will attempt the task `max_attempts` times (that
+   * is, if the first attempt fails, then there will be
+   * `max_attempts - 1` retries).  Must be &gt; 0.
+   * </pre>
+   *
+   * <code>int32 max_attempts = 1;</code>
    * @return The maxAttempts.
    */
   @java.lang.Override
@@ -201,6 +216,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int UNLIMITED_ATTEMPTS_FIELD_NUMBER = 2;
+  /**
+   * <pre>
+   * If true, then the number of attempts is unlimited.
+   * </pre>
+   *
+   * <code>bool unlimited_attempts = 2;</code>
+   * @return Whether the unlimitedAttempts field is set.
+   */
+  @java.lang.Override
+  public boolean hasUnlimitedAttempts() {
+    return numAttemptsCase_ == 2;
+  }
   /**
    * <pre>
    * If true, then the number of attempts is unlimited.
@@ -959,6 +986,20 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 max_attempts = 1;</code>
+     * @return Whether the maxAttempts field is set.
+     */
+    public boolean hasMaxAttempts() {
+      return numAttemptsCase_ == 1;
+    }
+    /**
+     * <pre>
+     * The maximum number of attempts for a task.
+     * Cloud Tasks will attempt the task `max_attempts` times (that
+     * is, if the first attempt fails, then there will be
+     * `max_attempts - 1` retries).  Must be &gt; 0.
+     * </pre>
+     *
+     * <code>int32 max_attempts = 1;</code>
      * @return The maxAttempts.
      */
     public int getMaxAttempts() {
@@ -1005,6 +1046,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * If true, then the number of attempts is unlimited.
+     * </pre>
+     *
+     * <code>bool unlimited_attempts = 2;</code>
+     * @return Whether the unlimitedAttempts field is set.
+     */
+    public boolean hasUnlimitedAttempts() {
+      return numAttemptsCase_ == 2;
+    }
     /**
      * <pre>
      * If true, then the number of attempts is unlimited.

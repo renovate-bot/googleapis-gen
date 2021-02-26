@@ -68,7 +68,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      * The Google Cloud Storage location to write the output to.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta1.GcsDestination gcs_destination = 1;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta1\GcsDestination
+     * @return \Google\Cloud\DocumentAI\V1beta1\GcsDestination|null
      */
     public function getGcsDestination()
     {

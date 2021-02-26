@@ -79,7 +79,7 @@ class CreateKnowledgeBaseRequest extends \Google\Protobuf\Internal\Message
      * Required. The knowledge base to create.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Dialogflow\V2beta1\KnowledgeBase
+     * @return \Google\Cloud\Dialogflow\V2beta1\KnowledgeBase|null
      */
     public function getKnowledgeBase()
     {

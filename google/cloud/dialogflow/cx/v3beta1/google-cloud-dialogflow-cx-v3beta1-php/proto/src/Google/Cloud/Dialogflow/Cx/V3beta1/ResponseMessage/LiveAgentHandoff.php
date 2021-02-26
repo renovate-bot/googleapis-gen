@@ -53,7 +53,7 @@ class LiveAgentHandoff extends \Google\Protobuf\Internal\Message
      * any structure on this.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct metadata = 1;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getMetadata()
     {

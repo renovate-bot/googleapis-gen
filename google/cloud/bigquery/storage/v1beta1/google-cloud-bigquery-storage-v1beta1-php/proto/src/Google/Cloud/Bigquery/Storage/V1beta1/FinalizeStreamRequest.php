@@ -41,7 +41,7 @@ class FinalizeStreamRequest extends \Google\Protobuf\Internal\Message
      * Required. Stream to finalize.
      *
      * Generated from protobuf field <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Bigquery\Storage\V1beta1\Stream
+     * @return \Google\Cloud\Bigquery\Storage\V1beta1\Stream|null
      */
     public function getStream()
     {

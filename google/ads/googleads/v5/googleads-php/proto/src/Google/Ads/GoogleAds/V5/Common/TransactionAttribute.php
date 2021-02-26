@@ -103,7 +103,7 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue transaction_date_time = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getTransactionDateTime()
     {
@@ -172,7 +172,7 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
      * Transaction amount in micros. Required.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue transaction_amount_micros = 2;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getTransactionAmountMicros()
     {
@@ -235,7 +235,7 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
      * Transaction currency code. ISO 4217 three-letter code is used. Required.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCurrencyCode()
     {
@@ -299,7 +299,7 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
      * Required.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getConversionAction()
     {
@@ -366,7 +366,7 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
      * Accessible only to customers on the allow-list.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue order_id = 5;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getOrderId()
     {
@@ -433,7 +433,7 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
      * Accessible only to customers on the allow-list.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.StoreAttribute store_attribute = 6;</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\StoreAttribute
+     * @return \Google\Ads\GoogleAds\V5\Common\StoreAttribute|null
      */
     public function getStoreAttribute()
     {
@@ -471,7 +471,7 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
      * Accessible only to customers on the allow-list.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue custom_value = 7;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCustomValue()
     {

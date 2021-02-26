@@ -40,7 +40,7 @@ class RbmSuggestion extends \Google\Protobuf\Internal\Message
      * Predefined replies for user to select instead of typing
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedReply reply = 1;</code>
-     * @return \Google\Cloud\Dialogflow\V2beta1\Intent\Message\RbmSuggestedReply
+     * @return \Google\Cloud\Dialogflow\V2beta1\Intent\Message\RbmSuggestedReply|null
      */
     public function getReply()
     {
@@ -71,7 +71,7 @@ class RbmSuggestion extends \Google\Protobuf\Internal\Message
      * Predefined client side actions that user can choose
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction action = 2;</code>
-     * @return \Google\Cloud\Dialogflow\V2beta1\Intent\Message\RbmSuggestedAction
+     * @return \Google\Cloud\Dialogflow\V2beta1\Intent\Message\RbmSuggestedAction|null
      */
     public function getAction()
     {

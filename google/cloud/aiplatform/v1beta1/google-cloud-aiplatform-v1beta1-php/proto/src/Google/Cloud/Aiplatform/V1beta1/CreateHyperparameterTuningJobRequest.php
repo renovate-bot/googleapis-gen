@@ -79,7 +79,7 @@ class CreateHyperparameterTuningJobRequest extends \Google\Protobuf\Internal\Mes
      * Required. The HyperparameterTuningJob to create.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.HyperparameterTuningJob hyperparameter_tuning_job = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\HyperparameterTuningJob
+     * @return \Google\Cloud\Aiplatform\V1beta1\HyperparameterTuningJob|null
      */
     public function getHyperparameterTuningJob()
     {

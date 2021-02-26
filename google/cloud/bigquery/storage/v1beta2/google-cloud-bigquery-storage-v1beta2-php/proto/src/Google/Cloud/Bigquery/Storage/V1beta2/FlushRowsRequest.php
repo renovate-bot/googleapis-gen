@@ -78,7 +78,7 @@ class FlushRowsRequest extends \Google\Protobuf\Internal\Message
      * this offset) will be flushed.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value offset = 2;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getOffset()
     {

@@ -50,7 +50,7 @@ class UpdateReservationRequest extends \Google\Protobuf\Internal\Message
      * Content of the reservation to update.
      *
      * Generated from protobuf field <code>.google.cloud.bigquery.reservation.v1beta1.Reservation reservation = 1;</code>
-     * @return \Google\Cloud\BigQuery\Reservation\V1beta1\Reservation
+     * @return \Google\Cloud\BigQuery\Reservation\V1beta1\Reservation|null
      */
     public function getReservation()
     {
@@ -86,7 +86,7 @@ class UpdateReservationRequest extends \Google\Protobuf\Internal\Message
      * Standard field mask for the set of fields to be updated.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

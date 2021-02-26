@@ -276,7 +276,7 @@ class ComponentSettings extends \Google\Protobuf\Internal\Message
      * Output only. The time these settings were last updated.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {
@@ -313,7 +313,7 @@ class ComponentSettings extends \Google\Protobuf\Internal\Message
      * For component, expect CONTAINER_THREAT_DETECTION
      *
      * Generated from protobuf field <code>.google.cloud.securitycenter.settings.v1beta1.ContainerThreatDetectionSettings container_threat_detection_settings = 41;</code>
-     * @return \Google\Cloud\SecurityCenter\Settings\V1beta1\ContainerThreatDetectionSettings
+     * @return \Google\Cloud\SecurityCenter\Settings\V1beta1\ContainerThreatDetectionSettings|null
      */
     public function getContainerThreatDetectionSettings()
     {
@@ -346,7 +346,7 @@ class ComponentSettings extends \Google\Protobuf\Internal\Message
      * For component, expect EVENT_THREAT_DETECTION
      *
      * Generated from protobuf field <code>.google.cloud.securitycenter.settings.v1beta1.EventThreatDetectionSettings event_threat_detection_settings = 42;</code>
-     * @return \Google\Cloud\SecurityCenter\Settings\V1beta1\EventThreatDetectionSettings
+     * @return \Google\Cloud\SecurityCenter\Settings\V1beta1\EventThreatDetectionSettings|null
      */
     public function getEventThreatDetectionSettings()
     {
@@ -379,7 +379,7 @@ class ComponentSettings extends \Google\Protobuf\Internal\Message
      * For component, expect SECURITY_HEALTH_ANALYTICS
      *
      * Generated from protobuf field <code>.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings security_health_analytics_settings = 44;</code>
-     * @return \Google\Cloud\SecurityCenter\Settings\V1beta1\SecurityHealthAnalyticsSettings
+     * @return \Google\Cloud\SecurityCenter\Settings\V1beta1\SecurityHealthAnalyticsSettings|null
      */
     public function getSecurityHealthAnalyticsSettings()
     {
@@ -412,7 +412,7 @@ class ComponentSettings extends \Google\Protobuf\Internal\Message
      * For component, expect WEB_SECURITY_SCANNER
      *
      * Generated from protobuf field <code>.google.cloud.securitycenter.settings.v1beta1.WebSecurityScanner web_security_scanner_settings = 40;</code>
-     * @return \Google\Cloud\SecurityCenter\Settings\V1beta1\WebSecurityScanner
+     * @return \Google\Cloud\SecurityCenter\Settings\V1beta1\WebSecurityScanner|null
      */
     public function getWebSecurityScannerSettings()
     {

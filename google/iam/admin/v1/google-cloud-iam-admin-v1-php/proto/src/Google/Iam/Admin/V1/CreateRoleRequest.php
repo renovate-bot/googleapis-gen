@@ -173,7 +173,7 @@ class CreateRoleRequest extends \Google\Protobuf\Internal\Message
      * The Role resource to create.
      *
      * Generated from protobuf field <code>.google.iam.admin.v1.Role role = 3;</code>
-     * @return \Google\Iam\Admin\V1\Role
+     * @return \Google\Iam\Admin\V1\Role|null
      */
     public function getRole()
     {

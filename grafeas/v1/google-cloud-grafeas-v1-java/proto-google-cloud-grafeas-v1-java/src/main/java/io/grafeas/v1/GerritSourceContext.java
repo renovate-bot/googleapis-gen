@@ -262,6 +262,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string revision_id = 3;</code>
+   * @return Whether the revisionId field is set.
+   */
+  public boolean hasRevisionId() {
+    return revisionCase_ == 3;
+  }
+  /**
+   * <pre>
+   * A revision (commit) ID.
+   * </pre>
+   *
+   * <code>string revision_id = 3;</code>
    * @return The revisionId.
    */
   public java.lang.String getRevisionId() {
@@ -957,6 +968,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * A revision (commit) ID.
+     * </pre>
+     *
+     * <code>string revision_id = 3;</code>
+     * @return Whether the revisionId field is set.
+     */
+    @java.lang.Override
+    public boolean hasRevisionId() {
+      return revisionCase_ == 3;
+    }
     /**
      * <pre>
      * A revision (commit) ID.

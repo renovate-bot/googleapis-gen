@@ -109,7 +109,7 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the topic.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -172,7 +172,7 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
      * Output only. Resource name of parent of the topic constant.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue topic_constant_parent = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getTopicConstantParent()
     {

@@ -204,7 +204,7 @@ class IamPolicySearchResult extends \Google\Protobuf\Internal\Message
      *       `policy.role.permissions:compute.instances.create`
      *
      * Generated from protobuf field <code>.google.iam.v1.Policy policy = 3;</code>
-     * @return \Google\Cloud\Iam\V1\Policy
+     * @return \Google\Cloud\Iam\V1\Policy|null
      */
     public function getPolicy()
     {
@@ -252,7 +252,7 @@ class IamPolicySearchResult extends \Google\Protobuf\Internal\Message
      * information to explain why the search result matches the query.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1.IamPolicySearchResult.Explanation explanation = 4;</code>
-     * @return \Google\Cloud\Asset\V1\IamPolicySearchResult\Explanation
+     * @return \Google\Cloud\Asset\V1\IamPolicySearchResult\Explanation|null
      */
     public function getExplanation()
     {

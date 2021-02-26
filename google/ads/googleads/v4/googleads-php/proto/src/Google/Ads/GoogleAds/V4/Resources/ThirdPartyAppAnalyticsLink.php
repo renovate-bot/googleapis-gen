@@ -90,7 +90,7 @@ class ThirdPartyAppAnalyticsLink extends \Google\Protobuf\Internal\Message
      * method in the ThirdPartyAppAnalyticsLinkService.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue shareable_link_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getShareableLinkId()
     {

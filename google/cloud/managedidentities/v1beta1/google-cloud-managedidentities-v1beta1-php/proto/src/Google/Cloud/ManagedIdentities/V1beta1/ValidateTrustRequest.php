@@ -80,7 +80,7 @@ class ValidateTrustRequest extends \Google\Protobuf\Internal\Message
      * The domain trust to validate trust state for.
      *
      * Generated from protobuf field <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2;</code>
-     * @return \Google\Cloud\ManagedIdentities\V1beta1\Trust
+     * @return \Google\Cloud\ManagedIdentities\V1beta1\Trust|null
      */
     public function getTrust()
     {

@@ -61,7 +61,7 @@ class Result extends \Google\Protobuf\Internal\Message
      * The Product.
      *
      * Generated from protobuf field <code>.google.cloud.vision.v1p4beta1.Product product = 1;</code>
-     * @return \Google\Cloud\Vision\V1p4beta1\Product
+     * @return \Google\Cloud\Vision\V1p4beta1\Product|null
      */
     public function getProduct()
     {

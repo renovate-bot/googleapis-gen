@@ -38,7 +38,7 @@ class IapCredential extends \Google\Protobuf\Internal\Message
      * account is added in Identity-Aware-Proxy (IAP) access policies.
      *
      * Generated from protobuf field <code>.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.IapCredential.IapTestServiceAccountInfo iap_test_service_account_info = 1;</code>
-     * @return \Google\Cloud\WebSecurityScanner\V1\ScanConfig\Authentication\IapCredential\IapTestServiceAccountInfo
+     * @return \Google\Cloud\WebSecurityScanner\V1\ScanConfig\Authentication\IapCredential\IapTestServiceAccountInfo|null
      */
     public function getIapTestServiceAccountInfo()
     {

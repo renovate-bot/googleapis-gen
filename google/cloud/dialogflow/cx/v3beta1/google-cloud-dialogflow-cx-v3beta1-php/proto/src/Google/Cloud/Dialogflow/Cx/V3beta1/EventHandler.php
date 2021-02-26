@@ -136,7 +136,7 @@ class EventHandler extends \Google\Protobuf\Internal\Message
      * handler handling webhooks.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.Fulfillment trigger_fulfillment = 5;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Fulfillment
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Fulfillment|null
      */
     public function getTriggerFulfillment()
     {

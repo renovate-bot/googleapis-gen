@@ -105,7 +105,7 @@ class CreateTransitionRouteGroupRequest extends \Google\Protobuf\Internal\Messag
      * Required. The transition route group to create.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup transition_route_group = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\TransitionRouteGroup
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\TransitionRouteGroup|null
      */
     public function getTransitionRouteGroup()
     {

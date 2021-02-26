@@ -117,7 +117,7 @@ class RbmStandaloneCard extends \Google\Protobuf\Internal\Message
      * Required. Card content.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent card_content = 3;</code>
-     * @return \Google\Cloud\Dialogflow\V2beta1\Intent\Message\RbmCardContent
+     * @return \Google\Cloud\Dialogflow\V2beta1\Intent\Message\RbmCardContent|null
      */
     public function getCardContent()
     {

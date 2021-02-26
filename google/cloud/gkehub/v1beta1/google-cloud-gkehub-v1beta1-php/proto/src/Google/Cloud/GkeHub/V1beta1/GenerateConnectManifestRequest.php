@@ -117,7 +117,7 @@ class GenerateConnectManifestRequest extends \Google\Protobuf\Internal\Message
      * Optional. The connect agent to generate manifest for.
      *
      * Generated from protobuf field <code>.google.cloud.gkehub.v1beta1.ConnectAgent connect_agent = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\GkeHub\V1beta1\ConnectAgent
+     * @return \Google\Cloud\GkeHub\V1beta1\ConnectAgent|null
      */
     public function getConnectAgent()
     {

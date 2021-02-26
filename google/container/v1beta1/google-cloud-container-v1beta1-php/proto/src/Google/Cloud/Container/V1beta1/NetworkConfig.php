@@ -190,7 +190,7 @@ class NetworkConfig extends \Google\Protobuf\Internal\Message
      * prevent sNAT on cluster internal traffic.
      *
      * Generated from protobuf field <code>.google.container.v1beta1.DefaultSnatStatus default_snat_status = 7;</code>
-     * @return \Google\Cloud\Container\V1beta1\DefaultSnatStatus
+     * @return \Google\Cloud\Container\V1beta1\DefaultSnatStatus|null
      */
     public function getDefaultSnatStatus()
     {

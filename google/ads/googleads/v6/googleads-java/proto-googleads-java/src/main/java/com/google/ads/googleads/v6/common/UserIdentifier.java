@@ -212,6 +212,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string hashed_email = 7;</code>
+   * @return Whether the hashedEmail field is set.
+   */
+  public boolean hasHashedEmail() {
+    return identifierCase_ == 7;
+  }
+  /**
+   * <pre>
+   * Hashed email address using SHA-256 hash function after normalization.
+   * </pre>
+   *
+   * <code>string hashed_email = 7;</code>
    * @return The hashedEmail.
    */
   public java.lang.String getHashedEmail() {
@@ -259,6 +270,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int HASHED_PHONE_NUMBER_FIELD_NUMBER = 8;
+  /**
+   * <pre>
+   * Hashed phone number using SHA-256 hash function after normalization
+   * (E164 standard).
+   * </pre>
+   *
+   * <code>string hashed_phone_number = 8;</code>
+   * @return Whether the hashedPhoneNumber field is set.
+   */
+  public boolean hasHashedPhoneNumber() {
+    return identifierCase_ == 8;
+  }
   /**
    * <pre>
    * Hashed phone number using SHA-256 hash function after normalization
@@ -320,6 +343,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string mobile_id = 9;</code>
+   * @return Whether the mobileId field is set.
+   */
+  public boolean hasMobileId() {
+    return identifierCase_ == 9;
+  }
+  /**
+   * <pre>
+   * Mobile device ID (advertising ID/IDFA).
+   * </pre>
+   *
+   * <code>string mobile_id = 9;</code>
    * @return The mobileId.
    */
   public java.lang.String getMobileId() {
@@ -367,6 +401,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int THIRD_PARTY_USER_ID_FIELD_NUMBER = 10;
+  /**
+   * <pre>
+   * Advertiser-assigned user ID for Customer Match upload, or
+   * third-party-assigned user ID for SSD.
+   * </pre>
+   *
+   * <code>string third_party_user_id = 10;</code>
+   * @return Whether the thirdPartyUserId field is set.
+   */
+  public boolean hasThirdPartyUserId() {
+    return identifierCase_ == 10;
+  }
   /**
    * <pre>
    * Advertiser-assigned user ID for Customer Match upload, or
@@ -1004,6 +1050,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string hashed_email = 7;</code>
+     * @return Whether the hashedEmail field is set.
+     */
+    @java.lang.Override
+    public boolean hasHashedEmail() {
+      return identifierCase_ == 7;
+    }
+    /**
+     * <pre>
+     * Hashed email address using SHA-256 hash function after normalization.
+     * </pre>
+     *
+     * <code>string hashed_email = 7;</code>
      * @return The hashedEmail.
      */
     @java.lang.Override
@@ -1107,6 +1165,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Hashed phone number using SHA-256 hash function after normalization
+     * (E164 standard).
+     * </pre>
+     *
+     * <code>string hashed_phone_number = 8;</code>
+     * @return Whether the hashedPhoneNumber field is set.
+     */
+    @java.lang.Override
+    public boolean hasHashedPhoneNumber() {
+      return identifierCase_ == 8;
+    }
     /**
      * <pre>
      * Hashed phone number using SHA-256 hash function after normalization
@@ -1227,6 +1298,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string mobile_id = 9;</code>
+     * @return Whether the mobileId field is set.
+     */
+    @java.lang.Override
+    public boolean hasMobileId() {
+      return identifierCase_ == 9;
+    }
+    /**
+     * <pre>
+     * Mobile device ID (advertising ID/IDFA).
+     * </pre>
+     *
+     * <code>string mobile_id = 9;</code>
      * @return The mobileId.
      */
     @java.lang.Override
@@ -1330,6 +1413,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Advertiser-assigned user ID for Customer Match upload, or
+     * third-party-assigned user ID for SSD.
+     * </pre>
+     *
+     * <code>string third_party_user_id = 10;</code>
+     * @return Whether the thirdPartyUserId field is set.
+     */
+    @java.lang.Override
+    public boolean hasThirdPartyUserId() {
+      return identifierCase_ == 10;
+    }
     /**
      * <pre>
      * Advertiser-assigned user ID for Customer Match upload, or

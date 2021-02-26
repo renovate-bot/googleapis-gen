@@ -82,7 +82,7 @@ class KeywordPlanKeywordHistoricalMetrics extends \Google\Protobuf\Internal\Mess
      * close_variants field.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue search_query = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getSearchQuery()
     {
@@ -195,7 +195,7 @@ class KeywordPlanKeywordHistoricalMetrics extends \Google\Protobuf\Internal\Mess
      * ad_group_keywords in the plan.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.KeywordPlanHistoricalMetrics keyword_metrics = 2;</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\KeywordPlanHistoricalMetrics
+     * @return \Google\Ads\GoogleAds\V5\Common\KeywordPlanHistoricalMetrics|null
      */
     public function getKeywordMetrics()
     {

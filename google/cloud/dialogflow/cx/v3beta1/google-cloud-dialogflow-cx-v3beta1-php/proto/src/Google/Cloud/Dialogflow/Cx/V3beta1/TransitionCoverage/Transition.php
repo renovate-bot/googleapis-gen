@@ -72,7 +72,7 @@ class Transition extends \Google\Protobuf\Internal\Message
      * The start node of a transition.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.TransitionCoverage.TransitionNode source = 1;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\TransitionCoverage\TransitionNode
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\TransitionCoverage\TransitionNode|null
      */
     public function getSource()
     {
@@ -134,7 +134,7 @@ class Transition extends \Google\Protobuf\Internal\Message
      * The end node of a transition.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.TransitionCoverage.TransitionNode target = 2;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\TransitionCoverage\TransitionNode
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\TransitionCoverage\TransitionNode|null
      */
     public function getTarget()
     {
@@ -198,7 +198,7 @@ class Transition extends \Google\Protobuf\Internal\Message
      * Intent route or condition route.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.TransitionRoute transition_route = 5;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\TransitionRoute
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\TransitionRoute|null
      */
     public function getTransitionRoute()
     {
@@ -229,7 +229,7 @@ class Transition extends \Google\Protobuf\Internal\Message
      * Event handler.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.EventHandler event_handler = 6;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\EventHandler
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\EventHandler|null
      */
     public function getEventHandler()
     {

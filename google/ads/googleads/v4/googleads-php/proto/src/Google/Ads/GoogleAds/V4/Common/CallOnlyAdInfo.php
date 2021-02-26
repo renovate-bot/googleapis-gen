@@ -143,7 +143,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
      * The country code in the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCountryCode()
     {
@@ -206,7 +206,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
      * The phone number in the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue phone_number = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPhoneNumber()
     {
@@ -269,7 +269,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
      * The business name in the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue business_name = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getBusinessName()
     {
@@ -332,7 +332,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
      * First headline in the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue headline1 = 11;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getHeadline1()
     {
@@ -395,7 +395,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
      * Second headline in the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue headline2 = 12;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getHeadline2()
     {
@@ -458,7 +458,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
      * The first line of the ad's description.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description1 = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDescription1()
     {
@@ -521,7 +521,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
      * The second line of the ad's description.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description2 = 5;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDescription2()
     {
@@ -585,7 +585,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
      * tracking also enables call conversions.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue call_tracked = 6;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getCallTracked()
     {
@@ -654,7 +654,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
      * If `call_tracked` is `false`, this field is ignored.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue disable_call_conversion = 7;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getDisableCallConversion()
     {
@@ -726,7 +726,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
      * The URL to be used for phone number verification.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue phone_number_verification_url = 8;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPhoneNumberVerificationUrl()
     {
@@ -791,7 +791,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
      * call_tracked is set to true. Otherwise this field is ignored.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 9;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getConversionAction()
     {

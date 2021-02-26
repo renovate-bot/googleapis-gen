@@ -41,7 +41,7 @@ class LogicalUserListOperandInfo extends \Google\Protobuf\Internal\Message
      * Resource name of a user list as an operand.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue user_list = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getUserList()
     {

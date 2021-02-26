@@ -85,7 +85,7 @@ class CreateCampaignExperimentRequest extends \Google\Protobuf\Internal\Message
      * Required. The campaign experiment to be created.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.CampaignExperiment campaign_experiment = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\CampaignExperiment
+     * @return \Google\Ads\GoogleAds\V4\Resources\CampaignExperiment|null
      */
     public function getCampaignExperiment()
     {

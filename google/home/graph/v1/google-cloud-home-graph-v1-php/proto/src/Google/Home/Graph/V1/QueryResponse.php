@@ -102,7 +102,7 @@ class QueryResponse extends \Google\Protobuf\Internal\Message
      * Device states for the devices given in the request.
      *
      * Generated from protobuf field <code>.google.home.graph.v1.QueryResponsePayload payload = 2;</code>
-     * @return \Google\Home\Graph\V1\QueryResponsePayload
+     * @return \Google\Home\Graph\V1\QueryResponsePayload|null
      */
     public function getPayload()
     {

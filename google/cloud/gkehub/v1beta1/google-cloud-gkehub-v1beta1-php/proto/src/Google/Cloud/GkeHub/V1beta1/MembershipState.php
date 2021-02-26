@@ -25,12 +25,14 @@ class MembershipState extends \Google\Protobuf\Internal\Message
      * This field is never set by the Hub Service.
      *
      * Generated from protobuf field <code>string description = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $description = '';
     /**
      * This field is never set by the Hub Service.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 3 [deprecated = true];</code>
+     * @deprecated
      */
     protected $update_time = null;
 
@@ -84,9 +86,11 @@ class MembershipState extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string description = 2 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getDescription()
     {
+        @trigger_error('description is deprecated.', E_USER_DEPRECATED);
         return $this->description;
     }
 
@@ -96,9 +100,11 @@ class MembershipState extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string description = 2 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setDescription($var)
     {
+        @trigger_error('description is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->description = $var;
 
@@ -109,20 +115,24 @@ class MembershipState extends \Google\Protobuf\Internal\Message
      * This field is never set by the Hub Service.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 3 [deprecated = true];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
+     * @deprecated
      */
     public function getUpdateTime()
     {
+        @trigger_error('update_time is deprecated.', E_USER_DEPRECATED);
         return isset($this->update_time) ? $this->update_time : null;
     }
 
     public function hasUpdateTime()
     {
+        @trigger_error('update_time is deprecated.', E_USER_DEPRECATED);
         return isset($this->update_time);
     }
 
     public function clearUpdateTime()
     {
+        @trigger_error('update_time is deprecated.', E_USER_DEPRECATED);
         unset($this->update_time);
     }
 
@@ -132,9 +142,11 @@ class MembershipState extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 3 [deprecated = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
+     * @deprecated
      */
     public function setUpdateTime($var)
     {
+        @trigger_error('update_time is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->update_time = $var;
 

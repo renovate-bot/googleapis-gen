@@ -201,6 +201,20 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string remove = 2;</code>
+   * @return Whether the remove field is set.
+   */
+  public boolean hasRemove() {
+    return operationCase_ == 2;
+  }
+  /**
+   * <pre>
+   * Remove operation: A resource name for the ad group ad label
+   * being removed, in this format:
+   * `customers/{customer_id}/adGroupAdLabels/{ad_group_id}~{ad_id}
+   * _{label_id}`
+   * </pre>
+   *
+   * <code>string remove = 2;</code>
    * @return The remove.
    */
   public java.lang.String getRemove() {
@@ -806,6 +820,21 @@ private static final long serialVersionUID = 0L;
       return createBuilder_;
     }
 
+    /**
+     * <pre>
+     * Remove operation: A resource name for the ad group ad label
+     * being removed, in this format:
+     * `customers/{customer_id}/adGroupAdLabels/{ad_group_id}~{ad_id}
+     * _{label_id}`
+     * </pre>
+     *
+     * <code>string remove = 2;</code>
+     * @return Whether the remove field is set.
+     */
+    @java.lang.Override
+    public boolean hasRemove() {
+      return operationCase_ == 2;
+    }
     /**
      * <pre>
      * Remove operation: A resource name for the ad group ad label

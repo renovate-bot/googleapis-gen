@@ -1815,6 +1815,15 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string role = 1;</code>
+     * @return Whether the role field is set.
+     */
+    boolean hasRole();
+    /**
+     * <pre>
+     * The role.
+     * </pre>
+     *
+     * <code>string role = 1;</code>
      * @return The role.
      */
     java.lang.String getRole();
@@ -1829,6 +1838,15 @@ private static final long serialVersionUID = 0L;
     com.google.protobuf.ByteString
         getRoleBytes();
 
+    /**
+     * <pre>
+     * The permission.
+     * </pre>
+     *
+     * <code>string permission = 2;</code>
+     * @return Whether the permission field is set.
+     */
+    boolean hasPermission();
     /**
      * <pre>
      * The permission.
@@ -2032,6 +2050,17 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string role = 1;</code>
+     * @return Whether the role field is set.
+     */
+    public boolean hasRole() {
+      return oneofAccessCase_ == 1;
+    }
+    /**
+     * <pre>
+     * The role.
+     * </pre>
+     *
+     * <code>string role = 1;</code>
      * @return The role.
      */
     public java.lang.String getRole() {
@@ -2079,6 +2108,17 @@ private static final long serialVersionUID = 0L;
     }
 
     public static final int PERMISSION_FIELD_NUMBER = 2;
+    /**
+     * <pre>
+     * The permission.
+     * </pre>
+     *
+     * <code>string permission = 2;</code>
+     * @return Whether the permission field is set.
+     */
+    public boolean hasPermission() {
+      return oneofAccessCase_ == 2;
+    }
     /**
      * <pre>
      * The permission.
@@ -2572,6 +2612,18 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string role = 1;</code>
+       * @return Whether the role field is set.
+       */
+      @java.lang.Override
+      public boolean hasRole() {
+        return oneofAccessCase_ == 1;
+      }
+      /**
+       * <pre>
+       * The role.
+       * </pre>
+       *
+       * <code>string role = 1;</code>
        * @return The role.
        */
       @java.lang.Override
@@ -2675,6 +2727,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      /**
+       * <pre>
+       * The permission.
+       * </pre>
+       *
+       * <code>string permission = 2;</code>
+       * @return Whether the permission field is set.
+       */
+      @java.lang.Override
+      public boolean hasPermission() {
+        return oneofAccessCase_ == 2;
+      }
       /**
        * <pre>
        * The permission.

@@ -21,6 +21,7 @@ class WorkloadMetadataConfig extends \Google\Protobuf\Internal\Message
      * workloads running on the node.
      *
      * Generated from protobuf field <code>.google.container.v1beta1.WorkloadMetadataConfig.NodeMetadata node_metadata = 1 [deprecated = true];</code>
+     * @deprecated
      */
     protected $node_metadata = 0;
     /**
@@ -56,9 +57,11 @@ class WorkloadMetadataConfig extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.container.v1beta1.WorkloadMetadataConfig.NodeMetadata node_metadata = 1 [deprecated = true];</code>
      * @return int
+     * @deprecated
      */
     public function getNodeMetadata()
     {
+        @trigger_error('node_metadata is deprecated.', E_USER_DEPRECATED);
         return $this->node_metadata;
     }
 
@@ -69,9 +72,11 @@ class WorkloadMetadataConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.container.v1beta1.WorkloadMetadataConfig.NodeMetadata node_metadata = 1 [deprecated = true];</code>
      * @param int $var
      * @return $this
+     * @deprecated
      */
     public function setNodeMetadata($var)
     {
+        @trigger_error('node_metadata is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkEnum($var, \Google\Cloud\Container\V1beta1\WorkloadMetadataConfig\NodeMetadata::class);
         $this->node_metadata = $var;
 

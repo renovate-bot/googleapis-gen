@@ -289,6 +289,18 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.datastore.v1.ReadOptions.ReadConsistency read_consistency = 1;</code>
+   * @return Whether the readConsistency field is set.
+   */
+  public boolean hasReadConsistency() {
+    return consistencyTypeCase_ == 1;
+  }
+  /**
+   * <pre>
+   * The non-transactional read consistency to use.
+   * Cannot be set to `STRONG` for global queries.
+   * </pre>
+   *
+   * <code>.google.datastore.v1.ReadOptions.ReadConsistency read_consistency = 1;</code>
    * @return The enum numeric value on the wire for readConsistency.
    */
   public int getReadConsistencyValue() {
@@ -317,6 +329,20 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TRANSACTION_FIELD_NUMBER = 2;
+  /**
+   * <pre>
+   * The identifier of the transaction in which to read. A
+   * transaction identifier is returned by a call to
+   * [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction].
+   * </pre>
+   *
+   * <code>bytes transaction = 2;</code>
+   * @return Whether the transaction field is set.
+   */
+  @java.lang.Override
+  public boolean hasTransaction() {
+    return consistencyTypeCase_ == 2;
+  }
   /**
    * <pre>
    * The identifier of the transaction in which to read. A
@@ -709,6 +735,19 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.datastore.v1.ReadOptions.ReadConsistency read_consistency = 1;</code>
+     * @return Whether the readConsistency field is set.
+     */
+    @java.lang.Override
+    public boolean hasReadConsistency() {
+      return consistencyTypeCase_ == 1;
+    }
+    /**
+     * <pre>
+     * The non-transactional read consistency to use.
+     * Cannot be set to `STRONG` for global queries.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.ReadOptions.ReadConsistency read_consistency = 1;</code>
      * @return The enum numeric value on the wire for readConsistency.
      */
     @java.lang.Override
@@ -790,6 +829,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The identifier of the transaction in which to read. A
+     * transaction identifier is returned by a call to
+     * [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction].
+     * </pre>
+     *
+     * <code>bytes transaction = 2;</code>
+     * @return Whether the transaction field is set.
+     */
+    public boolean hasTransaction() {
+      return consistencyTypeCase_ == 2;
+    }
     /**
      * <pre>
      * The identifier of the transaction in which to read. A

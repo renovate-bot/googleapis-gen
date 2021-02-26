@@ -41,7 +41,7 @@ class MutateAccountBudgetProposalResponse extends \Google\Protobuf\Internal\Mess
      * The result of the mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.services.MutateAccountBudgetProposalResult result = 2;</code>
-     * @return \Google\Ads\GoogleAds\V5\Services\MutateAccountBudgetProposalResult
+     * @return \Google\Ads\GoogleAds\V5\Services\MutateAccountBudgetProposalResult|null
      */
     public function getResult()
     {

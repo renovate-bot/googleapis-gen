@@ -30,6 +30,7 @@ class RouterApplianceInstance extends \Google\Protobuf\Internal\Message
     protected $ip_address = '';
     /**
      * Generated from protobuf field <code>string network_interface = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $network_interface = '';
 
@@ -106,9 +107,11 @@ class RouterApplianceInstance extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string network_interface = 2 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getNetworkInterface()
     {
+        @trigger_error('network_interface is deprecated.', E_USER_DEPRECATED);
         return $this->network_interface;
     }
 
@@ -116,9 +119,11 @@ class RouterApplianceInstance extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string network_interface = 2 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setNetworkInterface($var)
     {
+        @trigger_error('network_interface is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->network_interface = $var;
 

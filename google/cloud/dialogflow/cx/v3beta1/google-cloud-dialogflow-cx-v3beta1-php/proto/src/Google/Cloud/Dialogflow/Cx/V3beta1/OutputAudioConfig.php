@@ -125,7 +125,7 @@ class OutputAudioConfig extends \Google\Protobuf\Internal\Message
      * Optional. Configuration of how speech should be synthesized.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\SynthesizeSpeechConfig
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\SynthesizeSpeechConfig|null
      */
     public function getSynthesizeSpeechConfig()
     {

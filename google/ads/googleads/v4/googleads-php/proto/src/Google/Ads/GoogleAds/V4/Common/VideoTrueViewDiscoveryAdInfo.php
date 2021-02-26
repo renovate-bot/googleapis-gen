@@ -57,7 +57,7 @@ class VideoTrueViewDiscoveryAdInfo extends \Google\Protobuf\Internal\Message
      * The headline of the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue headline = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getHeadline()
     {
@@ -120,7 +120,7 @@ class VideoTrueViewDiscoveryAdInfo extends \Google\Protobuf\Internal\Message
      * First text line for a TrueView video discovery ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description1 = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDescription1()
     {
@@ -183,7 +183,7 @@ class VideoTrueViewDiscoveryAdInfo extends \Google\Protobuf\Internal\Message
      * Second text line for a TrueView video discovery ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description2 = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDescription2()
     {

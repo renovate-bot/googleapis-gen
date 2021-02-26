@@ -173,7 +173,7 @@ class CriterionCategoryChannelAvailability extends \Google\Protobuf\Internal\Mes
      * is not set is not included in this availability configuration.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue include_default_channel_sub_type = 4;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getIncludeDefaultChannelSubType()
     {

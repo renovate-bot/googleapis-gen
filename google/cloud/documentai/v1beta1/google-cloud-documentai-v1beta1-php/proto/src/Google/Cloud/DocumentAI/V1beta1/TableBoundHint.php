@@ -86,7 +86,7 @@ class TableBoundHint extends \Google\Protobuf\Internal\Message
      * normalized to [0,1] and the bounding box must be an axis-aligned rectangle.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta1.BoundingPoly bounding_box = 2;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta1\BoundingPoly
+     * @return \Google\Cloud\DocumentAI\V1beta1\BoundingPoly|null
      */
     public function getBoundingBox()
     {

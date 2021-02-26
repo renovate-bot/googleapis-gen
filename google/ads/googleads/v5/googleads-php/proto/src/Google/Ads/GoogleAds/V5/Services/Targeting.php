@@ -88,7 +88,7 @@ class Targeting extends \Google\Protobuf\Internal\Message
      * Plannable locations ID can be obtained from ListPlannableLocations.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue plannable_location_id = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPlannableLocationId()
     {

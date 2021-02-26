@@ -14,6 +14,16 @@ public interface InsertObjectRequestOrBuilder extends
    * </pre>
    *
    * <code>string upload_id = 1;</code>
+   * @return Whether the uploadId field is set.
+   */
+  boolean hasUploadId();
+  /**
+   * <pre>
+   * For resumable uploads. This should be the `upload_id` returned from a
+   * call to `StartResumableWriteResponse`.
+   * </pre>
+   *
+   * <code>string upload_id = 1;</code>
    * @return The uploadId.
    */
   java.lang.String getUploadId();

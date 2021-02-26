@@ -46,7 +46,7 @@ class DimensionFilter extends \Google\Protobuf\Internal\Message
      * values specified in this condition.
      *
      * Generated from protobuf field <code>.google.ads.admob.v1.StringList matches_any = 2;</code>
-     * @return \Google\Ads\Admob\V1\StringList
+     * @return \Google\Ads\Admob\V1\StringList|null
      */
     public function getMatchesAny()
     {

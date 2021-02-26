@@ -141,7 +141,7 @@ class OperationMetadataV1 extends \Google\Protobuf\Internal\Message
      * The original request that started the operation.
      *
      * Generated from protobuf field <code>.google.protobuf.Any request = 3;</code>
-     * @return \Google\Protobuf\Any
+     * @return \Google\Protobuf\Any|null
      */
     public function getRequest()
     {
@@ -205,7 +205,7 @@ class OperationMetadataV1 extends \Google\Protobuf\Internal\Message
      * The last update timestamp of the operation.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 5;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {

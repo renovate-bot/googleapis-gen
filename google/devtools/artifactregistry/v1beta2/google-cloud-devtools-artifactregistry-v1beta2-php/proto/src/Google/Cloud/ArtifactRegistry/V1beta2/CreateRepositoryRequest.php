@@ -109,7 +109,7 @@ class CreateRepositoryRequest extends \Google\Protobuf\Internal\Message
      * The repository to be created.
      *
      * Generated from protobuf field <code>.google.devtools.artifactregistry.v1beta2.Repository repository = 3;</code>
-     * @return \Google\Cloud\ArtifactRegistry\V1beta2\Repository
+     * @return \Google\Cloud\ArtifactRegistry\V1beta2\Repository|null
      */
     public function getRepository()
     {

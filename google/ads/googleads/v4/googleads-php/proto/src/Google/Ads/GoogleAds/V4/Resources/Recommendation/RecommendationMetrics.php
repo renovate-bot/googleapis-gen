@@ -74,7 +74,7 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
      * Output only. Number of ad impressions.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue impressions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getImpressions()
     {
@@ -137,7 +137,7 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
      * Output only. Number of ad clicks.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue clicks = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getClicks()
     {
@@ -200,7 +200,7 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
      * Output only. Cost (in micros) for advertising, in the local currency for the account.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCostMicros()
     {
@@ -263,7 +263,7 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
      * Output only. Number of conversions.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getConversions()
     {
@@ -326,7 +326,7 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
      * Output only. Number of video views for a video ad campaign.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue video_views = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getVideoViews()
     {

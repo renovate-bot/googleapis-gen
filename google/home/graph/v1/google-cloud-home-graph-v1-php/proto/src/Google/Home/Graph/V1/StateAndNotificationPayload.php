@@ -41,7 +41,7 @@ class StateAndNotificationPayload extends \Google\Protobuf\Internal\Message
      * The devices for updating state and sending notifications.
      *
      * Generated from protobuf field <code>.google.home.graph.v1.ReportStateAndNotificationDevice devices = 1;</code>
-     * @return \Google\Home\Graph\V1\ReportStateAndNotificationDevice
+     * @return \Google\Home\Graph\V1\ReportStateAndNotificationDevice|null
      */
     public function getDevices()
     {

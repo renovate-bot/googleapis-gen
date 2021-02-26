@@ -138,6 +138,19 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string cloud_secret = 2;</code>
+   * @return Whether the cloudSecret field is set.
+   */
+  public boolean hasCloudSecret() {
+    return valueCase_ == 2;
+  }
+  /**
+   * <pre>
+   * The relative resource name of a Secret Manager secret version, in the
+   * following form:
+   * "projects/{project_id}/secrets/{secret_id}/versions/{version_id}".
+   * </pre>
+   *
+   * <code>string cloud_secret = 2;</code>
    * @return The cloudSecret.
    */
   public java.lang.String getCloudSecret() {
@@ -530,6 +543,20 @@ private static final long serialVersionUID = 0L;
     }
 
 
+    /**
+     * <pre>
+     * The relative resource name of a Secret Manager secret version, in the
+     * following form:
+     * "projects/{project_id}/secrets/{secret_id}/versions/{version_id}".
+     * </pre>
+     *
+     * <code>string cloud_secret = 2;</code>
+     * @return Whether the cloudSecret field is set.
+     */
+    @java.lang.Override
+    public boolean hasCloudSecret() {
+      return valueCase_ == 2;
+    }
     /**
      * <pre>
      * The relative resource name of a Secret Manager secret version, in the

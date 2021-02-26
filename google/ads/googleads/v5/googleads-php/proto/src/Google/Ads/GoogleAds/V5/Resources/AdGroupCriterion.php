@@ -454,7 +454,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * Output only. Information regarding the quality of the criterion.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.resources.AdGroupCriterion.QualityInfo quality_info = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V5\Resources\AdGroupCriterion\QualityInfo
+     * @return \Google\Ads\GoogleAds\V5\Resources\AdGroupCriterion\QualityInfo|null
      */
     public function getQualityInfo()
     {
@@ -1110,7 +1110,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * Output only. Estimates for criterion bids at various positions.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.resources.AdGroupCriterion.PositionEstimates position_estimates = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V5\Resources\AdGroupCriterion\PositionEstimates
+     * @return \Google\Ads\GoogleAds\V5\Resources\AdGroupCriterion\PositionEstimates|null
      */
     public function getPositionEstimates()
     {
@@ -1300,7 +1300,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Keyword.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.KeywordInfo keyword = 27 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\KeywordInfo
+     * @return \Google\Ads\GoogleAds\V5\Common\KeywordInfo|null
      */
     public function getKeyword()
     {
@@ -1331,7 +1331,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Placement.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.PlacementInfo placement = 28 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\PlacementInfo
+     * @return \Google\Ads\GoogleAds\V5\Common\PlacementInfo|null
      */
     public function getPlacement()
     {
@@ -1362,7 +1362,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Mobile app category.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.MobileAppCategoryInfo mobile_app_category = 29 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\MobileAppCategoryInfo
+     * @return \Google\Ads\GoogleAds\V5\Common\MobileAppCategoryInfo|null
      */
     public function getMobileAppCategory()
     {
@@ -1393,7 +1393,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Mobile application.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.MobileApplicationInfo mobile_application = 30 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\MobileApplicationInfo
+     * @return \Google\Ads\GoogleAds\V5\Common\MobileApplicationInfo|null
      */
     public function getMobileApplication()
     {
@@ -1424,7 +1424,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Listing group.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.ListingGroupInfo listing_group = 32 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\ListingGroupInfo
+     * @return \Google\Ads\GoogleAds\V5\Common\ListingGroupInfo|null
      */
     public function getListingGroup()
     {
@@ -1455,7 +1455,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Age range.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.AgeRangeInfo age_range = 36 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\AgeRangeInfo
+     * @return \Google\Ads\GoogleAds\V5\Common\AgeRangeInfo|null
      */
     public function getAgeRange()
     {
@@ -1486,7 +1486,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Gender.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.GenderInfo gender = 37 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\GenderInfo
+     * @return \Google\Ads\GoogleAds\V5\Common\GenderInfo|null
      */
     public function getGender()
     {
@@ -1517,7 +1517,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Income range.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.IncomeRangeInfo income_range = 38 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\IncomeRangeInfo
+     * @return \Google\Ads\GoogleAds\V5\Common\IncomeRangeInfo|null
      */
     public function getIncomeRange()
     {
@@ -1548,7 +1548,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Parental status.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.ParentalStatusInfo parental_status = 39 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\ParentalStatusInfo
+     * @return \Google\Ads\GoogleAds\V5\Common\ParentalStatusInfo|null
      */
     public function getParentalStatus()
     {
@@ -1579,7 +1579,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. User List.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.UserListInfo user_list = 42 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\UserListInfo
+     * @return \Google\Ads\GoogleAds\V5\Common\UserListInfo|null
      */
     public function getUserList()
     {
@@ -1610,7 +1610,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. YouTube Video.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.YouTubeVideoInfo youtube_video = 40 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\YouTubeVideoInfo
+     * @return \Google\Ads\GoogleAds\V5\Common\YouTubeVideoInfo|null
      */
     public function getYoutubeVideo()
     {
@@ -1641,7 +1641,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. YouTube Channel.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.YouTubeChannelInfo youtube_channel = 41 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\YouTubeChannelInfo
+     * @return \Google\Ads\GoogleAds\V5\Common\YouTubeChannelInfo|null
      */
     public function getYoutubeChannel()
     {
@@ -1672,7 +1672,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Topic.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.TopicInfo topic = 43 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\TopicInfo
+     * @return \Google\Ads\GoogleAds\V5\Common\TopicInfo|null
      */
     public function getTopic()
     {
@@ -1703,7 +1703,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. User Interest.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.UserInterestInfo user_interest = 45 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\UserInterestInfo
+     * @return \Google\Ads\GoogleAds\V5\Common\UserInterestInfo|null
      */
     public function getUserInterest()
     {
@@ -1734,7 +1734,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Webpage
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.WebpageInfo webpage = 46 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\WebpageInfo
+     * @return \Google\Ads\GoogleAds\V5\Common\WebpageInfo|null
      */
     public function getWebpage()
     {
@@ -1765,7 +1765,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. App Payment Model.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.AppPaymentModelInfo app_payment_model = 47 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\AppPaymentModelInfo
+     * @return \Google\Ads\GoogleAds\V5\Common\AppPaymentModelInfo|null
      */
     public function getAppPaymentModel()
     {
@@ -1796,7 +1796,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Custom Affinity.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.CustomAffinityInfo custom_affinity = 48 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\CustomAffinityInfo
+     * @return \Google\Ads\GoogleAds\V5\Common\CustomAffinityInfo|null
      */
     public function getCustomAffinity()
     {
@@ -1827,7 +1827,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Custom Intent.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.CustomIntentInfo custom_intent = 49 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\CustomIntentInfo
+     * @return \Google\Ads\GoogleAds\V5\Common\CustomIntentInfo|null
      */
     public function getCustomIntent()
     {

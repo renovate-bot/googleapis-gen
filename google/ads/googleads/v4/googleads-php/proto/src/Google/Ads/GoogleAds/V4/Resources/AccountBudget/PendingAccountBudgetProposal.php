@@ -113,7 +113,7 @@ class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Message
      * `customers/{customer_id}/accountBudgetProposals/{account_budget_proposal_id}`
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue account_budget_proposal = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAccountBudgetProposal()
     {
@@ -210,7 +210,7 @@ class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Message
      * Output only. The name to assign to the account-level budget.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {
@@ -273,7 +273,7 @@ class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Message
      * Output only. The start time in yyyy-MM-dd HH:mm:ss format.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue start_date_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getStartDateTime()
     {
@@ -337,7 +337,7 @@ class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Message
      * in their monthly invoices.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue purchase_order_number = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPurchaseOrderNumber()
     {
@@ -403,7 +403,7 @@ class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Message
      * Output only. Notes associated with this budget.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue notes = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getNotes()
     {
@@ -467,7 +467,7 @@ class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Message
      * Formatted as yyyy-MM-dd HH:mm:ss.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue creation_date_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCreationDateTime()
     {
@@ -533,7 +533,7 @@ class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Message
      * Output only. The end time in yyyy-MM-dd HH:mm:ss format.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue end_date_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getEndDateTime()
     {
@@ -623,7 +623,7 @@ class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Message
      * one unit.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value spending_limit_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getSpendingLimitMicros()
     {

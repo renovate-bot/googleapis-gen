@@ -228,7 +228,7 @@ class WriteLogEntriesRequest extends \Google\Protobuf\Internal\Message
      * See [LogEntry][google.logging.v2.LogEntry].
      *
      * Generated from protobuf field <code>.google.api.MonitoredResource resource = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Api\MonitoredResource
+     * @return \Google\Api\MonitoredResource|null
      */
     public function getResource()
     {

@@ -40,10 +40,28 @@ public interface AttributeValueOrBuilder extends
    * </pre>
    *
    * <code>int64 int_value = 2;</code>
+   * @return Whether the intValue field is set.
+   */
+  boolean hasIntValue();
+  /**
+   * <pre>
+   * A 64-bit signed integer.
+   * </pre>
+   *
+   * <code>int64 int_value = 2;</code>
    * @return The intValue.
    */
   long getIntValue();
 
+  /**
+   * <pre>
+   * A Boolean value represented by `true` or `false`.
+   * </pre>
+   *
+   * <code>bool bool_value = 3;</code>
+   * @return Whether the boolValue field is set.
+   */
+  boolean hasBoolValue();
   /**
    * <pre>
    * A Boolean value represented by `true` or `false`.

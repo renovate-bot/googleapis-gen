@@ -1042,6 +1042,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType proposed_start_time_type = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the proposedStartTimeType field is set.
+   */
+  public boolean hasProposedStartTimeType() {
+    return proposedStartTimeCase_ == 7;
+  }
+  /**
+   * <pre>
+   * Immutable. The proposed start date time as a well-defined type, e.g. NOW.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType proposed_start_time_type = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The enum numeric value on the wire for proposedStartTimeType.
    */
   public int getProposedStartTimeTypeValue() {
@@ -1118,6 +1129,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType proposed_end_time_type = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the proposedEndTimeType field is set.
+   */
+  public boolean hasProposedEndTimeType() {
+    return proposedEndTimeCase_ == 9;
+  }
+  /**
+   * <pre>
+   * Immutable. The proposed end date time as a well-defined type, e.g. FOREVER.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType proposed_end_time_type = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The enum numeric value on the wire for proposedEndTimeType.
    */
   public int getProposedEndTimeTypeValue() {
@@ -1188,6 +1210,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int APPROVED_END_TIME_TYPE_FIELD_NUMBER = 22;
+  /**
+   * <pre>
+   * Output only. The approved end date time as a well-defined type, e.g. FOREVER.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType approved_end_time_type = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the approvedEndTimeType field is set.
+   */
+  public boolean hasApprovedEndTimeType() {
+    return approvedEndTimeCase_ == 22;
+  }
   /**
    * <pre>
    * Output only. The approved end date time as a well-defined type, e.g. FOREVER.
@@ -1273,6 +1306,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.enums.SpendingLimitTypeEnum.SpendingLimitType proposed_spending_limit_type = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the proposedSpendingLimitType field is set.
+   */
+  public boolean hasProposedSpendingLimitType() {
+    return proposedSpendingLimitCase_ == 11;
+  }
+  /**
+   * <pre>
+   * Immutable. The proposed spending limit as a well-defined type, e.g. INFINITE.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.enums.SpendingLimitTypeEnum.SpendingLimitType proposed_spending_limit_type = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The enum numeric value on the wire for proposedSpendingLimitType.
    */
   public int getProposedSpendingLimitTypeValue() {
@@ -1346,6 +1390,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int APPROVED_SPENDING_LIMIT_TYPE_FIELD_NUMBER = 24;
+  /**
+   * <pre>
+   * Output only. The approved spending limit as a well-defined type, e.g. INFINITE.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.enums.SpendingLimitTypeEnum.SpendingLimitType approved_spending_limit_type = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the approvedSpendingLimitType field is set.
+   */
+  public boolean hasApprovedSpendingLimitType() {
+    return approvedSpendingLimitCase_ == 24;
+  }
   /**
    * <pre>
    * Output only. The approved spending limit as a well-defined type, e.g. INFINITE.
@@ -4261,6 +4316,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType proposed_start_time_type = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return Whether the proposedStartTimeType field is set.
+     */
+    @java.lang.Override
+    public boolean hasProposedStartTimeType() {
+      return proposedStartTimeCase_ == 7;
+    }
+    /**
+     * <pre>
+     * Immutable. The proposed start date time as a well-defined type, e.g. NOW.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType proposed_start_time_type = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The enum numeric value on the wire for proposedStartTimeType.
      */
     @java.lang.Override
@@ -4521,6 +4588,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType proposed_end_time_type = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return Whether the proposedEndTimeType field is set.
+     */
+    @java.lang.Override
+    public boolean hasProposedEndTimeType() {
+      return proposedEndTimeCase_ == 9;
+    }
+    /**
+     * <pre>
+     * Immutable. The proposed end date time as a well-defined type, e.g. FOREVER.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType proposed_end_time_type = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The enum numeric value on the wire for proposedEndTimeType.
      */
     @java.lang.Override
@@ -4775,6 +4854,18 @@ private static final long serialVersionUID = 0L;
       return approvedEndDateTimeBuilder_;
     }
 
+    /**
+     * <pre>
+     * Output only. The approved end date time as a well-defined type, e.g. FOREVER.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType approved_end_time_type = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the approvedEndTimeType field is set.
+     */
+    @java.lang.Override
+    public boolean hasApprovedEndTimeType() {
+      return approvedEndTimeCase_ == 22;
+    }
     /**
      * <pre>
      * Output only. The approved end date time as a well-defined type, e.g. FOREVER.
@@ -5050,6 +5141,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.enums.SpendingLimitTypeEnum.SpendingLimitType proposed_spending_limit_type = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return Whether the proposedSpendingLimitType field is set.
+     */
+    @java.lang.Override
+    public boolean hasProposedSpendingLimitType() {
+      return proposedSpendingLimitCase_ == 11;
+    }
+    /**
+     * <pre>
+     * Immutable. The proposed spending limit as a well-defined type, e.g. INFINITE.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.enums.SpendingLimitTypeEnum.SpendingLimitType proposed_spending_limit_type = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The enum numeric value on the wire for proposedSpendingLimitType.
      */
     @java.lang.Override
@@ -5313,6 +5416,18 @@ private static final long serialVersionUID = 0L;
       return approvedSpendingLimitMicrosBuilder_;
     }
 
+    /**
+     * <pre>
+     * Output only. The approved spending limit as a well-defined type, e.g. INFINITE.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.enums.SpendingLimitTypeEnum.SpendingLimitType approved_spending_limit_type = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the approvedSpendingLimitType field is set.
+     */
+    @java.lang.Override
+    public boolean hasApprovedSpendingLimitType() {
+      return approvedSpendingLimitCase_ == 24;
+    }
     /**
      * <pre>
      * Output only. The approved spending limit as a well-defined type, e.g. INFINITE.

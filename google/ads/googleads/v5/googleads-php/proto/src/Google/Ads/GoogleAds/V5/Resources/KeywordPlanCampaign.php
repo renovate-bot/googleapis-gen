@@ -150,7 +150,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
      * The keyword plan this campaign belongs to.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan = 2 [(.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getKeywordPlan()
     {
@@ -213,7 +213,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the Keyword Plan campaign.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -278,7 +278,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
      * campaigns.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {
@@ -408,7 +408,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
      * campaigns.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_micros = 7;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCpcBidMicros()
     {

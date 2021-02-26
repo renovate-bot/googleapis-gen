@@ -340,7 +340,7 @@ class RunReportRequest extends \Google\Protobuf\Internal\Message
      * this filter. Metrics cannot be used in this filter.
      *
      * Generated from protobuf field <code>.google.analytics.data.v1beta.FilterExpression dimension_filter = 5;</code>
-     * @return \Google\Analytics\Data\V1beta\FilterExpression
+     * @return \Google\Analytics\Data\V1beta\FilterExpression|null
      */
     public function getDimensionFilter()
     {
@@ -379,7 +379,7 @@ class RunReportRequest extends \Google\Protobuf\Internal\Message
      * Dimensions cannot be used in this filter.
      *
      * Generated from protobuf field <code>.google.analytics.data.v1beta.FilterExpression metric_filter = 6;</code>
-     * @return \Google\Analytics\Data\V1beta\FilterExpression
+     * @return \Google\Analytics\Data\V1beta\FilterExpression|null
      */
     public function getMetricFilter()
     {
@@ -584,7 +584,7 @@ class RunReportRequest extends \Google\Protobuf\Internal\Message
      * in the request the 'cohort' dimension must be present.
      *
      * Generated from protobuf field <code>.google.analytics.data.v1beta.CohortSpec cohort_spec = 12;</code>
-     * @return \Google\Analytics\Data\V1beta\CohortSpec
+     * @return \Google\Analytics\Data\V1beta\CohortSpec|null
      */
     public function getCohortSpec()
     {

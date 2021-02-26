@@ -69,7 +69,7 @@ class Contact extends \Google\Protobuf\Internal\Message
      * Required. Postal address of the contact.
      *
      * Generated from protobuf field <code>.google.type.PostalAddress postal_address = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Type\PostalAddress
+     * @return \Google\Type\PostalAddress|null
      */
     public function getPostalAddress()
     {

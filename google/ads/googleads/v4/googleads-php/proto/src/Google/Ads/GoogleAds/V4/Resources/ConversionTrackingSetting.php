@@ -62,7 +62,7 @@ class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
      * doesn't use conversion tracking, this is 0. This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value conversion_tracking_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getConversionTrackingId()
     {
@@ -134,7 +134,7 @@ class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
      * Ads UI. This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cross_account_conversion_tracking_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCrossAccountConversionTrackingId()
     {

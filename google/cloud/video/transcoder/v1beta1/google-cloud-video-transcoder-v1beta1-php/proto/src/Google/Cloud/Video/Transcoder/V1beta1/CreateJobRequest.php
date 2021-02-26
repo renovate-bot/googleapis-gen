@@ -79,7 +79,7 @@ class CreateJobRequest extends \Google\Protobuf\Internal\Message
      * Required. Parameters for creating transcoding job.
      *
      * Generated from protobuf field <code>.google.cloud.video.transcoder.v1beta1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Video\Transcoder\V1beta1\Job
+     * @return \Google\Cloud\Video\Transcoder\V1beta1\Job|null
      */
     public function getJob()
     {

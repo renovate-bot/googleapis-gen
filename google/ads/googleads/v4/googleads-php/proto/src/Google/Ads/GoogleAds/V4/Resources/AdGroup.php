@@ -319,7 +319,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the ad group.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -387,7 +387,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * (code point 0xA) or carriage return (code point 0xD) characters.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {
@@ -547,7 +547,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue base_ad_group = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getBaseAdGroup()
     {
@@ -622,7 +622,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * The URL template for constructing a tracking URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 13;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getTrackingUrlTemplate()
     {
@@ -713,7 +713,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * Immutable. The campaign to which the ad group belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCampaign()
     {
@@ -776,7 +776,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * The maximum CPC (cost-per-click) bid.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_micros = 14;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCpcBidMicros()
     {
@@ -839,7 +839,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * The maximum CPM (cost-per-thousand viewable impressions) bid.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpm_bid_micros = 15;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCpmBidMicros()
     {
@@ -902,7 +902,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * The target CPA (cost-per-acquisition).
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpa_micros = 27;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getTargetCpaMicros()
     {
@@ -965,7 +965,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * Output only. The CPV (cost-per-view) bid.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpv_bid_micros = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCpvBidMicros()
     {
@@ -1029,7 +1029,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * thousand times the ad is shown.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpm_micros = 26;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getTargetCpmMicros()
     {
@@ -1098,7 +1098,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * Otherwise, this value is ignored.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue target_roas = 30;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getTargetRoas()
     {
@@ -1172,7 +1172,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * value stored here is 1,000,000 * [fraction].
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value percent_cpc_bid_micros = 20;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getPercentCpcBidMicros()
     {
@@ -1241,7 +1241,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * Settings for the Display Campaign Optimizer, initially termed "Explorer".
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.ExplorerAutoOptimizerSetting explorer_auto_optimizer_setting = 21;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\ExplorerAutoOptimizerSetting
+     * @return \Google\Ads\GoogleAds\V4\Common\ExplorerAutoOptimizerSetting|null
      */
     public function getExplorerAutoOptimizerSetting()
     {
@@ -1307,7 +1307,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * URL template for appending params to Final URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 24;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getFinalUrlSuffix()
     {
@@ -1370,7 +1370,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * Setting for targeting related features.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.TargetingSetting targeting_setting = 25;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\TargetingSetting
+     * @return \Google\Ads\GoogleAds\V4\Common\TargetingSetting|null
      */
     public function getTargetingSetting()
     {
@@ -1407,7 +1407,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value effective_target_cpa_micros = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getEffectiveTargetCpaMicros()
     {
@@ -1502,7 +1502,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue effective_target_roas = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getEffectiveTargetRoas()
     {

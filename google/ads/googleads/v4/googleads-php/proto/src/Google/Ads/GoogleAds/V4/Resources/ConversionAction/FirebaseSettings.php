@@ -49,7 +49,7 @@ class FirebaseSettings extends \Google\Protobuf\Internal\Message
      * Output only. The event name of a Firebase conversion.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue event_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getEventName()
     {
@@ -112,7 +112,7 @@ class FirebaseSettings extends \Google\Protobuf\Internal\Message
      * Output only. The Firebase project ID of the conversion.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue project_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getProjectId()
     {

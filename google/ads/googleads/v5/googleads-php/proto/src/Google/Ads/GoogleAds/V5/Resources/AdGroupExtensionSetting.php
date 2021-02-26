@@ -146,7 +146,7 @@ class AdGroupExtensionSetting extends \Google\Protobuf\Internal\Message
      * `customers/{customer_id}/adGroups/{ad_group_id}`
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAdGroup()
     {

@@ -190,7 +190,7 @@ class ExplainRequest extends \Google\Protobuf\Internal\Message
      * [parameters_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.parameters_schema_uri].
      *
      * Generated from protobuf field <code>.google.protobuf.Value parameters = 4;</code>
-     * @return \Google\Protobuf\Value
+     * @return \Google\Protobuf\Value|null
      */
     public function getParameters()
     {
@@ -236,7 +236,7 @@ class ExplainRequest extends \Google\Protobuf\Internal\Message
      *  - Using different baselines for explaining the prediction results.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride explanation_spec_override = 5;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\ExplanationSpecOverride
+     * @return \Google\Cloud\Aiplatform\V1beta1\ExplanationSpecOverride|null
      */
     public function getExplanationSpecOverride()
     {

@@ -105,6 +105,17 @@ public interface KeywordPlanCampaignOperationOrBuilder extends
    * </pre>
    *
    * <code>string remove = 3 [(.google.api.resource_reference) = { ... }</code>
+   * @return Whether the remove field is set.
+   */
+  boolean hasRemove();
+  /**
+   * <pre>
+   * Remove operation: A resource name for the removed Keyword Plan campaign
+   * is expected, in this format:
+   * `customers/{customer_id}/keywordPlanCampaigns/{keywordPlan_campaign_id}`
+   * </pre>
+   *
+   * <code>string remove = 3 [(.google.api.resource_reference) = { ... }</code>
    * @return The remove.
    */
   java.lang.String getRemove();

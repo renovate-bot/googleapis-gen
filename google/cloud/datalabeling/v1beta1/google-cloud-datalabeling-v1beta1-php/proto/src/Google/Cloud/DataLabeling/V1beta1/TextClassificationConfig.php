@@ -113,7 +113,7 @@ class TextClassificationConfig extends \Google\Protobuf\Internal\Message
      * Optional. Configs for sentiment selection.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\SentimentConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\SentimentConfig|null
      */
     public function getSentimentConfig()
     {

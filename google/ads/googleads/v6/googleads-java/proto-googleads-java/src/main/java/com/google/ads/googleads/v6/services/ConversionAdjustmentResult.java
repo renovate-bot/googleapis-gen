@@ -370,6 +370,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string order_id = 6;</code>
+   * @return Whether the orderId field is set.
+   */
+  public boolean hasOrderId() {
+    return conversionIdentifierCase_ == 6;
+  }
+  /**
+   * <pre>
+   * The order ID of the conversion that was adjusted.
+   * </pre>
+   *
+   * <code>string order_id = 6;</code>
    * @return The orderId.
    */
   public java.lang.String getOrderId() {
@@ -1344,6 +1355,18 @@ private static final long serialVersionUID = 0L;
       return gclidDateTimePairBuilder_;
     }
 
+    /**
+     * <pre>
+     * The order ID of the conversion that was adjusted.
+     * </pre>
+     *
+     * <code>string order_id = 6;</code>
+     * @return Whether the orderId field is set.
+     */
+    @java.lang.Override
+    public boolean hasOrderId() {
+      return conversionIdentifierCase_ == 6;
+    }
     /**
      * <pre>
      * The order ID of the conversion that was adjusted.

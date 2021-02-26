@@ -33,6 +33,15 @@ public interface PlayableLocationOrBuilder extends
    * </pre>
    *
    * <code>string place_id = 2;</code>
+   * @return Whether the placeId field is set.
+   */
+  boolean hasPlaceId();
+  /**
+   * <pre>
+   * A [place ID] (https://developers.google.com/places/place-id)
+   * </pre>
+   *
+   * <code>string place_id = 2;</code>
    * @return The placeId.
    */
   java.lang.String getPlaceId();
@@ -47,6 +56,15 @@ public interface PlayableLocationOrBuilder extends
   com.google.protobuf.ByteString
       getPlaceIdBytes();
 
+  /**
+   * <pre>
+   * A [plus code] (http://openlocationcode.com)
+   * </pre>
+   *
+   * <code>string plus_code = 3;</code>
+   * @return Whether the plusCode field is set.
+   */
+  boolean hasPlusCode();
   /**
    * <pre>
    * A [plus code] (http://openlocationcode.com)

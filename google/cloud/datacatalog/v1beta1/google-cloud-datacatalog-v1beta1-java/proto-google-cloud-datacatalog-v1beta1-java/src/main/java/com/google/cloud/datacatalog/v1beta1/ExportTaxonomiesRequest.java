@@ -256,6 +256,18 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool serialized_taxonomies = 3;</code>
+   * @return Whether the serializedTaxonomies field is set.
+   */
+  @java.lang.Override
+  public boolean hasSerializedTaxonomies() {
+    return destinationCase_ == 3;
+  }
+  /**
+   * <pre>
+   * Export taxonomies as serialized taxonomies.
+   * </pre>
+   *
+   * <code>bool serialized_taxonomies = 3;</code>
    * @return The serializedTaxonomies.
    */
   @java.lang.Override
@@ -913,6 +925,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Export taxonomies as serialized taxonomies.
+     * </pre>
+     *
+     * <code>bool serialized_taxonomies = 3;</code>
+     * @return Whether the serializedTaxonomies field is set.
+     */
+    public boolean hasSerializedTaxonomies() {
+      return destinationCase_ == 3;
+    }
     /**
      * <pre>
      * Export taxonomies as serialized taxonomies.

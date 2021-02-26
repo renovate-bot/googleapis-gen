@@ -339,7 +339,7 @@ class AnnotatedDataset extends \Google\Protobuf\Internal\Message
      * Output only. Per label statistics.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.LabelStats label_stats = 6;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\LabelStats
+     * @return \Google\Cloud\DataLabeling\V1beta1\LabelStats|null
      */
     public function getLabelStats()
     {
@@ -375,7 +375,7 @@ class AnnotatedDataset extends \Google\Protobuf\Internal\Message
      * Output only. Time the AnnotatedDataset was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 7;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -411,7 +411,7 @@ class AnnotatedDataset extends \Google\Protobuf\Internal\Message
      * Output only. Additional information about AnnotatedDataset.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadata metadata = 10;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\AnnotatedDatasetMetadata
+     * @return \Google\Cloud\DataLabeling\V1beta1\AnnotatedDatasetMetadata|null
      */
     public function getMetadata()
     {

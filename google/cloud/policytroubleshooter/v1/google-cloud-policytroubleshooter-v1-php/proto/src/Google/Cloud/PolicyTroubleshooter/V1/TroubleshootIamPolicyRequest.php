@@ -44,7 +44,7 @@ class TroubleshootIamPolicyRequest extends \Google\Protobuf\Internal\Message
      * resource.
      *
      * Generated from protobuf field <code>.google.cloud.policytroubleshooter.v1.AccessTuple access_tuple = 1;</code>
-     * @return \Google\Cloud\PolicyTroubleshooter\V1\AccessTuple
+     * @return \Google\Cloud\PolicyTroubleshooter\V1\AccessTuple|null
      */
     public function getAccessTuple()
     {

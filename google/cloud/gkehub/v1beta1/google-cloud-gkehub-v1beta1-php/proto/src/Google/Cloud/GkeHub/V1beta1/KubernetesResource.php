@@ -209,7 +209,7 @@ class KubernetesResource extends \Google\Protobuf\Internal\Message
      * Optional. Options for Kubernetes resource generation.
      *
      * Generated from protobuf field <code>.google.cloud.gkehub.v1beta1.ResourceOptions resource_options = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\GkeHub\V1beta1\ResourceOptions
+     * @return \Google\Cloud\GkeHub\V1beta1\ResourceOptions|null
      */
     public function getResourceOptions()
     {

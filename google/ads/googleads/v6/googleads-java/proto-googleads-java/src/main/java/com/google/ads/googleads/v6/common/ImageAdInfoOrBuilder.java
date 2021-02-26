@@ -198,6 +198,15 @@ public interface ImageAdInfoOrBuilder extends
    * </pre>
    *
    * <code>string media_file = 12;</code>
+   * @return Whether the mediaFile field is set.
+   */
+  boolean hasMediaFile();
+  /**
+   * <pre>
+   * The MediaFile resource to use for the image.
+   * </pre>
+   *
+   * <code>string media_file = 12;</code>
    * @return The mediaFile.
    */
   java.lang.String getMediaFile();
@@ -218,10 +227,28 @@ public interface ImageAdInfoOrBuilder extends
    * </pre>
    *
    * <code>bytes data = 13;</code>
+   * @return Whether the data field is set.
+   */
+  boolean hasData();
+  /**
+   * <pre>
+   * Raw image data as bytes.
+   * </pre>
+   *
+   * <code>bytes data = 13;</code>
    * @return The data.
    */
   com.google.protobuf.ByteString getData();
 
+  /**
+   * <pre>
+   * An ad ID to copy the image from.
+   * </pre>
+   *
+   * <code>int64 ad_id_to_copy_image_from = 14;</code>
+   * @return Whether the adIdToCopyImageFrom field is set.
+   */
+  boolean hasAdIdToCopyImageFrom();
   /**
    * <pre>
    * An ad ID to copy the image from.

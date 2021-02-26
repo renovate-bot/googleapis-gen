@@ -262,7 +262,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -409,7 +409,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * The URL template for constructing a tracking URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 12;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getTrackingUrlTemplate()
     {
@@ -472,7 +472,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * The suffix to use when constructing a final URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 38;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getFinalUrlSuffix()
     {
@@ -565,7 +565,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * The URL that appears in the ad description for some ad formats.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue display_url = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDisplayUrl()
     {
@@ -657,7 +657,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * performing.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue added_by_google_ads = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getAddedByGoogleAds()
     {
@@ -794,7 +794,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * does not need to be unique and does not affect the served ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 23 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {
@@ -888,7 +888,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * Immutable. Details pertaining to a text ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.TextAdInfo text_ad = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\TextAdInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\TextAdInfo|null
      */
     public function getTextAd()
     {
@@ -919,7 +919,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * Details pertaining to an expanded text ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.ExpandedTextAdInfo expanded_text_ad = 7;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\ExpandedTextAdInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\ExpandedTextAdInfo|null
      */
     public function getExpandedTextAd()
     {
@@ -950,7 +950,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * Details pertaining to a call-only ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.CallOnlyAdInfo call_only_ad = 13;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\CallOnlyAdInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\CallOnlyAdInfo|null
      */
     public function getCallOnlyAd()
     {
@@ -985,7 +985,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * campaign level.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.ExpandedDynamicSearchAdInfo expanded_dynamic_search_ad = 14 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\ExpandedDynamicSearchAdInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\ExpandedDynamicSearchAdInfo|null
      */
     public function getExpandedDynamicSearchAd()
     {
@@ -1020,7 +1020,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * Details pertaining to a hotel ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.HotelAdInfo hotel_ad = 15;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\HotelAdInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\HotelAdInfo|null
      */
     public function getHotelAd()
     {
@@ -1051,7 +1051,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * Details pertaining to a Smart Shopping ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.ShoppingSmartAdInfo shopping_smart_ad = 17;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\ShoppingSmartAdInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\ShoppingSmartAdInfo|null
      */
     public function getShoppingSmartAd()
     {
@@ -1082,7 +1082,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * Details pertaining to a Shopping product ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.ShoppingProductAdInfo shopping_product_ad = 18;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\ShoppingProductAdInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\ShoppingProductAdInfo|null
      */
     public function getShoppingProductAd()
     {
@@ -1113,7 +1113,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * Immutable. Details pertaining to a Gmail ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.GmailAdInfo gmail_ad = 21 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\GmailAdInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\GmailAdInfo|null
      */
     public function getGmailAd()
     {
@@ -1144,7 +1144,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * Immutable. Details pertaining to an Image ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.ImageAdInfo image_ad = 22 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\ImageAdInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\ImageAdInfo|null
      */
     public function getImageAd()
     {
@@ -1175,7 +1175,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * Details pertaining to a Video ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.VideoAdInfo video_ad = 24;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\VideoAdInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\VideoAdInfo|null
      */
     public function getVideoAd()
     {
@@ -1206,7 +1206,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * Details pertaining to a responsive search ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.ResponsiveSearchAdInfo responsive_search_ad = 25;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\ResponsiveSearchAdInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\ResponsiveSearchAdInfo|null
      */
     public function getResponsiveSearchAd()
     {
@@ -1237,7 +1237,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * Details pertaining to a legacy responsive display ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.LegacyResponsiveDisplayAdInfo legacy_responsive_display_ad = 28;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\LegacyResponsiveDisplayAdInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\LegacyResponsiveDisplayAdInfo|null
      */
     public function getLegacyResponsiveDisplayAd()
     {
@@ -1268,7 +1268,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * Details pertaining to an app ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.AppAdInfo app_ad = 29;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\AppAdInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\AppAdInfo|null
      */
     public function getAppAd()
     {
@@ -1299,7 +1299,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * Immutable. Details pertaining to a legacy app install ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.LegacyAppInstallAdInfo legacy_app_install_ad = 30 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\LegacyAppInstallAdInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\LegacyAppInstallAdInfo|null
      */
     public function getLegacyAppInstallAd()
     {
@@ -1330,7 +1330,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * Details pertaining to a responsive display ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.ResponsiveDisplayAdInfo responsive_display_ad = 31;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\ResponsiveDisplayAdInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\ResponsiveDisplayAdInfo|null
      */
     public function getResponsiveDisplayAd()
     {
@@ -1361,7 +1361,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * Details pertaining to a local ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.LocalAdInfo local_ad = 32;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\LocalAdInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\LocalAdInfo|null
      */
     public function getLocalAd()
     {
@@ -1392,7 +1392,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * Details pertaining to a display upload ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.DisplayUploadAdInfo display_upload_ad = 33;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\DisplayUploadAdInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\DisplayUploadAdInfo|null
      */
     public function getDisplayUploadAd()
     {
@@ -1423,7 +1423,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * Details pertaining to an app engagement ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.AppEngagementAdInfo app_engagement_ad = 34;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\AppEngagementAdInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\AppEngagementAdInfo|null
      */
     public function getAppEngagementAd()
     {
@@ -1454,7 +1454,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      * Details pertaining to a Shopping Comparison Listing ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.ShoppingComparisonListingAdInfo shopping_comparison_listing_ad = 36;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\ShoppingComparisonListingAdInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\ShoppingComparisonListingAdInfo|null
      */
     public function getShoppingComparisonListingAd()
     {

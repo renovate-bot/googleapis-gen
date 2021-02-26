@@ -50,7 +50,7 @@ class FeedAttributeOperand extends \Google\Protobuf\Internal\Message
      * The associated feed. Required.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value feed_id = 1;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getFeedId()
     {
@@ -113,7 +113,7 @@ class FeedAttributeOperand extends \Google\Protobuf\Internal\Message
      * Id of the referenced feed attribute. Required.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value feed_attribute_id = 2;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getFeedAttributeId()
     {

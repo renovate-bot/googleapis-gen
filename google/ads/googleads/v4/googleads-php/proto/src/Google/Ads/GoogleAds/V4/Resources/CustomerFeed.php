@@ -115,7 +115,7 @@ class CustomerFeed extends \Google\Protobuf\Internal\Message
      * Immutable. The feed being linked to the customer.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getFeed()
     {
@@ -208,7 +208,7 @@ class CustomerFeed extends \Google\Protobuf\Internal\Message
      * Required.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.MatchingFunction matching_function = 4;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\MatchingFunction
+     * @return \Google\Ads\GoogleAds\V4\Common\MatchingFunction|null
      */
     public function getMatchingFunction()
     {

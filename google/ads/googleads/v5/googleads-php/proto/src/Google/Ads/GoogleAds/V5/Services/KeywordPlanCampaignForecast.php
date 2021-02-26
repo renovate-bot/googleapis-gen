@@ -52,7 +52,7 @@ class KeywordPlanCampaignForecast extends \Google\Protobuf\Internal\Message
      * `customers/{customer_id}/keywordPlanCampaigns/{keyword_plan_campaign_id}`
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan_campaign = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getKeywordPlanCampaign()
     {
@@ -118,7 +118,7 @@ class KeywordPlanCampaignForecast extends \Google\Protobuf\Internal\Message
      * The forecast for the Keyword Plan campaign.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.services.ForecastMetrics campaign_forecast = 2;</code>
-     * @return \Google\Ads\GoogleAds\V5\Services\ForecastMetrics
+     * @return \Google\Ads\GoogleAds\V5\Services\ForecastMetrics|null
      */
     public function getCampaignForecast()
     {

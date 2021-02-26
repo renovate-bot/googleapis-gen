@@ -355,7 +355,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * A required long format headline. The maximum length is 90 characters.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.AdTextAsset long_headline = 6;</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\AdTextAsset
+     * @return \Google\Ads\GoogleAds\V5\Common\AdTextAsset|null
      */
     public function getLongHeadline()
     {

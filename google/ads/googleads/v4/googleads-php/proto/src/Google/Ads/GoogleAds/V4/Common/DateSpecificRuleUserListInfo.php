@@ -68,7 +68,7 @@ class DateSpecificRuleUserListInfo extends \Google\Protobuf\Internal\Message
      * Required for creating a date specific rule user list.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.UserListRuleInfo rule = 1;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\UserListRuleInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\UserListRuleInfo|null
      */
     public function getRule()
     {
@@ -107,7 +107,7 @@ class DateSpecificRuleUserListInfo extends \Google\Protobuf\Internal\Message
      * Required for creating a data specific rule user list.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getStartDate()
     {
@@ -178,7 +178,7 @@ class DateSpecificRuleUserListInfo extends \Google\Protobuf\Internal\Message
      * Required for creating a data specific rule user list.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getEndDate()
     {

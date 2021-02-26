@@ -41,7 +41,7 @@ class StreamStats extends \Google\Protobuf\Internal\Message
      * Represents the progress of the current stream.
      *
      * Generated from protobuf field <code>.google.cloud.bigquery.storage.v1beta2.StreamStats.Progress progress = 2;</code>
-     * @return \Google\Cloud\Bigquery\Storage\V1beta2\StreamStats\Progress
+     * @return \Google\Cloud\Bigquery\Storage\V1beta2\StreamStats\Progress|null
      */
     public function getProgress()
     {

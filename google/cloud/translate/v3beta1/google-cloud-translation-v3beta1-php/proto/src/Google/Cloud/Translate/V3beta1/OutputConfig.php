@@ -144,7 +144,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      * `gs://translation_test/a_b_c_'trg'_glossary_errors.[extension]`
      *
      * Generated from protobuf field <code>.google.cloud.translation.v3beta1.GcsDestination gcs_destination = 1;</code>
-     * @return \Google\Cloud\Translate\V3beta1\GcsDestination
+     * @return \Google\Cloud\Translate\V3beta1\GcsDestination|null
      */
     public function getGcsDestination()
     {

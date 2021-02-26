@@ -79,7 +79,7 @@ class CreateDatasetRequest extends \Google\Protobuf\Internal\Message
      * Required. The dataset to be created.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.Dataset dataset = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\Dataset
+     * @return \Google\Cloud\DataLabeling\V1beta1\Dataset|null
      */
     public function getDataset()
     {

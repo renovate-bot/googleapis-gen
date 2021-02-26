@@ -155,6 +155,20 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string operation = 1;</code>
+   * @return Whether the operation field is set.
+   */
+  public boolean hasOperation() {
+    return referenceCase_ == 1;
+  }
+  /**
+   * <pre>
+   * For API calls that return a long running operation.
+   * Resource name of the long running operation.
+   * Format:
+   * 'projects/{project}/locations/{location}/operations/{operation}'
+   * </pre>
+   *
+   * <code>string operation = 1;</code>
    * @return The operation.
    */
   public java.lang.String getOperation() {
@@ -205,6 +219,20 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DATA_LABELING_JOB_FIELD_NUMBER = 2;
+  /**
+   * <pre>
+   * For API calls that start a LabelingJob.
+   * Resource name of the LabelingJob.
+   * Format:
+   * 'projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}'
+   * </pre>
+   *
+   * <code>string data_labeling_job = 2;</code>
+   * @return Whether the dataLabelingJob field is set.
+   */
+  public boolean hasDataLabelingJob() {
+    return referenceCase_ == 2;
+  }
   /**
    * <pre>
    * For API calls that start a LabelingJob.
@@ -705,6 +733,21 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string operation = 1;</code>
+     * @return Whether the operation field is set.
+     */
+    @java.lang.Override
+    public boolean hasOperation() {
+      return referenceCase_ == 1;
+    }
+    /**
+     * <pre>
+     * For API calls that return a long running operation.
+     * Resource name of the long running operation.
+     * Format:
+     * 'projects/{project}/locations/{location}/operations/{operation}'
+     * </pre>
+     *
+     * <code>string operation = 1;</code>
      * @return The operation.
      */
     @java.lang.Override
@@ -820,6 +863,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * For API calls that start a LabelingJob.
+     * Resource name of the LabelingJob.
+     * Format:
+     * 'projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}'
+     * </pre>
+     *
+     * <code>string data_labeling_job = 2;</code>
+     * @return Whether the dataLabelingJob field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataLabelingJob() {
+      return referenceCase_ == 2;
+    }
     /**
      * <pre>
      * For API calls that start a LabelingJob.

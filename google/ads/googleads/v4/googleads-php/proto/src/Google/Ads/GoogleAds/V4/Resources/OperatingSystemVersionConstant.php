@@ -119,7 +119,7 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the operating system version.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -182,7 +182,7 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
      * Output only. Name of the operating system.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {
@@ -245,7 +245,7 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
      * Output only. The OS Major Version number.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value os_major_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int32Value
+     * @return \Google\Protobuf\Int32Value|null
      */
     public function getOsMajorVersion()
     {
@@ -308,7 +308,7 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
      * Output only. The OS Minor Version number.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value os_minor_version = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int32Value
+     * @return \Google\Protobuf\Int32Value|null
      */
     public function getOsMinorVersion()
     {

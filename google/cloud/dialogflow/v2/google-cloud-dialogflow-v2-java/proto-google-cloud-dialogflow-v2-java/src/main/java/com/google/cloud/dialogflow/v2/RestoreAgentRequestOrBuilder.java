@@ -36,6 +36,16 @@ public interface RestoreAgentRequestOrBuilder extends
    * </pre>
    *
    * <code>string agent_uri = 2;</code>
+   * @return Whether the agentUri field is set.
+   */
+  boolean hasAgentUri();
+  /**
+   * <pre>
+   * The URI to a Google Cloud Storage file containing the agent to restore.
+   * Note: The URI must start with "gs://".
+   * </pre>
+   *
+   * <code>string agent_uri = 2;</code>
    * @return The agentUri.
    */
   java.lang.String getAgentUri();
@@ -51,6 +61,15 @@ public interface RestoreAgentRequestOrBuilder extends
   com.google.protobuf.ByteString
       getAgentUriBytes();
 
+  /**
+   * <pre>
+   * Zip compressed raw byte content for agent.
+   * </pre>
+   *
+   * <code>bytes agent_content = 3;</code>
+   * @return Whether the agentContent field is set.
+   */
+  boolean hasAgentContent();
   /**
    * <pre>
    * Zip compressed raw byte content for agent.

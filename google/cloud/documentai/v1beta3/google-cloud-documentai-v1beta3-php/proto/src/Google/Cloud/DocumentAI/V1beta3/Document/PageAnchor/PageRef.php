@@ -32,6 +32,7 @@ class PageRef extends \Google\Protobuf\Internal\Message
      * Optional. Deprecated.  Use [PageRef.bounding_poly][google.cloud.documentai.v1beta3.Document.PageAnchor.PageRef.bounding_poly] instead.
      *
      * Generated from protobuf field <code>string layout_id = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
+     * @deprecated
      */
     protected $layout_id = '';
     /**
@@ -122,9 +123,11 @@ class PageRef extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string layout_id = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      * @return string
+     * @deprecated
      */
     public function getLayoutId()
     {
+        @trigger_error('layout_id is deprecated.', E_USER_DEPRECATED);
         return $this->layout_id;
     }
 
@@ -134,9 +137,11 @@ class PageRef extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string layout_id = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setLayoutId($var)
     {
+        @trigger_error('layout_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->layout_id = $var;
 
@@ -147,7 +152,7 @@ class PageRef extends \Google\Protobuf\Internal\Message
      * Optional. Identifies the bounding polygon of a layout element on the page.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.BoundingPoly bounding_poly = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\DocumentAI\V1beta3\BoundingPoly
+     * @return \Google\Cloud\DocumentAI\V1beta3\BoundingPoly|null
      */
     public function getBoundingPoly()
     {

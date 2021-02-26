@@ -49,7 +49,7 @@ class DateRange extends \Google\Protobuf\Internal\Message
      * The start date, in yyyy-mm-dd format. This date is inclusive.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getStartDate()
     {
@@ -112,7 +112,7 @@ class DateRange extends \Google\Protobuf\Internal\Message
      * The end date, in yyyy-mm-dd format. This date is inclusive.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getEndDate()
     {

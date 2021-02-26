@@ -107,7 +107,7 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
      * The Google click ID (gclid) associated with this conversion.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue gclid = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getGclid()
     {
@@ -173,7 +173,7 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
      * conversion action id as the sole identifier of the conversion action.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getConversionAction()
     {
@@ -247,7 +247,7 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
      * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. “2019-01-01 12:32:45-08:00”.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_date_time = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getConversionDateTime()
     {
@@ -316,7 +316,7 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
      * The value of the conversion for the advertiser.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversion_value = 4;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getConversionValue()
     {
@@ -380,7 +380,7 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
      * 3-character currency code. For example: USD, EUR.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 5;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCurrencyCode()
     {
@@ -447,7 +447,7 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
      * for one conversion per conversion action.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue order_id = 6;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getOrderId()
     {
@@ -515,7 +515,7 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
      * action, but should not be set otherwise.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.ExternalAttributionData external_attribution_data = 7;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\ExternalAttributionData
+     * @return \Google\Ads\GoogleAds\V4\Services\ExternalAttributionData|null
      */
     public function getExternalAttributionData()
     {

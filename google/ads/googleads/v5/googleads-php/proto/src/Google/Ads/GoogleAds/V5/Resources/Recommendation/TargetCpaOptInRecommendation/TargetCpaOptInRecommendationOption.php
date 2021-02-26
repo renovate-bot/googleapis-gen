@@ -97,7 +97,7 @@ class TargetCpaOptInRecommendationOption extends \Google\Protobuf\Internal\Messa
      * Output only. Average CPA target.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpa_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getTargetCpaMicros()
     {
@@ -163,7 +163,7 @@ class TargetCpaOptInRecommendationOption extends \Google\Protobuf\Internal\Messa
      * currency unit.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value required_campaign_budget_amount_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getRequiredCampaignBudgetAmountMicros()
     {
@@ -235,7 +235,7 @@ class TargetCpaOptInRecommendationOption extends \Google\Protobuf\Internal\Messa
      * Output only. The impact estimate if this option is selected.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.resources.Recommendation.RecommendationImpact impact = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V5\Resources\Recommendation\RecommendationImpact
+     * @return \Google\Ads\GoogleAds\V5\Resources\Recommendation\RecommendationImpact|null
      */
     public function getImpact()
     {

@@ -203,7 +203,7 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -269,7 +269,7 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
      * Immutable. The campaign draft with staged changes to the base campaign.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign_draft = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCampaignDraft()
     {
@@ -337,7 +337,7 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
      * (code point 0xA) or carriage return (code point 0xD) characters.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {
@@ -415,7 +415,7 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
      * The description of the experiment.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 5;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDescription()
     {
@@ -480,7 +480,7 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
      * (100 - traffic_split_percent). Required for create.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value traffic_split_percent = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getTrafficSplitPercent()
     {
@@ -575,7 +575,7 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
      * Output only. The experiment campaign, as opposed to the base campaign.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue experiment_campaign = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getExperimentCampaign()
     {
@@ -666,7 +666,7 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
      * running operation is returned.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getLongRunningOperation()
     {
@@ -740,7 +740,7 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
      * Example: 2019-03-14
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 11;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getStartDate()
     {
@@ -822,7 +822,7 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
      * Example: 2019-04-18
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 12;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getEndDate()
     {

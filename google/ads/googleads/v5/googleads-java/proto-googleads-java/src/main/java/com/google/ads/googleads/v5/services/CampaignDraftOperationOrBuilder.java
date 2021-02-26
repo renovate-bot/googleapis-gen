@@ -102,6 +102,17 @@ public interface CampaignDraftOperationOrBuilder extends
    * </pre>
    *
    * <code>string remove = 3;</code>
+   * @return Whether the remove field is set.
+   */
+  boolean hasRemove();
+  /**
+   * <pre>
+   * Remove operation: The campaign draft is expected to have a valid
+   * resource name, in this format:
+   * `customers/{customer_id}/campaignDrafts/{base_campaign_id}~{draft_id}`
+   * </pre>
+   *
+   * <code>string remove = 3;</code>
    * @return The remove.
    */
   java.lang.String getRemove();

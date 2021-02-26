@@ -171,7 +171,7 @@ class Trial extends \Google\Protobuf\Internal\Message
      * Output only. The final measurement containing the objective value.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.Measurement final_measurement = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\Measurement
+     * @return \Google\Cloud\Aiplatform\V1beta1\Measurement|null
      */
     public function getFinalMeasurement()
     {
@@ -207,7 +207,7 @@ class Trial extends \Google\Protobuf\Internal\Message
      * Output only. Time when the Trial was started.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartTime()
     {
@@ -243,7 +243,7 @@ class Trial extends \Google\Protobuf\Internal\Message
      * Output only. Time when the Trial's status changed to `SUCCEEDED` or `INFEASIBLE`.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getEndTime()
     {

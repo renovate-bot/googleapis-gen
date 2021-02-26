@@ -49,7 +49,7 @@ class StreamPosition extends \Google\Protobuf\Internal\Message
      * Identifier for a given Stream.
      *
      * Generated from protobuf field <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 1;</code>
-     * @return \Google\Cloud\Bigquery\Storage\V1beta1\Stream
+     * @return \Google\Cloud\Bigquery\Storage\V1beta1\Stream|null
      */
     public function getStream()
     {

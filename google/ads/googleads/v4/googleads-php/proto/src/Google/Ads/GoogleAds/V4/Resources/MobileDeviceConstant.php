@@ -115,7 +115,7 @@ class MobileDeviceConstant extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the mobile device constant.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -178,7 +178,7 @@ class MobileDeviceConstant extends \Google\Protobuf\Internal\Message
      * Output only. The name of the mobile device.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {
@@ -241,7 +241,7 @@ class MobileDeviceConstant extends \Google\Protobuf\Internal\Message
      * Output only. The manufacturer of the mobile device.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue manufacturer_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getManufacturerName()
     {
@@ -304,7 +304,7 @@ class MobileDeviceConstant extends \Google\Protobuf\Internal\Message
      * Output only. The operating system of the mobile device.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue operating_system_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getOperatingSystemName()
     {

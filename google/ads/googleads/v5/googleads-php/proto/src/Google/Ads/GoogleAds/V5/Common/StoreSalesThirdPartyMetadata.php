@@ -108,7 +108,7 @@ class StoreSalesThirdPartyMetadata extends \Google\Protobuf\Internal\Message
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue advertiser_upload_date_time = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAdvertiserUploadDateTime()
     {
@@ -180,7 +180,7 @@ class StoreSalesThirdPartyMetadata extends \Google\Protobuf\Internal\Message
      * The fraction needs to be between 0 and 1 (excluding 0).
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue valid_transaction_fraction = 2;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getValidTransactionFraction()
     {
@@ -255,7 +255,7 @@ class StoreSalesThirdPartyMetadata extends \Google\Protobuf\Internal\Message
      * The fraction needs to be between 0 and 1 (excluding 0).
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue partner_match_fraction = 3;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getPartnerMatchFraction()
     {
@@ -330,7 +330,7 @@ class StoreSalesThirdPartyMetadata extends \Google\Protobuf\Internal\Message
      * The fraction needs to be between 0 and 1 (excluding 0).
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue partner_upload_fraction = 4;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getPartnerUploadFraction()
     {
@@ -402,7 +402,7 @@ class StoreSalesThirdPartyMetadata extends \Google\Protobuf\Internal\Message
      * Version of partner IDs to be used for uploads. Required.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue bridge_map_version_id = 5;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getBridgeMapVersionId()
     {
@@ -465,7 +465,7 @@ class StoreSalesThirdPartyMetadata extends \Google\Protobuf\Internal\Message
      * ID of the third party partner updating the transaction feed.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value partner_id = 6;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getPartnerId()
     {

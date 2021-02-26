@@ -73,7 +73,7 @@ class Page extends \Google\Protobuf\Internal\Message
      * Additional information detected on the page.
      *
      * Generated from protobuf field <code>.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty property = 1;</code>
-     * @return \Google\Cloud\Vision\V1p1beta1\TextAnnotation\TextProperty
+     * @return \Google\Cloud\Vision\V1p1beta1\TextAnnotation\TextProperty|null
      */
     public function getProperty()
     {

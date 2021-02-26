@@ -86,7 +86,7 @@ class CreateProfileRequest extends \Google\Protobuf\Internal\Message
      * Deployment details.
      *
      * Generated from protobuf field <code>.google.devtools.cloudprofiler.v2.Deployment deployment = 1;</code>
-     * @return \Google\Cloud\Profiler\V2\Deployment
+     * @return \Google\Cloud\Profiler\V2\Deployment|null
      */
     public function getDeployment()
     {

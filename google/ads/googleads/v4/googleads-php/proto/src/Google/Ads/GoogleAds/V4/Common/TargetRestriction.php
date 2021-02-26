@@ -93,7 +93,7 @@ class TargetRestriction extends \Google\Protobuf\Internal\Message
      * modifiers.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue bid_only = 2;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getBidOnly()
     {

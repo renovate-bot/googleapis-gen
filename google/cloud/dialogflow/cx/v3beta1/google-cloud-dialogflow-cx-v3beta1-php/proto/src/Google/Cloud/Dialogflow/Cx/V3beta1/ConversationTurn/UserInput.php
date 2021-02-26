@@ -66,7 +66,7 @@ class UserInput extends \Google\Protobuf\Internal\Message
      * [dtmf input][google.cloud.dialogflow.cx.v3beta1.QueryInput.dtmf] in the test case.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.QueryInput input = 5;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\QueryInput
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\QueryInput|null
      */
     public function getInput()
     {
@@ -104,7 +104,7 @@ class UserInput extends \Google\Protobuf\Internal\Message
      * detection.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct injected_parameters = 2;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getInjectedParameters()
     {

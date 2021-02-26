@@ -21,6 +21,7 @@ class GetServerConfigRequest extends \Google\Protobuf\Internal\Message
      * This field has been deprecated and replaced by the name field.
      *
      * Generated from protobuf field <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     * @deprecated
      */
     protected $project_id = '';
     /**
@@ -30,6 +31,7 @@ class GetServerConfigRequest extends \Google\Protobuf\Internal\Message
      * field.
      *
      * Generated from protobuf field <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     * @deprecated
      */
     protected $zone = '';
     /**
@@ -72,9 +74,11 @@ class GetServerConfigRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      * @return string
+     * @deprecated
      */
     public function getProjectId()
     {
+        @trigger_error('project_id is deprecated.', E_USER_DEPRECATED);
         return $this->project_id;
     }
 
@@ -86,9 +90,11 @@ class GetServerConfigRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setProjectId($var)
     {
+        @trigger_error('project_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->project_id = $var;
 
@@ -103,9 +109,11 @@ class GetServerConfigRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      * @return string
+     * @deprecated
      */
     public function getZone()
     {
+        @trigger_error('zone is deprecated.', E_USER_DEPRECATED);
         return $this->zone;
     }
 
@@ -118,9 +126,11 @@ class GetServerConfigRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setZone($var)
     {
+        @trigger_error('zone is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->zone = $var;
 

@@ -59,7 +59,7 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
      * The Google Click ID (gclid) associated with this conversion.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue gclid = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getGclid()
     {
@@ -122,7 +122,7 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
      * Resource name of the conversion action associated with this conversion.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getConversionAction()
     {
@@ -186,7 +186,7 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
      * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. “2019-01-01 12:32:45-08:00”.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_date_time = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getConversionDateTime()
     {

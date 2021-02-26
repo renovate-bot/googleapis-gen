@@ -283,7 +283,7 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      * among different campaigns to get optimum results.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -364,7 +364,7 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      * in UTF-8 bytes, (trimmed).
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {
@@ -447,7 +447,7 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      * currency unit. Monthly spend is capped at 30.4 times this amount.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value amount_micros = 5;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getAmountMicros()
     {
@@ -518,7 +518,7 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      * currency unit.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value total_amount_micros = 10;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getTotalAmountMicros()
     {
@@ -653,7 +653,7 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      * A shared campaign budget can never become non-shared.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue explicitly_shared = 8;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getExplicitlyShared()
     {
@@ -747,7 +747,7 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value reference_count = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getReferenceCount()
     {
@@ -814,7 +814,7 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue has_recommended_budget = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getHasRecommendedBudget()
     {
@@ -884,7 +884,7 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getRecommendedBudgetAmountMicros()
     {
@@ -986,7 +986,7 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_clicks = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getRecommendedBudgetEstimatedChangeWeeklyClicks()
     {
@@ -1054,7 +1054,7 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_cost_micros = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getRecommendedBudgetEstimatedChangeWeeklyCostMicros()
     {
@@ -1125,7 +1125,7 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_interactions = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getRecommendedBudgetEstimatedChangeWeeklyInteractions()
     {
@@ -1195,7 +1195,7 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_views = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getRecommendedBudgetEstimatedChangeWeeklyViews()
     {

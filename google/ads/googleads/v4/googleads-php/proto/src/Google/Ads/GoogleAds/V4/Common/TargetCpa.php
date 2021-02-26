@@ -68,7 +68,7 @@ class TargetCpa extends \Google\Protobuf\Internal\Message
      * on the currency for the account.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpa_micros = 1;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getTargetCpaMicros()
     {
@@ -138,7 +138,7 @@ class TargetCpa extends \Google\Protobuf\Internal\Message
      * The limit applies to all keywords managed by the strategy.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_ceiling_micros = 2;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCpcBidCeilingMicros()
     {
@@ -205,7 +205,7 @@ class TargetCpa extends \Google\Protobuf\Internal\Message
      * The limit applies to all keywords managed by the strategy.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_floor_micros = 3;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCpcBidFloorMicros()
     {

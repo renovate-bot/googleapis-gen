@@ -93,7 +93,7 @@ class AddressInfo extends \Google\Protobuf\Internal\Message
      * Postal code.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue postal_code = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPostalCode()
     {
@@ -156,7 +156,7 @@ class AddressInfo extends \Google\Protobuf\Internal\Message
      * Province or state code.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue province_code = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getProvinceCode()
     {
@@ -219,7 +219,7 @@ class AddressInfo extends \Google\Protobuf\Internal\Message
      * Country code.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCountryCode()
     {
@@ -282,7 +282,7 @@ class AddressInfo extends \Google\Protobuf\Internal\Message
      * Province or state name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue province_name = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getProvinceName()
     {
@@ -345,7 +345,7 @@ class AddressInfo extends \Google\Protobuf\Internal\Message
      * Street address line 1.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue street_address = 5;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getStreetAddress()
     {
@@ -410,7 +410,7 @@ class AddressInfo extends \Google\Protobuf\Internal\Message
      * empty.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue street_address2 = 6;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getStreetAddress2()
     {
@@ -479,7 +479,7 @@ class AddressInfo extends \Google\Protobuf\Internal\Message
      * Name of the city.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue city_name = 7;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCityName()
     {

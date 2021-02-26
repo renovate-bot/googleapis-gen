@@ -40,7 +40,7 @@ class Animation extends \Google\Protobuf\Internal\Message
      * Display static overlay object.
      *
      * Generated from protobuf field <code>.google.cloud.video.transcoder.v1beta1.Overlay.AnimationStatic animation_static = 1;</code>
-     * @return \Google\Cloud\Video\Transcoder\V1beta1\Overlay\AnimationStatic
+     * @return \Google\Cloud\Video\Transcoder\V1beta1\Overlay\AnimationStatic|null
      */
     public function getAnimationStatic()
     {
@@ -71,7 +71,7 @@ class Animation extends \Google\Protobuf\Internal\Message
      * Display overlay object with fade animation.
      *
      * Generated from protobuf field <code>.google.cloud.video.transcoder.v1beta1.Overlay.AnimationFade animation_fade = 2;</code>
-     * @return \Google\Cloud\Video\Transcoder\V1beta1\Overlay\AnimationFade
+     * @return \Google\Cloud\Video\Transcoder\V1beta1\Overlay\AnimationFade|null
      */
     public function getAnimationFade()
     {
@@ -102,7 +102,7 @@ class Animation extends \Google\Protobuf\Internal\Message
      * End previous animation.
      *
      * Generated from protobuf field <code>.google.cloud.video.transcoder.v1beta1.Overlay.AnimationEnd animation_end = 3;</code>
-     * @return \Google\Cloud\Video\Transcoder\V1beta1\Overlay\AnimationEnd
+     * @return \Google\Cloud\Video\Transcoder\V1beta1\Overlay\AnimationEnd|null
      */
     public function getAnimationEnd()
     {

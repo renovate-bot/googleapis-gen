@@ -134,7 +134,7 @@ class SharedSet extends \Google\Protobuf\Internal\Message
      * Output only. The ID of this shared set. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -229,7 +229,7 @@ class SharedSet extends \Google\Protobuf\Internal\Message
      * inclusive.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {
@@ -330,7 +330,7 @@ class SharedSet extends \Google\Protobuf\Internal\Message
      * Output only. The number of shared criteria within this shared set. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value member_count = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getMemberCount()
     {
@@ -393,7 +393,7 @@ class SharedSet extends \Google\Protobuf\Internal\Message
      * Output only. The number of campaigns associated with this shared set. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value reference_count = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getReferenceCount()
     {

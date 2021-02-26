@@ -42,6 +42,17 @@ public interface AccountLinkOperationOrBuilder extends
    * </pre>
    *
    * <code>string remove = 3;</code>
+   * @return Whether the remove field is set.
+   */
+  boolean hasRemove();
+  /**
+   * <pre>
+   * Remove operation: A resource name for the account link to remove is
+   * expected, in this format:
+   * `customers/{customer_id}/accountLinks/{account_link_id}`
+   * </pre>
+   *
+   * <code>string remove = 3;</code>
    * @return The remove.
    */
   java.lang.String getRemove();

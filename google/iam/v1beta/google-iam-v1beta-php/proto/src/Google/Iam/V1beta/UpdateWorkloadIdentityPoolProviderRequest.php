@@ -49,7 +49,7 @@ class UpdateWorkloadIdentityPoolProviderRequest extends \Google\Protobuf\Interna
      * Required. The provider to update.
      *
      * Generated from protobuf field <code>.google.iam.v1beta.WorkloadIdentityPoolProvider workload_identity_pool_provider = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Iam\V1beta\WorkloadIdentityPoolProvider
+     * @return \Google\Iam\V1beta\WorkloadIdentityPoolProvider|null
      */
     public function getWorkloadIdentityPoolProvider()
     {
@@ -85,7 +85,7 @@ class UpdateWorkloadIdentityPoolProviderRequest extends \Google\Protobuf\Interna
      * Required. The list of fields to update.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

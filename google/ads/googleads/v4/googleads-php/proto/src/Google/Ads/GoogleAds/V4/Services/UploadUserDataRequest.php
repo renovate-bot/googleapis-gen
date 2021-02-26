@@ -104,7 +104,7 @@ class UploadUserDataRequest extends \Google\Protobuf\Internal\Message
      * Metadata for data updates to a Customer Match user list.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.CustomerMatchUserListMetadata customer_match_user_list_metadata = 2;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\CustomerMatchUserListMetadata
+     * @return \Google\Ads\GoogleAds\V4\Common\CustomerMatchUserListMetadata|null
      */
     public function getCustomerMatchUserListMetadata()
     {

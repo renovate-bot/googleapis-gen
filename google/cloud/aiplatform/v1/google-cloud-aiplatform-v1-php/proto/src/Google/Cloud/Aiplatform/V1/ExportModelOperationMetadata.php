@@ -49,7 +49,7 @@ class ExportModelOperationMetadata extends \Google\Protobuf\Internal\Message
      * The common part of the operation metadata.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.GenericOperationMetadata generic_metadata = 1;</code>
-     * @return \Google\Cloud\Aiplatform\V1\GenericOperationMetadata
+     * @return \Google\Cloud\Aiplatform\V1\GenericOperationMetadata|null
      */
     public function getGenericMetadata()
     {
@@ -85,7 +85,7 @@ class ExportModelOperationMetadata extends \Google\Protobuf\Internal\Message
      * Output only. Information further describing the output of this Model export.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.ExportModelOperationMetadata.OutputInfo output_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Cloud\Aiplatform\V1\ExportModelOperationMetadata\OutputInfo
+     * @return \Google\Cloud\Aiplatform\V1\ExportModelOperationMetadata\OutputInfo|null
      */
     public function getOutputInfo()
     {

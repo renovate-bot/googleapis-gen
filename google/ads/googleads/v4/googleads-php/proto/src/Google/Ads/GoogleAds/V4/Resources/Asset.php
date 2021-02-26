@@ -111,7 +111,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the asset.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -174,7 +174,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      * Optional name of the asset.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {
@@ -263,7 +263,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      * Immutable. A YouTube video asset.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.YoutubeVideoAsset youtube_video_asset = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\YoutubeVideoAsset
+     * @return \Google\Ads\GoogleAds\V4\Common\YoutubeVideoAsset|null
      */
     public function getYoutubeVideoAsset()
     {
@@ -294,7 +294,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      * Immutable. A media bundle asset.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.MediaBundleAsset media_bundle_asset = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\MediaBundleAsset
+     * @return \Google\Ads\GoogleAds\V4\Common\MediaBundleAsset|null
      */
     public function getMediaBundleAsset()
     {
@@ -325,7 +325,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      * Output only. An image asset.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.ImageAsset image_asset = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\ImageAsset
+     * @return \Google\Ads\GoogleAds\V4\Common\ImageAsset|null
      */
     public function getImageAsset()
     {
@@ -356,7 +356,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      * Output only. A text asset.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.TextAsset text_asset = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\TextAsset
+     * @return \Google\Ads\GoogleAds\V4\Common\TextAsset|null
      */
     public function getTextAsset()
     {
@@ -387,7 +387,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      * A book on google asset.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.BookOnGoogleAsset book_on_google_asset = 10;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\BookOnGoogleAsset
+     * @return \Google\Ads\GoogleAds\V4\Common\BookOnGoogleAsset|null
      */
     public function getBookOnGoogleAsset()
     {

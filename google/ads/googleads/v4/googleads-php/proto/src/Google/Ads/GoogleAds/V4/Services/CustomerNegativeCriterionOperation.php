@@ -40,7 +40,7 @@ class CustomerNegativeCriterionOperation extends \Google\Protobuf\Internal\Messa
      * Create operation: No resource name is expected for the new criterion.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.CustomerNegativeCriterion create = 1;</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\CustomerNegativeCriterion
+     * @return \Google\Ads\GoogleAds\V4\Resources\CustomerNegativeCriterion|null
      */
     public function getCreate()
     {

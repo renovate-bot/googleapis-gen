@@ -204,6 +204,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string revision_id = 2;</code>
+   * @return Whether the revisionId field is set.
+   */
+  public boolean hasRevisionId() {
+    return revisionCase_ == 2;
+  }
+  /**
+   * <pre>
+   * A revision ID.
+   * </pre>
+   *
+   * <code>string revision_id = 2;</code>
    * @return The revisionId.
    */
   public java.lang.String getRevisionId() {
@@ -849,6 +860,18 @@ private static final long serialVersionUID = 0L;
       return repoIdBuilder_;
     }
 
+    /**
+     * <pre>
+     * A revision ID.
+     * </pre>
+     *
+     * <code>string revision_id = 2;</code>
+     * @return Whether the revisionId field is set.
+     */
+    @java.lang.Override
+    public boolean hasRevisionId() {
+      return revisionCase_ == 2;
+    }
     /**
      * <pre>
      * A revision ID.

@@ -41,7 +41,7 @@ class HotelClassInfo extends \Google\Protobuf\Internal\Message
      * Long value of the hotel class.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value value = 1;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getValue()
     {

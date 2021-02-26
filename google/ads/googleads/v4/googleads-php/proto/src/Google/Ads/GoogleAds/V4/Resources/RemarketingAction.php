@@ -105,7 +105,7 @@ class RemarketingAction extends \Google\Protobuf\Internal\Message
      * Output only. Id of the remarketing action.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -170,7 +170,7 @@ class RemarketingAction extends \Google\Protobuf\Internal\Message
      * remarketing actions.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {

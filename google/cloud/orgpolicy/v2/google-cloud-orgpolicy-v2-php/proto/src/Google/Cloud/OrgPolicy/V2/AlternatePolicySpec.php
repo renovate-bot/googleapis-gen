@@ -84,7 +84,7 @@ class AlternatePolicySpec extends \Google\Protobuf\Internal\Message
      * Specify `Constraint` for configurations of Cloud Platform resources.
      *
      * Generated from protobuf field <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
-     * @return \Google\Cloud\OrgPolicy\V2\PolicySpec
+     * @return \Google\Cloud\OrgPolicy\V2\PolicySpec|null
      */
     public function getSpec()
     {

@@ -44,6 +44,7 @@ class IndividualProcessStatus extends \Google\Protobuf\Internal\Message
      * returned by ReviewDocument method.
      *
      * Generated from protobuf field <code>string human_review_operation = 4 [deprecated = true];</code>
+     * @deprecated
      */
     protected $human_review_operation = '';
     /**
@@ -119,7 +120,7 @@ class IndividualProcessStatus extends \Google\Protobuf\Internal\Message
      * The status of the processing of the document.
      *
      * Generated from protobuf field <code>.google.rpc.Status status = 2;</code>
-     * @return \Google\Rpc\Status
+     * @return \Google\Rpc\Status|null
      */
     public function getStatus()
     {
@@ -187,9 +188,11 @@ class IndividualProcessStatus extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string human_review_operation = 4 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getHumanReviewOperation()
     {
+        @trigger_error('human_review_operation is deprecated.', E_USER_DEPRECATED);
         return $this->human_review_operation;
     }
 
@@ -202,9 +205,11 @@ class IndividualProcessStatus extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string human_review_operation = 4 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setHumanReviewOperation($var)
     {
+        @trigger_error('human_review_operation is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->human_review_operation = $var;
 
@@ -215,7 +220,7 @@ class IndividualProcessStatus extends \Google\Protobuf\Internal\Message
      * The status of human review on the processed document.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.HumanReviewStatus human_review_status = 5;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta3\HumanReviewStatus
+     * @return \Google\Cloud\DocumentAI\V1beta3\HumanReviewStatus|null
      */
     public function getHumanReviewStatus()
     {

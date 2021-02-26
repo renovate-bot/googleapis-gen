@@ -98,7 +98,7 @@ class CreateExclusionRequest extends \Google\Protobuf\Internal\Message
      * that is not already used in the parent resource.
      *
      * Generated from protobuf field <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Logging\V2\LogExclusion
+     * @return \Google\Cloud\Logging\V2\LogExclusion|null
      */
     public function getExclusion()
     {

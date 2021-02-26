@@ -107,7 +107,7 @@ class Video extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the video.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getId()
     {
@@ -170,7 +170,7 @@ class Video extends \Google\Protobuf\Internal\Message
      * Output only. The owner channel id of the video.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue channel_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getChannelId()
     {
@@ -233,7 +233,7 @@ class Video extends \Google\Protobuf\Internal\Message
      * Output only. The duration of the video in milliseconds.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value duration_millis = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getDurationMillis()
     {
@@ -296,7 +296,7 @@ class Video extends \Google\Protobuf\Internal\Message
      * Output only. The title of the video.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue title = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getTitle()
     {

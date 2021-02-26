@@ -65,7 +65,7 @@ class ProductBiddingCategoryInfo extends \Google\Protobuf\Internal\Message
      * this article: https://support.google.com/merchants/answer/6324436
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -135,7 +135,7 @@ class ProductBiddingCategoryInfo extends \Google\Protobuf\Internal\Message
      * match the campaign.shopping_setting.sales_country field.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCountryCode()
     {

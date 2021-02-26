@@ -113,7 +113,7 @@ class CreateNoteRequest extends \Google\Protobuf\Internal\Message
      * The note to create.
      *
      * Generated from protobuf field <code>.grafeas.v1.Note note = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Grafeas\V1\Note
+     * @return \Grafeas\V1\Note|null
      */
     public function getNote()
     {

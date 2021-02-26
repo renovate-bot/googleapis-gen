@@ -175,7 +175,7 @@ class Page extends \Google\Protobuf\Internal\Message
      * Physical dimension of the page.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta1.Document.Page.Dimension dimension = 2;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta1\Document\Page\Dimension
+     * @return \Google\Cloud\DocumentAI\V1beta1\Document\Page\Dimension|null
      */
     public function getDimension()
     {
@@ -212,7 +212,7 @@ class Page extends \Google\Protobuf\Internal\Message
      * page.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta1.Document.Page.Layout layout = 3;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta1\Document\Page\Layout
+     * @return \Google\Cloud\DocumentAI\V1beta1\Document\Page\Layout|null
      */
     public function getLayout()
     {

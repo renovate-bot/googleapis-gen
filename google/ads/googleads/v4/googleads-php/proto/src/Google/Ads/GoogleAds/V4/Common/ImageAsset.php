@@ -65,7 +65,7 @@ class ImageAsset extends \Google\Protobuf\Internal\Message
      * The raw bytes data of an image. This field is mutate only.
      *
      * Generated from protobuf field <code>.google.protobuf.BytesValue data = 1;</code>
-     * @return \Google\Protobuf\BytesValue
+     * @return \Google\Protobuf\BytesValue|null
      */
     public function getData()
     {
@@ -128,7 +128,7 @@ class ImageAsset extends \Google\Protobuf\Internal\Message
      * File size of the image asset in bytes.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value file_size = 2;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getFileSize()
     {
@@ -217,7 +217,7 @@ class ImageAsset extends \Google\Protobuf\Internal\Message
      * Metadata for this image at its original size.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.ImageDimension full_size = 4;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\ImageDimension
+     * @return \Google\Ads\GoogleAds\V4\Common\ImageDimension|null
      */
     public function getFullSize()
     {

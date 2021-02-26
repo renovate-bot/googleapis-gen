@@ -28,6 +28,7 @@ class Operation extends \Google\Protobuf\Internal\Message
      * operation is taking place. This field is deprecated, use location instead.
      *
      * Generated from protobuf field <code>string zone = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $zone = '';
     /**
@@ -53,6 +54,7 @@ class Operation extends \Google\Protobuf\Internal\Message
      * Deprecated. Use field error instead.
      *
      * Generated from protobuf field <code>string status_message = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @deprecated
      */
     protected $status_message = '';
     /**
@@ -102,6 +104,7 @@ class Operation extends \Google\Protobuf\Internal\Message
      * Deprecated. Use field error instead.
      *
      * Generated from protobuf field <code>repeated .google.container.v1beta1.StatusCondition cluster_conditions = 13 [deprecated = true];</code>
+     * @deprecated
      */
     private $cluster_conditions;
     /**
@@ -109,6 +112,7 @@ class Operation extends \Google\Protobuf\Internal\Message
      * Deprecated. Use field error instead.
      *
      * Generated from protobuf field <code>repeated .google.container.v1beta1.StatusCondition nodepool_conditions = 14 [deprecated = true];</code>
+     * @deprecated
      */
     private $nodepool_conditions;
     /**
@@ -205,9 +209,11 @@ class Operation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string zone = 2 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getZone()
     {
+        @trigger_error('zone is deprecated.', E_USER_DEPRECATED);
         return $this->zone;
     }
 
@@ -219,9 +225,11 @@ class Operation extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string zone = 2 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setZone($var)
     {
+        @trigger_error('zone is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->zone = $var;
 
@@ -312,9 +320,11 @@ class Operation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string status_message = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
+     * @deprecated
      */
     public function getStatusMessage()
     {
+        @trigger_error('status_message is deprecated.', E_USER_DEPRECATED);
         return $this->status_message;
     }
 
@@ -325,9 +335,11 @@ class Operation extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string status_message = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setStatusMessage($var)
     {
+        @trigger_error('status_message is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->status_message = $var;
 
@@ -480,7 +492,7 @@ class Operation extends \Google\Protobuf\Internal\Message
      * Output only. [Output only] Progress information for an operation.
      *
      * Generated from protobuf field <code>.google.container.v1beta1.OperationProgress progress = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Cloud\Container\V1beta1\OperationProgress
+     * @return \Google\Cloud\Container\V1beta1\OperationProgress|null
      */
     public function getProgress()
     {
@@ -518,9 +530,11 @@ class Operation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>repeated .google.container.v1beta1.StatusCondition cluster_conditions = 13 [deprecated = true];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
+     * @deprecated
      */
     public function getClusterConditions()
     {
+        @trigger_error('cluster_conditions is deprecated.', E_USER_DEPRECATED);
         return $this->cluster_conditions;
     }
 
@@ -531,9 +545,11 @@ class Operation extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .google.container.v1beta1.StatusCondition cluster_conditions = 13 [deprecated = true];</code>
      * @param \Google\Cloud\Container\V1beta1\StatusCondition[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
+     * @deprecated
      */
     public function setClusterConditions($var)
     {
+        @trigger_error('cluster_conditions is deprecated.', E_USER_DEPRECATED);
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Cloud\Container\V1beta1\StatusCondition::class);
         $this->cluster_conditions = $arr;
 
@@ -546,9 +562,11 @@ class Operation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>repeated .google.container.v1beta1.StatusCondition nodepool_conditions = 14 [deprecated = true];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
+     * @deprecated
      */
     public function getNodepoolConditions()
     {
+        @trigger_error('nodepool_conditions is deprecated.', E_USER_DEPRECATED);
         return $this->nodepool_conditions;
     }
 
@@ -559,9 +577,11 @@ class Operation extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .google.container.v1beta1.StatusCondition nodepool_conditions = 14 [deprecated = true];</code>
      * @param \Google\Cloud\Container\V1beta1\StatusCondition[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
+     * @deprecated
      */
     public function setNodepoolConditions($var)
     {
+        @trigger_error('nodepool_conditions is deprecated.', E_USER_DEPRECATED);
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Cloud\Container\V1beta1\StatusCondition::class);
         $this->nodepool_conditions = $arr;
 
@@ -572,7 +592,7 @@ class Operation extends \Google\Protobuf\Internal\Message
      * The error result of the operation in case of failure.
      *
      * Generated from protobuf field <code>.google.rpc.Status error = 15;</code>
-     * @return \Google\Rpc\Status
+     * @return \Google\Rpc\Status|null
      */
     public function getError()
     {

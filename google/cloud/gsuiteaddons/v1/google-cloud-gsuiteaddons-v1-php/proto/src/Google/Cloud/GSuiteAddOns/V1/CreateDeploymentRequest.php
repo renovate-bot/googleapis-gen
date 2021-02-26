@@ -117,7 +117,7 @@ class CreateDeploymentRequest extends \Google\Protobuf\Internal\Message
      * Required. The deployment to create (deployment.name cannot be set).
      *
      * Generated from protobuf field <code>.google.cloud.gsuiteaddons.v1.Deployment deployment = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\GSuiteAddOns\V1\Deployment
+     * @return \Google\Cloud\GSuiteAddOns\V1\Deployment|null
      */
     public function getDeployment()
     {

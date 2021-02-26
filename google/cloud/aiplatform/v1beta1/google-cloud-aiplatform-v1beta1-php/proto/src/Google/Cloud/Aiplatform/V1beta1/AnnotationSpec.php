@@ -135,7 +135,7 @@ class AnnotationSpec extends \Google\Protobuf\Internal\Message
      * Output only. Timestamp when this AnnotationSpec was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -171,7 +171,7 @@ class AnnotationSpec extends \Google\Protobuf\Internal\Message
      * Output only. Timestamp when AnnotationSpec was last updated.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {

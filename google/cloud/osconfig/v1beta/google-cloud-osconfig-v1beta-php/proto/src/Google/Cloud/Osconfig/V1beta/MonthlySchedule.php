@@ -42,7 +42,7 @@ class MonthlySchedule extends \Google\Protobuf\Internal\Message
      * Required. Week day in a month.
      *
      * Generated from protobuf field <code>.google.cloud.osconfig.v1beta.WeekDayOfMonth week_day_of_month = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Osconfig\V1beta\WeekDayOfMonth
+     * @return \Google\Cloud\Osconfig\V1beta\WeekDayOfMonth|null
      */
     public function getWeekDayOfMonth()
     {

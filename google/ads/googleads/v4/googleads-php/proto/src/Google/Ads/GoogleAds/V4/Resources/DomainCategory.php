@@ -156,7 +156,7 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
      * Output only. The campaign this category is recommended for.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCampaign()
     {
@@ -220,7 +220,7 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
      * about electronics, the categories could be "cameras", "televisions", etc.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue category = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCategory()
     {
@@ -290,7 +290,7 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
      * and match searches with.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getLanguageCode()
     {
@@ -366,7 +366,7 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
      * DynamicSearchAdsSetting required for dynamic search ads.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue domain = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDomain()
     {
@@ -432,7 +432,7 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
      * Output only. Fraction of pages on your site that this category matches.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue coverage_fraction = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getCoverageFraction()
     {
@@ -496,7 +496,7 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
      * indicate a better match for the domain. null indicates not recommended.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value category_rank = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCategoryRank()
     {
@@ -562,7 +562,7 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
      * Output only. Indicates whether this category has sub-categories.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue has_children = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getHasChildren()
     {
@@ -625,7 +625,7 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
      * Output only. The recommended cost per click for the category.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_cpc_bid_micros = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getRecommendedCpcBidMicros()
     {

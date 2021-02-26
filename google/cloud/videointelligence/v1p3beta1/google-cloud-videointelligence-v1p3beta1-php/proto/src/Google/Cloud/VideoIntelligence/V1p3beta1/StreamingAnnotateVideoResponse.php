@@ -68,7 +68,7 @@ class StreamingAnnotateVideoResponse extends \Google\Protobuf\Internal\Message
      * specifies the error for the operation.
      *
      * Generated from protobuf field <code>.google.rpc.Status error = 1;</code>
-     * @return \Google\Rpc\Status
+     * @return \Google\Rpc\Status|null
      */
     public function getError()
     {
@@ -105,7 +105,7 @@ class StreamingAnnotateVideoResponse extends \Google\Protobuf\Internal\Message
      * Streaming annotation results.
      *
      * Generated from protobuf field <code>.google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResults annotation_results = 2;</code>
-     * @return \Google\Cloud\VideoIntelligence\V1p3beta1\StreamingVideoAnnotationResults
+     * @return \Google\Cloud\VideoIntelligence\V1p3beta1\StreamingVideoAnnotationResults|null
      */
     public function getAnnotationResults()
     {

@@ -55,7 +55,7 @@ class AnimationStatic extends \Google\Protobuf\Internal\Message
      * object.
      *
      * Generated from protobuf field <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 1;</code>
-     * @return \Google\Cloud\Video\Transcoder\V1beta1\Overlay\NormalizedCoordinate
+     * @return \Google\Cloud\Video\Transcoder\V1beta1\Overlay\NormalizedCoordinate|null
      */
     public function getXy()
     {
@@ -93,7 +93,7 @@ class AnimationStatic extends \Google\Protobuf\Internal\Message
      * The time to start displaying the overlay object, in seconds. Default: 0
      *
      * Generated from protobuf field <code>.google.protobuf.Duration start_time_offset = 2;</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getStartTimeOffset()
     {

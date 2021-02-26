@@ -113,7 +113,7 @@ class AppendRowsRequest extends \Google\Protobuf\Internal\Message
      * when calling AppendRows for the '_default' stream.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value offset = 2;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getOffset()
     {
@@ -185,7 +185,7 @@ class AppendRowsRequest extends \Google\Protobuf\Internal\Message
      * Rows in proto format.
      *
      * Generated from protobuf field <code>.google.cloud.bigquery.storage.v1beta2.AppendRowsRequest.ProtoData proto_rows = 4;</code>
-     * @return \Google\Cloud\Bigquery\Storage\V1beta2\AppendRowsRequest\ProtoData
+     * @return \Google\Cloud\Bigquery\Storage\V1beta2\AppendRowsRequest\ProtoData|null
      */
     public function getProtoRows()
     {

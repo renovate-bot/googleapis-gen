@@ -464,7 +464,7 @@ class DataLabelingJob extends \Google\Protobuf\Internal\Message
      * Required. Input config parameters for the DataLabelingJob.
      *
      * Generated from protobuf field <code>.google.protobuf.Value inputs = 7 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Value
+     * @return \Google\Protobuf\Value|null
      */
     public function getInputs()
     {
@@ -555,7 +555,7 @@ class DataLabelingJob extends \Google\Protobuf\Internal\Message
      * date.
      *
      * Generated from protobuf field <code>.google.type.Money current_spend = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Type\Money
+     * @return \Google\Type\Money|null
      */
     public function getCurrentSpend()
     {
@@ -592,7 +592,7 @@ class DataLabelingJob extends \Google\Protobuf\Internal\Message
      * Output only. Timestamp when this DataLabelingJob was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -628,7 +628,7 @@ class DataLabelingJob extends \Google\Protobuf\Internal\Message
      * Output only. Timestamp when this DataLabelingJob was updated most recently.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {
@@ -665,7 +665,7 @@ class DataLabelingJob extends \Google\Protobuf\Internal\Message
      * `JOB_STATE_FAILED` or `JOB_STATE_CANCELLED`.
      *
      * Generated from protobuf field <code>.google.rpc.Status error = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Rpc\Status
+     * @return \Google\Rpc\Status|null
      */
     public function getError()
     {
@@ -773,7 +773,7 @@ class DataLabelingJob extends \Google\Protobuf\Internal\Message
      * the EncryptionSpec of the Dataset they are exported to.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 20;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\EncryptionSpec
+     * @return \Google\Cloud\Aiplatform\V1beta1\EncryptionSpec|null
      */
     public function getEncryptionSpec()
     {
@@ -814,7 +814,7 @@ class DataLabelingJob extends \Google\Protobuf\Internal\Message
      * it will select a batch of data based on the sampling strategy.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ActiveLearningConfig active_learning_config = 21;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\ActiveLearningConfig
+     * @return \Google\Cloud\Aiplatform\V1beta1\ActiveLearningConfig|null
      */
     public function getActiveLearningConfig()
     {

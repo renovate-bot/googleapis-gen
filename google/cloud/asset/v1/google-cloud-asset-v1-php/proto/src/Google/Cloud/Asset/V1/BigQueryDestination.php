@@ -271,7 +271,7 @@ class BigQueryDestination extends \Google\Protobuf\Internal\Message
      * error will be returned if the schema update or data appension fails.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1.PartitionSpec partition_spec = 4;</code>
-     * @return \Google\Cloud\Asset\V1\PartitionSpec
+     * @return \Google\Cloud\Asset\V1\PartitionSpec|null
      */
     public function getPartitionSpec()
     {

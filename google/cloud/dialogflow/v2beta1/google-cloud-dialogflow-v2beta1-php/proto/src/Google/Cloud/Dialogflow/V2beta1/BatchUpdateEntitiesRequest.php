@@ -175,7 +175,7 @@ class BatchUpdateEntitiesRequest extends \Google\Protobuf\Internal\Message
      * Optional. The mask to control which fields get updated.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 4;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

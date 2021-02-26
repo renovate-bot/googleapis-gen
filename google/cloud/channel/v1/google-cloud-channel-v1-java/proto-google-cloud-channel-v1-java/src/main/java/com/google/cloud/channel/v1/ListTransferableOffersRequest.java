@@ -177,6 +177,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string cloud_identity_id = 4;</code>
+   * @return Whether the cloudIdentityId field is set.
+   */
+  public boolean hasCloudIdentityId() {
+    return transferredCustomerIdentityCase_ == 4;
+  }
+  /**
+   * <pre>
+   * Customer's Cloud Identity ID
+   * </pre>
+   *
+   * <code>string cloud_identity_id = 4;</code>
    * @return The cloudIdentityId.
    */
   public java.lang.String getCloudIdentityId() {
@@ -224,6 +235,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CUSTOMER_NAME_FIELD_NUMBER = 5;
+  /**
+   * <pre>
+   * A reseller should create a customer and use the resource name of
+   * the created customer here.
+   * </pre>
+   *
+   * <code>string customer_name = 5;</code>
+   * @return Whether the customerName field is set.
+   */
+  public boolean hasCustomerName() {
+    return transferredCustomerIdentityCase_ == 5;
+  }
   /**
    * <pre>
    * A reseller should create a customer and use the resource name of
@@ -947,6 +970,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string cloud_identity_id = 4;</code>
+     * @return Whether the cloudIdentityId field is set.
+     */
+    @java.lang.Override
+    public boolean hasCloudIdentityId() {
+      return transferredCustomerIdentityCase_ == 4;
+    }
+    /**
+     * <pre>
+     * Customer's Cloud Identity ID
+     * </pre>
+     *
+     * <code>string cloud_identity_id = 4;</code>
      * @return The cloudIdentityId.
      */
     @java.lang.Override
@@ -1050,6 +1085,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * A reseller should create a customer and use the resource name of
+     * the created customer here.
+     * </pre>
+     *
+     * <code>string customer_name = 5;</code>
+     * @return Whether the customerName field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomerName() {
+      return transferredCustomerIdentityCase_ == 5;
+    }
     /**
      * <pre>
      * A reseller should create a customer and use the resource name of

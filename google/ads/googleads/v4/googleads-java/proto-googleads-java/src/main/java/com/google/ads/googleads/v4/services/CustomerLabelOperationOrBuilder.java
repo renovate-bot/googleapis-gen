@@ -45,6 +45,17 @@ public interface CustomerLabelOperationOrBuilder extends
    * </pre>
    *
    * <code>string remove = 2;</code>
+   * @return Whether the remove field is set.
+   */
+  boolean hasRemove();
+  /**
+   * <pre>
+   * Remove operation: A resource name for the customer-label relationship
+   * being removed, in this format:
+   * `customers/{customer_id}/customerLabels/{label_id}`
+   * </pre>
+   *
+   * <code>string remove = 2;</code>
    * @return The remove.
    */
   java.lang.String getRemove();

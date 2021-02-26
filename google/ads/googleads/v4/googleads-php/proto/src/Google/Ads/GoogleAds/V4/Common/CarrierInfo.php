@@ -41,7 +41,7 @@ class CarrierInfo extends \Google\Protobuf\Internal\Message
      * The Carrier constant resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue carrier_constant = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCarrierConstant()
     {

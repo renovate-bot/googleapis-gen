@@ -117,7 +117,7 @@ class RbmSuggestedAction extends \Google\Protobuf\Internal\Message
      * Suggested client side action: Dial a phone number
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionDial dial = 3;</code>
-     * @return \Google\Cloud\Dialogflow\V2beta1\Intent\Message\RbmSuggestedAction\RbmSuggestedActionDial
+     * @return \Google\Cloud\Dialogflow\V2beta1\Intent\Message\RbmSuggestedAction\RbmSuggestedActionDial|null
      */
     public function getDial()
     {
@@ -148,7 +148,7 @@ class RbmSuggestedAction extends \Google\Protobuf\Internal\Message
      * Suggested client side action: Open a URI on device
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionOpenUri open_url = 4;</code>
-     * @return \Google\Cloud\Dialogflow\V2beta1\Intent\Message\RbmSuggestedAction\RbmSuggestedActionOpenUri
+     * @return \Google\Cloud\Dialogflow\V2beta1\Intent\Message\RbmSuggestedAction\RbmSuggestedActionOpenUri|null
      */
     public function getOpenUrl()
     {
@@ -179,7 +179,7 @@ class RbmSuggestedAction extends \Google\Protobuf\Internal\Message
      * Suggested client side action: Share user location
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.RbmSuggestedActionShareLocation share_location = 5;</code>
-     * @return \Google\Cloud\Dialogflow\V2beta1\Intent\Message\RbmSuggestedAction\RbmSuggestedActionShareLocation
+     * @return \Google\Cloud\Dialogflow\V2beta1\Intent\Message\RbmSuggestedAction\RbmSuggestedActionShareLocation|null
      */
     public function getShareLocation()
     {

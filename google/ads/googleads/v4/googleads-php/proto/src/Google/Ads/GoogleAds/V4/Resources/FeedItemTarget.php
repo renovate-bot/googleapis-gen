@@ -122,7 +122,7 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
      * Immutable. The feed item to which this feed item target belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getFeedItem()
     {
@@ -211,7 +211,7 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the targeted resource. This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value feed_item_target_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getFeedItemTargetId()
     {
@@ -302,7 +302,7 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
      * Immutable. The targeted campaign.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCampaign()
     {
@@ -360,7 +360,7 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
      * Immutable. The targeted ad group.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAdGroup()
     {
@@ -418,7 +418,7 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
      * Immutable. The targeted keyword.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.KeywordInfo keyword = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\KeywordInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\KeywordInfo|null
      */
     public function getKeyword()
     {
@@ -449,7 +449,7 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
      * Immutable. The targeted geo target constant resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_constant = 8 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getGeoTargetConstant()
     {
@@ -538,7 +538,7 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
      * Immutable. The targeted schedule.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.AdScheduleInfo ad_schedule = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\AdScheduleInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\AdScheduleInfo|null
      */
     public function getAdSchedule()
     {

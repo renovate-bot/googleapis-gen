@@ -78,7 +78,7 @@ class VideoThumbnail extends \Google\Protobuf\Internal\Message
      * video frame where the thumbnail has been extracted from.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration time_offset = 2;</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getTimeOffset()
     {

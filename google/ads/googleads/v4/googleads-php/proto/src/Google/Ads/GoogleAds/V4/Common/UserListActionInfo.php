@@ -38,7 +38,7 @@ class UserListActionInfo extends \Google\Protobuf\Internal\Message
      * A conversion action that's not generated from remarketing.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getConversionAction()
     {
@@ -96,7 +96,7 @@ class UserListActionInfo extends \Google\Protobuf\Internal\Message
      * A remarketing action.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue remarketing_action = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getRemarketingAction()
     {

@@ -140,7 +140,7 @@ class Execution extends \Google\Protobuf\Internal\Message
      * Output only. Marks the beginning of execution.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartTime()
     {
@@ -176,7 +176,7 @@ class Execution extends \Google\Protobuf\Internal\Message
      * Output only. Marks the end of execution, successful or not.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getEndTime()
     {
@@ -296,7 +296,7 @@ class Execution extends \Google\Protobuf\Internal\Message
      * or `CANCELLED`.
      *
      * Generated from protobuf field <code>.google.cloud.workflows.executions.v1.Execution.Error error = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Cloud\Workflows\Executions\V1\Execution\Error
+     * @return \Google\Cloud\Workflows\Executions\V1\Execution\Error|null
      */
     public function getError()
     {

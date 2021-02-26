@@ -126,7 +126,7 @@ class TagSnippet extends \Google\Protobuf\Internal\Message
      * new cookies on your domain.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue global_site_tag = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getGlobalSiteTag()
     {
@@ -193,7 +193,7 @@ class TagSnippet extends \Google\Protobuf\Internal\Message
      * should be counted as conversions.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue event_snippet = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getEventSnippet()
     {

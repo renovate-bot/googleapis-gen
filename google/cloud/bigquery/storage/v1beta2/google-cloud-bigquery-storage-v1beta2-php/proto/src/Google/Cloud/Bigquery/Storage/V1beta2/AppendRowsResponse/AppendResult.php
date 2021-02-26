@@ -44,7 +44,7 @@ class AppendResult extends \Google\Protobuf\Internal\Message
      * set if appending using default streams.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value offset = 1;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getOffset()
     {

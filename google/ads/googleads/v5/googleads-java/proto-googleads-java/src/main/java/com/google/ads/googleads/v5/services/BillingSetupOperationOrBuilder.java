@@ -46,6 +46,18 @@ public interface BillingSetupOperationOrBuilder extends
    * </pre>
    *
    * <code>string remove = 1;</code>
+   * @return Whether the remove field is set.
+   */
+  boolean hasRemove();
+  /**
+   * <pre>
+   * Resource name of the billing setup to remove. A setup cannot be
+   * removed unless it is in a pending state or its scheduled start time is in
+   * the future. The resource name looks like
+   * `customers/{customer_id}/billingSetups/{billing_id}`.
+   * </pre>
+   *
+   * <code>string remove = 1;</code>
    * @return The remove.
    */
   java.lang.String getRemove();

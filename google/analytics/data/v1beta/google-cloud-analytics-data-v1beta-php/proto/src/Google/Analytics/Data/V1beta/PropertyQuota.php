@@ -85,7 +85,7 @@ class PropertyQuota extends \Google\Protobuf\Internal\Message
      * consume fewer than 10 tokens.
      *
      * Generated from protobuf field <code>.google.analytics.data.v1beta.QuotaStatus tokens_per_day = 1;</code>
-     * @return \Google\Analytics\Data\V1beta\QuotaStatus
+     * @return \Google\Analytics\Data\V1beta\QuotaStatus|null
      */
     public function getTokensPerDay()
     {
@@ -126,7 +126,7 @@ class PropertyQuota extends \Google\Protobuf\Internal\Message
      * the hourly and daily quotas.
      *
      * Generated from protobuf field <code>.google.analytics.data.v1beta.QuotaStatus tokens_per_hour = 2;</code>
-     * @return \Google\Analytics\Data\V1beta\QuotaStatus
+     * @return \Google\Analytics\Data\V1beta\QuotaStatus|null
      */
     public function getTokensPerHour()
     {
@@ -166,7 +166,7 @@ class PropertyQuota extends \Google\Protobuf\Internal\Message
      * Analytics 360 Properties can use up to 50 concurrent requests.
      *
      * Generated from protobuf field <code>.google.analytics.data.v1beta.QuotaStatus concurrent_requests = 3;</code>
-     * @return \Google\Analytics\Data\V1beta\QuotaStatus
+     * @return \Google\Analytics\Data\V1beta\QuotaStatus|null
      */
     public function getConcurrentRequests()
     {
@@ -205,7 +205,7 @@ class PropertyQuota extends \Google\Protobuf\Internal\Message
      * can have up to 50 server errors per hour.
      *
      * Generated from protobuf field <code>.google.analytics.data.v1beta.QuotaStatus server_errors_per_project_per_hour = 4;</code>
-     * @return \Google\Analytics\Data\V1beta\QuotaStatus
+     * @return \Google\Analytics\Data\V1beta\QuotaStatus|null
      */
     public function getServerErrorsPerProjectPerHour()
     {

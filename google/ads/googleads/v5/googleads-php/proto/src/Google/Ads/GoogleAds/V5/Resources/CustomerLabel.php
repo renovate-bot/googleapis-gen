@@ -100,7 +100,7 @@ class CustomerLabel extends \Google\Protobuf\Internal\Message
      * Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue customer = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCustomer()
     {
@@ -168,7 +168,7 @@ class CustomerLabel extends \Google\Protobuf\Internal\Message
      * validated when creating a new CustomerLabel.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getLabel()
     {

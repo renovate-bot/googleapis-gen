@@ -75,7 +75,7 @@ class CreateBotSessionRequest extends \Google\Protobuf\Internal\Message
      * Required. The bot session to create. Server-assigned fields like name must be unset.
      *
      * Generated from protobuf field <code>.google.devtools.remoteworkers.v1test2.BotSession bot_session = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Devtools\Remoteworkers\V1test2\BotSession
+     * @return \Google\Devtools\Remoteworkers\V1test2\BotSession|null
      */
     public function getBotSession()
     {

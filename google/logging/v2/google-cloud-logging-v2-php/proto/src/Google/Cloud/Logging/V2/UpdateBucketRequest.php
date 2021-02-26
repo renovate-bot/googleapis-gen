@@ -125,7 +125,7 @@ class UpdateBucketRequest extends \Google\Protobuf\Internal\Message
      * Required. The updated bucket.
      *
      * Generated from protobuf field <code>.google.logging.v2.LogBucket bucket = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Logging\V2\LogBucket
+     * @return \Google\Cloud\Logging\V2\LogBucket|null
      */
     public function getBucket()
     {
@@ -166,7 +166,7 @@ class UpdateBucketRequest extends \Google\Protobuf\Internal\Message
      * Example: `updateMask=retention_days`.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

@@ -386,6 +386,15 @@ public interface AccountBudgetOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.enums.TimeTypeEnum.TimeType proposed_end_time_type = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the proposedEndTimeType field is set.
+   */
+  boolean hasProposedEndTimeType();
+  /**
+   * <pre>
+   * Output only. The proposed end time as a well-defined type, e.g. FOREVER.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.TimeTypeEnum.TimeType proposed_end_time_type = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The enum numeric value on the wire for proposedEndTimeType.
    */
   int getProposedEndTimeTypeValue();
@@ -426,6 +435,15 @@ public interface AccountBudgetOrBuilder extends
    */
   com.google.protobuf.StringValueOrBuilder getApprovedEndDateTimeOrBuilder();
 
+  /**
+   * <pre>
+   * Output only. The approved end time as a well-defined type, e.g. FOREVER.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.TimeTypeEnum.TimeType approved_end_time_type = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the approvedEndTimeType field is set.
+   */
+  boolean hasApprovedEndTimeType();
   /**
    * <pre>
    * Output only. The approved end time as a well-defined type, e.g. FOREVER.
@@ -481,6 +499,15 @@ public interface AccountBudgetOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.enums.SpendingLimitTypeEnum.SpendingLimitType proposed_spending_limit_type = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the proposedSpendingLimitType field is set.
+   */
+  boolean hasProposedSpendingLimitType();
+  /**
+   * <pre>
+   * Output only. The proposed spending limit as a well-defined type, e.g. INFINITE.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.SpendingLimitTypeEnum.SpendingLimitType proposed_spending_limit_type = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The enum numeric value on the wire for proposedSpendingLimitType.
    */
   int getProposedSpendingLimitTypeValue();
@@ -530,6 +557,16 @@ public interface AccountBudgetOrBuilder extends
    */
   com.google.protobuf.Int64ValueOrBuilder getApprovedSpendingLimitMicrosOrBuilder();
 
+  /**
+   * <pre>
+   * Output only. The approved spending limit as a well-defined type, e.g. INFINITE.  This
+   * will only be populated if the approved spending limit is INFINITE.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.SpendingLimitTypeEnum.SpendingLimitType approved_spending_limit_type = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the approvedSpendingLimitType field is set.
+   */
+  boolean hasApprovedSpendingLimitType();
   /**
    * <pre>
    * Output only. The approved spending limit as a well-defined type, e.g. INFINITE.  This
@@ -602,6 +639,18 @@ public interface AccountBudgetOrBuilder extends
    */
   com.google.protobuf.Int64ValueOrBuilder getAdjustedSpendingLimitMicrosOrBuilder();
 
+  /**
+   * <pre>
+   * Output only. The adjusted spending limit as a well-defined type, e.g. INFINITE.
+   * This will only be populated if the adjusted spending limit is INFINITE,
+   * which is guaranteed to be true if the approved spending limit is
+   * INFINITE.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.SpendingLimitTypeEnum.SpendingLimitType adjusted_spending_limit_type = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the adjustedSpendingLimitType field is set.
+   */
+  boolean hasAdjustedSpendingLimitType();
   /**
    * <pre>
    * Output only. The adjusted spending limit as a well-defined type, e.g. INFINITE.

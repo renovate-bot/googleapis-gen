@@ -445,7 +445,7 @@ class Document extends \Google\Protobuf\Internal\Message
      * document. If the document is not sharded, this message is not specified.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document.ShardInfo shard_info = 9;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta3\Document\ShardInfo
+     * @return \Google\Cloud\DocumentAI\V1beta3\Document\ShardInfo|null
      */
     public function getShardInfo()
     {
@@ -482,7 +482,7 @@ class Document extends \Google\Protobuf\Internal\Message
      * Any error that occurred while processing this document.
      *
      * Generated from protobuf field <code>.google.rpc.Status error = 10;</code>
-     * @return \Google\Rpc\Status
+     * @return \Google\Rpc\Status|null
      */
     public function getError()
     {

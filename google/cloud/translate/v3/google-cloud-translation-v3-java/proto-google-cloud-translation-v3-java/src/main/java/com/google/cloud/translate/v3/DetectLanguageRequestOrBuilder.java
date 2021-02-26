@@ -77,6 +77,15 @@ public interface DetectLanguageRequestOrBuilder extends
    * </pre>
    *
    * <code>string content = 1;</code>
+   * @return Whether the content field is set.
+   */
+  boolean hasContent();
+  /**
+   * <pre>
+   * The content of the input stored as a string.
+   * </pre>
+   *
+   * <code>string content = 1;</code>
    * @return The content.
    */
   java.lang.String getContent();

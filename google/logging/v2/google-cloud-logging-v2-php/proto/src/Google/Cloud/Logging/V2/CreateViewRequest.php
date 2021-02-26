@@ -121,7 +121,7 @@ class CreateViewRequest extends \Google\Protobuf\Internal\Message
      * Required. The new view.
      *
      * Generated from protobuf field <code>.google.logging.v2.LogView view = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Logging\V2\LogView
+     * @return \Google\Cloud\Logging\V2\LogView|null
      */
     public function getView()
     {

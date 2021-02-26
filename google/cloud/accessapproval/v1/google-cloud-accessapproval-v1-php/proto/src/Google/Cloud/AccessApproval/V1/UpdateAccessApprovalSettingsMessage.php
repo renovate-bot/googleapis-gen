@@ -65,7 +65,7 @@ class UpdateAccessApprovalSettingsMessage extends \Google\Protobuf\Internal\Mess
      * The new AccessApprovalSettings.
      *
      * Generated from protobuf field <code>.google.cloud.accessapproval.v1.AccessApprovalSettings settings = 1;</code>
-     * @return \Google\Cloud\AccessApproval\V1\AccessApprovalSettings
+     * @return \Google\Cloud\AccessApproval\V1\AccessApprovalSettings|null
      */
     public function getSettings()
     {
@@ -109,7 +109,7 @@ class UpdateAccessApprovalSettingsMessage extends \Google\Protobuf\Internal\Mess
      * updated.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

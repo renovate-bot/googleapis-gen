@@ -84,7 +84,7 @@ class PositionEstimates extends \Google\Protobuf\Internal\Message
      * page of search results.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value first_page_cpc_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getFirstPageCpcMicros()
     {
@@ -151,7 +151,7 @@ class PositionEstimates extends \Google\Protobuf\Internal\Message
      * position, at the top of the first page of search results.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value first_position_cpc_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getFirstPositionCpcMicros()
     {
@@ -218,7 +218,7 @@ class PositionEstimates extends \Google\Protobuf\Internal\Message
      * of the first page of search results.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value top_of_page_cpc_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getTopOfPageCpcMicros()
     {
@@ -285,7 +285,7 @@ class PositionEstimates extends \Google\Protobuf\Internal\Message
      * keyword bid to the value in first_position_cpc_micros.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value estimated_add_clicks_at_first_position_cpc = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getEstimatedAddClicksAtFirstPositionCpc()
     {
@@ -352,7 +352,7 @@ class PositionEstimates extends \Google\Protobuf\Internal\Message
      * keyword bid to the value in first_position_cpc_micros.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value estimated_add_cost_at_first_position_cpc = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getEstimatedAddCostAtFirstPositionCpc()
     {

@@ -59,7 +59,7 @@ class CommandOverhead extends \Google\Protobuf\Internal\Message
      * the RPCs and the bot response time.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration duration = 1;</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getDuration()
     {
@@ -98,7 +98,7 @@ class CommandOverhead extends \Google\Protobuf\Internal\Message
      * uploading/downloading files).
      *
      * Generated from protobuf field <code>.google.protobuf.Duration overhead = 2;</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getOverhead()
     {

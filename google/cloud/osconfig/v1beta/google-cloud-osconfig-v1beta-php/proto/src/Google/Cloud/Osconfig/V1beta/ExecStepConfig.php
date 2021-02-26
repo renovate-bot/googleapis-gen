@@ -93,7 +93,7 @@ class ExecStepConfig extends \Google\Protobuf\Internal\Message
      * A Google Cloud Storage object containing the executable.
      *
      * Generated from protobuf field <code>.google.cloud.osconfig.v1beta.GcsObject gcs_object = 2;</code>
-     * @return \Google\Cloud\Osconfig\V1beta\GcsObject
+     * @return \Google\Cloud\Osconfig\V1beta\GcsObject|null
      */
     public function getGcsObject()
     {

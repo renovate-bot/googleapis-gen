@@ -65,7 +65,7 @@ class PreprocessingConfig extends \Google\Protobuf\Internal\Message
      * Color preprocessing configuration.
      *
      * Generated from protobuf field <code>.google.cloud.video.transcoder.v1beta1.PreprocessingConfig.Color color = 1;</code>
-     * @return \Google\Cloud\Video\Transcoder\V1beta1\PreprocessingConfig\Color
+     * @return \Google\Cloud\Video\Transcoder\V1beta1\PreprocessingConfig\Color|null
      */
     public function getColor()
     {
@@ -101,7 +101,7 @@ class PreprocessingConfig extends \Google\Protobuf\Internal\Message
      * Denoise preprocessing configuration.
      *
      * Generated from protobuf field <code>.google.cloud.video.transcoder.v1beta1.PreprocessingConfig.Denoise denoise = 2;</code>
-     * @return \Google\Cloud\Video\Transcoder\V1beta1\PreprocessingConfig\Denoise
+     * @return \Google\Cloud\Video\Transcoder\V1beta1\PreprocessingConfig\Denoise|null
      */
     public function getDenoise()
     {
@@ -137,7 +137,7 @@ class PreprocessingConfig extends \Google\Protobuf\Internal\Message
      * Deblock preprocessing configuration.
      *
      * Generated from protobuf field <code>.google.cloud.video.transcoder.v1beta1.PreprocessingConfig.Deblock deblock = 3;</code>
-     * @return \Google\Cloud\Video\Transcoder\V1beta1\PreprocessingConfig\Deblock
+     * @return \Google\Cloud\Video\Transcoder\V1beta1\PreprocessingConfig\Deblock|null
      */
     public function getDeblock()
     {
@@ -173,7 +173,7 @@ class PreprocessingConfig extends \Google\Protobuf\Internal\Message
      * Audio preprocessing configuration.
      *
      * Generated from protobuf field <code>.google.cloud.video.transcoder.v1beta1.PreprocessingConfig.Audio audio = 4;</code>
-     * @return \Google\Cloud\Video\Transcoder\V1beta1\PreprocessingConfig\Audio
+     * @return \Google\Cloud\Video\Transcoder\V1beta1\PreprocessingConfig\Audio|null
      */
     public function getAudio()
     {

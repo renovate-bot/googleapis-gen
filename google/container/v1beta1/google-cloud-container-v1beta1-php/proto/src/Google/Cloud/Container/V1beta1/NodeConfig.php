@@ -811,7 +811,7 @@ class NodeConfig extends \Google\Protobuf\Internal\Message
      * Sandbox configuration for this node.
      *
      * Generated from protobuf field <code>.google.container.v1beta1.SandboxConfig sandbox_config = 17;</code>
-     * @return \Google\Cloud\Container\V1beta1\SandboxConfig
+     * @return \Google\Cloud\Container\V1beta1\SandboxConfig|null
      */
     public function getSandboxConfig()
     {
@@ -882,7 +882,7 @@ class NodeConfig extends \Google\Protobuf\Internal\Message
      * to this node pool.
      *
      * Generated from protobuf field <code>.google.container.v1beta1.ReservationAffinity reservation_affinity = 19;</code>
-     * @return \Google\Cloud\Container\V1beta1\ReservationAffinity
+     * @return \Google\Cloud\Container\V1beta1\ReservationAffinity|null
      */
     public function getReservationAffinity()
     {
@@ -989,7 +989,7 @@ class NodeConfig extends \Google\Protobuf\Internal\Message
      * The workload metadata configuration for this node.
      *
      * Generated from protobuf field <code>.google.container.v1beta1.WorkloadMetadataConfig workload_metadata_config = 14;</code>
-     * @return \Google\Cloud\Container\V1beta1\WorkloadMetadataConfig
+     * @return \Google\Cloud\Container\V1beta1\WorkloadMetadataConfig|null
      */
     public function getWorkloadMetadataConfig()
     {
@@ -1091,7 +1091,7 @@ class NodeConfig extends \Google\Protobuf\Internal\Message
      * Shielded Instance options.
      *
      * Generated from protobuf field <code>.google.container.v1beta1.ShieldedInstanceConfig shielded_instance_config = 20;</code>
-     * @return \Google\Cloud\Container\V1beta1\ShieldedInstanceConfig
+     * @return \Google\Cloud\Container\V1beta1\ShieldedInstanceConfig|null
      */
     public function getShieldedInstanceConfig()
     {
@@ -1127,7 +1127,7 @@ class NodeConfig extends \Google\Protobuf\Internal\Message
      * Parameters that can be configured on Linux nodes.
      *
      * Generated from protobuf field <code>.google.container.v1beta1.LinuxNodeConfig linux_node_config = 21;</code>
-     * @return \Google\Cloud\Container\V1beta1\LinuxNodeConfig
+     * @return \Google\Cloud\Container\V1beta1\LinuxNodeConfig|null
      */
     public function getLinuxNodeConfig()
     {
@@ -1163,7 +1163,7 @@ class NodeConfig extends \Google\Protobuf\Internal\Message
      * Node kubelet configs.
      *
      * Generated from protobuf field <code>.google.container.v1beta1.NodeKubeletConfig kubelet_config = 22;</code>
-     * @return \Google\Cloud\Container\V1beta1\NodeKubeletConfig
+     * @return \Google\Cloud\Container\V1beta1\NodeKubeletConfig|null
      */
     public function getKubeletConfig()
     {
@@ -1200,7 +1200,7 @@ class NodeConfig extends \Google\Protobuf\Internal\Message
      * If unspecified, ephemeral storage is backed by the boot disk.
      *
      * Generated from protobuf field <code>.google.container.v1beta1.EphemeralStorageConfig ephemeral_storage_config = 24;</code>
-     * @return \Google\Cloud\Container\V1beta1\EphemeralStorageConfig
+     * @return \Google\Cloud\Container\V1beta1\EphemeralStorageConfig|null
      */
     public function getEphemeralStorageConfig()
     {

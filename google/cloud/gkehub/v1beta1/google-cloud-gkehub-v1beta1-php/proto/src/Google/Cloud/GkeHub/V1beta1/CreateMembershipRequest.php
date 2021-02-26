@@ -137,7 +137,7 @@ class CreateMembershipRequest extends \Google\Protobuf\Internal\Message
      * Required. The membership to create.
      *
      * Generated from protobuf field <code>.google.cloud.gkehub.v1beta1.Membership resource = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\GkeHub\V1beta1\Membership
+     * @return \Google\Cloud\GkeHub\V1beta1\Membership|null
      */
     public function getResource()
     {

@@ -69,7 +69,7 @@ class ExecutionInfo extends \Google\Protobuf\Internal\Message
      * Status returned by the backend when the job was created.
      *
      * Generated from protobuf field <code>.google.rpc.Status job_creation_status = 1;</code>
-     * @return \Google\Rpc\Status
+     * @return \Google\Rpc\Status|null
      */
     public function getJobCreationStatus()
     {
@@ -131,7 +131,7 @@ class ExecutionInfo extends \Google\Protobuf\Internal\Message
      * Time when the execution was triggered.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -169,7 +169,7 @@ class ExecutionInfo extends \Google\Protobuf\Internal\Message
      * they can handle it when this field is not populated.
      *
      * Generated from protobuf field <code>.google.cloud.dataqna.v1alpha.BigQueryJob bigquery_job = 4;</code>
-     * @return \Google\Cloud\DataQnA\V1alpha\BigQueryJob
+     * @return \Google\Cloud\DataQnA\V1alpha\BigQueryJob|null
      */
     public function getBigqueryJob()
     {

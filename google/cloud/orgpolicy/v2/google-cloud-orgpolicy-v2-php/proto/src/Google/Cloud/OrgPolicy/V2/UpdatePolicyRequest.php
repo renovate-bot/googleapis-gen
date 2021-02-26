@@ -42,7 +42,7 @@ class UpdatePolicyRequest extends \Google\Protobuf\Internal\Message
      * Required. `Policy` to update.
      *
      * Generated from protobuf field <code>.google.cloud.orgpolicy.v2.Policy policy = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\OrgPolicy\V2\Policy
+     * @return \Google\Cloud\OrgPolicy\V2\Policy|null
      */
     public function getPolicy()
     {

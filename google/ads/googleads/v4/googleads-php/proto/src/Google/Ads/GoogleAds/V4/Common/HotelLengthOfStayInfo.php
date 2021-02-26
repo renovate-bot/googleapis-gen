@@ -49,7 +49,7 @@ class HotelLengthOfStayInfo extends \Google\Protobuf\Internal\Message
      * Low end of the number of nights in the stay.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value min_nights = 1;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getMinNights()
     {
@@ -112,7 +112,7 @@ class HotelLengthOfStayInfo extends \Google\Protobuf\Internal\Message
      * High end of the number of nights in the stay.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value max_nights = 2;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getMaxNights()
     {

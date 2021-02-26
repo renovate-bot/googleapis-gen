@@ -14,6 +14,16 @@ public interface MatchIntentResponseOrBuilder extends
    * </pre>
    *
    * <code>string text = 1;</code>
+   * @return Whether the text field is set.
+   */
+  boolean hasText();
+  /**
+   * <pre>
+   * If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput] was provided as input, this field
+   * will contain a copy of the text.
+   * </pre>
+   *
+   * <code>string text = 1;</code>
    * @return The text.
    */
   java.lang.String getText();
@@ -29,6 +39,16 @@ public interface MatchIntentResponseOrBuilder extends
   com.google.protobuf.ByteString
       getTextBytes();
 
+  /**
+   * <pre>
+   * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
+   * contain a copy of the intent identifier.
+   * </pre>
+   *
+   * <code>string trigger_intent = 2;</code>
+   * @return Whether the triggerIntent field is set.
+   */
+  boolean hasTriggerIntent();
   /**
    * <pre>
    * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
@@ -58,6 +78,16 @@ public interface MatchIntentResponseOrBuilder extends
    * </pre>
    *
    * <code>string transcript = 3;</code>
+   * @return Whether the transcript field is set.
+   */
+  boolean hasTranscript();
+  /**
+   * <pre>
+   * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
+   * this field will contain the trascript for the audio.
+   * </pre>
+   *
+   * <code>string transcript = 3;</code>
    * @return The transcript.
    */
   java.lang.String getTranscript();
@@ -73,6 +103,16 @@ public interface MatchIntentResponseOrBuilder extends
   com.google.protobuf.ByteString
       getTranscriptBytes();
 
+  /**
+   * <pre>
+   * If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided as input, this field will
+   * contain a copy of the event name.
+   * </pre>
+   *
+   * <code>string trigger_event = 6;</code>
+   * @return Whether the triggerEvent field is set.
+   */
+  boolean hasTriggerEvent();
   /**
    * <pre>
    * If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided as input, this field will

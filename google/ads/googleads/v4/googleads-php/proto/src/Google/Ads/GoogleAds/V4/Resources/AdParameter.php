@@ -128,7 +128,7 @@ class AdParameter extends \Google\Protobuf\Internal\Message
      * Immutable. The ad group criterion that this ad parameter belongs to.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAdGroupCriterion()
     {
@@ -191,7 +191,7 @@ class AdParameter extends \Google\Protobuf\Internal\Message
      * Immutable. The unique index of this ad parameter. Must be either 1 or 2.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value parameter_index = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getParameterIndex()
     {
@@ -266,7 +266,7 @@ class AdParameter extends \Google\Protobuf\Internal\Message
      *    valid.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue insertion_text = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getInsertionText()
     {

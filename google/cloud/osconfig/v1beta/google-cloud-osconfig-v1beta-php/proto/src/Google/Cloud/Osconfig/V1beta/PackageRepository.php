@@ -42,7 +42,7 @@ class PackageRepository extends \Google\Protobuf\Internal\Message
      * An Apt Repository.
      *
      * Generated from protobuf field <code>.google.cloud.osconfig.v1beta.AptRepository apt = 1;</code>
-     * @return \Google\Cloud\Osconfig\V1beta\AptRepository
+     * @return \Google\Cloud\Osconfig\V1beta\AptRepository|null
      */
     public function getApt()
     {
@@ -73,7 +73,7 @@ class PackageRepository extends \Google\Protobuf\Internal\Message
      * A Yum Repository.
      *
      * Generated from protobuf field <code>.google.cloud.osconfig.v1beta.YumRepository yum = 2;</code>
-     * @return \Google\Cloud\Osconfig\V1beta\YumRepository
+     * @return \Google\Cloud\Osconfig\V1beta\YumRepository|null
      */
     public function getYum()
     {
@@ -104,7 +104,7 @@ class PackageRepository extends \Google\Protobuf\Internal\Message
      * A Zypper Repository.
      *
      * Generated from protobuf field <code>.google.cloud.osconfig.v1beta.ZypperRepository zypper = 3;</code>
-     * @return \Google\Cloud\Osconfig\V1beta\ZypperRepository
+     * @return \Google\Cloud\Osconfig\V1beta\ZypperRepository|null
      */
     public function getZypper()
     {
@@ -135,7 +135,7 @@ class PackageRepository extends \Google\Protobuf\Internal\Message
      * A Goo Repository.
      *
      * Generated from protobuf field <code>.google.cloud.osconfig.v1beta.GooRepository goo = 4;</code>
-     * @return \Google\Cloud\Osconfig\V1beta\GooRepository
+     * @return \Google\Cloud\Osconfig\V1beta\GooRepository|null
      */
     public function getGoo()
     {

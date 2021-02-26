@@ -79,7 +79,7 @@ class CreateQuestionRequest extends \Google\Protobuf\Internal\Message
      * Required. The question to create.
      *
      * Generated from protobuf field <code>.google.cloud.dataqna.v1alpha.Question question = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\DataQnA\V1alpha\Question
+     * @return \Google\Cloud\DataQnA\V1alpha\Question|null
      */
     public function getQuestion()
     {

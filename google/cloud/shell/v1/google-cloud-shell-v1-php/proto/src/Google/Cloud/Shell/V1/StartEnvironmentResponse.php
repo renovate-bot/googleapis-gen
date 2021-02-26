@@ -43,7 +43,7 @@ class StartEnvironmentResponse extends \Google\Protobuf\Internal\Message
      * Environment that was started.
      *
      * Generated from protobuf field <code>.google.cloud.shell.v1.Environment environment = 1;</code>
-     * @return \Google\Cloud\Shell\V1\Environment
+     * @return \Google\Cloud\Shell\V1\Environment|null
      */
     public function getEnvironment()
     {

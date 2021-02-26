@@ -111,7 +111,7 @@ class MigrateResourceResponse extends \Google\Protobuf\Internal\Message
      * automl.googleapis.com or datalabeling.googleapis.com.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.MigratableResource migratable_resource = 3;</code>
-     * @return \Google\Cloud\Aiplatform\V1\MigratableResource
+     * @return \Google\Cloud\Aiplatform\V1\MigratableResource|null
      */
     public function getMigratableResource()
     {

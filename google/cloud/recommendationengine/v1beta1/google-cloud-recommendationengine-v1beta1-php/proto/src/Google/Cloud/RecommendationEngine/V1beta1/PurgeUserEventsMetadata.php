@@ -76,7 +76,7 @@ class PurgeUserEventsMetadata extends \Google\Protobuf\Internal\Message
      * Operation create time.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 2;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {

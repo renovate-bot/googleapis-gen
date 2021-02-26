@@ -89,7 +89,7 @@ class UpdateHubRequest extends \Google\Protobuf\Internal\Message
      * user does not provide a mask then all fields will be overwritten.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {
@@ -129,7 +129,7 @@ class UpdateHubRequest extends \Google\Protobuf\Internal\Message
      * Required. The state that the Hub should be in after the update.
      *
      * Generated from protobuf field <code>.google.cloud.networkconnectivity.v1alpha1.Hub hub = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\NetworkConnectivity\V1alpha1\Hub
+     * @return \Google\Cloud\NetworkConnectivity\V1alpha1\Hub|null
      */
     public function getHub()
     {

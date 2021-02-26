@@ -100,7 +100,7 @@ class CreateReferenceImageRequest extends \Google\Protobuf\Internal\Message
      * If an image ID is specified, it is ignored.
      *
      * Generated from protobuf field <code>.google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Vision\V1p3beta1\ReferenceImage
+     * @return \Google\Cloud\Vision\V1p3beta1\ReferenceImage|null
      */
     public function getReferenceImage()
     {

@@ -49,7 +49,7 @@ class KeywordPlanMaxCpcBidForecast extends \Google\Protobuf\Internal\Message
      * The max cpc bid in micros.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value max_cpc_bid_micros = 1;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getMaxCpcBidMicros()
     {
@@ -112,7 +112,7 @@ class KeywordPlanMaxCpcBidForecast extends \Google\Protobuf\Internal\Message
      * The forecast for the Keyword Plan campaign at the specific bid.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.ForecastMetrics max_cpc_bid_forecast = 2;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\ForecastMetrics
+     * @return \Google\Ads\GoogleAds\V4\Services\ForecastMetrics|null
      */
     public function getMaxCpcBidForecast()
     {

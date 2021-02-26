@@ -21,6 +21,7 @@ class StatusCondition extends \Google\Protobuf\Internal\Message
      * Deprecated. Use canonical_code instead.
      *
      * Generated from protobuf field <code>.google.container.v1beta1.StatusCondition.Code code = 1 [deprecated = true];</code>
+     * @deprecated
      */
     protected $code = 0;
     /**
@@ -62,9 +63,11 @@ class StatusCondition extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.container.v1beta1.StatusCondition.Code code = 1 [deprecated = true];</code>
      * @return int
+     * @deprecated
      */
     public function getCode()
     {
+        @trigger_error('code is deprecated.', E_USER_DEPRECATED);
         return $this->code;
     }
 
@@ -75,9 +78,11 @@ class StatusCondition extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.container.v1beta1.StatusCondition.Code code = 1 [deprecated = true];</code>
      * @param int $var
      * @return $this
+     * @deprecated
      */
     public function setCode($var)
     {
+        @trigger_error('code is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkEnum($var, \Google\Cloud\Container\V1beta1\StatusCondition\Code::class);
         $this->code = $var;
 

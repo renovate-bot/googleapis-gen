@@ -55,7 +55,7 @@ class ReloadStatus extends \Google\Protobuf\Internal\Message
      * not have succeeded.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp time = 1;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getTime()
     {
@@ -93,7 +93,7 @@ class ReloadStatus extends \Google\Protobuf\Internal\Message
      * Output only. The status of a reload attempt or the initial load.
      *
      * Generated from protobuf field <code>.google.rpc.Status status = 2;</code>
-     * @return \Google\Rpc\Status
+     * @return \Google\Rpc\Status|null
      */
     public function getStatus()
     {

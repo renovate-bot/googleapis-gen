@@ -211,7 +211,7 @@ class DetectIntentRequest extends \Google\Protobuf\Internal\Message
      * The parameters of this query.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.QueryParameters query_params = 2;</code>
-     * @return \Google\Cloud\Dialogflow\V2beta1\QueryParameters
+     * @return \Google\Cloud\Dialogflow\V2beta1\QueryParameters|null
      */
     public function getQueryParams()
     {
@@ -251,7 +251,7 @@ class DetectIntentRequest extends \Google\Protobuf\Internal\Message
      * 3.  an event that specifies which intent to trigger.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Dialogflow\V2beta1\QueryInput
+     * @return \Google\Cloud\Dialogflow\V2beta1\QueryInput|null
      */
     public function getQueryInput()
     {
@@ -293,7 +293,7 @@ class DetectIntentRequest extends \Google\Protobuf\Internal\Message
      * configured, no output audio is generated.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 4;</code>
-     * @return \Google\Cloud\Dialogflow\V2beta1\OutputAudioConfig
+     * @return \Google\Cloud\Dialogflow\V2beta1\OutputAudioConfig|null
      */
     public function getOutputAudioConfig()
     {
@@ -335,7 +335,7 @@ class DetectIntentRequest extends \Google\Protobuf\Internal\Message
      * config in its entirety.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask output_audio_config_mask = 7;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getOutputAudioConfigMask()
     {

@@ -139,7 +139,7 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
      * this article: https://support.google.com/merchants/answer/6324436.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -208,7 +208,7 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
      * Output only. Two-letter upper-case country code of the product bidding category.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCountryCode()
     {
@@ -271,7 +271,7 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
      * Output only. Resource name of the parent product bidding category.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_bidding_category_constant_parent = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getProductBiddingCategoryConstantParent()
     {
@@ -386,7 +386,7 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
      * Output only. Language code of the product bidding category.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getLanguageCode()
     {
@@ -450,7 +450,7 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
      * language_code.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue localized_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getLocalizedName()
     {

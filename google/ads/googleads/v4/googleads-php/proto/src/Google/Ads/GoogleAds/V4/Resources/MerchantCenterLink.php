@@ -105,7 +105,7 @@ class MerchantCenterLink extends \Google\Protobuf\Internal\Message
      * This field is readonly.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -172,7 +172,7 @@ class MerchantCenterLink extends \Google\Protobuf\Internal\Message
      * This field is readonly.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue merchant_center_account_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getMerchantCenterAccountName()
     {

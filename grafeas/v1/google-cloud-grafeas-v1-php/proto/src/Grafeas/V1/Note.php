@@ -264,7 +264,7 @@ class Note extends \Google\Protobuf\Internal\Message
      * Time of expiration for this note. Empty if note does not expire.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp expiration_time = 6;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getExpirationTime()
     {
@@ -301,7 +301,7 @@ class Note extends \Google\Protobuf\Internal\Message
      * filter in list requests.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 7;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -339,7 +339,7 @@ class Note extends \Google\Protobuf\Internal\Message
      * a filter in list requests.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 8;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {
@@ -402,7 +402,7 @@ class Note extends \Google\Protobuf\Internal\Message
      * A note describing a package vulnerability.
      *
      * Generated from protobuf field <code>.grafeas.v1.VulnerabilityNote vulnerability = 10;</code>
-     * @return \Grafeas\V1\VulnerabilityNote
+     * @return \Grafeas\V1\VulnerabilityNote|null
      */
     public function getVulnerability()
     {
@@ -433,7 +433,7 @@ class Note extends \Google\Protobuf\Internal\Message
      * A note describing build provenance for a verifiable build.
      *
      * Generated from protobuf field <code>.grafeas.v1.BuildNote build = 11;</code>
-     * @return \Grafeas\V1\BuildNote
+     * @return \Grafeas\V1\BuildNote|null
      */
     public function getBuild()
     {
@@ -464,7 +464,7 @@ class Note extends \Google\Protobuf\Internal\Message
      * A note describing a base image.
      *
      * Generated from protobuf field <code>.grafeas.v1.ImageNote image = 12;</code>
-     * @return \Grafeas\V1\ImageNote
+     * @return \Grafeas\V1\ImageNote|null
      */
     public function getImage()
     {
@@ -495,7 +495,7 @@ class Note extends \Google\Protobuf\Internal\Message
      * A note describing a package hosted by various package managers.
      *
      * Generated from protobuf field <code>.grafeas.v1.PackageNote package = 13;</code>
-     * @return \Grafeas\V1\PackageNote
+     * @return \Grafeas\V1\PackageNote|null
      */
     public function getPackage()
     {
@@ -526,7 +526,7 @@ class Note extends \Google\Protobuf\Internal\Message
      * A note describing something that can be deployed.
      *
      * Generated from protobuf field <code>.grafeas.v1.DeploymentNote deployment = 14;</code>
-     * @return \Grafeas\V1\DeploymentNote
+     * @return \Grafeas\V1\DeploymentNote|null
      */
     public function getDeployment()
     {
@@ -557,7 +557,7 @@ class Note extends \Google\Protobuf\Internal\Message
      * A note describing the initial analysis of a resource.
      *
      * Generated from protobuf field <code>.grafeas.v1.DiscoveryNote discovery = 15;</code>
-     * @return \Grafeas\V1\DiscoveryNote
+     * @return \Grafeas\V1\DiscoveryNote|null
      */
     public function getDiscovery()
     {
@@ -588,7 +588,7 @@ class Note extends \Google\Protobuf\Internal\Message
      * A note describing an attestation role.
      *
      * Generated from protobuf field <code>.grafeas.v1.AttestationNote attestation = 16;</code>
-     * @return \Grafeas\V1\AttestationNote
+     * @return \Grafeas\V1\AttestationNote|null
      */
     public function getAttestation()
     {
@@ -619,7 +619,7 @@ class Note extends \Google\Protobuf\Internal\Message
      * A note describing available package upgrades.
      *
      * Generated from protobuf field <code>.grafeas.v1.UpgradeNote upgrade = 17;</code>
-     * @return \Grafeas\V1\UpgradeNote
+     * @return \Grafeas\V1\UpgradeNote|null
      */
     public function getUpgrade()
     {

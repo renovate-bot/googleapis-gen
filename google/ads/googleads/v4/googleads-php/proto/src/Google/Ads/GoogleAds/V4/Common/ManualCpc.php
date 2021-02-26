@@ -41,7 +41,7 @@ class ManualCpc extends \Google\Protobuf\Internal\Message
      * Whether bids are to be enhanced based on conversion optimizer data.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue enhanced_cpc_enabled = 1;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getEnhancedCpcEnabled()
     {

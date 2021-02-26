@@ -318,7 +318,7 @@ class HumanAnnotationConfig extends \Google\Protobuf\Internal\Message
      * is 3600 seconds. Default is 3600 seconds.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration question_duration = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getQuestionDuration()
     {

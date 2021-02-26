@@ -897,6 +897,20 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 percent_off = 17;</code>
+   * @return Whether the percentOff field is set.
+   */
+  @java.lang.Override
+  public boolean hasPercentOff() {
+    return discountTypeCase_ == 17;
+  }
+  /**
+   * <pre>
+   * Percentage off discount in the promotion in micros.
+   * One million is equivalent to one percent.
+   * Either this or money_off_amount is required.
+   * </pre>
+   *
+   * <code>int64 percent_off = 17;</code>
    * @return The percentOff.
    */
   @java.lang.Override
@@ -954,6 +968,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PROMOTION_CODE_FIELD_NUMBER = 18;
+  /**
+   * <pre>
+   * A code the user should use in order to be eligible for the promotion.
+   * </pre>
+   *
+   * <code>string promotion_code = 18;</code>
+   * @return Whether the promotionCode field is set.
+   */
+  public boolean hasPromotionCode() {
+    return promotionTriggerCase_ == 18;
+  }
   /**
    * <pre>
    * A code the user should use in order to be eligible for the promotion.
@@ -3277,6 +3302,19 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 percent_off = 17;</code>
+     * @return Whether the percentOff field is set.
+     */
+    public boolean hasPercentOff() {
+      return discountTypeCase_ == 17;
+    }
+    /**
+     * <pre>
+     * Percentage off discount in the promotion in micros.
+     * One million is equivalent to one percent.
+     * Either this or money_off_amount is required.
+     * </pre>
+     *
+     * <code>int64 percent_off = 17;</code>
      * @return The percentOff.
      */
     public long getPercentOff() {
@@ -3507,6 +3545,18 @@ private static final long serialVersionUID = 0L;
       return moneyAmountOffBuilder_;
     }
 
+    /**
+     * <pre>
+     * A code the user should use in order to be eligible for the promotion.
+     * </pre>
+     *
+     * <code>string promotion_code = 18;</code>
+     * @return Whether the promotionCode field is set.
+     */
+    @java.lang.Override
+    public boolean hasPromotionCode() {
+      return promotionTriggerCase_ == 18;
+    }
     /**
      * <pre>
      * A code the user should use in order to be eligible for the promotion.

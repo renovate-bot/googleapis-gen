@@ -76,7 +76,7 @@ class ResponseMessage extends \Google\Protobuf\Internal\Message
      * Returns a text response.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.Text text = 1;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\ResponseMessage\Text
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\ResponseMessage\Text|null
      */
     public function getText()
     {
@@ -107,7 +107,7 @@ class ResponseMessage extends \Google\Protobuf\Internal\Message
      * Returns a response containing a custom, platform-specific payload.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct payload = 2;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getPayload()
     {
@@ -138,7 +138,7 @@ class ResponseMessage extends \Google\Protobuf\Internal\Message
      * Indicates that the conversation succeeded.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.ConversationSuccess conversation_success = 9;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\ResponseMessage\ConversationSuccess
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\ResponseMessage\ConversationSuccess|null
      */
     public function getConversationSuccess()
     {
@@ -170,7 +170,7 @@ class ResponseMessage extends \Google\Protobuf\Internal\Message
      * synthesis, as described in the comment on the ResponseMessage message.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.OutputAudioText output_audio_text = 8;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\ResponseMessage\OutputAudioText
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\ResponseMessage\OutputAudioText|null
      */
     public function getOutputAudioText()
     {
@@ -202,7 +202,7 @@ class ResponseMessage extends \Google\Protobuf\Internal\Message
      * Hands off conversation to a human agent.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.LiveAgentHandoff live_agent_handoff = 10;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\ResponseMessage\LiveAgentHandoff
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\ResponseMessage\LiveAgentHandoff|null
      */
     public function getLiveAgentHandoff()
     {
@@ -238,7 +238,7 @@ class ResponseMessage extends \Google\Protobuf\Internal\Message
      * It's guaranteed that there is at most one such message in each response.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction end_interaction = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\ResponseMessage\EndInteraction
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\ResponseMessage\EndInteraction|null
      */
     public function getEndInteraction()
     {
@@ -277,7 +277,7 @@ class ResponseMessage extends \Google\Protobuf\Internal\Message
      * does not try to read or process the URI in any way.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio play_audio = 12;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\ResponseMessage\PlayAudio
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\ResponseMessage\PlayAudio|null
      */
     public function getPlayAudio()
     {
@@ -315,7 +315,7 @@ class ResponseMessage extends \Google\Protobuf\Internal\Message
      * defined by the user.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.MixedAudio mixed_audio = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\ResponseMessage\MixedAudio
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\ResponseMessage\MixedAudio|null
      */
     public function getMixedAudio()
     {

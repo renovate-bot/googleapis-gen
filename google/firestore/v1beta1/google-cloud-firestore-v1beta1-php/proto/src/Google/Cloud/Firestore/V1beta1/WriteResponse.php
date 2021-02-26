@@ -163,7 +163,7 @@ class WriteResponse extends \Google\Protobuf\Internal\Message
      * The time at which the commit occurred.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp commit_time = 4;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCommitTime()
     {

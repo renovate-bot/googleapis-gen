@@ -38,7 +38,7 @@ class ImportProductSetsInputConfig extends \Google\Protobuf\Internal\Message
      * of ImportProductSetRequests in each line.
      *
      * Generated from protobuf field <code>.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource gcs_source = 1;</code>
-     * @return \Google\Cloud\Vision\V1p3beta1\ImportProductSetsGcsSource
+     * @return \Google\Cloud\Vision\V1p3beta1\ImportProductSetsGcsSource|null
      */
     public function getGcsSource()
     {

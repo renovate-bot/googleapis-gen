@@ -315,7 +315,7 @@ class LogEntry extends \Google\Protobuf\Internal\Message
      * the error.
      *
      * Generated from protobuf field <code>.google.api.MonitoredResource resource = 8 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Api\MonitoredResource
+     * @return \Google\Api\MonitoredResource|null
      */
     public function getResource()
     {
@@ -359,7 +359,7 @@ class LogEntry extends \Google\Protobuf\Internal\Message
      *   "type.googleapis.com/google.appengine.logging.v1.RequestLog"
      *
      * Generated from protobuf field <code>.google.protobuf.Any proto_payload = 2;</code>
-     * @return \Google\Protobuf\Any
+     * @return \Google\Protobuf\Any|null
      */
     public function getProtoPayload()
     {
@@ -427,7 +427,7 @@ class LogEntry extends \Google\Protobuf\Internal\Message
      * expressed as a JSON object.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct json_payload = 6;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getJsonPayload()
     {
@@ -468,7 +468,7 @@ class LogEntry extends \Google\Protobuf\Internal\Message
      * those time boundaries aren't ingested by Logging.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp timestamp = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getTimestamp()
     {
@@ -513,7 +513,7 @@ class LogEntry extends \Google\Protobuf\Internal\Message
      * Output only. The time the log entry was received by Logging.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp receive_timestamp = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getReceiveTimestamp()
     {
@@ -618,7 +618,7 @@ class LogEntry extends \Google\Protobuf\Internal\Message
      * applicable.
      *
      * Generated from protobuf field <code>.google.logging.type.HttpRequest http_request = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\Logging\Type\HttpRequest
+     * @return \Google\Cloud\Logging\Type\HttpRequest|null
      */
     public function getHttpRequest()
     {
@@ -684,7 +684,7 @@ class LogEntry extends \Google\Protobuf\Internal\Message
      * applicable.
      *
      * Generated from protobuf field <code>.google.logging.v2.LogEntryOperation operation = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\Logging\V2\LogEntryOperation
+     * @return \Google\Cloud\Logging\V2\LogEntryOperation|null
      */
     public function getOperation()
     {
@@ -821,7 +821,7 @@ class LogEntry extends \Google\Protobuf\Internal\Message
      * Optional. Source code location information associated with the log entry, if any.
      *
      * Generated from protobuf field <code>.google.logging.v2.LogEntrySourceLocation source_location = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\Logging\V2\LogEntrySourceLocation
+     * @return \Google\Cloud\Logging\V2\LogEntrySourceLocation|null
      */
     public function getSourceLocation()
     {

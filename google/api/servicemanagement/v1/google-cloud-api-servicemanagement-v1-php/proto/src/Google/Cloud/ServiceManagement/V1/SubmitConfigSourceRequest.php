@@ -91,7 +91,7 @@ class SubmitConfigSourceRequest extends \Google\Protobuf\Internal\Message
      * Required. The source configuration for the service.
      *
      * Generated from protobuf field <code>.google.api.servicemanagement.v1.ConfigSource config_source = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\ServiceManagement\V1\ConfigSource
+     * @return \Google\Cloud\ServiceManagement\V1\ConfigSource|null
      */
     public function getConfigSource()
     {

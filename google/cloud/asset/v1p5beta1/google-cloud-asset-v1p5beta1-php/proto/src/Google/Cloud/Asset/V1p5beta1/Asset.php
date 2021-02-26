@@ -168,7 +168,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      * Representation of the resource.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1p5beta1.Resource resource = 3;</code>
-     * @return \Google\Cloud\Asset\V1p5beta1\Resource
+     * @return \Google\Cloud\Asset\V1p5beta1\Resource|null
      */
     public function getResource()
     {
@@ -205,7 +205,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      * each resource, there must be at most one Cloud IAM policy set on it.
      *
      * Generated from protobuf field <code>.google.iam.v1.Policy iam_policy = 4;</code>
-     * @return \Google\Cloud\Iam\V1\Policy
+     * @return \Google\Cloud\Iam\V1\Policy|null
      */
     public function getIamPolicy()
     {
@@ -270,7 +270,7 @@ class Asset extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code>
-     * @return \Google\Identity\AccessContextManager\V1\AccessPolicy
+     * @return \Google\Identity\AccessContextManager\V1\AccessPolicy|null
      */
     public function getAccessPolicy()
     {
@@ -297,7 +297,7 @@ class Asset extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code>
-     * @return \Google\Identity\AccessContextManager\V1\AccessLevel
+     * @return \Google\Identity\AccessContextManager\V1\AccessLevel|null
      */
     public function getAccessLevel()
     {
@@ -324,7 +324,7 @@ class Asset extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
-     * @return \Google\Identity\AccessContextManager\V1\ServicePerimeter
+     * @return \Google\Identity\AccessContextManager\V1\ServicePerimeter|null
      */
     public function getServicePerimeter()
     {

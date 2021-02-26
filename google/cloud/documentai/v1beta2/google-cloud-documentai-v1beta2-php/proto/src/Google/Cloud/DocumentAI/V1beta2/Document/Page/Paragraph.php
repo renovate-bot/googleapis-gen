@@ -49,7 +49,7 @@ class Paragraph extends \Google\Protobuf\Internal\Message
      * [Layout][google.cloud.documentai.v1beta2.Document.Page.Layout] for [Paragraph][google.cloud.documentai.v1beta2.Document.Page.Paragraph].
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta2.Document.Page.Layout layout = 1;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta2\Document\Page\Layout
+     * @return \Google\Cloud\DocumentAI\V1beta2\Document\Page\Layout|null
      */
     public function getLayout()
     {

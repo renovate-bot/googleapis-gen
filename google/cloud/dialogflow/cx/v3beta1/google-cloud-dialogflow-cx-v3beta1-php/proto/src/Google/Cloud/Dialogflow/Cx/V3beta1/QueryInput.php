@@ -62,7 +62,7 @@ class QueryInput extends \Google\Protobuf\Internal\Message
      * The natural language text to be processed.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.TextInput text = 2;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\TextInput
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\TextInput|null
      */
     public function getText()
     {
@@ -93,7 +93,7 @@ class QueryInput extends \Google\Protobuf\Internal\Message
      * The intent to be triggered.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.IntentInput intent = 3;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\IntentInput
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\IntentInput|null
      */
     public function getIntent()
     {
@@ -124,7 +124,7 @@ class QueryInput extends \Google\Protobuf\Internal\Message
      * The natural language speech audio to be processed.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.AudioInput audio = 5;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\AudioInput
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\AudioInput|null
      */
     public function getAudio()
     {
@@ -155,7 +155,7 @@ class QueryInput extends \Google\Protobuf\Internal\Message
      * The event to be triggered.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.EventInput event = 6;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\EventInput
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\EventInput|null
      */
     public function getEvent()
     {
@@ -186,7 +186,7 @@ class QueryInput extends \Google\Protobuf\Internal\Message
      * The DTMF event to be handled.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.DtmfInput dtmf = 7;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\DtmfInput
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\DtmfInput|null
      */
     public function getDtmf()
     {

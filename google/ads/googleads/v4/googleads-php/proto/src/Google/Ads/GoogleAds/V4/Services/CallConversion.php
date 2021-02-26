@@ -100,7 +100,7 @@ class CallConversion extends \Google\Protobuf\Internal\Message
      * in E.164 format with preceding '+' sign. e.g. "+16502531234".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue caller_id = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCallerId()
     {
@@ -168,7 +168,7 @@ class CallConversion extends \Google\Protobuf\Internal\Message
      * e.g. "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue call_start_date_time = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCallStartDateTime()
     {
@@ -240,7 +240,7 @@ class CallConversion extends \Google\Protobuf\Internal\Message
      * conversion action id as the sole identifier of the conversion action.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getConversionAction()
     {
@@ -314,7 +314,7 @@ class CallConversion extends \Google\Protobuf\Internal\Message
      * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_date_time = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getConversionDateTime()
     {
@@ -383,7 +383,7 @@ class CallConversion extends \Google\Protobuf\Internal\Message
      * The value of the conversion for the advertiser.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversion_value = 5;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getConversionValue()
     {
@@ -447,7 +447,7 @@ class CallConversion extends \Google\Protobuf\Internal\Message
      * 3-character currency code. For example: USD, EUR.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 6;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCurrencyCode()
     {

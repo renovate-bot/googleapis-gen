@@ -41,7 +41,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      * other than image segmentation.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.GcsDestination gcs_destination = 1;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\GcsDestination
+     * @return \Google\Cloud\DataLabeling\V1beta1\GcsDestination|null
      */
     public function getGcsDestination()
     {
@@ -74,7 +74,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      * segmentation labeling output.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.GcsFolderDestination gcs_folder_destination = 2;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\GcsFolderDestination
+     * @return \Google\Cloud\DataLabeling\V1beta1\GcsFolderDestination|null
      */
     public function getGcsFolderDestination()
     {

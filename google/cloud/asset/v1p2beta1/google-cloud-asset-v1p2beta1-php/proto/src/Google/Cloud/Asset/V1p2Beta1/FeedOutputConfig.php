@@ -36,7 +36,7 @@ class FeedOutputConfig extends \Google\Protobuf\Internal\Message
      * Destination on Cloud Pubsub.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1p2beta1.PubsubDestination pubsub_destination = 1;</code>
-     * @return \Google\Cloud\Asset\V1p2Beta1\PubsubDestination
+     * @return \Google\Cloud\Asset\V1p2Beta1\PubsubDestination|null
      */
     public function getPubsubDestination()
     {

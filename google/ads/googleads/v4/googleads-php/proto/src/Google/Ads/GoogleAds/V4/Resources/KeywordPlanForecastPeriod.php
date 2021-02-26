@@ -75,7 +75,7 @@ class KeywordPlanForecastPeriod extends \Google\Protobuf\Internal\Message
      * The start and end dates are inclusive.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.DateRange date_range = 2;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\DateRange
+     * @return \Google\Ads\GoogleAds\V4\Common\DateRange|null
      */
     public function getDateRange()
     {

@@ -134,7 +134,7 @@ class FeedItemPlaceholderPolicyInfo extends \Google\Protobuf\Internal\Message
      * Output only. The FeedMapping that contains the placeholder type.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue feed_mapping_resource_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getFeedMappingResourceName()
     {

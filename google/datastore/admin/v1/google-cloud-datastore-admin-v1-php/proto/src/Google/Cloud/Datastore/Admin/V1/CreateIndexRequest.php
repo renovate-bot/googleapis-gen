@@ -79,7 +79,7 @@ class CreateIndexRequest extends \Google\Protobuf\Internal\Message
      * ignored. Single property indexes cannot be created or deleted.
      *
      * Generated from protobuf field <code>.google.datastore.admin.v1.Index index = 3;</code>
-     * @return \Google\Cloud\Datastore\Admin\V1\Index
+     * @return \Google\Cloud\Datastore\Admin\V1\Index|null
      */
     public function getIndex()
     {

@@ -57,7 +57,7 @@ class GclidDateTimePair extends \Google\Protobuf\Internal\Message
      * adjustment.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue gclid = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getGclid()
     {
@@ -125,7 +125,7 @@ class GclidDateTimePair extends \Google\Protobuf\Internal\Message
      * hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_date_time = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getConversionDateTime()
     {

@@ -41,7 +41,7 @@ class CampaignDuration extends \Google\Protobuf\Internal\Message
      * The duration value in days.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value duration_in_days = 1;</code>
-     * @return \Google\Protobuf\Int32Value
+     * @return \Google\Protobuf\Int32Value|null
      */
     public function getDurationInDays()
     {

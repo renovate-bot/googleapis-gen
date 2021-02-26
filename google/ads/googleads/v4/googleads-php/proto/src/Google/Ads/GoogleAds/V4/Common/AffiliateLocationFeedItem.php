@@ -113,7 +113,7 @@ class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
      * The name of the business.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue business_name = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getBusinessName()
     {
@@ -176,7 +176,7 @@ class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
      * Line 1 of the business address.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue address_line_1 = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAddressLine1()
     {
@@ -239,7 +239,7 @@ class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
      * Line 2 of the business address.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue address_line_2 = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAddressLine2()
     {
@@ -302,7 +302,7 @@ class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
      * City of the business address.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue city = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCity()
     {
@@ -365,7 +365,7 @@ class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
      * Province of the business address.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue province = 5;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getProvince()
     {
@@ -428,7 +428,7 @@ class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
      * Postal code of the business address.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue postal_code = 6;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPostalCode()
     {
@@ -491,7 +491,7 @@ class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
      * Country code of the business address.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 7;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCountryCode()
     {
@@ -554,7 +554,7 @@ class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
      * Phone number of the business.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue phone_number = 8;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPhoneNumber()
     {
@@ -617,7 +617,7 @@ class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
      * Id of the retail chain that is advertised as a seller of your product.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value chain_id = 9;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getChainId()
     {
@@ -680,7 +680,7 @@ class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
      * Name of chain.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue chain_name = 10;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getChainName()
     {

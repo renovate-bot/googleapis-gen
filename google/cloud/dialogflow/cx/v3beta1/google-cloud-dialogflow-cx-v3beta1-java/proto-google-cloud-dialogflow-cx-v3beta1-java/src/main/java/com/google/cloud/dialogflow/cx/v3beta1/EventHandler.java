@@ -321,6 +321,19 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string target_page = 2 [(.google.api.resource_reference) = { ... }</code>
+   * @return Whether the targetPage field is set.
+   */
+  public boolean hasTargetPage() {
+    return targetCase_ == 2;
+  }
+  /**
+   * <pre>
+   * The target page to transition to.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+   * </pre>
+   *
+   * <code>string target_page = 2 [(.google.api.resource_reference) = { ... }</code>
    * @return The targetPage.
    */
   public java.lang.String getTargetPage() {
@@ -370,6 +383,19 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TARGET_FLOW_FIELD_NUMBER = 3;
+  /**
+   * <pre>
+   * The target flow to transition to.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;`.
+   * </pre>
+   *
+   * <code>string target_flow = 3 [(.google.api.resource_reference) = { ... }</code>
+   * @return Whether the targetFlow field is set.
+   */
+  public boolean hasTargetFlow() {
+    return targetCase_ == 3;
+  }
   /**
    * <pre>
    * The target flow to transition to.
@@ -1248,6 +1274,20 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string target_page = 2 [(.google.api.resource_reference) = { ... }</code>
+     * @return Whether the targetPage field is set.
+     */
+    @java.lang.Override
+    public boolean hasTargetPage() {
+      return targetCase_ == 2;
+    }
+    /**
+     * <pre>
+     * The target page to transition to.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     * </pre>
+     *
+     * <code>string target_page = 2 [(.google.api.resource_reference) = { ... }</code>
      * @return The targetPage.
      */
     @java.lang.Override
@@ -1359,6 +1399,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The target flow to transition to.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * </pre>
+     *
+     * <code>string target_flow = 3 [(.google.api.resource_reference) = { ... }</code>
+     * @return Whether the targetFlow field is set.
+     */
+    @java.lang.Override
+    public boolean hasTargetFlow() {
+      return targetCase_ == 3;
+    }
     /**
      * <pre>
      * The target flow to transition to.

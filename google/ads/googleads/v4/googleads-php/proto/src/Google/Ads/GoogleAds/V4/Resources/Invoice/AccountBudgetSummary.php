@@ -141,7 +141,7 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      * `customers/{customer_id}`
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue customer = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCustomer()
     {
@@ -217,7 +217,7 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      * invoice PDF as "Account".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue customer_descriptive_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCustomerDescriptiveName()
     {
@@ -286,7 +286,7 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      * `customers/{customer_id}/accountBudgets/{account_budget_id}`
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue account_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAccountBudget()
     {
@@ -359,7 +359,7 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      * budget".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue account_budget_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAccountBudgetName()
     {
@@ -426,7 +426,7 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      * invoice PDF as "Purchase order".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue purchase_order_number = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPurchaseOrderNumber()
     {
@@ -493,7 +493,7 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      * period, in micros.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value subtotal_amount_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getSubtotalAmountMicros()
     {
@@ -560,7 +560,7 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      * micros.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value tax_amount_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getTaxAmountMicros()
     {
@@ -628,7 +628,7 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      * the account budget tax amount.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value total_amount_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getTotalAmountMicros()
     {
@@ -699,7 +699,7 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      * be different from the account budget's start and end time.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.DateRange billable_activity_date_range = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\DateRange
+     * @return \Google\Ads\GoogleAds\V4\Common\DateRange|null
      */
     public function getBillableActivityDateRange()
     {

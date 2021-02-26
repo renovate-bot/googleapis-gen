@@ -130,7 +130,7 @@ class SmoothGradConfig extends \Google\Protobuf\Internal\Message
      * features.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.FeatureNoiseSigma feature_noise_sigma = 2;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\FeatureNoiseSigma
+     * @return \Google\Cloud\Aiplatform\V1beta1\FeatureNoiseSigma|null
      */
     public function getFeatureNoiseSigma()
     {

@@ -135,7 +135,7 @@ class ResponsiveSearchAdInfo extends \Google\Protobuf\Internal\Message
      * First part of text that may appear appended to the url displayed in the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue path1 = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPath1()
     {
@@ -199,7 +199,7 @@ class ResponsiveSearchAdInfo extends \Google\Protobuf\Internal\Message
      * ad. This field can only be set when path1 is also set.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue path2 = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPath2()
     {

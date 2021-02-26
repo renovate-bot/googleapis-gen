@@ -50,7 +50,7 @@ class AnnotateFileResponse extends \Google\Protobuf\Internal\Message
      * Information about the file for which this response is generated.
      *
      * Generated from protobuf field <code>.google.cloud.vision.v1p3beta1.InputConfig input_config = 1;</code>
-     * @return \Google\Cloud\Vision\V1p3beta1\InputConfig
+     * @return \Google\Cloud\Vision\V1p3beta1\InputConfig|null
      */
     public function getInputConfig()
     {

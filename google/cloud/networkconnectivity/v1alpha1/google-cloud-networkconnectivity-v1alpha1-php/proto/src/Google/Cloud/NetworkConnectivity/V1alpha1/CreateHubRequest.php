@@ -137,7 +137,7 @@ class CreateHubRequest extends \Google\Protobuf\Internal\Message
      * Required. Initial values for a new Hub.
      *
      * Generated from protobuf field <code>.google.cloud.networkconnectivity.v1alpha1.Hub hub = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\NetworkConnectivity\V1alpha1\Hub
+     * @return \Google\Cloud\NetworkConnectivity\V1alpha1\Hub|null
      */
     public function getHub()
     {

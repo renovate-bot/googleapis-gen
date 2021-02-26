@@ -59,7 +59,7 @@ class UpdateTaxonomyRequest extends \Google\Protobuf\Internal\Message
      * policy types can be updated.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1beta1.Taxonomy taxonomy = 1;</code>
-     * @return \Google\Cloud\DataCatalog\V1beta1\Taxonomy
+     * @return \Google\Cloud\DataCatalog\V1beta1\Taxonomy|null
      */
     public function getTaxonomy()
     {
@@ -99,7 +99,7 @@ class UpdateTaxonomyRequest extends \Google\Protobuf\Internal\Message
      * If not set, defaults to all of the fields that are allowed to update.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

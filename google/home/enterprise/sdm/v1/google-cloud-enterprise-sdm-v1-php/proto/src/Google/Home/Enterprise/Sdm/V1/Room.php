@@ -80,7 +80,7 @@ class Room extends \Google\Protobuf\Internal\Message
      * Room traits.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct traits = 2;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getTraits()
     {

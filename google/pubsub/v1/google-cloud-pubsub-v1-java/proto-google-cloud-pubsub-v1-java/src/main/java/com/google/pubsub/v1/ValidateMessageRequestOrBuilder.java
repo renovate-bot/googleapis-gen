@@ -36,6 +36,16 @@ public interface ValidateMessageRequestOrBuilder extends
    * </pre>
    *
    * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
+  /**
+   * <pre>
+   * Name of the schema against which to validate.
+   * Format is `projects/{project}/schemas/{schema}`.
+   * </pre>
+   *
+   * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
    * @return The name.
    */
   java.lang.String getName();

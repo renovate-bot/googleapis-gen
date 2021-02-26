@@ -617,6 +617,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v4.enums.FeedItemTargetDeviceEnum.FeedItemTargetDevice device = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the device field is set.
+   */
+  public boolean hasDevice() {
+    return targetCase_ == 9;
+  }
+  /**
+   * <pre>
+   * Immutable. The targeted device.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.FeedItemTargetDeviceEnum.FeedItemTargetDevice device = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The enum numeric value on the wire for device.
    */
   public int getDeviceValue() {
@@ -2545,6 +2556,18 @@ private static final long serialVersionUID = 0L;
       return geoTargetConstantBuilder_;
     }
 
+    /**
+     * <pre>
+     * Immutable. The targeted device.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.FeedItemTargetDeviceEnum.FeedItemTargetDevice device = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return Whether the device field is set.
+     */
+    @java.lang.Override
+    public boolean hasDevice() {
+      return targetCase_ == 9;
+    }
     /**
      * <pre>
      * Immutable. The targeted device.

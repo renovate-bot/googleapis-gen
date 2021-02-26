@@ -121,7 +121,7 @@ class BatchJob extends \Google\Protobuf\Internal\Message
      * Output only. ID of this batch job.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -185,7 +185,7 @@ class BatchJob extends \Google\Protobuf\Internal\Message
      * batch job status is PENDING.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue next_add_sequence_token = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getNextAddSequenceToken()
     {
@@ -251,7 +251,7 @@ class BatchJob extends \Google\Protobuf\Internal\Message
      * Output only. Contains additional information about this batch job.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.BatchJob.BatchJobMetadata metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\BatchJob\BatchJobMetadata
+     * @return \Google\Ads\GoogleAds\V4\Resources\BatchJob\BatchJobMetadata|null
      */
     public function getMetadata()
     {
@@ -314,7 +314,7 @@ class BatchJob extends \Google\Protobuf\Internal\Message
      * for completion. Only set when the batch job status is RUNNING or DONE.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getLongRunningOperation()
     {

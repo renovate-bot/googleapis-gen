@@ -109,7 +109,7 @@ class CreateTagRequest extends \Google\Protobuf\Internal\Message
      * The tag to be created.
      *
      * Generated from protobuf field <code>.google.devtools.artifactregistry.v1beta2.Tag tag = 3;</code>
-     * @return \Google\Cloud\ArtifactRegistry\V1beta2\Tag
+     * @return \Google\Cloud\ArtifactRegistry\V1beta2\Tag|null
      */
     public function getTag()
     {

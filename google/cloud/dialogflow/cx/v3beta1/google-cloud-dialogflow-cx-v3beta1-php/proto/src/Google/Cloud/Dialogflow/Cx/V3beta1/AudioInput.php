@@ -63,7 +63,7 @@ class AudioInput extends \Google\Protobuf\Internal\Message
      * Required. Instructs the speech recognizer how to process the speech audio.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.InputAudioConfig config = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\InputAudioConfig
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\InputAudioConfig|null
      */
     public function getConfig()
     {

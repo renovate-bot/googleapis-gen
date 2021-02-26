@@ -24643,6 +24643,15 @@ public final class GuestPolicies {
          * </pre>
          *
          * <code>string artifact_id = 1;</code>
+         * @return Whether the artifactId field is set.
+         */
+        boolean hasArtifactId();
+        /**
+         * <pre>
+         * The id of the relevant artifact in the recipe.
+         * </pre>
+         *
+         * <code>string artifact_id = 1;</code>
          * @return The artifactId.
          */
         java.lang.String getArtifactId();
@@ -24657,6 +24666,15 @@ public final class GuestPolicies {
         com.google.protobuf.ByteString
             getArtifactIdBytes();
 
+        /**
+         * <pre>
+         * The absolute path of the file on the local filesystem.
+         * </pre>
+         *
+         * <code>string local_path = 2;</code>
+         * @return Whether the localPath field is set.
+         */
+        boolean hasLocalPath();
         /**
          * <pre>
          * The absolute path of the file on the local filesystem.
@@ -24932,6 +24950,17 @@ public final class GuestPolicies {
          * </pre>
          *
          * <code>string artifact_id = 1;</code>
+         * @return Whether the artifactId field is set.
+         */
+        public boolean hasArtifactId() {
+          return locationTypeCase_ == 1;
+        }
+        /**
+         * <pre>
+         * The id of the relevant artifact in the recipe.
+         * </pre>
+         *
+         * <code>string artifact_id = 1;</code>
          * @return The artifactId.
          */
         public java.lang.String getArtifactId() {
@@ -24979,6 +25008,17 @@ public final class GuestPolicies {
         }
 
         public static final int LOCAL_PATH_FIELD_NUMBER = 2;
+        /**
+         * <pre>
+         * The absolute path of the file on the local filesystem.
+         * </pre>
+         *
+         * <code>string local_path = 2;</code>
+         * @return Whether the localPath field is set.
+         */
+        public boolean hasLocalPath() {
+          return locationTypeCase_ == 2;
+        }
         /**
          * <pre>
          * The absolute path of the file on the local filesystem.
@@ -25579,6 +25619,18 @@ public final class GuestPolicies {
            * </pre>
            *
            * <code>string artifact_id = 1;</code>
+           * @return Whether the artifactId field is set.
+           */
+          @java.lang.Override
+          public boolean hasArtifactId() {
+            return locationTypeCase_ == 1;
+          }
+          /**
+           * <pre>
+           * The id of the relevant artifact in the recipe.
+           * </pre>
+           *
+           * <code>string artifact_id = 1;</code>
            * @return The artifactId.
            */
           @java.lang.Override
@@ -25682,6 +25734,18 @@ public final class GuestPolicies {
             return this;
           }
 
+          /**
+           * <pre>
+           * The absolute path of the file on the local filesystem.
+           * </pre>
+           *
+           * <code>string local_path = 2;</code>
+           * @return Whether the localPath field is set.
+           */
+          @java.lang.Override
+          public boolean hasLocalPath() {
+            return locationTypeCase_ == 2;
+          }
           /**
            * <pre>
            * The absolute path of the file on the local filesystem.

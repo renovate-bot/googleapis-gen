@@ -49,7 +49,7 @@ class KeywordMatchTypeRecommendation extends \Google\Protobuf\Internal\Message
      * Output only. The existing keyword where the match type should be more broad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\KeywordInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\KeywordInfo|null
      */
     public function getKeyword()
     {

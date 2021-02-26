@@ -156,7 +156,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the bidding strategy.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -222,7 +222,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * in UTF-8 bytes, (trimmed).
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {
@@ -353,7 +353,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value campaign_count = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCampaignCount()
     {
@@ -420,7 +420,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value non_removed_campaign_count = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getNonRemovedCampaignCount()
     {
@@ -488,7 +488,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * likely.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.EnhancedCpc enhanced_cpc = 7;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\EnhancedCpc
+     * @return \Google\Ads\GoogleAds\V4\Common\EnhancedCpc|null
      */
     public function getEnhancedCpc()
     {
@@ -522,7 +522,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * possible at the target cost-per-acquisition (CPA) you set.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.TargetCpa target_cpa = 9;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\TargetCpa
+     * @return \Google\Ads\GoogleAds\V4\Common\TargetCpa|null
      */
     public function getTargetCpa()
     {
@@ -555,7 +555,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * percentage of impressions.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.TargetImpressionShare target_impression_share = 48;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\TargetImpressionShare
+     * @return \Google\Ads\GoogleAds\V4\Common\TargetImpressionShare|null
      */
     public function getTargetImpressionShare()
     {
@@ -588,7 +588,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * specific target Return On Ad Spend (ROAS).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.TargetRoas target_roas = 11;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\TargetRoas
+     * @return \Google\Ads\GoogleAds\V4\Common\TargetRoas|null
      */
     public function getTargetRoas()
     {
@@ -621,7 +621,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * possible within your budget.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.TargetSpend target_spend = 12;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\TargetSpend
+     * @return \Google\Ads\GoogleAds\V4\Common\TargetSpend|null
      */
     public function getTargetSpend()
     {

@@ -109,7 +109,7 @@ class CreateProductRequest extends \Google\Protobuf\Internal\Message
      * Required. The [Product][google.cloud.retail.v2beta.Product] to create.
      *
      * Generated from protobuf field <code>.google.cloud.retail.v2beta.Product product = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Retail\V2beta\Product
+     * @return \Google\Cloud\Retail\V2beta\Product|null
      */
     public function getProduct()
     {

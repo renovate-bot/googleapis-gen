@@ -65,7 +65,7 @@ class StreamingVideoConfig extends \Google\Protobuf\Internal\Message
      * Config for STREAMING_SHOT_CHANGE_DETECTION.
      *
      * Generated from protobuf field <code>.google.cloud.videointelligence.v1p3beta1.StreamingShotChangeDetectionConfig shot_change_detection_config = 2;</code>
-     * @return \Google\Cloud\VideoIntelligence\V1p3beta1\StreamingShotChangeDetectionConfig
+     * @return \Google\Cloud\VideoIntelligence\V1p3beta1\StreamingShotChangeDetectionConfig|null
      */
     public function getShotChangeDetectionConfig()
     {
@@ -96,7 +96,7 @@ class StreamingVideoConfig extends \Google\Protobuf\Internal\Message
      * Config for STREAMING_LABEL_DETECTION.
      *
      * Generated from protobuf field <code>.google.cloud.videointelligence.v1p3beta1.StreamingLabelDetectionConfig label_detection_config = 3;</code>
-     * @return \Google\Cloud\VideoIntelligence\V1p3beta1\StreamingLabelDetectionConfig
+     * @return \Google\Cloud\VideoIntelligence\V1p3beta1\StreamingLabelDetectionConfig|null
      */
     public function getLabelDetectionConfig()
     {
@@ -127,7 +127,7 @@ class StreamingVideoConfig extends \Google\Protobuf\Internal\Message
      * Config for STREAMING_EXPLICIT_CONTENT_DETECTION.
      *
      * Generated from protobuf field <code>.google.cloud.videointelligence.v1p3beta1.StreamingExplicitContentDetectionConfig explicit_content_detection_config = 4;</code>
-     * @return \Google\Cloud\VideoIntelligence\V1p3beta1\StreamingExplicitContentDetectionConfig
+     * @return \Google\Cloud\VideoIntelligence\V1p3beta1\StreamingExplicitContentDetectionConfig|null
      */
     public function getExplicitContentDetectionConfig()
     {
@@ -158,7 +158,7 @@ class StreamingVideoConfig extends \Google\Protobuf\Internal\Message
      * Config for STREAMING_OBJECT_TRACKING.
      *
      * Generated from protobuf field <code>.google.cloud.videointelligence.v1p3beta1.StreamingObjectTrackingConfig object_tracking_config = 5;</code>
-     * @return \Google\Cloud\VideoIntelligence\V1p3beta1\StreamingObjectTrackingConfig
+     * @return \Google\Cloud\VideoIntelligence\V1p3beta1\StreamingObjectTrackingConfig|null
      */
     public function getObjectTrackingConfig()
     {
@@ -189,7 +189,7 @@ class StreamingVideoConfig extends \Google\Protobuf\Internal\Message
      * Config for STREAMING_AUTOML_ACTION_RECOGNITION.
      *
      * Generated from protobuf field <code>.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig automl_action_recognition_config = 23;</code>
-     * @return \Google\Cloud\VideoIntelligence\V1p3beta1\StreamingAutomlActionRecognitionConfig
+     * @return \Google\Cloud\VideoIntelligence\V1p3beta1\StreamingAutomlActionRecognitionConfig|null
      */
     public function getAutomlActionRecognitionConfig()
     {
@@ -220,7 +220,7 @@ class StreamingVideoConfig extends \Google\Protobuf\Internal\Message
      * Config for STREAMING_AUTOML_CLASSIFICATION.
      *
      * Generated from protobuf field <code>.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig automl_classification_config = 21;</code>
-     * @return \Google\Cloud\VideoIntelligence\V1p3beta1\StreamingAutomlClassificationConfig
+     * @return \Google\Cloud\VideoIntelligence\V1p3beta1\StreamingAutomlClassificationConfig|null
      */
     public function getAutomlClassificationConfig()
     {
@@ -251,7 +251,7 @@ class StreamingVideoConfig extends \Google\Protobuf\Internal\Message
      * Config for STREAMING_AUTOML_OBJECT_TRACKING.
      *
      * Generated from protobuf field <code>.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig automl_object_tracking_config = 22;</code>
-     * @return \Google\Cloud\VideoIntelligence\V1p3beta1\StreamingAutomlObjectTrackingConfig
+     * @return \Google\Cloud\VideoIntelligence\V1p3beta1\StreamingAutomlObjectTrackingConfig|null
      */
     public function getAutomlObjectTrackingConfig()
     {
@@ -308,7 +308,7 @@ class StreamingVideoConfig extends \Google\Protobuf\Internal\Message
      * Streaming storage option. By default: storage is disabled.
      *
      * Generated from protobuf field <code>.google.cloud.videointelligence.v1p3beta1.StreamingStorageConfig storage_config = 30;</code>
-     * @return \Google\Cloud\VideoIntelligence\V1p3beta1\StreamingStorageConfig
+     * @return \Google\Cloud\VideoIntelligence\V1p3beta1\StreamingStorageConfig|null
      */
     public function getStorageConfig()
     {

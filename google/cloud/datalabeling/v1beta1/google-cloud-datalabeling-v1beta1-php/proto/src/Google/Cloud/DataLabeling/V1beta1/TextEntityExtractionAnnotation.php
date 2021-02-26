@@ -49,7 +49,7 @@ class TextEntityExtractionAnnotation extends \Google\Protobuf\Internal\Message
      * Label of the text entities.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\AnnotationSpec
+     * @return \Google\Cloud\DataLabeling\V1beta1\AnnotationSpec|null
      */
     public function getAnnotationSpec()
     {
@@ -85,7 +85,7 @@ class TextEntityExtractionAnnotation extends \Google\Protobuf\Internal\Message
      * Position of the entity.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.SequentialSegment sequential_segment = 2;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\SequentialSegment
+     * @return \Google\Cloud\DataLabeling\V1beta1\SequentialSegment|null
      */
     public function getSequentialSegment()
     {

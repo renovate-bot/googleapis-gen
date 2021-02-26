@@ -721,7 +721,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Budget campaign association status.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.BudgetCampaignAssociationStatus budget_campaign_association_status = 134;</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\BudgetCampaignAssociationStatus
+     * @return \Google\Ads\GoogleAds\V5\Common\BudgetCampaignAssociationStatus|null
      */
     public function getBudgetCampaignAssociationStatus()
     {
@@ -2061,7 +2061,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Keyword criterion.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.Keyword keyword = 61;</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\Keyword
+     * @return \Google\Ads\GoogleAds\V5\Common\Keyword|null
      */
     public function getKeyword()
     {

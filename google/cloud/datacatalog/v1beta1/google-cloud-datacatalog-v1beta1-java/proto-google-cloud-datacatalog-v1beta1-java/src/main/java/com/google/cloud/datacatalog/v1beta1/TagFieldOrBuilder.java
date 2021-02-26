@@ -33,10 +33,28 @@ public interface TagFieldOrBuilder extends
    * </pre>
    *
    * <code>double double_value = 2;</code>
+   * @return Whether the doubleValue field is set.
+   */
+  boolean hasDoubleValue();
+  /**
+   * <pre>
+   * Holds the value for a tag field with double type.
+   * </pre>
+   *
+   * <code>double double_value = 2;</code>
    * @return The doubleValue.
    */
   double getDoubleValue();
 
+  /**
+   * <pre>
+   * Holds the value for a tag field with string type.
+   * </pre>
+   *
+   * <code>string string_value = 3;</code>
+   * @return Whether the stringValue field is set.
+   */
+  boolean hasStringValue();
   /**
    * <pre>
    * Holds the value for a tag field with string type.
@@ -57,6 +75,15 @@ public interface TagFieldOrBuilder extends
   com.google.protobuf.ByteString
       getStringValueBytes();
 
+  /**
+   * <pre>
+   * Holds the value for a tag field with boolean type.
+   * </pre>
+   *
+   * <code>bool bool_value = 4;</code>
+   * @return Whether the boolValue field is set.
+   */
+  boolean hasBoolValue();
   /**
    * <pre>
    * Holds the value for a tag field with boolean type.

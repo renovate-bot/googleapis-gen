@@ -72,6 +72,17 @@ public interface MerchantCenterLinkOperationOrBuilder extends
    * </pre>
    *
    * <code>string remove = 2;</code>
+   * @return Whether the remove field is set.
+   */
+  boolean hasRemove();
+  /**
+   * <pre>
+   * Remove operation: A resource name for the removed merchant center link is
+   * expected, in this format:
+   * `customers/{customer_id}/merchantCenterLinks/{merchant_center_id}`
+   * </pre>
+   *
+   * <code>string remove = 2;</code>
    * @return The remove.
    */
   java.lang.String getRemove();

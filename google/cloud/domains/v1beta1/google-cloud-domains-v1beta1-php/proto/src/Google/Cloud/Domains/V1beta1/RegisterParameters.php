@@ -185,7 +185,7 @@ class RegisterParameters extends \Google\Protobuf\Internal\Message
      * Price to register or renew the domain for one year.
      *
      * Generated from protobuf field <code>.google.type.Money yearly_price = 5;</code>
-     * @return \Google\Type\Money
+     * @return \Google\Type\Money|null
      */
     public function getYearlyPrice()
     {

@@ -45,6 +45,17 @@ public interface FeedItemTargetOperationOrBuilder extends
    * </pre>
    *
    * <code>string remove = 2;</code>
+   * @return Whether the remove field is set.
+   */
+  boolean hasRemove();
+  /**
+   * <pre>
+   * Remove operation: A resource name for the removed feed item target is
+   * expected, in this format:
+   * `customers/{customer_id}/feedItemTargets/{feed_id}~{feed_item_id}~{feed_item_target_type}~{feed_item_target_id}`
+   * </pre>
+   *
+   * <code>string remove = 2;</code>
    * @return The remove.
    */
   java.lang.String getRemove();

@@ -47,7 +47,7 @@ class UpdatePolicyRequest extends \Google\Protobuf\Internal\Message
      * the request URL, in the format `projects/&#42;&#47;policy`.
      *
      * Generated from protobuf field <code>.google.cloud.binaryauthorization.v1beta1.Policy policy = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\BinaryAuthorization\V1beta1\Policy
+     * @return \Google\Cloud\BinaryAuthorization\V1beta1\Policy|null
      */
     public function getPolicy()
     {

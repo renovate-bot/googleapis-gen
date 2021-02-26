@@ -76,7 +76,7 @@ class CreateTaxonomyRequest extends \Google\Protobuf\Internal\Message
      * The taxonomy to be created.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1beta1.Taxonomy taxonomy = 2;</code>
-     * @return \Google\Cloud\DataCatalog\V1beta1\Taxonomy
+     * @return \Google\Cloud\DataCatalog\V1beta1\Taxonomy|null
      */
     public function getTaxonomy()
     {

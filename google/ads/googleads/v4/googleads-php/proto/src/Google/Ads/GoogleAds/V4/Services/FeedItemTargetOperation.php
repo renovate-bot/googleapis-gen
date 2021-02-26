@@ -42,7 +42,7 @@ class FeedItemTargetOperation extends \Google\Protobuf\Internal\Message
      * target.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.FeedItemTarget create = 1;</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\FeedItemTarget
+     * @return \Google\Ads\GoogleAds\V4\Resources\FeedItemTarget|null
      */
     public function getCreate()
     {

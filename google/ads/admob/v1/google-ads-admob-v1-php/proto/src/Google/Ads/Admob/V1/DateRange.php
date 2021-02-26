@@ -54,7 +54,7 @@ class DateRange extends \Google\Protobuf\Internal\Message
      * end date.
      *
      * Generated from protobuf field <code>.google.type.Date start_date = 1;</code>
-     * @return \Google\Type\Date
+     * @return \Google\Type\Date|null
      */
     public function getStartDate()
     {
@@ -92,7 +92,7 @@ class DateRange extends \Google\Protobuf\Internal\Message
      * start date.
      *
      * Generated from protobuf field <code>.google.type.Date end_date = 2;</code>
-     * @return \Google\Type\Date
+     * @return \Google\Type\Date|null
      */
     public function getEndDate()
     {

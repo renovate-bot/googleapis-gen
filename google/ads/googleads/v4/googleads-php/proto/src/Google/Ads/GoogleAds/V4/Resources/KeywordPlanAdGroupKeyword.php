@@ -132,7 +132,7 @@ class KeywordPlanAdGroupKeyword extends \Google\Protobuf\Internal\Message
      * The Keyword Plan ad group to which this keyword belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan_ad_group = 2 [(.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getKeywordPlanAdGroup()
     {
@@ -195,7 +195,7 @@ class KeywordPlanAdGroupKeyword extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the Keyword Plan keyword.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -258,7 +258,7 @@ class KeywordPlanAdGroupKeyword extends \Google\Protobuf\Internal\Message
      * The keyword text.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue text = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getText()
     {
@@ -351,7 +351,7 @@ class KeywordPlanAdGroupKeyword extends \Google\Protobuf\Internal\Message
      * This field is Optional.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_micros = 6;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCpcBidMicros()
     {
@@ -426,7 +426,7 @@ class KeywordPlanAdGroupKeyword extends \Google\Protobuf\Internal\Message
      * Immutable. If true, the keyword is negative.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue negative = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getNegative()
     {

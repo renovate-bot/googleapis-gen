@@ -377,7 +377,7 @@ class TranslateTextRequest extends \Google\Protobuf\Internal\Message
      * an INVALID_ARGUMENT (400) error is returned.
      *
      * Generated from protobuf field <code>.google.cloud.translation.v3beta1.TranslateTextGlossaryConfig glossary_config = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\Translate\V3beta1\TranslateTextGlossaryConfig
+     * @return \Google\Cloud\Translate\V3beta1\TranslateTextGlossaryConfig|null
      */
     public function getGlossaryConfig()
     {

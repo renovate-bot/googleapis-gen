@@ -48,7 +48,7 @@ class InputConfig extends \Google\Protobuf\Internal\Message
      * single file.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta1.GcsSource gcs_source = 1;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta1\GcsSource
+     * @return \Google\Cloud\DocumentAI\V1beta1\GcsSource|null
      */
     public function getGcsSource()
     {

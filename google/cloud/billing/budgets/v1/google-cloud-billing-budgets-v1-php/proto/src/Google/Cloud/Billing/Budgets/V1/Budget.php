@@ -168,7 +168,7 @@ class Budget extends \Google\Protobuf\Internal\Message
      * the actual spend against the budget.
      *
      * Generated from protobuf field <code>.google.cloud.billing.budgets.v1.Filter budget_filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\Billing\Budgets\V1\Filter
+     * @return \Google\Cloud\Billing\Budgets\V1\Filter|null
      */
     public function getBudgetFilter()
     {
@@ -205,7 +205,7 @@ class Budget extends \Google\Protobuf\Internal\Message
      * Required. Budgeted amount.
      *
      * Generated from protobuf field <code>.google.cloud.billing.budgets.v1.BudgetAmount amount = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Billing\Budgets\V1\BudgetAmount
+     * @return \Google\Cloud\Billing\Budgets\V1\BudgetAmount|null
      */
     public function getAmount()
     {
@@ -270,7 +270,7 @@ class Budget extends \Google\Protobuf\Internal\Message
      * thresholds.
      *
      * Generated from protobuf field <code>.google.cloud.billing.budgets.v1.NotificationsRule notifications_rule = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\Billing\Budgets\V1\NotificationsRule
+     * @return \Google\Cloud\Billing\Budgets\V1\NotificationsRule|null
      */
     public function getNotificationsRule()
     {

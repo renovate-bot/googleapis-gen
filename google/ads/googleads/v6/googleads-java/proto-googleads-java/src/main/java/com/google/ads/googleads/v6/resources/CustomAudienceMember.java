@@ -197,6 +197,20 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string keyword = 2;</code>
+   * @return Whether the keyword field is set.
+   */
+  public boolean hasKeyword() {
+    return valueCase_ == 2;
+  }
+  /**
+   * <pre>
+   * A keyword or keyword phrase — at most 10 words and 80 characters.
+   * Languages with double-width characters such as Chinese, Japanese,
+   * or Korean, are allowed 40 characters, which describes the user's
+   * interests or actions.
+   * </pre>
+   *
+   * <code>string keyword = 2;</code>
    * @return The keyword.
    */
   public java.lang.String getKeyword() {
@@ -247,6 +261,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int URL_FIELD_NUMBER = 3;
+  /**
+   * <pre>
+   * An HTTP URL, protocol-included — at most 2048 characters, which includes
+   * contents users have interests in.
+   * </pre>
+   *
+   * <code>string url = 3;</code>
+   * @return Whether the url field is set.
+   */
+  public boolean hasUrl() {
+    return valueCase_ == 3;
+  }
   /**
    * <pre>
    * An HTTP URL, protocol-included — at most 2048 characters, which includes
@@ -308,6 +334,18 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 place_category = 4;</code>
+   * @return Whether the placeCategory field is set.
+   */
+  @java.lang.Override
+  public boolean hasPlaceCategory() {
+    return valueCase_ == 4;
+  }
+  /**
+   * <pre>
+   * A place type described by a place category users visit.
+   * </pre>
+   *
+   * <code>int64 place_category = 4;</code>
    * @return The placeCategory.
    */
   @java.lang.Override
@@ -319,6 +357,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int APP_FIELD_NUMBER = 5;
+  /**
+   * <pre>
+   * A package name of Android apps which users installed such as
+   * com.google.example.
+   * </pre>
+   *
+   * <code>string app = 5;</code>
+   * @return Whether the app field is set.
+   */
+  public boolean hasApp() {
+    return valueCase_ == 5;
+  }
   /**
    * <pre>
    * A package name of Android apps which users installed such as
@@ -888,6 +938,21 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string keyword = 2;</code>
+     * @return Whether the keyword field is set.
+     */
+    @java.lang.Override
+    public boolean hasKeyword() {
+      return valueCase_ == 2;
+    }
+    /**
+     * <pre>
+     * A keyword or keyword phrase — at most 10 words and 80 characters.
+     * Languages with double-width characters such as Chinese, Japanese,
+     * or Korean, are allowed 40 characters, which describes the user's
+     * interests or actions.
+     * </pre>
+     *
+     * <code>string keyword = 2;</code>
      * @return The keyword.
      */
     @java.lang.Override
@@ -1010,6 +1075,19 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string url = 3;</code>
+     * @return Whether the url field is set.
+     */
+    @java.lang.Override
+    public boolean hasUrl() {
+      return valueCase_ == 3;
+    }
+    /**
+     * <pre>
+     * An HTTP URL, protocol-included — at most 2048 characters, which includes
+     * contents users have interests in.
+     * </pre>
+     *
+     * <code>string url = 3;</code>
      * @return The url.
      */
     @java.lang.Override
@@ -1123,6 +1201,17 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 place_category = 4;</code>
+     * @return Whether the placeCategory field is set.
+     */
+    public boolean hasPlaceCategory() {
+      return valueCase_ == 4;
+    }
+    /**
+     * <pre>
+     * A place type described by a place category users visit.
+     * </pre>
+     *
+     * <code>int64 place_category = 4;</code>
      * @return The placeCategory.
      */
     public long getPlaceCategory() {
@@ -1163,6 +1252,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * A package name of Android apps which users installed such as
+     * com.google.example.
+     * </pre>
+     *
+     * <code>string app = 5;</code>
+     * @return Whether the app field is set.
+     */
+    @java.lang.Override
+    public boolean hasApp() {
+      return valueCase_ == 5;
+    }
     /**
      * <pre>
      * A package name of Android apps which users installed such as

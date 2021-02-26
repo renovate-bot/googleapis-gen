@@ -108,7 +108,7 @@ class Access extends \Google\Protobuf\Internal\Message
      * The analysis state of this access node.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.AnalysisState analysis_state = 3;</code>
-     * @return \Google\Cloud\Asset\V1p4beta1\IamPolicyAnalysisResult\AnalysisState
+     * @return \Google\Cloud\Asset\V1p4beta1\IamPolicyAnalysisResult\AnalysisState|null
      */
     public function getAnalysisState()
     {

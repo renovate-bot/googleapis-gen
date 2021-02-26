@@ -57,7 +57,7 @@ class BatchCreateReadSessionStreamsRequest extends \Google\Protobuf\Internal\Mes
      * CreateReadSession. Only the name field needs to be set.
      *
      * Generated from protobuf field <code>.google.cloud.bigquery.storage.v1beta1.ReadSession session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Bigquery\Storage\V1beta1\ReadSession
+     * @return \Google\Cloud\Bigquery\Storage\V1beta1\ReadSession|null
      */
     public function getSession()
     {

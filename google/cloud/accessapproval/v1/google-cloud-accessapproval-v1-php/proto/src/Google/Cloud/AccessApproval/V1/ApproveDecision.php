@@ -49,7 +49,7 @@ class ApproveDecision extends \Google\Protobuf\Internal\Message
      * The time at which approval was granted.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp approve_time = 1;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getApproveTime()
     {
@@ -85,7 +85,7 @@ class ApproveDecision extends \Google\Protobuf\Internal\Message
      * The time at which the approval expires.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp expire_time = 2;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getExpireTime()
     {

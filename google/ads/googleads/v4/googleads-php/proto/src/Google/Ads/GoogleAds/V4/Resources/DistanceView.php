@@ -121,7 +121,7 @@ class DistanceView extends \Google\Protobuf\Internal\Message
      * Output only. True if the DistanceBucket is using the metric system, false otherwise.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue metric_system = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getMetricSystem()
     {

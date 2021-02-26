@@ -41,7 +41,7 @@ class YouTubeVideoInfo extends \Google\Protobuf\Internal\Message
      * YouTube video id as it appears on the YouTube watch page.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue video_id = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getVideoId()
     {

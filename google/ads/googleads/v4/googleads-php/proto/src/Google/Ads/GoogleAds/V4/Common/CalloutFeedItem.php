@@ -44,7 +44,7 @@ class CalloutFeedItem extends \Google\Protobuf\Internal\Message
      * The length of this string should be between 1 and 25, inclusive.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue callout_text = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCalloutText()
     {

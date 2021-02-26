@@ -51,7 +51,7 @@ class ExportDataOperationMetadata extends \Google\Protobuf\Internal\Message
      * The common part of the operation metadata.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 1;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\GenericOperationMetadata
+     * @return \Google\Cloud\Aiplatform\V1beta1\GenericOperationMetadata|null
      */
     public function getGenericMetadata()
     {

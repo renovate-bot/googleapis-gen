@@ -51,7 +51,7 @@ class Transition extends \Google\Protobuf\Internal\Message
      * Intent route or condition route.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.TransitionRoute transition_route = 1;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\TransitionRoute
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\TransitionRoute|null
      */
     public function getTransitionRoute()
     {

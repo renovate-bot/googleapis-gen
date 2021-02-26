@@ -99,6 +99,17 @@ public interface SharedSetOperationOrBuilder extends
    * </pre>
    *
    * <code>string remove = 3;</code>
+   * @return Whether the remove field is set.
+   */
+  boolean hasRemove();
+  /**
+   * <pre>
+   * Remove operation: A resource name for the removed shared set is expected,
+   * in this format:
+   * `customers/{customer_id}/sharedSets/{shared_set_id}`
+   * </pre>
+   *
+   * <code>string remove = 3;</code>
    * @return The remove.
    */
   java.lang.String getRemove();

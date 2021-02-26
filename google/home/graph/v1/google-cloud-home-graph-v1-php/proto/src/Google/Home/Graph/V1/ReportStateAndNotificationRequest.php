@@ -64,6 +64,7 @@ class ReportStateAndNotificationRequest extends \Google\Protobuf\Internal\Messag
      * for details on implementing follow up notifications.
      *
      * Generated from protobuf field <code>string follow_up_token = 5 [deprecated = true];</code>
+     * @deprecated
      */
     protected $follow_up_token = '';
     /**
@@ -185,9 +186,11 @@ class ReportStateAndNotificationRequest extends \Google\Protobuf\Internal\Messag
      *
      * Generated from protobuf field <code>string follow_up_token = 5 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getFollowUpToken()
     {
+        @trigger_error('follow_up_token is deprecated.', E_USER_DEPRECATED);
         return $this->follow_up_token;
     }
 
@@ -200,9 +203,11 @@ class ReportStateAndNotificationRequest extends \Google\Protobuf\Internal\Messag
      * Generated from protobuf field <code>string follow_up_token = 5 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setFollowUpToken($var)
     {
+        @trigger_error('follow_up_token is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->follow_up_token = $var;
 
@@ -213,7 +218,7 @@ class ReportStateAndNotificationRequest extends \Google\Protobuf\Internal\Messag
      * Required. State of devices to update and notification metadata for devices.
      *
      * Generated from protobuf field <code>.google.home.graph.v1.StateAndNotificationPayload payload = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Home\Graph\V1\StateAndNotificationPayload
+     * @return \Google\Home\Graph\V1\StateAndNotificationPayload|null
      */
     public function getPayload()
     {

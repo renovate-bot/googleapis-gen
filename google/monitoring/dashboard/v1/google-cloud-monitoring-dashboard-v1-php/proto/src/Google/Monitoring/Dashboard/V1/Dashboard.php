@@ -171,7 +171,7 @@ class Dashboard extends \Google\Protobuf\Internal\Message
      * informational elements like widgets or tiles.
      *
      * Generated from protobuf field <code>.google.monitoring.dashboard.v1.GridLayout grid_layout = 5;</code>
-     * @return \Google\Monitoring\Dashboard\V1\GridLayout
+     * @return \Google\Monitoring\Dashboard\V1\GridLayout|null
      */
     public function getGridLayout()
     {
@@ -204,7 +204,7 @@ class Dashboard extends \Google\Protobuf\Internal\Message
      * arranged horizontally.
      *
      * Generated from protobuf field <code>.google.monitoring.dashboard.v1.RowLayout row_layout = 8;</code>
-     * @return \Google\Monitoring\Dashboard\V1\RowLayout
+     * @return \Google\Monitoring\Dashboard\V1\RowLayout|null
      */
     public function getRowLayout()
     {
@@ -237,7 +237,7 @@ class Dashboard extends \Google\Protobuf\Internal\Message
      * arranged vertically.
      *
      * Generated from protobuf field <code>.google.monitoring.dashboard.v1.ColumnLayout column_layout = 9;</code>
-     * @return \Google\Monitoring\Dashboard\V1\ColumnLayout
+     * @return \Google\Monitoring\Dashboard\V1\ColumnLayout|null
      */
     public function getColumnLayout()
     {

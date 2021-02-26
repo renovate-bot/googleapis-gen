@@ -133,7 +133,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      * Security Command Center and cannot be modified by the user.
      *
      * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;</code>
-     * @return \Google\Cloud\Securitycenter\V1beta1\Asset\SecurityCenterProperties
+     * @return \Google\Cloud\Securitycenter\V1beta1\Asset\SecurityCenterProperties|null
      */
     public function getSecurityCenterProperties()
     {
@@ -199,7 +199,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      * and come from the SecurityMarks resource that belongs to the asset.
      *
      * Generated from protobuf field <code>.google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 8;</code>
-     * @return \Google\Cloud\Securitycenter\V1beta1\SecurityMarks
+     * @return \Google\Cloud\Securitycenter\V1beta1\SecurityMarks|null
      */
     public function getSecurityMarks()
     {
@@ -236,7 +236,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      * The time at which the asset was created in Security Command Center.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 9;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -273,7 +273,7 @@ class Asset extends \Google\Protobuf\Internal\Message
      * Command Center.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 10;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {

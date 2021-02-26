@@ -125,7 +125,7 @@ class PublishLifecycleEventRequest extends \Google\Protobuf\Internal\Message
      * with INVALID_REQUEST.
      *
      * Generated from protobuf field <code>.google.devtools.build.v1.OrderedBuildEvent build_event = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Devtools\Build\V1\OrderedBuildEvent
+     * @return \Google\Devtools\Build\V1\OrderedBuildEvent|null
      */
     public function getBuildEvent()
     {
@@ -165,7 +165,7 @@ class PublishLifecycleEventRequest extends \Google\Protobuf\Internal\Message
      * BES backend will use its own default value.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration stream_timeout = 3;</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getStreamTimeout()
     {

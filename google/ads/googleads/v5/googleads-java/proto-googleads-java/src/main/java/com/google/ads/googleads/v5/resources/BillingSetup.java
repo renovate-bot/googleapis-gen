@@ -2395,6 +2395,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType start_time_type = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the startTimeType field is set.
+   */
+  public boolean hasStartTimeType() {
+    return startTimeCase_ == 10;
+  }
+  /**
+   * <pre>
+   * Immutable. The start time as a type. Only NOW is allowed.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType start_time_type = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The enum numeric value on the wire for startTimeType.
    */
   public int getStartTimeTypeValue() {
@@ -2465,6 +2476,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int END_TIME_TYPE_FIELD_NUMBER = 14;
+  /**
+   * <pre>
+   * Output only. The end time as a type.  The only possible value is FOREVER.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType end_time_type = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the endTimeType field is set.
+   */
+  public boolean hasEndTimeType() {
+    return endTimeCase_ == 14;
+  }
   /**
    * <pre>
    * Output only. The end time as a type.  The only possible value is FOREVER.
@@ -3997,6 +4019,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType start_time_type = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return Whether the startTimeType field is set.
+     */
+    @java.lang.Override
+    public boolean hasStartTimeType() {
+      return startTimeCase_ == 10;
+    }
+    /**
+     * <pre>
+     * Immutable. The start time as a type. Only NOW is allowed.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType start_time_type = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The enum numeric value on the wire for startTimeType.
      */
     @java.lang.Override
@@ -4251,6 +4285,18 @@ private static final long serialVersionUID = 0L;
       return endDateTimeBuilder_;
     }
 
+    /**
+     * <pre>
+     * Output only. The end time as a type.  The only possible value is FOREVER.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.enums.TimeTypeEnum.TimeType end_time_type = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the endTimeType field is set.
+     */
+    @java.lang.Override
+    public boolean hasEndTimeType() {
+      return endTimeCase_ == 14;
+    }
     /**
      * <pre>
      * Output only. The end time as a type.  The only possible value is FOREVER.

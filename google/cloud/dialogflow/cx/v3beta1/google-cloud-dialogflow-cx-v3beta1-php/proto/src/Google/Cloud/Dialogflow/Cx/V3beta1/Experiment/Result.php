@@ -79,7 +79,7 @@ class Result extends \Google\Protobuf\Internal\Message
      * value if stats have never been computed for this experiment.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp last_update_time = 2;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getLastUpdateTime()
     {

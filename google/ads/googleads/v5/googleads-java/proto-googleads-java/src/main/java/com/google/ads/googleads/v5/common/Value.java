@@ -164,6 +164,18 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool boolean_value = 1;</code>
+   * @return Whether the booleanValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasBooleanValue() {
+    return valueCase_ == 1;
+  }
+  /**
+   * <pre>
+   * A boolean.
+   * </pre>
+   *
+   * <code>bool boolean_value = 1;</code>
    * @return The booleanValue.
    */
   @java.lang.Override
@@ -175,6 +187,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int INT64_VALUE_FIELD_NUMBER = 2;
+  /**
+   * <pre>
+   * An int64.
+   * </pre>
+   *
+   * <code>int64 int64_value = 2;</code>
+   * @return Whether the int64Value field is set.
+   */
+  @java.lang.Override
+  public boolean hasInt64Value() {
+    return valueCase_ == 2;
+  }
   /**
    * <pre>
    * An int64.
@@ -198,6 +222,18 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>float float_value = 3;</code>
+   * @return Whether the floatValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasFloatValue() {
+    return valueCase_ == 3;
+  }
+  /**
+   * <pre>
+   * A float.
+   * </pre>
+   *
+   * <code>float float_value = 3;</code>
    * @return The floatValue.
    */
   @java.lang.Override
@@ -215,6 +251,18 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>double double_value = 4;</code>
+   * @return Whether the doubleValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasDoubleValue() {
+    return valueCase_ == 4;
+  }
+  /**
+   * <pre>
+   * A double.
+   * </pre>
+   *
+   * <code>double double_value = 4;</code>
    * @return The doubleValue.
    */
   @java.lang.Override
@@ -226,6 +274,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int STRING_VALUE_FIELD_NUMBER = 5;
+  /**
+   * <pre>
+   * A string.
+   * </pre>
+   *
+   * <code>string string_value = 5;</code>
+   * @return Whether the stringValue field is set.
+   */
+  public boolean hasStringValue() {
+    return valueCase_ == 5;
+  }
   /**
    * <pre>
    * A string.
@@ -730,6 +789,17 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool boolean_value = 1;</code>
+     * @return Whether the booleanValue field is set.
+     */
+    public boolean hasBooleanValue() {
+      return valueCase_ == 1;
+    }
+    /**
+     * <pre>
+     * A boolean.
+     * </pre>
+     *
+     * <code>bool boolean_value = 1;</code>
      * @return The booleanValue.
      */
     public boolean getBooleanValue() {
@@ -770,6 +840,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * An int64.
+     * </pre>
+     *
+     * <code>int64 int64_value = 2;</code>
+     * @return Whether the int64Value field is set.
+     */
+    public boolean hasInt64Value() {
+      return valueCase_ == 2;
+    }
     /**
      * <pre>
      * An int64.
@@ -822,6 +903,17 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float float_value = 3;</code>
+     * @return Whether the floatValue field is set.
+     */
+    public boolean hasFloatValue() {
+      return valueCase_ == 3;
+    }
+    /**
+     * <pre>
+     * A float.
+     * </pre>
+     *
+     * <code>float float_value = 3;</code>
      * @return The floatValue.
      */
     public float getFloatValue() {
@@ -868,6 +960,17 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>double double_value = 4;</code>
+     * @return Whether the doubleValue field is set.
+     */
+    public boolean hasDoubleValue() {
+      return valueCase_ == 4;
+    }
+    /**
+     * <pre>
+     * A double.
+     * </pre>
+     *
+     * <code>double double_value = 4;</code>
      * @return The doubleValue.
      */
     public double getDoubleValue() {
@@ -908,6 +1011,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * A string.
+     * </pre>
+     *
+     * <code>string string_value = 5;</code>
+     * @return Whether the stringValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasStringValue() {
+      return valueCase_ == 5;
+    }
     /**
      * <pre>
      * A string.

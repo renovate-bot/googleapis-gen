@@ -296,7 +296,7 @@ class TrainingPipeline extends \Google\Protobuf\Internal\Message
      * TrainingPipeline does not depend on this configuration.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.InputDataConfig input_data_config = 3;</code>
-     * @return \Google\Cloud\Aiplatform\V1\InputDataConfig
+     * @return \Google\Cloud\Aiplatform\V1\InputDataConfig|null
      */
     public function getInputDataConfig()
     {
@@ -378,7 +378,7 @@ class TrainingPipeline extends \Google\Protobuf\Internal\Message
      * [training_task_definition][google.cloud.aiplatform.v1.TrainingPipeline.training_task_definition]'s `inputs`.
      *
      * Generated from protobuf field <code>.google.protobuf.Value training_task_inputs = 5 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Value
+     * @return \Google\Protobuf\Value|null
      */
     public function getTrainingTaskInputs()
     {
@@ -419,7 +419,7 @@ class TrainingPipeline extends \Google\Protobuf\Internal\Message
      * pipeline's [training_task_definition][google.cloud.aiplatform.v1.TrainingPipeline.training_task_definition] contains `metadata` object.
      *
      * Generated from protobuf field <code>.google.protobuf.Value training_task_metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Value
+     * @return \Google\Protobuf\Value|null
      */
     public function getTrainingTaskMetadata()
     {
@@ -472,7 +472,7 @@ class TrainingPipeline extends \Google\Protobuf\Internal\Message
      * is.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.Model model_to_upload = 7;</code>
-     * @return \Google\Cloud\Aiplatform\V1\Model
+     * @return \Google\Cloud\Aiplatform\V1\Model|null
      */
     public function getModelToUpload()
     {
@@ -548,7 +548,7 @@ class TrainingPipeline extends \Google\Protobuf\Internal\Message
      * `PIPELINE_STATE_CANCELLED`.
      *
      * Generated from protobuf field <code>.google.rpc.Status error = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Rpc\Status
+     * @return \Google\Rpc\Status|null
      */
     public function getError()
     {
@@ -585,7 +585,7 @@ class TrainingPipeline extends \Google\Protobuf\Internal\Message
      * Output only. Time when the TrainingPipeline was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -622,7 +622,7 @@ class TrainingPipeline extends \Google\Protobuf\Internal\Message
      * `PIPELINE_STATE_RUNNING` state.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartTime()
     {
@@ -661,7 +661,7 @@ class TrainingPipeline extends \Google\Protobuf\Internal\Message
      * `PIPELINE_STATE_CANCELLED`.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getEndTime()
     {
@@ -699,7 +699,7 @@ class TrainingPipeline extends \Google\Protobuf\Internal\Message
      * Output only. Time when the TrainingPipeline was most recently updated.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {
@@ -772,7 +772,7 @@ class TrainingPipeline extends \Google\Protobuf\Internal\Message
      * [model_to_upload][google.cloud.aiplatform.v1.TrainingPipeline.encryption_spec] is not set separately.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 18;</code>
-     * @return \Google\Cloud\Aiplatform\V1\EncryptionSpec
+     * @return \Google\Cloud\Aiplatform\V1\EncryptionSpec|null
      */
     public function getEncryptionSpec()
     {

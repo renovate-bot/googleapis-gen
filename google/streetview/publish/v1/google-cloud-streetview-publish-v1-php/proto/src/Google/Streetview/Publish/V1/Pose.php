@@ -130,7 +130,7 @@ class Pose extends \Google\Protobuf\Internal\Message
      * photo or exif header causes the create photo process to fail.
      *
      * Generated from protobuf field <code>.google.type.LatLng lat_lng_pair = 1;</code>
-     * @return \Google\Type\LatLng
+     * @return \Google\Type\LatLng|null
      */
     public function getLatLngPair()
     {
@@ -291,7 +291,7 @@ class Pose extends \Google\Protobuf\Internal\Message
      * Level (the floor in a building) used to configure vertical navigation.
      *
      * Generated from protobuf field <code>.google.streetview.publish.v1.Level level = 7;</code>
-     * @return \Google\Streetview\Publish\V1\Level
+     * @return \Google\Streetview\Publish\V1\Level|null
      */
     public function getLevel()
     {

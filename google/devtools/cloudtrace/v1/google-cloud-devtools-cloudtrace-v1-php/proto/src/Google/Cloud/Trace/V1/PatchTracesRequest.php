@@ -75,7 +75,7 @@ class PatchTracesRequest extends \Google\Protobuf\Internal\Message
      * Required. The body of the message.
      *
      * Generated from protobuf field <code>.google.devtools.cloudtrace.v1.Traces traces = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Trace\V1\Traces
+     * @return \Google\Cloud\Trace\V1\Traces|null
      */
     public function getTraces()
     {

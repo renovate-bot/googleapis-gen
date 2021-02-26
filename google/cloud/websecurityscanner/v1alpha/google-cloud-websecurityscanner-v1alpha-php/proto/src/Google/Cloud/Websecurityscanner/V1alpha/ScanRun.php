@@ -211,7 +211,7 @@ class ScanRun extends \Google\Protobuf\Internal\Message
      * The time at which the ScanRun started.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 4;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartTime()
     {
@@ -248,7 +248,7 @@ class ScanRun extends \Google\Protobuf\Internal\Message
      * is either finished or stopped by user.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 5;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getEndTime()
     {

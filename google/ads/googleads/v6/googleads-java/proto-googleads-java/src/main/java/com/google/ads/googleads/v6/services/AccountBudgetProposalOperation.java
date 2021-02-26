@@ -271,6 +271,20 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string remove = 1;</code>
+   * @return Whether the remove field is set.
+   */
+  public boolean hasRemove() {
+    return operationCase_ == 1;
+  }
+  /**
+   * <pre>
+   * Remove operation: A resource name for the removed proposal is expected,
+   * in this format:
+   * `customers/{customer_id}/accountBudgetProposals/{account_budget_proposal_id}`
+   * A request may be cancelled iff it is pending.
+   * </pre>
+   *
+   * <code>string remove = 1;</code>
    * @return The remove.
    */
   public java.lang.String getRemove() {
@@ -1116,6 +1130,21 @@ private static final long serialVersionUID = 0L;
       return createBuilder_;
     }
 
+    /**
+     * <pre>
+     * Remove operation: A resource name for the removed proposal is expected,
+     * in this format:
+     * `customers/{customer_id}/accountBudgetProposals/{account_budget_proposal_id}`
+     * A request may be cancelled iff it is pending.
+     * </pre>
+     *
+     * <code>string remove = 1;</code>
+     * @return Whether the remove field is set.
+     */
+    @java.lang.Override
+    public boolean hasRemove() {
+      return operationCase_ == 1;
+    }
     /**
      * <pre>
      * Remove operation: A resource name for the removed proposal is expected,

@@ -58,7 +58,7 @@ class Line extends \Google\Protobuf\Internal\Message
      * [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] for [Line][google.cloud.documentai.v1beta3.Document.Page.Line].
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document.Page.Layout layout = 1;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta3\Document\Page\Layout
+     * @return \Google\Cloud\DocumentAI\V1beta3\Document\Page\Layout|null
      */
     public function getLayout()
     {
@@ -120,7 +120,7 @@ class Line extends \Google\Protobuf\Internal\Message
      * The  history of this annotation.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta3\Document\Provenance
+     * @return \Google\Cloud\DocumentAI\V1beta3\Document\Provenance|null
      */
     public function getProvenance()
     {

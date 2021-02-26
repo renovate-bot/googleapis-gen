@@ -172,7 +172,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * The short version of the ad's headline.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue short_headline = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getShortHeadline()
     {
@@ -235,7 +235,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * The long version of the ad's headline.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue long_headline = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getLongHeadline()
     {
@@ -298,7 +298,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * The description of the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDescription()
     {
@@ -361,7 +361,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * The business name in the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue business_name = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getBusinessName()
     {
@@ -428,7 +428,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * Must be true if main_color and accent_color are not set.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue allow_flexible_color = 5;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getAllowFlexibleColor()
     {
@@ -505,7 +505,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * well.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue accent_color = 6;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAccentColor()
     {
@@ -576,7 +576,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * well.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue main_color = 7;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getMainColor()
     {
@@ -645,7 +645,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * The call-to-action text for the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue call_to_action_text = 8;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCallToActionText()
     {
@@ -708,7 +708,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * The MediaFile resource name of the logo image used in the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue logo_image = 9;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getLogoImage()
     {
@@ -771,7 +771,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * The MediaFile resource name of the square logo image used in the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue square_logo_image = 10;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getSquareLogoImage()
     {
@@ -834,7 +834,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * The MediaFile resource name of the marketing image used in the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue marketing_image = 11;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getMarketingImage()
     {
@@ -897,7 +897,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * The MediaFile resource name of the square marketing image used in the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue square_marketing_image = 12;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getSquareMarketingImage()
     {
@@ -986,7 +986,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * Prefix before price. E.g. 'as low as'.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue price_prefix = 14;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPricePrefix()
     {
@@ -1050,7 +1050,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * 'Free two-day shipping'.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue promo_text = 15;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPromoText()
     {

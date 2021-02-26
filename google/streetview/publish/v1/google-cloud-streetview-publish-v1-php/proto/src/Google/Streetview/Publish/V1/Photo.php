@@ -153,7 +153,7 @@ class Photo extends \Google\Protobuf\Internal\Message
      * Google.
      *
      * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoId photo_id = 1;</code>
-     * @return \Google\Streetview\Publish\V1\PhotoId
+     * @return \Google\Streetview\Publish\V1\PhotoId|null
      */
     public function getPhotoId()
     {
@@ -192,7 +192,7 @@ class Photo extends \Google\Protobuf\Internal\Message
      * photo bytes are uploaded to.
      *
      * Generated from protobuf field <code>.google.streetview.publish.v1.UploadRef upload_reference = 2;</code>
-     * @return \Google\Streetview\Publish\V1\UploadRef
+     * @return \Google\Streetview\Publish\V1\UploadRef|null
      */
     public function getUploadReference()
     {
@@ -315,7 +315,7 @@ class Photo extends \Google\Protobuf\Internal\Message
      * Pose of the photo.
      *
      * Generated from protobuf field <code>.google.streetview.publish.v1.Pose pose = 4;</code>
-     * @return \Google\Streetview\Publish\V1\Pose
+     * @return \Google\Streetview\Publish\V1\Pose|null
      */
     public function getPose()
     {
@@ -381,7 +381,7 @@ class Photo extends \Google\Protobuf\Internal\Message
      * the photo metadata.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp capture_time = 6;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCaptureTime()
     {

@@ -38,7 +38,7 @@ class IamPolicyAnalysisOutputConfig extends \Google\Protobuf\Internal\Message
      * Destination on Cloud Storage.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.GcsDestination gcs_destination = 1;</code>
-     * @return \Google\Cloud\Asset\V1\IamPolicyAnalysisOutputConfig\GcsDestination
+     * @return \Google\Cloud\Asset\V1\IamPolicyAnalysisOutputConfig\GcsDestination|null
      */
     public function getGcsDestination()
     {
@@ -69,7 +69,7 @@ class IamPolicyAnalysisOutputConfig extends \Google\Protobuf\Internal\Message
      * Destination on BigQuery.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.BigQueryDestination bigquery_destination = 2;</code>
-     * @return \Google\Cloud\Asset\V1\IamPolicyAnalysisOutputConfig\BigQueryDestination
+     * @return \Google\Cloud\Asset\V1\IamPolicyAnalysisOutputConfig\BigQueryDestination|null
      */
     public function getBigqueryDestination()
     {

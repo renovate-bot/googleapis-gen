@@ -119,7 +119,7 @@ class ReadSession extends \Google\Protobuf\Internal\Message
      * requests to read this Session will return errors.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp expire_time = 2;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getExpireTime()
     {
@@ -156,7 +156,7 @@ class ReadSession extends \Google\Protobuf\Internal\Message
      * Avro schema.
      *
      * Generated from protobuf field <code>.google.cloud.bigquery.storage.v1beta1.AvroSchema avro_schema = 5;</code>
-     * @return \Google\Cloud\Bigquery\Storage\V1beta1\AvroSchema
+     * @return \Google\Cloud\Bigquery\Storage\V1beta1\AvroSchema|null
      */
     public function getAvroSchema()
     {
@@ -187,7 +187,7 @@ class ReadSession extends \Google\Protobuf\Internal\Message
      * Arrow schema.
      *
      * Generated from protobuf field <code>.google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 6;</code>
-     * @return \Google\Cloud\Bigquery\Storage\V1beta1\ArrowSchema
+     * @return \Google\Cloud\Bigquery\Storage\V1beta1\ArrowSchema|null
      */
     public function getArrowSchema()
     {
@@ -244,7 +244,7 @@ class ReadSession extends \Google\Protobuf\Internal\Message
      * Table that this ReadSession is reading from.
      *
      * Generated from protobuf field <code>.google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 7;</code>
-     * @return \Google\Cloud\Bigquery\Storage\V1beta1\TableReference
+     * @return \Google\Cloud\Bigquery\Storage\V1beta1\TableReference|null
      */
     public function getTableReference()
     {
@@ -280,7 +280,7 @@ class ReadSession extends \Google\Protobuf\Internal\Message
      * Any modifiers which are applied when reading from the specified table.
      *
      * Generated from protobuf field <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 8;</code>
-     * @return \Google\Cloud\Bigquery\Storage\V1beta1\TableModifiers
+     * @return \Google\Cloud\Bigquery\Storage\V1beta1\TableModifiers|null
      */
     public function getTableModifiers()
     {

@@ -137,7 +137,7 @@ class CreateStreamRequest extends \Google\Protobuf\Internal\Message
      * Required. The stream to create.
      *
      * Generated from protobuf field <code>.google.partner.aistreams.v1alpha1.Stream stream = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Partner\Aistreams\V1alpha1\Stream
+     * @return \Google\Partner\Aistreams\V1alpha1\Stream|null
      */
     public function getStream()
     {

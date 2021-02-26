@@ -29,6 +29,7 @@ class ProcessResponse extends \Google\Protobuf\Internal\Message
      * ReviewDocument method.
      *
      * Generated from protobuf field <code>string human_review_operation = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $human_review_operation = '';
     /**
@@ -66,7 +67,7 @@ class ProcessResponse extends \Google\Protobuf\Internal\Message
      * behavior.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document document = 1;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta3\Document
+     * @return \Google\Cloud\DocumentAI\V1beta3\Document|null
      */
     public function getDocument()
     {
@@ -107,9 +108,11 @@ class ProcessResponse extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string human_review_operation = 2 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getHumanReviewOperation()
     {
+        @trigger_error('human_review_operation is deprecated.', E_USER_DEPRECATED);
         return $this->human_review_operation;
     }
 
@@ -122,9 +125,11 @@ class ProcessResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string human_review_operation = 2 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setHumanReviewOperation($var)
     {
+        @trigger_error('human_review_operation is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->human_review_operation = $var;
 
@@ -135,7 +140,7 @@ class ProcessResponse extends \Google\Protobuf\Internal\Message
      * The status of human review on the processed document.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.HumanReviewStatus human_review_status = 3;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta3\HumanReviewStatus
+     * @return \Google\Cloud\DocumentAI\V1beta3\HumanReviewStatus|null
      */
     public function getHumanReviewStatus()
     {

@@ -41,7 +41,7 @@ class BuildEnqueued extends \Google\Protobuf\Internal\Message
      * Additional details about the Build.
      *
      * Generated from protobuf field <code>.google.protobuf.Any details = 1;</code>
-     * @return \Google\Protobuf\Any
+     * @return \Google\Protobuf\Any|null
      */
     public function getDetails()
     {

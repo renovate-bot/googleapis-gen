@@ -49,7 +49,7 @@ class GeoPointInfo extends \Google\Protobuf\Internal\Message
      * Micro degrees for the longitude.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value longitude_in_micro_degrees = 1;</code>
-     * @return \Google\Protobuf\Int32Value
+     * @return \Google\Protobuf\Int32Value|null
      */
     public function getLongitudeInMicroDegrees()
     {
@@ -112,7 +112,7 @@ class GeoPointInfo extends \Google\Protobuf\Internal\Message
      * Micro degrees for the latitude.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value latitude_in_micro_degrees = 2;</code>
-     * @return \Google\Protobuf\Int32Value
+     * @return \Google\Protobuf\Int32Value|null
      */
     public function getLatitudeInMicroDegrees()
     {

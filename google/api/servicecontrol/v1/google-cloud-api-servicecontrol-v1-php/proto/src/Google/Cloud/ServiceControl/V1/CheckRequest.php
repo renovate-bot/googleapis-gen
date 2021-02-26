@@ -105,7 +105,7 @@ class CheckRequest extends \Google\Protobuf\Internal\Message
      * The operation to be checked.
      *
      * Generated from protobuf field <code>.google.api.servicecontrol.v1.Operation operation = 2;</code>
-     * @return \Google\Cloud\ServiceControl\V1\Operation
+     * @return \Google\Cloud\ServiceControl\V1\Operation|null
      */
     public function getOperation()
     {

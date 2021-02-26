@@ -53,7 +53,7 @@ class UpdateRepositoryRequest extends \Google\Protobuf\Internal\Message
      * The repository that replaces the resource on the server.
      *
      * Generated from protobuf field <code>.google.devtools.artifactregistry.v1beta2.Repository repository = 1;</code>
-     * @return \Google\Cloud\ArtifactRegistry\V1beta2\Repository
+     * @return \Google\Cloud\ArtifactRegistry\V1beta2\Repository|null
      */
     public function getRepository()
     {
@@ -91,7 +91,7 @@ class UpdateRepositoryRequest extends \Google\Protobuf\Internal\Message
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

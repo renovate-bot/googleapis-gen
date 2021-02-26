@@ -110,7 +110,7 @@ class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
      * ListPlannableLocations.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue plannable_location_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPlannableLocationId()
     {
@@ -177,7 +177,7 @@ class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
      * Three-character ISO 4217 currency code.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCurrencyCode()
     {
@@ -244,7 +244,7 @@ class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
      * Amount in micros. One million is equivalent to one unit.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value budget_micros = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getBudgetMicros()
     {
@@ -312,7 +312,7 @@ class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
      * unless explicitly specified.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.services.Preferences preferences = 5;</code>
-     * @return \Google\Ads\GoogleAds\V5\Services\Preferences
+     * @return \Google\Ads\GoogleAds\V5\Services\Preferences|null
      */
     public function getPreferences()
     {

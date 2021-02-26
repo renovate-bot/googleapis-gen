@@ -54,7 +54,7 @@ class BatchCommitWriteStreamsResponse extends \Google\Protobuf\Internal\Message
      * This field will only exist when there is no stream errors.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp commit_time = 1;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCommitTime()
     {

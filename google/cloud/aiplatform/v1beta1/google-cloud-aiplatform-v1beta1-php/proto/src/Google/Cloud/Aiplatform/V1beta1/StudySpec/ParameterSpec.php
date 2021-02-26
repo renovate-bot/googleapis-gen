@@ -76,7 +76,7 @@ class ParameterSpec extends \Google\Protobuf\Internal\Message
      * The value spec for a 'DOUBLE' parameter.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.DoubleValueSpec double_value_spec = 2;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\StudySpec\ParameterSpec\DoubleValueSpec
+     * @return \Google\Cloud\Aiplatform\V1beta1\StudySpec\ParameterSpec\DoubleValueSpec|null
      */
     public function getDoubleValueSpec()
     {
@@ -107,7 +107,7 @@ class ParameterSpec extends \Google\Protobuf\Internal\Message
      * The value spec for an 'INTEGER' parameter.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.IntegerValueSpec integer_value_spec = 3;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\StudySpec\ParameterSpec\IntegerValueSpec
+     * @return \Google\Cloud\Aiplatform\V1beta1\StudySpec\ParameterSpec\IntegerValueSpec|null
      */
     public function getIntegerValueSpec()
     {
@@ -138,7 +138,7 @@ class ParameterSpec extends \Google\Protobuf\Internal\Message
      * The value spec for a 'CATEGORICAL' parameter.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.CategoricalValueSpec categorical_value_spec = 4;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\StudySpec\ParameterSpec\CategoricalValueSpec
+     * @return \Google\Cloud\Aiplatform\V1beta1\StudySpec\ParameterSpec\CategoricalValueSpec|null
      */
     public function getCategoricalValueSpec()
     {
@@ -169,7 +169,7 @@ class ParameterSpec extends \Google\Protobuf\Internal\Message
      * The value spec for a 'DISCRETE' parameter.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.DiscreteValueSpec discrete_value_spec = 5;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\StudySpec\ParameterSpec\DiscreteValueSpec
+     * @return \Google\Cloud\Aiplatform\V1beta1\StudySpec\ParameterSpec\DiscreteValueSpec|null
      */
     public function getDiscreteValueSpec()
     {

@@ -318,7 +318,7 @@ class EntityAnnotation extends \Google\Protobuf\Internal\Message
      * for `LABEL_DETECTION` features.
      *
      * Generated from protobuf field <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 7;</code>
-     * @return \Google\Cloud\Vision\V1p3beta1\BoundingPoly
+     * @return \Google\Cloud\Vision\V1p3beta1\BoundingPoly|null
      */
     public function getBoundingPoly()
     {

@@ -51,7 +51,7 @@ class UpdateWebhookRequest extends \Google\Protobuf\Internal\Message
      * Required. The webhook to update.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.Webhook webhook = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Webhook
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Webhook|null
      */
     public function getWebhook()
     {
@@ -88,7 +88,7 @@ class UpdateWebhookRequest extends \Google\Protobuf\Internal\Message
      * all fields will be updated.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

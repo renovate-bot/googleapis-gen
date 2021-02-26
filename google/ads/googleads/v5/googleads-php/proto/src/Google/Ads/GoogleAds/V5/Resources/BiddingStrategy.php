@@ -434,7 +434,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * likely.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.EnhancedCpc enhanced_cpc = 7;</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\EnhancedCpc
+     * @return \Google\Ads\GoogleAds\V5\Common\EnhancedCpc|null
      */
     public function getEnhancedCpc()
     {
@@ -468,7 +468,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * possible at the target cost-per-acquisition (CPA) you set.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.TargetCpa target_cpa = 9;</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\TargetCpa
+     * @return \Google\Ads\GoogleAds\V5\Common\TargetCpa|null
      */
     public function getTargetCpa()
     {
@@ -501,7 +501,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * percentage of impressions.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.TargetImpressionShare target_impression_share = 48;</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\TargetImpressionShare
+     * @return \Google\Ads\GoogleAds\V5\Common\TargetImpressionShare|null
      */
     public function getTargetImpressionShare()
     {
@@ -534,7 +534,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * specific target Return On Ad Spend (ROAS).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.TargetRoas target_roas = 11;</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\TargetRoas
+     * @return \Google\Ads\GoogleAds\V5\Common\TargetRoas|null
      */
     public function getTargetRoas()
     {
@@ -567,7 +567,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * possible within your budget.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.TargetSpend target_spend = 12;</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\TargetSpend
+     * @return \Google\Ads\GoogleAds\V5\Common\TargetSpend|null
      */
     public function getTargetSpend()
     {

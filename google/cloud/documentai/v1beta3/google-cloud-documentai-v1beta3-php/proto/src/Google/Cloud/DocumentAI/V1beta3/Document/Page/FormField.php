@@ -84,7 +84,7 @@ class FormField extends \Google\Protobuf\Internal\Message
      * `Grand total`, `Phone number`, etc.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document.Page.Layout field_name = 1;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta3\Document\Page\Layout
+     * @return \Google\Cloud\DocumentAI\V1beta3\Document\Page\Layout|null
      */
     public function getFieldName()
     {
@@ -121,7 +121,7 @@ class FormField extends \Google\Protobuf\Internal\Message
      * [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1beta3.Document.Page.FormField] value.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document.Page.Layout field_value = 2;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta3\Document\Page\Layout
+     * @return \Google\Cloud\DocumentAI\V1beta3\Document\Page\Layout|null
      */
     public function getFieldValue()
     {

@@ -156,7 +156,7 @@ class UpdateSinkRequest extends \Google\Protobuf\Internal\Message
      * of `sink_name`.
      *
      * Generated from protobuf field <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Logging\V2\LogSink
+     * @return \Google\Cloud\Logging\V2\LogSink|null
      */
     public function getSink()
     {
@@ -247,7 +247,7 @@ class UpdateSinkRequest extends \Google\Protobuf\Internal\Message
      * Example: `updateMask=filter`.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

@@ -145,6 +145,15 @@ public interface LogEntryOrBuilder extends
    * </pre>
    *
    * <code>string text_payload = 3;</code>
+   * @return Whether the textPayload field is set.
+   */
+  boolean hasTextPayload();
+  /**
+   * <pre>
+   * The log entry payload, represented as a Unicode string (UTF-8).
+   * </pre>
+   *
+   * <code>string text_payload = 3;</code>
    * @return The textPayload.
    */
   java.lang.String getTextPayload();

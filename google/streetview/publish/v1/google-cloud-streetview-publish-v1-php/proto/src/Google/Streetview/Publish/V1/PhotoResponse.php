@@ -59,7 +59,7 @@ class PhotoResponse extends \Google\Protobuf\Internal\Message
      * request.
      *
      * Generated from protobuf field <code>.google.rpc.Status status = 1;</code>
-     * @return \Google\Rpc\Status
+     * @return \Google\Rpc\Status|null
      */
     public function getStatus()
     {
@@ -97,7 +97,7 @@ class PhotoResponse extends \Google\Protobuf\Internal\Message
      * was successful.
      *
      * Generated from protobuf field <code>.google.streetview.publish.v1.Photo photo = 2;</code>
-     * @return \Google\Streetview\Publish\V1\Photo
+     * @return \Google\Streetview\Publish\V1\Photo|null
      */
     public function getPhoto()
     {

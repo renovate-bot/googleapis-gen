@@ -26,6 +26,7 @@ class ReviewDocumentRequest extends \Google\Protobuf\Internal\Message
      * The document that needs human review.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $document = null;
     protected $source;
@@ -54,7 +55,7 @@ class ReviewDocumentRequest extends \Google\Protobuf\Internal\Message
      * An inline document proto.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta3\Document
+     * @return \Google\Cloud\DocumentAI\V1beta3\Document|null
      */
     public function getInlineDocument()
     {
@@ -113,20 +114,24 @@ class ReviewDocumentRequest extends \Google\Protobuf\Internal\Message
      * The document that needs human review.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
-     * @return \Google\Cloud\DocumentAI\V1beta3\Document
+     * @return \Google\Cloud\DocumentAI\V1beta3\Document|null
+     * @deprecated
      */
     public function getDocument()
     {
+        @trigger_error('document is deprecated.', E_USER_DEPRECATED);
         return isset($this->document) ? $this->document : null;
     }
 
     public function hasDocument()
     {
+        @trigger_error('document is deprecated.', E_USER_DEPRECATED);
         return isset($this->document);
     }
 
     public function clearDocument()
     {
+        @trigger_error('document is deprecated.', E_USER_DEPRECATED);
         unset($this->document);
     }
 
@@ -136,9 +141,11 @@ class ReviewDocumentRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      * @param \Google\Cloud\DocumentAI\V1beta3\Document $var
      * @return $this
+     * @deprecated
      */
     public function setDocument($var)
     {
+        @trigger_error('document is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Google\Cloud\DocumentAI\V1beta3\Document::class);
         $this->document = $var;
 

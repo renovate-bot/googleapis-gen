@@ -288,7 +288,7 @@ class Attribution extends \Google\Protobuf\Internal\Message
      * describes the features and their attribution values (if it is populated).
      *
      * Generated from protobuf field <code>.google.protobuf.Value feature_attributions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Value
+     * @return \Google\Protobuf\Value|null
      */
     public function getFeatureAttributions()
     {

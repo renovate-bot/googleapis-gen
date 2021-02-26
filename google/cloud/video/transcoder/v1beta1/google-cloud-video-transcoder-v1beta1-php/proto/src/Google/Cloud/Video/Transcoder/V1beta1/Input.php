@@ -121,7 +121,7 @@ class Input extends \Google\Protobuf\Internal\Message
      * Preprocessing configurations.
      *
      * Generated from protobuf field <code>.google.cloud.video.transcoder.v1beta1.PreprocessingConfig preprocessing_config = 3;</code>
-     * @return \Google\Cloud\Video\Transcoder\V1beta1\PreprocessingConfig
+     * @return \Google\Cloud\Video\Transcoder\V1beta1\PreprocessingConfig|null
      */
     public function getPreprocessingConfig()
     {

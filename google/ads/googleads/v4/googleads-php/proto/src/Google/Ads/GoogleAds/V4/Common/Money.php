@@ -49,7 +49,7 @@ class Money extends \Google\Protobuf\Internal\Message
      * Three-character ISO 4217 currency code.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCurrencyCode()
     {
@@ -112,7 +112,7 @@ class Money extends \Google\Protobuf\Internal\Message
      * Amount in micros. One million is equivalent to one unit.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value amount_micros = 2;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getAmountMicros()
     {

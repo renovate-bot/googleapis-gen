@@ -26,6 +26,7 @@ class TargetSpend extends \Google\Protobuf\Internal\Message
      * for details.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value target_spend_micros = 1 [deprecated = true];</code>
+     * @deprecated
      */
     protected $target_spend_micros = null;
     /**
@@ -70,20 +71,24 @@ class TargetSpend extends \Google\Protobuf\Internal\Message
      * for details.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value target_spend_micros = 1 [deprecated = true];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
+     * @deprecated
      */
     public function getTargetSpendMicros()
     {
+        @trigger_error('target_spend_micros is deprecated.', E_USER_DEPRECATED);
         return isset($this->target_spend_micros) ? $this->target_spend_micros : null;
     }
 
     public function hasTargetSpendMicros()
     {
+        @trigger_error('target_spend_micros is deprecated.', E_USER_DEPRECATED);
         return isset($this->target_spend_micros);
     }
 
     public function clearTargetSpendMicros()
     {
+        @trigger_error('target_spend_micros is deprecated.', E_USER_DEPRECATED);
         unset($this->target_spend_micros);
     }
 
@@ -103,6 +108,7 @@ class TargetSpend extends \Google\Protobuf\Internal\Message
      */
     public function getTargetSpendMicrosUnwrapped()
     {
+        @trigger_error('target_spend_micros is deprecated.', E_USER_DEPRECATED);
         return $this->readWrapperValue("target_spend_micros");
     }
 
@@ -118,9 +124,11 @@ class TargetSpend extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value target_spend_micros = 1 [deprecated = true];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
+     * @deprecated
      */
     public function setTargetSpendMicros($var)
     {
+        @trigger_error('target_spend_micros is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
         $this->target_spend_micros = $var;
 
@@ -152,7 +160,7 @@ class TargetSpend extends \Google\Protobuf\Internal\Message
      * The limit applies to all keywords managed by the strategy.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_ceiling_micros = 2;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCpcBidCeilingMicros()
     {

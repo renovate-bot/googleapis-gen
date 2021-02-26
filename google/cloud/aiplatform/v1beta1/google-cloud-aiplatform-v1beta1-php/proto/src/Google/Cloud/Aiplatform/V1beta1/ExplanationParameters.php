@@ -93,7 +93,7 @@ class ExplanationParameters extends \Google\Protobuf\Internal\Message
      * Refer to this paper for model details: https://arxiv.org/abs/1306.4265.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution sampled_shapley_attribution = 1;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\SampledShapleyAttribution
+     * @return \Google\Cloud\Aiplatform\V1beta1\SampledShapleyAttribution|null
      */
     public function getSampledShapleyAttribution()
     {
@@ -129,7 +129,7 @@ class ExplanationParameters extends \Google\Protobuf\Internal\Message
      * paper for more details: https://arxiv.org/abs/1703.01365
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution integrated_gradients_attribution = 2;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\IntegratedGradientsAttribution
+     * @return \Google\Cloud\Aiplatform\V1beta1\IntegratedGradientsAttribution|null
      */
     public function getIntegratedGradientsAttribution()
     {
@@ -169,7 +169,7 @@ class ExplanationParameters extends \Google\Protobuf\Internal\Message
      * x-rays or quality-control cameras, use Integrated Gradients instead.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.XraiAttribution xrai_attribution = 3;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\XraiAttribution
+     * @return \Google\Cloud\Aiplatform\V1beta1\XraiAttribution|null
      */
     public function getXraiAttribution()
     {
@@ -247,7 +247,7 @@ class ExplanationParameters extends \Google\Protobuf\Internal\Message
      * Models that predict multiple classes).
      *
      * Generated from protobuf field <code>.google.protobuf.ListValue output_indices = 5;</code>
-     * @return \Google\Protobuf\ListValue
+     * @return \Google\Protobuf\ListValue|null
      */
     public function getOutputIndices()
     {

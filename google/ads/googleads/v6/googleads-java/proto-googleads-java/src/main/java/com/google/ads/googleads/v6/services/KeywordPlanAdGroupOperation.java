@@ -316,6 +316,19 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string remove = 3 [(.google.api.resource_reference) = { ... }</code>
+   * @return Whether the remove field is set.
+   */
+  public boolean hasRemove() {
+    return operationCase_ == 3;
+  }
+  /**
+   * <pre>
+   * Remove operation: A resource name for the removed Keyword Plan ad group
+   * is expected, in this format:
+   * `customers/{customer_id}/keywordPlanAdGroups/{kp_ad_group_id}`
+   * </pre>
+   *
+   * <code>string remove = 3 [(.google.api.resource_reference) = { ... }</code>
    * @return The remove.
    */
   public java.lang.String getRemove() {
@@ -1326,6 +1339,20 @@ private static final long serialVersionUID = 0L;
       return updateBuilder_;
     }
 
+    /**
+     * <pre>
+     * Remove operation: A resource name for the removed Keyword Plan ad group
+     * is expected, in this format:
+     * `customers/{customer_id}/keywordPlanAdGroups/{kp_ad_group_id}`
+     * </pre>
+     *
+     * <code>string remove = 3 [(.google.api.resource_reference) = { ... }</code>
+     * @return Whether the remove field is set.
+     */
+    @java.lang.Override
+    public boolean hasRemove() {
+      return operationCase_ == 3;
+    }
     /**
      * <pre>
      * Remove operation: A resource name for the removed Keyword Plan ad group

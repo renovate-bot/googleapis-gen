@@ -25,12 +25,14 @@ class BatchProcessRequest extends \Google\Protobuf\Internal\Message
      * The input config for each single document in the batch process.
      *
      * Generated from protobuf field <code>repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];</code>
+     * @deprecated
      */
     private $input_configs;
     /**
      * The overall output config for batch process.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3 [deprecated = true];</code>
+     * @deprecated
      */
     protected $output_config = null;
     /**
@@ -110,9 +112,11 @@ class BatchProcessRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
+     * @deprecated
      */
     public function getInputConfigs()
     {
+        @trigger_error('input_configs is deprecated.', E_USER_DEPRECATED);
         return $this->input_configs;
     }
 
@@ -122,9 +126,11 @@ class BatchProcessRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];</code>
      * @param \Google\Cloud\DocumentAI\V1beta3\BatchProcessRequest\BatchInputConfig[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
+     * @deprecated
      */
     public function setInputConfigs($var)
     {
+        @trigger_error('input_configs is deprecated.', E_USER_DEPRECATED);
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Cloud\DocumentAI\V1beta3\BatchProcessRequest\BatchInputConfig::class);
         $this->input_configs = $arr;
 
@@ -135,20 +141,24 @@ class BatchProcessRequest extends \Google\Protobuf\Internal\Message
      * The overall output config for batch process.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3 [deprecated = true];</code>
-     * @return \Google\Cloud\DocumentAI\V1beta3\BatchProcessRequest\BatchOutputConfig
+     * @return \Google\Cloud\DocumentAI\V1beta3\BatchProcessRequest\BatchOutputConfig|null
+     * @deprecated
      */
     public function getOutputConfig()
     {
+        @trigger_error('output_config is deprecated.', E_USER_DEPRECATED);
         return isset($this->output_config) ? $this->output_config : null;
     }
 
     public function hasOutputConfig()
     {
+        @trigger_error('output_config is deprecated.', E_USER_DEPRECATED);
         return isset($this->output_config);
     }
 
     public function clearOutputConfig()
     {
+        @trigger_error('output_config is deprecated.', E_USER_DEPRECATED);
         unset($this->output_config);
     }
 
@@ -158,9 +168,11 @@ class BatchProcessRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3 [deprecated = true];</code>
      * @param \Google\Cloud\DocumentAI\V1beta3\BatchProcessRequest\BatchOutputConfig $var
      * @return $this
+     * @deprecated
      */
     public function setOutputConfig($var)
     {
+        @trigger_error('output_config is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Google\Cloud\DocumentAI\V1beta3\BatchProcessRequest\BatchOutputConfig::class);
         $this->output_config = $var;
 
@@ -171,7 +183,7 @@ class BatchProcessRequest extends \Google\Protobuf\Internal\Message
      * The input documents for batch process.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta3\BatchDocumentsInputConfig
+     * @return \Google\Cloud\DocumentAI\V1beta3\BatchDocumentsInputConfig|null
      */
     public function getInputDocuments()
     {
@@ -207,7 +219,7 @@ class BatchProcessRequest extends \Google\Protobuf\Internal\Message
      * The overall output config for batch process.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta3\DocumentOutputConfig
+     * @return \Google\Cloud\DocumentAI\V1beta3\DocumentOutputConfig|null
      */
     public function getDocumentOutputConfig()
     {

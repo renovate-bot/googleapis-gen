@@ -65,7 +65,7 @@ class UpdatePolicyTagRequest extends \Google\Protobuf\Internal\Message
      * parent_policy_tag fields can be updated.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1beta1.PolicyTag policy_tag = 1;</code>
-     * @return \Google\Cloud\DataCatalog\V1beta1\PolicyTag
+     * @return \Google\Cloud\DataCatalog\V1beta1\PolicyTag|null
      */
     public function getPolicyTag()
     {
@@ -108,7 +108,7 @@ class UpdatePolicyTagRequest extends \Google\Protobuf\Internal\Message
      * If not set, defaults to all of the fields that are allowed to update.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

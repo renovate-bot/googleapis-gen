@@ -267,7 +267,7 @@ class TraceSpan extends \Google\Protobuf\Internal\Message
      * Start time of the span in nanoseconds from the UNIX epoch.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 4;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartTime()
     {
@@ -303,7 +303,7 @@ class TraceSpan extends \Google\Protobuf\Internal\Message
      * End time of the span in nanoseconds from the UNIX epoch.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 5;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getEndTime()
     {

@@ -155,7 +155,7 @@ class ExportDataOperationResponse extends \Google\Protobuf\Internal\Message
      * Output only. Statistic infos of labels in the exported dataset.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.LabelStats label_stats = 4;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\LabelStats
+     * @return \Google\Cloud\DataLabeling\V1beta1\LabelStats|null
      */
     public function getLabelStats()
     {
@@ -191,7 +191,7 @@ class ExportDataOperationResponse extends \Google\Protobuf\Internal\Message
      * Output only. output_config in the ExportData request.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.OutputConfig output_config = 5;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\OutputConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\OutputConfig|null
      */
     public function getOutputConfig()
     {

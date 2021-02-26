@@ -75,7 +75,7 @@ class Button extends \Google\Protobuf\Internal\Message
      * Required. Action to take when a user taps on the button.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2;</code>
-     * @return \Google\Cloud\Dialogflow\V2beta1\Intent\Message\BasicCard\Button\OpenUriAction
+     * @return \Google\Cloud\Dialogflow\V2beta1\Intent\Message\BasicCard\Button\OpenUriAction|null
      */
     public function getOpenUriAction()
     {

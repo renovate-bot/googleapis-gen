@@ -1004,6 +1004,15 @@ public interface CampaignOrBuilder extends
    * </pre>
    *
    * <code>string bidding_strategy = 67 [(.google.api.resource_reference) = { ... }</code>
+   * @return Whether the biddingStrategy field is set.
+   */
+  boolean hasBiddingStrategy();
+  /**
+   * <pre>
+   * Portfolio bidding strategy used by campaign.
+   * </pre>
+   *
+   * <code>string bidding_strategy = 67 [(.google.api.resource_reference) = { ... }</code>
    * @return The biddingStrategy.
    */
   java.lang.String getBiddingStrategy();

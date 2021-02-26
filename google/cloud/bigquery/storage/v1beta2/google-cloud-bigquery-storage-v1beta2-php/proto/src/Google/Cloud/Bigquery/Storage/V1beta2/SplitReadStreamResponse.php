@@ -55,7 +55,7 @@ class SplitReadStreamResponse extends \Google\Protobuf\Internal\Message
      * longer be split.
      *
      * Generated from protobuf field <code>.google.cloud.bigquery.storage.v1beta2.ReadStream primary_stream = 1;</code>
-     * @return \Google\Cloud\Bigquery\Storage\V1beta2\ReadStream
+     * @return \Google\Cloud\Bigquery\Storage\V1beta2\ReadStream|null
      */
     public function getPrimaryStream()
     {
@@ -94,7 +94,7 @@ class SplitReadStreamResponse extends \Google\Protobuf\Internal\Message
      * value indicates that the original stream can no longer be split.
      *
      * Generated from protobuf field <code>.google.cloud.bigquery.storage.v1beta2.ReadStream remainder_stream = 2;</code>
-     * @return \Google\Cloud\Bigquery\Storage\V1beta2\ReadStream
+     * @return \Google\Cloud\Bigquery\Storage\V1beta2\ReadStream|null
      */
     public function getRemainderStream()
     {

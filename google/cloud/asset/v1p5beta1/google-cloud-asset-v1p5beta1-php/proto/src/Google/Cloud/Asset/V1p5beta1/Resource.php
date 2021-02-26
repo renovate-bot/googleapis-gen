@@ -286,7 +286,7 @@ class Resource extends \Google\Protobuf\Internal\Message
      * away and may not be present.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct data = 6;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getData()
     {

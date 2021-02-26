@@ -79,7 +79,7 @@ class CreateDataLabelingJobRequest extends \Google\Protobuf\Internal\Message
      * Required. The DataLabelingJob to create.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.DataLabelingJob data_labeling_job = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\DataLabelingJob
+     * @return \Google\Cloud\Aiplatform\V1beta1\DataLabelingJob|null
      */
     public function getDataLabelingJob()
     {

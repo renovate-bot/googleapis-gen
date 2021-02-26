@@ -50,7 +50,7 @@ class MediaBundleAsset extends \Google\Protobuf\Internal\Message
      * MediaBundleAsset. This field is mutate only.
      *
      * Generated from protobuf field <code>.google.protobuf.BytesValue data = 1;</code>
-     * @return \Google\Protobuf\BytesValue
+     * @return \Google\Protobuf\BytesValue|null
      */
     public function getData()
     {

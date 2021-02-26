@@ -150,7 +150,7 @@ class MediationReportSpec extends \Google\Protobuf\Internal\Message
      * The date range for which the report is generated.
      *
      * Generated from protobuf field <code>.google.ads.admob.v1.DateRange date_range = 1;</code>
-     * @return \Google\Ads\Admob\V1\DateRange
+     * @return \Google\Ads\Admob\V1\DateRange|null
      */
     public function getDateRange()
     {
@@ -300,7 +300,7 @@ class MediationReportSpec extends \Google\Protobuf\Internal\Message
      * Localization settings of the report.
      *
      * Generated from protobuf field <code>.google.ads.admob.v1.LocalizationSettings localization_settings = 6;</code>
-     * @return \Google\Ads\Admob\V1\LocalizationSettings
+     * @return \Google\Ads\Admob\V1\LocalizationSettings|null
      */
     public function getLocalizationSettings()
     {

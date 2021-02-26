@@ -290,7 +290,7 @@ class Job extends \Google\Protobuf\Internal\Message
      * The configuration for this job.
      *
      * Generated from protobuf field <code>.google.cloud.video.transcoder.v1beta1.JobConfig config = 5;</code>
-     * @return \Google\Cloud\Video\Transcoder\V1beta1\JobConfig
+     * @return \Google\Cloud\Video\Transcoder\V1beta1\JobConfig|null
      */
     public function getConfig()
     {
@@ -349,7 +349,7 @@ class Job extends \Google\Protobuf\Internal\Message
      * Output only. The origin URI.
      *
      * Generated from protobuf field <code>.google.cloud.video.transcoder.v1beta1.Job.OriginUri origin_uri = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Cloud\Video\Transcoder\V1beta1\Job\OriginUri
+     * @return \Google\Cloud\Video\Transcoder\V1beta1\Job\OriginUri|null
      */
     public function getOriginUri()
     {
@@ -412,7 +412,7 @@ class Job extends \Google\Protobuf\Internal\Message
      * step.
      *
      * Generated from protobuf field <code>.google.cloud.video.transcoder.v1beta1.Progress progress = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Cloud\Video\Transcoder\V1beta1\Progress
+     * @return \Google\Cloud\Video\Transcoder\V1beta1\Progress|null
      */
     public function getProgress()
     {
@@ -505,7 +505,7 @@ class Job extends \Google\Protobuf\Internal\Message
      * Output only. The time the job was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -541,7 +541,7 @@ class Job extends \Google\Protobuf\Internal\Message
      * Output only. The time the transcoding started.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartTime()
     {
@@ -577,7 +577,7 @@ class Job extends \Google\Protobuf\Internal\Message
      * Output only. The time the transcoding finished.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getEndTime()
     {

@@ -87,7 +87,7 @@ class LabelOperationMetadata extends \Google\Protobuf\Internal\Message
      * Details of label image classification operation.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\LabelImageClassificationOperationMetadata
+     * @return \Google\Cloud\DataLabeling\V1beta1\LabelImageClassificationOperationMetadata|null
      */
     public function getImageClassificationDetails()
     {
@@ -118,7 +118,7 @@ class LabelOperationMetadata extends \Google\Protobuf\Internal\Message
      * Details of label image bounding box operation.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\LabelImageBoundingBoxOperationMetadata
+     * @return \Google\Cloud\DataLabeling\V1beta1\LabelImageBoundingBoxOperationMetadata|null
      */
     public function getImageBoundingBoxDetails()
     {
@@ -149,7 +149,7 @@ class LabelOperationMetadata extends \Google\Protobuf\Internal\Message
      * Details of label image bounding poly operation.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\LabelImageBoundingPolyOperationMetadata
+     * @return \Google\Cloud\DataLabeling\V1beta1\LabelImageBoundingPolyOperationMetadata|null
      */
     public function getImageBoundingPolyDetails()
     {
@@ -180,7 +180,7 @@ class LabelOperationMetadata extends \Google\Protobuf\Internal\Message
      * Details of label image oriented bounding box operation.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\LabelImageOrientedBoundingBoxOperationMetadata
+     * @return \Google\Cloud\DataLabeling\V1beta1\LabelImageOrientedBoundingBoxOperationMetadata|null
      */
     public function getImageOrientedBoundingBoxDetails()
     {
@@ -211,7 +211,7 @@ class LabelOperationMetadata extends \Google\Protobuf\Internal\Message
      * Details of label image polyline operation.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\LabelImagePolylineOperationMetadata
+     * @return \Google\Cloud\DataLabeling\V1beta1\LabelImagePolylineOperationMetadata|null
      */
     public function getImagePolylineDetails()
     {
@@ -242,7 +242,7 @@ class LabelOperationMetadata extends \Google\Protobuf\Internal\Message
      * Details of label image segmentation operation.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\LabelImageSegmentationOperationMetadata
+     * @return \Google\Cloud\DataLabeling\V1beta1\LabelImageSegmentationOperationMetadata|null
      */
     public function getImageSegmentationDetails()
     {
@@ -273,7 +273,7 @@ class LabelOperationMetadata extends \Google\Protobuf\Internal\Message
      * Details of label video classification operation.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\LabelVideoClassificationOperationMetadata
+     * @return \Google\Cloud\DataLabeling\V1beta1\LabelVideoClassificationOperationMetadata|null
      */
     public function getVideoClassificationDetails()
     {
@@ -304,7 +304,7 @@ class LabelOperationMetadata extends \Google\Protobuf\Internal\Message
      * Details of label video object detection operation.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\LabelVideoObjectDetectionOperationMetadata
+     * @return \Google\Cloud\DataLabeling\V1beta1\LabelVideoObjectDetectionOperationMetadata|null
      */
     public function getVideoObjectDetectionDetails()
     {
@@ -335,7 +335,7 @@ class LabelOperationMetadata extends \Google\Protobuf\Internal\Message
      * Details of label video object tracking operation.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\LabelVideoObjectTrackingOperationMetadata
+     * @return \Google\Cloud\DataLabeling\V1beta1\LabelVideoObjectTrackingOperationMetadata|null
      */
     public function getVideoObjectTrackingDetails()
     {
@@ -366,7 +366,7 @@ class LabelOperationMetadata extends \Google\Protobuf\Internal\Message
      * Details of label video event operation.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\LabelVideoEventOperationMetadata
+     * @return \Google\Cloud\DataLabeling\V1beta1\LabelVideoEventOperationMetadata|null
      */
     public function getVideoEventDetails()
     {
@@ -397,7 +397,7 @@ class LabelOperationMetadata extends \Google\Protobuf\Internal\Message
      * Details of label text classification operation.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\LabelTextClassificationOperationMetadata
+     * @return \Google\Cloud\DataLabeling\V1beta1\LabelTextClassificationOperationMetadata|null
      */
     public function getTextClassificationDetails()
     {
@@ -428,7 +428,7 @@ class LabelOperationMetadata extends \Google\Protobuf\Internal\Message
      * Details of label text entity extraction operation.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\LabelTextEntityExtractionOperationMetadata
+     * @return \Google\Cloud\DataLabeling\V1beta1\LabelTextEntityExtractionOperationMetadata|null
      */
     public function getTextEntityExtractionDetails()
     {
@@ -515,7 +515,7 @@ class LabelOperationMetadata extends \Google\Protobuf\Internal\Message
      * Output only. Timestamp when labeling request was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 16;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {

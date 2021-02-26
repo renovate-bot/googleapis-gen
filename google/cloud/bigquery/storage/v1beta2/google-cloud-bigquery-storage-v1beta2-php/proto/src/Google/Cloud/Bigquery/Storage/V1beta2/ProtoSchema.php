@@ -47,7 +47,7 @@ class ProtoSchema extends \Google\Protobuf\Internal\Message
      * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf).
      *
      * Generated from protobuf field <code>.google.protobuf.DescriptorProto proto_descriptor = 1;</code>
-     * @return \Google\Protobuf\DescriptorProto
+     * @return \Google\Protobuf\DescriptorProto|null
      */
     public function getProtoDescriptor()
     {

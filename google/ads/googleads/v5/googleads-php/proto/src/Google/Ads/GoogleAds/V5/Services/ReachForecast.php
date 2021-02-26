@@ -59,7 +59,7 @@ class ReachForecast extends \Google\Protobuf\Internal\Message
      * The cost in micros.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 1;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCostMicros()
     {
@@ -122,7 +122,7 @@ class ReachForecast extends \Google\Protobuf\Internal\Message
      * Forecasted traffic metrics for this point.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.services.Forecast forecast = 2;</code>
-     * @return \Google\Ads\GoogleAds\V5\Services\Forecast
+     * @return \Google\Ads\GoogleAds\V5\Services\Forecast|null
      */
     public function getForecast()
     {

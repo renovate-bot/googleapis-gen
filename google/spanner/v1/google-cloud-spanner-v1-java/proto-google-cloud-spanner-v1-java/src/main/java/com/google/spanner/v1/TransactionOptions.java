@@ -1206,6 +1206,16 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool strong = 1;</code>
+     * @return Whether the strong field is set.
+     */
+    boolean hasStrong();
+    /**
+     * <pre>
+     * Read at a timestamp where all previously committed transactions
+     * are visible.
+     * </pre>
+     *
+     * <code>bool strong = 1;</code>
      * @return The strong.
      */
     boolean getStrong();
@@ -1625,6 +1635,19 @@ private static final long serialVersionUID = 0L;
     }
 
     public static final int STRONG_FIELD_NUMBER = 1;
+    /**
+     * <pre>
+     * Read at a timestamp where all previously committed transactions
+     * are visible.
+     * </pre>
+     *
+     * <code>bool strong = 1;</code>
+     * @return Whether the strong field is set.
+     */
+    @java.lang.Override
+    public boolean hasStrong() {
+      return timestampBoundCase_ == 1;
+    }
     /**
      * <pre>
      * Read at a timestamp where all previously committed transactions
@@ -2397,6 +2420,18 @@ private static final long serialVersionUID = 0L;
       }
 
 
+      /**
+       * <pre>
+       * Read at a timestamp where all previously committed transactions
+       * are visible.
+       * </pre>
+       *
+       * <code>bool strong = 1;</code>
+       * @return Whether the strong field is set.
+       */
+      public boolean hasStrong() {
+        return timestampBoundCase_ == 1;
+      }
       /**
        * <pre>
        * Read at a timestamp where all previously committed transactions

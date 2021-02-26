@@ -76,7 +76,7 @@ class TemporalAsset extends \Google\Protobuf\Internal\Message
      * The time window when the asset data and state was observed.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1.TimeWindow window = 1;</code>
-     * @return \Google\Cloud\Asset\V1\TimeWindow
+     * @return \Google\Cloud\Asset\V1\TimeWindow|null
      */
     public function getWindow()
     {
@@ -138,7 +138,7 @@ class TemporalAsset extends \Google\Protobuf\Internal\Message
      * An asset in Google Cloud.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1.Asset asset = 3;</code>
-     * @return \Google\Cloud\Asset\V1\Asset
+     * @return \Google\Cloud\Asset\V1\Asset|null
      */
     public function getAsset()
     {
@@ -201,7 +201,7 @@ class TemporalAsset extends \Google\Protobuf\Internal\Message
      * Currently this is only set for responses in Real-Time Feed.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1.Asset prior_asset = 5;</code>
-     * @return \Google\Cloud\Asset\V1\Asset
+     * @return \Google\Cloud\Asset\V1\Asset|null
      */
     public function getPriorAsset()
     {

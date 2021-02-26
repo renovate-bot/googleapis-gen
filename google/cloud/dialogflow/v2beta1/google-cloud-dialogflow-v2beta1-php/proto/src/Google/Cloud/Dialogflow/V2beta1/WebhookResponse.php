@@ -266,7 +266,7 @@ class WebhookResponse extends \Google\Protobuf\Internal\Message
      * format](https://developers.google.com/assistant/actions/build/json/dialogflow-webhook-json)
      *
      * Generated from protobuf field <code>.google.protobuf.Struct payload = 4;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getPayload()
     {
@@ -345,7 +345,7 @@ class WebhookResponse extends \Google\Protobuf\Internal\Message
      * `fulfillment_messages`, and `payload` fields.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.EventInput followup_event_input = 6;</code>
-     * @return \Google\Cloud\Dialogflow\V2beta1\EventInput
+     * @return \Google\Cloud\Dialogflow\V2beta1\EventInput|null
      */
     public function getFollowupEventInput()
     {

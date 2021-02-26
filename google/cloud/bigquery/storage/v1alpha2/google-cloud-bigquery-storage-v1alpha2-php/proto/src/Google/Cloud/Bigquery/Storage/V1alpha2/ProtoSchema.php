@@ -53,7 +53,7 @@ class ProtoSchema extends \Google\Protobuf\Internal\Message
      * (https://github.com/google/zetasql/tree/master/zetasql/public/proto).
      *
      * Generated from protobuf field <code>.google.protobuf.DescriptorProto proto_descriptor = 1;</code>
-     * @return \Google\Protobuf\DescriptorProto
+     * @return \Google\Protobuf\DescriptorProto|null
      */
     public function getProtoDescriptor()
     {

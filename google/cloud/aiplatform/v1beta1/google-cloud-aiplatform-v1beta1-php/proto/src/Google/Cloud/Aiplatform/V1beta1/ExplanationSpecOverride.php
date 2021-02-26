@@ -56,7 +56,7 @@ class ExplanationSpecOverride extends \Google\Protobuf\Internal\Message
      * no parameter is overridden.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ExplanationParameters parameters = 1;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\ExplanationParameters
+     * @return \Google\Cloud\Aiplatform\V1beta1\ExplanationParameters|null
      */
     public function getParameters()
     {
@@ -94,7 +94,7 @@ class ExplanationSpecOverride extends \Google\Protobuf\Internal\Message
      * The metadata to be overridden. If not specified, no metadata is overridden.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride metadata = 2;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\ExplanationMetadataOverride
+     * @return \Google\Cloud\Aiplatform\V1beta1\ExplanationMetadataOverride|null
      */
     public function getMetadata()
     {

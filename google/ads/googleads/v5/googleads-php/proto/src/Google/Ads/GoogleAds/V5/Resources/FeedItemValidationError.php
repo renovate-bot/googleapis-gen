@@ -104,7 +104,7 @@ class FeedItemValidationError extends \Google\Protobuf\Internal\Message
      * Output only. The description of the validation error.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDescription()
     {
@@ -199,7 +199,7 @@ class FeedItemValidationError extends \Google\Protobuf\Internal\Message
      * feed_attribute_id is not mapped). Note that extra_info is not localized.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue extra_info = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getExtraInfo()
     {

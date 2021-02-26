@@ -95,7 +95,7 @@ class AllocateQuotaRequest extends \Google\Protobuf\Internal\Message
      * Operation that describes the quota allocation.
      *
      * Generated from protobuf field <code>.google.api.servicecontrol.v1.QuotaOperation allocate_operation = 2;</code>
-     * @return \Google\Cloud\ServiceControl\V1\QuotaOperation
+     * @return \Google\Cloud\ServiceControl\V1\QuotaOperation|null
      */
     public function getAllocateOperation()
     {

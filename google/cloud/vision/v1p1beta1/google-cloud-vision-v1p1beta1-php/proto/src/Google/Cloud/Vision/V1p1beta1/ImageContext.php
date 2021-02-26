@@ -87,7 +87,7 @@ class ImageContext extends \Google\Protobuf\Internal\Message
      * lat/long rectangle that specifies the location of the image.
      *
      * Generated from protobuf field <code>.google.cloud.vision.v1p1beta1.LatLongRect lat_long_rect = 1;</code>
-     * @return \Google\Cloud\Vision\V1p1beta1\LatLongRect
+     * @return \Google\Cloud\Vision\V1p1beta1\LatLongRect|null
      */
     public function getLatLongRect()
     {
@@ -163,7 +163,7 @@ class ImageContext extends \Google\Protobuf\Internal\Message
      * Parameters for crop hints annotation request.
      *
      * Generated from protobuf field <code>.google.cloud.vision.v1p1beta1.CropHintsParams crop_hints_params = 4;</code>
-     * @return \Google\Cloud\Vision\V1p1beta1\CropHintsParams
+     * @return \Google\Cloud\Vision\V1p1beta1\CropHintsParams|null
      */
     public function getCropHintsParams()
     {
@@ -199,7 +199,7 @@ class ImageContext extends \Google\Protobuf\Internal\Message
      * Parameters for web detection.
      *
      * Generated from protobuf field <code>.google.cloud.vision.v1p1beta1.WebDetectionParams web_detection_params = 6;</code>
-     * @return \Google\Cloud\Vision\V1p1beta1\WebDetectionParams
+     * @return \Google\Cloud\Vision\V1p1beta1\WebDetectionParams|null
      */
     public function getWebDetectionParams()
     {
@@ -235,7 +235,7 @@ class ImageContext extends \Google\Protobuf\Internal\Message
      * Parameters for text detection and document text detection.
      *
      * Generated from protobuf field <code>.google.cloud.vision.v1p1beta1.TextDetectionParams text_detection_params = 12;</code>
-     * @return \Google\Cloud\Vision\V1p1beta1\TextDetectionParams
+     * @return \Google\Cloud\Vision\V1p1beta1\TextDetectionParams|null
      */
     public function getTextDetectionParams()
     {

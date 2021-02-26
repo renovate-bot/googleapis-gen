@@ -68,7 +68,7 @@ class KerberosConfig extends \Google\Protobuf\Internal\Message
      * with a Kerberos Key Distribution Center (KDC).
      *
      * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.Secret keytab = 1;</code>
-     * @return \Google\Cloud\Metastore\V1alpha\Secret
+     * @return \Google\Cloud\Metastore\V1alpha\Secret|null
      */
     public function getKeytab()
     {

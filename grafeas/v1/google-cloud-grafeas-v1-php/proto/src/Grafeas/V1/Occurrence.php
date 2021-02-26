@@ -261,7 +261,7 @@ class Occurrence extends \Google\Protobuf\Internal\Message
      * Output only. The time this occurrence was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 6;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -297,7 +297,7 @@ class Occurrence extends \Google\Protobuf\Internal\Message
      * Output only. The time this occurrence was last updated.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 7;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {
@@ -333,7 +333,7 @@ class Occurrence extends \Google\Protobuf\Internal\Message
      * Describes a security vulnerability.
      *
      * Generated from protobuf field <code>.grafeas.v1.VulnerabilityOccurrence vulnerability = 8;</code>
-     * @return \Grafeas\V1\VulnerabilityOccurrence
+     * @return \Grafeas\V1\VulnerabilityOccurrence|null
      */
     public function getVulnerability()
     {
@@ -364,7 +364,7 @@ class Occurrence extends \Google\Protobuf\Internal\Message
      * Describes a verifiable build.
      *
      * Generated from protobuf field <code>.grafeas.v1.BuildOccurrence build = 9;</code>
-     * @return \Grafeas\V1\BuildOccurrence
+     * @return \Grafeas\V1\BuildOccurrence|null
      */
     public function getBuild()
     {
@@ -396,7 +396,7 @@ class Occurrence extends \Google\Protobuf\Internal\Message
      * note.
      *
      * Generated from protobuf field <code>.grafeas.v1.ImageOccurrence image = 10;</code>
-     * @return \Grafeas\V1\ImageOccurrence
+     * @return \Grafeas\V1\ImageOccurrence|null
      */
     public function getImage()
     {
@@ -428,7 +428,7 @@ class Occurrence extends \Google\Protobuf\Internal\Message
      * Describes the installation of a package on the linked resource.
      *
      * Generated from protobuf field <code>.grafeas.v1.PackageOccurrence package = 11;</code>
-     * @return \Grafeas\V1\PackageOccurrence
+     * @return \Grafeas\V1\PackageOccurrence|null
      */
     public function getPackage()
     {
@@ -459,7 +459,7 @@ class Occurrence extends \Google\Protobuf\Internal\Message
      * Describes the deployment of an artifact on a runtime.
      *
      * Generated from protobuf field <code>.grafeas.v1.DeploymentOccurrence deployment = 12;</code>
-     * @return \Grafeas\V1\DeploymentOccurrence
+     * @return \Grafeas\V1\DeploymentOccurrence|null
      */
     public function getDeployment()
     {
@@ -490,7 +490,7 @@ class Occurrence extends \Google\Protobuf\Internal\Message
      * Describes when a resource was discovered.
      *
      * Generated from protobuf field <code>.grafeas.v1.DiscoveryOccurrence discovery = 13;</code>
-     * @return \Grafeas\V1\DiscoveryOccurrence
+     * @return \Grafeas\V1\DiscoveryOccurrence|null
      */
     public function getDiscovery()
     {
@@ -521,7 +521,7 @@ class Occurrence extends \Google\Protobuf\Internal\Message
      * Describes an attestation of an artifact.
      *
      * Generated from protobuf field <code>.grafeas.v1.AttestationOccurrence attestation = 14;</code>
-     * @return \Grafeas\V1\AttestationOccurrence
+     * @return \Grafeas\V1\AttestationOccurrence|null
      */
     public function getAttestation()
     {
@@ -552,7 +552,7 @@ class Occurrence extends \Google\Protobuf\Internal\Message
      * Describes an available package upgrade on the linked resource.
      *
      * Generated from protobuf field <code>.grafeas.v1.UpgradeOccurrence upgrade = 15;</code>
-     * @return \Grafeas\V1\UpgradeOccurrence
+     * @return \Grafeas\V1\UpgradeOccurrence|null
      */
     public function getUpgrade()
     {

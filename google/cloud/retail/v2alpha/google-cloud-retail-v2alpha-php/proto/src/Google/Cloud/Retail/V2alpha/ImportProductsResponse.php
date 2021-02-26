@@ -78,7 +78,7 @@ class ImportProductsResponse extends \Google\Protobuf\Internal\Message
      * Echoes the destination for the complete errors in the request if set.
      *
      * Generated from protobuf field <code>.google.cloud.retail.v2alpha.ImportErrorsConfig errors_config = 2;</code>
-     * @return \Google\Cloud\Retail\V2alpha\ImportErrorsConfig
+     * @return \Google\Cloud\Retail\V2alpha\ImportErrorsConfig|null
      */
     public function getErrorsConfig()
     {

@@ -173,7 +173,7 @@ class Version extends \Google\Protobuf\Internal\Message
      * Output only. The NLU settings of the flow at version creation.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.NluSettings nlu_settings = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\NluSettings
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\NluSettings|null
      */
     public function getNluSettings()
     {
@@ -209,7 +209,7 @@ class Version extends \Google\Protobuf\Internal\Message
      * Output only. Create time of the version.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {

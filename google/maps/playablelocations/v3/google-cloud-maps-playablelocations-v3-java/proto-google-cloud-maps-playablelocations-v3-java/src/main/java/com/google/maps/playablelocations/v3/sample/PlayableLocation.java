@@ -238,6 +238,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string place_id = 2;</code>
+   * @return Whether the placeId field is set.
+   */
+  public boolean hasPlaceId() {
+    return locationIdCase_ == 2;
+  }
+  /**
+   * <pre>
+   * A [place ID] (https://developers.google.com/places/place-id)
+   * </pre>
+   *
+   * <code>string place_id = 2;</code>
    * @return The placeId.
    */
   public java.lang.String getPlaceId() {
@@ -285,6 +296,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PLUS_CODE_FIELD_NUMBER = 3;
+  /**
+   * <pre>
+   * A [plus code] (http://openlocationcode.com)
+   * </pre>
+   *
+   * <code>string plus_code = 3;</code>
+   * @return Whether the plusCode field is set.
+   */
+  public boolean hasPlusCode() {
+    return locationIdCase_ == 3;
+  }
   /**
    * <pre>
    * A [plus code] (http://openlocationcode.com)
@@ -1070,6 +1092,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string place_id = 2;</code>
+     * @return Whether the placeId field is set.
+     */
+    @java.lang.Override
+    public boolean hasPlaceId() {
+      return locationIdCase_ == 2;
+    }
+    /**
+     * <pre>
+     * A [place ID] (https://developers.google.com/places/place-id)
+     * </pre>
+     *
+     * <code>string place_id = 2;</code>
      * @return The placeId.
      */
     @java.lang.Override
@@ -1173,6 +1207,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * A [plus code] (http://openlocationcode.com)
+     * </pre>
+     *
+     * <code>string plus_code = 3;</code>
+     * @return Whether the plusCode field is set.
+     */
+    @java.lang.Override
+    public boolean hasPlusCode() {
+      return locationIdCase_ == 3;
+    }
     /**
      * <pre>
      * A [plus code] (http://openlocationcode.com)

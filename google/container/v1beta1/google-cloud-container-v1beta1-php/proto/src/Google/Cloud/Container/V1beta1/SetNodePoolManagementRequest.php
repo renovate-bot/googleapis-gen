@@ -22,6 +22,7 @@ class SetNodePoolManagementRequest extends \Google\Protobuf\Internal\Message
      * This field has been deprecated and replaced by the name field.
      *
      * Generated from protobuf field <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     * @deprecated
      */
     protected $project_id = '';
     /**
@@ -31,6 +32,7 @@ class SetNodePoolManagementRequest extends \Google\Protobuf\Internal\Message
      * field.
      *
      * Generated from protobuf field <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     * @deprecated
      */
     protected $zone = '';
     /**
@@ -38,6 +40,7 @@ class SetNodePoolManagementRequest extends \Google\Protobuf\Internal\Message
      * This field has been deprecated and replaced by the name field.
      *
      * Generated from protobuf field <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     * @deprecated
      */
     protected $cluster_id = '';
     /**
@@ -45,6 +48,7 @@ class SetNodePoolManagementRequest extends \Google\Protobuf\Internal\Message
      * This field has been deprecated and replaced by the name field.
      *
      * Generated from protobuf field <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
+     * @deprecated
      */
     protected $node_pool_id = '';
     /**
@@ -103,9 +107,11 @@ class SetNodePoolManagementRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      * @return string
+     * @deprecated
      */
     public function getProjectId()
     {
+        @trigger_error('project_id is deprecated.', E_USER_DEPRECATED);
         return $this->project_id;
     }
 
@@ -117,9 +123,11 @@ class SetNodePoolManagementRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setProjectId($var)
     {
+        @trigger_error('project_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->project_id = $var;
 
@@ -134,9 +142,11 @@ class SetNodePoolManagementRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      * @return string
+     * @deprecated
      */
     public function getZone()
     {
+        @trigger_error('zone is deprecated.', E_USER_DEPRECATED);
         return $this->zone;
     }
 
@@ -149,9 +159,11 @@ class SetNodePoolManagementRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setZone($var)
     {
+        @trigger_error('zone is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->zone = $var;
 
@@ -164,9 +176,11 @@ class SetNodePoolManagementRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      * @return string
+     * @deprecated
      */
     public function getClusterId()
     {
+        @trigger_error('cluster_id is deprecated.', E_USER_DEPRECATED);
         return $this->cluster_id;
     }
 
@@ -177,9 +191,11 @@ class SetNodePoolManagementRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setClusterId($var)
     {
+        @trigger_error('cluster_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->cluster_id = $var;
 
@@ -192,9 +208,11 @@ class SetNodePoolManagementRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      * @return string
+     * @deprecated
      */
     public function getNodePoolId()
     {
+        @trigger_error('node_pool_id is deprecated.', E_USER_DEPRECATED);
         return $this->node_pool_id;
     }
 
@@ -205,9 +223,11 @@ class SetNodePoolManagementRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string node_pool_id = 4 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setNodePoolId($var)
     {
+        @trigger_error('node_pool_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->node_pool_id = $var;
 
@@ -218,7 +238,7 @@ class SetNodePoolManagementRequest extends \Google\Protobuf\Internal\Message
      * Required. NodeManagement configuration for the node pool.
      *
      * Generated from protobuf field <code>.google.container.v1beta1.NodeManagement management = 5 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Container\V1beta1\NodeManagement
+     * @return \Google\Cloud\Container\V1beta1\NodeManagement|null
      */
     public function getManagement()
     {

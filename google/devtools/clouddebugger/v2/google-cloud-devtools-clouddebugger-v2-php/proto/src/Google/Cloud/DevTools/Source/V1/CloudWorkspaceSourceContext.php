@@ -51,7 +51,7 @@ class CloudWorkspaceSourceContext extends \Google\Protobuf\Internal\Message
      * The ID of the workspace.
      *
      * Generated from protobuf field <code>.google.devtools.source.v1.CloudWorkspaceId workspace_id = 1;</code>
-     * @return \Google\Cloud\DevTools\Source\V1\CloudWorkspaceId
+     * @return \Google\Cloud\DevTools\Source\V1\CloudWorkspaceId|null
      */
     public function getWorkspaceId()
     {

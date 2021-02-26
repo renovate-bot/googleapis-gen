@@ -260,6 +260,19 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool remove_all = 3;</code>
+   * @return Whether the removeAll field is set.
+   */
+  @java.lang.Override
+  public boolean hasRemoveAll() {
+    return operationCase_ == 3;
+  }
+  /**
+   * <pre>
+   * Remove all previously provided data. This is only supported for Customer
+   * Match.
+   * </pre>
+   *
+   * <code>bool remove_all = 3;</code>
    * @return The removeAll.
    */
   @java.lang.Override
@@ -1040,6 +1053,18 @@ private static final long serialVersionUID = 0L;
       return removeBuilder_;
     }
 
+    /**
+     * <pre>
+     * Remove all previously provided data. This is only supported for Customer
+     * Match.
+     * </pre>
+     *
+     * <code>bool remove_all = 3;</code>
+     * @return Whether the removeAll field is set.
+     */
+    public boolean hasRemoveAll() {
+      return operationCase_ == 3;
+    }
     /**
      * <pre>
      * Remove all previously provided data. This is only supported for Customer

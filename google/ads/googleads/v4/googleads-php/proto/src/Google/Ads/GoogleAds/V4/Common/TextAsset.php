@@ -41,7 +41,7 @@ class TextAsset extends \Google\Protobuf\Internal\Message
      * Text content of the text asset.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue text = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getText()
     {

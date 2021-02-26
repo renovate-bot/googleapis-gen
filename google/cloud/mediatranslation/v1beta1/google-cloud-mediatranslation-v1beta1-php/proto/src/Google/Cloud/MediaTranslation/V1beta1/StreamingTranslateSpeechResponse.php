@@ -63,7 +63,7 @@ class StreamingTranslateSpeechResponse extends \Google\Protobuf\Internal\Message
      * specifies the error for the operation.
      *
      * Generated from protobuf field <code>.google.rpc.Status error = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Rpc\Status
+     * @return \Google\Rpc\Status|null
      */
     public function getError()
     {
@@ -101,7 +101,7 @@ class StreamingTranslateSpeechResponse extends \Google\Protobuf\Internal\Message
      * true or false).
      *
      * Generated from protobuf field <code>.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult result = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Cloud\MediaTranslation\V1beta1\StreamingTranslateSpeechResult
+     * @return \Google\Cloud\MediaTranslation\V1beta1\StreamingTranslateSpeechResult|null
      */
     public function getResult()
     {

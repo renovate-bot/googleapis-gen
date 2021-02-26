@@ -130,7 +130,7 @@ class DataItem extends \Google\Protobuf\Internal\Message
      * Output only. Timestamp when this DataItem was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -166,7 +166,7 @@ class DataItem extends \Google\Protobuf\Internal\Message
      * Output only. Timestamp when this DataItem was last updated.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {
@@ -246,7 +246,7 @@ class DataItem extends \Google\Protobuf\Internal\Message
      * [metadata schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri] dataItemSchemaUri field.
      *
      * Generated from protobuf field <code>.google.protobuf.Value payload = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Value
+     * @return \Google\Protobuf\Value|null
      */
     public function getPayload()
     {

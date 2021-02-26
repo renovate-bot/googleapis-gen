@@ -88,7 +88,7 @@ class MobileApplicationInfo extends \Google\Protobuf\Internal\Message
      * This field is required and must be set in CREATE operations.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAppId()
     {
@@ -190,7 +190,7 @@ class MobileApplicationInfo extends \Google\Protobuf\Internal\Message
      * Name of this mobile application.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {

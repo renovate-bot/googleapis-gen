@@ -50,7 +50,7 @@ class CustomParameter extends \Google\Protobuf\Internal\Message
      * The key matching the parameter tag name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue key = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getKey()
     {
@@ -113,7 +113,7 @@ class CustomParameter extends \Google\Protobuf\Internal\Message
      * The value to be substituted.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue value = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getValue()
     {

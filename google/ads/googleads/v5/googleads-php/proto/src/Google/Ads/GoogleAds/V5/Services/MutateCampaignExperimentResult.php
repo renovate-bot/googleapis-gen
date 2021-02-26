@@ -81,7 +81,7 @@ class MutateCampaignExperimentResult extends \Google\Protobuf\Internal\Message
      * "MUTABLE_RESOURCE".
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.resources.CampaignExperiment campaign_experiment = 2;</code>
-     * @return \Google\Ads\GoogleAds\V5\Resources\CampaignExperiment
+     * @return \Google\Ads\GoogleAds\V5\Resources\CampaignExperiment|null
      */
     public function getCampaignExperiment()
     {

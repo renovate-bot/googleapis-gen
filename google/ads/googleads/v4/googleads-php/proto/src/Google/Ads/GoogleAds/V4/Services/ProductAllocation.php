@@ -57,7 +57,7 @@ class ProductAllocation extends \Google\Protobuf\Internal\Message
      * location id.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue plannable_product_code = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPlannableProductCode()
     {
@@ -127,7 +127,7 @@ class ProductAllocation extends \Google\Protobuf\Internal\Message
      * Amount in micros. One million is equivalent to one unit.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value budget_micros = 2;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getBudgetMicros()
     {

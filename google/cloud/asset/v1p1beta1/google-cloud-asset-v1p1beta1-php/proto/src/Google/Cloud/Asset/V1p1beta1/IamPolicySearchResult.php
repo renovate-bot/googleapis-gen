@@ -152,7 +152,7 @@ class IamPolicySearchResult extends \Google\Protobuf\Internal\Message
      * policies (e.g. an empty query), this contains all the bindings.
      *
      * Generated from protobuf field <code>.google.iam.v1.Policy policy = 4;</code>
-     * @return \Google\Cloud\Iam\V1\Policy
+     * @return \Google\Cloud\Iam\V1\Policy|null
      */
     public function getPolicy()
     {
@@ -192,7 +192,7 @@ class IamPolicySearchResult extends \Google\Protobuf\Internal\Message
      * information to explain why the search result matches the query.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
-     * @return \Google\Cloud\Asset\V1p1beta1\IamPolicySearchResult\Explanation
+     * @return \Google\Cloud\Asset\V1p1beta1\IamPolicySearchResult\Explanation|null
      */
     public function getExplanation()
     {

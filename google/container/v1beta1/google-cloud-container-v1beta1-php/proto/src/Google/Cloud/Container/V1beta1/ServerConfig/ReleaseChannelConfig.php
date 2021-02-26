@@ -33,6 +33,7 @@ class ReleaseChannelConfig extends \Google\Protobuf\Internal\Message
      * field.
      *
      * Generated from protobuf field <code>repeated .google.container.v1beta1.ServerConfig.ReleaseChannelConfig.AvailableVersion available_versions = 3 [deprecated = true];</code>
+     * @deprecated
      */
     private $available_versions;
     /**
@@ -124,9 +125,11 @@ class ReleaseChannelConfig extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>repeated .google.container.v1beta1.ServerConfig.ReleaseChannelConfig.AvailableVersion available_versions = 3 [deprecated = true];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
+     * @deprecated
      */
     public function getAvailableVersions()
     {
+        @trigger_error('available_versions is deprecated.', E_USER_DEPRECATED);
         return $this->available_versions;
     }
 
@@ -138,9 +141,11 @@ class ReleaseChannelConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .google.container.v1beta1.ServerConfig.ReleaseChannelConfig.AvailableVersion available_versions = 3 [deprecated = true];</code>
      * @param \Google\Cloud\Container\V1beta1\ServerConfig\ReleaseChannelConfig\AvailableVersion[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
+     * @deprecated
      */
     public function setAvailableVersions($var)
     {
+        @trigger_error('available_versions is deprecated.', E_USER_DEPRECATED);
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Cloud\Container\V1beta1\ServerConfig\ReleaseChannelConfig\AvailableVersion::class);
         $this->available_versions = $arr;
 

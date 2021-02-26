@@ -178,7 +178,7 @@ class TailLogEntriesRequest extends \Google\Protobuf\Internal\Message
      * milliseconds.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration buffer_window = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getBufferWindow()
     {

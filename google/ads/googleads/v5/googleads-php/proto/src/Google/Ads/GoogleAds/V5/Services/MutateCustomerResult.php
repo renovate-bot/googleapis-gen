@@ -78,7 +78,7 @@ class MutateCustomerResult extends \Google\Protobuf\Internal\Message
      * only be returned when response_content_type is set to "MUTABLE_RESOURCE".
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.resources.Customer customer = 2;</code>
-     * @return \Google\Ads\GoogleAds\V5\Resources\Customer
+     * @return \Google\Ads\GoogleAds\V5\Resources\Customer|null
      */
     public function getCustomer()
     {

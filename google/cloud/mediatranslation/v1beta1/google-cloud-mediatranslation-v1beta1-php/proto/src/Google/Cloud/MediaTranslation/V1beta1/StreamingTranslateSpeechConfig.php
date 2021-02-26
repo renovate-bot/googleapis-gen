@@ -73,7 +73,7 @@ class StreamingTranslateSpeechConfig extends \Google\Protobuf\Internal\Message
      * Required. The common config for all the following audio contents.
      *
      * Generated from protobuf field <code>.google.cloud.mediatranslation.v1beta1.TranslateSpeechConfig audio_config = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\MediaTranslation\V1beta1\TranslateSpeechConfig
+     * @return \Google\Cloud\MediaTranslation\V1beta1\TranslateSpeechConfig|null
      */
     public function getAudioConfig()
     {

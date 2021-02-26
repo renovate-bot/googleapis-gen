@@ -71,7 +71,7 @@ class UpdateIntentRequest extends \Google\Protobuf\Internal\Message
      * Required. The intent to update.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Intent
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Intent|null
      */
     public function getIntent()
     {
@@ -146,7 +146,7 @@ class UpdateIntentRequest extends \Google\Protobuf\Internal\Message
      * all fields will be updated.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 3;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

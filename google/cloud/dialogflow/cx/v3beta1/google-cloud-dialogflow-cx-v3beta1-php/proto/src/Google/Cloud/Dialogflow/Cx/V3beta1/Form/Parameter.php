@@ -237,7 +237,7 @@ class Parameter extends \Google\Protobuf\Internal\Message
      * Required. Defines fill behavior for the parameter.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.Form.Parameter.FillBehavior fill_behavior = 7 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Form\Parameter\FillBehavior
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Form\Parameter\FillBehavior|null
      */
     public function getFillBehavior()
     {
@@ -274,7 +274,7 @@ class Parameter extends \Google\Protobuf\Internal\Message
      * the default value will be ignored.
      *
      * Generated from protobuf field <code>.google.protobuf.Value default_value = 9;</code>
-     * @return \Google\Protobuf\Value
+     * @return \Google\Protobuf\Value|null
      */
     public function getDefaultValue()
     {

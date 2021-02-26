@@ -68,7 +68,7 @@ class DynamicSearchAdsSetting extends \Google\Protobuf\Internal\Message
      * or "www.google.com".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue domain_name = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDomainName()
     {
@@ -134,7 +134,7 @@ class DynamicSearchAdsSetting extends \Google\Protobuf\Internal\Message
      * The language code specifying the language of the domain, e.g., "en".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getLanguageCode()
     {
@@ -197,7 +197,7 @@ class DynamicSearchAdsSetting extends \Google\Protobuf\Internal\Message
      * Whether the campaign uses advertiser supplied URLs exclusively.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue use_supplied_urls_only = 3;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getUseSuppliedUrlsOnly()
     {

@@ -418,6 +418,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string campaign = 14 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
+   * @return Whether the campaign field is set.
+   */
+  public boolean hasCampaign() {
+    return targetCase_ == 14;
+  }
+  /**
+   * <pre>
+   * Immutable. The targeted campaign.
+   * </pre>
+   *
+   * <code>string campaign = 14 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
    * @return The campaign.
    */
   public java.lang.String getCampaign() {
@@ -465,6 +476,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int AD_GROUP_FIELD_NUMBER = 15;
+  /**
+   * <pre>
+   * Immutable. The targeted ad group.
+   * </pre>
+   *
+   * <code>string ad_group = 15 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
+   * @return Whether the adGroup field is set.
+   */
+  public boolean hasAdGroup() {
+    return targetCase_ == 15;
+  }
   /**
    * <pre>
    * Immutable. The targeted ad group.
@@ -567,6 +589,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string geo_target_constant = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
+   * @return Whether the geoTargetConstant field is set.
+   */
+  public boolean hasGeoTargetConstant() {
+    return targetCase_ == 16;
+  }
+  /**
+   * <pre>
+   * Immutable. The targeted geo target constant resource name.
+   * </pre>
+   *
+   * <code>string geo_target_constant = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
    * @return The geoTargetConstant.
    */
   public java.lang.String getGeoTargetConstant() {
@@ -614,6 +647,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DEVICE_FIELD_NUMBER = 9;
+  /**
+   * <pre>
+   * Immutable. The targeted device.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v6.enums.FeedItemTargetDeviceEnum.FeedItemTargetDevice device = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the device field is set.
+   */
+  public boolean hasDevice() {
+    return targetCase_ == 9;
+  }
   /**
    * <pre>
    * Immutable. The targeted device.
@@ -1685,6 +1729,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string campaign = 14 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
+     * @return Whether the campaign field is set.
+     */
+    @java.lang.Override
+    public boolean hasCampaign() {
+      return targetCase_ == 14;
+    }
+    /**
+     * <pre>
+     * Immutable. The targeted campaign.
+     * </pre>
+     *
+     * <code>string campaign = 14 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      * @return The campaign.
      */
     @java.lang.Override
@@ -1788,6 +1844,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Immutable. The targeted ad group.
+     * </pre>
+     *
+     * <code>string ad_group = 15 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
+     * @return Whether the adGroup field is set.
+     */
+    @java.lang.Override
+    public boolean hasAdGroup() {
+      return targetCase_ == 15;
+    }
     /**
      * <pre>
      * Immutable. The targeted ad group.
@@ -2080,6 +2148,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string geo_target_constant = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
+     * @return Whether the geoTargetConstant field is set.
+     */
+    @java.lang.Override
+    public boolean hasGeoTargetConstant() {
+      return targetCase_ == 16;
+    }
+    /**
+     * <pre>
+     * Immutable. The targeted geo target constant resource name.
+     * </pre>
+     *
+     * <code>string geo_target_constant = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
      * @return The geoTargetConstant.
      */
     @java.lang.Override
@@ -2183,6 +2263,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Immutable. The targeted device.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v6.enums.FeedItemTargetDeviceEnum.FeedItemTargetDevice device = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return Whether the device field is set.
+     */
+    @java.lang.Override
+    public boolean hasDevice() {
+      return targetCase_ == 9;
+    }
     /**
      * <pre>
      * Immutable. The targeted device.

@@ -60,7 +60,7 @@ class FulfillIntentRequest extends \Google\Protobuf\Internal\Message
      * behavior is undefined.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.MatchIntentRequest match_intent_request = 1;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\MatchIntentRequest
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\MatchIntentRequest|null
      */
     public function getMatchIntentRequest()
     {
@@ -97,7 +97,7 @@ class FulfillIntentRequest extends \Google\Protobuf\Internal\Message
      * The matched intent/event to fulfill.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.Match match = 2;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Match
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Match|null
      */
     public function getMatch()
     {
@@ -133,7 +133,7 @@ class FulfillIntentRequest extends \Google\Protobuf\Internal\Message
      * Instructs the speech synthesizer how to generate output audio.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig output_audio_config = 3;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\OutputAudioConfig
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\OutputAudioConfig|null
      */
     public function getOutputAudioConfig()
     {

@@ -84,7 +84,7 @@ class DedicatedResources extends \Google\Protobuf\Internal\Message
      * Required. Immutable. The specification of a single machine used by the prediction.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Cloud\Aiplatform\V1\MachineSpec
+     * @return \Google\Cloud\Aiplatform\V1\MachineSpec|null
      */
     public function getMachineSpec()
     {

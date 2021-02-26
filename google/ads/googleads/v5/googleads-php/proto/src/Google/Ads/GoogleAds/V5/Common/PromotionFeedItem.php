@@ -150,7 +150,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * This field is required.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue promotion_target = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPromotionTarget()
     {
@@ -242,7 +242,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * Start date of when the promotion is eligible to be redeemed.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue promotion_start_date = 7;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPromotionStartDate()
     {
@@ -305,7 +305,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * End date of when the promotion is eligible to be redeemed.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue promotion_end_date = 8;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPromotionEndDate()
     {
@@ -452,7 +452,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * URL template for constructing a tracking URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 12;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getTrackingUrlTemplate()
     {
@@ -544,7 +544,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * tracking.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 14;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getFinalUrlSuffix()
     {
@@ -611,7 +611,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * Represented as BCP 47 language tag.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 15;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getLanguageCode()
     {
@@ -679,7 +679,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * Either this or money_off_amount is required.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value percent_off = 3;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getPercentOff()
     {
@@ -744,7 +744,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * Either this or percent_off is required.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.Money money_amount_off = 4;</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\Money
+     * @return \Google\Ads\GoogleAds\V5\Common\Money|null
      */
     public function getMoneyAmountOff()
     {
@@ -776,7 +776,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * A code the user should use in order to be eligible for the promotion.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue promotion_code = 5;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPromotionCode()
     {
@@ -835,7 +835,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * the promotion.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.Money orders_over_amount = 6;</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\Money
+     * @return \Google\Ads\GoogleAds\V5\Common\Money|null
      */
     public function getOrdersOverAmount()
     {

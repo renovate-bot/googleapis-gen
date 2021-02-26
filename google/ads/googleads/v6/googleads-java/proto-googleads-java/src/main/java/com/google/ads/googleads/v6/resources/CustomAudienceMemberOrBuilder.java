@@ -35,6 +35,18 @@ public interface CustomAudienceMemberOrBuilder extends
    * </pre>
    *
    * <code>string keyword = 2;</code>
+   * @return Whether the keyword field is set.
+   */
+  boolean hasKeyword();
+  /**
+   * <pre>
+   * A keyword or keyword phrase — at most 10 words and 80 characters.
+   * Languages with double-width characters such as Chinese, Japanese,
+   * or Korean, are allowed 40 characters, which describes the user's
+   * interests or actions.
+   * </pre>
+   *
+   * <code>string keyword = 2;</code>
    * @return The keyword.
    */
   java.lang.String getKeyword();
@@ -52,6 +64,16 @@ public interface CustomAudienceMemberOrBuilder extends
   com.google.protobuf.ByteString
       getKeywordBytes();
 
+  /**
+   * <pre>
+   * An HTTP URL, protocol-included — at most 2048 characters, which includes
+   * contents users have interests in.
+   * </pre>
+   *
+   * <code>string url = 3;</code>
+   * @return Whether the url field is set.
+   */
+  boolean hasUrl();
   /**
    * <pre>
    * An HTTP URL, protocol-included — at most 2048 characters, which includes
@@ -80,10 +102,29 @@ public interface CustomAudienceMemberOrBuilder extends
    * </pre>
    *
    * <code>int64 place_category = 4;</code>
+   * @return Whether the placeCategory field is set.
+   */
+  boolean hasPlaceCategory();
+  /**
+   * <pre>
+   * A place type described by a place category users visit.
+   * </pre>
+   *
+   * <code>int64 place_category = 4;</code>
    * @return The placeCategory.
    */
   long getPlaceCategory();
 
+  /**
+   * <pre>
+   * A package name of Android apps which users installed such as
+   * com.google.example.
+   * </pre>
+   *
+   * <code>string app = 5;</code>
+   * @return Whether the app field is set.
+   */
+  boolean hasApp();
   /**
    * <pre>
    * A package name of Android apps which users installed such as

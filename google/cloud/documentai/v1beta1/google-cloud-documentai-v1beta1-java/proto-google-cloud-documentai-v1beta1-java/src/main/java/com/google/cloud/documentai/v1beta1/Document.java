@@ -29237,6 +29237,21 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string uri = 1;</code>
+   * @return Whether the uri field is set.
+   */
+  public boolean hasUri() {
+    return sourceCase_ == 1;
+  }
+  /**
+   * <pre>
+   * Currently supports Google Cloud Storage URI of the form
+   *    `gs://bucket_name/object_name`. Object versioning is not supported.
+   *    See [Google Cloud Storage Request
+   *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
+   *    info.
+   * </pre>
+   *
+   * <code>string uri = 1;</code>
    * @return The uri.
    */
   public java.lang.String getUri() {
@@ -29288,6 +29303,20 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CONTENT_FIELD_NUMBER = 2;
+  /**
+   * <pre>
+   * Inline document content, represented as a stream of bytes.
+   * Note: As with all `bytes` fields, protobuffers use a pure binary
+   * representation, whereas JSON representations use base64.
+   * </pre>
+   *
+   * <code>bytes content = 2;</code>
+   * @return Whether the content field is set.
+   */
+  @java.lang.Override
+  public boolean hasContent() {
+    return sourceCase_ == 2;
+  }
   /**
    * <pre>
    * Inline document content, represented as a stream of bytes.
@@ -30444,6 +30473,22 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string uri = 1;</code>
+     * @return Whether the uri field is set.
+     */
+    @java.lang.Override
+    public boolean hasUri() {
+      return sourceCase_ == 1;
+    }
+    /**
+     * <pre>
+     * Currently supports Google Cloud Storage URI of the form
+     *    `gs://bucket_name/object_name`. Object versioning is not supported.
+     *    See [Google Cloud Storage Request
+     *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
+     *    info.
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
      * @return The uri.
      */
     @java.lang.Override
@@ -30563,6 +30608,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Inline document content, represented as a stream of bytes.
+     * Note: As with all `bytes` fields, protobuffers use a pure binary
+     * representation, whereas JSON representations use base64.
+     * </pre>
+     *
+     * <code>bytes content = 2;</code>
+     * @return Whether the content field is set.
+     */
+    public boolean hasContent() {
+      return sourceCase_ == 2;
+    }
     /**
      * <pre>
      * Inline document content, represented as a stream of bytes.

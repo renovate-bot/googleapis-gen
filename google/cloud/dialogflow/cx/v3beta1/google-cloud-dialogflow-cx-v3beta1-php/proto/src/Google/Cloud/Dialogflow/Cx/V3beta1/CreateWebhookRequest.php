@@ -79,7 +79,7 @@ class CreateWebhookRequest extends \Google\Protobuf\Internal\Message
      * Required. The webhook to create.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.Webhook webhook = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Webhook
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Webhook|null
      */
     public function getWebhook()
     {

@@ -148,7 +148,7 @@ class FrequencyCapKey extends \Google\Protobuf\Internal\Message
      * Number of time units the cap lasts.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value time_length = 4;</code>
-     * @return \Google\Protobuf\Int32Value
+     * @return \Google\Protobuf\Int32Value|null
      */
     public function getTimeLength()
     {

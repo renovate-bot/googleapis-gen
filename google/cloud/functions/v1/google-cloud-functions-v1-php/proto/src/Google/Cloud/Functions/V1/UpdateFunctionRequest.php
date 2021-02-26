@@ -49,7 +49,7 @@ class UpdateFunctionRequest extends \Google\Protobuf\Internal\Message
      * Required. New version of the function.
      *
      * Generated from protobuf field <code>.google.cloud.functions.v1.CloudFunction function = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Functions\V1\CloudFunction
+     * @return \Google\Cloud\Functions\V1\CloudFunction|null
      */
     public function getFunction()
     {
@@ -85,7 +85,7 @@ class UpdateFunctionRequest extends \Google\Protobuf\Internal\Message
      * Required list of fields to be updated in this request.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

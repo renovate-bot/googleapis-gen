@@ -41,7 +41,7 @@ class MutateCustomerResponse extends \Google\Protobuf\Internal\Message
      * Result for the mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.MutateCustomerResult result = 2;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\MutateCustomerResult
+     * @return \Google\Ads\GoogleAds\V4\Services\MutateCustomerResult|null
      */
     public function getResult()
     {

@@ -83,7 +83,7 @@ class ExportDataRequest extends \Google\Protobuf\Internal\Message
      * Required. The desired output location.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.ExportDataConfig export_config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Aiplatform\V1\ExportDataConfig
+     * @return \Google\Cloud\Aiplatform\V1\ExportDataConfig|null
      */
     public function getExportConfig()
     {

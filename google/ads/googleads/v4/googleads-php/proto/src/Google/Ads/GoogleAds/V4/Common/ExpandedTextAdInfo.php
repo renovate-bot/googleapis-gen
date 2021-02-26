@@ -89,7 +89,7 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
      * The first part of the ad's headline.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue headline_part1 = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getHeadlinePart1()
     {
@@ -152,7 +152,7 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
      * The second part of the ad's headline.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue headline_part2 = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getHeadlinePart2()
     {
@@ -215,7 +215,7 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
      * The third part of the ad's headline.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue headline_part3 = 6;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getHeadlinePart3()
     {
@@ -278,7 +278,7 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
      * The description of the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDescription()
     {
@@ -341,7 +341,7 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
      * The second description of the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description2 = 7;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDescription2()
     {
@@ -404,7 +404,7 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
      * The text that can appear alongside the ad's displayed URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue path1 = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPath1()
     {
@@ -467,7 +467,7 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
      * Additional text that can appear alongside the ad's displayed URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue path2 = 5;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPath2()
     {

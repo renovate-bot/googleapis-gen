@@ -49,7 +49,7 @@ class UpdateBookRequest extends \Google\Protobuf\Internal\Message
      * The name of the book to update.
      *
      * Generated from protobuf field <code>.google.example.library.v1.Book book = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Example\Library\V1\Book
+     * @return \Google\Example\Library\V1\Book|null
      */
     public function getBook()
     {
@@ -85,7 +85,7 @@ class UpdateBookRequest extends \Google\Protobuf\Internal\Message
      * Required. Mask of fields to update.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

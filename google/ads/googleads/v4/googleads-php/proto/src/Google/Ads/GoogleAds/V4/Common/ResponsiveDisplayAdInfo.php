@@ -355,7 +355,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * A required long format headline. The maximum length is 90 characters.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.AdTextAsset long_headline = 6;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\AdTextAsset
+     * @return \Google\Ads\GoogleAds\V4\Common\AdTextAsset|null
      */
     public function getLongHeadline()
     {
@@ -445,7 +445,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * The advertiser/brand name. Maximum display width is 25.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue business_name = 9;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getBusinessName()
     {
@@ -510,7 +510,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * well.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue main_color = 10;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getMainColor()
     {
@@ -581,7 +581,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * well.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue accent_color = 11;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAccentColor()
     {
@@ -654,7 +654,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * Must be true if main_color and accent_color are not set.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue allow_flexible_color = 12;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getAllowFlexibleColor()
     {
@@ -729,7 +729,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * The call-to-action text for the ad. Maximum display width is 30.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue call_to_action_text = 13;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCallToActionText()
     {
@@ -792,7 +792,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * Prefix before price. E.g. 'as low as'.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue price_prefix = 14;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPricePrefix()
     {
@@ -856,7 +856,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * 'Free two-day shipping'.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue promo_text = 15;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPromoText()
     {

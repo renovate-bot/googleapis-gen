@@ -41,7 +41,7 @@ class RemarketingSetting extends \Google\Protobuf\Internal\Message
      * Output only. The Google global site tag.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue google_global_site_tag = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getGoogleGlobalSiteTag()
     {

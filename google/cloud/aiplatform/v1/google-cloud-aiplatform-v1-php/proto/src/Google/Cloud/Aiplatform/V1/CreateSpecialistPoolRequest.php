@@ -79,7 +79,7 @@ class CreateSpecialistPoolRequest extends \Google\Protobuf\Internal\Message
      * Required. The SpecialistPool to create.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.SpecialistPool specialist_pool = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Aiplatform\V1\SpecialistPool
+     * @return \Google\Cloud\Aiplatform\V1\SpecialistPool|null
      */
     public function getSpecialistPool()
     {

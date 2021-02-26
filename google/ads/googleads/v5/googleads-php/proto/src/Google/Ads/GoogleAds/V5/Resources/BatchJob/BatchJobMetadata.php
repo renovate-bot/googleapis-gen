@@ -93,7 +93,7 @@ class BatchJobMetadata extends \Google\Protobuf\Internal\Message
      * Formatted as yyyy-mm-dd hh:mm:ss. Example: "2018-03-05 09:15:00"
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue creation_date_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCreationDateTime()
     {
@@ -198,7 +198,7 @@ class BatchJobMetadata extends \Google\Protobuf\Internal\Message
      * Formatted as yyyy-MM-dd HH:mm:ss. Example: "2018-03-05 09:16:00"
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue completion_date_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCompletionDateTime()
     {
@@ -265,7 +265,7 @@ class BatchJobMetadata extends \Google\Protobuf\Internal\Message
      * This is empty if the job hasn't started running yet.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue estimated_completion_ratio = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getEstimatedCompletionRatio()
     {
@@ -331,7 +331,7 @@ class BatchJobMetadata extends \Google\Protobuf\Internal\Message
      * Output only. The number of mutate operations in the batch job.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value operation_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getOperationCount()
     {
@@ -395,7 +395,7 @@ class BatchJobMetadata extends \Google\Protobuf\Internal\Message
      * Present only if the job has started running.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value executed_operation_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getExecutedOperationCount()
     {

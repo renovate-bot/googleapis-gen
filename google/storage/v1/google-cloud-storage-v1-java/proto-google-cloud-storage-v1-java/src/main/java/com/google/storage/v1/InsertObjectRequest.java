@@ -271,6 +271,18 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string upload_id = 1;</code>
+   * @return Whether the uploadId field is set.
+   */
+  public boolean hasUploadId() {
+    return firstMessageCase_ == 1;
+  }
+  /**
+   * <pre>
+   * For resumable uploads. This should be the `upload_id` returned from a
+   * call to `StartResumableWriteResponse`.
+   * </pre>
+   *
+   * <code>string upload_id = 1;</code>
    * @return The uploadId.
    */
   public java.lang.String getUploadId() {
@@ -1233,6 +1245,19 @@ private static final long serialVersionUID = 0L;
     }
 
 
+    /**
+     * <pre>
+     * For resumable uploads. This should be the `upload_id` returned from a
+     * call to `StartResumableWriteResponse`.
+     * </pre>
+     *
+     * <code>string upload_id = 1;</code>
+     * @return Whether the uploadId field is set.
+     */
+    @java.lang.Override
+    public boolean hasUploadId() {
+      return firstMessageCase_ == 1;
+    }
     /**
      * <pre>
      * For resumable uploads. This should be the `upload_id` returned from a

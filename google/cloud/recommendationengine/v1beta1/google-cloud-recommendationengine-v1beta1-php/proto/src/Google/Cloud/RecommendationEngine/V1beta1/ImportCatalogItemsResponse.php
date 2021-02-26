@@ -77,7 +77,7 @@ class ImportCatalogItemsResponse extends \Google\Protobuf\Internal\Message
      * Echoes the destination for the complete errors in the request if set.
      *
      * Generated from protobuf field <code>.google.cloud.recommendationengine.v1beta1.ImportErrorsConfig errors_config = 2;</code>
-     * @return \Google\Cloud\RecommendationEngine\V1beta1\ImportErrorsConfig
+     * @return \Google\Cloud\RecommendationEngine\V1beta1\ImportErrorsConfig|null
      */
     public function getErrorsConfig()
     {

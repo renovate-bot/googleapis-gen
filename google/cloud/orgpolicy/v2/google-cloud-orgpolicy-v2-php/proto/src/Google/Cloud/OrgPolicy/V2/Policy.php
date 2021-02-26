@@ -126,7 +126,7 @@ class Policy extends \Google\Protobuf\Internal\Message
      * Basic information about the Organization Policy.
      *
      * Generated from protobuf field <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
-     * @return \Google\Cloud\OrgPolicy\V2\PolicySpec
+     * @return \Google\Cloud\OrgPolicy\V2\PolicySpec|null
      */
     public function getSpec()
     {
@@ -165,7 +165,7 @@ class Policy extends \Google\Protobuf\Internal\Message
      * is via dry-run/darklaunch.
      *
      * Generated from protobuf field <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3;</code>
-     * @return \Google\Cloud\OrgPolicy\V2\AlternatePolicySpec
+     * @return \Google\Cloud\OrgPolicy\V2\AlternatePolicySpec|null
      */
     public function getAlternate()
     {

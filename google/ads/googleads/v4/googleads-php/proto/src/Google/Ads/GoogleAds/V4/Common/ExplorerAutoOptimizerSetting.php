@@ -43,7 +43,7 @@ class ExplorerAutoOptimizerSetting extends \Google\Protobuf\Internal\Message
      * Indicates whether the optimizer is turned on.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue opt_in = 1;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getOptIn()
     {

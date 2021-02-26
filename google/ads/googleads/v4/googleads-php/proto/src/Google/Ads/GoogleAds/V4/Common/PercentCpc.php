@@ -65,7 +65,7 @@ class PercentCpc extends \Google\Protobuf\Internal\Message
      * undefined.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_ceiling_micros = 1;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCpcBidCeilingMicros()
     {
@@ -140,7 +140,7 @@ class PercentCpc extends \Google\Protobuf\Internal\Message
      * not.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue enhanced_cpc_enabled = 2;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getEnhancedCpcEnabled()
     {

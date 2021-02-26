@@ -41,7 +41,7 @@ class NotificationConfig extends \Google\Protobuf\Internal\Message
      * Notification config for Pub/Sub.
      *
      * Generated from protobuf field <code>.google.container.v1beta1.NotificationConfig.PubSub pubsub = 1;</code>
-     * @return \Google\Cloud\Container\V1beta1\NotificationConfig\PubSub
+     * @return \Google\Cloud\Container\V1beta1\NotificationConfig\PubSub|null
      */
     public function getPubsub()
     {

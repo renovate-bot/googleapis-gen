@@ -130,7 +130,7 @@ class Hub extends \Google\Protobuf\Internal\Message
      * Time when the Hub was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 2;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -166,7 +166,7 @@ class Hub extends \Google\Protobuf\Internal\Message
      * Time when the Hub was updated.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {

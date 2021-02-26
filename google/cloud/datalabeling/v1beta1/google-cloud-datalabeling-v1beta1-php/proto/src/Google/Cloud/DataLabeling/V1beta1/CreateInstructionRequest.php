@@ -79,7 +79,7 @@ class CreateInstructionRequest extends \Google\Protobuf\Internal\Message
      * Required. Instruction of how to perform the labeling task.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.Instruction instruction = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\Instruction
+     * @return \Google\Cloud\DataLabeling\V1beta1\Instruction|null
      */
     public function getInstruction()
     {

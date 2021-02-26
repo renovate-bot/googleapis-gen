@@ -168,6 +168,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string value = 3;</code>
+   * @return Whether the value field is set.
+   */
+  public boolean hasValue() {
+    return dataItemCase_ == 3;
+  }
+  /**
+   * <pre>
+   * String data to inspect or redact.
+   * </pre>
+   *
+   * <code>string value = 3;</code>
    * @return The value.
    */
   public java.lang.String getValue() {
@@ -702,6 +713,18 @@ private static final long serialVersionUID = 0L;
     }
 
 
+    /**
+     * <pre>
+     * String data to inspect or redact.
+     * </pre>
+     *
+     * <code>string value = 3;</code>
+     * @return Whether the value field is set.
+     */
+    @java.lang.Override
+    public boolean hasValue() {
+      return dataItemCase_ == 3;
+    }
     /**
      * <pre>
      * String data to inspect or redact.

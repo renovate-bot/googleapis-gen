@@ -373,7 +373,7 @@ class Domain extends \Google\Protobuf\Internal\Message
      * Output only. The time the instance was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 11;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -409,7 +409,7 @@ class Domain extends \Google\Protobuf\Internal\Message
      * Output only. The last update time.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 12;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {

@@ -188,7 +188,7 @@ class ExplainedPolicy extends \Google\Protobuf\Internal\Message
      * is empty.
      *
      * Generated from protobuf field <code>.google.iam.v1.Policy policy = 3;</code>
-     * @return \Google\Cloud\Iam\V1\Policy
+     * @return \Google\Cloud\Iam\V1\Policy|null
      */
     public function getPolicy()
     {

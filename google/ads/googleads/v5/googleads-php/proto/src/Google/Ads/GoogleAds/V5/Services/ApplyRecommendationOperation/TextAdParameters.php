@@ -44,7 +44,7 @@ class TextAdParameters extends \Google\Protobuf\Internal\Message
      * set in this message. This is a required field.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.resources.Ad ad = 1;</code>
-     * @return \Google\Ads\GoogleAds\V5\Resources\Ad
+     * @return \Google\Ads\GoogleAds\V5\Resources\Ad|null
      */
     public function getAd()
     {

@@ -136,7 +136,7 @@ class Annotation extends \Google\Protobuf\Internal\Message
      * bounding box values are stored here.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.AnnotationValue annotation_value = 3;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\AnnotationValue
+     * @return \Google\Cloud\DataLabeling\V1beta1\AnnotationValue|null
      */
     public function getAnnotationValue()
     {
@@ -174,7 +174,7 @@ class Annotation extends \Google\Protobuf\Internal\Message
      * for labels.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.AnnotationMetadata annotation_metadata = 4;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\AnnotationMetadata
+     * @return \Google\Cloud\DataLabeling\V1beta1\AnnotationMetadata|null
      */
     public function getAnnotationMetadata()
     {

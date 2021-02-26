@@ -349,7 +349,7 @@ class Agent extends \Google\Protobuf\Internal\Message
      * Speech recognition related settings.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.SpeechToTextSettings speech_to_text_settings = 13;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\SpeechToTextSettings
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\SpeechToTextSettings|null
      */
     public function getSpeechToTextSettings()
     {

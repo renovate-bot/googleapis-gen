@@ -48,7 +48,7 @@ class Step extends \Google\Protobuf\Internal\Message
      * Copies a file onto the instance.
      *
      * Generated from protobuf field <code>.google.cloud.osconfig.v1beta.SoftwareRecipe.Step.CopyFile file_copy = 1;</code>
-     * @return \Google\Cloud\Osconfig\V1beta\SoftwareRecipe\Step\CopyFile
+     * @return \Google\Cloud\Osconfig\V1beta\SoftwareRecipe\Step\CopyFile|null
      */
     public function getFileCopy()
     {
@@ -79,7 +79,7 @@ class Step extends \Google\Protobuf\Internal\Message
      * Extracts an archive into the specified directory.
      *
      * Generated from protobuf field <code>.google.cloud.osconfig.v1beta.SoftwareRecipe.Step.ExtractArchive archive_extraction = 2;</code>
-     * @return \Google\Cloud\Osconfig\V1beta\SoftwareRecipe\Step\ExtractArchive
+     * @return \Google\Cloud\Osconfig\V1beta\SoftwareRecipe\Step\ExtractArchive|null
      */
     public function getArchiveExtraction()
     {
@@ -110,7 +110,7 @@ class Step extends \Google\Protobuf\Internal\Message
      * Installs an MSI file.
      *
      * Generated from protobuf field <code>.google.cloud.osconfig.v1beta.SoftwareRecipe.Step.InstallMsi msi_installation = 3;</code>
-     * @return \Google\Cloud\Osconfig\V1beta\SoftwareRecipe\Step\InstallMsi
+     * @return \Google\Cloud\Osconfig\V1beta\SoftwareRecipe\Step\InstallMsi|null
      */
     public function getMsiInstallation()
     {
@@ -141,7 +141,7 @@ class Step extends \Google\Protobuf\Internal\Message
      * Installs a deb file via dpkg.
      *
      * Generated from protobuf field <code>.google.cloud.osconfig.v1beta.SoftwareRecipe.Step.InstallDpkg dpkg_installation = 4;</code>
-     * @return \Google\Cloud\Osconfig\V1beta\SoftwareRecipe\Step\InstallDpkg
+     * @return \Google\Cloud\Osconfig\V1beta\SoftwareRecipe\Step\InstallDpkg|null
      */
     public function getDpkgInstallation()
     {
@@ -172,7 +172,7 @@ class Step extends \Google\Protobuf\Internal\Message
      * Installs an rpm file via the rpm utility.
      *
      * Generated from protobuf field <code>.google.cloud.osconfig.v1beta.SoftwareRecipe.Step.InstallRpm rpm_installation = 5;</code>
-     * @return \Google\Cloud\Osconfig\V1beta\SoftwareRecipe\Step\InstallRpm
+     * @return \Google\Cloud\Osconfig\V1beta\SoftwareRecipe\Step\InstallRpm|null
      */
     public function getRpmInstallation()
     {
@@ -203,7 +203,7 @@ class Step extends \Google\Protobuf\Internal\Message
      * Executes an artifact or local file.
      *
      * Generated from protobuf field <code>.google.cloud.osconfig.v1beta.SoftwareRecipe.Step.ExecFile file_exec = 6;</code>
-     * @return \Google\Cloud\Osconfig\V1beta\SoftwareRecipe\Step\ExecFile
+     * @return \Google\Cloud\Osconfig\V1beta\SoftwareRecipe\Step\ExecFile|null
      */
     public function getFileExec()
     {
@@ -234,7 +234,7 @@ class Step extends \Google\Protobuf\Internal\Message
      * Runs commands in a shell.
      *
      * Generated from protobuf field <code>.google.cloud.osconfig.v1beta.SoftwareRecipe.Step.RunScript script_run = 7;</code>
-     * @return \Google\Cloud\Osconfig\V1beta\SoftwareRecipe\Step\RunScript
+     * @return \Google\Cloud\Osconfig\V1beta\SoftwareRecipe\Step\RunScript|null
      */
     public function getScriptRun()
     {

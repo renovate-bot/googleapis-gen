@@ -53,7 +53,7 @@ class StreamingTranslateSpeechRequest extends \Google\Protobuf\Internal\Message
      * a `streaming_config` message.
      *
      * Generated from protobuf field <code>.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechConfig streaming_config = 1;</code>
-     * @return \Google\Cloud\MediaTranslation\V1beta1\StreamingTranslateSpeechConfig
+     * @return \Google\Cloud\MediaTranslation\V1beta1\StreamingTranslateSpeechConfig|null
      */
     public function getStreamingConfig()
     {

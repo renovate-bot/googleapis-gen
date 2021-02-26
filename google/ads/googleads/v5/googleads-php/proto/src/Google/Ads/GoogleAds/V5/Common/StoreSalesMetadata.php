@@ -88,7 +88,7 @@ class StoreSalesMetadata extends \Google\Protobuf\Internal\Message
      * The fraction needs to be between 0 and 1 (excluding 0).
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue loyalty_fraction = 1;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getLoyaltyFraction()
     {
@@ -164,7 +164,7 @@ class StoreSalesMetadata extends \Google\Protobuf\Internal\Message
      * would be 0.5.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue transaction_upload_fraction = 2;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getTransactionUploadFraction()
     {
@@ -242,7 +242,7 @@ class StoreSalesMetadata extends \Google\Protobuf\Internal\Message
      * Accessible only to customers on the allow-list.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue custom_key = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCustomKey()
     {
@@ -314,7 +314,7 @@ class StoreSalesMetadata extends \Google\Protobuf\Internal\Message
      * Metadata for a third party Store Sales upload.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.StoreSalesThirdPartyMetadata third_party_metadata = 3;</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\StoreSalesThirdPartyMetadata
+     * @return \Google\Ads\GoogleAds\V5\Common\StoreSalesThirdPartyMetadata|null
      */
     public function getThirdPartyMetadata()
     {

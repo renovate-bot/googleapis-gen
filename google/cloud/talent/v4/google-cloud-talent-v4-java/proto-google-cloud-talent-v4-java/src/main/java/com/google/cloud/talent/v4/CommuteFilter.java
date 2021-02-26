@@ -463,6 +463,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.cloud.talent.v4.CommuteFilter.RoadTraffic road_traffic = 5;</code>
+   * @return Whether the roadTraffic field is set.
+   */
+  public boolean hasRoadTraffic() {
+    return trafficOptionCase_ == 5;
+  }
+  /**
+   * <pre>
+   * Specifies the traffic density to use when calculating commute time.
+   * </pre>
+   *
+   * <code>.google.cloud.talent.v4.CommuteFilter.RoadTraffic road_traffic = 5;</code>
    * @return The enum numeric value on the wire for roadTraffic.
    */
   public int getRoadTrafficValue() {
@@ -1458,6 +1469,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Specifies the traffic density to use when calculating commute time.
+     * </pre>
+     *
+     * <code>.google.cloud.talent.v4.CommuteFilter.RoadTraffic road_traffic = 5;</code>
+     * @return Whether the roadTraffic field is set.
+     */
+    @java.lang.Override
+    public boolean hasRoadTraffic() {
+      return trafficOptionCase_ == 5;
+    }
     /**
      * <pre>
      * Specifies the traffic density to use when calculating commute time.

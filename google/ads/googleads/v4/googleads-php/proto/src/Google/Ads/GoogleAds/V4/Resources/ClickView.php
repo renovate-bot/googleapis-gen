@@ -124,7 +124,7 @@ class ClickView extends \Google\Protobuf\Internal\Message
      * Output only. The Google Click ID.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue gclid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getGclid()
     {
@@ -188,7 +188,7 @@ class ClickView extends \Google\Protobuf\Internal\Message
      * impression.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.ClickLocation area_of_interest = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\ClickLocation
+     * @return \Google\Ads\GoogleAds\V4\Common\ClickLocation|null
      */
     public function getAreaOfInterest()
     {
@@ -226,7 +226,7 @@ class ClickView extends \Google\Protobuf\Internal\Message
      * impression.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.ClickLocation location_of_presence = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\ClickLocation
+     * @return \Google\Ads\GoogleAds\V4\Common\ClickLocation|null
      */
     public function getLocationOfPresence()
     {
@@ -263,7 +263,7 @@ class ClickView extends \Google\Protobuf\Internal\Message
      * Output only. Page number in search results where the ad was shown.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value page_number = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getPageNumber()
     {
@@ -326,7 +326,7 @@ class ClickView extends \Google\Protobuf\Internal\Message
      * Output only. The associated ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAdGroupAd()
     {

@@ -40,7 +40,7 @@ class AccountLinkOperation extends \Google\Protobuf\Internal\Message
      * Create operation: No resource name is expected for the new account link.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.AccountLink create = 1;</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\AccountLink
+     * @return \Google\Ads\GoogleAds\V4\Resources\AccountLink|null
      */
     public function getCreate()
     {

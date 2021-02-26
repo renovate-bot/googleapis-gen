@@ -81,7 +81,7 @@ class WebhookResponse extends \Google\Protobuf\Internal\Message
      * the webhook if it does not intend to send any response to the user.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.WebhookResponse.FulfillmentResponse fulfillment_response = 1;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\WebhookResponse\FulfillmentResponse
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\WebhookResponse\FulfillmentResponse|null
      */
     public function getFulfillmentResponse()
     {
@@ -119,7 +119,7 @@ class WebhookResponse extends \Google\Protobuf\Internal\Message
      * it does not intend to modify page status.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.PageInfo page_info = 2;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\PageInfo
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\PageInfo|null
      */
     public function getPageInfo()
     {
@@ -157,7 +157,7 @@ class WebhookResponse extends \Google\Protobuf\Internal\Message
      * if it does not intend to modify session status.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.SessionInfo session_info = 3;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\SessionInfo
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\SessionInfo|null
      */
     public function getSessionInfo()
     {
@@ -194,7 +194,7 @@ class WebhookResponse extends \Google\Protobuf\Internal\Message
      * Value to append directly to [QueryResult.webhook_payloads][google.cloud.dialogflow.cx.v3beta1.QueryResult.webhook_payloads].
      *
      * Generated from protobuf field <code>.google.protobuf.Struct payload = 4;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getPayload()
     {

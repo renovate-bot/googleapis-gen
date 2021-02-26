@@ -137,6 +137,15 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.firestore.v1beta1.DocumentTransform.FieldTransform.ServerValue set_to_server_value = 2;</code>
+     * @return Whether the setToServerValue field is set.
+     */
+    boolean hasSetToServerValue();
+    /**
+     * <pre>
+     * Sets the field to the given server value.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.DocumentTransform.FieldTransform.ServerValue set_to_server_value = 2;</code>
      * @return The enum numeric value on the wire for setToServerValue.
      */
     int getSetToServerValueValue();
@@ -811,6 +820,17 @@ private static final long serialVersionUID = 0L;
     }
 
     public static final int SET_TO_SERVER_VALUE_FIELD_NUMBER = 2;
+    /**
+     * <pre>
+     * Sets the field to the given server value.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.DocumentTransform.FieldTransform.ServerValue set_to_server_value = 2;</code>
+     * @return Whether the setToServerValue field is set.
+     */
+    public boolean hasSetToServerValue() {
+      return transformTypeCase_ == 2;
+    }
     /**
      * <pre>
      * Sets the field to the given server value.
@@ -1781,6 +1801,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      /**
+       * <pre>
+       * Sets the field to the given server value.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.DocumentTransform.FieldTransform.ServerValue set_to_server_value = 2;</code>
+       * @return Whether the setToServerValue field is set.
+       */
+      @java.lang.Override
+      public boolean hasSetToServerValue() {
+        return transformTypeCase_ == 2;
+      }
       /**
        * <pre>
        * Sets the field to the given server value.

@@ -212,7 +212,7 @@ class UserEvent extends \Google\Protobuf\Internal\Message
      * Required. User information.
      *
      * Generated from protobuf field <code>.google.cloud.recommendationengine.v1beta1.UserInfo user_info = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\RecommendationEngine\V1beta1\UserInfo
+     * @return \Google\Cloud\RecommendationEngine\V1beta1\UserInfo|null
      */
     public function getUserInfo()
     {
@@ -249,7 +249,7 @@ class UserEvent extends \Google\Protobuf\Internal\Message
      * recommendation types.
      *
      * Generated from protobuf field <code>.google.cloud.recommendationengine.v1beta1.EventDetail event_detail = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\RecommendationEngine\V1beta1\EventDetail
+     * @return \Google\Cloud\RecommendationEngine\V1beta1\EventDetail|null
      */
     public function getEventDetail()
     {
@@ -303,7 +303,7 @@ class UserEvent extends \Google\Protobuf\Internal\Message
      * * `home-page-view`
      *
      * Generated from protobuf field <code>.google.cloud.recommendationengine.v1beta1.ProductEventDetail product_event_detail = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\RecommendationEngine\V1beta1\ProductEventDetail
+     * @return \Google\Cloud\RecommendationEngine\V1beta1\ProductEventDetail|null
      */
     public function getProductEventDetail()
     {
@@ -357,7 +357,7 @@ class UserEvent extends \Google\Protobuf\Internal\Message
      * event created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp event_time = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getEventTime()
     {

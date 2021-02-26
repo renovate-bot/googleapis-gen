@@ -42,6 +42,17 @@ public interface BatchJobOperationOrBuilder extends
    * </pre>
    *
    * <code>string remove = 3;</code>
+   * @return Whether the remove field is set.
+   */
+  boolean hasRemove();
+  /**
+   * <pre>
+   * Remove operation: The batch job must not have been run. A resource name
+   * for the removed batch job is expected, in this format:
+   * `customers/{customer_id}/batchJobs/{batch_job_id}`
+   * </pre>
+   *
+   * <code>string remove = 3;</code>
    * @return The remove.
    */
   java.lang.String getRemove();

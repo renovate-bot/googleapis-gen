@@ -122,7 +122,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      * [Model.supported_export_formats] object contains `ARTIFACT`.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.GcsDestination artifact_destination = 3;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\GcsDestination
+     * @return \Google\Cloud\Aiplatform\V1beta1\GcsDestination|null
      */
     public function getArtifactDestination()
     {
@@ -168,7 +168,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      * [Model.supported_export_formats] object contains `IMAGE`.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ContainerRegistryDestination image_destination = 4;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\ContainerRegistryDestination
+     * @return \Google\Cloud\Aiplatform\V1beta1\ContainerRegistryDestination|null
      */
     public function getImageDestination()
     {

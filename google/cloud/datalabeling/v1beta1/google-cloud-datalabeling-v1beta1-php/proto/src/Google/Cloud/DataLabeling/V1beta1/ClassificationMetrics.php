@@ -52,7 +52,7 @@ class ClassificationMetrics extends \Google\Protobuf\Internal\Message
      * scores for the predicted labels.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\PrCurve
+     * @return \Google\Cloud\DataLabeling\V1beta1\PrCurve|null
      */
     public function getPrCurve()
     {
@@ -89,7 +89,7 @@ class ClassificationMetrics extends \Google\Protobuf\Internal\Message
      * Confusion matrix of predicted labels vs. ground truth labels.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\ConfusionMatrix
+     * @return \Google\Cloud\DataLabeling\V1beta1\ConfusionMatrix|null
      */
     public function getConfusionMatrix()
     {

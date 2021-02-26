@@ -49,7 +49,7 @@ class InvocationAttemptFinished extends \Google\Protobuf\Internal\Message
      * Final status of the invocation.
      *
      * Generated from protobuf field <code>.google.devtools.build.v1.BuildStatus invocation_status = 3;</code>
-     * @return \Google\Devtools\Build\V1\BuildStatus
+     * @return \Google\Devtools\Build\V1\BuildStatus|null
      */
     public function getInvocationStatus()
     {
@@ -85,7 +85,7 @@ class InvocationAttemptFinished extends \Google\Protobuf\Internal\Message
      * Arbitrary details about the invocation attempt.
      *
      * Generated from protobuf field <code>.google.protobuf.Any details = 4;</code>
-     * @return \Google\Protobuf\Any
+     * @return \Google\Protobuf\Any|null
      */
     public function getDetails()
     {

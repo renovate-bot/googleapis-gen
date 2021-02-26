@@ -296,7 +296,7 @@ class CatalogItem extends \Google\Protobuf\Internal\Message
      * providing the item attributes here.
      *
      * Generated from protobuf field <code>.google.cloud.recommendationengine.v1beta1.FeatureMap item_attributes = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\RecommendationEngine\V1beta1\FeatureMap
+     * @return \Google\Cloud\RecommendationEngine\V1beta1\FeatureMap|null
      */
     public function getItemAttributes()
     {
@@ -434,7 +434,7 @@ class CatalogItem extends \Google\Protobuf\Internal\Message
      * Optional. Metadata specific to retail products.
      *
      * Generated from protobuf field <code>.google.cloud.recommendationengine.v1beta1.ProductCatalogItem product_metadata = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\RecommendationEngine\V1beta1\ProductCatalogItem
+     * @return \Google\Cloud\RecommendationEngine\V1beta1\ProductCatalogItem|null
      */
     public function getProductMetadata()
     {

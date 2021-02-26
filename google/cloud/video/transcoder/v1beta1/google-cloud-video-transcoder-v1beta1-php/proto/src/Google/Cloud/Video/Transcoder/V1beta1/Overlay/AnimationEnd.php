@@ -43,7 +43,7 @@ class AnimationEnd extends \Google\Protobuf\Internal\Message
      * The time to end overlay object, in seconds. Default: 0
      *
      * Generated from protobuf field <code>.google.protobuf.Duration start_time_offset = 1;</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getStartTimeOffset()
     {

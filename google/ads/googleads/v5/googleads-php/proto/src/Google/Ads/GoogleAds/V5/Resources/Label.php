@@ -111,7 +111,7 @@ class Label extends \Google\Protobuf\Internal\Message
      * Output only. Id of the label. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -176,7 +176,7 @@ class Label extends \Google\Protobuf\Internal\Message
      * The length of this string should be between 1 and 80, inclusive.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {
@@ -271,7 +271,7 @@ class Label extends \Google\Protobuf\Internal\Message
      * A type of label displaying text on a colored background.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.TextLabel text_label = 5;</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\TextLabel
+     * @return \Google\Ads\GoogleAds\V5\Common\TextLabel|null
      */
     public function getTextLabel()
     {

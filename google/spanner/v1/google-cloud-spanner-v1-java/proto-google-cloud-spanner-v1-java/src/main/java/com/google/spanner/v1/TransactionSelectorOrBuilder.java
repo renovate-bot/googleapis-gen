@@ -46,6 +46,15 @@ public interface TransactionSelectorOrBuilder extends
    * </pre>
    *
    * <code>bytes id = 2;</code>
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
+  /**
+   * <pre>
+   * Execute the read or SQL query in a previously-started transaction.
+   * </pre>
+   *
+   * <code>bytes id = 2;</code>
    * @return The id.
    */
   com.google.protobuf.ByteString getId();

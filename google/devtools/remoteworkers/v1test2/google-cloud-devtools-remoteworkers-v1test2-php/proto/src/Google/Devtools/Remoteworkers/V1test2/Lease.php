@@ -92,12 +92,14 @@ class Lease extends \Google\Protobuf\Internal\Message
      * `payload`.
      *
      * Generated from protobuf field <code>string assignment = 1 [deprecated = true];</code>
+     * @deprecated
      */
     protected $assignment = '';
     /**
      * DEPRECATED. Use `payload` instead.
      *
      * Generated from protobuf field <code>.google.protobuf.Any inline_assignment = 6 [deprecated = true];</code>
+     * @deprecated
      */
     protected $inline_assignment = null;
 
@@ -181,7 +183,7 @@ class Lease extends \Google\Protobuf\Internal\Message
      * the bot. Output only (must only be set by the server).
      *
      * Generated from protobuf field <code>.google.protobuf.Any payload = 8;</code>
-     * @return \Google\Protobuf\Any
+     * @return \Google\Protobuf\Any|null
      */
     public function getPayload()
     {
@@ -222,7 +224,7 @@ class Lease extends \Google\Protobuf\Internal\Message
      * server).
      *
      * Generated from protobuf field <code>.google.protobuf.Any result = 9;</code>
-     * @return \Google\Protobuf\Any
+     * @return \Google\Protobuf\Any|null
      */
     public function getResult()
     {
@@ -293,7 +295,7 @@ class Lease extends \Google\Protobuf\Internal\Message
      * communicated via the `result` field.
      *
      * Generated from protobuf field <code>.google.rpc.Status status = 3;</code>
-     * @return \Google\Rpc\Status
+     * @return \Google\Rpc\Status|null
      */
     public function getStatus()
     {
@@ -336,7 +338,7 @@ class Lease extends \Google\Protobuf\Internal\Message
      * omitted by the server if the lease is not pending.
      *
      * Generated from protobuf field <code>.google.devtools.remoteworkers.v1test2.Worker requirements = 4;</code>
-     * @return \Google\Devtools\Remoteworkers\V1test2\Worker
+     * @return \Google\Devtools\Remoteworkers\V1test2\Worker|null
      */
     public function getRequirements()
     {
@@ -375,7 +377,7 @@ class Lease extends \Google\Protobuf\Internal\Message
      * expiry date except the first one.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp expire_time = 5;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getExpireTime()
     {
@@ -417,9 +419,11 @@ class Lease extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string assignment = 1 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getAssignment()
     {
+        @trigger_error('assignment is deprecated.', E_USER_DEPRECATED);
         return $this->assignment;
     }
 
@@ -432,9 +436,11 @@ class Lease extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string assignment = 1 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setAssignment($var)
     {
+        @trigger_error('assignment is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->assignment = $var;
 
@@ -445,20 +451,24 @@ class Lease extends \Google\Protobuf\Internal\Message
      * DEPRECATED. Use `payload` instead.
      *
      * Generated from protobuf field <code>.google.protobuf.Any inline_assignment = 6 [deprecated = true];</code>
-     * @return \Google\Protobuf\Any
+     * @return \Google\Protobuf\Any|null
+     * @deprecated
      */
     public function getInlineAssignment()
     {
+        @trigger_error('inline_assignment is deprecated.', E_USER_DEPRECATED);
         return isset($this->inline_assignment) ? $this->inline_assignment : null;
     }
 
     public function hasInlineAssignment()
     {
+        @trigger_error('inline_assignment is deprecated.', E_USER_DEPRECATED);
         return isset($this->inline_assignment);
     }
 
     public function clearInlineAssignment()
     {
+        @trigger_error('inline_assignment is deprecated.', E_USER_DEPRECATED);
         unset($this->inline_assignment);
     }
 
@@ -468,9 +478,11 @@ class Lease extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Any inline_assignment = 6 [deprecated = true];</code>
      * @param \Google\Protobuf\Any $var
      * @return $this
+     * @deprecated
      */
     public function setInlineAssignment($var)
     {
+        @trigger_error('inline_assignment is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Google\Protobuf\Any::class);
         $this->inline_assignment = $var;
 

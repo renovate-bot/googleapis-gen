@@ -83,7 +83,7 @@ class AppendRowsResponse extends \Google\Protobuf\Internal\Message
      * into the system. Users can retry within the same connection.
      *
      * Generated from protobuf field <code>.google.rpc.Status error = 2;</code>
-     * @return \Google\Rpc\Status
+     * @return \Google\Rpc\Status|null
      */
     public function getError()
     {
@@ -117,7 +117,7 @@ class AppendRowsResponse extends \Google\Protobuf\Internal\Message
      * schema updates.
      *
      * Generated from protobuf field <code>.google.cloud.bigquery.storage.v1alpha2.TableSchema updated_schema = 3;</code>
-     * @return \Google\Cloud\Bigquery\Storage\V1alpha2\TableSchema
+     * @return \Google\Cloud\Bigquery\Storage\V1alpha2\TableSchema|null
      */
     public function getUpdatedSchema()
     {

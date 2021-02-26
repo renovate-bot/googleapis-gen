@@ -25249,6 +25249,15 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string text = 1;</code>
+       * @return Whether the text field is set.
+       */
+      boolean hasText();
+      /**
+       * <pre>
+       * The raw text to be synthesized.
+       * </pre>
+       *
+       * <code>string text = 1;</code>
        * @return The text.
        */
       java.lang.String getText();
@@ -25263,6 +25272,16 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString
           getTextBytes();
 
+      /**
+       * <pre>
+       * The SSML to be synthesized. For more information, see
+       * [SSML](https://developers.google.com/actions/reference/ssml).
+       * </pre>
+       *
+       * <code>string ssml = 2;</code>
+       * @return Whether the ssml field is set.
+       */
+      boolean hasSsml();
       /**
        * <pre>
        * The SSML to be synthesized. For more information, see
@@ -25432,6 +25451,17 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string text = 1;</code>
+       * @return Whether the text field is set.
+       */
+      public boolean hasText() {
+        return sourceCase_ == 1;
+      }
+      /**
+       * <pre>
+       * The raw text to be synthesized.
+       * </pre>
+       *
+       * <code>string text = 1;</code>
        * @return The text.
        */
       public java.lang.String getText() {
@@ -25479,6 +25509,18 @@ private static final long serialVersionUID = 0L;
       }
 
       public static final int SSML_FIELD_NUMBER = 2;
+      /**
+       * <pre>
+       * The SSML to be synthesized. For more information, see
+       * [SSML](https://developers.google.com/actions/reference/ssml).
+       * </pre>
+       *
+       * <code>string ssml = 2;</code>
+       * @return Whether the ssml field is set.
+       */
+      public boolean hasSsml() {
+        return sourceCase_ == 2;
+      }
       /**
        * <pre>
        * The SSML to be synthesized. For more information, see
@@ -25910,6 +25952,18 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>string text = 1;</code>
+         * @return Whether the text field is set.
+         */
+        @java.lang.Override
+        public boolean hasText() {
+          return sourceCase_ == 1;
+        }
+        /**
+         * <pre>
+         * The raw text to be synthesized.
+         * </pre>
+         *
+         * <code>string text = 1;</code>
          * @return The text.
          */
         @java.lang.Override
@@ -26013,6 +26067,19 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        /**
+         * <pre>
+         * The SSML to be synthesized. For more information, see
+         * [SSML](https://developers.google.com/actions/reference/ssml).
+         * </pre>
+         *
+         * <code>string ssml = 2;</code>
+         * @return Whether the ssml field is set.
+         */
+        @java.lang.Override
+        public boolean hasSsml() {
+          return sourceCase_ == 2;
+        }
         /**
          * <pre>
          * The SSML to be synthesized. For more information, see

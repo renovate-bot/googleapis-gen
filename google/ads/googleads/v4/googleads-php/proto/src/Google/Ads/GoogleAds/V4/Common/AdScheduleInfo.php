@@ -167,7 +167,7 @@ class AdScheduleInfo extends \Google\Protobuf\Internal\Message
      * operations.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value start_hour = 3;</code>
-     * @return \Google\Protobuf\Int32Value
+     * @return \Google\Protobuf\Int32Value|null
      */
     public function getStartHour()
     {
@@ -242,7 +242,7 @@ class AdScheduleInfo extends \Google\Protobuf\Internal\Message
      * operations.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value end_hour = 4;</code>
-     * @return \Google\Protobuf\Int32Value
+     * @return \Google\Protobuf\Int32Value|null
      */
     public function getEndHour()
     {

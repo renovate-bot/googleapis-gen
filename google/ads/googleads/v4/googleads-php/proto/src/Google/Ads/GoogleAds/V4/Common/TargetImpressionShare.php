@@ -92,7 +92,7 @@ class TargetImpressionShare extends \Google\Protobuf\Internal\Message
      * E.g. 1% equals 10,000.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value location_fraction_micros = 2;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getLocationFractionMicros()
     {
@@ -160,7 +160,7 @@ class TargetImpressionShare extends \Google\Protobuf\Internal\Message
      * and specified in local micros.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_ceiling_micros = 3;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCpcBidCeilingMicros()
     {

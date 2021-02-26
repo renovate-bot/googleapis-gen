@@ -89,7 +89,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * Shopping campaigns.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value merchant_id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getMerchantId()
     {
@@ -161,7 +161,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * to 'ZZ' if set.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue sales_country = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getSalesCountry()
     {
@@ -238,7 +238,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * 3 if set.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value campaign_priority = 3;</code>
-     * @return \Google\Protobuf\Int32Value
+     * @return \Google\Protobuf\Int32Value|null
      */
     public function getCampaignPriority()
     {
@@ -316,7 +316,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      * Whether to include local products.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue enable_local = 4;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getEnableLocal()
     {

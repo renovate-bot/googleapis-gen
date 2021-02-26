@@ -47,7 +47,7 @@ class ReadRowsRequest extends \Google\Protobuf\Internal\Message
      * Requesting a larger offset is undefined.
      *
      * Generated from protobuf field <code>.google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Bigquery\Storage\V1beta1\StreamPosition
+     * @return \Google\Cloud\Bigquery\Storage\V1beta1\StreamPosition|null
      */
     public function getReadPosition()
     {

@@ -89,7 +89,7 @@ class CreateWorkloadIdentityPoolProviderRequest extends \Google\Protobuf\Interna
      * Required. The provider to create.
      *
      * Generated from protobuf field <code>.google.iam.v1beta.WorkloadIdentityPoolProvider workload_identity_pool_provider = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Iam\V1beta\WorkloadIdentityPoolProvider
+     * @return \Google\Iam\V1beta\WorkloadIdentityPoolProvider|null
      */
     public function getWorkloadIdentityPoolProvider()
     {

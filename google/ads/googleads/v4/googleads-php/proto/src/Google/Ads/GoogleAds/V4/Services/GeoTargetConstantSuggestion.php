@@ -86,7 +86,7 @@ class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Message
      * returned if no translation exists for the locale in the request.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue locale = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getLocale()
     {
@@ -159,7 +159,7 @@ class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Message
      * nearest 100.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value reach = 2;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getReach()
     {
@@ -226,7 +226,7 @@ class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Message
      * matched the geo target.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getSearchTerm()
     {
@@ -292,7 +292,7 @@ class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Message
      * The GeoTargetConstant result.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.GeoTargetConstant geo_target_constant = 4;</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\GeoTargetConstant
+     * @return \Google\Ads\GoogleAds\V4\Resources\GeoTargetConstant|null
      */
     public function getGeoTargetConstant()
     {

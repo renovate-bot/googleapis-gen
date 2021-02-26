@@ -41,7 +41,7 @@ class RetrieveRegisterParametersResponse extends \Google\Protobuf\Internal\Messa
      * Parameters to use when calling the `RegisterDomain` method.
      *
      * Generated from protobuf field <code>.google.cloud.domains.v1beta1.RegisterParameters register_parameters = 1;</code>
-     * @return \Google\Cloud\Domains\V1beta1\RegisterParameters
+     * @return \Google\Cloud\Domains\V1beta1\RegisterParameters|null
      */
     public function getRegisterParameters()
     {

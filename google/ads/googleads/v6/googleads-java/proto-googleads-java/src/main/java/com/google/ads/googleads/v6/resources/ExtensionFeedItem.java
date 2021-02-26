@@ -1442,6 +1442,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string targeted_campaign = 28 [(.google.api.resource_reference) = { ... }</code>
+   * @return Whether the targetedCampaign field is set.
+   */
+  public boolean hasTargetedCampaign() {
+    return servingResourceTargetingCase_ == 28;
+  }
+  /**
+   * <pre>
+   * The targeted campaign.
+   * </pre>
+   *
+   * <code>string targeted_campaign = 28 [(.google.api.resource_reference) = { ... }</code>
    * @return The targetedCampaign.
    */
   public java.lang.String getTargetedCampaign() {
@@ -1489,6 +1500,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TARGETED_AD_GROUP_FIELD_NUMBER = 29;
+  /**
+   * <pre>
+   * The targeted ad group.
+   * </pre>
+   *
+   * <code>string targeted_ad_group = 29 [(.google.api.resource_reference) = { ... }</code>
+   * @return Whether the targetedAdGroup field is set.
+   */
+  public boolean hasTargetedAdGroup() {
+    return servingResourceTargetingCase_ == 29;
+  }
   /**
    * <pre>
    * The targeted ad group.
@@ -5920,6 +5942,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string targeted_campaign = 28 [(.google.api.resource_reference) = { ... }</code>
+     * @return Whether the targetedCampaign field is set.
+     */
+    @java.lang.Override
+    public boolean hasTargetedCampaign() {
+      return servingResourceTargetingCase_ == 28;
+    }
+    /**
+     * <pre>
+     * The targeted campaign.
+     * </pre>
+     *
+     * <code>string targeted_campaign = 28 [(.google.api.resource_reference) = { ... }</code>
      * @return The targetedCampaign.
      */
     @java.lang.Override
@@ -6023,6 +6057,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The targeted ad group.
+     * </pre>
+     *
+     * <code>string targeted_ad_group = 29 [(.google.api.resource_reference) = { ... }</code>
+     * @return Whether the targetedAdGroup field is set.
+     */
+    @java.lang.Override
+    public boolean hasTargetedAdGroup() {
+      return servingResourceTargetingCase_ == 29;
+    }
     /**
      * <pre>
      * The targeted ad group.

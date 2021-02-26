@@ -122,7 +122,7 @@ class Attestor extends \Google\Protobuf\Internal\Message
      * A Drydock ATTESTATION_AUTHORITY Note, created by the user.
      *
      * Generated from protobuf field <code>.google.cloud.binaryauthorization.v1beta1.UserOwnedDrydockNote user_owned_drydock_note = 3;</code>
-     * @return \Google\Cloud\BinaryAuthorization\V1beta1\UserOwnedDrydockNote
+     * @return \Google\Cloud\BinaryAuthorization\V1beta1\UserOwnedDrydockNote|null
      */
     public function getUserOwnedDrydockNote()
     {
@@ -153,7 +153,7 @@ class Attestor extends \Google\Protobuf\Internal\Message
      * Output only. Time when the attestor was last updated.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {

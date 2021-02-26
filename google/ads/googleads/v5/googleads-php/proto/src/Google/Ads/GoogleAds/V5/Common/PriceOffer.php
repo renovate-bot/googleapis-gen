@@ -81,7 +81,7 @@ class PriceOffer extends \Google\Protobuf\Internal\Message
      * Header text of this offer.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue header = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getHeader()
     {
@@ -144,7 +144,7 @@ class PriceOffer extends \Google\Protobuf\Internal\Message
      * Description text of this offer.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDescription()
     {
@@ -207,7 +207,7 @@ class PriceOffer extends \Google\Protobuf\Internal\Message
      * Price value of this offer.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.Money price = 3;</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\Money
+     * @return \Google\Ads\GoogleAds\V5\Common\Money|null
      */
     public function getPrice()
     {

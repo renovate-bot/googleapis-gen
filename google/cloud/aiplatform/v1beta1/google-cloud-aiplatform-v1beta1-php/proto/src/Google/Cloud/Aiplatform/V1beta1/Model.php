@@ -481,7 +481,7 @@ class Model extends \Google\Protobuf\Internal\Message
      * [PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict] and [PredictionService.Explain][google.cloud.aiplatform.v1beta1.PredictionService.Explain].
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.PredictSchemata predict_schemata = 4;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\PredictSchemata
+     * @return \Google\Cloud\Aiplatform\V1beta1\PredictSchemata|null
      */
     public function getPredictSchemata()
     {
@@ -565,7 +565,7 @@ class Model extends \Google\Protobuf\Internal\Message
      * Unset if the Model does not have any additional information.
      *
      * Generated from protobuf field <code>.google.protobuf.Value metadata = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Protobuf\Value
+     * @return \Google\Protobuf\Value|null
      */
     public function getMetadata()
     {
@@ -661,7 +661,7 @@ class Model extends \Google\Protobuf\Internal\Message
      * Not present for AutoML Models.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ModelContainerSpec container_spec = 9 [(.google.api.field_behavior) = INPUT_ONLY];</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\ModelContainerSpec
+     * @return \Google\Cloud\Aiplatform\V1beta1\ModelContainerSpec|null
      */
     public function getContainerSpec()
     {
@@ -935,7 +935,7 @@ class Model extends \Google\Protobuf\Internal\Message
      * Output only. Timestamp when this Model was uploaded into AI Platform.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -971,7 +971,7 @@ class Model extends \Google\Protobuf\Internal\Message
      * Output only. Timestamp when this Model was most recently updated.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {
@@ -1045,7 +1045,7 @@ class Model extends \Google\Protobuf\Internal\Message
      * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 23;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\ExplanationSpec
+     * @return \Google\Cloud\Aiplatform\V1beta1\ExplanationSpec|null
      */
     public function getExplanationSpec()
     {
@@ -1154,7 +1154,7 @@ class Model extends \Google\Protobuf\Internal\Message
      * Model and all sub-resources of this Model will be secured by this key.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 24;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\EncryptionSpec
+     * @return \Google\Cloud\Aiplatform\V1beta1\EncryptionSpec|null
      */
     public function getEncryptionSpec()
     {

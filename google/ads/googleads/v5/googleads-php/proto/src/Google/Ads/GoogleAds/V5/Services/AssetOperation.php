@@ -38,7 +38,7 @@ class AssetOperation extends \Google\Protobuf\Internal\Message
      * Create operation: No resource name is expected for the new asset.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.resources.Asset create = 1;</code>
-     * @return \Google\Ads\GoogleAds\V5\Resources\Asset
+     * @return \Google\Ads\GoogleAds\V5\Resources\Asset|null
      */
     public function getCreate()
     {

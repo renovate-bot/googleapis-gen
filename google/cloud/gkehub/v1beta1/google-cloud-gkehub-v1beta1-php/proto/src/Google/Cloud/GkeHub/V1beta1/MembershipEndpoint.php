@@ -70,7 +70,7 @@ class MembershipEndpoint extends \Google\Protobuf\Internal\Message
      * Optional. GKE-specific information. Only present if this Membership is a GKE cluster.
      *
      * Generated from protobuf field <code>.google.cloud.gkehub.v1beta1.GkeCluster gke_cluster = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\GkeHub\V1beta1\GkeCluster
+     * @return \Google\Cloud\GkeHub\V1beta1\GkeCluster|null
      */
     public function getGkeCluster()
     {
@@ -106,7 +106,7 @@ class MembershipEndpoint extends \Google\Protobuf\Internal\Message
      * Output only. Useful Kubernetes-specific metadata.
      *
      * Generated from protobuf field <code>.google.cloud.gkehub.v1beta1.KubernetesMetadata kubernetes_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Cloud\GkeHub\V1beta1\KubernetesMetadata
+     * @return \Google\Cloud\GkeHub\V1beta1\KubernetesMetadata|null
      */
     public function getKubernetesMetadata()
     {
@@ -148,7 +148,7 @@ class MembershipEndpoint extends \Google\Protobuf\Internal\Message
      *   * Ensure proper initial configuration of default Hub Features.
      *
      * Generated from protobuf field <code>.google.cloud.gkehub.v1beta1.KubernetesResource kubernetes_resource = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\GkeHub\V1beta1\KubernetesResource
+     * @return \Google\Cloud\GkeHub\V1beta1\KubernetesResource|null
      */
     public function getKubernetesResource()
     {

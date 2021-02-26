@@ -13,10 +13,28 @@ public interface ValueOrBuilder extends
    * </pre>
    *
    * <code>bool boolean_value = 1;</code>
+   * @return Whether the booleanValue field is set.
+   */
+  boolean hasBooleanValue();
+  /**
+   * <pre>
+   * A boolean.
+   * </pre>
+   *
+   * <code>bool boolean_value = 1;</code>
    * @return The booleanValue.
    */
   boolean getBooleanValue();
 
+  /**
+   * <pre>
+   * An int64.
+   * </pre>
+   *
+   * <code>int64 int64_value = 2;</code>
+   * @return Whether the int64Value field is set.
+   */
+  boolean hasInt64Value();
   /**
    * <pre>
    * An int64.
@@ -33,6 +51,15 @@ public interface ValueOrBuilder extends
    * </pre>
    *
    * <code>float float_value = 3;</code>
+   * @return Whether the floatValue field is set.
+   */
+  boolean hasFloatValue();
+  /**
+   * <pre>
+   * A float.
+   * </pre>
+   *
+   * <code>float float_value = 3;</code>
    * @return The floatValue.
    */
   float getFloatValue();
@@ -43,10 +70,28 @@ public interface ValueOrBuilder extends
    * </pre>
    *
    * <code>double double_value = 4;</code>
+   * @return Whether the doubleValue field is set.
+   */
+  boolean hasDoubleValue();
+  /**
+   * <pre>
+   * A double.
+   * </pre>
+   *
+   * <code>double double_value = 4;</code>
    * @return The doubleValue.
    */
   double getDoubleValue();
 
+  /**
+   * <pre>
+   * A string.
+   * </pre>
+   *
+   * <code>string string_value = 5;</code>
+   * @return Whether the stringValue field is set.
+   */
+  boolean hasStringValue();
   /**
    * <pre>
    * A string.

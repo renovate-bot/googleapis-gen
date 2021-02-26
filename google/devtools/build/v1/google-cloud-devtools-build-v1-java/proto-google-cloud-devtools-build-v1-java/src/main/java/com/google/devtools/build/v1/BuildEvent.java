@@ -3640,6 +3640,15 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string text_output = 2;</code>
+     * @return Whether the textOutput field is set.
+     */
+    boolean hasTextOutput();
+    /**
+     * <pre>
+     * Regular UTF-8 output; normal text.
+     * </pre>
+     *
+     * <code>string text_output = 2;</code>
      * @return The textOutput.
      */
     java.lang.String getTextOutput();
@@ -3654,6 +3663,15 @@ private static final long serialVersionUID = 0L;
     com.google.protobuf.ByteString
         getTextOutputBytes();
 
+    /**
+     * <pre>
+     * Used if the output is not UTF-8 text (for example, a binary proto).
+     * </pre>
+     *
+     * <code>bytes binary_output = 3;</code>
+     * @return Whether the binaryOutput field is set.
+     */
+    boolean hasBinaryOutput();
     /**
      * <pre>
      * Used if the output is not UTF-8 text (for example, a binary proto).
@@ -3840,6 +3858,17 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string text_output = 2;</code>
+     * @return Whether the textOutput field is set.
+     */
+    public boolean hasTextOutput() {
+      return outputCase_ == 2;
+    }
+    /**
+     * <pre>
+     * Regular UTF-8 output; normal text.
+     * </pre>
+     *
+     * <code>string text_output = 2;</code>
      * @return The textOutput.
      */
     public java.lang.String getTextOutput() {
@@ -3887,6 +3916,18 @@ private static final long serialVersionUID = 0L;
     }
 
     public static final int BINARY_OUTPUT_FIELD_NUMBER = 3;
+    /**
+     * <pre>
+     * Used if the output is not UTF-8 text (for example, a binary proto).
+     * </pre>
+     *
+     * <code>bytes binary_output = 3;</code>
+     * @return Whether the binaryOutput field is set.
+     */
+    @java.lang.Override
+    public boolean hasBinaryOutput() {
+      return outputCase_ == 3;
+    }
     /**
      * <pre>
      * Used if the output is not UTF-8 text (for example, a binary proto).
@@ -4367,6 +4408,18 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string text_output = 2;</code>
+       * @return Whether the textOutput field is set.
+       */
+      @java.lang.Override
+      public boolean hasTextOutput() {
+        return outputCase_ == 2;
+      }
+      /**
+       * <pre>
+       * Regular UTF-8 output; normal text.
+       * </pre>
+       *
+       * <code>string text_output = 2;</code>
        * @return The textOutput.
        */
       @java.lang.Override
@@ -4470,6 +4523,17 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      /**
+       * <pre>
+       * Used if the output is not UTF-8 text (for example, a binary proto).
+       * </pre>
+       *
+       * <code>bytes binary_output = 3;</code>
+       * @return Whether the binaryOutput field is set.
+       */
+      public boolean hasBinaryOutput() {
+        return outputCase_ == 3;
+      }
       /**
        * <pre>
        * Used if the output is not UTF-8 text (for example, a binary proto).

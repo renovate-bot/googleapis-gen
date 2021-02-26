@@ -51,7 +51,7 @@ class Overlay extends \Google\Protobuf\Internal\Message
      * Image overlay.
      *
      * Generated from protobuf field <code>.google.cloud.video.transcoder.v1beta1.Overlay.Image image = 1;</code>
-     * @return \Google\Cloud\Video\Transcoder\V1beta1\Overlay\Image
+     * @return \Google\Cloud\Video\Transcoder\V1beta1\Overlay\Image|null
      */
     public function getImage()
     {

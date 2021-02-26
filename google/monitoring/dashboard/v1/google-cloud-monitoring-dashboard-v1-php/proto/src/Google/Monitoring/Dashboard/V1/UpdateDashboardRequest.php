@@ -41,7 +41,7 @@ class UpdateDashboardRequest extends \Google\Protobuf\Internal\Message
      * Required. The dashboard that will replace the existing dashboard.
      *
      * Generated from protobuf field <code>.google.monitoring.dashboard.v1.Dashboard dashboard = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Monitoring\Dashboard\V1\Dashboard
+     * @return \Google\Monitoring\Dashboard\V1\Dashboard|null
      */
     public function getDashboard()
     {

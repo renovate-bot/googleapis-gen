@@ -155,6 +155,15 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 int_value = 2;</code>
+     * @return Whether the intValue field is set.
+     */
+    boolean hasIntValue();
+    /**
+     * <pre>
+     * For metrics with integer value.
+     * </pre>
+     *
+     * <code>int64 int_value = 2;</code>
      * @return The intValue.
      */
     long getIntValue();
@@ -165,10 +174,28 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>double double_value = 3;</code>
+     * @return Whether the doubleValue field is set.
+     */
+    boolean hasDoubleValue();
+    /**
+     * <pre>
+     * For metrics with floating point value.
+     * </pre>
+     *
+     * <code>double double_value = 3;</code>
      * @return The doubleValue.
      */
     double getDoubleValue();
 
+    /**
+     * <pre>
+     * For metrics with custom values (ratios, visual progress, etc.).
+     * </pre>
+     *
+     * <code>string string_value = 4;</code>
+     * @return Whether the stringValue field is set.
+     */
+    boolean hasStringValue();
     /**
      * <pre>
      * For metrics with custom values (ratios, visual progress, etc.).
@@ -391,6 +418,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 int_value = 2;</code>
+     * @return Whether the intValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasIntValue() {
+      return valueCase_ == 2;
+    }
+    /**
+     * <pre>
+     * For metrics with integer value.
+     * </pre>
+     *
+     * <code>int64 int_value = 2;</code>
      * @return The intValue.
      */
     @java.lang.Override
@@ -408,6 +447,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>double double_value = 3;</code>
+     * @return Whether the doubleValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasDoubleValue() {
+      return valueCase_ == 3;
+    }
+    /**
+     * <pre>
+     * For metrics with floating point value.
+     * </pre>
+     *
+     * <code>double double_value = 3;</code>
      * @return The doubleValue.
      */
     @java.lang.Override
@@ -419,6 +470,17 @@ private static final long serialVersionUID = 0L;
     }
 
     public static final int STRING_VALUE_FIELD_NUMBER = 4;
+    /**
+     * <pre>
+     * For metrics with custom values (ratios, visual progress, etc.).
+     * </pre>
+     *
+     * <code>string string_value = 4;</code>
+     * @return Whether the stringValue field is set.
+     */
+    public boolean hasStringValue() {
+      return valueCase_ == 4;
+    }
     /**
      * <pre>
      * For metrics with custom values (ratios, visual progress, etc.).
@@ -985,6 +1047,17 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 int_value = 2;</code>
+       * @return Whether the intValue field is set.
+       */
+      public boolean hasIntValue() {
+        return valueCase_ == 2;
+      }
+      /**
+       * <pre>
+       * For metrics with integer value.
+       * </pre>
+       *
+       * <code>int64 int_value = 2;</code>
        * @return The intValue.
        */
       public long getIntValue() {
@@ -1031,6 +1104,17 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>double double_value = 3;</code>
+       * @return Whether the doubleValue field is set.
+       */
+      public boolean hasDoubleValue() {
+        return valueCase_ == 3;
+      }
+      /**
+       * <pre>
+       * For metrics with floating point value.
+       * </pre>
+       *
+       * <code>double double_value = 3;</code>
        * @return The doubleValue.
        */
       public double getDoubleValue() {
@@ -1071,6 +1155,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      /**
+       * <pre>
+       * For metrics with custom values (ratios, visual progress, etc.).
+       * </pre>
+       *
+       * <code>string string_value = 4;</code>
+       * @return Whether the stringValue field is set.
+       */
+      @java.lang.Override
+      public boolean hasStringValue() {
+        return valueCase_ == 4;
+      }
       /**
        * <pre>
        * For metrics with custom values (ratios, visual progress, etc.).

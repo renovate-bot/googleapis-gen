@@ -265,6 +265,18 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 row_count_exact = 3;</code>
+   * @return Whether the rowCountExact field is set.
+   */
+  @java.lang.Override
+  public boolean hasRowCountExact() {
+    return rowCountCase_ == 3;
+  }
+  /**
+   * <pre>
+   * Standard DML returns an exact count of rows that were modified.
+   * </pre>
+   *
+   * <code>int64 row_count_exact = 3;</code>
    * @return The rowCountExact.
    */
   @java.lang.Override
@@ -276,6 +288,19 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ROW_COUNT_LOWER_BOUND_FIELD_NUMBER = 4;
+  /**
+   * <pre>
+   * Partitioned DML does not offer exactly-once semantics, so it
+   * returns a lower bound of the rows modified.
+   * </pre>
+   *
+   * <code>int64 row_count_lower_bound = 4;</code>
+   * @return Whether the rowCountLowerBound field is set.
+   */
+  @java.lang.Override
+  public boolean hasRowCountLowerBound() {
+    return rowCountCase_ == 4;
+  }
   /**
    * <pre>
    * Partitioned DML does not offer exactly-once semantics, so it
@@ -1103,6 +1128,17 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 row_count_exact = 3;</code>
+     * @return Whether the rowCountExact field is set.
+     */
+    public boolean hasRowCountExact() {
+      return rowCountCase_ == 3;
+    }
+    /**
+     * <pre>
+     * Standard DML returns an exact count of rows that were modified.
+     * </pre>
+     *
+     * <code>int64 row_count_exact = 3;</code>
      * @return The rowCountExact.
      */
     public long getRowCountExact() {
@@ -1143,6 +1179,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Partitioned DML does not offer exactly-once semantics, so it
+     * returns a lower bound of the rows modified.
+     * </pre>
+     *
+     * <code>int64 row_count_lower_bound = 4;</code>
+     * @return Whether the rowCountLowerBound field is set.
+     */
+    public boolean hasRowCountLowerBound() {
+      return rowCountCase_ == 4;
+    }
     /**
      * <pre>
      * Partitioned DML does not offer exactly-once semantics, so it

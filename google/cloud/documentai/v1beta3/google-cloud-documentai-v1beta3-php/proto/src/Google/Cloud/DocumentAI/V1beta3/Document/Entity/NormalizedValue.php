@@ -73,7 +73,7 @@ class NormalizedValue extends \Google\Protobuf\Internal\Message
      * github.com/googleapis/googleapis/blob/master/google/type/money.proto
      *
      * Generated from protobuf field <code>.google.type.Money money_value = 2;</code>
-     * @return \Google\Type\Money
+     * @return \Google\Type\Money|null
      */
     public function getMoneyValue()
     {
@@ -108,7 +108,7 @@ class NormalizedValue extends \Google\Protobuf\Internal\Message
      * github.com/googleapis/googleapis/blob/master/google/type/date.proto
      *
      * Generated from protobuf field <code>.google.type.Date date_value = 3;</code>
-     * @return \Google\Type\Date
+     * @return \Google\Type\Date|null
      */
     public function getDateValue()
     {
@@ -143,7 +143,7 @@ class NormalizedValue extends \Google\Protobuf\Internal\Message
      * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
      *
      * Generated from protobuf field <code>.google.type.DateTime datetime_value = 4;</code>
-     * @return \Google\Type\DateTime
+     * @return \Google\Type\DateTime|null
      */
     public function getDatetimeValue()
     {
@@ -178,7 +178,7 @@ class NormalizedValue extends \Google\Protobuf\Internal\Message
      * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
      *
      * Generated from protobuf field <code>.google.type.PostalAddress address_value = 5;</code>
-     * @return \Google\Type\PostalAddress
+     * @return \Google\Type\PostalAddress|null
      */
     public function getAddressValue()
     {

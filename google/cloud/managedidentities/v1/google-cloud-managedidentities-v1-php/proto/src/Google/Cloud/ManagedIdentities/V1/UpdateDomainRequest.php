@@ -67,7 +67,7 @@ class UpdateDomainRequest extends \Google\Protobuf\Internal\Message
      *  * `authorized_networks`
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {
@@ -109,7 +109,7 @@ class UpdateDomainRequest extends \Google\Protobuf\Internal\Message
      * update_mask are updated.
      *
      * Generated from protobuf field <code>.google.cloud.managedidentities.v1.Domain domain = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\ManagedIdentities\V1\Domain
+     * @return \Google\Cloud\ManagedIdentities\V1\Domain|null
      */
     public function getDomain()
     {

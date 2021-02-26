@@ -101,7 +101,7 @@ class IamPolicyAnalysisQuery extends \Google\Protobuf\Internal\Message
      * Optional. Specifies a resource for analysis. Leaving it empty means ANY.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1p4beta1.IamPolicyAnalysisQuery.ResourceSelector resource_selector = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\Asset\V1p4beta1\IamPolicyAnalysisQuery\ResourceSelector
+     * @return \Google\Cloud\Asset\V1p4beta1\IamPolicyAnalysisQuery\ResourceSelector|null
      */
     public function getResourceSelector()
     {
@@ -137,7 +137,7 @@ class IamPolicyAnalysisQuery extends \Google\Protobuf\Internal\Message
      * Optional. Specifies an identity for analysis. Leaving it empty means ANY.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1p4beta1.IamPolicyAnalysisQuery.IdentitySelector identity_selector = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\Asset\V1p4beta1\IamPolicyAnalysisQuery\IdentitySelector
+     * @return \Google\Cloud\Asset\V1p4beta1\IamPolicyAnalysisQuery\IdentitySelector|null
      */
     public function getIdentitySelector()
     {
@@ -174,7 +174,7 @@ class IamPolicyAnalysisQuery extends \Google\Protobuf\Internal\Message
      * means ANY.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1p4beta1.IamPolicyAnalysisQuery.AccessSelector access_selector = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\Asset\V1p4beta1\IamPolicyAnalysisQuery\AccessSelector
+     * @return \Google\Cloud\Asset\V1p4beta1\IamPolicyAnalysisQuery\AccessSelector|null
      */
     public function getAccessSelector()
     {

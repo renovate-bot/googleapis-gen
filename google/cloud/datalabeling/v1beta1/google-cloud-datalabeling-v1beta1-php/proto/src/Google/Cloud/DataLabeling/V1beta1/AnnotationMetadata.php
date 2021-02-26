@@ -41,7 +41,7 @@ class AnnotationMetadata extends \Google\Protobuf\Internal\Message
      * Metadata related to human labeling.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.OperatorMetadata operator_metadata = 2;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\OperatorMetadata
+     * @return \Google\Cloud\DataLabeling\V1beta1\OperatorMetadata|null
      */
     public function getOperatorMetadata()
     {

@@ -124,7 +124,7 @@ class CreateSinkRequest extends \Google\Protobuf\Internal\Message
      * is not already in use.
      *
      * Generated from protobuf field <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Logging\V2\LogSink
+     * @return \Google\Cloud\Logging\V2\LogSink|null
      */
     public function getSink()
     {

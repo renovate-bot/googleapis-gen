@@ -76,7 +76,7 @@ class CreatePolicyTagRequest extends \Google\Protobuf\Internal\Message
      * The policy tag to be created.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1beta1.PolicyTag policy_tag = 2;</code>
-     * @return \Google\Cloud\DataCatalog\V1beta1\PolicyTag
+     * @return \Google\Cloud\DataCatalog\V1beta1\PolicyTag|null
      */
     public function getPolicyTag()
     {

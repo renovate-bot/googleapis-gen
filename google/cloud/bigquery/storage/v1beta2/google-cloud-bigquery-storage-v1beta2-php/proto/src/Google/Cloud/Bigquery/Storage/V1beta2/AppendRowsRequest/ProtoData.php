@@ -49,7 +49,7 @@ class ProtoData extends \Google\Protobuf\Internal\Message
      * Proto schema used to serialize the data.
      *
      * Generated from protobuf field <code>.google.cloud.bigquery.storage.v1beta2.ProtoSchema writer_schema = 1;</code>
-     * @return \Google\Cloud\Bigquery\Storage\V1beta2\ProtoSchema
+     * @return \Google\Cloud\Bigquery\Storage\V1beta2\ProtoSchema|null
      */
     public function getWriterSchema()
     {
@@ -85,7 +85,7 @@ class ProtoData extends \Google\Protobuf\Internal\Message
      * Serialized row data in protobuf message format.
      *
      * Generated from protobuf field <code>.google.cloud.bigquery.storage.v1beta2.ProtoRows rows = 2;</code>
-     * @return \Google\Cloud\Bigquery\Storage\V1beta2\ProtoRows
+     * @return \Google\Cloud\Bigquery\Storage\V1beta2\ProtoRows|null
      */
     public function getRows()
     {

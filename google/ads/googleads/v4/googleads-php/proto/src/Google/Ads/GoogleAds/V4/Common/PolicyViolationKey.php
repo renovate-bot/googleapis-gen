@@ -58,7 +58,7 @@ class PolicyViolationKey extends \Google\Protobuf\Internal\Message
      * Unique ID of the violated policy.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue policy_name = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPolicyName()
     {
@@ -125,7 +125,7 @@ class PolicyViolationKey extends \Google\Protobuf\Internal\Message
      * Must be specified for ad exemptions.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue violating_text = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getViolatingText()
     {

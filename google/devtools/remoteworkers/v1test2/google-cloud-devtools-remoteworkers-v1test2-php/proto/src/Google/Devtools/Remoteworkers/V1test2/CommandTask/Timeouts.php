@@ -79,7 +79,7 @@ class Timeouts extends \Google\Protobuf\Internal\Message
      * will terminate the task if it runs longer than this.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration execution = 1;</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getExecution()
     {
@@ -120,7 +120,7 @@ class Timeouts extends \Google\Protobuf\Internal\Message
      * terminate the task.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration idle = 2;</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getIdle()
     {
@@ -164,7 +164,7 @@ class Timeouts extends \Google\Protobuf\Internal\Message
      * SIGKILL on *nix, CTRL_BREAK_EVENT on Windows).
      *
      * Generated from protobuf field <code>.google.protobuf.Duration shutdown = 3;</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getShutdown()
     {

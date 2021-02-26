@@ -49,7 +49,7 @@ class HumanReadable extends \Google\Protobuf\Internal\Message
      * Generated query explaining the interpretation.
      *
      * Generated from protobuf field <code>.google.cloud.dataqna.v1alpha.AnnotatedString generated_interpretation = 1;</code>
-     * @return \Google\Cloud\DataQnA\V1alpha\AnnotatedString
+     * @return \Google\Cloud\DataQnA\V1alpha\AnnotatedString|null
      */
     public function getGeneratedInterpretation()
     {
@@ -85,7 +85,7 @@ class HumanReadable extends \Google\Protobuf\Internal\Message
      * Annotations on the original query.
      *
      * Generated from protobuf field <code>.google.cloud.dataqna.v1alpha.AnnotatedString original_question = 2;</code>
-     * @return \Google\Cloud\DataQnA\V1alpha\AnnotatedString
+     * @return \Google\Cloud\DataQnA\V1alpha\AnnotatedString|null
      */
     public function getOriginalQuestion()
     {

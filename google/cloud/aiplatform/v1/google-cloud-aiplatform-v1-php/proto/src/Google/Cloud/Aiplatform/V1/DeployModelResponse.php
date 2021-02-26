@@ -41,7 +41,7 @@ class DeployModelResponse extends \Google\Protobuf\Internal\Message
      * The DeployedModel that had been deployed in the Endpoint.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.DeployedModel deployed_model = 1;</code>
-     * @return \Google\Cloud\Aiplatform\V1\DeployedModel
+     * @return \Google\Cloud\Aiplatform\V1\DeployedModel|null
      */
     public function getDeployedModel()
     {

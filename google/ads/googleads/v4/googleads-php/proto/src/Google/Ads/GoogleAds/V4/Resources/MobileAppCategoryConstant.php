@@ -91,7 +91,7 @@ class MobileAppCategoryConstant extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the mobile app category constant.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int32Value
+     * @return \Google\Protobuf\Int32Value|null
      */
     public function getId()
     {
@@ -154,7 +154,7 @@ class MobileAppCategoryConstant extends \Google\Protobuf\Internal\Message
      * Output only. Mobile app category name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {

@@ -67,7 +67,7 @@ class FieldType extends \Google\Protobuf\Internal\Message
      * Represents an enum type.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1beta1.FieldType.EnumType enum_type = 2;</code>
-     * @return \Google\Cloud\DataCatalog\V1beta1\FieldType\EnumType
+     * @return \Google\Cloud\DataCatalog\V1beta1\FieldType\EnumType|null
      */
     public function getEnumType()
     {

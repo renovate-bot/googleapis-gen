@@ -79,7 +79,7 @@ class InstallStatus extends \Google\Protobuf\Internal\Message
      * True if the deployment is installed for the user
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue installed = 2;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getInstalled()
     {

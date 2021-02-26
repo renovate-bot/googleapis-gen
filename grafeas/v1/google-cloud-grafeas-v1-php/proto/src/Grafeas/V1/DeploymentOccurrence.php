@@ -117,7 +117,7 @@ class DeploymentOccurrence extends \Google\Protobuf\Internal\Message
      * Required. Beginning of the lifetime of this deployment.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp deploy_time = 2;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getDeployTime()
     {
@@ -153,7 +153,7 @@ class DeploymentOccurrence extends \Google\Protobuf\Internal\Message
      * End of the lifetime of this deployment.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp undeploy_time = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUndeployTime()
     {

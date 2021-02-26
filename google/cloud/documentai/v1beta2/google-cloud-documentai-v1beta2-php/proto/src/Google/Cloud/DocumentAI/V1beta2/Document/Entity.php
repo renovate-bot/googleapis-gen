@@ -107,7 +107,7 @@ class Entity extends \Google\Protobuf\Internal\Message
      * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta2.Document.text].
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta2.Document.TextAnchor text_anchor = 1;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta2\Document\TextAnchor
+     * @return \Google\Cloud\DocumentAI\V1beta2\Document\TextAnchor|null
      */
     public function getTextAnchor()
     {
@@ -249,7 +249,7 @@ class Entity extends \Google\Protobuf\Internal\Message
      * page where it was found.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta2.Document.PageAnchor page_anchor = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\DocumentAI\V1beta2\Document\PageAnchor
+     * @return \Google\Cloud\DocumentAI\V1beta2\Document\PageAnchor|null
      */
     public function getPageAnchor()
     {
@@ -315,7 +315,7 @@ class Entity extends \Google\Protobuf\Internal\Message
      * the frontend only. Do not use before you talk to ybo&#64; and lukasr&#64;.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta2.BoundingPoly bounding_poly_for_demo_frontend = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\DocumentAI\V1beta2\BoundingPoly
+     * @return \Google\Cloud\DocumentAI\V1beta2\BoundingPoly|null
      */
     public function getBoundingPolyForDemoFrontend()
     {

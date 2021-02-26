@@ -36,7 +36,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      * Destination on Cloud Storage.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1p2beta1.GcsDestination gcs_destination = 1;</code>
-     * @return \Google\Cloud\Asset\V1p2Beta1\GcsDestination
+     * @return \Google\Cloud\Asset\V1p2Beta1\GcsDestination|null
      */
     public function getGcsDestination()
     {

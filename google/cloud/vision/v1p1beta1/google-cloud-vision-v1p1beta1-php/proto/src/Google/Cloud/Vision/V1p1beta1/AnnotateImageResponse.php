@@ -264,7 +264,7 @@ class AnnotateImageResponse extends \Google\Protobuf\Internal\Message
      * text.
      *
      * Generated from protobuf field <code>.google.cloud.vision.v1p1beta1.TextAnnotation full_text_annotation = 12;</code>
-     * @return \Google\Cloud\Vision\V1p1beta1\TextAnnotation
+     * @return \Google\Cloud\Vision\V1p1beta1\TextAnnotation|null
      */
     public function getFullTextAnnotation()
     {
@@ -303,7 +303,7 @@ class AnnotateImageResponse extends \Google\Protobuf\Internal\Message
      * If present, safe-search annotation has completed successfully.
      *
      * Generated from protobuf field <code>.google.cloud.vision.v1p1beta1.SafeSearchAnnotation safe_search_annotation = 6;</code>
-     * @return \Google\Cloud\Vision\V1p1beta1\SafeSearchAnnotation
+     * @return \Google\Cloud\Vision\V1p1beta1\SafeSearchAnnotation|null
      */
     public function getSafeSearchAnnotation()
     {
@@ -339,7 +339,7 @@ class AnnotateImageResponse extends \Google\Protobuf\Internal\Message
      * If present, image properties were extracted successfully.
      *
      * Generated from protobuf field <code>.google.cloud.vision.v1p1beta1.ImageProperties image_properties_annotation = 8;</code>
-     * @return \Google\Cloud\Vision\V1p1beta1\ImageProperties
+     * @return \Google\Cloud\Vision\V1p1beta1\ImageProperties|null
      */
     public function getImagePropertiesAnnotation()
     {
@@ -375,7 +375,7 @@ class AnnotateImageResponse extends \Google\Protobuf\Internal\Message
      * If present, crop hints have completed successfully.
      *
      * Generated from protobuf field <code>.google.cloud.vision.v1p1beta1.CropHintsAnnotation crop_hints_annotation = 11;</code>
-     * @return \Google\Cloud\Vision\V1p1beta1\CropHintsAnnotation
+     * @return \Google\Cloud\Vision\V1p1beta1\CropHintsAnnotation|null
      */
     public function getCropHintsAnnotation()
     {
@@ -411,7 +411,7 @@ class AnnotateImageResponse extends \Google\Protobuf\Internal\Message
      * If present, web detection has completed successfully.
      *
      * Generated from protobuf field <code>.google.cloud.vision.v1p1beta1.WebDetection web_detection = 13;</code>
-     * @return \Google\Cloud\Vision\V1p1beta1\WebDetection
+     * @return \Google\Cloud\Vision\V1p1beta1\WebDetection|null
      */
     public function getWebDetection()
     {
@@ -449,7 +449,7 @@ class AnnotateImageResponse extends \Google\Protobuf\Internal\Message
      * correct, even when `error` is set.
      *
      * Generated from protobuf field <code>.google.rpc.Status error = 9;</code>
-     * @return \Google\Rpc\Status
+     * @return \Google\Rpc\Status|null
      */
     public function getError()
     {

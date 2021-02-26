@@ -75,7 +75,7 @@ class MutateMerchantCenterLinkRequest extends \Google\Protobuf\Internal\Message
      * Required. The operation to perform on the link
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.services.MerchantCenterLinkOperation operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Ads\GoogleAds\V5\Services\MerchantCenterLinkOperation
+     * @return \Google\Ads\GoogleAds\V5\Services\MerchantCenterLinkOperation|null
      */
     public function getOperation()
     {

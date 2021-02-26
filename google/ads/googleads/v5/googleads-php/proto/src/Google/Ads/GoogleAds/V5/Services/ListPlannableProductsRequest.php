@@ -44,7 +44,7 @@ class ListPlannableProductsRequest extends \Google\Protobuf\Internal\Message
      * plannable location ids use ListPlannableLocations.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue plannable_location_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPlannableLocationId()
     {

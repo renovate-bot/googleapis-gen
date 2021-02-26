@@ -79,7 +79,7 @@ class DirectoryMetadata extends \Google\Protobuf\Internal\Message
      * Directory message.
      *
      * Generated from protobuf field <code>.google.devtools.remoteworkers.v1test2.Digest digest = 2;</code>
-     * @return \Google\Devtools\Remoteworkers\V1test2\Digest
+     * @return \Google\Devtools\Remoteworkers\V1test2\Digest|null
      */
     public function getDigest()
     {

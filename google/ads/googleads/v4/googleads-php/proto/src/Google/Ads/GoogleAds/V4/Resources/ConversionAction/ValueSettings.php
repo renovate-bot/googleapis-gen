@@ -72,7 +72,7 @@ class ValueSettings extends \Google\Protobuf\Internal\Message
      * this conversion action is configured to always use the default value.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue default_value = 1;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getDefaultValue()
     {
@@ -143,7 +143,7 @@ class ValueSettings extends \Google\Protobuf\Internal\Message
      * conversion action is configured to always use the default value.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue default_currency_code = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDefaultCurrencyCode()
     {
@@ -214,7 +214,7 @@ class ValueSettings extends \Google\Protobuf\Internal\Message
      * this conversion action.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue always_use_default_value = 3;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getAlwaysUseDefaultValue()
     {

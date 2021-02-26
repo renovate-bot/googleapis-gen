@@ -100,7 +100,7 @@ class ProductSearchParams extends \Google\Protobuf\Internal\Message
      * If it is not specified, system discretion will be applied.
      *
      * Generated from protobuf field <code>.google.cloud.vision.v1p4beta1.BoundingPoly bounding_poly = 9;</code>
-     * @return \Google\Cloud\Vision\V1p4beta1\BoundingPoly
+     * @return \Google\Cloud\Vision\V1p4beta1\BoundingPoly|null
      */
     public function getBoundingPoly()
     {

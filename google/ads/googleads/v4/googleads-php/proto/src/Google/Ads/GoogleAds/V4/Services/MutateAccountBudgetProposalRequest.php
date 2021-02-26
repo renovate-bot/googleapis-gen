@@ -86,7 +86,7 @@ class MutateAccountBudgetProposalRequest extends \Google\Protobuf\Internal\Messa
      * Required. The operation to perform on an individual account-level budget proposal.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.AccountBudgetProposalOperation operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\AccountBudgetProposalOperation
+     * @return \Google\Ads\GoogleAds\V4\Services\AccountBudgetProposalOperation|null
      */
     public function getOperation()
     {

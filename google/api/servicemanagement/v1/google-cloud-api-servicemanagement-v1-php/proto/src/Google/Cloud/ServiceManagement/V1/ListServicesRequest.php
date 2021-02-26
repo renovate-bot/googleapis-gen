@@ -42,6 +42,7 @@ class ListServicesRequest extends \Google\Protobuf\Internal\Message
      * - project:<project_id>
      *
      * Generated from protobuf field <code>string consumer_id = 7 [deprecated = true];</code>
+     * @deprecated
      */
     protected $consumer_id = '';
 
@@ -161,9 +162,11 @@ class ListServicesRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string consumer_id = 7 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getConsumerId()
     {
+        @trigger_error('consumer_id is deprecated.', E_USER_DEPRECATED);
         return $this->consumer_id;
     }
 
@@ -176,9 +179,11 @@ class ListServicesRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string consumer_id = 7 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setConsumerId($var)
     {
+        @trigger_error('consumer_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->consumer_id = $var;
 

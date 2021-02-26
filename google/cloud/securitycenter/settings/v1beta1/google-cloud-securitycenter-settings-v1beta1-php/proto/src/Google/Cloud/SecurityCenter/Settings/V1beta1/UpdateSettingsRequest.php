@@ -73,7 +73,7 @@ class UpdateSettingsRequest extends \Google\Protobuf\Internal\Message
      *  * `projects/{project}/zones/{zone}/clusters/{cluster}/settings`
      *
      * Generated from protobuf field <code>.google.cloud.securitycenter.settings.v1beta1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\SecurityCenter\Settings\V1beta1\Settings
+     * @return \Google\Cloud\SecurityCenter\Settings\V1beta1\Settings|null
      */
     public function getSettings()
     {
@@ -117,7 +117,7 @@ class UpdateSettingsRequest extends \Google\Protobuf\Internal\Message
      * The list of fields to be updated on the settings.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

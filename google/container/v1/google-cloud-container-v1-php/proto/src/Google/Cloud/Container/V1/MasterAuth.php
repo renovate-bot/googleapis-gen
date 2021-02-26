@@ -27,6 +27,7 @@ class MasterAuth extends \Google\Protobuf\Internal\Message
      * https://cloud.google.com/kubernetes-engine/docs/how-to/api-server-authentication
      *
      * Generated from protobuf field <code>string username = 1 [deprecated = true];</code>
+     * @deprecated
      */
     protected $username = '';
     /**
@@ -40,6 +41,7 @@ class MasterAuth extends \Google\Protobuf\Internal\Message
      * https://cloud.google.com/kubernetes-engine/docs/how-to/api-server-authentication
      *
      * Generated from protobuf field <code>string password = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $password = '';
     /**
@@ -126,9 +128,11 @@ class MasterAuth extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string username = 1 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getUsername()
     {
+        @trigger_error('username is deprecated.', E_USER_DEPRECATED);
         return $this->username;
     }
 
@@ -144,9 +148,11 @@ class MasterAuth extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string username = 1 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setUsername($var)
     {
+        @trigger_error('username is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->username = $var;
 
@@ -165,9 +171,11 @@ class MasterAuth extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string password = 2 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getPassword()
     {
+        @trigger_error('password is deprecated.', E_USER_DEPRECATED);
         return $this->password;
     }
 
@@ -184,9 +192,11 @@ class MasterAuth extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string password = 2 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setPassword($var)
     {
+        @trigger_error('password is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->password = $var;
 
@@ -199,7 +209,7 @@ class MasterAuth extends \Google\Protobuf\Internal\Message
      * certificate is issued.
      *
      * Generated from protobuf field <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
-     * @return \Google\Cloud\Container\V1\ClientCertificateConfig
+     * @return \Google\Cloud\Container\V1\ClientCertificateConfig|null
      */
     public function getClientCertificateConfig()
     {

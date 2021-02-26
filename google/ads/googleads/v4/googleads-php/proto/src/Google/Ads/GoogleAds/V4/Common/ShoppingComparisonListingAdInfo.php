@@ -44,7 +44,7 @@ class ShoppingComparisonListingAdInfo extends \Google\Protobuf\Internal\Message
      * and 45 characters.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue headline = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getHeadline()
     {

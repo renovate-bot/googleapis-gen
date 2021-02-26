@@ -109,7 +109,7 @@ class ConfigureDnsSettingsRequest extends \Google\Protobuf\Internal\Message
      * Fields of the `DnsSettings` to update.
      *
      * Generated from protobuf field <code>.google.cloud.domains.v1alpha2.DnsSettings dns_settings = 2;</code>
-     * @return \Google\Cloud\Domains\V1alpha2\DnsSettings
+     * @return \Google\Cloud\Domains\V1alpha2\DnsSettings|null
      */
     public function getDnsSettings()
     {
@@ -152,7 +152,7 @@ class ConfigureDnsSettingsRequest extends \Google\Protobuf\Internal\Message
      * `update_mask` would be `"custom_dns"`. //
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

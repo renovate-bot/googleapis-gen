@@ -148,14 +148,17 @@ class GerritSourceContext extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string alias_name = 4 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getAliasName()
     {
+        @trigger_error('alias_name is deprecated.', E_USER_DEPRECATED);
         return $this->readOneof(4);
     }
 
     public function hasAliasName()
     {
+        @trigger_error('alias_name is deprecated.', E_USER_DEPRECATED);
         return $this->hasOneof(4);
     }
 
@@ -165,9 +168,11 @@ class GerritSourceContext extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string alias_name = 4 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setAliasName($var)
     {
+        @trigger_error('alias_name is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->writeOneof(4, $var);
 
@@ -178,7 +183,7 @@ class GerritSourceContext extends \Google\Protobuf\Internal\Message
      * An alias, which may be a branch or tag.
      *
      * Generated from protobuf field <code>.google.devtools.source.v1.AliasContext alias_context = 5;</code>
-     * @return \Google\Cloud\DevTools\Source\V1\AliasContext
+     * @return \Google\Cloud\DevTools\Source\V1\AliasContext|null
      */
     public function getAliasContext()
     {

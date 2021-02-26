@@ -152,6 +152,19 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool exists = 1;</code>
+   * @return Whether the exists field is set.
+   */
+  @java.lang.Override
+  public boolean hasExists() {
+    return conditionTypeCase_ == 1;
+  }
+  /**
+   * <pre>
+   * When set to `true`, the target document must exist.
+   * When set to `false`, the target document must not exist.
+   * </pre>
+   *
+   * <code>bool exists = 1;</code>
    * @return The exists.
    */
   @java.lang.Override
@@ -580,6 +593,18 @@ private static final long serialVersionUID = 0L;
     }
 
 
+    /**
+     * <pre>
+     * When set to `true`, the target document must exist.
+     * When set to `false`, the target document must not exist.
+     * </pre>
+     *
+     * <code>bool exists = 1;</code>
+     * @return Whether the exists field is set.
+     */
+    public boolean hasExists() {
+      return conditionTypeCase_ == 1;
+    }
     /**
      * <pre>
      * When set to `true`, the target document must exist.

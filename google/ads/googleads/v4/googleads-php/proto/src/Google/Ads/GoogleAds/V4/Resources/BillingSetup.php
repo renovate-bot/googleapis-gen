@@ -139,7 +139,7 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the billing setup.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -234,7 +234,7 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
      * populated.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue payments_account = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPaymentsAccount()
     {
@@ -319,7 +319,7 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
      * populated.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.BillingSetup.PaymentsAccountInfo payments_account_info = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\BillingSetup\PaymentsAccountInfo
+     * @return \Google\Ads\GoogleAds\V4\Resources\BillingSetup\PaymentsAccountInfo|null
      */
     public function getPaymentsAccountInfo()
     {
@@ -360,7 +360,7 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
      * future time is allowed.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue start_date_time = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getStartDateTime()
     {
@@ -452,7 +452,7 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
      * Output only. The end date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue end_date_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getEndDateTime()
     {

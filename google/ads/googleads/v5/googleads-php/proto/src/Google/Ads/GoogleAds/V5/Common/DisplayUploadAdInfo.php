@@ -84,7 +84,7 @@ class DisplayUploadAdInfo extends \Google\Protobuf\Internal\Message
      * information.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.AdMediaBundleAsset media_bundle = 2;</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\AdMediaBundleAsset
+     * @return \Google\Ads\GoogleAds\V5\Common\AdMediaBundleAsset|null
      */
     public function getMediaBundle()
     {

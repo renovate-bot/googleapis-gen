@@ -152,7 +152,7 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value draft_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getDraftId()
     {
@@ -218,7 +218,7 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      * Immutable. The base campaign to which the draft belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue base_campaign = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getBaseCampaign()
     {
@@ -285,7 +285,7 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      * (code point 0xA) or carriage return (code point 0xD) characters.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {
@@ -362,7 +362,7 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue draft_campaign = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDraftCampaign()
     {
@@ -459,7 +459,7 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      * Output only. Whether there is an experiment based on this draft currently serving.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue has_experiment_running = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getHasExperimentRunning()
     {
@@ -524,7 +524,7 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      * is in progress or finished.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getLongRunningOperation()
     {

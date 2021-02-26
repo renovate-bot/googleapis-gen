@@ -51,7 +51,7 @@ class CampaignBudgetRecommendationOption extends \Google\Protobuf\Internal\Messa
      * Output only. The budget amount for this option.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value budget_amount_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getBudgetAmountMicros()
     {
@@ -115,7 +115,7 @@ class CampaignBudgetRecommendationOption extends \Google\Protobuf\Internal\Messa
      * option.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.resources.Recommendation.RecommendationImpact impact = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V5\Resources\Recommendation\RecommendationImpact
+     * @return \Google\Ads\GoogleAds\V5\Resources\Recommendation\RecommendationImpact|null
      */
     public function getImpact()
     {

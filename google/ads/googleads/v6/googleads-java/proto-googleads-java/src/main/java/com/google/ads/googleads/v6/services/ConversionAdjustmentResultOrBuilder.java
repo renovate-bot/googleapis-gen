@@ -126,6 +126,15 @@ public interface ConversionAdjustmentResultOrBuilder extends
    * </pre>
    *
    * <code>string order_id = 6;</code>
+   * @return Whether the orderId field is set.
+   */
+  boolean hasOrderId();
+  /**
+   * <pre>
+   * The order ID of the conversion that was adjusted.
+   * </pre>
+   *
+   * <code>string order_id = 6;</code>
    * @return The orderId.
    */
   java.lang.String getOrderId();

@@ -147,7 +147,7 @@ class UpdateRoleRequest extends \Google\Protobuf\Internal\Message
      * The updated role.
      *
      * Generated from protobuf field <code>.google.iam.admin.v1.Role role = 2;</code>
-     * @return \Google\Iam\Admin\V1\Role
+     * @return \Google\Iam\Admin\V1\Role|null
      */
     public function getRole()
     {
@@ -183,7 +183,7 @@ class UpdateRoleRequest extends \Google\Protobuf\Internal\Message
      * A mask describing which fields in the Role have changed.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 3;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

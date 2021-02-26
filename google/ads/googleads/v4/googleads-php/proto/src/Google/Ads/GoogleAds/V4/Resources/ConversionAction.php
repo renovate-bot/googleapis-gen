@@ -237,7 +237,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the conversion action.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -302,7 +302,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * conversion actions.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {
@@ -450,7 +450,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * is a system-defined conversion action.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getOwnerCustomer()
     {
@@ -517,7 +517,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * metric.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue include_in_conversions_metric = 8;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getIncludeInConversionsMetric()
     {
@@ -584,7 +584,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * (e.g., a click) and a conversion event.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value click_through_lookback_window_days = 9;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getClickThroughLookbackWindowDays()
     {
@@ -651,7 +651,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * conversion without an interaction.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value view_through_lookback_window_days = 10;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getViewThroughLookbackWindowDays()
     {
@@ -718,7 +718,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * conversion action.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.ConversionAction.ValueSettings value_settings = 11;</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\ConversionAction\ValueSettings
+     * @return \Google\Ads\GoogleAds\V4\Resources\ConversionAction\ValueSettings|null
      */
     public function getValueSettings()
     {
@@ -781,7 +781,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * Settings related to this conversion action's attribution model.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.ConversionAction.AttributionModelSettings attribution_model_settings = 13;</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\ConversionAction\AttributionModelSettings
+     * @return \Google\Ads\GoogleAds\V4\Resources\ConversionAction\AttributionModelSettings|null
      */
     public function getAttributionModelSettings()
     {
@@ -845,7 +845,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * The value must be between 0 and 10000, inclusive.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value phone_call_duration_seconds = 15;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getPhoneCallDurationSeconds()
     {
@@ -914,7 +914,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * App ID for an app conversion action.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 16;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAppId()
     {
@@ -1003,7 +1003,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * Output only. Firebase settings for Firebase conversion types.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.ConversionAction.FirebaseSettings firebase_settings = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\ConversionAction\FirebaseSettings
+     * @return \Google\Ads\GoogleAds\V4\Resources\ConversionAction\FirebaseSettings|null
      */
     public function getFirebaseSettings()
     {
@@ -1039,7 +1039,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * Output only. Third Party App Analytics settings for third party conversion types.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.ConversionAction.ThirdPartyAppAnalyticsSettings third_party_app_analytics_settings = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\ConversionAction\ThirdPartyAppAnalyticsSettings
+     * @return \Google\Ads\GoogleAds\V4\Resources\ConversionAction\ThirdPartyAppAnalyticsSettings|null
      */
     public function getThirdPartyAppAnalyticsSettings()
     {

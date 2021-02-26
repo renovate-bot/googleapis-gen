@@ -237,7 +237,7 @@ class ProductSearchParams extends \Google\Protobuf\Internal\Message
      * [Deprecated] Use `bounding_poly`.
      *
      * Generated from protobuf field <code>.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;</code>
-     * @return \Google\Cloud\Vision\V1p3beta1\NormalizedBoundingPoly
+     * @return \Google\Cloud\Vision\V1p3beta1\NormalizedBoundingPoly|null
      */
     public function getNormalizedBoundingPoly()
     {
@@ -276,7 +276,7 @@ class ProductSearchParams extends \Google\Protobuf\Internal\Message
      * Optional. If it is not specified, system discretion will be applied.
      *
      * Generated from protobuf field <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 9;</code>
-     * @return \Google\Cloud\Vision\V1p3beta1\BoundingPoly
+     * @return \Google\Cloud\Vision\V1p3beta1\BoundingPoly|null
      */
     public function getBoundingPoly()
     {

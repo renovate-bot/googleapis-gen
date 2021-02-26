@@ -271,7 +271,7 @@ class Policy extends \Google\Protobuf\Internal\Message
      * kubernetes-service-account, or per-istio-service-identity admission rule.
      *
      * Generated from protobuf field <code>.google.cloud.binaryauthorization.v1beta1.AdmissionRule default_admission_rule = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\BinaryAuthorization\V1beta1\AdmissionRule
+     * @return \Google\Cloud\BinaryAuthorization\V1beta1\AdmissionRule|null
      */
     public function getDefaultAdmissionRule()
     {
@@ -308,7 +308,7 @@ class Policy extends \Google\Protobuf\Internal\Message
      * Output only. Time when the policy was last updated.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {

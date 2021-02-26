@@ -93,7 +93,7 @@ class CreateWorkloadIdentityPoolRequest extends \Google\Protobuf\Internal\Messag
      * Required. The pool to create.
      *
      * Generated from protobuf field <code>.google.iam.v1beta.WorkloadIdentityPool workload_identity_pool = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Iam\V1beta\WorkloadIdentityPool
+     * @return \Google\Iam\V1beta\WorkloadIdentityPool|null
      */
     public function getWorkloadIdentityPool()
     {

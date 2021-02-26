@@ -328,7 +328,7 @@ class EvaluationJob extends \Google\Protobuf\Internal\Message
      * Required. Configuration details for the evaluation job.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.EvaluationJobConfig evaluation_job_config = 6;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\EvaluationJobConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\EvaluationJobConfig|null
      */
     public function getEvaluationJobConfig()
     {
@@ -460,7 +460,7 @@ class EvaluationJob extends \Google\Protobuf\Internal\Message
      * Output only. Timestamp of when this evaluation job was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 10;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {

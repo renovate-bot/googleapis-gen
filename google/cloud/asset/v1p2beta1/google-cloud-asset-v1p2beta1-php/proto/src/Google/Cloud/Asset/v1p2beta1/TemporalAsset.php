@@ -58,7 +58,7 @@ class TemporalAsset extends \Google\Protobuf\Internal\Message
      * The time window when the asset data and state was observed.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1p2beta1.TimeWindow window = 1;</code>
-     * @return \Google\Cloud\Asset\v1p2beta1\TimeWindow
+     * @return \Google\Cloud\Asset\v1p2beta1\TimeWindow|null
      */
     public function getWindow()
     {
@@ -120,7 +120,7 @@ class TemporalAsset extends \Google\Protobuf\Internal\Message
      * Asset.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1p2beta1.Asset asset = 3;</code>
-     * @return \Google\Cloud\Asset\v1p2beta1\Asset
+     * @return \Google\Cloud\Asset\v1p2beta1\Asset|null
      */
     public function getAsset()
     {

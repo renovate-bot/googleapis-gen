@@ -41,7 +41,7 @@ class MediaAudio extends \Google\Protobuf\Internal\Message
      * Output only. The duration of the Audio in milliseconds.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value ad_duration_millis = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getAdDurationMillis()
     {

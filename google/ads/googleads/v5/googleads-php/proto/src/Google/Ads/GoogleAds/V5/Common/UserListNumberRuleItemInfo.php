@@ -89,7 +89,7 @@ class UserListNumberRuleItemInfo extends \Google\Protobuf\Internal\Message
      * rule item.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue value = 2;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getValue()
     {

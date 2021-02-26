@@ -106,7 +106,7 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * Width in pixels of the full size image.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value pixel_width = 4;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getPixelWidth()
     {
@@ -169,7 +169,7 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * Height in pixels of the full size image.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value pixel_height = 5;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getPixelHeight()
     {
@@ -232,7 +232,7 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * URL of the full size image.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue image_url = 6;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getImageUrl()
     {
@@ -295,7 +295,7 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * Width in pixels of the preview size image.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value preview_pixel_width = 7;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getPreviewPixelWidth()
     {
@@ -358,7 +358,7 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * Height in pixels of the preview size image.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value preview_pixel_height = 8;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getPreviewPixelHeight()
     {
@@ -421,7 +421,7 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * URL of the preview size image.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue preview_image_url = 9;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPreviewImageUrl()
     {
@@ -511,7 +511,7 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * the MediaFile's name. If the image was created from bytes, this is empty.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 11;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {
@@ -577,7 +577,7 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * The MediaFile resource to use for the image.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue media_file = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getMediaFile()
     {
@@ -635,7 +635,7 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * Raw image data as bytes.
      *
      * Generated from protobuf field <code>.google.protobuf.BytesValue data = 2;</code>
-     * @return \Google\Protobuf\BytesValue
+     * @return \Google\Protobuf\BytesValue|null
      */
     public function getData()
     {
@@ -693,7 +693,7 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * An ad ID to copy the image from.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value ad_id_to_copy_image_from = 3;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getAdIdToCopyImageFrom()
     {

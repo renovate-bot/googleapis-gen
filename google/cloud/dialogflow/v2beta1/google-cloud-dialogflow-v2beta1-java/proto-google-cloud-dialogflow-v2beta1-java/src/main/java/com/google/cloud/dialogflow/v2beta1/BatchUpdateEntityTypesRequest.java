@@ -234,6 +234,20 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string entity_type_batch_uri = 2;</code>
+   * @return Whether the entityTypeBatchUri field is set.
+   */
+  public boolean hasEntityTypeBatchUri() {
+    return entityTypeBatchCase_ == 2;
+  }
+  /**
+   * <pre>
+   * The URI to a Google Cloud Storage file containing entity types to update
+   * or create. The file format can either be a serialized proto (of
+   * EntityBatch type) or a JSON object. Note: The URI must start with
+   * "gs://".
+   * </pre>
+   *
+   * <code>string entity_type_batch_uri = 2;</code>
    * @return The entityTypeBatchUri.
    */
   public java.lang.String getEntityTypeBatchUri() {
@@ -963,6 +977,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * The URI to a Google Cloud Storage file containing entity types to update
+     * or create. The file format can either be a serialized proto (of
+     * EntityBatch type) or a JSON object. Note: The URI must start with
+     * "gs://".
+     * </pre>
+     *
+     * <code>string entity_type_batch_uri = 2;</code>
+     * @return Whether the entityTypeBatchUri field is set.
+     */
+    @java.lang.Override
+    public boolean hasEntityTypeBatchUri() {
+      return entityTypeBatchCase_ == 2;
+    }
     /**
      * <pre>
      * The URI to a Google Cloud Storage file containing entity types to update

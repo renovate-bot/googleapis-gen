@@ -446,7 +446,7 @@ class Finding extends \Google\Protobuf\Internal\Message
      * An addon containing information about outdated libraries.
      *
      * Generated from protobuf field <code>.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary outdated_library = 11;</code>
-     * @return \Google\Cloud\Websecurityscanner\V1alpha\OutdatedLibrary
+     * @return \Google\Cloud\Websecurityscanner\V1alpha\OutdatedLibrary|null
      */
     public function getOutdatedLibrary()
     {
@@ -483,7 +483,7 @@ class Finding extends \Google\Protobuf\Internal\Message
      * vulnerability such as JavaScript sources, image, audio files, etc.
      *
      * Generated from protobuf field <code>.google.cloud.websecurityscanner.v1alpha.ViolatingResource violating_resource = 12;</code>
-     * @return \Google\Cloud\Websecurityscanner\V1alpha\ViolatingResource
+     * @return \Google\Cloud\Websecurityscanner\V1alpha\ViolatingResource|null
      */
     public function getViolatingResource()
     {
@@ -520,7 +520,7 @@ class Finding extends \Google\Protobuf\Internal\Message
      * An addon containing information about vulnerable or missing HTTP headers.
      *
      * Generated from protobuf field <code>.google.cloud.websecurityscanner.v1alpha.VulnerableHeaders vulnerable_headers = 15;</code>
-     * @return \Google\Cloud\Websecurityscanner\V1alpha\VulnerableHeaders
+     * @return \Google\Cloud\Websecurityscanner\V1alpha\VulnerableHeaders|null
      */
     public function getVulnerableHeaders()
     {
@@ -557,7 +557,7 @@ class Finding extends \Google\Protobuf\Internal\Message
      * to be vulnerable.
      *
      * Generated from protobuf field <code>.google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerable_parameters = 13;</code>
-     * @return \Google\Cloud\Websecurityscanner\V1alpha\VulnerableParameters
+     * @return \Google\Cloud\Websecurityscanner\V1alpha\VulnerableParameters|null
      */
     public function getVulnerableParameters()
     {
@@ -594,7 +594,7 @@ class Finding extends \Google\Protobuf\Internal\Message
      * An addon containing information reported for an XSS, if any.
      *
      * Generated from protobuf field <code>.google.cloud.websecurityscanner.v1alpha.Xss xss = 14;</code>
-     * @return \Google\Cloud\Websecurityscanner\V1alpha\Xss
+     * @return \Google\Cloud\Websecurityscanner\V1alpha\Xss|null
      */
     public function getXss()
     {

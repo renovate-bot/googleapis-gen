@@ -218,6 +218,18 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 integer_value = 1;</code>
+   * @return Whether the integerValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasIntegerValue() {
+    return typeCase_ == 1;
+  }
+  /**
+   * <pre>
+   * integer
+   * </pre>
+   *
+   * <code>int64 integer_value = 1;</code>
    * @return The integerValue.
    */
   @java.lang.Override
@@ -235,6 +247,18 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>double float_value = 2;</code>
+   * @return Whether the floatValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasFloatValue() {
+    return typeCase_ == 2;
+  }
+  /**
+   * <pre>
+   * float
+   * </pre>
+   *
+   * <code>double float_value = 2;</code>
    * @return The floatValue.
    */
   @java.lang.Override
@@ -246,6 +270,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int STRING_VALUE_FIELD_NUMBER = 3;
+  /**
+   * <pre>
+   * string
+   * </pre>
+   *
+   * <code>string string_value = 3;</code>
+   * @return Whether the stringValue field is set.
+   */
+  public boolean hasStringValue() {
+    return typeCase_ == 3;
+  }
   /**
    * <pre>
    * string
@@ -299,6 +334,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int BOOLEAN_VALUE_FIELD_NUMBER = 4;
+  /**
+   * <pre>
+   * boolean
+   * </pre>
+   *
+   * <code>bool boolean_value = 4;</code>
+   * @return Whether the booleanValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasBooleanValue() {
+    return typeCase_ == 4;
+  }
   /**
    * <pre>
    * boolean
@@ -445,6 +492,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DAY_OF_WEEK_VALUE_FIELD_NUMBER = 8;
+  /**
+   * <pre>
+   * day of week
+   * </pre>
+   *
+   * <code>.google.type.DayOfWeek day_of_week_value = 8;</code>
+   * @return Whether the dayOfWeekValue field is set.
+   */
+  public boolean hasDayOfWeekValue() {
+    return typeCase_ == 8;
+  }
   /**
    * <pre>
    * day of week
@@ -1008,6 +1066,17 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 integer_value = 1;</code>
+     * @return Whether the integerValue field is set.
+     */
+    public boolean hasIntegerValue() {
+      return typeCase_ == 1;
+    }
+    /**
+     * <pre>
+     * integer
+     * </pre>
+     *
+     * <code>int64 integer_value = 1;</code>
      * @return The integerValue.
      */
     public long getIntegerValue() {
@@ -1054,6 +1123,17 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>double float_value = 2;</code>
+     * @return Whether the floatValue field is set.
+     */
+    public boolean hasFloatValue() {
+      return typeCase_ == 2;
+    }
+    /**
+     * <pre>
+     * float
+     * </pre>
+     *
+     * <code>double float_value = 2;</code>
      * @return The floatValue.
      */
     public double getFloatValue() {
@@ -1094,6 +1174,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * string
+     * </pre>
+     *
+     * <code>string string_value = 3;</code>
+     * @return Whether the stringValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasStringValue() {
+      return typeCase_ == 3;
+    }
     /**
      * <pre>
      * string
@@ -1203,6 +1295,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * boolean
+     * </pre>
+     *
+     * <code>bool boolean_value = 4;</code>
+     * @return Whether the booleanValue field is set.
+     */
+    public boolean hasBooleanValue() {
+      return typeCase_ == 4;
+    }
     /**
      * <pre>
      * boolean
@@ -1780,6 +1883,18 @@ private static final long serialVersionUID = 0L;
       return dateValueBuilder_;
     }
 
+    /**
+     * <pre>
+     * day of week
+     * </pre>
+     *
+     * <code>.google.type.DayOfWeek day_of_week_value = 8;</code>
+     * @return Whether the dayOfWeekValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasDayOfWeekValue() {
+      return typeCase_ == 8;
+    }
     /**
      * <pre>
      * day of week

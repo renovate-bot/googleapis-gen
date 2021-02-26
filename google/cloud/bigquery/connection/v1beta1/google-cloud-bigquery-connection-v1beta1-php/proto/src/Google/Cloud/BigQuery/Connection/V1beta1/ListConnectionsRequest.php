@@ -87,7 +87,7 @@ class ListConnectionsRequest extends \Google\Protobuf\Internal\Message
      * Required. Maximum number of results per page.
      *
      * Generated from protobuf field <code>.google.protobuf.UInt32Value max_results = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\UInt32Value
+     * @return \Google\Protobuf\UInt32Value|null
      */
     public function getMaxResults()
     {

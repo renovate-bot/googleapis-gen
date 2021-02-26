@@ -83,7 +83,7 @@ class InvocationAttemptStarted extends \Google\Protobuf\Internal\Message
      * Arbitrary details about the invocation attempt.
      *
      * Generated from protobuf field <code>.google.protobuf.Any details = 2;</code>
-     * @return \Google\Protobuf\Any
+     * @return \Google\Protobuf\Any|null
      */
     public function getDetails()
     {

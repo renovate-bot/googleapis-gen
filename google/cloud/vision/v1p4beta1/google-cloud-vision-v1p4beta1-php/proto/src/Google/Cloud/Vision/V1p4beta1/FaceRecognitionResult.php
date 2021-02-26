@@ -52,7 +52,7 @@ class FaceRecognitionResult extends \Google\Protobuf\Internal\Message
      * matched to.
      *
      * Generated from protobuf field <code>.google.cloud.vision.v1p4beta1.Celebrity celebrity = 1;</code>
-     * @return \Google\Cloud\Vision\V1p4beta1\Celebrity
+     * @return \Google\Cloud\Vision\V1p4beta1\Celebrity|null
      */
     public function getCelebrity()
     {

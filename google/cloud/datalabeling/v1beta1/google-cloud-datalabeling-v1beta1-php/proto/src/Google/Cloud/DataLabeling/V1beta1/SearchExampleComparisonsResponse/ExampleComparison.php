@@ -50,7 +50,7 @@ class ExampleComparison extends \Google\Protobuf\Internal\Message
      * The ground truth output for the input.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\Example
+     * @return \Google\Cloud\DataLabeling\V1beta1\Example|null
      */
     public function getGroundTruthExample()
     {

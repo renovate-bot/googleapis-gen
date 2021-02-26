@@ -63,7 +63,7 @@ class Example extends \Google\Protobuf\Internal\Message
      * The image payload, a container of the image bytes/uri.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.ImagePayload image_payload = 2;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\ImagePayload
+     * @return \Google\Cloud\DataLabeling\V1beta1\ImagePayload|null
      */
     public function getImagePayload()
     {
@@ -94,7 +94,7 @@ class Example extends \Google\Protobuf\Internal\Message
      * The text payload, a container of the text content.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.TextPayload text_payload = 6;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\TextPayload
+     * @return \Google\Cloud\DataLabeling\V1beta1\TextPayload|null
      */
     public function getTextPayload()
     {
@@ -125,7 +125,7 @@ class Example extends \Google\Protobuf\Internal\Message
      * The video payload, a container of the video uri.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.VideoPayload video_payload = 7;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\VideoPayload
+     * @return \Google\Cloud\DataLabeling\V1beta1\VideoPayload|null
      */
     public function getVideoPayload()
     {

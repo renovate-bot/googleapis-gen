@@ -182,7 +182,7 @@ class Dataset extends \Google\Protobuf\Internal\Message
      * Output only. Time the dataset is created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 4;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {

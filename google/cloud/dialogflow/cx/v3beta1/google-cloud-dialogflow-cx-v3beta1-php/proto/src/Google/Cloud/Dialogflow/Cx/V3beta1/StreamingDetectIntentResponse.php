@@ -44,7 +44,7 @@ class StreamingDetectIntentResponse extends \Google\Protobuf\Internal\Message
      * The result of speech recognition.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.StreamingRecognitionResult recognition_result = 1;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\StreamingRecognitionResult
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\StreamingRecognitionResult|null
      */
     public function getRecognitionResult()
     {
@@ -75,7 +75,7 @@ class StreamingDetectIntentResponse extends \Google\Protobuf\Internal\Message
      * The response from detect intent.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse detect_intent_response = 2;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\DetectIntentResponse
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\DetectIntentResponse|null
      */
     public function getDetectIntentResponse()
     {

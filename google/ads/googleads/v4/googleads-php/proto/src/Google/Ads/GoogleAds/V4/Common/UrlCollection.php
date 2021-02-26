@@ -65,7 +65,7 @@ class UrlCollection extends \Google\Protobuf\Internal\Message
      * Unique identifier for this UrlCollection instance.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue url_collection_id = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getUrlCollectionId()
     {
@@ -180,7 +180,7 @@ class UrlCollection extends \Google\Protobuf\Internal\Message
      * URL template for constructing a tracking URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getTrackingUrlTemplate()
     {

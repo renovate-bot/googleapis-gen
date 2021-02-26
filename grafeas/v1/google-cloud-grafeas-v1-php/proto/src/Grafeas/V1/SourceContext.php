@@ -49,7 +49,7 @@ class SourceContext extends \Google\Protobuf\Internal\Message
      * A SourceContext referring to a revision in a Google Cloud Source Repo.
      *
      * Generated from protobuf field <code>.grafeas.v1.CloudRepoSourceContext cloud_repo = 1;</code>
-     * @return \Grafeas\V1\CloudRepoSourceContext
+     * @return \Grafeas\V1\CloudRepoSourceContext|null
      */
     public function getCloudRepo()
     {
@@ -80,7 +80,7 @@ class SourceContext extends \Google\Protobuf\Internal\Message
      * A SourceContext referring to a Gerrit project.
      *
      * Generated from protobuf field <code>.grafeas.v1.GerritSourceContext gerrit = 2;</code>
-     * @return \Grafeas\V1\GerritSourceContext
+     * @return \Grafeas\V1\GerritSourceContext|null
      */
     public function getGerrit()
     {
@@ -111,7 +111,7 @@ class SourceContext extends \Google\Protobuf\Internal\Message
      * A SourceContext referring to any third party Git repo (e.g., GitHub).
      *
      * Generated from protobuf field <code>.grafeas.v1.GitSourceContext git = 3;</code>
-     * @return \Grafeas\V1\GitSourceContext
+     * @return \Grafeas\V1\GitSourceContext|null
      */
     public function getGit()
     {

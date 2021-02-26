@@ -109,7 +109,7 @@ class LanguageConstant extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the language constant.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -172,7 +172,7 @@ class LanguageConstant extends \Google\Protobuf\Internal\Message
      * Output only. The language code, e.g. "en_US", "en_AU", "es", "fr", etc.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCode()
     {
@@ -236,7 +236,7 @@ class LanguageConstant extends \Google\Protobuf\Internal\Message
      * etc.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {
@@ -302,7 +302,7 @@ class LanguageConstant extends \Google\Protobuf\Internal\Message
      * Output only. Whether the language is targetable.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue targetable = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getTargetable()
     {

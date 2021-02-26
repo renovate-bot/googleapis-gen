@@ -173,7 +173,7 @@ class ExportDataRequest extends \Google\Protobuf\Internal\Message
      * Required. Specify the output destination.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\OutputConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\OutputConfig|null
      */
     public function getOutputConfig()
     {

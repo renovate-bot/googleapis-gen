@@ -105,7 +105,7 @@ class UpdateViewRequest extends \Google\Protobuf\Internal\Message
      * Required. The updated view.
      *
      * Generated from protobuf field <code>.google.logging.v2.LogView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Logging\V2\LogView
+     * @return \Google\Cloud\Logging\V2\LogView|null
      */
     public function getView()
     {
@@ -146,7 +146,7 @@ class UpdateViewRequest extends \Google\Protobuf\Internal\Message
      * Example: `updateMask=filter`.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

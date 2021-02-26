@@ -59,7 +59,7 @@ class UpdateRowRequest extends \Google\Protobuf\Internal\Message
      * Required. The row to update.
      *
      * Generated from protobuf field <code>.google.area120.tables.v1alpha1.Row row = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Area120\Tables\V1alpha1\Row
+     * @return \Google\Area120\Tables\V1alpha1\Row|null
      */
     public function getRow()
     {
@@ -95,7 +95,7 @@ class UpdateRowRequest extends \Google\Protobuf\Internal\Message
      * The list of fields to update.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

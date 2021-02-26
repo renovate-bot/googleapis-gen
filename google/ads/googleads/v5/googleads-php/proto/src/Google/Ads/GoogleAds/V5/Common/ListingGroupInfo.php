@@ -88,7 +88,7 @@ class ListingGroupInfo extends \Google\Protobuf\Internal\Message
      * Undefined for the root group.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.ListingDimensionInfo case_value = 2;</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\ListingDimensionInfo
+     * @return \Google\Ads\GoogleAds\V5\Common\ListingDimensionInfo|null
      */
     public function getCaseValue()
     {

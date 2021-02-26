@@ -41,7 +41,7 @@ class HotelIdInfo extends \Google\Protobuf\Internal\Message
      * String value of the hotel ID.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue value = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getValue()
     {

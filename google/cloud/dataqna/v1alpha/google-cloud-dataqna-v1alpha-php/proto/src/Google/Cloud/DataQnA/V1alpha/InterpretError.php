@@ -109,7 +109,7 @@ class InterpretError extends \Google\Protobuf\Internal\Message
      * Details on interpretation failure.
      *
      * Generated from protobuf field <code>.google.cloud.dataqna.v1alpha.InterpretError.InterpretErrorDetails details = 3;</code>
-     * @return \Google\Cloud\DataQnA\V1alpha\InterpretError\InterpretErrorDetails
+     * @return \Google\Cloud\DataQnA\V1alpha\InterpretError\InterpretErrorDetails|null
      */
     public function getDetails()
     {

@@ -79,7 +79,7 @@ class CreateServiceRolloutRequest extends \Google\Protobuf\Internal\Message
      * Required. The rollout resource. The `service_name` field is output only.
      *
      * Generated from protobuf field <code>.google.api.servicemanagement.v1.Rollout rollout = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\ServiceManagement\V1\Rollout
+     * @return \Google\Cloud\ServiceManagement\V1\Rollout|null
      */
     public function getRollout()
     {

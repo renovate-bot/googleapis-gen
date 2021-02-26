@@ -91,7 +91,7 @@ class AdGroupCriterionLabel extends \Google\Protobuf\Internal\Message
      * Immutable. The ad group criterion to which the label is attached.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAdGroupCriterion()
     {
@@ -154,7 +154,7 @@ class AdGroupCriterionLabel extends \Google\Protobuf\Internal\Message
      * Immutable. The label assigned to the ad group criterion.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue label = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getLabel()
     {

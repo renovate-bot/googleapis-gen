@@ -40,7 +40,7 @@ class InputConfig extends \Google\Protobuf\Internal\Message
      * The Inline source for the input content for Catalog items.
      *
      * Generated from protobuf field <code>.google.cloud.recommendationengine.v1beta1.CatalogInlineSource catalog_inline_source = 1;</code>
-     * @return \Google\Cloud\RecommendationEngine\V1beta1\CatalogInlineSource
+     * @return \Google\Cloud\RecommendationEngine\V1beta1\CatalogInlineSource|null
      */
     public function getCatalogInlineSource()
     {
@@ -71,7 +71,7 @@ class InputConfig extends \Google\Protobuf\Internal\Message
      * Google Cloud Storage location for the input content.
      *
      * Generated from protobuf field <code>.google.cloud.recommendationengine.v1beta1.GcsSource gcs_source = 2;</code>
-     * @return \Google\Cloud\RecommendationEngine\V1beta1\GcsSource
+     * @return \Google\Cloud\RecommendationEngine\V1beta1\GcsSource|null
      */
     public function getGcsSource()
     {
@@ -102,7 +102,7 @@ class InputConfig extends \Google\Protobuf\Internal\Message
      * The Inline source for the input content for UserEvents.
      *
      * Generated from protobuf field <code>.google.cloud.recommendationengine.v1beta1.UserEventInlineSource user_event_inline_source = 3;</code>
-     * @return \Google\Cloud\RecommendationEngine\V1beta1\UserEventInlineSource
+     * @return \Google\Cloud\RecommendationEngine\V1beta1\UserEventInlineSource|null
      */
     public function getUserEventInlineSource()
     {

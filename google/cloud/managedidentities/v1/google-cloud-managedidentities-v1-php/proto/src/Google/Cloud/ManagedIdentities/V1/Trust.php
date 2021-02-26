@@ -302,7 +302,7 @@ class Trust extends \Google\Protobuf\Internal\Message
      * Output only. The time the instance was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -338,7 +338,7 @@ class Trust extends \Google\Protobuf\Internal\Message
      * Output only. The last update time.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {
@@ -426,7 +426,7 @@ class Trust extends \Google\Protobuf\Internal\Message
      * Output only. The last heartbeat time when the trust was known to be connected.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp last_trust_heartbeat_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getLastTrustHeartbeatTime()
     {

@@ -79,7 +79,7 @@ class CreateSecuritySettingsRequest extends \Google\Protobuf\Internal\Message
      * Required. The security settings to create.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings security_settings = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\SecuritySettings
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\SecuritySettings|null
      */
     public function getSecuritySettings()
     {

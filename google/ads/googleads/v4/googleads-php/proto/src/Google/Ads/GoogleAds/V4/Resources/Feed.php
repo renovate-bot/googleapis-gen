@@ -143,7 +143,7 @@ class Feed extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -209,7 +209,7 @@ class Feed extends \Google\Protobuf\Internal\Message
      * Immutable. Name of the feed. Required.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {
@@ -387,7 +387,7 @@ class Feed extends \Google\Protobuf\Internal\Message
      * Locations.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Feed.PlacesLocationFeedData places_location_feed_data = 6;</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Feed\PlacesLocationFeedData
+     * @return \Google\Ads\GoogleAds\V4\Resources\Feed\PlacesLocationFeedData|null
      */
     public function getPlacesLocationFeedData()
     {
@@ -420,7 +420,7 @@ class Feed extends \Google\Protobuf\Internal\Message
      * the specified chains.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Feed.AffiliateLocationFeedData affiliate_location_feed_data = 7;</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Feed\AffiliateLocationFeedData
+     * @return \Google\Ads\GoogleAds\V4\Resources\Feed\AffiliateLocationFeedData|null
      */
     public function getAffiliateLocationFeedData()
     {

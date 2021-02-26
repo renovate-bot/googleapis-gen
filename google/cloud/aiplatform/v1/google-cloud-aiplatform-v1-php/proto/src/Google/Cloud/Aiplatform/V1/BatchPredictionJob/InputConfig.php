@@ -56,7 +56,7 @@ class InputConfig extends \Google\Protobuf\Internal\Message
      * The Cloud Storage location for the input instances.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.GcsSource gcs_source = 2;</code>
-     * @return \Google\Cloud\Aiplatform\V1\GcsSource
+     * @return \Google\Cloud\Aiplatform\V1\GcsSource|null
      */
     public function getGcsSource()
     {
@@ -91,7 +91,7 @@ class InputConfig extends \Google\Protobuf\Internal\Message
      * be ignored.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.BigQuerySource bigquery_source = 3;</code>
-     * @return \Google\Cloud\Aiplatform\V1\BigQuerySource
+     * @return \Google\Cloud\Aiplatform\V1\BigQuerySource|null
      */
     public function getBigquerySource()
     {

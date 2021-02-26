@@ -207,7 +207,7 @@ class Annotation extends \Google\Protobuf\Internal\Message
      * [payload_schema][google.cloud.aiplatform.v1beta1.Annotation.payload_schema_uri].
      *
      * Generated from protobuf field <code>.google.protobuf.Value payload = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Value
+     * @return \Google\Protobuf\Value|null
      */
     public function getPayload()
     {
@@ -244,7 +244,7 @@ class Annotation extends \Google\Protobuf\Internal\Message
      * Output only. Timestamp when this Annotation was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -280,7 +280,7 @@ class Annotation extends \Google\Protobuf\Internal\Message
      * Output only. Timestamp when this Annotation was last updated.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {
@@ -344,7 +344,7 @@ class Annotation extends \Google\Protobuf\Internal\Message
      * Output only. The source of the Annotation.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.UserActionReference annotation_source = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\UserActionReference
+     * @return \Google\Cloud\Aiplatform\V1beta1\UserActionReference|null
      */
     public function getAnnotationSource()
     {

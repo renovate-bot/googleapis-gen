@@ -39,7 +39,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      * Destination on Cloud Storage.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1p7beta1.GcsDestination gcs_destination = 1;</code>
-     * @return \Google\Cloud\Asset\V1p7beta1\GcsDestination
+     * @return \Google\Cloud\Asset\V1p7beta1\GcsDestination|null
      */
     public function getGcsDestination()
     {
@@ -71,7 +71,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      * proto as columns in BigQuery.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1p7beta1.BigQueryDestination bigquery_destination = 2;</code>
-     * @return \Google\Cloud\Asset\V1p7beta1\BigQueryDestination
+     * @return \Google\Cloud\Asset\V1p7beta1\BigQueryDestination|null
      */
     public function getBigqueryDestination()
     {

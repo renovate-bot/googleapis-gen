@@ -239,7 +239,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the account-level budget.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -304,7 +304,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * `customers/{customer_id}/billingSetups/{billing_setup_id}`
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue billing_setup = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getBillingSetup()
     {
@@ -399,7 +399,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * Output only. The name of the account-level budget.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {
@@ -464,7 +464,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * this is the time of request.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue proposed_start_date_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getProposedStartDateTime()
     {
@@ -536,7 +536,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * the approved start time is the time of approval.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue approved_start_date_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getApprovedStartDateTime()
     {
@@ -609,7 +609,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * An example of an adjustment is courtesy credits.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value total_adjustments_micros = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getTotalAdjustmentsMicros()
     {
@@ -677,7 +677,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * automatically applied to the budget (see total_adjustments_micros).
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value amount_served_micros = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getAmountServedMicros()
     {
@@ -747,7 +747,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * in their monthly invoices.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue purchase_order_number = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPurchaseOrderNumber()
     {
@@ -813,7 +813,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * Output only. Notes associated with the budget.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue notes = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getNotes()
     {
@@ -876,7 +876,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * Output only. The pending proposal to modify this budget, if applicable.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.AccountBudget.PendingAccountBudgetProposal pending_proposal = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\AccountBudget\PendingAccountBudgetProposal
+     * @return \Google\Ads\GoogleAds\V4\Resources\AccountBudget\PendingAccountBudgetProposal|null
      */
     public function getPendingProposal()
     {
@@ -912,7 +912,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * Output only. The proposed end time in yyyy-MM-dd HH:mm:ss format.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue proposed_end_date_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getProposedEndDateTime()
     {
@@ -1001,7 +1001,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * Output only. The approved end time in yyyy-MM-dd HH:mm:ss format.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue approved_end_date_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getApprovedEndDateTime()
     {
@@ -1091,7 +1091,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * one unit.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value proposed_spending_limit_micros = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getProposedSpendingLimitMicros()
     {
@@ -1186,7 +1186,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * proposed spending limit.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value approved_spending_limit_micros = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getApprovedSpendingLimitMicros()
     {
@@ -1294,7 +1294,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * allowed to spend.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value adjusted_spending_limit_micros = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getAdjustedSpendingLimitMicros()
     {

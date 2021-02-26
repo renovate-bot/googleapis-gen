@@ -62,7 +62,7 @@ class OrderedBuildEvent extends \Google\Protobuf\Internal\Message
      * Which build event stream this event belongs to.
      *
      * Generated from protobuf field <code>.google.devtools.build.v1.StreamId stream_id = 1;</code>
-     * @return \Google\Devtools\Build\V1\StreamId
+     * @return \Google\Devtools\Build\V1\StreamId|null
      */
     public function getStreamId()
     {
@@ -128,7 +128,7 @@ class OrderedBuildEvent extends \Google\Protobuf\Internal\Message
      * The actual event.
      *
      * Generated from protobuf field <code>.google.devtools.build.v1.BuildEvent event = 3;</code>
-     * @return \Google\Devtools\Build\V1\BuildEvent
+     * @return \Google\Devtools\Build\V1\BuildEvent|null
      */
     public function getEvent()
     {

@@ -85,7 +85,7 @@ class ModelEvaluationExplanationSpec extends \Google\Protobuf\Internal\Message
      * Explanation spec details.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 2;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\ExplanationSpec
+     * @return \Google\Cloud\Aiplatform\V1beta1\ExplanationSpec|null
      */
     public function getExplanationSpec()
     {

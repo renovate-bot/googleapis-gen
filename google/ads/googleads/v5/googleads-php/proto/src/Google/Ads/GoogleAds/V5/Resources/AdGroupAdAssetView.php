@@ -138,7 +138,7 @@ class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
      * Output only. The ad group ad to which the asset is linked.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAdGroupAd()
     {
@@ -201,7 +201,7 @@ class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
      * Output only. The asset which is linked to the ad group ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue asset = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAsset()
     {
@@ -332,7 +332,7 @@ class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
      * Output only. Policy information for the ad group ad asset.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.resources.AdGroupAdAssetPolicySummary policy_summary = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V5\Resources\AdGroupAdAssetPolicySummary
+     * @return \Google\Ads\GoogleAds\V5\Resources\AdGroupAdAssetPolicySummary|null
      */
     public function getPolicySummary()
     {

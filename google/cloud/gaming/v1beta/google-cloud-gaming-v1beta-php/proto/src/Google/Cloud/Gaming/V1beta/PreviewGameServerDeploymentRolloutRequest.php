@@ -70,7 +70,7 @@ class PreviewGameServerDeploymentRolloutRequest extends \Google\Protobuf\Interna
      * Only fields specified in update_mask are updated.
      *
      * Generated from protobuf field <code>.google.cloud.gaming.v1beta.GameServerDeploymentRollout rollout = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Gaming\V1beta\GameServerDeploymentRollout
+     * @return \Google\Cloud\Gaming\V1beta\GameServerDeploymentRollout|null
      */
     public function getRollout()
     {
@@ -111,7 +111,7 @@ class PreviewGameServerDeploymentRolloutRequest extends \Google\Protobuf\Interna
      * // /docs/reference/google.protobuf#fieldmask
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {
@@ -152,7 +152,7 @@ class PreviewGameServerDeploymentRolloutRequest extends \Google\Protobuf\Interna
      * after the proposed rollout completes.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp preview_time = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getPreviewTime()
     {

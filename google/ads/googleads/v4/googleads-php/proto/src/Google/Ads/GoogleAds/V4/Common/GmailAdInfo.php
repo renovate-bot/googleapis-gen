@@ -109,7 +109,7 @@ class GmailAdInfo extends \Google\Protobuf\Internal\Message
      * The Gmail teaser.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.GmailTeaser teaser = 1;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\GmailTeaser
+     * @return \Google\Ads\GoogleAds\V4\Common\GmailTeaser|null
      */
     public function getTeaser()
     {
@@ -147,7 +147,7 @@ class GmailAdInfo extends \Google\Protobuf\Internal\Message
      * be between 3:1 and 5:1 (+-1%).
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue header_image = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getHeaderImage()
     {
@@ -219,7 +219,7 @@ class GmailAdInfo extends \Google\Protobuf\Internal\Message
      * minimum size of 300x300 pixels and aspect ratio of 1:1 (+-1%)
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue marketing_image = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getMarketingImage()
     {
@@ -291,7 +291,7 @@ class GmailAdInfo extends \Google\Protobuf\Internal\Message
      * Headline of the marketing image.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue marketing_image_headline = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getMarketingImageHeadline()
     {
@@ -354,7 +354,7 @@ class GmailAdInfo extends \Google\Protobuf\Internal\Message
      * Description of the marketing image.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue marketing_image_description = 5;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getMarketingImageDescription()
     {
@@ -417,7 +417,7 @@ class GmailAdInfo extends \Google\Protobuf\Internal\Message
      * Display-call-to-action of the marketing image.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.DisplayCallToAction marketing_image_display_call_to_action = 6;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\DisplayCallToAction
+     * @return \Google\Ads\GoogleAds\V4\Common\DisplayCallToAction|null
      */
     public function getMarketingImageDisplayCallToAction()
     {

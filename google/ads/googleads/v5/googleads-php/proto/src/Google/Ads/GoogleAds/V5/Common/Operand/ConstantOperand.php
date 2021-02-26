@@ -42,7 +42,7 @@ class ConstantOperand extends \Google\Protobuf\Internal\Message
      * String value of the operand if it is a string type.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue string_value = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getStringValue()
     {
@@ -100,7 +100,7 @@ class ConstantOperand extends \Google\Protobuf\Internal\Message
      * Int64 value of the operand if it is a int64 type.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value long_value = 2;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getLongValue()
     {
@@ -158,7 +158,7 @@ class ConstantOperand extends \Google\Protobuf\Internal\Message
      * Boolean value of the operand if it is a boolean type.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue boolean_value = 3;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getBooleanValue()
     {
@@ -216,7 +216,7 @@ class ConstantOperand extends \Google\Protobuf\Internal\Message
      * Double value of the operand if it is a double type.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue double_value = 4;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getDoubleValue()
     {

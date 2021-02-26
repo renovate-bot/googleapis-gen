@@ -121,7 +121,7 @@ class CreateInstructionMetadata extends \Google\Protobuf\Internal\Message
      * Timestamp when create instruction request was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {

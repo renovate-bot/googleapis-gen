@@ -72,6 +72,17 @@ public interface CampaignExperimentOperationOrBuilder extends
    * </pre>
    *
    * <code>string remove = 2;</code>
+   * @return Whether the remove field is set.
+   */
+  boolean hasRemove();
+  /**
+   * <pre>
+   * Remove operation: The campaign experiment is expected to have a valid
+   * resource name, in this format:
+   * `customers/{customer_id}/campaignExperiments/{campaign_experiment_id}`
+   * </pre>
+   *
+   * <code>string remove = 2;</code>
    * @return The remove.
    */
   java.lang.String getRemove();

@@ -124,7 +124,7 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
      * application ID, or a YouTube video ID.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue placement = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPlacement()
     {
@@ -191,7 +191,7 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
      * videos, and translated mobile app name for mobile apps.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue display_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDisplayName()
     {
@@ -258,7 +258,7 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
      * app store, or a YouTube channel URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue group_placement_target_url = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getGroupPlacementTargetUrl()
     {
@@ -325,7 +325,7 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
      * store, or a YouTube video URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue target_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getTargetUrl()
     {

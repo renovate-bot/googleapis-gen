@@ -152,6 +152,16 @@ public interface FeedMappingOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v6.enums.PlaceholderTypeEnum.PlaceholderType placeholder_type = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the placeholderType field is set.
+   */
+  boolean hasPlaceholderType();
+  /**
+   * <pre>
+   * Immutable. The placeholder type of this mapping (i.e., if the mapping maps feed
+   * attributes to placeholder fields).
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v6.enums.PlaceholderTypeEnum.PlaceholderType placeholder_type = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The enum numeric value on the wire for placeholderType.
    */
   int getPlaceholderTypeValue();
@@ -166,6 +176,16 @@ public interface FeedMappingOrBuilder extends
    */
   com.google.ads.googleads.v6.enums.PlaceholderTypeEnum.PlaceholderType getPlaceholderType();
 
+  /**
+   * <pre>
+   * Immutable. The criterion type of this mapping (i.e., if the mapping maps feed
+   * attributes to criterion fields).
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v6.enums.FeedMappingCriterionTypeEnum.FeedMappingCriterionType criterion_type = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the criterionType field is set.
+   */
+  boolean hasCriterionType();
   /**
    * <pre>
    * Immutable. The criterion type of this mapping (i.e., if the mapping maps feed

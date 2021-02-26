@@ -44,7 +44,7 @@ class StoreAttribute extends \Google\Protobuf\Internal\Message
      * https://support.google.com/business/answer/3370250#storecode
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue store_code = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getStoreCode()
     {

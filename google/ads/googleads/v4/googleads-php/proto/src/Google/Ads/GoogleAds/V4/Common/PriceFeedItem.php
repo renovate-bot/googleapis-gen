@@ -135,7 +135,7 @@ class PriceFeedItem extends \Google\Protobuf\Internal\Message
      * Tracking URL template for all offers of this price extension.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getTrackingUrlTemplate()
     {
@@ -198,7 +198,7 @@ class PriceFeedItem extends \Google\Protobuf\Internal\Message
      * The code of the language used for this price extension.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getLanguageCode()
     {
@@ -288,7 +288,7 @@ class PriceFeedItem extends \Google\Protobuf\Internal\Message
      * tracking.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 6;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getFinalUrlSuffix()
     {

@@ -72,7 +72,7 @@ class CallConversionResult extends \Google\Protobuf\Internal\Message
      * in E.164 format with preceding '+' sign.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue caller_id = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCallerId()
     {
@@ -139,7 +139,7 @@ class CallConversionResult extends \Google\Protobuf\Internal\Message
      * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue call_start_date_time = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCallStartDateTime()
     {
@@ -205,7 +205,7 @@ class CallConversionResult extends \Google\Protobuf\Internal\Message
      * Resource name of the conversion action associated with this conversion.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getConversionAction()
     {
@@ -269,7 +269,7 @@ class CallConversionResult extends \Google\Protobuf\Internal\Message
      * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_date_time = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getConversionDateTime()
     {

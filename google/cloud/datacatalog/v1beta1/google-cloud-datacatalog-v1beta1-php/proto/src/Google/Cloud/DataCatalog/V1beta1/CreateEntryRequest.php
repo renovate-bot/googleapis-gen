@@ -122,7 +122,7 @@ class CreateEntryRequest extends \Google\Protobuf\Internal\Message
      * Required. The entry to create.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1beta1.Entry entry = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\DataCatalog\V1beta1\Entry
+     * @return \Google\Cloud\DataCatalog\V1beta1\Entry|null
      */
     public function getEntry()
     {

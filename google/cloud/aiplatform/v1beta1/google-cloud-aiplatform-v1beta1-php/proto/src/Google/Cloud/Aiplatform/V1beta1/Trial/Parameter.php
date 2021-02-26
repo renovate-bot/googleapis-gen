@@ -91,7 +91,7 @@ class Parameter extends \Google\Protobuf\Internal\Message
      * in type 'CATEGORICAL'.
      *
      * Generated from protobuf field <code>.google.protobuf.Value value = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Value
+     * @return \Google\Protobuf\Value|null
      */
     public function getValue()
     {

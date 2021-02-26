@@ -121,7 +121,7 @@ class GeographicView extends \Google\Protobuf\Internal\Message
      * Output only. Criterion Id for the country.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value country_criterion_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCountryCriterionId()
     {

@@ -739,7 +739,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Resource name of the conversion action.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 52;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getConversionAction()
     {
@@ -828,7 +828,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Conversion action name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action_name = 54;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getConversionActionName()
     {
@@ -895,7 +895,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * post-adjustment data.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue conversion_adjustment = 27;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getConversionAdjustment()
     {
@@ -1053,7 +1053,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * yyyy-MM-dd format, e.g., 2018-04-17.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue date = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDate()
     {
@@ -1197,7 +1197,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Resource name of the geo target constant that represents an airport.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_airport = 65;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getGeoTargetAirport()
     {
@@ -1260,7 +1260,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Resource name of the geo target constant that represents a canton.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_canton = 76;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getGeoTargetCanton()
     {
@@ -1323,7 +1323,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Resource name of the geo target constant that represents a city.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_city = 62;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getGeoTargetCity()
     {
@@ -1386,7 +1386,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Resource name of the geo target constant that represents a country.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_country = 77;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getGeoTargetCountry()
     {
@@ -1449,7 +1449,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Resource name of the geo target constant that represents a county.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_county = 68;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getGeoTargetCounty()
     {
@@ -1512,7 +1512,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Resource name of the geo target constant that represents a district.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_district = 69;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getGeoTargetDistrict()
     {
@@ -1575,7 +1575,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Resource name of the geo target constant that represents a metro.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_metro = 63;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getGeoTargetMetro()
     {
@@ -1639,7 +1639,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * specific location.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_most_specific_location = 72;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getGeoTargetMostSpecificLocation()
     {
@@ -1705,7 +1705,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Resource name of the geo target constant that represents a postal code.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_postal_code = 71;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getGeoTargetPostalCode()
     {
@@ -1768,7 +1768,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Resource name of the geo target constant that represents a province.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_province = 75;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getGeoTargetProvince()
     {
@@ -1831,7 +1831,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Resource name of the geo target constant that represents a region.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_region = 64;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getGeoTargetRegion()
     {
@@ -1894,7 +1894,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Resource name of the geo target constant that represents a state.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_state = 67;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getGeoTargetState()
     {
@@ -1957,7 +1957,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Hotel booking window in days.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_booking_window_days = 6;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getHotelBookingWindowDays()
     {
@@ -2020,7 +2020,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Hotel center ID.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_center_id = 7;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getHotelCenterId()
     {
@@ -2083,7 +2083,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Hotel check-in date. Formatted as yyyy-MM-dd.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue hotel_check_in_date = 8;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getHotelCheckInDate()
     {
@@ -2172,7 +2172,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Hotel city.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue hotel_city = 10;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getHotelCity()
     {
@@ -2235,7 +2235,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Hotel class.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value hotel_class = 11;</code>
-     * @return \Google\Protobuf\Int32Value
+     * @return \Google\Protobuf\Int32Value|null
      */
     public function getHotelClass()
     {
@@ -2298,7 +2298,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Hotel country.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue hotel_country = 12;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getHotelCountry()
     {
@@ -2387,7 +2387,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Hotel length of stay.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value hotel_length_of_stay = 14;</code>
-     * @return \Google\Protobuf\Int32Value
+     * @return \Google\Protobuf\Int32Value|null
      */
     public function getHotelLengthOfStay()
     {
@@ -2450,7 +2450,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Hotel rate rule ID.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue hotel_rate_rule_id = 73;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getHotelRateRuleId()
     {
@@ -2565,7 +2565,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Hotel state.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue hotel_state = 15;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getHotelState()
     {
@@ -2628,7 +2628,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Hour of day as a number between 0 and 23, inclusive.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value hour = 16;</code>
-     * @return \Google\Protobuf\Int32Value
+     * @return \Google\Protobuf\Int32Value|null
      */
     public function getHour()
     {
@@ -2693,7 +2693,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * or a different extension or ad unit.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue interaction_on_this_extension = 49;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getInteractionOnThisExtension()
     {
@@ -2762,7 +2762,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Keyword criterion.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.Keyword keyword = 61;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\Keyword
+     * @return \Google\Ads\GoogleAds\V4\Common\Keyword|null
      */
     public function getKeyword()
     {
@@ -2799,7 +2799,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * yyyy-MM-dd.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue month = 17;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getMonth()
     {
@@ -2891,7 +2891,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Partner hotel ID.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue partner_hotel_id = 19;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPartnerHotelId()
     {
@@ -2980,7 +2980,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Aggregator ID of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.UInt64Value product_aggregator_id = 28;</code>
-     * @return \Google\Protobuf\UInt64Value
+     * @return \Google\Protobuf\UInt64Value|null
      */
     public function getProductAggregatorId()
     {
@@ -3043,7 +3043,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Bidding category (level 1) of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_bidding_category_level1 = 56;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getProductBiddingCategoryLevel1()
     {
@@ -3106,7 +3106,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Bidding category (level 2) of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_bidding_category_level2 = 57;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getProductBiddingCategoryLevel2()
     {
@@ -3169,7 +3169,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Bidding category (level 3) of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_bidding_category_level3 = 58;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getProductBiddingCategoryLevel3()
     {
@@ -3232,7 +3232,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Bidding category (level 4) of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_bidding_category_level4 = 59;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getProductBiddingCategoryLevel4()
     {
@@ -3295,7 +3295,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Bidding category (level 5) of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_bidding_category_level5 = 60;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getProductBiddingCategoryLevel5()
     {
@@ -3358,7 +3358,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Brand of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_brand = 29;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getProductBrand()
     {
@@ -3500,7 +3500,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_country = 33;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getProductCountry()
     {
@@ -3566,7 +3566,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Custom attribute 0 of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_custom_attribute0 = 34;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getProductCustomAttribute0()
     {
@@ -3629,7 +3629,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Custom attribute 1 of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_custom_attribute1 = 35;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getProductCustomAttribute1()
     {
@@ -3692,7 +3692,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Custom attribute 2 of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_custom_attribute2 = 36;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getProductCustomAttribute2()
     {
@@ -3755,7 +3755,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Custom attribute 3 of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_custom_attribute3 = 37;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getProductCustomAttribute3()
     {
@@ -3818,7 +3818,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Custom attribute 4 of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_custom_attribute4 = 38;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getProductCustomAttribute4()
     {
@@ -3881,7 +3881,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Item ID of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_item_id = 39;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getProductItemId()
     {
@@ -3944,7 +3944,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Resource name of the language constant for the language of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_language = 40;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getProductLanguage()
     {
@@ -4007,7 +4007,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Merchant ID of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.UInt64Value product_merchant_id = 41;</code>
-     * @return \Google\Protobuf\UInt64Value
+     * @return \Google\Protobuf\UInt64Value|null
      */
     public function getProductMerchantId()
     {
@@ -4070,7 +4070,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Store ID of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_store_id = 42;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getProductStoreId()
     {
@@ -4133,7 +4133,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Title of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_title = 43;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getProductTitle()
     {
@@ -4196,7 +4196,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Type (level 1) of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_type_l1 = 44;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getProductTypeL1()
     {
@@ -4259,7 +4259,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Type (level 2) of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_type_l2 = 45;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getProductTypeL2()
     {
@@ -4322,7 +4322,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Type (level 3) of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_type_l3 = 46;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getProductTypeL3()
     {
@@ -4385,7 +4385,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Type (level 4) of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_type_l4 = 47;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getProductTypeL4()
     {
@@ -4448,7 +4448,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Type (level 5) of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_type_l5 = 48;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getProductTypeL5()
     {
@@ -4513,7 +4513,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * starts on 2018-04-01. Formatted as yyyy-MM-dd.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue quarter = 21;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getQuarter()
     {
@@ -4660,7 +4660,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Resource name of the ad group criterion that represents webpage criterion.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue webpage = 66;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getWebpage()
     {
@@ -4724,7 +4724,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Monday. Formatted as yyyy-MM-dd.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue week = 24;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getWeek()
     {
@@ -4790,7 +4790,7 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Year, formatted as yyyy.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value year = 25;</code>
-     * @return \Google\Protobuf\Int32Value
+     * @return \Google\Protobuf\Int32Value|null
      */
     public function getYear()
     {

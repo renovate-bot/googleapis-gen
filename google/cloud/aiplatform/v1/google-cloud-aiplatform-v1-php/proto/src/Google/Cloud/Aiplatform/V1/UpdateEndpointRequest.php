@@ -53,7 +53,7 @@ class UpdateEndpointRequest extends \Google\Protobuf\Internal\Message
      * Required. The Endpoint which replaces the resource on the server.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.Endpoint endpoint = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Aiplatform\V1\Endpoint
+     * @return \Google\Cloud\Aiplatform\V1\Endpoint|null
      */
     public function getEndpoint()
     {
@@ -91,7 +91,7 @@ class UpdateEndpointRequest extends \Google\Protobuf\Internal\Message
      * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

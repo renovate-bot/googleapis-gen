@@ -75,7 +75,7 @@ class FieldPathElement extends \Google\Protobuf\Internal\Message
      * If field_name is a repeated field, this is the element that failed
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value index = 2;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getIndex()
     {

@@ -256,7 +256,7 @@ class EventTrigger extends \Google\Protobuf\Internal\Message
      * Specifies policy for failed executions.
      *
      * Generated from protobuf field <code>.google.cloud.functions.v1.FailurePolicy failure_policy = 5;</code>
-     * @return \Google\Cloud\Functions\V1\FailurePolicy
+     * @return \Google\Cloud\Functions\V1\FailurePolicy|null
      */
     public function getFailurePolicy()
     {

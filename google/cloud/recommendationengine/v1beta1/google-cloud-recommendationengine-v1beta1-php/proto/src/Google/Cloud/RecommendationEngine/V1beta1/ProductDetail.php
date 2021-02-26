@@ -335,7 +335,7 @@ class ProductDetail extends \Google\Protobuf\Internal\Message
      * Optional. Extra features associated with a product in the user event.
      *
      * Generated from protobuf field <code>.google.cloud.recommendationengine.v1beta1.FeatureMap item_attributes = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\RecommendationEngine\V1beta1\FeatureMap
+     * @return \Google\Cloud\RecommendationEngine\V1beta1\FeatureMap|null
      */
     public function getItemAttributes()
     {

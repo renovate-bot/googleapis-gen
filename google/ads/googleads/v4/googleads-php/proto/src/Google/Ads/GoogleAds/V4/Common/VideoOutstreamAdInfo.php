@@ -50,7 +50,7 @@ class VideoOutstreamAdInfo extends \Google\Protobuf\Internal\Message
      * The headline of the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue headline = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getHeadline()
     {
@@ -113,7 +113,7 @@ class VideoOutstreamAdInfo extends \Google\Protobuf\Internal\Message
      * The description line.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDescription()
     {

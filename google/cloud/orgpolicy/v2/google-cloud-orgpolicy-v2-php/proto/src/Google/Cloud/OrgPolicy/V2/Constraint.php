@@ -218,7 +218,7 @@ class Constraint extends \Google\Protobuf\Internal\Message
      * Defines this constraint as being a ListConstraint.
      *
      * Generated from protobuf field <code>.google.cloud.orgpolicy.v2.Constraint.ListConstraint list_constraint = 5;</code>
-     * @return \Google\Cloud\OrgPolicy\V2\Constraint\ListConstraint
+     * @return \Google\Cloud\OrgPolicy\V2\Constraint\ListConstraint|null
      */
     public function getListConstraint()
     {
@@ -249,7 +249,7 @@ class Constraint extends \Google\Protobuf\Internal\Message
      * Defines this constraint as being a BooleanConstraint.
      *
      * Generated from protobuf field <code>.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint boolean_constraint = 6;</code>
-     * @return \Google\Cloud\OrgPolicy\V2\Constraint\BooleanConstraint
+     * @return \Google\Cloud\OrgPolicy\V2\Constraint\BooleanConstraint|null
      */
     public function getBooleanConstraint()
     {

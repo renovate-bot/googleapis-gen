@@ -422,7 +422,7 @@ class Options extends \Google\Protobuf\Internal\Message
      * Default is empty.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration execution_timeout = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getExecutionTimeout()
     {

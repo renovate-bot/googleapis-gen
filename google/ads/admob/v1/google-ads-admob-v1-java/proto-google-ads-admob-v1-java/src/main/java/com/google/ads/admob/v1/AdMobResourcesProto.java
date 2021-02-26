@@ -3469,6 +3469,15 @@ public final class AdMobResourcesProto {
        * </pre>
        *
        * <code>.google.ads.admob.v1.NetworkReportSpec.Dimension dimension = 1;</code>
+       * @return Whether the dimension field is set.
+       */
+      boolean hasDimension();
+      /**
+       * <pre>
+       * Sort by the specified dimension.
+       * </pre>
+       *
+       * <code>.google.ads.admob.v1.NetworkReportSpec.Dimension dimension = 1;</code>
        * @return The enum numeric value on the wire for dimension.
        */
       int getDimensionValue();
@@ -3482,6 +3491,15 @@ public final class AdMobResourcesProto {
        */
       com.google.ads.admob.v1.AdMobResourcesProto.NetworkReportSpec.Dimension getDimension();
 
+      /**
+       * <pre>
+       * Sort by the specified metric.
+       * </pre>
+       *
+       * <code>.google.ads.admob.v1.NetworkReportSpec.Metric metric = 2;</code>
+       * @return Whether the metric field is set.
+       */
+      boolean hasMetric();
       /**
        * <pre>
        * Sort by the specified metric.
@@ -3670,6 +3688,17 @@ public final class AdMobResourcesProto {
        * </pre>
        *
        * <code>.google.ads.admob.v1.NetworkReportSpec.Dimension dimension = 1;</code>
+       * @return Whether the dimension field is set.
+       */
+      public boolean hasDimension() {
+        return sortOnCase_ == 1;
+      }
+      /**
+       * <pre>
+       * Sort by the specified dimension.
+       * </pre>
+       *
+       * <code>.google.ads.admob.v1.NetworkReportSpec.Dimension dimension = 1;</code>
        * @return The enum numeric value on the wire for dimension.
        */
       public int getDimensionValue() {
@@ -3697,6 +3726,17 @@ public final class AdMobResourcesProto {
       }
 
       public static final int METRIC_FIELD_NUMBER = 2;
+      /**
+       * <pre>
+       * Sort by the specified metric.
+       * </pre>
+       *
+       * <code>.google.ads.admob.v1.NetworkReportSpec.Metric metric = 2;</code>
+       * @return Whether the metric field is set.
+       */
+      public boolean hasMetric() {
+        return sortOnCase_ == 2;
+      }
       /**
        * <pre>
        * Sort by the specified metric.
@@ -4143,6 +4183,18 @@ public final class AdMobResourcesProto {
          * </pre>
          *
          * <code>.google.ads.admob.v1.NetworkReportSpec.Dimension dimension = 1;</code>
+         * @return Whether the dimension field is set.
+         */
+        @java.lang.Override
+        public boolean hasDimension() {
+          return sortOnCase_ == 1;
+        }
+        /**
+         * <pre>
+         * Sort by the specified dimension.
+         * </pre>
+         *
+         * <code>.google.ads.admob.v1.NetworkReportSpec.Dimension dimension = 1;</code>
          * @return The enum numeric value on the wire for dimension.
          */
         @java.lang.Override
@@ -4220,6 +4272,18 @@ public final class AdMobResourcesProto {
           return this;
         }
 
+        /**
+         * <pre>
+         * Sort by the specified metric.
+         * </pre>
+         *
+         * <code>.google.ads.admob.v1.NetworkReportSpec.Metric metric = 2;</code>
+         * @return Whether the metric field is set.
+         */
+        @java.lang.Override
+        public boolean hasMetric() {
+          return sortOnCase_ == 2;
+        }
         /**
          * <pre>
          * Sort by the specified metric.
@@ -9188,6 +9252,15 @@ public final class AdMobResourcesProto {
        * </pre>
        *
        * <code>.google.ads.admob.v1.MediationReportSpec.Dimension dimension = 1;</code>
+       * @return Whether the dimension field is set.
+       */
+      boolean hasDimension();
+      /**
+       * <pre>
+       * Sort by the specified dimension.
+       * </pre>
+       *
+       * <code>.google.ads.admob.v1.MediationReportSpec.Dimension dimension = 1;</code>
        * @return The enum numeric value on the wire for dimension.
        */
       int getDimensionValue();
@@ -9201,6 +9274,15 @@ public final class AdMobResourcesProto {
        */
       com.google.ads.admob.v1.AdMobResourcesProto.MediationReportSpec.Dimension getDimension();
 
+      /**
+       * <pre>
+       * Sort by the specified metric.
+       * </pre>
+       *
+       * <code>.google.ads.admob.v1.MediationReportSpec.Metric metric = 2;</code>
+       * @return Whether the metric field is set.
+       */
+      boolean hasMetric();
       /**
        * <pre>
        * Sort by the specified metric.
@@ -9389,6 +9471,17 @@ public final class AdMobResourcesProto {
        * </pre>
        *
        * <code>.google.ads.admob.v1.MediationReportSpec.Dimension dimension = 1;</code>
+       * @return Whether the dimension field is set.
+       */
+      public boolean hasDimension() {
+        return sortOnCase_ == 1;
+      }
+      /**
+       * <pre>
+       * Sort by the specified dimension.
+       * </pre>
+       *
+       * <code>.google.ads.admob.v1.MediationReportSpec.Dimension dimension = 1;</code>
        * @return The enum numeric value on the wire for dimension.
        */
       public int getDimensionValue() {
@@ -9416,6 +9509,17 @@ public final class AdMobResourcesProto {
       }
 
       public static final int METRIC_FIELD_NUMBER = 2;
+      /**
+       * <pre>
+       * Sort by the specified metric.
+       * </pre>
+       *
+       * <code>.google.ads.admob.v1.MediationReportSpec.Metric metric = 2;</code>
+       * @return Whether the metric field is set.
+       */
+      public boolean hasMetric() {
+        return sortOnCase_ == 2;
+      }
       /**
        * <pre>
        * Sort by the specified metric.
@@ -9862,6 +9966,18 @@ public final class AdMobResourcesProto {
          * </pre>
          *
          * <code>.google.ads.admob.v1.MediationReportSpec.Dimension dimension = 1;</code>
+         * @return Whether the dimension field is set.
+         */
+        @java.lang.Override
+        public boolean hasDimension() {
+          return sortOnCase_ == 1;
+        }
+        /**
+         * <pre>
+         * Sort by the specified dimension.
+         * </pre>
+         *
+         * <code>.google.ads.admob.v1.MediationReportSpec.Dimension dimension = 1;</code>
          * @return The enum numeric value on the wire for dimension.
          */
         @java.lang.Override
@@ -9939,6 +10055,18 @@ public final class AdMobResourcesProto {
           return this;
         }
 
+        /**
+         * <pre>
+         * Sort by the specified metric.
+         * </pre>
+         *
+         * <code>.google.ads.admob.v1.MediationReportSpec.Metric metric = 2;</code>
+         * @return Whether the metric field is set.
+         */
+        @java.lang.Override
+        public boolean hasMetric() {
+          return sortOnCase_ == 2;
+        }
         /**
          * <pre>
          * Sort by the specified metric.
@@ -13880,6 +14008,15 @@ public final class AdMobResourcesProto {
        * </pre>
        *
        * <code>int64 integer_value = 1;</code>
+       * @return Whether the integerValue field is set.
+       */
+      boolean hasIntegerValue();
+      /**
+       * <pre>
+       * Metric integer value.
+       * </pre>
+       *
+       * <code>int64 integer_value = 1;</code>
        * @return The integerValue.
        */
       long getIntegerValue();
@@ -13890,10 +14027,30 @@ public final class AdMobResourcesProto {
        * </pre>
        *
        * <code>double double_value = 2;</code>
+       * @return Whether the doubleValue field is set.
+       */
+      boolean hasDoubleValue();
+      /**
+       * <pre>
+       * Double precision (approximate) decimal values. Rates are from 0 to 1.
+       * </pre>
+       *
+       * <code>double double_value = 2;</code>
        * @return The doubleValue.
        */
       double getDoubleValue();
 
+      /**
+       * <pre>
+       * Amount in micros. One million is equivalent to one unit. Currency value
+       * is in the unit (USD, EUR or other) specified by the request.
+       * For example, $6.50 whould be represented as 6500000 micros.
+       * </pre>
+       *
+       * <code>int64 micros_value = 3;</code>
+       * @return Whether the microsValue field is set.
+       */
+      boolean hasMicrosValue();
       /**
        * <pre>
        * Amount in micros. One million is equivalent to one unit. Currency value
@@ -14054,6 +14211,18 @@ public final class AdMobResourcesProto {
        * </pre>
        *
        * <code>int64 integer_value = 1;</code>
+       * @return Whether the integerValue field is set.
+       */
+      @java.lang.Override
+      public boolean hasIntegerValue() {
+        return valueCase_ == 1;
+      }
+      /**
+       * <pre>
+       * Metric integer value.
+       * </pre>
+       *
+       * <code>int64 integer_value = 1;</code>
        * @return The integerValue.
        */
       @java.lang.Override
@@ -14071,6 +14240,18 @@ public final class AdMobResourcesProto {
        * </pre>
        *
        * <code>double double_value = 2;</code>
+       * @return Whether the doubleValue field is set.
+       */
+      @java.lang.Override
+      public boolean hasDoubleValue() {
+        return valueCase_ == 2;
+      }
+      /**
+       * <pre>
+       * Double precision (approximate) decimal values. Rates are from 0 to 1.
+       * </pre>
+       *
+       * <code>double double_value = 2;</code>
        * @return The doubleValue.
        */
       @java.lang.Override
@@ -14082,6 +14263,20 @@ public final class AdMobResourcesProto {
       }
 
       public static final int MICROS_VALUE_FIELD_NUMBER = 3;
+      /**
+       * <pre>
+       * Amount in micros. One million is equivalent to one unit. Currency value
+       * is in the unit (USD, EUR or other) specified by the request.
+       * For example, $6.50 whould be represented as 6500000 micros.
+       * </pre>
+       *
+       * <code>int64 micros_value = 3;</code>
+       * @return Whether the microsValue field is set.
+       */
+      @java.lang.Override
+      public boolean hasMicrosValue() {
+        return valueCase_ == 3;
+      }
       /**
        * <pre>
        * Amount in micros. One million is equivalent to one unit. Currency value
@@ -14503,6 +14698,17 @@ public final class AdMobResourcesProto {
          * </pre>
          *
          * <code>int64 integer_value = 1;</code>
+         * @return Whether the integerValue field is set.
+         */
+        public boolean hasIntegerValue() {
+          return valueCase_ == 1;
+        }
+        /**
+         * <pre>
+         * Metric integer value.
+         * </pre>
+         *
+         * <code>int64 integer_value = 1;</code>
          * @return The integerValue.
          */
         public long getIntegerValue() {
@@ -14549,6 +14755,17 @@ public final class AdMobResourcesProto {
          * </pre>
          *
          * <code>double double_value = 2;</code>
+         * @return Whether the doubleValue field is set.
+         */
+        public boolean hasDoubleValue() {
+          return valueCase_ == 2;
+        }
+        /**
+         * <pre>
+         * Double precision (approximate) decimal values. Rates are from 0 to 1.
+         * </pre>
+         *
+         * <code>double double_value = 2;</code>
          * @return The doubleValue.
          */
         public double getDoubleValue() {
@@ -14589,6 +14806,19 @@ public final class AdMobResourcesProto {
           return this;
         }
 
+        /**
+         * <pre>
+         * Amount in micros. One million is equivalent to one unit. Currency value
+         * is in the unit (USD, EUR or other) specified by the request.
+         * For example, $6.50 whould be represented as 6500000 micros.
+         * </pre>
+         *
+         * <code>int64 micros_value = 3;</code>
+         * @return Whether the microsValue field is set.
+         */
+        public boolean hasMicrosValue() {
+          return valueCase_ == 3;
+        }
         /**
          * <pre>
          * Amount in micros. One million is equivalent to one unit. Currency value

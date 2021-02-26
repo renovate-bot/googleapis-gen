@@ -58,7 +58,7 @@ class CommandTask extends \Google\Protobuf\Internal\Message
      * The inputs to the task.
      *
      * Generated from protobuf field <code>.google.devtools.remoteworkers.v1test2.CommandTask.Inputs inputs = 1;</code>
-     * @return \Google\Devtools\Remoteworkers\V1test2\CommandTask\Inputs
+     * @return \Google\Devtools\Remoteworkers\V1test2\CommandTask\Inputs|null
      */
     public function getInputs()
     {
@@ -94,7 +94,7 @@ class CommandTask extends \Google\Protobuf\Internal\Message
      * The expected outputs from the task.
      *
      * Generated from protobuf field <code>.google.devtools.remoteworkers.v1test2.CommandTask.Outputs expected_outputs = 4;</code>
-     * @return \Google\Devtools\Remoteworkers\V1test2\CommandTask\Outputs
+     * @return \Google\Devtools\Remoteworkers\V1test2\CommandTask\Outputs|null
      */
     public function getExpectedOutputs()
     {
@@ -130,7 +130,7 @@ class CommandTask extends \Google\Protobuf\Internal\Message
      * The timeouts of this task.
      *
      * Generated from protobuf field <code>.google.devtools.remoteworkers.v1test2.CommandTask.Timeouts timeouts = 5;</code>
-     * @return \Google\Devtools\Remoteworkers\V1test2\CommandTask\Timeouts
+     * @return \Google\Devtools\Remoteworkers\V1test2\CommandTask\Timeouts|null
      */
     public function getTimeouts()
     {

@@ -234,7 +234,7 @@ class ListDataLabelingJobsRequest extends \Google\Protobuf\Internal\Message
      * If this field is not set, all fields of the DataLabelingJob are returned.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask read_mask = 5;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getReadMask()
     {

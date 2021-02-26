@@ -124,7 +124,7 @@ class BillingSettings extends \Google\Protobuf\Internal\Message
      * Can be compared to expire_time value to determine full contract duration
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartTime()
     {
@@ -163,7 +163,7 @@ class BillingSettings extends \Google\Protobuf\Internal\Message
      * indication of a point in the _past_ when a PREMIUM access ended.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp expire_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getExpireTime()
     {

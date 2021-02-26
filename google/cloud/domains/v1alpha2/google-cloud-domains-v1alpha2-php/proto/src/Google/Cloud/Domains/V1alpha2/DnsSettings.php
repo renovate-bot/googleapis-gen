@@ -48,7 +48,7 @@ class DnsSettings extends \Google\Protobuf\Internal\Message
      * An arbitrary DNS provider identified by its name servers.
      *
      * Generated from protobuf field <code>.google.cloud.domains.v1alpha2.DnsSettings.CustomDns custom_dns = 1;</code>
-     * @return \Google\Cloud\Domains\V1alpha2\DnsSettings\CustomDns
+     * @return \Google\Cloud\Domains\V1alpha2\DnsSettings\CustomDns|null
      */
     public function getCustomDns()
     {
@@ -80,7 +80,7 @@ class DnsSettings extends \Google\Protobuf\Internal\Message
      * [Google Domains](https://domains.google/).
      *
      * Generated from protobuf field <code>.google.cloud.domains.v1alpha2.DnsSettings.GoogleDomainsDns google_domains_dns = 2;</code>
-     * @return \Google\Cloud\Domains\V1alpha2\DnsSettings\GoogleDomainsDns
+     * @return \Google\Cloud\Domains\V1alpha2\DnsSettings\GoogleDomainsDns|null
      */
     public function getGoogleDomainsDns()
     {

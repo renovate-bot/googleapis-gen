@@ -59,7 +59,7 @@ class ReportStateAndNotificationDevice extends \Google\Protobuf\Internal\Message
      * guides](https://developers.google.com/assistant/smarthome/traits).
      *
      * Generated from protobuf field <code>.google.protobuf.Struct states = 1;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getStates()
     {
@@ -99,7 +99,7 @@ class ReportStateAndNotificationDevice extends \Google\Protobuf\Internal\Message
      * guides](https://developers.google.com/assistant/smarthome/traits).
      *
      * Generated from protobuf field <code>.google.protobuf.Struct notifications = 2;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getNotifications()
     {

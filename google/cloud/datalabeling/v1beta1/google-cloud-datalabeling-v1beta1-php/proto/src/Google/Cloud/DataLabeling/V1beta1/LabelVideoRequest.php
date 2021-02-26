@@ -78,7 +78,7 @@ class LabelVideoRequest extends \Google\Protobuf\Internal\Message
      * object_tracking_config and event_config is required.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.VideoClassificationConfig video_classification_config = 4;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\VideoClassificationConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\VideoClassificationConfig|null
      */
     public function getVideoClassificationConfig()
     {
@@ -113,7 +113,7 @@ class LabelVideoRequest extends \Google\Protobuf\Internal\Message
      * object_tracking_config and event_config is required.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig object_detection_config = 5;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\ObjectDetectionConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\ObjectDetectionConfig|null
      */
     public function getObjectDetectionConfig()
     {
@@ -148,7 +148,7 @@ class LabelVideoRequest extends \Google\Protobuf\Internal\Message
      * object_tracking_config and event_config is required.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig object_tracking_config = 6;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\ObjectTrackingConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\ObjectTrackingConfig|null
      */
     public function getObjectTrackingConfig()
     {
@@ -183,7 +183,7 @@ class LabelVideoRequest extends \Google\Protobuf\Internal\Message
      * object_tracking_config and event_config is required.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.EventConfig event_config = 7;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\EventConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\EventConfig|null
      */
     public function getEventConfig()
     {
@@ -244,7 +244,7 @@ class LabelVideoRequest extends \Google\Protobuf\Internal\Message
      * Required. Basic human annotation config.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\HumanAnnotationConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\HumanAnnotationConfig|null
      */
     public function getBasicConfig()
     {

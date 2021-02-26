@@ -94,7 +94,7 @@ class WindowsUpdate extends \Google\Protobuf\Internal\Message
      * Required - The unique identifier for the update.
      *
      * Generated from protobuf field <code>.grafeas.v1.WindowsUpdate.Identity identity = 1;</code>
-     * @return \Grafeas\V1\WindowsUpdate\Identity
+     * @return \Grafeas\V1\WindowsUpdate\Identity|null
      */
     public function getIdentity()
     {
@@ -262,7 +262,7 @@ class WindowsUpdate extends \Google\Protobuf\Internal\Message
      * The last published timestamp of the update.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp last_published_timestamp = 7;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getLastPublishedTimestamp()
     {

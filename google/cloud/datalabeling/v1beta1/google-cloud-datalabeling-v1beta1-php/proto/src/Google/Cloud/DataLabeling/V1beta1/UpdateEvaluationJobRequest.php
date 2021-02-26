@@ -61,7 +61,7 @@ class UpdateEvaluationJobRequest extends \Google\Protobuf\Internal\Message
      * Required. Evaluation job that is going to be updated.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_job = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\EvaluationJob
+     * @return \Google\Cloud\DataLabeling\V1beta1\EvaluationJob|null
      */
     public function getEvaluationJob()
     {
@@ -103,7 +103,7 @@ class UpdateEvaluationJobRequest extends \Google\Protobuf\Internal\Message
      * commas.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

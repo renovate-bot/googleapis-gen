@@ -282,7 +282,7 @@ class ServiceAccountKey extends \Google\Protobuf\Internal\Message
      * The key can be used after this timestamp.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp valid_after_time = 4;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getValidAfterTime()
     {
@@ -321,7 +321,7 @@ class ServiceAccountKey extends \Google\Protobuf\Internal\Message
      * for verification for a few hours after this time.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp valid_before_time = 5;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getValidBeforeTime()
     {

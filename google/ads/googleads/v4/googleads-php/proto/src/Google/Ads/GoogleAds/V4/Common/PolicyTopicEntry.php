@@ -84,7 +84,7 @@ class PolicyTopicEntry extends \Google\Protobuf\Internal\Message
      * at any time.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue topic = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getTopic()
     {

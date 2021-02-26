@@ -53,7 +53,7 @@ class OnTargetAudienceMetrics extends \Google\Protobuf\Internal\Message
      * Reference audience size matching the considered targeting for YouTube.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value youtube_audience_size = 1;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getYoutubeAudienceSize()
     {
@@ -116,7 +116,7 @@ class OnTargetAudienceMetrics extends \Google\Protobuf\Internal\Message
      * Reference audience size matching the considered targeting for Census.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value census_audience_size = 2;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCensusAudienceSize()
     {

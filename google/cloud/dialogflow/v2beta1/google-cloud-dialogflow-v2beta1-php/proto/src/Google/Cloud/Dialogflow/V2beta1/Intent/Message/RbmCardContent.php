@@ -128,7 +128,7 @@ class RbmCardContent extends \Google\Protobuf\Internal\Message
      * be set. Media (image, GIF or a video) to include in the card.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.Intent.Message.RbmCardContent.RbmMedia media = 3;</code>
-     * @return \Google\Cloud\Dialogflow\V2beta1\Intent\Message\RbmCardContent\RbmMedia
+     * @return \Google\Cloud\Dialogflow\V2beta1\Intent\Message\RbmCardContent\RbmMedia|null
      */
     public function getMedia()
     {

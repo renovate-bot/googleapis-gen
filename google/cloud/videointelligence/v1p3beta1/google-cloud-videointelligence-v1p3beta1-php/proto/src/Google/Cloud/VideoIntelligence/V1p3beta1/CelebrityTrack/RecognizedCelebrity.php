@@ -49,7 +49,7 @@ class RecognizedCelebrity extends \Google\Protobuf\Internal\Message
      * The recognized celebrity.
      *
      * Generated from protobuf field <code>.google.cloud.videointelligence.v1p3beta1.Celebrity celebrity = 1;</code>
-     * @return \Google\Cloud\VideoIntelligence\V1p3beta1\Celebrity
+     * @return \Google\Cloud\VideoIntelligence\V1p3beta1\Celebrity|null
      */
     public function getCelebrity()
     {

@@ -61,7 +61,7 @@ class IamPolicyAnalysis extends \Google\Protobuf\Internal\Message
      * The analysis query.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1p4beta1.IamPolicyAnalysisQuery analysis_query = 1;</code>
-     * @return \Google\Cloud\Asset\V1p4beta1\IamPolicyAnalysisQuery
+     * @return \Google\Cloud\Asset\V1p4beta1\IamPolicyAnalysisQuery|null
      */
     public function getAnalysisQuery()
     {

@@ -48,7 +48,7 @@ class AttestationNote extends \Google\Protobuf\Internal\Message
      * Hint hints at the purpose of the attestation authority.
      *
      * Generated from protobuf field <code>.grafeas.v1.AttestationNote.Hint hint = 1;</code>
-     * @return \Grafeas\V1\AttestationNote\Hint
+     * @return \Grafeas\V1\AttestationNote\Hint|null
      */
     public function getHint()
     {

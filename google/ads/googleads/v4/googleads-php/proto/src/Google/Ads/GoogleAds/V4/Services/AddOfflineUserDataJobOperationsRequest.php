@@ -84,7 +84,7 @@ class AddOfflineUserDataJobOperationsRequest extends \Google\Protobuf\Internal\M
      * True to enable partial failure for the offline user data job.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue enable_partial_failure = 2;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getEnablePartialFailure()
     {

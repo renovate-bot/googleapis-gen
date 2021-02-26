@@ -97,7 +97,7 @@ class GenerateKeywordIdeaResult extends \Google\Protobuf\Internal\Message
      * The historical metrics for the keyword
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.KeywordPlanHistoricalMetrics keyword_idea_metrics = 3;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\KeywordPlanHistoricalMetrics
+     * @return \Google\Ads\GoogleAds\V6\Common\KeywordPlanHistoricalMetrics|null
      */
     public function getKeywordIdeaMetrics()
     {

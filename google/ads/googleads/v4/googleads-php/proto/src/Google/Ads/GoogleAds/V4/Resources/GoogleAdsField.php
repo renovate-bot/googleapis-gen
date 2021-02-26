@@ -221,7 +221,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      * Output only. The name of the artifact.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {
@@ -311,7 +311,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      * queries.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue selectable = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getSelectable()
     {
@@ -378,7 +378,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      * queries.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue filterable = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getFilterable()
     {
@@ -445,7 +445,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      * queries.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue sortable = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getSortable()
     {
@@ -703,7 +703,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      * Output only. The URL of proto describing the artifact's data type.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue type_url = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getTypeUrl()
     {
@@ -766,7 +766,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      * Output only. Whether the field artifact is repeated.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue is_repeated = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getIsRepeated()
     {

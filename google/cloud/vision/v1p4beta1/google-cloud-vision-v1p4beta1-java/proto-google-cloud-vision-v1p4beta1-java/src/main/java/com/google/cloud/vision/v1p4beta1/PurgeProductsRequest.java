@@ -207,6 +207,19 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool delete_orphan_products = 3;</code>
+   * @return Whether the deleteOrphanProducts field is set.
+   */
+  @java.lang.Override
+  public boolean hasDeleteOrphanProducts() {
+    return targetCase_ == 3;
+  }
+  /**
+   * <pre>
+   * If delete_orphan_products is true, all Products that are not in any
+   * ProductSet will be deleted.
+   * </pre>
+   *
+   * <code>bool delete_orphan_products = 3;</code>
    * @return The deleteOrphanProducts.
    */
   @java.lang.Override
@@ -865,6 +878,18 @@ private static final long serialVersionUID = 0L;
       return productSetPurgeConfigBuilder_;
     }
 
+    /**
+     * <pre>
+     * If delete_orphan_products is true, all Products that are not in any
+     * ProductSet will be deleted.
+     * </pre>
+     *
+     * <code>bool delete_orphan_products = 3;</code>
+     * @return Whether the deleteOrphanProducts field is set.
+     */
+    public boolean hasDeleteOrphanProducts() {
+      return targetCase_ == 3;
+    }
     /**
      * <pre>
      * If delete_orphan_products is true, all Products that are not in any

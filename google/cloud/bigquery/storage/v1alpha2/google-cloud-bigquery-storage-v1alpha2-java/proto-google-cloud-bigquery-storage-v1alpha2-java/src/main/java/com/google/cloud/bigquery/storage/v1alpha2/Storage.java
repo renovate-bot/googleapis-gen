@@ -3198,6 +3198,15 @@ public final class Storage {
      * </pre>
      *
      * <code>int64 offset = 1;</code>
+     * @return Whether the offset field is set.
+     */
+    boolean hasOffset();
+    /**
+     * <pre>
+     * The row offset at which the last append occurred.
+     * </pre>
+     *
+     * <code>int64 offset = 1;</code>
      * @return The offset.
      */
     long getOffset();
@@ -3422,6 +3431,18 @@ public final class Storage {
     }
 
     public static final int OFFSET_FIELD_NUMBER = 1;
+    /**
+     * <pre>
+     * The row offset at which the last append occurred.
+     * </pre>
+     *
+     * <code>int64 offset = 1;</code>
+     * @return Whether the offset field is set.
+     */
+    @java.lang.Override
+    public boolean hasOffset() {
+      return responseCase_ == 1;
+    }
     /**
      * <pre>
      * The row offset at which the last append occurred.
@@ -3930,6 +3951,17 @@ public final class Storage {
       }
 
 
+      /**
+       * <pre>
+       * The row offset at which the last append occurred.
+       * </pre>
+       *
+       * <code>int64 offset = 1;</code>
+       * @return Whether the offset field is set.
+       */
+      public boolean hasOffset() {
+        return responseCase_ == 1;
+      }
       /**
        * <pre>
        * The row offset at which the last append occurred.

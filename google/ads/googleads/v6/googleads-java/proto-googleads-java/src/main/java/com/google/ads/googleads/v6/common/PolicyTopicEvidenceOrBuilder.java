@@ -68,6 +68,16 @@ public interface PolicyTopicEvidenceOrBuilder extends
    * </pre>
    *
    * <code>string language_code = 9;</code>
+   * @return Whether the languageCode field is set.
+   */
+  boolean hasLanguageCode();
+  /**
+   * <pre>
+   * The language the resource was detected to be written in.
+   * This is an IETF language tag such as "en-US".
+   * </pre>
+   *
+   * <code>string language_code = 9;</code>
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();

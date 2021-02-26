@@ -41,7 +41,7 @@ class QueryRequestInput extends \Google\Protobuf\Internal\Message
      * Payload containing third-party device IDs.
      *
      * Generated from protobuf field <code>.google.home.graph.v1.QueryRequestPayload payload = 1;</code>
-     * @return \Google\Home\Graph\V1\QueryRequestPayload
+     * @return \Google\Home\Graph\V1\QueryRequestPayload|null
      */
     public function getPayload()
     {

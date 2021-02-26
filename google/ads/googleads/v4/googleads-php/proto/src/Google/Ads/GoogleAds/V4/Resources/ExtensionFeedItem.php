@@ -198,7 +198,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * Output only. The ID of this feed item. Read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -292,7 +292,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue start_date_time = 5;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getStartDateTime()
     {
@@ -367,7 +367,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue end_date_time = 6;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getEndDateTime()
     {
@@ -495,7 +495,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * The targeted geo target constant.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue targeted_geo_target_constant = 20 [(.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getTargetedGeoTargetConstant()
     {
@@ -558,7 +558,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * The targeted keyword.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.KeywordInfo targeted_keyword = 22;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\KeywordInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\KeywordInfo|null
      */
     public function getTargetedKeyword()
     {
@@ -622,7 +622,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * Sitelink extension.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.SitelinkFeedItem sitelink_feed_item = 2;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\SitelinkFeedItem
+     * @return \Google\Ads\GoogleAds\V4\Common\SitelinkFeedItem|null
      */
     public function getSitelinkFeedItem()
     {
@@ -653,7 +653,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * Structured snippet extension.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.StructuredSnippetFeedItem structured_snippet_feed_item = 3;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\StructuredSnippetFeedItem
+     * @return \Google\Ads\GoogleAds\V4\Common\StructuredSnippetFeedItem|null
      */
     public function getStructuredSnippetFeedItem()
     {
@@ -684,7 +684,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * App extension.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.AppFeedItem app_feed_item = 7;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\AppFeedItem
+     * @return \Google\Ads\GoogleAds\V4\Common\AppFeedItem|null
      */
     public function getAppFeedItem()
     {
@@ -715,7 +715,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * Call extension.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.CallFeedItem call_feed_item = 8;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\CallFeedItem
+     * @return \Google\Ads\GoogleAds\V4\Common\CallFeedItem|null
      */
     public function getCallFeedItem()
     {
@@ -746,7 +746,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * Callout extension.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.CalloutFeedItem callout_feed_item = 9;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\CalloutFeedItem
+     * @return \Google\Ads\GoogleAds\V4\Common\CalloutFeedItem|null
      */
     public function getCalloutFeedItem()
     {
@@ -777,7 +777,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * Text message extension.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.TextMessageFeedItem text_message_feed_item = 10;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\TextMessageFeedItem
+     * @return \Google\Ads\GoogleAds\V4\Common\TextMessageFeedItem|null
      */
     public function getTextMessageFeedItem()
     {
@@ -808,7 +808,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * Price extension.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.PriceFeedItem price_feed_item = 11;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\PriceFeedItem
+     * @return \Google\Ads\GoogleAds\V4\Common\PriceFeedItem|null
      */
     public function getPriceFeedItem()
     {
@@ -839,7 +839,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * Promotion extension.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.PromotionFeedItem promotion_feed_item = 12;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\PromotionFeedItem
+     * @return \Google\Ads\GoogleAds\V4\Common\PromotionFeedItem|null
      */
     public function getPromotionFeedItem()
     {
@@ -871,7 +871,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.LocationFeedItem location_feed_item = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\LocationFeedItem
+     * @return \Google\Ads\GoogleAds\V4\Common\LocationFeedItem|null
      */
     public function getLocationFeedItem()
     {
@@ -905,7 +905,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.AffiliateLocationFeedItem affiliate_location_feed_item = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\AffiliateLocationFeedItem
+     * @return \Google\Ads\GoogleAds\V4\Common\AffiliateLocationFeedItem|null
      */
     public function getAffiliateLocationFeedItem()
     {
@@ -938,7 +938,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * Hotel Callout extension.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.HotelCalloutFeedItem hotel_callout_feed_item = 23;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\HotelCalloutFeedItem
+     * @return \Google\Ads\GoogleAds\V4\Common\HotelCalloutFeedItem|null
      */
     public function getHotelCalloutFeedItem()
     {
@@ -969,7 +969,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * The targeted campaign.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue targeted_campaign = 18 [(.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getTargetedCampaign()
     {
@@ -1027,7 +1027,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * The targeted ad group.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue targeted_ad_group = 19 [(.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getTargetedAdGroup()
     {

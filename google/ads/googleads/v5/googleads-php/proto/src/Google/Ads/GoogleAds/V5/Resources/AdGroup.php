@@ -887,7 +887,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * Settings for the Display Campaign Optimizer, initially termed "Explorer".
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.ExplorerAutoOptimizerSetting explorer_auto_optimizer_setting = 21;</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\ExplorerAutoOptimizerSetting
+     * @return \Google\Ads\GoogleAds\V5\Common\ExplorerAutoOptimizerSetting|null
      */
     public function getExplorerAutoOptimizerSetting()
     {
@@ -989,7 +989,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * Setting for targeting related features.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.TargetingSetting targeting_setting = 25;</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\TargetingSetting
+     * @return \Google\Ads\GoogleAds\V5\Common\TargetingSetting|null
      */
     public function getTargetingSetting()
     {

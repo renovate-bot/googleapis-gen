@@ -62,7 +62,7 @@ class UpdateBudgetRequest extends \Google\Protobuf\Internal\Message
      * The budget to update is specified by the budget name in the budget.
      *
      * Generated from protobuf field <code>.google.cloud.billing.budgets.v1beta1.Budget budget = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Billing\Budgets\V1beta1\Budget
+     * @return \Google\Cloud\Billing\Budgets\V1beta1\Budget|null
      */
     public function getBudget()
     {
@@ -104,7 +104,7 @@ class UpdateBudgetRequest extends \Google\Protobuf\Internal\Message
      * details about default values.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

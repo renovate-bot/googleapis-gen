@@ -201,6 +201,19 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes row_key_prefix = 2;</code>
+   * @return Whether the rowKeyPrefix field is set.
+   */
+  @java.lang.Override
+  public boolean hasRowKeyPrefix() {
+    return targetCase_ == 2;
+  }
+  /**
+   * <pre>
+   * Delete all rows that start with this row key prefix. Prefix cannot be
+   * zero length.
+   * </pre>
+   *
+   * <code>bytes row_key_prefix = 2;</code>
    * @return The rowKeyPrefix.
    */
   @java.lang.Override
@@ -212,6 +225,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DELETE_ALL_DATA_FROM_TABLE_FIELD_NUMBER = 3;
+  /**
+   * <pre>
+   * Delete all rows in the table. Setting this to false is a no-op.
+   * </pre>
+   *
+   * <code>bool delete_all_data_from_table = 3;</code>
+   * @return Whether the deleteAllDataFromTable field is set.
+   */
+  @java.lang.Override
+  public boolean hasDeleteAllDataFromTable() {
+    return targetCase_ == 3;
+  }
   /**
    * <pre>
    * Delete all rows in the table. Setting this to false is a no-op.
@@ -729,6 +754,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes row_key_prefix = 2;</code>
+     * @return Whether the rowKeyPrefix field is set.
+     */
+    public boolean hasRowKeyPrefix() {
+      return targetCase_ == 2;
+    }
+    /**
+     * <pre>
+     * Delete all rows that start with this row key prefix. Prefix cannot be
+     * zero length.
+     * </pre>
+     *
+     * <code>bytes row_key_prefix = 2;</code>
      * @return The rowKeyPrefix.
      */
     public com.google.protobuf.ByteString getRowKeyPrefix() {
@@ -774,6 +811,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Delete all rows in the table. Setting this to false is a no-op.
+     * </pre>
+     *
+     * <code>bool delete_all_data_from_table = 3;</code>
+     * @return Whether the deleteAllDataFromTable field is set.
+     */
+    public boolean hasDeleteAllDataFromTable() {
+      return targetCase_ == 3;
+    }
     /**
      * <pre>
      * Delete all rows in the table. Setting this to false is a no-op.

@@ -76,7 +76,7 @@ class CelebrityTrack extends \Google\Protobuf\Internal\Message
      * A track of a person's face.
      *
      * Generated from protobuf field <code>.google.cloud.videointelligence.v1p3beta1.Track face_track = 3;</code>
-     * @return \Google\Cloud\VideoIntelligence\V1p3beta1\Track
+     * @return \Google\Cloud\VideoIntelligence\V1p3beta1\Track|null
      */
     public function getFaceTrack()
     {

@@ -89,7 +89,7 @@ class Image extends \Google\Protobuf\Internal\Message
      * used to perform the image annotation request.
      *
      * Generated from protobuf field <code>.google.cloud.vision.v1p1beta1.ImageSource source = 2;</code>
-     * @return \Google\Cloud\Vision\V1p1beta1\ImageSource
+     * @return \Google\Cloud\Vision\V1p1beta1\ImageSource|null
      */
     public function getSource()
     {

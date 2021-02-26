@@ -41,7 +41,7 @@ class ObjectDetectionMetrics extends \Google\Protobuf\Internal\Message
      * Precision-recall curve.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\PrCurve
+     * @return \Google\Cloud\DataLabeling\V1beta1\PrCurve|null
      */
     public function getPrCurve()
     {

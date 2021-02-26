@@ -3817,6 +3817,15 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v4.enums.PolicyTopicEvidenceDestinationNotWorkingDnsErrorTypeEnum.PolicyTopicEvidenceDestinationNotWorkingDnsErrorType dns_error_type = 1;</code>
+     * @return Whether the dnsErrorType field is set.
+     */
+    boolean hasDnsErrorType();
+    /**
+     * <pre>
+     * The type of DNS error.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.PolicyTopicEvidenceDestinationNotWorkingDnsErrorTypeEnum.PolicyTopicEvidenceDestinationNotWorkingDnsErrorType dns_error_type = 1;</code>
      * @return The enum numeric value on the wire for dnsErrorType.
      */
     int getDnsErrorTypeValue();
@@ -4145,6 +4154,17 @@ private static final long serialVersionUID = 0L;
     }
 
     public static final int DNS_ERROR_TYPE_FIELD_NUMBER = 1;
+    /**
+     * <pre>
+     * The type of DNS error.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.PolicyTopicEvidenceDestinationNotWorkingDnsErrorTypeEnum.PolicyTopicEvidenceDestinationNotWorkingDnsErrorType dns_error_type = 1;</code>
+     * @return Whether the dnsErrorType field is set.
+     */
+    public boolean hasDnsErrorType() {
+      return reasonCase_ == 1;
+    }
     /**
      * <pre>
      * The type of DNS error.
@@ -5068,6 +5088,18 @@ private static final long serialVersionUID = 0L;
         return lastCheckedDateTimeBuilder_;
       }
 
+      /**
+       * <pre>
+       * The type of DNS error.
+       * </pre>
+       *
+       * <code>.google.ads.googleads.v4.enums.PolicyTopicEvidenceDestinationNotWorkingDnsErrorTypeEnum.PolicyTopicEvidenceDestinationNotWorkingDnsErrorType dns_error_type = 1;</code>
+       * @return Whether the dnsErrorType field is set.
+       */
+      @java.lang.Override
+      public boolean hasDnsErrorType() {
+        return reasonCase_ == 1;
+      }
       /**
        * <pre>
        * The type of DNS error.

@@ -44,7 +44,7 @@ class BillingSetupOperation extends \Google\Protobuf\Internal\Message
      * setup.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.resources.BillingSetup create = 2;</code>
-     * @return \Google\Ads\GoogleAds\V5\Resources\BillingSetup
+     * @return \Google\Ads\GoogleAds\V5\Resources\BillingSetup|null
      */
     public function getCreate()
     {

@@ -41,7 +41,7 @@ class AdVideoAsset extends \Google\Protobuf\Internal\Message
      * The Asset resource name of this video.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue asset = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAsset()
     {

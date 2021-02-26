@@ -87,7 +87,7 @@ class UpdateOccurrenceRequest extends \Google\Protobuf\Internal\Message
      * The updated occurrence.
      *
      * Generated from protobuf field <code>.grafeas.v1.Occurrence occurrence = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Grafeas\V1\Occurrence
+     * @return \Grafeas\V1\Occurrence|null
      */
     public function getOccurrence()
     {
@@ -123,7 +123,7 @@ class UpdateOccurrenceRequest extends \Google\Protobuf\Internal\Message
      * The fields to update.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 3;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

@@ -112,7 +112,7 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      * are not selectable.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Feed.PlacesLocationFeedData.OAuthInfo oauth_info = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Feed\PlacesLocationFeedData\OAuthInfo
+     * @return \Google\Ads\GoogleAds\V4\Resources\Feed\PlacesLocationFeedData\OAuthInfo|null
      */
     public function getOauthInfo()
     {
@@ -151,7 +151,7 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      * manager of the Google My Business account. Required.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue email_address = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getEmailAddress()
     {
@@ -220,7 +220,7 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      * This field is mutate-only and is not selectable.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue business_account_id = 10;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getBusinessAccountId()
     {
@@ -294,7 +294,7 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      * are candidates to be sync'd into FeedItems.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue business_name_filter = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getBusinessNameFilter()
     {

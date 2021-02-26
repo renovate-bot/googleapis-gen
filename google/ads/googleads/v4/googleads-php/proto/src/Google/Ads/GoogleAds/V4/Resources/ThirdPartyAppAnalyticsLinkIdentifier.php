@@ -92,7 +92,7 @@ class ThirdPartyAppAnalyticsLinkIdentifier extends \Google\Protobuf\Internal\Mes
      * the link.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value app_analytics_provider_id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getAppAnalyticsProviderId()
     {
@@ -174,7 +174,7 @@ class ThirdPartyAppAnalyticsLinkIdentifier extends \Google\Protobuf\Internal\Mes
      * the link.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAppId()
     {

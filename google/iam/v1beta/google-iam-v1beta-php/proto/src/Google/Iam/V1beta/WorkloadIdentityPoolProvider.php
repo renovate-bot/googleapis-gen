@@ -588,7 +588,7 @@ class WorkloadIdentityPoolProvider extends \Google\Protobuf\Internal\Message
      * An Amazon Web Services identity provider.
      *
      * Generated from protobuf field <code>.google.iam.v1beta.WorkloadIdentityPoolProvider.Aws aws = 8;</code>
-     * @return \Google\Iam\V1beta\WorkloadIdentityPoolProvider\Aws
+     * @return \Google\Iam\V1beta\WorkloadIdentityPoolProvider\Aws|null
      */
     public function getAws()
     {
@@ -619,7 +619,7 @@ class WorkloadIdentityPoolProvider extends \Google\Protobuf\Internal\Message
      * An OpenId Connect 1.0 identity provider.
      *
      * Generated from protobuf field <code>.google.iam.v1beta.WorkloadIdentityPoolProvider.Oidc oidc = 9;</code>
-     * @return \Google\Iam\V1beta\WorkloadIdentityPoolProvider\Oidc
+     * @return \Google\Iam\V1beta\WorkloadIdentityPoolProvider\Oidc|null
      */
     public function getOidc()
     {

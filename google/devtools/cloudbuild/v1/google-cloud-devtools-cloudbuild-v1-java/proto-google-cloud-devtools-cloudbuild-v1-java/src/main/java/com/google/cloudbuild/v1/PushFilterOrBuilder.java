@@ -15,6 +15,17 @@ public interface PushFilterOrBuilder extends
    * </pre>
    *
    * <code>string branch = 2;</code>
+   * @return Whether the branch field is set.
+   */
+  boolean hasBranch();
+  /**
+   * <pre>
+   * Regexes matching branches to build.
+   * The syntax of the regular expressions accepted is the syntax accepted by
+   * RE2 and described at https://github.com/google/re2/wiki/Syntax
+   * </pre>
+   *
+   * <code>string branch = 2;</code>
    * @return The branch.
    */
   java.lang.String getBranch();
@@ -31,6 +42,17 @@ public interface PushFilterOrBuilder extends
   com.google.protobuf.ByteString
       getBranchBytes();
 
+  /**
+   * <pre>
+   * Regexes matching tags to build.
+   * The syntax of the regular expressions accepted is the syntax accepted by
+   * RE2 and described at https://github.com/google/re2/wiki/Syntax
+   * </pre>
+   *
+   * <code>string tag = 3;</code>
+   * @return Whether the tag field is set.
+   */
+  boolean hasTag();
   /**
    * <pre>
    * Regexes matching tags to build.

@@ -125,6 +125,15 @@ public interface FeedItemTargetOrBuilder extends
    * </pre>
    *
    * <code>string campaign = 14 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
+   * @return Whether the campaign field is set.
+   */
+  boolean hasCampaign();
+  /**
+   * <pre>
+   * Immutable. The targeted campaign.
+   * </pre>
+   *
+   * <code>string campaign = 14 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
    * @return The campaign.
    */
   java.lang.String getCampaign();
@@ -139,6 +148,15 @@ public interface FeedItemTargetOrBuilder extends
   com.google.protobuf.ByteString
       getCampaignBytes();
 
+  /**
+   * <pre>
+   * Immutable. The targeted ad group.
+   * </pre>
+   *
+   * <code>string ad_group = 15 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
+   * @return Whether the adGroup field is set.
+   */
+  boolean hasAdGroup();
   /**
    * <pre>
    * Immutable. The targeted ad group.
@@ -192,6 +210,15 @@ public interface FeedItemTargetOrBuilder extends
    * </pre>
    *
    * <code>string geo_target_constant = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
+   * @return Whether the geoTargetConstant field is set.
+   */
+  boolean hasGeoTargetConstant();
+  /**
+   * <pre>
+   * Immutable. The targeted geo target constant resource name.
+   * </pre>
+   *
+   * <code>string geo_target_constant = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
    * @return The geoTargetConstant.
    */
   java.lang.String getGeoTargetConstant();
@@ -206,6 +233,15 @@ public interface FeedItemTargetOrBuilder extends
   com.google.protobuf.ByteString
       getGeoTargetConstantBytes();
 
+  /**
+   * <pre>
+   * Immutable. The targeted device.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v6.enums.FeedItemTargetDeviceEnum.FeedItemTargetDevice device = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the device field is set.
+   */
+  boolean hasDevice();
   /**
    * <pre>
    * Immutable. The targeted device.

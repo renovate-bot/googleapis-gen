@@ -105,7 +105,7 @@ class KeywordPlan extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the keyword plan.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -170,7 +170,7 @@ class KeywordPlan extends \Google\Protobuf\Internal\Message
      * plans.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {
@@ -239,7 +239,7 @@ class KeywordPlan extends \Google\Protobuf\Internal\Message
      * The date period used for forecasting the plan.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.resources.KeywordPlanForecastPeriod forecast_period = 4;</code>
-     * @return \Google\Ads\GoogleAds\V5\Resources\KeywordPlanForecastPeriod
+     * @return \Google\Ads\GoogleAds\V5\Resources\KeywordPlanForecastPeriod|null
      */
     public function getForecastPeriod()
     {

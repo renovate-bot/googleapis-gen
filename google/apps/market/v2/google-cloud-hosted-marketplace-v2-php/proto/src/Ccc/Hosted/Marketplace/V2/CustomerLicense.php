@@ -38,6 +38,7 @@ class CustomerLicense extends \Google\Protobuf\Internal\Message
      * (Deprecated)
      *
      * Generated from protobuf field <code>repeated .ccc.hosted.marketplace.v2.CustomerLicense.Editions editions = 4 [deprecated = true];</code>
+     * @deprecated
      */
     private $editions;
     /**
@@ -170,9 +171,11 @@ class CustomerLicense extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>repeated .ccc.hosted.marketplace.v2.CustomerLicense.Editions editions = 4 [deprecated = true];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
+     * @deprecated
      */
     public function getEditions()
     {
+        @trigger_error('editions is deprecated.', E_USER_DEPRECATED);
         return $this->editions;
     }
 
@@ -182,9 +185,11 @@ class CustomerLicense extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .ccc.hosted.marketplace.v2.CustomerLicense.Editions editions = 4 [deprecated = true];</code>
      * @param \Ccc\Hosted\Marketplace\V2\CustomerLicense\Editions[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
+     * @deprecated
      */
     public function setEditions($var)
     {
+        @trigger_error('editions is deprecated.', E_USER_DEPRECATED);
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Ccc\Hosted\Marketplace\V2\CustomerLicense\Editions::class);
         $this->editions = $arr;
 

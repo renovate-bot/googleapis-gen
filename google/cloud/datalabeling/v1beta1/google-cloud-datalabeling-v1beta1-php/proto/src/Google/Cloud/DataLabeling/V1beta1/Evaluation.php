@@ -139,7 +139,7 @@ class Evaluation extends \Google\Protobuf\Internal\Message
      * evaluation.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.EvaluationConfig config = 2;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\EvaluationConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\EvaluationConfig|null
      */
     public function getConfig()
     {
@@ -177,7 +177,7 @@ class Evaluation extends \Google\Protobuf\Internal\Message
      * evaluation ran.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp evaluation_job_run_time = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getEvaluationJobRunTime()
     {
@@ -214,7 +214,7 @@ class Evaluation extends \Google\Protobuf\Internal\Message
      * Output only. Timestamp for when this evaluation was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 4;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -250,7 +250,7 @@ class Evaluation extends \Google\Protobuf\Internal\Message
      * Output only. Metrics comparing predictions to ground truth labels.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.EvaluationMetrics evaluation_metrics = 5;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\EvaluationMetrics
+     * @return \Google\Cloud\DataLabeling\V1beta1\EvaluationMetrics|null
      */
     public function getEvaluationMetrics()
     {

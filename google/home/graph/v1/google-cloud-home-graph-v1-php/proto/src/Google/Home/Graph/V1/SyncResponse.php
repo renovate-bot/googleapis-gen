@@ -112,7 +112,7 @@ class SyncResponse extends \Google\Protobuf\Internal\Message
      * Devices associated with the third-party user.
      *
      * Generated from protobuf field <code>.google.home.graph.v1.SyncResponsePayload payload = 2;</code>
-     * @return \Google\Home\Graph\V1\SyncResponsePayload
+     * @return \Google\Home\Graph\V1\SyncResponsePayload|null
      */
     public function getPayload()
     {

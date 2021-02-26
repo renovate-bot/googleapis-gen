@@ -74,7 +74,7 @@ class InputConfig extends \Google\Protobuf\Internal\Message
      * Required for text import, as language code must be specified.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.TextMetadata text_metadata = 6;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\TextMetadata
+     * @return \Google\Cloud\DataLabeling\V1beta1\TextMetadata|null
      */
     public function getTextMetadata()
     {
@@ -105,7 +105,7 @@ class InputConfig extends \Google\Protobuf\Internal\Message
      * Source located in Cloud Storage.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\GcsSource
+     * @return \Google\Cloud\DataLabeling\V1beta1\GcsSource|null
      */
     public function getGcsSource()
     {
@@ -137,7 +137,7 @@ class InputConfig extends \Google\Protobuf\Internal\Message
      * this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob].
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\BigQuerySource
+     * @return \Google\Cloud\DataLabeling\V1beta1\BigQuerySource|null
      */
     public function getBigquerySource()
     {
@@ -227,7 +227,7 @@ class InputConfig extends \Google\Protobuf\Internal\Message
      * model version that performs classification.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\ClassificationMetadata
+     * @return \Google\Cloud\DataLabeling\V1beta1\ClassificationMetadata|null
      */
     public function getClassificationMetadata()
     {

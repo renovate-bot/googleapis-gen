@@ -71,7 +71,7 @@ class UpdateTransitionRouteGroupRequest extends \Google\Protobuf\Internal\Messag
      * Required. The transition route group to update.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup transition_route_group = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\TransitionRouteGroup
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\TransitionRouteGroup|null
      */
     public function getTransitionRouteGroup()
     {
@@ -107,7 +107,7 @@ class UpdateTransitionRouteGroupRequest extends \Google\Protobuf\Internal\Messag
      * The mask to control which fields get updated.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

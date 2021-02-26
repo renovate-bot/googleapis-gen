@@ -137,7 +137,7 @@ class CreateClusterRequest extends \Google\Protobuf\Internal\Message
      * Required. The cluster resource to create.
      *
      * Generated from protobuf field <code>.google.partner.aistreams.v1alpha1.Cluster cluster = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Partner\Aistreams\V1alpha1\Cluster
+     * @return \Google\Partner\Aistreams\V1alpha1\Cluster|null
      */
     public function getCluster()
     {

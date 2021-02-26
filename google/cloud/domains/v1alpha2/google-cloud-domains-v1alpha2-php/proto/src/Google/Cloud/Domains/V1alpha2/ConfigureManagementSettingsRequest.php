@@ -91,7 +91,7 @@ class ConfigureManagementSettingsRequest extends \Google\Protobuf\Internal\Messa
      * Fields of the `ManagementSettings` to update.
      *
      * Generated from protobuf field <code>.google.cloud.domains.v1alpha2.ManagementSettings management_settings = 2;</code>
-     * @return \Google\Cloud\Domains\V1alpha2\ManagementSettings
+     * @return \Google\Cloud\Domains\V1alpha2\ManagementSettings|null
      */
     public function getManagementSettings()
     {
@@ -129,7 +129,7 @@ class ConfigureManagementSettingsRequest extends \Google\Protobuf\Internal\Messa
      * would be `"transfer_lock_state"`.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

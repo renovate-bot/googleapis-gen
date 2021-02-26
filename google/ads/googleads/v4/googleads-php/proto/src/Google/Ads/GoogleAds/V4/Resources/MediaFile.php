@@ -136,7 +136,7 @@ class MediaFile extends \Google\Protobuf\Internal\Message
      * Output only. The ID of the media file.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getId()
     {
@@ -252,7 +252,7 @@ class MediaFile extends \Google\Protobuf\Internal\Message
      * name). Only used for media of type AUDIO and IMAGE.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue source_url = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getSourceUrl()
     {
@@ -319,7 +319,7 @@ class MediaFile extends \Google\Protobuf\Internal\Message
      * identify previously uploaded media.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getName()
     {
@@ -385,7 +385,7 @@ class MediaFile extends \Google\Protobuf\Internal\Message
      * Output only. The size of the media file in bytes.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value file_size = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getFileSize()
     {
@@ -448,7 +448,7 @@ class MediaFile extends \Google\Protobuf\Internal\Message
      * Immutable. Encapsulates an Image.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.MediaImage image = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\MediaImage
+     * @return \Google\Ads\GoogleAds\V4\Resources\MediaImage|null
      */
     public function getImage()
     {
@@ -479,7 +479,7 @@ class MediaFile extends \Google\Protobuf\Internal\Message
      * Immutable. A ZIP archive media the content of which contains HTML5 assets.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.MediaBundle media_bundle = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\MediaBundle
+     * @return \Google\Ads\GoogleAds\V4\Resources\MediaBundle|null
      */
     public function getMediaBundle()
     {
@@ -510,7 +510,7 @@ class MediaFile extends \Google\Protobuf\Internal\Message
      * Output only. Encapsulates an Audio.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.MediaAudio audio = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\MediaAudio
+     * @return \Google\Ads\GoogleAds\V4\Resources\MediaAudio|null
      */
     public function getAudio()
     {
@@ -541,7 +541,7 @@ class MediaFile extends \Google\Protobuf\Internal\Message
      * Immutable. Encapsulates a Video.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.MediaVideo video = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\MediaVideo
+     * @return \Google\Ads\GoogleAds\V4\Resources\MediaVideo|null
      */
     public function getVideo()
     {

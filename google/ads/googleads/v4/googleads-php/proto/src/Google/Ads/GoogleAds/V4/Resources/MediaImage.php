@@ -41,7 +41,7 @@ class MediaImage extends \Google\Protobuf\Internal\Message
      * Immutable. Raw image data.
      *
      * Generated from protobuf field <code>.google.protobuf.BytesValue data = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Protobuf\BytesValue
+     * @return \Google\Protobuf\BytesValue|null
      */
     public function getData()
     {

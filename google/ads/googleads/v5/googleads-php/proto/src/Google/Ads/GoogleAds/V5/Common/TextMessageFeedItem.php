@@ -81,7 +81,7 @@ class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
      * This field is required.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue business_name = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getBusinessName()
     {
@@ -148,7 +148,7 @@ class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
      * This field is required.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCountryCode()
     {
@@ -214,7 +214,7 @@ class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
      * The advertiser's phone number the message will be sent to. Required.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue phone_number = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPhoneNumber()
     {
@@ -278,7 +278,7 @@ class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
      * This field is required.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue text = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getText()
     {
@@ -344,7 +344,7 @@ class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
      * The message text populated in the messaging app.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue extension_text = 5;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getExtensionText()
     {

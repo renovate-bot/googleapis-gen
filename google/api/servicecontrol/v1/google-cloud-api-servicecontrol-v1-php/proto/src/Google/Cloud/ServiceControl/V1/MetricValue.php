@@ -117,7 +117,7 @@ class MetricValue extends \Google\Protobuf\Internal\Message
      * documentation in the service configuration for details.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 2;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartTime()
     {
@@ -157,7 +157,7 @@ class MetricValue extends \Google\Protobuf\Internal\Message
      * applies.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getEndTime()
     {
@@ -318,7 +318,7 @@ class MetricValue extends \Google\Protobuf\Internal\Message
      * A distribution value.
      *
      * Generated from protobuf field <code>.google.api.servicecontrol.v1.Distribution distribution_value = 8;</code>
-     * @return \Google\Cloud\ServiceControl\V1\Distribution
+     * @return \Google\Cloud\ServiceControl\V1\Distribution|null
      */
     public function getDistributionValue()
     {

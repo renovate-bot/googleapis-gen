@@ -79,7 +79,7 @@ class CreateFunctionRequest extends \Google\Protobuf\Internal\Message
      * Required. Function to be created.
      *
      * Generated from protobuf field <code>.google.cloud.functions.v1.CloudFunction function = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Functions\V1\CloudFunction
+     * @return \Google\Cloud\Functions\V1\CloudFunction|null
      */
     public function getFunction()
     {

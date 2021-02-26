@@ -111,7 +111,7 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
      * Immutable. The client customer linked to this customer.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getClientCustomer()
     {
@@ -174,7 +174,7 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
      * Output only. This is uniquely identifies a customer client link. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value manager_link_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getManagerLinkId()
     {
@@ -265,7 +265,7 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
      * Default value is false
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue hidden = 6;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getHidden()
     {

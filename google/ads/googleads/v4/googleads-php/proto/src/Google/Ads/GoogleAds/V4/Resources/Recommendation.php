@@ -201,7 +201,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Recommendation.RecommendationImpact impact = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Recommendation\RecommendationImpact
+     * @return \Google\Ads\GoogleAds\V4\Resources\Recommendation\RecommendationImpact|null
      */
     public function getImpact()
     {
@@ -241,7 +241,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * CAMPAIGN_BUDGET, FORECASTING_CAMPAIGN_BUDGET, MOVE_UNUSED_BUDGET
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign_budget = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCampaignBudget()
     {
@@ -319,7 +319,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCampaign()
     {
@@ -403,7 +403,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * KEYWORD, OPTIMIZE_AD_ROTATION, TEXT_AD
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getAdGroup()
     {
@@ -475,7 +475,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * Output only. Whether the recommendation is dismissed or not.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue dismissed = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getDismissed()
     {
@@ -538,7 +538,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * Output only. The campaign budget recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Recommendation.CampaignBudgetRecommendation campaign_budget_recommendation = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Recommendation\CampaignBudgetRecommendation
+     * @return \Google\Ads\GoogleAds\V4\Resources\Recommendation\CampaignBudgetRecommendation|null
      */
     public function getCampaignBudgetRecommendation()
     {
@@ -569,7 +569,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * Output only. The keyword recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Recommendation.KeywordRecommendation keyword_recommendation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Recommendation\KeywordRecommendation
+     * @return \Google\Ads\GoogleAds\V4\Resources\Recommendation\KeywordRecommendation|null
      */
     public function getKeywordRecommendation()
     {
@@ -600,7 +600,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * Output only. Add expanded text ad recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Recommendation.TextAdRecommendation text_ad_recommendation = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Recommendation\TextAdRecommendation
+     * @return \Google\Ads\GoogleAds\V4\Resources\Recommendation\TextAdRecommendation|null
      */
     public function getTextAdRecommendation()
     {
@@ -631,7 +631,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * Output only. The TargetCPA opt-in recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Recommendation.TargetCpaOptInRecommendation target_cpa_opt_in_recommendation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Recommendation\TargetCpaOptInRecommendation
+     * @return \Google\Ads\GoogleAds\V4\Resources\Recommendation\TargetCpaOptInRecommendation|null
      */
     public function getTargetCpaOptInRecommendation()
     {
@@ -662,7 +662,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * Output only. The MaximizeConversions Opt-In recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Recommendation.MaximizeConversionsOptInRecommendation maximize_conversions_opt_in_recommendation = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Recommendation\MaximizeConversionsOptInRecommendation
+     * @return \Google\Ads\GoogleAds\V4\Resources\Recommendation\MaximizeConversionsOptInRecommendation|null
      */
     public function getMaximizeConversionsOptInRecommendation()
     {
@@ -693,7 +693,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * Output only. The Enhanced Cost-Per-Click Opt-In recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Recommendation.EnhancedCpcOptInRecommendation enhanced_cpc_opt_in_recommendation = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Recommendation\EnhancedCpcOptInRecommendation
+     * @return \Google\Ads\GoogleAds\V4\Resources\Recommendation\EnhancedCpcOptInRecommendation|null
      */
     public function getEnhancedCpcOptInRecommendation()
     {
@@ -724,7 +724,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * Output only. The Search Partners Opt-In recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Recommendation.SearchPartnersOptInRecommendation search_partners_opt_in_recommendation = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Recommendation\SearchPartnersOptInRecommendation
+     * @return \Google\Ads\GoogleAds\V4\Resources\Recommendation\SearchPartnersOptInRecommendation|null
      */
     public function getSearchPartnersOptInRecommendation()
     {
@@ -755,7 +755,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * Output only. The MaximizeClicks Opt-In recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Recommendation.MaximizeClicksOptInRecommendation maximize_clicks_opt_in_recommendation = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Recommendation\MaximizeClicksOptInRecommendation
+     * @return \Google\Ads\GoogleAds\V4\Resources\Recommendation\MaximizeClicksOptInRecommendation|null
      */
     public function getMaximizeClicksOptInRecommendation()
     {
@@ -786,7 +786,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * Output only. The Optimize Ad Rotation recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Recommendation.OptimizeAdRotationRecommendation optimize_ad_rotation_recommendation = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Recommendation\OptimizeAdRotationRecommendation
+     * @return \Google\Ads\GoogleAds\V4\Resources\Recommendation\OptimizeAdRotationRecommendation|null
      */
     public function getOptimizeAdRotationRecommendation()
     {
@@ -817,7 +817,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * Output only. The Callout extension recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Recommendation.CalloutExtensionRecommendation callout_extension_recommendation = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Recommendation\CalloutExtensionRecommendation
+     * @return \Google\Ads\GoogleAds\V4\Resources\Recommendation\CalloutExtensionRecommendation|null
      */
     public function getCalloutExtensionRecommendation()
     {
@@ -848,7 +848,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * Output only. The Sitelink extension recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Recommendation.SitelinkExtensionRecommendation sitelink_extension_recommendation = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Recommendation\SitelinkExtensionRecommendation
+     * @return \Google\Ads\GoogleAds\V4\Resources\Recommendation\SitelinkExtensionRecommendation|null
      */
     public function getSitelinkExtensionRecommendation()
     {
@@ -879,7 +879,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * Output only. The Call extension recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Recommendation.CallExtensionRecommendation call_extension_recommendation = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Recommendation\CallExtensionRecommendation
+     * @return \Google\Ads\GoogleAds\V4\Resources\Recommendation\CallExtensionRecommendation|null
      */
     public function getCallExtensionRecommendation()
     {
@@ -910,7 +910,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * Output only. The keyword match type recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Recommendation.KeywordMatchTypeRecommendation keyword_match_type_recommendation = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Recommendation\KeywordMatchTypeRecommendation
+     * @return \Google\Ads\GoogleAds\V4\Resources\Recommendation\KeywordMatchTypeRecommendation|null
      */
     public function getKeywordMatchTypeRecommendation()
     {
@@ -941,7 +941,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * Output only. The move unused budget recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.Recommendation.MoveUnusedBudgetRecommendation move_unused_budget_recommendation = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\Recommendation\MoveUnusedBudgetRecommendation
+     * @return \Google\Ads\GoogleAds\V4\Resources\Recommendation\MoveUnusedBudgetRecommendation|null
      */
     public function getMoveUnusedBudgetRecommendation()
     {

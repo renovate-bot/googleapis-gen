@@ -131,7 +131,7 @@ class IamPolicyAnalysisQuery extends \Google\Protobuf\Internal\Message
      * Optional. Specifies a resource for analysis.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1.IamPolicyAnalysisQuery.ResourceSelector resource_selector = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\Asset\V1\IamPolicyAnalysisQuery\ResourceSelector
+     * @return \Google\Cloud\Asset\V1\IamPolicyAnalysisQuery\ResourceSelector|null
      */
     public function getResourceSelector()
     {
@@ -167,7 +167,7 @@ class IamPolicyAnalysisQuery extends \Google\Protobuf\Internal\Message
      * Optional. Specifies an identity for analysis.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1.IamPolicyAnalysisQuery.IdentitySelector identity_selector = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\Asset\V1\IamPolicyAnalysisQuery\IdentitySelector
+     * @return \Google\Cloud\Asset\V1\IamPolicyAnalysisQuery\IdentitySelector|null
      */
     public function getIdentitySelector()
     {
@@ -203,7 +203,7 @@ class IamPolicyAnalysisQuery extends \Google\Protobuf\Internal\Message
      * Optional. Specifies roles or permissions for analysis. This is optional.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1.IamPolicyAnalysisQuery.AccessSelector access_selector = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\Asset\V1\IamPolicyAnalysisQuery\AccessSelector
+     * @return \Google\Cloud\Asset\V1\IamPolicyAnalysisQuery\AccessSelector|null
      */
     public function getAccessSelector()
     {
@@ -239,7 +239,7 @@ class IamPolicyAnalysisQuery extends \Google\Protobuf\Internal\Message
      * Optional. The query options.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1.IamPolicyAnalysisQuery.Options options = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\Asset\V1\IamPolicyAnalysisQuery\Options
+     * @return \Google\Cloud\Asset\V1\IamPolicyAnalysisQuery\Options|null
      */
     public function getOptions()
     {

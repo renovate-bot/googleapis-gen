@@ -52,7 +52,7 @@ class ProductMetadata extends \Google\Protobuf\Internal\Message
      * To list the available plannable product codes use ListPlannableProducts.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue plannable_product_code = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPlannableProductCode()
     {
@@ -118,7 +118,7 @@ class ProductMetadata extends \Google\Protobuf\Internal\Message
      * The allowed plannable targeting for this product.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.services.PlannableTargeting plannable_targeting = 2;</code>
-     * @return \Google\Ads\GoogleAds\V4\Services\PlannableTargeting
+     * @return \Google\Ads\GoogleAds\V4\Services\PlannableTargeting|null
      */
     public function getPlannableTargeting()
     {

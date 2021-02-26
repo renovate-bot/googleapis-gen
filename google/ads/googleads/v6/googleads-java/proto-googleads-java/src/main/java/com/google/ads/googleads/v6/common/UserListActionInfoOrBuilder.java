@@ -13,6 +13,15 @@ public interface UserListActionInfoOrBuilder extends
    * </pre>
    *
    * <code>string conversion_action = 3;</code>
+   * @return Whether the conversionAction field is set.
+   */
+  boolean hasConversionAction();
+  /**
+   * <pre>
+   * A conversion action that's not generated from remarketing.
+   * </pre>
+   *
+   * <code>string conversion_action = 3;</code>
    * @return The conversionAction.
    */
   java.lang.String getConversionAction();
@@ -27,6 +36,15 @@ public interface UserListActionInfoOrBuilder extends
   com.google.protobuf.ByteString
       getConversionActionBytes();
 
+  /**
+   * <pre>
+   * A remarketing action.
+   * </pre>
+   *
+   * <code>string remarketing_action = 4;</code>
+   * @return Whether the remarketingAction field is set.
+   */
+  boolean hasRemarketingAction();
   /**
    * <pre>
    * A remarketing action.

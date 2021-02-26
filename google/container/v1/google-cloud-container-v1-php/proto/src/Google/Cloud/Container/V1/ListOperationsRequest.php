@@ -21,6 +21,7 @@ class ListOperationsRequest extends \Google\Protobuf\Internal\Message
      * This field has been deprecated and replaced by the parent field.
      *
      * Generated from protobuf field <code>string project_id = 1 [deprecated = true];</code>
+     * @deprecated
      */
     protected $project_id = '';
     /**
@@ -30,6 +31,7 @@ class ListOperationsRequest extends \Google\Protobuf\Internal\Message
      * replaced by the parent field.
      *
      * Generated from protobuf field <code>string zone = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $zone = '';
     /**
@@ -74,9 +76,11 @@ class ListOperationsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string project_id = 1 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getProjectId()
     {
+        @trigger_error('project_id is deprecated.', E_USER_DEPRECATED);
         return $this->project_id;
     }
 
@@ -88,9 +92,11 @@ class ListOperationsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string project_id = 1 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setProjectId($var)
     {
+        @trigger_error('project_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->project_id = $var;
 
@@ -105,9 +111,11 @@ class ListOperationsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string zone = 2 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getZone()
     {
+        @trigger_error('zone is deprecated.', E_USER_DEPRECATED);
         return $this->zone;
     }
 
@@ -120,9 +128,11 @@ class ListOperationsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string zone = 2 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setZone($var)
     {
+        @trigger_error('zone is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->zone = $var;
 

@@ -50,7 +50,7 @@ class FrequencyCap extends \Google\Protobuf\Internal\Message
      * Required. The number of impressions, inclusive.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value impressions = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\Int32Value
+     * @return \Google\Protobuf\Int32Value|null
      */
     public function getImpressions()
     {

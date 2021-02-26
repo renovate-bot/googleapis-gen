@@ -88,10 +88,29 @@ public interface ResultSetStatsOrBuilder extends
    * </pre>
    *
    * <code>int64 row_count_exact = 3;</code>
+   * @return Whether the rowCountExact field is set.
+   */
+  boolean hasRowCountExact();
+  /**
+   * <pre>
+   * Standard DML returns an exact count of rows that were modified.
+   * </pre>
+   *
+   * <code>int64 row_count_exact = 3;</code>
    * @return The rowCountExact.
    */
   long getRowCountExact();
 
+  /**
+   * <pre>
+   * Partitioned DML does not offer exactly-once semantics, so it
+   * returns a lower bound of the rows modified.
+   * </pre>
+   *
+   * <code>int64 row_count_lower_bound = 4;</code>
+   * @return Whether the rowCountLowerBound field is set.
+   */
+  boolean hasRowCountLowerBound();
   /**
    * <pre>
    * Partitioned DML does not offer exactly-once semantics, so it

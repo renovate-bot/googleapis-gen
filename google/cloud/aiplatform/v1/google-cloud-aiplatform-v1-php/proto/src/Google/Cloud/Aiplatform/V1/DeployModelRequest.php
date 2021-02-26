@@ -116,7 +116,7 @@ class DeployModelRequest extends \Google\Protobuf\Internal\Message
      * [EndpointService.UpdateEndpoint][google.cloud.aiplatform.v1.EndpointService.UpdateEndpoint].
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.DeployedModel deployed_model = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Aiplatform\V1\DeployedModel
+     * @return \Google\Cloud\Aiplatform\V1\DeployedModel|null
      */
     public function getDeployedModel()
     {

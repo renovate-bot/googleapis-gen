@@ -13,6 +13,15 @@ public interface PigJobOrBuilder extends
    * </pre>
    *
    * <code>string query_file_uri = 1;</code>
+   * @return Whether the queryFileUri field is set.
+   */
+  boolean hasQueryFileUri();
+  /**
+   * <pre>
+   * The HCFS URI of the script that contains the Pig queries.
+   * </pre>
+   *
+   * <code>string query_file_uri = 1;</code>
    * @return The queryFileUri.
    */
   java.lang.String getQueryFileUri();

@@ -46,6 +46,7 @@ class CommandResult extends \Google\Protobuf\Internal\Message
      * the RPCs and the bot response time.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration duration = 4 [deprecated = true];</code>
+     * @deprecated
      */
     protected $duration = null;
     /**
@@ -53,6 +54,7 @@ class CommandResult extends \Google\Protobuf\Internal\Message
      * uploading/downloading files).
      *
      * Generated from protobuf field <code>.google.protobuf.Duration overhead = 5 [deprecated = true];</code>
+     * @deprecated
      */
     protected $overhead = null;
     /**
@@ -112,7 +114,7 @@ class CommandResult extends \Google\Protobuf\Internal\Message
      * memory exhaustion, it might have a code of RESOURCE_EXHAUSTED.
      *
      * Generated from protobuf field <code>.google.rpc.Status status = 1;</code>
-     * @return \Google\Rpc\Status
+     * @return \Google\Rpc\Status|null
      */
     public function getStatus()
     {
@@ -181,7 +183,7 @@ class CommandResult extends \Google\Protobuf\Internal\Message
      *    * A LUCI-style .isolated file
      *
      * Generated from protobuf field <code>.google.devtools.remoteworkers.v1test2.Digest outputs = 3;</code>
-     * @return \Google\Devtools\Remoteworkers\V1test2\Digest
+     * @return \Google\Devtools\Remoteworkers\V1test2\Digest|null
      */
     public function getOutputs()
     {
@@ -222,20 +224,24 @@ class CommandResult extends \Google\Protobuf\Internal\Message
      * the RPCs and the bot response time.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration duration = 4 [deprecated = true];</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
+     * @deprecated
      */
     public function getDuration()
     {
+        @trigger_error('duration is deprecated.', E_USER_DEPRECATED);
         return isset($this->duration) ? $this->duration : null;
     }
 
     public function hasDuration()
     {
+        @trigger_error('duration is deprecated.', E_USER_DEPRECATED);
         return isset($this->duration);
     }
 
     public function clearDuration()
     {
+        @trigger_error('duration is deprecated.', E_USER_DEPRECATED);
         unset($this->duration);
     }
 
@@ -247,9 +253,11 @@ class CommandResult extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Duration duration = 4 [deprecated = true];</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
+     * @deprecated
      */
     public function setDuration($var)
     {
+        @trigger_error('duration is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->duration = $var;
 
@@ -261,20 +269,24 @@ class CommandResult extends \Google\Protobuf\Internal\Message
      * uploading/downloading files).
      *
      * Generated from protobuf field <code>.google.protobuf.Duration overhead = 5 [deprecated = true];</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
+     * @deprecated
      */
     public function getOverhead()
     {
+        @trigger_error('overhead is deprecated.', E_USER_DEPRECATED);
         return isset($this->overhead) ? $this->overhead : null;
     }
 
     public function hasOverhead()
     {
+        @trigger_error('overhead is deprecated.', E_USER_DEPRECATED);
         return isset($this->overhead);
     }
 
     public function clearOverhead()
     {
+        @trigger_error('overhead is deprecated.', E_USER_DEPRECATED);
         unset($this->overhead);
     }
 
@@ -285,9 +297,11 @@ class CommandResult extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Duration overhead = 5 [deprecated = true];</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
+     * @deprecated
      */
     public function setOverhead($var)
     {
+        @trigger_error('overhead is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->overhead = $var;
 

@@ -548,6 +548,19 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.type.CalendarPeriod calendar_period = 6;</code>
+   * @return Whether the calendarPeriod field is set.
+   */
+  public boolean hasCalendarPeriod() {
+    return periodCase_ == 6;
+  }
+  /**
+   * <pre>
+   * A calendar period, semantically "since the start of the current
+   * `&lt;calendar_period&gt;`". At this time, only `DAY`, `WEEK`, `FORTNIGHT`, and
+   * `MONTH` are supported.
+   * </pre>
+   *
+   * <code>.google.type.CalendarPeriod calendar_period = 6;</code>
    * @return The enum numeric value on the wire for calendarPeriod.
    */
   public int getCalendarPeriodValue() {
@@ -1635,6 +1648,20 @@ private static final long serialVersionUID = 0L;
       return rollingPeriodBuilder_;
     }
 
+    /**
+     * <pre>
+     * A calendar period, semantically "since the start of the current
+     * `&lt;calendar_period&gt;`". At this time, only `DAY`, `WEEK`, `FORTNIGHT`, and
+     * `MONTH` are supported.
+     * </pre>
+     *
+     * <code>.google.type.CalendarPeriod calendar_period = 6;</code>
+     * @return Whether the calendarPeriod field is set.
+     */
+    @java.lang.Override
+    public boolean hasCalendarPeriod() {
+      return periodCase_ == 6;
+    }
     /**
      * <pre>
      * A calendar period, semantically "since the start of the current

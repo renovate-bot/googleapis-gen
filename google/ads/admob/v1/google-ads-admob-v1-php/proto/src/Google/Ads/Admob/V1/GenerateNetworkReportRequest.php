@@ -79,7 +79,7 @@ class GenerateNetworkReportRequest extends \Google\Protobuf\Internal\Message
      * Network report specification.
      *
      * Generated from protobuf field <code>.google.ads.admob.v1.NetworkReportSpec report_spec = 2;</code>
-     * @return \Google\Ads\Admob\V1\NetworkReportSpec
+     * @return \Google\Ads\Admob\V1\NetworkReportSpec|null
      */
     public function getReportSpec()
     {

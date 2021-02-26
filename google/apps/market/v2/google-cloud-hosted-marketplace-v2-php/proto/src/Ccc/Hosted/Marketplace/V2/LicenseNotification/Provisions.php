@@ -21,6 +21,7 @@ class Provisions extends \Google\Protobuf\Internal\Message
      * (Deprecated)
      *
      * Generated from protobuf field <code>string edition_id = 601 [deprecated = true];</code>
+     * @deprecated
      */
     protected $edition_id = '';
     /**
@@ -75,9 +76,11 @@ class Provisions extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string edition_id = 601 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getEditionId()
     {
+        @trigger_error('edition_id is deprecated.', E_USER_DEPRECATED);
         return $this->edition_id;
     }
 
@@ -87,9 +90,11 @@ class Provisions extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string edition_id = 601 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setEditionId($var)
     {
+        @trigger_error('edition_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->edition_id = $var;
 

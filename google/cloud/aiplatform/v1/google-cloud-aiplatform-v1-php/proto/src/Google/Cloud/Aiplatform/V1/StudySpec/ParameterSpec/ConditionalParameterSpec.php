@@ -52,7 +52,7 @@ class ConditionalParameterSpec extends \Google\Protobuf\Internal\Message
      * `DISCRETE` type.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.StudySpec.ParameterSpec.ConditionalParameterSpec.DiscreteValueCondition parent_discrete_values = 2;</code>
-     * @return \Google\Cloud\Aiplatform\V1\StudySpec\ParameterSpec\ConditionalParameterSpec\DiscreteValueCondition
+     * @return \Google\Cloud\Aiplatform\V1\StudySpec\ParameterSpec\ConditionalParameterSpec\DiscreteValueCondition|null
      */
     public function getParentDiscreteValues()
     {
@@ -85,7 +85,7 @@ class ConditionalParameterSpec extends \Google\Protobuf\Internal\Message
      * type.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.StudySpec.ParameterSpec.ConditionalParameterSpec.IntValueCondition parent_int_values = 3;</code>
-     * @return \Google\Cloud\Aiplatform\V1\StudySpec\ParameterSpec\ConditionalParameterSpec\IntValueCondition
+     * @return \Google\Cloud\Aiplatform\V1\StudySpec\ParameterSpec\ConditionalParameterSpec\IntValueCondition|null
      */
     public function getParentIntValues()
     {
@@ -118,7 +118,7 @@ class ConditionalParameterSpec extends \Google\Protobuf\Internal\Message
      * `CATEGORICAL` type.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.StudySpec.ParameterSpec.ConditionalParameterSpec.CategoricalValueCondition parent_categorical_values = 4;</code>
-     * @return \Google\Cloud\Aiplatform\V1\StudySpec\ParameterSpec\ConditionalParameterSpec\CategoricalValueCondition
+     * @return \Google\Cloud\Aiplatform\V1\StudySpec\ParameterSpec\ConditionalParameterSpec\CategoricalValueCondition|null
      */
     public function getParentCategoricalValues()
     {
@@ -150,7 +150,7 @@ class ConditionalParameterSpec extends \Google\Protobuf\Internal\Message
      * Required. The spec for a conditional parameter.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.StudySpec.ParameterSpec parameter_spec = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Aiplatform\V1\StudySpec\ParameterSpec
+     * @return \Google\Cloud\Aiplatform\V1\StudySpec\ParameterSpec|null
      */
     public function getParameterSpec()
     {

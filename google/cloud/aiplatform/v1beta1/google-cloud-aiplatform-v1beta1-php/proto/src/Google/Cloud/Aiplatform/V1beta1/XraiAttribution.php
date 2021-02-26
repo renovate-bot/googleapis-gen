@@ -103,7 +103,7 @@ class XraiAttribution extends \Google\Protobuf\Internal\Message
      * details: https://arxiv.org/pdf/1706.03825.pdf
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.SmoothGradConfig smooth_grad_config = 2;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\SmoothGradConfig
+     * @return \Google\Cloud\Aiplatform\V1beta1\SmoothGradConfig|null
      */
     public function getSmoothGradConfig()
     {

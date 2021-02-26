@@ -44,7 +44,7 @@ class Connection extends \Google\Protobuf\Internal\Message
      * another photo.
      *
      * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoId target = 1;</code>
-     * @return \Google\Streetview\Publish\V1\PhotoId
+     * @return \Google\Streetview\Publish\V1\PhotoId|null
      */
     public function getTarget()
     {

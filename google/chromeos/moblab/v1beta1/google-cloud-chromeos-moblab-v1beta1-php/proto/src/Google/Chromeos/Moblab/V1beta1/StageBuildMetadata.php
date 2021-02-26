@@ -84,7 +84,7 @@ class StageBuildMetadata extends \Google\Protobuf\Internal\Message
      * Build stage start time.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 2;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartTime()
     {
@@ -120,7 +120,7 @@ class StageBuildMetadata extends \Google\Protobuf\Internal\Message
      * Build stage end time.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getEndTime()
     {

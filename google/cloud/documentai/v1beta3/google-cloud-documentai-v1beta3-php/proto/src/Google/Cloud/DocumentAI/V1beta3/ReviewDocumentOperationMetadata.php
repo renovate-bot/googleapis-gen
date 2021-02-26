@@ -129,7 +129,7 @@ class ReviewDocumentOperationMetadata extends \Google\Protobuf\Internal\Message
      * The creation time of the operation.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -165,7 +165,7 @@ class ReviewDocumentOperationMetadata extends \Google\Protobuf\Internal\Message
      * The last update time of the operation.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 4;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {
@@ -201,7 +201,7 @@ class ReviewDocumentOperationMetadata extends \Google\Protobuf\Internal\Message
      * The basic metadata of the long running operation.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta3\CommonOperationMetadata
+     * @return \Google\Cloud\DocumentAI\V1beta3\CommonOperationMetadata|null
      */
     public function getCommonMetadata()
     {

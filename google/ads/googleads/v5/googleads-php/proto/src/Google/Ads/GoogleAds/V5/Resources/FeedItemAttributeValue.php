@@ -149,7 +149,7 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
      * Id of the feed attribute for which the value is associated with.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value feed_attribute_id = 1;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getFeedAttributeId()
     {
@@ -213,7 +213,7 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
      * of type INT64.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value integer_value = 2;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getIntegerValue()
     {
@@ -280,7 +280,7 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
      * of type BOOLEAN.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue boolean_value = 3;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getBooleanValue()
     {
@@ -350,7 +350,7 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
      * "YYYYMMDD HHMMSS".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue string_value = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getStringValue()
     {
@@ -426,7 +426,7 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
      * of type DOUBLE.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue double_value = 5;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getDoubleValue()
     {
@@ -493,7 +493,7 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
      * of type PRICE.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.Money price_value = 6;</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\Money
+     * @return \Google\Ads\GoogleAds\V5\Common\Money|null
      */
     public function getPriceValue()
     {

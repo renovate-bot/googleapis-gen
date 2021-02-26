@@ -41,7 +41,7 @@ class LabelTextEntityExtractionOperationMetadata extends \Google\Protobuf\Intern
      * Basic human annotation config used in labeling request.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 1;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\HumanAnnotationConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\HumanAnnotationConfig|null
      */
     public function getBasicConfig()
     {

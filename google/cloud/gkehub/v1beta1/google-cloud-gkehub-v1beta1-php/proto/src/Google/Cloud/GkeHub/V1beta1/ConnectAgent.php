@@ -19,6 +19,7 @@ class ConnectAgent extends \Google\Protobuf\Internal\Message
      * Do not set.
      *
      * Generated from protobuf field <code>string name = 1 [deprecated = true];</code>
+     * @deprecated
      */
     protected $name = '';
     /**
@@ -72,9 +73,11 @@ class ConnectAgent extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string name = 1 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getName()
     {
+        @trigger_error('name is deprecated.', E_USER_DEPRECATED);
         return $this->name;
     }
 
@@ -84,9 +87,11 @@ class ConnectAgent extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string name = 1 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setName($var)
     {
+        @trigger_error('name is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->name = $var;
 

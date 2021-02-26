@@ -56,7 +56,7 @@ class AnnotationValue extends \Google\Protobuf\Internal\Message
      * Annotation value for image classification case.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.ImageClassificationAnnotation image_classification_annotation = 1;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\ImageClassificationAnnotation
+     * @return \Google\Cloud\DataLabeling\V1beta1\ImageClassificationAnnotation|null
      */
     public function getImageClassificationAnnotation()
     {
@@ -88,7 +88,7 @@ class AnnotationValue extends \Google\Protobuf\Internal\Message
      * and polygon cases.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.ImageBoundingPolyAnnotation image_bounding_poly_annotation = 2;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\ImageBoundingPolyAnnotation
+     * @return \Google\Cloud\DataLabeling\V1beta1\ImageBoundingPolyAnnotation|null
      */
     public function getImageBoundingPolyAnnotation()
     {
@@ -123,7 +123,7 @@ class AnnotationValue extends \Google\Protobuf\Internal\Message
      * The line segments can cross each other.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.ImagePolylineAnnotation image_polyline_annotation = 8;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\ImagePolylineAnnotation
+     * @return \Google\Cloud\DataLabeling\V1beta1\ImagePolylineAnnotation|null
      */
     public function getImagePolylineAnnotation()
     {
@@ -157,7 +157,7 @@ class AnnotationValue extends \Google\Protobuf\Internal\Message
      * Annotation value for image segmentation.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.ImageSegmentationAnnotation image_segmentation_annotation = 9;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\ImageSegmentationAnnotation
+     * @return \Google\Cloud\DataLabeling\V1beta1\ImageSegmentationAnnotation|null
      */
     public function getImageSegmentationAnnotation()
     {
@@ -188,7 +188,7 @@ class AnnotationValue extends \Google\Protobuf\Internal\Message
      * Annotation value for text classification case.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.TextClassificationAnnotation text_classification_annotation = 3;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\TextClassificationAnnotation
+     * @return \Google\Cloud\DataLabeling\V1beta1\TextClassificationAnnotation|null
      */
     public function getTextClassificationAnnotation()
     {
@@ -219,7 +219,7 @@ class AnnotationValue extends \Google\Protobuf\Internal\Message
      * Annotation value for text entity extraction case.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation text_entity_extraction_annotation = 10;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\TextEntityExtractionAnnotation
+     * @return \Google\Cloud\DataLabeling\V1beta1\TextEntityExtractionAnnotation|null
      */
     public function getTextEntityExtractionAnnotation()
     {
@@ -250,7 +250,7 @@ class AnnotationValue extends \Google\Protobuf\Internal\Message
      * Annotation value for video classification case.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.VideoClassificationAnnotation video_classification_annotation = 4;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\VideoClassificationAnnotation
+     * @return \Google\Cloud\DataLabeling\V1beta1\VideoClassificationAnnotation|null
      */
     public function getVideoClassificationAnnotation()
     {
@@ -281,7 +281,7 @@ class AnnotationValue extends \Google\Protobuf\Internal\Message
      * Annotation value for video object detection and tracking case.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.VideoObjectTrackingAnnotation video_object_tracking_annotation = 5;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\VideoObjectTrackingAnnotation
+     * @return \Google\Cloud\DataLabeling\V1beta1\VideoObjectTrackingAnnotation|null
      */
     public function getVideoObjectTrackingAnnotation()
     {
@@ -312,7 +312,7 @@ class AnnotationValue extends \Google\Protobuf\Internal\Message
      * Annotation value for video event case.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.VideoEventAnnotation video_event_annotation = 6;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\VideoEventAnnotation
+     * @return \Google\Cloud\DataLabeling\V1beta1\VideoEventAnnotation|null
      */
     public function getVideoEventAnnotation()
     {

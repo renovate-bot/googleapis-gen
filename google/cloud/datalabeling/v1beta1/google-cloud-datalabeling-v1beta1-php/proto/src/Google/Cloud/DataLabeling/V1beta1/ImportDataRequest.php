@@ -89,7 +89,7 @@ class ImportDataRequest extends \Google\Protobuf\Internal\Message
      * Required. Specify the input source of the data.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\InputConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\InputConfig|null
      */
     public function getInputConfig()
     {

@@ -90,7 +90,7 @@ class PageInfo extends \Google\Protobuf\Internal\Message
      * Information about the form.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.PageInfo.FormInfo form_info = 3;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\PageInfo\FormInfo
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\PageInfo\FormInfo|null
      */
     public function getFormInfo()
     {

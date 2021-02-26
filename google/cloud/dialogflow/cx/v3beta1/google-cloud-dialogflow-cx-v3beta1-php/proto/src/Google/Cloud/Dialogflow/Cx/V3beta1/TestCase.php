@@ -229,7 +229,7 @@ class TestCase extends \Google\Protobuf\Internal\Message
      * Config for the test case.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.TestConfig test_config = 13;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\TestConfig
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\TestConfig|null
      */
     public function getTestConfig()
     {
@@ -295,7 +295,7 @@ class TestCase extends \Google\Protobuf\Internal\Message
      * Output only. When the test was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp creation_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreationTime()
     {
@@ -331,7 +331,7 @@ class TestCase extends \Google\Protobuf\Internal\Message
      * The latest test result.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.TestCaseResult last_test_result = 12;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\TestCaseResult
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\TestCaseResult|null
      */
     public function getLastTestResult()
     {

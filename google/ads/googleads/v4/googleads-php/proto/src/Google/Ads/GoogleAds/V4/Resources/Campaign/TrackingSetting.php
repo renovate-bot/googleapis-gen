@@ -41,7 +41,7 @@ class TrackingSetting extends \Google\Protobuf\Internal\Message
      * Output only. The url used for dynamic tracking.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getTrackingUrl()
     {

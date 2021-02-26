@@ -80,7 +80,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      * Strings related filter.
      *
      * Generated from protobuf field <code>.google.analytics.data.v1beta.Filter.StringFilter string_filter = 3;</code>
-     * @return \Google\Analytics\Data\V1beta\Filter\StringFilter
+     * @return \Google\Analytics\Data\V1beta\Filter\StringFilter|null
      */
     public function getStringFilter()
     {
@@ -111,7 +111,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      * A filter for in list values.
      *
      * Generated from protobuf field <code>.google.analytics.data.v1beta.Filter.InListFilter in_list_filter = 4;</code>
-     * @return \Google\Analytics\Data\V1beta\Filter\InListFilter
+     * @return \Google\Analytics\Data\V1beta\Filter\InListFilter|null
      */
     public function getInListFilter()
     {
@@ -142,7 +142,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      * A filter for numeric or date values.
      *
      * Generated from protobuf field <code>.google.analytics.data.v1beta.Filter.NumericFilter numeric_filter = 5;</code>
-     * @return \Google\Analytics\Data\V1beta\Filter\NumericFilter
+     * @return \Google\Analytics\Data\V1beta\Filter\NumericFilter|null
      */
     public function getNumericFilter()
     {
@@ -173,7 +173,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      * A filter for two values.
      *
      * Generated from protobuf field <code>.google.analytics.data.v1beta.Filter.BetweenFilter between_filter = 6;</code>
-     * @return \Google\Analytics\Data\V1beta\Filter\BetweenFilter
+     * @return \Google\Analytics\Data\V1beta\Filter\BetweenFilter|null
      */
     public function getBetweenFilter()
     {

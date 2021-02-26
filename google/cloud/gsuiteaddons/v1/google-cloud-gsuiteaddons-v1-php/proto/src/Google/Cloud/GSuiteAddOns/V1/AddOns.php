@@ -97,7 +97,7 @@ class AddOns extends \Google\Protobuf\Internal\Message
      * Configuration that is common across all Google Workspace Add-ons.
      *
      * Generated from protobuf field <code>.google.apps.script.type.CommonAddOnManifest common = 1;</code>
-     * @return \Google\Apps\Script\Type\CommonAddOnManifest
+     * @return \Google\Apps\Script\Type\CommonAddOnManifest|null
      */
     public function getCommon()
     {
@@ -133,7 +133,7 @@ class AddOns extends \Google\Protobuf\Internal\Message
      * Gmail add-on configuration.
      *
      * Generated from protobuf field <code>.google.apps.script.type.gmail.GmailAddOnManifest gmail = 2;</code>
-     * @return \Google\Apps\Script\Type\Gmail\GmailAddOnManifest
+     * @return \Google\Apps\Script\Type\Gmail\GmailAddOnManifest|null
      */
     public function getGmail()
     {
@@ -169,7 +169,7 @@ class AddOns extends \Google\Protobuf\Internal\Message
      * Drive add-on configuration.
      *
      * Generated from protobuf field <code>.google.apps.script.type.drive.DriveAddOnManifest drive = 5;</code>
-     * @return \Google\Apps\Script\Type\Drive\DriveAddOnManifest
+     * @return \Google\Apps\Script\Type\Drive\DriveAddOnManifest|null
      */
     public function getDrive()
     {
@@ -205,7 +205,7 @@ class AddOns extends \Google\Protobuf\Internal\Message
      * Calendar add-on configuration.
      *
      * Generated from protobuf field <code>.google.apps.script.type.calendar.CalendarAddOnManifest calendar = 6;</code>
-     * @return \Google\Apps\Script\Type\Calendar\CalendarAddOnManifest
+     * @return \Google\Apps\Script\Type\Calendar\CalendarAddOnManifest|null
      */
     public function getCalendar()
     {
@@ -241,7 +241,7 @@ class AddOns extends \Google\Protobuf\Internal\Message
      * Docs add-on configuration.
      *
      * Generated from protobuf field <code>.google.apps.script.type.docs.DocsAddOnManifest docs = 7;</code>
-     * @return \Google\Apps\Script\Type\Docs\DocsAddOnManifest
+     * @return \Google\Apps\Script\Type\Docs\DocsAddOnManifest|null
      */
     public function getDocs()
     {
@@ -277,7 +277,7 @@ class AddOns extends \Google\Protobuf\Internal\Message
      * Sheets add-on configuration.
      *
      * Generated from protobuf field <code>.google.apps.script.type.sheets.SheetsAddOnManifest sheets = 8;</code>
-     * @return \Google\Apps\Script\Type\Sheets\SheetsAddOnManifest
+     * @return \Google\Apps\Script\Type\Sheets\SheetsAddOnManifest|null
      */
     public function getSheets()
     {
@@ -313,7 +313,7 @@ class AddOns extends \Google\Protobuf\Internal\Message
      * Slides add-on configuration.
      *
      * Generated from protobuf field <code>.google.apps.script.type.slides.SlidesAddOnManifest slides = 10;</code>
-     * @return \Google\Apps\Script\Type\Slides\SlidesAddOnManifest
+     * @return \Google\Apps\Script\Type\Slides\SlidesAddOnManifest|null
      */
     public function getSlides()
     {
@@ -349,7 +349,7 @@ class AddOns extends \Google\Protobuf\Internal\Message
      * Options for sending requests to add-on HTTP endpoints
      *
      * Generated from protobuf field <code>.google.apps.script.type.HttpOptions http_options = 15;</code>
-     * @return \Google\Apps\Script\Type\HttpOptions
+     * @return \Google\Apps\Script\Type\HttpOptions|null
      */
     public function getHttpOptions()
     {

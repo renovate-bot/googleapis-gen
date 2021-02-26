@@ -43,7 +43,7 @@ class AuditData extends \Google\Protobuf\Internal\Message
      * The permission_delta when when creating or updating a Role.
      *
      * Generated from protobuf field <code>.google.iam.admin.v1.AuditData.PermissionDelta permission_delta = 1;</code>
-     * @return \Google\Iam\Admin\V1\AuditData\PermissionDelta
+     * @return \Google\Iam\Admin\V1\AuditData\PermissionDelta|null
      */
     public function getPermissionDelta()
     {

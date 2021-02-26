@@ -125,7 +125,7 @@ class ActiveLearningConfig extends \Google\Protobuf\Internal\Message
      * iteration, it will select a batch of data based on the sampling strategy.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.SampleConfig sample_config = 3;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\SampleConfig
+     * @return \Google\Cloud\Aiplatform\V1beta1\SampleConfig|null
      */
     public function getSampleConfig()
     {
@@ -164,7 +164,7 @@ class ActiveLearningConfig extends \Google\Protobuf\Internal\Message
      * by data sampling algorithm to select DataItems.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.TrainingConfig training_config = 4;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\TrainingConfig
+     * @return \Google\Cloud\Aiplatform\V1beta1\TrainingConfig|null
      */
     public function getTrainingConfig()
     {

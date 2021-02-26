@@ -90,7 +90,7 @@ class UpdateMetadataImportRequest extends \Google\Protobuf\Internal\Message
      * to the full request). A field is overwritten if it is in the mask.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {
@@ -132,7 +132,7 @@ class UpdateMetadataImportRequest extends \Google\Protobuf\Internal\Message
      * import to be updated.
      *
      * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.MetadataImport metadata_import = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Metastore\V1alpha\MetadataImport
+     * @return \Google\Cloud\Metastore\V1alpha\MetadataImport|null
      */
     public function getMetadataImport()
     {

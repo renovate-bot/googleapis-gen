@@ -86,7 +86,7 @@ class CreateLogMetricRequest extends \Google\Protobuf\Internal\Message
      * already exists.
      *
      * Generated from protobuf field <code>.google.logging.v2.LogMetric metric = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Logging\V2\LogMetric
+     * @return \Google\Cloud\Logging\V2\LogMetric|null
      */
     public function getMetric()
     {

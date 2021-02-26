@@ -131,7 +131,7 @@ class DiscoveryOccurrence extends \Google\Protobuf\Internal\Message
      * populated by the API.
      *
      * Generated from protobuf field <code>.google.rpc.Status analysis_status_error = 3;</code>
-     * @return \Google\Rpc\Status
+     * @return \Google\Rpc\Status|null
      */
     public function getAnalysisStatusError()
     {
@@ -195,7 +195,7 @@ class DiscoveryOccurrence extends \Google\Protobuf\Internal\Message
      * The last time this resource was scanned.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp last_scan_time = 5;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getLastScanTime()
     {

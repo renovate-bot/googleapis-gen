@@ -41,7 +41,7 @@ class CreatePhotoRequest extends \Google\Protobuf\Internal\Message
      * Required. Photo to create.
      *
      * Generated from protobuf field <code>.google.streetview.publish.v1.Photo photo = 1;</code>
-     * @return \Google\Streetview\Publish\V1\Photo
+     * @return \Google\Streetview\Publish\V1\Photo|null
      */
     public function getPhoto()
     {

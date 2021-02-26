@@ -136,7 +136,7 @@ class Rollout extends \Google\Protobuf\Internal\Message
      * Creation time of the rollout. Readonly.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 2;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -229,7 +229,7 @@ class Rollout extends \Google\Protobuf\Internal\Message
      * traffic percentage.
      *
      * Generated from protobuf field <code>.google.api.servicemanagement.v1.Rollout.TrafficPercentStrategy traffic_percent_strategy = 5;</code>
-     * @return \Google\Cloud\ServiceManagement\V1\Rollout\TrafficPercentStrategy
+     * @return \Google\Cloud\ServiceManagement\V1\Rollout\TrafficPercentStrategy|null
      */
     public function getTrafficPercentStrategy()
     {
@@ -262,7 +262,7 @@ class Rollout extends \Google\Protobuf\Internal\Message
      * Readonly.
      *
      * Generated from protobuf field <code>.google.api.servicemanagement.v1.Rollout.DeleteServiceStrategy delete_service_strategy = 200;</code>
-     * @return \Google\Cloud\ServiceManagement\V1\Rollout\DeleteServiceStrategy
+     * @return \Google\Cloud\ServiceManagement\V1\Rollout\DeleteServiceStrategy|null
      */
     public function getDeleteServiceStrategy()
     {

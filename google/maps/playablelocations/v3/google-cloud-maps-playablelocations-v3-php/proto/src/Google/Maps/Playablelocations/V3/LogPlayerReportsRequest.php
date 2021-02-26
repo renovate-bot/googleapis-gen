@@ -136,7 +136,7 @@ class LogPlayerReportsRequest extends \Google\Protobuf\Internal\Message
      * operating system).
      *
      * Generated from protobuf field <code>.google.maps.unity.ClientInfo client_info = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Maps\Unity\ClientInfo
+     * @return \Google\Maps\Unity\ClientInfo|null
      */
     public function getClientInfo()
     {

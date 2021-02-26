@@ -348,7 +348,7 @@ class InputMetadata extends \Google\Protobuf\Internal\Message
      * mean or standard deviation if normalized.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.FeatureValueDomain feature_value_domain = 5;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\ExplanationMetadata\InputMetadata\FeatureValueDomain
+     * @return \Google\Cloud\Aiplatform\V1beta1\ExplanationMetadata\InputMetadata\FeatureValueDomain|null
      */
     public function getFeatureValueDomain()
     {
@@ -547,7 +547,7 @@ class InputMetadata extends \Google\Protobuf\Internal\Message
      * Visualization configurations for image explanation.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization visualization = 11;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\ExplanationMetadata\InputMetadata\Visualization
+     * @return \Google\Cloud\Aiplatform\V1beta1\ExplanationMetadata\InputMetadata\Visualization|null
      */
     public function getVisualization()
     {

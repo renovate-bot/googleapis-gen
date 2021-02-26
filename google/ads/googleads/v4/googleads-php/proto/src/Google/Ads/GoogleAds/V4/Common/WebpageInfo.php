@@ -69,7 +69,7 @@ class WebpageInfo extends \Google\Protobuf\Internal\Message
      * operations.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue criterion_name = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCriterionName()
     {

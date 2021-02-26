@@ -40,7 +40,7 @@ class Authentication extends \Google\Protobuf\Internal\Message
      * Authentication using a Google account.
      *
      * Generated from protobuf field <code>.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1;</code>
-     * @return \Google\Cloud\WebSecurityScanner\V1\ScanConfig\Authentication\GoogleAccount
+     * @return \Google\Cloud\WebSecurityScanner\V1\ScanConfig\Authentication\GoogleAccount|null
      */
     public function getGoogleAccount()
     {
@@ -71,7 +71,7 @@ class Authentication extends \Google\Protobuf\Internal\Message
      * Authentication using a custom account.
      *
      * Generated from protobuf field <code>.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.CustomAccount custom_account = 2;</code>
-     * @return \Google\Cloud\WebSecurityScanner\V1\ScanConfig\Authentication\CustomAccount
+     * @return \Google\Cloud\WebSecurityScanner\V1\ScanConfig\Authentication\CustomAccount|null
      */
     public function getCustomAccount()
     {
@@ -102,7 +102,7 @@ class Authentication extends \Google\Protobuf\Internal\Message
      * Authentication using Identity-Aware-Proxy (IAP).
      *
      * Generated from protobuf field <code>.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.IapCredential iap_credential = 4;</code>
-     * @return \Google\Cloud\WebSecurityScanner\V1\ScanConfig\Authentication\IapCredential
+     * @return \Google\Cloud\WebSecurityScanner\V1\ScanConfig\Authentication\IapCredential|null
      */
     public function getIapCredential()
     {

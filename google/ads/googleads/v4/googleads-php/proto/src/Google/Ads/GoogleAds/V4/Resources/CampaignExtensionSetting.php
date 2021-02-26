@@ -146,7 +146,7 @@ class CampaignExtensionSetting extends \Google\Protobuf\Internal\Message
      * `customers/{customer_id}/campaigns/{campaign_id}`
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCampaign()
     {

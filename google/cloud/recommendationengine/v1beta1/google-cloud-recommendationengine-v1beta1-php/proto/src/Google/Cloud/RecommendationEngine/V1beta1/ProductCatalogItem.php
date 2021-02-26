@@ -100,7 +100,7 @@ class ProductCatalogItem extends \Google\Protobuf\Internal\Message
      * Optional. The exact product price.
      *
      * Generated from protobuf field <code>.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.ExactPrice exact_price = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\RecommendationEngine\V1beta1\ProductCatalogItem\ExactPrice
+     * @return \Google\Cloud\RecommendationEngine\V1beta1\ProductCatalogItem\ExactPrice|null
      */
     public function getExactPrice()
     {
@@ -131,7 +131,7 @@ class ProductCatalogItem extends \Google\Protobuf\Internal\Message
      * Optional. The product price range.
      *
      * Generated from protobuf field <code>.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.PriceRange price_range = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\RecommendationEngine\V1beta1\ProductCatalogItem\PriceRange
+     * @return \Google\Cloud\RecommendationEngine\V1beta1\ProductCatalogItem\PriceRange|null
      */
     public function getPriceRange()
     {

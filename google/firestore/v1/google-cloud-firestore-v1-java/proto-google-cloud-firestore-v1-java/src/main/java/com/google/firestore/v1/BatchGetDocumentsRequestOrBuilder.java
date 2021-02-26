@@ -121,6 +121,15 @@ public interface BatchGetDocumentsRequestOrBuilder extends
    * </pre>
    *
    * <code>bytes transaction = 4;</code>
+   * @return Whether the transaction field is set.
+   */
+  boolean hasTransaction();
+  /**
+   * <pre>
+   * Reads documents in a transaction.
+   * </pre>
+   *
+   * <code>bytes transaction = 4;</code>
    * @return The transaction.
    */
   com.google.protobuf.ByteString getTransaction();

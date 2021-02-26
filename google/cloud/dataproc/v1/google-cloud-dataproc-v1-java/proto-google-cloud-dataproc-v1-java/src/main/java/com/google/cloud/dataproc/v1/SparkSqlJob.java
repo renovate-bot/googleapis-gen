@@ -220,6 +220,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string query_file_uri = 1;</code>
+   * @return Whether the queryFileUri field is set.
+   */
+  public boolean hasQueryFileUri() {
+    return queriesCase_ == 1;
+  }
+  /**
+   * <pre>
+   * The HCFS URI of the script that contains SQL queries.
+   * </pre>
+   *
+   * <code>string query_file_uri = 1;</code>
    * @return The queryFileUri.
    */
   public java.lang.String getQueryFileUri() {
@@ -1121,6 +1132,18 @@ private static final long serialVersionUID = 0L;
 
     private int bitField0_;
 
+    /**
+     * <pre>
+     * The HCFS URI of the script that contains SQL queries.
+     * </pre>
+     *
+     * <code>string query_file_uri = 1;</code>
+     * @return Whether the queryFileUri field is set.
+     */
+    @java.lang.Override
+    public boolean hasQueryFileUri() {
+      return queriesCase_ == 1;
+    }
     /**
      * <pre>
      * The HCFS URI of the script that contains SQL queries.

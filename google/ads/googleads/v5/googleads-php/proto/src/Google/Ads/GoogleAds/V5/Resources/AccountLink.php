@@ -110,7 +110,7 @@ class AccountLink extends \Google\Protobuf\Internal\Message
      * This field is read only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value account_link_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getAccountLinkId()
     {
@@ -228,7 +228,7 @@ class AccountLink extends \Google\Protobuf\Internal\Message
      * Immutable. A third party app analytics link.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.resources.ThirdPartyAppAnalyticsLinkIdentifier third_party_app_analytics = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V5\Resources\ThirdPartyAppAnalyticsLinkIdentifier
+     * @return \Google\Ads\GoogleAds\V5\Resources\ThirdPartyAppAnalyticsLinkIdentifier|null
      */
     public function getThirdPartyAppAnalytics()
     {
@@ -259,7 +259,7 @@ class AccountLink extends \Google\Protobuf\Internal\Message
      * Output only. Data partner link.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.resources.DataPartnerLinkIdentifier data_partner = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V5\Resources\DataPartnerLinkIdentifier
+     * @return \Google\Ads\GoogleAds\V5\Resources\DataPartnerLinkIdentifier|null
      */
     public function getDataPartner()
     {
@@ -290,7 +290,7 @@ class AccountLink extends \Google\Protobuf\Internal\Message
      * Output only. Google Ads link.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.resources.GoogleAdsLinkIdentifier google_ads = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V5\Resources\GoogleAdsLinkIdentifier
+     * @return \Google\Ads\GoogleAds\V5\Resources\GoogleAdsLinkIdentifier|null
      */
     public function getGoogleAds()
     {

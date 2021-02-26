@@ -52,7 +52,7 @@ class TargetCpaOptInParameters extends \Google\Protobuf\Internal\Message
      * field.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpa_micros = 1;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getTargetCpaMicros()
     {
@@ -118,7 +118,7 @@ class TargetCpaOptInParameters extends \Google\Protobuf\Internal\Message
      * Optional, budget amount to set for the campaign.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value new_campaign_budget_amount_micros = 2;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getNewCampaignBudgetAmountMicros()
     {

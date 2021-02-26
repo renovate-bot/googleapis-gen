@@ -87,6 +87,7 @@ class Agent extends \Google\Protobuf\Internal\Message
      * Optional. Determines how intents are detected from user queries.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
+     * @deprecated
      */
     protected $match_mode = 0;
     /**
@@ -415,9 +416,11 @@ class Agent extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      * @return int
+     * @deprecated
      */
     public function getMatchMode()
     {
+        @trigger_error('match_mode is deprecated.', E_USER_DEPRECATED);
         return $this->match_mode;
     }
 
@@ -427,9 +430,11 @@ class Agent extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      * @param int $var
      * @return $this
+     * @deprecated
      */
     public function setMatchMode($var)
     {
+        @trigger_error('match_mode is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkEnum($var, \Google\Cloud\Dialogflow\V2\Agent\MatchMode::class);
         $this->match_mode = $var;
 

@@ -73,7 +73,7 @@ class ClickLocation extends \Google\Protobuf\Internal\Message
      * The city location criterion associated with the impression.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue city = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCity()
     {
@@ -136,7 +136,7 @@ class ClickLocation extends \Google\Protobuf\Internal\Message
      * The country location criterion associated with the impression.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCountry()
     {
@@ -199,7 +199,7 @@ class ClickLocation extends \Google\Protobuf\Internal\Message
      * The metro location criterion associated with the impression.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue metro = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getMetro()
     {
@@ -262,7 +262,7 @@ class ClickLocation extends \Google\Protobuf\Internal\Message
      * The most specific location criterion associated with the impression.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue most_specific = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getMostSpecific()
     {
@@ -325,7 +325,7 @@ class ClickLocation extends \Google\Protobuf\Internal\Message
      * The region location criterion associated with the impression.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue region = 5;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getRegion()
     {

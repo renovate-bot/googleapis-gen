@@ -150,6 +150,15 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string string_value = 5;</code>
+     * @return Whether the stringValue field is set.
+     */
+    boolean hasStringValue();
+    /**
+     * <pre>
+     * String value of the operand if it is a string type.
+     * </pre>
+     *
+     * <code>string string_value = 5;</code>
      * @return The stringValue.
      */
     java.lang.String getStringValue();
@@ -170,6 +179,15 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 long_value = 6;</code>
+     * @return Whether the longValue field is set.
+     */
+    boolean hasLongValue();
+    /**
+     * <pre>
+     * Int64 value of the operand if it is a int64 type.
+     * </pre>
+     *
+     * <code>int64 long_value = 6;</code>
      * @return The longValue.
      */
     long getLongValue();
@@ -180,10 +198,28 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool boolean_value = 7;</code>
+     * @return Whether the booleanValue field is set.
+     */
+    boolean hasBooleanValue();
+    /**
+     * <pre>
+     * Boolean value of the operand if it is a boolean type.
+     * </pre>
+     *
+     * <code>bool boolean_value = 7;</code>
      * @return The booleanValue.
      */
     boolean getBooleanValue();
 
+    /**
+     * <pre>
+     * Double value of the operand if it is a double type.
+     * </pre>
+     *
+     * <code>double double_value = 8;</code>
+     * @return Whether the doubleValue field is set.
+     */
+    boolean hasDoubleValue();
     /**
      * <pre>
      * Double value of the operand if it is a double type.
@@ -350,6 +386,17 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string string_value = 5;</code>
+     * @return Whether the stringValue field is set.
+     */
+    public boolean hasStringValue() {
+      return constantOperandValueCase_ == 5;
+    }
+    /**
+     * <pre>
+     * String value of the operand if it is a string type.
+     * </pre>
+     *
+     * <code>string string_value = 5;</code>
      * @return The stringValue.
      */
     public java.lang.String getStringValue() {
@@ -403,6 +450,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 long_value = 6;</code>
+     * @return Whether the longValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasLongValue() {
+      return constantOperandValueCase_ == 6;
+    }
+    /**
+     * <pre>
+     * Int64 value of the operand if it is a int64 type.
+     * </pre>
+     *
+     * <code>int64 long_value = 6;</code>
      * @return The longValue.
      */
     @java.lang.Override
@@ -420,6 +479,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool boolean_value = 7;</code>
+     * @return Whether the booleanValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasBooleanValue() {
+      return constantOperandValueCase_ == 7;
+    }
+    /**
+     * <pre>
+     * Boolean value of the operand if it is a boolean type.
+     * </pre>
+     *
+     * <code>bool boolean_value = 7;</code>
      * @return The booleanValue.
      */
     @java.lang.Override
@@ -431,6 +502,18 @@ private static final long serialVersionUID = 0L;
     }
 
     public static final int DOUBLE_VALUE_FIELD_NUMBER = 8;
+    /**
+     * <pre>
+     * Double value of the operand if it is a double type.
+     * </pre>
+     *
+     * <code>double double_value = 8;</code>
+     * @return Whether the doubleValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasDoubleValue() {
+      return constantOperandValueCase_ == 8;
+    }
     /**
      * <pre>
      * Double value of the operand if it is a double type.
@@ -873,6 +956,18 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string string_value = 5;</code>
+       * @return Whether the stringValue field is set.
+       */
+      @java.lang.Override
+      public boolean hasStringValue() {
+        return constantOperandValueCase_ == 5;
+      }
+      /**
+       * <pre>
+       * String value of the operand if it is a string type.
+       * </pre>
+       *
+       * <code>string string_value = 5;</code>
        * @return The stringValue.
        */
       @java.lang.Override
@@ -982,6 +1077,17 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 long_value = 6;</code>
+       * @return Whether the longValue field is set.
+       */
+      public boolean hasLongValue() {
+        return constantOperandValueCase_ == 6;
+      }
+      /**
+       * <pre>
+       * Int64 value of the operand if it is a int64 type.
+       * </pre>
+       *
+       * <code>int64 long_value = 6;</code>
        * @return The longValue.
        */
       public long getLongValue() {
@@ -1028,6 +1134,17 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>bool boolean_value = 7;</code>
+       * @return Whether the booleanValue field is set.
+       */
+      public boolean hasBooleanValue() {
+        return constantOperandValueCase_ == 7;
+      }
+      /**
+       * <pre>
+       * Boolean value of the operand if it is a boolean type.
+       * </pre>
+       *
+       * <code>bool boolean_value = 7;</code>
        * @return The booleanValue.
        */
       public boolean getBooleanValue() {
@@ -1068,6 +1185,17 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      /**
+       * <pre>
+       * Double value of the operand if it is a double type.
+       * </pre>
+       *
+       * <code>double double_value = 8;</code>
+       * @return Whether the doubleValue field is set.
+       */
+      public boolean hasDoubleValue() {
+        return constantOperandValueCase_ == 8;
+      }
       /**
        * <pre>
        * Double value of the operand if it is a double type.

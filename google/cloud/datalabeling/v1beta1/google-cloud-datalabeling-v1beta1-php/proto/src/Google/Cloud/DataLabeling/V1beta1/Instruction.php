@@ -62,6 +62,7 @@ class Instruction extends \Google\Protobuf\Internal\Message
      * * The second column is comma separated labels associated with data.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7 [deprecated = true];</code>
+     * @deprecated
      */
     protected $csv_instruction = null;
     /**
@@ -204,7 +205,7 @@ class Instruction extends \Google\Protobuf\Internal\Message
      * Output only. Creation time of instruction.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 4;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -240,7 +241,7 @@ class Instruction extends \Google\Protobuf\Internal\Message
      * Output only. Last update time of instruction.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 5;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {
@@ -306,20 +307,24 @@ class Instruction extends \Google\Protobuf\Internal\Message
      * * The second column is comma separated labels associated with data.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7 [deprecated = true];</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\CsvInstruction
+     * @return \Google\Cloud\DataLabeling\V1beta1\CsvInstruction|null
+     * @deprecated
      */
     public function getCsvInstruction()
     {
+        @trigger_error('csv_instruction is deprecated.', E_USER_DEPRECATED);
         return isset($this->csv_instruction) ? $this->csv_instruction : null;
     }
 
     public function hasCsvInstruction()
     {
+        @trigger_error('csv_instruction is deprecated.', E_USER_DEPRECATED);
         return isset($this->csv_instruction);
     }
 
     public function clearCsvInstruction()
     {
+        @trigger_error('csv_instruction is deprecated.', E_USER_DEPRECATED);
         unset($this->csv_instruction);
     }
 
@@ -333,9 +338,11 @@ class Instruction extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7 [deprecated = true];</code>
      * @param \Google\Cloud\DataLabeling\V1beta1\CsvInstruction $var
      * @return $this
+     * @deprecated
      */
     public function setCsvInstruction($var)
     {
+        @trigger_error('csv_instruction is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Google\Cloud\DataLabeling\V1beta1\CsvInstruction::class);
         $this->csv_instruction = $var;
 
@@ -347,7 +354,7 @@ class Instruction extends \Google\Protobuf\Internal\Message
      * bucket.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.PdfInstruction pdf_instruction = 9;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\PdfInstruction
+     * @return \Google\Cloud\DataLabeling\V1beta1\PdfInstruction|null
      */
     public function getPdfInstruction()
     {

@@ -69,7 +69,7 @@ class ExportAssetsResponse extends \Google\Protobuf\Internal\Message
      * Time the snapshot was taken.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp read_time = 1;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getReadTime()
     {
@@ -105,7 +105,7 @@ class ExportAssetsResponse extends \Google\Protobuf\Internal\Message
      * Output configuration indicating where the results were output to.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1p7beta1.OutputConfig output_config = 2;</code>
-     * @return \Google\Cloud\Asset\V1p7beta1\OutputConfig
+     * @return \Google\Cloud\Asset\V1p7beta1\OutputConfig|null
      */
     public function getOutputConfig()
     {
@@ -145,7 +145,7 @@ class ExportAssetsResponse extends \Google\Protobuf\Internal\Message
      * once it exceeds a single Google Cloud Storage object limit.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1p7beta1.OutputResult output_result = 3;</code>
-     * @return \Google\Cloud\Asset\V1p7beta1\OutputResult
+     * @return \Google\Cloud\Asset\V1p7beta1\OutputResult|null
      */
     public function getOutputResult()
     {

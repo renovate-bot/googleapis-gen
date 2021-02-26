@@ -102,6 +102,17 @@ public interface CampaignExtensionSettingOperationOrBuilder extends
    * </pre>
    *
    * <code>string remove = 3;</code>
+   * @return Whether the remove field is set.
+   */
+  boolean hasRemove();
+  /**
+   * <pre>
+   * Remove operation: A resource name for the removed campaign extension
+   * setting is expected, in this format:
+   * `customers/{customer_id}/campaignExtensionSettings/{campaign_id}~{extension_type}`
+   * </pre>
+   *
+   * <code>string remove = 3;</code>
    * @return The remove.
    */
   java.lang.String getRemove();

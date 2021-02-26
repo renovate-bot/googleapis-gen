@@ -53,7 +53,7 @@ class ValidateExclusivityResponse extends \Google\Protobuf\Internal\Message
      *    another Hub. See `status.message` for more information.
      *
      * Generated from protobuf field <code>.google.rpc.Status status = 1;</code>
-     * @return \Google\Rpc\Status
+     * @return \Google\Rpc\Status|null
      */
     public function getStatus()
     {

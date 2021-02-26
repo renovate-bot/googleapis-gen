@@ -13,6 +13,15 @@ public interface KeywordPlanForecastPeriodOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v5.enums.KeywordPlanForecastIntervalEnum.KeywordPlanForecastInterval date_interval = 1;</code>
+   * @return Whether the dateInterval field is set.
+   */
+  boolean hasDateInterval();
+  /**
+   * <pre>
+   * A future date range relative to the current date used for forecasting.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.enums.KeywordPlanForecastIntervalEnum.KeywordPlanForecastInterval date_interval = 1;</code>
    * @return The enum numeric value on the wire for dateInterval.
    */
   int getDateIntervalValue();

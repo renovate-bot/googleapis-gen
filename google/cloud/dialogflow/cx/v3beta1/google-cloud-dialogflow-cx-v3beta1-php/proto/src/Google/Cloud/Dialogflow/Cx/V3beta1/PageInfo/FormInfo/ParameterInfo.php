@@ -201,7 +201,7 @@ class ParameterInfo extends \Google\Protobuf\Internal\Message
      * change the parameter value.
      *
      * Generated from protobuf field <code>.google.protobuf.Value value = 4;</code>
-     * @return \Google\Protobuf\Value
+     * @return \Google\Protobuf\Value|null
      */
     public function getValue()
     {

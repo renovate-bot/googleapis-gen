@@ -143,6 +143,21 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 scale = 2 [deprecated = true];</code>
+     * @return Whether the scale field is set.
+     */
+    @java.lang.Deprecated boolean hasScale();
+    /**
+     * <pre>
+     * DEPRECATED: Use capacity instead which can express a superset of
+     * configurations.
+     * Every partition in the topic is allocated throughput equivalent to
+     * `scale` times the standard partition throughput (4 MiB/s). This is also
+     * reflected in the cost of this topic; a topic with `scale` of 2 and
+     * count of 10 is charged for 20 partitions. This value must be in the
+     * range [1,4].
+     * </pre>
+     *
+     * <code>int32 scale = 2 [deprecated = true];</code>
      * @return The scale.
      */
     @java.lang.Deprecated int getScale();
@@ -966,6 +981,24 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 scale = 2 [deprecated = true];</code>
+     * @return Whether the scale field is set.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated public boolean hasScale() {
+      return dimensionCase_ == 2;
+    }
+    /**
+     * <pre>
+     * DEPRECATED: Use capacity instead which can express a superset of
+     * configurations.
+     * Every partition in the topic is allocated throughput equivalent to
+     * `scale` times the standard partition throughput (4 MiB/s). This is also
+     * reflected in the cost of this topic; a topic with `scale` of 2 and
+     * count of 10 is charged for 20 partitions. This value must be in the
+     * range [1,4].
+     * </pre>
+     *
+     * <code>int32 scale = 2 [deprecated = true];</code>
      * @return The scale.
      */
     @java.lang.Override
@@ -1451,6 +1484,23 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      /**
+       * <pre>
+       * DEPRECATED: Use capacity instead which can express a superset of
+       * configurations.
+       * Every partition in the topic is allocated throughput equivalent to
+       * `scale` times the standard partition throughput (4 MiB/s). This is also
+       * reflected in the cost of this topic; a topic with `scale` of 2 and
+       * count of 10 is charged for 20 partitions. This value must be in the
+       * range [1,4].
+       * </pre>
+       *
+       * <code>int32 scale = 2 [deprecated = true];</code>
+       * @return Whether the scale field is set.
+       */
+      @java.lang.Deprecated public boolean hasScale() {
+        return dimensionCase_ == 2;
+      }
       /**
        * <pre>
        * DEPRECATED: Use capacity instead which can express a superset of

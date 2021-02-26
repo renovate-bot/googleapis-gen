@@ -88,7 +88,7 @@ class ListingGroupInfo extends \Google\Protobuf\Internal\Message
      * Undefined for the root group.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.ListingDimensionInfo case_value = 2;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\ListingDimensionInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\ListingDimensionInfo|null
      */
     public function getCaseValue()
     {
@@ -126,7 +126,7 @@ class ListingGroupInfo extends \Google\Protobuf\Internal\Message
      * subdivision. Null for the root group.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue parent_ad_group_criterion = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getParentAdGroupCriterion()
     {

@@ -41,7 +41,7 @@ class UndeployModelOperationMetadata extends \Google\Protobuf\Internal\Message
      * The operation generic information.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.GenericOperationMetadata generic_metadata = 1;</code>
-     * @return \Google\Cloud\Aiplatform\V1\GenericOperationMetadata
+     * @return \Google\Cloud\Aiplatform\V1\GenericOperationMetadata|null
      */
     public function getGenericMetadata()
     {

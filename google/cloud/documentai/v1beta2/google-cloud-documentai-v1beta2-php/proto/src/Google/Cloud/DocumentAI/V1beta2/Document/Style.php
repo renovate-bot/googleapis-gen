@@ -98,7 +98,7 @@ class Style extends \Google\Protobuf\Internal\Message
      * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta2.Document.text].
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta2.Document.TextAnchor text_anchor = 1;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta2\Document\TextAnchor
+     * @return \Google\Cloud\DocumentAI\V1beta2\Document\TextAnchor|null
      */
     public function getTextAnchor()
     {
@@ -134,7 +134,7 @@ class Style extends \Google\Protobuf\Internal\Message
      * Text color.
      *
      * Generated from protobuf field <code>.google.type.Color color = 2;</code>
-     * @return \Google\Type\Color
+     * @return \Google\Type\Color|null
      */
     public function getColor()
     {
@@ -170,7 +170,7 @@ class Style extends \Google\Protobuf\Internal\Message
      * Text background color.
      *
      * Generated from protobuf field <code>.google.type.Color background_color = 3;</code>
-     * @return \Google\Type\Color
+     * @return \Google\Type\Color|null
      */
     public function getBackgroundColor()
     {
@@ -292,7 +292,7 @@ class Style extends \Google\Protobuf\Internal\Message
      * Font size.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta2.Document.Style.FontSize font_size = 7;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta2\Document\Style\FontSize
+     * @return \Google\Cloud\DocumentAI\V1beta2\Document\Style\FontSize|null
      */
     public function getFontSize()
     {

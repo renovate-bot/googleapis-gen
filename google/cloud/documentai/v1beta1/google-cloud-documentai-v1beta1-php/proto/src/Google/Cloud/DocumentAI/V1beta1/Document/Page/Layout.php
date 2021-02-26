@@ -80,7 +80,7 @@ class Layout extends \Google\Protobuf\Internal\Message
      * [Document.text][google.cloud.documentai.v1beta1.Document.text].
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta1.Document.TextAnchor text_anchor = 1;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta1\Document\TextAnchor
+     * @return \Google\Cloud\DocumentAI\V1beta1\Document\TextAnchor|null
      */
     public function getTextAnchor()
     {
@@ -152,7 +152,7 @@ class Layout extends \Google\Protobuf\Internal\Message
      * [Layout][google.cloud.documentai.v1beta1.Document.Page.Layout].
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta1.BoundingPoly bounding_poly = 3;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta1\BoundingPoly
+     * @return \Google\Cloud\DocumentAI\V1beta1\BoundingPoly|null
      */
     public function getBoundingPoly()
     {

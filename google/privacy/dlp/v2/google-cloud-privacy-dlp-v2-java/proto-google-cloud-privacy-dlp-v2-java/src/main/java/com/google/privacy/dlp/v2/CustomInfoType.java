@@ -4267,6 +4267,15 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Likelihood fixed_likelihood = 1;</code>
+       * @return Whether the fixedLikelihood field is set.
+       */
+      boolean hasFixedLikelihood();
+      /**
+       * <pre>
+       * Set the likelihood of a finding to a fixed value.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.Likelihood fixed_likelihood = 1;</code>
        * @return The enum numeric value on the wire for fixedLikelihood.
        */
       int getFixedLikelihoodValue();
@@ -4280,6 +4289,22 @@ private static final long serialVersionUID = 0L;
        */
       com.google.privacy.dlp.v2.Likelihood getFixedLikelihood();
 
+      /**
+       * <pre>
+       * Increase or decrease the likelihood by the specified number of
+       * levels. For example, if a finding would be `POSSIBLE` without the
+       * detection rule and `relative_likelihood` is 1, then it is upgraded to
+       * `LIKELY`, while a value of -1 would downgrade it to `UNLIKELY`.
+       * Likelihood may never drop below `VERY_UNLIKELY` or exceed
+       * `VERY_LIKELY`, so applying an adjustment of 1 followed by an
+       * adjustment of -1 when base likelihood is `VERY_LIKELY` will result in
+       * a final likelihood of `LIKELY`.
+       * </pre>
+       *
+       * <code>int32 relative_likelihood = 2;</code>
+       * @return Whether the relativeLikelihood field is set.
+       */
+      boolean hasRelativeLikelihood();
       /**
        * <pre>
        * Increase or decrease the likelihood by the specified number of
@@ -4440,6 +4465,17 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Likelihood fixed_likelihood = 1;</code>
+       * @return Whether the fixedLikelihood field is set.
+       */
+      public boolean hasFixedLikelihood() {
+        return adjustmentCase_ == 1;
+      }
+      /**
+       * <pre>
+       * Set the likelihood of a finding to a fixed value.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.Likelihood fixed_likelihood = 1;</code>
        * @return The enum numeric value on the wire for fixedLikelihood.
        */
       public int getFixedLikelihoodValue() {
@@ -4467,6 +4503,25 @@ private static final long serialVersionUID = 0L;
       }
 
       public static final int RELATIVE_LIKELIHOOD_FIELD_NUMBER = 2;
+      /**
+       * <pre>
+       * Increase or decrease the likelihood by the specified number of
+       * levels. For example, if a finding would be `POSSIBLE` without the
+       * detection rule and `relative_likelihood` is 1, then it is upgraded to
+       * `LIKELY`, while a value of -1 would downgrade it to `UNLIKELY`.
+       * Likelihood may never drop below `VERY_UNLIKELY` or exceed
+       * `VERY_LIKELY`, so applying an adjustment of 1 followed by an
+       * adjustment of -1 when base likelihood is `VERY_LIKELY` will result in
+       * a final likelihood of `LIKELY`.
+       * </pre>
+       *
+       * <code>int32 relative_likelihood = 2;</code>
+       * @return Whether the relativeLikelihood field is set.
+       */
+      @java.lang.Override
+      public boolean hasRelativeLikelihood() {
+        return adjustmentCase_ == 2;
+      }
       /**
        * <pre>
        * Increase or decrease the likelihood by the specified number of
@@ -4864,6 +4919,18 @@ private static final long serialVersionUID = 0L;
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.Likelihood fixed_likelihood = 1;</code>
+         * @return Whether the fixedLikelihood field is set.
+         */
+        @java.lang.Override
+        public boolean hasFixedLikelihood() {
+          return adjustmentCase_ == 1;
+        }
+        /**
+         * <pre>
+         * Set the likelihood of a finding to a fixed value.
+         * </pre>
+         *
+         * <code>.google.privacy.dlp.v2.Likelihood fixed_likelihood = 1;</code>
          * @return The enum numeric value on the wire for fixedLikelihood.
          */
         @java.lang.Override
@@ -4941,6 +5008,24 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        /**
+         * <pre>
+         * Increase or decrease the likelihood by the specified number of
+         * levels. For example, if a finding would be `POSSIBLE` without the
+         * detection rule and `relative_likelihood` is 1, then it is upgraded to
+         * `LIKELY`, while a value of -1 would downgrade it to `UNLIKELY`.
+         * Likelihood may never drop below `VERY_UNLIKELY` or exceed
+         * `VERY_LIKELY`, so applying an adjustment of 1 followed by an
+         * adjustment of -1 when base likelihood is `VERY_LIKELY` will result in
+         * a final likelihood of `LIKELY`.
+         * </pre>
+         *
+         * <code>int32 relative_likelihood = 2;</code>
+         * @return Whether the relativeLikelihood field is set.
+         */
+        public boolean hasRelativeLikelihood() {
+          return adjustmentCase_ == 2;
+        }
         /**
          * <pre>
          * Increase or decrease the likelihood by the specified number of

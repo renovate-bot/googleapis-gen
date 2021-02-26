@@ -15,6 +15,17 @@ public interface SecretOrBuilder extends
    * </pre>
    *
    * <code>string cloud_secret = 2;</code>
+   * @return Whether the cloudSecret field is set.
+   */
+  boolean hasCloudSecret();
+  /**
+   * <pre>
+   * The relative resource name of a Secret Manager secret version, in the
+   * following form:
+   * "projects/{project_id}/secrets/{secret_id}/versions/{version_id}".
+   * </pre>
+   *
+   * <code>string cloud_secret = 2;</code>
    * @return The cloudSecret.
    */
   java.lang.String getCloudSecret();

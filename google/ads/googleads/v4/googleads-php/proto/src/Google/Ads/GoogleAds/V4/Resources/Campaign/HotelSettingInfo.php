@@ -41,7 +41,7 @@ class HotelSettingInfo extends \Google\Protobuf\Internal\Message
      * Immutable. The linked Hotel Center account.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_center_id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getHotelCenterId()
     {

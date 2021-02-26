@@ -44,7 +44,7 @@ class MoveUnusedBudgetParameters extends \Google\Protobuf\Internal\Message
      * a required field.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value budget_micros_to_move = 1;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getBudgetMicrosToMove()
     {

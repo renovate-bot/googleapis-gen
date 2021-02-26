@@ -114,7 +114,7 @@ class ResponseMediaObject extends \Google\Protobuf\Internal\Message
      * Optional. Image to display above media content.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.Intent.Message.Image large_image = 3;</code>
-     * @return \Google\Cloud\Dialogflow\V2beta1\Intent\Message\Image
+     * @return \Google\Cloud\Dialogflow\V2beta1\Intent\Message\Image|null
      */
     public function getLargeImage()
     {
@@ -145,7 +145,7 @@ class ResponseMediaObject extends \Google\Protobuf\Internal\Message
      * Optional. Icon to display above media content.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.Intent.Message.Image icon = 4;</code>
-     * @return \Google\Cloud\Dialogflow\V2beta1\Intent\Message\Image
+     * @return \Google\Cloud\Dialogflow\V2beta1\Intent\Message\Image|null
      */
     public function getIcon()
     {

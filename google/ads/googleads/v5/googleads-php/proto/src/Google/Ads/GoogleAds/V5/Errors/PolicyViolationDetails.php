@@ -96,7 +96,7 @@ class PolicyViolationDetails extends \Google\Protobuf\Internal\Message
      * If policy is exemptible, this key may be used to request exemption.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v5.common.PolicyViolationKey key = 4;</code>
-     * @return \Google\Ads\GoogleAds\V5\Common\PolicyViolationKey
+     * @return \Google\Ads\GoogleAds\V5\Common\PolicyViolationKey|null
      */
     public function getKey()
     {

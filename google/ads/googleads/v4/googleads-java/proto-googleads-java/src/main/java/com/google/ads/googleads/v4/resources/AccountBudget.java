@@ -573,6 +573,15 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v4.enums.TimeTypeEnum.TimeType end_time_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the endTimeType field is set.
+     */
+    boolean hasEndTimeType();
+    /**
+     * <pre>
+     * Output only. The end time as a well-defined type, e.g. FOREVER.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.TimeTypeEnum.TimeType end_time_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The enum numeric value on the wire for endTimeType.
      */
     int getEndTimeTypeValue();
@@ -616,6 +625,15 @@ private static final long serialVersionUID = 0L;
      */
     com.google.protobuf.Int64ValueOrBuilder getSpendingLimitMicrosOrBuilder();
 
+    /**
+     * <pre>
+     * Output only. The spending limit as a well-defined type, e.g. INFINITE.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.SpendingLimitTypeEnum.SpendingLimitType spending_limit_type = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the spendingLimitType field is set.
+     */
+    boolean hasSpendingLimitType();
     /**
      * <pre>
      * Output only. The spending limit as a well-defined type, e.g. INFINITE.
@@ -1247,6 +1265,17 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v4.enums.TimeTypeEnum.TimeType end_time_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the endTimeType field is set.
+     */
+    public boolean hasEndTimeType() {
+      return endTimeCase_ == 6;
+    }
+    /**
+     * <pre>
+     * Output only. The end time as a well-defined type, e.g. FOREVER.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.TimeTypeEnum.TimeType end_time_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The enum numeric value on the wire for endTimeType.
      */
     public int getEndTimeTypeValue() {
@@ -1320,6 +1349,17 @@ private static final long serialVersionUID = 0L;
     }
 
     public static final int SPENDING_LIMIT_TYPE_FIELD_NUMBER = 8;
+    /**
+     * <pre>
+     * Output only. The spending limit as a well-defined type, e.g. INFINITE.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.SpendingLimitTypeEnum.SpendingLimitType spending_limit_type = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the spendingLimitType field is set.
+     */
+    public boolean hasSpendingLimitType() {
+      return spendingLimitCase_ == 8;
+    }
     /**
      * <pre>
      * Output only. The spending limit as a well-defined type, e.g. INFINITE.
@@ -3226,6 +3266,18 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.ads.googleads.v4.enums.TimeTypeEnum.TimeType end_time_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return Whether the endTimeType field is set.
+       */
+      @java.lang.Override
+      public boolean hasEndTimeType() {
+        return endTimeCase_ == 6;
+      }
+      /**
+       * <pre>
+       * Output only. The end time as a well-defined type, e.g. FOREVER.
+       * </pre>
+       *
+       * <code>.google.ads.googleads.v4.enums.TimeTypeEnum.TimeType end_time_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The enum numeric value on the wire for endTimeType.
        */
       @java.lang.Override
@@ -3489,6 +3541,18 @@ private static final long serialVersionUID = 0L;
         return spendingLimitMicrosBuilder_;
       }
 
+      /**
+       * <pre>
+       * Output only. The spending limit as a well-defined type, e.g. INFINITE.
+       * </pre>
+       *
+       * <code>.google.ads.googleads.v4.enums.SpendingLimitTypeEnum.SpendingLimitType spending_limit_type = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return Whether the spendingLimitType field is set.
+       */
+      @java.lang.Override
+      public boolean hasSpendingLimitType() {
+        return spendingLimitCase_ == 8;
+      }
       /**
        * <pre>
        * Output only. The spending limit as a well-defined type, e.g. INFINITE.
@@ -4369,6 +4433,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v4.enums.TimeTypeEnum.TimeType proposed_end_time_type = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the proposedEndTimeType field is set.
+   */
+  public boolean hasProposedEndTimeType() {
+    return proposedEndTimeCase_ == 9;
+  }
+  /**
+   * <pre>
+   * Output only. The proposed end time as a well-defined type, e.g. FOREVER.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.TimeTypeEnum.TimeType proposed_end_time_type = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The enum numeric value on the wire for proposedEndTimeType.
    */
   public int getProposedEndTimeTypeValue() {
@@ -4439,6 +4514,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int APPROVED_END_TIME_TYPE_FIELD_NUMBER = 11;
+  /**
+   * <pre>
+   * Output only. The approved end time as a well-defined type, e.g. FOREVER.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.TimeTypeEnum.TimeType approved_end_time_type = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the approvedEndTimeType field is set.
+   */
+  public boolean hasApprovedEndTimeType() {
+    return approvedEndTimeCase_ == 11;
+  }
   /**
    * <pre>
    * Output only. The approved end time as a well-defined type, e.g. FOREVER.
@@ -4524,6 +4610,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v4.enums.SpendingLimitTypeEnum.SpendingLimitType proposed_spending_limit_type = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the proposedSpendingLimitType field is set.
+   */
+  public boolean hasProposedSpendingLimitType() {
+    return proposedSpendingLimitCase_ == 13;
+  }
+  /**
+   * <pre>
+   * Output only. The proposed spending limit as a well-defined type, e.g. INFINITE.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.SpendingLimitTypeEnum.SpendingLimitType proposed_spending_limit_type = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The enum numeric value on the wire for proposedSpendingLimitType.
    */
   public int getProposedSpendingLimitTypeValue() {
@@ -4603,6 +4700,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int APPROVED_SPENDING_LIMIT_TYPE_FIELD_NUMBER = 15;
+  /**
+   * <pre>
+   * Output only. The approved spending limit as a well-defined type, e.g. INFINITE.  This
+   * will only be populated if the approved spending limit is INFINITE.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.SpendingLimitTypeEnum.SpendingLimitType approved_spending_limit_type = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the approvedSpendingLimitType field is set.
+   */
+  public boolean hasApprovedSpendingLimitType() {
+    return approvedSpendingLimitCase_ == 15;
+  }
   /**
    * <pre>
    * Output only. The approved spending limit as a well-defined type, e.g. INFINITE.  This
@@ -4705,6 +4814,20 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ADJUSTED_SPENDING_LIMIT_TYPE_FIELD_NUMBER = 17;
+  /**
+   * <pre>
+   * Output only. The adjusted spending limit as a well-defined type, e.g. INFINITE.
+   * This will only be populated if the adjusted spending limit is INFINITE,
+   * which is guaranteed to be true if the approved spending limit is
+   * INFINITE.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.enums.SpendingLimitTypeEnum.SpendingLimitType adjusted_spending_limit_type = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the adjustedSpendingLimitType field is set.
+   */
+  public boolean hasAdjustedSpendingLimitType() {
+    return adjustedSpendingLimitCase_ == 17;
+  }
   /**
    * <pre>
    * Output only. The adjusted spending limit as a well-defined type, e.g. INFINITE.
@@ -7790,6 +7913,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v4.enums.TimeTypeEnum.TimeType proposed_end_time_type = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the proposedEndTimeType field is set.
+     */
+    @java.lang.Override
+    public boolean hasProposedEndTimeType() {
+      return proposedEndTimeCase_ == 9;
+    }
+    /**
+     * <pre>
+     * Output only. The proposed end time as a well-defined type, e.g. FOREVER.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.TimeTypeEnum.TimeType proposed_end_time_type = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The enum numeric value on the wire for proposedEndTimeType.
      */
     @java.lang.Override
@@ -8044,6 +8179,18 @@ private static final long serialVersionUID = 0L;
       return approvedEndDateTimeBuilder_;
     }
 
+    /**
+     * <pre>
+     * Output only. The approved end time as a well-defined type, e.g. FOREVER.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.TimeTypeEnum.TimeType approved_end_time_type = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the approvedEndTimeType field is set.
+     */
+    @java.lang.Override
+    public boolean hasApprovedEndTimeType() {
+      return approvedEndTimeCase_ == 11;
+    }
     /**
      * <pre>
      * Output only. The approved end time as a well-defined type, e.g. FOREVER.
@@ -8313,6 +8460,18 @@ private static final long serialVersionUID = 0L;
       return proposedSpendingLimitMicrosBuilder_;
     }
 
+    /**
+     * <pre>
+     * Output only. The proposed spending limit as a well-defined type, e.g. INFINITE.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.SpendingLimitTypeEnum.SpendingLimitType proposed_spending_limit_type = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the proposedSpendingLimitType field is set.
+     */
+    @java.lang.Override
+    public boolean hasProposedSpendingLimitType() {
+      return proposedSpendingLimitCase_ == 13;
+    }
     /**
      * <pre>
      * Output only. The proposed spending limit as a well-defined type, e.g. INFINITE.
@@ -8600,6 +8759,19 @@ private static final long serialVersionUID = 0L;
       return approvedSpendingLimitMicrosBuilder_;
     }
 
+    /**
+     * <pre>
+     * Output only. The approved spending limit as a well-defined type, e.g. INFINITE.  This
+     * will only be populated if the approved spending limit is INFINITE.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.SpendingLimitTypeEnum.SpendingLimitType approved_spending_limit_type = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the approvedSpendingLimitType field is set.
+     */
+    @java.lang.Override
+    public boolean hasApprovedSpendingLimitType() {
+      return approvedSpendingLimitCase_ == 15;
+    }
     /**
      * <pre>
      * Output only. The approved spending limit as a well-defined type, e.g. INFINITE.  This
@@ -8937,6 +9109,21 @@ private static final long serialVersionUID = 0L;
       return adjustedSpendingLimitMicrosBuilder_;
     }
 
+    /**
+     * <pre>
+     * Output only. The adjusted spending limit as a well-defined type, e.g. INFINITE.
+     * This will only be populated if the adjusted spending limit is INFINITE,
+     * which is guaranteed to be true if the approved spending limit is
+     * INFINITE.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v4.enums.SpendingLimitTypeEnum.SpendingLimitType adjusted_spending_limit_type = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the adjustedSpendingLimitType field is set.
+     */
+    @java.lang.Override
+    public boolean hasAdjustedSpendingLimitType() {
+      return adjustedSpendingLimitCase_ == 17;
+    }
     /**
      * <pre>
      * Output only. The adjusted spending limit as a well-defined type, e.g. INFINITE.

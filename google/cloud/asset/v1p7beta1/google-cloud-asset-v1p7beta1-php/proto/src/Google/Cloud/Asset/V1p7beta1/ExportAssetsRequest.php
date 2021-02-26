@@ -179,7 +179,7 @@ class ExportAssetsRequest extends \Google\Protobuf\Internal\Message
      * running the same query may get different results.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp read_time = 2;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getReadTime()
     {
@@ -300,7 +300,7 @@ class ExportAssetsRequest extends \Google\Protobuf\Internal\Message
      * to.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1p7beta1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Asset\V1p7beta1\OutputConfig
+     * @return \Google\Cloud\Asset\V1p7beta1\OutputConfig|null
      */
     public function getOutputConfig()
     {

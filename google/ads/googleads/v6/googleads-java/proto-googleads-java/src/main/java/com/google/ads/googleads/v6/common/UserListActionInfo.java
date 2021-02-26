@@ -144,6 +144,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string conversion_action = 3;</code>
+   * @return Whether the conversionAction field is set.
+   */
+  public boolean hasConversionAction() {
+    return userListActionCase_ == 3;
+  }
+  /**
+   * <pre>
+   * A conversion action that's not generated from remarketing.
+   * </pre>
+   *
+   * <code>string conversion_action = 3;</code>
    * @return The conversionAction.
    */
   public java.lang.String getConversionAction() {
@@ -191,6 +202,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int REMARKETING_ACTION_FIELD_NUMBER = 4;
+  /**
+   * <pre>
+   * A remarketing action.
+   * </pre>
+   *
+   * <code>string remarketing_action = 4;</code>
+   * @return Whether the remarketingAction field is set.
+   */
+  public boolean hasRemarketingAction() {
+    return userListActionCase_ == 4;
+  }
   /**
    * <pre>
    * A remarketing action.
@@ -616,6 +638,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string conversion_action = 3;</code>
+     * @return Whether the conversionAction field is set.
+     */
+    @java.lang.Override
+    public boolean hasConversionAction() {
+      return userListActionCase_ == 3;
+    }
+    /**
+     * <pre>
+     * A conversion action that's not generated from remarketing.
+     * </pre>
+     *
+     * <code>string conversion_action = 3;</code>
      * @return The conversionAction.
      */
     @java.lang.Override
@@ -719,6 +753,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * A remarketing action.
+     * </pre>
+     *
+     * <code>string remarketing_action = 4;</code>
+     * @return Whether the remarketingAction field is set.
+     */
+    @java.lang.Override
+    public boolean hasRemarketingAction() {
+      return userListActionCase_ == 4;
+    }
     /**
      * <pre>
      * A remarketing action.

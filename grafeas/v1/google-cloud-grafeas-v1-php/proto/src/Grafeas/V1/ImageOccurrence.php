@@ -75,7 +75,7 @@ class ImageOccurrence extends \Google\Protobuf\Internal\Message
      * Required. The fingerprint of the derived image.
      *
      * Generated from protobuf field <code>.grafeas.v1.Fingerprint fingerprint = 1;</code>
-     * @return \Grafeas\V1\Fingerprint
+     * @return \Grafeas\V1\Fingerprint|null
      */
     public function getFingerprint()
     {

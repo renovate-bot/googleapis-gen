@@ -98,7 +98,7 @@ class CallFeedItem extends \Google\Protobuf\Internal\Message
      * This string must not be empty.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue phone_number = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getPhoneNumber()
     {
@@ -165,7 +165,7 @@ class CallFeedItem extends \Google\Protobuf\Internal\Message
      * This string must not be empty.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCountryCode()
     {
@@ -232,7 +232,7 @@ class CallFeedItem extends \Google\Protobuf\Internal\Message
      * not enabled.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue call_tracking_enabled = 3;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getCallTrackingEnabled()
     {
@@ -300,7 +300,7 @@ class CallFeedItem extends \Google\Protobuf\Internal\Message
      * call_tracking_enabled is set to true. Otherwise this field is ignored.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue call_conversion_action = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCallConversionAction()
     {
@@ -370,7 +370,7 @@ class CallFeedItem extends \Google\Protobuf\Internal\Message
      * not be set if this is true. Optional.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue call_conversion_tracking_disabled = 5;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getCallConversionTrackingDisabled()
     {

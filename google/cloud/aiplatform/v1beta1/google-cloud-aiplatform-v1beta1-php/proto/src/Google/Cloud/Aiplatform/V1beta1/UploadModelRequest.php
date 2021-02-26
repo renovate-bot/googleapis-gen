@@ -79,7 +79,7 @@ class UploadModelRequest extends \Google\Protobuf\Internal\Message
      * Required. The Model to create.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.Model model = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\Model
+     * @return \Google\Cloud\Aiplatform\V1beta1\Model|null
      */
     public function getModel()
     {

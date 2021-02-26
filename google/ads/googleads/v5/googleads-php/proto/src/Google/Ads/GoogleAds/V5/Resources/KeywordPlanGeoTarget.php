@@ -41,7 +41,7 @@ class KeywordPlanGeoTarget extends \Google\Protobuf\Internal\Message
      * Required. The resource name of the geo target.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_constant = 1 [(.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getGeoTargetConstant()
     {

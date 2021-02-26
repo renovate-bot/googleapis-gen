@@ -45,6 +45,17 @@ public interface CampaignAssetOperationOrBuilder extends
    * </pre>
    *
    * <code>string remove = 2;</code>
+   * @return Whether the remove field is set.
+   */
+  boolean hasRemove();
+  /**
+   * <pre>
+   * Remove operation: A resource name for the removed campaign asset is
+   * expected, in this format:
+   * `customers/{customer_id}/campaignAssets/{campaign_id}~{asset_id}~{field_type}`
+   * </pre>
+   *
+   * <code>string remove = 2;</code>
    * @return The remove.
    */
   java.lang.String getRemove();

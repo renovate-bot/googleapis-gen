@@ -141,7 +141,7 @@ class CreateFeedRequest extends \Google\Protobuf\Internal\Message
      * organizations/organization_number/feeds/feed_id
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1p2beta1.Feed feed = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Asset\V1p2Beta1\Feed
+     * @return \Google\Cloud\Asset\V1p2Beta1\Feed|null
      */
     public function getFeed()
     {

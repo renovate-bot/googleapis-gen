@@ -169,7 +169,7 @@ class EntryGroup extends \Google\Protobuf\Internal\Message
      * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps data_catalog_timestamps = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Cloud\DataCatalog\V1beta1\SystemTimestamps
+     * @return \Google\Cloud\DataCatalog\V1beta1\SystemTimestamps|null
      */
     public function getDataCatalogTimestamps()
     {

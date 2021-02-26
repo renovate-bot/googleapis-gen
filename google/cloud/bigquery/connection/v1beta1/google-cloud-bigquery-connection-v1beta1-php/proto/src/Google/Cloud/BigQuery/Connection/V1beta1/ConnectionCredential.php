@@ -36,7 +36,7 @@ class ConnectionCredential extends \Google\Protobuf\Internal\Message
      * Credential for Cloud SQL database.
      *
      * Generated from protobuf field <code>.google.cloud.bigquery.connection.v1beta1.CloudSqlCredential cloud_sql = 1;</code>
-     * @return \Google\Cloud\BigQuery\Connection\V1beta1\CloudSqlCredential
+     * @return \Google\Cloud\BigQuery\Connection\V1beta1\CloudSqlCredential|null
      */
     public function getCloudSql()
     {

@@ -122,7 +122,7 @@ class Scorecard extends \Google\Protobuf\Internal\Message
      * Stackdriver metrics API.
      *
      * Generated from protobuf field <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Monitoring\Dashboard\V1\TimeSeriesQuery
+     * @return \Google\Monitoring\Dashboard\V1\TimeSeriesQuery|null
      */
     public function getTimeSeriesQuery()
     {
@@ -159,7 +159,7 @@ class Scorecard extends \Google\Protobuf\Internal\Message
      * Will cause the scorecard to show a gauge chart.
      *
      * Generated from protobuf field <code>.google.monitoring.dashboard.v1.Scorecard.GaugeView gauge_view = 4;</code>
-     * @return \Google\Monitoring\Dashboard\V1\Scorecard\GaugeView
+     * @return \Google\Monitoring\Dashboard\V1\Scorecard\GaugeView|null
      */
     public function getGaugeView()
     {
@@ -190,7 +190,7 @@ class Scorecard extends \Google\Protobuf\Internal\Message
      * Will cause the scorecard to show a spark chart.
      *
      * Generated from protobuf field <code>.google.monitoring.dashboard.v1.Scorecard.SparkChartView spark_chart_view = 5;</code>
-     * @return \Google\Monitoring\Dashboard\V1\Scorecard\SparkChartView
+     * @return \Google\Monitoring\Dashboard\V1\Scorecard\SparkChartView|null
      */
     public function getSparkChartView()
     {

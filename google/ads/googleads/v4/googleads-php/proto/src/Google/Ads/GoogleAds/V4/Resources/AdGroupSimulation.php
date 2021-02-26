@@ -135,7 +135,7 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
      * Output only. Ad group id of the simulation.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value ad_group_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getAdGroupId()
     {
@@ -250,7 +250,7 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
      * Output only. First day on which the simulation is based, in YYYY-MM-DD format.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getStartDate()
     {
@@ -313,7 +313,7 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
      * Output only. Last day on which the simulation is based, in YYYY-MM-DD format
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getEndDate()
     {
@@ -376,7 +376,7 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
      * Output only. Simulation points if the simulation type is CPC_BID.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.CpcBidSimulationPointList cpc_bid_point_list = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\CpcBidSimulationPointList
+     * @return \Google\Ads\GoogleAds\V4\Common\CpcBidSimulationPointList|null
      */
     public function getCpcBidPointList()
     {
@@ -407,7 +407,7 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
      * Output only. Simulation points if the simulation type is CPV_BID.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.CpvBidSimulationPointList cpv_bid_point_list = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\CpvBidSimulationPointList
+     * @return \Google\Ads\GoogleAds\V4\Common\CpvBidSimulationPointList|null
      */
     public function getCpvBidPointList()
     {
@@ -438,7 +438,7 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
      * Output only. Simulation points if the simulation type is TARGET_CPA.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.TargetCpaSimulationPointList target_cpa_point_list = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\TargetCpaSimulationPointList
+     * @return \Google\Ads\GoogleAds\V4\Common\TargetCpaSimulationPointList|null
      */
     public function getTargetCpaPointList()
     {
@@ -469,7 +469,7 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
      * Output only. Simulation points if the simulation type is TARGET_ROAS.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.TargetRoasSimulationPointList target_roas_point_list = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\TargetRoasSimulationPointList
+     * @return \Google\Ads\GoogleAds\V4\Common\TargetRoasSimulationPointList|null
      */
     public function getTargetRoasPointList()
     {

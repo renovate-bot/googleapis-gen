@@ -74,7 +74,7 @@ class Entity extends \Google\Protobuf\Internal\Message
      * [Document.text][google.cloud.documentai.v1beta1.Document.text].
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta1.Document.TextAnchor text_anchor = 1;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta1\Document\TextAnchor
+     * @return \Google\Cloud\DocumentAI\V1beta1\Document\TextAnchor|null
      */
     public function getTextAnchor()
     {

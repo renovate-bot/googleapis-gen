@@ -82,7 +82,7 @@ class BeginTransactionRequest extends \Google\Protobuf\Internal\Message
      * Defaults to a read-write transaction.
      *
      * Generated from protobuf field <code>.google.firestore.v1beta1.TransactionOptions options = 2;</code>
-     * @return \Google\Cloud\Firestore\V1beta1\TransactionOptions
+     * @return \Google\Cloud\Firestore\V1beta1\TransactionOptions|null
      */
     public function getOptions()
     {

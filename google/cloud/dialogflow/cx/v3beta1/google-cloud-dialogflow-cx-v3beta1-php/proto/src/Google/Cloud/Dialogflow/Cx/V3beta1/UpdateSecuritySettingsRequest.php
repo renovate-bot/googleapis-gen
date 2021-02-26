@@ -54,7 +54,7 @@ class UpdateSecuritySettingsRequest extends \Google\Protobuf\Internal\Message
      * fields to update.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings security_settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\SecuritySettings
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\SecuritySettings|null
      */
     public function getSecuritySettings()
     {
@@ -92,7 +92,7 @@ class UpdateSecuritySettingsRequest extends \Google\Protobuf\Internal\Message
      * all fields will be updated.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

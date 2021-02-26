@@ -3216,6 +3216,15 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v6.enums.PolicyTopicEvidenceDestinationNotWorkingDnsErrorTypeEnum.PolicyTopicEvidenceDestinationNotWorkingDnsErrorType dns_error_type = 1;</code>
+     * @return Whether the dnsErrorType field is set.
+     */
+    boolean hasDnsErrorType();
+    /**
+     * <pre>
+     * The type of DNS error.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v6.enums.PolicyTopicEvidenceDestinationNotWorkingDnsErrorTypeEnum.PolicyTopicEvidenceDestinationNotWorkingDnsErrorType dns_error_type = 1;</code>
      * @return The enum numeric value on the wire for dnsErrorType.
      */
     int getDnsErrorTypeValue();
@@ -3229,6 +3238,15 @@ private static final long serialVersionUID = 0L;
      */
     com.google.ads.googleads.v6.enums.PolicyTopicEvidenceDestinationNotWorkingDnsErrorTypeEnum.PolicyTopicEvidenceDestinationNotWorkingDnsErrorType getDnsErrorType();
 
+    /**
+     * <pre>
+     * The HTTP error code.
+     * </pre>
+     *
+     * <code>int64 http_error_code = 6;</code>
+     * @return Whether the httpErrorCode field is set.
+     */
+    boolean hasHttpErrorCode();
     /**
      * <pre>
      * The HTTP error code.
@@ -3554,6 +3572,17 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v6.enums.PolicyTopicEvidenceDestinationNotWorkingDnsErrorTypeEnum.PolicyTopicEvidenceDestinationNotWorkingDnsErrorType dns_error_type = 1;</code>
+     * @return Whether the dnsErrorType field is set.
+     */
+    public boolean hasDnsErrorType() {
+      return reasonCase_ == 1;
+    }
+    /**
+     * <pre>
+     * The type of DNS error.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v6.enums.PolicyTopicEvidenceDestinationNotWorkingDnsErrorTypeEnum.PolicyTopicEvidenceDestinationNotWorkingDnsErrorType dns_error_type = 1;</code>
      * @return The enum numeric value on the wire for dnsErrorType.
      */
     public int getDnsErrorTypeValue() {
@@ -3581,6 +3610,18 @@ private static final long serialVersionUID = 0L;
     }
 
     public static final int HTTP_ERROR_CODE_FIELD_NUMBER = 6;
+    /**
+     * <pre>
+     * The HTTP error code.
+     * </pre>
+     *
+     * <code>int64 http_error_code = 6;</code>
+     * @return Whether the httpErrorCode field is set.
+     */
+    @java.lang.Override
+    public boolean hasHttpErrorCode() {
+      return reasonCase_ == 6;
+    }
     /**
      * <pre>
      * The HTTP error code.
@@ -4344,6 +4385,18 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.ads.googleads.v6.enums.PolicyTopicEvidenceDestinationNotWorkingDnsErrorTypeEnum.PolicyTopicEvidenceDestinationNotWorkingDnsErrorType dns_error_type = 1;</code>
+       * @return Whether the dnsErrorType field is set.
+       */
+      @java.lang.Override
+      public boolean hasDnsErrorType() {
+        return reasonCase_ == 1;
+      }
+      /**
+       * <pre>
+       * The type of DNS error.
+       * </pre>
+       *
+       * <code>.google.ads.googleads.v6.enums.PolicyTopicEvidenceDestinationNotWorkingDnsErrorTypeEnum.PolicyTopicEvidenceDestinationNotWorkingDnsErrorType dns_error_type = 1;</code>
        * @return The enum numeric value on the wire for dnsErrorType.
        */
       @java.lang.Override
@@ -4421,6 +4474,17 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      /**
+       * <pre>
+       * The HTTP error code.
+       * </pre>
+       *
+       * <code>int64 http_error_code = 6;</code>
+       * @return Whether the httpErrorCode field is set.
+       */
+      public boolean hasHttpErrorCode() {
+        return reasonCase_ == 6;
+      }
       /**
        * <pre>
        * The HTTP error code.
@@ -4655,6 +4719,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 9;
+  /**
+   * <pre>
+   * The language the resource was detected to be written in.
+   * This is an IETF language tag such as "en-US".
+   * </pre>
+   *
+   * <code>string language_code = 9;</code>
+   * @return Whether the languageCode field is set.
+   */
+  public boolean hasLanguageCode() {
+    return valueCase_ == 9;
+  }
   /**
    * <pre>
    * The language the resource was detected to be written in.
@@ -5672,6 +5748,19 @@ private static final long serialVersionUID = 0L;
       return textListBuilder_;
     }
 
+    /**
+     * <pre>
+     * The language the resource was detected to be written in.
+     * This is an IETF language tag such as "en-US".
+     * </pre>
+     *
+     * <code>string language_code = 9;</code>
+     * @return Whether the languageCode field is set.
+     */
+    @java.lang.Override
+    public boolean hasLanguageCode() {
+      return valueCase_ == 9;
+    }
     /**
      * <pre>
      * The language the resource was detected to be written in.

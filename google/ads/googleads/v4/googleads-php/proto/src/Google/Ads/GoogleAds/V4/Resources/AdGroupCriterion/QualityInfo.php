@@ -71,7 +71,7 @@ class QualityInfo extends \Google\Protobuf\Internal\Message
      * information to determine a value.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value quality_score = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int32Value
+     * @return \Google\Protobuf\Int32Value|null
      */
     public function getQualityScore()
     {

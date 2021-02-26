@@ -51,7 +51,7 @@ class TimeWindow extends \Google\Protobuf\Internal\Message
      * Start time of the time window (exclusive).
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 1;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartTime()
     {
@@ -88,7 +88,7 @@ class TimeWindow extends \Google\Protobuf\Internal\Message
      * Current timestamp if not specified.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 2;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getEndTime()
     {

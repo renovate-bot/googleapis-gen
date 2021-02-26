@@ -42,7 +42,7 @@ class RealTimeBiddingSetting extends \Google\Protobuf\Internal\Message
      * Whether the campaign is opted in to real-time bidding.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue opt_in = 1;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getOptIn()
     {

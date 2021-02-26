@@ -42,7 +42,7 @@ class AdGroupCriterionLabelOperation extends \Google\Protobuf\Internal\Message
      * label.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.AdGroupCriterionLabel create = 1;</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\AdGroupCriterionLabel
+     * @return \Google\Ads\GoogleAds\V4\Resources\AdGroupCriterionLabel|null
      */
     public function getCreate()
     {

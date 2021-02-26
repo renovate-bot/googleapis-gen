@@ -59,7 +59,7 @@ class ListAssetsResponse extends \Google\Protobuf\Internal\Message
      * Time the snapshot was taken.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp read_time = 1;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getReadTime()
     {

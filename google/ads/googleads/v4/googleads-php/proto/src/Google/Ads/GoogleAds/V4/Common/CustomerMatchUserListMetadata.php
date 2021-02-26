@@ -44,7 +44,7 @@ class CustomerMatchUserListMetadata extends \Google\Protobuf\Internal\Message
      * Required for job of CUSTOMER_MATCH_USER_LIST type.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue user_list = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getUserList()
     {

@@ -67,7 +67,7 @@ class ExportDataConfig extends \Google\Protobuf\Internal\Message
      * output format.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.GcsDestination gcs_destination = 1;</code>
-     * @return \Google\Cloud\Aiplatform\V1\GcsDestination
+     * @return \Google\Cloud\Aiplatform\V1\GcsDestination|null
      */
     public function getGcsDestination()
     {

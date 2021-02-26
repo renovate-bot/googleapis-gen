@@ -90,7 +90,7 @@ class SparkChartView extends \Google\Protobuf\Internal\Message
      * optional and exists only as a hint.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration min_alignment_period = 2;</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getMinAlignmentPeriod()
     {

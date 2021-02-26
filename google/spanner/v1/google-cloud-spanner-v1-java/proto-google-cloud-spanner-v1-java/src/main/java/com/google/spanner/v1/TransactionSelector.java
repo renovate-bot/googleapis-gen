@@ -219,6 +219,18 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes id = 2;</code>
+   * @return Whether the id field is set.
+   */
+  @java.lang.Override
+  public boolean hasId() {
+    return selectorCase_ == 2;
+  }
+  /**
+   * <pre>
+   * Execute the read or SQL query in a previously-started transaction.
+   * </pre>
+   *
+   * <code>bytes id = 2;</code>
    * @return The id.
    */
   @java.lang.Override
@@ -873,6 +885,17 @@ private static final long serialVersionUID = 0L;
       return singleUseBuilder_;
     }
 
+    /**
+     * <pre>
+     * Execute the read or SQL query in a previously-started transaction.
+     * </pre>
+     *
+     * <code>bytes id = 2;</code>
+     * @return Whether the id field is set.
+     */
+    public boolean hasId() {
+      return selectorCase_ == 2;
+    }
     /**
      * <pre>
      * Execute the read or SQL query in a previously-started transaction.

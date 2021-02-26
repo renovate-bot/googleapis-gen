@@ -93,7 +93,7 @@ class CreateDocumentRequest extends \Google\Protobuf\Internal\Message
      * Required. The document to create.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.Document document = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Dialogflow\V2beta1\Document
+     * @return \Google\Cloud\Dialogflow\V2beta1\Document|null
      */
     public function getDocument()
     {

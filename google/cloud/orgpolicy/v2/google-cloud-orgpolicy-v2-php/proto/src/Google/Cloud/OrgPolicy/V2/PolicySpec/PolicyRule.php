@@ -72,7 +72,7 @@ class PolicyRule extends \Google\Protobuf\Internal\Message
      * only in Policies for list constraints.
      *
      * Generated from protobuf field <code>.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule.StringValues values = 1;</code>
-     * @return \Google\Cloud\OrgPolicy\V2\PolicySpec\PolicyRule\StringValues
+     * @return \Google\Cloud\OrgPolicy\V2\PolicySpec\PolicyRule\StringValues|null
      */
     public function getValues()
     {
@@ -213,7 +213,7 @@ class PolicyRule extends \Google\Protobuf\Internal\Message
      * "resource.matchLabels('labelKeys/123, 'labelValues/456')".
      *
      * Generated from protobuf field <code>.google.type.Expr condition = 5;</code>
-     * @return \Google\Type\Expr
+     * @return \Google\Type\Expr|null
      */
     public function getCondition()
     {

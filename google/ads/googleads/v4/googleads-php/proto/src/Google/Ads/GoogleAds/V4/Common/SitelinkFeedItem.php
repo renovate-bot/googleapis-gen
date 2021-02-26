@@ -112,7 +112,7 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      * The length of this string should be between 1 and 25, inclusive.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue link_text = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getLinkText()
     {
@@ -180,7 +180,7 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      * The length of this string should be between 0 and 35, inclusive.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue line1 = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getLine1()
     {
@@ -251,7 +251,7 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      * The length of this string should be between 0 and 35, inclusive.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue line2 = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getLine2()
     {
@@ -372,7 +372,7 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      * URL template for constructing a tracking URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 6;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getTrackingUrlTemplate()
     {
@@ -464,7 +464,7 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      * parallel tracking.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 8;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getFinalUrlSuffix()
     {

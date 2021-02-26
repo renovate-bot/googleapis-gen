@@ -113,7 +113,7 @@ class FileMetadata extends \Google\Protobuf\Internal\Message
      * retrieves the contents from a CAS system is not defined here.
      *
      * Generated from protobuf field <code>.google.devtools.remoteworkers.v1test2.Digest digest = 2;</code>
-     * @return \Google\Devtools\Remoteworkers\V1test2\Digest
+     * @return \Google\Devtools\Remoteworkers\V1test2\Digest|null
      */
     public function getDigest()
     {

@@ -76,7 +76,7 @@ class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      * This is required and must be set in CREATE operations.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue feed = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getFeed()
     {
@@ -171,7 +171,7 @@ class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      * This is required and must be set in CREATE operations.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value radius = 3;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getRadius()
     {

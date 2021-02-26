@@ -46,7 +46,7 @@ class BudgetAmount extends \Google\Protobuf\Internal\Message
      * The `currency_code` is provided on output.
      *
      * Generated from protobuf field <code>.google.type.Money specified_amount = 1;</code>
-     * @return \Google\Type\Money
+     * @return \Google\Type\Money|null
      */
     public function getSpecifiedAmount()
     {
@@ -81,7 +81,7 @@ class BudgetAmount extends \Google\Protobuf\Internal\Message
      * Use the last period's actual spend as the budget for the present period.
      *
      * Generated from protobuf field <code>.google.cloud.billing.budgets.v1beta1.LastPeriodAmount last_period_amount = 2;</code>
-     * @return \Google\Cloud\Billing\Budgets\V1beta1\LastPeriodAmount
+     * @return \Google\Cloud\Billing\Budgets\V1beta1\LastPeriodAmount|null
      */
     public function getLastPeriodAmount()
     {

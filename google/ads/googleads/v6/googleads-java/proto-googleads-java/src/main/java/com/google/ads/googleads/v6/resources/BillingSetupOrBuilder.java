@@ -162,6 +162,16 @@ public interface BillingSetupOrBuilder extends
    * </pre>
    *
    * <code>string start_date_time = 16 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the startDateTime field is set.
+   */
+  boolean hasStartDateTime();
+  /**
+   * <pre>
+   * Immutable. The start date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format. Only a
+   * future time is allowed.
+   * </pre>
+   *
+   * <code>string start_date_time = 16 [(.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The startDateTime.
    */
   java.lang.String getStartDateTime();
@@ -177,6 +187,15 @@ public interface BillingSetupOrBuilder extends
   com.google.protobuf.ByteString
       getStartDateTimeBytes();
 
+  /**
+   * <pre>
+   * Immutable. The start time as a type. Only NOW is allowed.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v6.enums.TimeTypeEnum.TimeType start_time_type = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the startTimeType field is set.
+   */
+  boolean hasStartTimeType();
   /**
    * <pre>
    * Immutable. The start time as a type. Only NOW is allowed.
@@ -202,6 +221,15 @@ public interface BillingSetupOrBuilder extends
    * </pre>
    *
    * <code>string end_date_time = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the endDateTime field is set.
+   */
+  boolean hasEndDateTime();
+  /**
+   * <pre>
+   * Output only. The end date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format.
+   * </pre>
+   *
+   * <code>string end_date_time = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The endDateTime.
    */
   java.lang.String getEndDateTime();
@@ -216,6 +244,15 @@ public interface BillingSetupOrBuilder extends
   com.google.protobuf.ByteString
       getEndDateTimeBytes();
 
+  /**
+   * <pre>
+   * Output only. The end time as a type.  The only possible value is FOREVER.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v6.enums.TimeTypeEnum.TimeType end_time_type = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the endTimeType field is set.
+   */
+  boolean hasEndTimeType();
   /**
    * <pre>
    * Output only. The end time as a type.  The only possible value is FOREVER.

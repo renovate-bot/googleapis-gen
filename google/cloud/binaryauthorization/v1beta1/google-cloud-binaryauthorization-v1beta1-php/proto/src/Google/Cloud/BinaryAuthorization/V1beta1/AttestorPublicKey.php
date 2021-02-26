@@ -192,7 +192,7 @@ class AttestorPublicKey extends \Google\Protobuf\Internal\Message
      * encoding of the public key.
      *
      * Generated from protobuf field <code>.google.cloud.binaryauthorization.v1beta1.PkixPublicKey pkix_public_key = 5;</code>
-     * @return \Google\Cloud\BinaryAuthorization\V1beta1\PkixPublicKey
+     * @return \Google\Cloud\BinaryAuthorization\V1beta1\PkixPublicKey|null
      */
     public function getPkixPublicKey()
     {

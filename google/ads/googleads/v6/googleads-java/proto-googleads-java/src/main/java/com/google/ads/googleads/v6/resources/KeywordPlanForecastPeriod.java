@@ -152,6 +152,17 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v6.enums.KeywordPlanForecastIntervalEnum.KeywordPlanForecastInterval date_interval = 1;</code>
+   * @return Whether the dateInterval field is set.
+   */
+  public boolean hasDateInterval() {
+    return intervalCase_ == 1;
+  }
+  /**
+   * <pre>
+   * A future date range relative to the current date used for forecasting.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v6.enums.KeywordPlanForecastIntervalEnum.KeywordPlanForecastInterval date_interval = 1;</code>
    * @return The enum numeric value on the wire for dateInterval.
    */
   public int getDateIntervalValue() {
@@ -599,6 +610,18 @@ private static final long serialVersionUID = 0L;
     }
 
 
+    /**
+     * <pre>
+     * A future date range relative to the current date used for forecasting.
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v6.enums.KeywordPlanForecastIntervalEnum.KeywordPlanForecastInterval date_interval = 1;</code>
+     * @return Whether the dateInterval field is set.
+     */
+    @java.lang.Override
+    public boolean hasDateInterval() {
+      return intervalCase_ == 1;
+    }
     /**
      * <pre>
      * A future date range relative to the current date used for forecasting.

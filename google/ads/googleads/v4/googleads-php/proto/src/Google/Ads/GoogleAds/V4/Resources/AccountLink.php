@@ -106,7 +106,7 @@ class AccountLink extends \Google\Protobuf\Internal\Message
      * This field is read only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value account_link_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getAccountLinkId()
     {
@@ -224,7 +224,7 @@ class AccountLink extends \Google\Protobuf\Internal\Message
      * Immutable. A third party app analytics link.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.resources.ThirdPartyAppAnalyticsLinkIdentifier third_party_app_analytics = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V4\Resources\ThirdPartyAppAnalyticsLinkIdentifier
+     * @return \Google\Ads\GoogleAds\V4\Resources\ThirdPartyAppAnalyticsLinkIdentifier|null
      */
     public function getThirdPartyAppAnalytics()
     {

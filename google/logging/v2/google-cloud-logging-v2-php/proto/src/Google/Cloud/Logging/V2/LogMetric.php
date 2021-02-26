@@ -141,6 +141,7 @@ class LogMetric extends \Google\Protobuf\Internal\Message
      * The v2 format is used by default and cannot be changed.
      *
      * Generated from protobuf field <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
+     * @deprecated
      */
     protected $version = 0;
 
@@ -368,7 +369,7 @@ class LogMetric extends \Google\Protobuf\Internal\Message
      * their description.
      *
      * Generated from protobuf field <code>.google.api.MetricDescriptor metric_descriptor = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Api\MetricDescriptor
+     * @return \Google\Api\MetricDescriptor|null
      */
     public function getMetricDescriptor()
     {
@@ -528,7 +529,7 @@ class LogMetric extends \Google\Protobuf\Internal\Message
      * used to create a histogram of the extracted values.
      *
      * Generated from protobuf field <code>.google.api.Distribution.BucketOptions bucket_options = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Api\Distribution\BucketOptions
+     * @return \Google\Api\Distribution\BucketOptions|null
      */
     public function getBucketOptions()
     {
@@ -567,7 +568,7 @@ class LogMetric extends \Google\Protobuf\Internal\Message
      * This field may not be present for older metrics.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -605,7 +606,7 @@ class LogMetric extends \Google\Protobuf\Internal\Message
      * This field may not be present for older metrics.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {
@@ -644,9 +645,11 @@ class LogMetric extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
      * @return int
+     * @deprecated
      */
     public function getVersion()
     {
+        @trigger_error('version is deprecated.', E_USER_DEPRECATED);
         return $this->version;
     }
 
@@ -657,9 +660,11 @@ class LogMetric extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
      * @param int $var
      * @return $this
+     * @deprecated
      */
     public function setVersion($var)
     {
+        @trigger_error('version is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkEnum($var, \Google\Cloud\Logging\V2\LogMetric\ApiVersion::class);
         $this->version = $var;
 

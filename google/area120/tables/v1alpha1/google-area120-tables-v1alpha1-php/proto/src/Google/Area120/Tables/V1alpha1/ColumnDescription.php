@@ -230,7 +230,7 @@ class ColumnDescription extends \Google\Protobuf\Internal\Message
      * is relationship.
      *
      * Generated from protobuf field <code>.google.area120.tables.v1alpha1.RelationshipDetails relationship_details = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Area120\Tables\V1alpha1\RelationshipDetails
+     * @return \Google\Area120\Tables\V1alpha1\RelationshipDetails|null
      */
     public function getRelationshipDetails()
     {
@@ -270,7 +270,7 @@ class ColumnDescription extends \Google\Protobuf\Internal\Message
      * relationship column.
      *
      * Generated from protobuf field <code>.google.area120.tables.v1alpha1.LookupDetails lookup_details = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Area120\Tables\V1alpha1\LookupDetails
+     * @return \Google\Area120\Tables\V1alpha1\LookupDetails|null
      */
     public function getLookupDetails()
     {

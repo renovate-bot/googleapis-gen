@@ -193,7 +193,7 @@ class CheckResponse extends \Google\Protobuf\Internal\Message
      * Feedback data returned from the server during processing a Check request.
      *
      * Generated from protobuf field <code>.google.api.servicecontrol.v1.CheckResponse.CheckInfo check_info = 6;</code>
-     * @return \Google\Cloud\ServiceControl\V1\CheckResponse\CheckInfo
+     * @return \Google\Cloud\ServiceControl\V1\CheckResponse\CheckInfo|null
      */
     public function getCheckInfo()
     {

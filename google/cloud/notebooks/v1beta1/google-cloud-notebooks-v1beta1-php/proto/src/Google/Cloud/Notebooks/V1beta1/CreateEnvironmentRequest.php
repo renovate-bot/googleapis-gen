@@ -121,7 +121,7 @@ class CreateEnvironmentRequest extends \Google\Protobuf\Internal\Message
      * Required. The environment to be created.
      *
      * Generated from protobuf field <code>.google.cloud.notebooks.v1beta1.Environment environment = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Notebooks\V1Beta1\Environment
+     * @return \Google\Cloud\Notebooks\V1Beta1\Environment|null
      */
     public function getEnvironment()
     {

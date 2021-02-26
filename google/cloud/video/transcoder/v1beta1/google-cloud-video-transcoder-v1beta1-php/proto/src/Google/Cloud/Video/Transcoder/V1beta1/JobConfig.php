@@ -249,7 +249,7 @@ class JobConfig extends \Google\Protobuf\Internal\Message
      * Output configuration.
      *
      * Generated from protobuf field <code>.google.cloud.video.transcoder.v1beta1.Output output = 6;</code>
-     * @return \Google\Cloud\Video\Transcoder\V1beta1\Output
+     * @return \Google\Cloud\Video\Transcoder\V1beta1\Output|null
      */
     public function getOutput()
     {
@@ -313,7 +313,7 @@ class JobConfig extends \Google\Protobuf\Internal\Message
      * Destination on Pub/Sub.
      *
      * Generated from protobuf field <code>.google.cloud.video.transcoder.v1beta1.PubsubDestination pubsub_destination = 8;</code>
-     * @return \Google\Cloud\Video\Transcoder\V1beta1\PubsubDestination
+     * @return \Google\Cloud\Video\Transcoder\V1beta1\PubsubDestination|null
      */
     public function getPubsubDestination()
     {

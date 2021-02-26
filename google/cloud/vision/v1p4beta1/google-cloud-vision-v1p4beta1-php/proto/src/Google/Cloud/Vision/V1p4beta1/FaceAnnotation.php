@@ -207,7 +207,7 @@ class FaceAnnotation extends \Google\Protobuf\Internal\Message
      * appears in the image to be annotated.
      *
      * Generated from protobuf field <code>.google.cloud.vision.v1p4beta1.BoundingPoly bounding_poly = 1;</code>
-     * @return \Google\Cloud\Vision\V1p4beta1\BoundingPoly
+     * @return \Google\Cloud\Vision\V1p4beta1\BoundingPoly|null
      */
     public function getBoundingPoly()
     {
@@ -254,7 +254,7 @@ class FaceAnnotation extends \Google\Protobuf\Internal\Message
      * the <code>fd</code> (face detection) prefix.
      *
      * Generated from protobuf field <code>.google.cloud.vision.v1p4beta1.BoundingPoly fd_bounding_poly = 2;</code>
-     * @return \Google\Cloud\Vision\V1p4beta1\BoundingPoly
+     * @return \Google\Cloud\Vision\V1p4beta1\BoundingPoly|null
      */
     public function getFdBoundingPoly()
     {

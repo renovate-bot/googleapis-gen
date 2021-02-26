@@ -73,7 +73,7 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
      * Impressions
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue impressions = 1;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getImpressions()
     {
@@ -136,7 +136,7 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
      * Ctr
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue ctr = 2;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getCtr()
     {
@@ -199,7 +199,7 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
      * AVG cpc
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value average_cpc = 3;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getAverageCpc()
     {
@@ -262,7 +262,7 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
      * Clicks
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue clicks = 5;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getClicks()
     {
@@ -325,7 +325,7 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
      * Cost
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 6;</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCostMicros()
     {

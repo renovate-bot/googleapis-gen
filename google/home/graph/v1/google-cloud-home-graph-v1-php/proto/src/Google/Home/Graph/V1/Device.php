@@ -255,7 +255,7 @@ class Device extends \Google\Protobuf\Internal\Message
      * Names given to this device by your smart home Action.
      *
      * Generated from protobuf field <code>.google.home.graph.v1.DeviceNames name = 4;</code>
-     * @return \Google\Home\Graph\V1\DeviceNames
+     * @return \Google\Home\Graph\V1\DeviceNames|null
      */
     public function getName()
     {
@@ -377,7 +377,7 @@ class Device extends \Google\Protobuf\Internal\Message
      * Device manufacturer, model, hardware version, and software version.
      *
      * Generated from protobuf field <code>.google.home.graph.v1.DeviceInfo device_info = 8;</code>
-     * @return \Google\Home\Graph\V1\DeviceInfo
+     * @return \Google\Home\Graph\V1\DeviceInfo|null
      */
     public function getDeviceInfo()
     {
@@ -413,7 +413,7 @@ class Device extends \Google\Protobuf\Internal\Message
      * Attributes for the traits supported by the device.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct attributes = 9;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getAttributes()
     {
@@ -454,7 +454,7 @@ class Device extends \Google\Protobuf\Internal\Message
      * intent.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct custom_data = 10;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getCustomData()
     {

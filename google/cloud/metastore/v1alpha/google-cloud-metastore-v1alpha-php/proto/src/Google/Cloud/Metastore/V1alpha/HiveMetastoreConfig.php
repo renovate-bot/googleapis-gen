@@ -121,7 +121,7 @@ class HiveMetastoreConfig extends \Google\Protobuf\Internal\Message
      * principal in a Kerberos realm.
      *
      * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.KerberosConfig kerberos_config = 3;</code>
-     * @return \Google\Cloud\Metastore\V1alpha\KerberosConfig
+     * @return \Google\Cloud\Metastore\V1alpha\KerberosConfig|null
      */
     public function getKerberosConfig()
     {

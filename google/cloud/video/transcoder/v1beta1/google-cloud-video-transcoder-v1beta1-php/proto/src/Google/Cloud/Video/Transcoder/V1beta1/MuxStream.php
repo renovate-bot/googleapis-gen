@@ -221,7 +221,7 @@ class MuxStream extends \Google\Protobuf\Internal\Message
      * Segment settings for `"ts"`, `"fmp4"` and `"vtt"`.
      *
      * Generated from protobuf field <code>.google.cloud.video.transcoder.v1beta1.SegmentSettings segment_settings = 5;</code>
-     * @return \Google\Cloud\Video\Transcoder\V1beta1\SegmentSettings
+     * @return \Google\Cloud\Video\Transcoder\V1beta1\SegmentSettings|null
      */
     public function getSegmentSettings()
     {
@@ -257,7 +257,7 @@ class MuxStream extends \Google\Protobuf\Internal\Message
      * Encryption settings.
      *
      * Generated from protobuf field <code>.google.cloud.video.transcoder.v1beta1.Encryption encryption = 6;</code>
-     * @return \Google\Cloud\Video\Transcoder\V1beta1\Encryption
+     * @return \Google\Cloud\Video\Transcoder\V1beta1\Encryption|null
      */
     public function getEncryption()
     {

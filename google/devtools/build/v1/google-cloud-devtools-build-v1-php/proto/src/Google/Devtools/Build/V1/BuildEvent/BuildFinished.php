@@ -51,7 +51,7 @@ class BuildFinished extends \Google\Protobuf\Internal\Message
      * Final status of the build.
      *
      * Generated from protobuf field <code>.google.devtools.build.v1.BuildStatus status = 1;</code>
-     * @return \Google\Devtools\Build\V1\BuildStatus
+     * @return \Google\Devtools\Build\V1\BuildStatus|null
      */
     public function getStatus()
     {
@@ -87,7 +87,7 @@ class BuildFinished extends \Google\Protobuf\Internal\Message
      * Additional details about the Build.
      *
      * Generated from protobuf field <code>.google.protobuf.Any details = 2;</code>
-     * @return \Google\Protobuf\Any
+     * @return \Google\Protobuf\Any|null
      */
     public function getDetails()
     {

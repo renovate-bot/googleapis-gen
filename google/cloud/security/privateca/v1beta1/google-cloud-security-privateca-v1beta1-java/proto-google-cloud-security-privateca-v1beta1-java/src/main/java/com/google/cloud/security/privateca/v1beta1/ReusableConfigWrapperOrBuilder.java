@@ -14,6 +14,16 @@ public interface ReusableConfigWrapperOrBuilder extends
    * </pre>
    *
    * <code>string reusable_config = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the reusableConfig field is set.
+   */
+  boolean hasReusableConfig();
+  /**
+   * <pre>
+   * Required. A resource path to a [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig] in the format
+   * `projects/&#42;&#47;locations/&#42;&#47;reusableConfigs/&#42;`.
+   * </pre>
+   *
+   * <code>string reusable_config = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The reusableConfig.
    */
   java.lang.String getReusableConfig();

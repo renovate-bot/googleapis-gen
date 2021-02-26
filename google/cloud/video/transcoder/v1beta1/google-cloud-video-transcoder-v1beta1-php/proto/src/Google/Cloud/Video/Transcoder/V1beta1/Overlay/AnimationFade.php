@@ -99,7 +99,7 @@ class AnimationFade extends \Google\Protobuf\Internal\Message
      * object.
      *
      * Generated from protobuf field <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 2;</code>
-     * @return \Google\Cloud\Video\Transcoder\V1beta1\Overlay\NormalizedCoordinate
+     * @return \Google\Cloud\Video\Transcoder\V1beta1\Overlay\NormalizedCoordinate|null
      */
     public function getXy()
     {
@@ -137,7 +137,7 @@ class AnimationFade extends \Google\Protobuf\Internal\Message
      * The time to start the fade animation, in seconds. Default: 0
      *
      * Generated from protobuf field <code>.google.protobuf.Duration start_time_offset = 3;</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getStartTimeOffset()
     {
@@ -174,7 +174,7 @@ class AnimationFade extends \Google\Protobuf\Internal\Message
      * `start_time_offset` + 1s
      *
      * Generated from protobuf field <code>.google.protobuf.Duration end_time_offset = 4;</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getEndTimeOffset()
     {

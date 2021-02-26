@@ -63,7 +63,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      * The Google Cloud Storage location to write the output(s) to.
      *
      * Generated from protobuf field <code>.google.cloud.vision.v1p2beta1.GcsDestination gcs_destination = 1;</code>
-     * @return \Google\Cloud\Vision\V1p2beta1\GcsDestination
+     * @return \Google\Cloud\Vision\V1p2beta1\GcsDestination|null
      */
     public function getGcsDestination()
     {

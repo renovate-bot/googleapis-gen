@@ -100,7 +100,7 @@ class UpdateMembershipRequest extends \Google\Protobuf\Internal\Message
      * mask.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {
@@ -142,7 +142,7 @@ class UpdateMembershipRequest extends \Google\Protobuf\Internal\Message
      * value to the empty string.
      *
      * Generated from protobuf field <code>.google.cloud.gkehub.v1beta1.Membership resource = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\GkeHub\V1beta1\Membership
+     * @return \Google\Cloud\GkeHub\V1beta1\Membership|null
      */
     public function getResource()
     {

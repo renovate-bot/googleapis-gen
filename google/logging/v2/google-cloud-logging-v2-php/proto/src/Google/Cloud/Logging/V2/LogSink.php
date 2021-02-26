@@ -79,6 +79,7 @@ class LogSink extends \Google\Protobuf\Internal\Message
      * Deprecated. This field is unused.
      *
      * Generated from protobuf field <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];</code>
+     * @deprecated
      */
     protected $output_version_format = 0;
     /**
@@ -411,9 +412,11 @@ class LogSink extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];</code>
      * @return int
+     * @deprecated
      */
     public function getOutputVersionFormat()
     {
+        @trigger_error('output_version_format is deprecated.', E_USER_DEPRECATED);
         return $this->output_version_format;
     }
 
@@ -423,9 +426,11 @@ class LogSink extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];</code>
      * @param int $var
      * @return $this
+     * @deprecated
      */
     public function setOutputVersionFormat($var)
     {
+        @trigger_error('output_version_format is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkEnum($var, \Google\Cloud\Logging\V2\LogSink\VersionFormat::class);
         $this->output_version_format = $var;
 
@@ -530,7 +535,7 @@ class LogSink extends \Google\Protobuf\Internal\Message
      * Optional. Options that affect sinks exporting data to BigQuery.
      *
      * Generated from protobuf field <code>.google.logging.v2.BigQueryOptions bigquery_options = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\Logging\V2\BigQueryOptions
+     * @return \Google\Cloud\Logging\V2\BigQueryOptions|null
      */
     public function getBigqueryOptions()
     {
@@ -562,7 +567,7 @@ class LogSink extends \Google\Protobuf\Internal\Message
      * This field may not be present for older sinks.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -600,7 +605,7 @@ class LogSink extends \Google\Protobuf\Internal\Message
      * This field may not be present for older sinks.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {

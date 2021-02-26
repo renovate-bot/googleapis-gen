@@ -49,7 +49,7 @@ class UpdateWorkloadIdentityPoolRequest extends \Google\Protobuf\Internal\Messag
      * Required. The pool to update. The `name` field is used to identify the pool.
      *
      * Generated from protobuf field <code>.google.iam.v1beta.WorkloadIdentityPool workload_identity_pool = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Iam\V1beta\WorkloadIdentityPool
+     * @return \Google\Iam\V1beta\WorkloadIdentityPool|null
      */
     public function getWorkloadIdentityPool()
     {
@@ -85,7 +85,7 @@ class UpdateWorkloadIdentityPoolRequest extends \Google\Protobuf\Internal\Messag
      * Required. The list of fields update.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

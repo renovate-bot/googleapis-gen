@@ -78,7 +78,7 @@ class Write extends \Google\Protobuf\Internal\Message
      * A document to write.
      *
      * Generated from protobuf field <code>.google.firestore.v1beta1.Document update = 1;</code>
-     * @return \Google\Cloud\Firestore\V1beta1\Document
+     * @return \Google\Cloud\Firestore\V1beta1\Document|null
      */
     public function getUpdate()
     {
@@ -145,7 +145,7 @@ class Write extends \Google\Protobuf\Internal\Message
      * request.
      *
      * Generated from protobuf field <code>.google.firestore.v1beta1.DocumentTransform transform = 6;</code>
-     * @return \Google\Cloud\Firestore\V1beta1\DocumentTransform
+     * @return \Google\Cloud\Firestore\V1beta1\DocumentTransform|null
      */
     public function getTransform()
     {
@@ -187,7 +187,7 @@ class Write extends \Google\Protobuf\Internal\Message
      * The field paths in this mask must not contain a reserved field name.
      *
      * Generated from protobuf field <code>.google.firestore.v1beta1.DocumentMask update_mask = 3;</code>
-     * @return \Google\Cloud\Firestore\V1beta1\DocumentMask
+     * @return \Google\Cloud\Firestore\V1beta1\DocumentMask|null
      */
     public function getUpdateMask()
     {
@@ -232,7 +232,7 @@ class Write extends \Google\Protobuf\Internal\Message
      * The write will fail if this is set and not met by the target document.
      *
      * Generated from protobuf field <code>.google.firestore.v1beta1.Precondition current_document = 4;</code>
-     * @return \Google\Cloud\Firestore\V1beta1\Precondition
+     * @return \Google\Cloud\Firestore\V1beta1\Precondition|null
      */
     public function getCurrentDocument()
     {

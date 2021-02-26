@@ -222,6 +222,20 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string children_of_group = 2 [(.google.api.resource_reference) = { ... }</code>
+   * @return Whether the childrenOfGroup field is set.
+   */
+  public boolean hasChildrenOfGroup() {
+    return filterCase_ == 2;
+  }
+  /**
+   * <pre>
+   * A group name. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   * Returns groups whose `parent_name` field contains the group
+   * name.  If no groups have this parent, the results are empty.
+   * </pre>
+   *
+   * <code>string children_of_group = 2 [(.google.api.resource_reference) = { ... }</code>
    * @return The childrenOfGroup.
    */
   public java.lang.String getChildrenOfGroup() {
@@ -272,6 +286,22 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ANCESTORS_OF_GROUP_FIELD_NUMBER = 3;
+  /**
+   * <pre>
+   * A group name. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   * Returns groups that are ancestors of the specified group.
+   * The groups are returned in order, starting with the immediate parent and
+   * ending with the most distant ancestor.  If the specified group has no
+   * immediate parent, the results are empty.
+   * </pre>
+   *
+   * <code>string ancestors_of_group = 3 [(.google.api.resource_reference) = { ... }</code>
+   * @return Whether the ancestorsOfGroup field is set.
+   */
+  public boolean hasAncestorsOfGroup() {
+    return filterCase_ == 3;
+  }
   /**
    * <pre>
    * A group name. The format is:
@@ -335,6 +365,21 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DESCENDANTS_OF_GROUP_FIELD_NUMBER = 4;
+  /**
+   * <pre>
+   * A group name. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   * Returns the descendants of the specified group.  This is a superset of
+   * the results returned by the `children_of_group` filter, and includes
+   * children-of-children, and so forth.
+   * </pre>
+   *
+   * <code>string descendants_of_group = 4 [(.google.api.resource_reference) = { ... }</code>
+   * @return Whether the descendantsOfGroup field is set.
+   */
+  public boolean hasDescendantsOfGroup() {
+    return filterCase_ == 4;
+  }
   /**
    * <pre>
    * A group name. The format is:
@@ -1011,6 +1056,21 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string children_of_group = 2 [(.google.api.resource_reference) = { ... }</code>
+     * @return Whether the childrenOfGroup field is set.
+     */
+    @java.lang.Override
+    public boolean hasChildrenOfGroup() {
+      return filterCase_ == 2;
+    }
+    /**
+     * <pre>
+     * A group name. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+     * Returns groups whose `parent_name` field contains the group
+     * name.  If no groups have this parent, the results are empty.
+     * </pre>
+     *
+     * <code>string children_of_group = 2 [(.google.api.resource_reference) = { ... }</code>
      * @return The childrenOfGroup.
      */
     @java.lang.Override
@@ -1126,6 +1186,23 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * A group name. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+     * Returns groups that are ancestors of the specified group.
+     * The groups are returned in order, starting with the immediate parent and
+     * ending with the most distant ancestor.  If the specified group has no
+     * immediate parent, the results are empty.
+     * </pre>
+     *
+     * <code>string ancestors_of_group = 3 [(.google.api.resource_reference) = { ... }</code>
+     * @return Whether the ancestorsOfGroup field is set.
+     */
+    @java.lang.Override
+    public boolean hasAncestorsOfGroup() {
+      return filterCase_ == 3;
+    }
     /**
      * <pre>
      * A group name. The format is:
@@ -1260,6 +1337,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * A group name. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+     * Returns the descendants of the specified group.  This is a superset of
+     * the results returned by the `children_of_group` filter, and includes
+     * children-of-children, and so forth.
+     * </pre>
+     *
+     * <code>string descendants_of_group = 4 [(.google.api.resource_reference) = { ... }</code>
+     * @return Whether the descendantsOfGroup field is set.
+     */
+    @java.lang.Override
+    public boolean hasDescendantsOfGroup() {
+      return filterCase_ == 4;
+    }
     /**
      * <pre>
      * A group name. The format is:

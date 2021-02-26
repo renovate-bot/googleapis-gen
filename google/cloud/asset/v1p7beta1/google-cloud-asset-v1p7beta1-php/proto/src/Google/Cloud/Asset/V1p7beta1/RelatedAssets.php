@@ -49,7 +49,7 @@ class RelatedAssets extends \Google\Protobuf\Internal\Message
      * The detailed relation attributes.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1p7beta1.RelationshipAttributes relationship_attributes = 1;</code>
-     * @return \Google\Cloud\Asset\V1p7beta1\RelationshipAttributes
+     * @return \Google\Cloud\Asset\V1p7beta1\RelationshipAttributes|null
      */
     public function getRelationshipAttributes()
     {

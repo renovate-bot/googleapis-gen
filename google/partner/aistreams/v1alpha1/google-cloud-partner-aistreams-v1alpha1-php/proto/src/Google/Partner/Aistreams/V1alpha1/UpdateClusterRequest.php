@@ -89,7 +89,7 @@ class UpdateClusterRequest extends \Google\Protobuf\Internal\Message
      * user does not provide a mask then all fields will be overwritten.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {
@@ -129,7 +129,7 @@ class UpdateClusterRequest extends \Google\Protobuf\Internal\Message
      * Required. The Cluster resource to update.
      *
      * Generated from protobuf field <code>.google.partner.aistreams.v1alpha1.Cluster cluster = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Partner\Aistreams\V1alpha1\Cluster
+     * @return \Google\Partner\Aistreams\V1alpha1\Cluster|null
      */
     public function getCluster()
     {

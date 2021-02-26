@@ -219,7 +219,7 @@ class Registration extends \Google\Protobuf\Internal\Message
      * Output only. The creation timestamp of the `Registration` resource.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -255,7 +255,7 @@ class Registration extends \Google\Protobuf\Internal\Message
      * Output only. The expiration timestamp of the `Registration`.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp expire_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getExpireTime()
     {
@@ -372,7 +372,7 @@ class Registration extends \Google\Protobuf\Internal\Message
      * method.
      *
      * Generated from protobuf field <code>.google.cloud.domains.v1alpha2.ManagementSettings management_settings = 10;</code>
-     * @return \Google\Cloud\Domains\V1alpha2\ManagementSettings
+     * @return \Google\Cloud\Domains\V1alpha2\ManagementSettings|null
      */
     public function getManagementSettings()
     {
@@ -413,7 +413,7 @@ class Registration extends \Google\Protobuf\Internal\Message
      * settings, use the `ConfigureDnsSettings` method.
      *
      * Generated from protobuf field <code>.google.cloud.domains.v1alpha2.DnsSettings dns_settings = 11;</code>
-     * @return \Google\Cloud\Domains\V1alpha2\DnsSettings
+     * @return \Google\Cloud\Domains\V1alpha2\DnsSettings|null
      */
     public function getDnsSettings()
     {
@@ -453,7 +453,7 @@ class Registration extends \Google\Protobuf\Internal\Message
      * settings, use the `ConfigureContactSettings` method.
      *
      * Generated from protobuf field <code>.google.cloud.domains.v1alpha2.ContactSettings contact_settings = 12 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Domains\V1alpha2\ContactSettings
+     * @return \Google\Cloud\Domains\V1alpha2\ContactSettings|null
      */
     public function getContactSettings()
     {
@@ -497,7 +497,7 @@ class Registration extends \Google\Protobuf\Internal\Message
      * email they receive.
      *
      * Generated from protobuf field <code>.google.cloud.domains.v1alpha2.ContactSettings pending_contact_settings = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Cloud\Domains\V1alpha2\ContactSettings
+     * @return \Google\Cloud\Domains\V1alpha2\ContactSettings|null
      */
     public function getPendingContactSettings()
     {

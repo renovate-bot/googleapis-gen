@@ -79,7 +79,7 @@ class CreateBudgetRequest extends \Google\Protobuf\Internal\Message
      * Required. Budget to create.
      *
      * Generated from protobuf field <code>.google.cloud.billing.budgets.v1beta1.Budget budget = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Billing\Budgets\V1beta1\Budget
+     * @return \Google\Cloud\Billing\Budgets\V1beta1\Budget|null
      */
     public function getBudget()
     {

@@ -65,7 +65,7 @@ class AnalyzeIamPolicyResponse extends \Google\Protobuf\Internal\Message
      * The main analysis that matches the original request.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis main_analysis = 1;</code>
-     * @return \Google\Cloud\Asset\V1\AnalyzeIamPolicyResponse\IamPolicyAnalysis
+     * @return \Google\Cloud\Asset\V1\AnalyzeIamPolicyResponse\IamPolicyAnalysis|null
      */
     public function getMainAnalysis()
     {

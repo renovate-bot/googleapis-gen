@@ -54,7 +54,7 @@ class MaximizeConversionValue extends \Google\Protobuf\Internal\Message
      * achieve the highest possible ROAS for the budget.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue target_roas = 1;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getTargetRoas()
     {

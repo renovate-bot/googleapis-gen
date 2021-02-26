@@ -343,7 +343,7 @@ class StreamingRecognitionResult extends \Google\Protobuf\Internal\Message
      * beginning of the audio. Only populated for `message_type` = `TRANSCRIPT`.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration speech_end_offset = 8;</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getSpeechEndOffset()
     {
@@ -380,7 +380,7 @@ class StreamingRecognitionResult extends \Google\Protobuf\Internal\Message
      * DTMF digits. Populated if and only if `message_type` = `DTMF_DIGITS`.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf_digits = 5;</code>
-     * @return \Google\Cloud\Dialogflow\V2beta1\TelephonyDtmfEvents
+     * @return \Google\Cloud\Dialogflow\V2beta1\TelephonyDtmfEvents|null
      */
     public function getDtmfDigits()
     {

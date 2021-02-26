@@ -79,7 +79,7 @@ class CreateCustomJobRequest extends \Google\Protobuf\Internal\Message
      * Required. The CustomJob to create.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.CustomJob custom_job = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\CustomJob
+     * @return \Google\Cloud\Aiplatform\V1beta1\CustomJob|null
      */
     public function getCustomJob()
     {

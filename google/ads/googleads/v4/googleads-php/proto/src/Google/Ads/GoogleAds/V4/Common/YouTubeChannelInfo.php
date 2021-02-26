@@ -41,7 +41,7 @@ class YouTubeChannelInfo extends \Google\Protobuf\Internal\Message
      * The YouTube uploader channel id or the channel code of a YouTube channel.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue channel_id = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getChannelId()
     {

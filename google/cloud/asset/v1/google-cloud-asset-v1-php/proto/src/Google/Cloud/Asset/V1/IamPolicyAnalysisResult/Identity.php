@@ -115,7 +115,7 @@ class Identity extends \Google\Protobuf\Internal\Message
      * The analysis state of this identity.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1.IamPolicyAnalysisState analysis_state = 2;</code>
-     * @return \Google\Cloud\Asset\V1\IamPolicyAnalysisState
+     * @return \Google\Cloud\Asset\V1\IamPolicyAnalysisState|null
      */
     public function getAnalysisState()
     {

@@ -46,7 +46,7 @@ class MigrateResourceRequest extends \Google\Protobuf\Internal\Message
      * Config for migrating Version in ml.googleapis.com to AI Platform's Model.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.MigrateResourceRequest.MigrateMlEngineModelVersionConfig migrate_ml_engine_model_version_config = 1;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\MigrateResourceRequest\MigrateMlEngineModelVersionConfig
+     * @return \Google\Cloud\Aiplatform\V1beta1\MigrateResourceRequest\MigrateMlEngineModelVersionConfig|null
      */
     public function getMigrateMlEngineModelVersionConfig()
     {
@@ -78,7 +78,7 @@ class MigrateResourceRequest extends \Google\Protobuf\Internal\Message
      * Model.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.MigrateResourceRequest.MigrateAutomlModelConfig migrate_automl_model_config = 2;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\MigrateResourceRequest\MigrateAutomlModelConfig
+     * @return \Google\Cloud\Aiplatform\V1beta1\MigrateResourceRequest\MigrateAutomlModelConfig|null
      */
     public function getMigrateAutomlModelConfig()
     {
@@ -111,7 +111,7 @@ class MigrateResourceRequest extends \Google\Protobuf\Internal\Message
      * Dataset.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.MigrateResourceRequest.MigrateAutomlDatasetConfig migrate_automl_dataset_config = 3;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\MigrateResourceRequest\MigrateAutomlDatasetConfig
+     * @return \Google\Cloud\Aiplatform\V1beta1\MigrateResourceRequest\MigrateAutomlDatasetConfig|null
      */
     public function getMigrateAutomlDatasetConfig()
     {
@@ -144,7 +144,7 @@ class MigrateResourceRequest extends \Google\Protobuf\Internal\Message
      * AI Platform's Dataset.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.MigrateResourceRequest.MigrateDataLabelingDatasetConfig migrate_data_labeling_dataset_config = 4;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\MigrateResourceRequest\MigrateDataLabelingDatasetConfig
+     * @return \Google\Cloud\Aiplatform\V1beta1\MigrateResourceRequest\MigrateDataLabelingDatasetConfig|null
      */
     public function getMigrateDataLabelingDatasetConfig()
     {

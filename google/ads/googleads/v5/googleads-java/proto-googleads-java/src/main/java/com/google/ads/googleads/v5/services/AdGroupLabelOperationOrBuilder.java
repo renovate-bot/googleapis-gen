@@ -45,6 +45,17 @@ public interface AdGroupLabelOperationOrBuilder extends
    * </pre>
    *
    * <code>string remove = 2;</code>
+   * @return Whether the remove field is set.
+   */
+  boolean hasRemove();
+  /**
+   * <pre>
+   * Remove operation: A resource name for the ad group label
+   * being removed, in this format:
+   * `customers/{customer_id}/adGroupLabels/{ad_group_id}~{label_id}`
+   * </pre>
+   *
+   * <code>string remove = 2;</code>
    * @return The remove.
    */
   java.lang.String getRemove();

@@ -54,7 +54,7 @@ class ProcessDocumentResponse extends \Google\Protobuf\Internal\Message
      * input config in the request.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta2.InputConfig input_config = 1;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta2\InputConfig
+     * @return \Google\Cloud\DocumentAI\V1beta2\InputConfig|null
      */
     public function getInputConfig()
     {
@@ -92,7 +92,7 @@ class ProcessDocumentResponse extends \Google\Protobuf\Internal\Message
      * this location as JSON-serialized `Document` objects.
      *
      * Generated from protobuf field <code>.google.cloud.documentai.v1beta2.OutputConfig output_config = 2;</code>
-     * @return \Google\Cloud\DocumentAI\V1beta2\OutputConfig
+     * @return \Google\Cloud\DocumentAI\V1beta2\OutputConfig|null
      */
     public function getOutputConfig()
     {

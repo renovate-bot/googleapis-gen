@@ -70,7 +70,7 @@ class LabelTextRequest extends \Google\Protobuf\Internal\Message
      * is required.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 4;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\TextClassificationConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\TextClassificationConfig|null
      */
     public function getTextClassificationConfig()
     {
@@ -105,7 +105,7 @@ class LabelTextRequest extends \Google\Protobuf\Internal\Message
      * is required.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.TextEntityExtractionConfig text_entity_extraction_config = 5;</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\TextEntityExtractionConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\TextEntityExtractionConfig|null
      */
     public function getTextEntityExtractionConfig()
     {
@@ -166,7 +166,7 @@ class LabelTextRequest extends \Google\Protobuf\Internal\Message
      * Required. Basic human annotation config.
      *
      * Generated from protobuf field <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\DataLabeling\V1beta1\HumanAnnotationConfig
+     * @return \Google\Cloud\DataLabeling\V1beta1\HumanAnnotationConfig|null
      */
     public function getBasicConfig()
     {

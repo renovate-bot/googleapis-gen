@@ -52,7 +52,7 @@ class ExternalAttributionData extends \Google\Protobuf\Internal\Message
      * Google Ads click.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue external_attribution_credit = 1;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getExternalAttributionCredit()
     {
@@ -118,7 +118,7 @@ class ExternalAttributionData extends \Google\Protobuf\Internal\Message
      * Specifies the attribution model name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue external_attribution_model = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getExternalAttributionModel()
     {

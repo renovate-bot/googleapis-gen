@@ -57,7 +57,7 @@ class InterpretErrorDetails extends \Google\Protobuf\Internal\Message
      * Populated if parts of the query are unsupported.
      *
      * Generated from protobuf field <code>.google.cloud.dataqna.v1alpha.InterpretError.InterpretUnsupportedDetails unsupported_details = 1;</code>
-     * @return \Google\Cloud\DataQnA\V1alpha\InterpretError\InterpretUnsupportedDetails
+     * @return \Google\Cloud\DataQnA\V1alpha\InterpretError\InterpretUnsupportedDetails|null
      */
     public function getUnsupportedDetails()
     {
@@ -93,7 +93,7 @@ class InterpretErrorDetails extends \Google\Protobuf\Internal\Message
      * Populated if the query is incomplete.
      *
      * Generated from protobuf field <code>.google.cloud.dataqna.v1alpha.InterpretError.InterpretIncompleteQueryDetails incomplete_query_details = 2;</code>
-     * @return \Google\Cloud\DataQnA\V1alpha\InterpretError\InterpretIncompleteQueryDetails
+     * @return \Google\Cloud\DataQnA\V1alpha\InterpretError\InterpretIncompleteQueryDetails|null
      */
     public function getIncompleteQueryDetails()
     {
@@ -129,7 +129,7 @@ class InterpretErrorDetails extends \Google\Protobuf\Internal\Message
      * Populated if the query was too ambiguous.
      *
      * Generated from protobuf field <code>.google.cloud.dataqna.v1alpha.InterpretError.InterpretAmbiguityDetails ambiguity_details = 3;</code>
-     * @return \Google\Cloud\DataQnA\V1alpha\InterpretError\InterpretAmbiguityDetails
+     * @return \Google\Cloud\DataQnA\V1alpha\InterpretError\InterpretAmbiguityDetails|null
      */
     public function getAmbiguityDetails()
     {

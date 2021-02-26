@@ -52,7 +52,7 @@ class VideoAdInfo extends \Google\Protobuf\Internal\Message
      * The MediaFile resource to use for the video.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue media_file = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getMediaFile()
     {
@@ -115,7 +115,7 @@ class VideoAdInfo extends \Google\Protobuf\Internal\Message
      * Video TrueView in-stream ad format.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.VideoTrueViewInStreamAdInfo in_stream = 2;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\VideoTrueViewInStreamAdInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\VideoTrueViewInStreamAdInfo|null
      */
     public function getInStream()
     {
@@ -146,7 +146,7 @@ class VideoAdInfo extends \Google\Protobuf\Internal\Message
      * Video bumper in-stream ad format.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.VideoBumperInStreamAdInfo bumper = 3;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\VideoBumperInStreamAdInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\VideoBumperInStreamAdInfo|null
      */
     public function getBumper()
     {
@@ -177,7 +177,7 @@ class VideoAdInfo extends \Google\Protobuf\Internal\Message
      * Video out-stream ad format.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.VideoOutstreamAdInfo out_stream = 4;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\VideoOutstreamAdInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\VideoOutstreamAdInfo|null
      */
     public function getOutStream()
     {
@@ -208,7 +208,7 @@ class VideoAdInfo extends \Google\Protobuf\Internal\Message
      * Video non-skippable in-stream ad format.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.VideoNonSkippableInStreamAdInfo non_skippable = 5;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\VideoNonSkippableInStreamAdInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\VideoNonSkippableInStreamAdInfo|null
      */
     public function getNonSkippable()
     {
@@ -239,7 +239,7 @@ class VideoAdInfo extends \Google\Protobuf\Internal\Message
      * Video TrueView discovery ad format.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.VideoTrueViewDiscoveryAdInfo discovery = 6;</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\VideoTrueViewDiscoveryAdInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\VideoTrueViewDiscoveryAdInfo|null
      */
     public function getDiscovery()
     {

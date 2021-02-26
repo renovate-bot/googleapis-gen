@@ -169,7 +169,7 @@ class Settings extends \Google\Protobuf\Internal\Message
      * Billing settings
      *
      * Generated from protobuf field <code>.google.cloud.securitycenter.settings.v1beta1.BillingSettings billing_settings = 2;</code>
-     * @return \Google\Cloud\SecurityCenter\Settings\V1beta1\BillingSettings
+     * @return \Google\Cloud\SecurityCenter\Settings\V1beta1\BillingSettings|null
      */
     public function getBillingSettings()
     {
@@ -261,7 +261,7 @@ class Settings extends \Google\Protobuf\Internal\Message
      * Sink settings.
      *
      * Generated from protobuf field <code>.google.cloud.securitycenter.settings.v1beta1.SinkSettings sink_settings = 6;</code>
-     * @return \Google\Cloud\SecurityCenter\Settings\V1beta1\SinkSettings
+     * @return \Google\Cloud\SecurityCenter\Settings\V1beta1\SinkSettings|null
      */
     public function getSinkSettings()
     {
@@ -381,7 +381,7 @@ class Settings extends \Google\Protobuf\Internal\Message
      * Output only. The time these settings were last updated.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {

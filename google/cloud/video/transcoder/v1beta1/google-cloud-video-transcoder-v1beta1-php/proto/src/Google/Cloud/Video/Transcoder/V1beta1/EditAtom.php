@@ -133,7 +133,7 @@ class EditAtom extends \Google\Protobuf\Internal\Message
      * the end of the atom.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration end_time_offset = 3;</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getEndTimeOffset()
     {
@@ -172,7 +172,7 @@ class EditAtom extends \Google\Protobuf\Internal\Message
      * The default is `0s`.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration start_time_offset = 4;</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getStartTimeOffset()
     {

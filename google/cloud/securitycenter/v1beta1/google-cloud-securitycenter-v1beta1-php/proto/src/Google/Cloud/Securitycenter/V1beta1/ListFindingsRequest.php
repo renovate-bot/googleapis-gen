@@ -292,7 +292,7 @@ class ListFindingsRequest extends \Google\Protobuf\Internal\Message
      * API's version of NOW.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp read_time = 4;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getReadTime()
     {
@@ -332,7 +332,7 @@ class ListFindingsRequest extends \Google\Protobuf\Internal\Message
      * An empty field mask will list all fields.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask field_mask = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getFieldMask()
     {

@@ -111,7 +111,7 @@ class CreateIntentRequest extends \Google\Protobuf\Internal\Message
      * Required. The intent to create.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.Intent intent = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Dialogflow\V2beta1\Intent
+     * @return \Google\Cloud\Dialogflow\V2beta1\Intent|null
      */
     public function getIntent()
     {

@@ -74,6 +74,16 @@ public interface OfflineUserDataJobOperationOrBuilder extends
    * </pre>
    *
    * <code>bool remove_all = 3;</code>
+   * @return Whether the removeAll field is set.
+   */
+  boolean hasRemoveAll();
+  /**
+   * <pre>
+   * Remove all previously provided data. This is only supported for Customer
+   * Match.
+   * </pre>
+   *
+   * <code>bool remove_all = 3;</code>
    * @return The removeAll.
    */
   boolean getRemoveAll();

@@ -70,7 +70,7 @@ class GmailTeaser extends \Google\Protobuf\Internal\Message
      * Headline of the teaser.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue headline = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getHeadline()
     {
@@ -133,7 +133,7 @@ class GmailTeaser extends \Google\Protobuf\Internal\Message
      * Description of the teaser.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getDescription()
     {
@@ -196,7 +196,7 @@ class GmailTeaser extends \Google\Protobuf\Internal\Message
      * Business name of the advertiser.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue business_name = 3;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getBusinessName()
     {
@@ -261,7 +261,7 @@ class GmailTeaser extends \Google\Protobuf\Internal\Message
      * be 1:1 (+-1%).
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue logo_image = 4;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getLogoImage()
     {

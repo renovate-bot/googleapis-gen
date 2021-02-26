@@ -202,7 +202,7 @@ class CustomJob extends \Google\Protobuf\Internal\Message
      * Required. Job spec.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.CustomJobSpec job_spec = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\CustomJobSpec
+     * @return \Google\Cloud\Aiplatform\V1beta1\CustomJobSpec|null
      */
     public function getJobSpec()
     {
@@ -264,7 +264,7 @@ class CustomJob extends \Google\Protobuf\Internal\Message
      * Output only. Time when the CustomJob was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -301,7 +301,7 @@ class CustomJob extends \Google\Protobuf\Internal\Message
      * `JOB_STATE_RUNNING` state.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartTime()
     {
@@ -339,7 +339,7 @@ class CustomJob extends \Google\Protobuf\Internal\Message
      * `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getEndTime()
     {
@@ -376,7 +376,7 @@ class CustomJob extends \Google\Protobuf\Internal\Message
      * Output only. Time when the CustomJob was most recently updated.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {
@@ -413,7 +413,7 @@ class CustomJob extends \Google\Protobuf\Internal\Message
      * `JOB_STATE_CANCELLED`.
      *
      * Generated from protobuf field <code>.google.rpc.Status error = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Rpc\Status
+     * @return \Google\Rpc\Status|null
      */
     public function getError()
     {
@@ -486,7 +486,7 @@ class CustomJob extends \Google\Protobuf\Internal\Message
      * provided encryption key.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 12;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\EncryptionSpec
+     * @return \Google\Cloud\Aiplatform\V1beta1\EncryptionSpec|null
      */
     public function getEncryptionSpec()
     {

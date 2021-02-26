@@ -93,6 +93,7 @@ class StreamingDetectIntentRequest extends \Google\Protobuf\Internal\Message
      * This setting is ignored when `query_input` is a piece of text or an event.
      *
      * Generated from protobuf field <code>bool single_utterance = 4 [deprecated = true];</code>
+     * @deprecated
      */
     protected $single_utterance = false;
     /**
@@ -259,7 +260,7 @@ class StreamingDetectIntentRequest extends \Google\Protobuf\Internal\Message
      * The parameters of this query.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.QueryParameters query_params = 2;</code>
-     * @return \Google\Cloud\Dialogflow\V2beta1\QueryParameters
+     * @return \Google\Cloud\Dialogflow\V2beta1\QueryParameters|null
      */
     public function getQueryParams()
     {
@@ -299,7 +300,7 @@ class StreamingDetectIntentRequest extends \Google\Protobuf\Internal\Message
      * 3.  an event that specifies which intent to trigger.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Dialogflow\V2beta1\QueryInput
+     * @return \Google\Cloud\Dialogflow\V2beta1\QueryInput|null
      */
     public function getQueryInput()
     {
@@ -348,9 +349,11 @@ class StreamingDetectIntentRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>bool single_utterance = 4 [deprecated = true];</code>
      * @return bool
+     * @deprecated
      */
     public function getSingleUtterance()
     {
+        @trigger_error('single_utterance is deprecated.', E_USER_DEPRECATED);
         return $this->single_utterance;
     }
 
@@ -368,9 +371,11 @@ class StreamingDetectIntentRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool single_utterance = 4 [deprecated = true];</code>
      * @param bool $var
      * @return $this
+     * @deprecated
      */
     public function setSingleUtterance($var)
     {
+        @trigger_error('single_utterance is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkBool($var);
         $this->single_utterance = $var;
 
@@ -383,7 +388,7 @@ class StreamingDetectIntentRequest extends \Google\Protobuf\Internal\Message
      * configured, no output audio is generated.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 5;</code>
-     * @return \Google\Cloud\Dialogflow\V2beta1\OutputAudioConfig
+     * @return \Google\Cloud\Dialogflow\V2beta1\OutputAudioConfig|null
      */
     public function getOutputAudioConfig()
     {
@@ -425,7 +430,7 @@ class StreamingDetectIntentRequest extends \Google\Protobuf\Internal\Message
      * config in its entirety.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask output_audio_config_mask = 7;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getOutputAudioConfigMask()
     {

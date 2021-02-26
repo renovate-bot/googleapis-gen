@@ -245,7 +245,7 @@ class VideoAnnotationResults extends \Google\Protobuf\Internal\Message
      * Explicit content annotation.
      *
      * Generated from protobuf field <code>.google.cloud.videointelligence.v1p1beta1.ExplicitContentAnnotation explicit_annotation = 7;</code>
-     * @return \Google\Cloud\VideoIntelligence\V1p1beta1\ExplicitContentAnnotation
+     * @return \Google\Cloud\VideoIntelligence\V1p1beta1\ExplicitContentAnnotation|null
      */
     public function getExplicitAnnotation()
     {
@@ -308,7 +308,7 @@ class VideoAnnotationResults extends \Google\Protobuf\Internal\Message
      * `AnnotateVideoRequest` some videos may succeed and some may fail.
      *
      * Generated from protobuf field <code>.google.rpc.Status error = 9;</code>
-     * @return \Google\Rpc\Status
+     * @return \Google\Rpc\Status|null
      */
     public function getError()
     {

@@ -17,18 +17,21 @@ class Editions extends \Google\Protobuf\Internal\Message
      * (Deprecated)
      *
      * Generated from protobuf field <code>string edition_id = 405 [deprecated = true];</code>
+     * @deprecated
      */
     protected $edition_id = '';
     /**
      * (Deprecated)
      *
      * Generated from protobuf field <code>int32 seat_count = 406 [deprecated = true];</code>
+     * @deprecated
      */
     protected $seat_count = 0;
     /**
      * (Deprecated)
      *
      * Generated from protobuf field <code>int32 assigned_seats = 409 [deprecated = true];</code>
+     * @deprecated
      */
     protected $assigned_seats = 0;
 
@@ -56,9 +59,11 @@ class Editions extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string edition_id = 405 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getEditionId()
     {
+        @trigger_error('edition_id is deprecated.', E_USER_DEPRECATED);
         return $this->edition_id;
     }
 
@@ -68,9 +73,11 @@ class Editions extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string edition_id = 405 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setEditionId($var)
     {
+        @trigger_error('edition_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->edition_id = $var;
 
@@ -82,9 +89,11 @@ class Editions extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int32 seat_count = 406 [deprecated = true];</code>
      * @return int
+     * @deprecated
      */
     public function getSeatCount()
     {
+        @trigger_error('seat_count is deprecated.', E_USER_DEPRECATED);
         return $this->seat_count;
     }
 
@@ -94,9 +103,11 @@ class Editions extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 seat_count = 406 [deprecated = true];</code>
      * @param int $var
      * @return $this
+     * @deprecated
      */
     public function setSeatCount($var)
     {
+        @trigger_error('seat_count is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkInt32($var);
         $this->seat_count = $var;
 
@@ -108,9 +119,11 @@ class Editions extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int32 assigned_seats = 409 [deprecated = true];</code>
      * @return int
+     * @deprecated
      */
     public function getAssignedSeats()
     {
+        @trigger_error('assigned_seats is deprecated.', E_USER_DEPRECATED);
         return $this->assigned_seats;
     }
 
@@ -120,9 +133,11 @@ class Editions extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 assigned_seats = 409 [deprecated = true];</code>
      * @param int $var
      * @return $this
+     * @deprecated
      */
     public function setAssignedSeats($var)
     {
+        @trigger_error('assigned_seats is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkInt32($var);
         $this->assigned_seats = $var;
 

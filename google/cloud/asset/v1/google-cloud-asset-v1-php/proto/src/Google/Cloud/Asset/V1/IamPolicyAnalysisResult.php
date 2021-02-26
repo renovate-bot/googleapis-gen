@@ -114,7 +114,7 @@ class IamPolicyAnalysisResult extends \Google\Protobuf\Internal\Message
      * The Cloud IAM policy binding under analysis.
      *
      * Generated from protobuf field <code>.google.iam.v1.Binding iam_binding = 2;</code>
-     * @return \Google\Cloud\Iam\V1\Binding
+     * @return \Google\Cloud\Iam\V1\Binding|null
      */
     public function getIamBinding()
     {
@@ -179,7 +179,7 @@ class IamPolicyAnalysisResult extends \Google\Protobuf\Internal\Message
      * potentially match identity selector specified in the request.
      *
      * Generated from protobuf field <code>.google.cloud.asset.v1.IamPolicyAnalysisResult.IdentityList identity_list = 4;</code>
-     * @return \Google\Cloud\Asset\V1\IamPolicyAnalysisResult\IdentityList
+     * @return \Google\Cloud\Asset\V1\IamPolicyAnalysisResult\IdentityList|null
      */
     public function getIdentityList()
     {

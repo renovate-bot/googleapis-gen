@@ -498,6 +498,16 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.firestore.admin.v1.Index.IndexField.Order order = 2;</code>
+     * @return Whether the order field is set.
+     */
+    boolean hasOrder();
+    /**
+     * <pre>
+     * Indicates that this field supports ordering by the specified order or
+     * comparing using =, &lt;, &lt;=, &gt;, &gt;=.
+     * </pre>
+     *
+     * <code>.google.firestore.admin.v1.Index.IndexField.Order order = 2;</code>
      * @return The enum numeric value on the wire for order.
      */
     int getOrderValue();
@@ -512,6 +522,15 @@ private static final long serialVersionUID = 0L;
      */
     com.google.firestore.admin.v1.Index.IndexField.Order getOrder();
 
+    /**
+     * <pre>
+     * Indicates that this field supports operations on `array_value`s.
+     * </pre>
+     *
+     * <code>.google.firestore.admin.v1.Index.IndexField.ArrayConfig array_config = 3;</code>
+     * @return Whether the arrayConfig field is set.
+     */
+    boolean hasArrayConfig();
     /**
      * <pre>
      * Indicates that this field supports operations on `array_value`s.
@@ -1007,6 +1026,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.firestore.admin.v1.Index.IndexField.Order order = 2;</code>
+     * @return Whether the order field is set.
+     */
+    public boolean hasOrder() {
+      return valueModeCase_ == 2;
+    }
+    /**
+     * <pre>
+     * Indicates that this field supports ordering by the specified order or
+     * comparing using =, &lt;, &lt;=, &gt;, &gt;=.
+     * </pre>
+     *
+     * <code>.google.firestore.admin.v1.Index.IndexField.Order order = 2;</code>
      * @return The enum numeric value on the wire for order.
      */
     public int getOrderValue() {
@@ -1035,6 +1066,17 @@ private static final long serialVersionUID = 0L;
     }
 
     public static final int ARRAY_CONFIG_FIELD_NUMBER = 3;
+    /**
+     * <pre>
+     * Indicates that this field supports operations on `array_value`s.
+     * </pre>
+     *
+     * <code>.google.firestore.admin.v1.Index.IndexField.ArrayConfig array_config = 3;</code>
+     * @return Whether the arrayConfig field is set.
+     */
+    public boolean hasArrayConfig() {
+      return valueModeCase_ == 3;
+    }
     /**
      * <pre>
      * Indicates that this field supports operations on `array_value`s.
@@ -1564,6 +1606,19 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.firestore.admin.v1.Index.IndexField.Order order = 2;</code>
+       * @return Whether the order field is set.
+       */
+      @java.lang.Override
+      public boolean hasOrder() {
+        return valueModeCase_ == 2;
+      }
+      /**
+       * <pre>
+       * Indicates that this field supports ordering by the specified order or
+       * comparing using =, &lt;, &lt;=, &gt;, &gt;=.
+       * </pre>
+       *
+       * <code>.google.firestore.admin.v1.Index.IndexField.Order order = 2;</code>
        * @return The enum numeric value on the wire for order.
        */
       @java.lang.Override
@@ -1645,6 +1700,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      /**
+       * <pre>
+       * Indicates that this field supports operations on `array_value`s.
+       * </pre>
+       *
+       * <code>.google.firestore.admin.v1.Index.IndexField.ArrayConfig array_config = 3;</code>
+       * @return Whether the arrayConfig field is set.
+       */
+      @java.lang.Override
+      public boolean hasArrayConfig() {
+        return valueModeCase_ == 3;
+      }
       /**
        * <pre>
        * Indicates that this field supports operations on `array_value`s.

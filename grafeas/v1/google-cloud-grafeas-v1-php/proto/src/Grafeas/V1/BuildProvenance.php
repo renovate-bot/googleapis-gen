@@ -248,7 +248,7 @@ class BuildProvenance extends \Google\Protobuf\Internal\Message
      * Time at which the build was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 5;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -284,7 +284,7 @@ class BuildProvenance extends \Google\Protobuf\Internal\Message
      * Time at which execution of the build was started.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 6;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartTime()
     {
@@ -320,7 +320,7 @@ class BuildProvenance extends \Google\Protobuf\Internal\Message
      * Time at which execution of the build was finished.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 7;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getEndTime()
     {
@@ -412,7 +412,7 @@ class BuildProvenance extends \Google\Protobuf\Internal\Message
      * Details of the Source input to the build.
      *
      * Generated from protobuf field <code>.grafeas.v1.Source source_provenance = 10;</code>
-     * @return \Grafeas\V1\Source
+     * @return \Grafeas\V1\Source|null
      */
     public function getSourceProvenance()
     {

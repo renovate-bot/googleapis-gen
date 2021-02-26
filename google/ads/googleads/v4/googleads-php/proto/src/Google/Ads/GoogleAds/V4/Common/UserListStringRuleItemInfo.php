@@ -92,7 +92,7 @@ class UserListStringRuleItemInfo extends \Google\Protobuf\Internal\Message
      * creating a new string rule item.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue value = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getValue()
     {

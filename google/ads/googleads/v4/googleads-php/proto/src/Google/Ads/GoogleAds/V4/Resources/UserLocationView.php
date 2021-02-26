@@ -95,7 +95,7 @@ class UserLocationView extends \Google\Protobuf\Internal\Message
      * Output only. Criterion Id for the country.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value country_criterion_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCountryCriterionId()
     {
@@ -158,7 +158,7 @@ class UserLocationView extends \Google\Protobuf\Internal\Message
      * Output only. Indicates whether location was targeted or not.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue targeting_location = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getTargetingLocation()
     {

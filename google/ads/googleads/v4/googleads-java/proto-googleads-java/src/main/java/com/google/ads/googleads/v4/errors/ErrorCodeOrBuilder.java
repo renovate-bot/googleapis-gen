@@ -13,6 +13,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.RequestErrorEnum.RequestError request_error = 1;</code>
+   * @return Whether the requestError field is set.
+   */
+  boolean hasRequestError();
+  /**
+   * <pre>
+   * An error caused by the request
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.RequestErrorEnum.RequestError request_error = 1;</code>
    * @return The enum numeric value on the wire for requestError.
    */
   int getRequestErrorValue();
@@ -26,6 +35,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.RequestErrorEnum.RequestError getRequestError();
 
+  /**
+   * <pre>
+   * An error with a Bidding Strategy mutate.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.BiddingStrategyErrorEnum.BiddingStrategyError bidding_strategy_error = 2;</code>
+   * @return Whether the biddingStrategyError field is set.
+   */
+  boolean hasBiddingStrategyError();
   /**
    * <pre>
    * An error with a Bidding Strategy mutate.
@@ -51,6 +69,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.UrlFieldErrorEnum.UrlFieldError url_field_error = 3;</code>
+   * @return Whether the urlFieldError field is set.
+   */
+  boolean hasUrlFieldError();
+  /**
+   * <pre>
+   * An error with a URL field mutate.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.UrlFieldErrorEnum.UrlFieldError url_field_error = 3;</code>
    * @return The enum numeric value on the wire for urlFieldError.
    */
   int getUrlFieldErrorValue();
@@ -64,6 +91,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.UrlFieldErrorEnum.UrlFieldError getUrlFieldError();
 
+  /**
+   * <pre>
+   * An error with a list operation.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.ListOperationErrorEnum.ListOperationError list_operation_error = 4;</code>
+   * @return Whether the listOperationError field is set.
+   */
+  boolean hasListOperationError();
   /**
    * <pre>
    * An error with a list operation.
@@ -89,6 +125,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.QueryErrorEnum.QueryError query_error = 5;</code>
+   * @return Whether the queryError field is set.
+   */
+  boolean hasQueryError();
+  /**
+   * <pre>
+   * An error with an AWQL query
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.QueryErrorEnum.QueryError query_error = 5;</code>
    * @return The enum numeric value on the wire for queryError.
    */
   int getQueryErrorValue();
@@ -102,6 +147,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.QueryErrorEnum.QueryError getQueryError();
 
+  /**
+   * <pre>
+   * An error with a mutate
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.MutateErrorEnum.MutateError mutate_error = 7;</code>
+   * @return Whether the mutateError field is set.
+   */
+  boolean hasMutateError();
   /**
    * <pre>
    * An error with a mutate
@@ -127,6 +181,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.FieldMaskErrorEnum.FieldMaskError field_mask_error = 8;</code>
+   * @return Whether the fieldMaskError field is set.
+   */
+  boolean hasFieldMaskError();
+  /**
+   * <pre>
+   * An error with a field mask
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.FieldMaskErrorEnum.FieldMaskError field_mask_error = 8;</code>
    * @return The enum numeric value on the wire for fieldMaskError.
    */
   int getFieldMaskErrorValue();
@@ -140,6 +203,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.FieldMaskErrorEnum.FieldMaskError getFieldMaskError();
 
+  /**
+   * <pre>
+   * An error encountered when trying to authorize a user.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.AuthorizationErrorEnum.AuthorizationError authorization_error = 9;</code>
+   * @return Whether the authorizationError field is set.
+   */
+  boolean hasAuthorizationError();
   /**
    * <pre>
    * An error encountered when trying to authorize a user.
@@ -165,6 +237,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.InternalErrorEnum.InternalError internal_error = 10;</code>
+   * @return Whether the internalError field is set.
+   */
+  boolean hasInternalError();
+  /**
+   * <pre>
+   * An unexpected server-side error.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.InternalErrorEnum.InternalError internal_error = 10;</code>
    * @return The enum numeric value on the wire for internalError.
    */
   int getInternalErrorValue();
@@ -178,6 +259,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.InternalErrorEnum.InternalError getInternalError();
 
+  /**
+   * <pre>
+   * An error with the amonut of quota remaining.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.QuotaErrorEnum.QuotaError quota_error = 11;</code>
+   * @return Whether the quotaError field is set.
+   */
+  boolean hasQuotaError();
   /**
    * <pre>
    * An error with the amonut of quota remaining.
@@ -203,6 +293,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.AdErrorEnum.AdError ad_error = 12;</code>
+   * @return Whether the adError field is set.
+   */
+  boolean hasAdError();
+  /**
+   * <pre>
+   * An error with an Ad Group Ad mutate.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.AdErrorEnum.AdError ad_error = 12;</code>
    * @return The enum numeric value on the wire for adError.
    */
   int getAdErrorValue();
@@ -216,6 +315,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.AdErrorEnum.AdError getAdError();
 
+  /**
+   * <pre>
+   * An error with an Ad Group mutate.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.AdGroupErrorEnum.AdGroupError ad_group_error = 13;</code>
+   * @return Whether the adGroupError field is set.
+   */
+  boolean hasAdGroupError();
   /**
    * <pre>
    * An error with an Ad Group mutate.
@@ -241,6 +349,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.CampaignBudgetErrorEnum.CampaignBudgetError campaign_budget_error = 14;</code>
+   * @return Whether the campaignBudgetError field is set.
+   */
+  boolean hasCampaignBudgetError();
+  /**
+   * <pre>
+   * An error with a Campaign Budget mutate.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.CampaignBudgetErrorEnum.CampaignBudgetError campaign_budget_error = 14;</code>
    * @return The enum numeric value on the wire for campaignBudgetError.
    */
   int getCampaignBudgetErrorValue();
@@ -254,6 +371,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.CampaignBudgetErrorEnum.CampaignBudgetError getCampaignBudgetError();
 
+  /**
+   * <pre>
+   * An error with a Campaign mutate.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.CampaignErrorEnum.CampaignError campaign_error = 15;</code>
+   * @return Whether the campaignError field is set.
+   */
+  boolean hasCampaignError();
   /**
    * <pre>
    * An error with a Campaign mutate.
@@ -279,6 +405,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.AuthenticationErrorEnum.AuthenticationError authentication_error = 17;</code>
+   * @return Whether the authenticationError field is set.
+   */
+  boolean hasAuthenticationError();
+  /**
+   * <pre>
+   * Indicates failure to properly authenticate user.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.AuthenticationErrorEnum.AuthenticationError authentication_error = 17;</code>
    * @return The enum numeric value on the wire for authenticationError.
    */
   int getAuthenticationErrorValue();
@@ -292,6 +427,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.AuthenticationErrorEnum.AuthenticationError getAuthenticationError();
 
+  /**
+   * <pre>
+   * Indicates failure to properly authenticate user.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.AdGroupCriterionErrorEnum.AdGroupCriterionError ad_group_criterion_error = 18;</code>
+   * @return Whether the adGroupCriterionError field is set.
+   */
+  boolean hasAdGroupCriterionError();
   /**
    * <pre>
    * Indicates failure to properly authenticate user.
@@ -317,6 +461,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.AdCustomizerErrorEnum.AdCustomizerError ad_customizer_error = 19;</code>
+   * @return Whether the adCustomizerError field is set.
+   */
+  boolean hasAdCustomizerError();
+  /**
+   * <pre>
+   * The reasons for the ad customizer error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.AdCustomizerErrorEnum.AdCustomizerError ad_customizer_error = 19;</code>
    * @return The enum numeric value on the wire for adCustomizerError.
    */
   int getAdCustomizerErrorValue();
@@ -330,6 +483,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.AdCustomizerErrorEnum.AdCustomizerError getAdCustomizerError();
 
+  /**
+   * <pre>
+   * The reasons for the ad group ad error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.AdGroupAdErrorEnum.AdGroupAdError ad_group_ad_error = 21;</code>
+   * @return Whether the adGroupAdError field is set.
+   */
+  boolean hasAdGroupAdError();
   /**
    * <pre>
    * The reasons for the ad group ad error
@@ -355,6 +517,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.AdSharingErrorEnum.AdSharingError ad_sharing_error = 24;</code>
+   * @return Whether the adSharingError field is set.
+   */
+  boolean hasAdSharingError();
+  /**
+   * <pre>
+   * The reasons for the ad sharing error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.AdSharingErrorEnum.AdSharingError ad_sharing_error = 24;</code>
    * @return The enum numeric value on the wire for adSharingError.
    */
   int getAdSharingErrorValue();
@@ -368,6 +539,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.AdSharingErrorEnum.AdSharingError getAdSharingError();
 
+  /**
+   * <pre>
+   * The reasons for the adx error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.AdxErrorEnum.AdxError adx_error = 25;</code>
+   * @return Whether the adxError field is set.
+   */
+  boolean hasAdxError();
   /**
    * <pre>
    * The reasons for the adx error
@@ -393,6 +573,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.AssetErrorEnum.AssetError asset_error = 107;</code>
+   * @return Whether the assetError field is set.
+   */
+  boolean hasAssetError();
+  /**
+   * <pre>
+   * The reasons for the asset error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.AssetErrorEnum.AssetError asset_error = 107;</code>
    * @return The enum numeric value on the wire for assetError.
    */
   int getAssetErrorValue();
@@ -406,6 +595,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.AssetErrorEnum.AssetError getAssetError();
 
+  /**
+   * <pre>
+   * The reasons for the bidding errors
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.BiddingErrorEnum.BiddingError bidding_error = 26;</code>
+   * @return Whether the biddingError field is set.
+   */
+  boolean hasBiddingError();
   /**
    * <pre>
    * The reasons for the bidding errors
@@ -431,6 +629,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.CampaignCriterionErrorEnum.CampaignCriterionError campaign_criterion_error = 29;</code>
+   * @return Whether the campaignCriterionError field is set.
+   */
+  boolean hasCampaignCriterionError();
+  /**
+   * <pre>
+   * The reasons for the campaign criterion error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.CampaignCriterionErrorEnum.CampaignCriterionError campaign_criterion_error = 29;</code>
    * @return The enum numeric value on the wire for campaignCriterionError.
    */
   int getCampaignCriterionErrorValue();
@@ -444,6 +651,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.CampaignCriterionErrorEnum.CampaignCriterionError getCampaignCriterionError();
 
+  /**
+   * <pre>
+   * The reasons for the collection size error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.CollectionSizeErrorEnum.CollectionSizeError collection_size_error = 31;</code>
+   * @return Whether the collectionSizeError field is set.
+   */
+  boolean hasCollectionSizeError();
   /**
    * <pre>
    * The reasons for the collection size error
@@ -469,6 +685,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.CountryCodeErrorEnum.CountryCodeError country_code_error = 109;</code>
+   * @return Whether the countryCodeError field is set.
+   */
+  boolean hasCountryCodeError();
+  /**
+   * <pre>
+   * The reasons for the country code error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.CountryCodeErrorEnum.CountryCodeError country_code_error = 109;</code>
    * @return The enum numeric value on the wire for countryCodeError.
    */
   int getCountryCodeErrorValue();
@@ -482,6 +707,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.CountryCodeErrorEnum.CountryCodeError getCountryCodeError();
 
+  /**
+   * <pre>
+   * The reasons for the criterion error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.CriterionErrorEnum.CriterionError criterion_error = 32;</code>
+   * @return Whether the criterionError field is set.
+   */
+  boolean hasCriterionError();
   /**
    * <pre>
    * The reasons for the criterion error
@@ -507,6 +741,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.CustomerErrorEnum.CustomerError customer_error = 90;</code>
+   * @return Whether the customerError field is set.
+   */
+  boolean hasCustomerError();
+  /**
+   * <pre>
+   * The reasons for the customer error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.CustomerErrorEnum.CustomerError customer_error = 90;</code>
    * @return The enum numeric value on the wire for customerError.
    */
   int getCustomerErrorValue();
@@ -520,6 +763,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.CustomerErrorEnum.CustomerError getCustomerError();
 
+  /**
+   * <pre>
+   * The reasons for the date error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.DateErrorEnum.DateError date_error = 33;</code>
+   * @return Whether the dateError field is set.
+   */
+  boolean hasDateError();
   /**
    * <pre>
    * The reasons for the date error
@@ -545,6 +797,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.DateRangeErrorEnum.DateRangeError date_range_error = 34;</code>
+   * @return Whether the dateRangeError field is set.
+   */
+  boolean hasDateRangeError();
+  /**
+   * <pre>
+   * The reasons for the date range error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.DateRangeErrorEnum.DateRangeError date_range_error = 34;</code>
    * @return The enum numeric value on the wire for dateRangeError.
    */
   int getDateRangeErrorValue();
@@ -558,6 +819,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.DateRangeErrorEnum.DateRangeError getDateRangeError();
 
+  /**
+   * <pre>
+   * The reasons for the distinct error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.DistinctErrorEnum.DistinctError distinct_error = 35;</code>
+   * @return Whether the distinctError field is set.
+   */
+  boolean hasDistinctError();
   /**
    * <pre>
    * The reasons for the distinct error
@@ -583,6 +853,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.FeedAttributeReferenceErrorEnum.FeedAttributeReferenceError feed_attribute_reference_error = 36;</code>
+   * @return Whether the feedAttributeReferenceError field is set.
+   */
+  boolean hasFeedAttributeReferenceError();
+  /**
+   * <pre>
+   * The reasons for the feed attribute reference error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.FeedAttributeReferenceErrorEnum.FeedAttributeReferenceError feed_attribute_reference_error = 36;</code>
    * @return The enum numeric value on the wire for feedAttributeReferenceError.
    */
   int getFeedAttributeReferenceErrorValue();
@@ -596,6 +875,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.FeedAttributeReferenceErrorEnum.FeedAttributeReferenceError getFeedAttributeReferenceError();
 
+  /**
+   * <pre>
+   * The reasons for the function error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.FunctionErrorEnum.FunctionError function_error = 37;</code>
+   * @return Whether the functionError field is set.
+   */
+  boolean hasFunctionError();
   /**
    * <pre>
    * The reasons for the function error
@@ -621,6 +909,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.FunctionParsingErrorEnum.FunctionParsingError function_parsing_error = 38;</code>
+   * @return Whether the functionParsingError field is set.
+   */
+  boolean hasFunctionParsingError();
+  /**
+   * <pre>
+   * The reasons for the function parsing error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.FunctionParsingErrorEnum.FunctionParsingError function_parsing_error = 38;</code>
    * @return The enum numeric value on the wire for functionParsingError.
    */
   int getFunctionParsingErrorValue();
@@ -634,6 +931,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.FunctionParsingErrorEnum.FunctionParsingError getFunctionParsingError();
 
+  /**
+   * <pre>
+   * The reasons for the id error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.IdErrorEnum.IdError id_error = 39;</code>
+   * @return Whether the idError field is set.
+   */
+  boolean hasIdError();
   /**
    * <pre>
    * The reasons for the id error
@@ -659,6 +965,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.ImageErrorEnum.ImageError image_error = 40;</code>
+   * @return Whether the imageError field is set.
+   */
+  boolean hasImageError();
+  /**
+   * <pre>
+   * The reasons for the image error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.ImageErrorEnum.ImageError image_error = 40;</code>
    * @return The enum numeric value on the wire for imageError.
    */
   int getImageErrorValue();
@@ -672,6 +987,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.ImageErrorEnum.ImageError getImageError();
 
+  /**
+   * <pre>
+   * The reasons for the language code error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.LanguageCodeErrorEnum.LanguageCodeError language_code_error = 110;</code>
+   * @return Whether the languageCodeError field is set.
+   */
+  boolean hasLanguageCodeError();
   /**
    * <pre>
    * The reasons for the language code error
@@ -697,6 +1021,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.MediaBundleErrorEnum.MediaBundleError media_bundle_error = 42;</code>
+   * @return Whether the mediaBundleError field is set.
+   */
+  boolean hasMediaBundleError();
+  /**
+   * <pre>
+   * The reasons for the media bundle error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.MediaBundleErrorEnum.MediaBundleError media_bundle_error = 42;</code>
    * @return The enum numeric value on the wire for mediaBundleError.
    */
   int getMediaBundleErrorValue();
@@ -710,6 +1043,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.MediaBundleErrorEnum.MediaBundleError getMediaBundleError();
 
+  /**
+   * <pre>
+   * The reasons for media uploading errors.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.MediaUploadErrorEnum.MediaUploadError media_upload_error = 116;</code>
+   * @return Whether the mediaUploadError field is set.
+   */
+  boolean hasMediaUploadError();
   /**
    * <pre>
    * The reasons for media uploading errors.
@@ -735,6 +1077,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.MediaFileErrorEnum.MediaFileError media_file_error = 86;</code>
+   * @return Whether the mediaFileError field is set.
+   */
+  boolean hasMediaFileError();
+  /**
+   * <pre>
+   * The reasons for the media file error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.MediaFileErrorEnum.MediaFileError media_file_error = 86;</code>
    * @return The enum numeric value on the wire for mediaFileError.
    */
   int getMediaFileErrorValue();
@@ -748,6 +1099,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.MediaFileErrorEnum.MediaFileError getMediaFileError();
 
+  /**
+   * <pre>
+   * The reasons for the multiplier error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.MultiplierErrorEnum.MultiplierError multiplier_error = 44;</code>
+   * @return Whether the multiplierError field is set.
+   */
+  boolean hasMultiplierError();
   /**
    * <pre>
    * The reasons for the multiplier error
@@ -773,6 +1133,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.NewResourceCreationErrorEnum.NewResourceCreationError new_resource_creation_error = 45;</code>
+   * @return Whether the newResourceCreationError field is set.
+   */
+  boolean hasNewResourceCreationError();
+  /**
+   * <pre>
+   * The reasons for the new resource creation error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.NewResourceCreationErrorEnum.NewResourceCreationError new_resource_creation_error = 45;</code>
    * @return The enum numeric value on the wire for newResourceCreationError.
    */
   int getNewResourceCreationErrorValue();
@@ -786,6 +1155,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.NewResourceCreationErrorEnum.NewResourceCreationError getNewResourceCreationError();
 
+  /**
+   * <pre>
+   * The reasons for the not empty error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.NotEmptyErrorEnum.NotEmptyError not_empty_error = 46;</code>
+   * @return Whether the notEmptyError field is set.
+   */
+  boolean hasNotEmptyError();
   /**
    * <pre>
    * The reasons for the not empty error
@@ -811,6 +1189,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.NullErrorEnum.NullError null_error = 47;</code>
+   * @return Whether the nullError field is set.
+   */
+  boolean hasNullError();
+  /**
+   * <pre>
+   * The reasons for the null error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.NullErrorEnum.NullError null_error = 47;</code>
    * @return The enum numeric value on the wire for nullError.
    */
   int getNullErrorValue();
@@ -824,6 +1211,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.NullErrorEnum.NullError getNullError();
 
+  /**
+   * <pre>
+   * The reasons for the operator error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.OperatorErrorEnum.OperatorError operator_error = 48;</code>
+   * @return Whether the operatorError field is set.
+   */
+  boolean hasOperatorError();
   /**
    * <pre>
    * The reasons for the operator error
@@ -849,6 +1245,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.RangeErrorEnum.RangeError range_error = 49;</code>
+   * @return Whether the rangeError field is set.
+   */
+  boolean hasRangeError();
+  /**
+   * <pre>
+   * The reasons for the range error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.RangeErrorEnum.RangeError range_error = 49;</code>
    * @return The enum numeric value on the wire for rangeError.
    */
   int getRangeErrorValue();
@@ -862,6 +1267,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.RangeErrorEnum.RangeError getRangeError();
 
+  /**
+   * <pre>
+   * The reasons for error in applying a recommendation
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.RecommendationErrorEnum.RecommendationError recommendation_error = 58;</code>
+   * @return Whether the recommendationError field is set.
+   */
+  boolean hasRecommendationError();
   /**
    * <pre>
    * The reasons for error in applying a recommendation
@@ -887,6 +1301,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.RegionCodeErrorEnum.RegionCodeError region_code_error = 51;</code>
+   * @return Whether the regionCodeError field is set.
+   */
+  boolean hasRegionCodeError();
+  /**
+   * <pre>
+   * The reasons for the region code error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.RegionCodeErrorEnum.RegionCodeError region_code_error = 51;</code>
    * @return The enum numeric value on the wire for regionCodeError.
    */
   int getRegionCodeErrorValue();
@@ -900,6 +1323,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.RegionCodeErrorEnum.RegionCodeError getRegionCodeError();
 
+  /**
+   * <pre>
+   * The reasons for the setting error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.SettingErrorEnum.SettingError setting_error = 52;</code>
+   * @return Whether the settingError field is set.
+   */
+  boolean hasSettingError();
   /**
    * <pre>
    * The reasons for the setting error
@@ -925,6 +1357,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.StringFormatErrorEnum.StringFormatError string_format_error = 53;</code>
+   * @return Whether the stringFormatError field is set.
+   */
+  boolean hasStringFormatError();
+  /**
+   * <pre>
+   * The reasons for the string format error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.StringFormatErrorEnum.StringFormatError string_format_error = 53;</code>
    * @return The enum numeric value on the wire for stringFormatError.
    */
   int getStringFormatErrorValue();
@@ -938,6 +1379,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.StringFormatErrorEnum.StringFormatError getStringFormatError();
 
+  /**
+   * <pre>
+   * The reasons for the string length error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.StringLengthErrorEnum.StringLengthError string_length_error = 54;</code>
+   * @return Whether the stringLengthError field is set.
+   */
+  boolean hasStringLengthError();
   /**
    * <pre>
    * The reasons for the string length error
@@ -963,6 +1413,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.OperationAccessDeniedErrorEnum.OperationAccessDeniedError operation_access_denied_error = 55;</code>
+   * @return Whether the operationAccessDeniedError field is set.
+   */
+  boolean hasOperationAccessDeniedError();
+  /**
+   * <pre>
+   * The reasons for the operation access denied error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.OperationAccessDeniedErrorEnum.OperationAccessDeniedError operation_access_denied_error = 55;</code>
    * @return The enum numeric value on the wire for operationAccessDeniedError.
    */
   int getOperationAccessDeniedErrorValue();
@@ -976,6 +1435,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.OperationAccessDeniedErrorEnum.OperationAccessDeniedError getOperationAccessDeniedError();
 
+  /**
+   * <pre>
+   * The reasons for the resource access denied error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.ResourceAccessDeniedErrorEnum.ResourceAccessDeniedError resource_access_denied_error = 56;</code>
+   * @return Whether the resourceAccessDeniedError field is set.
+   */
+  boolean hasResourceAccessDeniedError();
   /**
    * <pre>
    * The reasons for the resource access denied error
@@ -1001,6 +1469,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.ResourceCountLimitExceededErrorEnum.ResourceCountLimitExceededError resource_count_limit_exceeded_error = 57;</code>
+   * @return Whether the resourceCountLimitExceededError field is set.
+   */
+  boolean hasResourceCountLimitExceededError();
+  /**
+   * <pre>
+   * The reasons for the resource count limit exceeded error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.ResourceCountLimitExceededErrorEnum.ResourceCountLimitExceededError resource_count_limit_exceeded_error = 57;</code>
    * @return The enum numeric value on the wire for resourceCountLimitExceededError.
    */
   int getResourceCountLimitExceededErrorValue();
@@ -1014,6 +1491,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.ResourceCountLimitExceededErrorEnum.ResourceCountLimitExceededError getResourceCountLimitExceededError();
 
+  /**
+   * <pre>
+   * The reasons for YouTube video registration errors.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.YoutubeVideoRegistrationErrorEnum.YoutubeVideoRegistrationError youtube_video_registration_error = 117;</code>
+   * @return Whether the youtubeVideoRegistrationError field is set.
+   */
+  boolean hasYoutubeVideoRegistrationError();
   /**
    * <pre>
    * The reasons for YouTube video registration errors.
@@ -1039,6 +1525,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.AdGroupBidModifierErrorEnum.AdGroupBidModifierError ad_group_bid_modifier_error = 59;</code>
+   * @return Whether the adGroupBidModifierError field is set.
+   */
+  boolean hasAdGroupBidModifierError();
+  /**
+   * <pre>
+   * The reasons for the ad group bid modifier error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.AdGroupBidModifierErrorEnum.AdGroupBidModifierError ad_group_bid_modifier_error = 59;</code>
    * @return The enum numeric value on the wire for adGroupBidModifierError.
    */
   int getAdGroupBidModifierErrorValue();
@@ -1052,6 +1547,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.AdGroupBidModifierErrorEnum.AdGroupBidModifierError getAdGroupBidModifierError();
 
+  /**
+   * <pre>
+   * The reasons for the context error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.ContextErrorEnum.ContextError context_error = 60;</code>
+   * @return Whether the contextError field is set.
+   */
+  boolean hasContextError();
   /**
    * <pre>
    * The reasons for the context error
@@ -1077,6 +1581,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.FieldErrorEnum.FieldError field_error = 61;</code>
+   * @return Whether the fieldError field is set.
+   */
+  boolean hasFieldError();
+  /**
+   * <pre>
+   * The reasons for the field error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.FieldErrorEnum.FieldError field_error = 61;</code>
    * @return The enum numeric value on the wire for fieldError.
    */
   int getFieldErrorValue();
@@ -1090,6 +1603,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.FieldErrorEnum.FieldError getFieldError();
 
+  /**
+   * <pre>
+   * The reasons for the shared set error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.SharedSetErrorEnum.SharedSetError shared_set_error = 62;</code>
+   * @return Whether the sharedSetError field is set.
+   */
+  boolean hasSharedSetError();
   /**
    * <pre>
    * The reasons for the shared set error
@@ -1115,6 +1637,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.SharedCriterionErrorEnum.SharedCriterionError shared_criterion_error = 63;</code>
+   * @return Whether the sharedCriterionError field is set.
+   */
+  boolean hasSharedCriterionError();
+  /**
+   * <pre>
+   * The reasons for the shared criterion error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.SharedCriterionErrorEnum.SharedCriterionError shared_criterion_error = 63;</code>
    * @return The enum numeric value on the wire for sharedCriterionError.
    */
   int getSharedCriterionErrorValue();
@@ -1128,6 +1659,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.SharedCriterionErrorEnum.SharedCriterionError getSharedCriterionError();
 
+  /**
+   * <pre>
+   * The reasons for the campaign shared set error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.CampaignSharedSetErrorEnum.CampaignSharedSetError campaign_shared_set_error = 64;</code>
+   * @return Whether the campaignSharedSetError field is set.
+   */
+  boolean hasCampaignSharedSetError();
   /**
    * <pre>
    * The reasons for the campaign shared set error
@@ -1153,6 +1693,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.ConversionActionErrorEnum.ConversionActionError conversion_action_error = 65;</code>
+   * @return Whether the conversionActionError field is set.
+   */
+  boolean hasConversionActionError();
+  /**
+   * <pre>
+   * The reasons for the conversion action error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.ConversionActionErrorEnum.ConversionActionError conversion_action_error = 65;</code>
    * @return The enum numeric value on the wire for conversionActionError.
    */
   int getConversionActionErrorValue();
@@ -1166,6 +1715,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.ConversionActionErrorEnum.ConversionActionError getConversionActionError();
 
+  /**
+   * <pre>
+   * The reasons for the conversion adjustment upload error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.ConversionAdjustmentUploadErrorEnum.ConversionAdjustmentUploadError conversion_adjustment_upload_error = 115;</code>
+   * @return Whether the conversionAdjustmentUploadError field is set.
+   */
+  boolean hasConversionAdjustmentUploadError();
   /**
    * <pre>
    * The reasons for the conversion adjustment upload error
@@ -1191,6 +1749,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.ConversionUploadErrorEnum.ConversionUploadError conversion_upload_error = 111;</code>
+   * @return Whether the conversionUploadError field is set.
+   */
+  boolean hasConversionUploadError();
+  /**
+   * <pre>
+   * The reasons for the conversion upload error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.ConversionUploadErrorEnum.ConversionUploadError conversion_upload_error = 111;</code>
    * @return The enum numeric value on the wire for conversionUploadError.
    */
   int getConversionUploadErrorValue();
@@ -1204,6 +1771,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.ConversionUploadErrorEnum.ConversionUploadError getConversionUploadError();
 
+  /**
+   * <pre>
+   * The reasons for the header error.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.HeaderErrorEnum.HeaderError header_error = 66;</code>
+   * @return Whether the headerError field is set.
+   */
+  boolean hasHeaderError();
   /**
    * <pre>
    * The reasons for the header error.
@@ -1229,6 +1805,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.DatabaseErrorEnum.DatabaseError database_error = 67;</code>
+   * @return Whether the databaseError field is set.
+   */
+  boolean hasDatabaseError();
+  /**
+   * <pre>
+   * The reasons for the database error.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.DatabaseErrorEnum.DatabaseError database_error = 67;</code>
    * @return The enum numeric value on the wire for databaseError.
    */
   int getDatabaseErrorValue();
@@ -1242,6 +1827,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.DatabaseErrorEnum.DatabaseError getDatabaseError();
 
+  /**
+   * <pre>
+   * The reasons for the policy finding error.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.PolicyFindingErrorEnum.PolicyFindingError policy_finding_error = 68;</code>
+   * @return Whether the policyFindingError field is set.
+   */
+  boolean hasPolicyFindingError();
   /**
    * <pre>
    * The reasons for the policy finding error.
@@ -1267,6 +1861,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.EnumErrorEnum.EnumError enum_error = 70;</code>
+   * @return Whether the enumError field is set.
+   */
+  boolean hasEnumError();
+  /**
+   * <pre>
+   * The reason for enum error.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.EnumErrorEnum.EnumError enum_error = 70;</code>
    * @return The enum numeric value on the wire for enumError.
    */
   int getEnumErrorValue();
@@ -1280,6 +1883,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.EnumErrorEnum.EnumError getEnumError();
 
+  /**
+   * <pre>
+   * The reason for keyword plan error.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.KeywordPlanErrorEnum.KeywordPlanError keyword_plan_error = 71;</code>
+   * @return Whether the keywordPlanError field is set.
+   */
+  boolean hasKeywordPlanError();
   /**
    * <pre>
    * The reason for keyword plan error.
@@ -1305,6 +1917,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.KeywordPlanCampaignErrorEnum.KeywordPlanCampaignError keyword_plan_campaign_error = 72;</code>
+   * @return Whether the keywordPlanCampaignError field is set.
+   */
+  boolean hasKeywordPlanCampaignError();
+  /**
+   * <pre>
+   * The reason for keyword plan campaign error.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.KeywordPlanCampaignErrorEnum.KeywordPlanCampaignError keyword_plan_campaign_error = 72;</code>
    * @return The enum numeric value on the wire for keywordPlanCampaignError.
    */
   int getKeywordPlanCampaignErrorValue();
@@ -1318,6 +1939,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.KeywordPlanCampaignErrorEnum.KeywordPlanCampaignError getKeywordPlanCampaignError();
 
+  /**
+   * <pre>
+   * The reason for keyword plan campaign keyword error.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.KeywordPlanCampaignKeywordErrorEnum.KeywordPlanCampaignKeywordError keyword_plan_campaign_keyword_error = 132;</code>
+   * @return Whether the keywordPlanCampaignKeywordError field is set.
+   */
+  boolean hasKeywordPlanCampaignKeywordError();
   /**
    * <pre>
    * The reason for keyword plan campaign keyword error.
@@ -1343,6 +1973,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.KeywordPlanAdGroupErrorEnum.KeywordPlanAdGroupError keyword_plan_ad_group_error = 74;</code>
+   * @return Whether the keywordPlanAdGroupError field is set.
+   */
+  boolean hasKeywordPlanAdGroupError();
+  /**
+   * <pre>
+   * The reason for keyword plan ad group error.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.KeywordPlanAdGroupErrorEnum.KeywordPlanAdGroupError keyword_plan_ad_group_error = 74;</code>
    * @return The enum numeric value on the wire for keywordPlanAdGroupError.
    */
   int getKeywordPlanAdGroupErrorValue();
@@ -1356,6 +1995,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.KeywordPlanAdGroupErrorEnum.KeywordPlanAdGroupError getKeywordPlanAdGroupError();
 
+  /**
+   * <pre>
+   * The reason for keyword plan ad group keyword error.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.KeywordPlanAdGroupKeywordErrorEnum.KeywordPlanAdGroupKeywordError keyword_plan_ad_group_keyword_error = 133;</code>
+   * @return Whether the keywordPlanAdGroupKeywordError field is set.
+   */
+  boolean hasKeywordPlanAdGroupKeywordError();
   /**
    * <pre>
    * The reason for keyword plan ad group keyword error.
@@ -1381,6 +2029,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.KeywordPlanIdeaErrorEnum.KeywordPlanIdeaError keyword_plan_idea_error = 76;</code>
+   * @return Whether the keywordPlanIdeaError field is set.
+   */
+  boolean hasKeywordPlanIdeaError();
+  /**
+   * <pre>
+   * The reason for keyword idea error.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.KeywordPlanIdeaErrorEnum.KeywordPlanIdeaError keyword_plan_idea_error = 76;</code>
    * @return The enum numeric value on the wire for keywordPlanIdeaError.
    */
   int getKeywordPlanIdeaErrorValue();
@@ -1394,6 +2051,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.KeywordPlanIdeaErrorEnum.KeywordPlanIdeaError getKeywordPlanIdeaError();
 
+  /**
+   * <pre>
+   * The reasons for account budget proposal errors.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.AccountBudgetProposalErrorEnum.AccountBudgetProposalError account_budget_proposal_error = 77;</code>
+   * @return Whether the accountBudgetProposalError field is set.
+   */
+  boolean hasAccountBudgetProposalError();
   /**
    * <pre>
    * The reasons for account budget proposal errors.
@@ -1419,6 +2085,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.UserListErrorEnum.UserListError user_list_error = 78;</code>
+   * @return Whether the userListError field is set.
+   */
+  boolean hasUserListError();
+  /**
+   * <pre>
+   * The reasons for the user list error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.UserListErrorEnum.UserListError user_list_error = 78;</code>
    * @return The enum numeric value on the wire for userListError.
    */
   int getUserListErrorValue();
@@ -1432,6 +2107,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.UserListErrorEnum.UserListError getUserListError();
 
+  /**
+   * <pre>
+   * The reasons for the change status error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.ChangeStatusErrorEnum.ChangeStatusError change_status_error = 79;</code>
+   * @return Whether the changeStatusError field is set.
+   */
+  boolean hasChangeStatusError();
   /**
    * <pre>
    * The reasons for the change status error
@@ -1457,6 +2141,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.FeedErrorEnum.FeedError feed_error = 80;</code>
+   * @return Whether the feedError field is set.
+   */
+  boolean hasFeedError();
+  /**
+   * <pre>
+   * The reasons for the feed error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.FeedErrorEnum.FeedError feed_error = 80;</code>
    * @return The enum numeric value on the wire for feedError.
    */
   int getFeedErrorValue();
@@ -1470,6 +2163,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.FeedErrorEnum.FeedError getFeedError();
 
+  /**
+   * <pre>
+   * The reasons for the geo target constant suggestion error.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.GeoTargetConstantSuggestionErrorEnum.GeoTargetConstantSuggestionError geo_target_constant_suggestion_error = 81;</code>
+   * @return Whether the geoTargetConstantSuggestionError field is set.
+   */
+  boolean hasGeoTargetConstantSuggestionError();
   /**
    * <pre>
    * The reasons for the geo target constant suggestion error.
@@ -1495,6 +2197,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.CampaignDraftErrorEnum.CampaignDraftError campaign_draft_error = 82;</code>
+   * @return Whether the campaignDraftError field is set.
+   */
+  boolean hasCampaignDraftError();
+  /**
+   * <pre>
+   * The reasons for the campaign draft error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.CampaignDraftErrorEnum.CampaignDraftError campaign_draft_error = 82;</code>
    * @return The enum numeric value on the wire for campaignDraftError.
    */
   int getCampaignDraftErrorValue();
@@ -1508,6 +2219,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.CampaignDraftErrorEnum.CampaignDraftError getCampaignDraftError();
 
+  /**
+   * <pre>
+   * The reasons for the feed item error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.FeedItemErrorEnum.FeedItemError feed_item_error = 83;</code>
+   * @return Whether the feedItemError field is set.
+   */
+  boolean hasFeedItemError();
   /**
    * <pre>
    * The reasons for the feed item error
@@ -1533,6 +2253,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.LabelErrorEnum.LabelError label_error = 84;</code>
+   * @return Whether the labelError field is set.
+   */
+  boolean hasLabelError();
+  /**
+   * <pre>
+   * The reason for the label error.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.LabelErrorEnum.LabelError label_error = 84;</code>
    * @return The enum numeric value on the wire for labelError.
    */
   int getLabelErrorValue();
@@ -1546,6 +2275,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.LabelErrorEnum.LabelError getLabelError();
 
+  /**
+   * <pre>
+   * The reasons for the billing setup error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.BillingSetupErrorEnum.BillingSetupError billing_setup_error = 87;</code>
+   * @return Whether the billingSetupError field is set.
+   */
+  boolean hasBillingSetupError();
   /**
    * <pre>
    * The reasons for the billing setup error
@@ -1571,6 +2309,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.CustomerClientLinkErrorEnum.CustomerClientLinkError customer_client_link_error = 88;</code>
+   * @return Whether the customerClientLinkError field is set.
+   */
+  boolean hasCustomerClientLinkError();
+  /**
+   * <pre>
+   * The reasons for the customer client link error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.CustomerClientLinkErrorEnum.CustomerClientLinkError customer_client_link_error = 88;</code>
    * @return The enum numeric value on the wire for customerClientLinkError.
    */
   int getCustomerClientLinkErrorValue();
@@ -1584,6 +2331,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.CustomerClientLinkErrorEnum.CustomerClientLinkError getCustomerClientLinkError();
 
+  /**
+   * <pre>
+   * The reasons for the customer manager link error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.CustomerManagerLinkErrorEnum.CustomerManagerLinkError customer_manager_link_error = 91;</code>
+   * @return Whether the customerManagerLinkError field is set.
+   */
+  boolean hasCustomerManagerLinkError();
   /**
    * <pre>
    * The reasons for the customer manager link error
@@ -1609,6 +2365,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.FeedMappingErrorEnum.FeedMappingError feed_mapping_error = 92;</code>
+   * @return Whether the feedMappingError field is set.
+   */
+  boolean hasFeedMappingError();
+  /**
+   * <pre>
+   * The reasons for the feed mapping error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.FeedMappingErrorEnum.FeedMappingError feed_mapping_error = 92;</code>
    * @return The enum numeric value on the wire for feedMappingError.
    */
   int getFeedMappingErrorValue();
@@ -1622,6 +2387,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.FeedMappingErrorEnum.FeedMappingError getFeedMappingError();
 
+  /**
+   * <pre>
+   * The reasons for the customer feed error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.CustomerFeedErrorEnum.CustomerFeedError customer_feed_error = 93;</code>
+   * @return Whether the customerFeedError field is set.
+   */
+  boolean hasCustomerFeedError();
   /**
    * <pre>
    * The reasons for the customer feed error
@@ -1647,6 +2421,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.AdGroupFeedErrorEnum.AdGroupFeedError ad_group_feed_error = 94;</code>
+   * @return Whether the adGroupFeedError field is set.
+   */
+  boolean hasAdGroupFeedError();
+  /**
+   * <pre>
+   * The reasons for the ad group feed error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.AdGroupFeedErrorEnum.AdGroupFeedError ad_group_feed_error = 94;</code>
    * @return The enum numeric value on the wire for adGroupFeedError.
    */
   int getAdGroupFeedErrorValue();
@@ -1660,6 +2443,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.AdGroupFeedErrorEnum.AdGroupFeedError getAdGroupFeedError();
 
+  /**
+   * <pre>
+   * The reasons for the campaign feed error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.CampaignFeedErrorEnum.CampaignFeedError campaign_feed_error = 96;</code>
+   * @return Whether the campaignFeedError field is set.
+   */
+  boolean hasCampaignFeedError();
   /**
    * <pre>
    * The reasons for the campaign feed error
@@ -1685,6 +2477,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.CustomInterestErrorEnum.CustomInterestError custom_interest_error = 97;</code>
+   * @return Whether the customInterestError field is set.
+   */
+  boolean hasCustomInterestError();
+  /**
+   * <pre>
+   * The reasons for the custom interest error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.CustomInterestErrorEnum.CustomInterestError custom_interest_error = 97;</code>
    * @return The enum numeric value on the wire for customInterestError.
    */
   int getCustomInterestErrorValue();
@@ -1698,6 +2499,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.CustomInterestErrorEnum.CustomInterestError getCustomInterestError();
 
+  /**
+   * <pre>
+   * The reasons for the campaign experiment error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.CampaignExperimentErrorEnum.CampaignExperimentError campaign_experiment_error = 98;</code>
+   * @return Whether the campaignExperimentError field is set.
+   */
+  boolean hasCampaignExperimentError();
   /**
    * <pre>
    * The reasons for the campaign experiment error
@@ -1723,6 +2533,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.ExtensionFeedItemErrorEnum.ExtensionFeedItemError extension_feed_item_error = 100;</code>
+   * @return Whether the extensionFeedItemError field is set.
+   */
+  boolean hasExtensionFeedItemError();
+  /**
+   * <pre>
+   * The reasons for the extension feed item error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.ExtensionFeedItemErrorEnum.ExtensionFeedItemError extension_feed_item_error = 100;</code>
    * @return The enum numeric value on the wire for extensionFeedItemError.
    */
   int getExtensionFeedItemErrorValue();
@@ -1736,6 +2555,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.ExtensionFeedItemErrorEnum.ExtensionFeedItemError getExtensionFeedItemError();
 
+  /**
+   * <pre>
+   * The reasons for the ad parameter error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.AdParameterErrorEnum.AdParameterError ad_parameter_error = 101;</code>
+   * @return Whether the adParameterError field is set.
+   */
+  boolean hasAdParameterError();
   /**
    * <pre>
    * The reasons for the ad parameter error
@@ -1761,6 +2589,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.FeedItemValidationErrorEnum.FeedItemValidationError feed_item_validation_error = 102;</code>
+   * @return Whether the feedItemValidationError field is set.
+   */
+  boolean hasFeedItemValidationError();
+  /**
+   * <pre>
+   * The reasons for the feed item validation error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.FeedItemValidationErrorEnum.FeedItemValidationError feed_item_validation_error = 102;</code>
    * @return The enum numeric value on the wire for feedItemValidationError.
    */
   int getFeedItemValidationErrorValue();
@@ -1774,6 +2611,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.FeedItemValidationErrorEnum.FeedItemValidationError getFeedItemValidationError();
 
+  /**
+   * <pre>
+   * The reasons for the extension setting error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.ExtensionSettingErrorEnum.ExtensionSettingError extension_setting_error = 103;</code>
+   * @return Whether the extensionSettingError field is set.
+   */
+  boolean hasExtensionSettingError();
   /**
    * <pre>
    * The reasons for the extension setting error
@@ -1799,6 +2645,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.FeedItemTargetErrorEnum.FeedItemTargetError feed_item_target_error = 104;</code>
+   * @return Whether the feedItemTargetError field is set.
+   */
+  boolean hasFeedItemTargetError();
+  /**
+   * <pre>
+   * The reasons for the feed item target error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.FeedItemTargetErrorEnum.FeedItemTargetError feed_item_target_error = 104;</code>
    * @return The enum numeric value on the wire for feedItemTargetError.
    */
   int getFeedItemTargetErrorValue();
@@ -1812,6 +2667,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.FeedItemTargetErrorEnum.FeedItemTargetError getFeedItemTargetError();
 
+  /**
+   * <pre>
+   * The reasons for the policy violation error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.PolicyViolationErrorEnum.PolicyViolationError policy_violation_error = 105;</code>
+   * @return Whether the policyViolationError field is set.
+   */
+  boolean hasPolicyViolationError();
   /**
    * <pre>
    * The reasons for the policy violation error
@@ -1837,6 +2701,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.PartialFailureErrorEnum.PartialFailureError partial_failure_error = 112;</code>
+   * @return Whether the partialFailureError field is set.
+   */
+  boolean hasPartialFailureError();
+  /**
+   * <pre>
+   * The reasons for the mutate job error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.PartialFailureErrorEnum.PartialFailureError partial_failure_error = 112;</code>
    * @return The enum numeric value on the wire for partialFailureError.
    */
   int getPartialFailureErrorValue();
@@ -1850,6 +2723,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.PartialFailureErrorEnum.PartialFailureError getPartialFailureError();
 
+  /**
+   * <pre>
+   * The reasons for the policy validation parameter error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.PolicyValidationParameterErrorEnum.PolicyValidationParameterError policy_validation_parameter_error = 114;</code>
+   * @return Whether the policyValidationParameterError field is set.
+   */
+  boolean hasPolicyValidationParameterError();
   /**
    * <pre>
    * The reasons for the policy validation parameter error
@@ -1875,6 +2757,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.SizeLimitErrorEnum.SizeLimitError size_limit_error = 118;</code>
+   * @return Whether the sizeLimitError field is set.
+   */
+  boolean hasSizeLimitError();
+  /**
+   * <pre>
+   * The reasons for the size limit error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.SizeLimitErrorEnum.SizeLimitError size_limit_error = 118;</code>
    * @return The enum numeric value on the wire for sizeLimitError.
    */
   int getSizeLimitErrorValue();
@@ -1888,6 +2779,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.SizeLimitErrorEnum.SizeLimitError getSizeLimitError();
 
+  /**
+   * <pre>
+   * The reasons for the offline user data job error.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.OfflineUserDataJobErrorEnum.OfflineUserDataJobError offline_user_data_job_error = 119;</code>
+   * @return Whether the offlineUserDataJobError field is set.
+   */
+  boolean hasOfflineUserDataJobError();
   /**
    * <pre>
    * The reasons for the offline user data job error.
@@ -1913,6 +2813,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.NotWhitelistedErrorEnum.NotWhitelistedError not_whitelisted_error = 120;</code>
+   * @return Whether the notWhitelistedError field is set.
+   */
+  boolean hasNotWhitelistedError();
+  /**
+   * <pre>
+   * The reasons for the not whitelisted error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.NotWhitelistedErrorEnum.NotWhitelistedError not_whitelisted_error = 120;</code>
    * @return The enum numeric value on the wire for notWhitelistedError.
    */
   int getNotWhitelistedErrorValue();
@@ -1926,6 +2835,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.NotWhitelistedErrorEnum.NotWhitelistedError getNotWhitelistedError();
 
+  /**
+   * <pre>
+   * The reasons for the manager link error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.ManagerLinkErrorEnum.ManagerLinkError manager_link_error = 121;</code>
+   * @return Whether the managerLinkError field is set.
+   */
+  boolean hasManagerLinkError();
   /**
    * <pre>
    * The reasons for the manager link error
@@ -1951,6 +2869,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.CurrencyCodeErrorEnum.CurrencyCodeError currency_code_error = 122;</code>
+   * @return Whether the currencyCodeError field is set.
+   */
+  boolean hasCurrencyCodeError();
+  /**
+   * <pre>
+   * The reasons for the currency code error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.CurrencyCodeErrorEnum.CurrencyCodeError currency_code_error = 122;</code>
    * @return The enum numeric value on the wire for currencyCodeError.
    */
   int getCurrencyCodeErrorValue();
@@ -1964,6 +2891,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.CurrencyCodeErrorEnum.CurrencyCodeError getCurrencyCodeError();
 
+  /**
+   * <pre>
+   * The reasons for the access invitation error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.AccessInvitationErrorEnum.AccessInvitationError access_invitation_error = 124;</code>
+   * @return Whether the accessInvitationError field is set.
+   */
+  boolean hasAccessInvitationError();
   /**
    * <pre>
    * The reasons for the access invitation error
@@ -1989,6 +2925,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.ReachPlanErrorEnum.ReachPlanError reach_plan_error = 125;</code>
+   * @return Whether the reachPlanError field is set.
+   */
+  boolean hasReachPlanError();
+  /**
+   * <pre>
+   * The reasons for the reach plan error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.ReachPlanErrorEnum.ReachPlanError reach_plan_error = 125;</code>
    * @return The enum numeric value on the wire for reachPlanError.
    */
   int getReachPlanErrorValue();
@@ -2002,6 +2947,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.ReachPlanErrorEnum.ReachPlanError getReachPlanError();
 
+  /**
+   * <pre>
+   * The reasons for the invoice error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.InvoiceErrorEnum.InvoiceError invoice_error = 126;</code>
+   * @return Whether the invoiceError field is set.
+   */
+  boolean hasInvoiceError();
   /**
    * <pre>
    * The reasons for the invoice error
@@ -2027,6 +2981,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.PaymentsAccountErrorEnum.PaymentsAccountError payments_account_error = 127;</code>
+   * @return Whether the paymentsAccountError field is set.
+   */
+  boolean hasPaymentsAccountError();
+  /**
+   * <pre>
+   * The reasons for errors in payments accounts service
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.PaymentsAccountErrorEnum.PaymentsAccountError payments_account_error = 127;</code>
    * @return The enum numeric value on the wire for paymentsAccountError.
    */
   int getPaymentsAccountErrorValue();
@@ -2040,6 +3003,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.PaymentsAccountErrorEnum.PaymentsAccountError getPaymentsAccountError();
 
+  /**
+   * <pre>
+   * The reasons for the time zone error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.TimeZoneErrorEnum.TimeZoneError time_zone_error = 128;</code>
+   * @return Whether the timeZoneError field is set.
+   */
+  boolean hasTimeZoneError();
   /**
    * <pre>
    * The reasons for the time zone error
@@ -2065,6 +3037,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.AssetLinkErrorEnum.AssetLinkError asset_link_error = 129;</code>
+   * @return Whether the assetLinkError field is set.
+   */
+  boolean hasAssetLinkError();
+  /**
+   * <pre>
+   * The reasons for the asset link error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.AssetLinkErrorEnum.AssetLinkError asset_link_error = 129;</code>
    * @return The enum numeric value on the wire for assetLinkError.
    */
   int getAssetLinkErrorValue();
@@ -2084,6 +3065,15 @@ public interface ErrorCodeOrBuilder extends
    * </pre>
    *
    * <code>.google.ads.googleads.v4.errors.UserDataErrorEnum.UserDataError user_data_error = 130;</code>
+   * @return Whether the userDataError field is set.
+   */
+  boolean hasUserDataError();
+  /**
+   * <pre>
+   * The reasons for the user data error.
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.UserDataErrorEnum.UserDataError user_data_error = 130;</code>
    * @return The enum numeric value on the wire for userDataError.
    */
   int getUserDataErrorValue();
@@ -2097,6 +3087,15 @@ public interface ErrorCodeOrBuilder extends
    */
   com.google.ads.googleads.v4.errors.UserDataErrorEnum.UserDataError getUserDataError();
 
+  /**
+   * <pre>
+   * The reasons for the batch job error
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v4.errors.BatchJobErrorEnum.BatchJobError batch_job_error = 131;</code>
+   * @return Whether the batchJobError field is set.
+   */
+  boolean hasBatchJobError();
   /**
    * <pre>
    * The reasons for the batch job error

@@ -44,7 +44,7 @@ class MaximizeClicksOptInRecommendation extends \Google\Protobuf\Internal\Messag
      * Only set if the current budget is too high.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getRecommendedBudgetAmountMicros()
     {

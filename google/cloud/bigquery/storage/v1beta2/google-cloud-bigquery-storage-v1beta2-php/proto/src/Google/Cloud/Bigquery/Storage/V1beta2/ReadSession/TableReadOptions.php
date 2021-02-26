@@ -145,7 +145,7 @@ class TableReadOptions extends \Google\Protobuf\Internal\Message
      * Optional. Options specific to the Apache Arrow output format.
      *
      * Generated from protobuf field <code>.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return \Google\Cloud\Bigquery\Storage\V1beta2\ArrowSerializationOptions
+     * @return \Google\Cloud\Bigquery\Storage\V1beta2\ArrowSerializationOptions|null
      */
     public function getArrowSerializationOptions()
     {

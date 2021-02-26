@@ -75,7 +75,7 @@ class ImportTaxonomiesRequest extends \Google\Protobuf\Internal\Message
      * Inline source used for taxonomies import
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1beta1.InlineSource inline_source = 2;</code>
-     * @return \Google\Cloud\DataCatalog\V1beta1\InlineSource
+     * @return \Google\Cloud\DataCatalog\V1beta1\InlineSource|null
      */
     public function getInlineSource()
     {

@@ -47,7 +47,7 @@ class CloudRepoSourceContext extends \Google\Protobuf\Internal\Message
      * The ID of the repo.
      *
      * Generated from protobuf field <code>.grafeas.v1.RepoId repo_id = 1;</code>
-     * @return \Grafeas\V1\RepoId
+     * @return \Grafeas\V1\RepoId|null
      */
     public function getRepoId()
     {
@@ -114,7 +114,7 @@ class CloudRepoSourceContext extends \Google\Protobuf\Internal\Message
      * An alias, which may be a branch or tag.
      *
      * Generated from protobuf field <code>.grafeas.v1.AliasContext alias_context = 3;</code>
-     * @return \Grafeas\V1\AliasContext
+     * @return \Grafeas\V1\AliasContext|null
      */
     public function getAliasContext()
     {

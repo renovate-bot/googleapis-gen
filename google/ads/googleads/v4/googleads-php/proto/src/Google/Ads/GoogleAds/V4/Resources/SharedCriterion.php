@@ -114,7 +114,7 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. The shared set to which the shared criterion belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue shared_set = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getSharedSet()
     {
@@ -178,7 +178,7 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
      * This field is ignored for mutates.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\Int64Value
+     * @return \Google\Protobuf\Int64Value|null
      */
     public function getCriterionId()
     {
@@ -270,7 +270,7 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Keyword.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.KeywordInfo keyword = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\KeywordInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\KeywordInfo|null
      */
     public function getKeyword()
     {
@@ -301,7 +301,7 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. YouTube Video.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.YouTubeVideoInfo youtube_video = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\YouTubeVideoInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\YouTubeVideoInfo|null
      */
     public function getYoutubeVideo()
     {
@@ -332,7 +332,7 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. YouTube Channel.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.YouTubeChannelInfo youtube_channel = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\YouTubeChannelInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\YouTubeChannelInfo|null
      */
     public function getYoutubeChannel()
     {
@@ -363,7 +363,7 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Placement.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.PlacementInfo placement = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\PlacementInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\PlacementInfo|null
      */
     public function getPlacement()
     {
@@ -394,7 +394,7 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Mobile App Category.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.MobileAppCategoryInfo mobile_app_category = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\MobileAppCategoryInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\MobileAppCategoryInfo|null
      */
     public function getMobileAppCategory()
     {
@@ -425,7 +425,7 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Mobile application.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v4.common.MobileApplicationInfo mobile_application = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V4\Common\MobileApplicationInfo
+     * @return \Google\Ads\GoogleAds\V4\Common\MobileApplicationInfo|null
      */
     public function getMobileApplication()
     {

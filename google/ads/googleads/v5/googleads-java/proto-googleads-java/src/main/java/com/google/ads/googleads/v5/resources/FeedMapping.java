@@ -383,6 +383,18 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.ads.googleads.v5.enums.PlaceholderTypeEnum.PlaceholderType placeholder_type = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the placeholderType field is set.
+   */
+  public boolean hasPlaceholderType() {
+    return targetCase_ == 3;
+  }
+  /**
+   * <pre>
+   * Immutable. The placeholder type of this mapping (i.e., if the mapping maps feed
+   * attributes to placeholder fields).
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.enums.PlaceholderTypeEnum.PlaceholderType placeholder_type = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The enum numeric value on the wire for placeholderType.
    */
   public int getPlaceholderTypeValue() {
@@ -411,6 +423,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CRITERION_TYPE_FIELD_NUMBER = 4;
+  /**
+   * <pre>
+   * Immutable. The criterion type of this mapping (i.e., if the mapping maps feed
+   * attributes to criterion fields).
+   * </pre>
+   *
+   * <code>.google.ads.googleads.v5.enums.FeedMappingCriterionTypeEnum.FeedMappingCriterionType criterion_type = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the criterionType field is set.
+   */
+  public boolean hasCriterionType() {
+    return targetCase_ == 4;
+  }
   /**
    * <pre>
    * Immutable. The criterion type of this mapping (i.e., if the mapping maps feed
@@ -1661,6 +1685,19 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.ads.googleads.v5.enums.PlaceholderTypeEnum.PlaceholderType placeholder_type = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return Whether the placeholderType field is set.
+     */
+    @java.lang.Override
+    public boolean hasPlaceholderType() {
+      return targetCase_ == 3;
+    }
+    /**
+     * <pre>
+     * Immutable. The placeholder type of this mapping (i.e., if the mapping maps feed
+     * attributes to placeholder fields).
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.enums.PlaceholderTypeEnum.PlaceholderType placeholder_type = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The enum numeric value on the wire for placeholderType.
      */
     @java.lang.Override
@@ -1742,6 +1779,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Immutable. The criterion type of this mapping (i.e., if the mapping maps feed
+     * attributes to criterion fields).
+     * </pre>
+     *
+     * <code>.google.ads.googleads.v5.enums.FeedMappingCriterionTypeEnum.FeedMappingCriterionType criterion_type = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return Whether the criterionType field is set.
+     */
+    @java.lang.Override
+    public boolean hasCriterionType() {
+      return targetCase_ == 4;
+    }
     /**
      * <pre>
      * Immutable. The criterion type of this mapping (i.e., if the mapping maps feed

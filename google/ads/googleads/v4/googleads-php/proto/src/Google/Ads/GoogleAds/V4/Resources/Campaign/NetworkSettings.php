@@ -71,7 +71,7 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
      * Whether ads will be served with google.com search results.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue target_google_search = 1;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getTargetGoogleSearch()
     {
@@ -135,7 +135,7 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
      * (requires `target_google_search` to also be `true`).
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue target_search_network = 2;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getTargetSearchNetwork()
     {
@@ -202,7 +202,7 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
      * Network. Placements are specified using the Placement criterion.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue target_content_network = 3;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getTargetContentNetwork()
     {
@@ -269,7 +269,7 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
      * This is available only to some select Google partner accounts.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue target_partner_search_network = 4;</code>
-     * @return \Google\Protobuf\BoolValue
+     * @return \Google\Protobuf\BoolValue|null
      */
     public function getTargetPartnerSearchNetwork()
     {

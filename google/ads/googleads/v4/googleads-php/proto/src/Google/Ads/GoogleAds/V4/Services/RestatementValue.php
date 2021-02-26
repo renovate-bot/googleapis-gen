@@ -73,7 +73,7 @@ class RestatementValue extends \Google\Protobuf\Internal\Message
      * and ignored.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue adjusted_value = 1;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * @return \Google\Protobuf\DoubleValue|null
      */
     public function getAdjustedValue()
     {
@@ -157,7 +157,7 @@ class RestatementValue extends \Google\Protobuf\Internal\Message
      * code e.g. USD or EUR.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 2;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return \Google\Protobuf\StringValue|null
      */
     public function getCurrencyCode()
     {

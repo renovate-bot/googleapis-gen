@@ -75,7 +75,7 @@ class GenerateNetworkReportResponse extends \Google\Protobuf\Internal\Message
      * the report date range and localization settings.
      *
      * Generated from protobuf field <code>.google.ads.admob.v1.ReportHeader header = 1;</code>
-     * @return \Google\Ads\Admob\V1\ReportHeader
+     * @return \Google\Ads\Admob\V1\ReportHeader|null
      */
     public function getHeader()
     {
@@ -107,7 +107,7 @@ class GenerateNetworkReportResponse extends \Google\Protobuf\Internal\Message
      * Actual report data.
      *
      * Generated from protobuf field <code>.google.ads.admob.v1.ReportRow row = 2;</code>
-     * @return \Google\Ads\Admob\V1\ReportRow
+     * @return \Google\Ads\Admob\V1\ReportRow|null
      */
     public function getRow()
     {
@@ -139,7 +139,7 @@ class GenerateNetworkReportResponse extends \Google\Protobuf\Internal\Message
      * the data.
      *
      * Generated from protobuf field <code>.google.ads.admob.v1.ReportFooter footer = 3;</code>
-     * @return \Google\Ads\Admob\V1\ReportFooter
+     * @return \Google\Ads\Admob\V1\ReportFooter|null
      */
     public function getFooter()
     {

@@ -109,7 +109,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      * containing only `code` and `message` fields.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.GcsDestination gcs_destination = 2;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\GcsDestination
+     * @return \Google\Cloud\Aiplatform\V1beta1\GcsDestination|null
      */
     public function getGcsDestination()
     {
@@ -177,7 +177,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      * represented as a STRUCT, and containing only `code` and `message`.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination bigquery_destination = 3;</code>
-     * @return \Google\Cloud\Aiplatform\V1beta1\BigQueryDestination
+     * @return \Google\Cloud\Aiplatform\V1beta1\BigQueryDestination|null
      */
     public function getBigqueryDestination()
     {

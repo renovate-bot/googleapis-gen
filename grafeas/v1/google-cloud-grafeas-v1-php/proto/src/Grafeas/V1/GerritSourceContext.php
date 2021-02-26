@@ -145,7 +145,7 @@ class GerritSourceContext extends \Google\Protobuf\Internal\Message
      * An alias, which may be a branch or tag.
      *
      * Generated from protobuf field <code>.grafeas.v1.AliasContext alias_context = 4;</code>
-     * @return \Grafeas\V1\AliasContext
+     * @return \Grafeas\V1\AliasContext|null
      */
     public function getAliasContext()
     {
