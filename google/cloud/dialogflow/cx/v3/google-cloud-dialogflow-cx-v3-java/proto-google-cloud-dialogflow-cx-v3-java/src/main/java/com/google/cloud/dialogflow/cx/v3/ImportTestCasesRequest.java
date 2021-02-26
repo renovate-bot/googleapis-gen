@@ -200,6 +200,19 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string gcs_uri = 2;</code>
+   * @return Whether the gcsUri field is set.
+   */
+  public boolean hasGcsUri() {
+    return sourceCase_ == 2;
+  }
+  /**
+   * <pre>
+   * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
+   * to import test cases from. The format of this URI must be
+   * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   * </pre>
+   *
+   * <code>string gcs_uri = 2;</code>
    * @return The gcsUri.
    */
   public java.lang.String getGcsUri() {
@@ -249,6 +262,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CONTENT_FIELD_NUMBER = 3;
+  /**
+   * <pre>
+   * Uncompressed raw byte content for test cases.
+   * </pre>
+   *
+   * <code>bytes content = 3;</code>
+   * @return Whether the content field is set.
+   */
+  @java.lang.Override
+  public boolean hasContent() {
+    return sourceCase_ == 3;
+  }
   /**
    * <pre>
    * Uncompressed raw byte content for test cases.
@@ -759,6 +784,20 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string gcs_uri = 2;</code>
+     * @return Whether the gcsUri field is set.
+     */
+    @java.lang.Override
+    public boolean hasGcsUri() {
+      return sourceCase_ == 2;
+    }
+    /**
+     * <pre>
+     * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
+     * to import test cases from. The format of this URI must be
+     * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     * </pre>
+     *
+     * <code>string gcs_uri = 2;</code>
      * @return The gcsUri.
      */
     @java.lang.Override
@@ -870,6 +909,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Uncompressed raw byte content for test cases.
+     * </pre>
+     *
+     * <code>bytes content = 3;</code>
+     * @return Whether the content field is set.
+     */
+    public boolean hasContent() {
+      return sourceCase_ == 3;
+    }
     /**
      * <pre>
      * Uncompressed raw byte content for test cases.

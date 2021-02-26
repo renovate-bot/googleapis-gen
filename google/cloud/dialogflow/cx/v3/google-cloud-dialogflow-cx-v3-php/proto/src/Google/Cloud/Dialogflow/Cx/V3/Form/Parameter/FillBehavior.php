@@ -104,7 +104,7 @@ class FillBehavior extends \Google\Protobuf\Internal\Message
      * can present to the user in order to fill the parameter.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Fulfillment initial_prompt_fulfillment = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\Fulfillment
+     * @return \Google\Cloud\Dialogflow\Cx\V3\Fulfillment|null
      */
     public function getInitialPromptFulfillment()
     {

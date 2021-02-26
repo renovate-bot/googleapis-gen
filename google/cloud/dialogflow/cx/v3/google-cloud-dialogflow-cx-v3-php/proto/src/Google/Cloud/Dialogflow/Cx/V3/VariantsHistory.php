@@ -44,7 +44,7 @@ class VariantsHistory extends \Google\Protobuf\Internal\Message
      * The flow versions as the variants.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.VersionVariants version_variants = 1;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\VersionVariants
+     * @return \Google\Cloud\Dialogflow\Cx\V3\VersionVariants|null
      */
     public function getVersionVariants()
     {
@@ -75,7 +75,7 @@ class VariantsHistory extends \Google\Protobuf\Internal\Message
      * Update time of the variants.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 2;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {

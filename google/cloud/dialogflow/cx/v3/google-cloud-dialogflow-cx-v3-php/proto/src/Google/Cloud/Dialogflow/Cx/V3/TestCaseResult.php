@@ -193,7 +193,7 @@ class TestCaseResult extends \Google\Protobuf\Internal\Message
      * The time that the test was run.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp test_time = 5;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getTestTime()
     {

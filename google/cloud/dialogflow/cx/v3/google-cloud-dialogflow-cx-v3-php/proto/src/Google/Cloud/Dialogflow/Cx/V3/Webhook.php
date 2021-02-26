@@ -143,7 +143,7 @@ class Webhook extends \Google\Protobuf\Internal\Message
      * Configuration for a generic web service.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Webhook.GenericWebService generic_web_service = 4;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\Webhook\GenericWebService
+     * @return \Google\Cloud\Dialogflow\Cx\V3\Webhook\GenericWebService|null
      */
     public function getGenericWebService()
     {
@@ -176,7 +176,7 @@ class Webhook extends \Google\Protobuf\Internal\Message
      * Defaults to 5 seconds, maximum allowed timeout is 30 seconds.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration timeout = 6;</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getTimeout()
     {

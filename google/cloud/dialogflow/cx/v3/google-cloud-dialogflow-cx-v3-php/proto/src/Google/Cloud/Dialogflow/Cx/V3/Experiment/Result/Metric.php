@@ -187,7 +187,7 @@ class Metric extends \Google\Protobuf\Internal\Message
      * in the experiment
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Experiment.Result.ConfidenceInterval confidence_interval = 3;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\Experiment\Result\ConfidenceInterval
+     * @return \Google\Cloud\Dialogflow\Cx\V3\Experiment\Result\ConfidenceInterval|null
      */
     public function getConfidenceInterval()
     {

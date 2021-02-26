@@ -113,7 +113,7 @@ class CreatePageRequest extends \Google\Protobuf\Internal\Message
      * Required. The page to create.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Page page = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\Page
+     * @return \Google\Cloud\Dialogflow\Cx\V3\Page|null
      */
     public function getPage()
     {

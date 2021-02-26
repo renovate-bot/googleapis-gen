@@ -38,7 +38,7 @@ class CaseContent extends \Google\Protobuf\Internal\Message
      * Returned message.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.ResponseMessage message = 1;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\ResponseMessage
+     * @return \Google\Cloud\Dialogflow\Cx\V3\ResponseMessage|null
      */
     public function getMessage()
     {
@@ -69,7 +69,7 @@ class CaseContent extends \Google\Protobuf\Internal\Message
      * Additional cases to be evaluated.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases additional_cases = 2;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\Fulfillment\ConditionalCases
+     * @return \Google\Cloud\Dialogflow\Cx\V3\Fulfillment\ConditionalCases|null
      */
     public function getAdditionalCases()
     {

@@ -41,7 +41,7 @@ class TransitionNode extends \Google\Protobuf\Internal\Message
      * displayname will be set.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Page page = 1;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\Page
+     * @return \Google\Cloud\Dialogflow\Cx\V3\Page|null
      */
     public function getPage()
     {
@@ -74,7 +74,7 @@ class TransitionNode extends \Google\Protobuf\Internal\Message
      * displayname will be set.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Flow flow = 2;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\Flow
+     * @return \Google\Cloud\Dialogflow\Cx\V3\Flow|null
      */
     public function getFlow()
     {

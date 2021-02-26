@@ -233,7 +233,7 @@ class SynthesizeSpeechConfig extends \Google\Protobuf\Internal\Message
      * Optional. The desired voice of the synthesized audio.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.VoiceSelectionParams voice = 4;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\VoiceSelectionParams
+     * @return \Google\Cloud\Dialogflow\Cx\V3\VoiceSelectionParams|null
      */
     public function getVoice()
     {

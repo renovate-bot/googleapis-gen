@@ -83,7 +83,7 @@ class CreateExperimentRequest extends \Google\Protobuf\Internal\Message
      * Required. The experiment to create.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Experiment experiment = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\Experiment
+     * @return \Google\Cloud\Dialogflow\Cx\V3\Experiment|null
      */
     public function getExperiment()
     {

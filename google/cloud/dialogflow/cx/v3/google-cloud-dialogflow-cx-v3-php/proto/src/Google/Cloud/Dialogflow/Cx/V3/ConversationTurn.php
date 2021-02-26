@@ -50,7 +50,7 @@ class ConversationTurn extends \Google\Protobuf\Internal\Message
      * The user input.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.ConversationTurn.UserInput user_input = 1;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\ConversationTurn\UserInput
+     * @return \Google\Cloud\Dialogflow\Cx\V3\ConversationTurn\UserInput|null
      */
     public function getUserInput()
     {
@@ -86,7 +86,7 @@ class ConversationTurn extends \Google\Protobuf\Internal\Message
      * The virtual agent output.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.ConversationTurn.VirtualAgentOutput virtual_agent_output = 2;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\ConversationTurn\VirtualAgentOutput
+     * @return \Google\Cloud\Dialogflow\Cx\V3\ConversationTurn\VirtualAgentOutput|null
      */
     public function getVirtualAgentOutput()
     {

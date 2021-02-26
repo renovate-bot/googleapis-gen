@@ -25,12 +25,14 @@ class GenericWebService extends \Google\Protobuf\Internal\Message
      * The user name for HTTP Basic authentication.
      *
      * Generated from protobuf field <code>string username = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $username = '';
     /**
      * The password for HTTP Basic authentication.
      *
      * Generated from protobuf field <code>string password = 3 [deprecated = true];</code>
+     * @deprecated
      */
     protected $password = '';
     /**
@@ -94,9 +96,11 @@ class GenericWebService extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string username = 2 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getUsername()
     {
+        @trigger_error('username is deprecated.', E_USER_DEPRECATED);
         return $this->username;
     }
 
@@ -106,9 +110,11 @@ class GenericWebService extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string username = 2 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setUsername($var)
     {
+        @trigger_error('username is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->username = $var;
 
@@ -120,9 +126,11 @@ class GenericWebService extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string password = 3 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getPassword()
     {
+        @trigger_error('password is deprecated.', E_USER_DEPRECATED);
         return $this->password;
     }
 
@@ -132,9 +140,11 @@ class GenericWebService extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string password = 3 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setPassword($var)
     {
+        @trigger_error('password is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->password = $var;
 

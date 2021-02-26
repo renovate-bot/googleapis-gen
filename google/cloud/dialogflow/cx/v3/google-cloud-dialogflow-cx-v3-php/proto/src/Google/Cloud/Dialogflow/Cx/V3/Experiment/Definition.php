@@ -82,7 +82,7 @@ class Definition extends \Google\Protobuf\Internal\Message
      * The flow versions as the variants of this experiment.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.VersionVariants version_variants = 2;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\VersionVariants
+     * @return \Google\Cloud\Dialogflow\Cx\V3\VersionVariants|null
      */
     public function getVersionVariants()
     {

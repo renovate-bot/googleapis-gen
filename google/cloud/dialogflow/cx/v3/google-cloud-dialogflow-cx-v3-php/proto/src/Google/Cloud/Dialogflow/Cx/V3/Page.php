@@ -221,7 +221,7 @@ class Page extends \Google\Protobuf\Internal\Message
      * The fulfillment to call when the session is entering the page.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Fulfillment entry_fulfillment = 7;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\Fulfillment
+     * @return \Google\Cloud\Dialogflow\Cx\V3\Fulfillment|null
      */
     public function getEntryFulfillment()
     {
@@ -258,7 +258,7 @@ class Page extends \Google\Protobuf\Internal\Message
      * relevant to the page.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Form form = 4;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\Form
+     * @return \Google\Cloud\Dialogflow\Cx\V3\Form|null
      */
     public function getForm()
     {

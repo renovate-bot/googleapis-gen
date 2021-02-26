@@ -51,7 +51,7 @@ class UpdateVersionRequest extends \Google\Protobuf\Internal\Message
      * Required. The version to update.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Version version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\Version
+     * @return \Google\Cloud\Dialogflow\Cx\V3\Version|null
      */
     public function getVersion()
     {
@@ -88,7 +88,7 @@ class UpdateVersionRequest extends \Google\Protobuf\Internal\Message
      * and `display_name` can be updated.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

@@ -113,7 +113,7 @@ class FulfillIntentResponse extends \Google\Protobuf\Internal\Message
      * The result of the conversational query.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.QueryResult query_result = 2;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\QueryResult
+     * @return \Google\Cloud\Dialogflow\Cx\V3\QueryResult|null
      */
     public function getQueryResult()
     {
@@ -193,7 +193,7 @@ class FulfillIntentResponse extends \Google\Protobuf\Internal\Message
      * The config used by the speech synthesizer to generate the output audio.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.OutputAudioConfig output_audio_config = 4;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\OutputAudioConfig
+     * @return \Google\Cloud\Dialogflow\Cx\V3\OutputAudioConfig|null
      */
     public function getOutputAudioConfig()
     {

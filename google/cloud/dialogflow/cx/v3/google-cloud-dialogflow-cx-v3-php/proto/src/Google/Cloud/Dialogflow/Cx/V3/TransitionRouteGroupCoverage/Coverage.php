@@ -59,7 +59,7 @@ class Coverage extends \Google\Protobuf\Internal\Message
      * Transition route group metadata. Only name and displayName will be set.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.TransitionRouteGroup route_group = 1;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\TransitionRouteGroup
+     * @return \Google\Cloud\Dialogflow\Cx\V3\TransitionRouteGroup|null
      */
     public function getRouteGroup()
     {

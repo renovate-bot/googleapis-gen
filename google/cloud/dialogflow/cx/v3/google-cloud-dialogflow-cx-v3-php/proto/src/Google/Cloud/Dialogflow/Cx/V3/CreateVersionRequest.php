@@ -83,7 +83,7 @@ class CreateVersionRequest extends \Google\Protobuf\Internal\Message
      * Required. The version to create.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Version version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\Version
+     * @return \Google\Cloud\Dialogflow\Cx\V3\Version|null
      */
     public function getVersion()
     {

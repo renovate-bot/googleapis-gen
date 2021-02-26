@@ -338,7 +338,7 @@ class StreamingRecognitionResult extends \Google\Protobuf\Internal\Message
      * `TRANSCRIPT`.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration speech_end_offset = 8;</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getSpeechEndOffset()
     {

@@ -136,7 +136,7 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
      * webhook call.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.WebhookRequest.FulfillmentInfo fulfillment_info = 6;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\WebhookRequest\FulfillmentInfo
+     * @return \Google\Cloud\Dialogflow\Cx\V3\WebhookRequest\FulfillmentInfo|null
      */
     public function getFulfillmentInfo()
     {
@@ -173,7 +173,7 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
      * Information about the last matched intent.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo intent_info = 3;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\WebhookRequest\IntentInfo
+     * @return \Google\Cloud\Dialogflow\Cx\V3\WebhookRequest\IntentInfo|null
      */
     public function getIntentInfo()
     {
@@ -209,7 +209,7 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
      * Information about page status.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.PageInfo page_info = 4;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\PageInfo
+     * @return \Google\Cloud\Dialogflow\Cx\V3\PageInfo|null
      */
     public function getPageInfo()
     {
@@ -245,7 +245,7 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
      * Information about session status.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.SessionInfo session_info = 5;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\SessionInfo
+     * @return \Google\Cloud\Dialogflow\Cx\V3\SessionInfo|null
      */
     public function getSessionInfo()
     {
@@ -311,7 +311,7 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
      * Custom data set in [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
      *
      * Generated from protobuf field <code>.google.protobuf.Struct payload = 8;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getPayload()
     {
@@ -348,7 +348,7 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
      * filled when sentiment analysis is configured to be enabled for the request.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.WebhookRequest.SentimentAnalysisResult sentiment_analysis_result = 9;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\WebhookRequest\SentimentAnalysisResult
+     * @return \Google\Cloud\Dialogflow\Cx\V3\WebhookRequest\SentimentAnalysisResult|null
      */
     public function getSentimentAnalysisResult()
     {

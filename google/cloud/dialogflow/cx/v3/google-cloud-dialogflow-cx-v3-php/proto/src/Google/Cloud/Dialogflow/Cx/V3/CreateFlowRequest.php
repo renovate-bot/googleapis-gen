@@ -101,7 +101,7 @@ class CreateFlowRequest extends \Google\Protobuf\Internal\Message
      * Required. The flow to create.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Flow flow = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\Flow
+     * @return \Google\Cloud\Dialogflow\Cx\V3\Flow|null
      */
     public function getFlow()
     {

@@ -78,7 +78,7 @@ class IntentParameterValue extends \Google\Protobuf\Internal\Message
      * utterance.
      *
      * Generated from protobuf field <code>.google.protobuf.Value resolved_value = 2;</code>
-     * @return \Google\Protobuf\Value
+     * @return \Google\Protobuf\Value|null
      */
     public function getResolvedValue()
     {

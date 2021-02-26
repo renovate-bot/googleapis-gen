@@ -219,7 +219,7 @@ class TransitionRoute extends \Google\Protobuf\Internal\Message
      * defined, `trigger_fulfillment` is executed first.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Fulfillment trigger_fulfillment = 3;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\Fulfillment
+     * @return \Google\Cloud\Dialogflow\Cx\V3\Fulfillment|null
      */
     public function getTriggerFulfillment()
     {

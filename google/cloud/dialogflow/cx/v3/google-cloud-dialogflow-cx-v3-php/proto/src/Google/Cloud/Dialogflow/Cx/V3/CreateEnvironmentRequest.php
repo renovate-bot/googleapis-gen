@@ -79,7 +79,7 @@ class CreateEnvironmentRequest extends \Google\Protobuf\Internal\Message
      * Required. The environment to create.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Environment environment = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\Environment
+     * @return \Google\Cloud\Dialogflow\Cx\V3\Environment|null
      */
     public function getEnvironment()
     {

@@ -62,7 +62,7 @@ class QueryInput extends \Google\Protobuf\Internal\Message
      * The natural language text to be processed.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.TextInput text = 2;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\TextInput
+     * @return \Google\Cloud\Dialogflow\Cx\V3\TextInput|null
      */
     public function getText()
     {
@@ -93,7 +93,7 @@ class QueryInput extends \Google\Protobuf\Internal\Message
      * The intent to be triggered.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.IntentInput intent = 3;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\IntentInput
+     * @return \Google\Cloud\Dialogflow\Cx\V3\IntentInput|null
      */
     public function getIntent()
     {
@@ -124,7 +124,7 @@ class QueryInput extends \Google\Protobuf\Internal\Message
      * The natural language speech audio to be processed.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.AudioInput audio = 5;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\AudioInput
+     * @return \Google\Cloud\Dialogflow\Cx\V3\AudioInput|null
      */
     public function getAudio()
     {
@@ -155,7 +155,7 @@ class QueryInput extends \Google\Protobuf\Internal\Message
      * The event to be triggered.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.EventInput event = 6;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\EventInput
+     * @return \Google\Cloud\Dialogflow\Cx\V3\EventInput|null
      */
     public function getEvent()
     {
@@ -186,7 +186,7 @@ class QueryInput extends \Google\Protobuf\Internal\Message
      * The DTMF event to be handled.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.DtmfInput dtmf = 7;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\DtmfInput
+     * @return \Google\Cloud\Dialogflow\Cx\V3\DtmfInput|null
      */
     public function getDtmf()
     {

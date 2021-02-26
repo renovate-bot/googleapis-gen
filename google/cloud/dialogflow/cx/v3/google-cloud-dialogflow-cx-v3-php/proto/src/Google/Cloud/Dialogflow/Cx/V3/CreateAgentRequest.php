@@ -79,7 +79,7 @@ class CreateAgentRequest extends \Google\Protobuf\Internal\Message
      * Required. The agent to create.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Agent agent = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\Agent
+     * @return \Google\Cloud\Dialogflow\Cx\V3\Agent|null
      */
     public function getAgent()
     {

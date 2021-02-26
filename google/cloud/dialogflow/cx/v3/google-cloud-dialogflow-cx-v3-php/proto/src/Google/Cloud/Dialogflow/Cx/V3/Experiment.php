@@ -257,7 +257,7 @@ class Experiment extends \Google\Protobuf\Internal\Message
      * The definition of the experiment.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Experiment.Definition definition = 5;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\Experiment\Definition
+     * @return \Google\Cloud\Dialogflow\Cx\V3\Experiment\Definition|null
      */
     public function getDefinition()
     {
@@ -293,7 +293,7 @@ class Experiment extends \Google\Protobuf\Internal\Message
      * Inference result of the experiment.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Experiment.Result result = 6;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\Experiment\Result
+     * @return \Google\Cloud\Dialogflow\Cx\V3\Experiment\Result|null
      */
     public function getResult()
     {
@@ -329,7 +329,7 @@ class Experiment extends \Google\Protobuf\Internal\Message
      * Creation time of this experiment.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 7;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
     {
@@ -365,7 +365,7 @@ class Experiment extends \Google\Protobuf\Internal\Message
      * Start time of this experiment.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 8;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartTime()
     {
@@ -401,7 +401,7 @@ class Experiment extends \Google\Protobuf\Internal\Message
      * End time of this experiment.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 9;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getEndTime()
     {
@@ -437,7 +437,7 @@ class Experiment extends \Google\Protobuf\Internal\Message
      * Last update time of this experiment.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp last_update_time = 10;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getLastUpdateTime()
     {
@@ -473,7 +473,7 @@ class Experiment extends \Google\Protobuf\Internal\Message
      * Maximum number of days to run the experiment.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration experiment_length = 11;</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getExperimentLength()
     {

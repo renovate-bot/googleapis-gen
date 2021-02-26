@@ -83,7 +83,7 @@ class TestError extends \Google\Protobuf\Internal\Message
      * The status associated with the test.
      *
      * Generated from protobuf field <code>.google.rpc.Status status = 2;</code>
-     * @return \Google\Rpc\Status
+     * @return \Google\Rpc\Status|null
      */
     public function getStatus()
     {
@@ -119,7 +119,7 @@ class TestError extends \Google\Protobuf\Internal\Message
      * The timestamp when the test was completed.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp test_time = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getTestTime()
     {

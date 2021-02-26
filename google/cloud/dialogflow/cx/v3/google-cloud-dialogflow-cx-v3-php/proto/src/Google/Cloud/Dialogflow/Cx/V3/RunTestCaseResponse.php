@@ -41,7 +41,7 @@ class RunTestCaseResponse extends \Google\Protobuf\Internal\Message
      * The result.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.TestCaseResult result = 2;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\TestCaseResult
+     * @return \Google\Cloud\Dialogflow\Cx\V3\TestCaseResult|null
      */
     public function getResult()
     {

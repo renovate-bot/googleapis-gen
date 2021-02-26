@@ -53,7 +53,7 @@ class UpdateTestCaseRequest extends \Google\Protobuf\Internal\Message
      * Required. The test case to update.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.TestCase test_case = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\TestCase
+     * @return \Google\Cloud\Dialogflow\Cx\V3\TestCase|null
      */
     public function getTestCase()
     {
@@ -91,7 +91,7 @@ class UpdateTestCaseRequest extends \Google\Protobuf\Internal\Message
      * [`lastTestResult`][google.cloud.dialogflow.cx.v3.TestCase.last_test_result] cannot be updated.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

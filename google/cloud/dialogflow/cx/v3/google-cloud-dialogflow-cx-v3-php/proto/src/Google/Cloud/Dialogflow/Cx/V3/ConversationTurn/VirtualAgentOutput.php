@@ -103,7 +103,7 @@ class VirtualAgentOutput extends \Google\Protobuf\Internal\Message
      * The session parameters available to the bot at this point.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct session_parameters = 4;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getSessionParameters()
     {
@@ -171,7 +171,7 @@ class VirtualAgentOutput extends \Google\Protobuf\Internal\Message
      * output for the turn.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct diagnostic_info = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getDiagnosticInfo()
     {
@@ -210,7 +210,7 @@ class VirtualAgentOutput extends \Google\Protobuf\Internal\Message
      * will be set.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Intent triggered_intent = 7;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\Intent
+     * @return \Google\Cloud\Dialogflow\Cx\V3\Intent|null
      */
     public function getTriggeredIntent()
     {
@@ -248,7 +248,7 @@ class VirtualAgentOutput extends \Google\Protobuf\Internal\Message
      * will be set.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Page current_page = 8;</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\Page
+     * @return \Google\Cloud\Dialogflow\Cx\V3\Page|null
      */
     public function getCurrentPage()
     {
@@ -312,7 +312,7 @@ class VirtualAgentOutput extends \Google\Protobuf\Internal\Message
      * is empty.
      *
      * Generated from protobuf field <code>.google.rpc.Status status = 10;</code>
-     * @return \Google\Rpc\Status
+     * @return \Google\Rpc\Status|null
      */
     public function getStatus()
     {

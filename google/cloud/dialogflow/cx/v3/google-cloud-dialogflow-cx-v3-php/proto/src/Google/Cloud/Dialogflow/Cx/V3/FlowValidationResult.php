@@ -117,7 +117,7 @@ class FlowValidationResult extends \Google\Protobuf\Internal\Message
      * Last time the flow was validated.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
     {

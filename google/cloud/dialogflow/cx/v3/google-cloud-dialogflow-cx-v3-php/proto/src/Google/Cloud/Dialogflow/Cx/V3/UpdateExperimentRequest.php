@@ -49,7 +49,7 @@ class UpdateExperimentRequest extends \Google\Protobuf\Internal\Message
      * Required. The experiment to update.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Experiment experiment = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Cloud\Dialogflow\Cx\V3\Experiment
+     * @return \Google\Cloud\Dialogflow\Cx\V3\Experiment|null
      */
     public function getExperiment()
     {
@@ -85,7 +85,7 @@ class UpdateExperimentRequest extends \Google\Protobuf\Internal\Message
      * Required. The mask to control which fields get updated.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

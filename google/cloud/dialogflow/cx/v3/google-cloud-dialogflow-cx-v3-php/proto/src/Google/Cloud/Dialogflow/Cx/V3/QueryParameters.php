@@ -181,7 +181,7 @@ class QueryParameters extends \Google\Protobuf\Internal\Message
      * The geo location of this conversational query.
      *
      * Generated from protobuf field <code>.google.type.LatLng geo_location = 2;</code>
-     * @return \Google\Type\LatLng
+     * @return \Google\Type\LatLng|null
      */
     public function getGeoLocation()
     {
@@ -248,7 +248,7 @@ class QueryParameters extends \Google\Protobuf\Internal\Message
      * the agent. Arbitrary JSON objects are supported.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct payload = 4;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getPayload()
     {
@@ -301,7 +301,7 @@ class QueryParameters extends \Google\Protobuf\Internal\Message
      *     -   Else: parameter value
      *
      * Generated from protobuf field <code>.google.protobuf.Struct parameters = 5;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getParameters()
     {

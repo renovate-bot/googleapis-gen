@@ -37,6 +37,17 @@ public interface ImportTestCasesRequestOrBuilder extends
    * </pre>
    *
    * <code>string gcs_uri = 2;</code>
+   * @return Whether the gcsUri field is set.
+   */
+  boolean hasGcsUri();
+  /**
+   * <pre>
+   * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
+   * to import test cases from. The format of this URI must be
+   * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   * </pre>
+   *
+   * <code>string gcs_uri = 2;</code>
    * @return The gcsUri.
    */
   java.lang.String getGcsUri();
@@ -53,6 +64,15 @@ public interface ImportTestCasesRequestOrBuilder extends
   com.google.protobuf.ByteString
       getGcsUriBytes();
 
+  /**
+   * <pre>
+   * Uncompressed raw byte content for test cases.
+   * </pre>
+   *
+   * <code>bytes content = 3;</code>
+   * @return Whether the content field is set.
+   */
+  boolean hasContent();
   /**
    * <pre>
    * Uncompressed raw byte content for test cases.

@@ -188,6 +188,18 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string text = 1;</code>
+   * @return Whether the text field is set.
+   */
+  public boolean hasText() {
+    return queryCase_ == 1;
+  }
+  /**
+   * <pre>
+   * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
+   * will contain a copy of the text.
+   * </pre>
+   *
+   * <code>string text = 1;</code>
    * @return The text.
    */
   public java.lang.String getText() {
@@ -236,6 +248,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TRIGGER_INTENT_FIELD_NUMBER = 2;
+  /**
+   * <pre>
+   * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
+   * contain a copy of the intent identifier.
+   * </pre>
+   *
+   * <code>string trigger_intent = 2;</code>
+   * @return Whether the triggerIntent field is set.
+   */
+  public boolean hasTriggerIntent() {
+    return queryCase_ == 2;
+  }
   /**
    * <pre>
    * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
@@ -298,6 +322,18 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string transcript = 3;</code>
+   * @return Whether the transcript field is set.
+   */
+  public boolean hasTranscript() {
+    return queryCase_ == 3;
+  }
+  /**
+   * <pre>
+   * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+   * this field will contain the trascript for the audio.
+   * </pre>
+   *
+   * <code>string transcript = 3;</code>
    * @return The transcript.
    */
   public java.lang.String getTranscript() {
@@ -346,6 +382,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TRIGGER_EVENT_FIELD_NUMBER = 6;
+  /**
+   * <pre>
+   * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will
+   * contain a copy of the event name.
+   * </pre>
+   *
+   * <code>string trigger_event = 6;</code>
+   * @return Whether the triggerEvent field is set.
+   */
+  public boolean hasTriggerEvent() {
+    return queryCase_ == 6;
+  }
   /**
    * <pre>
    * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will
@@ -1013,6 +1061,19 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string text = 1;</code>
+     * @return Whether the text field is set.
+     */
+    @java.lang.Override
+    public boolean hasText() {
+      return queryCase_ == 1;
+    }
+    /**
+     * <pre>
+     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
+     * will contain a copy of the text.
+     * </pre>
+     *
+     * <code>string text = 1;</code>
      * @return The text.
      */
     @java.lang.Override
@@ -1120,6 +1181,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
+     * contain a copy of the intent identifier.
+     * </pre>
+     *
+     * <code>string trigger_intent = 2;</code>
+     * @return Whether the triggerIntent field is set.
+     */
+    @java.lang.Override
+    public boolean hasTriggerIntent() {
+      return queryCase_ == 2;
+    }
     /**
      * <pre>
      * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
@@ -1241,6 +1315,19 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string transcript = 3;</code>
+     * @return Whether the transcript field is set.
+     */
+    @java.lang.Override
+    public boolean hasTranscript() {
+      return queryCase_ == 3;
+    }
+    /**
+     * <pre>
+     * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+     * this field will contain the trascript for the audio.
+     * </pre>
+     *
+     * <code>string transcript = 3;</code>
      * @return The transcript.
      */
     @java.lang.Override
@@ -1348,6 +1435,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will
+     * contain a copy of the event name.
+     * </pre>
+     *
+     * <code>string trigger_event = 6;</code>
+     * @return Whether the triggerEvent field is set.
+     */
+    @java.lang.Override
+    public boolean hasTriggerEvent() {
+      return queryCase_ == 6;
+    }
     /**
      * <pre>
      * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will
