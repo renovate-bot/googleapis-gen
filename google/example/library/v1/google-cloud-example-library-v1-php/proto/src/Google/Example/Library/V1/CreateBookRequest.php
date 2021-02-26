@@ -18,9 +18,9 @@ class CreateBookRequest extends \Google\Protobuf\Internal\Message
     /**
      * The name of the shelf in which the book is created.
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    protected $name = '';
+    protected $parent = '';
     /**
      * The book to create.
      *
@@ -34,7 +34,7 @@ class CreateBookRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $name
+     *     @type string $parent
      *           The name of the shelf in which the book is created.
      *     @type \Google\Example\Library\V1\Book $book
      *           The book to create.
@@ -48,25 +48,25 @@ class CreateBookRequest extends \Google\Protobuf\Internal\Message
     /**
      * The name of the shelf in which the book is created.
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
-    public function getName()
+    public function getParent()
     {
-        return $this->name;
+        return $this->parent;
     }
 
     /**
      * The name of the shelf in which the book is created.
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
-    public function setName($var)
+    public function setParent($var)
     {
         GPBUtil::checkString($var, True);
-        $this->name = $var;
+        $this->parent = $var;
 
         return $this;
     }

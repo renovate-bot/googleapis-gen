@@ -3,7 +3,7 @@
   "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
   "language": "typescript",
   "protoPackage": "google.example.library.v1",
-  "libraryPackage": "library",
+  "libraryPackage": "@google-cloud/library",
   "services": {
     "LibraryService": {
       "clients": {

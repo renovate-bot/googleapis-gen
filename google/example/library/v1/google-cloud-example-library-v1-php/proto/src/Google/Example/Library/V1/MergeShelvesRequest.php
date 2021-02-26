@@ -25,9 +25,9 @@ class MergeShelvesRequest extends \Google\Protobuf\Internal\Message
     /**
      * The name of the shelf we're removing books from and deleting.
      *
-     * Generated from protobuf field <code>string other_shelf_name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>string other_shelf = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    protected $other_shelf_name = '';
+    protected $other_shelf = '';
 
     /**
      * Constructor.
@@ -37,7 +37,7 @@ class MergeShelvesRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $name
      *           The name of the shelf we're adding books to.
-     *     @type string $other_shelf_name
+     *     @type string $other_shelf
      *           The name of the shelf we're removing books from and deleting.
      * }
      */
@@ -75,25 +75,25 @@ class MergeShelvesRequest extends \Google\Protobuf\Internal\Message
     /**
      * The name of the shelf we're removing books from and deleting.
      *
-     * Generated from protobuf field <code>string other_shelf_name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>string other_shelf = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
-    public function getOtherShelfName()
+    public function getOtherShelf()
     {
-        return $this->other_shelf_name;
+        return $this->other_shelf;
     }
 
     /**
      * The name of the shelf we're removing books from and deleting.
      *
-     * Generated from protobuf field <code>string other_shelf_name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>string other_shelf = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
-    public function setOtherShelfName($var)
+    public function setOtherShelf($var)
     {
         GPBUtil::checkString($var, True);
-        $this->other_shelf_name = $var;
+        $this->other_shelf = $var;
 
         return $this;
     }

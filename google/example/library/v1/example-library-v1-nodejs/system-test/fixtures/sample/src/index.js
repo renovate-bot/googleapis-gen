@@ -18,7 +18,7 @@
 
 
 /* eslint-disable node/no-missing-require, no-unused-vars */
-const library = require('library');
+const library = require('@google-cloud/library');
 
 function main() {
   const libraryServiceClient = new library.LibraryServiceClient();

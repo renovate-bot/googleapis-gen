@@ -41,17 +41,17 @@ def partition(
 class libraryCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-    'create_book': ('name', 'book', ),
+    'create_book': ('parent', 'book', ),
     'create_shelf': ('shelf', ),
     'delete_book': ('name', ),
     'delete_shelf': ('name', ),
     'get_book': ('name', ),
     'get_shelf': ('name', ),
-    'list_books': ('name', 'page_size', 'page_token', ),
+    'list_books': ('parent', 'page_size', 'page_token', ),
     'list_shelves': ('page_size', 'page_token', ),
-    'merge_shelves': ('name', 'other_shelf_name', ),
+    'merge_shelves': ('name', 'other_shelf', ),
     'move_book': ('name', 'other_shelf_name', ),
-    'update_book': ('name', 'book', ),
+    'update_book': ('book', 'update_mask', ),
 
     }
 

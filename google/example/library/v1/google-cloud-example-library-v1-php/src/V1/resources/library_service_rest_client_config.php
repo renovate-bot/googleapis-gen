@@ -48,12 +48,12 @@ return [
             ],
             'CreateBook' => [
                 'method' => 'post',
-                'uriTemplate' => '/v1/{name=shelves/*}/books',
+                'uriTemplate' => '/v1/{parent=shelves/*}/books',
                 'body' => 'book',
                 'placeholders' => [
-                    'name' => [
+                    'parent' => [
                         'getters' => [
-                            'getName',
+                            'getParent',
                         ],
                     ],
                 ],
@@ -71,11 +71,11 @@ return [
             ],
             'ListBooks' => [
                 'method' => 'get',
-                'uriTemplate' => '/v1/{name=shelves/*}/books',
+                'uriTemplate' => '/v1/{parent=shelves/*}/books',
                 'placeholders' => [
-                    'name' => [
+                    'parent' => [
                         'getters' => [
-                            'getName',
+                            'getParent',
                         ],
                     ],
                 ],
@@ -92,7 +92,7 @@ return [
                 ],
             ],
             'UpdateBook' => [
-                'method' => 'put',
+                'method' => 'patch',
                 'uriTemplate' => '/v1/{book.name=shelves/*/books/*}',
                 'body' => 'book',
                 'placeholders' => [

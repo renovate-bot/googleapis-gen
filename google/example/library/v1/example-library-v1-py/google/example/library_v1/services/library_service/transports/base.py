@@ -106,57 +106,148 @@ class LibraryServiceTransport(abc.ABC):
         self._wrapped_methods = {
             self.create_shelf: gapic_v1.method.wrap_method(
                 self.create_shelf,
-                default_timeout=None,
+                default_retry=retries.Retry(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
+                    ),
+                ),
+                default_timeout=60.0,
                 client_info=client_info,
             ),
             self.get_shelf: gapic_v1.method.wrap_method(
                 self.get_shelf,
-                default_timeout=None,
+                default_retry=retries.Retry(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
+                        exceptions.DeadlineExceeded,
+                        exceptions.ServiceUnavailable,
+                    ),
+                ),
+                default_timeout=60.0,
                 client_info=client_info,
             ),
             self.list_shelves: gapic_v1.method.wrap_method(
                 self.list_shelves,
-                default_timeout=None,
+                default_retry=retries.Retry(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
+                        exceptions.DeadlineExceeded,
+                        exceptions.ServiceUnavailable,
+                    ),
+                ),
+                default_timeout=60.0,
                 client_info=client_info,
             ),
             self.delete_shelf: gapic_v1.method.wrap_method(
                 self.delete_shelf,
-                default_timeout=None,
+                default_retry=retries.Retry(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
+                        exceptions.DeadlineExceeded,
+                        exceptions.ServiceUnavailable,
+                    ),
+                ),
+                default_timeout=60.0,
                 client_info=client_info,
             ),
             self.merge_shelves: gapic_v1.method.wrap_method(
                 self.merge_shelves,
-                default_timeout=None,
+                default_retry=retries.Retry(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
+                    ),
+                ),
+                default_timeout=60.0,
                 client_info=client_info,
             ),
             self.create_book: gapic_v1.method.wrap_method(
                 self.create_book,
-                default_timeout=None,
+                default_retry=retries.Retry(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
+                    ),
+                ),
+                default_timeout=60.0,
                 client_info=client_info,
             ),
             self.get_book: gapic_v1.method.wrap_method(
                 self.get_book,
-                default_timeout=None,
+                default_retry=retries.Retry(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
+                        exceptions.DeadlineExceeded,
+                        exceptions.ServiceUnavailable,
+                    ),
+                ),
+                default_timeout=60.0,
                 client_info=client_info,
             ),
             self.list_books: gapic_v1.method.wrap_method(
                 self.list_books,
-                default_timeout=None,
+                default_retry=retries.Retry(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
+                        exceptions.DeadlineExceeded,
+                        exceptions.ServiceUnavailable,
+                    ),
+                ),
+                default_timeout=60.0,
                 client_info=client_info,
             ),
             self.delete_book: gapic_v1.method.wrap_method(
                 self.delete_book,
-                default_timeout=None,
+                default_retry=retries.Retry(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
+                        exceptions.DeadlineExceeded,
+                        exceptions.ServiceUnavailable,
+                    ),
+                ),
+                default_timeout=60.0,
                 client_info=client_info,
             ),
             self.update_book: gapic_v1.method.wrap_method(
                 self.update_book,
-                default_timeout=None,
+                default_retry=retries.Retry(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
+                        exceptions.DeadlineExceeded,
+                        exceptions.ServiceUnavailable,
+                    ),
+                ),
+                default_timeout=60.0,
                 client_info=client_info,
             ),
             self.move_book: gapic_v1.method.wrap_method(
                 self.move_book,
-                default_timeout=None,
+                default_retry=retries.Retry(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
+                    ),
+                ),
+                default_timeout=60.0,
                 client_info=client_info,
             ),
 

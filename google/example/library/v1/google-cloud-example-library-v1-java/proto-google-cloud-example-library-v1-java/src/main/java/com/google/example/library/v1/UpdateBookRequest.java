@@ -20,7 +20,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private UpdateBookRequest() {
-    name_ = "";
   }
 
   @java.lang.Override
@@ -54,12 +53,6 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            name_ = s;
-            break;
-          }
-          case 18: {
             com.google.example.library.v1.Book.Builder subBuilder = null;
             if (book_ != null) {
               subBuilder = book_.toBuilder();
@@ -68,6 +61,19 @@ private static final long serialVersionUID = 0L;
             if (subBuilder != null) {
               subBuilder.mergeFrom(book_);
               book_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 18: {
+            com.google.protobuf.FieldMask.Builder subBuilder = null;
+            if (updateMask_ != null) {
+              subBuilder = updateMask_.toBuilder();
+            }
+            updateMask_ = input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(updateMask_);
+              updateMask_ = subBuilder.buildPartial();
             }
 
             break;
@@ -104,60 +110,14 @@ private static final long serialVersionUID = 0L;
             com.google.example.library.v1.UpdateBookRequest.class, com.google.example.library.v1.UpdateBookRequest.Builder.class);
   }
 
-  public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
-  /**
-   * <pre>
-   * The name of the book to update.
-   * </pre>
-   *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The name.
-   */
-  @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      name_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * The name of the book to update.
-   * </pre>
-   *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The bytes for name.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      name_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int BOOK_FIELD_NUMBER = 2;
+  public static final int BOOK_FIELD_NUMBER = 1;
   private com.google.example.library.v1.Book book_;
   /**
    * <pre>
-   * The book to update with. The name must match or be empty.
+   * The name of the book to update.
    * </pre>
    *
-   * <code>.google.example.library.v1.Book book = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.example.library.v1.Book book = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the book field is set.
    */
   @java.lang.Override
@@ -166,10 +126,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The book to update with. The name must match or be empty.
+   * The name of the book to update.
    * </pre>
    *
-   * <code>.google.example.library.v1.Book book = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.example.library.v1.Book book = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The book.
    */
   @java.lang.Override
@@ -178,14 +138,52 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The book to update with. The name must match or be empty.
+   * The name of the book to update.
    * </pre>
    *
-   * <code>.google.example.library.v1.Book book = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.example.library.v1.Book book = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public com.google.example.library.v1.BookOrBuilder getBookOrBuilder() {
     return getBook();
+  }
+
+  public static final int UPDATE_MASK_FIELD_NUMBER = 2;
+  private com.google.protobuf.FieldMask updateMask_;
+  /**
+   * <pre>
+   * Required. Mask of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the updateMask field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateMask() {
+    return updateMask_ != null;
+  }
+  /**
+   * <pre>
+   * Required. Mask of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The updateMask.
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMask getUpdateMask() {
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+  }
+  /**
+   * <pre>
+   * Required. Mask of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+    return getUpdateMask();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -202,11 +200,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
-    }
     if (book_ != null) {
-      output.writeMessage(2, getBook());
+      output.writeMessage(1, getBook());
+    }
+    if (updateMask_ != null) {
+      output.writeMessage(2, getUpdateMask());
     }
     unknownFields.writeTo(output);
   }
@@ -217,12 +215,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
-    }
     if (book_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getBook());
+        .computeMessageSize(1, getBook());
+    }
+    if (updateMask_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getUpdateMask());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -239,12 +238,15 @@ private static final long serialVersionUID = 0L;
     }
     com.google.example.library.v1.UpdateBookRequest other = (com.google.example.library.v1.UpdateBookRequest) obj;
 
-    if (!getName()
-        .equals(other.getName())) return false;
     if (hasBook() != other.hasBook()) return false;
     if (hasBook()) {
       if (!getBook()
           .equals(other.getBook())) return false;
+    }
+    if (hasUpdateMask() != other.hasUpdateMask()) return false;
+    if (hasUpdateMask()) {
+      if (!getUpdateMask()
+          .equals(other.getUpdateMask())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -257,11 +259,13 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
     if (hasBook()) {
       hash = (37 * hash) + BOOK_FIELD_NUMBER;
       hash = (53 * hash) + getBook().hashCode();
+    }
+    if (hasUpdateMask()) {
+      hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateMask().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -400,13 +404,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      name_ = "";
-
       if (bookBuilder_ == null) {
         book_ = null;
       } else {
         book_ = null;
         bookBuilder_ = null;
+      }
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = null;
+      } else {
+        updateMask_ = null;
+        updateMaskBuilder_ = null;
       }
       return this;
     }
@@ -434,11 +442,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.example.library.v1.UpdateBookRequest buildPartial() {
       com.google.example.library.v1.UpdateBookRequest result = new com.google.example.library.v1.UpdateBookRequest(this);
-      result.name_ = name_;
       if (bookBuilder_ == null) {
         result.book_ = book_;
       } else {
         result.book_ = bookBuilder_.build();
+      }
+      if (updateMaskBuilder_ == null) {
+        result.updateMask_ = updateMask_;
+      } else {
+        result.updateMask_ = updateMaskBuilder_.build();
       }
       onBuilt();
       return result;
@@ -488,12 +500,11 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.google.example.library.v1.UpdateBookRequest other) {
       if (other == com.google.example.library.v1.UpdateBookRequest.getDefaultInstance()) return this;
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
-        onChanged();
-      }
       if (other.hasBook()) {
         mergeBook(other.getBook());
+      }
+      if (other.hasUpdateMask()) {
+        mergeUpdateMask(other.getUpdateMask());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -524,111 +535,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object name_ = "";
-    /**
-     * <pre>
-     * The name of the book to update.
-     * </pre>
-     *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return The name.
-     */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The name of the book to update.
-     * </pre>
-     *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return The bytes for name.
-     */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The name of the book to update.
-     * </pre>
-     *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param value The name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      name_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The name of the book to update.
-     * </pre>
-     *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearName() {
-      
-      name_ = getDefaultInstance().getName();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The name of the book to update.
-     * </pre>
-     *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param value The bytes for name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      name_ = value;
-      onChanged();
-      return this;
-    }
-
     private com.google.example.library.v1.Book book_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.example.library.v1.Book, com.google.example.library.v1.Book.Builder, com.google.example.library.v1.BookOrBuilder> bookBuilder_;
     /**
      * <pre>
-     * The book to update with. The name must match or be empty.
+     * The name of the book to update.
      * </pre>
      *
-     * <code>.google.example.library.v1.Book book = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.example.library.v1.Book book = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the book field is set.
      */
     public boolean hasBook() {
@@ -636,10 +551,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The book to update with. The name must match or be empty.
+     * The name of the book to update.
      * </pre>
      *
-     * <code>.google.example.library.v1.Book book = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.example.library.v1.Book book = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The book.
      */
     public com.google.example.library.v1.Book getBook() {
@@ -651,10 +566,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The book to update with. The name must match or be empty.
+     * The name of the book to update.
      * </pre>
      *
-     * <code>.google.example.library.v1.Book book = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.example.library.v1.Book book = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setBook(com.google.example.library.v1.Book value) {
       if (bookBuilder_ == null) {
@@ -671,10 +586,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The book to update with. The name must match or be empty.
+     * The name of the book to update.
      * </pre>
      *
-     * <code>.google.example.library.v1.Book book = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.example.library.v1.Book book = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setBook(
         com.google.example.library.v1.Book.Builder builderForValue) {
@@ -689,10 +604,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The book to update with. The name must match or be empty.
+     * The name of the book to update.
      * </pre>
      *
-     * <code>.google.example.library.v1.Book book = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.example.library.v1.Book book = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeBook(com.google.example.library.v1.Book value) {
       if (bookBuilder_ == null) {
@@ -711,10 +626,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The book to update with. The name must match or be empty.
+     * The name of the book to update.
      * </pre>
      *
-     * <code>.google.example.library.v1.Book book = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.example.library.v1.Book book = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearBook() {
       if (bookBuilder_ == null) {
@@ -729,10 +644,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The book to update with. The name must match or be empty.
+     * The name of the book to update.
      * </pre>
      *
-     * <code>.google.example.library.v1.Book book = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.example.library.v1.Book book = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.example.library.v1.Book.Builder getBookBuilder() {
       
@@ -741,10 +656,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The book to update with. The name must match or be empty.
+     * The name of the book to update.
      * </pre>
      *
-     * <code>.google.example.library.v1.Book book = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.example.library.v1.Book book = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.example.library.v1.BookOrBuilder getBookOrBuilder() {
       if (bookBuilder_ != null) {
@@ -756,10 +671,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The book to update with. The name must match or be empty.
+     * The name of the book to update.
      * </pre>
      *
-     * <code>.google.example.library.v1.Book book = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.example.library.v1.Book book = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.example.library.v1.Book, com.google.example.library.v1.Book.Builder, com.google.example.library.v1.BookOrBuilder> 
@@ -773,6 +688,161 @@ private static final long serialVersionUID = 0L;
         book_ = null;
       }
       return bookBuilder_;
+    }
+
+    private com.google.protobuf.FieldMask updateMask_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> updateMaskBuilder_;
+    /**
+     * <pre>
+     * Required. Mask of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the updateMask field is set.
+     */
+    public boolean hasUpdateMask() {
+      return updateMaskBuilder_ != null || updateMask_ != null;
+    }
+    /**
+     * <pre>
+     * Required. Mask of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The updateMask.
+     */
+    public com.google.protobuf.FieldMask getUpdateMask() {
+      if (updateMaskBuilder_ == null) {
+        return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+      } else {
+        return updateMaskBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Required. Mask of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateMask_ = value;
+        onChanged();
+      } else {
+        updateMaskBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Required. Mask of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public Builder setUpdateMask(
+        com.google.protobuf.FieldMask.Builder builderForValue) {
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = builderForValue.build();
+        onChanged();
+      } else {
+        updateMaskBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Required. Mask of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (updateMask_ != null) {
+          updateMask_ =
+            com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        } else {
+          updateMask_ = value;
+        }
+        onChanged();
+      } else {
+        updateMaskBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Required. Mask of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public Builder clearUpdateMask() {
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = null;
+        onChanged();
+      } else {
+        updateMask_ = null;
+        updateMaskBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Required. Mask of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
+      
+      onChanged();
+      return getUpdateMaskFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Required. Mask of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+      if (updateMaskBuilder_ != null) {
+        return updateMaskBuilder_.getMessageOrBuilder();
+      } else {
+        return updateMask_ == null ?
+            com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+      }
+    }
+    /**
+     * <pre>
+     * Required. Mask of fields to update.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> 
+        getUpdateMaskFieldBuilder() {
+      if (updateMaskBuilder_ == null) {
+        updateMaskBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder>(
+                getUpdateMask(),
+                getParentForChildren(),
+                isClean());
+        updateMask_ = null;
+      }
+      return updateMaskBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

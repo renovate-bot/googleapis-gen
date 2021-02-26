@@ -485,8 +485,8 @@ describe('v1.LibraryServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.CreateBookRequest());
-            request.name = '';
-            const expectedHeaderRequestParams = "name=";
+            request.parent = '';
+            const expectedHeaderRequestParams = "parent=";
             const expectedOptions = {
                 otherArgs: {
                     headers: {
@@ -509,8 +509,8 @@ describe('v1.LibraryServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.CreateBookRequest());
-            request.name = '';
-            const expectedHeaderRequestParams = "name=";
+            request.parent = '';
+            const expectedHeaderRequestParams = "parent=";
             const expectedOptions = {
                 otherArgs: {
                     headers: {
@@ -544,8 +544,8 @@ describe('v1.LibraryServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.CreateBookRequest());
-            request.name = '';
-            const expectedHeaderRequestParams = "name=";
+            request.parent = '';
+            const expectedHeaderRequestParams = "parent=";
             const expectedOptions = {
                 otherArgs: {
                     headers: {
@@ -1078,8 +1078,8 @@ describe('v1.LibraryServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.ListBooksRequest());
-            request.name = '';
-            const expectedHeaderRequestParams = "name=";
+            request.parent = '';
+            const expectedHeaderRequestParams = "parent=";
             const expectedOptions = {
                 otherArgs: {
                     headers: {
@@ -1106,8 +1106,8 @@ describe('v1.LibraryServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.ListBooksRequest());
-            request.name = '';
-            const expectedHeaderRequestParams = "name=";
+            request.parent = '';
+            const expectedHeaderRequestParams = "parent=";
             const expectedOptions = {
                 otherArgs: {
                     headers: {
@@ -1145,8 +1145,8 @@ describe('v1.LibraryServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.ListBooksRequest());
-            request.name = '';
-            const expectedHeaderRequestParams = "name=";
+            request.parent = '';
+            const expectedHeaderRequestParams = "parent=";
             const expectedOptions = {
                 otherArgs: {
                     headers: {
@@ -1168,8 +1168,8 @@ describe('v1.LibraryServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.ListBooksRequest());
-            request.name = '';
-            const expectedHeaderRequestParams = "name=";
+            request.parent = '';
+            const expectedHeaderRequestParams = "parent=";
             const expectedResponse = [
               generateSampleMessage(new protos.google.example.library.v1.Book()),
               generateSampleMessage(new protos.google.example.library.v1.Book()),
@@ -1207,8 +1207,8 @@ describe('v1.LibraryServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.ListBooksRequest());
-            request.name = '';
-            const expectedHeaderRequestParams = "name=";
+            request.parent = '';
+            const expectedHeaderRequestParams = "parent=";
             const expectedError = new Error('expected');
             client.descriptors.page.listBooks.createStream = stubPageStreamingCall(undefined, expectedError);
             const stream = client.listBooksStream(request);
@@ -1241,8 +1241,8 @@ describe('v1.LibraryServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.ListBooksRequest());
-            request.name = '';
-            const expectedHeaderRequestParams = "name=";const expectedResponse = [
+            request.parent = '';
+            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
               generateSampleMessage(new protos.google.example.library.v1.Book()),
               generateSampleMessage(new protos.google.example.library.v1.Book()),
               generateSampleMessage(new protos.google.example.library.v1.Book()),
@@ -1271,8 +1271,8 @@ describe('v1.LibraryServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.ListBooksRequest());
-            request.name = '';
-            const expectedHeaderRequestParams = "name=";const expectedError = new Error('expected');
+            request.parent = '';
+            const expectedHeaderRequestParams = "parent=";const expectedError = new Error('expected');
             client.descriptors.page.listBooks.asyncIterate = stubAsyncIterationCall(undefined, expectedError);
             const iterable = client.listBooksAsync(request);
             await assert.rejects(async () => {
@@ -1297,8 +1297,8 @@ describe('v1.LibraryServiceClient', () => {
         describe('book', () => {
             const fakePath = "/rendered/path/book";
             const expectedParameters = {
-                shelf_id: "shelfIdValue",
-                book_id: "bookIdValue",
+                shelf: "shelfValue",
+                book: "bookValue",
             };
             const client = new libraryserviceModule.v1.LibraryServiceClient({
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
@@ -1311,22 +1311,22 @@ describe('v1.LibraryServiceClient', () => {
                 sinon.stub().returns(expectedParameters);
 
             it('bookPath', () => {
-                const result = client.bookPath("shelfIdValue", "bookIdValue");
+                const result = client.bookPath("shelfValue", "bookValue");
                 assert.strictEqual(result, fakePath);
                 assert((client.pathTemplates.bookPathTemplate.render as SinonStub)
                     .getCall(-1).calledWith(expectedParameters));
             });
 
-            it('matchShelfIdFromBookName', () => {
-                const result = client.matchShelfIdFromBookName(fakePath);
-                assert.strictEqual(result, "shelfIdValue");
+            it('matchShelfFromBookName', () => {
+                const result = client.matchShelfFromBookName(fakePath);
+                assert.strictEqual(result, "shelfValue");
                 assert((client.pathTemplates.bookPathTemplate.match as SinonStub)
                     .getCall(-1).calledWith(fakePath));
             });
 
-            it('matchBookIdFromBookName', () => {
-                const result = client.matchBookIdFromBookName(fakePath);
-                assert.strictEqual(result, "bookIdValue");
+            it('matchBookFromBookName', () => {
+                const result = client.matchBookFromBookName(fakePath);
+                assert.strictEqual(result, "bookValue");
                 assert((client.pathTemplates.bookPathTemplate.match as SinonStub)
                     .getCall(-1).calledWith(fakePath));
             });

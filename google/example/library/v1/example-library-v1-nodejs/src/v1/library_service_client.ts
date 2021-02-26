@@ -162,7 +162,7 @@ export class LibraryServiceClient {
     // Create useful helper objects for these.
     this.pathTemplates = {
       bookPathTemplate: new this._gaxModule.PathTemplate(
-        'shelves/{shelf_id}/books/{book_id}'
+        'shelves/{shelf}/books/{book}'
       ),
       shelfPathTemplate: new this._gaxModule.PathTemplate(
         'shelves/{shelf_id}'
@@ -539,7 +539,7 @@ export class LibraryServiceClient {
  *   The request object that will be sent.
  * @param {string} request.name
  *   The name of the shelf we're adding books to.
- * @param {string} request.otherShelfName
+ * @param {string} request.otherShelf
  *   The name of the shelf we're removing books from and deleting.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -610,7 +610,7 @@ export class LibraryServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.name
+ * @param {string} request.parent
  *   The name of the shelf in which the book is created.
  * @param {google.example.library.v1.Book} request.book
  *   The book to create.
@@ -653,7 +653,7 @@ export class LibraryServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'name': request.name || '',
+      'parent': request.parent || '',
     });
     this.initialize();
     return this.innerApiCalls.createBook(request, options, callback);
@@ -826,10 +826,10 @@ export class LibraryServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.name
- *   The name of the book to update.
  * @param {google.example.library.v1.Book} request.book
- *   The book to update with. The name must match or be empty.
+ *   The name of the book to update.
+ * @param {google.protobuf.FieldMask} request.updateMask
+ *   Required. Mask of fields to update.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -1138,7 +1138,7 @@ export class LibraryServiceClient {
  *
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.name
+ * @param {string} request.parent
  *   The name of the shelf whose books we'd like to list.
  * @param {number} request.pageSize
  *   Requested page size. Server may return fewer books than requested.
@@ -1191,7 +1191,7 @@ export class LibraryServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'name': request.name || '',
+      'parent': request.parent || '',
     });
     this.initialize();
     return this.innerApiCalls.listBooks(request, options, callback);
@@ -1201,7 +1201,7 @@ export class LibraryServiceClient {
  * Equivalent to `method.name.toCamelCase()`, but returns a NodeJS Stream object.
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.name
+ * @param {string} request.parent
  *   The name of the shelf whose books we'd like to list.
  * @param {number} request.pageSize
  *   Requested page size. Server may return fewer books than requested.
@@ -1234,7 +1234,7 @@ export class LibraryServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'name': request.name || '',
+      'parent': request.parent || '',
     });
     const callSettings = new gax.CallSettings(options);
     this.initialize();
@@ -1251,7 +1251,7 @@ export class LibraryServiceClient {
  * `for`-`await`-`of` syntax is used with the iterable to get response elements on-demand.
  * @param {Object} request
  *   The request object that will be sent.
- * @param {string} request.name
+ * @param {string} request.parent
  *   The name of the shelf whose books we'd like to list.
  * @param {number} request.pageSize
  *   Requested page size. Server may return fewer books than requested.
@@ -1288,7 +1288,7 @@ export class LibraryServiceClient {
     options.otherArgs.headers[
       'x-goog-request-params'
     ] = gax.routingHeader.fromParams({
-      'name': request.name || '',
+      'parent': request.parent || '',
     });
     options = options || {};
     const callSettings = new gax.CallSettings(options);
@@ -1306,37 +1306,37 @@ export class LibraryServiceClient {
   /**
    * Return a fully-qualified book resource name string.
    *
-   * @param {string} shelf_id
-   * @param {string} book_id
+   * @param {string} shelf
+   * @param {string} book
    * @returns {string} Resource name string.
    */
-  bookPath(shelfId:string,bookId:string) {
+  bookPath(shelf:string,book:string) {
     return this.pathTemplates.bookPathTemplate.render({
-      shelf_id: shelfId,
-      book_id: bookId,
+      shelf: shelf,
+      book: book,
     });
   }
 
   /**
-   * Parse the shelf_id from Book resource.
+   * Parse the shelf from Book resource.
    *
    * @param {string} bookName
    *   A fully-qualified path representing Book resource.
-   * @returns {string} A string representing the shelf_id.
+   * @returns {string} A string representing the shelf.
    */
-  matchShelfIdFromBookName(bookName: string) {
-    return this.pathTemplates.bookPathTemplate.match(bookName).shelf_id;
+  matchShelfFromBookName(bookName: string) {
+    return this.pathTemplates.bookPathTemplate.match(bookName).shelf;
   }
 
   /**
-   * Parse the book_id from Book resource.
+   * Parse the book from Book resource.
    *
    * @param {string} bookName
    *   A fully-qualified path representing Book resource.
-   * @returns {string} A string representing the book_id.
+   * @returns {string} A string representing the book.
    */
-  matchBookIdFromBookName(bookName: string) {
-    return this.pathTemplates.bookPathTemplate.match(bookName).book_id;
+  matchBookFromBookName(bookName: string) {
+    return this.pathTemplates.bookPathTemplate.match(bookName).book;
   }
 
   /**

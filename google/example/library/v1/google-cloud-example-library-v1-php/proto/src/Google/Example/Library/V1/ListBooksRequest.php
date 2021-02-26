@@ -18,9 +18,9 @@ class ListBooksRequest extends \Google\Protobuf\Internal\Message
     /**
      * The name of the shelf whose books we'd like to list.
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    protected $name = '';
+    protected $parent = '';
     /**
      * Requested page size. Server may return fewer books than requested.
      * If unspecified, server will pick an appropriate default.
@@ -44,7 +44,7 @@ class ListBooksRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $name
+     *     @type string $parent
      *           The name of the shelf whose books we'd like to list.
      *     @type int $page_size
      *           Requested page size. Server may return fewer books than requested.
@@ -64,25 +64,25 @@ class ListBooksRequest extends \Google\Protobuf\Internal\Message
     /**
      * The name of the shelf whose books we'd like to list.
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
-    public function getName()
+    public function getParent()
     {
-        return $this->name;
+        return $this->parent;
     }
 
     /**
      * The name of the shelf whose books we'd like to list.
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
-    public function setName($var)
+    public function setParent($var)
     {
         GPBUtil::checkString($var, True);
-        $this->name = $var;
+        $this->parent = $var;
 
         return $this;
     }

@@ -12,45 +12,52 @@ public interface UpdateBookRequestOrBuilder extends
    * The name of the book to update.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The name.
-   */
-  java.lang.String getName();
-  /**
-   * <pre>
-   * The name of the book to update.
-   * </pre>
-   *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The bytes for name.
-   */
-  com.google.protobuf.ByteString
-      getNameBytes();
-
-  /**
-   * <pre>
-   * The book to update with. The name must match or be empty.
-   * </pre>
-   *
-   * <code>.google.example.library.v1.Book book = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.example.library.v1.Book book = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the book field is set.
    */
   boolean hasBook();
   /**
    * <pre>
-   * The book to update with. The name must match or be empty.
+   * The name of the book to update.
    * </pre>
    *
-   * <code>.google.example.library.v1.Book book = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.example.library.v1.Book book = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The book.
    */
   com.google.example.library.v1.Book getBook();
   /**
    * <pre>
-   * The book to update with. The name must match or be empty.
+   * The name of the book to update.
    * </pre>
    *
-   * <code>.google.example.library.v1.Book book = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.example.library.v1.Book book = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.example.library.v1.BookOrBuilder getBookOrBuilder();
+
+  /**
+   * <pre>
+   * Required. Mask of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return Whether the updateMask field is set.
+   */
+  boolean hasUpdateMask();
+  /**
+   * <pre>
+   * Required. Mask of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * @return The updateMask.
+   */
+  com.google.protobuf.FieldMask getUpdateMask();
+  /**
+   * <pre>
+   * Required. Mask of fields to update.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   */
+  com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

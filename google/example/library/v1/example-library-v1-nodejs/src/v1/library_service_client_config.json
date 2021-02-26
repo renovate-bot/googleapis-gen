@@ -21,46 +21,57 @@
       },
       "methods": {
         "CreateShelf": {
+          "timeout_millis": 60000,
           "retry_codes_name": "non_idempotent",
           "retry_params_name": "default"
         },
         "GetShelf": {
-          "retry_codes_name": "non_idempotent",
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
           "retry_params_name": "default"
         },
         "ListShelves": {
-          "retry_codes_name": "non_idempotent",
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
           "retry_params_name": "default"
         },
         "DeleteShelf": {
-          "retry_codes_name": "non_idempotent",
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
           "retry_params_name": "default"
         },
         "MergeShelves": {
+          "timeout_millis": 60000,
           "retry_codes_name": "non_idempotent",
           "retry_params_name": "default"
         },
         "CreateBook": {
+          "timeout_millis": 60000,
           "retry_codes_name": "non_idempotent",
           "retry_params_name": "default"
         },
         "GetBook": {
-          "retry_codes_name": "non_idempotent",
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
           "retry_params_name": "default"
         },
         "ListBooks": {
-          "retry_codes_name": "non_idempotent",
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
           "retry_params_name": "default"
         },
         "DeleteBook": {
-          "retry_codes_name": "non_idempotent",
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
           "retry_params_name": "default"
         },
         "UpdateBook": {
-          "retry_codes_name": "non_idempotent",
+          "timeout_millis": 60000,
+          "retry_codes_name": "idempotent",
           "retry_params_name": "default"
         },
         "MoveBook": {
+          "timeout_millis": 60000,
           "retry_codes_name": "non_idempotent",
           "retry_params_name": "default"
         }

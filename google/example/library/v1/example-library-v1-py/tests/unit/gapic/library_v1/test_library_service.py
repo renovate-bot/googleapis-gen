@@ -38,6 +38,7 @@ from google.example.library_v1.services.library_service import pagers
 from google.example.library_v1.services.library_service import transports
 from google.example.library_v1.types import library
 from google.oauth2 import service_account
+from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 
 
 def client_cert_source_callback():
@@ -1476,7 +1477,7 @@ def test_merge_shelves_flattened():
         # using the keyword arguments to the method.
         client.merge_shelves(
             name='name_value',
-            other_shelf_name='other_shelf_name_value',
+            other_shelf='other_shelf_value',
         )
 
         # Establish that the underlying call was made with the expected
@@ -1486,7 +1487,7 @@ def test_merge_shelves_flattened():
 
         assert args[0].name == 'name_value'
 
-        assert args[0].other_shelf_name == 'other_shelf_name_value'
+        assert args[0].other_shelf == 'other_shelf_value'
 
 
 def test_merge_shelves_flattened_error():
@@ -1500,7 +1501,7 @@ def test_merge_shelves_flattened_error():
         client.merge_shelves(
             library.MergeShelvesRequest(),
             name='name_value',
-            other_shelf_name='other_shelf_name_value',
+            other_shelf='other_shelf_value',
         )
 
 
@@ -1522,7 +1523,7 @@ async def test_merge_shelves_flattened_async():
         # using the keyword arguments to the method.
         response = await client.merge_shelves(
             name='name_value',
-            other_shelf_name='other_shelf_name_value',
+            other_shelf='other_shelf_value',
         )
 
         # Establish that the underlying call was made with the expected
@@ -1532,7 +1533,7 @@ async def test_merge_shelves_flattened_async():
 
         assert args[0].name == 'name_value'
 
-        assert args[0].other_shelf_name == 'other_shelf_name_value'
+        assert args[0].other_shelf == 'other_shelf_value'
 
 
 @pytest.mark.asyncio
@@ -1547,7 +1548,7 @@ async def test_merge_shelves_flattened_error_async():
         await client.merge_shelves(
             library.MergeShelvesRequest(),
             name='name_value',
-            other_shelf_name='other_shelf_name_value',
+            other_shelf='other_shelf_value',
         )
 
 
@@ -1676,7 +1677,7 @@ def test_create_book_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = library.CreateBookRequest()
-    request.name = 'name/value'
+    request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
@@ -1695,7 +1696,7 @@ def test_create_book_field_headers():
     _, _, kw = call.mock_calls[0]
     assert (
         'x-goog-request-params',
-        'name=name/value',
+        'parent=parent/value',
     ) in kw['metadata']
 
 
@@ -1708,7 +1709,7 @@ async def test_create_book_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = library.CreateBookRequest()
-    request.name = 'name/value'
+    request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
@@ -1727,7 +1728,7 @@ async def test_create_book_field_headers_async():
     _, _, kw = call.mock_calls[0]
     assert (
         'x-goog-request-params',
-        'name=name/value',
+        'parent=parent/value',
     ) in kw['metadata']
 
 
@@ -1746,7 +1747,7 @@ def test_create_book_flattened():
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_book(
-            name='name_value',
+            parent='parent_value',
             book=library.Book(name='name_value'),
         )
 
@@ -1755,7 +1756,7 @@ def test_create_book_flattened():
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
 
-        assert args[0].name == 'name_value'
+        assert args[0].parent == 'parent_value'
 
         assert args[0].book == library.Book(name='name_value')
 
@@ -1770,7 +1771,7 @@ def test_create_book_flattened_error():
     with pytest.raises(ValueError):
         client.create_book(
             library.CreateBookRequest(),
-            name='name_value',
+            parent='parent_value',
             book=library.Book(name='name_value'),
         )
 
@@ -1792,7 +1793,7 @@ async def test_create_book_flattened_async():
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         response = await client.create_book(
-            name='name_value',
+            parent='parent_value',
             book=library.Book(name='name_value'),
         )
 
@@ -1801,7 +1802,7 @@ async def test_create_book_flattened_async():
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
 
-        assert args[0].name == 'name_value'
+        assert args[0].parent == 'parent_value'
 
         assert args[0].book == library.Book(name='name_value')
 
@@ -1817,7 +1818,7 @@ async def test_create_book_flattened_error_async():
     with pytest.raises(ValueError):
         await client.create_book(
             library.CreateBookRequest(),
-            name='name_value',
+            parent='parent_value',
             book=library.Book(name='name_value'),
         )
 
@@ -2189,7 +2190,7 @@ def test_list_books_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = library.ListBooksRequest()
-    request.name = 'name/value'
+    request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
@@ -2208,7 +2209,7 @@ def test_list_books_field_headers():
     _, _, kw = call.mock_calls[0]
     assert (
         'x-goog-request-params',
-        'name=name/value',
+        'parent=parent/value',
     ) in kw['metadata']
 
 
@@ -2221,7 +2222,7 @@ async def test_list_books_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = library.ListBooksRequest()
-    request.name = 'name/value'
+    request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
@@ -2240,7 +2241,7 @@ async def test_list_books_field_headers_async():
     _, _, kw = call.mock_calls[0]
     assert (
         'x-goog-request-params',
-        'name=name/value',
+        'parent=parent/value',
     ) in kw['metadata']
 
 
@@ -2259,7 +2260,7 @@ def test_list_books_flattened():
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_books(
-            name='name_value',
+            parent='parent_value',
         )
 
         # Establish that the underlying call was made with the expected
@@ -2267,7 +2268,7 @@ def test_list_books_flattened():
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
 
-        assert args[0].name == 'name_value'
+        assert args[0].parent == 'parent_value'
 
 
 def test_list_books_flattened_error():
@@ -2280,7 +2281,7 @@ def test_list_books_flattened_error():
     with pytest.raises(ValueError):
         client.list_books(
             library.ListBooksRequest(),
-            name='name_value',
+            parent='parent_value',
         )
 
 
@@ -2301,7 +2302,7 @@ async def test_list_books_flattened_async():
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         response = await client.list_books(
-            name='name_value',
+            parent='parent_value',
         )
 
         # Establish that the underlying call was made with the expected
@@ -2309,7 +2310,7 @@ async def test_list_books_flattened_async():
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
 
-        assert args[0].name == 'name_value'
+        assert args[0].parent == 'parent_value'
 
 
 @pytest.mark.asyncio
@@ -2323,7 +2324,7 @@ async def test_list_books_flattened_error_async():
     with pytest.raises(ValueError):
         await client.list_books(
             library.ListBooksRequest(),
-            name='name_value',
+            parent='parent_value',
         )
 
 
@@ -2368,7 +2369,7 @@ def test_list_books_pager():
         metadata = ()
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', ''),
+                ('parent', ''),
             )),
         )
         pager = client.list_books(request={})
@@ -2663,6 +2664,89 @@ async def test_delete_book_field_headers_async():
     ) in kw['metadata']
 
 
+def test_delete_book_flattened():
+    client = LibraryServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_book),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = None
+
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        client.delete_book(
+            name='name_value',
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0].name == 'name_value'
+
+
+def test_delete_book_flattened_error():
+    client = LibraryServiceClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        client.delete_book(
+            library.DeleteBookRequest(),
+            name='name_value',
+        )
+
+
+@pytest.mark.asyncio
+async def test_delete_book_flattened_async():
+    client = LibraryServiceAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_book),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = None
+
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        response = await client.delete_book(
+            name='name_value',
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0].name == 'name_value'
+
+
+@pytest.mark.asyncio
+async def test_delete_book_flattened_error_async():
+    client = LibraryServiceAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        await client.delete_book(
+            library.DeleteBookRequest(),
+            name='name_value',
+        )
+
+
 def test_update_book(transport: str = 'grpc', request_type=library.UpdateBookRequest):
     client = LibraryServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -2859,6 +2943,7 @@ def test_update_book_flattened():
         # using the keyword arguments to the method.
         client.update_book(
             book=library.Book(name='name_value'),
+            update_mask=field_mask.FieldMask(paths=['paths_value']),
         )
 
         # Establish that the underlying call was made with the expected
@@ -2867,6 +2952,8 @@ def test_update_book_flattened():
         _, args, _ = call.mock_calls[0]
 
         assert args[0].book == library.Book(name='name_value')
+
+        assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
 def test_update_book_flattened_error():
@@ -2880,6 +2967,7 @@ def test_update_book_flattened_error():
         client.update_book(
             library.UpdateBookRequest(),
             book=library.Book(name='name_value'),
+            update_mask=field_mask.FieldMask(paths=['paths_value']),
         )
 
 
@@ -2901,6 +2989,7 @@ async def test_update_book_flattened_async():
         # using the keyword arguments to the method.
         response = await client.update_book(
             book=library.Book(name='name_value'),
+            update_mask=field_mask.FieldMask(paths=['paths_value']),
         )
 
         # Establish that the underlying call was made with the expected
@@ -2909,6 +2998,8 @@ async def test_update_book_flattened_async():
         _, args, _ = call.mock_calls[0]
 
         assert args[0].book == library.Book(name='name_value')
+
+        assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
 @pytest.mark.asyncio
@@ -2923,6 +3014,7 @@ async def test_update_book_flattened_error_async():
         await client.update_book(
             library.UpdateBookRequest(),
             book=library.Book(name='name_value'),
+            update_mask=field_mask.FieldMask(paths=['paths_value']),
         )
 
 
@@ -3530,18 +3622,18 @@ def test_library_service_transport_channel_mtls_with_adc(
 
 
 def test_book_path():
-    shelf_id = "squid"
-    book_id = "clam"
+    shelf = "squid"
+    book = "clam"
 
-    expected = "shelves/{shelf_id}/books/{book_id}".format(shelf_id=shelf_id, book_id=book_id, )
-    actual = LibraryServiceClient.book_path(shelf_id, book_id)
+    expected = "shelves/{shelf}/books/{book}".format(shelf=shelf, book=book, )
+    actual = LibraryServiceClient.book_path(shelf, book)
     assert expected == actual
 
 
 def test_parse_book_path():
     expected = {
-    "shelf_id": "whelk",
-    "book_id": "octopus",
+    "shelf": "whelk",
+    "book": "octopus",
 
     }
     path = LibraryServiceClient.book_path(**expected)

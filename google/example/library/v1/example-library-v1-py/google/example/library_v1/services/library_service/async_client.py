@@ -30,6 +30,7 @@ from google.oauth2 import service_account              # type: ignore
 
 from google.example.library_v1.services.library_service import pagers
 from google.example.library_v1.types import library
+from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 
 from .transports.base import LibraryServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import LibraryServiceGrpcAsyncIOTransport
@@ -217,7 +218,14 @@ class LibraryServiceAsyncClient:
         # and friendly error handling.
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.create_shelf,
-            default_timeout=None,
+            default_retry=retries.Retry(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
+                ),
+            ),
+            default_timeout=60.0,
             client_info=DEFAULT_CLIENT_INFO,
         )
 
@@ -284,7 +292,16 @@ class LibraryServiceAsyncClient:
         # and friendly error handling.
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_shelf,
-            default_timeout=None,
+            default_retry=retries.Retry(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
+                    exceptions.DeadlineExceeded,
+                    exceptions.ServiceUnavailable,
+                ),
+            ),
+            default_timeout=60.0,
             client_info=DEFAULT_CLIENT_INFO,
         )
 
@@ -346,7 +363,16 @@ class LibraryServiceAsyncClient:
         # and friendly error handling.
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_shelves,
-            default_timeout=None,
+            default_retry=retries.Retry(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
+                    exceptions.DeadlineExceeded,
+                    exceptions.ServiceUnavailable,
+                ),
+            ),
+            default_timeout=60.0,
             client_info=DEFAULT_CLIENT_INFO,
         )
 
@@ -416,7 +442,16 @@ class LibraryServiceAsyncClient:
         # and friendly error handling.
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_shelf,
-            default_timeout=None,
+            default_retry=retries.Retry(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
+                    exceptions.DeadlineExceeded,
+                    exceptions.ServiceUnavailable,
+                ),
+            ),
+            default_timeout=60.0,
             client_info=DEFAULT_CLIENT_INFO,
         )
 
@@ -440,7 +475,7 @@ class LibraryServiceAsyncClient:
             request: library.MergeShelvesRequest = None,
             *,
             name: str = None,
-            other_shelf_name: str = None,
+            other_shelf: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -464,11 +499,11 @@ class LibraryServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            other_shelf_name (:class:`str`):
+            other_shelf (:class:`str`):
                 The name of the shelf we're removing
                 books from and deleting.
 
-                This corresponds to the ``other_shelf_name`` field
+                This corresponds to the ``other_shelf`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
 
@@ -487,7 +522,7 @@ class LibraryServiceAsyncClient:
         # Create or coerce a protobuf request object.
         # Sanity check: If we got a request object, we should *not* have
         # gotten any keyword arguments that map to the request.
-        has_flattened_params = any([name, other_shelf_name])
+        has_flattened_params = any([name, other_shelf])
         if request is not None and has_flattened_params:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
@@ -499,14 +534,21 @@ class LibraryServiceAsyncClient:
 
         if name is not None:
             request.name = name
-        if other_shelf_name is not None:
-            request.other_shelf_name = other_shelf_name
+        if other_shelf is not None:
+            request.other_shelf = other_shelf
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.merge_shelves,
-            default_timeout=None,
+            default_retry=retries.Retry(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
+                ),
+            ),
+            default_timeout=60.0,
             client_info=DEFAULT_CLIENT_INFO,
         )
 
@@ -532,7 +574,7 @@ class LibraryServiceAsyncClient:
     async def create_book(self,
             request: library.CreateBookRequest = None,
             *,
-            name: str = None,
+            parent: str = None,
             book: library.Book = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -544,11 +586,11 @@ class LibraryServiceAsyncClient:
             request (:class:`google.example.library_v1.types.CreateBookRequest`):
                 The request object. Request message for
                 LibraryService.CreateBook.
-            name (:class:`str`):
+            parent (:class:`str`):
                 The name of the shelf in which the
                 book is created.
 
-                This corresponds to the ``name`` field
+                This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
             book (:class:`google.example.library_v1.types.Book`):
@@ -570,7 +612,7 @@ class LibraryServiceAsyncClient:
         # Create or coerce a protobuf request object.
         # Sanity check: If we got a request object, we should *not* have
         # gotten any keyword arguments that map to the request.
-        has_flattened_params = any([name, book])
+        has_flattened_params = any([parent, book])
         if request is not None and has_flattened_params:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
@@ -580,8 +622,8 @@ class LibraryServiceAsyncClient:
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
 
-        if name is not None:
-            request.name = name
+        if parent is not None:
+            request.parent = parent
         if book is not None:
             request.book = book
 
@@ -589,7 +631,14 @@ class LibraryServiceAsyncClient:
         # and friendly error handling.
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.create_book,
-            default_timeout=None,
+            default_retry=retries.Retry(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
+                ),
+            ),
+            default_timeout=60.0,
             client_info=DEFAULT_CLIENT_INFO,
         )
 
@@ -597,7 +646,7 @@ class LibraryServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ('parent', request.parent),
             )),
         )
 
@@ -662,7 +711,16 @@ class LibraryServiceAsyncClient:
         # and friendly error handling.
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_book,
-            default_timeout=None,
+            default_retry=retries.Retry(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
+                    exceptions.DeadlineExceeded,
+                    exceptions.ServiceUnavailable,
+                ),
+            ),
+            default_timeout=60.0,
             client_info=DEFAULT_CLIENT_INFO,
         )
 
@@ -688,7 +746,7 @@ class LibraryServiceAsyncClient:
     async def list_books(self,
             request: library.ListBooksRequest = None,
             *,
-            name: str = None,
+            parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -702,11 +760,11 @@ class LibraryServiceAsyncClient:
             request (:class:`google.example.library_v1.types.ListBooksRequest`):
                 The request object. Request message for
                 LibraryService.ListBooks.
-            name (:class:`str`):
+            parent (:class:`str`):
                 The name of the shelf whose books
                 we'd like to list.
 
-                This corresponds to the ``name`` field
+                This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
 
@@ -728,7 +786,7 @@ class LibraryServiceAsyncClient:
         # Create or coerce a protobuf request object.
         # Sanity check: If we got a request object, we should *not* have
         # gotten any keyword arguments that map to the request.
-        has_flattened_params = any([name])
+        has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
@@ -738,14 +796,23 @@ class LibraryServiceAsyncClient:
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
 
-        if name is not None:
-            request.name = name
+        if parent is not None:
+            request.parent = parent
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_books,
-            default_timeout=None,
+            default_retry=retries.Retry(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
+                    exceptions.DeadlineExceeded,
+                    exceptions.ServiceUnavailable,
+                ),
+            ),
+            default_timeout=60.0,
             client_info=DEFAULT_CLIENT_INFO,
         )
 
@@ -753,7 +820,7 @@ class LibraryServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ('parent', request.parent),
             )),
         )
 
@@ -780,6 +847,7 @@ class LibraryServiceAsyncClient:
     async def delete_book(self,
             request: library.DeleteBookRequest = None,
             *,
+            name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -790,6 +858,11 @@ class LibraryServiceAsyncClient:
             request (:class:`google.example.library_v1.types.DeleteBookRequest`):
                 The request object. Request message for
                 LibraryService.DeleteBook.
+            name (:class:`str`):
+                The name of the book to delete.
+                This corresponds to the ``name`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
 
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -798,14 +871,35 @@ class LibraryServiceAsyncClient:
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([name])
+        if request is not None and has_flattened_params:
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
 
         request = library.DeleteBookRequest(request)
+
+        # If we have keyword arguments corresponding to fields on the
+        # request, apply these.
+
+        if name is not None:
+            request.name = name
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_book,
-            default_timeout=None,
+            default_retry=retries.Retry(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
+                    exceptions.DeadlineExceeded,
+                    exceptions.ServiceUnavailable,
+                ),
+            ),
+            default_timeout=60.0,
             client_info=DEFAULT_CLIENT_INFO,
         )
 
@@ -829,6 +923,7 @@ class LibraryServiceAsyncClient:
             request: library.UpdateBookRequest = None,
             *,
             book: library.Book = None,
+            update_mask: field_mask.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -841,10 +936,13 @@ class LibraryServiceAsyncClient:
                 The request object. Request message for
                 LibraryService.UpdateBook.
             book (:class:`google.example.library_v1.types.Book`):
-                The book to update with. The name
-                must match or be empty.
-
+                The name of the book to update.
                 This corresponds to the ``book`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            update_mask (:class:`google.protobuf.field_mask_pb2.FieldMask`):
+                Required. Mask of fields to update.
+                This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
 
@@ -861,7 +959,7 @@ class LibraryServiceAsyncClient:
         # Create or coerce a protobuf request object.
         # Sanity check: If we got a request object, we should *not* have
         # gotten any keyword arguments that map to the request.
-        has_flattened_params = any([book])
+        has_flattened_params = any([book, update_mask])
         if request is not None and has_flattened_params:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
@@ -873,12 +971,23 @@ class LibraryServiceAsyncClient:
 
         if book is not None:
             request.book = book
+        if update_mask is not None:
+            request.update_mask = update_mask
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_book,
-            default_timeout=None,
+            default_retry=retries.Retry(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
+                    exceptions.DeadlineExceeded,
+                    exceptions.ServiceUnavailable,
+                ),
+            ),
+            default_timeout=60.0,
             client_info=DEFAULT_CLIENT_INFO,
         )
 
@@ -961,7 +1070,14 @@ class LibraryServiceAsyncClient:
         # and friendly error handling.
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.move_book,
-            default_timeout=None,
+            default_retry=retries.Retry(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
+                ),
+            ),
+            default_timeout=60.0,
             client_info=DEFAULT_CLIENT_INFO,
         )
 

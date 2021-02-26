@@ -32,18 +32,18 @@ public interface MergeShelvesRequestOrBuilder extends
    * The name of the shelf we're removing books from and deleting.
    * </pre>
    *
-   * <code>string other_shelf_name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The otherShelfName.
+   * <code>string other_shelf = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The otherShelf.
    */
-  java.lang.String getOtherShelfName();
+  java.lang.String getOtherShelf();
   /**
    * <pre>
    * The name of the shelf we're removing books from and deleting.
    * </pre>
    *
-   * <code>string other_shelf_name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The bytes for otherShelfName.
+   * <code>string other_shelf = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for otherShelf.
    */
   com.google.protobuf.ByteString
-      getOtherShelfNameBytes();
+      getOtherShelfBytes();
 }

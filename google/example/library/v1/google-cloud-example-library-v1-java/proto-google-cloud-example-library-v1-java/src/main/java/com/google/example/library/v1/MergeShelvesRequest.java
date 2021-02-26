@@ -22,7 +22,7 @@ private static final long serialVersionUID = 0L;
   }
   private MergeShelvesRequest() {
     name_ = "";
-    otherShelfName_ = "";
+    otherShelf_ = "";
   }
 
   @java.lang.Override
@@ -64,7 +64,7 @@ private static final long serialVersionUID = 0L;
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            otherShelfName_ = s;
+            otherShelf_ = s;
             break;
           }
           default: {
@@ -145,26 +145,26 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int OTHER_SHELF_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object otherShelfName_;
+  public static final int OTHER_SHELF_FIELD_NUMBER = 2;
+  private volatile java.lang.Object otherShelf_;
   /**
    * <pre>
    * The name of the shelf we're removing books from and deleting.
    * </pre>
    *
-   * <code>string other_shelf_name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The otherShelfName.
+   * <code>string other_shelf = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The otherShelf.
    */
   @java.lang.Override
-  public java.lang.String getOtherShelfName() {
-    java.lang.Object ref = otherShelfName_;
+  public java.lang.String getOtherShelf() {
+    java.lang.Object ref = otherShelf_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      otherShelfName_ = s;
+      otherShelf_ = s;
       return s;
     }
   }
@@ -173,18 +173,18 @@ private static final long serialVersionUID = 0L;
    * The name of the shelf we're removing books from and deleting.
    * </pre>
    *
-   * <code>string other_shelf_name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The bytes for otherShelfName.
+   * <code>string other_shelf = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for otherShelf.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getOtherShelfNameBytes() {
-    java.lang.Object ref = otherShelfName_;
+      getOtherShelfBytes() {
+    java.lang.Object ref = otherShelf_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      otherShelfName_ = b;
+      otherShelf_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -208,8 +208,8 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getOtherShelfNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, otherShelfName_);
+    if (!getOtherShelfBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, otherShelf_);
     }
     unknownFields.writeTo(output);
   }
@@ -223,8 +223,8 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getOtherShelfNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, otherShelfName_);
+    if (!getOtherShelfBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, otherShelf_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -243,8 +243,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getName()
         .equals(other.getName())) return false;
-    if (!getOtherShelfName()
-        .equals(other.getOtherShelfName())) return false;
+    if (!getOtherShelf()
+        .equals(other.getOtherShelf())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -258,8 +258,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + OTHER_SHELF_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getOtherShelfName().hashCode();
+    hash = (37 * hash) + OTHER_SHELF_FIELD_NUMBER;
+    hash = (53 * hash) + getOtherShelf().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -400,7 +400,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       name_ = "";
 
-      otherShelfName_ = "";
+      otherShelf_ = "";
 
       return this;
     }
@@ -429,7 +429,7 @@ private static final long serialVersionUID = 0L;
     public com.google.example.library.v1.MergeShelvesRequest buildPartial() {
       com.google.example.library.v1.MergeShelvesRequest result = new com.google.example.library.v1.MergeShelvesRequest(this);
       result.name_ = name_;
-      result.otherShelfName_ = otherShelfName_;
+      result.otherShelf_ = otherShelf_;
       onBuilt();
       return result;
     }
@@ -482,8 +482,8 @@ private static final long serialVersionUID = 0L;
         name_ = other.name_;
         onChanged();
       }
-      if (!other.getOtherShelfName().isEmpty()) {
-        otherShelfName_ = other.otherShelfName_;
+      if (!other.getOtherShelf().isEmpty()) {
+        otherShelf_ = other.otherShelf_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -611,22 +611,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object otherShelfName_ = "";
+    private java.lang.Object otherShelf_ = "";
     /**
      * <pre>
      * The name of the shelf we're removing books from and deleting.
      * </pre>
      *
-     * <code>string other_shelf_name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @return The otherShelfName.
+     * <code>string other_shelf = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The otherShelf.
      */
-    public java.lang.String getOtherShelfName() {
-      java.lang.Object ref = otherShelfName_;
+    public java.lang.String getOtherShelf() {
+      java.lang.Object ref = otherShelf_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        otherShelfName_ = s;
+        otherShelf_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -637,17 +637,17 @@ private static final long serialVersionUID = 0L;
      * The name of the shelf we're removing books from and deleting.
      * </pre>
      *
-     * <code>string other_shelf_name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @return The bytes for otherShelfName.
+     * <code>string other_shelf = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for otherShelf.
      */
     public com.google.protobuf.ByteString
-        getOtherShelfNameBytes() {
-      java.lang.Object ref = otherShelfName_;
+        getOtherShelfBytes() {
+      java.lang.Object ref = otherShelf_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        otherShelfName_ = b;
+        otherShelf_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -658,17 +658,17 @@ private static final long serialVersionUID = 0L;
      * The name of the shelf we're removing books from and deleting.
      * </pre>
      *
-     * <code>string other_shelf_name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @param value The otherShelfName to set.
+     * <code>string other_shelf = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The otherShelf to set.
      * @return This builder for chaining.
      */
-    public Builder setOtherShelfName(
+    public Builder setOtherShelf(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      otherShelfName_ = value;
+      otherShelf_ = value;
       onChanged();
       return this;
     }
@@ -677,12 +677,12 @@ private static final long serialVersionUID = 0L;
      * The name of the shelf we're removing books from and deleting.
      * </pre>
      *
-     * <code>string other_shelf_name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>string other_shelf = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder clearOtherShelfName() {
+    public Builder clearOtherShelf() {
       
-      otherShelfName_ = getDefaultInstance().getOtherShelfName();
+      otherShelf_ = getDefaultInstance().getOtherShelf();
       onChanged();
       return this;
     }
@@ -691,18 +691,18 @@ private static final long serialVersionUID = 0L;
      * The name of the shelf we're removing books from and deleting.
      * </pre>
      *
-     * <code>string other_shelf_name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @param value The bytes for otherShelfName to set.
+     * <code>string other_shelf = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for otherShelf to set.
      * @return This builder for chaining.
      */
-    public Builder setOtherShelfNameBytes(
+    public Builder setOtherShelfBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      otherShelfName_ = value;
+      otherShelf_ = value;
       onChanged();
       return this;
     }

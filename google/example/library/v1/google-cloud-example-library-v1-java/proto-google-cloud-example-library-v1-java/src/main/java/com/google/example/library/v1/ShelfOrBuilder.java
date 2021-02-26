@@ -14,7 +14,7 @@ public interface ShelfOrBuilder extends
    * The name is ignored when creating a shelf.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>string name = 1;</code>
    * @return The name.
    */
   java.lang.String getName();
@@ -25,7 +25,7 @@ public interface ShelfOrBuilder extends
    * The name is ignored when creating a shelf.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>string name = 1;</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString

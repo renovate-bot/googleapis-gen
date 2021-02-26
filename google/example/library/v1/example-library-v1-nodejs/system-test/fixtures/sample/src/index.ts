@@ -16,7 +16,7 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
-import {LibraryServiceClient} from 'library';
+import {LibraryServiceClient} from '@google-cloud/library';
 
 // check that the client class type name can be used
 function doStuffWithLibraryServiceClient(client: LibraryServiceClient) {

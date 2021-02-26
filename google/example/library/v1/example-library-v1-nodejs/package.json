@@ -1,5 +1,5 @@
 {
-  "name": "library",
+  "name": "@google-cloud/library",
   "version": "0.1.0",
   "description": "Library client for Node.js",
   "repository": "googleapis/nodejs-library",

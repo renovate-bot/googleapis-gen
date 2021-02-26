@@ -50,6 +50,7 @@ use Google\Example\Library\V1\MergeShelvesRequest;
 use Google\Example\Library\V1\MoveBookRequest;
 use Google\Example\Library\V1\Shelf;
 use Google\Example\Library\V1\UpdateBookRequest;
+use Google\Protobuf\FieldMask;
 use Google\Protobuf\GPBEmpty;
 
 /**
@@ -147,7 +148,7 @@ class LibraryServiceGapicClient
     private static function getShelfNameTemplate()
     {
         if (null == self::$shelfNameTemplate) {
-            self::$shelfNameTemplate = new PathTemplate('shelves/{shelf}');
+            self::$shelfNameTemplate = new PathTemplate('shelves/{shelf_id}');
         }
 
         return self::$shelfNameTemplate;
@@ -187,15 +188,15 @@ class LibraryServiceGapicClient
      * Formats a string containing the fully-qualified path to represent
      * a shelf resource.
      *
-     * @param string $shelf
+     * @param string $shelfId
      *
      * @return string The formatted shelf resource.
      * @experimental
      */
-    public static function shelfName($shelf)
+    public static function shelfName($shelfId)
     {
         return self::getShelfNameTemplate()->render([
-            'shelf' => $shelf,
+            'shelf_id' => $shelfId,
         ]);
     }
 
@@ -204,7 +205,7 @@ class LibraryServiceGapicClient
      * The following name formats are supported:
      * Template: Pattern
      * - book: shelves/{shelf}/books/{book}
-     * - shelf: shelves/{shelf}.
+     * - shelf: shelves/{shelf_id}.
      *
      * The optional $template argument can be supplied to specify a particular pattern, and must
      * match one of the templates listed above. If no $template argument is provided, or if the
@@ -349,7 +350,7 @@ class LibraryServiceGapicClient
      * ```
      * $libraryServiceClient = new LibraryServiceClient();
      * try {
-     *     $formattedName = $libraryServiceClient->shelfName('[SHELF]');
+     *     $formattedName = $libraryServiceClient->shelfName('[SHELF_ID]');
      *     $response = $libraryServiceClient->getShelf($formattedName);
      * } finally {
      *     $libraryServiceClient->close();
@@ -470,7 +471,7 @@ class LibraryServiceGapicClient
      * ```
      * $libraryServiceClient = new LibraryServiceClient();
      * try {
-     *     $formattedName = $libraryServiceClient->shelfName('[SHELF]');
+     *     $formattedName = $libraryServiceClient->shelfName('[SHELF_ID]');
      *     $libraryServiceClient->deleteShelf($formattedName);
      * } finally {
      *     $libraryServiceClient->close();
@@ -524,18 +525,18 @@ class LibraryServiceGapicClient
      * ```
      * $libraryServiceClient = new LibraryServiceClient();
      * try {
-     *     $formattedName = $libraryServiceClient->shelfName('[SHELF]');
-     *     $otherShelfName = '';
-     *     $response = $libraryServiceClient->mergeShelves($formattedName, $otherShelfName);
+     *     $formattedName = $libraryServiceClient->shelfName('[SHELF_ID]');
+     *     $formattedOtherShelf = $libraryServiceClient->shelfName('[SHELF_ID]');
+     *     $response = $libraryServiceClient->mergeShelves($formattedName, $formattedOtherShelf);
      * } finally {
      *     $libraryServiceClient->close();
      * }
      * ```
      *
-     * @param string $name           The name of the shelf we're adding books to.
-     * @param string $otherShelfName The name of the shelf we're removing books from and deleting.
-     * @param array  $optionalArgs   {
-     *                               Optional.
+     * @param string $name         The name of the shelf we're adding books to.
+     * @param string $otherShelf   The name of the shelf we're removing books from and deleting.
+     * @param array  $optionalArgs {
+     *                             Optional.
      *
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
@@ -549,11 +550,11 @@ class LibraryServiceGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function mergeShelves($name, $otherShelfName, array $optionalArgs = [])
+    public function mergeShelves($name, $otherShelf, array $optionalArgs = [])
     {
         $request = new MergeShelvesRequest();
         $request->setName($name);
-        $request->setOtherShelfName($otherShelfName);
+        $request->setOtherShelf($otherShelf);
 
         $requestParams = new RequestParamsHeaderDescriptor([
           'name' => $request->getName(),
@@ -577,15 +578,15 @@ class LibraryServiceGapicClient
      * ```
      * $libraryServiceClient = new LibraryServiceClient();
      * try {
-     *     $formattedName = $libraryServiceClient->shelfName('[SHELF]');
+     *     $formattedParent = $libraryServiceClient->shelfName('[SHELF_ID]');
      *     $book = new Book();
-     *     $response = $libraryServiceClient->createBook($formattedName, $book);
+     *     $response = $libraryServiceClient->createBook($formattedParent, $book);
      * } finally {
      *     $libraryServiceClient->close();
      * }
      * ```
      *
-     * @param string $name         The name of the shelf in which the book is created.
+     * @param string $parent       The name of the shelf in which the book is created.
      * @param Book   $book         The book to create.
      * @param array  $optionalArgs {
      *                             Optional.
@@ -602,14 +603,14 @@ class LibraryServiceGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function createBook($name, $book, array $optionalArgs = [])
+    public function createBook($parent, $book, array $optionalArgs = [])
     {
         $request = new CreateBookRequest();
-        $request->setName($name);
+        $request->setParent($parent);
         $request->setBook($book);
 
         $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
+          'parent' => $request->getParent(),
         ]);
         $optionalArgs['headers'] = isset($optionalArgs['headers'])
             ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
@@ -682,9 +683,9 @@ class LibraryServiceGapicClient
      * ```
      * $libraryServiceClient = new LibraryServiceClient();
      * try {
-     *     $formattedName = $libraryServiceClient->shelfName('[SHELF]');
+     *     $formattedParent = $libraryServiceClient->shelfName('[SHELF_ID]');
      *     // Iterate over pages of elements
-     *     $pagedResponse = $libraryServiceClient->listBooks($formattedName);
+     *     $pagedResponse = $libraryServiceClient->listBooks($formattedParent);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
@@ -695,7 +696,7 @@ class LibraryServiceGapicClient
      *     // Alternatively:
      *
      *     // Iterate through all elements
-     *     $pagedResponse = $libraryServiceClient->listBooks($formattedName);
+     *     $pagedResponse = $libraryServiceClient->listBooks($formattedParent);
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
      *         // doSomethingWith($element);
      *     }
@@ -704,7 +705,7 @@ class LibraryServiceGapicClient
      * }
      * ```
      *
-     * @param string $name         The name of the shelf whose books we'd like to list.
+     * @param string $parent       The name of the shelf whose books we'd like to list.
      * @param array  $optionalArgs {
      *                             Optional.
      *
@@ -729,10 +730,10 @@ class LibraryServiceGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function listBooks($name, array $optionalArgs = [])
+    public function listBooks($parent, array $optionalArgs = [])
     {
         $request = new ListBooksRequest();
-        $request->setName($name);
+        $request->setParent($parent);
         if (isset($optionalArgs['pageSize'])) {
             $request->setPageSize($optionalArgs['pageSize']);
         }
@@ -741,7 +742,7 @@ class LibraryServiceGapicClient
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([
-          'name' => $request->getName(),
+          'parent' => $request->getParent(),
         ]);
         $optionalArgs['headers'] = isset($optionalArgs['headers'])
             ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
@@ -811,18 +812,18 @@ class LibraryServiceGapicClient
      * ```
      * $libraryServiceClient = new LibraryServiceClient();
      * try {
-     *     $name = '';
      *     $book = new Book();
-     *     $response = $libraryServiceClient->updateBook($name, $book);
+     *     $updateMask = new FieldMask();
+     *     $response = $libraryServiceClient->updateBook($book, $updateMask);
      * } finally {
      *     $libraryServiceClient->close();
      * }
      * ```
      *
-     * @param string $name         The name of the book to update.
-     * @param Book   $book         The book to update with. The name must match or be empty.
-     * @param array  $optionalArgs {
-     *                             Optional.
+     * @param Book      $book         The name of the book to update.
+     * @param FieldMask $updateMask   Required. Mask of fields to update.
+     * @param array     $optionalArgs {
+     *                                Optional.
      *
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
@@ -836,11 +837,11 @@ class LibraryServiceGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function updateBook($name, $book, array $optionalArgs = [])
+    public function updateBook($book, $updateMask, array $optionalArgs = [])
     {
         $request = new UpdateBookRequest();
-        $request->setName($name);
         $request->setBook($book);
+        $request->setUpdateMask($updateMask);
 
         $requestParams = new RequestParamsHeaderDescriptor([
           'book.name' => $request->getBook()->getName(),
@@ -866,8 +867,8 @@ class LibraryServiceGapicClient
      * $libraryServiceClient = new LibraryServiceClient();
      * try {
      *     $formattedName = $libraryServiceClient->bookName('[SHELF]', '[BOOK]');
-     *     $otherShelfName = '';
-     *     $response = $libraryServiceClient->moveBook($formattedName, $otherShelfName);
+     *     $formattedOtherShelfName = $libraryServiceClient->shelfName('[SHELF_ID]');
+     *     $response = $libraryServiceClient->moveBook($formattedName, $formattedOtherShelfName);
      * } finally {
      *     $libraryServiceClient->close();
      * }

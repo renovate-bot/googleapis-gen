@@ -19,83 +19,82 @@ class Library
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Protobuf\GPBEmpty::initOnce();
+        \GPBMetadata\Google\Protobuf\FieldMask::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ó
-\'google/example/library/v1/library.protogoogle.example.library.v1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.protogoogle/protobuf/empty.proto"º
-Book9
-name (	B+‡A˙A%
-#library-example.googleapis.com/Book
+»
+\'google/example/library/v1/library.protogoogle.example.library.v1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.protogoogle/protobuf/empty.proto google/protobuf/field_mask.proto"â
+Book
+name (	
 author (	
 title (	
-read (:LÍAI
-#library-example.googleapis.com/Book"shelves/{shelf_id}/books/{book_id}"ë
-Shelf:
-name (	B,‡A˙A&
-$library-example.googleapis.com/Shelf
+read (:FÍAC
+#library-example.googleapis.com/Bookshelves/{shelf}/books/{book}"c
+Shelf
+name (	
 theme (	:=ÍA:
 $library-example.googleapis.com/Shelfshelves/{shelf_id}"J
 CreateShelfRequest4
-shelf (2 .google.example.library.v1.ShelfB‡A".
-GetShelfRequest
-name (	B‡A˙A
-Shelf";
+shelf (2 .google.example.library.v1.ShelfB‡A"M
+GetShelfRequest:
+name (	B,‡A˙A&
+$library-example.googleapis.com/Shelf";
 ListShelvesRequest
 	page_size (
 
 page_token (	"a
 ListShelvesResponse1
 shelves (2 .google.example.library.v1.Shelf
-next_page_token (	"1
-DeleteShelfRequest
-name (	B‡A˙A
-Shelf"[
-MergeShelvesRequest
-name (	B‡A˙A
-Shelf\'
-other_shelf_name (	B‡A˙A
-Shelf"d
-CreateBookRequest
-name (	B‡A˙A
-Shelf2
-book (2.google.example.library.v1.BookB‡A",
-GetBookRequest
-name (	B‡A˙A
-Book"V
-ListBooksRequest
-name (	B‡A˙A
-Shelf
+next_page_token (	"P
+DeleteShelfRequest:
+name (	B,‡A˙A&
+$library-example.googleapis.com/Shelf"î
+MergeShelvesRequest:
+name (	B,‡A˙A&
+$library-example.googleapis.com/ShelfA
+other_shelf (	B,‡A˙A&
+$library-example.googleapis.com/Shelf"Ö
+CreateBookRequest<
+parent (	B,‡A˙A&
+$library-example.googleapis.com/Shelf2
+book (2.google.example.library.v1.BookB‡A"K
+GetBookRequest9
+name (	B+‡A˙A%
+#library-example.googleapis.com/Book"w
+ListBooksRequest<
+parent (	B,‡A˙A&
+$library-example.googleapis.com/Shelf
 	page_size (
 
 page_token (	"\\
 ListBooksResponse.
 books (2.google.example.library.v1.Book
-next_page_token (	"Z
-UpdateBookRequest
-name (	B‡A2
-book (2.google.example.library.v1.BookB‡A"/
-DeleteBookRequest
-name (	B‡A˙A
-Book"V
-MoveBookRequest
-name (	B‡A˙A
-Book\'
-other_shelf_name (	B‡A˙A
-Shelf2µ
+next_page_token (	"}
+UpdateBookRequest2
+book (2.google.example.library.v1.BookB‡A4
+update_mask (2.google.protobuf.FieldMaskB‡A"N
+DeleteBookRequest9
+name (	B+‡A˙A%
+#library-example.googleapis.com/Book"î
+MoveBookRequest9
+name (	B+‡A˙A%
+#library-example.googleapis.com/BookF
+other_shelf_name (	B,‡A˙A&
+$library-example.googleapis.com/Shelf2À
 LibraryServiceÇ
 CreateShelf-.google.example.library.v1.CreateShelfRequest .google.example.library.v1.Shelf""Ç”‰ì"/v1/shelves:shelf⁄Ashelf}
 GetShelf*.google.example.library.v1.GetShelfRequest .google.example.library.v1.Shelf"#Ç”‰ì/v1/{name=shelves/*}⁄AnameÅ
 ListShelves-.google.example.library.v1.ListShelvesRequest..google.example.library.v1.ListShelvesResponse"Ç”‰ì/v1/shelvesy
-DeleteShelf-.google.example.library.v1.DeleteShelfRequest.google.protobuf.Empty"#Ç”‰ì*/v1/{name=shelves/*}⁄Anameü
-MergeShelves..google.example.library.v1.MergeShelvesRequest .google.example.library.v1.Shelf"=Ç”‰ì"/v1/{name=shelves/*}:merge:*⁄Aname,other_shelf_nameë
+DeleteShelf-.google.example.library.v1.DeleteShelfRequest.google.protobuf.Empty"#Ç”‰ì*/v1/{name=shelves/*}⁄Anameö
+MergeShelves..google.example.library.v1.MergeShelvesRequest .google.example.library.v1.Shelf"8Ç”‰ì"/v1/{name=shelves/*}:merge:*⁄Aname,other_shelfï
 
-CreateBook,.google.example.library.v1.CreateBookRequest.google.example.library.v1.Book"4Ç”‰ì""/v1/{name=shelves/*}/books:book⁄A	name,bookÇ
-GetBook).google.example.library.v1.GetBookRequest.google.example.library.v1.Book"+Ç”‰ì/v1/{name=shelves/*/books/*}⁄Anameë
-	ListBooks+.google.example.library.v1.ListBooksRequest,.google.example.library.v1.ListBooksResponse")Ç”‰ì/v1/{name=shelves/*}/books⁄Anamex
+CreateBook,.google.example.library.v1.CreateBookRequest.google.example.library.v1.Book"8Ç”‰ì$"/v1/{parent=shelves/*}/books:book⁄Aparent,bookÇ
+GetBook).google.example.library.v1.GetBookRequest.google.example.library.v1.Book"+Ç”‰ì/v1/{name=shelves/*/books/*}⁄Anameï
+	ListBooks+.google.example.library.v1.ListBooksRequest,.google.example.library.v1.ListBooksResponse"-Ç”‰ì/v1/{parent=shelves/*}/books⁄Aparent
 
-DeleteBook,.google.example.library.v1.DeleteBookRequest.google.protobuf.Empty"$Ç”‰ì*/v1/{name=shelves/*/books/*}ì
+DeleteBook,.google.example.library.v1.DeleteBookRequest.google.protobuf.Empty"+Ç”‰ì*/v1/{name=shelves/*/books/*}⁄Anameü
 
-UpdateBook,.google.example.library.v1.UpdateBookRequest.google.example.library.v1.Book"6Ç”‰ì)!/v1/{book.name=shelves/*/books/*}:book⁄Abookù
+UpdateBook,.google.example.library.v1.UpdateBookRequest.google.example.library.v1.Book"BÇ”‰ì)2!/v1/{book.name=shelves/*/books/*}:book⁄Abook,update_maskù
 MoveBook*.google.example.library.v1.MoveBookRequest.google.example.library.v1.Book"DÇ”‰ì&"!/v1/{name=shelves/*/books/*}:move:*⁄Aname,other_shelf_name! Alibrary-example.googleapis.comBq
 com.google.example.library.v1BLibraryProtoPZ@google.golang.org/genproto/googleapis/example/library/v1;librarybproto3'
         , true);

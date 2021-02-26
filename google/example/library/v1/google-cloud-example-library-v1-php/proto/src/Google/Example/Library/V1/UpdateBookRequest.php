@@ -18,15 +18,15 @@ class UpdateBookRequest extends \Google\Protobuf\Internal\Message
     /**
      * The name of the book to update.
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     */
-    protected $name = '';
-    /**
-     * The book to update with. The name must match or be empty.
-     *
-     * Generated from protobuf field <code>.google.example.library.v1.Book book = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>.google.example.library.v1.Book book = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $book = null;
+    /**
+     * Required. Mask of fields to update.
+     *
+     * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    protected $update_mask = null;
 
     /**
      * Constructor.
@@ -34,10 +34,10 @@ class UpdateBookRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $name
-     *           The name of the book to update.
      *     @type \Google\Example\Library\V1\Book $book
-     *           The book to update with. The name must match or be empty.
+     *           The name of the book to update.
+     *     @type \Google\Protobuf\FieldMask $update_mask
+     *           Required. Mask of fields to update.
      * }
      */
     public function __construct($data = NULL) {
@@ -48,33 +48,7 @@ class UpdateBookRequest extends \Google\Protobuf\Internal\Message
     /**
      * The name of the book to update.
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * The name of the book to update.
-     *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setName($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->name = $var;
-
-        return $this;
-    }
-
-    /**
-     * The book to update with. The name must match or be empty.
-     *
-     * Generated from protobuf field <code>.google.example.library.v1.Book book = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>.google.example.library.v1.Book book = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Example\Library\V1\Book
      */
     public function getBook()
@@ -93,9 +67,9 @@ class UpdateBookRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The book to update with. The name must match or be empty.
+     * The name of the book to update.
      *
-     * Generated from protobuf field <code>.google.example.library.v1.Book book = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>.google.example.library.v1.Book book = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Example\Library\V1\Book $var
      * @return $this
      */
@@ -103,6 +77,42 @@ class UpdateBookRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Example\Library\V1\Book::class);
         $this->book = $var;
+
+        return $this;
+    }
+
+    /**
+     * Required. Mask of fields to update.
+     *
+     * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return \Google\Protobuf\FieldMask
+     */
+    public function getUpdateMask()
+    {
+        return isset($this->update_mask) ? $this->update_mask : null;
+    }
+
+    public function hasUpdateMask()
+    {
+        return isset($this->update_mask);
+    }
+
+    public function clearUpdateMask()
+    {
+        unset($this->update_mask);
+    }
+
+    /**
+     * Required. Mask of fields to update.
+     *
+     * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @param \Google\Protobuf\FieldMask $var
+     * @return $this
+     */
+    public function setUpdateMask($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\FieldMask::class);
+        $this->update_mask = $var;
 
         return $this;
     }

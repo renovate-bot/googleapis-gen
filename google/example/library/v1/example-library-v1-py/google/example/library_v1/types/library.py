@@ -18,6 +18,9 @@
 import proto  # type: ignore
 
 
+from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
+
+
 __protobuf__ = proto.module(
     package='google.example.library.v1',
     manifest={
@@ -170,28 +173,28 @@ class MergeShelvesRequest(proto.Message):
     Attributes:
         name (str):
             The name of the shelf we're adding books to.
-        other_shelf_name (str):
+        other_shelf (str):
             The name of the shelf we're removing books
             from and deleting.
     """
 
     name = proto.Field(proto.STRING, number=1)
 
-    other_shelf_name = proto.Field(proto.STRING, number=2)
+    other_shelf = proto.Field(proto.STRING, number=2)
 
 
 class CreateBookRequest(proto.Message):
     r"""Request message for LibraryService.CreateBook.
 
     Attributes:
-        name (str):
+        parent (str):
             The name of the shelf in which the book is
             created.
         book (google.example.library_v1.types.Book):
             The book to create.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    parent = proto.Field(proto.STRING, number=1)
 
     book = proto.Field(proto.MESSAGE, number=2,
         message='Book',
@@ -213,7 +216,7 @@ class ListBooksRequest(proto.Message):
     r"""Request message for LibraryService.ListBooks.
 
     Attributes:
-        name (str):
+        parent (str):
             The name of the shelf whose books we'd like
             to list.
         page_size (int):
@@ -227,7 +230,7 @@ class ListBooksRequest(proto.Message):
             returned from the previous call to ``ListBooks`` method.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    parent = proto.Field(proto.STRING, number=1)
 
     page_size = proto.Field(proto.INT32, number=2)
 
@@ -263,17 +266,18 @@ class UpdateBookRequest(proto.Message):
     r"""Request message for LibraryService.UpdateBook.
 
     Attributes:
-        name (str):
-            The name of the book to update.
         book (google.example.library_v1.types.Book):
-            The book to update with. The name must match
-            or be empty.
+            The name of the book to update.
+        update_mask (google.protobuf.field_mask_pb2.FieldMask):
+            Required. Mask of fields to update.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    book = proto.Field(proto.MESSAGE, number=2,
+    book = proto.Field(proto.MESSAGE, number=1,
         message='Book',
+    )
+
+    update_mask = proto.Field(proto.MESSAGE, number=2,
+        message=field_mask.FieldMask,
     )
 
 

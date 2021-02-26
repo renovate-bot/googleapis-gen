@@ -20,7 +20,7 @@ class Book extends \Google\Protobuf\Internal\Message
      * Book names have the form `shelves/{shelf_id}/books/{book_id}`.
      * The name is ignored when creating a book.
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>string name = 1;</code>
      */
     protected $name = '';
     /**
@@ -70,7 +70,7 @@ class Book extends \Google\Protobuf\Internal\Message
      * Book names have the form `shelves/{shelf_id}/books/{book_id}`.
      * The name is ignored when creating a book.
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>string name = 1;</code>
      * @return string
      */
     public function getName()
@@ -83,7 +83,7 @@ class Book extends \Google\Protobuf\Internal\Message
      * Book names have the form `shelves/{shelf_id}/books/{book_id}`.
      * The name is ignored when creating a book.
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>string name = 1;</code>
      * @param string $var
      * @return $this
      */

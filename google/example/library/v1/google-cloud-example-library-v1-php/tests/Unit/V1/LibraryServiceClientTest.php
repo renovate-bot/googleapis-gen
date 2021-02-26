@@ -32,6 +32,7 @@ use Google\Example\Library\V1\ListBooksResponse;
 use Google\Example\Library\V1\ListShelvesResponse;
 use Google\Example\Library\V1\Shelf;
 use Google\Protobuf\Any;
+use Google\Protobuf\FieldMask;
 use Google\Protobuf\GPBEmpty;
 use Google\Rpc\Code;
 use stdClass;
@@ -166,7 +167,7 @@ class LibraryServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $formattedName = $client->shelfName('[SHELF]');
+        $formattedName = $client->shelfName('[SHELF_ID]');
 
         $response = $client->getShelf($formattedName);
         $this->assertEquals($expectedResponse, $response);
@@ -206,7 +207,7 @@ class LibraryServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $formattedName = $client->shelfName('[SHELF]');
+        $formattedName = $client->shelfName('[SHELF_ID]');
 
         try {
             $client->getShelf($formattedName);
@@ -307,7 +308,7 @@ class LibraryServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $formattedName = $client->shelfName('[SHELF]');
+        $formattedName = $client->shelfName('[SHELF_ID]');
 
         $client->deleteShelf($formattedName);
         $actualRequests = $transport->popReceivedCalls();
@@ -346,7 +347,7 @@ class LibraryServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $formattedName = $client->shelfName('[SHELF]');
+        $formattedName = $client->shelfName('[SHELF_ID]');
 
         try {
             $client->deleteShelf($formattedName);
@@ -381,10 +382,10 @@ class LibraryServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $formattedName = $client->shelfName('[SHELF]');
-        $otherShelfName = 'otherShelfName145746959';
+        $formattedName = $client->shelfName('[SHELF_ID]');
+        $formattedOtherShelf = $client->shelfName('[SHELF_ID]');
 
-        $response = $client->mergeShelves($formattedName, $otherShelfName);
+        $response = $client->mergeShelves($formattedName, $formattedOtherShelf);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -395,9 +396,9 @@ class LibraryServiceClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getName();
 
         $this->assertProtobufEquals($formattedName, $actualValue);
-        $actualValue = $actualRequestObject->getOtherShelfName();
+        $actualValue = $actualRequestObject->getOtherShelf();
 
-        $this->assertProtobufEquals($otherShelfName, $actualValue);
+        $this->assertProtobufEquals($formattedOtherShelf, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -425,11 +426,11 @@ class LibraryServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $formattedName = $client->shelfName('[SHELF]');
-        $otherShelfName = 'otherShelfName145746959';
+        $formattedName = $client->shelfName('[SHELF_ID]');
+        $formattedOtherShelf = $client->shelfName('[SHELF_ID]');
 
         try {
-            $client->mergeShelves($formattedName, $otherShelfName);
+            $client->mergeShelves($formattedName, $formattedOtherShelf);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -453,22 +454,22 @@ class LibraryServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
 
         // Mock response
-        $name2 = 'name2-1052831874';
+        $name = 'name3373707';
         $author = 'author-1406328437';
         $title = 'title110371416';
         $read = true;
         $expectedResponse = new Book();
-        $expectedResponse->setName($name2);
+        $expectedResponse->setName($name);
         $expectedResponse->setAuthor($author);
         $expectedResponse->setTitle($title);
         $expectedResponse->setRead($read);
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $formattedName = $client->shelfName('[SHELF]');
+        $formattedParent = $client->shelfName('[SHELF_ID]');
         $book = new Book();
 
-        $response = $client->createBook($formattedName, $book);
+        $response = $client->createBook($formattedParent, $book);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -476,9 +477,9 @@ class LibraryServiceClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.example.library.v1.LibraryService/CreateBook', $actualFuncCall);
 
-        $actualValue = $actualRequestObject->getName();
+        $actualValue = $actualRequestObject->getParent();
 
-        $this->assertProtobufEquals($formattedName, $actualValue);
+        $this->assertProtobufEquals($formattedParent, $actualValue);
         $actualValue = $actualRequestObject->getBook();
 
         $this->assertProtobufEquals($book, $actualValue);
@@ -509,11 +510,11 @@ class LibraryServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $formattedName = $client->shelfName('[SHELF]');
+        $formattedParent = $client->shelfName('[SHELF_ID]');
         $book = new Book();
 
         try {
-            $client->createBook($formattedName, $book);
+            $client->createBook($formattedParent, $book);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -625,9 +626,9 @@ class LibraryServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $formattedName = $client->shelfName('[SHELF]');
+        $formattedParent = $client->shelfName('[SHELF_ID]');
 
-        $response = $client->listBooks($formattedName);
+        $response = $client->listBooks($formattedParent);
         $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
         $resources = iterator_to_array($response->iterateAllElements());
         $this->assertSame(1, count($resources));
@@ -639,9 +640,9 @@ class LibraryServiceClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.example.library.v1.LibraryService/ListBooks', $actualFuncCall);
 
-        $actualValue = $actualRequestObject->getName();
+        $actualValue = $actualRequestObject->getParent();
 
-        $this->assertProtobufEquals($formattedName, $actualValue);
+        $this->assertProtobufEquals($formattedParent, $actualValue);
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -668,10 +669,10 @@ class LibraryServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $formattedName = $client->shelfName('[SHELF]');
+        $formattedParent = $client->shelfName('[SHELF_ID]');
 
         try {
-            $client->listBooks($formattedName);
+            $client->listBooks($formattedParent);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -765,22 +766,22 @@ class LibraryServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
 
         // Mock response
-        $name2 = 'name2-1052831874';
+        $name = 'name3373707';
         $author = 'author-1406328437';
         $title = 'title110371416';
         $read = true;
         $expectedResponse = new Book();
-        $expectedResponse->setName($name2);
+        $expectedResponse->setName($name);
         $expectedResponse->setAuthor($author);
         $expectedResponse->setTitle($title);
         $expectedResponse->setRead($read);
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $name = 'name3373707';
         $book = new Book();
+        $updateMask = new FieldMask();
 
-        $response = $client->updateBook($name, $book);
+        $response = $client->updateBook($book, $updateMask);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -788,12 +789,12 @@ class LibraryServiceClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.example.library.v1.LibraryService/UpdateBook', $actualFuncCall);
 
-        $actualValue = $actualRequestObject->getName();
-
-        $this->assertProtobufEquals($name, $actualValue);
         $actualValue = $actualRequestObject->getBook();
 
         $this->assertProtobufEquals($book, $actualValue);
+        $actualValue = $actualRequestObject->getUpdateMask();
+
+        $this->assertProtobufEquals($updateMask, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -821,11 +822,11 @@ class LibraryServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $name = 'name3373707';
         $book = new Book();
+        $updateMask = new FieldMask();
 
         try {
-            $client->updateBook($name, $book);
+            $client->updateBook($book, $updateMask);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -862,9 +863,9 @@ class LibraryServiceClientTest extends GeneratedTest
 
         // Mock request
         $formattedName = $client->bookName('[SHELF]', '[BOOK]');
-        $otherShelfName = 'otherShelfName145746959';
+        $formattedOtherShelfName = $client->shelfName('[SHELF_ID]');
 
-        $response = $client->moveBook($formattedName, $otherShelfName);
+        $response = $client->moveBook($formattedName, $formattedOtherShelfName);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -877,7 +878,7 @@ class LibraryServiceClientTest extends GeneratedTest
         $this->assertProtobufEquals($formattedName, $actualValue);
         $actualValue = $actualRequestObject->getOtherShelfName();
 
-        $this->assertProtobufEquals($otherShelfName, $actualValue);
+        $this->assertProtobufEquals($formattedOtherShelfName, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -906,10 +907,10 @@ class LibraryServiceClientTest extends GeneratedTest
 
         // Mock request
         $formattedName = $client->bookName('[SHELF]', '[BOOK]');
-        $otherShelfName = 'otherShelfName145746959';
+        $formattedOtherShelfName = $client->shelfName('[SHELF_ID]');
 
         try {
-            $client->moveBook($formattedName, $otherShelfName);
+            $client->moveBook($formattedName, $formattedOtherShelfName);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

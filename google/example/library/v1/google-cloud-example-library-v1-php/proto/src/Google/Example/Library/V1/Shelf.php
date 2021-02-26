@@ -20,7 +20,7 @@ class Shelf extends \Google\Protobuf\Internal\Message
      * Shelf names have the form `shelves/{shelf_id}`.
      * The name is ignored when creating a shelf.
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>string name = 1;</code>
      */
     protected $name = '';
     /**
@@ -54,7 +54,7 @@ class Shelf extends \Google\Protobuf\Internal\Message
      * Shelf names have the form `shelves/{shelf_id}`.
      * The name is ignored when creating a shelf.
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>string name = 1;</code>
      * @return string
      */
     public function getName()
@@ -67,7 +67,7 @@ class Shelf extends \Google\Protobuf\Internal\Message
      * Shelf names have the form `shelves/{shelf_id}`.
      * The name is ignored when creating a shelf.
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>string name = 1;</code>
      * @param string $var
      * @return $this
      */

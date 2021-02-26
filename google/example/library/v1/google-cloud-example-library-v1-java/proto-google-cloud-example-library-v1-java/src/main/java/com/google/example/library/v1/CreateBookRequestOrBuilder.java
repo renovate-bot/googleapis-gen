@@ -12,20 +12,20 @@ public interface CreateBookRequestOrBuilder extends
    * The name of the shelf in which the book is created.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The name.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
-  java.lang.String getName();
+  java.lang.String getParent();
   /**
    * <pre>
    * The name of the shelf in which the book is created.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The bytes for name.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
-      getNameBytes();
+      getParentBytes();
 
   /**
    * <pre>

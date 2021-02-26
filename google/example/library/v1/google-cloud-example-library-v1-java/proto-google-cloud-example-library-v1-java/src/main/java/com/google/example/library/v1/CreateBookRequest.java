@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreateBookRequest() {
-    name_ = "";
+    parent_ = "";
   }
 
   @java.lang.Override
@@ -56,7 +56,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
+            parent_ = s;
             break;
           }
           case 18: {
@@ -104,26 +104,26 @@ private static final long serialVersionUID = 0L;
             com.google.example.library.v1.CreateBookRequest.class, com.google.example.library.v1.CreateBookRequest.Builder.class);
   }
 
-  public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+  public static final int PARENT_FIELD_NUMBER = 1;
+  private volatile java.lang.Object parent_;
   /**
    * <pre>
    * The name of the shelf in which the book is created.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The name.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The parent.
    */
   @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
+  public java.lang.String getParent() {
+    java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      name_ = s;
+      parent_ = s;
       return s;
     }
   }
@@ -132,18 +132,18 @@ private static final long serialVersionUID = 0L;
    * The name of the shelf in which the book is created.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The bytes for name.
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for parent.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
+      getParentBytes() {
+    java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      name_ = b;
+      parent_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -202,8 +202,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    if (!getParentBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
     if (book_ != null) {
       output.writeMessage(2, getBook());
@@ -217,8 +217,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    if (!getParentBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     if (book_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -239,8 +239,8 @@ private static final long serialVersionUID = 0L;
     }
     com.google.example.library.v1.CreateBookRequest other = (com.google.example.library.v1.CreateBookRequest) obj;
 
-    if (!getName()
-        .equals(other.getName())) return false;
+    if (!getParent()
+        .equals(other.getParent())) return false;
     if (hasBook() != other.hasBook()) return false;
     if (hasBook()) {
       if (!getBook()
@@ -257,8 +257,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + PARENT_FIELD_NUMBER;
+    hash = (53 * hash) + getParent().hashCode();
     if (hasBook()) {
       hash = (37 * hash) + BOOK_FIELD_NUMBER;
       hash = (53 * hash) + getBook().hashCode();
@@ -400,7 +400,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      name_ = "";
+      parent_ = "";
 
       if (bookBuilder_ == null) {
         book_ = null;
@@ -434,7 +434,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.example.library.v1.CreateBookRequest buildPartial() {
       com.google.example.library.v1.CreateBookRequest result = new com.google.example.library.v1.CreateBookRequest(this);
-      result.name_ = name_;
+      result.parent_ = parent_;
       if (bookBuilder_ == null) {
         result.book_ = book_;
       } else {
@@ -488,8 +488,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.google.example.library.v1.CreateBookRequest other) {
       if (other == com.google.example.library.v1.CreateBookRequest.getDefaultInstance()) return this;
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
+      if (!other.getParent().isEmpty()) {
+        parent_ = other.parent_;
         onChanged();
       }
       if (other.hasBook()) {
@@ -524,22 +524,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object name_ = "";
+    private java.lang.Object parent_ = "";
     /**
      * <pre>
      * The name of the shelf in which the book is created.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @return The name.
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The parent.
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getParent() {
+      java.lang.Object ref = parent_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        parent_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -550,17 +550,17 @@ private static final long serialVersionUID = 0L;
      * The name of the shelf in which the book is created.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @return The bytes for name.
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
+        getParentBytes() {
+      java.lang.Object ref = parent_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name_ = b;
+        parent_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -571,17 +571,17 @@ private static final long serialVersionUID = 0L;
      * The name of the shelf in which the book is created.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @param value The name to set.
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The parent to set.
      * @return This builder for chaining.
      */
-    public Builder setName(
+    public Builder setParent(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      name_ = value;
+      parent_ = value;
       onChanged();
       return this;
     }
@@ -590,12 +590,12 @@ private static final long serialVersionUID = 0L;
      * The name of the shelf in which the book is created.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder clearName() {
+    public Builder clearParent() {
       
-      name_ = getDefaultInstance().getName();
+      parent_ = getDefaultInstance().getParent();
       onChanged();
       return this;
     }
@@ -604,18 +604,18 @@ private static final long serialVersionUID = 0L;
      * The name of the shelf in which the book is created.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @param value The bytes for name to set.
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for parent to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(
+    public Builder setParentBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      name_ = value;
+      parent_ = value;
       onChanged();
       return this;
     }

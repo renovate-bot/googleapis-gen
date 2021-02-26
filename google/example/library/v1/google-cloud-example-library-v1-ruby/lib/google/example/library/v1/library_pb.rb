@@ -8,6 +8,7 @@ require 'google/api/client_pb'
 require 'google/api/field_behavior_pb'
 require 'google/api/resource_pb'
 require 'google/protobuf/empty_pb'
+require 'google/protobuf/field_mask_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("google/example/library/v1/library.proto", :syntax => :proto3) do
     add_message "google.example.library.v1.Book" do
@@ -39,17 +40,17 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "google.example.library.v1.MergeShelvesRequest" do
       optional :name, :string, 1
-      optional :other_shelf_name, :string, 2
+      optional :other_shelf, :string, 2
     end
     add_message "google.example.library.v1.CreateBookRequest" do
-      optional :name, :string, 1
+      optional :parent, :string, 1
       optional :book, :message, 2, "google.example.library.v1.Book"
     end
     add_message "google.example.library.v1.GetBookRequest" do
       optional :name, :string, 1
     end
     add_message "google.example.library.v1.ListBooksRequest" do
-      optional :name, :string, 1
+      optional :parent, :string, 1
       optional :page_size, :int32, 2
       optional :page_token, :string, 3
     end
@@ -58,8 +59,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :next_page_token, :string, 2
     end
     add_message "google.example.library.v1.UpdateBookRequest" do
-      optional :name, :string, 1
-      optional :book, :message, 2, "google.example.library.v1.Book"
+      optional :book, :message, 1, "google.example.library.v1.Book"
+      optional :update_mask, :message, 2, "google.protobuf.FieldMask"
     end
     add_message "google.example.library.v1.DeleteBookRequest" do
       optional :name, :string, 1
