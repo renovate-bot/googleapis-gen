@@ -1187,7 +1187,7 @@ public final class CloudChannelServiceGrpc {
      * List of [CloudIdentityCustomerAccount][google.cloud.channel.v1.CloudIdentityCustomerAccount] resources for the domain.
      * List may be empty.
      * Note: in the v1alpha1 version of the API, a NOT_FOUND error is returned if
-     * no [CloudIdentityCustomerAccount][google.cloud.channel.v1.CloudIdentityCustomerAccount] resource match the domain.
+     * no [CloudIdentityCustomerAccount][google.cloud.channel.v1.CloudIdentityCustomerAccount] resources match the domain.
      * </pre>
      */
     public void checkCloudIdentityAccountsExist(com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistRequest request,
@@ -2251,7 +2251,7 @@ public final class CloudChannelServiceGrpc {
      * List of [CloudIdentityCustomerAccount][google.cloud.channel.v1.CloudIdentityCustomerAccount] resources for the domain.
      * List may be empty.
      * Note: in the v1alpha1 version of the API, a NOT_FOUND error is returned if
-     * no [CloudIdentityCustomerAccount][google.cloud.channel.v1.CloudIdentityCustomerAccount] resource match the domain.
+     * no [CloudIdentityCustomerAccount][google.cloud.channel.v1.CloudIdentityCustomerAccount] resources match the domain.
      * </pre>
      */
     public void checkCloudIdentityAccountsExist(com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistRequest request,
@@ -3108,7 +3108,7 @@ public final class CloudChannelServiceGrpc {
      * List of [CloudIdentityCustomerAccount][google.cloud.channel.v1.CloudIdentityCustomerAccount] resources for the domain.
      * List may be empty.
      * Note: in the v1alpha1 version of the API, a NOT_FOUND error is returned if
-     * no [CloudIdentityCustomerAccount][google.cloud.channel.v1.CloudIdentityCustomerAccount] resource match the domain.
+     * no [CloudIdentityCustomerAccount][google.cloud.channel.v1.CloudIdentityCustomerAccount] resources match the domain.
      * </pre>
      */
     public com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistResponse checkCloudIdentityAccountsExist(com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistRequest request) {
@@ -3936,7 +3936,7 @@ public final class CloudChannelServiceGrpc {
      * List of [CloudIdentityCustomerAccount][google.cloud.channel.v1.CloudIdentityCustomerAccount] resources for the domain.
      * List may be empty.
      * Note: in the v1alpha1 version of the API, a NOT_FOUND error is returned if
-     * no [CloudIdentityCustomerAccount][google.cloud.channel.v1.CloudIdentityCustomerAccount] resource match the domain.
+     * no [CloudIdentityCustomerAccount][google.cloud.channel.v1.CloudIdentityCustomerAccount] resources match the domain.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistResponse> checkCloudIdentityAccountsExist(

@@ -276,6 +276,10 @@ class Plan(proto.Message):
             regular pricing goes into effect when trial
             period ends, or if paid service is started
             before the end of the trial period.
+        billing_account (str):
+            Reseller Billing account to charge after an
+            offer transaction. Only present for Google Cloud
+            Platform offers.
     """
 
     payment_plan = proto.Field(proto.ENUM, number=1,
@@ -293,6 +297,8 @@ class Plan(proto.Message):
     trial_period = proto.Field(proto.MESSAGE, number=4,
         message='Period',
     )
+
+    billing_account = proto.Field(proto.STRING, number=5)
 
 
 class PriceByResource(proto.Message):
