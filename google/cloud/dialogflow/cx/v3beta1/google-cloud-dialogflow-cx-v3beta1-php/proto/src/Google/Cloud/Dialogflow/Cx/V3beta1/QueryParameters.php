@@ -68,6 +68,12 @@ class QueryParameters extends \Google\Protobuf\Internal\Message
      */
     protected $parameters = null;
     /**
+     * Whether to disable webhook calls for this request.
+     *
+     * Generated from protobuf field <code>bool disable_webhook = 7;</code>
+     */
+    protected $disable_webhook = false;
+    /**
      * Configures whether sentiment analysis should be performed. If not
      * provided, sentiment analysis is not performed.
      *
@@ -126,6 +132,8 @@ class QueryParameters extends \Google\Protobuf\Internal\Message
      *               -   If parameter's entity type is a composite entity:
      *                   map from composite entity property names to property values
      *               -   Else: parameter value
+     *     @type bool $disable_webhook
+     *           Whether to disable webhook calls for this request.
      *     @type bool $analyze_query_text_sentiment
      *           Configures whether sentiment analysis should be performed. If not
      *           provided, sentiment analysis is not performed.
@@ -345,6 +353,32 @@ class QueryParameters extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
         $this->parameters = $var;
+
+        return $this;
+    }
+
+    /**
+     * Whether to disable webhook calls for this request.
+     *
+     * Generated from protobuf field <code>bool disable_webhook = 7;</code>
+     * @return bool
+     */
+    public function getDisableWebhook()
+    {
+        return $this->disable_webhook;
+    }
+
+    /**
+     * Whether to disable webhook calls for this request.
+     *
+     * Generated from protobuf field <code>bool disable_webhook = 7;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDisableWebhook($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->disable_webhook = $var;
 
         return $this;
     }

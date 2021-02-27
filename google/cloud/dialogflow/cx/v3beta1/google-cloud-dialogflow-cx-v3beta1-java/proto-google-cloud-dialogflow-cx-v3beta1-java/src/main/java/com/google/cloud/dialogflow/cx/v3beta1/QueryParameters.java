@@ -109,6 +109,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 56: {
+
+            disableWebhook_ = input.readBool();
+            break;
+          }
           case 64: {
 
             analyzeQueryTextSentiment_ = input.readBool();
@@ -461,6 +466,21 @@ private static final long serialVersionUID = 0L;
     return getParameters();
   }
 
+  public static final int DISABLE_WEBHOOK_FIELD_NUMBER = 7;
+  private boolean disableWebhook_;
+  /**
+   * <pre>
+   * Whether to disable webhook calls for this request.
+   * </pre>
+   *
+   * <code>bool disable_webhook = 7;</code>
+   * @return The disableWebhook.
+   */
+  @java.lang.Override
+  public boolean getDisableWebhook() {
+    return disableWebhook_;
+  }
+
   public static final int ANALYZE_QUERY_TEXT_SENTIMENT_FIELD_NUMBER = 8;
   private boolean analyzeQueryTextSentiment_;
   /**
@@ -631,6 +651,9 @@ private static final long serialVersionUID = 0L;
     if (parameters_ != null) {
       output.writeMessage(5, getParameters());
     }
+    if (disableWebhook_ != false) {
+      output.writeBool(7, disableWebhook_);
+    }
     if (analyzeQueryTextSentiment_ != false) {
       output.writeBool(8, analyzeQueryTextSentiment_);
     }
@@ -667,6 +690,10 @@ private static final long serialVersionUID = 0L;
     if (parameters_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getParameters());
+    }
+    if (disableWebhook_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(7, disableWebhook_);
     }
     if (analyzeQueryTextSentiment_ != false) {
       size += com.google.protobuf.CodedOutputStream
@@ -716,6 +743,8 @@ private static final long serialVersionUID = 0L;
       if (!getParameters()
           .equals(other.getParameters())) return false;
     }
+    if (getDisableWebhook()
+        != other.getDisableWebhook()) return false;
     if (getAnalyzeQueryTextSentiment()
         != other.getAnalyzeQueryTextSentiment()) return false;
     if (!internalGetWebhookHeaders().equals(
@@ -749,6 +778,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
       hash = (53 * hash) + getParameters().hashCode();
     }
+    hash = (37 * hash) + DISABLE_WEBHOOK_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getDisableWebhook());
     hash = (37 * hash) + ANALYZE_QUERY_TEXT_SENTIMENT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getAnalyzeQueryTextSentiment());
@@ -942,6 +974,8 @@ private static final long serialVersionUID = 0L;
         parameters_ = null;
         parametersBuilder_ = null;
       }
+      disableWebhook_ = false;
+
       analyzeQueryTextSentiment_ = false;
 
       internalGetMutableWebhookHeaders().clear();
@@ -997,6 +1031,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.parameters_ = parametersBuilder_.build();
       }
+      result.disableWebhook_ = disableWebhook_;
       result.analyzeQueryTextSentiment_ = analyzeQueryTextSentiment_;
       result.webhookHeaders_ = internalGetWebhookHeaders();
       result.webhookHeaders_.makeImmutable();
@@ -1086,6 +1121,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasParameters()) {
         mergeParameters(other.getParameters());
+      }
+      if (other.getDisableWebhook() != false) {
+        setDisableWebhook(other.getDisableWebhook());
       }
       if (other.getAnalyzeQueryTextSentiment() != false) {
         setAnalyzeQueryTextSentiment(other.getAnalyzeQueryTextSentiment());
@@ -2197,6 +2235,49 @@ private static final long serialVersionUID = 0L;
         parameters_ = null;
       }
       return parametersBuilder_;
+    }
+
+    private boolean disableWebhook_ ;
+    /**
+     * <pre>
+     * Whether to disable webhook calls for this request.
+     * </pre>
+     *
+     * <code>bool disable_webhook = 7;</code>
+     * @return The disableWebhook.
+     */
+    @java.lang.Override
+    public boolean getDisableWebhook() {
+      return disableWebhook_;
+    }
+    /**
+     * <pre>
+     * Whether to disable webhook calls for this request.
+     * </pre>
+     *
+     * <code>bool disable_webhook = 7;</code>
+     * @param value The disableWebhook to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisableWebhook(boolean value) {
+      
+      disableWebhook_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to disable webhook calls for this request.
+     * </pre>
+     *
+     * <code>bool disable_webhook = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDisableWebhook() {
+      
+      disableWebhook_ = false;
+      onChanged();
+      return this;
     }
 
     private boolean analyzeQueryTextSentiment_ ;

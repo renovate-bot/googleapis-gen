@@ -284,6 +284,9 @@ module Google
           #         * If parameter's entity type is a composite entity:
           #           map from composite entity property names to property values
           #         * Else: parameter value
+          # @!attribute [rw] disable_webhook
+          #   @return [true, false]
+          #     Whether to disable webhook calls for this request.
           # @!attribute [rw] analyze_query_text_sentiment
           #   @return [true, false]
           #     Configures whether sentiment analysis should be performed. If not

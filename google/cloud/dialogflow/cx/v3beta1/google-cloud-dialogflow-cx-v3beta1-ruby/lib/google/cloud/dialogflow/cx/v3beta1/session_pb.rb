@@ -63,6 +63,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       repeated :session_entity_types, :message, 3, "google.cloud.dialogflow.cx.v3beta1.SessionEntityType"
       optional :payload, :message, 4, "google.protobuf.Struct"
       optional :parameters, :message, 5, "google.protobuf.Struct"
+      optional :disable_webhook, :bool, 7
       optional :analyze_query_text_sentiment, :bool, 8
       map :webhook_headers, :string, :string, 10
     end
