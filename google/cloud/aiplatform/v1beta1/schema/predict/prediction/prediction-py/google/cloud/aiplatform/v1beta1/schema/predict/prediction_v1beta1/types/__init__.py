@@ -36,9 +36,6 @@ from .text_extraction import (
 from .text_sentiment import (
     TextSentimentPredictionResult,
 )
-from .time_series_forecasting import (
-    TimeSeriesForecastingPredictionResult,
-)
 from .video_action_recognition import (
     VideoActionRecognitionPredictionResult,
 )
@@ -57,7 +54,6 @@ __all__ = (
     'TabularRegressionPredictionResult',
     'TextExtractionPredictionResult',
     'TextSentimentPredictionResult',
-    'TimeSeriesForecastingPredictionResult',
     'VideoActionRecognitionPredictionResult',
     'VideoClassificationPredictionResult',
     'VideoObjectTrackingPredictionResult',

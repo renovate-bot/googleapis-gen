@@ -22,7 +22,6 @@ from google.cloud.aiplatform.v1beta1.schema.predict.prediction_v1beta1.types.tab
 from google.cloud.aiplatform.v1beta1.schema.predict.prediction_v1beta1.types.tabular_regression import TabularRegressionPredictionResult
 from google.cloud.aiplatform.v1beta1.schema.predict.prediction_v1beta1.types.text_extraction import TextExtractionPredictionResult
 from google.cloud.aiplatform.v1beta1.schema.predict.prediction_v1beta1.types.text_sentiment import TextSentimentPredictionResult
-from google.cloud.aiplatform.v1beta1.schema.predict.prediction_v1beta1.types.time_series_forecasting import TimeSeriesForecastingPredictionResult
 from google.cloud.aiplatform.v1beta1.schema.predict.prediction_v1beta1.types.video_action_recognition import VideoActionRecognitionPredictionResult
 from google.cloud.aiplatform.v1beta1.schema.predict.prediction_v1beta1.types.video_classification import VideoClassificationPredictionResult
 from google.cloud.aiplatform.v1beta1.schema.predict.prediction_v1beta1.types.video_object_tracking import VideoObjectTrackingPredictionResult
@@ -35,7 +34,6 @@ __all__ = (
     'TabularRegressionPredictionResult',
     'TextExtractionPredictionResult',
     'TextSentimentPredictionResult',
-    'TimeSeriesForecastingPredictionResult',
     'VideoActionRecognitionPredictionResult',
     'VideoClassificationPredictionResult',
     'VideoObjectTrackingPredictionResult',
