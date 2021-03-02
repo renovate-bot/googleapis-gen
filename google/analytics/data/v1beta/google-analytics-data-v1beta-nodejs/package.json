@@ -1,5 +1,5 @@
 {
-  "name": "@google-cloud/data",
+  "name": "@google-analytics/data",
   "version": "0.1.0",
   "description": "Data client for Node.js",
   "repository": "googleapis/nodejs-data",
