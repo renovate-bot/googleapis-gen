@@ -221,6 +221,16 @@ public interface QueryParametersOrBuilder extends
 
   /**
    * <pre>
+   * Whether to disable webhook calls for this request.
+   * </pre>
+   *
+   * <code>bool disable_webhook = 7;</code>
+   * @return The disableWebhook.
+   */
+  boolean getDisableWebhook();
+
+  /**
+   * <pre>
    * Configures whether sentiment analysis should be performed. If not
    * provided, sentiment analysis is not performed.
    * </pre>
