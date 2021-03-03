@@ -188,8 +188,6 @@ type Topic struct {
 	// The expected format is `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
 	KmsKeyName string `protobuf:"bytes,5,opt,name=kms_key_name,json=kmsKeyName,proto3" json:"kms_key_name,omitempty"`
 	// Settings for validating messages published against a schema.
-	//
-	// EXPERIMENTAL: Schema support is in development and may not work yet.
 	SchemaSettings *SchemaSettings `protobuf:"bytes,6,opt,name=schema_settings,json=schemaSettings,proto3" json:"schema_settings,omitempty"`
 	// Reserved for future use. This field is set only in responses from the
 	// server; it is ignored if it is set in any requests.

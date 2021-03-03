@@ -16,6 +16,9 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
+ * <pre>
+ * Service for doing schema-related operations.
+ * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
@@ -258,6 +261,9 @@ public final class SchemaServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Service for doing schema-related operations.
+   * </pre>
    */
   public static abstract class SchemaServiceImplBase implements io.grpc.BindableService {
 
@@ -370,6 +376,9 @@ public final class SchemaServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Service for doing schema-related operations.
+   * </pre>
    */
   public static final class SchemaServiceStub extends io.grpc.stub.AbstractAsyncStub<SchemaServiceStub> {
     private SchemaServiceStub(
@@ -451,6 +460,9 @@ public final class SchemaServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Service for doing schema-related operations.
+   * </pre>
    */
   public static final class SchemaServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<SchemaServiceBlockingStub> {
     private SchemaServiceBlockingStub(
@@ -526,6 +538,9 @@ public final class SchemaServiceGrpc {
   }
 
   /**
+   * <pre>
+   * Service for doing schema-related operations.
+   * </pre>
    */
   public static final class SchemaServiceFutureStub extends io.grpc.stub.AbstractFutureStub<SchemaServiceFutureStub> {
     private SchemaServiceFutureStub(
