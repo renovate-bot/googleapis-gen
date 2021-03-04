@@ -22,7 +22,7 @@ class Webhook
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-§
+Ã
 
 -google/cloud/dialogflow/v2beta1/webhook.protogoogle.cloud.dialogflow.v2beta1,google/cloud/dialogflow/v2beta1/intent.proto-google/cloud/dialogflow/v2beta1/session.proto9google/cloud/dialogflow/v2beta1/session_entity_type.protogoogle/protobuf/struct.protogoogle/api/annotations.proto"±
 WebhookRequest
@@ -30,14 +30,15 @@ class Webhook
 response_id (	B
 query_result (2,.google.cloud.dialogflow.v2beta1.QueryResultO
 alternative_query_results (2,.google.cloud.dialogflow.v2beta1.QueryResultd
-original_detect_intent_request (2<.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest"­
+original_detect_intent_request (2<.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest"É
 WebhookResponse
 fulfillment_text (	M
 fulfillment_messages (2/.google.cloud.dialogflow.v2beta1.Intent.Message
 source (	(
 payload (2.google.protobuf.StructA
 output_contexts (2(.google.cloud.dialogflow.v2beta1.ContextI
-followup_event_input (2+.google.cloud.dialogflow.v2beta1.EventInput
+followup_event_input (2+.google.cloud.dialogflow.v2beta1.EventInput
+live_agent_handoff (
 end_interaction (P
 session_entity_types
  (22.google.cloud.dialogflow.v2beta1.SessionEntityType"h

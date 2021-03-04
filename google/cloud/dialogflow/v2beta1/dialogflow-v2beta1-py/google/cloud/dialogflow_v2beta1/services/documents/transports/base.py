@@ -123,6 +123,11 @@ class DocumentsTransport(abc.ABC):
                 default_timeout=None,
                 client_info=client_info,
             ),
+            self.import_documents: gapic_v1.method.wrap_method(
+                self.import_documents,
+                default_timeout=None,
+                client_info=client_info,
+            ),
             self.delete_document: gapic_v1.method.wrap_method(
                 self.delete_document,
                 default_timeout=None,
@@ -167,6 +172,15 @@ class DocumentsTransport(abc.ABC):
     @property
     def create_document(self) -> typing.Callable[
             [gcd_document.CreateDocumentRequest],
+            typing.Union[
+                operations.Operation,
+                typing.Awaitable[operations.Operation]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def import_documents(self) -> typing.Callable[
+            [document.ImportDocumentsRequest],
             typing.Union[
                 operations.Operation,
                 typing.Awaitable[operations.Operation]

@@ -16,6 +16,15 @@ module Google
   module Cloud
     module Dialogflow
       module V2beta1
+        # Google Cloud Storage locations for the inputs.
+        # @!attribute [rw] uris
+        #   @return [Array<String>]
+        #     Required. Google Cloud Storage URIs for the inputs. A URI is of the
+        #     form:
+        #       gs://bucket/object-prefix-or-name
+        #     Whether a prefix or name is used depends on the use case.
+        class GcsSources; end
+
         # Google Cloud Storage location for single input.
         # @!attribute [rw] uri
         #   @return [String]

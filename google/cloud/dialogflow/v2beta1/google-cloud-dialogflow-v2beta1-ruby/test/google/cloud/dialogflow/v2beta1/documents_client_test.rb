@@ -353,6 +353,124 @@ describe Google::Cloud::Dialogflow::V2beta1::DocumentsClient do
     end
   end
 
+  describe 'import_documents' do
+    custom_error = CustomTestError_v2beta1.new "Custom test error for Google::Cloud::Dialogflow::V2beta1::DocumentsClient#import_documents."
+
+    it 'invokes import_documents without error' do
+      # Create request parameters
+      parent = ''
+      document_template = {}
+
+      # Create expected grpc response
+      expected_response = {}
+      expected_response = Google::Gax::to_proto(expected_response, Google::Cloud::Dialogflow::V2beta1::ImportDocumentsResponse)
+      result = Google::Protobuf::Any.new
+      result.pack(expected_response)
+      operation = Google::Longrunning::Operation.new(
+        name: 'operations/import_documents_test',
+        done: true,
+        response: result
+      )
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Cloud::Dialogflow::V2beta1::ImportDocumentsRequest, request)
+        assert_equal(parent, request.parent)
+        assert_equal(Google::Gax::to_proto(document_template, Google::Cloud::Dialogflow::V2beta1::ImportDocumentTemplate), request.document_template)
+        OpenStruct.new(execute: operation)
+      end
+      mock_stub = MockGrpcClientStub_v2beta1.new(:import_documents, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockDocumentsCredentials_v2beta1.new("import_documents")
+
+      Google::Cloud::Dialogflow::V2beta1::Documents::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Dialogflow::V2beta1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Dialogflow::Documents.new(version: :v2beta1)
+
+          # Call method
+          response = client.import_documents(parent, document_template)
+
+          # Verify the response
+          assert_equal(expected_response, response.response)
+        end
+      end
+    end
+
+    it 'invokes import_documents and returns an operation error.' do
+      # Create request parameters
+      parent = ''
+      document_template = {}
+
+      # Create expected grpc response
+      operation_error = Google::Rpc::Status.new(
+        message: 'Operation error for Google::Cloud::Dialogflow::V2beta1::DocumentsClient#import_documents.'
+      )
+      operation = Google::Longrunning::Operation.new(
+        name: 'operations/import_documents_test',
+        done: true,
+        error: operation_error
+      )
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Cloud::Dialogflow::V2beta1::ImportDocumentsRequest, request)
+        assert_equal(parent, request.parent)
+        assert_equal(Google::Gax::to_proto(document_template, Google::Cloud::Dialogflow::V2beta1::ImportDocumentTemplate), request.document_template)
+        OpenStruct.new(execute: operation)
+      end
+      mock_stub = MockGrpcClientStub_v2beta1.new(:import_documents, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockDocumentsCredentials_v2beta1.new("import_documents")
+
+      Google::Cloud::Dialogflow::V2beta1::Documents::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Dialogflow::V2beta1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Dialogflow::Documents.new(version: :v2beta1)
+
+          # Call method
+          response = client.import_documents(parent, document_template)
+
+          # Verify the response
+          assert(response.error?)
+          assert_equal(operation_error, response.error)
+        end
+      end
+    end
+
+    it 'invokes import_documents with error' do
+      # Create request parameters
+      parent = ''
+      document_template = {}
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Cloud::Dialogflow::V2beta1::ImportDocumentsRequest, request)
+        assert_equal(parent, request.parent)
+        assert_equal(Google::Gax::to_proto(document_template, Google::Cloud::Dialogflow::V2beta1::ImportDocumentTemplate), request.document_template)
+        raise custom_error
+      end
+      mock_stub = MockGrpcClientStub_v2beta1.new(:import_documents, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockDocumentsCredentials_v2beta1.new("import_documents")
+
+      Google::Cloud::Dialogflow::V2beta1::Documents::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Dialogflow::V2beta1::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Dialogflow::Documents.new(version: :v2beta1)
+
+          # Call method
+          err = assert_raises Google::Gax::GaxError, CustomTestError_v2beta1 do
+            client.import_documents(parent, document_template)
+          end
+
+          # Verify the GaxError wrapped the custom error that was raised.
+          assert_match(custom_error.message, err.message)
+        end
+      end
+    end
+  end
+
   describe 'delete_document' do
     custom_error = CustomTestError_v2beta1.new "Custom test error for Google::Cloud::Dialogflow::V2beta1::DocumentsClient#delete_document."
 

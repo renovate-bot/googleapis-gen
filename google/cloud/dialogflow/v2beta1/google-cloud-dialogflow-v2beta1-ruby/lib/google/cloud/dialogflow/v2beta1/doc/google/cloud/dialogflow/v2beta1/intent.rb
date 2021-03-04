@@ -73,6 +73,12 @@ module Google
         #     Note: If `ml_disabled` setting is set to true, then this intent is not
         #     taken into account during inference in `ML ONLY` match mode. Also,
         #     auto-markup in the UI is turned off.
+        # @!attribute [rw] live_agent_handoff
+        #   @return [true, false]
+        #     Optional. Indicates that a live agent should be brought in to handle the
+        #     interaction with the user. In most cases, when you set this flag to true,
+        #     you would also want to set end_interaction to true as well. Default is
+        #     false.
         # @!attribute [rw] end_interaction
         #   @return [true, false]
         #     Optional. Indicates that this intent ends an interaction. Some integrations

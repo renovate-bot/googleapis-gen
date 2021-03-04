@@ -25,6 +25,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :payload, :message, 4, "google.protobuf.Struct"
       repeated :output_contexts, :message, 5, "google.cloud.dialogflow.v2beta1.Context"
       optional :followup_event_input, :message, 6, "google.cloud.dialogflow.v2beta1.EventInput"
+      optional :live_agent_handoff, :bool, 7
       optional :end_interaction, :bool, 8
       repeated :session_entity_types, :message, 10, "google.cloud.dialogflow.v2beta1.SessionEntityType"
     end

@@ -83,6 +83,12 @@ module Google
         #     Output only. The time and status of the latest reload.
         #     This reload may have been triggered automatically or manually
         #     and may not have succeeded.
+        # @!attribute [rw] metadata
+        #   @return [Hash{String => String}]
+        #     Optional. Metadata for the document. The metadata supports arbitrary
+        #     key-value pairs. Suggested use cases include storing a document's title,
+        #     an external URL distinct from the document's content_uri, etc.
+        #     The max size of a `key` or a `value` of the metadata is 1024 bytes.
         class Document
           # The status of a reload attempt.
           # @!attribute [rw] time
@@ -112,6 +118,13 @@ module Google
             # Documents for which unstructured text is extracted and used for
             # question answering.
             EXTRACTIVE_QA = 2
+
+            # The entire document content as a whole can be used for query results.
+            # Only for Contact Center Solutions on Dialogflow.
+            ARTICLE_SUGGESTION = 3
+
+            # The legacy enum for agent-facing smart reply feature.
+            SMART_REPLY = 4
           end
         end
 
@@ -185,6 +198,50 @@ module Google
         #     Whether to import custom metadata from Google Cloud Storage.
         #     Only valid when the document source is Google Cloud Storage URI.
         class CreateDocumentRequest; end
+
+        # Request message for {Google::Cloud::Dialogflow::V2beta1::Documents::ImportDocuments Documents::ImportDocuments}.
+        # @!attribute [rw] parent
+        #   @return [String]
+        #     Required. The knowledge base to import documents into.
+        #     Format: `projects/<Project ID>/locations/<Location
+        #     ID>/knowledgeBases/<Knowledge Base ID>`.
+        # @!attribute [rw] gcs_source
+        #   @return [Google::Cloud::Dialogflow::V2beta1::GcsSources]
+        #     The Google Cloud Storage location for the documents.
+        #     The path can include a wildcard.
+        #
+        #     These URIs may have the forms
+        #     `gs://<bucket-name>/<object-name>`.
+        #     `gs://<bucket-name>/<object-path>/*.<extension>`.
+        # @!attribute [rw] document_template
+        #   @return [Google::Cloud::Dialogflow::V2beta1::ImportDocumentTemplate]
+        #     Required. Document template used for importing all the documents.
+        # @!attribute [rw] import_gcs_custom_metadata
+        #   @return [true, false]
+        #     Whether to import custom metadata from Google Cloud Storage.
+        #     Only valid when the document source is Google Cloud Storage URI.
+        class ImportDocumentsRequest; end
+
+        # The template used for importing documents.
+        # @!attribute [rw] mime_type
+        #   @return [String]
+        #     Required. The MIME type of the document.
+        # @!attribute [rw] knowledge_types
+        #   @return [Array<Google::Cloud::Dialogflow::V2beta1::Document::KnowledgeType>]
+        #     Required. The knowledge type of document content.
+        # @!attribute [rw] metadata
+        #   @return [Hash{String => String}]
+        #     Metadata for the document. The metadata supports arbitrary
+        #     key-value pairs. Suggested use cases include storing a document's title,
+        #     an external URL distinct from the document's content_uri, etc.
+        #     The max size of a `key` or a `value` of the metadata is 1024 bytes.
+        class ImportDocumentTemplate; end
+
+        # Response message for {Google::Cloud::Dialogflow::V2beta1::Documents::ImportDocuments Documents::ImportDocuments}.
+        # @!attribute [rw] warnings
+        #   @return [Array<Google::Rpc::Status>]
+        #     Includes details about skipped documents or any other warnings.
+        class ImportDocumentsResponse; end
 
         # Request message for {Google::Cloud::Dialogflow::V2beta1::Documents::DeleteDocument Documents::DeleteDocument}.
         # @!attribute [rw] name

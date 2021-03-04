@@ -221,6 +221,11 @@ private static final long serialVersionUID = 0L;
             mlDisabled_ = input.readBool();
             break;
           }
+          case 160: {
+
+            liveAgentHandoff_ = input.readBool();
+            break;
+          }
           case 168: {
 
             endInteraction_ = input.readBool();
@@ -56771,6 +56776,24 @@ private static final long serialVersionUID = 0L;
     return mlDisabled_;
   }
 
+  public static final int LIVE_AGENT_HANDOFF_FIELD_NUMBER = 20;
+  private boolean liveAgentHandoff_;
+  /**
+   * <pre>
+   * Optional. Indicates that a live agent should be brought in to handle the
+   * interaction with the user. In most cases, when you set this flag to true,
+   * you would also want to set end_interaction to true as well. Default is
+   * false.
+   * </pre>
+   *
+   * <code>bool live_agent_handoff = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The liveAgentHandoff.
+   */
+  @java.lang.Override
+  public boolean getLiveAgentHandoff() {
+    return liveAgentHandoff_;
+  }
+
   public static final int END_INTERACTION_FIELD_NUMBER = 21;
   private boolean endInteraction_;
   /**
@@ -57590,6 +57613,9 @@ private static final long serialVersionUID = 0L;
     if (mlDisabled_ != false) {
       output.writeBool(19, mlDisabled_);
     }
+    if (liveAgentHandoff_ != false) {
+      output.writeBool(20, liveAgentHandoff_);
+    }
     if (endInteraction_ != false) {
       output.writeBool(21, endInteraction_);
     }
@@ -57689,6 +57715,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(19, mlDisabled_);
     }
+    if (liveAgentHandoff_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(20, liveAgentHandoff_);
+    }
     if (endInteraction_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(21, endInteraction_);
@@ -57721,6 +57751,8 @@ private static final long serialVersionUID = 0L;
         != other.getMlEnabled()) return false;
     if (getMlDisabled()
         != other.getMlDisabled()) return false;
+    if (getLiveAgentHandoff()
+        != other.getLiveAgentHandoff()) return false;
     if (getEndInteraction()
         != other.getEndInteraction()) return false;
     if (!getInputContextNamesList()
@@ -57774,6 +57806,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ML_DISABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getMlDisabled());
+    hash = (37 * hash) + LIVE_AGENT_HANDOFF_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getLiveAgentHandoff());
     hash = (37 * hash) + END_INTERACTION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getEndInteraction());
@@ -57981,6 +58016,8 @@ private static final long serialVersionUID = 0L;
 
       mlDisabled_ = false;
 
+      liveAgentHandoff_ = false;
+
       endInteraction_ = false;
 
       inputContextNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -58061,6 +58098,7 @@ private static final long serialVersionUID = 0L;
       result.isFallback_ = isFallback_;
       result.mlEnabled_ = mlEnabled_;
       result.mlDisabled_ = mlDisabled_;
+      result.liveAgentHandoff_ = liveAgentHandoff_;
       result.endInteraction_ = endInteraction_;
       if (((bitField0_ & 0x00000001) != 0)) {
         inputContextNames_ = inputContextNames_.getUnmodifiableView();
@@ -58196,6 +58234,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getMlDisabled() != false) {
         setMlDisabled(other.getMlDisabled());
+      }
+      if (other.getLiveAgentHandoff() != false) {
+        setLiveAgentHandoff(other.getLiveAgentHandoff());
       }
       if (other.getEndInteraction() != false) {
         setEndInteraction(other.getEndInteraction());
@@ -58921,6 +58962,58 @@ private static final long serialVersionUID = 0L;
     public Builder clearMlDisabled() {
       
       mlDisabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean liveAgentHandoff_ ;
+    /**
+     * <pre>
+     * Optional. Indicates that a live agent should be brought in to handle the
+     * interaction with the user. In most cases, when you set this flag to true,
+     * you would also want to set end_interaction to true as well. Default is
+     * false.
+     * </pre>
+     *
+     * <code>bool live_agent_handoff = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The liveAgentHandoff.
+     */
+    @java.lang.Override
+    public boolean getLiveAgentHandoff() {
+      return liveAgentHandoff_;
+    }
+    /**
+     * <pre>
+     * Optional. Indicates that a live agent should be brought in to handle the
+     * interaction with the user. In most cases, when you set this flag to true,
+     * you would also want to set end_interaction to true as well. Default is
+     * false.
+     * </pre>
+     *
+     * <code>bool live_agent_handoff = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The liveAgentHandoff to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLiveAgentHandoff(boolean value) {
+      
+      liveAgentHandoff_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Indicates that a live agent should be brought in to handle the
+     * interaction with the user. In most cases, when you set this flag to true,
+     * you would also want to set end_interaction to true as well. Default is
+     * false.
+     * </pre>
+     *
+     * <code>bool live_agent_handoff = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLiveAgentHandoff() {
+      
+      liveAgentHandoff_ = false;
       onChanged();
       return this;
     }

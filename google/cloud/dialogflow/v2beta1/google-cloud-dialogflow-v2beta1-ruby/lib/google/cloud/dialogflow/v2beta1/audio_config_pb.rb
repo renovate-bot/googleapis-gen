@@ -30,6 +30,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :model, :string, 7
       optional :model_variant, :enum, 10, "google.cloud.dialogflow.v2beta1.SpeechModelVariant"
       optional :single_utterance, :bool, 8
+      optional :disable_no_speech_recognized_event, :bool, 14
     end
     add_message "google.cloud.dialogflow.v2beta1.VoiceSelectionParams" do
       optional :name, :string, 1
@@ -49,6 +50,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents" do
       repeated :dtmf_events, :enum, 1, "google.cloud.dialogflow.v2beta1.TelephonyDtmf"
+    end
+    add_message "google.cloud.dialogflow.v2beta1.SpeechToTextConfig" do
+      optional :speech_model_variant, :enum, 1, "google.cloud.dialogflow.v2beta1.SpeechModelVariant"
     end
     add_enum "google.cloud.dialogflow.v2beta1.AudioEncoding" do
       value :AUDIO_ENCODING_UNSPECIFIED, 0
@@ -111,6 +115,7 @@ module Google
         SynthesizeSpeechConfig = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig").msgclass
         OutputAudioConfig = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.OutputAudioConfig").msgclass
         TelephonyDtmfEvents = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents").msgclass
+        SpeechToTextConfig = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.SpeechToTextConfig").msgclass
         AudioEncoding = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.AudioEncoding").enummodule
         SpeechModelVariant = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.SpeechModelVariant").enummodule
         SsmlVoiceGender = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.SsmlVoiceGender").enummodule

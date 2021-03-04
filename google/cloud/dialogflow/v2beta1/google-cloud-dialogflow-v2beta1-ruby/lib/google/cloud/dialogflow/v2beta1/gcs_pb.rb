@@ -7,6 +7,9 @@ require 'google/api/field_behavior_pb'
 require 'google/api/annotations_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("google/cloud/dialogflow/v2beta1/gcs.proto", :syntax => :proto3) do
+    add_message "google.cloud.dialogflow.v2beta1.GcsSources" do
+      repeated :uris, :string, 2
+    end
     add_message "google.cloud.dialogflow.v2beta1.GcsSource" do
       optional :uri, :string, 1
     end
@@ -17,6 +20,7 @@ module Google
   module Cloud
     module Dialogflow
       module V2beta1
+        GcsSources = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.GcsSources").msgclass
         GcsSource = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.GcsSource").msgclass
       end
     end

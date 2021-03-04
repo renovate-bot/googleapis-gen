@@ -59,6 +59,30 @@
         }
       }
     },
+    "AnswerRecords":  {
+      "clients":  {
+        "grpc":  {
+          "libraryClient":  "AnswerRecordsClient",
+          "rpcs":  {
+            "GetAnswerRecord":  {
+              "methods":  [
+                "GetAnswerRecord"
+              ]
+            },
+            "ListAnswerRecords":  {
+              "methods":  [
+                "ListAnswerRecords"
+              ]
+            },
+            "UpdateAnswerRecord":  {
+              "methods":  [
+                "UpdateAnswerRecord"
+              ]
+            }
+          }
+        }
+      }
+    },
     "Contexts":  {
       "clients":  {
         "grpc":  {
@@ -98,6 +122,94 @@
         }
       }
     },
+    "ConversationProfiles":  {
+      "clients":  {
+        "grpc":  {
+          "libraryClient":  "ConversationProfilesClient",
+          "rpcs":  {
+            "CreateConversationProfile":  {
+              "methods":  [
+                "CreateConversationProfile"
+              ]
+            },
+            "DeleteConversationProfile":  {
+              "methods":  [
+                "DeleteConversationProfile"
+              ]
+            },
+            "GetConversationProfile":  {
+              "methods":  [
+                "GetConversationProfile"
+              ]
+            },
+            "ListConversationProfiles":  {
+              "methods":  [
+                "ListConversationProfiles"
+              ]
+            },
+            "UpdateConversationProfile":  {
+              "methods":  [
+                "UpdateConversationProfile"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "Conversations":  {
+      "clients":  {
+        "grpc":  {
+          "libraryClient":  "ConversationsClient",
+          "rpcs":  {
+            "BatchCreateMessages":  {
+              "methods":  [
+                "BatchCreateMessages"
+              ]
+            },
+            "CompleteConversation":  {
+              "methods":  [
+                "CompleteConversation"
+              ]
+            },
+            "CreateCallMatcher":  {
+              "methods":  [
+                "CreateCallMatcher"
+              ]
+            },
+            "CreateConversation":  {
+              "methods":  [
+                "CreateConversation"
+              ]
+            },
+            "DeleteCallMatcher":  {
+              "methods":  [
+                "DeleteCallMatcher"
+              ]
+            },
+            "GetConversation":  {
+              "methods":  [
+                "GetConversation"
+              ]
+            },
+            "ListCallMatchers":  {
+              "methods":  [
+                "ListCallMatchers"
+              ]
+            },
+            "ListConversations":  {
+              "methods":  [
+                "ListConversations"
+              ]
+            },
+            "ListMessages":  {
+              "methods":  [
+                "ListMessages"
+              ]
+            }
+          }
+        }
+      }
+    },
     "Documents":  {
       "clients":  {
         "grpc":  {
@@ -116,6 +228,11 @@
             "GetDocument":  {
               "methods":  [
                 "GetDocument"
+              ]
+            },
+            "ImportDocuments":  {
+              "methods":  [
+                "ImportDocuments"
               ]
             },
             "ListDocuments":  {
@@ -282,6 +399,70 @@
             "UpdateKnowledgeBase":  {
               "methods":  [
                 "UpdateKnowledgeBase"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "Participants":  {
+      "clients":  {
+        "grpc":  {
+          "libraryClient":  "ParticipantsClient",
+          "rpcs":  {
+            "AnalyzeContent":  {
+              "methods":  [
+                "AnalyzeContent"
+              ]
+            },
+            "CompileSuggestion":  {
+              "methods":  [
+                "CompileSuggestion"
+              ]
+            },
+            "CreateParticipant":  {
+              "methods":  [
+                "CreateParticipant"
+              ]
+            },
+            "GetParticipant":  {
+              "methods":  [
+                "GetParticipant"
+              ]
+            },
+            "ListParticipants":  {
+              "methods":  [
+                "ListParticipants"
+              ]
+            },
+            "ListSuggestions":  {
+              "methods":  [
+                "ListSuggestions"
+              ]
+            },
+            "StreamingAnalyzeContent":  {
+              "methods":  [
+                "StreamingAnalyzeContent"
+              ]
+            },
+            "SuggestArticles":  {
+              "methods":  [
+                "SuggestArticles"
+              ]
+            },
+            "SuggestFaqAnswers":  {
+              "methods":  [
+                "SuggestFaqAnswers"
+              ]
+            },
+            "SuggestSmartReplies":  {
+              "methods":  [
+                "SuggestSmartReplies"
+              ]
+            },
+            "UpdateParticipant":  {
+              "methods":  [
+                "UpdateParticipant"
               ]
             }
           }

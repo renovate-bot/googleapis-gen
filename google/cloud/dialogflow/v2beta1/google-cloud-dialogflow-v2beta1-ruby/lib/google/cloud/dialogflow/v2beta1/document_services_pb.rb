@@ -48,6 +48,8 @@ module Google
             # Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
             # only use `projects.knowledgeBases.documents`.
             rpc :CreateDocument, ::Google::Cloud::Dialogflow::V2beta1::CreateDocumentRequest, ::Google::Longrunning::Operation
+            # Create documents by importing data from external sources.
+            rpc :ImportDocuments, ::Google::Cloud::Dialogflow::V2beta1::ImportDocumentsRequest, ::Google::Longrunning::Operation
             # Deletes the specified document.
             #
             # Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;

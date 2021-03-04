@@ -24,6 +24,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :is_fallback, :bool, 4
       optional :ml_enabled, :bool, 5
       optional :ml_disabled, :bool, 19
+      optional :live_agent_handoff, :bool, 20
       optional :end_interaction, :bool, 21
       repeated :input_context_names, :string, 7
       repeated :events, :string, 8

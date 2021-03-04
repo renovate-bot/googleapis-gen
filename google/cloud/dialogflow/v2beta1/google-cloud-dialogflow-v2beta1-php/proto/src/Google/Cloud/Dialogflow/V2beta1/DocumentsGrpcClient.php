@@ -87,6 +87,21 @@ class DocumentsGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
+     * Create documents by importing data from external sources.
+     * @param \Google\Cloud\Dialogflow\V2beta1\ImportDocumentsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ImportDocuments(\Google\Cloud\Dialogflow\V2beta1\ImportDocumentsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.dialogflow.v2beta1.Documents/ImportDocuments',
+        $argument,
+        ['\Google\LongRunning\Operation', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Deletes the specified document.
      *
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;

@@ -37,11 +37,26 @@ class KnowledgeType
      * Generated from protobuf enum <code>EXTRACTIVE_QA = 2;</code>
      */
     const EXTRACTIVE_QA = 2;
+    /**
+     * The entire document content as a whole can be used for query results.
+     * Only for Contact Center Solutions on Dialogflow.
+     *
+     * Generated from protobuf enum <code>ARTICLE_SUGGESTION = 3;</code>
+     */
+    const ARTICLE_SUGGESTION = 3;
+    /**
+     * The legacy enum for agent-facing smart reply feature.
+     *
+     * Generated from protobuf enum <code>SMART_REPLY = 4;</code>
+     */
+    const SMART_REPLY = 4;
 
     private static $valueToName = [
         self::KNOWLEDGE_TYPE_UNSPECIFIED => 'KNOWLEDGE_TYPE_UNSPECIFIED',
         self::FAQ => 'FAQ',
         self::EXTRACTIVE_QA => 'EXTRACTIVE_QA',
+        self::ARTICLE_SUGGESTION => 'ARTICLE_SUGGESTION',
+        self::SMART_REPLY => 'SMART_REPLY',
     ];
 
     public static function name($value)

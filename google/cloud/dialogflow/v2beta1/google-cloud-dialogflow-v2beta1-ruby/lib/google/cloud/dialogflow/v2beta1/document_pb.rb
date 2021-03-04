@@ -22,6 +22,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       repeated :knowledge_types, :enum, 4, "google.cloud.dialogflow.v2beta1.Document.KnowledgeType"
       optional :enable_auto_reload, :bool, 11
       optional :latest_reload_status, :message, 12, "google.cloud.dialogflow.v2beta1.Document.ReloadStatus"
+      map :metadata, :string, :string, 7
       oneof :source do
         optional :content_uri, :string, 5
         optional :content, :string, 6
@@ -36,6 +37,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :KNOWLEDGE_TYPE_UNSPECIFIED, 0
       value :FAQ, 1
       value :EXTRACTIVE_QA, 2
+      value :ARTICLE_SUGGESTION, 3
+      value :SMART_REPLY, 4
     end
     add_message "google.cloud.dialogflow.v2beta1.GetDocumentRequest" do
       optional :name, :string, 1
@@ -54,6 +57,22 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :parent, :string, 1
       optional :document, :message, 2, "google.cloud.dialogflow.v2beta1.Document"
       optional :import_gcs_custom_metadata, :bool, 3
+    end
+    add_message "google.cloud.dialogflow.v2beta1.ImportDocumentsRequest" do
+      optional :parent, :string, 1
+      optional :document_template, :message, 3, "google.cloud.dialogflow.v2beta1.ImportDocumentTemplate"
+      optional :import_gcs_custom_metadata, :bool, 4
+      oneof :source do
+        optional :gcs_source, :message, 2, "google.cloud.dialogflow.v2beta1.GcsSources"
+      end
+    end
+    add_message "google.cloud.dialogflow.v2beta1.ImportDocumentTemplate" do
+      optional :mime_type, :string, 1
+      repeated :knowledge_types, :enum, 2, "google.cloud.dialogflow.v2beta1.Document.KnowledgeType"
+      map :metadata, :string, :string, 3
+    end
+    add_message "google.cloud.dialogflow.v2beta1.ImportDocumentsResponse" do
+      repeated :warnings, :message, 1, "google.rpc.Status"
     end
     add_message "google.cloud.dialogflow.v2beta1.DeleteDocumentRequest" do
       optional :name, :string, 1
@@ -92,6 +111,9 @@ module Google
         ListDocumentsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.ListDocumentsRequest").msgclass
         ListDocumentsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.ListDocumentsResponse").msgclass
         CreateDocumentRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.CreateDocumentRequest").msgclass
+        ImportDocumentsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.ImportDocumentsRequest").msgclass
+        ImportDocumentTemplate = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.ImportDocumentTemplate").msgclass
+        ImportDocumentsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.ImportDocumentsResponse").msgclass
         DeleteDocumentRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.DeleteDocumentRequest").msgclass
         UpdateDocumentRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.UpdateDocumentRequest").msgclass
         KnowledgeOperationMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata").msgclass

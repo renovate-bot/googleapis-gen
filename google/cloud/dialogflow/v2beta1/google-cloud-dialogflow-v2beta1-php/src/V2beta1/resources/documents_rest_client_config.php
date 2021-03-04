@@ -69,6 +69,25 @@ return [
                     ],
                 ],
             ],
+            'ImportDocuments' => [
+                'method' => 'post',
+                'uriTemplate' => '/v2beta1/{parent=projects/*/knowledgeBases/*}/documents:import',
+                'body' => '*',
+                'additionalBindings' => [
+                    [
+                        'method' => 'post',
+                        'uriTemplate' => '/v2beta1/{parent=projects/*/locations/*/knowledgeBases/*}/documents:import',
+                        'body' => '*',
+                    ],
+                ],
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
             'DeleteDocument' => [
                 'method' => 'delete',
                 'uriTemplate' => '/v2beta1/{name=projects/*/knowledgeBases/*/documents/*}',

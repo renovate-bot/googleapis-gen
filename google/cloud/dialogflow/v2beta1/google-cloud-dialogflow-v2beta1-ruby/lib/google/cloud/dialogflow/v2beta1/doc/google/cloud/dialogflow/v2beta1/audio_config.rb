@@ -142,6 +142,12 @@ module Google
         #     Note: This setting is relevant only for streaming methods.
         #     Note: When specified, InputAudioConfig.single_utterance takes precedence
         #     over StreamingDetectIntentRequest.single_utterance.
+        # @!attribute [rw] disable_no_speech_recognized_event
+        #   @return [true, false]
+        #     Only used in {Google::Cloud::Dialogflow::V2beta1::Participants::AnalyzeContent Participants::AnalyzeContent} and
+        #     {Google::Cloud::Dialogflow::V2beta1::Participants::StreamingAnalyzeContent Participants::StreamingAnalyzeContent}.
+        #     If `false` and recognition doesn't return any result, trigger
+        #     `NO_SPEECH_RECOGNIZED` event to Dialogflow agent.
         class InputAudioConfig; end
 
         # Description of which voice to use for speech synthesis.
@@ -217,6 +223,15 @@ module Google
         #   @return [Array<Google::Cloud::Dialogflow::V2beta1::TelephonyDtmf>]
         #     A sequence of TelephonyDtmf digits.
         class TelephonyDtmfEvents; end
+
+        # Configures speech transcription for  {Google::Cloud::Dialogflow::V2beta1::ConversationProfile ConversationProfile}.
+        # @!attribute [rw] speech_model_variant
+        #   @return [Google::Cloud::Dialogflow::V2beta1::SpeechModelVariant]
+        #     Optional. The speech model used in speech to text.
+        #     `SPEECH_MODEL_VARIANT_UNSPECIFIED`, `USE_BEST_AVAILABLE` will be treated as
+        #     `USE_ENHANCED`. It can be overridden in {Google::Cloud::Dialogflow::V2beta1::AnalyzeContentRequest AnalyzeContentRequest} and
+        #     {Google::Cloud::Dialogflow::V2beta1::StreamingAnalyzeContentRequest StreamingAnalyzeContentRequest} request.
+        class SpeechToTextConfig; end
 
         # Audio encoding of the audio content sent in the conversational query request.
         # Refer to the

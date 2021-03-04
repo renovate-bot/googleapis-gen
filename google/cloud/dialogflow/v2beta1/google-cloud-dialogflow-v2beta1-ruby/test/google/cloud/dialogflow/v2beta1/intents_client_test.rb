@@ -154,6 +154,7 @@ describe Google::Cloud::Dialogflow::V2beta1::IntentsClient do
       is_fallback = false
       ml_enabled = false
       ml_disabled = true
+      live_agent_handoff = false
       end_interaction = true
       action = "action-1422950858"
       reset_contexts = true
@@ -166,6 +167,7 @@ describe Google::Cloud::Dialogflow::V2beta1::IntentsClient do
         is_fallback: is_fallback,
         ml_enabled: ml_enabled,
         ml_disabled: ml_disabled,
+        live_agent_handoff: live_agent_handoff,
         end_interaction: end_interaction,
         action: action,
         reset_contexts: reset_contexts,
@@ -251,6 +253,7 @@ describe Google::Cloud::Dialogflow::V2beta1::IntentsClient do
       is_fallback = false
       ml_enabled = false
       ml_disabled = true
+      live_agent_handoff = false
       end_interaction = true
       action = "action-1422950858"
       reset_contexts = true
@@ -263,6 +266,7 @@ describe Google::Cloud::Dialogflow::V2beta1::IntentsClient do
         is_fallback: is_fallback,
         ml_enabled: ml_enabled,
         ml_disabled: ml_disabled,
+        live_agent_handoff: live_agent_handoff,
         end_interaction: end_interaction,
         action: action,
         reset_contexts: reset_contexts,
@@ -350,6 +354,7 @@ describe Google::Cloud::Dialogflow::V2beta1::IntentsClient do
       is_fallback = false
       ml_enabled = false
       ml_disabled = true
+      live_agent_handoff = false
       end_interaction = true
       action = "action-1422950858"
       reset_contexts = true
@@ -362,6 +367,7 @@ describe Google::Cloud::Dialogflow::V2beta1::IntentsClient do
         is_fallback: is_fallback,
         ml_enabled: ml_enabled,
         ml_disabled: ml_disabled,
+        live_agent_handoff: live_agent_handoff,
         end_interaction: end_interaction,
         action: action,
         reset_contexts: reset_contexts,

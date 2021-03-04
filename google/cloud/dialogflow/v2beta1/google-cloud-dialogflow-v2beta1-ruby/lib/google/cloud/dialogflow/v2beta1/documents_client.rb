@@ -248,6 +248,14 @@ module Google
                 {'parent' => request.parent}
               end
             )
+            @import_documents = Google::Gax.create_api_call(
+              @documents_stub.method(:import_documents),
+              defaults["import_documents"],
+              exception_transformer: exception_transformer,
+              params_extractor: proc do |request|
+                {'parent' => request.parent}
+              end
+            )
             @delete_document = Google::Gax.create_api_call(
               @documents_stub.method(:delete_document),
               defaults["delete_document"],
@@ -472,6 +480,95 @@ module Google
               @create_document.call(req, options),
               @operations_client,
               Google::Cloud::Dialogflow::V2beta1::Document,
+              Google::Cloud::Dialogflow::V2beta1::KnowledgeOperationMetadata,
+              call_options: options
+            )
+            operation.on_done { |operation| yield(operation) } if block_given?
+            operation
+          end
+
+          # Create documents by importing data from external sources.
+          #
+          # @param parent [String]
+          #   Required. The knowledge base to import documents into.
+          #   Format: `projects/<Project ID>/locations/<Location
+          #   ID>/knowledgeBases/<Knowledge Base ID>`.
+          # @param document_template [Google::Cloud::Dialogflow::V2beta1::ImportDocumentTemplate | Hash]
+          #   Required. Document template used for importing all the documents.
+          #   A hash of the same form as `Google::Cloud::Dialogflow::V2beta1::ImportDocumentTemplate`
+          #   can also be provided.
+          # @param gcs_source [Google::Cloud::Dialogflow::V2beta1::GcsSources | Hash]
+          #   The Google Cloud Storage location for the documents.
+          #   The path can include a wildcard.
+          #
+          #   These URIs may have the forms
+          #   `gs://<bucket-name>/<object-name>`.
+          #   `gs://<bucket-name>/<object-path>/*.<extension>`.
+          #   A hash of the same form as `Google::Cloud::Dialogflow::V2beta1::GcsSources`
+          #   can also be provided.
+          # @param import_gcs_custom_metadata [true, false]
+          #   Whether to import custom metadata from Google Cloud Storage.
+          #   Only valid when the document source is Google Cloud Storage URI.
+          # @param options [Google::Gax::CallOptions]
+          #   Overrides the default settings for this call, e.g, timeout,
+          #   retries, etc.
+          # @return [Google::Gax::Operation]
+          # @raise [Google::Gax::GaxError] if the RPC is aborted.
+          # @example
+          #   require "google/cloud/dialogflow"
+          #
+          #   documents_client = Google::Cloud::Dialogflow::Documents.new(version: :v2beta1)
+          #
+          #   # TODO: Initialize `parent`:
+          #   parent = ''
+          #
+          #   # TODO: Initialize `document_template`:
+          #   document_template = {}
+          #
+          #   # Register a callback during the method call.
+          #   operation = documents_client.import_documents(parent, document_template) do |op|
+          #     raise op.results.message if op.error?
+          #     op_results = op.results
+          #     # Process the results.
+          #
+          #     metadata = op.metadata
+          #     # Process the metadata.
+          #   end
+          #
+          #   # Or use the return value to register a callback.
+          #   operation.on_done do |op|
+          #     raise op.results.message if op.error?
+          #     op_results = op.results
+          #     # Process the results.
+          #
+          #     metadata = op.metadata
+          #     # Process the metadata.
+          #   end
+          #
+          #   # Manually reload the operation.
+          #   operation.reload!
+          #
+          #   # Or block until the operation completes, triggering callbacks on
+          #   # completion.
+          #   operation.wait_until_done!
+
+          def import_documents \
+              parent,
+              document_template,
+              gcs_source: nil,
+              import_gcs_custom_metadata: nil,
+              options: nil
+            req = {
+              parent: parent,
+              document_template: document_template,
+              gcs_source: gcs_source,
+              import_gcs_custom_metadata: import_gcs_custom_metadata
+            }.delete_if { |_, v| v.nil? }
+            req = Google::Gax::to_proto(req, Google::Cloud::Dialogflow::V2beta1::ImportDocumentsRequest)
+            operation = Google::Gax::Operation.new(
+              @import_documents.call(req, options),
+              @operations_client,
+              Google::Cloud::Dialogflow::V2beta1::ImportDocumentsResponse,
               Google::Cloud::Dialogflow::V2beta1::KnowledgeOperationMetadata,
               call_options: options
             )

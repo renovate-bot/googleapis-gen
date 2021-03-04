@@ -170,6 +170,7 @@ class IntentsClientTest extends GeneratedTest
         $isFallback = false;
         $mlEnabled = false;
         $mlDisabled = true;
+        $liveAgentHandoff = false;
         $endInteraction = true;
         $action = 'action-1422950858';
         $resetContexts = true;
@@ -182,6 +183,7 @@ class IntentsClientTest extends GeneratedTest
         $expectedResponse->setIsFallback($isFallback);
         $expectedResponse->setMlEnabled($mlEnabled);
         $expectedResponse->setMlDisabled($mlDisabled);
+        $expectedResponse->setLiveAgentHandoff($liveAgentHandoff);
         $expectedResponse->setEndInteraction($endInteraction);
         $expectedResponse->setAction($action);
         $expectedResponse->setResetContexts($resetContexts);
@@ -263,6 +265,7 @@ class IntentsClientTest extends GeneratedTest
         $isFallback = false;
         $mlEnabled = false;
         $mlDisabled = true;
+        $liveAgentHandoff = false;
         $endInteraction = true;
         $action = 'action-1422950858';
         $resetContexts = true;
@@ -275,6 +278,7 @@ class IntentsClientTest extends GeneratedTest
         $expectedResponse->setIsFallback($isFallback);
         $expectedResponse->setMlEnabled($mlEnabled);
         $expectedResponse->setMlDisabled($mlDisabled);
+        $expectedResponse->setLiveAgentHandoff($liveAgentHandoff);
         $expectedResponse->setEndInteraction($endInteraction);
         $expectedResponse->setAction($action);
         $expectedResponse->setResetContexts($resetContexts);
@@ -361,6 +365,7 @@ class IntentsClientTest extends GeneratedTest
         $isFallback = false;
         $mlEnabled = false;
         $mlDisabled = true;
+        $liveAgentHandoff = false;
         $endInteraction = true;
         $action = 'action-1422950858';
         $resetContexts = true;
@@ -373,6 +378,7 @@ class IntentsClientTest extends GeneratedTest
         $expectedResponse->setIsFallback($isFallback);
         $expectedResponse->setMlEnabled($mlEnabled);
         $expectedResponse->setMlDisabled($mlDisabled);
+        $expectedResponse->setLiveAgentHandoff($liveAgentHandoff);
         $expectedResponse->setEndInteraction($endInteraction);
         $expectedResponse->setAction($action);
         $expectedResponse->setResetContexts($resetContexts);

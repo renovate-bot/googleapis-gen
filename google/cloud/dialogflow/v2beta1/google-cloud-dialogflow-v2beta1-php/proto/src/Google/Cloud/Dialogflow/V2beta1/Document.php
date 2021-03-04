@@ -73,6 +73,15 @@ class Document extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.Document.ReloadStatus latest_reload_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $latest_reload_status = null;
+    /**
+     * Optional. Metadata for the document. The metadata supports arbitrary
+     * key-value pairs. Suggested use cases include storing a document's title,
+     * an external URL distinct from the document's content_uri, etc.
+     * The max size of a `key` or a `value` of the metadata is 1024 bytes.
+     *
+     * Generated from protobuf field <code>map<string, string> metadata = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private $metadata;
     protected $source;
 
     /**
@@ -127,6 +136,11 @@ class Document extends \Google\Protobuf\Internal\Message
      *           Output only. The time and status of the latest reload.
      *           This reload may have been triggered automatically or manually
      *           and may not have succeeded.
+     *     @type array|\Google\Protobuf\Internal\MapField $metadata
+     *           Optional. Metadata for the document. The metadata supports arbitrary
+     *           key-value pairs. Suggested use cases include storing a document's title,
+     *           an external URL distinct from the document's content_uri, etc.
+     *           The max size of a `key` or a `value` of the metadata is 1024 bytes.
      * }
      */
     public function __construct($data = NULL) {
@@ -450,6 +464,38 @@ class Document extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\Dialogflow\V2beta1\Document\ReloadStatus::class);
         $this->latest_reload_status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional. Metadata for the document. The metadata supports arbitrary
+     * key-value pairs. Suggested use cases include storing a document's title,
+     * an external URL distinct from the document's content_uri, etc.
+     * The max size of a `key` or a `value` of the metadata is 1024 bytes.
+     *
+     * Generated from protobuf field <code>map<string, string> metadata = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getMetadata()
+    {
+        return $this->metadata;
+    }
+
+    /**
+     * Optional. Metadata for the document. The metadata supports arbitrary
+     * key-value pairs. Suggested use cases include storing a document's title,
+     * an external URL distinct from the document's content_uri, etc.
+     * The max size of a `key` or a `value` of the metadata is 1024 bytes.
+     *
+     * Generated from protobuf field <code>map<string, string> metadata = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setMetadata($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->metadata = $arr;
 
         return $this;
     }

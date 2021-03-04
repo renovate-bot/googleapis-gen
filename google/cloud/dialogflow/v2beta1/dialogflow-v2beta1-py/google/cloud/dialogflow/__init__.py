@@ -17,8 +17,14 @@
 
 from google.cloud.dialogflow_v2beta1.services.agents.async_client import AgentsAsyncClient
 from google.cloud.dialogflow_v2beta1.services.agents.client import AgentsClient
+from google.cloud.dialogflow_v2beta1.services.answer_records.async_client import AnswerRecordsAsyncClient
+from google.cloud.dialogflow_v2beta1.services.answer_records.client import AnswerRecordsClient
 from google.cloud.dialogflow_v2beta1.services.contexts.async_client import ContextsAsyncClient
 from google.cloud.dialogflow_v2beta1.services.contexts.client import ContextsClient
+from google.cloud.dialogflow_v2beta1.services.conversation_profiles.async_client import ConversationProfilesAsyncClient
+from google.cloud.dialogflow_v2beta1.services.conversation_profiles.client import ConversationProfilesClient
+from google.cloud.dialogflow_v2beta1.services.conversations.async_client import ConversationsAsyncClient
+from google.cloud.dialogflow_v2beta1.services.conversations.client import ConversationsClient
 from google.cloud.dialogflow_v2beta1.services.documents.async_client import DocumentsAsyncClient
 from google.cloud.dialogflow_v2beta1.services.documents.client import DocumentsClient
 from google.cloud.dialogflow_v2beta1.services.entity_types.async_client import EntityTypesAsyncClient
@@ -29,6 +35,8 @@ from google.cloud.dialogflow_v2beta1.services.intents.async_client import Intent
 from google.cloud.dialogflow_v2beta1.services.intents.client import IntentsClient
 from google.cloud.dialogflow_v2beta1.services.knowledge_bases.async_client import KnowledgeBasesAsyncClient
 from google.cloud.dialogflow_v2beta1.services.knowledge_bases.client import KnowledgeBasesClient
+from google.cloud.dialogflow_v2beta1.services.participants.async_client import ParticipantsAsyncClient
+from google.cloud.dialogflow_v2beta1.services.participants.client import ParticipantsClient
 from google.cloud.dialogflow_v2beta1.services.session_entity_types.async_client import SessionEntityTypesAsyncClient
 from google.cloud.dialogflow_v2beta1.services.session_entity_types.client import SessionEntityTypesClient
 from google.cloud.dialogflow_v2beta1.services.sessions.async_client import SessionsAsyncClient
@@ -46,12 +54,21 @@ from google.cloud.dialogflow_v2beta1.types.agent import SearchAgentsResponse
 from google.cloud.dialogflow_v2beta1.types.agent import SetAgentRequest
 from google.cloud.dialogflow_v2beta1.types.agent import SubAgent
 from google.cloud.dialogflow_v2beta1.types.agent import TrainAgentRequest
+from google.cloud.dialogflow_v2beta1.types.answer_record import AgentAssistantFeedback
+from google.cloud.dialogflow_v2beta1.types.answer_record import AgentAssistantRecord
+from google.cloud.dialogflow_v2beta1.types.answer_record import AnswerFeedback
+from google.cloud.dialogflow_v2beta1.types.answer_record import AnswerRecord
+from google.cloud.dialogflow_v2beta1.types.answer_record import GetAnswerRecordRequest
+from google.cloud.dialogflow_v2beta1.types.answer_record import ListAnswerRecordsRequest
+from google.cloud.dialogflow_v2beta1.types.answer_record import ListAnswerRecordsResponse
+from google.cloud.dialogflow_v2beta1.types.answer_record import UpdateAnswerRecordRequest
 from google.cloud.dialogflow_v2beta1.types.audio_config import AudioEncoding
 from google.cloud.dialogflow_v2beta1.types.audio_config import InputAudioConfig
 from google.cloud.dialogflow_v2beta1.types.audio_config import OutputAudioConfig
 from google.cloud.dialogflow_v2beta1.types.audio_config import OutputAudioEncoding
 from google.cloud.dialogflow_v2beta1.types.audio_config import SpeechContext
 from google.cloud.dialogflow_v2beta1.types.audio_config import SpeechModelVariant
+from google.cloud.dialogflow_v2beta1.types.audio_config import SpeechToTextConfig
 from google.cloud.dialogflow_v2beta1.types.audio_config import SpeechWordInfo
 from google.cloud.dialogflow_v2beta1.types.audio_config import SsmlVoiceGender
 from google.cloud.dialogflow_v2beta1.types.audio_config import SynthesizeSpeechConfig
@@ -66,10 +83,43 @@ from google.cloud.dialogflow_v2beta1.types.context import GetContextRequest
 from google.cloud.dialogflow_v2beta1.types.context import ListContextsRequest
 from google.cloud.dialogflow_v2beta1.types.context import ListContextsResponse
 from google.cloud.dialogflow_v2beta1.types.context import UpdateContextRequest
+from google.cloud.dialogflow_v2beta1.types.conversation import BatchCreateMessagesRequest
+from google.cloud.dialogflow_v2beta1.types.conversation import BatchCreateMessagesResponse
+from google.cloud.dialogflow_v2beta1.types.conversation import CallMatcher
+from google.cloud.dialogflow_v2beta1.types.conversation import CompleteConversationRequest
+from google.cloud.dialogflow_v2beta1.types.conversation import Conversation
+from google.cloud.dialogflow_v2beta1.types.conversation import ConversationPhoneNumber
+from google.cloud.dialogflow_v2beta1.types.conversation import CreateCallMatcherRequest
+from google.cloud.dialogflow_v2beta1.types.conversation import CreateConversationRequest
+from google.cloud.dialogflow_v2beta1.types.conversation import CreateMessageRequest
+from google.cloud.dialogflow_v2beta1.types.conversation import DeleteCallMatcherRequest
+from google.cloud.dialogflow_v2beta1.types.conversation import GetConversationRequest
+from google.cloud.dialogflow_v2beta1.types.conversation import ListCallMatchersRequest
+from google.cloud.dialogflow_v2beta1.types.conversation import ListCallMatchersResponse
+from google.cloud.dialogflow_v2beta1.types.conversation import ListConversationsRequest
+from google.cloud.dialogflow_v2beta1.types.conversation import ListConversationsResponse
+from google.cloud.dialogflow_v2beta1.types.conversation import ListMessagesRequest
+from google.cloud.dialogflow_v2beta1.types.conversation import ListMessagesResponse
+from google.cloud.dialogflow_v2beta1.types.conversation_event import ConversationEvent
+from google.cloud.dialogflow_v2beta1.types.conversation_profile import AutomatedAgentConfig
+from google.cloud.dialogflow_v2beta1.types.conversation_profile import ConversationProfile
+from google.cloud.dialogflow_v2beta1.types.conversation_profile import CreateConversationProfileRequest
+from google.cloud.dialogflow_v2beta1.types.conversation_profile import DeleteConversationProfileRequest
+from google.cloud.dialogflow_v2beta1.types.conversation_profile import GetConversationProfileRequest
+from google.cloud.dialogflow_v2beta1.types.conversation_profile import HumanAgentAssistantConfig
+from google.cloud.dialogflow_v2beta1.types.conversation_profile import HumanAgentHandoffConfig
+from google.cloud.dialogflow_v2beta1.types.conversation_profile import ListConversationProfilesRequest
+from google.cloud.dialogflow_v2beta1.types.conversation_profile import ListConversationProfilesResponse
+from google.cloud.dialogflow_v2beta1.types.conversation_profile import LoggingConfig
+from google.cloud.dialogflow_v2beta1.types.conversation_profile import NotificationConfig
+from google.cloud.dialogflow_v2beta1.types.conversation_profile import UpdateConversationProfileRequest
 from google.cloud.dialogflow_v2beta1.types.document import CreateDocumentRequest
 from google.cloud.dialogflow_v2beta1.types.document import DeleteDocumentRequest
 from google.cloud.dialogflow_v2beta1.types.document import Document
 from google.cloud.dialogflow_v2beta1.types.document import GetDocumentRequest
+from google.cloud.dialogflow_v2beta1.types.document import ImportDocumentTemplate
+from google.cloud.dialogflow_v2beta1.types.document import ImportDocumentsRequest
+from google.cloud.dialogflow_v2beta1.types.document import ImportDocumentsResponse
 from google.cloud.dialogflow_v2beta1.types.document import KnowledgeOperationMetadata
 from google.cloud.dialogflow_v2beta1.types.document import ListDocumentsRequest
 from google.cloud.dialogflow_v2beta1.types.document import ListDocumentsResponse
@@ -93,6 +143,8 @@ from google.cloud.dialogflow_v2beta1.types.environment import Environment
 from google.cloud.dialogflow_v2beta1.types.environment import ListEnvironmentsRequest
 from google.cloud.dialogflow_v2beta1.types.environment import ListEnvironmentsResponse
 from google.cloud.dialogflow_v2beta1.types.gcs import GcsSource
+from google.cloud.dialogflow_v2beta1.types.gcs import GcsSources
+from google.cloud.dialogflow_v2beta1.types.human_agent_assistant_event import HumanAgentAssistantEvent
 from google.cloud.dialogflow_v2beta1.types.intent import BatchDeleteIntentsRequest
 from google.cloud.dialogflow_v2beta1.types.intent import BatchUpdateIntentsRequest
 from google.cloud.dialogflow_v2beta1.types.intent import BatchUpdateIntentsResponse
@@ -112,6 +164,43 @@ from google.cloud.dialogflow_v2beta1.types.knowledge_base import KnowledgeBase
 from google.cloud.dialogflow_v2beta1.types.knowledge_base import ListKnowledgeBasesRequest
 from google.cloud.dialogflow_v2beta1.types.knowledge_base import ListKnowledgeBasesResponse
 from google.cloud.dialogflow_v2beta1.types.knowledge_base import UpdateKnowledgeBaseRequest
+from google.cloud.dialogflow_v2beta1.types.participant import AnalyzeContentRequest
+from google.cloud.dialogflow_v2beta1.types.participant import AnalyzeContentResponse
+from google.cloud.dialogflow_v2beta1.types.participant import AnnotatedMessagePart
+from google.cloud.dialogflow_v2beta1.types.participant import ArticleAnswer
+from google.cloud.dialogflow_v2beta1.types.participant import AudioInput
+from google.cloud.dialogflow_v2beta1.types.participant import AutomatedAgentReply
+from google.cloud.dialogflow_v2beta1.types.participant import CompileSuggestionRequest
+from google.cloud.dialogflow_v2beta1.types.participant import CompileSuggestionResponse
+from google.cloud.dialogflow_v2beta1.types.participant import CreateParticipantRequest
+from google.cloud.dialogflow_v2beta1.types.participant import DtmfParameters
+from google.cloud.dialogflow_v2beta1.types.participant import FaqAnswer
+from google.cloud.dialogflow_v2beta1.types.participant import GetParticipantRequest
+from google.cloud.dialogflow_v2beta1.types.participant import InputAudio
+from google.cloud.dialogflow_v2beta1.types.participant import InputText
+from google.cloud.dialogflow_v2beta1.types.participant import InputTextConfig
+from google.cloud.dialogflow_v2beta1.types.participant import ListParticipantsRequest
+from google.cloud.dialogflow_v2beta1.types.participant import ListParticipantsResponse
+from google.cloud.dialogflow_v2beta1.types.participant import ListSuggestionsRequest
+from google.cloud.dialogflow_v2beta1.types.participant import ListSuggestionsResponse
+from google.cloud.dialogflow_v2beta1.types.participant import Message
+from google.cloud.dialogflow_v2beta1.types.participant import MessageAnnotation
+from google.cloud.dialogflow_v2beta1.types.participant import OutputAudio
+from google.cloud.dialogflow_v2beta1.types.participant import Participant
+from google.cloud.dialogflow_v2beta1.types.participant import ResponseMessage
+from google.cloud.dialogflow_v2beta1.types.participant import SmartReplyAnswer
+from google.cloud.dialogflow_v2beta1.types.participant import StreamingAnalyzeContentRequest
+from google.cloud.dialogflow_v2beta1.types.participant import StreamingAnalyzeContentResponse
+from google.cloud.dialogflow_v2beta1.types.participant import SuggestArticlesRequest
+from google.cloud.dialogflow_v2beta1.types.participant import SuggestArticlesResponse
+from google.cloud.dialogflow_v2beta1.types.participant import SuggestFaqAnswersRequest
+from google.cloud.dialogflow_v2beta1.types.participant import SuggestFaqAnswersResponse
+from google.cloud.dialogflow_v2beta1.types.participant import SuggestSmartRepliesRequest
+from google.cloud.dialogflow_v2beta1.types.participant import SuggestSmartRepliesResponse
+from google.cloud.dialogflow_v2beta1.types.participant import Suggestion
+from google.cloud.dialogflow_v2beta1.types.participant import SuggestionFeature
+from google.cloud.dialogflow_v2beta1.types.participant import SuggestionResult
+from google.cloud.dialogflow_v2beta1.types.participant import UpdateParticipantRequest
 from google.cloud.dialogflow_v2beta1.types.session import DetectIntentRequest
 from google.cloud.dialogflow_v2beta1.types.session import DetectIntentResponse
 from google.cloud.dialogflow_v2beta1.types.session import EventInput
@@ -141,10 +230,25 @@ from google.cloud.dialogflow_v2beta1.types.webhook import WebhookResponse
 
 __all__ = (
     'Agent',
+    'AgentAssistantFeedback',
+    'AgentAssistantRecord',
     'AgentsAsyncClient',
     'AgentsClient',
+    'AnalyzeContentRequest',
+    'AnalyzeContentResponse',
+    'AnnotatedMessagePart',
+    'AnswerFeedback',
+    'AnswerRecord',
+    'AnswerRecordsAsyncClient',
+    'AnswerRecordsClient',
+    'ArticleAnswer',
     'AudioEncoding',
+    'AudioInput',
+    'AutomatedAgentConfig',
+    'AutomatedAgentReply',
     'BatchCreateEntitiesRequest',
+    'BatchCreateMessagesRequest',
+    'BatchCreateMessagesResponse',
     'BatchDeleteEntitiesRequest',
     'BatchDeleteEntityTypesRequest',
     'BatchDeleteIntentsRequest',
@@ -153,18 +257,37 @@ __all__ = (
     'BatchUpdateEntityTypesResponse',
     'BatchUpdateIntentsRequest',
     'BatchUpdateIntentsResponse',
+    'CallMatcher',
+    'CompileSuggestionRequest',
+    'CompileSuggestionResponse',
+    'CompleteConversationRequest',
     'Context',
     'ContextsAsyncClient',
     'ContextsClient',
+    'Conversation',
+    'ConversationEvent',
+    'ConversationPhoneNumber',
+    'ConversationProfile',
+    'ConversationProfilesAsyncClient',
+    'ConversationProfilesClient',
+    'ConversationsAsyncClient',
+    'ConversationsClient',
+    'CreateCallMatcherRequest',
     'CreateContextRequest',
+    'CreateConversationProfileRequest',
+    'CreateConversationRequest',
     'CreateDocumentRequest',
     'CreateEntityTypeRequest',
     'CreateIntentRequest',
     'CreateKnowledgeBaseRequest',
+    'CreateMessageRequest',
+    'CreateParticipantRequest',
     'CreateSessionEntityTypeRequest',
     'DeleteAgentRequest',
     'DeleteAllContextsRequest',
+    'DeleteCallMatcherRequest',
     'DeleteContextRequest',
+    'DeleteConversationProfileRequest',
     'DeleteDocumentRequest',
     'DeleteEntityTypeRequest',
     'DeleteIntentRequest',
@@ -175,6 +298,7 @@ __all__ = (
     'Document',
     'DocumentsAsyncClient',
     'DocumentsClient',
+    'DtmfParameters',
     'EntityType',
     'EntityTypeBatch',
     'EntityTypesAsyncClient',
@@ -185,17 +309,32 @@ __all__ = (
     'EventInput',
     'ExportAgentRequest',
     'ExportAgentResponse',
+    'FaqAnswer',
     'GcsSource',
+    'GcsSources',
     'GetAgentRequest',
+    'GetAnswerRecordRequest',
     'GetContextRequest',
+    'GetConversationProfileRequest',
+    'GetConversationRequest',
     'GetDocumentRequest',
     'GetEntityTypeRequest',
     'GetIntentRequest',
     'GetKnowledgeBaseRequest',
+    'GetParticipantRequest',
     'GetSessionEntityTypeRequest',
     'GetValidationResultRequest',
+    'HumanAgentAssistantConfig',
+    'HumanAgentAssistantEvent',
+    'HumanAgentHandoffConfig',
     'ImportAgentRequest',
+    'ImportDocumentTemplate',
+    'ImportDocumentsRequest',
+    'ImportDocumentsResponse',
+    'InputAudio',
     'InputAudioConfig',
+    'InputText',
+    'InputTextConfig',
     'Intent',
     'IntentBatch',
     'IntentView',
@@ -206,8 +345,16 @@ __all__ = (
     'KnowledgeBasesAsyncClient',
     'KnowledgeBasesClient',
     'KnowledgeOperationMetadata',
+    'ListAnswerRecordsRequest',
+    'ListAnswerRecordsResponse',
+    'ListCallMatchersRequest',
+    'ListCallMatchersResponse',
     'ListContextsRequest',
     'ListContextsResponse',
+    'ListConversationProfilesRequest',
+    'ListConversationProfilesResponse',
+    'ListConversationsRequest',
+    'ListConversationsResponse',
     'ListDocumentsRequest',
     'ListDocumentsResponse',
     'ListEntityTypesRequest',
@@ -218,15 +365,30 @@ __all__ = (
     'ListIntentsResponse',
     'ListKnowledgeBasesRequest',
     'ListKnowledgeBasesResponse',
+    'ListMessagesRequest',
+    'ListMessagesResponse',
+    'ListParticipantsRequest',
+    'ListParticipantsResponse',
     'ListSessionEntityTypesRequest',
     'ListSessionEntityTypesResponse',
+    'ListSuggestionsRequest',
+    'ListSuggestionsResponse',
+    'LoggingConfig',
+    'Message',
+    'MessageAnnotation',
+    'NotificationConfig',
     'OriginalDetectIntentRequest',
+    'OutputAudio',
     'OutputAudioConfig',
     'OutputAudioEncoding',
+    'Participant',
+    'ParticipantsAsyncClient',
+    'ParticipantsClient',
     'QueryInput',
     'QueryParameters',
     'QueryResult',
     'ReloadDocumentRequest',
+    'ResponseMessage',
     'RestoreAgentRequest',
     'SearchAgentsRequest',
     'SearchAgentsResponse',
@@ -239,24 +401,40 @@ __all__ = (
     'SessionsAsyncClient',
     'SessionsClient',
     'SetAgentRequest',
+    'SmartReplyAnswer',
     'SpeechContext',
     'SpeechModelVariant',
+    'SpeechToTextConfig',
     'SpeechWordInfo',
     'SsmlVoiceGender',
+    'StreamingAnalyzeContentRequest',
+    'StreamingAnalyzeContentResponse',
     'StreamingDetectIntentRequest',
     'StreamingDetectIntentResponse',
     'StreamingRecognitionResult',
     'SubAgent',
+    'SuggestArticlesRequest',
+    'SuggestArticlesResponse',
+    'SuggestFaqAnswersRequest',
+    'SuggestFaqAnswersResponse',
+    'SuggestSmartRepliesRequest',
+    'SuggestSmartRepliesResponse',
+    'Suggestion',
+    'SuggestionFeature',
+    'SuggestionResult',
     'SynthesizeSpeechConfig',
     'TelephonyDtmf',
     'TelephonyDtmfEvents',
     'TextInput',
     'TrainAgentRequest',
+    'UpdateAnswerRecordRequest',
     'UpdateContextRequest',
+    'UpdateConversationProfileRequest',
     'UpdateDocumentRequest',
     'UpdateEntityTypeRequest',
     'UpdateIntentRequest',
     'UpdateKnowledgeBaseRequest',
+    'UpdateParticipantRequest',
     'UpdateSessionEntityTypeRequest',
     'ValidationError',
     'ValidationResult',

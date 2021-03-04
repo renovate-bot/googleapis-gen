@@ -41,7 +41,10 @@ use Google\Cloud\Dialogflow\V2beta1\CreateDocumentRequest;
 use Google\Cloud\Dialogflow\V2beta1\DeleteDocumentRequest;
 use Google\Cloud\Dialogflow\V2beta1\Document;
 use Google\Cloud\Dialogflow\V2beta1\GcsSource;
+use Google\Cloud\Dialogflow\V2beta1\GcsSources;
 use Google\Cloud\Dialogflow\V2beta1\GetDocumentRequest;
+use Google\Cloud\Dialogflow\V2beta1\ImportDocumentTemplate;
+use Google\Cloud\Dialogflow\V2beta1\ImportDocumentsRequest;
 use Google\Cloud\Dialogflow\V2beta1\ListDocumentsRequest;
 use Google\Cloud\Dialogflow\V2beta1\ListDocumentsResponse;
 use Google\Cloud\Dialogflow\V2beta1\ReloadDocumentRequest;
@@ -726,6 +729,105 @@ class DocumentsGapicClient
 
         return $this->startOperationsCall(
             'CreateDocument',
+            $optionalArgs,
+            $request,
+            $this->getOperationsClient()
+        )->wait();
+    }
+
+    /**
+     * Create documents by importing data from external sources.
+     *
+     * Sample code:
+     * ```
+     * $documentsClient = new DocumentsClient();
+     * try {
+     *     $parent = '';
+     *     $documentTemplate = new ImportDocumentTemplate();
+     *     $operationResponse = $documentsClient->importDocuments($parent, $documentTemplate);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         $result = $operationResponse->getResult();
+     *         // doSomethingWith($result)
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *
+     *
+     *     // Alternatively:
+     *
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $documentsClient->importDocuments($parent, $documentTemplate);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $documentsClient->resumeOperation($operationName, 'importDocuments');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *       $result = $newOperationResponse->getResult();
+     *       // doSomethingWith($result)
+     *     } else {
+     *       $error = $newOperationResponse->getError();
+     *       // handleError($error)
+     *     }
+     * } finally {
+     *     $documentsClient->close();
+     * }
+     * ```
+     *
+     * @param string                 $parent           Required. The knowledge base to import documents into.
+     *                                                 Format: `projects/<Project ID>/locations/<Location
+     *                                                 ID>/knowledgeBases/<Knowledge Base ID>`.
+     * @param ImportDocumentTemplate $documentTemplate Required. Document template used for importing all the documents.
+     * @param array                  $optionalArgs     {
+     *                                                 Optional.
+     *
+     *     @type GcsSources $gcsSource
+     *          The Google Cloud Storage location for the documents.
+     *          The path can include a wildcard.
+     *
+     *          These URIs may have the forms
+     *          `gs://<bucket-name>/<object-name>`.
+     *          `gs://<bucket-name>/<object-path>/*.<extension>`.
+     *     @type bool $importGcsCustomMetadata
+     *          Whether to import custom metadata from Google Cloud Storage.
+     *          Only valid when the document source is Google Cloud Storage URI.
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\OperationResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function importDocuments($parent, $documentTemplate, array $optionalArgs = [])
+    {
+        $request = new ImportDocumentsRequest();
+        $request->setParent($parent);
+        $request->setDocumentTemplate($documentTemplate);
+        if (isset($optionalArgs['gcsSource'])) {
+            $request->setGcsSource($optionalArgs['gcsSource']);
+        }
+        if (isset($optionalArgs['importGcsCustomMetadata'])) {
+            $request->setImportGcsCustomMetadata($optionalArgs['importGcsCustomMetadata']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'parent' => $request->getParent(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startOperationsCall(
+            'ImportDocuments',
             $optionalArgs,
             $request,
             $this->getOperationsClient()

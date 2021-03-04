@@ -84,6 +84,15 @@ class WebhookResponse extends \Google\Protobuf\Internal\Message
      */
     protected $followup_event_input = null;
     /**
+     * Indicates that a live agent should be brought in to handle the
+     * interaction with the user. In most cases, when you set this flag to true,
+     * you would also want to set end_interaction to true as well. Default is
+     * false.
+     *
+     * Generated from protobuf field <code>bool live_agent_handoff = 7;</code>
+     */
+    protected $live_agent_handoff = false;
+    /**
      * Optional. Indicates that this intent ends an interaction. Some integrations
      * (e.g., Actions on Google or Dialogflow phone gateway) use this information
      * to close interaction with an end user. Default is false.
@@ -142,6 +151,11 @@ class WebhookResponse extends \Google\Protobuf\Internal\Message
      *           Optional. Invokes the supplied events.
      *           When this field is set, Dialogflow ignores the `fulfillment_text`,
      *           `fulfillment_messages`, and `payload` fields.
+     *     @type bool $live_agent_handoff
+     *           Indicates that a live agent should be brought in to handle the
+     *           interaction with the user. In most cases, when you set this flag to true,
+     *           you would also want to set end_interaction to true as well. Default is
+     *           false.
      *     @type bool $end_interaction
      *           Optional. Indicates that this intent ends an interaction. Some integrations
      *           (e.g., Actions on Google or Dialogflow phone gateway) use this information
@@ -375,6 +389,38 @@ class WebhookResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\Dialogflow\V2beta1\EventInput::class);
         $this->followup_event_input = $var;
+
+        return $this;
+    }
+
+    /**
+     * Indicates that a live agent should be brought in to handle the
+     * interaction with the user. In most cases, when you set this flag to true,
+     * you would also want to set end_interaction to true as well. Default is
+     * false.
+     *
+     * Generated from protobuf field <code>bool live_agent_handoff = 7;</code>
+     * @return bool
+     */
+    public function getLiveAgentHandoff()
+    {
+        return $this->live_agent_handoff;
+    }
+
+    /**
+     * Indicates that a live agent should be brought in to handle the
+     * interaction with the user. In most cases, when you set this flag to true,
+     * you would also want to set end_interaction to true as well. Default is
+     * false.
+     *
+     * Generated from protobuf field <code>bool live_agent_handoff = 7;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setLiveAgentHandoff($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->live_agent_handoff = $var;
 
         return $this;
     }
