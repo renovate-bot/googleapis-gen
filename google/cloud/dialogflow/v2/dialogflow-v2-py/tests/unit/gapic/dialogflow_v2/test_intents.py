@@ -822,6 +822,10 @@ def test_get_intent(transport: str = 'grpc', request_type=intent.GetIntentReques
 
             ml_disabled=True,
 
+            live_agent_handoff=True,
+
+            end_interaction=True,
+
             input_context_names=['input_context_names_value'],
 
             events=['events_value'],
@@ -861,6 +865,10 @@ def test_get_intent(transport: str = 'grpc', request_type=intent.GetIntentReques
     assert response.is_fallback is True
 
     assert response.ml_disabled is True
+
+    assert response.live_agent_handoff is True
+
+    assert response.end_interaction is True
 
     assert response.input_context_names == ['input_context_names_value']
 
@@ -922,6 +930,8 @@ async def test_get_intent_async(transport: str = 'grpc_asyncio', request_type=in
             priority=898,
             is_fallback=True,
             ml_disabled=True,
+            live_agent_handoff=True,
+            end_interaction=True,
             input_context_names=['input_context_names_value'],
             events=['events_value'],
             action='action_value',
@@ -953,6 +963,10 @@ async def test_get_intent_async(transport: str = 'grpc_asyncio', request_type=in
     assert response.is_fallback is True
 
     assert response.ml_disabled is True
+
+    assert response.live_agent_handoff is True
+
+    assert response.end_interaction is True
 
     assert response.input_context_names == ['input_context_names_value']
 
@@ -1156,6 +1170,10 @@ def test_create_intent(transport: str = 'grpc', request_type=gcd_intent.CreateIn
 
             ml_disabled=True,
 
+            live_agent_handoff=True,
+
+            end_interaction=True,
+
             input_context_names=['input_context_names_value'],
 
             events=['events_value'],
@@ -1195,6 +1213,10 @@ def test_create_intent(transport: str = 'grpc', request_type=gcd_intent.CreateIn
     assert response.is_fallback is True
 
     assert response.ml_disabled is True
+
+    assert response.live_agent_handoff is True
+
+    assert response.end_interaction is True
 
     assert response.input_context_names == ['input_context_names_value']
 
@@ -1256,6 +1278,8 @@ async def test_create_intent_async(transport: str = 'grpc_asyncio', request_type
             priority=898,
             is_fallback=True,
             ml_disabled=True,
+            live_agent_handoff=True,
+            end_interaction=True,
             input_context_names=['input_context_names_value'],
             events=['events_value'],
             action='action_value',
@@ -1287,6 +1311,10 @@ async def test_create_intent_async(transport: str = 'grpc_asyncio', request_type
     assert response.is_fallback is True
 
     assert response.ml_disabled is True
+
+    assert response.live_agent_handoff is True
+
+    assert response.end_interaction is True
 
     assert response.input_context_names == ['input_context_names_value']
 
@@ -1498,6 +1526,10 @@ def test_update_intent(transport: str = 'grpc', request_type=gcd_intent.UpdateIn
 
             ml_disabled=True,
 
+            live_agent_handoff=True,
+
+            end_interaction=True,
+
             input_context_names=['input_context_names_value'],
 
             events=['events_value'],
@@ -1537,6 +1569,10 @@ def test_update_intent(transport: str = 'grpc', request_type=gcd_intent.UpdateIn
     assert response.is_fallback is True
 
     assert response.ml_disabled is True
+
+    assert response.live_agent_handoff is True
+
+    assert response.end_interaction is True
 
     assert response.input_context_names == ['input_context_names_value']
 
@@ -1598,6 +1634,8 @@ async def test_update_intent_async(transport: str = 'grpc_asyncio', request_type
             priority=898,
             is_fallback=True,
             ml_disabled=True,
+            live_agent_handoff=True,
+            end_interaction=True,
             input_context_names=['input_context_names_value'],
             events=['events_value'],
             action='action_value',
@@ -1629,6 +1667,10 @@ async def test_update_intent_async(transport: str = 'grpc_asyncio', request_type
     assert response.is_fallback is True
 
     assert response.ml_disabled is True
+
+    assert response.live_agent_handoff is True
+
+    assert response.end_interaction is True
 
     assert response.input_context_names == ['input_context_names_value']
 

@@ -216,6 +216,16 @@ private static final long serialVersionUID = 0L;
             mlDisabled_ = input.readBool();
             break;
           }
+          case 160: {
+
+            liveAgentHandoff_ = input.readBool();
+            break;
+          }
+          case 168: {
+
+            endInteraction_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -40860,6 +40870,41 @@ private static final long serialVersionUID = 0L;
     return mlDisabled_;
   }
 
+  public static final int LIVE_AGENT_HANDOFF_FIELD_NUMBER = 20;
+  private boolean liveAgentHandoff_;
+  /**
+   * <pre>
+   * Optional. Indicates that a live agent should be brought in to handle the
+   * interaction with the user. In most cases, when you set this flag to true,
+   * you would also want to set end_interaction to true as well. Default is
+   * false.
+   * </pre>
+   *
+   * <code>bool live_agent_handoff = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The liveAgentHandoff.
+   */
+  @java.lang.Override
+  public boolean getLiveAgentHandoff() {
+    return liveAgentHandoff_;
+  }
+
+  public static final int END_INTERACTION_FIELD_NUMBER = 21;
+  private boolean endInteraction_;
+  /**
+   * <pre>
+   * Optional. Indicates that this intent ends an interaction. Some integrations
+   * (e.g., Actions on Google or Dialogflow phone gateway) use this information
+   * to close interaction with an end user. Default is false.
+   * </pre>
+   *
+   * <code>bool end_interaction = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The endInteraction.
+   */
+  @java.lang.Override
+  public boolean getEndInteraction() {
+    return endInteraction_;
+  }
+
   public static final int INPUT_CONTEXT_NAMES_FIELD_NUMBER = 7;
   private com.google.protobuf.LazyStringList inputContextNames_;
   /**
@@ -41647,6 +41692,12 @@ private static final long serialVersionUID = 0L;
     if (mlDisabled_ != false) {
       output.writeBool(19, mlDisabled_);
     }
+    if (liveAgentHandoff_ != false) {
+      output.writeBool(20, liveAgentHandoff_);
+    }
+    if (endInteraction_ != false) {
+      output.writeBool(21, endInteraction_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -41739,6 +41790,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(19, mlDisabled_);
     }
+    if (liveAgentHandoff_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(20, liveAgentHandoff_);
+    }
+    if (endInteraction_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(21, endInteraction_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -41765,6 +41824,10 @@ private static final long serialVersionUID = 0L;
         != other.getIsFallback()) return false;
     if (getMlDisabled()
         != other.getMlDisabled()) return false;
+    if (getLiveAgentHandoff()
+        != other.getLiveAgentHandoff()) return false;
+    if (getEndInteraction()
+        != other.getEndInteraction()) return false;
     if (!getInputContextNamesList()
         .equals(other.getInputContextNamesList())) return false;
     if (!getEventsList()
@@ -41813,6 +41876,12 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ML_DISABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getMlDisabled());
+    hash = (37 * hash) + LIVE_AGENT_HANDOFF_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getLiveAgentHandoff());
+    hash = (37 * hash) + END_INTERACTION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getEndInteraction());
     if (getInputContextNamesCount() > 0) {
       hash = (37 * hash) + INPUT_CONTEXT_NAMES_FIELD_NUMBER;
       hash = (53 * hash) + getInputContextNamesList().hashCode();
@@ -42015,6 +42084,10 @@ private static final long serialVersionUID = 0L;
 
       mlDisabled_ = false;
 
+      liveAgentHandoff_ = false;
+
+      endInteraction_ = false;
+
       inputContextNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       events_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -42092,6 +42165,8 @@ private static final long serialVersionUID = 0L;
       result.priority_ = priority_;
       result.isFallback_ = isFallback_;
       result.mlDisabled_ = mlDisabled_;
+      result.liveAgentHandoff_ = liveAgentHandoff_;
+      result.endInteraction_ = endInteraction_;
       if (((bitField0_ & 0x00000001) != 0)) {
         inputContextNames_ = inputContextNames_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -42223,6 +42298,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getMlDisabled() != false) {
         setMlDisabled(other.getMlDisabled());
+      }
+      if (other.getLiveAgentHandoff() != false) {
+        setLiveAgentHandoff(other.getLiveAgentHandoff());
+      }
+      if (other.getEndInteraction() != false) {
+        setEndInteraction(other.getEndInteraction());
       }
       if (!other.inputContextNames_.isEmpty()) {
         if (inputContextNames_.isEmpty()) {
@@ -42862,6 +42943,107 @@ private static final long serialVersionUID = 0L;
     public Builder clearMlDisabled() {
       
       mlDisabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean liveAgentHandoff_ ;
+    /**
+     * <pre>
+     * Optional. Indicates that a live agent should be brought in to handle the
+     * interaction with the user. In most cases, when you set this flag to true,
+     * you would also want to set end_interaction to true as well. Default is
+     * false.
+     * </pre>
+     *
+     * <code>bool live_agent_handoff = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The liveAgentHandoff.
+     */
+    @java.lang.Override
+    public boolean getLiveAgentHandoff() {
+      return liveAgentHandoff_;
+    }
+    /**
+     * <pre>
+     * Optional. Indicates that a live agent should be brought in to handle the
+     * interaction with the user. In most cases, when you set this flag to true,
+     * you would also want to set end_interaction to true as well. Default is
+     * false.
+     * </pre>
+     *
+     * <code>bool live_agent_handoff = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The liveAgentHandoff to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLiveAgentHandoff(boolean value) {
+      
+      liveAgentHandoff_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Indicates that a live agent should be brought in to handle the
+     * interaction with the user. In most cases, when you set this flag to true,
+     * you would also want to set end_interaction to true as well. Default is
+     * false.
+     * </pre>
+     *
+     * <code>bool live_agent_handoff = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLiveAgentHandoff() {
+      
+      liveAgentHandoff_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean endInteraction_ ;
+    /**
+     * <pre>
+     * Optional. Indicates that this intent ends an interaction. Some integrations
+     * (e.g., Actions on Google or Dialogflow phone gateway) use this information
+     * to close interaction with an end user. Default is false.
+     * </pre>
+     *
+     * <code>bool end_interaction = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The endInteraction.
+     */
+    @java.lang.Override
+    public boolean getEndInteraction() {
+      return endInteraction_;
+    }
+    /**
+     * <pre>
+     * Optional. Indicates that this intent ends an interaction. Some integrations
+     * (e.g., Actions on Google or Dialogflow phone gateway) use this information
+     * to close interaction with an end user. Default is false.
+     * </pre>
+     *
+     * <code>bool end_interaction = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The endInteraction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEndInteraction(boolean value) {
+      
+      endInteraction_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Indicates that this intent ends an interaction. Some integrations
+     * (e.g., Actions on Google or Dialogflow phone gateway) use this information
+     * to close interaction with an end user. Default is false.
+     * </pre>
+     *
+     * <code>bool end_interaction = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEndInteraction() {
+      
+      endInteraction_ = false;
       onChanged();
       return this;
     }
