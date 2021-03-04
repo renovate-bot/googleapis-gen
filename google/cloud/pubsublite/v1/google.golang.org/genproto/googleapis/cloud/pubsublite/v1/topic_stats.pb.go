@@ -1,4 +1,4 @@
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -557,10 +557,10 @@ type TopicStatsServiceClient interface {
 	// partition.
 	ComputeMessageStats(ctx context.Context, in *ComputeMessageStatsRequest, opts ...grpc.CallOption) (*ComputeMessageStatsResponse, error)
 	// Compute the head cursor for the partition.
-	// The head cursor’s offset is guaranteed to be before or equal to all
-	// messages which have not yet been acknowledged to be published, and
+	// The head cursor's offset is guaranteed to be less than or equal to all
+	// messages which have not yet been acknowledged as published, and
 	// greater than the offset of any message whose publish has already
-	// been acknowledged. It is 0 if there have never been messages on the
+	// been acknowledged. It is zero if there have never been messages in the
 	// partition.
 	ComputeHeadCursor(ctx context.Context, in *ComputeHeadCursorRequest, opts ...grpc.CallOption) (*ComputeHeadCursorResponse, error)
 }
@@ -597,10 +597,10 @@ type TopicStatsServiceServer interface {
 	// partition.
 	ComputeMessageStats(context.Context, *ComputeMessageStatsRequest) (*ComputeMessageStatsResponse, error)
 	// Compute the head cursor for the partition.
-	// The head cursor’s offset is guaranteed to be before or equal to all
-	// messages which have not yet been acknowledged to be published, and
+	// The head cursor's offset is guaranteed to be less than or equal to all
+	// messages which have not yet been acknowledged as published, and
 	// greater than the offset of any message whose publish has already
-	// been acknowledged. It is 0 if there have never been messages on the
+	// been acknowledged. It is zero if there have never been messages in the
 	// partition.
 	ComputeHeadCursor(context.Context, *ComputeHeadCursorRequest) (*ComputeHeadCursorResponse, error)
 }

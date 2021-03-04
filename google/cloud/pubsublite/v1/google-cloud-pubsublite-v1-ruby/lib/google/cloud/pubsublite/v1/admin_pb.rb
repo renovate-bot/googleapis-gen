@@ -55,6 +55,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :parent, :string, 1
       optional :subscription, :message, 2, "google.cloud.pubsublite.v1.Subscription"
       optional :subscription_id, :string, 3
+      optional :skip_backlog, :bool, 4
     end
     add_message "google.cloud.pubsublite.v1.GetSubscriptionRequest" do
       optional :name, :string, 1

@@ -45,7 +45,7 @@ class pubsubliteCallTransformer(cst.CSTTransformer):
     'commit_cursor': ('subscription', 'partition', 'cursor', ),
     'compute_head_cursor': ('topic', 'partition', ),
     'compute_message_stats': ('topic', 'partition', 'start_cursor', 'end_cursor', ),
-    'create_subscription': ('parent', 'subscription', 'subscription_id', ),
+    'create_subscription': ('parent', 'subscription', 'subscription_id', 'skip_backlog', ),
     'create_topic': ('parent', 'topic', 'topic_id', ),
     'delete_subscription': ('name', ),
     'delete_topic': ('name', ),

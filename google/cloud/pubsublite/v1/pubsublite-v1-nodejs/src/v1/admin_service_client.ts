@@ -700,6 +700,10 @@ export class AdminServiceClient {
  *   of the subscription's name.
  *
  *   This value is structured like: `my-sub-name`.
+ * @param {boolean} request.skipBacklog
+ *   If true, the newly created subscription will only receive messages
+ *   published after the subscription was created. Otherwise, the entire
+ *   message backlog will be received on the subscription. Defaults to false.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.

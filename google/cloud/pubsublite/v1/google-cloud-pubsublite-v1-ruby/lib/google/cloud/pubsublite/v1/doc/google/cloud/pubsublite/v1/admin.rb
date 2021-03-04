@@ -138,6 +138,11 @@ module Google
         #     of the subscription's name.
         #
         #     This value is structured like: `my-sub-name`.
+        # @!attribute [rw] skip_backlog
+        #   @return [true, false]
+        #     If true, the newly created subscription will only receive messages
+        #     published after the subscription was created. Otherwise, the entire
+        #     message backlog will be received on the subscription. Defaults to false.
         class CreateSubscriptionRequest; end
 
         # Request for GetSubscription.

@@ -641,6 +641,10 @@ module Google
           #   of the subscription's name.
           #
           #   This value is structured like: `my-sub-name`.
+          # @param skip_backlog [true, false]
+          #   If true, the newly created subscription will only receive messages
+          #   published after the subscription was created. Otherwise, the entire
+          #   message backlog will be received on the subscription. Defaults to false.
           # @param options [Google::Gax::CallOptions]
           #   Overrides the default settings for this call, e.g, timeout,
           #   retries, etc.
@@ -666,12 +670,14 @@ module Google
               parent,
               subscription,
               subscription_id,
+              skip_backlog: nil,
               options: nil,
               &block
             req = {
               parent: parent,
               subscription: subscription,
-              subscription_id: subscription_id
+              subscription_id: subscription_id,
+              skip_backlog: skip_backlog
             }.delete_if { |_, v| v.nil? }
             req = Google::Gax::to_proto(req, Google::Cloud::Pubsublite::V1::CreateSubscriptionRequest)
             @create_subscription.call(req, options, &block)

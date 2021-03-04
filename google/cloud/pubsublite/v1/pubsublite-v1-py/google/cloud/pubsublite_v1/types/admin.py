@@ -260,6 +260,12 @@ class CreateSubscriptionRequest(proto.Message):
             become the final component of the subscription's name.
 
             This value is structured like: ``my-sub-name``.
+        skip_backlog (bool):
+            If true, the newly created subscription will
+            only receive messages published after the
+            subscription was created. Otherwise, the entire
+            message backlog will be received on the
+            subscription. Defaults to false.
     """
 
     parent = proto.Field(proto.STRING, number=1)
@@ -269,6 +275,8 @@ class CreateSubscriptionRequest(proto.Message):
     )
 
     subscription_id = proto.Field(proto.STRING, number=3)
+
+    skip_backlog = proto.Field(proto.BOOL, number=4)
 
 
 class GetSubscriptionRequest(proto.Message):
