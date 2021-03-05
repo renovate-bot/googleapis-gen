@@ -265,7 +265,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
         optional :payload, :message, 2, "google.protobuf.Struct"
         optional :live_agent_handoff, :message, 3, "google.cloud.dialogflow.v2beta1.ResponseMessage.LiveAgentHandoff"
         optional :end_interaction, :message, 4, "google.cloud.dialogflow.v2beta1.ResponseMessage.EndInteraction"
-        optional :mixed_audio, :message, 5, "google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio"
       end
     end
     add_message "google.cloud.dialogflow.v2beta1.ResponseMessage.Text" do
@@ -275,16 +274,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :metadata, :message, 1, "google.protobuf.Struct"
     end
     add_message "google.cloud.dialogflow.v2beta1.ResponseMessage.EndInteraction" do
-    end
-    add_message "google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio" do
-      repeated :segments, :message, 1, "google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio.Segment"
-    end
-    add_message "google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio.Segment" do
-      optional :allow_playback_interruption, :bool, 3
-      oneof :content do
-        optional :audio, :bytes, 1
-        optional :uri, :string, 2
-      end
     end
   end
 end
@@ -337,8 +326,6 @@ module Google
         ResponseMessage::Text = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.ResponseMessage.Text").msgclass
         ResponseMessage::LiveAgentHandoff = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.ResponseMessage.LiveAgentHandoff").msgclass
         ResponseMessage::EndInteraction = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.ResponseMessage.EndInteraction").msgclass
-        ResponseMessage::MixedAudio = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio").msgclass
-        ResponseMessage::MixedAudio::Segment = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio.Segment").msgclass
       end
     end
   end

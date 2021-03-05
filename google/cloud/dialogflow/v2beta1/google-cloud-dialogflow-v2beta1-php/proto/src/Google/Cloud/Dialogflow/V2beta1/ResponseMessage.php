@@ -32,9 +32,6 @@ class ResponseMessage extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Dialogflow\V2beta1\ResponseMessage\EndInteraction $end_interaction
      *           A signal that indicates the interaction with the Dialogflow agent has
      *           ended.
-     *     @type \Google\Cloud\Dialogflow\V2beta1\ResponseMessage\MixedAudio $mixed_audio
-     *           An audio response message composed of both the synthesized Dialogflow
-     *           agent responses and the audios hosted in places known to the client.
      * }
      */
     public function __construct($data = NULL) {
@@ -164,39 +161,6 @@ class ResponseMessage extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\Dialogflow\V2beta1\ResponseMessage\EndInteraction::class);
         $this->writeOneof(4, $var);
-
-        return $this;
-    }
-
-    /**
-     * An audio response message composed of both the synthesized Dialogflow
-     * agent responses and the audios hosted in places known to the client.
-     *
-     * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio mixed_audio = 5;</code>
-     * @return \Google\Cloud\Dialogflow\V2beta1\ResponseMessage\MixedAudio|null
-     */
-    public function getMixedAudio()
-    {
-        return $this->readOneof(5);
-    }
-
-    public function hasMixedAudio()
-    {
-        return $this->hasOneof(5);
-    }
-
-    /**
-     * An audio response message composed of both the synthesized Dialogflow
-     * agent responses and the audios hosted in places known to the client.
-     *
-     * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio mixed_audio = 5;</code>
-     * @param \Google\Cloud\Dialogflow\V2beta1\ResponseMessage\MixedAudio $var
-     * @return $this
-     */
-    public function setMixedAudio($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Cloud\Dialogflow\V2beta1\ResponseMessage\MixedAudio::class);
-        $this->writeOneof(5, $var);
 
         return $this;
     }

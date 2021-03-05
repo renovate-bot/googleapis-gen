@@ -924,10 +924,6 @@ module Google
         #   @return [Google::Cloud::Dialogflow::V2beta1::ResponseMessage::EndInteraction]
         #     A signal that indicates the interaction with the Dialogflow agent has
         #     ended.
-        # @!attribute [rw] mixed_audio
-        #   @return [Google::Cloud::Dialogflow::V2beta1::ResponseMessage::MixedAudio]
-        #     An audio response message composed of both the synthesized Dialogflow
-        #     agent responses and the audios hosted in places known to the client.
         class ResponseMessage
           # The text response message.
           # @!attribute [rw] text
@@ -954,30 +950,6 @@ module Google
 
           # Indicates that interaction with the Dialogflow agent has ended.
           class EndInteraction; end
-
-          # Represents an audio message that is composed of both segments
-          # synthesized from the Dialogflow agent prompts and ones hosted externally
-          # at the specified URIs.
-          # @!attribute [rw] segments
-          #   @return [Array<Google::Cloud::Dialogflow::V2beta1::ResponseMessage::MixedAudio::Segment>]
-          #     Segments this audio response is composed of.
-          class MixedAudio
-            # Represents one segment of audio.
-            # @!attribute [rw] audio
-            #   @return [String]
-            #     Raw audio synthesized from the Dialogflow agent's response using
-            #     the output config specified in the request.
-            # @!attribute [rw] uri
-            #   @return [String]
-            #     Client-specific URI that points to an audio clip accessible to the
-            #     client.
-            # @!attribute [rw] allow_playback_interruption
-            #   @return [true, false]
-            #     Whether the playback of this segment can be interrupted by the end
-            #     user's speech and the client should then start the next Dialogflow
-            #     request.
-            class Segment; end
-          end
         end
       end
     end
