@@ -61,8 +61,8 @@ class ::Google::Analytics::Data::V1beta::BetaAnalyticsData::ClientTest < Minites
     date_ranges = [{}]
     dimension_filter = {}
     metric_filter = {}
-    page_size = 42
-    page_token = "hello world"
+    offset = 42
+    limit = 42
     metric_aggregations = [:METRIC_AGGREGATION_UNSPECIFIED]
     order_bys = [{}]
     currency_code = "hello world"
@@ -79,8 +79,8 @@ class ::Google::Analytics::Data::V1beta::BetaAnalyticsData::ClientTest < Minites
       assert_kind_of ::Google::Analytics::Data::V1beta::DateRange, request["date_ranges"].first
       assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Analytics::Data::V1beta::FilterExpression), request["dimension_filter"]
       assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Analytics::Data::V1beta::FilterExpression), request["metric_filter"]
-      assert_equal 42, request["page_size"]
-      assert_equal "hello world", request["page_token"]
+      assert_equal 42, request["offset"]
+      assert_equal 42, request["limit"]
       assert_equal [:METRIC_AGGREGATION_UNSPECIFIED], request["metric_aggregations"]
       assert_kind_of ::Google::Analytics::Data::V1beta::OrderBy, request["order_bys"].first
       assert_equal "hello world", request["currency_code"]
@@ -97,37 +97,32 @@ class ::Google::Analytics::Data::V1beta::BetaAnalyticsData::ClientTest < Minites
       end
 
       # Use hash object
-      client.run_report({ property: property, dimensions: dimensions, metrics: metrics, date_ranges: date_ranges, dimension_filter: dimension_filter, metric_filter: metric_filter, page_size: page_size, page_token: page_token, metric_aggregations: metric_aggregations, order_bys: order_bys, currency_code: currency_code, cohort_spec: cohort_spec, keep_empty_rows: keep_empty_rows, return_property_quota: return_property_quota }) do |response, operation|
-        assert_kind_of Gapic::PagedEnumerable, response
-        assert_equal grpc_response, response.response
+      client.run_report({ property: property, dimensions: dimensions, metrics: metrics, date_ranges: date_ranges, dimension_filter: dimension_filter, metric_filter: metric_filter, offset: offset, limit: limit, metric_aggregations: metric_aggregations, order_bys: order_bys, currency_code: currency_code, cohort_spec: cohort_spec, keep_empty_rows: keep_empty_rows, return_property_quota: return_property_quota }) do |response, operation|
+        assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
 
       # Use named arguments
-      client.run_report property: property, dimensions: dimensions, metrics: metrics, date_ranges: date_ranges, dimension_filter: dimension_filter, metric_filter: metric_filter, page_size: page_size, page_token: page_token, metric_aggregations: metric_aggregations, order_bys: order_bys, currency_code: currency_code, cohort_spec: cohort_spec, keep_empty_rows: keep_empty_rows, return_property_quota: return_property_quota do |response, operation|
-        assert_kind_of Gapic::PagedEnumerable, response
-        assert_equal grpc_response, response.response
+      client.run_report property: property, dimensions: dimensions, metrics: metrics, date_ranges: date_ranges, dimension_filter: dimension_filter, metric_filter: metric_filter, offset: offset, limit: limit, metric_aggregations: metric_aggregations, order_bys: order_bys, currency_code: currency_code, cohort_spec: cohort_spec, keep_empty_rows: keep_empty_rows, return_property_quota: return_property_quota do |response, operation|
+        assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
 
       # Use protobuf object
-      client.run_report ::Google::Analytics::Data::V1beta::RunReportRequest.new(property: property, dimensions: dimensions, metrics: metrics, date_ranges: date_ranges, dimension_filter: dimension_filter, metric_filter: metric_filter, page_size: page_size, page_token: page_token, metric_aggregations: metric_aggregations, order_bys: order_bys, currency_code: currency_code, cohort_spec: cohort_spec, keep_empty_rows: keep_empty_rows, return_property_quota: return_property_quota) do |response, operation|
-        assert_kind_of Gapic::PagedEnumerable, response
-        assert_equal grpc_response, response.response
+      client.run_report ::Google::Analytics::Data::V1beta::RunReportRequest.new(property: property, dimensions: dimensions, metrics: metrics, date_ranges: date_ranges, dimension_filter: dimension_filter, metric_filter: metric_filter, offset: offset, limit: limit, metric_aggregations: metric_aggregations, order_bys: order_bys, currency_code: currency_code, cohort_spec: cohort_spec, keep_empty_rows: keep_empty_rows, return_property_quota: return_property_quota) do |response, operation|
+        assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
 
       # Use hash object with options
-      client.run_report({ property: property, dimensions: dimensions, metrics: metrics, date_ranges: date_ranges, dimension_filter: dimension_filter, metric_filter: metric_filter, page_size: page_size, page_token: page_token, metric_aggregations: metric_aggregations, order_bys: order_bys, currency_code: currency_code, cohort_spec: cohort_spec, keep_empty_rows: keep_empty_rows, return_property_quota: return_property_quota }, grpc_options) do |response, operation|
-        assert_kind_of Gapic::PagedEnumerable, response
-        assert_equal grpc_response, response.response
+      client.run_report({ property: property, dimensions: dimensions, metrics: metrics, date_ranges: date_ranges, dimension_filter: dimension_filter, metric_filter: metric_filter, offset: offset, limit: limit, metric_aggregations: metric_aggregations, order_bys: order_bys, currency_code: currency_code, cohort_spec: cohort_spec, keep_empty_rows: keep_empty_rows, return_property_quota: return_property_quota }, grpc_options) do |response, operation|
+        assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
 
       # Use protobuf object with options
-      client.run_report ::Google::Analytics::Data::V1beta::RunReportRequest.new(property: property, dimensions: dimensions, metrics: metrics, date_ranges: date_ranges, dimension_filter: dimension_filter, metric_filter: metric_filter, page_size: page_size, page_token: page_token, metric_aggregations: metric_aggregations, order_bys: order_bys, currency_code: currency_code, cohort_spec: cohort_spec, keep_empty_rows: keep_empty_rows, return_property_quota: return_property_quota), grpc_options do |response, operation|
-        assert_kind_of Gapic::PagedEnumerable, response
-        assert_equal grpc_response, response.response
+      client.run_report ::Google::Analytics::Data::V1beta::RunReportRequest.new(property: property, dimensions: dimensions, metrics: metrics, date_ranges: date_ranges, dimension_filter: dimension_filter, metric_filter: metric_filter, offset: offset, limit: limit, metric_aggregations: metric_aggregations, order_bys: order_bys, currency_code: currency_code, cohort_spec: cohort_spec, keep_empty_rows: keep_empty_rows, return_property_quota: return_property_quota), grpc_options do |response, operation|
+        assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
 
@@ -405,7 +400,7 @@ class ::Google::Analytics::Data::V1beta::BetaAnalyticsData::ClientTest < Minites
     metrics = [{}]
     dimension_filter = {}
     metric_filter = {}
-    page_size = 42
+    limit = 42
     metric_aggregations = [:METRIC_AGGREGATION_UNSPECIFIED]
     order_bys = [{}]
     return_property_quota = true
@@ -418,7 +413,7 @@ class ::Google::Analytics::Data::V1beta::BetaAnalyticsData::ClientTest < Minites
       assert_kind_of ::Google::Analytics::Data::V1beta::Metric, request["metrics"].first
       assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Analytics::Data::V1beta::FilterExpression), request["dimension_filter"]
       assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Analytics::Data::V1beta::FilterExpression), request["metric_filter"]
-      assert_equal 42, request["page_size"]
+      assert_equal 42, request["limit"]
       assert_equal [:METRIC_AGGREGATION_UNSPECIFIED], request["metric_aggregations"]
       assert_kind_of ::Google::Analytics::Data::V1beta::OrderBy, request["order_bys"].first
       assert_equal true, request["return_property_quota"]
@@ -432,31 +427,31 @@ class ::Google::Analytics::Data::V1beta::BetaAnalyticsData::ClientTest < Minites
       end
 
       # Use hash object
-      client.run_realtime_report({ property: property, dimensions: dimensions, metrics: metrics, dimension_filter: dimension_filter, metric_filter: metric_filter, page_size: page_size, metric_aggregations: metric_aggregations, order_bys: order_bys, return_property_quota: return_property_quota }) do |response, operation|
+      client.run_realtime_report({ property: property, dimensions: dimensions, metrics: metrics, dimension_filter: dimension_filter, metric_filter: metric_filter, limit: limit, metric_aggregations: metric_aggregations, order_bys: order_bys, return_property_quota: return_property_quota }) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
 
       # Use named arguments
-      client.run_realtime_report property: property, dimensions: dimensions, metrics: metrics, dimension_filter: dimension_filter, metric_filter: metric_filter, page_size: page_size, metric_aggregations: metric_aggregations, order_bys: order_bys, return_property_quota: return_property_quota do |response, operation|
+      client.run_realtime_report property: property, dimensions: dimensions, metrics: metrics, dimension_filter: dimension_filter, metric_filter: metric_filter, limit: limit, metric_aggregations: metric_aggregations, order_bys: order_bys, return_property_quota: return_property_quota do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
 
       # Use protobuf object
-      client.run_realtime_report ::Google::Analytics::Data::V1beta::RunRealtimeReportRequest.new(property: property, dimensions: dimensions, metrics: metrics, dimension_filter: dimension_filter, metric_filter: metric_filter, page_size: page_size, metric_aggregations: metric_aggregations, order_bys: order_bys, return_property_quota: return_property_quota) do |response, operation|
+      client.run_realtime_report ::Google::Analytics::Data::V1beta::RunRealtimeReportRequest.new(property: property, dimensions: dimensions, metrics: metrics, dimension_filter: dimension_filter, metric_filter: metric_filter, limit: limit, metric_aggregations: metric_aggregations, order_bys: order_bys, return_property_quota: return_property_quota) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
 
       # Use hash object with options
-      client.run_realtime_report({ property: property, dimensions: dimensions, metrics: metrics, dimension_filter: dimension_filter, metric_filter: metric_filter, page_size: page_size, metric_aggregations: metric_aggregations, order_bys: order_bys, return_property_quota: return_property_quota }, grpc_options) do |response, operation|
+      client.run_realtime_report({ property: property, dimensions: dimensions, metrics: metrics, dimension_filter: dimension_filter, metric_filter: metric_filter, limit: limit, metric_aggregations: metric_aggregations, order_bys: order_bys, return_property_quota: return_property_quota }, grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
 
       # Use protobuf object with options
-      client.run_realtime_report ::Google::Analytics::Data::V1beta::RunRealtimeReportRequest.new(property: property, dimensions: dimensions, metrics: metrics, dimension_filter: dimension_filter, metric_filter: metric_filter, page_size: page_size, metric_aggregations: metric_aggregations, order_bys: order_bys, return_property_quota: return_property_quota), grpc_options do |response, operation|
+      client.run_realtime_report ::Google::Analytics::Data::V1beta::RunRealtimeReportRequest.new(property: property, dimensions: dimensions, metrics: metrics, dimension_filter: dimension_filter, metric_filter: metric_filter, limit: limit, metric_aggregations: metric_aggregations, order_bys: order_bys, return_property_quota: return_property_quota), grpc_options do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end

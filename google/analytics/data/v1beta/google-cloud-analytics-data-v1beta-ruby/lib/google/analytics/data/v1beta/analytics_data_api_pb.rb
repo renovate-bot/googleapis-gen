@@ -22,8 +22,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       repeated :date_ranges, :message, 4, "google.analytics.data.v1beta.DateRange"
       optional :dimension_filter, :message, 5, "google.analytics.data.v1beta.FilterExpression"
       optional :metric_filter, :message, 6, "google.analytics.data.v1beta.FilterExpression"
-      optional :page_size, :int32, 7
-      optional :page_token, :string, 8
+      optional :offset, :int64, 7
+      optional :limit, :int64, 8
       repeated :metric_aggregations, :enum, 9, "google.analytics.data.v1beta.MetricAggregation"
       repeated :order_bys, :message, 10, "google.analytics.data.v1beta.OrderBy"
       optional :currency_code, :string, 11
@@ -38,10 +38,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       repeated :totals, :message, 4, "google.analytics.data.v1beta.Row"
       repeated :maximums, :message, 5, "google.analytics.data.v1beta.Row"
       repeated :minimums, :message, 6, "google.analytics.data.v1beta.Row"
-      optional :next_page_token, :string, 7
-      optional :total_size, :int32, 8
-      optional :metadata, :message, 9, "google.analytics.data.v1beta.ResponseMetaData"
-      optional :property_quota, :message, 10, "google.analytics.data.v1beta.PropertyQuota"
+      optional :row_count, :int32, 7
+      optional :metadata, :message, 8, "google.analytics.data.v1beta.ResponseMetaData"
+      optional :property_quota, :message, 9, "google.analytics.data.v1beta.PropertyQuota"
     end
     add_message "google.analytics.data.v1beta.RunPivotReportRequest" do
       optional :property, :string, 1
@@ -88,7 +87,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       repeated :metrics, :message, 3, "google.analytics.data.v1beta.Metric"
       optional :dimension_filter, :message, 4, "google.analytics.data.v1beta.FilterExpression"
       optional :metric_filter, :message, 5, "google.analytics.data.v1beta.FilterExpression"
-      optional :page_size, :int32, 6
+      optional :limit, :int64, 6
       repeated :metric_aggregations, :enum, 7, "google.analytics.data.v1beta.MetricAggregation"
       repeated :order_bys, :message, 8, "google.analytics.data.v1beta.OrderBy"
       optional :return_property_quota, :bool, 9
@@ -100,7 +99,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       repeated :totals, :message, 4, "google.analytics.data.v1beta.Row"
       repeated :maximums, :message, 5, "google.analytics.data.v1beta.Row"
       repeated :minimums, :message, 6, "google.analytics.data.v1beta.Row"
-      optional :total_size, :int32, 7
+      optional :row_count, :int32, 7
       optional :property_quota, :message, 8, "google.analytics.data.v1beta.PropertyQuota"
     end
   end

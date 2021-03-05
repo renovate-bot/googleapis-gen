@@ -23,9 +23,7 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/golang/protobuf/proto"
 	gax "github.com/googleapis/gax-go/v2"
-	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
@@ -164,44 +162,25 @@ func (c *BetaAnalyticsDataClient) setGoogleClientInfo(keyval ...string) {
 // measurements of user activity on your property, such as active users or
 // event count. Dimensions break down metrics across some common criteria,
 // such as country or event name.
-func (c *BetaAnalyticsDataClient) RunReport(ctx context.Context, req *datapb.RunReportRequest, opts ...gax.CallOption) *DimensionHeaderIterator {
+func (c *BetaAnalyticsDataClient) RunReport(ctx context.Context, req *datapb.RunReportRequest, opts ...gax.CallOption) (*datapb.RunReportResponse, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "property", url.QueryEscape(req.GetProperty())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.RunReport[0:len(c.CallOptions.RunReport):len(c.CallOptions.RunReport)], opts...)
-	it := &DimensionHeaderIterator{}
-	req = proto.Clone(req).(*datapb.RunReportRequest)
-	it.InternalFetch = func(pageSize int, pageToken string) ([]*datapb.DimensionHeader, string, error) {
-		var resp *datapb.RunReportResponse
-		req.PageToken = pageToken
-		if pageSize > math.MaxInt32 {
-			req.PageSize = math.MaxInt32
-		} else {
-			req.PageSize = int32(pageSize)
-		}
-		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-			var err error
-			resp, err = c.betaAnalyticsDataClient.RunReport(ctx, req, settings.GRPC...)
-			return err
-		}, opts...)
-		if err != nil {
-			return nil, "", err
-		}
-
-		it.Response = resp
-		return resp.GetDimensionHeaders(), resp.GetNextPageToken(), nil
+	var resp *datapb.RunReportResponse
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.betaAnalyticsDataClient.RunReport(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
 	}
-	fetch := func(pageSize int, pageToken string) (string, error) {
-		items, nextPageToken, err := it.InternalFetch(pageSize, pageToken)
-		if err != nil {
-			return "", err
-		}
-		it.items = append(it.items, items...)
-		return nextPageToken, nil
-	}
-	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
-	it.pageInfo.MaxSize = int(req.GetPageSize())
-	it.pageInfo.Token = req.GetPageToken()
-	return it
+	return resp, nil
 }
 
 // RunPivotReport returns a customized pivot report of your Google Analytics event data.
@@ -329,51 +308,4 @@ func (c *BetaAnalyticsDataClient) RunRealtimeReport(ctx context.Context, req *da
 		return nil, err
 	}
 	return resp, nil
-}
-
-// DimensionHeaderIterator manages a stream of *datapb.DimensionHeader.
-type DimensionHeaderIterator struct {
-	items    []*datapb.DimensionHeader
-	pageInfo *iterator.PageInfo
-	nextFunc func() error
-
-	// Response is the raw response for the current page.
-	// It must be cast to the RPC response type.
-	// Calling Next() or InternalFetch() updates this value.
-	Response interface{}
-
-	// InternalFetch is for use by the Google Cloud Libraries only.
-	// It is not part of the stable interface of this package.
-	//
-	// InternalFetch returns results from a single call to the underlying RPC.
-	// The number of results is no greater than pageSize.
-	// If there are no more results, nextPageToken is empty and err is nil.
-	InternalFetch func(pageSize int, pageToken string) (results []*datapb.DimensionHeader, nextPageToken string, err error)
-}
-
-// PageInfo supports pagination. See the google.golang.org/api/iterator package for details.
-func (it *DimensionHeaderIterator) PageInfo() *iterator.PageInfo {
-	return it.pageInfo
-}
-
-// Next returns the next result. Its second return value is iterator.Done if there are no more
-// results. Once Next returns Done, all subsequent calls will return Done.
-func (it *DimensionHeaderIterator) Next() (*datapb.DimensionHeader, error) {
-	var item *datapb.DimensionHeader
-	if err := it.nextFunc(); err != nil {
-		return item, err
-	}
-	item = it.items[0]
-	it.items = it.items[1:]
-	return item, nil
-}
-
-func (it *DimensionHeaderIterator) bufLen() int {
-	return len(it.items)
-}
-
-func (it *DimensionHeaderIterator) takeBuf() interface{} {
-	b := it.items
-	it.items = nil
-	return b
 }

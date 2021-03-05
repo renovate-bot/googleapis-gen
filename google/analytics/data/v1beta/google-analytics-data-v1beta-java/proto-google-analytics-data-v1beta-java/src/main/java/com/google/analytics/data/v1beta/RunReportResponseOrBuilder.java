@@ -283,54 +283,26 @@ public interface RunReportResponseOrBuilder extends
 
   /**
    * <pre>
-   * A token that can be sent as `pageToken` in a subsequent `RunReportRequest`
-   * call to retrieve the next page of report rows. If this field is omitted,
-   * there are no subsequent pages of report rows.
+   * The total number of rows in the query result. `rowCount` is independent of
+   * the number of rows returned in the response, the `limit` request
+   * parameter, and the `offset` request parameter. For example if a query
+   * returns 175 rows and includes `limit` of 50 in the API request, the
+   * response will contain `rowCount` of 175 but only 50 rows.
    * To learn more about this pagination parameter, see
    * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
    * </pre>
    *
-   * <code>string next_page_token = 7;</code>
-   * @return The nextPageToken.
+   * <code>int32 row_count = 7;</code>
+   * @return The rowCount.
    */
-  java.lang.String getNextPageToken();
-  /**
-   * <pre>
-   * A token that can be sent as `pageToken` in a subsequent `RunReportRequest`
-   * call to retrieve the next page of report rows. If this field is omitted,
-   * there are no subsequent pages of report rows.
-   * To learn more about this pagination parameter, see
-   * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
-   * </pre>
-   *
-   * <code>string next_page_token = 7;</code>
-   * @return The bytes for nextPageToken.
-   */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
-
-  /**
-   * <pre>
-   * The total number of rows in the query result. `totalSize` is independent of
-   * the number of rows returned in the response, the `pageSize` request
-   * parameter, and the `pageToken` request parameter. For example if a query
-   * returns 175 rows and includes `pageSize` of 50 in the API request, the
-   * response will contain `totalSize` of 175 but only 50 rows.
-   * To learn more about this pagination parameter, see
-   * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
-   * </pre>
-   *
-   * <code>int32 total_size = 8;</code>
-   * @return The totalSize.
-   */
-  int getTotalSize();
+  int getRowCount();
 
   /**
    * <pre>
    * Metadata for the report.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 9;</code>
+   * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 8;</code>
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
@@ -339,7 +311,7 @@ public interface RunReportResponseOrBuilder extends
    * Metadata for the report.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 9;</code>
+   * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 8;</code>
    * @return The metadata.
    */
   com.google.analytics.data.v1beta.ResponseMetaData getMetadata();
@@ -348,7 +320,7 @@ public interface RunReportResponseOrBuilder extends
    * Metadata for the report.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 9;</code>
+   * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 8;</code>
    */
   com.google.analytics.data.v1beta.ResponseMetaDataOrBuilder getMetadataOrBuilder();
 
@@ -357,7 +329,7 @@ public interface RunReportResponseOrBuilder extends
    * This Analytics Property's quota state including this request.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 10;</code>
+   * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 9;</code>
    * @return Whether the propertyQuota field is set.
    */
   boolean hasPropertyQuota();
@@ -366,7 +338,7 @@ public interface RunReportResponseOrBuilder extends
    * This Analytics Property's quota state including this request.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 10;</code>
+   * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 9;</code>
    * @return The propertyQuota.
    */
   com.google.analytics.data.v1beta.PropertyQuota getPropertyQuota();
@@ -375,7 +347,7 @@ public interface RunReportResponseOrBuilder extends
    * This Analytics Property's quota state including this request.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 10;</code>
+   * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 9;</code>
    */
   com.google.analytics.data.v1beta.PropertyQuotaOrBuilder getPropertyQuotaOrBuilder();
 }

@@ -45,8 +45,8 @@ class dataCallTransformer(cst.CSTTransformer):
     'batch_run_reports': ('property', 'requests', ),
     'get_metadata': ('name', ),
     'run_pivot_report': ('property', 'dimensions', 'metrics', 'date_ranges', 'pivots', 'dimension_filter', 'metric_filter', 'currency_code', 'cohort_spec', 'keep_empty_rows', 'return_property_quota', ),
-    'run_realtime_report': ('property', 'dimensions', 'metrics', 'dimension_filter', 'metric_filter', 'page_size', 'metric_aggregations', 'order_bys', 'return_property_quota', ),
-    'run_report': ('property', 'dimensions', 'metrics', 'date_ranges', 'dimension_filter', 'metric_filter', 'page_size', 'page_token', 'metric_aggregations', 'order_bys', 'currency_code', 'cohort_spec', 'keep_empty_rows', 'return_property_quota', ),
+    'run_realtime_report': ('property', 'dimensions', 'metrics', 'dimension_filter', 'metric_filter', 'limit', 'metric_aggregations', 'order_bys', 'return_property_quota', ),
+    'run_report': ('property', 'dimensions', 'metrics', 'date_ranges', 'dimension_filter', 'metric_filter', 'offset', 'limit', 'metric_aggregations', 'order_bys', 'currency_code', 'cohort_spec', 'keep_empty_rows', 'return_property_quota', ),
 
     }
 

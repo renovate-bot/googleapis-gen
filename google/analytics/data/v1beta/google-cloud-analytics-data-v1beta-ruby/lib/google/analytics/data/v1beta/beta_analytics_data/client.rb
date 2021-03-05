@@ -187,7 +187,7 @@ module Google
             #   @param options [::Gapic::CallOptions, ::Hash]
             #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
             #
-            # @overload run_report(property: nil, dimensions: nil, metrics: nil, date_ranges: nil, dimension_filter: nil, metric_filter: nil, page_size: nil, page_token: nil, metric_aggregations: nil, order_bys: nil, currency_code: nil, cohort_spec: nil, keep_empty_rows: nil, return_property_quota: nil)
+            # @overload run_report(property: nil, dimensions: nil, metrics: nil, date_ranges: nil, dimension_filter: nil, metric_filter: nil, offset: nil, limit: nil, metric_aggregations: nil, order_bys: nil, currency_code: nil, cohort_spec: nil, keep_empty_rows: nil, return_property_quota: nil)
             #   Pass arguments to `run_report` via keyword arguments. Note that at
             #   least one keyword argument is required. To specify no parameters, or to keep all
             #   the default parameter values, pass an empty Hash as a request object (see above).
@@ -218,27 +218,26 @@ module Google
             #     The filter clause of metrics. Applied at post aggregation phase, similar to
             #     SQL having-clause. Metrics must be requested to be used in this filter.
             #     Dimensions cannot be used in this filter.
-            #   @param page_size [::Integer]
-            #     Page size is for paging and specifies maximum number of rows to return. The
-            #     API returns a maximum of 200,000 rows per request, no matter how many you
-            #     ask for. Page size must be positive.
+            #   @param offset [::Integer]
+            #     The row count of the start row. The first row is counted as row 0.
             #
-            #     The API can also return fewer rows than the requested `pageSize`, if there
-            #     aren't as many dimension values as the `pageSize`. For instance, there are
-            #     fewer than 300 possible values for the dimension `country`, so when
-            #     reporting on only `country`, you can't get more than 300 rows, even if you
-            #     set `pageSize` to a higher value.
+            #     When paging, the first request does not specify offset; or equivalently,
+            #     sets offset to 0; the first request returns the first `limit` of rows. The
+            #     second request sets offset to the `limit` of the first request; the second
+            #     request returns the second `limit` of rows.
             #
             #     To learn more about this pagination parameter, see
             #     [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
-            #   @param page_token [::String]
-            #     A continuation token to get the next page of the results. Adding this to
-            #     the request will return the next page of rows after the `pageToken`. The
-            #     `pageToken` should be the value returned in the `nextPageToken` parameter
-            #     in the response.
+            #   @param limit [::Integer]
+            #     The number of rows to return. If unspecified, 10,000 rows are returned. The
+            #     API returns a maximum of 100,000 rows per request, no matter how many you
+            #     ask for. `limit` must be positive.
             #
-            #     When paginating, all other parameters specified in `RunReportRequest` must
-            #     match the call that provided the page token.
+            #     The API can also return fewer rows than the requested `limit`, if there
+            #     aren't as many dimension values as the `limit`. For instance, there are
+            #     fewer than 300 possible values for the dimension `country`, so when
+            #     reporting on only `country`, you can't get more than 300 rows, even if you
+            #     set `limit` to a higher value.
             #
             #     To learn more about this pagination parameter, see
             #     [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
@@ -262,10 +261,10 @@ module Google
             #     quota. Quota is returned in [PropertyQuota](#PropertyQuota).
             #
             # @yield [response, operation] Access the result along with the RPC operation
-            # @yieldparam response [::Gapic::PagedEnumerable<::Google::Analytics::Data::V1beta::DimensionHeader>]
+            # @yieldparam response [::Google::Analytics::Data::V1beta::RunReportResponse]
             # @yieldparam operation [::GRPC::ActiveCall::Operation]
             #
-            # @return [::Gapic::PagedEnumerable<::Google::Analytics::Data::V1beta::DimensionHeader>]
+            # @return [::Google::Analytics::Data::V1beta::RunReportResponse]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
@@ -299,7 +298,6 @@ module Google
                                      retry_policy: @config.retry_policy
 
               @beta_analytics_data_stub.call_rpc :run_report, request, options: options do |response, operation|
-                response = ::Gapic::PagedEnumerable.new @beta_analytics_data_stub, :run_report, request, response, operation, options
                 yield response, operation if block_given?
                 return response
               end
@@ -678,7 +676,7 @@ module Google
             #   @param options [::Gapic::CallOptions, ::Hash]
             #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
             #
-            # @overload run_realtime_report(property: nil, dimensions: nil, metrics: nil, dimension_filter: nil, metric_filter: nil, page_size: nil, metric_aggregations: nil, order_bys: nil, return_property_quota: nil)
+            # @overload run_realtime_report(property: nil, dimensions: nil, metrics: nil, dimension_filter: nil, metric_filter: nil, limit: nil, metric_aggregations: nil, order_bys: nil, return_property_quota: nil)
             #   Pass arguments to `run_realtime_report` via keyword arguments. Note that at
             #   least one keyword argument is required. To specify no parameters, or to keep all
             #   the default parameter values, pass an empty Hash as a request object (see above).
@@ -701,19 +699,16 @@ module Google
             #     The filter clause of metrics. Applied at post aggregation phase, similar to
             #     SQL having-clause. Metrics must be requested to be used in this filter.
             #     Dimensions cannot be used in this filter.
-            #   @param page_size [::Integer]
-            #     Page size specifies maximum number of rows to return. If unspecified, up to
-            #     10,000 rows are returned. The API returns a maximum of 100,000 rows per
-            #     request, no matter how many you ask for. Page size must be positive.
+            #   @param limit [::Integer]
+            #     The number of rows to return. If unspecified, 10,000 rows are returned. The
+            #     API returns a maximum of 100,000 rows per request, no matter how many you
+            #     ask for. `limit` must be positive.
             #
-            #     The API can also return fewer rows than the requested `pageSize`, if there
-            #     aren't as many dimension values as the `pageSize`. For instance, there are
+            #     The API can also return fewer rows than the requested `limit`, if there
+            #     aren't as many dimension values as the `limit`. For instance, there are
             #     fewer than 300 possible values for the dimension `country`, so when
             #     reporting on only `country`, you can't get more than 300 rows, even if you
-            #     set `pageSize` to a higher value.
-            #
-            #     To learn more about this pagination parameter, see
-            #     [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/realtime-basics#pagination).
+            #     set `limit` to a higher value.
             #   @param metric_aggregations [::Array<::Google::Analytics::Data::V1beta::MetricAggregation>]
             #     Aggregation of metrics. Aggregated metric values will be shown in rows
             #     where the dimension_values are set to "RESERVED_(MetricAggregation)".

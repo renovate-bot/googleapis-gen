@@ -69,29 +69,28 @@ module Google
         #     The filter clause of metrics. Applied at post aggregation phase, similar to
         #     SQL having-clause. Metrics must be requested to be used in this filter.
         #     Dimensions cannot be used in this filter.
-        # @!attribute [rw] page_size
+        # @!attribute [rw] offset
         #   @return [::Integer]
-        #     Page size is for paging and specifies maximum number of rows to return. The
-        #     API returns a maximum of 200,000 rows per request, no matter how many you
-        #     ask for. Page size must be positive.
+        #     The row count of the start row. The first row is counted as row 0.
         #
-        #     The API can also return fewer rows than the requested `pageSize`, if there
-        #     aren't as many dimension values as the `pageSize`. For instance, there are
-        #     fewer than 300 possible values for the dimension `country`, so when
-        #     reporting on only `country`, you can't get more than 300 rows, even if you
-        #     set `pageSize` to a higher value.
+        #     When paging, the first request does not specify offset; or equivalently,
+        #     sets offset to 0; the first request returns the first `limit` of rows. The
+        #     second request sets offset to the `limit` of the first request; the second
+        #     request returns the second `limit` of rows.
         #
         #     To learn more about this pagination parameter, see
         #     [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
-        # @!attribute [rw] page_token
-        #   @return [::String]
-        #     A continuation token to get the next page of the results. Adding this to
-        #     the request will return the next page of rows after the `pageToken`. The
-        #     `pageToken` should be the value returned in the `nextPageToken` parameter
-        #     in the response.
+        # @!attribute [rw] limit
+        #   @return [::Integer]
+        #     The number of rows to return. If unspecified, 10,000 rows are returned. The
+        #     API returns a maximum of 100,000 rows per request, no matter how many you
+        #     ask for. `limit` must be positive.
         #
-        #     When paginating, all other parameters specified in `RunReportRequest` must
-        #     match the call that provided the page token.
+        #     The API can also return fewer rows than the requested `limit`, if there
+        #     aren't as many dimension values as the `limit`. For instance, there are
+        #     fewer than 300 possible values for the dimension `country`, so when
+        #     reporting on only `country`, you can't get more than 300 rows, even if you
+        #     set `limit` to a higher value.
         #
         #     To learn more about this pagination parameter, see
         #     [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
@@ -145,21 +144,13 @@ module Google
         # @!attribute [rw] minimums
         #   @return [::Array<::Google::Analytics::Data::V1beta::Row>]
         #     If requested, the minimum values of metrics.
-        # @!attribute [rw] next_page_token
-        #   @return [::String]
-        #     A token that can be sent as `pageToken` in a subsequent `RunReportRequest`
-        #     call to retrieve the next page of report rows. If this field is omitted,
-        #     there are no subsequent pages of report rows.
-        #
-        #     To learn more about this pagination parameter, see
-        #     [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
-        # @!attribute [rw] total_size
+        # @!attribute [rw] row_count
         #   @return [::Integer]
-        #     The total number of rows in the query result. `totalSize` is independent of
-        #     the number of rows returned in the response, the `pageSize` request
-        #     parameter, and the `pageToken` request parameter. For example if a query
-        #     returns 175 rows and includes `pageSize` of 50 in the API request, the
-        #     response will contain `totalSize` of 175 but only 50 rows.
+        #     The total number of rows in the query result. `rowCount` is independent of
+        #     the number of rows returned in the response, the `limit` request
+        #     parameter, and the `offset` request parameter. For example if a query
+        #     returns 175 rows and includes `limit` of 50 in the API request, the
+        #     response will contain `rowCount` of 175 but only 50 rows.
         #
         #     To learn more about this pagination parameter, see
         #     [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
@@ -408,20 +399,17 @@ module Google
         #     The filter clause of metrics. Applied at post aggregation phase, similar to
         #     SQL having-clause. Metrics must be requested to be used in this filter.
         #     Dimensions cannot be used in this filter.
-        # @!attribute [rw] page_size
+        # @!attribute [rw] limit
         #   @return [::Integer]
-        #     Page size specifies maximum number of rows to return. If unspecified, up to
-        #     10,000 rows are returned. The API returns a maximum of 100,000 rows per
-        #     request, no matter how many you ask for. Page size must be positive.
+        #     The number of rows to return. If unspecified, 10,000 rows are returned. The
+        #     API returns a maximum of 100,000 rows per request, no matter how many you
+        #     ask for. `limit` must be positive.
         #
-        #     The API can also return fewer rows than the requested `pageSize`, if there
-        #     aren't as many dimension values as the `pageSize`. For instance, there are
+        #     The API can also return fewer rows than the requested `limit`, if there
+        #     aren't as many dimension values as the `limit`. For instance, there are
         #     fewer than 300 possible values for the dimension `country`, so when
         #     reporting on only `country`, you can't get more than 300 rows, even if you
-        #     set `pageSize` to a higher value.
-        #
-        #     To learn more about this pagination parameter, see
-        #     [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/realtime-basics#pagination).
+        #     set `limit` to a higher value.
         # @!attribute [rw] metric_aggregations
         #   @return [::Array<::Google::Analytics::Data::V1beta::MetricAggregation>]
         #     Aggregation of metrics. Aggregated metric values will be shown in rows
@@ -459,12 +447,12 @@ module Google
         # @!attribute [rw] minimums
         #   @return [::Array<::Google::Analytics::Data::V1beta::Row>]
         #     If requested, the minimum values of metrics.
-        # @!attribute [rw] total_size
+        # @!attribute [rw] row_count
         #   @return [::Integer]
-        #     The total number of rows in the query result. `totalSize` is independent of
-        #     the number of rows returned in the response and the `pageSize` request
-        #     parameter. For example if a query returns 175 rows and includes `pageSize`
-        #     of 50 in the API request, the response will contain `totalSize` of 175 but
+        #     The total number of rows in the query result. `rowCount` is independent of
+        #     the number of rows returned in the response and the `limit` request
+        #     parameter. For example if a query returns 175 rows and includes `limit`
+        #     of 50 in the API request, the response will contain `rowCount` of 175 but
         #     only 50 rows.
         # @!attribute [rw] property_quota
         #   @return [::Google::Analytics::Data::V1beta::PropertyQuota]

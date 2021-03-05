@@ -19,7 +19,6 @@ package data_test
 import (
 	"context"
 
-	"google.golang.org/api/iterator"
 	datapb "google.golang.org/genproto/googleapis/analytics/data/v1beta"
 	data "google.golang.org/google/analytics/data/v1beta"
 )
@@ -36,7 +35,6 @@ func ExampleNewBetaAnalyticsDataClient() {
 
 func ExampleBetaAnalyticsDataClient_RunReport() {
 	// import datapb "google.golang.org/genproto/googleapis/analytics/data/v1beta"
-	// import "google.golang.org/api/iterator"
 
 	ctx := context.Background()
 	c, err := data.NewBetaAnalyticsDataClient(ctx)
@@ -47,18 +45,12 @@ func ExampleBetaAnalyticsDataClient_RunReport() {
 	req := &datapb.RunReportRequest{
 		// TODO: Fill request struct fields.
 	}
-	it := c.RunReport(ctx, req)
-	for {
-		resp, err := it.Next()
-		if err == iterator.Done {
-			break
-		}
-		if err != nil {
-			// TODO: Handle error.
-		}
-		// TODO: Use resp.
-		_ = resp
+	resp, err := c.RunReport(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
 	}
+	// TODO: Use resp.
+	_ = resp
 }
 
 func ExampleBetaAnalyticsDataClient_RunPivotReport() {

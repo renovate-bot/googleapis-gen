@@ -26,7 +26,6 @@ private static final long serialVersionUID = 0L;
     totals_ = java.util.Collections.emptyList();
     maximums_ = java.util.Collections.emptyList();
     minimums_ = java.util.Collections.emptyList();
-    nextPageToken_ = "";
   }
 
   @java.lang.Override
@@ -114,18 +113,12 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.google.analytics.data.v1beta.Row.parser(), extensionRegistry));
             break;
           }
-          case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 56: {
 
-            nextPageToken_ = s;
+            rowCount_ = input.readInt32();
             break;
           }
-          case 64: {
-
-            totalSize_ = input.readInt32();
-            break;
-          }
-          case 74: {
+          case 66: {
             com.google.analytics.data.v1beta.ResponseMetaData.Builder subBuilder = null;
             if (metadata_ != null) {
               subBuilder = metadata_.toBuilder();
@@ -138,7 +131,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 82: {
+          case 74: {
             com.google.analytics.data.v1beta.PropertyQuota.Builder subBuilder = null;
             if (propertyQuota_ != null) {
               subBuilder = propertyQuota_.toBuilder();
@@ -571,89 +564,35 @@ private static final long serialVersionUID = 0L;
     return minimums_.get(index);
   }
 
-  public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 7;
-  private volatile java.lang.Object nextPageToken_;
+  public static final int ROW_COUNT_FIELD_NUMBER = 7;
+  private int rowCount_;
   /**
    * <pre>
-   * A token that can be sent as `pageToken` in a subsequent `RunReportRequest`
-   * call to retrieve the next page of report rows. If this field is omitted,
-   * there are no subsequent pages of report rows.
+   * The total number of rows in the query result. `rowCount` is independent of
+   * the number of rows returned in the response, the `limit` request
+   * parameter, and the `offset` request parameter. For example if a query
+   * returns 175 rows and includes `limit` of 50 in the API request, the
+   * response will contain `rowCount` of 175 but only 50 rows.
    * To learn more about this pagination parameter, see
    * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
    * </pre>
    *
-   * <code>string next_page_token = 7;</code>
-   * @return The nextPageToken.
+   * <code>int32 row_count = 7;</code>
+   * @return The rowCount.
    */
   @java.lang.Override
-  public java.lang.String getNextPageToken() {
-    java.lang.Object ref = nextPageToken_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      nextPageToken_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * A token that can be sent as `pageToken` in a subsequent `RunReportRequest`
-   * call to retrieve the next page of report rows. If this field is omitted,
-   * there are no subsequent pages of report rows.
-   * To learn more about this pagination parameter, see
-   * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
-   * </pre>
-   *
-   * <code>string next_page_token = 7;</code>
-   * @return The bytes for nextPageToken.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getNextPageTokenBytes() {
-    java.lang.Object ref = nextPageToken_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      nextPageToken_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public int getRowCount() {
+    return rowCount_;
   }
 
-  public static final int TOTAL_SIZE_FIELD_NUMBER = 8;
-  private int totalSize_;
-  /**
-   * <pre>
-   * The total number of rows in the query result. `totalSize` is independent of
-   * the number of rows returned in the response, the `pageSize` request
-   * parameter, and the `pageToken` request parameter. For example if a query
-   * returns 175 rows and includes `pageSize` of 50 in the API request, the
-   * response will contain `totalSize` of 175 but only 50 rows.
-   * To learn more about this pagination parameter, see
-   * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
-   * </pre>
-   *
-   * <code>int32 total_size = 8;</code>
-   * @return The totalSize.
-   */
-  @java.lang.Override
-  public int getTotalSize() {
-    return totalSize_;
-  }
-
-  public static final int METADATA_FIELD_NUMBER = 9;
+  public static final int METADATA_FIELD_NUMBER = 8;
   private com.google.analytics.data.v1beta.ResponseMetaData metadata_;
   /**
    * <pre>
    * Metadata for the report.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 9;</code>
+   * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 8;</code>
    * @return Whether the metadata field is set.
    */
   @java.lang.Override
@@ -665,7 +604,7 @@ private static final long serialVersionUID = 0L;
    * Metadata for the report.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 9;</code>
+   * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 8;</code>
    * @return The metadata.
    */
   @java.lang.Override
@@ -677,21 +616,21 @@ private static final long serialVersionUID = 0L;
    * Metadata for the report.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 9;</code>
+   * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 8;</code>
    */
   @java.lang.Override
   public com.google.analytics.data.v1beta.ResponseMetaDataOrBuilder getMetadataOrBuilder() {
     return getMetadata();
   }
 
-  public static final int PROPERTY_QUOTA_FIELD_NUMBER = 10;
+  public static final int PROPERTY_QUOTA_FIELD_NUMBER = 9;
   private com.google.analytics.data.v1beta.PropertyQuota propertyQuota_;
   /**
    * <pre>
    * This Analytics Property's quota state including this request.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 10;</code>
+   * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 9;</code>
    * @return Whether the propertyQuota field is set.
    */
   @java.lang.Override
@@ -703,7 +642,7 @@ private static final long serialVersionUID = 0L;
    * This Analytics Property's quota state including this request.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 10;</code>
+   * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 9;</code>
    * @return The propertyQuota.
    */
   @java.lang.Override
@@ -715,7 +654,7 @@ private static final long serialVersionUID = 0L;
    * This Analytics Property's quota state including this request.
    * </pre>
    *
-   * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 10;</code>
+   * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 9;</code>
    */
   @java.lang.Override
   public com.google.analytics.data.v1beta.PropertyQuotaOrBuilder getPropertyQuotaOrBuilder() {
@@ -754,17 +693,14 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < minimums_.size(); i++) {
       output.writeMessage(6, minimums_.get(i));
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, nextPageToken_);
-    }
-    if (totalSize_ != 0) {
-      output.writeInt32(8, totalSize_);
+    if (rowCount_ != 0) {
+      output.writeInt32(7, rowCount_);
     }
     if (metadata_ != null) {
-      output.writeMessage(9, getMetadata());
+      output.writeMessage(8, getMetadata());
     }
     if (propertyQuota_ != null) {
-      output.writeMessage(10, getPropertyQuota());
+      output.writeMessage(9, getPropertyQuota());
     }
     unknownFields.writeTo(output);
   }
@@ -799,20 +735,17 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, minimums_.get(i));
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, nextPageToken_);
-    }
-    if (totalSize_ != 0) {
+    if (rowCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(8, totalSize_);
+        .computeInt32Size(7, rowCount_);
     }
     if (metadata_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, getMetadata());
+        .computeMessageSize(8, getMetadata());
     }
     if (propertyQuota_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, getPropertyQuota());
+        .computeMessageSize(9, getPropertyQuota());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -841,10 +774,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getMaximumsList())) return false;
     if (!getMinimumsList()
         .equals(other.getMinimumsList())) return false;
-    if (!getNextPageToken()
-        .equals(other.getNextPageToken())) return false;
-    if (getTotalSize()
-        != other.getTotalSize()) return false;
+    if (getRowCount()
+        != other.getRowCount()) return false;
     if (hasMetadata() != other.hasMetadata()) return false;
     if (hasMetadata()) {
       if (!getMetadata()
@@ -890,10 +821,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + MINIMUMS_FIELD_NUMBER;
       hash = (53 * hash) + getMinimumsList().hashCode();
     }
-    hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
-    hash = (53 * hash) + getNextPageToken().hashCode();
-    hash = (37 * hash) + TOTAL_SIZE_FIELD_NUMBER;
-    hash = (53 * hash) + getTotalSize();
+    hash = (37 * hash) + ROW_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getRowCount();
     if (hasMetadata()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getMetadata().hashCode();
@@ -1081,9 +1010,7 @@ private static final long serialVersionUID = 0L;
       } else {
         minimumsBuilder_.clear();
       }
-      nextPageToken_ = "";
-
-      totalSize_ = 0;
+      rowCount_ = 0;
 
       if (metadataBuilder_ == null) {
         metadata_ = null;
@@ -1178,8 +1105,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.minimums_ = minimumsBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
-      result.totalSize_ = totalSize_;
+      result.rowCount_ = rowCount_;
       if (metadataBuilder_ == null) {
         result.metadata_ = metadata_;
       } else {
@@ -1394,12 +1320,8 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
-      if (!other.getNextPageToken().isEmpty()) {
-        nextPageToken_ = other.nextPageToken_;
-        onChanged();
-      }
-      if (other.getTotalSize() != 0) {
-        setTotalSize(other.getTotalSize());
+      if (other.getRowCount() != 0) {
+        setRowCount(other.getRowCount());
       }
       if (other.hasMetadata()) {
         mergeMetadata(other.getMetadata());
@@ -3345,179 +3267,63 @@ private static final long serialVersionUID = 0L;
       return minimumsBuilder_;
     }
 
-    private java.lang.Object nextPageToken_ = "";
+    private int rowCount_ ;
     /**
      * <pre>
-     * A token that can be sent as `pageToken` in a subsequent `RunReportRequest`
-     * call to retrieve the next page of report rows. If this field is omitted,
-     * there are no subsequent pages of report rows.
+     * The total number of rows in the query result. `rowCount` is independent of
+     * the number of rows returned in the response, the `limit` request
+     * parameter, and the `offset` request parameter. For example if a query
+     * returns 175 rows and includes `limit` of 50 in the API request, the
+     * response will contain `rowCount` of 175 but only 50 rows.
      * To learn more about this pagination parameter, see
      * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
      * </pre>
      *
-     * <code>string next_page_token = 7;</code>
-     * @return The nextPageToken.
-     */
-    public java.lang.String getNextPageToken() {
-      java.lang.Object ref = nextPageToken_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        nextPageToken_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * A token that can be sent as `pageToken` in a subsequent `RunReportRequest`
-     * call to retrieve the next page of report rows. If this field is omitted,
-     * there are no subsequent pages of report rows.
-     * To learn more about this pagination parameter, see
-     * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
-     * </pre>
-     *
-     * <code>string next_page_token = 7;</code>
-     * @return The bytes for nextPageToken.
-     */
-    public com.google.protobuf.ByteString
-        getNextPageTokenBytes() {
-      java.lang.Object ref = nextPageToken_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        nextPageToken_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * A token that can be sent as `pageToken` in a subsequent `RunReportRequest`
-     * call to retrieve the next page of report rows. If this field is omitted,
-     * there are no subsequent pages of report rows.
-     * To learn more about this pagination parameter, see
-     * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
-     * </pre>
-     *
-     * <code>string next_page_token = 7;</code>
-     * @param value The nextPageToken to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNextPageToken(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      nextPageToken_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * A token that can be sent as `pageToken` in a subsequent `RunReportRequest`
-     * call to retrieve the next page of report rows. If this field is omitted,
-     * there are no subsequent pages of report rows.
-     * To learn more about this pagination parameter, see
-     * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
-     * </pre>
-     *
-     * <code>string next_page_token = 7;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearNextPageToken() {
-      
-      nextPageToken_ = getDefaultInstance().getNextPageToken();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * A token that can be sent as `pageToken` in a subsequent `RunReportRequest`
-     * call to retrieve the next page of report rows. If this field is omitted,
-     * there are no subsequent pages of report rows.
-     * To learn more about this pagination parameter, see
-     * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
-     * </pre>
-     *
-     * <code>string next_page_token = 7;</code>
-     * @param value The bytes for nextPageToken to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNextPageTokenBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      nextPageToken_ = value;
-      onChanged();
-      return this;
-    }
-
-    private int totalSize_ ;
-    /**
-     * <pre>
-     * The total number of rows in the query result. `totalSize` is independent of
-     * the number of rows returned in the response, the `pageSize` request
-     * parameter, and the `pageToken` request parameter. For example if a query
-     * returns 175 rows and includes `pageSize` of 50 in the API request, the
-     * response will contain `totalSize` of 175 but only 50 rows.
-     * To learn more about this pagination parameter, see
-     * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
-     * </pre>
-     *
-     * <code>int32 total_size = 8;</code>
-     * @return The totalSize.
+     * <code>int32 row_count = 7;</code>
+     * @return The rowCount.
      */
     @java.lang.Override
-    public int getTotalSize() {
-      return totalSize_;
+    public int getRowCount() {
+      return rowCount_;
     }
     /**
      * <pre>
-     * The total number of rows in the query result. `totalSize` is independent of
-     * the number of rows returned in the response, the `pageSize` request
-     * parameter, and the `pageToken` request parameter. For example if a query
-     * returns 175 rows and includes `pageSize` of 50 in the API request, the
-     * response will contain `totalSize` of 175 but only 50 rows.
+     * The total number of rows in the query result. `rowCount` is independent of
+     * the number of rows returned in the response, the `limit` request
+     * parameter, and the `offset` request parameter. For example if a query
+     * returns 175 rows and includes `limit` of 50 in the API request, the
+     * response will contain `rowCount` of 175 but only 50 rows.
      * To learn more about this pagination parameter, see
      * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
      * </pre>
      *
-     * <code>int32 total_size = 8;</code>
-     * @param value The totalSize to set.
+     * <code>int32 row_count = 7;</code>
+     * @param value The rowCount to set.
      * @return This builder for chaining.
      */
-    public Builder setTotalSize(int value) {
+    public Builder setRowCount(int value) {
       
-      totalSize_ = value;
+      rowCount_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The total number of rows in the query result. `totalSize` is independent of
-     * the number of rows returned in the response, the `pageSize` request
-     * parameter, and the `pageToken` request parameter. For example if a query
-     * returns 175 rows and includes `pageSize` of 50 in the API request, the
-     * response will contain `totalSize` of 175 but only 50 rows.
+     * The total number of rows in the query result. `rowCount` is independent of
+     * the number of rows returned in the response, the `limit` request
+     * parameter, and the `offset` request parameter. For example if a query
+     * returns 175 rows and includes `limit` of 50 in the API request, the
+     * response will contain `rowCount` of 175 but only 50 rows.
      * To learn more about this pagination parameter, see
      * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
      * </pre>
      *
-     * <code>int32 total_size = 8;</code>
+     * <code>int32 row_count = 7;</code>
      * @return This builder for chaining.
      */
-    public Builder clearTotalSize() {
+    public Builder clearRowCount() {
       
-      totalSize_ = 0;
+      rowCount_ = 0;
       onChanged();
       return this;
     }
@@ -3530,7 +3336,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 9;</code>
+     * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 8;</code>
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
@@ -3541,7 +3347,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 9;</code>
+     * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 8;</code>
      * @return The metadata.
      */
     public com.google.analytics.data.v1beta.ResponseMetaData getMetadata() {
@@ -3556,7 +3362,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 9;</code>
+     * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 8;</code>
      */
     public Builder setMetadata(com.google.analytics.data.v1beta.ResponseMetaData value) {
       if (metadataBuilder_ == null) {
@@ -3576,7 +3382,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 9;</code>
+     * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 8;</code>
      */
     public Builder setMetadata(
         com.google.analytics.data.v1beta.ResponseMetaData.Builder builderForValue) {
@@ -3594,7 +3400,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 9;</code>
+     * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 8;</code>
      */
     public Builder mergeMetadata(com.google.analytics.data.v1beta.ResponseMetaData value) {
       if (metadataBuilder_ == null) {
@@ -3616,7 +3422,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 9;</code>
+     * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 8;</code>
      */
     public Builder clearMetadata() {
       if (metadataBuilder_ == null) {
@@ -3634,7 +3440,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 9;</code>
+     * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 8;</code>
      */
     public com.google.analytics.data.v1beta.ResponseMetaData.Builder getMetadataBuilder() {
       
@@ -3646,7 +3452,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 9;</code>
+     * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 8;</code>
      */
     public com.google.analytics.data.v1beta.ResponseMetaDataOrBuilder getMetadataOrBuilder() {
       if (metadataBuilder_ != null) {
@@ -3661,7 +3467,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the report.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 9;</code>
+     * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.analytics.data.v1beta.ResponseMetaData, com.google.analytics.data.v1beta.ResponseMetaData.Builder, com.google.analytics.data.v1beta.ResponseMetaDataOrBuilder> 
@@ -3685,7 +3491,7 @@ private static final long serialVersionUID = 0L;
      * This Analytics Property's quota state including this request.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 10;</code>
+     * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 9;</code>
      * @return Whether the propertyQuota field is set.
      */
     public boolean hasPropertyQuota() {
@@ -3696,7 +3502,7 @@ private static final long serialVersionUID = 0L;
      * This Analytics Property's quota state including this request.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 10;</code>
+     * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 9;</code>
      * @return The propertyQuota.
      */
     public com.google.analytics.data.v1beta.PropertyQuota getPropertyQuota() {
@@ -3711,7 +3517,7 @@ private static final long serialVersionUID = 0L;
      * This Analytics Property's quota state including this request.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 10;</code>
+     * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 9;</code>
      */
     public Builder setPropertyQuota(com.google.analytics.data.v1beta.PropertyQuota value) {
       if (propertyQuotaBuilder_ == null) {
@@ -3731,7 +3537,7 @@ private static final long serialVersionUID = 0L;
      * This Analytics Property's quota state including this request.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 10;</code>
+     * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 9;</code>
      */
     public Builder setPropertyQuota(
         com.google.analytics.data.v1beta.PropertyQuota.Builder builderForValue) {
@@ -3749,7 +3555,7 @@ private static final long serialVersionUID = 0L;
      * This Analytics Property's quota state including this request.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 10;</code>
+     * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 9;</code>
      */
     public Builder mergePropertyQuota(com.google.analytics.data.v1beta.PropertyQuota value) {
       if (propertyQuotaBuilder_ == null) {
@@ -3771,7 +3577,7 @@ private static final long serialVersionUID = 0L;
      * This Analytics Property's quota state including this request.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 10;</code>
+     * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 9;</code>
      */
     public Builder clearPropertyQuota() {
       if (propertyQuotaBuilder_ == null) {
@@ -3789,7 +3595,7 @@ private static final long serialVersionUID = 0L;
      * This Analytics Property's quota state including this request.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 10;</code>
+     * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 9;</code>
      */
     public com.google.analytics.data.v1beta.PropertyQuota.Builder getPropertyQuotaBuilder() {
       
@@ -3801,7 +3607,7 @@ private static final long serialVersionUID = 0L;
      * This Analytics Property's quota state including this request.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 10;</code>
+     * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 9;</code>
      */
     public com.google.analytics.data.v1beta.PropertyQuotaOrBuilder getPropertyQuotaOrBuilder() {
       if (propertyQuotaBuilder_ != null) {
@@ -3816,7 +3622,7 @@ private static final long serialVersionUID = 0L;
      * This Analytics Property's quota state including this request.
      * </pre>
      *
-     * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 10;</code>
+     * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.analytics.data.v1beta.PropertyQuota, com.google.analytics.data.v1beta.PropertyQuota.Builder, com.google.analytics.data.v1beta.PropertyQuotaOrBuilder> 
