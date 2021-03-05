@@ -27,6 +27,7 @@ private static final long serialVersionUID = 0L;
     stateMessage_ = "";
     artifactGcsUri_ = "";
     tier_ = 0;
+    uid_ = "";
   }
 
   @java.lang.Override
@@ -158,6 +159,51 @@ private static final long serialVersionUID = 0L;
             int rawValue = input.readEnum();
 
             tier_ = rawValue;
+            break;
+          }
+          case 114: {
+            com.google.cloud.metastore.v1alpha.MetadataIntegration.Builder subBuilder = null;
+            if (metadataIntegration_ != null) {
+              subBuilder = metadataIntegration_.toBuilder();
+            }
+            metadataIntegration_ = input.readMessage(com.google.cloud.metastore.v1alpha.MetadataIntegration.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(metadataIntegration_);
+              metadataIntegration_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 122: {
+            com.google.cloud.metastore.v1alpha.MaintenanceWindow.Builder subBuilder = null;
+            if (maintenanceWindow_ != null) {
+              subBuilder = maintenanceWindow_.toBuilder();
+            }
+            maintenanceWindow_ = input.readMessage(com.google.cloud.metastore.v1alpha.MaintenanceWindow.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(maintenanceWindow_);
+              maintenanceWindow_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 130: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            uid_ = s;
+            break;
+          }
+          case 138: {
+            com.google.cloud.metastore.v1alpha.MetadataManagementActivity.Builder subBuilder = null;
+            if (metadataManagementActivity_ != null) {
+              subBuilder = metadataManagementActivity_.toBuilder();
+            }
+            metadataManagementActivity_ = input.readMessage(com.google.cloud.metastore.v1alpha.MetadataManagementActivity.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(metadataManagementActivity_);
+              metadataManagementActivity_ = subBuilder.buildPartial();
+            }
+
             break;
           }
           default: {
@@ -459,8 +505,17 @@ private static final long serialVersionUID = 0L;
     TIER_UNSPECIFIED(0),
     /**
      * <pre>
-     * The enterprise tier combines a powerful metastore serving layer with a
-     * highly scalable data storage layer.
+     * The developer tier provides limited scalability and no fault tolerance.
+     * Good for low-cost proof-of-concept.
+     * </pre>
+     *
+     * <code>DEVELOPER = 1;</code>
+     */
+    DEVELOPER(1),
+    /**
+     * <pre>
+     * The enterprise tier provides multi-zone high availability, and sufficient
+     * scalability for enterprise-level Dataproc Metastore workloads.
      * </pre>
      *
      * <code>ENTERPRISE = 3;</code>
@@ -479,8 +534,17 @@ private static final long serialVersionUID = 0L;
     public static final int TIER_UNSPECIFIED_VALUE = 0;
     /**
      * <pre>
-     * The enterprise tier combines a powerful metastore serving layer with a
-     * highly scalable data storage layer.
+     * The developer tier provides limited scalability and no fault tolerance.
+     * Good for low-cost proof-of-concept.
+     * </pre>
+     *
+     * <code>DEVELOPER = 1;</code>
+     */
+    public static final int DEVELOPER_VALUE = 1;
+    /**
+     * <pre>
+     * The enterprise tier provides multi-zone high availability, and sufficient
+     * scalability for enterprise-level Dataproc Metastore workloads.
      * </pre>
      *
      * <code>ENTERPRISE = 3;</code>
@@ -513,6 +577,7 @@ private static final long serialVersionUID = 0L;
     public static Tier forNumber(int value) {
       switch (value) {
         case 0: return TIER_UNSPECIFIED;
+        case 1: return DEVELOPER;
         case 3: return ENTERPRISE;
         default: return null;
       }
@@ -609,12 +674,58 @@ private static final long serialVersionUID = 0L;
         metastoreConfigCase_);
   }
 
+  public static final int HIVE_METASTORE_CONFIG_FIELD_NUMBER = 5;
+  /**
+   * <pre>
+   * Configuration information specific to running Hive metastore
+   * software as the metastore service.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
+   * @return Whether the hiveMetastoreConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasHiveMetastoreConfig() {
+    return metastoreConfigCase_ == 5;
+  }
+  /**
+   * <pre>
+   * Configuration information specific to running Hive metastore
+   * software as the metastore service.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
+   * @return The hiveMetastoreConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.metastore.v1alpha.HiveMetastoreConfig getHiveMetastoreConfig() {
+    if (metastoreConfigCase_ == 5) {
+       return (com.google.cloud.metastore.v1alpha.HiveMetastoreConfig) metastoreConfig_;
+    }
+    return com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * Configuration information specific to running Hive metastore
+   * software as the metastore service.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.metastore.v1alpha.HiveMetastoreConfigOrBuilder getHiveMetastoreConfigOrBuilder() {
+    if (metastoreConfigCase_ == 5) {
+       return (com.google.cloud.metastore.v1alpha.HiveMetastoreConfig) metastoreConfig_;
+    }
+    return com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.getDefaultInstance();
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
    * <pre>
    * Immutable. The relative resource name of the metastore service, of the form:
-   * "projects/{project_id}/locations/{location_id}/services/{service_id}".
+   * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -636,7 +747,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Immutable. The relative resource name of the metastore service, of the form:
-   * "projects/{project_id}/locations/{location_id}/services/{service_id}".
+   * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -830,60 +941,13 @@ private static final long serialVersionUID = 0L;
     return map.get(key);
   }
 
-  public static final int HIVE_METASTORE_CONFIG_FIELD_NUMBER = 5;
-  /**
-   * <pre>
-   * Configuration information specific to running Hive metastore
-   * software as the metastore service.
-   * </pre>
-   *
-   * <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
-   * @return Whether the hiveMetastoreConfig field is set.
-   */
-  @java.lang.Override
-  public boolean hasHiveMetastoreConfig() {
-    return metastoreConfigCase_ == 5;
-  }
-  /**
-   * <pre>
-   * Configuration information specific to running Hive metastore
-   * software as the metastore service.
-   * </pre>
-   *
-   * <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
-   * @return The hiveMetastoreConfig.
-   */
-  @java.lang.Override
-  public com.google.cloud.metastore.v1alpha.HiveMetastoreConfig getHiveMetastoreConfig() {
-    if (metastoreConfigCase_ == 5) {
-       return (com.google.cloud.metastore.v1alpha.HiveMetastoreConfig) metastoreConfig_;
-    }
-    return com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.getDefaultInstance();
-  }
-  /**
-   * <pre>
-   * Configuration information specific to running Hive metastore
-   * software as the metastore service.
-   * </pre>
-   *
-   * <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
-   */
-  @java.lang.Override
-  public com.google.cloud.metastore.v1alpha.HiveMetastoreConfigOrBuilder getHiveMetastoreConfigOrBuilder() {
-    if (metastoreConfigCase_ == 5) {
-       return (com.google.cloud.metastore.v1alpha.HiveMetastoreConfig) metastoreConfig_;
-    }
-    return com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.getDefaultInstance();
-  }
-
   public static final int NETWORK_FIELD_NUMBER = 7;
   private volatile java.lang.Object network_;
   /**
    * <pre>
    * Immutable. The relative resource name of the VPC network on which the instance can be
-   * accessed. The network must belong to the same project as the metastore
-   * instance. It is specified in the following form:
-   * "projects/{project_id}/global/networks/{network_id}".
+   * accessed. It is specified in the following form:
+   * `projects/{project_number}/global/networks/{network_id}`.
    * </pre>
    *
    * <code>string network = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
@@ -905,9 +969,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Immutable. The relative resource name of the VPC network on which the instance can be
-   * accessed. The network must belong to the same project as the metastore
-   * instance. It is specified in the following form:
-   * "projects/{project_id}/global/networks/{network_id}".
+   * accessed. It is specified in the following form:
+   * `projects/{project_number}/global/networks/{network_id}`.
    * </pre>
    *
    * <code>string network = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
@@ -1139,6 +1202,172 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.google.cloud.metastore.v1alpha.Service.Tier.UNRECOGNIZED : result;
   }
 
+  public static final int METADATA_INTEGRATION_FIELD_NUMBER = 14;
+  private com.google.cloud.metastore.v1alpha.MetadataIntegration metadataIntegration_;
+  /**
+   * <pre>
+   * The setting that defines how metastore metadata should be integrated with
+   * external services and systems.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.MetadataIntegration metadata_integration = 14;</code>
+   * @return Whether the metadataIntegration field is set.
+   */
+  @java.lang.Override
+  public boolean hasMetadataIntegration() {
+    return metadataIntegration_ != null;
+  }
+  /**
+   * <pre>
+   * The setting that defines how metastore metadata should be integrated with
+   * external services and systems.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.MetadataIntegration metadata_integration = 14;</code>
+   * @return The metadataIntegration.
+   */
+  @java.lang.Override
+  public com.google.cloud.metastore.v1alpha.MetadataIntegration getMetadataIntegration() {
+    return metadataIntegration_ == null ? com.google.cloud.metastore.v1alpha.MetadataIntegration.getDefaultInstance() : metadataIntegration_;
+  }
+  /**
+   * <pre>
+   * The setting that defines how metastore metadata should be integrated with
+   * external services and systems.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.MetadataIntegration metadata_integration = 14;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.metastore.v1alpha.MetadataIntegrationOrBuilder getMetadataIntegrationOrBuilder() {
+    return getMetadataIntegration();
+  }
+
+  public static final int MAINTENANCE_WINDOW_FIELD_NUMBER = 15;
+  private com.google.cloud.metastore.v1alpha.MaintenanceWindow maintenanceWindow_;
+  /**
+   * <pre>
+   * The one hour maintenance window of the metastore service. This specifies
+   * when the service can be restarted for maintenance purposes in UTC time.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
+   * @return Whether the maintenanceWindow field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaintenanceWindow() {
+    return maintenanceWindow_ != null;
+  }
+  /**
+   * <pre>
+   * The one hour maintenance window of the metastore service. This specifies
+   * when the service can be restarted for maintenance purposes in UTC time.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
+   * @return The maintenanceWindow.
+   */
+  @java.lang.Override
+  public com.google.cloud.metastore.v1alpha.MaintenanceWindow getMaintenanceWindow() {
+    return maintenanceWindow_ == null ? com.google.cloud.metastore.v1alpha.MaintenanceWindow.getDefaultInstance() : maintenanceWindow_;
+  }
+  /**
+   * <pre>
+   * The one hour maintenance window of the metastore service. This specifies
+   * when the service can be restarted for maintenance purposes in UTC time.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.metastore.v1alpha.MaintenanceWindowOrBuilder getMaintenanceWindowOrBuilder() {
+    return getMaintenanceWindow();
+  }
+
+  public static final int UID_FIELD_NUMBER = 16;
+  private volatile java.lang.Object uid_;
+  /**
+   * <pre>
+   * Output only. The globally unique resource identifier of the metastore service.
+   * </pre>
+   *
+   * <code>string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The uid.
+   */
+  @java.lang.Override
+  public java.lang.String getUid() {
+    java.lang.Object ref = uid_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      uid_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Output only. The globally unique resource identifier of the metastore service.
+   * </pre>
+   *
+   * <code>string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for uid.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getUidBytes() {
+    java.lang.Object ref = uid_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      uid_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int METADATA_MANAGEMENT_ACTIVITY_FIELD_NUMBER = 17;
+  private com.google.cloud.metastore.v1alpha.MetadataManagementActivity metadataManagementActivity_;
+  /**
+   * <pre>
+   * Output only. The metadata management activities of the metastore service.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.MetadataManagementActivity metadata_management_activity = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the metadataManagementActivity field is set.
+   */
+  @java.lang.Override
+  public boolean hasMetadataManagementActivity() {
+    return metadataManagementActivity_ != null;
+  }
+  /**
+   * <pre>
+   * Output only. The metadata management activities of the metastore service.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.MetadataManagementActivity metadata_management_activity = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The metadataManagementActivity.
+   */
+  @java.lang.Override
+  public com.google.cloud.metastore.v1alpha.MetadataManagementActivity getMetadataManagementActivity() {
+    return metadataManagementActivity_ == null ? com.google.cloud.metastore.v1alpha.MetadataManagementActivity.getDefaultInstance() : metadataManagementActivity_;
+  }
+  /**
+   * <pre>
+   * Output only. The metadata management activities of the metastore service.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.MetadataManagementActivity metadata_management_activity = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.metastore.v1alpha.MetadataManagementActivityOrBuilder getMetadataManagementActivityOrBuilder() {
+    return getMetadataManagementActivity();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1191,6 +1420,18 @@ private static final long serialVersionUID = 0L;
     }
     if (tier_ != com.google.cloud.metastore.v1alpha.Service.Tier.TIER_UNSPECIFIED.getNumber()) {
       output.writeEnum(13, tier_);
+    }
+    if (metadataIntegration_ != null) {
+      output.writeMessage(14, getMetadataIntegration());
+    }
+    if (maintenanceWindow_ != null) {
+      output.writeMessage(15, getMaintenanceWindow());
+    }
+    if (!getUidBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, uid_);
+    }
+    if (metadataManagementActivity_ != null) {
+      output.writeMessage(17, getMetadataManagementActivity());
     }
     unknownFields.writeTo(output);
   }
@@ -1250,6 +1491,21 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(13, tier_);
     }
+    if (metadataIntegration_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(14, getMetadataIntegration());
+    }
+    if (maintenanceWindow_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(15, getMaintenanceWindow());
+    }
+    if (!getUidBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, uid_);
+    }
+    if (metadataManagementActivity_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(17, getMetadataManagementActivity());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1291,6 +1547,23 @@ private static final long serialVersionUID = 0L;
     if (!getArtifactGcsUri()
         .equals(other.getArtifactGcsUri())) return false;
     if (tier_ != other.tier_) return false;
+    if (hasMetadataIntegration() != other.hasMetadataIntegration()) return false;
+    if (hasMetadataIntegration()) {
+      if (!getMetadataIntegration()
+          .equals(other.getMetadataIntegration())) return false;
+    }
+    if (hasMaintenanceWindow() != other.hasMaintenanceWindow()) return false;
+    if (hasMaintenanceWindow()) {
+      if (!getMaintenanceWindow()
+          .equals(other.getMaintenanceWindow())) return false;
+    }
+    if (!getUid()
+        .equals(other.getUid())) return false;
+    if (hasMetadataManagementActivity() != other.hasMetadataManagementActivity()) return false;
+    if (hasMetadataManagementActivity()) {
+      if (!getMetadataManagementActivity()
+          .equals(other.getMetadataManagementActivity())) return false;
+    }
     if (!getMetastoreConfigCase().equals(other.getMetastoreConfigCase())) return false;
     switch (metastoreConfigCase_) {
       case 5:
@@ -1339,6 +1612,20 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getArtifactGcsUri().hashCode();
     hash = (37 * hash) + TIER_FIELD_NUMBER;
     hash = (53 * hash) + tier_;
+    if (hasMetadataIntegration()) {
+      hash = (37 * hash) + METADATA_INTEGRATION_FIELD_NUMBER;
+      hash = (53 * hash) + getMetadataIntegration().hashCode();
+    }
+    if (hasMaintenanceWindow()) {
+      hash = (37 * hash) + MAINTENANCE_WINDOW_FIELD_NUMBER;
+      hash = (53 * hash) + getMaintenanceWindow().hashCode();
+    }
+    hash = (37 * hash) + UID_FIELD_NUMBER;
+    hash = (53 * hash) + getUid().hashCode();
+    if (hasMetadataManagementActivity()) {
+      hash = (37 * hash) + METADATA_MANAGEMENT_ACTIVITY_FIELD_NUMBER;
+      hash = (53 * hash) + getMetadataManagementActivity().hashCode();
+    }
     switch (metastoreConfigCase_) {
       case 5:
         hash = (37 * hash) + HIVE_METASTORE_CONFIG_FIELD_NUMBER;
@@ -1535,6 +1822,26 @@ private static final long serialVersionUID = 0L;
 
       tier_ = 0;
 
+      if (metadataIntegrationBuilder_ == null) {
+        metadataIntegration_ = null;
+      } else {
+        metadataIntegration_ = null;
+        metadataIntegrationBuilder_ = null;
+      }
+      if (maintenanceWindowBuilder_ == null) {
+        maintenanceWindow_ = null;
+      } else {
+        maintenanceWindow_ = null;
+        maintenanceWindowBuilder_ = null;
+      }
+      uid_ = "";
+
+      if (metadataManagementActivityBuilder_ == null) {
+        metadataManagementActivity_ = null;
+      } else {
+        metadataManagementActivity_ = null;
+        metadataManagementActivityBuilder_ = null;
+      }
       metastoreConfigCase_ = 0;
       metastoreConfig_ = null;
       return this;
@@ -1564,6 +1871,13 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.metastore.v1alpha.Service buildPartial() {
       com.google.cloud.metastore.v1alpha.Service result = new com.google.cloud.metastore.v1alpha.Service(this);
       int from_bitField0_ = bitField0_;
+      if (metastoreConfigCase_ == 5) {
+        if (hiveMetastoreConfigBuilder_ == null) {
+          result.metastoreConfig_ = metastoreConfig_;
+        } else {
+          result.metastoreConfig_ = hiveMetastoreConfigBuilder_.build();
+        }
+      }
       result.name_ = name_;
       if (createTimeBuilder_ == null) {
         result.createTime_ = createTime_;
@@ -1577,13 +1891,6 @@ private static final long serialVersionUID = 0L;
       }
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
-      if (metastoreConfigCase_ == 5) {
-        if (hiveMetastoreConfigBuilder_ == null) {
-          result.metastoreConfig_ = metastoreConfig_;
-        } else {
-          result.metastoreConfig_ = hiveMetastoreConfigBuilder_.build();
-        }
-      }
       result.network_ = network_;
       result.endpointUri_ = endpointUri_;
       result.port_ = port_;
@@ -1591,6 +1898,22 @@ private static final long serialVersionUID = 0L;
       result.stateMessage_ = stateMessage_;
       result.artifactGcsUri_ = artifactGcsUri_;
       result.tier_ = tier_;
+      if (metadataIntegrationBuilder_ == null) {
+        result.metadataIntegration_ = metadataIntegration_;
+      } else {
+        result.metadataIntegration_ = metadataIntegrationBuilder_.build();
+      }
+      if (maintenanceWindowBuilder_ == null) {
+        result.maintenanceWindow_ = maintenanceWindow_;
+      } else {
+        result.maintenanceWindow_ = maintenanceWindowBuilder_.build();
+      }
+      result.uid_ = uid_;
+      if (metadataManagementActivityBuilder_ == null) {
+        result.metadataManagementActivity_ = metadataManagementActivity_;
+      } else {
+        result.metadataManagementActivity_ = metadataManagementActivityBuilder_.build();
+      }
       result.metastoreConfigCase_ = metastoreConfigCase_;
       onBuilt();
       return result;
@@ -1677,6 +2000,19 @@ private static final long serialVersionUID = 0L;
       if (other.tier_ != 0) {
         setTierValue(other.getTierValue());
       }
+      if (other.hasMetadataIntegration()) {
+        mergeMetadataIntegration(other.getMetadataIntegration());
+      }
+      if (other.hasMaintenanceWindow()) {
+        mergeMaintenanceWindow(other.getMaintenanceWindow());
+      }
+      if (!other.getUid().isEmpty()) {
+        uid_ = other.uid_;
+        onChanged();
+      }
+      if (other.hasMetadataManagementActivity()) {
+        mergeMetadataManagementActivity(other.getMetadataManagementActivity());
+      }
       switch (other.getMetastoreConfigCase()) {
         case HIVE_METASTORE_CONFIG: {
           mergeHiveMetastoreConfig(other.getHiveMetastoreConfig());
@@ -1731,11 +2067,197 @@ private static final long serialVersionUID = 0L;
 
     private int bitField0_;
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.metastore.v1alpha.HiveMetastoreConfig, com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.Builder, com.google.cloud.metastore.v1alpha.HiveMetastoreConfigOrBuilder> hiveMetastoreConfigBuilder_;
+    /**
+     * <pre>
+     * Configuration information specific to running Hive metastore
+     * software as the metastore service.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
+     * @return Whether the hiveMetastoreConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasHiveMetastoreConfig() {
+      return metastoreConfigCase_ == 5;
+    }
+    /**
+     * <pre>
+     * Configuration information specific to running Hive metastore
+     * software as the metastore service.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
+     * @return The hiveMetastoreConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.metastore.v1alpha.HiveMetastoreConfig getHiveMetastoreConfig() {
+      if (hiveMetastoreConfigBuilder_ == null) {
+        if (metastoreConfigCase_ == 5) {
+          return (com.google.cloud.metastore.v1alpha.HiveMetastoreConfig) metastoreConfig_;
+        }
+        return com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.getDefaultInstance();
+      } else {
+        if (metastoreConfigCase_ == 5) {
+          return hiveMetastoreConfigBuilder_.getMessage();
+        }
+        return com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Configuration information specific to running Hive metastore
+     * software as the metastore service.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
+     */
+    public Builder setHiveMetastoreConfig(com.google.cloud.metastore.v1alpha.HiveMetastoreConfig value) {
+      if (hiveMetastoreConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metastoreConfig_ = value;
+        onChanged();
+      } else {
+        hiveMetastoreConfigBuilder_.setMessage(value);
+      }
+      metastoreConfigCase_ = 5;
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration information specific to running Hive metastore
+     * software as the metastore service.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
+     */
+    public Builder setHiveMetastoreConfig(
+        com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.Builder builderForValue) {
+      if (hiveMetastoreConfigBuilder_ == null) {
+        metastoreConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        hiveMetastoreConfigBuilder_.setMessage(builderForValue.build());
+      }
+      metastoreConfigCase_ = 5;
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration information specific to running Hive metastore
+     * software as the metastore service.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
+     */
+    public Builder mergeHiveMetastoreConfig(com.google.cloud.metastore.v1alpha.HiveMetastoreConfig value) {
+      if (hiveMetastoreConfigBuilder_ == null) {
+        if (metastoreConfigCase_ == 5 &&
+            metastoreConfig_ != com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.getDefaultInstance()) {
+          metastoreConfig_ = com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.newBuilder((com.google.cloud.metastore.v1alpha.HiveMetastoreConfig) metastoreConfig_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          metastoreConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (metastoreConfigCase_ == 5) {
+          hiveMetastoreConfigBuilder_.mergeFrom(value);
+        }
+        hiveMetastoreConfigBuilder_.setMessage(value);
+      }
+      metastoreConfigCase_ = 5;
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration information specific to running Hive metastore
+     * software as the metastore service.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
+     */
+    public Builder clearHiveMetastoreConfig() {
+      if (hiveMetastoreConfigBuilder_ == null) {
+        if (metastoreConfigCase_ == 5) {
+          metastoreConfigCase_ = 0;
+          metastoreConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (metastoreConfigCase_ == 5) {
+          metastoreConfigCase_ = 0;
+          metastoreConfig_ = null;
+        }
+        hiveMetastoreConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration information specific to running Hive metastore
+     * software as the metastore service.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
+     */
+    public com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.Builder getHiveMetastoreConfigBuilder() {
+      return getHiveMetastoreConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Configuration information specific to running Hive metastore
+     * software as the metastore service.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.metastore.v1alpha.HiveMetastoreConfigOrBuilder getHiveMetastoreConfigOrBuilder() {
+      if ((metastoreConfigCase_ == 5) && (hiveMetastoreConfigBuilder_ != null)) {
+        return hiveMetastoreConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (metastoreConfigCase_ == 5) {
+          return (com.google.cloud.metastore.v1alpha.HiveMetastoreConfig) metastoreConfig_;
+        }
+        return com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Configuration information specific to running Hive metastore
+     * software as the metastore service.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.metastore.v1alpha.HiveMetastoreConfig, com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.Builder, com.google.cloud.metastore.v1alpha.HiveMetastoreConfigOrBuilder> 
+        getHiveMetastoreConfigFieldBuilder() {
+      if (hiveMetastoreConfigBuilder_ == null) {
+        if (!(metastoreConfigCase_ == 5)) {
+          metastoreConfig_ = com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.getDefaultInstance();
+        }
+        hiveMetastoreConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.metastore.v1alpha.HiveMetastoreConfig, com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.Builder, com.google.cloud.metastore.v1alpha.HiveMetastoreConfigOrBuilder>(
+                (com.google.cloud.metastore.v1alpha.HiveMetastoreConfig) metastoreConfig_,
+                getParentForChildren(),
+                isClean());
+        metastoreConfig_ = null;
+      }
+      metastoreConfigCase_ = 5;
+      onChanged();;
+      return hiveMetastoreConfigBuilder_;
+    }
+
     private java.lang.Object name_ = "";
     /**
      * <pre>
      * Immutable. The relative resource name of the metastore service, of the form:
-     * "projects/{project_id}/locations/{location_id}/services/{service_id}".
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1756,7 +2278,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. The relative resource name of the metastore service, of the form:
-     * "projects/{project_id}/locations/{location_id}/services/{service_id}".
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1778,7 +2300,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. The relative resource name of the metastore service, of the form:
-     * "projects/{project_id}/locations/{location_id}/services/{service_id}".
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1798,7 +2320,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. The relative resource name of the metastore service, of the form:
-     * "projects/{project_id}/locations/{location_id}/services/{service_id}".
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1813,7 +2335,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. The relative resource name of the metastore service, of the form:
-     * "projects/{project_id}/locations/{location_id}/services/{service_id}".
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2298,199 +2820,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.metastore.v1alpha.HiveMetastoreConfig, com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.Builder, com.google.cloud.metastore.v1alpha.HiveMetastoreConfigOrBuilder> hiveMetastoreConfigBuilder_;
-    /**
-     * <pre>
-     * Configuration information specific to running Hive metastore
-     * software as the metastore service.
-     * </pre>
-     *
-     * <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
-     * @return Whether the hiveMetastoreConfig field is set.
-     */
-    @java.lang.Override
-    public boolean hasHiveMetastoreConfig() {
-      return metastoreConfigCase_ == 5;
-    }
-    /**
-     * <pre>
-     * Configuration information specific to running Hive metastore
-     * software as the metastore service.
-     * </pre>
-     *
-     * <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
-     * @return The hiveMetastoreConfig.
-     */
-    @java.lang.Override
-    public com.google.cloud.metastore.v1alpha.HiveMetastoreConfig getHiveMetastoreConfig() {
-      if (hiveMetastoreConfigBuilder_ == null) {
-        if (metastoreConfigCase_ == 5) {
-          return (com.google.cloud.metastore.v1alpha.HiveMetastoreConfig) metastoreConfig_;
-        }
-        return com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.getDefaultInstance();
-      } else {
-        if (metastoreConfigCase_ == 5) {
-          return hiveMetastoreConfigBuilder_.getMessage();
-        }
-        return com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.getDefaultInstance();
-      }
-    }
-    /**
-     * <pre>
-     * Configuration information specific to running Hive metastore
-     * software as the metastore service.
-     * </pre>
-     *
-     * <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
-     */
-    public Builder setHiveMetastoreConfig(com.google.cloud.metastore.v1alpha.HiveMetastoreConfig value) {
-      if (hiveMetastoreConfigBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        metastoreConfig_ = value;
-        onChanged();
-      } else {
-        hiveMetastoreConfigBuilder_.setMessage(value);
-      }
-      metastoreConfigCase_ = 5;
-      return this;
-    }
-    /**
-     * <pre>
-     * Configuration information specific to running Hive metastore
-     * software as the metastore service.
-     * </pre>
-     *
-     * <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
-     */
-    public Builder setHiveMetastoreConfig(
-        com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.Builder builderForValue) {
-      if (hiveMetastoreConfigBuilder_ == null) {
-        metastoreConfig_ = builderForValue.build();
-        onChanged();
-      } else {
-        hiveMetastoreConfigBuilder_.setMessage(builderForValue.build());
-      }
-      metastoreConfigCase_ = 5;
-      return this;
-    }
-    /**
-     * <pre>
-     * Configuration information specific to running Hive metastore
-     * software as the metastore service.
-     * </pre>
-     *
-     * <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
-     */
-    public Builder mergeHiveMetastoreConfig(com.google.cloud.metastore.v1alpha.HiveMetastoreConfig value) {
-      if (hiveMetastoreConfigBuilder_ == null) {
-        if (metastoreConfigCase_ == 5 &&
-            metastoreConfig_ != com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.getDefaultInstance()) {
-          metastoreConfig_ = com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.newBuilder((com.google.cloud.metastore.v1alpha.HiveMetastoreConfig) metastoreConfig_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          metastoreConfig_ = value;
-        }
-        onChanged();
-      } else {
-        if (metastoreConfigCase_ == 5) {
-          hiveMetastoreConfigBuilder_.mergeFrom(value);
-        }
-        hiveMetastoreConfigBuilder_.setMessage(value);
-      }
-      metastoreConfigCase_ = 5;
-      return this;
-    }
-    /**
-     * <pre>
-     * Configuration information specific to running Hive metastore
-     * software as the metastore service.
-     * </pre>
-     *
-     * <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
-     */
-    public Builder clearHiveMetastoreConfig() {
-      if (hiveMetastoreConfigBuilder_ == null) {
-        if (metastoreConfigCase_ == 5) {
-          metastoreConfigCase_ = 0;
-          metastoreConfig_ = null;
-          onChanged();
-        }
-      } else {
-        if (metastoreConfigCase_ == 5) {
-          metastoreConfigCase_ = 0;
-          metastoreConfig_ = null;
-        }
-        hiveMetastoreConfigBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * Configuration information specific to running Hive metastore
-     * software as the metastore service.
-     * </pre>
-     *
-     * <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
-     */
-    public com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.Builder getHiveMetastoreConfigBuilder() {
-      return getHiveMetastoreConfigFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * Configuration information specific to running Hive metastore
-     * software as the metastore service.
-     * </pre>
-     *
-     * <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
-     */
-    @java.lang.Override
-    public com.google.cloud.metastore.v1alpha.HiveMetastoreConfigOrBuilder getHiveMetastoreConfigOrBuilder() {
-      if ((metastoreConfigCase_ == 5) && (hiveMetastoreConfigBuilder_ != null)) {
-        return hiveMetastoreConfigBuilder_.getMessageOrBuilder();
-      } else {
-        if (metastoreConfigCase_ == 5) {
-          return (com.google.cloud.metastore.v1alpha.HiveMetastoreConfig) metastoreConfig_;
-        }
-        return com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.getDefaultInstance();
-      }
-    }
-    /**
-     * <pre>
-     * Configuration information specific to running Hive metastore
-     * software as the metastore service.
-     * </pre>
-     *
-     * <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.metastore.v1alpha.HiveMetastoreConfig, com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.Builder, com.google.cloud.metastore.v1alpha.HiveMetastoreConfigOrBuilder> 
-        getHiveMetastoreConfigFieldBuilder() {
-      if (hiveMetastoreConfigBuilder_ == null) {
-        if (!(metastoreConfigCase_ == 5)) {
-          metastoreConfig_ = com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.getDefaultInstance();
-        }
-        hiveMetastoreConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.metastore.v1alpha.HiveMetastoreConfig, com.google.cloud.metastore.v1alpha.HiveMetastoreConfig.Builder, com.google.cloud.metastore.v1alpha.HiveMetastoreConfigOrBuilder>(
-                (com.google.cloud.metastore.v1alpha.HiveMetastoreConfig) metastoreConfig_,
-                getParentForChildren(),
-                isClean());
-        metastoreConfig_ = null;
-      }
-      metastoreConfigCase_ = 5;
-      onChanged();;
-      return hiveMetastoreConfigBuilder_;
-    }
-
     private java.lang.Object network_ = "";
     /**
      * <pre>
      * Immutable. The relative resource name of the VPC network on which the instance can be
-     * accessed. The network must belong to the same project as the metastore
-     * instance. It is specified in the following form:
-     * "projects/{project_id}/global/networks/{network_id}".
+     * accessed. It is specified in the following form:
+     * `projects/{project_number}/global/networks/{network_id}`.
      * </pre>
      *
      * <code>string network = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
@@ -2511,9 +2846,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. The relative resource name of the VPC network on which the instance can be
-     * accessed. The network must belong to the same project as the metastore
-     * instance. It is specified in the following form:
-     * "projects/{project_id}/global/networks/{network_id}".
+     * accessed. It is specified in the following form:
+     * `projects/{project_number}/global/networks/{network_id}`.
      * </pre>
      *
      * <code>string network = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
@@ -2535,9 +2869,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. The relative resource name of the VPC network on which the instance can be
-     * accessed. The network must belong to the same project as the metastore
-     * instance. It is specified in the following form:
-     * "projects/{project_id}/global/networks/{network_id}".
+     * accessed. It is specified in the following form:
+     * `projects/{project_number}/global/networks/{network_id}`.
      * </pre>
      *
      * <code>string network = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
@@ -2557,9 +2890,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. The relative resource name of the VPC network on which the instance can be
-     * accessed. The network must belong to the same project as the metastore
-     * instance. It is specified in the following form:
-     * "projects/{project_id}/global/networks/{network_id}".
+     * accessed. It is specified in the following form:
+     * `projects/{project_number}/global/networks/{network_id}`.
      * </pre>
      *
      * <code>string network = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
@@ -2574,9 +2906,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. The relative resource name of the VPC network on which the instance can be
-     * accessed. The network must belong to the same project as the metastore
-     * instance. It is specified in the following form:
-     * "projects/{project_id}/global/networks/{network_id}".
+     * accessed. It is specified in the following form:
+     * `projects/{project_number}/global/networks/{network_id}`.
      * </pre>
      *
      * <code>string network = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
@@ -3082,6 +3413,585 @@ private static final long serialVersionUID = 0L;
       tier_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.metastore.v1alpha.MetadataIntegration metadataIntegration_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.metastore.v1alpha.MetadataIntegration, com.google.cloud.metastore.v1alpha.MetadataIntegration.Builder, com.google.cloud.metastore.v1alpha.MetadataIntegrationOrBuilder> metadataIntegrationBuilder_;
+    /**
+     * <pre>
+     * The setting that defines how metastore metadata should be integrated with
+     * external services and systems.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MetadataIntegration metadata_integration = 14;</code>
+     * @return Whether the metadataIntegration field is set.
+     */
+    public boolean hasMetadataIntegration() {
+      return metadataIntegrationBuilder_ != null || metadataIntegration_ != null;
+    }
+    /**
+     * <pre>
+     * The setting that defines how metastore metadata should be integrated with
+     * external services and systems.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MetadataIntegration metadata_integration = 14;</code>
+     * @return The metadataIntegration.
+     */
+    public com.google.cloud.metastore.v1alpha.MetadataIntegration getMetadataIntegration() {
+      if (metadataIntegrationBuilder_ == null) {
+        return metadataIntegration_ == null ? com.google.cloud.metastore.v1alpha.MetadataIntegration.getDefaultInstance() : metadataIntegration_;
+      } else {
+        return metadataIntegrationBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The setting that defines how metastore metadata should be integrated with
+     * external services and systems.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MetadataIntegration metadata_integration = 14;</code>
+     */
+    public Builder setMetadataIntegration(com.google.cloud.metastore.v1alpha.MetadataIntegration value) {
+      if (metadataIntegrationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metadataIntegration_ = value;
+        onChanged();
+      } else {
+        metadataIntegrationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The setting that defines how metastore metadata should be integrated with
+     * external services and systems.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MetadataIntegration metadata_integration = 14;</code>
+     */
+    public Builder setMetadataIntegration(
+        com.google.cloud.metastore.v1alpha.MetadataIntegration.Builder builderForValue) {
+      if (metadataIntegrationBuilder_ == null) {
+        metadataIntegration_ = builderForValue.build();
+        onChanged();
+      } else {
+        metadataIntegrationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The setting that defines how metastore metadata should be integrated with
+     * external services and systems.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MetadataIntegration metadata_integration = 14;</code>
+     */
+    public Builder mergeMetadataIntegration(com.google.cloud.metastore.v1alpha.MetadataIntegration value) {
+      if (metadataIntegrationBuilder_ == null) {
+        if (metadataIntegration_ != null) {
+          metadataIntegration_ =
+            com.google.cloud.metastore.v1alpha.MetadataIntegration.newBuilder(metadataIntegration_).mergeFrom(value).buildPartial();
+        } else {
+          metadataIntegration_ = value;
+        }
+        onChanged();
+      } else {
+        metadataIntegrationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The setting that defines how metastore metadata should be integrated with
+     * external services and systems.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MetadataIntegration metadata_integration = 14;</code>
+     */
+    public Builder clearMetadataIntegration() {
+      if (metadataIntegrationBuilder_ == null) {
+        metadataIntegration_ = null;
+        onChanged();
+      } else {
+        metadataIntegration_ = null;
+        metadataIntegrationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The setting that defines how metastore metadata should be integrated with
+     * external services and systems.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MetadataIntegration metadata_integration = 14;</code>
+     */
+    public com.google.cloud.metastore.v1alpha.MetadataIntegration.Builder getMetadataIntegrationBuilder() {
+      
+      onChanged();
+      return getMetadataIntegrationFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The setting that defines how metastore metadata should be integrated with
+     * external services and systems.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MetadataIntegration metadata_integration = 14;</code>
+     */
+    public com.google.cloud.metastore.v1alpha.MetadataIntegrationOrBuilder getMetadataIntegrationOrBuilder() {
+      if (metadataIntegrationBuilder_ != null) {
+        return metadataIntegrationBuilder_.getMessageOrBuilder();
+      } else {
+        return metadataIntegration_ == null ?
+            com.google.cloud.metastore.v1alpha.MetadataIntegration.getDefaultInstance() : metadataIntegration_;
+      }
+    }
+    /**
+     * <pre>
+     * The setting that defines how metastore metadata should be integrated with
+     * external services and systems.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MetadataIntegration metadata_integration = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.metastore.v1alpha.MetadataIntegration, com.google.cloud.metastore.v1alpha.MetadataIntegration.Builder, com.google.cloud.metastore.v1alpha.MetadataIntegrationOrBuilder> 
+        getMetadataIntegrationFieldBuilder() {
+      if (metadataIntegrationBuilder_ == null) {
+        metadataIntegrationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.metastore.v1alpha.MetadataIntegration, com.google.cloud.metastore.v1alpha.MetadataIntegration.Builder, com.google.cloud.metastore.v1alpha.MetadataIntegrationOrBuilder>(
+                getMetadataIntegration(),
+                getParentForChildren(),
+                isClean());
+        metadataIntegration_ = null;
+      }
+      return metadataIntegrationBuilder_;
+    }
+
+    private com.google.cloud.metastore.v1alpha.MaintenanceWindow maintenanceWindow_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.metastore.v1alpha.MaintenanceWindow, com.google.cloud.metastore.v1alpha.MaintenanceWindow.Builder, com.google.cloud.metastore.v1alpha.MaintenanceWindowOrBuilder> maintenanceWindowBuilder_;
+    /**
+     * <pre>
+     * The one hour maintenance window of the metastore service. This specifies
+     * when the service can be restarted for maintenance purposes in UTC time.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
+     * @return Whether the maintenanceWindow field is set.
+     */
+    public boolean hasMaintenanceWindow() {
+      return maintenanceWindowBuilder_ != null || maintenanceWindow_ != null;
+    }
+    /**
+     * <pre>
+     * The one hour maintenance window of the metastore service. This specifies
+     * when the service can be restarted for maintenance purposes in UTC time.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
+     * @return The maintenanceWindow.
+     */
+    public com.google.cloud.metastore.v1alpha.MaintenanceWindow getMaintenanceWindow() {
+      if (maintenanceWindowBuilder_ == null) {
+        return maintenanceWindow_ == null ? com.google.cloud.metastore.v1alpha.MaintenanceWindow.getDefaultInstance() : maintenanceWindow_;
+      } else {
+        return maintenanceWindowBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The one hour maintenance window of the metastore service. This specifies
+     * when the service can be restarted for maintenance purposes in UTC time.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
+     */
+    public Builder setMaintenanceWindow(com.google.cloud.metastore.v1alpha.MaintenanceWindow value) {
+      if (maintenanceWindowBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maintenanceWindow_ = value;
+        onChanged();
+      } else {
+        maintenanceWindowBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The one hour maintenance window of the metastore service. This specifies
+     * when the service can be restarted for maintenance purposes in UTC time.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
+     */
+    public Builder setMaintenanceWindow(
+        com.google.cloud.metastore.v1alpha.MaintenanceWindow.Builder builderForValue) {
+      if (maintenanceWindowBuilder_ == null) {
+        maintenanceWindow_ = builderForValue.build();
+        onChanged();
+      } else {
+        maintenanceWindowBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The one hour maintenance window of the metastore service. This specifies
+     * when the service can be restarted for maintenance purposes in UTC time.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
+     */
+    public Builder mergeMaintenanceWindow(com.google.cloud.metastore.v1alpha.MaintenanceWindow value) {
+      if (maintenanceWindowBuilder_ == null) {
+        if (maintenanceWindow_ != null) {
+          maintenanceWindow_ =
+            com.google.cloud.metastore.v1alpha.MaintenanceWindow.newBuilder(maintenanceWindow_).mergeFrom(value).buildPartial();
+        } else {
+          maintenanceWindow_ = value;
+        }
+        onChanged();
+      } else {
+        maintenanceWindowBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The one hour maintenance window of the metastore service. This specifies
+     * when the service can be restarted for maintenance purposes in UTC time.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
+     */
+    public Builder clearMaintenanceWindow() {
+      if (maintenanceWindowBuilder_ == null) {
+        maintenanceWindow_ = null;
+        onChanged();
+      } else {
+        maintenanceWindow_ = null;
+        maintenanceWindowBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The one hour maintenance window of the metastore service. This specifies
+     * when the service can be restarted for maintenance purposes in UTC time.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
+     */
+    public com.google.cloud.metastore.v1alpha.MaintenanceWindow.Builder getMaintenanceWindowBuilder() {
+      
+      onChanged();
+      return getMaintenanceWindowFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The one hour maintenance window of the metastore service. This specifies
+     * when the service can be restarted for maintenance purposes in UTC time.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
+     */
+    public com.google.cloud.metastore.v1alpha.MaintenanceWindowOrBuilder getMaintenanceWindowOrBuilder() {
+      if (maintenanceWindowBuilder_ != null) {
+        return maintenanceWindowBuilder_.getMessageOrBuilder();
+      } else {
+        return maintenanceWindow_ == null ?
+            com.google.cloud.metastore.v1alpha.MaintenanceWindow.getDefaultInstance() : maintenanceWindow_;
+      }
+    }
+    /**
+     * <pre>
+     * The one hour maintenance window of the metastore service. This specifies
+     * when the service can be restarted for maintenance purposes in UTC time.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.metastore.v1alpha.MaintenanceWindow, com.google.cloud.metastore.v1alpha.MaintenanceWindow.Builder, com.google.cloud.metastore.v1alpha.MaintenanceWindowOrBuilder> 
+        getMaintenanceWindowFieldBuilder() {
+      if (maintenanceWindowBuilder_ == null) {
+        maintenanceWindowBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.metastore.v1alpha.MaintenanceWindow, com.google.cloud.metastore.v1alpha.MaintenanceWindow.Builder, com.google.cloud.metastore.v1alpha.MaintenanceWindowOrBuilder>(
+                getMaintenanceWindow(),
+                getParentForChildren(),
+                isClean());
+        maintenanceWindow_ = null;
+      }
+      return maintenanceWindowBuilder_;
+    }
+
+    private java.lang.Object uid_ = "";
+    /**
+     * <pre>
+     * Output only. The globally unique resource identifier of the metastore service.
+     * </pre>
+     *
+     * <code>string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The uid.
+     */
+    public java.lang.String getUid() {
+      java.lang.Object ref = uid_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uid_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The globally unique resource identifier of the metastore service.
+     * </pre>
+     *
+     * <code>string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for uid.
+     */
+    public com.google.protobuf.ByteString
+        getUidBytes() {
+      java.lang.Object ref = uid_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        uid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The globally unique resource identifier of the metastore service.
+     * </pre>
+     *
+     * <code>string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The uid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUid(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      uid_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The globally unique resource identifier of the metastore service.
+     * </pre>
+     *
+     * <code>string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUid() {
+      
+      uid_ = getDefaultInstance().getUid();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The globally unique resource identifier of the metastore service.
+     * </pre>
+     *
+     * <code>string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for uid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUidBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      uid_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.metastore.v1alpha.MetadataManagementActivity metadataManagementActivity_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.metastore.v1alpha.MetadataManagementActivity, com.google.cloud.metastore.v1alpha.MetadataManagementActivity.Builder, com.google.cloud.metastore.v1alpha.MetadataManagementActivityOrBuilder> metadataManagementActivityBuilder_;
+    /**
+     * <pre>
+     * Output only. The metadata management activities of the metastore service.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MetadataManagementActivity metadata_management_activity = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the metadataManagementActivity field is set.
+     */
+    public boolean hasMetadataManagementActivity() {
+      return metadataManagementActivityBuilder_ != null || metadataManagementActivity_ != null;
+    }
+    /**
+     * <pre>
+     * Output only. The metadata management activities of the metastore service.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MetadataManagementActivity metadata_management_activity = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The metadataManagementActivity.
+     */
+    public com.google.cloud.metastore.v1alpha.MetadataManagementActivity getMetadataManagementActivity() {
+      if (metadataManagementActivityBuilder_ == null) {
+        return metadataManagementActivity_ == null ? com.google.cloud.metastore.v1alpha.MetadataManagementActivity.getDefaultInstance() : metadataManagementActivity_;
+      } else {
+        return metadataManagementActivityBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The metadata management activities of the metastore service.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MetadataManagementActivity metadata_management_activity = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setMetadataManagementActivity(com.google.cloud.metastore.v1alpha.MetadataManagementActivity value) {
+      if (metadataManagementActivityBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metadataManagementActivity_ = value;
+        onChanged();
+      } else {
+        metadataManagementActivityBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The metadata management activities of the metastore service.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MetadataManagementActivity metadata_management_activity = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setMetadataManagementActivity(
+        com.google.cloud.metastore.v1alpha.MetadataManagementActivity.Builder builderForValue) {
+      if (metadataManagementActivityBuilder_ == null) {
+        metadataManagementActivity_ = builderForValue.build();
+        onChanged();
+      } else {
+        metadataManagementActivityBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The metadata management activities of the metastore service.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MetadataManagementActivity metadata_management_activity = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder mergeMetadataManagementActivity(com.google.cloud.metastore.v1alpha.MetadataManagementActivity value) {
+      if (metadataManagementActivityBuilder_ == null) {
+        if (metadataManagementActivity_ != null) {
+          metadataManagementActivity_ =
+            com.google.cloud.metastore.v1alpha.MetadataManagementActivity.newBuilder(metadataManagementActivity_).mergeFrom(value).buildPartial();
+        } else {
+          metadataManagementActivity_ = value;
+        }
+        onChanged();
+      } else {
+        metadataManagementActivityBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The metadata management activities of the metastore service.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MetadataManagementActivity metadata_management_activity = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder clearMetadataManagementActivity() {
+      if (metadataManagementActivityBuilder_ == null) {
+        metadataManagementActivity_ = null;
+        onChanged();
+      } else {
+        metadataManagementActivity_ = null;
+        metadataManagementActivityBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The metadata management activities of the metastore service.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MetadataManagementActivity metadata_management_activity = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.cloud.metastore.v1alpha.MetadataManagementActivity.Builder getMetadataManagementActivityBuilder() {
+      
+      onChanged();
+      return getMetadataManagementActivityFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Output only. The metadata management activities of the metastore service.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MetadataManagementActivity metadata_management_activity = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.cloud.metastore.v1alpha.MetadataManagementActivityOrBuilder getMetadataManagementActivityOrBuilder() {
+      if (metadataManagementActivityBuilder_ != null) {
+        return metadataManagementActivityBuilder_.getMessageOrBuilder();
+      } else {
+        return metadataManagementActivity_ == null ?
+            com.google.cloud.metastore.v1alpha.MetadataManagementActivity.getDefaultInstance() : metadataManagementActivity_;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The metadata management activities of the metastore service.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MetadataManagementActivity metadata_management_activity = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.metastore.v1alpha.MetadataManagementActivity, com.google.cloud.metastore.v1alpha.MetadataManagementActivity.Builder, com.google.cloud.metastore.v1alpha.MetadataManagementActivityOrBuilder> 
+        getMetadataManagementActivityFieldBuilder() {
+      if (metadataManagementActivityBuilder_ == null) {
+        metadataManagementActivityBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.metastore.v1alpha.MetadataManagementActivity, com.google.cloud.metastore.v1alpha.MetadataManagementActivity.Builder, com.google.cloud.metastore.v1alpha.MetadataManagementActivityOrBuilder>(
+                getMetadataManagementActivity(),
+                getParentForChildren(),
+                isClean());
+        metadataManagementActivity_ = null;
+      }
+      return metadataManagementActivityBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

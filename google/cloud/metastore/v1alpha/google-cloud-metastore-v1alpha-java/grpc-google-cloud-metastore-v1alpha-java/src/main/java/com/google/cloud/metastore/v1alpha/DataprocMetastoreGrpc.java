@@ -30,7 +30,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  *   (a location must refer to a Google Cloud `region`)
  * * Each location has a collection of services, named: `/services/&#42;`
  * * Dataproc Metastore services are resources with names of the form:
- *   `/projects/{project_id}/locations/{location_id}/services/{service_id}`.
+ *   `/projects/{project_number}/locations/{location_id}/services/{service_id}`.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -322,6 +322,192 @@ public final class DataprocMetastoreGrpc {
     return getUpdateMetadataImportMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.metastore.v1alpha.ExportMetadataRequest,
+      com.google.longrunning.Operation> getExportMetadataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExportMetadata",
+      requestType = com.google.cloud.metastore.v1alpha.ExportMetadataRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.cloud.metastore.v1alpha.ExportMetadataRequest,
+      com.google.longrunning.Operation> getExportMetadataMethod() {
+    io.grpc.MethodDescriptor<com.google.cloud.metastore.v1alpha.ExportMetadataRequest, com.google.longrunning.Operation> getExportMetadataMethod;
+    if ((getExportMetadataMethod = DataprocMetastoreGrpc.getExportMetadataMethod) == null) {
+      synchronized (DataprocMetastoreGrpc.class) {
+        if ((getExportMetadataMethod = DataprocMetastoreGrpc.getExportMetadataMethod) == null) {
+          DataprocMetastoreGrpc.getExportMetadataMethod = getExportMetadataMethod =
+              io.grpc.MethodDescriptor.<com.google.cloud.metastore.v1alpha.ExportMetadataRequest, com.google.longrunning.Operation>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ExportMetadata"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.metastore.v1alpha.ExportMetadataRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.longrunning.Operation.getDefaultInstance()))
+              .setSchemaDescriptor(new DataprocMetastoreMethodDescriptorSupplier("ExportMetadata"))
+              .build();
+        }
+      }
+    }
+    return getExportMetadataMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.metastore.v1alpha.RestoreServiceRequest,
+      com.google.longrunning.Operation> getRestoreServiceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RestoreService",
+      requestType = com.google.cloud.metastore.v1alpha.RestoreServiceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.cloud.metastore.v1alpha.RestoreServiceRequest,
+      com.google.longrunning.Operation> getRestoreServiceMethod() {
+    io.grpc.MethodDescriptor<com.google.cloud.metastore.v1alpha.RestoreServiceRequest, com.google.longrunning.Operation> getRestoreServiceMethod;
+    if ((getRestoreServiceMethod = DataprocMetastoreGrpc.getRestoreServiceMethod) == null) {
+      synchronized (DataprocMetastoreGrpc.class) {
+        if ((getRestoreServiceMethod = DataprocMetastoreGrpc.getRestoreServiceMethod) == null) {
+          DataprocMetastoreGrpc.getRestoreServiceMethod = getRestoreServiceMethod =
+              io.grpc.MethodDescriptor.<com.google.cloud.metastore.v1alpha.RestoreServiceRequest, com.google.longrunning.Operation>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RestoreService"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.metastore.v1alpha.RestoreServiceRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.longrunning.Operation.getDefaultInstance()))
+              .setSchemaDescriptor(new DataprocMetastoreMethodDescriptorSupplier("RestoreService"))
+              .build();
+        }
+      }
+    }
+    return getRestoreServiceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.metastore.v1alpha.ListBackupsRequest,
+      com.google.cloud.metastore.v1alpha.ListBackupsResponse> getListBackupsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListBackups",
+      requestType = com.google.cloud.metastore.v1alpha.ListBackupsRequest.class,
+      responseType = com.google.cloud.metastore.v1alpha.ListBackupsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.cloud.metastore.v1alpha.ListBackupsRequest,
+      com.google.cloud.metastore.v1alpha.ListBackupsResponse> getListBackupsMethod() {
+    io.grpc.MethodDescriptor<com.google.cloud.metastore.v1alpha.ListBackupsRequest, com.google.cloud.metastore.v1alpha.ListBackupsResponse> getListBackupsMethod;
+    if ((getListBackupsMethod = DataprocMetastoreGrpc.getListBackupsMethod) == null) {
+      synchronized (DataprocMetastoreGrpc.class) {
+        if ((getListBackupsMethod = DataprocMetastoreGrpc.getListBackupsMethod) == null) {
+          DataprocMetastoreGrpc.getListBackupsMethod = getListBackupsMethod =
+              io.grpc.MethodDescriptor.<com.google.cloud.metastore.v1alpha.ListBackupsRequest, com.google.cloud.metastore.v1alpha.ListBackupsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListBackups"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.metastore.v1alpha.ListBackupsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.metastore.v1alpha.ListBackupsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new DataprocMetastoreMethodDescriptorSupplier("ListBackups"))
+              .build();
+        }
+      }
+    }
+    return getListBackupsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.metastore.v1alpha.GetBackupRequest,
+      com.google.cloud.metastore.v1alpha.Backup> getGetBackupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetBackup",
+      requestType = com.google.cloud.metastore.v1alpha.GetBackupRequest.class,
+      responseType = com.google.cloud.metastore.v1alpha.Backup.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.cloud.metastore.v1alpha.GetBackupRequest,
+      com.google.cloud.metastore.v1alpha.Backup> getGetBackupMethod() {
+    io.grpc.MethodDescriptor<com.google.cloud.metastore.v1alpha.GetBackupRequest, com.google.cloud.metastore.v1alpha.Backup> getGetBackupMethod;
+    if ((getGetBackupMethod = DataprocMetastoreGrpc.getGetBackupMethod) == null) {
+      synchronized (DataprocMetastoreGrpc.class) {
+        if ((getGetBackupMethod = DataprocMetastoreGrpc.getGetBackupMethod) == null) {
+          DataprocMetastoreGrpc.getGetBackupMethod = getGetBackupMethod =
+              io.grpc.MethodDescriptor.<com.google.cloud.metastore.v1alpha.GetBackupRequest, com.google.cloud.metastore.v1alpha.Backup>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetBackup"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.metastore.v1alpha.GetBackupRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.metastore.v1alpha.Backup.getDefaultInstance()))
+              .setSchemaDescriptor(new DataprocMetastoreMethodDescriptorSupplier("GetBackup"))
+              .build();
+        }
+      }
+    }
+    return getGetBackupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.metastore.v1alpha.CreateBackupRequest,
+      com.google.longrunning.Operation> getCreateBackupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateBackup",
+      requestType = com.google.cloud.metastore.v1alpha.CreateBackupRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.cloud.metastore.v1alpha.CreateBackupRequest,
+      com.google.longrunning.Operation> getCreateBackupMethod() {
+    io.grpc.MethodDescriptor<com.google.cloud.metastore.v1alpha.CreateBackupRequest, com.google.longrunning.Operation> getCreateBackupMethod;
+    if ((getCreateBackupMethod = DataprocMetastoreGrpc.getCreateBackupMethod) == null) {
+      synchronized (DataprocMetastoreGrpc.class) {
+        if ((getCreateBackupMethod = DataprocMetastoreGrpc.getCreateBackupMethod) == null) {
+          DataprocMetastoreGrpc.getCreateBackupMethod = getCreateBackupMethod =
+              io.grpc.MethodDescriptor.<com.google.cloud.metastore.v1alpha.CreateBackupRequest, com.google.longrunning.Operation>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateBackup"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.metastore.v1alpha.CreateBackupRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.longrunning.Operation.getDefaultInstance()))
+              .setSchemaDescriptor(new DataprocMetastoreMethodDescriptorSupplier("CreateBackup"))
+              .build();
+        }
+      }
+    }
+    return getCreateBackupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.metastore.v1alpha.DeleteBackupRequest,
+      com.google.longrunning.Operation> getDeleteBackupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteBackup",
+      requestType = com.google.cloud.metastore.v1alpha.DeleteBackupRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.cloud.metastore.v1alpha.DeleteBackupRequest,
+      com.google.longrunning.Operation> getDeleteBackupMethod() {
+    io.grpc.MethodDescriptor<com.google.cloud.metastore.v1alpha.DeleteBackupRequest, com.google.longrunning.Operation> getDeleteBackupMethod;
+    if ((getDeleteBackupMethod = DataprocMetastoreGrpc.getDeleteBackupMethod) == null) {
+      synchronized (DataprocMetastoreGrpc.class) {
+        if ((getDeleteBackupMethod = DataprocMetastoreGrpc.getDeleteBackupMethod) == null) {
+          DataprocMetastoreGrpc.getDeleteBackupMethod = getDeleteBackupMethod =
+              io.grpc.MethodDescriptor.<com.google.cloud.metastore.v1alpha.DeleteBackupRequest, com.google.longrunning.Operation>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteBackup"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.metastore.v1alpha.DeleteBackupRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.longrunning.Operation.getDefaultInstance()))
+              .setSchemaDescriptor(new DataprocMetastoreMethodDescriptorSupplier("DeleteBackup"))
+              .build();
+        }
+      }
+    }
+    return getDeleteBackupMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -381,7 +567,7 @@ public final class DataprocMetastoreGrpc {
    *   (a location must refer to a Google Cloud `region`)
    * * Each location has a collection of services, named: `/services/&#42;`
    * * Dataproc Metastore services are resources with names of the form:
-   *   `/projects/{project_id}/locations/{location_id}/services/{service_id}`.
+   *   `/projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * </pre>
    */
   public static abstract class DataprocMetastoreImplBase implements io.grpc.BindableService {
@@ -477,6 +663,66 @@ public final class DataprocMetastoreGrpc {
       asyncUnimplementedUnaryCall(getUpdateMetadataImportMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * Exports metadata from a service.
+     * </pre>
+     */
+    public void exportMetadata(com.google.cloud.metastore.v1alpha.ExportMetadataRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(getExportMetadataMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Restores a service from a backup.
+     * </pre>
+     */
+    public void restoreService(com.google.cloud.metastore.v1alpha.RestoreServiceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(getRestoreServiceMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Lists backups in a service.
+     * </pre>
+     */
+    public void listBackups(com.google.cloud.metastore.v1alpha.ListBackupsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.metastore.v1alpha.ListBackupsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getListBackupsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Gets details of a single backup.
+     * </pre>
+     */
+    public void getBackup(com.google.cloud.metastore.v1alpha.GetBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.metastore.v1alpha.Backup> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetBackupMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Creates a new Backup in a given project and location.
+     * </pre>
+     */
+    public void createBackup(com.google.cloud.metastore.v1alpha.CreateBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(getCreateBackupMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Deletes a single backup.
+     * </pre>
+     */
+    public void deleteBackup(com.google.cloud.metastore.v1alpha.DeleteBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeleteBackupMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -542,6 +788,48 @@ public final class DataprocMetastoreGrpc {
                 com.google.cloud.metastore.v1alpha.UpdateMetadataImportRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_UPDATE_METADATA_IMPORT)))
+          .addMethod(
+            getExportMetadataMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.metastore.v1alpha.ExportMetadataRequest,
+                com.google.longrunning.Operation>(
+                  this, METHODID_EXPORT_METADATA)))
+          .addMethod(
+            getRestoreServiceMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.metastore.v1alpha.RestoreServiceRequest,
+                com.google.longrunning.Operation>(
+                  this, METHODID_RESTORE_SERVICE)))
+          .addMethod(
+            getListBackupsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.metastore.v1alpha.ListBackupsRequest,
+                com.google.cloud.metastore.v1alpha.ListBackupsResponse>(
+                  this, METHODID_LIST_BACKUPS)))
+          .addMethod(
+            getGetBackupMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.metastore.v1alpha.GetBackupRequest,
+                com.google.cloud.metastore.v1alpha.Backup>(
+                  this, METHODID_GET_BACKUP)))
+          .addMethod(
+            getCreateBackupMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.metastore.v1alpha.CreateBackupRequest,
+                com.google.longrunning.Operation>(
+                  this, METHODID_CREATE_BACKUP)))
+          .addMethod(
+            getDeleteBackupMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.metastore.v1alpha.DeleteBackupRequest,
+                com.google.longrunning.Operation>(
+                  this, METHODID_DELETE_BACKUP)))
           .build();
     }
   }
@@ -561,7 +849,7 @@ public final class DataprocMetastoreGrpc {
    *   (a location must refer to a Google Cloud `region`)
    * * Each location has a collection of services, named: `/services/&#42;`
    * * Dataproc Metastore services are resources with names of the form:
-   *   `/projects/{project_id}/locations/{location_id}/services/{service_id}`.
+   *   `/projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * </pre>
    */
   public static final class DataprocMetastoreStub extends io.grpc.stub.AbstractAsyncStub<DataprocMetastoreStub> {
@@ -675,6 +963,72 @@ public final class DataprocMetastoreGrpc {
       asyncUnaryCall(
           getChannel().newCall(getUpdateMetadataImportMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Exports metadata from a service.
+     * </pre>
+     */
+    public void exportMetadata(com.google.cloud.metastore.v1alpha.ExportMetadataRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getExportMetadataMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Restores a service from a backup.
+     * </pre>
+     */
+    public void restoreService(com.google.cloud.metastore.v1alpha.RestoreServiceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getRestoreServiceMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Lists backups in a service.
+     * </pre>
+     */
+    public void listBackups(com.google.cloud.metastore.v1alpha.ListBackupsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.metastore.v1alpha.ListBackupsResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListBackupsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Gets details of a single backup.
+     * </pre>
+     */
+    public void getBackup(com.google.cloud.metastore.v1alpha.GetBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.metastore.v1alpha.Backup> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetBackupMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Creates a new Backup in a given project and location.
+     * </pre>
+     */
+    public void createBackup(com.google.cloud.metastore.v1alpha.CreateBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCreateBackupMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Deletes a single backup.
+     * </pre>
+     */
+    public void deleteBackup(com.google.cloud.metastore.v1alpha.DeleteBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeleteBackupMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -692,7 +1046,7 @@ public final class DataprocMetastoreGrpc {
    *   (a location must refer to a Google Cloud `region`)
    * * Each location has a collection of services, named: `/services/&#42;`
    * * Dataproc Metastore services are resources with names of the form:
-   *   `/projects/{project_id}/locations/{location_id}/services/{service_id}`.
+   *   `/projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * </pre>
    */
   public static final class DataprocMetastoreBlockingStub extends io.grpc.stub.AbstractBlockingStub<DataprocMetastoreBlockingStub> {
@@ -797,6 +1151,66 @@ public final class DataprocMetastoreGrpc {
       return blockingUnaryCall(
           getChannel(), getUpdateMetadataImportMethod(), getCallOptions(), request);
     }
+
+    /**
+     * <pre>
+     * Exports metadata from a service.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportMetadata(com.google.cloud.metastore.v1alpha.ExportMetadataRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getExportMetadataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Restores a service from a backup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation restoreService(com.google.cloud.metastore.v1alpha.RestoreServiceRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getRestoreServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Lists backups in a service.
+     * </pre>
+     */
+    public com.google.cloud.metastore.v1alpha.ListBackupsResponse listBackups(com.google.cloud.metastore.v1alpha.ListBackupsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListBackupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Gets details of a single backup.
+     * </pre>
+     */
+    public com.google.cloud.metastore.v1alpha.Backup getBackup(com.google.cloud.metastore.v1alpha.GetBackupRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Creates a new Backup in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createBackup(com.google.cloud.metastore.v1alpha.CreateBackupRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getCreateBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Deletes a single backup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteBackup(com.google.cloud.metastore.v1alpha.DeleteBackupRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getDeleteBackupMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -814,7 +1228,7 @@ public final class DataprocMetastoreGrpc {
    *   (a location must refer to a Google Cloud `region`)
    * * Each location has a collection of services, named: `/services/&#42;`
    * * Dataproc Metastore services are resources with names of the form:
-   *   `/projects/{project_id}/locations/{location_id}/services/{service_id}`.
+   *   `/projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * </pre>
    */
   public static final class DataprocMetastoreFutureStub extends io.grpc.stub.AbstractFutureStub<DataprocMetastoreFutureStub> {
@@ -928,6 +1342,72 @@ public final class DataprocMetastoreGrpc {
       return futureUnaryCall(
           getChannel().newCall(getUpdateMetadataImportMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Exports metadata from a service.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> exportMetadata(
+        com.google.cloud.metastore.v1alpha.ExportMetadataRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getExportMetadataMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Restores a service from a backup.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> restoreService(
+        com.google.cloud.metastore.v1alpha.RestoreServiceRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getRestoreServiceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Lists backups in a service.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.metastore.v1alpha.ListBackupsResponse> listBackups(
+        com.google.cloud.metastore.v1alpha.ListBackupsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListBackupsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Gets details of a single backup.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.metastore.v1alpha.Backup> getBackup(
+        com.google.cloud.metastore.v1alpha.GetBackupRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetBackupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Creates a new Backup in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> createBackup(
+        com.google.cloud.metastore.v1alpha.CreateBackupRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCreateBackupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Deletes a single backup.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> deleteBackup(
+        com.google.cloud.metastore.v1alpha.DeleteBackupRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeleteBackupMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_SERVICES = 0;
@@ -939,6 +1419,12 @@ public final class DataprocMetastoreGrpc {
   private static final int METHODID_GET_METADATA_IMPORT = 6;
   private static final int METHODID_CREATE_METADATA_IMPORT = 7;
   private static final int METHODID_UPDATE_METADATA_IMPORT = 8;
+  private static final int METHODID_EXPORT_METADATA = 9;
+  private static final int METHODID_RESTORE_SERVICE = 10;
+  private static final int METHODID_LIST_BACKUPS = 11;
+  private static final int METHODID_GET_BACKUP = 12;
+  private static final int METHODID_CREATE_BACKUP = 13;
+  private static final int METHODID_DELETE_BACKUP = 14;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -991,6 +1477,30 @@ public final class DataprocMetastoreGrpc {
           break;
         case METHODID_UPDATE_METADATA_IMPORT:
           serviceImpl.updateMetadataImport((com.google.cloud.metastore.v1alpha.UpdateMetadataImportRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_EXPORT_METADATA:
+          serviceImpl.exportMetadata((com.google.cloud.metastore.v1alpha.ExportMetadataRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_RESTORE_SERVICE:
+          serviceImpl.restoreService((com.google.cloud.metastore.v1alpha.RestoreServiceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_BACKUPS:
+          serviceImpl.listBackups((com.google.cloud.metastore.v1alpha.ListBackupsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.metastore.v1alpha.ListBackupsResponse>) responseObserver);
+          break;
+        case METHODID_GET_BACKUP:
+          serviceImpl.getBackup((com.google.cloud.metastore.v1alpha.GetBackupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.metastore.v1alpha.Backup>) responseObserver);
+          break;
+        case METHODID_CREATE_BACKUP:
+          serviceImpl.createBackup((com.google.cloud.metastore.v1alpha.CreateBackupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_BACKUP:
+          serviceImpl.deleteBackup((com.google.cloud.metastore.v1alpha.DeleteBackupRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -1063,6 +1573,12 @@ public final class DataprocMetastoreGrpc {
               .addMethod(getGetMetadataImportMethod())
               .addMethod(getCreateMetadataImportMethod())
               .addMethod(getUpdateMetadataImportMethod())
+              .addMethod(getExportMetadataMethod())
+              .addMethod(getRestoreServiceMethod())
+              .addMethod(getListBackupsMethod())
+              .addMethod(getGetBackupMethod())
+              .addMethod(getCreateBackupMethod())
+              .addMethod(getDeleteBackupMethod())
               .build();
         }
       }

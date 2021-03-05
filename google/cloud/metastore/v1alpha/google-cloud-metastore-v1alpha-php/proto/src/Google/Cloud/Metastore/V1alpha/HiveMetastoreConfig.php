@@ -32,7 +32,10 @@ class HiveMetastoreConfig extends \Google\Protobuf\Internal\Message
     private $config_overrides;
     /**
      * Information used to configure the Hive metastore service as a service
-     * principal in a Kerberos realm.
+     * principal in a Kerberos realm. To disable Kerberos, use the `UpdateService`
+     * method and specify this field's path
+     * (`hive_metastore_config.kerberos_config`) in the request's `update_mask`
+     * while omitting this field from the request's `service`.
      *
      * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.KerberosConfig kerberos_config = 3;</code>
      */
@@ -52,7 +55,10 @@ class HiveMetastoreConfig extends \Google\Protobuf\Internal\Message
      *           override system defaults (some keys cannot be overridden).
      *     @type \Google\Cloud\Metastore\V1alpha\KerberosConfig $kerberos_config
      *           Information used to configure the Hive metastore service as a service
-     *           principal in a Kerberos realm.
+     *           principal in a Kerberos realm. To disable Kerberos, use the `UpdateService`
+     *           method and specify this field's path
+     *           (`hive_metastore_config.kerberos_config`) in the request's `update_mask`
+     *           while omitting this field from the request's `service`.
      * }
      */
     public function __construct($data = NULL) {
@@ -118,7 +124,10 @@ class HiveMetastoreConfig extends \Google\Protobuf\Internal\Message
 
     /**
      * Information used to configure the Hive metastore service as a service
-     * principal in a Kerberos realm.
+     * principal in a Kerberos realm. To disable Kerberos, use the `UpdateService`
+     * method and specify this field's path
+     * (`hive_metastore_config.kerberos_config`) in the request's `update_mask`
+     * while omitting this field from the request's `service`.
      *
      * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.KerberosConfig kerberos_config = 3;</code>
      * @return \Google\Cloud\Metastore\V1alpha\KerberosConfig|null
@@ -140,7 +149,10 @@ class HiveMetastoreConfig extends \Google\Protobuf\Internal\Message
 
     /**
      * Information used to configure the Hive metastore service as a service
-     * principal in a Kerberos realm.
+     * principal in a Kerberos realm. To disable Kerberos, use the `UpdateService`
+     * method and specify this field's path
+     * (`hive_metastore_config.kerberos_config`) in the request's `update_mask`
+     * while omitting this field from the request's `service`.
      *
      * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.KerberosConfig kerberos_config = 3;</code>
      * @param \Google\Cloud\Metastore\V1alpha\KerberosConfig $var

@@ -18,7 +18,7 @@ class CreateServiceRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The relative resource name of the location in which to create a metastore
      * service, in the following form:
-     * "projects/{project_id}/locations/{location_id}".
+     * `projects/{project_number}/locations/{location_id}`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -26,7 +26,7 @@ class CreateServiceRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The ID of the metastore service, which is used as the final
      * component of the metastore service's name.
-     * This value must be between 1 and 64 characters long, begin with a
+     * This value must be between 2 and 63 characters long inclusive, begin with a
      * letter, end with a letter or number, and consist of alpha-numeric
      * ASCII characters or hyphens.
      *
@@ -66,11 +66,11 @@ class CreateServiceRequest extends \Google\Protobuf\Internal\Message
      *     @type string $parent
      *           Required. The relative resource name of the location in which to create a metastore
      *           service, in the following form:
-     *           "projects/{project_id}/locations/{location_id}".
+     *           `projects/{project_number}/locations/{location_id}`.
      *     @type string $service_id
      *           Required. The ID of the metastore service, which is used as the final
      *           component of the metastore service's name.
-     *           This value must be between 1 and 64 characters long, begin with a
+     *           This value must be between 2 and 63 characters long inclusive, begin with a
      *           letter, end with a letter or number, and consist of alpha-numeric
      *           ASCII characters or hyphens.
      *     @type \Google\Cloud\Metastore\V1alpha\Service $service
@@ -98,7 +98,7 @@ class CreateServiceRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The relative resource name of the location in which to create a metastore
      * service, in the following form:
-     * "projects/{project_id}/locations/{location_id}".
+     * `projects/{project_number}/locations/{location_id}`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -111,7 +111,7 @@ class CreateServiceRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The relative resource name of the location in which to create a metastore
      * service, in the following form:
-     * "projects/{project_id}/locations/{location_id}".
+     * `projects/{project_number}/locations/{location_id}`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
@@ -128,7 +128,7 @@ class CreateServiceRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The ID of the metastore service, which is used as the final
      * component of the metastore service's name.
-     * This value must be between 1 and 64 characters long, begin with a
+     * This value must be between 2 and 63 characters long inclusive, begin with a
      * letter, end with a letter or number, and consist of alpha-numeric
      * ASCII characters or hyphens.
      *
@@ -143,7 +143,7 @@ class CreateServiceRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The ID of the metastore service, which is used as the final
      * component of the metastore service's name.
-     * This value must be between 1 and 64 characters long, begin with a
+     * This value must be between 2 and 63 characters long inclusive, begin with a
      * letter, end with a letter or number, and consist of alpha-numeric
      * ASCII characters or hyphens.
      *

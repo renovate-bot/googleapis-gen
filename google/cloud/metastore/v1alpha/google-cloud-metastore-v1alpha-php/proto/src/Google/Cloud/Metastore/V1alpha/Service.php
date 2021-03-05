@@ -17,7 +17,7 @@ class Service extends \Google\Protobuf\Internal\Message
 {
     /**
      * Immutable. The relative resource name of the metastore service, of the form:
-     * "projects/{project_id}/locations/{location_id}/services/{service_id}".
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
@@ -42,9 +42,8 @@ class Service extends \Google\Protobuf\Internal\Message
     private $labels;
     /**
      * Immutable. The relative resource name of the VPC network on which the instance can be
-     * accessed. The network must belong to the same project as the metastore
-     * instance. It is specified in the following form:
-     * "projects/{project_id}/global/networks/{network_id}".
+     * accessed. It is specified in the following form:
+     * `projects/{project_number}/global/networks/{network_id}`.
      *
      * Generated from protobuf field <code>string network = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
@@ -87,6 +86,32 @@ class Service extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.Service.Tier tier = 13;</code>
      */
     protected $tier = 0;
+    /**
+     * The setting that defines how metastore metadata should be integrated with
+     * external services and systems.
+     *
+     * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.MetadataIntegration metadata_integration = 14;</code>
+     */
+    protected $metadata_integration = null;
+    /**
+     * The one hour maintenance window of the metastore service. This specifies
+     * when the service can be restarted for maintenance purposes in UTC time.
+     *
+     * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
+     */
+    protected $maintenance_window = null;
+    /**
+     * Output only. The globally unique resource identifier of the metastore service.
+     *
+     * Generated from protobuf field <code>string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $uid = '';
+    /**
+     * Output only. The metadata management activities of the metastore service.
+     *
+     * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.MetadataManagementActivity metadata_management_activity = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $metadata_management_activity = null;
     protected $metastore_config;
 
     /**
@@ -95,23 +120,22 @@ class Service extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type \Google\Cloud\Metastore\V1alpha\HiveMetastoreConfig $hive_metastore_config
+     *           Configuration information specific to running Hive metastore
+     *           software as the metastore service.
      *     @type string $name
      *           Immutable. The relative resource name of the metastore service, of the form:
-     *           "projects/{project_id}/locations/{location_id}/services/{service_id}".
+     *           `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      *     @type \Google\Protobuf\Timestamp $create_time
      *           Output only. The time when the metastore service was created.
      *     @type \Google\Protobuf\Timestamp $update_time
      *           Output only. The time when the metastore service was last updated.
      *     @type array|\Google\Protobuf\Internal\MapField $labels
      *           User-defined labels for the metastore service.
-     *     @type \Google\Cloud\Metastore\V1alpha\HiveMetastoreConfig $hive_metastore_config
-     *           Configuration information specific to running Hive metastore
-     *           software as the metastore service.
      *     @type string $network
      *           Immutable. The relative resource name of the VPC network on which the instance can be
-     *           accessed. The network must belong to the same project as the metastore
-     *           instance. It is specified in the following form:
-     *           "projects/{project_id}/global/networks/{network_id}".
+     *           accessed. It is specified in the following form:
+     *           `projects/{project_number}/global/networks/{network_id}`.
      *     @type string $endpoint_uri
      *           Output only. The URI of the endpoint used to access the metastore service.
      *     @type int $port
@@ -126,6 +150,16 @@ class Service extends \Google\Protobuf\Internal\Message
      *           related to the metastore service are stored.
      *     @type int $tier
      *           The tier of the service.
+     *     @type \Google\Cloud\Metastore\V1alpha\MetadataIntegration $metadata_integration
+     *           The setting that defines how metastore metadata should be integrated with
+     *           external services and systems.
+     *     @type \Google\Cloud\Metastore\V1alpha\MaintenanceWindow $maintenance_window
+     *           The one hour maintenance window of the metastore service. This specifies
+     *           when the service can be restarted for maintenance purposes in UTC time.
+     *     @type string $uid
+     *           Output only. The globally unique resource identifier of the metastore service.
+     *     @type \Google\Cloud\Metastore\V1alpha\MetadataManagementActivity $metadata_management_activity
+     *           Output only. The metadata management activities of the metastore service.
      * }
      */
     public function __construct($data = NULL) {
@@ -134,8 +168,41 @@ class Service extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Configuration information specific to running Hive metastore
+     * software as the metastore service.
+     *
+     * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
+     * @return \Google\Cloud\Metastore\V1alpha\HiveMetastoreConfig|null
+     */
+    public function getHiveMetastoreConfig()
+    {
+        return $this->readOneof(5);
+    }
+
+    public function hasHiveMetastoreConfig()
+    {
+        return $this->hasOneof(5);
+    }
+
+    /**
+     * Configuration information specific to running Hive metastore
+     * software as the metastore service.
+     *
+     * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
+     * @param \Google\Cloud\Metastore\V1alpha\HiveMetastoreConfig $var
+     * @return $this
+     */
+    public function setHiveMetastoreConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Metastore\V1alpha\HiveMetastoreConfig::class);
+        $this->writeOneof(5, $var);
+
+        return $this;
+    }
+
+    /**
      * Immutable. The relative resource name of the metastore service, of the form:
-     * "projects/{project_id}/locations/{location_id}/services/{service_id}".
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string
@@ -147,7 +214,7 @@ class Service extends \Google\Protobuf\Internal\Message
 
     /**
      * Immutable. The relative resource name of the metastore service, of the form:
-     * "projects/{project_id}/locations/{location_id}/services/{service_id}".
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string $var
@@ -260,43 +327,9 @@ class Service extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Configuration information specific to running Hive metastore
-     * software as the metastore service.
-     *
-     * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
-     * @return \Google\Cloud\Metastore\V1alpha\HiveMetastoreConfig|null
-     */
-    public function getHiveMetastoreConfig()
-    {
-        return $this->readOneof(5);
-    }
-
-    public function hasHiveMetastoreConfig()
-    {
-        return $this->hasOneof(5);
-    }
-
-    /**
-     * Configuration information specific to running Hive metastore
-     * software as the metastore service.
-     *
-     * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
-     * @param \Google\Cloud\Metastore\V1alpha\HiveMetastoreConfig $var
-     * @return $this
-     */
-    public function setHiveMetastoreConfig($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Cloud\Metastore\V1alpha\HiveMetastoreConfig::class);
-        $this->writeOneof(5, $var);
-
-        return $this;
-    }
-
-    /**
      * Immutable. The relative resource name of the VPC network on which the instance can be
-     * accessed. The network must belong to the same project as the metastore
-     * instance. It is specified in the following form:
-     * "projects/{project_id}/global/networks/{network_id}".
+     * accessed. It is specified in the following form:
+     * `projects/{project_number}/global/networks/{network_id}`.
      *
      * Generated from protobuf field <code>string network = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
@@ -308,9 +341,8 @@ class Service extends \Google\Protobuf\Internal\Message
 
     /**
      * Immutable. The relative resource name of the VPC network on which the instance can be
-     * accessed. The network must belong to the same project as the metastore
-     * instance. It is specified in the following form:
-     * "projects/{project_id}/global/networks/{network_id}".
+     * accessed. It is specified in the following form:
+     * `projects/{project_number}/global/networks/{network_id}`.
      *
      * Generated from protobuf field <code>string network = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
@@ -480,6 +512,144 @@ class Service extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Cloud\Metastore\V1alpha\Service\Tier::class);
         $this->tier = $var;
+
+        return $this;
+    }
+
+    /**
+     * The setting that defines how metastore metadata should be integrated with
+     * external services and systems.
+     *
+     * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.MetadataIntegration metadata_integration = 14;</code>
+     * @return \Google\Cloud\Metastore\V1alpha\MetadataIntegration|null
+     */
+    public function getMetadataIntegration()
+    {
+        return isset($this->metadata_integration) ? $this->metadata_integration : null;
+    }
+
+    public function hasMetadataIntegration()
+    {
+        return isset($this->metadata_integration);
+    }
+
+    public function clearMetadataIntegration()
+    {
+        unset($this->metadata_integration);
+    }
+
+    /**
+     * The setting that defines how metastore metadata should be integrated with
+     * external services and systems.
+     *
+     * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.MetadataIntegration metadata_integration = 14;</code>
+     * @param \Google\Cloud\Metastore\V1alpha\MetadataIntegration $var
+     * @return $this
+     */
+    public function setMetadataIntegration($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Metastore\V1alpha\MetadataIntegration::class);
+        $this->metadata_integration = $var;
+
+        return $this;
+    }
+
+    /**
+     * The one hour maintenance window of the metastore service. This specifies
+     * when the service can be restarted for maintenance purposes in UTC time.
+     *
+     * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
+     * @return \Google\Cloud\Metastore\V1alpha\MaintenanceWindow|null
+     */
+    public function getMaintenanceWindow()
+    {
+        return isset($this->maintenance_window) ? $this->maintenance_window : null;
+    }
+
+    public function hasMaintenanceWindow()
+    {
+        return isset($this->maintenance_window);
+    }
+
+    public function clearMaintenanceWindow()
+    {
+        unset($this->maintenance_window);
+    }
+
+    /**
+     * The one hour maintenance window of the metastore service. This specifies
+     * when the service can be restarted for maintenance purposes in UTC time.
+     *
+     * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
+     * @param \Google\Cloud\Metastore\V1alpha\MaintenanceWindow $var
+     * @return $this
+     */
+    public function setMaintenanceWindow($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Metastore\V1alpha\MaintenanceWindow::class);
+        $this->maintenance_window = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The globally unique resource identifier of the metastore service.
+     *
+     * Generated from protobuf field <code>string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return string
+     */
+    public function getUid()
+    {
+        return $this->uid;
+    }
+
+    /**
+     * Output only. The globally unique resource identifier of the metastore service.
+     *
+     * Generated from protobuf field <code>string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUid($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->uid = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The metadata management activities of the metastore service.
+     *
+     * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.MetadataManagementActivity metadata_management_activity = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Cloud\Metastore\V1alpha\MetadataManagementActivity|null
+     */
+    public function getMetadataManagementActivity()
+    {
+        return isset($this->metadata_management_activity) ? $this->metadata_management_activity : null;
+    }
+
+    public function hasMetadataManagementActivity()
+    {
+        return isset($this->metadata_management_activity);
+    }
+
+    public function clearMetadataManagementActivity()
+    {
+        unset($this->metadata_management_activity);
+    }
+
+    /**
+     * Output only. The metadata management activities of the metastore service.
+     *
+     * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.MetadataManagementActivity metadata_management_activity = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Cloud\Metastore\V1alpha\MetadataManagementActivity $var
+     * @return $this
+     */
+    public function setMetadataManagementActivity($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Metastore\V1alpha\MetadataManagementActivity::class);
+        $this->metadata_management_activity = $var;
 
         return $this;
     }

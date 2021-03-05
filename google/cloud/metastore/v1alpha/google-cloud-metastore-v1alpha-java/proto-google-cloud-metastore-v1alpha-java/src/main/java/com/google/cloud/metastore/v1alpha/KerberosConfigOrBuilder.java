@@ -41,7 +41,7 @@ public interface KerberosConfigOrBuilder extends
    * <pre>
    * A Kerberos principal that exists in the both the keytab the KDC
    * to authenticate as. A typical principal is of the form
-   * "primary/instance&#64;REALM", but there is no exact format.
+   * `primary/instance&#64;REALM`, but there is no exact format.
    * </pre>
    *
    * <code>string principal = 2;</code>
@@ -52,7 +52,7 @@ public interface KerberosConfigOrBuilder extends
    * <pre>
    * A Kerberos principal that exists in the both the keytab the KDC
    * to authenticate as. A typical principal is of the form
-   * "primary/instance&#64;REALM", but there is no exact format.
+   * `primary/instance&#64;REALM`, but there is no exact format.
    * </pre>
    *
    * <code>string principal = 2;</code>

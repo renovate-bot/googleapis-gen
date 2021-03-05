@@ -58,7 +58,7 @@ class DataprocMetastoreGrpcTransport(DataprocMetastoreTransport):
 
     -  Dataproc Metastore services are resources with names of the form:
 
-       ``/projects/{project_id}/locations/{location_id}/services/{service_id}``.
+       ``/projects/{project_number}/locations/{location_id}/services/{service_id}``.
 
     This class defines the same methods as the primary client, so the
     primary client can load the underlying transport implementation
@@ -513,6 +513,162 @@ class DataprocMetastoreGrpcTransport(DataprocMetastoreTransport):
                 response_deserializer=operations.Operation.FromString,
             )
         return self._stubs['update_metadata_import']
+
+    @property
+    def export_metadata(self) -> Callable[
+            [metastore.ExportMetadataRequest],
+            operations.Operation]:
+        r"""Return a callable for the export metadata method over gRPC.
+
+        Exports metadata from a service.
+
+        Returns:
+            Callable[[~.ExportMetadataRequest],
+                    ~.Operation]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'export_metadata' not in self._stubs:
+            self._stubs['export_metadata'] = self.grpc_channel.unary_unary(
+                '/google.cloud.metastore.v1alpha.DataprocMetastore/ExportMetadata',
+                request_serializer=metastore.ExportMetadataRequest.serialize,
+                response_deserializer=operations.Operation.FromString,
+            )
+        return self._stubs['export_metadata']
+
+    @property
+    def restore_service(self) -> Callable[
+            [metastore.RestoreServiceRequest],
+            operations.Operation]:
+        r"""Return a callable for the restore service method over gRPC.
+
+        Restores a service from a backup.
+
+        Returns:
+            Callable[[~.RestoreServiceRequest],
+                    ~.Operation]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'restore_service' not in self._stubs:
+            self._stubs['restore_service'] = self.grpc_channel.unary_unary(
+                '/google.cloud.metastore.v1alpha.DataprocMetastore/RestoreService',
+                request_serializer=metastore.RestoreServiceRequest.serialize,
+                response_deserializer=operations.Operation.FromString,
+            )
+        return self._stubs['restore_service']
+
+    @property
+    def list_backups(self) -> Callable[
+            [metastore.ListBackupsRequest],
+            metastore.ListBackupsResponse]:
+        r"""Return a callable for the list backups method over gRPC.
+
+        Lists backups in a service.
+
+        Returns:
+            Callable[[~.ListBackupsRequest],
+                    ~.ListBackupsResponse]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'list_backups' not in self._stubs:
+            self._stubs['list_backups'] = self.grpc_channel.unary_unary(
+                '/google.cloud.metastore.v1alpha.DataprocMetastore/ListBackups',
+                request_serializer=metastore.ListBackupsRequest.serialize,
+                response_deserializer=metastore.ListBackupsResponse.deserialize,
+            )
+        return self._stubs['list_backups']
+
+    @property
+    def get_backup(self) -> Callable[
+            [metastore.GetBackupRequest],
+            metastore.Backup]:
+        r"""Return a callable for the get backup method over gRPC.
+
+        Gets details of a single backup.
+
+        Returns:
+            Callable[[~.GetBackupRequest],
+                    ~.Backup]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'get_backup' not in self._stubs:
+            self._stubs['get_backup'] = self.grpc_channel.unary_unary(
+                '/google.cloud.metastore.v1alpha.DataprocMetastore/GetBackup',
+                request_serializer=metastore.GetBackupRequest.serialize,
+                response_deserializer=metastore.Backup.deserialize,
+            )
+        return self._stubs['get_backup']
+
+    @property
+    def create_backup(self) -> Callable[
+            [metastore.CreateBackupRequest],
+            operations.Operation]:
+        r"""Return a callable for the create backup method over gRPC.
+
+        Creates a new Backup in a given project and location.
+
+        Returns:
+            Callable[[~.CreateBackupRequest],
+                    ~.Operation]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'create_backup' not in self._stubs:
+            self._stubs['create_backup'] = self.grpc_channel.unary_unary(
+                '/google.cloud.metastore.v1alpha.DataprocMetastore/CreateBackup',
+                request_serializer=metastore.CreateBackupRequest.serialize,
+                response_deserializer=operations.Operation.FromString,
+            )
+        return self._stubs['create_backup']
+
+    @property
+    def delete_backup(self) -> Callable[
+            [metastore.DeleteBackupRequest],
+            operations.Operation]:
+        r"""Return a callable for the delete backup method over gRPC.
+
+        Deletes a single backup.
+
+        Returns:
+            Callable[[~.DeleteBackupRequest],
+                    ~.Operation]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'delete_backup' not in self._stubs:
+            self._stubs['delete_backup'] = self.grpc_channel.unary_unary(
+                '/google.cloud.metastore.v1alpha.DataprocMetastore/DeleteBackup',
+                request_serializer=metastore.DeleteBackupRequest.serialize,
+                response_deserializer=operations.Operation.FromString,
+            )
+        return self._stubs['delete_backup']
 
 
 __all__ = (

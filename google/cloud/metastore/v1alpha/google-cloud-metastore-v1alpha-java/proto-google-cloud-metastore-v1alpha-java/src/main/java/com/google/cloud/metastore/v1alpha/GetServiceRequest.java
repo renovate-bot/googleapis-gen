@@ -97,7 +97,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. The relative resource name of the metastore service to retrieve, in the
    * following form:
-   * "projects/{project_id}/locations/{location_id}/services/{service_id}".
+   * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -120,7 +120,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. The relative resource name of the metastore service to retrieve, in the
    * following form:
-   * "projects/{project_id}/locations/{location_id}/services/{service_id}".
+   * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -452,7 +452,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. The relative resource name of the metastore service to retrieve, in the
      * following form:
-     * "projects/{project_id}/locations/{location_id}/services/{service_id}".
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -474,7 +474,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. The relative resource name of the metastore service to retrieve, in the
      * following form:
-     * "projects/{project_id}/locations/{location_id}/services/{service_id}".
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -497,7 +497,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. The relative resource name of the metastore service to retrieve, in the
      * following form:
-     * "projects/{project_id}/locations/{location_id}/services/{service_id}".
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -518,7 +518,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. The relative resource name of the metastore service to retrieve, in the
      * following form:
-     * "projects/{project_id}/locations/{location_id}/services/{service_id}".
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -534,7 +534,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. The relative resource name of the metastore service to retrieve, in the
      * following form:
-     * "projects/{project_id}/locations/{location_id}/services/{service_id}".
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

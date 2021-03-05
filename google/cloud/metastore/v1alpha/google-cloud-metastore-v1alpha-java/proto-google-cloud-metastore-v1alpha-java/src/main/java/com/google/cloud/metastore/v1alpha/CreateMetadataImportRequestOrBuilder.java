@@ -11,7 +11,7 @@ public interface CreateMetadataImportRequestOrBuilder extends
    * <pre>
    * Required. The relative resource name of the service in which to create a metastore
    * import, in the following form:
-   * "projects/{project_id}/locations/{location_id}/services/{service_id}"
+   * `projects/{project_number}/locations/{location_id}/services/{service_id}`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -22,7 +22,7 @@ public interface CreateMetadataImportRequestOrBuilder extends
    * <pre>
    * Required. The relative resource name of the service in which to create a metastore
    * import, in the following form:
-   * "projects/{project_id}/locations/{location_id}/services/{service_id}"
+   * `projects/{project_number}/locations/{location_id}/services/{service_id}`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

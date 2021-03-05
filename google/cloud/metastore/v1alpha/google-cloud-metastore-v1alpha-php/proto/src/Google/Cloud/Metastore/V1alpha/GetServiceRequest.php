@@ -18,7 +18,7 @@ class GetServiceRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The relative resource name of the metastore service to retrieve, in the
      * following form:
-     * "projects/{project_id}/locations/{location_id}/services/{service_id}".
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -33,7 +33,7 @@ class GetServiceRequest extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *           Required. The relative resource name of the metastore service to retrieve, in the
      *           following form:
-     *           "projects/{project_id}/locations/{location_id}/services/{service_id}".
+     *           `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      * }
      */
     public function __construct($data = NULL) {
@@ -44,7 +44,7 @@ class GetServiceRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The relative resource name of the metastore service to retrieve, in the
      * following form:
-     * "projects/{project_id}/locations/{location_id}/services/{service_id}".
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -57,7 +57,7 @@ class GetServiceRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The relative resource name of the metastore service to retrieve, in the
      * following form:
-     * "projects/{project_id}/locations/{location_id}/services/{service_id}".
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

@@ -9,8 +9,38 @@ public interface ServiceOrBuilder extends
 
   /**
    * <pre>
+   * Configuration information specific to running Hive metastore
+   * software as the metastore service.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
+   * @return Whether the hiveMetastoreConfig field is set.
+   */
+  boolean hasHiveMetastoreConfig();
+  /**
+   * <pre>
+   * Configuration information specific to running Hive metastore
+   * software as the metastore service.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
+   * @return The hiveMetastoreConfig.
+   */
+  com.google.cloud.metastore.v1alpha.HiveMetastoreConfig getHiveMetastoreConfig();
+  /**
+   * <pre>
+   * Configuration information specific to running Hive metastore
+   * software as the metastore service.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
+   */
+  com.google.cloud.metastore.v1alpha.HiveMetastoreConfigOrBuilder getHiveMetastoreConfigOrBuilder();
+
+  /**
+   * <pre>
    * Immutable. The relative resource name of the metastore service, of the form:
-   * "projects/{project_id}/locations/{location_id}/services/{service_id}".
+   * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -20,7 +50,7 @@ public interface ServiceOrBuilder extends
   /**
    * <pre>
    * Immutable. The relative resource name of the metastore service, of the form:
-   * "projects/{project_id}/locations/{location_id}/services/{service_id}".
+   * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -139,40 +169,9 @@ public interface ServiceOrBuilder extends
 
   /**
    * <pre>
-   * Configuration information specific to running Hive metastore
-   * software as the metastore service.
-   * </pre>
-   *
-   * <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
-   * @return Whether the hiveMetastoreConfig field is set.
-   */
-  boolean hasHiveMetastoreConfig();
-  /**
-   * <pre>
-   * Configuration information specific to running Hive metastore
-   * software as the metastore service.
-   * </pre>
-   *
-   * <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
-   * @return The hiveMetastoreConfig.
-   */
-  com.google.cloud.metastore.v1alpha.HiveMetastoreConfig getHiveMetastoreConfig();
-  /**
-   * <pre>
-   * Configuration information specific to running Hive metastore
-   * software as the metastore service.
-   * </pre>
-   *
-   * <code>.google.cloud.metastore.v1alpha.HiveMetastoreConfig hive_metastore_config = 5;</code>
-   */
-  com.google.cloud.metastore.v1alpha.HiveMetastoreConfigOrBuilder getHiveMetastoreConfigOrBuilder();
-
-  /**
-   * <pre>
    * Immutable. The relative resource name of the VPC network on which the instance can be
-   * accessed. The network must belong to the same project as the metastore
-   * instance. It is specified in the following form:
-   * "projects/{project_id}/global/networks/{network_id}".
+   * accessed. It is specified in the following form:
+   * `projects/{project_number}/global/networks/{network_id}`.
    * </pre>
    *
    * <code>string network = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
@@ -182,9 +181,8 @@ public interface ServiceOrBuilder extends
   /**
    * <pre>
    * Immutable. The relative resource name of the VPC network on which the instance can be
-   * accessed. The network must belong to the same project as the metastore
-   * instance. It is specified in the following form:
-   * "projects/{project_id}/global/networks/{network_id}".
+   * accessed. It is specified in the following form:
+   * `projects/{project_number}/global/networks/{network_id}`.
    * </pre>
    *
    * <code>string network = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
@@ -304,6 +302,113 @@ public interface ServiceOrBuilder extends
    * @return The tier.
    */
   com.google.cloud.metastore.v1alpha.Service.Tier getTier();
+
+  /**
+   * <pre>
+   * The setting that defines how metastore metadata should be integrated with
+   * external services and systems.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.MetadataIntegration metadata_integration = 14;</code>
+   * @return Whether the metadataIntegration field is set.
+   */
+  boolean hasMetadataIntegration();
+  /**
+   * <pre>
+   * The setting that defines how metastore metadata should be integrated with
+   * external services and systems.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.MetadataIntegration metadata_integration = 14;</code>
+   * @return The metadataIntegration.
+   */
+  com.google.cloud.metastore.v1alpha.MetadataIntegration getMetadataIntegration();
+  /**
+   * <pre>
+   * The setting that defines how metastore metadata should be integrated with
+   * external services and systems.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.MetadataIntegration metadata_integration = 14;</code>
+   */
+  com.google.cloud.metastore.v1alpha.MetadataIntegrationOrBuilder getMetadataIntegrationOrBuilder();
+
+  /**
+   * <pre>
+   * The one hour maintenance window of the metastore service. This specifies
+   * when the service can be restarted for maintenance purposes in UTC time.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
+   * @return Whether the maintenanceWindow field is set.
+   */
+  boolean hasMaintenanceWindow();
+  /**
+   * <pre>
+   * The one hour maintenance window of the metastore service. This specifies
+   * when the service can be restarted for maintenance purposes in UTC time.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
+   * @return The maintenanceWindow.
+   */
+  com.google.cloud.metastore.v1alpha.MaintenanceWindow getMaintenanceWindow();
+  /**
+   * <pre>
+   * The one hour maintenance window of the metastore service. This specifies
+   * when the service can be restarted for maintenance purposes in UTC time.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.MaintenanceWindow maintenance_window = 15;</code>
+   */
+  com.google.cloud.metastore.v1alpha.MaintenanceWindowOrBuilder getMaintenanceWindowOrBuilder();
+
+  /**
+   * <pre>
+   * Output only. The globally unique resource identifier of the metastore service.
+   * </pre>
+   *
+   * <code>string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The uid.
+   */
+  java.lang.String getUid();
+  /**
+   * <pre>
+   * Output only. The globally unique resource identifier of the metastore service.
+   * </pre>
+   *
+   * <code>string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for uid.
+   */
+  com.google.protobuf.ByteString
+      getUidBytes();
+
+  /**
+   * <pre>
+   * Output only. The metadata management activities of the metastore service.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.MetadataManagementActivity metadata_management_activity = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the metadataManagementActivity field is set.
+   */
+  boolean hasMetadataManagementActivity();
+  /**
+   * <pre>
+   * Output only. The metadata management activities of the metastore service.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.MetadataManagementActivity metadata_management_activity = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The metadataManagementActivity.
+   */
+  com.google.cloud.metastore.v1alpha.MetadataManagementActivity getMetadataManagementActivity();
+  /**
+   * <pre>
+   * Output only. The metadata management activities of the metastore service.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.MetadataManagementActivity metadata_management_activity = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  com.google.cloud.metastore.v1alpha.MetadataManagementActivityOrBuilder getMetadataManagementActivityOrBuilder();
 
   public com.google.cloud.metastore.v1alpha.Service.MetastoreConfigCase getMetastoreConfigCase();
 }

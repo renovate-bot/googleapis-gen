@@ -287,7 +287,10 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Information used to configure the Hive metastore service as a service
-   * principal in a Kerberos realm.
+   * principal in a Kerberos realm. To disable Kerberos, use the `UpdateService`
+   * method and specify this field's path
+   * (`hive_metastore_config.kerberos_config`) in the request's `update_mask`
+   * while omitting this field from the request's `service`.
    * </pre>
    *
    * <code>.google.cloud.metastore.v1alpha.KerberosConfig kerberos_config = 3;</code>
@@ -300,7 +303,10 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Information used to configure the Hive metastore service as a service
-   * principal in a Kerberos realm.
+   * principal in a Kerberos realm. To disable Kerberos, use the `UpdateService`
+   * method and specify this field's path
+   * (`hive_metastore_config.kerberos_config`) in the request's `update_mask`
+   * while omitting this field from the request's `service`.
    * </pre>
    *
    * <code>.google.cloud.metastore.v1alpha.KerberosConfig kerberos_config = 3;</code>
@@ -313,7 +319,10 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Information used to configure the Hive metastore service as a service
-   * principal in a Kerberos realm.
+   * principal in a Kerberos realm. To disable Kerberos, use the `UpdateService`
+   * method and specify this field's path
+   * (`hive_metastore_config.kerberos_config`) in the request's `update_mask`
+   * while omitting this field from the request's `service`.
    * </pre>
    *
    * <code>.google.cloud.metastore.v1alpha.KerberosConfig kerberos_config = 3;</code>
@@ -983,7 +992,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Information used to configure the Hive metastore service as a service
-     * principal in a Kerberos realm.
+     * principal in a Kerberos realm. To disable Kerberos, use the `UpdateService`
+     * method and specify this field's path
+     * (`hive_metastore_config.kerberos_config`) in the request's `update_mask`
+     * while omitting this field from the request's `service`.
      * </pre>
      *
      * <code>.google.cloud.metastore.v1alpha.KerberosConfig kerberos_config = 3;</code>
@@ -995,7 +1007,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Information used to configure the Hive metastore service as a service
-     * principal in a Kerberos realm.
+     * principal in a Kerberos realm. To disable Kerberos, use the `UpdateService`
+     * method and specify this field's path
+     * (`hive_metastore_config.kerberos_config`) in the request's `update_mask`
+     * while omitting this field from the request's `service`.
      * </pre>
      *
      * <code>.google.cloud.metastore.v1alpha.KerberosConfig kerberos_config = 3;</code>
@@ -1011,7 +1026,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Information used to configure the Hive metastore service as a service
-     * principal in a Kerberos realm.
+     * principal in a Kerberos realm. To disable Kerberos, use the `UpdateService`
+     * method and specify this field's path
+     * (`hive_metastore_config.kerberos_config`) in the request's `update_mask`
+     * while omitting this field from the request's `service`.
      * </pre>
      *
      * <code>.google.cloud.metastore.v1alpha.KerberosConfig kerberos_config = 3;</code>
@@ -1032,7 +1050,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Information used to configure the Hive metastore service as a service
-     * principal in a Kerberos realm.
+     * principal in a Kerberos realm. To disable Kerberos, use the `UpdateService`
+     * method and specify this field's path
+     * (`hive_metastore_config.kerberos_config`) in the request's `update_mask`
+     * while omitting this field from the request's `service`.
      * </pre>
      *
      * <code>.google.cloud.metastore.v1alpha.KerberosConfig kerberos_config = 3;</code>
@@ -1051,7 +1072,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Information used to configure the Hive metastore service as a service
-     * principal in a Kerberos realm.
+     * principal in a Kerberos realm. To disable Kerberos, use the `UpdateService`
+     * method and specify this field's path
+     * (`hive_metastore_config.kerberos_config`) in the request's `update_mask`
+     * while omitting this field from the request's `service`.
      * </pre>
      *
      * <code>.google.cloud.metastore.v1alpha.KerberosConfig kerberos_config = 3;</code>
@@ -1074,7 +1098,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Information used to configure the Hive metastore service as a service
-     * principal in a Kerberos realm.
+     * principal in a Kerberos realm. To disable Kerberos, use the `UpdateService`
+     * method and specify this field's path
+     * (`hive_metastore_config.kerberos_config`) in the request's `update_mask`
+     * while omitting this field from the request's `service`.
      * </pre>
      *
      * <code>.google.cloud.metastore.v1alpha.KerberosConfig kerberos_config = 3;</code>
@@ -1093,7 +1120,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Information used to configure the Hive metastore service as a service
-     * principal in a Kerberos realm.
+     * principal in a Kerberos realm. To disable Kerberos, use the `UpdateService`
+     * method and specify this field's path
+     * (`hive_metastore_config.kerberos_config`) in the request's `update_mask`
+     * while omitting this field from the request's `service`.
      * </pre>
      *
      * <code>.google.cloud.metastore.v1alpha.KerberosConfig kerberos_config = 3;</code>
@@ -1106,7 +1136,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Information used to configure the Hive metastore service as a service
-     * principal in a Kerberos realm.
+     * principal in a Kerberos realm. To disable Kerberos, use the `UpdateService`
+     * method and specify this field's path
+     * (`hive_metastore_config.kerberos_config`) in the request's `update_mask`
+     * while omitting this field from the request's `service`.
      * </pre>
      *
      * <code>.google.cloud.metastore.v1alpha.KerberosConfig kerberos_config = 3;</code>
@@ -1122,7 +1155,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Information used to configure the Hive metastore service as a service
-     * principal in a Kerberos realm.
+     * principal in a Kerberos realm. To disable Kerberos, use the `UpdateService`
+     * method and specify this field's path
+     * (`hive_metastore_config.kerberos_config`) in the request's `update_mask`
+     * while omitting this field from the request's `service`.
      * </pre>
      *
      * <code>.google.cloud.metastore.v1alpha.KerberosConfig kerberos_config = 3;</code>

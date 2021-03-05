@@ -17,7 +17,7 @@ class MetadataImport extends \Google\Protobuf\Internal\Message
 {
     /**
      * Immutable. The relative resource name of the metadata import, of the form:
-     * "projects/{project_id}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}".
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
@@ -54,9 +54,11 @@ class MetadataImport extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type \Google\Cloud\Metastore\V1alpha\MetadataImport\DatabaseDump $database_dump
+     *           Immutable. A database dump from a pre-existing metastore's database.
      *     @type string $name
      *           Immutable. The relative resource name of the metadata import, of the form:
-     *           "projects/{project_id}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}".
+     *           `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
      *     @type string $description
      *           The description of the metadata import.
      *     @type \Google\Protobuf\Timestamp $create_time
@@ -65,8 +67,6 @@ class MetadataImport extends \Google\Protobuf\Internal\Message
      *           Output only. The time when the metadata import was last updated.
      *     @type int $state
      *           Output only. The current state of the metadata import.
-     *     @type \Google\Cloud\Metastore\V1alpha\MetadataImport\DatabaseDump $database_dump
-     *           Immutable. A database dump from a pre-existing metastore's database.
      * }
      */
     public function __construct($data = NULL) {
@@ -75,8 +75,39 @@ class MetadataImport extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Immutable. A database dump from a pre-existing metastore's database.
+     *
+     * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return \Google\Cloud\Metastore\V1alpha\MetadataImport\DatabaseDump|null
+     */
+    public function getDatabaseDump()
+    {
+        return $this->readOneof(6);
+    }
+
+    public function hasDatabaseDump()
+    {
+        return $this->hasOneof(6);
+    }
+
+    /**
+     * Immutable. A database dump from a pre-existing metastore's database.
+     *
+     * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @param \Google\Cloud\Metastore\V1alpha\MetadataImport\DatabaseDump $var
+     * @return $this
+     */
+    public function setDatabaseDump($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Metastore\V1alpha\MetadataImport\DatabaseDump::class);
+        $this->writeOneof(6, $var);
+
+        return $this;
+    }
+
+    /**
      * Immutable. The relative resource name of the metadata import, of the form:
-     * "projects/{project_id}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}".
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string
@@ -88,7 +119,7 @@ class MetadataImport extends \Google\Protobuf\Internal\Message
 
     /**
      * Immutable. The relative resource name of the metadata import, of the form:
-     * "projects/{project_id}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}".
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string $var
@@ -222,37 +253,6 @@ class MetadataImport extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Cloud\Metastore\V1alpha\MetadataImport\State::class);
         $this->state = $var;
-
-        return $this;
-    }
-
-    /**
-     * Immutable. A database dump from a pre-existing metastore's database.
-     *
-     * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Cloud\Metastore\V1alpha\MetadataImport\DatabaseDump|null
-     */
-    public function getDatabaseDump()
-    {
-        return $this->readOneof(6);
-    }
-
-    public function hasDatabaseDump()
-    {
-        return $this->hasOneof(6);
-    }
-
-    /**
-     * Immutable. A database dump from a pre-existing metastore's database.
-     *
-     * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @param \Google\Cloud\Metastore\V1alpha\MetadataImport\DatabaseDump $var
-     * @return $this
-     */
-    public function setDatabaseDump($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Cloud\Metastore\V1alpha\MetadataImport\DatabaseDump::class);
-        $this->writeOneof(6, $var);
 
         return $this;
     }

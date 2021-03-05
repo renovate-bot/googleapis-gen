@@ -2,7 +2,7 @@
 // GENERATED CODE -- DO NOT EDIT!
 
 // Original file comments:
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ namespace Google\Cloud\Metastore\V1alpha;
  * * Each location has a collection of services, named: `/services/*`
  * * Dataproc Metastore services are resources with names of the form:
  *
- *   `/projects/{project_id}/locations/{location_id}/services/{service_id}`.
+ *   `/projects/{project_number}/locations/{location_id}/services/{service_id}`.
  */
 class DataprocMetastoreGrpcClient extends \Grpc\BaseStub {
 
@@ -179,6 +179,96 @@ class DataprocMetastoreGrpcClient extends \Grpc\BaseStub {
     public function UpdateMetadataImport(\Google\Cloud\Metastore\V1alpha\UpdateMetadataImportRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.cloud.metastore.v1alpha.DataprocMetastore/UpdateMetadataImport',
+        $argument,
+        ['\Google\LongRunning\Operation', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Exports metadata from a service.
+     * @param \Google\Cloud\Metastore\V1alpha\ExportMetadataRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ExportMetadata(\Google\Cloud\Metastore\V1alpha\ExportMetadataRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.metastore.v1alpha.DataprocMetastore/ExportMetadata',
+        $argument,
+        ['\Google\LongRunning\Operation', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Restores a service from a backup.
+     * @param \Google\Cloud\Metastore\V1alpha\RestoreServiceRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function RestoreService(\Google\Cloud\Metastore\V1alpha\RestoreServiceRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.metastore.v1alpha.DataprocMetastore/RestoreService',
+        $argument,
+        ['\Google\LongRunning\Operation', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Lists backups in a service.
+     * @param \Google\Cloud\Metastore\V1alpha\ListBackupsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListBackups(\Google\Cloud\Metastore\V1alpha\ListBackupsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.metastore.v1alpha.DataprocMetastore/ListBackups',
+        $argument,
+        ['\Google\Cloud\Metastore\V1alpha\ListBackupsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Gets details of a single backup.
+     * @param \Google\Cloud\Metastore\V1alpha\GetBackupRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetBackup(\Google\Cloud\Metastore\V1alpha\GetBackupRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.metastore.v1alpha.DataprocMetastore/GetBackup',
+        $argument,
+        ['\Google\Cloud\Metastore\V1alpha\Backup', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Creates a new Backup in a given project and location.
+     * @param \Google\Cloud\Metastore\V1alpha\CreateBackupRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function CreateBackup(\Google\Cloud\Metastore\V1alpha\CreateBackupRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.metastore.v1alpha.DataprocMetastore/CreateBackup',
+        $argument,
+        ['\Google\LongRunning\Operation', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Deletes a single backup.
+     * @param \Google\Cloud\Metastore\V1alpha\DeleteBackupRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteBackup(\Google\Cloud\Metastore\V1alpha\DeleteBackupRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.metastore.v1alpha.DataprocMetastore/DeleteBackup',
         $argument,
         ['\Google\LongRunning\Operation', 'decode'],
         $metadata, $options);

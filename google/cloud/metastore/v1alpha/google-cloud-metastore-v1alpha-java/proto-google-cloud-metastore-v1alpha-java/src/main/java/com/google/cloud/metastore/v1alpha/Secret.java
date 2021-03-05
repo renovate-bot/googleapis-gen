@@ -134,7 +134,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The relative resource name of a Secret Manager secret version, in the
    * following form:
-   * "projects/{project_id}/secrets/{secret_id}/versions/{version_id}".
+   * `projects/{project_number}/secrets/{secret_id}/versions/{version_id}`.
    * </pre>
    *
    * <code>string cloud_secret = 2;</code>
@@ -147,7 +147,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The relative resource name of a Secret Manager secret version, in the
    * following form:
-   * "projects/{project_id}/secrets/{secret_id}/versions/{version_id}".
+   * `projects/{project_number}/secrets/{secret_id}/versions/{version_id}`.
    * </pre>
    *
    * <code>string cloud_secret = 2;</code>
@@ -174,7 +174,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The relative resource name of a Secret Manager secret version, in the
    * following form:
-   * "projects/{project_id}/secrets/{secret_id}/versions/{version_id}".
+   * `projects/{project_number}/secrets/{secret_id}/versions/{version_id}`.
    * </pre>
    *
    * <code>string cloud_secret = 2;</code>
@@ -547,7 +547,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The relative resource name of a Secret Manager secret version, in the
      * following form:
-     * "projects/{project_id}/secrets/{secret_id}/versions/{version_id}".
+     * `projects/{project_number}/secrets/{secret_id}/versions/{version_id}`.
      * </pre>
      *
      * <code>string cloud_secret = 2;</code>
@@ -561,7 +561,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The relative resource name of a Secret Manager secret version, in the
      * following form:
-     * "projects/{project_id}/secrets/{secret_id}/versions/{version_id}".
+     * `projects/{project_number}/secrets/{secret_id}/versions/{version_id}`.
      * </pre>
      *
      * <code>string cloud_secret = 2;</code>
@@ -589,7 +589,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The relative resource name of a Secret Manager secret version, in the
      * following form:
-     * "projects/{project_id}/secrets/{secret_id}/versions/{version_id}".
+     * `projects/{project_number}/secrets/{secret_id}/versions/{version_id}`.
      * </pre>
      *
      * <code>string cloud_secret = 2;</code>
@@ -618,7 +618,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The relative resource name of a Secret Manager secret version, in the
      * following form:
-     * "projects/{project_id}/secrets/{secret_id}/versions/{version_id}".
+     * `projects/{project_number}/secrets/{secret_id}/versions/{version_id}`.
      * </pre>
      *
      * <code>string cloud_secret = 2;</code>
@@ -639,7 +639,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The relative resource name of a Secret Manager secret version, in the
      * following form:
-     * "projects/{project_id}/secrets/{secret_id}/versions/{version_id}".
+     * `projects/{project_number}/secrets/{secret_id}/versions/{version_id}`.
      * </pre>
      *
      * <code>string cloud_secret = 2;</code>
@@ -657,7 +657,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The relative resource name of a Secret Manager secret version, in the
      * following form:
-     * "projects/{project_id}/secrets/{secret_id}/versions/{version_id}".
+     * `projects/{project_number}/secrets/{secret_id}/versions/{version_id}`.
      * </pre>
      *
      * <code>string cloud_secret = 2;</code>

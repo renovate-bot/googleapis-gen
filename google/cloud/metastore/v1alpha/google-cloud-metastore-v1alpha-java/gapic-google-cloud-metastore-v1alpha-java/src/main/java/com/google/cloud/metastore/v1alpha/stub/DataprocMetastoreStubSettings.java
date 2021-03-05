@@ -16,6 +16,7 @@
 
 package com.google.cloud.metastore.v1alpha.stub;
 
+import static com.google.cloud.metastore.v1alpha.DataprocMetastoreClient.ListBackupsPagedResponse;
 import static com.google.cloud.metastore.v1alpha.DataprocMetastoreClient.ListMetadataImportsPagedResponse;
 import static com.google.cloud.metastore.v1alpha.DataprocMetastoreClient.ListServicesPagedResponse;
 
@@ -45,17 +46,27 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.metastore.v1alpha.Backup;
+import com.google.cloud.metastore.v1alpha.CreateBackupRequest;
 import com.google.cloud.metastore.v1alpha.CreateMetadataImportRequest;
 import com.google.cloud.metastore.v1alpha.CreateServiceRequest;
+import com.google.cloud.metastore.v1alpha.DeleteBackupRequest;
 import com.google.cloud.metastore.v1alpha.DeleteServiceRequest;
+import com.google.cloud.metastore.v1alpha.ExportMetadataRequest;
+import com.google.cloud.metastore.v1alpha.GetBackupRequest;
 import com.google.cloud.metastore.v1alpha.GetMetadataImportRequest;
 import com.google.cloud.metastore.v1alpha.GetServiceRequest;
+import com.google.cloud.metastore.v1alpha.ListBackupsRequest;
+import com.google.cloud.metastore.v1alpha.ListBackupsResponse;
 import com.google.cloud.metastore.v1alpha.ListMetadataImportsRequest;
 import com.google.cloud.metastore.v1alpha.ListMetadataImportsResponse;
 import com.google.cloud.metastore.v1alpha.ListServicesRequest;
 import com.google.cloud.metastore.v1alpha.ListServicesResponse;
+import com.google.cloud.metastore.v1alpha.MetadataExport;
 import com.google.cloud.metastore.v1alpha.MetadataImport;
 import com.google.cloud.metastore.v1alpha.OperationMetadata;
+import com.google.cloud.metastore.v1alpha.Restore;
+import com.google.cloud.metastore.v1alpha.RestoreServiceRequest;
 import com.google.cloud.metastore.v1alpha.Service;
 import com.google.cloud.metastore.v1alpha.UpdateMetadataImportRequest;
 import com.google.cloud.metastore.v1alpha.UpdateServiceRequest;
@@ -138,6 +149,21 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
   private final OperationCallSettings<
           UpdateMetadataImportRequest, MetadataImport, OperationMetadata>
       updateMetadataImportOperationSettings;
+  private final UnaryCallSettings<ExportMetadataRequest, Operation> exportMetadataSettings;
+  private final OperationCallSettings<ExportMetadataRequest, MetadataExport, OperationMetadata>
+      exportMetadataOperationSettings;
+  private final UnaryCallSettings<RestoreServiceRequest, Operation> restoreServiceSettings;
+  private final OperationCallSettings<RestoreServiceRequest, Restore, OperationMetadata>
+      restoreServiceOperationSettings;
+  private final PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      listBackupsSettings;
+  private final UnaryCallSettings<GetBackupRequest, Backup> getBackupSettings;
+  private final UnaryCallSettings<CreateBackupRequest, Operation> createBackupSettings;
+  private final OperationCallSettings<CreateBackupRequest, Backup, OperationMetadata>
+      createBackupOperationSettings;
+  private final UnaryCallSettings<DeleteBackupRequest, Operation> deleteBackupSettings;
+  private final OperationCallSettings<DeleteBackupRequest, Empty, OperationMetadata>
+      deleteBackupOperationSettings;
 
   private static final PagedListDescriptor<ListServicesRequest, ListServicesResponse, Service>
       LIST_SERVICES_PAGE_STR_DESC =
@@ -215,6 +241,42 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
             }
           };
 
+  private static final PagedListDescriptor<ListBackupsRequest, ListBackupsResponse, Backup>
+      LIST_BACKUPS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListBackupsRequest, ListBackupsResponse, Backup>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListBackupsRequest injectToken(ListBackupsRequest payload, String token) {
+              return ListBackupsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListBackupsRequest injectPageSize(ListBackupsRequest payload, int pageSize) {
+              return ListBackupsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListBackupsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListBackupsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Backup> extractResources(ListBackupsResponse payload) {
+              return payload.getBackupsList() == null
+                  ? ImmutableList.<Backup>of()
+                  : payload.getBackupsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListServicesRequest, ListServicesResponse, ListServicesPagedResponse>
       LIST_SERVICES_PAGE_STR_FACT =
@@ -250,6 +312,23 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
                       PageContext.create(
                           callable, LIST_METADATA_IMPORTS_PAGE_STR_DESC, request, context);
               return ListMetadataImportsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      LIST_BACKUPS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>() {
+            @Override
+            public ApiFuture<ListBackupsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListBackupsRequest, ListBackupsResponse> callable,
+                ListBackupsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListBackupsResponse> futureResponse) {
+              PageContext<ListBackupsRequest, ListBackupsResponse, Backup> pageContext =
+                  PageContext.create(callable, LIST_BACKUPS_PAGE_STR_DESC, request, context);
+              return ListBackupsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -329,6 +408,61 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
   public OperationCallSettings<UpdateMetadataImportRequest, MetadataImport, OperationMetadata>
       updateMetadataImportOperationSettings() {
     return updateMetadataImportOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportMetadata. */
+  public UnaryCallSettings<ExportMetadataRequest, Operation> exportMetadataSettings() {
+    return exportMetadataSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportMetadata. */
+  public OperationCallSettings<ExportMetadataRequest, MetadataExport, OperationMetadata>
+      exportMetadataOperationSettings() {
+    return exportMetadataOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to restoreService. */
+  public UnaryCallSettings<RestoreServiceRequest, Operation> restoreServiceSettings() {
+    return restoreServiceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to restoreService. */
+  public OperationCallSettings<RestoreServiceRequest, Restore, OperationMetadata>
+      restoreServiceOperationSettings() {
+    return restoreServiceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listBackups. */
+  public PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      listBackupsSettings() {
+    return listBackupsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getBackup. */
+  public UnaryCallSettings<GetBackupRequest, Backup> getBackupSettings() {
+    return getBackupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createBackup. */
+  public UnaryCallSettings<CreateBackupRequest, Operation> createBackupSettings() {
+    return createBackupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createBackup. */
+  public OperationCallSettings<CreateBackupRequest, Backup, OperationMetadata>
+      createBackupOperationSettings() {
+    return createBackupOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackup. */
+  public UnaryCallSettings<DeleteBackupRequest, Operation> deleteBackupSettings() {
+    return deleteBackupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackup. */
+  public OperationCallSettings<DeleteBackupRequest, Empty, OperationMetadata>
+      deleteBackupOperationSettings() {
+    return deleteBackupOperationSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -416,6 +550,16 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
     updateMetadataImportSettings = settingsBuilder.updateMetadataImportSettings().build();
     updateMetadataImportOperationSettings =
         settingsBuilder.updateMetadataImportOperationSettings().build();
+    exportMetadataSettings = settingsBuilder.exportMetadataSettings().build();
+    exportMetadataOperationSettings = settingsBuilder.exportMetadataOperationSettings().build();
+    restoreServiceSettings = settingsBuilder.restoreServiceSettings().build();
+    restoreServiceOperationSettings = settingsBuilder.restoreServiceOperationSettings().build();
+    listBackupsSettings = settingsBuilder.listBackupsSettings().build();
+    getBackupSettings = settingsBuilder.getBackupSettings().build();
+    createBackupSettings = settingsBuilder.createBackupSettings().build();
+    createBackupOperationSettings = settingsBuilder.createBackupOperationSettings().build();
+    deleteBackupSettings = settingsBuilder.deleteBackupSettings().build();
+    deleteBackupOperationSettings = settingsBuilder.deleteBackupOperationSettings().build();
   }
 
   /** Builder for DataprocMetastoreStubSettings. */
@@ -451,6 +595,25 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
     private final OperationCallSettings.Builder<
             UpdateMetadataImportRequest, MetadataImport, OperationMetadata>
         updateMetadataImportOperationSettings;
+    private final UnaryCallSettings.Builder<ExportMetadataRequest, Operation>
+        exportMetadataSettings;
+    private final OperationCallSettings.Builder<
+            ExportMetadataRequest, MetadataExport, OperationMetadata>
+        exportMetadataOperationSettings;
+    private final UnaryCallSettings.Builder<RestoreServiceRequest, Operation>
+        restoreServiceSettings;
+    private final OperationCallSettings.Builder<RestoreServiceRequest, Restore, OperationMetadata>
+        restoreServiceOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+        listBackupsSettings;
+    private final UnaryCallSettings.Builder<GetBackupRequest, Backup> getBackupSettings;
+    private final UnaryCallSettings.Builder<CreateBackupRequest, Operation> createBackupSettings;
+    private final OperationCallSettings.Builder<CreateBackupRequest, Backup, OperationMetadata>
+        createBackupOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteBackupRequest, Operation> deleteBackupSettings;
+    private final OperationCallSettings.Builder<DeleteBackupRequest, Empty, OperationMetadata>
+        deleteBackupOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -514,6 +677,16 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
       createMetadataImportOperationSettings = OperationCallSettings.newBuilder();
       updateMetadataImportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateMetadataImportOperationSettings = OperationCallSettings.newBuilder();
+      exportMetadataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      exportMetadataOperationSettings = OperationCallSettings.newBuilder();
+      restoreServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      restoreServiceOperationSettings = OperationCallSettings.newBuilder();
+      listBackupsSettings = PagedCallSettings.newBuilder(LIST_BACKUPS_PAGE_STR_FACT);
+      getBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createBackupOperationSettings = OperationCallSettings.newBuilder();
+      deleteBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteBackupOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -525,7 +698,13 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
               listMetadataImportsSettings,
               getMetadataImportSettings,
               createMetadataImportSettings,
-              updateMetadataImportSettings);
+              updateMetadataImportSettings,
+              exportMetadataSettings,
+              restoreServiceSettings,
+              listBackupsSettings,
+              getBackupSettings,
+              createBackupSettings,
+              deleteBackupSettings);
       initDefaults(this);
     }
 
@@ -548,6 +727,16 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
       updateMetadataImportSettings = settings.updateMetadataImportSettings.toBuilder();
       updateMetadataImportOperationSettings =
           settings.updateMetadataImportOperationSettings.toBuilder();
+      exportMetadataSettings = settings.exportMetadataSettings.toBuilder();
+      exportMetadataOperationSettings = settings.exportMetadataOperationSettings.toBuilder();
+      restoreServiceSettings = settings.restoreServiceSettings.toBuilder();
+      restoreServiceOperationSettings = settings.restoreServiceOperationSettings.toBuilder();
+      listBackupsSettings = settings.listBackupsSettings.toBuilder();
+      getBackupSettings = settings.getBackupSettings.toBuilder();
+      createBackupSettings = settings.createBackupSettings.toBuilder();
+      createBackupOperationSettings = settings.createBackupOperationSettings.toBuilder();
+      deleteBackupSettings = settings.deleteBackupSettings.toBuilder();
+      deleteBackupOperationSettings = settings.deleteBackupOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -559,7 +748,13 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
               listMetadataImportsSettings,
               getMetadataImportSettings,
               createMetadataImportSettings,
-              updateMetadataImportSettings);
+              updateMetadataImportSettings,
+              exportMetadataSettings,
+              restoreServiceSettings,
+              listBackupsSettings,
+              getBackupSettings,
+              createBackupSettings,
+              deleteBackupSettings);
     }
 
     private static Builder createDefault() {
@@ -616,6 +811,36 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
 
       builder
           .updateMetadataImportSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .exportMetadataSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .restoreServiceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listBackupsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteBackupSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -725,6 +950,102 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(MetadataImport.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .exportMetadataOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ExportMetadataRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(MetadataExport.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .restoreServiceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RestoreServiceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Restore.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createBackupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateBackupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Backup.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteBackupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteBackupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
           .setPollingAlgorithm(
@@ -852,6 +1173,70 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
             UpdateMetadataImportRequest, MetadataImport, OperationMetadata>
         updateMetadataImportOperationSettings() {
       return updateMetadataImportOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportMetadata. */
+    public UnaryCallSettings.Builder<ExportMetadataRequest, Operation> exportMetadataSettings() {
+      return exportMetadataSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportMetadata. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<ExportMetadataRequest, MetadataExport, OperationMetadata>
+        exportMetadataOperationSettings() {
+      return exportMetadataOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to restoreService. */
+    public UnaryCallSettings.Builder<RestoreServiceRequest, Operation> restoreServiceSettings() {
+      return restoreServiceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to restoreService. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<RestoreServiceRequest, Restore, OperationMetadata>
+        restoreServiceOperationSettings() {
+      return restoreServiceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listBackups. */
+    public PagedCallSettings.Builder<
+            ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+        listBackupsSettings() {
+      return listBackupsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getBackup. */
+    public UnaryCallSettings.Builder<GetBackupRequest, Backup> getBackupSettings() {
+      return getBackupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createBackup. */
+    public UnaryCallSettings.Builder<CreateBackupRequest, Operation> createBackupSettings() {
+      return createBackupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createBackup. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<CreateBackupRequest, Backup, OperationMetadata>
+        createBackupOperationSettings() {
+      return createBackupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackup. */
+    public UnaryCallSettings.Builder<DeleteBackupRequest, Operation> deleteBackupSettings() {
+      return deleteBackupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackup. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteBackupRequest, Empty, OperationMetadata>
+        deleteBackupOperationSettings() {
+      return deleteBackupOperationSettings;
     }
 
     @Override

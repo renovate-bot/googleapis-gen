@@ -18,7 +18,7 @@ class ListServicesRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The relative resource name of the location of metastore services to
      * list, in the following form:
-     * "projects/{project_id}/locations/{location_id}".
+     * `projects/{project_number}/locations/{location_id}`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -49,9 +49,9 @@ class ListServicesRequest extends \Google\Protobuf\Internal\Message
      */
     protected $filter = '';
     /**
-     * Optional. Specify the ordering of results as described in
-     * [Sorting Order](https://cloud.google.com/apis/design/design_patterns#sorting_order). If not
-     * specified, the results will be sorted in the default order.
+     * Optional. Specify the ordering of results as described in [Sorting
+     * Order](https://cloud.google.com/apis/design/design_patterns#sorting_order).
+     * If not specified, the results will be sorted in the default order.
      *
      * Generated from protobuf field <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
@@ -66,7 +66,7 @@ class ListServicesRequest extends \Google\Protobuf\Internal\Message
      *     @type string $parent
      *           Required. The relative resource name of the location of metastore services to
      *           list, in the following form:
-     *           "projects/{project_id}/locations/{location_id}".
+     *           `projects/{project_number}/locations/{location_id}`.
      *     @type int $page_size
      *           Optional. The maximum number of services to return. The response may contain less
      *           than the maximum number. If unspecified, no more than 500 services are
@@ -81,9 +81,9 @@ class ListServicesRequest extends \Google\Protobuf\Internal\Message
      *     @type string $filter
      *           Optional. The filter to apply to list results.
      *     @type string $order_by
-     *           Optional. Specify the ordering of results as described in
-     *           [Sorting Order](https://cloud.google.com/apis/design/design_patterns#sorting_order). If not
-     *           specified, the results will be sorted in the default order.
+     *           Optional. Specify the ordering of results as described in [Sorting
+     *           Order](https://cloud.google.com/apis/design/design_patterns#sorting_order).
+     *           If not specified, the results will be sorted in the default order.
      * }
      */
     public function __construct($data = NULL) {
@@ -94,7 +94,7 @@ class ListServicesRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The relative resource name of the location of metastore services to
      * list, in the following form:
-     * "projects/{project_id}/locations/{location_id}".
+     * `projects/{project_number}/locations/{location_id}`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -107,7 +107,7 @@ class ListServicesRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The relative resource name of the location of metastore services to
      * list, in the following form:
-     * "projects/{project_id}/locations/{location_id}".
+     * `projects/{project_number}/locations/{location_id}`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
@@ -214,9 +214,9 @@ class ListServicesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Specify the ordering of results as described in
-     * [Sorting Order](https://cloud.google.com/apis/design/design_patterns#sorting_order). If not
-     * specified, the results will be sorted in the default order.
+     * Optional. Specify the ordering of results as described in [Sorting
+     * Order](https://cloud.google.com/apis/design/design_patterns#sorting_order).
+     * If not specified, the results will be sorted in the default order.
      *
      * Generated from protobuf field <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return string
@@ -227,9 +227,9 @@ class ListServicesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Specify the ordering of results as described in
-     * [Sorting Order](https://cloud.google.com/apis/design/design_patterns#sorting_order). If not
-     * specified, the results will be sorted in the default order.
+     * Optional. Specify the ordering of results as described in [Sorting
+     * Order](https://cloud.google.com/apis/design/design_patterns#sorting_order).
+     * If not specified, the results will be sorted in the default order.
      *
      * Generated from protobuf field <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param string $var

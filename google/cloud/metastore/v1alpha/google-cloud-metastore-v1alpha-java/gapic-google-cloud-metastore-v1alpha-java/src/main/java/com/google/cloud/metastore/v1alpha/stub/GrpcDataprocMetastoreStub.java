@@ -16,6 +16,7 @@
 
 package com.google.cloud.metastore.v1alpha.stub;
 
+import static com.google.cloud.metastore.v1alpha.DataprocMetastoreClient.ListBackupsPagedResponse;
 import static com.google.cloud.metastore.v1alpha.DataprocMetastoreClient.ListMetadataImportsPagedResponse;
 import static com.google.cloud.metastore.v1alpha.DataprocMetastoreClient.ListServicesPagedResponse;
 
@@ -28,17 +29,27 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.metastore.v1alpha.Backup;
+import com.google.cloud.metastore.v1alpha.CreateBackupRequest;
 import com.google.cloud.metastore.v1alpha.CreateMetadataImportRequest;
 import com.google.cloud.metastore.v1alpha.CreateServiceRequest;
+import com.google.cloud.metastore.v1alpha.DeleteBackupRequest;
 import com.google.cloud.metastore.v1alpha.DeleteServiceRequest;
+import com.google.cloud.metastore.v1alpha.ExportMetadataRequest;
+import com.google.cloud.metastore.v1alpha.GetBackupRequest;
 import com.google.cloud.metastore.v1alpha.GetMetadataImportRequest;
 import com.google.cloud.metastore.v1alpha.GetServiceRequest;
+import com.google.cloud.metastore.v1alpha.ListBackupsRequest;
+import com.google.cloud.metastore.v1alpha.ListBackupsResponse;
 import com.google.cloud.metastore.v1alpha.ListMetadataImportsRequest;
 import com.google.cloud.metastore.v1alpha.ListMetadataImportsResponse;
 import com.google.cloud.metastore.v1alpha.ListServicesRequest;
 import com.google.cloud.metastore.v1alpha.ListServicesResponse;
+import com.google.cloud.metastore.v1alpha.MetadataExport;
 import com.google.cloud.metastore.v1alpha.MetadataImport;
 import com.google.cloud.metastore.v1alpha.OperationMetadata;
+import com.google.cloud.metastore.v1alpha.Restore;
+import com.google.cloud.metastore.v1alpha.RestoreServiceRequest;
 import com.google.cloud.metastore.v1alpha.Service;
 import com.google.cloud.metastore.v1alpha.UpdateMetadataImportRequest;
 import com.google.cloud.metastore.v1alpha.UpdateServiceRequest;
@@ -155,6 +166,62 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ExportMetadataRequest, Operation>
+      exportMetadataMethodDescriptor =
+          MethodDescriptor.<ExportMetadataRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.metastore.v1alpha.DataprocMetastore/ExportMetadata")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExportMetadataRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<RestoreServiceRequest, Operation>
+      restoreServiceMethodDescriptor =
+          MethodDescriptor.<RestoreServiceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.metastore.v1alpha.DataprocMetastore/RestoreService")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RestoreServiceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListBackupsRequest, ListBackupsResponse>
+      listBackupsMethodDescriptor =
+          MethodDescriptor.<ListBackupsRequest, ListBackupsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.metastore.v1alpha.DataprocMetastore/ListBackups")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListBackupsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListBackupsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetBackupRequest, Backup> getBackupMethodDescriptor =
+      MethodDescriptor.<GetBackupRequest, Backup>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.metastore.v1alpha.DataprocMetastore/GetBackup")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetBackupRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Backup.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<CreateBackupRequest, Operation>
+      createBackupMethodDescriptor =
+          MethodDescriptor.<CreateBackupRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.metastore.v1alpha.DataprocMetastore/CreateBackup")
+              .setRequestMarshaller(ProtoUtils.marshaller(CreateBackupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteBackupRequest, Operation>
+      deleteBackupMethodDescriptor =
+          MethodDescriptor.<DeleteBackupRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.metastore.v1alpha.DataprocMetastore/DeleteBackup")
+              .setRequestMarshaller(ProtoUtils.marshaller(DeleteBackupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListServicesRequest, ListServicesResponse> listServicesCallable;
   private final UnaryCallable<ListServicesRequest, ListServicesPagedResponse>
       listServicesPagedCallable;
@@ -179,6 +246,22 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
   private final UnaryCallable<UpdateMetadataImportRequest, Operation> updateMetadataImportCallable;
   private final OperationCallable<UpdateMetadataImportRequest, MetadataImport, OperationMetadata>
       updateMetadataImportOperationCallable;
+  private final UnaryCallable<ExportMetadataRequest, Operation> exportMetadataCallable;
+  private final OperationCallable<ExportMetadataRequest, MetadataExport, OperationMetadata>
+      exportMetadataOperationCallable;
+  private final UnaryCallable<RestoreServiceRequest, Operation> restoreServiceCallable;
+  private final OperationCallable<RestoreServiceRequest, Restore, OperationMetadata>
+      restoreServiceOperationCallable;
+  private final UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable;
+  private final UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse>
+      listBackupsPagedCallable;
+  private final UnaryCallable<GetBackupRequest, Backup> getBackupCallable;
+  private final UnaryCallable<CreateBackupRequest, Operation> createBackupCallable;
+  private final OperationCallable<CreateBackupRequest, Backup, OperationMetadata>
+      createBackupOperationCallable;
+  private final UnaryCallable<DeleteBackupRequest, Operation> deleteBackupCallable;
+  private final OperationCallable<DeleteBackupRequest, Empty, OperationMetadata>
+      deleteBackupOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -344,6 +427,84 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   }
                 })
             .build();
+    GrpcCallSettings<ExportMetadataRequest, Operation> exportMetadataTransportSettings =
+        GrpcCallSettings.<ExportMetadataRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportMetadataMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ExportMetadataRequest>() {
+                  @Override
+                  public Map<String, String> extract(ExportMetadataRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("service", String.valueOf(request.getService()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<RestoreServiceRequest, Operation> restoreServiceTransportSettings =
+        GrpcCallSettings.<RestoreServiceRequest, Operation>newBuilder()
+            .setMethodDescriptor(restoreServiceMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<RestoreServiceRequest>() {
+                  @Override
+                  public Map<String, String> extract(RestoreServiceRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("service", String.valueOf(request.getService()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
+        GrpcCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
+            .setMethodDescriptor(listBackupsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListBackupsRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListBackupsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
+        GrpcCallSettings.<GetBackupRequest, Backup>newBuilder()
+            .setMethodDescriptor(getBackupMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetBackupRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetBackupRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<CreateBackupRequest, Operation> createBackupTransportSettings =
+        GrpcCallSettings.<CreateBackupRequest, Operation>newBuilder()
+            .setMethodDescriptor(createBackupMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateBackupRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateBackupRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DeleteBackupRequest, Operation> deleteBackupTransportSettings =
+        GrpcCallSettings.<DeleteBackupRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteBackupMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteBackupRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteBackupRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
 
     this.listServicesCallable =
         callableFactory.createUnaryCallable(
@@ -416,6 +577,51 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
         callableFactory.createOperationCallable(
             updateMetadataImportTransportSettings,
             settings.updateMetadataImportOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.exportMetadataCallable =
+        callableFactory.createUnaryCallable(
+            exportMetadataTransportSettings, settings.exportMetadataSettings(), clientContext);
+    this.exportMetadataOperationCallable =
+        callableFactory.createOperationCallable(
+            exportMetadataTransportSettings,
+            settings.exportMetadataOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.restoreServiceCallable =
+        callableFactory.createUnaryCallable(
+            restoreServiceTransportSettings, settings.restoreServiceSettings(), clientContext);
+    this.restoreServiceOperationCallable =
+        callableFactory.createOperationCallable(
+            restoreServiceTransportSettings,
+            settings.restoreServiceOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listBackupsCallable =
+        callableFactory.createUnaryCallable(
+            listBackupsTransportSettings, settings.listBackupsSettings(), clientContext);
+    this.listBackupsPagedCallable =
+        callableFactory.createPagedCallable(
+            listBackupsTransportSettings, settings.listBackupsSettings(), clientContext);
+    this.getBackupCallable =
+        callableFactory.createUnaryCallable(
+            getBackupTransportSettings, settings.getBackupSettings(), clientContext);
+    this.createBackupCallable =
+        callableFactory.createUnaryCallable(
+            createBackupTransportSettings, settings.createBackupSettings(), clientContext);
+    this.createBackupOperationCallable =
+        callableFactory.createOperationCallable(
+            createBackupTransportSettings,
+            settings.createBackupOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteBackupCallable =
+        callableFactory.createUnaryCallable(
+            deleteBackupTransportSettings, settings.deleteBackupSettings(), clientContext);
+    this.deleteBackupOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteBackupTransportSettings,
+            settings.deleteBackupOperationSettings(),
             clientContext,
             operationsStub);
 
@@ -512,6 +718,65 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
   public OperationCallable<UpdateMetadataImportRequest, MetadataImport, OperationMetadata>
       updateMetadataImportOperationCallable() {
     return updateMetadataImportOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportMetadataRequest, Operation> exportMetadataCallable() {
+    return exportMetadataCallable;
+  }
+
+  @Override
+  public OperationCallable<ExportMetadataRequest, MetadataExport, OperationMetadata>
+      exportMetadataOperationCallable() {
+    return exportMetadataOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RestoreServiceRequest, Operation> restoreServiceCallable() {
+    return restoreServiceCallable;
+  }
+
+  @Override
+  public OperationCallable<RestoreServiceRequest, Restore, OperationMetadata>
+      restoreServiceOperationCallable() {
+    return restoreServiceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable() {
+    return listBackupsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse> listBackupsPagedCallable() {
+    return listBackupsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetBackupRequest, Backup> getBackupCallable() {
+    return getBackupCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateBackupRequest, Operation> createBackupCallable() {
+    return createBackupCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateBackupRequest, Backup, OperationMetadata>
+      createBackupOperationCallable() {
+    return createBackupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteBackupRequest, Operation> deleteBackupCallable() {
+    return deleteBackupCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteBackupRequest, Empty, OperationMetadata>
+      deleteBackupOperationCallable() {
+    return deleteBackupOperationCallable;
   }
 
   @Override

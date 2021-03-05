@@ -26,7 +26,7 @@ class Secret extends \Google\Protobuf\Internal\Message
      *     @type string $cloud_secret
      *           The relative resource name of a Secret Manager secret version, in the
      *           following form:
-     *           "projects/{project_id}/secrets/{secret_id}/versions/{version_id}".
+     *           `projects/{project_number}/secrets/{secret_id}/versions/{version_id}`.
      * }
      */
     public function __construct($data = NULL) {
@@ -37,7 +37,7 @@ class Secret extends \Google\Protobuf\Internal\Message
     /**
      * The relative resource name of a Secret Manager secret version, in the
      * following form:
-     * "projects/{project_id}/secrets/{secret_id}/versions/{version_id}".
+     * `projects/{project_number}/secrets/{secret_id}/versions/{version_id}`.
      *
      * Generated from protobuf field <code>string cloud_secret = 2;</code>
      * @return string
@@ -55,7 +55,7 @@ class Secret extends \Google\Protobuf\Internal\Message
     /**
      * The relative resource name of a Secret Manager secret version, in the
      * following form:
-     * "projects/{project_id}/secrets/{secret_id}/versions/{version_id}".
+     * `projects/{project_number}/secrets/{secret_id}/versions/{version_id}`.
      *
      * Generated from protobuf field <code>string cloud_secret = 2;</code>
      * @param string $var

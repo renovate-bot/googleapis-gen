@@ -335,24 +335,24 @@ private static final long serialVersionUID = 0L;
      * The type of the database.
      * </pre>
      *
-     * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType database_type = 1;</code>
+     * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType database_type = 1 [deprecated = true];</code>
      * @return The enum numeric value on the wire for databaseType.
      */
-    int getDatabaseTypeValue();
+    @java.lang.Deprecated int getDatabaseTypeValue();
     /**
      * <pre>
      * The type of the database.
      * </pre>
      *
-     * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType database_type = 1;</code>
+     * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType database_type = 1 [deprecated = true];</code>
      * @return The databaseType.
      */
-    com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType getDatabaseType();
+    @java.lang.Deprecated com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType getDatabaseType();
 
     /**
      * <pre>
-     * A Cloud Storage object URI that specifies the source from which to
-     * import metadata. It must begin with `gs://`.
+     * A Cloud Storage object or folder URI that specifies the source from which
+     * to import metadata. It must begin with `gs://`.
      * </pre>
      *
      * <code>string gcs_uri = 2;</code>
@@ -361,8 +361,8 @@ private static final long serialVersionUID = 0L;
     java.lang.String getGcsUri();
     /**
      * <pre>
-     * A Cloud Storage object URI that specifies the source from which to
-     * import metadata. It must begin with `gs://`.
+     * A Cloud Storage object or folder URI that specifies the source from which
+     * to import metadata. It must begin with `gs://`.
      * </pre>
      *
      * <code>string gcs_uri = 2;</code>
@@ -376,20 +376,39 @@ private static final long serialVersionUID = 0L;
      * The name of the source database.
      * </pre>
      *
-     * <code>string source_database = 3;</code>
+     * <code>string source_database = 3 [deprecated = true];</code>
      * @return The sourceDatabase.
      */
-    java.lang.String getSourceDatabase();
+    @java.lang.Deprecated java.lang.String getSourceDatabase();
     /**
      * <pre>
      * The name of the source database.
      * </pre>
      *
-     * <code>string source_database = 3;</code>
+     * <code>string source_database = 3 [deprecated = true];</code>
      * @return The bytes for sourceDatabase.
      */
-    com.google.protobuf.ByteString
+    @java.lang.Deprecated com.google.protobuf.ByteString
         getSourceDatabaseBytes();
+
+    /**
+     * <pre>
+     * Optional. The type of the database dump. If unspecified, defaults to `MYSQL`.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.DatabaseDumpSpec.Type type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    int getTypeValue();
+    /**
+     * <pre>
+     * Optional. The type of the database dump. If unspecified, defaults to `MYSQL`.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.DatabaseDumpSpec.Type type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The type.
+     */
+    com.google.cloud.metastore.v1alpha.DatabaseDumpSpec.Type getType();
   }
   /**
    * <pre>
@@ -412,6 +431,7 @@ private static final long serialVersionUID = 0L;
       databaseType_ = 0;
       gcsUri_ = "";
       sourceDatabase_ = "";
+      type_ = 0;
     }
 
     @java.lang.Override
@@ -460,6 +480,12 @@ private static final long serialVersionUID = 0L;
               java.lang.String s = input.readStringRequireUtf8();
 
               sourceDatabase_ = s;
+              break;
+            }
+            case 32: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
               break;
             }
             default: {
@@ -629,10 +655,10 @@ private static final long serialVersionUID = 0L;
      * The type of the database.
      * </pre>
      *
-     * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType database_type = 1;</code>
+     * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType database_type = 1 [deprecated = true];</code>
      * @return The enum numeric value on the wire for databaseType.
      */
-    @java.lang.Override public int getDatabaseTypeValue() {
+    @java.lang.Override @java.lang.Deprecated public int getDatabaseTypeValue() {
       return databaseType_;
     }
     /**
@@ -640,10 +666,10 @@ private static final long serialVersionUID = 0L;
      * The type of the database.
      * </pre>
      *
-     * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType database_type = 1;</code>
+     * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType database_type = 1 [deprecated = true];</code>
      * @return The databaseType.
      */
-    @java.lang.Override public com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType getDatabaseType() {
+    @java.lang.Override @java.lang.Deprecated public com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType getDatabaseType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType result = com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType.valueOf(databaseType_);
       return result == null ? com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType.UNRECOGNIZED : result;
@@ -653,8 +679,8 @@ private static final long serialVersionUID = 0L;
     private volatile java.lang.Object gcsUri_;
     /**
      * <pre>
-     * A Cloud Storage object URI that specifies the source from which to
-     * import metadata. It must begin with `gs://`.
+     * A Cloud Storage object or folder URI that specifies the source from which
+     * to import metadata. It must begin with `gs://`.
      * </pre>
      *
      * <code>string gcs_uri = 2;</code>
@@ -675,8 +701,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A Cloud Storage object URI that specifies the source from which to
-     * import metadata. It must begin with `gs://`.
+     * A Cloud Storage object or folder URI that specifies the source from which
+     * to import metadata. It must begin with `gs://`.
      * </pre>
      *
      * <code>string gcs_uri = 2;</code>
@@ -704,11 +730,11 @@ private static final long serialVersionUID = 0L;
      * The name of the source database.
      * </pre>
      *
-     * <code>string source_database = 3;</code>
+     * <code>string source_database = 3 [deprecated = true];</code>
      * @return The sourceDatabase.
      */
     @java.lang.Override
-    public java.lang.String getSourceDatabase() {
+    @java.lang.Deprecated public java.lang.String getSourceDatabase() {
       java.lang.Object ref = sourceDatabase_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
@@ -725,11 +751,11 @@ private static final long serialVersionUID = 0L;
      * The name of the source database.
      * </pre>
      *
-     * <code>string source_database = 3;</code>
+     * <code>string source_database = 3 [deprecated = true];</code>
      * @return The bytes for sourceDatabase.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getSourceDatabaseBytes() {
       java.lang.Object ref = sourceDatabase_;
       if (ref instanceof java.lang.String) {
@@ -741,6 +767,33 @@ private static final long serialVersionUID = 0L;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 4;
+    private int type_;
+    /**
+     * <pre>
+     * Optional. The type of the database dump. If unspecified, defaults to `MYSQL`.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.DatabaseDumpSpec.Type type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <pre>
+     * Optional. The type of the database dump. If unspecified, defaults to `MYSQL`.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.DatabaseDumpSpec.Type type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The type.
+     */
+    @java.lang.Override public com.google.cloud.metastore.v1alpha.DatabaseDumpSpec.Type getType() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.metastore.v1alpha.DatabaseDumpSpec.Type result = com.google.cloud.metastore.v1alpha.DatabaseDumpSpec.Type.valueOf(type_);
+      return result == null ? com.google.cloud.metastore.v1alpha.DatabaseDumpSpec.Type.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -766,6 +819,9 @@ private static final long serialVersionUID = 0L;
       if (!getSourceDatabaseBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, sourceDatabase_);
       }
+      if (type_ != com.google.cloud.metastore.v1alpha.DatabaseDumpSpec.Type.TYPE_UNSPECIFIED.getNumber()) {
+        output.writeEnum(4, type_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -784,6 +840,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!getSourceDatabaseBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, sourceDatabase_);
+      }
+      if (type_ != com.google.cloud.metastore.v1alpha.DatabaseDumpSpec.Type.TYPE_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, type_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -805,6 +865,7 @@ private static final long serialVersionUID = 0L;
           .equals(other.getGcsUri())) return false;
       if (!getSourceDatabase()
           .equals(other.getSourceDatabase())) return false;
+      if (type_ != other.type_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -822,6 +883,8 @@ private static final long serialVersionUID = 0L;
       hash = (53 * hash) + getGcsUri().hashCode();
       hash = (37 * hash) + SOURCE_DATABASE_FIELD_NUMBER;
       hash = (53 * hash) + getSourceDatabase().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -966,6 +1029,8 @@ private static final long serialVersionUID = 0L;
 
         sourceDatabase_ = "";
 
+        type_ = 0;
+
         return this;
       }
 
@@ -995,6 +1060,7 @@ private static final long serialVersionUID = 0L;
         result.databaseType_ = databaseType_;
         result.gcsUri_ = gcsUri_;
         result.sourceDatabase_ = sourceDatabase_;
+        result.type_ = type_;
         onBuilt();
         return result;
       }
@@ -1054,6 +1120,9 @@ private static final long serialVersionUID = 0L;
           sourceDatabase_ = other.sourceDatabase_;
           onChanged();
         }
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1089,10 +1158,10 @@ private static final long serialVersionUID = 0L;
        * The type of the database.
        * </pre>
        *
-       * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType database_type = 1;</code>
+       * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType database_type = 1 [deprecated = true];</code>
        * @return The enum numeric value on the wire for databaseType.
        */
-      @java.lang.Override public int getDatabaseTypeValue() {
+      @java.lang.Override @java.lang.Deprecated public int getDatabaseTypeValue() {
         return databaseType_;
       }
       /**
@@ -1100,11 +1169,11 @@ private static final long serialVersionUID = 0L;
        * The type of the database.
        * </pre>
        *
-       * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType database_type = 1;</code>
+       * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType database_type = 1 [deprecated = true];</code>
        * @param value The enum numeric value on the wire for databaseType to set.
        * @return This builder for chaining.
        */
-      public Builder setDatabaseTypeValue(int value) {
+      @java.lang.Deprecated public Builder setDatabaseTypeValue(int value) {
         
         databaseType_ = value;
         onChanged();
@@ -1115,11 +1184,11 @@ private static final long serialVersionUID = 0L;
        * The type of the database.
        * </pre>
        *
-       * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType database_type = 1;</code>
+       * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType database_type = 1 [deprecated = true];</code>
        * @return The databaseType.
        */
       @java.lang.Override
-      public com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType getDatabaseType() {
+      @java.lang.Deprecated public com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType getDatabaseType() {
         @SuppressWarnings("deprecation")
         com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType result = com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType.valueOf(databaseType_);
         return result == null ? com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType.UNRECOGNIZED : result;
@@ -1129,11 +1198,11 @@ private static final long serialVersionUID = 0L;
        * The type of the database.
        * </pre>
        *
-       * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType database_type = 1;</code>
+       * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType database_type = 1 [deprecated = true];</code>
        * @param value The databaseType to set.
        * @return This builder for chaining.
        */
-      public Builder setDatabaseType(com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType value) {
+      @java.lang.Deprecated public Builder setDatabaseType(com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1147,10 +1216,10 @@ private static final long serialVersionUID = 0L;
        * The type of the database.
        * </pre>
        *
-       * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType database_type = 1;</code>
+       * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.DatabaseType database_type = 1 [deprecated = true];</code>
        * @return This builder for chaining.
        */
-      public Builder clearDatabaseType() {
+      @java.lang.Deprecated public Builder clearDatabaseType() {
         
         databaseType_ = 0;
         onChanged();
@@ -1160,8 +1229,8 @@ private static final long serialVersionUID = 0L;
       private java.lang.Object gcsUri_ = "";
       /**
        * <pre>
-       * A Cloud Storage object URI that specifies the source from which to
-       * import metadata. It must begin with `gs://`.
+       * A Cloud Storage object or folder URI that specifies the source from which
+       * to import metadata. It must begin with `gs://`.
        * </pre>
        *
        * <code>string gcs_uri = 2;</code>
@@ -1181,8 +1250,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * A Cloud Storage object URI that specifies the source from which to
-       * import metadata. It must begin with `gs://`.
+       * A Cloud Storage object or folder URI that specifies the source from which
+       * to import metadata. It must begin with `gs://`.
        * </pre>
        *
        * <code>string gcs_uri = 2;</code>
@@ -1203,8 +1272,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * A Cloud Storage object URI that specifies the source from which to
-       * import metadata. It must begin with `gs://`.
+       * A Cloud Storage object or folder URI that specifies the source from which
+       * to import metadata. It must begin with `gs://`.
        * </pre>
        *
        * <code>string gcs_uri = 2;</code>
@@ -1223,8 +1292,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * A Cloud Storage object URI that specifies the source from which to
-       * import metadata. It must begin with `gs://`.
+       * A Cloud Storage object or folder URI that specifies the source from which
+       * to import metadata. It must begin with `gs://`.
        * </pre>
        *
        * <code>string gcs_uri = 2;</code>
@@ -1238,8 +1307,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * A Cloud Storage object URI that specifies the source from which to
-       * import metadata. It must begin with `gs://`.
+       * A Cloud Storage object or folder URI that specifies the source from which
+       * to import metadata. It must begin with `gs://`.
        * </pre>
        *
        * <code>string gcs_uri = 2;</code>
@@ -1264,10 +1333,10 @@ private static final long serialVersionUID = 0L;
        * The name of the source database.
        * </pre>
        *
-       * <code>string source_database = 3;</code>
+       * <code>string source_database = 3 [deprecated = true];</code>
        * @return The sourceDatabase.
        */
-      public java.lang.String getSourceDatabase() {
+      @java.lang.Deprecated public java.lang.String getSourceDatabase() {
         java.lang.Object ref = sourceDatabase_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
@@ -1284,10 +1353,10 @@ private static final long serialVersionUID = 0L;
        * The name of the source database.
        * </pre>
        *
-       * <code>string source_database = 3;</code>
+       * <code>string source_database = 3 [deprecated = true];</code>
        * @return The bytes for sourceDatabase.
        */
-      public com.google.protobuf.ByteString
+      @java.lang.Deprecated public com.google.protobuf.ByteString
           getSourceDatabaseBytes() {
         java.lang.Object ref = sourceDatabase_;
         if (ref instanceof String) {
@@ -1305,11 +1374,11 @@ private static final long serialVersionUID = 0L;
        * The name of the source database.
        * </pre>
        *
-       * <code>string source_database = 3;</code>
+       * <code>string source_database = 3 [deprecated = true];</code>
        * @param value The sourceDatabase to set.
        * @return This builder for chaining.
        */
-      public Builder setSourceDatabase(
+      @java.lang.Deprecated public Builder setSourceDatabase(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
@@ -1324,10 +1393,10 @@ private static final long serialVersionUID = 0L;
        * The name of the source database.
        * </pre>
        *
-       * <code>string source_database = 3;</code>
+       * <code>string source_database = 3 [deprecated = true];</code>
        * @return This builder for chaining.
        */
-      public Builder clearSourceDatabase() {
+      @java.lang.Deprecated public Builder clearSourceDatabase() {
         
         sourceDatabase_ = getDefaultInstance().getSourceDatabase();
         onChanged();
@@ -1338,11 +1407,11 @@ private static final long serialVersionUID = 0L;
        * The name of the source database.
        * </pre>
        *
-       * <code>string source_database = 3;</code>
+       * <code>string source_database = 3 [deprecated = true];</code>
        * @param value The bytes for sourceDatabase to set.
        * @return This builder for chaining.
        */
-      public Builder setSourceDatabaseBytes(
+      @java.lang.Deprecated public Builder setSourceDatabaseBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
@@ -1350,6 +1419,80 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
         
         sourceDatabase_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int type_ = 0;
+      /**
+       * <pre>
+       * Optional. The type of the database dump. If unspecified, defaults to `MYSQL`.
+       * </pre>
+       *
+       * <code>.google.cloud.metastore.v1alpha.DatabaseDumpSpec.Type type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The enum numeric value on the wire for type.
+       */
+      @java.lang.Override public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <pre>
+       * Optional. The type of the database dump. If unspecified, defaults to `MYSQL`.
+       * </pre>
+       *
+       * <code>.google.cloud.metastore.v1alpha.DatabaseDumpSpec.Type type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeValue(int value) {
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional. The type of the database dump. If unspecified, defaults to `MYSQL`.
+       * </pre>
+       *
+       * <code>.google.cloud.metastore.v1alpha.DatabaseDumpSpec.Type type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The type.
+       */
+      @java.lang.Override
+      public com.google.cloud.metastore.v1alpha.DatabaseDumpSpec.Type getType() {
+        @SuppressWarnings("deprecation")
+        com.google.cloud.metastore.v1alpha.DatabaseDumpSpec.Type result = com.google.cloud.metastore.v1alpha.DatabaseDumpSpec.Type.valueOf(type_);
+        return result == null ? com.google.cloud.metastore.v1alpha.DatabaseDumpSpec.Type.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * Optional. The type of the database dump. If unspecified, defaults to `MYSQL`.
+       * </pre>
+       *
+       * <code>.google.cloud.metastore.v1alpha.DatabaseDumpSpec.Type type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(com.google.cloud.metastore.v1alpha.DatabaseDumpSpec.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional. The type of the database dump. If unspecified, defaults to `MYSQL`.
+       * </pre>
+       *
+       * <code>.google.cloud.metastore.v1alpha.DatabaseDumpSpec.Type type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
         onChanged();
         return this;
       }
@@ -1445,12 +1588,55 @@ private static final long serialVersionUID = 0L;
         metadataCase_);
   }
 
+  public static final int DATABASE_DUMP_FIELD_NUMBER = 6;
+  /**
+   * <pre>
+   * Immutable. A database dump from a pre-existing metastore's database.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the databaseDump field is set.
+   */
+  @java.lang.Override
+  public boolean hasDatabaseDump() {
+    return metadataCase_ == 6;
+  }
+  /**
+   * <pre>
+   * Immutable. A database dump from a pre-existing metastore's database.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return The databaseDump.
+   */
+  @java.lang.Override
+  public com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump getDatabaseDump() {
+    if (metadataCase_ == 6) {
+       return (com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump) metadata_;
+    }
+    return com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * Immutable. A database dump from a pre-existing metastore's database.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDumpOrBuilder getDatabaseDumpOrBuilder() {
+    if (metadataCase_ == 6) {
+       return (com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump) metadata_;
+    }
+    return com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.getDefaultInstance();
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
    * <pre>
    * Immutable. The relative resource name of the metadata import, of the form:
-   * "projects/{project_id}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}".
+   * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1472,7 +1658,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Immutable. The relative resource name of the metadata import, of the form:
-   * "projects/{project_id}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}".
+   * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1640,49 +1826,6 @@ private static final long serialVersionUID = 0L;
     @SuppressWarnings("deprecation")
     com.google.cloud.metastore.v1alpha.MetadataImport.State result = com.google.cloud.metastore.v1alpha.MetadataImport.State.valueOf(state_);
     return result == null ? com.google.cloud.metastore.v1alpha.MetadataImport.State.UNRECOGNIZED : result;
-  }
-
-  public static final int DATABASE_DUMP_FIELD_NUMBER = 6;
-  /**
-   * <pre>
-   * Immutable. A database dump from a pre-existing metastore's database.
-   * </pre>
-   *
-   * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
-   * @return Whether the databaseDump field is set.
-   */
-  @java.lang.Override
-  public boolean hasDatabaseDump() {
-    return metadataCase_ == 6;
-  }
-  /**
-   * <pre>
-   * Immutable. A database dump from a pre-existing metastore's database.
-   * </pre>
-   *
-   * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
-   * @return The databaseDump.
-   */
-  @java.lang.Override
-  public com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump getDatabaseDump() {
-    if (metadataCase_ == 6) {
-       return (com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump) metadata_;
-    }
-    return com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.getDefaultInstance();
-  }
-  /**
-   * <pre>
-   * Immutable. A database dump from a pre-existing metastore's database.
-   * </pre>
-   *
-   * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
-   */
-  @java.lang.Override
-  public com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDumpOrBuilder getDatabaseDumpOrBuilder() {
-    if (metadataCase_ == 6) {
-       return (com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump) metadata_;
-    }
-    return com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2003,6 +2146,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.cloud.metastore.v1alpha.MetadataImport buildPartial() {
       com.google.cloud.metastore.v1alpha.MetadataImport result = new com.google.cloud.metastore.v1alpha.MetadataImport(this);
+      if (metadataCase_ == 6) {
+        if (databaseDumpBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = databaseDumpBuilder_.build();
+        }
+      }
       result.name_ = name_;
       result.description_ = description_;
       if (createTimeBuilder_ == null) {
@@ -2016,13 +2166,6 @@ private static final long serialVersionUID = 0L;
         result.updateTime_ = updateTimeBuilder_.build();
       }
       result.state_ = state_;
-      if (metadataCase_ == 6) {
-        if (databaseDumpBuilder_ == null) {
-          result.metadata_ = metadata_;
-        } else {
-          result.metadata_ = databaseDumpBuilder_.build();
-        }
-      }
       result.metadataCase_ = metadataCase_;
       onBuilt();
       return result;
@@ -2142,11 +2285,188 @@ private static final long serialVersionUID = 0L;
     }
 
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump, com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.Builder, com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDumpOrBuilder> databaseDumpBuilder_;
+    /**
+     * <pre>
+     * Immutable. A database dump from a pre-existing metastore's database.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return Whether the databaseDump field is set.
+     */
+    @java.lang.Override
+    public boolean hasDatabaseDump() {
+      return metadataCase_ == 6;
+    }
+    /**
+     * <pre>
+     * Immutable. A database dump from a pre-existing metastore's database.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return The databaseDump.
+     */
+    @java.lang.Override
+    public com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump getDatabaseDump() {
+      if (databaseDumpBuilder_ == null) {
+        if (metadataCase_ == 6) {
+          return (com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump) metadata_;
+        }
+        return com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.getDefaultInstance();
+      } else {
+        if (metadataCase_ == 6) {
+          return databaseDumpBuilder_.getMessage();
+        }
+        return com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Immutable. A database dump from a pre-existing metastore's database.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     */
+    public Builder setDatabaseDump(com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump value) {
+      if (databaseDumpBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metadata_ = value;
+        onChanged();
+      } else {
+        databaseDumpBuilder_.setMessage(value);
+      }
+      metadataCase_ = 6;
+      return this;
+    }
+    /**
+     * <pre>
+     * Immutable. A database dump from a pre-existing metastore's database.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     */
+    public Builder setDatabaseDump(
+        com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.Builder builderForValue) {
+      if (databaseDumpBuilder_ == null) {
+        metadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        databaseDumpBuilder_.setMessage(builderForValue.build());
+      }
+      metadataCase_ = 6;
+      return this;
+    }
+    /**
+     * <pre>
+     * Immutable. A database dump from a pre-existing metastore's database.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     */
+    public Builder mergeDatabaseDump(com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump value) {
+      if (databaseDumpBuilder_ == null) {
+        if (metadataCase_ == 6 &&
+            metadata_ != com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.getDefaultInstance()) {
+          metadata_ = com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.newBuilder((com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump) metadata_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          metadata_ = value;
+        }
+        onChanged();
+      } else {
+        if (metadataCase_ == 6) {
+          databaseDumpBuilder_.mergeFrom(value);
+        }
+        databaseDumpBuilder_.setMessage(value);
+      }
+      metadataCase_ = 6;
+      return this;
+    }
+    /**
+     * <pre>
+     * Immutable. A database dump from a pre-existing metastore's database.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     */
+    public Builder clearDatabaseDump() {
+      if (databaseDumpBuilder_ == null) {
+        if (metadataCase_ == 6) {
+          metadataCase_ = 0;
+          metadata_ = null;
+          onChanged();
+        }
+      } else {
+        if (metadataCase_ == 6) {
+          metadataCase_ = 0;
+          metadata_ = null;
+        }
+        databaseDumpBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Immutable. A database dump from a pre-existing metastore's database.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     */
+    public com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.Builder getDatabaseDumpBuilder() {
+      return getDatabaseDumpFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Immutable. A database dump from a pre-existing metastore's database.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDumpOrBuilder getDatabaseDumpOrBuilder() {
+      if ((metadataCase_ == 6) && (databaseDumpBuilder_ != null)) {
+        return databaseDumpBuilder_.getMessageOrBuilder();
+      } else {
+        if (metadataCase_ == 6) {
+          return (com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump) metadata_;
+        }
+        return com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Immutable. A database dump from a pre-existing metastore's database.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump, com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.Builder, com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDumpOrBuilder> 
+        getDatabaseDumpFieldBuilder() {
+      if (databaseDumpBuilder_ == null) {
+        if (!(metadataCase_ == 6)) {
+          metadata_ = com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.getDefaultInstance();
+        }
+        databaseDumpBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump, com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.Builder, com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDumpOrBuilder>(
+                (com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump) metadata_,
+                getParentForChildren(),
+                isClean());
+        metadata_ = null;
+      }
+      metadataCase_ = 6;
+      onChanged();;
+      return databaseDumpBuilder_;
+    }
+
     private java.lang.Object name_ = "";
     /**
      * <pre>
      * Immutable. The relative resource name of the metadata import, of the form:
-     * "projects/{project_id}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}".
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2167,7 +2487,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. The relative resource name of the metadata import, of the form:
-     * "projects/{project_id}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}".
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2189,7 +2509,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. The relative resource name of the metadata import, of the form:
-     * "projects/{project_id}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}".
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2209,7 +2529,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. The relative resource name of the metadata import, of the form:
-     * "projects/{project_id}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}".
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2224,7 +2544,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. The relative resource name of the metadata import, of the form:
-     * "projects/{project_id}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}".
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2721,183 +3041,6 @@ private static final long serialVersionUID = 0L;
       state_ = 0;
       onChanged();
       return this;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump, com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.Builder, com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDumpOrBuilder> databaseDumpBuilder_;
-    /**
-     * <pre>
-     * Immutable. A database dump from a pre-existing metastore's database.
-     * </pre>
-     *
-     * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return Whether the databaseDump field is set.
-     */
-    @java.lang.Override
-    public boolean hasDatabaseDump() {
-      return metadataCase_ == 6;
-    }
-    /**
-     * <pre>
-     * Immutable. A database dump from a pre-existing metastore's database.
-     * </pre>
-     *
-     * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return The databaseDump.
-     */
-    @java.lang.Override
-    public com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump getDatabaseDump() {
-      if (databaseDumpBuilder_ == null) {
-        if (metadataCase_ == 6) {
-          return (com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump) metadata_;
-        }
-        return com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.getDefaultInstance();
-      } else {
-        if (metadataCase_ == 6) {
-          return databaseDumpBuilder_.getMessage();
-        }
-        return com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.getDefaultInstance();
-      }
-    }
-    /**
-     * <pre>
-     * Immutable. A database dump from a pre-existing metastore's database.
-     * </pre>
-     *
-     * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     */
-    public Builder setDatabaseDump(com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump value) {
-      if (databaseDumpBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        metadata_ = value;
-        onChanged();
-      } else {
-        databaseDumpBuilder_.setMessage(value);
-      }
-      metadataCase_ = 6;
-      return this;
-    }
-    /**
-     * <pre>
-     * Immutable. A database dump from a pre-existing metastore's database.
-     * </pre>
-     *
-     * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     */
-    public Builder setDatabaseDump(
-        com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.Builder builderForValue) {
-      if (databaseDumpBuilder_ == null) {
-        metadata_ = builderForValue.build();
-        onChanged();
-      } else {
-        databaseDumpBuilder_.setMessage(builderForValue.build());
-      }
-      metadataCase_ = 6;
-      return this;
-    }
-    /**
-     * <pre>
-     * Immutable. A database dump from a pre-existing metastore's database.
-     * </pre>
-     *
-     * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     */
-    public Builder mergeDatabaseDump(com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump value) {
-      if (databaseDumpBuilder_ == null) {
-        if (metadataCase_ == 6 &&
-            metadata_ != com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.getDefaultInstance()) {
-          metadata_ = com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.newBuilder((com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump) metadata_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          metadata_ = value;
-        }
-        onChanged();
-      } else {
-        if (metadataCase_ == 6) {
-          databaseDumpBuilder_.mergeFrom(value);
-        }
-        databaseDumpBuilder_.setMessage(value);
-      }
-      metadataCase_ = 6;
-      return this;
-    }
-    /**
-     * <pre>
-     * Immutable. A database dump from a pre-existing metastore's database.
-     * </pre>
-     *
-     * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     */
-    public Builder clearDatabaseDump() {
-      if (databaseDumpBuilder_ == null) {
-        if (metadataCase_ == 6) {
-          metadataCase_ = 0;
-          metadata_ = null;
-          onChanged();
-        }
-      } else {
-        if (metadataCase_ == 6) {
-          metadataCase_ = 0;
-          metadata_ = null;
-        }
-        databaseDumpBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * Immutable. A database dump from a pre-existing metastore's database.
-     * </pre>
-     *
-     * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     */
-    public com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.Builder getDatabaseDumpBuilder() {
-      return getDatabaseDumpFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * Immutable. A database dump from a pre-existing metastore's database.
-     * </pre>
-     *
-     * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     */
-    @java.lang.Override
-    public com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDumpOrBuilder getDatabaseDumpOrBuilder() {
-      if ((metadataCase_ == 6) && (databaseDumpBuilder_ != null)) {
-        return databaseDumpBuilder_.getMessageOrBuilder();
-      } else {
-        if (metadataCase_ == 6) {
-          return (com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump) metadata_;
-        }
-        return com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.getDefaultInstance();
-      }
-    }
-    /**
-     * <pre>
-     * Immutable. A database dump from a pre-existing metastore's database.
-     * </pre>
-     *
-     * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump, com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.Builder, com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDumpOrBuilder> 
-        getDatabaseDumpFieldBuilder() {
-      if (databaseDumpBuilder_ == null) {
-        if (!(metadataCase_ == 6)) {
-          metadata_ = com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.getDefaultInstance();
-        }
-        databaseDumpBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump, com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.Builder, com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDumpOrBuilder>(
-                (com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump) metadata_,
-                getParentForChildren(),
-                isClean());
-        metadata_ = null;
-      }
-      metadataCase_ = 6;
-      onChanged();;
-      return databaseDumpBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

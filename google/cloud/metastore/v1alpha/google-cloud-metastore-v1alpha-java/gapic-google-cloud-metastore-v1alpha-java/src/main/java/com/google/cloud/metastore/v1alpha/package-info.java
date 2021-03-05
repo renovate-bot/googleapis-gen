@@ -35,7 +35,7 @@
  *   <li>Dataproc Metastore services are resources with names of the form:
  * </ul>
  *
- * <p>`/projects/{project_id}/locations/{location_id}/services/{service_id}`.
+ * <p>`/projects/{project_number}/locations/{location_id}/services/{service_id}`.
  *
  * <p>Sample for DataprocMetastoreClient:
  *

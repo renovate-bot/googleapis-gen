@@ -16,6 +16,7 @@
 
 package com.google.cloud.metastore.v1alpha.stub;
 
+import static com.google.cloud.metastore.v1alpha.DataprocMetastoreClient.ListBackupsPagedResponse;
 import static com.google.cloud.metastore.v1alpha.DataprocMetastoreClient.ListMetadataImportsPagedResponse;
 import static com.google.cloud.metastore.v1alpha.DataprocMetastoreClient.ListServicesPagedResponse;
 
@@ -23,17 +24,27 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.metastore.v1alpha.Backup;
+import com.google.cloud.metastore.v1alpha.CreateBackupRequest;
 import com.google.cloud.metastore.v1alpha.CreateMetadataImportRequest;
 import com.google.cloud.metastore.v1alpha.CreateServiceRequest;
+import com.google.cloud.metastore.v1alpha.DeleteBackupRequest;
 import com.google.cloud.metastore.v1alpha.DeleteServiceRequest;
+import com.google.cloud.metastore.v1alpha.ExportMetadataRequest;
+import com.google.cloud.metastore.v1alpha.GetBackupRequest;
 import com.google.cloud.metastore.v1alpha.GetMetadataImportRequest;
 import com.google.cloud.metastore.v1alpha.GetServiceRequest;
+import com.google.cloud.metastore.v1alpha.ListBackupsRequest;
+import com.google.cloud.metastore.v1alpha.ListBackupsResponse;
 import com.google.cloud.metastore.v1alpha.ListMetadataImportsRequest;
 import com.google.cloud.metastore.v1alpha.ListMetadataImportsResponse;
 import com.google.cloud.metastore.v1alpha.ListServicesRequest;
 import com.google.cloud.metastore.v1alpha.ListServicesResponse;
+import com.google.cloud.metastore.v1alpha.MetadataExport;
 import com.google.cloud.metastore.v1alpha.MetadataImport;
 import com.google.cloud.metastore.v1alpha.OperationMetadata;
+import com.google.cloud.metastore.v1alpha.Restore;
+import com.google.cloud.metastore.v1alpha.RestoreServiceRequest;
 import com.google.cloud.metastore.v1alpha.Service;
 import com.google.cloud.metastore.v1alpha.UpdateMetadataImportRequest;
 import com.google.cloud.metastore.v1alpha.UpdateServiceRequest;
@@ -127,6 +138,54 @@ public abstract class DataprocMetastoreStub implements BackgroundResource {
 
   public UnaryCallable<UpdateMetadataImportRequest, Operation> updateMetadataImportCallable() {
     throw new UnsupportedOperationException("Not implemented: updateMetadataImportCallable()");
+  }
+
+  public OperationCallable<ExportMetadataRequest, MetadataExport, OperationMetadata>
+      exportMetadataOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportMetadataOperationCallable()");
+  }
+
+  public UnaryCallable<ExportMetadataRequest, Operation> exportMetadataCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportMetadataCallable()");
+  }
+
+  public OperationCallable<RestoreServiceRequest, Restore, OperationMetadata>
+      restoreServiceOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: restoreServiceOperationCallable()");
+  }
+
+  public UnaryCallable<RestoreServiceRequest, Operation> restoreServiceCallable() {
+    throw new UnsupportedOperationException("Not implemented: restoreServiceCallable()");
+  }
+
+  public UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse> listBackupsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listBackupsPagedCallable()");
+  }
+
+  public UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listBackupsCallable()");
+  }
+
+  public UnaryCallable<GetBackupRequest, Backup> getBackupCallable() {
+    throw new UnsupportedOperationException("Not implemented: getBackupCallable()");
+  }
+
+  public OperationCallable<CreateBackupRequest, Backup, OperationMetadata>
+      createBackupOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createBackupOperationCallable()");
+  }
+
+  public UnaryCallable<CreateBackupRequest, Operation> createBackupCallable() {
+    throw new UnsupportedOperationException("Not implemented: createBackupCallable()");
+  }
+
+  public OperationCallable<DeleteBackupRequest, Empty, OperationMetadata>
+      deleteBackupOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteBackupOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteBackupRequest, Operation> deleteBackupCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteBackupCallable()");
   }
 
   @Override

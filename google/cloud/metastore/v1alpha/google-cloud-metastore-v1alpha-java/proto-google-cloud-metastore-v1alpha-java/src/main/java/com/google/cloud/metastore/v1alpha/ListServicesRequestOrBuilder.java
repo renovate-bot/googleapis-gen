@@ -11,7 +11,7 @@ public interface ListServicesRequestOrBuilder extends
    * <pre>
    * Required. The relative resource name of the location of metastore services to
    * list, in the following form:
-   * "projects/{project_id}/locations/{location_id}".
+   * `projects/{project_number}/locations/{location_id}`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -22,7 +22,7 @@ public interface ListServicesRequestOrBuilder extends
    * <pre>
    * Required. The relative resource name of the location of metastore services to
    * list, in the following form:
-   * "projects/{project_id}/locations/{location_id}".
+   * `projects/{project_number}/locations/{location_id}`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -95,9 +95,9 @@ public interface ListServicesRequestOrBuilder extends
 
   /**
    * <pre>
-   * Optional. Specify the ordering of results as described in
-   * [Sorting Order](https://cloud.google.com/apis/design/design_patterns#sorting_order). If not
-   * specified, the results will be sorted in the default order.
+   * Optional. Specify the ordering of results as described in [Sorting
+   * Order](https://cloud.google.com/apis/design/design_patterns#sorting_order).
+   * If not specified, the results will be sorted in the default order.
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -106,9 +106,9 @@ public interface ListServicesRequestOrBuilder extends
   java.lang.String getOrderBy();
   /**
    * <pre>
-   * Optional. Specify the ordering of results as described in
-   * [Sorting Order](https://cloud.google.com/apis/design/design_patterns#sorting_order). If not
-   * specified, the results will be sorted in the default order.
+   * Optional. Specify the ordering of results as described in [Sorting
+   * Order](https://cloud.google.com/apis/design/design_patterns#sorting_order).
+   * If not specified, the results will be sorted in the default order.
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -20,16 +20,25 @@ import proto  # type: ignore
 
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.type import dayofweek_pb2 as dayofweek  # type: ignore
 
 
 __protobuf__ = proto.module(
     package='google.cloud.metastore.v1alpha',
     manifest={
         'Service',
+        'MetadataIntegration',
+        'DataCatalogConfig',
+        'MaintenanceWindow',
         'HiveMetastoreConfig',
         'KerberosConfig',
         'Secret',
+        'MetadataManagementActivity',
         'MetadataImport',
+        'MetadataExport',
+        'Backup',
+        'Restore',
         'ListServicesRequest',
         'ListServicesResponse',
         'GetServiceRequest',
@@ -41,8 +50,16 @@ __protobuf__ = proto.module(
         'GetMetadataImportRequest',
         'CreateMetadataImportRequest',
         'UpdateMetadataImportRequest',
+        'ListBackupsRequest',
+        'ListBackupsResponse',
+        'GetBackupRequest',
+        'CreateBackupRequest',
+        'DeleteBackupRequest',
+        'ExportMetadataRequest',
+        'RestoreServiceRequest',
         'OperationMetadata',
         'LocationMetadata',
+        'DatabaseDumpSpec',
     },
 )
 
@@ -51,11 +68,15 @@ class Service(proto.Message):
     r"""A managed metastore service that serves metadata queries.
 
     Attributes:
+        hive_metastore_config (google.cloud.metastore_v1alpha.types.HiveMetastoreConfig):
+            Configuration information specific to running
+            Hive metastore software as the metastore
+            service.
         name (str):
             Immutable. The relative resource name of the metastore
             service, of the form:
 
-            "projects/{project_id}/locations/{location_id}/services/{service_id}".
+            ``projects/{project_number}/locations/{location_id}/services/{service_id}``.
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time when the metastore
             service was created.
@@ -65,17 +86,12 @@ class Service(proto.Message):
         labels (Sequence[google.cloud.metastore_v1alpha.types.Service.LabelsEntry]):
             User-defined labels for the metastore
             service.
-        hive_metastore_config (google.cloud.metastore_v1alpha.types.HiveMetastoreConfig):
-            Configuration information specific to running
-            Hive metastore software as the metastore
-            service.
         network (str):
             Immutable. The relative resource name of the VPC network on
-            which the instance can be accessed. The network must belong
-            to the same project as the metastore instance. It is
-            specified in the following form:
+            which the instance can be accessed. It is specified in the
+            following form:
 
-            "projects/{project_id}/global/networks/{network_id}".
+            ``projects/{project_number}/global/networks/{network_id}``.
         endpoint_uri (str):
             Output only. The URI of the endpoint used to
             access the metastore service.
@@ -95,6 +111,21 @@ class Service(proto.Message):
             service are stored.
         tier (google.cloud.metastore_v1alpha.types.Service.Tier):
             The tier of the service.
+        metadata_integration (google.cloud.metastore_v1alpha.types.MetadataIntegration):
+            The setting that defines how metastore
+            metadata should be integrated with external
+            services and systems.
+        maintenance_window (google.cloud.metastore_v1alpha.types.MaintenanceWindow):
+            The one hour maintenance window of the
+            metastore service. This specifies when the
+            service can be restarted for maintenance
+            purposes in UTC time.
+        uid (str):
+            Output only. The globally unique resource
+            identifier of the metastore service.
+        metadata_management_activity (google.cloud.metastore_v1alpha.types.MetadataManagementActivity):
+            Output only. The metadata management
+            activities of the metastore service.
     """
     class State(proto.Enum):
         r"""The current state of the metastore service."""
@@ -110,7 +141,12 @@ class Service(proto.Message):
     class Tier(proto.Enum):
         r"""Available service tiers."""
         TIER_UNSPECIFIED = 0
+        DEVELOPER = 1
         ENTERPRISE = 3
+
+    hive_metastore_config = proto.Field(proto.MESSAGE, number=5, oneof='metastore_config',
+        message='HiveMetastoreConfig',
+    )
 
     name = proto.Field(proto.STRING, number=1)
 
@@ -123,10 +159,6 @@ class Service(proto.Message):
     )
 
     labels = proto.MapField(proto.STRING, proto.STRING, number=4)
-
-    hive_metastore_config = proto.Field(proto.MESSAGE, number=5, oneof='metastore_config',
-        message='HiveMetastoreConfig',
-    )
 
     network = proto.Field(proto.STRING, number=7)
 
@@ -146,6 +178,71 @@ class Service(proto.Message):
         enum=Tier,
     )
 
+    metadata_integration = proto.Field(proto.MESSAGE, number=14,
+        message='MetadataIntegration',
+    )
+
+    maintenance_window = proto.Field(proto.MESSAGE, number=15,
+        message='MaintenanceWindow',
+    )
+
+    uid = proto.Field(proto.STRING, number=16)
+
+    metadata_management_activity = proto.Field(proto.MESSAGE, number=17,
+        message='MetadataManagementActivity',
+    )
+
+
+class MetadataIntegration(proto.Message):
+    r"""Specifies how metastore metadata should be integrated with
+    external services.
+
+    Attributes:
+        data_catalog_config (google.cloud.metastore_v1alpha.types.DataCatalogConfig):
+            The integration config for the Data Catalog
+            service.
+    """
+
+    data_catalog_config = proto.Field(proto.MESSAGE, number=1,
+        message='DataCatalogConfig',
+    )
+
+
+class DataCatalogConfig(proto.Message):
+    r"""Specifies how metastore metadata should be integrated with
+    the Data Catalog service.
+
+    Attributes:
+        enabled (bool):
+            Defines whether the metastore metadata should
+            be synced to Data Catalog. The default value is
+            to disable syncing metastore metadata to Data
+            Catalog.
+    """
+
+    enabled = proto.Field(proto.BOOL, number=1)
+
+
+class MaintenanceWindow(proto.Message):
+    r"""Maintenance window. This specifies when Dataproc Metastore
+    may perform system maintenance operation to the service.
+
+    Attributes:
+        hour_of_day (google.protobuf.wrappers_pb2.Int32Value):
+            The hour of day (0-23) when the window
+            starts.
+        day_of_week (google.type.dayofweek_pb2.DayOfWeek):
+            The day of week, when the window starts.
+    """
+
+    hour_of_day = proto.Field(proto.MESSAGE, number=1,
+        message=wrappers.Int32Value,
+    )
+
+    day_of_week = proto.Field(proto.ENUM, number=2,
+        enum=dayofweek.DayOfWeek,
+    )
+
 
 class HiveMetastoreConfig(proto.Message):
     r"""Specifies configuration information specific to running Hive
@@ -160,9 +257,12 @@ class HiveMetastoreConfig(proto.Message):
             ``hive-site.xml``). The mappings override system defaults
             (some keys cannot be overridden).
         kerberos_config (google.cloud.metastore_v1alpha.types.KerberosConfig):
-            Information used to configure the Hive
-            metastore service as a service principal in a
-            Kerberos realm.
+            Information used to configure the Hive metastore service as
+            a service principal in a Kerberos realm. To disable
+            Kerberos, use the ``UpdateService`` method and specify this
+            field's path (``hive_metastore_config.kerberos_config``) in
+            the request's ``update_mask`` while omitting this field from
+            the request's ``service``.
     """
 
     version = proto.Field(proto.STRING, number=1)
@@ -183,11 +283,9 @@ class KerberosConfig(proto.Message):
             authenticate a service principal with a Kerberos
             Key Distribution Center (KDC).
         principal (str):
-            A Kerberos principal that exists in the both
-            the keytab the KDC to authenticate as. A typical
-            principal is of the form
-            "primary/instance@REALM", but there is no exact
-            format.
+            A Kerberos principal that exists in the both the keytab the
+            KDC to authenticate as. A typical principal is of the form
+            ``primary/instance@REALM``, but there is no exact format.
         krb5_config_gcs_uri (str):
             A Cloud Storage URI that specifies the path to a krb5.conf
             file. It is of the form
@@ -212,21 +310,45 @@ class Secret(proto.Message):
             The relative resource name of a Secret Manager secret
             version, in the following form:
 
-            "projects/{project_id}/secrets/{secret_id}/versions/{version_id}".
+            ``projects/{project_number}/secrets/{secret_id}/versions/{version_id}``.
     """
 
     cloud_secret = proto.Field(proto.STRING, number=2, oneof='value')
+
+
+class MetadataManagementActivity(proto.Message):
+    r"""The metadata management activities of the metastore service.
+
+    Attributes:
+        metadata_exports (Sequence[google.cloud.metastore_v1alpha.types.MetadataExport]):
+            Output only. The latest metadata exports of
+            the metastore service.
+        restores (Sequence[google.cloud.metastore_v1alpha.types.Restore]):
+            Output only. The latest restores of the
+            metastore service.
+    """
+
+    metadata_exports = proto.RepeatedField(proto.MESSAGE, number=1,
+        message='MetadataExport',
+    )
+
+    restores = proto.RepeatedField(proto.MESSAGE, number=2,
+        message='Restore',
+    )
 
 
 class MetadataImport(proto.Message):
     r"""A metastore resource that imports metadata.
 
     Attributes:
+        database_dump (google.cloud.metastore_v1alpha.types.MetadataImport.DatabaseDump):
+            Immutable. A database dump from a pre-
+            xisting metastore's database.
         name (str):
             Immutable. The relative resource name of the metadata
             import, of the form:
 
-            "projects/{project_id}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}".
+            ``projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}``.
         description (str):
             The description of the metadata import.
         create_time (google.protobuf.timestamp_pb2.Timestamp):
@@ -238,9 +360,6 @@ class MetadataImport(proto.Message):
         state (google.cloud.metastore_v1alpha.types.MetadataImport.State):
             Output only. The current state of the
             metadata import.
-        database_dump (google.cloud.metastore_v1alpha.types.MetadataImport.DatabaseDump):
-            Immutable. A database dump from a pre-
-            xisting metastore's database.
     """
     class State(proto.Enum):
         r"""The current state of the metadata import."""
@@ -258,10 +377,14 @@ class MetadataImport(proto.Message):
             database_type (google.cloud.metastore_v1alpha.types.MetadataImport.DatabaseDump.DatabaseType):
                 The type of the database.
             gcs_uri (str):
-                A Cloud Storage object URI that specifies the source from
-                which to import metadata. It must begin with ``gs://``.
+                A Cloud Storage object or folder URI that specifies the
+                source from which to import metadata. It must begin with
+                ``gs://``.
             source_database (str):
                 The name of the source database.
+            type_ (google.cloud.metastore_v1alpha.types.DatabaseDumpSpec.Type):
+                Optional. The type of the database dump. If unspecified,
+                defaults to ``MYSQL``.
         """
         class DatabaseType(proto.Enum):
             r"""The type of the database."""
@@ -275,6 +398,14 @@ class MetadataImport(proto.Message):
         gcs_uri = proto.Field(proto.STRING, number=2)
 
         source_database = proto.Field(proto.STRING, number=3)
+
+        type_ = proto.Field(proto.ENUM, number=4,
+            enum='DatabaseDumpSpec.Type',
+        )
+
+    database_dump = proto.Field(proto.MESSAGE, number=6, oneof='metadata',
+        message=DatabaseDump,
+    )
 
     name = proto.Field(proto.STRING, number=1)
 
@@ -292,9 +423,162 @@ class MetadataImport(proto.Message):
         enum=State,
     )
 
-    database_dump = proto.Field(proto.MESSAGE, number=6, oneof='metadata',
-        message=DatabaseDump,
+
+class MetadataExport(proto.Message):
+    r"""The details of a metadata export operation.
+
+    Attributes:
+        destination_gcs_uri (str):
+            Output only. A Cloud Storage URI of a folder that metadata
+            are exported to, in the form of
+            ``gs://<bucket_name>/<path_inside_bucket>/<export_folder>``,
+            where ``<export_folder>`` is automatically generated.
+        start_time (google.protobuf.timestamp_pb2.Timestamp):
+            Output only. The time when the export
+            started.
+        end_time (google.protobuf.timestamp_pb2.Timestamp):
+            Output only. The time when the export ended.
+        state (google.cloud.metastore_v1alpha.types.MetadataExport.State):
+            Output only. The current state of the export.
+        database_dump_type (google.cloud.metastore_v1alpha.types.DatabaseDumpSpec.Type):
+            Output only. The type of the database dump.
+    """
+    class State(proto.Enum):
+        r"""The current state of the metadata export."""
+        STATE_UNSPECIFIED = 0
+        RUNNING = 1
+        SUCCEEDED = 2
+        FAILED = 3
+        CANCELLED = 4
+
+    destination_gcs_uri = proto.Field(proto.STRING, number=4, oneof='destination')
+
+    start_time = proto.Field(proto.MESSAGE, number=1,
+        message=timestamp.Timestamp,
     )
+
+    end_time = proto.Field(proto.MESSAGE, number=2,
+        message=timestamp.Timestamp,
+    )
+
+    state = proto.Field(proto.ENUM, number=3,
+        enum=State,
+    )
+
+    database_dump_type = proto.Field(proto.ENUM, number=5,
+        enum='DatabaseDumpSpec.Type',
+    )
+
+
+class Backup(proto.Message):
+    r"""The details of a backup resource.
+
+    Attributes:
+        name (str):
+            Immutable. The relative resource name of the backup, in the
+            following form:
+
+            ``projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}``
+        create_time (google.protobuf.timestamp_pb2.Timestamp):
+            Output only. The time when the backup was
+            started.
+        end_time (google.protobuf.timestamp_pb2.Timestamp):
+            Output only. The time when the backup
+            finished creating.
+        state (google.cloud.metastore_v1alpha.types.Backup.State):
+            Output only. The current state of the backup.
+        service_revision (google.cloud.metastore_v1alpha.types.Service):
+            Output only. The revision of the service at
+            the time of backup.
+        description (str):
+            The description of the backup.
+    """
+    class State(proto.Enum):
+        r"""The current state of the backup."""
+        STATE_UNSPECIFIED = 0
+        CREATING = 1
+        DELETING = 2
+        ACTIVE = 3
+        FAILED = 4
+
+    name = proto.Field(proto.STRING, number=1)
+
+    create_time = proto.Field(proto.MESSAGE, number=2,
+        message=timestamp.Timestamp,
+    )
+
+    end_time = proto.Field(proto.MESSAGE, number=3,
+        message=timestamp.Timestamp,
+    )
+
+    state = proto.Field(proto.ENUM, number=4,
+        enum=State,
+    )
+
+    service_revision = proto.Field(proto.MESSAGE, number=5,
+        message='Service',
+    )
+
+    description = proto.Field(proto.STRING, number=6)
+
+
+class Restore(proto.Message):
+    r"""The details of a metadata restore operation.
+
+    Attributes:
+        start_time (google.protobuf.timestamp_pb2.Timestamp):
+            Output only. The time when the restore
+            started.
+        end_time (google.protobuf.timestamp_pb2.Timestamp):
+            Output only. The time when the restore ended.
+        state (google.cloud.metastore_v1alpha.types.Restore.State):
+            Output only. The current state of the
+            restore.
+        backup (str):
+            Output only. The relative resource name of the metastore
+            service backup to restore from, in the following form:
+
+            ``projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}``
+        type_ (google.cloud.metastore_v1alpha.types.Restore.RestoreType):
+            Output only. The type of restore.
+        details (str):
+            Output only. The restore details containing
+            the revision of the service to be restored to,
+            in format of JSON.
+    """
+    class State(proto.Enum):
+        r"""The current state of the restore."""
+        STATE_UNSPECIFIED = 0
+        RUNNING = 1
+        SUCCEEDED = 2
+        FAILED = 3
+        CANCELLED = 4
+
+    class RestoreType(proto.Enum):
+        r"""The type of restore."""
+        RESTORE_TYPE_UNSPECIFIED = 0
+        FULL = 1
+        METADATA_ONLY = 2
+
+    start_time = proto.Field(proto.MESSAGE, number=1,
+        message=timestamp.Timestamp,
+    )
+
+    end_time = proto.Field(proto.MESSAGE, number=2,
+        message=timestamp.Timestamp,
+    )
+
+    state = proto.Field(proto.ENUM, number=3,
+        enum=State,
+    )
+
+    backup = proto.Field(proto.STRING, number=4)
+
+    type_ = proto.Field(proto.ENUM, number=5,
+        enum=RestoreType,
+    )
+
+    details = proto.Field(proto.STRING, number=6)
 
 
 class ListServicesRequest(proto.Message):
@@ -306,7 +590,7 @@ class ListServicesRequest(proto.Message):
             Required. The relative resource name of the location of
             metastore services to list, in the following form:
 
-            "projects/{project_id}/locations/{location_id}".
+            ``projects/{project_number}/locations/{location_id}``.
         page_size (int):
             Optional. The maximum number of services to
             return. The response may contain less than the
@@ -382,7 +666,7 @@ class GetServiceRequest(proto.Message):
             Required. The relative resource name of the metastore
             service to retrieve, in the following form:
 
-            "projects/{project_id}/locations/{location_id}/services/{service_id}".
+            ``projects/{project_number}/locations/{location_id}/services/{service_id}``.
     """
 
     name = proto.Field(proto.STRING, number=1)
@@ -397,15 +681,15 @@ class CreateServiceRequest(proto.Message):
             Required. The relative resource name of the location in
             which to create a metastore service, in the following form:
 
-            "projects/{project_id}/locations/{location_id}".
+            ``projects/{project_number}/locations/{location_id}``.
         service_id (str):
             Required. The ID of the metastore service,
             which is used as the final component of the
             metastore service's name.
-            This value must be between 1 and 64 characters
-            long, begin with a letter, end with a letter or
-            number, and consist of alpha-numeric ASCII
-            characters or hyphens.
+            This value must be between 2 and 63 characters
+            long inclusive, begin with a letter, end with a
+            letter or number, and consist of alpha-numeric
+            ASCII characters or hyphens.
         service (google.cloud.metastore_v1alpha.types.Service):
             Required. The Metastore service to create. The ``name``
             field is ignored. The ID of the created metastore service
@@ -495,7 +779,7 @@ class DeleteServiceRequest(proto.Message):
             Required. The relative resource name of the metastore
             service to delete, in the following form:
 
-            "projects/{project_id}/locations/{location_id}/services/{service_id}".
+            ``projects/{project_number}/locations/{location_id}/services/{service_id}``.
         request_id (str):
             Optional. A request ID. Specify a unique request ID to allow
             the server to ignore the request if it has completed. The
@@ -528,7 +812,7 @@ class ListMetadataImportsRequest(proto.Message):
             Required. The relative resource name of the service whose
             metadata imports to list, in the following form:
 
-            "projects/{project_id}/locations/{location_id}/services/{service_id}/metadataImports".
+            ``projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports``.
         page_size (int):
             Optional. The maximum number of imports to
             return. The response may contain less than the
@@ -604,7 +888,7 @@ class GetMetadataImportRequest(proto.Message):
             Required. The relative resource name of the metadata import
             to retrieve, in the following form:
 
-            "projects/{project_id}/locations/{location_id}/services/{service_id}/metadataImports/{import_id}".
+            ``projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{import_id}``.
     """
 
     name = proto.Field(proto.STRING, number=1)
@@ -619,7 +903,7 @@ class CreateMetadataImportRequest(proto.Message):
             Required. The relative resource name of the service in which
             to create a metastore import, in the following form:
 
-            "projects/{project_id}/locations/{location_id}/services/{service_id}".
+            ``projects/{project_number}/locations/{location_id}/services/{service_id}``
         metadata_import_id (str):
             Required. The ID of the metadata import,
             which is used as the final component of the
@@ -708,6 +992,274 @@ class UpdateMetadataImportRequest(proto.Message):
     request_id = proto.Field(proto.STRING, number=3)
 
 
+class ListBackupsRequest(proto.Message):
+    r"""Request message for
+    [DataprocMetastore.ListBackups][google.cloud.metastore.v1alpha.DataprocMetastore.ListBackups].
+
+    Attributes:
+        parent (str):
+            Required. The relative resource name of the service whose
+            backups to list, in the following form:
+
+            ``projects/{project_number}/locations/{location_id}/services/{service_id}/backups``.
+        page_size (int):
+            Optional. The maximum number of backups to
+            return. The response may contain less than the
+            maximum number. If unspecified, no more than 500
+            backups are returned. The maximum value is 1000;
+            values above 1000 are changed to 1000.
+        page_token (str):
+            Optional. A page token, received from a previous
+            [DataprocMetastore.ListBackups][google.cloud.metastore.v1alpha.DataprocMetastore.ListBackups]
+            call. Provide this token to retrieve the subsequent page.
+
+            To retrieve the first page, supply an empty page token.
+
+            When paginating, other parameters provided to
+            [DataprocMetastore.ListBackups][google.cloud.metastore.v1alpha.DataprocMetastore.ListBackups]
+            must match the call that provided the page token.
+        filter (str):
+            Optional. The filter to apply to list
+            results.
+        order_by (str):
+            Optional. Specify the ordering of results as described in
+            `Sorting
+            Order <https://cloud.google.com/apis/design/design_patterns#sorting_order>`__.
+            If not specified, the results will be sorted in the default
+            order.
+    """
+
+    parent = proto.Field(proto.STRING, number=1)
+
+    page_size = proto.Field(proto.INT32, number=2)
+
+    page_token = proto.Field(proto.STRING, number=3)
+
+    filter = proto.Field(proto.STRING, number=4)
+
+    order_by = proto.Field(proto.STRING, number=5)
+
+
+class ListBackupsResponse(proto.Message):
+    r"""Response message for
+    [DataprocMetastore.ListBackups][google.cloud.metastore.v1alpha.DataprocMetastore.ListBackups].
+
+    Attributes:
+        backups (Sequence[google.cloud.metastore_v1alpha.types.Backup]):
+            The backups of the specified service.
+        next_page_token (str):
+            A token that can be sent as ``page_token`` to retrieve the
+            next page. If this field is omitted, there are no subsequent
+            pages.
+        unreachable (Sequence[str]):
+            Locations that could not be reached.
+    """
+
+    @property
+    def raw_page(self):
+        return self
+
+    backups = proto.RepeatedField(proto.MESSAGE, number=1,
+        message='Backup',
+    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
+
+    unreachable = proto.RepeatedField(proto.STRING, number=3)
+
+
+class GetBackupRequest(proto.Message):
+    r"""Request message for
+    [DataprocMetastore.GetBackup][google.cloud.metastore.v1alpha.DataprocMetastore.GetBackup].
+
+    Attributes:
+        name (str):
+            Required. The relative resource name of the backup to
+            retrieve, in the following form:
+
+            ``projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}``.
+    """
+
+    name = proto.Field(proto.STRING, number=1)
+
+
+class CreateBackupRequest(proto.Message):
+    r"""Request message for
+    [DataprocMetastore.CreateBackup][google.cloud.metastore.v1alpha.DataprocMetastore.CreateBackup].
+
+    Attributes:
+        parent (str):
+            Required. The relative resource name of the service in which
+            to create a backup of the following form:
+
+            ``projects/{project_number}/locations/{location_id}/services/{service_id}``
+        backup_id (str):
+            Required. The ID of the backup, which is used
+            as the final component of the backup's name.
+
+            This value must be between 1 and 64 characters
+            long, begin with a letter, end with a letter or
+            number, and consist of alpha-numeric ASCII
+            characters or hyphens.
+        backup (google.cloud.metastore_v1alpha.types.Backup):
+            Required. The backup to create. The ``name`` field is
+            ignored. The ID of the created backup must be provided in
+            the request's ``backup_id`` field.
+        request_id (str):
+            Optional. A request ID. Specify a unique request ID to allow
+            the server to ignore the request if it has completed. The
+            server will ignore subsequent requests that provide a
+            duplicate request ID for at least 60 minutes after the first
+            request.
+
+            For example, if an initial request times out, followed by
+            another request with the same request ID, the server ignores
+            the second request to prevent the creation of duplicate
+            commitments.
+
+            The request ID must be a valid
+            `UUID <https://en.wikipedia.org/wiki/Universally_unique_identifier#Format>`__
+            A zero UUID (00000000-0000-0000-0000-000000000000) is not
+            supported.
+    """
+
+    parent = proto.Field(proto.STRING, number=1)
+
+    backup_id = proto.Field(proto.STRING, number=2)
+
+    backup = proto.Field(proto.MESSAGE, number=3,
+        message='Backup',
+    )
+
+    request_id = proto.Field(proto.STRING, number=4)
+
+
+class DeleteBackupRequest(proto.Message):
+    r"""Request message for
+    [DataprocMetastore.DeleteBackup][google.cloud.metastore.v1alpha.DataprocMetastore.DeleteBackup].
+
+    Attributes:
+        name (str):
+            Required. The relative resource name of the backup to
+            delete, in the following form:
+
+            ``projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}``.
+        request_id (str):
+            Optional. A request ID. Specify a unique request ID to allow
+            the server to ignore the request if it has completed. The
+            server will ignore subsequent requests that provide a
+            duplicate request ID for at least 60 minutes after the first
+            request.
+
+            For example, if an initial request times out, followed by
+            another request with the same request ID, the server ignores
+            the second request to prevent the creation of duplicate
+            commitments.
+
+            The request ID must be a valid
+            `UUID <https://en.wikipedia.org/wiki/Universally_unique_identifier#Format>`__
+            A zero UUID (00000000-0000-0000-0000-000000000000) is not
+            supported.
+    """
+
+    name = proto.Field(proto.STRING, number=1)
+
+    request_id = proto.Field(proto.STRING, number=2)
+
+
+class ExportMetadataRequest(proto.Message):
+    r"""Request message for
+    [DataprocMetastore.ExportMetadata][google.cloud.metastore.v1alpha.DataprocMetastore.ExportMetadata].
+
+    Attributes:
+        destination_gcs_folder (str):
+            A Cloud Storage URI of a folder, in the format
+            ``gs://<bucket_name>/<path_inside_bucket>``. A sub-folder
+            ``<export_folder>`` containing exported files will be
+            created below it.
+        service (str):
+            Required. The relative resource name of the metastore
+            service to run export, in the following form:
+
+            ``projects/{project_id}/locations/{location_id}/services/{service_id}``
+        request_id (str):
+            Optional. A request ID. Specify a unique request ID to allow
+            the server to ignore the request if it has completed. The
+            server will ignore subsequent requests that provide a
+            duplicate request ID for at least 60 minutes after the first
+            request.
+
+            For example, if an initial request times out, followed by
+            another request with the same request ID, the server ignores
+            the second request to prevent the creation of duplicate
+            commitments.
+
+            The request ID must be a valid
+            `UUID <https://en.wikipedia.org/wiki/Universally_unique_identifier#Format>`__.
+            A zero UUID (00000000-0000-0000-0000-000000000000) is not
+            supported.
+        database_dump_type (google.cloud.metastore_v1alpha.types.DatabaseDumpSpec.Type):
+            Optional. The type of the database dump. If unspecified,
+            defaults to ``MYSQL``.
+    """
+
+    destination_gcs_folder = proto.Field(proto.STRING, number=2, oneof='destination')
+
+    service = proto.Field(proto.STRING, number=1)
+
+    request_id = proto.Field(proto.STRING, number=3)
+
+    database_dump_type = proto.Field(proto.ENUM, number=4,
+        enum='DatabaseDumpSpec.Type',
+    )
+
+
+class RestoreServiceRequest(proto.Message):
+    r"""Request message for [DataprocMetastore.Restore][].
+
+    Attributes:
+        service (str):
+            Required. The relative resource name of the metastore
+            service to run restore, in the following form:
+
+            ``projects/{project_id}/locations/{location_id}/services/{service_id}``
+        backup (str):
+            Required. The relative resource name of the metastore
+            service backup to restore from, in the following form:
+
+            ``projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}``
+        restore_type (google.cloud.metastore_v1alpha.types.Restore.RestoreType):
+            Optional. The type of restore. If unspecified, defaults to
+            ``METADATA_ONLY``.
+        request_id (str):
+            Optional. A request ID. Specify a unique request ID to allow
+            the server to ignore the request if it has completed. The
+            server will ignore subsequent requests that provide a
+            duplicate request ID for at least 60 minutes after the first
+            request.
+
+            For example, if an initial request times out, followed by
+            another request with the same request ID, the server ignores
+            the second request to prevent the creation of duplicate
+            commitments.
+
+            The request ID must be a valid
+            `UUID <https://en.wikipedia.org/wiki/Universally_unique_identifier#Format>`__.
+            A zero UUID (00000000-0000-0000-0000-000000000000) is not
+            supported.
+    """
+
+    service = proto.Field(proto.STRING, number=1)
+
+    backup = proto.Field(proto.STRING, number=2)
+
+    restore_type = proto.Field(proto.ENUM, number=3,
+        enum='Restore.RestoreType',
+    )
+
+    request_id = proto.Field(proto.STRING, number=4)
+
+
 class OperationMetadata(proto.Message):
     r"""Represents the metadata of a long-running operation.
 
@@ -788,6 +1340,16 @@ class LocationMetadata(proto.Message):
     supported_hive_metastore_versions = proto.RepeatedField(proto.MESSAGE, number=1,
         message=HiveMetastoreVersion,
     )
+
+
+class DatabaseDumpSpec(proto.Message):
+    r"""The specification of database dump to import from or export
+    to.
+    """
+    class Type(proto.Enum):
+        r"""The type of the database dump."""
+        TYPE_UNSPECIFIED = 0
+        MYSQL = 1
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

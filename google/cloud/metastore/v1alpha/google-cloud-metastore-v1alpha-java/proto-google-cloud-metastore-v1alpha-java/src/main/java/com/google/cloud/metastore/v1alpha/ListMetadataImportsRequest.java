@@ -123,7 +123,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. The relative resource name of the service whose metadata imports to
    * list, in the following form:
-   * "projects/{project_id}/locations/{location_id}/services/{service_id}/metadataImports".
+   * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -146,7 +146,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. The relative resource name of the service whose metadata imports to
    * list, in the following form:
-   * "projects/{project_id}/locations/{location_id}/services/{service_id}/metadataImports".
+   * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -290,9 +290,9 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object orderBy_;
   /**
    * <pre>
-   * Optional. Specify the ordering of results as described in
-   * [Sorting Order](https://cloud.google.com/apis/design/design_patterns#sorting_order). If not
-   * specified, the results will be sorted in the default order.
+   * Optional. Specify the ordering of results as described in [Sorting
+   * Order](https://cloud.google.com/apis/design/design_patterns#sorting_order).
+   * If not specified, the results will be sorted in the default order.
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -313,9 +313,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Specify the ordering of results as described in
-   * [Sorting Order](https://cloud.google.com/apis/design/design_patterns#sorting_order). If not
-   * specified, the results will be sorted in the default order.
+   * Optional. Specify the ordering of results as described in [Sorting
+   * Order](https://cloud.google.com/apis/design/design_patterns#sorting_order).
+   * If not specified, the results will be sorted in the default order.
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -715,7 +715,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. The relative resource name of the service whose metadata imports to
      * list, in the following form:
-     * "projects/{project_id}/locations/{location_id}/services/{service_id}/metadataImports".
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -737,7 +737,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. The relative resource name of the service whose metadata imports to
      * list, in the following form:
-     * "projects/{project_id}/locations/{location_id}/services/{service_id}/metadataImports".
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -760,7 +760,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. The relative resource name of the service whose metadata imports to
      * list, in the following form:
-     * "projects/{project_id}/locations/{location_id}/services/{service_id}/metadataImports".
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -781,7 +781,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. The relative resource name of the service whose metadata imports to
      * list, in the following form:
-     * "projects/{project_id}/locations/{location_id}/services/{service_id}/metadataImports".
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -797,7 +797,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. The relative resource name of the service whose metadata imports to
      * list, in the following form:
-     * "projects/{project_id}/locations/{location_id}/services/{service_id}/metadataImports".
+     * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -1085,9 +1085,9 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object orderBy_ = "";
     /**
      * <pre>
-     * Optional. Specify the ordering of results as described in
-     * [Sorting Order](https://cloud.google.com/apis/design/design_patterns#sorting_order). If not
-     * specified, the results will be sorted in the default order.
+     * Optional. Specify the ordering of results as described in [Sorting
+     * Order](https://cloud.google.com/apis/design/design_patterns#sorting_order).
+     * If not specified, the results will be sorted in the default order.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1107,9 +1107,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Specify the ordering of results as described in
-     * [Sorting Order](https://cloud.google.com/apis/design/design_patterns#sorting_order). If not
-     * specified, the results will be sorted in the default order.
+     * Optional. Specify the ordering of results as described in [Sorting
+     * Order](https://cloud.google.com/apis/design/design_patterns#sorting_order).
+     * If not specified, the results will be sorted in the default order.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1130,9 +1130,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Specify the ordering of results as described in
-     * [Sorting Order](https://cloud.google.com/apis/design/design_patterns#sorting_order). If not
-     * specified, the results will be sorted in the default order.
+     * Optional. Specify the ordering of results as described in [Sorting
+     * Order](https://cloud.google.com/apis/design/design_patterns#sorting_order).
+     * If not specified, the results will be sorted in the default order.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1151,9 +1151,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Specify the ordering of results as described in
-     * [Sorting Order](https://cloud.google.com/apis/design/design_patterns#sorting_order). If not
-     * specified, the results will be sorted in the default order.
+     * Optional. Specify the ordering of results as described in [Sorting
+     * Order](https://cloud.google.com/apis/design/design_patterns#sorting_order).
+     * If not specified, the results will be sorted in the default order.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1167,9 +1167,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Specify the ordering of results as described in
-     * [Sorting Order](https://cloud.google.com/apis/design/design_patterns#sorting_order). If not
-     * specified, the results will be sorted in the default order.
+     * Optional. Specify the ordering of results as described in [Sorting
+     * Order](https://cloud.google.com/apis/design/design_patterns#sorting_order).
+     * If not specified, the results will be sorted in the default order.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

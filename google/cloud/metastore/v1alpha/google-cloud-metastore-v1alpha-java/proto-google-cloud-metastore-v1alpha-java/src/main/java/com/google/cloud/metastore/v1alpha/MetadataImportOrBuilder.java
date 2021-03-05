@@ -9,8 +9,35 @@ public interface MetadataImportOrBuilder extends
 
   /**
    * <pre>
+   * Immutable. A database dump from a pre-existing metastore's database.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return Whether the databaseDump field is set.
+   */
+  boolean hasDatabaseDump();
+  /**
+   * <pre>
+   * Immutable. A database dump from a pre-existing metastore's database.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return The databaseDump.
+   */
+  com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump getDatabaseDump();
+  /**
+   * <pre>
+   * Immutable. A database dump from a pre-existing metastore's database.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   */
+  com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDumpOrBuilder getDatabaseDumpOrBuilder();
+
+  /**
+   * <pre>
    * Immutable. The relative resource name of the metadata import, of the form:
-   * "projects/{project_id}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}".
+   * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -20,7 +47,7 @@ public interface MetadataImportOrBuilder extends
   /**
    * <pre>
    * Immutable. The relative resource name of the metadata import, of the form:
-   * "projects/{project_id}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}".
+   * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -121,33 +148,6 @@ public interface MetadataImportOrBuilder extends
    * @return The state.
    */
   com.google.cloud.metastore.v1alpha.MetadataImport.State getState();
-
-  /**
-   * <pre>
-   * Immutable. A database dump from a pre-existing metastore's database.
-   * </pre>
-   *
-   * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
-   * @return Whether the databaseDump field is set.
-   */
-  boolean hasDatabaseDump();
-  /**
-   * <pre>
-   * Immutable. A database dump from a pre-existing metastore's database.
-   * </pre>
-   *
-   * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
-   * @return The databaseDump.
-   */
-  com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump getDatabaseDump();
-  /**
-   * <pre>
-   * Immutable. A database dump from a pre-existing metastore's database.
-   * </pre>
-   *
-   * <code>.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump database_dump = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
-   */
-  com.google.cloud.metastore.v1alpha.MetadataImport.DatabaseDumpOrBuilder getDatabaseDumpOrBuilder();
 
   public com.google.cloud.metastore.v1alpha.MetadataImport.MetadataCase getMetadataCase();
 }

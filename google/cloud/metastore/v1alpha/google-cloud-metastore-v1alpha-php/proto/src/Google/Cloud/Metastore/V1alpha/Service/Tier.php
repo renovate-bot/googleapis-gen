@@ -20,8 +20,15 @@ class Tier
      */
     const TIER_UNSPECIFIED = 0;
     /**
-     * The enterprise tier combines a powerful metastore serving layer with a
-     * highly scalable data storage layer.
+     * The developer tier provides limited scalability and no fault tolerance.
+     * Good for low-cost proof-of-concept.
+     *
+     * Generated from protobuf enum <code>DEVELOPER = 1;</code>
+     */
+    const DEVELOPER = 1;
+    /**
+     * The enterprise tier provides multi-zone high availability, and sufficient
+     * scalability for enterprise-level Dataproc Metastore workloads.
      *
      * Generated from protobuf enum <code>ENTERPRISE = 3;</code>
      */
@@ -29,6 +36,7 @@ class Tier
 
     private static $valueToName = [
         self::TIER_UNSPECIFIED => 'TIER_UNSPECIFIED',
+        self::DEVELOPER => 'DEVELOPER',
         self::ENTERPRISE => 'ENTERPRISE',
     ];
 
