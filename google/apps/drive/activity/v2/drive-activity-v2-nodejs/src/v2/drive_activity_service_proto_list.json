@@ -1,0 +1,9 @@
+[
+  "../../protos/google/apps/drive/activity/v2/action.proto",
+  "../../protos/google/apps/drive/activity/v2/actor.proto",
+  "../../protos/google/apps/drive/activity/v2/common.proto",
+  "../../protos/google/apps/drive/activity/v2/drive_activity_service.proto",
+  "../../protos/google/apps/drive/activity/v2/query_drive_activity_request.proto",
+  "../../protos/google/apps/drive/activity/v2/query_drive_activity_response.proto",
+  "../../protos/google/apps/drive/activity/v2/target.proto"
+]

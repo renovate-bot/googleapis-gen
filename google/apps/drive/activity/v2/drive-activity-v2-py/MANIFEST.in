@@ -1,0 +1,2 @@
+recursive-include google/apps/drive/activity *.py
+recursive-include google/apps/drive/activity_v2 *.py

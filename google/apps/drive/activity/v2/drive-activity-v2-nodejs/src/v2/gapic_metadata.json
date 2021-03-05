@@ -1,0 +1,37 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "typescript",
+  "protoPackage": "google.apps.drive.activity.v2",
+  "libraryPackage": "@google-cloud/drive-activity",
+  "services": {
+    "DriveActivityService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DriveActivityServiceClient",
+          "rpcs": {
+            "QueryDriveActivity": {
+              "methods": [
+                "queryDriveActivity",
+                "queryDriveActivityStream",
+                "queryDriveActivityAsync"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "DriveActivityServiceClient",
+          "rpcs": {
+            "QueryDriveActivity": {
+              "methods": [
+                "queryDriveActivity",
+                "queryDriveActivityStream",
+                "queryDriveActivityAsync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
