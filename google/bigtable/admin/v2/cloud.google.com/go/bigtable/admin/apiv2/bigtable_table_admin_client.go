@@ -670,6 +670,11 @@ func (c *BigtableTableAdminClient) DeleteSnapshot(ctx context.Context, req *admi
 // Backup, if successful. Cancelling the returned operation will stop the
 // creation and delete the backup.
 func (c *BigtableTableAdminClient) CreateBackup(ctx context.Context, req *adminpb.CreateBackupRequest, opts ...gax.CallOption) (*CreateBackupOperation, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.CreateBackup[0:len(c.CallOptions.CreateBackup):len(c.CallOptions.CreateBackup)], opts...)
@@ -800,6 +805,11 @@ func (c *BigtableTableAdminClient) ListBackups(ctx context.Context, req *adminpb
 // response type is
 // Table, if successful.
 func (c *BigtableTableAdminClient) RestoreTable(ctx context.Context, req *adminpb.RestoreTableRequest, opts ...gax.CallOption) (*RestoreTableOperation, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append(c.CallOptions.RestoreTable[0:len(c.CallOptions.RestoreTable):len(c.CallOptions.RestoreTable)], opts...)

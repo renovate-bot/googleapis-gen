@@ -237,7 +237,7 @@ class BigtableTableAdminTransport(abc.ABC):
             ),
             self.create_backup: gapic_v1.method.wrap_method(
                 self.create_backup,
-                default_timeout=None,
+                default_timeout=60.0,
                 client_info=client_info,
             ),
             self.get_backup: gapic_v1.method.wrap_method(
@@ -280,7 +280,7 @@ class BigtableTableAdminTransport(abc.ABC):
             ),
             self.restore_table: gapic_v1.method.wrap_method(
                 self.restore_table,
-                default_timeout=None,
+                default_timeout=60.0,
                 client_info=client_info,
             ),
             self.get_iam_policy: gapic_v1.method.wrap_method(
