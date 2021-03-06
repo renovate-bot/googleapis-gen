@@ -21,6 +21,8 @@
 const servicecontrol = require('@google-cloud/service-control');
 
 function main() {
+  const quotaControllerClient = new servicecontrol.QuotaControllerClient();
+  const serviceControllerClient = new servicecontrol.ServiceControllerClient();
 }
 
 main();

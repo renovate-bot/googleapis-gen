@@ -17,7 +17,9 @@
 // ** All changes to this file may be overwritten. **
 
 import * as v1 from './v1';
-export {v1};
-export default {v1};
+const ServiceManagerClient = v1.ServiceManagerClient;
+type ServiceManagerClient = v1.ServiceManagerClient;
+export {v1, ServiceManagerClient};
+export default {v1, ServiceManagerClient};
 import * as protos from '../protos/protos';
 export {protos}

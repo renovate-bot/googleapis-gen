@@ -21,6 +21,7 @@
 const servicemanagement = require('servicemanagement');
 
 function main() {
+  const serviceManagerClient = new servicemanagement.ServiceManagerClient();
 }
 
 main();
