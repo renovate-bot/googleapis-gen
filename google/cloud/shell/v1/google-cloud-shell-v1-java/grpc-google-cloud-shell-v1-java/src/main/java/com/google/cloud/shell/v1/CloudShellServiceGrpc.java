@@ -1,19 +1,6 @@
 package com.google.cloud.shell.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -255,7 +242,7 @@ public final class CloudShellServiceGrpc {
      */
     public void getEnvironment(com.google.cloud.shell.v1.GetEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.shell.v1.Environment> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetEnvironmentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetEnvironmentMethod(), responseObserver);
     }
 
     /**
@@ -270,7 +257,7 @@ public final class CloudShellServiceGrpc {
      */
     public void startEnvironment(com.google.cloud.shell.v1.StartEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getStartEnvironmentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStartEnvironmentMethod(), responseObserver);
     }
 
     /**
@@ -283,7 +270,7 @@ public final class CloudShellServiceGrpc {
      */
     public void authorizeEnvironment(com.google.cloud.shell.v1.AuthorizeEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getAuthorizeEnvironmentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAuthorizeEnvironmentMethod(), responseObserver);
     }
 
     /**
@@ -295,7 +282,7 @@ public final class CloudShellServiceGrpc {
      */
     public void addPublicKey(com.google.cloud.shell.v1.AddPublicKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getAddPublicKeyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAddPublicKeyMethod(), responseObserver);
     }
 
     /**
@@ -308,42 +295,42 @@ public final class CloudShellServiceGrpc {
      */
     public void removePublicKey(com.google.cloud.shell.v1.RemovePublicKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getRemovePublicKeyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRemovePublicKeyMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetEnvironmentMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.shell.v1.GetEnvironmentRequest,
                 com.google.cloud.shell.v1.Environment>(
                   this, METHODID_GET_ENVIRONMENT)))
           .addMethod(
             getStartEnvironmentMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.shell.v1.StartEnvironmentRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_START_ENVIRONMENT)))
           .addMethod(
             getAuthorizeEnvironmentMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.shell.v1.AuthorizeEnvironmentRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_AUTHORIZE_ENVIRONMENT)))
           .addMethod(
             getAddPublicKeyMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.shell.v1.AddPublicKeyRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_ADD_PUBLIC_KEY)))
           .addMethod(
             getRemovePublicKeyMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.shell.v1.RemovePublicKeyRequest,
                 com.google.longrunning.Operation>(
@@ -382,7 +369,7 @@ public final class CloudShellServiceGrpc {
      */
     public void getEnvironment(com.google.cloud.shell.v1.GetEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.shell.v1.Environment> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetEnvironmentMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -398,7 +385,7 @@ public final class CloudShellServiceGrpc {
      */
     public void startEnvironment(com.google.cloud.shell.v1.StartEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getStartEnvironmentMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -412,7 +399,7 @@ public final class CloudShellServiceGrpc {
      */
     public void authorizeEnvironment(com.google.cloud.shell.v1.AuthorizeEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getAuthorizeEnvironmentMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -425,7 +412,7 @@ public final class CloudShellServiceGrpc {
      */
     public void addPublicKey(com.google.cloud.shell.v1.AddPublicKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getAddPublicKeyMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -439,7 +426,7 @@ public final class CloudShellServiceGrpc {
      */
     public void removePublicKey(com.google.cloud.shell.v1.RemovePublicKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRemovePublicKeyMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -473,7 +460,7 @@ public final class CloudShellServiceGrpc {
      * </pre>
      */
     public com.google.cloud.shell.v1.Environment getEnvironment(com.google.cloud.shell.v1.GetEnvironmentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetEnvironmentMethod(), getCallOptions(), request);
     }
 
@@ -488,7 +475,7 @@ public final class CloudShellServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation startEnvironment(com.google.cloud.shell.v1.StartEnvironmentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getStartEnvironmentMethod(), getCallOptions(), request);
     }
 
@@ -501,7 +488,7 @@ public final class CloudShellServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation authorizeEnvironment(com.google.cloud.shell.v1.AuthorizeEnvironmentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getAuthorizeEnvironmentMethod(), getCallOptions(), request);
     }
 
@@ -513,7 +500,7 @@ public final class CloudShellServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation addPublicKey(com.google.cloud.shell.v1.AddPublicKeyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getAddPublicKeyMethod(), getCallOptions(), request);
     }
 
@@ -526,7 +513,7 @@ public final class CloudShellServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation removePublicKey(com.google.cloud.shell.v1.RemovePublicKeyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRemovePublicKeyMethod(), getCallOptions(), request);
     }
   }
@@ -561,7 +548,7 @@ public final class CloudShellServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.shell.v1.Environment> getEnvironment(
         com.google.cloud.shell.v1.GetEnvironmentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetEnvironmentMethod(), getCallOptions()), request);
     }
 
@@ -577,7 +564,7 @@ public final class CloudShellServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> startEnvironment(
         com.google.cloud.shell.v1.StartEnvironmentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getStartEnvironmentMethod(), getCallOptions()), request);
     }
 
@@ -591,7 +578,7 @@ public final class CloudShellServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> authorizeEnvironment(
         com.google.cloud.shell.v1.AuthorizeEnvironmentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getAuthorizeEnvironmentMethod(), getCallOptions()), request);
     }
 
@@ -604,7 +591,7 @@ public final class CloudShellServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> addPublicKey(
         com.google.cloud.shell.v1.AddPublicKeyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getAddPublicKeyMethod(), getCallOptions()), request);
     }
 
@@ -618,7 +605,7 @@ public final class CloudShellServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> removePublicKey(
         com.google.cloud.shell.v1.RemovePublicKeyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRemovePublicKeyMethod(), getCallOptions()), request);
     }
   }

@@ -21,12 +21,12 @@ compileJava.options.encoding = 'UTF-8'
 javadoc.options.encoding = 'UTF-8'
 
 dependencies {
-  compile 'com.google.api:gax:1.59.0'
-  testCompile 'com.google.api:gax:1.59.0:testlib'
-  compile 'com.google.api:gax-grpc:1.59.0'
-  testCompile 'com.google.api:gax-grpc:1.59.0:testlib'
-  testCompile 'io.grpc:grpc-netty-shaded:1.30.0'
-  testCompile 'junit:junit:4.13'
+  compile 'com.google.api:gax:1.62.0'
+  testCompile 'com.google.api:gax:1.62.0:testlib'
+  compile 'com.google.api:gax-grpc:1.62.0'
+  testCompile 'com.google.api:gax-grpc:1.62.0:testlib'
+  testCompile 'io.grpc:grpc-netty-shaded:1.36.0'
+  testCompile 'junit:junit:4.13.2'
   compile project(':proto-google-cloud-redis-v1-java')
   testCompile project(':grpc-google-cloud-redis-v1-java')
 }

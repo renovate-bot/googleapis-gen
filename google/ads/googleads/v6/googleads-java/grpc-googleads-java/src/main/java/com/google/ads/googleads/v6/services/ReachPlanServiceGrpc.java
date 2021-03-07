@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v6.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -220,7 +207,7 @@ public final class ReachPlanServiceGrpc {
      */
     public void listPlannableLocations(com.google.ads.googleads.v6.services.ListPlannableLocationsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.ListPlannableLocationsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListPlannableLocationsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListPlannableLocationsMethod(), responseObserver);
     }
 
     /**
@@ -231,7 +218,7 @@ public final class ReachPlanServiceGrpc {
      */
     public void listPlannableProducts(com.google.ads.googleads.v6.services.ListPlannableProductsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.ListPlannableProductsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListPlannableProductsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListPlannableProductsMethod(), responseObserver);
     }
 
     /**
@@ -243,7 +230,7 @@ public final class ReachPlanServiceGrpc {
      */
     public void generateProductMixIdeas(com.google.ads.googleads.v6.services.GenerateProductMixIdeasRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.GenerateProductMixIdeasResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getGenerateProductMixIdeasMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGenerateProductMixIdeasMethod(), responseObserver);
     }
 
     /**
@@ -253,35 +240,35 @@ public final class ReachPlanServiceGrpc {
      */
     public void generateReachForecast(com.google.ads.googleads.v6.services.GenerateReachForecastRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.GenerateReachForecastResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getGenerateReachForecastMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGenerateReachForecastMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getListPlannableLocationsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.ListPlannableLocationsRequest,
                 com.google.ads.googleads.v6.services.ListPlannableLocationsResponse>(
                   this, METHODID_LIST_PLANNABLE_LOCATIONS)))
           .addMethod(
             getListPlannableProductsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.ListPlannableProductsRequest,
                 com.google.ads.googleads.v6.services.ListPlannableProductsResponse>(
                   this, METHODID_LIST_PLANNABLE_PRODUCTS)))
           .addMethod(
             getGenerateProductMixIdeasMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.GenerateProductMixIdeasRequest,
                 com.google.ads.googleads.v6.services.GenerateProductMixIdeasResponse>(
                   this, METHODID_GENERATE_PRODUCT_MIX_IDEAS)))
           .addMethod(
             getGenerateReachForecastMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.GenerateReachForecastRequest,
                 com.google.ads.googleads.v6.services.GenerateReachForecastResponse>(
@@ -318,7 +305,7 @@ public final class ReachPlanServiceGrpc {
      */
     public void listPlannableLocations(com.google.ads.googleads.v6.services.ListPlannableLocationsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.ListPlannableLocationsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListPlannableLocationsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -330,7 +317,7 @@ public final class ReachPlanServiceGrpc {
      */
     public void listPlannableProducts(com.google.ads.googleads.v6.services.ListPlannableProductsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.ListPlannableProductsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListPlannableProductsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -343,7 +330,7 @@ public final class ReachPlanServiceGrpc {
      */
     public void generateProductMixIdeas(com.google.ads.googleads.v6.services.GenerateProductMixIdeasRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.GenerateProductMixIdeasResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGenerateProductMixIdeasMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -354,7 +341,7 @@ public final class ReachPlanServiceGrpc {
      */
     public void generateReachForecast(com.google.ads.googleads.v6.services.GenerateReachForecastRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.GenerateReachForecastResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGenerateReachForecastMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -386,7 +373,7 @@ public final class ReachPlanServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.services.ListPlannableLocationsResponse listPlannableLocations(com.google.ads.googleads.v6.services.ListPlannableLocationsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListPlannableLocationsMethod(), getCallOptions(), request);
     }
 
@@ -397,7 +384,7 @@ public final class ReachPlanServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.services.ListPlannableProductsResponse listPlannableProducts(com.google.ads.googleads.v6.services.ListPlannableProductsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListPlannableProductsMethod(), getCallOptions(), request);
     }
 
@@ -409,7 +396,7 @@ public final class ReachPlanServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.services.GenerateProductMixIdeasResponse generateProductMixIdeas(com.google.ads.googleads.v6.services.GenerateProductMixIdeasRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGenerateProductMixIdeasMethod(), getCallOptions(), request);
     }
 
@@ -419,7 +406,7 @@ public final class ReachPlanServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.services.GenerateReachForecastResponse generateReachForecast(com.google.ads.googleads.v6.services.GenerateReachForecastRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGenerateReachForecastMethod(), getCallOptions(), request);
     }
   }
@@ -452,7 +439,7 @@ public final class ReachPlanServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.services.ListPlannableLocationsResponse> listPlannableLocations(
         com.google.ads.googleads.v6.services.ListPlannableLocationsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListPlannableLocationsMethod(), getCallOptions()), request);
     }
 
@@ -464,7 +451,7 @@ public final class ReachPlanServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.services.ListPlannableProductsResponse> listPlannableProducts(
         com.google.ads.googleads.v6.services.ListPlannableProductsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListPlannableProductsMethod(), getCallOptions()), request);
     }
 
@@ -477,7 +464,7 @@ public final class ReachPlanServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.services.GenerateProductMixIdeasResponse> generateProductMixIdeas(
         com.google.ads.googleads.v6.services.GenerateProductMixIdeasRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGenerateProductMixIdeasMethod(), getCallOptions()), request);
     }
 
@@ -488,7 +475,7 @@ public final class ReachPlanServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.services.GenerateReachForecastResponse> generateReachForecast(
         com.google.ads.googleads.v6.services.GenerateReachForecastRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGenerateReachForecastMethod(), getCallOptions()), request);
     }
   }

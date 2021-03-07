@@ -1,19 +1,6 @@
 package com.google.iam.v1beta;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -463,7 +450,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public void listWorkloadIdentityPools(com.google.iam.v1beta.ListWorkloadIdentityPoolsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1beta.ListWorkloadIdentityPoolsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListWorkloadIdentityPoolsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListWorkloadIdentityPoolsMethod(), responseObserver);
     }
 
     /**
@@ -474,7 +461,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public void getWorkloadIdentityPool(com.google.iam.v1beta.GetWorkloadIdentityPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1beta.WorkloadIdentityPool> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetWorkloadIdentityPoolMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetWorkloadIdentityPoolMethod(), responseObserver);
     }
 
     /**
@@ -486,7 +473,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public void createWorkloadIdentityPool(com.google.iam.v1beta.CreateWorkloadIdentityPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateWorkloadIdentityPoolMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateWorkloadIdentityPoolMethod(), responseObserver);
     }
 
     /**
@@ -497,7 +484,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public void updateWorkloadIdentityPool(com.google.iam.v1beta.UpdateWorkloadIdentityPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateWorkloadIdentityPoolMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateWorkloadIdentityPoolMethod(), responseObserver);
     }
 
     /**
@@ -517,7 +504,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public void deleteWorkloadIdentityPool(com.google.iam.v1beta.DeleteWorkloadIdentityPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteWorkloadIdentityPoolMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteWorkloadIdentityPoolMethod(), responseObserver);
     }
 
     /**
@@ -528,7 +515,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public void undeleteWorkloadIdentityPool(com.google.iam.v1beta.UndeleteWorkloadIdentityPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUndeleteWorkloadIdentityPoolMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUndeleteWorkloadIdentityPoolMethod(), responseObserver);
     }
 
     /**
@@ -541,7 +528,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public void listWorkloadIdentityPoolProviders(com.google.iam.v1beta.ListWorkloadIdentityPoolProvidersRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1beta.ListWorkloadIdentityPoolProvidersResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListWorkloadIdentityPoolProvidersMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListWorkloadIdentityPoolProvidersMethod(), responseObserver);
     }
 
     /**
@@ -552,7 +539,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public void getWorkloadIdentityPoolProvider(com.google.iam.v1beta.GetWorkloadIdentityPoolProviderRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1beta.WorkloadIdentityPoolProvider> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetWorkloadIdentityPoolProviderMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetWorkloadIdentityPoolProviderMethod(), responseObserver);
     }
 
     /**
@@ -566,7 +553,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public void createWorkloadIdentityPoolProvider(com.google.iam.v1beta.CreateWorkloadIdentityPoolProviderRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateWorkloadIdentityPoolProviderMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateWorkloadIdentityPoolProviderMethod(), responseObserver);
     }
 
     /**
@@ -577,7 +564,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public void updateWorkloadIdentityPoolProvider(com.google.iam.v1beta.UpdateWorkloadIdentityPoolProviderRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateWorkloadIdentityPoolProviderMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateWorkloadIdentityPoolProviderMethod(), responseObserver);
     }
 
     /**
@@ -593,7 +580,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public void deleteWorkloadIdentityPoolProvider(com.google.iam.v1beta.DeleteWorkloadIdentityPoolProviderRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteWorkloadIdentityPoolProviderMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteWorkloadIdentityPoolProviderMethod(), responseObserver);
     }
 
     /**
@@ -605,91 +592,91 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public void undeleteWorkloadIdentityPoolProvider(com.google.iam.v1beta.UndeleteWorkloadIdentityPoolProviderRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUndeleteWorkloadIdentityPoolProviderMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUndeleteWorkloadIdentityPoolProviderMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getListWorkloadIdentityPoolsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.iam.v1beta.ListWorkloadIdentityPoolsRequest,
                 com.google.iam.v1beta.ListWorkloadIdentityPoolsResponse>(
                   this, METHODID_LIST_WORKLOAD_IDENTITY_POOLS)))
           .addMethod(
             getGetWorkloadIdentityPoolMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.iam.v1beta.GetWorkloadIdentityPoolRequest,
                 com.google.iam.v1beta.WorkloadIdentityPool>(
                   this, METHODID_GET_WORKLOAD_IDENTITY_POOL)))
           .addMethod(
             getCreateWorkloadIdentityPoolMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.iam.v1beta.CreateWorkloadIdentityPoolRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_CREATE_WORKLOAD_IDENTITY_POOL)))
           .addMethod(
             getUpdateWorkloadIdentityPoolMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.iam.v1beta.UpdateWorkloadIdentityPoolRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_UPDATE_WORKLOAD_IDENTITY_POOL)))
           .addMethod(
             getDeleteWorkloadIdentityPoolMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.iam.v1beta.DeleteWorkloadIdentityPoolRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_DELETE_WORKLOAD_IDENTITY_POOL)))
           .addMethod(
             getUndeleteWorkloadIdentityPoolMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.iam.v1beta.UndeleteWorkloadIdentityPoolRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_UNDELETE_WORKLOAD_IDENTITY_POOL)))
           .addMethod(
             getListWorkloadIdentityPoolProvidersMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.iam.v1beta.ListWorkloadIdentityPoolProvidersRequest,
                 com.google.iam.v1beta.ListWorkloadIdentityPoolProvidersResponse>(
                   this, METHODID_LIST_WORKLOAD_IDENTITY_POOL_PROVIDERS)))
           .addMethod(
             getGetWorkloadIdentityPoolProviderMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.iam.v1beta.GetWorkloadIdentityPoolProviderRequest,
                 com.google.iam.v1beta.WorkloadIdentityPoolProvider>(
                   this, METHODID_GET_WORKLOAD_IDENTITY_POOL_PROVIDER)))
           .addMethod(
             getCreateWorkloadIdentityPoolProviderMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.iam.v1beta.CreateWorkloadIdentityPoolProviderRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_CREATE_WORKLOAD_IDENTITY_POOL_PROVIDER)))
           .addMethod(
             getUpdateWorkloadIdentityPoolProviderMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.iam.v1beta.UpdateWorkloadIdentityPoolProviderRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_UPDATE_WORKLOAD_IDENTITY_POOL_PROVIDER)))
           .addMethod(
             getDeleteWorkloadIdentityPoolProviderMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.iam.v1beta.DeleteWorkloadIdentityPoolProviderRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_DELETE_WORKLOAD_IDENTITY_POOL_PROVIDER)))
           .addMethod(
             getUndeleteWorkloadIdentityPoolProviderMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.iam.v1beta.UndeleteWorkloadIdentityPoolProviderRequest,
                 com.google.longrunning.Operation>(
@@ -725,7 +712,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public void listWorkloadIdentityPools(com.google.iam.v1beta.ListWorkloadIdentityPoolsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1beta.ListWorkloadIdentityPoolsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListWorkloadIdentityPoolsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -737,7 +724,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public void getWorkloadIdentityPool(com.google.iam.v1beta.GetWorkloadIdentityPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1beta.WorkloadIdentityPool> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetWorkloadIdentityPoolMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -750,7 +737,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public void createWorkloadIdentityPool(com.google.iam.v1beta.CreateWorkloadIdentityPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateWorkloadIdentityPoolMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -762,7 +749,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public void updateWorkloadIdentityPool(com.google.iam.v1beta.UpdateWorkloadIdentityPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateWorkloadIdentityPoolMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -783,7 +770,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public void deleteWorkloadIdentityPool(com.google.iam.v1beta.DeleteWorkloadIdentityPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteWorkloadIdentityPoolMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -795,7 +782,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public void undeleteWorkloadIdentityPool(com.google.iam.v1beta.UndeleteWorkloadIdentityPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUndeleteWorkloadIdentityPoolMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -809,7 +796,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public void listWorkloadIdentityPoolProviders(com.google.iam.v1beta.ListWorkloadIdentityPoolProvidersRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1beta.ListWorkloadIdentityPoolProvidersResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListWorkloadIdentityPoolProvidersMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -821,7 +808,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public void getWorkloadIdentityPoolProvider(com.google.iam.v1beta.GetWorkloadIdentityPoolProviderRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1beta.WorkloadIdentityPoolProvider> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetWorkloadIdentityPoolProviderMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -836,7 +823,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public void createWorkloadIdentityPoolProvider(com.google.iam.v1beta.CreateWorkloadIdentityPoolProviderRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateWorkloadIdentityPoolProviderMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -848,7 +835,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public void updateWorkloadIdentityPoolProvider(com.google.iam.v1beta.UpdateWorkloadIdentityPoolProviderRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateWorkloadIdentityPoolProviderMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -865,7 +852,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public void deleteWorkloadIdentityPoolProvider(com.google.iam.v1beta.DeleteWorkloadIdentityPoolProviderRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteWorkloadIdentityPoolProviderMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -878,7 +865,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public void undeleteWorkloadIdentityPoolProvider(com.google.iam.v1beta.UndeleteWorkloadIdentityPoolProviderRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUndeleteWorkloadIdentityPoolProviderMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -909,7 +896,7 @@ public final class WorkloadIdentityPoolsGrpc {
      * </pre>
      */
     public com.google.iam.v1beta.ListWorkloadIdentityPoolsResponse listWorkloadIdentityPools(com.google.iam.v1beta.ListWorkloadIdentityPoolsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListWorkloadIdentityPoolsMethod(), getCallOptions(), request);
     }
 
@@ -920,7 +907,7 @@ public final class WorkloadIdentityPoolsGrpc {
      * </pre>
      */
     public com.google.iam.v1beta.WorkloadIdentityPool getWorkloadIdentityPool(com.google.iam.v1beta.GetWorkloadIdentityPoolRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetWorkloadIdentityPoolMethod(), getCallOptions(), request);
     }
 
@@ -932,7 +919,7 @@ public final class WorkloadIdentityPoolsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createWorkloadIdentityPool(com.google.iam.v1beta.CreateWorkloadIdentityPoolRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateWorkloadIdentityPoolMethod(), getCallOptions(), request);
     }
 
@@ -943,7 +930,7 @@ public final class WorkloadIdentityPoolsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateWorkloadIdentityPool(com.google.iam.v1beta.UpdateWorkloadIdentityPoolRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateWorkloadIdentityPoolMethod(), getCallOptions(), request);
     }
 
@@ -963,7 +950,7 @@ public final class WorkloadIdentityPoolsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteWorkloadIdentityPool(com.google.iam.v1beta.DeleteWorkloadIdentityPoolRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteWorkloadIdentityPoolMethod(), getCallOptions(), request);
     }
 
@@ -974,7 +961,7 @@ public final class WorkloadIdentityPoolsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation undeleteWorkloadIdentityPool(com.google.iam.v1beta.UndeleteWorkloadIdentityPoolRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUndeleteWorkloadIdentityPoolMethod(), getCallOptions(), request);
     }
 
@@ -987,7 +974,7 @@ public final class WorkloadIdentityPoolsGrpc {
      * </pre>
      */
     public com.google.iam.v1beta.ListWorkloadIdentityPoolProvidersResponse listWorkloadIdentityPoolProviders(com.google.iam.v1beta.ListWorkloadIdentityPoolProvidersRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListWorkloadIdentityPoolProvidersMethod(), getCallOptions(), request);
     }
 
@@ -998,7 +985,7 @@ public final class WorkloadIdentityPoolsGrpc {
      * </pre>
      */
     public com.google.iam.v1beta.WorkloadIdentityPoolProvider getWorkloadIdentityPoolProvider(com.google.iam.v1beta.GetWorkloadIdentityPoolProviderRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetWorkloadIdentityPoolProviderMethod(), getCallOptions(), request);
     }
 
@@ -1012,7 +999,7 @@ public final class WorkloadIdentityPoolsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createWorkloadIdentityPoolProvider(com.google.iam.v1beta.CreateWorkloadIdentityPoolProviderRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateWorkloadIdentityPoolProviderMethod(), getCallOptions(), request);
     }
 
@@ -1023,7 +1010,7 @@ public final class WorkloadIdentityPoolsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateWorkloadIdentityPoolProvider(com.google.iam.v1beta.UpdateWorkloadIdentityPoolProviderRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateWorkloadIdentityPoolProviderMethod(), getCallOptions(), request);
     }
 
@@ -1039,7 +1026,7 @@ public final class WorkloadIdentityPoolsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteWorkloadIdentityPoolProvider(com.google.iam.v1beta.DeleteWorkloadIdentityPoolProviderRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteWorkloadIdentityPoolProviderMethod(), getCallOptions(), request);
     }
 
@@ -1051,7 +1038,7 @@ public final class WorkloadIdentityPoolsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation undeleteWorkloadIdentityPoolProvider(com.google.iam.v1beta.UndeleteWorkloadIdentityPoolProviderRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUndeleteWorkloadIdentityPoolProviderMethod(), getCallOptions(), request);
     }
   }
@@ -1083,7 +1070,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1beta.ListWorkloadIdentityPoolsResponse> listWorkloadIdentityPools(
         com.google.iam.v1beta.ListWorkloadIdentityPoolsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListWorkloadIdentityPoolsMethod(), getCallOptions()), request);
     }
 
@@ -1095,7 +1082,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1beta.WorkloadIdentityPool> getWorkloadIdentityPool(
         com.google.iam.v1beta.GetWorkloadIdentityPoolRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetWorkloadIdentityPoolMethod(), getCallOptions()), request);
     }
 
@@ -1108,7 +1095,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> createWorkloadIdentityPool(
         com.google.iam.v1beta.CreateWorkloadIdentityPoolRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateWorkloadIdentityPoolMethod(), getCallOptions()), request);
     }
 
@@ -1120,7 +1107,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> updateWorkloadIdentityPool(
         com.google.iam.v1beta.UpdateWorkloadIdentityPoolRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateWorkloadIdentityPoolMethod(), getCallOptions()), request);
     }
 
@@ -1141,7 +1128,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> deleteWorkloadIdentityPool(
         com.google.iam.v1beta.DeleteWorkloadIdentityPoolRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteWorkloadIdentityPoolMethod(), getCallOptions()), request);
     }
 
@@ -1153,7 +1140,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> undeleteWorkloadIdentityPool(
         com.google.iam.v1beta.UndeleteWorkloadIdentityPoolRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUndeleteWorkloadIdentityPoolMethod(), getCallOptions()), request);
     }
 
@@ -1167,7 +1154,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1beta.ListWorkloadIdentityPoolProvidersResponse> listWorkloadIdentityPoolProviders(
         com.google.iam.v1beta.ListWorkloadIdentityPoolProvidersRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListWorkloadIdentityPoolProvidersMethod(), getCallOptions()), request);
     }
 
@@ -1179,7 +1166,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1beta.WorkloadIdentityPoolProvider> getWorkloadIdentityPoolProvider(
         com.google.iam.v1beta.GetWorkloadIdentityPoolProviderRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetWorkloadIdentityPoolProviderMethod(), getCallOptions()), request);
     }
 
@@ -1194,7 +1181,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> createWorkloadIdentityPoolProvider(
         com.google.iam.v1beta.CreateWorkloadIdentityPoolProviderRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateWorkloadIdentityPoolProviderMethod(), getCallOptions()), request);
     }
 
@@ -1206,7 +1193,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> updateWorkloadIdentityPoolProvider(
         com.google.iam.v1beta.UpdateWorkloadIdentityPoolProviderRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateWorkloadIdentityPoolProviderMethod(), getCallOptions()), request);
     }
 
@@ -1223,7 +1210,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> deleteWorkloadIdentityPoolProvider(
         com.google.iam.v1beta.DeleteWorkloadIdentityPoolProviderRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteWorkloadIdentityPoolProviderMethod(), getCallOptions()), request);
     }
 
@@ -1236,7 +1223,7 @@ public final class WorkloadIdentityPoolsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> undeleteWorkloadIdentityPoolProvider(
         com.google.iam.v1beta.UndeleteWorkloadIdentityPoolProviderRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUndeleteWorkloadIdentityPoolProviderMethod(), getCallOptions()), request);
     }
   }

@@ -1,19 +1,6 @@
 package com.google.devtools.clouderrorreporting.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -150,7 +137,7 @@ public final class ErrorGroupServiceGrpc {
      */
     public void getGroup(com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetGroupMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetGroupMethod(), responseObserver);
     }
 
     /**
@@ -161,21 +148,21 @@ public final class ErrorGroupServiceGrpc {
      */
     public void updateGroup(com.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateGroupMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateGroupMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetGroupMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest,
                 com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup>(
                   this, METHODID_GET_GROUP)))
           .addMethod(
             getUpdateGroupMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest,
                 com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup>(
@@ -208,7 +195,7 @@ public final class ErrorGroupServiceGrpc {
      */
     public void getGroup(com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetGroupMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -220,7 +207,7 @@ public final class ErrorGroupServiceGrpc {
      */
     public void updateGroup(com.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateGroupMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -248,7 +235,7 @@ public final class ErrorGroupServiceGrpc {
      * </pre>
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup getGroup(com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetGroupMethod(), getCallOptions(), request);
     }
 
@@ -259,7 +246,7 @@ public final class ErrorGroupServiceGrpc {
      * </pre>
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup updateGroup(com.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateGroupMethod(), getCallOptions(), request);
     }
   }
@@ -288,7 +275,7 @@ public final class ErrorGroupServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup> getGroup(
         com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetGroupMethod(), getCallOptions()), request);
     }
 
@@ -300,7 +287,7 @@ public final class ErrorGroupServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup> updateGroup(
         com.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateGroupMethod(), getCallOptions()), request);
     }
   }

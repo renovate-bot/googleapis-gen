@@ -1,19 +1,6 @@
 package com.google.devtools.artifactregistry.v1beta2;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -757,7 +744,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void listRepositories(com.google.devtools.artifactregistry.v1beta2.ListRepositoriesRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1beta2.ListRepositoriesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListRepositoriesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListRepositoriesMethod(), responseObserver);
     }
 
     /**
@@ -767,7 +754,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void getRepository(com.google.devtools.artifactregistry.v1beta2.GetRepositoryRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1beta2.Repository> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetRepositoryMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetRepositoryMethod(), responseObserver);
     }
 
     /**
@@ -778,7 +765,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void createRepository(com.google.devtools.artifactregistry.v1beta2.CreateRepositoryRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateRepositoryMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateRepositoryMethod(), responseObserver);
     }
 
     /**
@@ -788,7 +775,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void updateRepository(com.google.devtools.artifactregistry.v1beta2.UpdateRepositoryRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1beta2.Repository> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateRepositoryMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateRepositoryMethod(), responseObserver);
     }
 
     /**
@@ -800,7 +787,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void deleteRepository(com.google.devtools.artifactregistry.v1beta2.DeleteRepositoryRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteRepositoryMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteRepositoryMethod(), responseObserver);
     }
 
     /**
@@ -810,7 +797,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void listPackages(com.google.devtools.artifactregistry.v1beta2.ListPackagesRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1beta2.ListPackagesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListPackagesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListPackagesMethod(), responseObserver);
     }
 
     /**
@@ -820,7 +807,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void getPackage(com.google.devtools.artifactregistry.v1beta2.GetPackageRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1beta2.Package> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetPackageMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPackageMethod(), responseObserver);
     }
 
     /**
@@ -831,7 +818,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void deletePackage(com.google.devtools.artifactregistry.v1beta2.DeletePackageRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeletePackageMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeletePackageMethod(), responseObserver);
     }
 
     /**
@@ -841,7 +828,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void listVersions(com.google.devtools.artifactregistry.v1beta2.ListVersionsRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1beta2.ListVersionsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListVersionsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListVersionsMethod(), responseObserver);
     }
 
     /**
@@ -851,7 +838,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void getVersion(com.google.devtools.artifactregistry.v1beta2.GetVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1beta2.Version> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetVersionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetVersionMethod(), responseObserver);
     }
 
     /**
@@ -862,7 +849,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void deleteVersion(com.google.devtools.artifactregistry.v1beta2.DeleteVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteVersionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteVersionMethod(), responseObserver);
     }
 
     /**
@@ -872,7 +859,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void listFiles(com.google.devtools.artifactregistry.v1beta2.ListFilesRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1beta2.ListFilesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListFilesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListFilesMethod(), responseObserver);
     }
 
     /**
@@ -882,7 +869,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void getFile(com.google.devtools.artifactregistry.v1beta2.GetFileRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1beta2.File> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetFileMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetFileMethod(), responseObserver);
     }
 
     /**
@@ -892,7 +879,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void listTags(com.google.devtools.artifactregistry.v1beta2.ListTagsRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1beta2.ListTagsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListTagsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListTagsMethod(), responseObserver);
     }
 
     /**
@@ -902,7 +889,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void getTag(com.google.devtools.artifactregistry.v1beta2.GetTagRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1beta2.Tag> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetTagMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetTagMethod(), responseObserver);
     }
 
     /**
@@ -912,7 +899,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void createTag(com.google.devtools.artifactregistry.v1beta2.CreateTagRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1beta2.Tag> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateTagMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateTagMethod(), responseObserver);
     }
 
     /**
@@ -922,7 +909,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void updateTag(com.google.devtools.artifactregistry.v1beta2.UpdateTagRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1beta2.Tag> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateTagMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateTagMethod(), responseObserver);
     }
 
     /**
@@ -932,7 +919,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void deleteTag(com.google.devtools.artifactregistry.v1beta2.DeleteTagRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteTagMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteTagMethod(), responseObserver);
     }
 
     /**
@@ -942,7 +929,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnimplementedUnaryCall(getSetIamPolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSetIamPolicyMethod(), responseObserver);
     }
 
     /**
@@ -952,7 +939,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetIamPolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetIamPolicyMethod(), responseObserver);
     }
 
     /**
@@ -962,154 +949,154 @@ public final class ArtifactRegistryGrpc {
      */
     public void testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getTestIamPermissionsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTestIamPermissionsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getListRepositoriesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.devtools.artifactregistry.v1beta2.ListRepositoriesRequest,
                 com.google.devtools.artifactregistry.v1beta2.ListRepositoriesResponse>(
                   this, METHODID_LIST_REPOSITORIES)))
           .addMethod(
             getGetRepositoryMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.devtools.artifactregistry.v1beta2.GetRepositoryRequest,
                 com.google.devtools.artifactregistry.v1beta2.Repository>(
                   this, METHODID_GET_REPOSITORY)))
           .addMethod(
             getCreateRepositoryMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.devtools.artifactregistry.v1beta2.CreateRepositoryRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_CREATE_REPOSITORY)))
           .addMethod(
             getUpdateRepositoryMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.devtools.artifactregistry.v1beta2.UpdateRepositoryRequest,
                 com.google.devtools.artifactregistry.v1beta2.Repository>(
                   this, METHODID_UPDATE_REPOSITORY)))
           .addMethod(
             getDeleteRepositoryMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.devtools.artifactregistry.v1beta2.DeleteRepositoryRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_DELETE_REPOSITORY)))
           .addMethod(
             getListPackagesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.devtools.artifactregistry.v1beta2.ListPackagesRequest,
                 com.google.devtools.artifactregistry.v1beta2.ListPackagesResponse>(
                   this, METHODID_LIST_PACKAGES)))
           .addMethod(
             getGetPackageMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.devtools.artifactregistry.v1beta2.GetPackageRequest,
                 com.google.devtools.artifactregistry.v1beta2.Package>(
                   this, METHODID_GET_PACKAGE)))
           .addMethod(
             getDeletePackageMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.devtools.artifactregistry.v1beta2.DeletePackageRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_DELETE_PACKAGE)))
           .addMethod(
             getListVersionsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.devtools.artifactregistry.v1beta2.ListVersionsRequest,
                 com.google.devtools.artifactregistry.v1beta2.ListVersionsResponse>(
                   this, METHODID_LIST_VERSIONS)))
           .addMethod(
             getGetVersionMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.devtools.artifactregistry.v1beta2.GetVersionRequest,
                 com.google.devtools.artifactregistry.v1beta2.Version>(
                   this, METHODID_GET_VERSION)))
           .addMethod(
             getDeleteVersionMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.devtools.artifactregistry.v1beta2.DeleteVersionRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_DELETE_VERSION)))
           .addMethod(
             getListFilesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.devtools.artifactregistry.v1beta2.ListFilesRequest,
                 com.google.devtools.artifactregistry.v1beta2.ListFilesResponse>(
                   this, METHODID_LIST_FILES)))
           .addMethod(
             getGetFileMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.devtools.artifactregistry.v1beta2.GetFileRequest,
                 com.google.devtools.artifactregistry.v1beta2.File>(
                   this, METHODID_GET_FILE)))
           .addMethod(
             getListTagsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.devtools.artifactregistry.v1beta2.ListTagsRequest,
                 com.google.devtools.artifactregistry.v1beta2.ListTagsResponse>(
                   this, METHODID_LIST_TAGS)))
           .addMethod(
             getGetTagMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.devtools.artifactregistry.v1beta2.GetTagRequest,
                 com.google.devtools.artifactregistry.v1beta2.Tag>(
                   this, METHODID_GET_TAG)))
           .addMethod(
             getCreateTagMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.devtools.artifactregistry.v1beta2.CreateTagRequest,
                 com.google.devtools.artifactregistry.v1beta2.Tag>(
                   this, METHODID_CREATE_TAG)))
           .addMethod(
             getUpdateTagMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.devtools.artifactregistry.v1beta2.UpdateTagRequest,
                 com.google.devtools.artifactregistry.v1beta2.Tag>(
                   this, METHODID_UPDATE_TAG)))
           .addMethod(
             getDeleteTagMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.devtools.artifactregistry.v1beta2.DeleteTagRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_TAG)))
           .addMethod(
             getSetIamPolicyMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.iam.v1.SetIamPolicyRequest,
                 com.google.iam.v1.Policy>(
                   this, METHODID_SET_IAM_POLICY)))
           .addMethod(
             getGetIamPolicyMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.iam.v1.GetIamPolicyRequest,
                 com.google.iam.v1.Policy>(
                   this, METHODID_GET_IAM_POLICY)))
           .addMethod(
             getTestIamPermissionsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.iam.v1.TestIamPermissionsRequest,
                 com.google.iam.v1.TestIamPermissionsResponse>(
@@ -1151,7 +1138,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void listRepositories(com.google.devtools.artifactregistry.v1beta2.ListRepositoriesRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1beta2.ListRepositoriesResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListRepositoriesMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1162,7 +1149,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void getRepository(com.google.devtools.artifactregistry.v1beta2.GetRepositoryRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1beta2.Repository> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetRepositoryMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1174,7 +1161,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void createRepository(com.google.devtools.artifactregistry.v1beta2.CreateRepositoryRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateRepositoryMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1185,7 +1172,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void updateRepository(com.google.devtools.artifactregistry.v1beta2.UpdateRepositoryRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1beta2.Repository> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateRepositoryMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1198,7 +1185,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void deleteRepository(com.google.devtools.artifactregistry.v1beta2.DeleteRepositoryRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteRepositoryMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1209,7 +1196,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void listPackages(com.google.devtools.artifactregistry.v1beta2.ListPackagesRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1beta2.ListPackagesResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListPackagesMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1220,7 +1207,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void getPackage(com.google.devtools.artifactregistry.v1beta2.GetPackageRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1beta2.Package> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetPackageMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1232,7 +1219,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void deletePackage(com.google.devtools.artifactregistry.v1beta2.DeletePackageRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeletePackageMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1243,7 +1230,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void listVersions(com.google.devtools.artifactregistry.v1beta2.ListVersionsRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1beta2.ListVersionsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListVersionsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1254,7 +1241,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void getVersion(com.google.devtools.artifactregistry.v1beta2.GetVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1beta2.Version> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetVersionMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1266,7 +1253,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void deleteVersion(com.google.devtools.artifactregistry.v1beta2.DeleteVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteVersionMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1277,7 +1264,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void listFiles(com.google.devtools.artifactregistry.v1beta2.ListFilesRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1beta2.ListFilesResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListFilesMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1288,7 +1275,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void getFile(com.google.devtools.artifactregistry.v1beta2.GetFileRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1beta2.File> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetFileMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1299,7 +1286,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void listTags(com.google.devtools.artifactregistry.v1beta2.ListTagsRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1beta2.ListTagsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListTagsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1310,7 +1297,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void getTag(com.google.devtools.artifactregistry.v1beta2.GetTagRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1beta2.Tag> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetTagMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1321,7 +1308,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void createTag(com.google.devtools.artifactregistry.v1beta2.CreateTagRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1beta2.Tag> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateTagMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1332,7 +1319,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void updateTag(com.google.devtools.artifactregistry.v1beta2.UpdateTagRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1beta2.Tag> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateTagMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1343,7 +1330,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void deleteTag(com.google.devtools.artifactregistry.v1beta2.DeleteTagRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteTagMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1354,7 +1341,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1365,7 +1352,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1376,7 +1363,7 @@ public final class ArtifactRegistryGrpc {
      */
     public void testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -1413,7 +1400,7 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1beta2.ListRepositoriesResponse listRepositories(com.google.devtools.artifactregistry.v1beta2.ListRepositoriesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListRepositoriesMethod(), getCallOptions(), request);
     }
 
@@ -1423,7 +1410,7 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1beta2.Repository getRepository(com.google.devtools.artifactregistry.v1beta2.GetRepositoryRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetRepositoryMethod(), getCallOptions(), request);
     }
 
@@ -1434,7 +1421,7 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createRepository(com.google.devtools.artifactregistry.v1beta2.CreateRepositoryRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateRepositoryMethod(), getCallOptions(), request);
     }
 
@@ -1444,7 +1431,7 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1beta2.Repository updateRepository(com.google.devtools.artifactregistry.v1beta2.UpdateRepositoryRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateRepositoryMethod(), getCallOptions(), request);
     }
 
@@ -1456,7 +1443,7 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteRepository(com.google.devtools.artifactregistry.v1beta2.DeleteRepositoryRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteRepositoryMethod(), getCallOptions(), request);
     }
 
@@ -1466,7 +1453,7 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1beta2.ListPackagesResponse listPackages(com.google.devtools.artifactregistry.v1beta2.ListPackagesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListPackagesMethod(), getCallOptions(), request);
     }
 
@@ -1476,7 +1463,7 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1beta2.Package getPackage(com.google.devtools.artifactregistry.v1beta2.GetPackageRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetPackageMethod(), getCallOptions(), request);
     }
 
@@ -1487,7 +1474,7 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deletePackage(com.google.devtools.artifactregistry.v1beta2.DeletePackageRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeletePackageMethod(), getCallOptions(), request);
     }
 
@@ -1497,7 +1484,7 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1beta2.ListVersionsResponse listVersions(com.google.devtools.artifactregistry.v1beta2.ListVersionsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListVersionsMethod(), getCallOptions(), request);
     }
 
@@ -1507,7 +1494,7 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1beta2.Version getVersion(com.google.devtools.artifactregistry.v1beta2.GetVersionRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetVersionMethod(), getCallOptions(), request);
     }
 
@@ -1518,7 +1505,7 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteVersion(com.google.devtools.artifactregistry.v1beta2.DeleteVersionRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteVersionMethod(), getCallOptions(), request);
     }
 
@@ -1528,7 +1515,7 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1beta2.ListFilesResponse listFiles(com.google.devtools.artifactregistry.v1beta2.ListFilesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListFilesMethod(), getCallOptions(), request);
     }
 
@@ -1538,7 +1525,7 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1beta2.File getFile(com.google.devtools.artifactregistry.v1beta2.GetFileRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetFileMethod(), getCallOptions(), request);
     }
 
@@ -1548,7 +1535,7 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1beta2.ListTagsResponse listTags(com.google.devtools.artifactregistry.v1beta2.ListTagsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListTagsMethod(), getCallOptions(), request);
     }
 
@@ -1558,7 +1545,7 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1beta2.Tag getTag(com.google.devtools.artifactregistry.v1beta2.GetTagRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetTagMethod(), getCallOptions(), request);
     }
 
@@ -1568,7 +1555,7 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1beta2.Tag createTag(com.google.devtools.artifactregistry.v1beta2.CreateTagRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateTagMethod(), getCallOptions(), request);
     }
 
@@ -1578,7 +1565,7 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1beta2.Tag updateTag(com.google.devtools.artifactregistry.v1beta2.UpdateTagRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateTagMethod(), getCallOptions(), request);
     }
 
@@ -1588,7 +1575,7 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteTag(com.google.devtools.artifactregistry.v1beta2.DeleteTagRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteTagMethod(), getCallOptions(), request);
     }
 
@@ -1598,7 +1585,7 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1608,7 +1595,7 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1618,7 +1605,7 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
   }
@@ -1656,7 +1643,7 @@ public final class ArtifactRegistryGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.devtools.artifactregistry.v1beta2.ListRepositoriesResponse> listRepositories(
         com.google.devtools.artifactregistry.v1beta2.ListRepositoriesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListRepositoriesMethod(), getCallOptions()), request);
     }
 
@@ -1667,7 +1654,7 @@ public final class ArtifactRegistryGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.devtools.artifactregistry.v1beta2.Repository> getRepository(
         com.google.devtools.artifactregistry.v1beta2.GetRepositoryRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetRepositoryMethod(), getCallOptions()), request);
     }
 
@@ -1679,7 +1666,7 @@ public final class ArtifactRegistryGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> createRepository(
         com.google.devtools.artifactregistry.v1beta2.CreateRepositoryRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateRepositoryMethod(), getCallOptions()), request);
     }
 
@@ -1690,7 +1677,7 @@ public final class ArtifactRegistryGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.devtools.artifactregistry.v1beta2.Repository> updateRepository(
         com.google.devtools.artifactregistry.v1beta2.UpdateRepositoryRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateRepositoryMethod(), getCallOptions()), request);
     }
 
@@ -1703,7 +1690,7 @@ public final class ArtifactRegistryGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> deleteRepository(
         com.google.devtools.artifactregistry.v1beta2.DeleteRepositoryRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteRepositoryMethod(), getCallOptions()), request);
     }
 
@@ -1714,7 +1701,7 @@ public final class ArtifactRegistryGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.devtools.artifactregistry.v1beta2.ListPackagesResponse> listPackages(
         com.google.devtools.artifactregistry.v1beta2.ListPackagesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListPackagesMethod(), getCallOptions()), request);
     }
 
@@ -1725,7 +1712,7 @@ public final class ArtifactRegistryGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.devtools.artifactregistry.v1beta2.Package> getPackage(
         com.google.devtools.artifactregistry.v1beta2.GetPackageRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetPackageMethod(), getCallOptions()), request);
     }
 
@@ -1737,7 +1724,7 @@ public final class ArtifactRegistryGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> deletePackage(
         com.google.devtools.artifactregistry.v1beta2.DeletePackageRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeletePackageMethod(), getCallOptions()), request);
     }
 
@@ -1748,7 +1735,7 @@ public final class ArtifactRegistryGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.devtools.artifactregistry.v1beta2.ListVersionsResponse> listVersions(
         com.google.devtools.artifactregistry.v1beta2.ListVersionsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListVersionsMethod(), getCallOptions()), request);
     }
 
@@ -1759,7 +1746,7 @@ public final class ArtifactRegistryGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.devtools.artifactregistry.v1beta2.Version> getVersion(
         com.google.devtools.artifactregistry.v1beta2.GetVersionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetVersionMethod(), getCallOptions()), request);
     }
 
@@ -1771,7 +1758,7 @@ public final class ArtifactRegistryGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> deleteVersion(
         com.google.devtools.artifactregistry.v1beta2.DeleteVersionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteVersionMethod(), getCallOptions()), request);
     }
 
@@ -1782,7 +1769,7 @@ public final class ArtifactRegistryGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.devtools.artifactregistry.v1beta2.ListFilesResponse> listFiles(
         com.google.devtools.artifactregistry.v1beta2.ListFilesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListFilesMethod(), getCallOptions()), request);
     }
 
@@ -1793,7 +1780,7 @@ public final class ArtifactRegistryGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.devtools.artifactregistry.v1beta2.File> getFile(
         com.google.devtools.artifactregistry.v1beta2.GetFileRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetFileMethod(), getCallOptions()), request);
     }
 
@@ -1804,7 +1791,7 @@ public final class ArtifactRegistryGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.devtools.artifactregistry.v1beta2.ListTagsResponse> listTags(
         com.google.devtools.artifactregistry.v1beta2.ListTagsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListTagsMethod(), getCallOptions()), request);
     }
 
@@ -1815,7 +1802,7 @@ public final class ArtifactRegistryGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.devtools.artifactregistry.v1beta2.Tag> getTag(
         com.google.devtools.artifactregistry.v1beta2.GetTagRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetTagMethod(), getCallOptions()), request);
     }
 
@@ -1826,7 +1813,7 @@ public final class ArtifactRegistryGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.devtools.artifactregistry.v1beta2.Tag> createTag(
         com.google.devtools.artifactregistry.v1beta2.CreateTagRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateTagMethod(), getCallOptions()), request);
     }
 
@@ -1837,7 +1824,7 @@ public final class ArtifactRegistryGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.devtools.artifactregistry.v1beta2.Tag> updateTag(
         com.google.devtools.artifactregistry.v1beta2.UpdateTagRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateTagMethod(), getCallOptions()), request);
     }
 
@@ -1848,7 +1835,7 @@ public final class ArtifactRegistryGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteTag(
         com.google.devtools.artifactregistry.v1beta2.DeleteTagRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteTagMethod(), getCallOptions()), request);
     }
 
@@ -1859,7 +1846,7 @@ public final class ArtifactRegistryGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy> setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()), request);
     }
 
@@ -1870,7 +1857,7 @@ public final class ArtifactRegistryGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy> getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()), request);
     }
 
@@ -1881,7 +1868,7 @@ public final class ArtifactRegistryGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.TestIamPermissionsResponse> testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()), request);
     }
   }

@@ -1,19 +1,6 @@
 package com.google.logging.v2;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -801,7 +788,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void listBuckets(com.google.logging.v2.ListBucketsRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.ListBucketsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListBucketsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListBucketsMethod(), responseObserver);
     }
 
     /**
@@ -811,7 +798,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void getBucket(com.google.logging.v2.GetBucketRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogBucket> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetBucketMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetBucketMethod(), responseObserver);
     }
 
     /**
@@ -822,7 +809,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void createBucket(com.google.logging.v2.CreateBucketRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogBucket> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateBucketMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateBucketMethod(), responseObserver);
     }
 
     /**
@@ -838,7 +825,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void updateBucket(com.google.logging.v2.UpdateBucketRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogBucket> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateBucketMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateBucketMethod(), responseObserver);
     }
 
     /**
@@ -851,7 +838,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void deleteBucket(com.google.logging.v2.DeleteBucketRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteBucketMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteBucketMethod(), responseObserver);
     }
 
     /**
@@ -862,7 +849,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void undeleteBucket(com.google.logging.v2.UndeleteBucketRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getUndeleteBucketMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUndeleteBucketMethod(), responseObserver);
     }
 
     /**
@@ -872,7 +859,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void listViews(com.google.logging.v2.ListViewsRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.ListViewsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListViewsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListViewsMethod(), responseObserver);
     }
 
     /**
@@ -882,7 +869,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void getView(com.google.logging.v2.GetViewRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogView> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetViewMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetViewMethod(), responseObserver);
     }
 
     /**
@@ -893,7 +880,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void createView(com.google.logging.v2.CreateViewRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogView> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateViewMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateViewMethod(), responseObserver);
     }
 
     /**
@@ -904,7 +891,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void updateView(com.google.logging.v2.UpdateViewRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogView> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateViewMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateViewMethod(), responseObserver);
     }
 
     /**
@@ -914,7 +901,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void deleteView(com.google.logging.v2.DeleteViewRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteViewMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteViewMethod(), responseObserver);
     }
 
     /**
@@ -924,7 +911,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void listSinks(com.google.logging.v2.ListSinksRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.ListSinksResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListSinksMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListSinksMethod(), responseObserver);
     }
 
     /**
@@ -934,7 +921,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void getSink(com.google.logging.v2.GetSinkRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogSink> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetSinkMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetSinkMethod(), responseObserver);
     }
 
     /**
@@ -947,7 +934,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void createSink(com.google.logging.v2.CreateSinkRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogSink> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateSinkMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateSinkMethod(), responseObserver);
     }
 
     /**
@@ -960,7 +947,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void updateSink(com.google.logging.v2.UpdateSinkRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogSink> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateSinkMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateSinkMethod(), responseObserver);
     }
 
     /**
@@ -971,7 +958,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void deleteSink(com.google.logging.v2.DeleteSinkRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteSinkMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteSinkMethod(), responseObserver);
     }
 
     /**
@@ -981,7 +968,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void listExclusions(com.google.logging.v2.ListExclusionsRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.ListExclusionsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListExclusionsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListExclusionsMethod(), responseObserver);
     }
 
     /**
@@ -991,7 +978,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void getExclusion(com.google.logging.v2.GetExclusionRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogExclusion> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetExclusionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetExclusionMethod(), responseObserver);
     }
 
     /**
@@ -1003,7 +990,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void createExclusion(com.google.logging.v2.CreateExclusionRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogExclusion> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateExclusionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateExclusionMethod(), responseObserver);
     }
 
     /**
@@ -1013,7 +1000,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void updateExclusion(com.google.logging.v2.UpdateExclusionRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogExclusion> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateExclusionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateExclusionMethod(), responseObserver);
     }
 
     /**
@@ -1023,7 +1010,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void deleteExclusion(com.google.logging.v2.DeleteExclusionRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteExclusionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteExclusionMethod(), responseObserver);
     }
 
     /**
@@ -1039,7 +1026,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void getCmekSettings(com.google.logging.v2.GetCmekSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.CmekSettings> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetCmekSettingsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCmekSettingsMethod(), responseObserver);
     }
 
     /**
@@ -1060,168 +1047,168 @@ public final class ConfigServiceV2Grpc {
      */
     public void updateCmekSettings(com.google.logging.v2.UpdateCmekSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.CmekSettings> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateCmekSettingsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateCmekSettingsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getListBucketsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.logging.v2.ListBucketsRequest,
                 com.google.logging.v2.ListBucketsResponse>(
                   this, METHODID_LIST_BUCKETS)))
           .addMethod(
             getGetBucketMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.logging.v2.GetBucketRequest,
                 com.google.logging.v2.LogBucket>(
                   this, METHODID_GET_BUCKET)))
           .addMethod(
             getCreateBucketMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.logging.v2.CreateBucketRequest,
                 com.google.logging.v2.LogBucket>(
                   this, METHODID_CREATE_BUCKET)))
           .addMethod(
             getUpdateBucketMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.logging.v2.UpdateBucketRequest,
                 com.google.logging.v2.LogBucket>(
                   this, METHODID_UPDATE_BUCKET)))
           .addMethod(
             getDeleteBucketMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.logging.v2.DeleteBucketRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_BUCKET)))
           .addMethod(
             getUndeleteBucketMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.logging.v2.UndeleteBucketRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_UNDELETE_BUCKET)))
           .addMethod(
             getListViewsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.logging.v2.ListViewsRequest,
                 com.google.logging.v2.ListViewsResponse>(
                   this, METHODID_LIST_VIEWS)))
           .addMethod(
             getGetViewMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.logging.v2.GetViewRequest,
                 com.google.logging.v2.LogView>(
                   this, METHODID_GET_VIEW)))
           .addMethod(
             getCreateViewMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.logging.v2.CreateViewRequest,
                 com.google.logging.v2.LogView>(
                   this, METHODID_CREATE_VIEW)))
           .addMethod(
             getUpdateViewMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.logging.v2.UpdateViewRequest,
                 com.google.logging.v2.LogView>(
                   this, METHODID_UPDATE_VIEW)))
           .addMethod(
             getDeleteViewMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.logging.v2.DeleteViewRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_VIEW)))
           .addMethod(
             getListSinksMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.logging.v2.ListSinksRequest,
                 com.google.logging.v2.ListSinksResponse>(
                   this, METHODID_LIST_SINKS)))
           .addMethod(
             getGetSinkMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.logging.v2.GetSinkRequest,
                 com.google.logging.v2.LogSink>(
                   this, METHODID_GET_SINK)))
           .addMethod(
             getCreateSinkMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.logging.v2.CreateSinkRequest,
                 com.google.logging.v2.LogSink>(
                   this, METHODID_CREATE_SINK)))
           .addMethod(
             getUpdateSinkMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.logging.v2.UpdateSinkRequest,
                 com.google.logging.v2.LogSink>(
                   this, METHODID_UPDATE_SINK)))
           .addMethod(
             getDeleteSinkMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.logging.v2.DeleteSinkRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_SINK)))
           .addMethod(
             getListExclusionsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.logging.v2.ListExclusionsRequest,
                 com.google.logging.v2.ListExclusionsResponse>(
                   this, METHODID_LIST_EXCLUSIONS)))
           .addMethod(
             getGetExclusionMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.logging.v2.GetExclusionRequest,
                 com.google.logging.v2.LogExclusion>(
                   this, METHODID_GET_EXCLUSION)))
           .addMethod(
             getCreateExclusionMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.logging.v2.CreateExclusionRequest,
                 com.google.logging.v2.LogExclusion>(
                   this, METHODID_CREATE_EXCLUSION)))
           .addMethod(
             getUpdateExclusionMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.logging.v2.UpdateExclusionRequest,
                 com.google.logging.v2.LogExclusion>(
                   this, METHODID_UPDATE_EXCLUSION)))
           .addMethod(
             getDeleteExclusionMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.logging.v2.DeleteExclusionRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_EXCLUSION)))
           .addMethod(
             getGetCmekSettingsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.logging.v2.GetCmekSettingsRequest,
                 com.google.logging.v2.CmekSettings>(
                   this, METHODID_GET_CMEK_SETTINGS)))
           .addMethod(
             getUpdateCmekSettingsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.logging.v2.UpdateCmekSettingsRequest,
                 com.google.logging.v2.CmekSettings>(
@@ -1254,7 +1241,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void listBuckets(com.google.logging.v2.ListBucketsRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.ListBucketsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListBucketsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1265,7 +1252,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void getBucket(com.google.logging.v2.GetBucketRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogBucket> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetBucketMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1277,7 +1264,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void createBucket(com.google.logging.v2.CreateBucketRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogBucket> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateBucketMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1294,7 +1281,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void updateBucket(com.google.logging.v2.UpdateBucketRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogBucket> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateBucketMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1308,7 +1295,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void deleteBucket(com.google.logging.v2.DeleteBucketRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteBucketMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1320,7 +1307,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void undeleteBucket(com.google.logging.v2.UndeleteBucketRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUndeleteBucketMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1331,7 +1318,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void listViews(com.google.logging.v2.ListViewsRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.ListViewsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListViewsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1342,7 +1329,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void getView(com.google.logging.v2.GetViewRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogView> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetViewMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1354,7 +1341,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void createView(com.google.logging.v2.CreateViewRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogView> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateViewMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1366,7 +1353,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void updateView(com.google.logging.v2.UpdateViewRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogView> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateViewMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1377,7 +1364,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void deleteView(com.google.logging.v2.DeleteViewRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteViewMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1388,7 +1375,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void listSinks(com.google.logging.v2.ListSinksRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.ListSinksResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListSinksMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1399,7 +1386,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void getSink(com.google.logging.v2.GetSinkRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogSink> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetSinkMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1413,7 +1400,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void createSink(com.google.logging.v2.CreateSinkRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogSink> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateSinkMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1427,7 +1414,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void updateSink(com.google.logging.v2.UpdateSinkRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogSink> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateSinkMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1439,7 +1426,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void deleteSink(com.google.logging.v2.DeleteSinkRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteSinkMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1450,7 +1437,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void listExclusions(com.google.logging.v2.ListExclusionsRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.ListExclusionsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListExclusionsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1461,7 +1448,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void getExclusion(com.google.logging.v2.GetExclusionRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogExclusion> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetExclusionMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1474,7 +1461,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void createExclusion(com.google.logging.v2.CreateExclusionRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogExclusion> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateExclusionMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1485,7 +1472,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void updateExclusion(com.google.logging.v2.UpdateExclusionRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogExclusion> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateExclusionMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1496,7 +1483,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void deleteExclusion(com.google.logging.v2.DeleteExclusionRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteExclusionMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1513,7 +1500,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void getCmekSettings(com.google.logging.v2.GetCmekSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.CmekSettings> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetCmekSettingsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1535,7 +1522,7 @@ public final class ConfigServiceV2Grpc {
      */
     public void updateCmekSettings(com.google.logging.v2.UpdateCmekSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.CmekSettings> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateCmekSettingsMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -1563,7 +1550,7 @@ public final class ConfigServiceV2Grpc {
      * </pre>
      */
     public com.google.logging.v2.ListBucketsResponse listBuckets(com.google.logging.v2.ListBucketsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListBucketsMethod(), getCallOptions(), request);
     }
 
@@ -1573,7 +1560,7 @@ public final class ConfigServiceV2Grpc {
      * </pre>
      */
     public com.google.logging.v2.LogBucket getBucket(com.google.logging.v2.GetBucketRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetBucketMethod(), getCallOptions(), request);
     }
 
@@ -1584,7 +1571,7 @@ public final class ConfigServiceV2Grpc {
      * </pre>
      */
     public com.google.logging.v2.LogBucket createBucket(com.google.logging.v2.CreateBucketRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateBucketMethod(), getCallOptions(), request);
     }
 
@@ -1600,7 +1587,7 @@ public final class ConfigServiceV2Grpc {
      * </pre>
      */
     public com.google.logging.v2.LogBucket updateBucket(com.google.logging.v2.UpdateBucketRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateBucketMethod(), getCallOptions(), request);
     }
 
@@ -1613,7 +1600,7 @@ public final class ConfigServiceV2Grpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteBucket(com.google.logging.v2.DeleteBucketRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteBucketMethod(), getCallOptions(), request);
     }
 
@@ -1624,7 +1611,7 @@ public final class ConfigServiceV2Grpc {
      * </pre>
      */
     public com.google.protobuf.Empty undeleteBucket(com.google.logging.v2.UndeleteBucketRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUndeleteBucketMethod(), getCallOptions(), request);
     }
 
@@ -1634,7 +1621,7 @@ public final class ConfigServiceV2Grpc {
      * </pre>
      */
     public com.google.logging.v2.ListViewsResponse listViews(com.google.logging.v2.ListViewsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListViewsMethod(), getCallOptions(), request);
     }
 
@@ -1644,7 +1631,7 @@ public final class ConfigServiceV2Grpc {
      * </pre>
      */
     public com.google.logging.v2.LogView getView(com.google.logging.v2.GetViewRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetViewMethod(), getCallOptions(), request);
     }
 
@@ -1655,7 +1642,7 @@ public final class ConfigServiceV2Grpc {
      * </pre>
      */
     public com.google.logging.v2.LogView createView(com.google.logging.v2.CreateViewRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateViewMethod(), getCallOptions(), request);
     }
 
@@ -1666,7 +1653,7 @@ public final class ConfigServiceV2Grpc {
      * </pre>
      */
     public com.google.logging.v2.LogView updateView(com.google.logging.v2.UpdateViewRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateViewMethod(), getCallOptions(), request);
     }
 
@@ -1676,7 +1663,7 @@ public final class ConfigServiceV2Grpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteView(com.google.logging.v2.DeleteViewRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteViewMethod(), getCallOptions(), request);
     }
 
@@ -1686,7 +1673,7 @@ public final class ConfigServiceV2Grpc {
      * </pre>
      */
     public com.google.logging.v2.ListSinksResponse listSinks(com.google.logging.v2.ListSinksRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListSinksMethod(), getCallOptions(), request);
     }
 
@@ -1696,7 +1683,7 @@ public final class ConfigServiceV2Grpc {
      * </pre>
      */
     public com.google.logging.v2.LogSink getSink(com.google.logging.v2.GetSinkRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetSinkMethod(), getCallOptions(), request);
     }
 
@@ -1709,7 +1696,7 @@ public final class ConfigServiceV2Grpc {
      * </pre>
      */
     public com.google.logging.v2.LogSink createSink(com.google.logging.v2.CreateSinkRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateSinkMethod(), getCallOptions(), request);
     }
 
@@ -1722,7 +1709,7 @@ public final class ConfigServiceV2Grpc {
      * </pre>
      */
     public com.google.logging.v2.LogSink updateSink(com.google.logging.v2.UpdateSinkRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateSinkMethod(), getCallOptions(), request);
     }
 
@@ -1733,7 +1720,7 @@ public final class ConfigServiceV2Grpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteSink(com.google.logging.v2.DeleteSinkRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteSinkMethod(), getCallOptions(), request);
     }
 
@@ -1743,7 +1730,7 @@ public final class ConfigServiceV2Grpc {
      * </pre>
      */
     public com.google.logging.v2.ListExclusionsResponse listExclusions(com.google.logging.v2.ListExclusionsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListExclusionsMethod(), getCallOptions(), request);
     }
 
@@ -1753,7 +1740,7 @@ public final class ConfigServiceV2Grpc {
      * </pre>
      */
     public com.google.logging.v2.LogExclusion getExclusion(com.google.logging.v2.GetExclusionRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetExclusionMethod(), getCallOptions(), request);
     }
 
@@ -1765,7 +1752,7 @@ public final class ConfigServiceV2Grpc {
      * </pre>
      */
     public com.google.logging.v2.LogExclusion createExclusion(com.google.logging.v2.CreateExclusionRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateExclusionMethod(), getCallOptions(), request);
     }
 
@@ -1775,7 +1762,7 @@ public final class ConfigServiceV2Grpc {
      * </pre>
      */
     public com.google.logging.v2.LogExclusion updateExclusion(com.google.logging.v2.UpdateExclusionRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateExclusionMethod(), getCallOptions(), request);
     }
 
@@ -1785,7 +1772,7 @@ public final class ConfigServiceV2Grpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteExclusion(com.google.logging.v2.DeleteExclusionRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteExclusionMethod(), getCallOptions(), request);
     }
 
@@ -1801,7 +1788,7 @@ public final class ConfigServiceV2Grpc {
      * </pre>
      */
     public com.google.logging.v2.CmekSettings getCmekSettings(com.google.logging.v2.GetCmekSettingsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetCmekSettingsMethod(), getCallOptions(), request);
     }
 
@@ -1822,7 +1809,7 @@ public final class ConfigServiceV2Grpc {
      * </pre>
      */
     public com.google.logging.v2.CmekSettings updateCmekSettings(com.google.logging.v2.UpdateCmekSettingsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateCmekSettingsMethod(), getCallOptions(), request);
     }
   }
@@ -1851,7 +1838,7 @@ public final class ConfigServiceV2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.ListBucketsResponse> listBuckets(
         com.google.logging.v2.ListBucketsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListBucketsMethod(), getCallOptions()), request);
     }
 
@@ -1862,7 +1849,7 @@ public final class ConfigServiceV2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogBucket> getBucket(
         com.google.logging.v2.GetBucketRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetBucketMethod(), getCallOptions()), request);
     }
 
@@ -1874,7 +1861,7 @@ public final class ConfigServiceV2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogBucket> createBucket(
         com.google.logging.v2.CreateBucketRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateBucketMethod(), getCallOptions()), request);
     }
 
@@ -1891,7 +1878,7 @@ public final class ConfigServiceV2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogBucket> updateBucket(
         com.google.logging.v2.UpdateBucketRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateBucketMethod(), getCallOptions()), request);
     }
 
@@ -1905,7 +1892,7 @@ public final class ConfigServiceV2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteBucket(
         com.google.logging.v2.DeleteBucketRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteBucketMethod(), getCallOptions()), request);
     }
 
@@ -1917,7 +1904,7 @@ public final class ConfigServiceV2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> undeleteBucket(
         com.google.logging.v2.UndeleteBucketRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUndeleteBucketMethod(), getCallOptions()), request);
     }
 
@@ -1928,7 +1915,7 @@ public final class ConfigServiceV2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.ListViewsResponse> listViews(
         com.google.logging.v2.ListViewsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListViewsMethod(), getCallOptions()), request);
     }
 
@@ -1939,7 +1926,7 @@ public final class ConfigServiceV2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogView> getView(
         com.google.logging.v2.GetViewRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetViewMethod(), getCallOptions()), request);
     }
 
@@ -1951,7 +1938,7 @@ public final class ConfigServiceV2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogView> createView(
         com.google.logging.v2.CreateViewRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateViewMethod(), getCallOptions()), request);
     }
 
@@ -1963,7 +1950,7 @@ public final class ConfigServiceV2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogView> updateView(
         com.google.logging.v2.UpdateViewRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateViewMethod(), getCallOptions()), request);
     }
 
@@ -1974,7 +1961,7 @@ public final class ConfigServiceV2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteView(
         com.google.logging.v2.DeleteViewRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteViewMethod(), getCallOptions()), request);
     }
 
@@ -1985,7 +1972,7 @@ public final class ConfigServiceV2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.ListSinksResponse> listSinks(
         com.google.logging.v2.ListSinksRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListSinksMethod(), getCallOptions()), request);
     }
 
@@ -1996,7 +1983,7 @@ public final class ConfigServiceV2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogSink> getSink(
         com.google.logging.v2.GetSinkRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetSinkMethod(), getCallOptions()), request);
     }
 
@@ -2010,7 +1997,7 @@ public final class ConfigServiceV2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogSink> createSink(
         com.google.logging.v2.CreateSinkRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateSinkMethod(), getCallOptions()), request);
     }
 
@@ -2024,7 +2011,7 @@ public final class ConfigServiceV2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogSink> updateSink(
         com.google.logging.v2.UpdateSinkRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateSinkMethod(), getCallOptions()), request);
     }
 
@@ -2036,7 +2023,7 @@ public final class ConfigServiceV2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteSink(
         com.google.logging.v2.DeleteSinkRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteSinkMethod(), getCallOptions()), request);
     }
 
@@ -2047,7 +2034,7 @@ public final class ConfigServiceV2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.ListExclusionsResponse> listExclusions(
         com.google.logging.v2.ListExclusionsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListExclusionsMethod(), getCallOptions()), request);
     }
 
@@ -2058,7 +2045,7 @@ public final class ConfigServiceV2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogExclusion> getExclusion(
         com.google.logging.v2.GetExclusionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetExclusionMethod(), getCallOptions()), request);
     }
 
@@ -2071,7 +2058,7 @@ public final class ConfigServiceV2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogExclusion> createExclusion(
         com.google.logging.v2.CreateExclusionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateExclusionMethod(), getCallOptions()), request);
     }
 
@@ -2082,7 +2069,7 @@ public final class ConfigServiceV2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogExclusion> updateExclusion(
         com.google.logging.v2.UpdateExclusionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateExclusionMethod(), getCallOptions()), request);
     }
 
@@ -2093,7 +2080,7 @@ public final class ConfigServiceV2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteExclusion(
         com.google.logging.v2.DeleteExclusionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteExclusionMethod(), getCallOptions()), request);
     }
 
@@ -2110,7 +2097,7 @@ public final class ConfigServiceV2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.CmekSettings> getCmekSettings(
         com.google.logging.v2.GetCmekSettingsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetCmekSettingsMethod(), getCallOptions()), request);
     }
 
@@ -2132,7 +2119,7 @@ public final class ConfigServiceV2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.CmekSettings> updateCmekSettings(
         com.google.logging.v2.UpdateCmekSettingsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateCmekSettingsMethod(), getCallOptions()), request);
     }
   }

@@ -1,19 +1,6 @@
 package com.google.cloud.gsuiteaddons.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -413,7 +400,7 @@ public final class GSuiteAddOnsGrpc {
      */
     public void getAuthorization(com.google.cloud.gsuiteaddons.v1.GetAuthorizationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gsuiteaddons.v1.Authorization> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetAuthorizationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAuthorizationMethod(), responseObserver);
     }
 
     /**
@@ -423,7 +410,7 @@ public final class GSuiteAddOnsGrpc {
      */
     public void createDeployment(com.google.cloud.gsuiteaddons.v1.CreateDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gsuiteaddons.v1.Deployment> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateDeploymentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateDeploymentMethod(), responseObserver);
     }
 
     /**
@@ -433,7 +420,7 @@ public final class GSuiteAddOnsGrpc {
      */
     public void replaceDeployment(com.google.cloud.gsuiteaddons.v1.ReplaceDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gsuiteaddons.v1.Deployment> responseObserver) {
-      asyncUnimplementedUnaryCall(getReplaceDeploymentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getReplaceDeploymentMethod(), responseObserver);
     }
 
     /**
@@ -443,7 +430,7 @@ public final class GSuiteAddOnsGrpc {
      */
     public void getDeployment(com.google.cloud.gsuiteaddons.v1.GetDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gsuiteaddons.v1.Deployment> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetDeploymentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetDeploymentMethod(), responseObserver);
     }
 
     /**
@@ -453,7 +440,7 @@ public final class GSuiteAddOnsGrpc {
      */
     public void listDeployments(com.google.cloud.gsuiteaddons.v1.ListDeploymentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gsuiteaddons.v1.ListDeploymentsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListDeploymentsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListDeploymentsMethod(), responseObserver);
     }
 
     /**
@@ -463,7 +450,7 @@ public final class GSuiteAddOnsGrpc {
      */
     public void deleteDeployment(com.google.cloud.gsuiteaddons.v1.DeleteDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteDeploymentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteDeploymentMethod(), responseObserver);
     }
 
     /**
@@ -475,7 +462,7 @@ public final class GSuiteAddOnsGrpc {
      */
     public void installDeployment(com.google.cloud.gsuiteaddons.v1.InstallDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getInstallDeploymentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getInstallDeploymentMethod(), responseObserver);
     }
 
     /**
@@ -487,7 +474,7 @@ public final class GSuiteAddOnsGrpc {
      */
     public void uninstallDeployment(com.google.cloud.gsuiteaddons.v1.UninstallDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getUninstallDeploymentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUninstallDeploymentMethod(), responseObserver);
     }
 
     /**
@@ -497,70 +484,70 @@ public final class GSuiteAddOnsGrpc {
      */
     public void getInstallStatus(com.google.cloud.gsuiteaddons.v1.GetInstallStatusRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gsuiteaddons.v1.InstallStatus> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetInstallStatusMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetInstallStatusMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetAuthorizationMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.gsuiteaddons.v1.GetAuthorizationRequest,
                 com.google.cloud.gsuiteaddons.v1.Authorization>(
                   this, METHODID_GET_AUTHORIZATION)))
           .addMethod(
             getCreateDeploymentMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.gsuiteaddons.v1.CreateDeploymentRequest,
                 com.google.cloud.gsuiteaddons.v1.Deployment>(
                   this, METHODID_CREATE_DEPLOYMENT)))
           .addMethod(
             getReplaceDeploymentMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.gsuiteaddons.v1.ReplaceDeploymentRequest,
                 com.google.cloud.gsuiteaddons.v1.Deployment>(
                   this, METHODID_REPLACE_DEPLOYMENT)))
           .addMethod(
             getGetDeploymentMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.gsuiteaddons.v1.GetDeploymentRequest,
                 com.google.cloud.gsuiteaddons.v1.Deployment>(
                   this, METHODID_GET_DEPLOYMENT)))
           .addMethod(
             getListDeploymentsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.gsuiteaddons.v1.ListDeploymentsRequest,
                 com.google.cloud.gsuiteaddons.v1.ListDeploymentsResponse>(
                   this, METHODID_LIST_DEPLOYMENTS)))
           .addMethod(
             getDeleteDeploymentMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.gsuiteaddons.v1.DeleteDeploymentRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_DEPLOYMENT)))
           .addMethod(
             getInstallDeploymentMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.gsuiteaddons.v1.InstallDeploymentRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_INSTALL_DEPLOYMENT)))
           .addMethod(
             getUninstallDeploymentMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.gsuiteaddons.v1.UninstallDeploymentRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_UNINSTALL_DEPLOYMENT)))
           .addMethod(
             getGetInstallStatusMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.gsuiteaddons.v1.GetInstallStatusRequest,
                 com.google.cloud.gsuiteaddons.v1.InstallStatus>(
@@ -616,7 +603,7 @@ public final class GSuiteAddOnsGrpc {
      */
     public void getAuthorization(com.google.cloud.gsuiteaddons.v1.GetAuthorizationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gsuiteaddons.v1.Authorization> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetAuthorizationMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -627,7 +614,7 @@ public final class GSuiteAddOnsGrpc {
      */
     public void createDeployment(com.google.cloud.gsuiteaddons.v1.CreateDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gsuiteaddons.v1.Deployment> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateDeploymentMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -638,7 +625,7 @@ public final class GSuiteAddOnsGrpc {
      */
     public void replaceDeployment(com.google.cloud.gsuiteaddons.v1.ReplaceDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gsuiteaddons.v1.Deployment> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getReplaceDeploymentMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -649,7 +636,7 @@ public final class GSuiteAddOnsGrpc {
      */
     public void getDeployment(com.google.cloud.gsuiteaddons.v1.GetDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gsuiteaddons.v1.Deployment> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetDeploymentMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -660,7 +647,7 @@ public final class GSuiteAddOnsGrpc {
      */
     public void listDeployments(com.google.cloud.gsuiteaddons.v1.ListDeploymentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gsuiteaddons.v1.ListDeploymentsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListDeploymentsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -671,7 +658,7 @@ public final class GSuiteAddOnsGrpc {
      */
     public void deleteDeployment(com.google.cloud.gsuiteaddons.v1.DeleteDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteDeploymentMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -684,7 +671,7 @@ public final class GSuiteAddOnsGrpc {
      */
     public void installDeployment(com.google.cloud.gsuiteaddons.v1.InstallDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getInstallDeploymentMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -697,7 +684,7 @@ public final class GSuiteAddOnsGrpc {
      */
     public void uninstallDeployment(com.google.cloud.gsuiteaddons.v1.UninstallDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUninstallDeploymentMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -708,7 +695,7 @@ public final class GSuiteAddOnsGrpc {
      */
     public void getInstallStatus(com.google.cloud.gsuiteaddons.v1.GetInstallStatusRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gsuiteaddons.v1.InstallStatus> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetInstallStatusMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -759,7 +746,7 @@ public final class GSuiteAddOnsGrpc {
      * </pre>
      */
     public com.google.cloud.gsuiteaddons.v1.Authorization getAuthorization(com.google.cloud.gsuiteaddons.v1.GetAuthorizationRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetAuthorizationMethod(), getCallOptions(), request);
     }
 
@@ -769,7 +756,7 @@ public final class GSuiteAddOnsGrpc {
      * </pre>
      */
     public com.google.cloud.gsuiteaddons.v1.Deployment createDeployment(com.google.cloud.gsuiteaddons.v1.CreateDeploymentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -779,7 +766,7 @@ public final class GSuiteAddOnsGrpc {
      * </pre>
      */
     public com.google.cloud.gsuiteaddons.v1.Deployment replaceDeployment(com.google.cloud.gsuiteaddons.v1.ReplaceDeploymentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getReplaceDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -789,7 +776,7 @@ public final class GSuiteAddOnsGrpc {
      * </pre>
      */
     public com.google.cloud.gsuiteaddons.v1.Deployment getDeployment(com.google.cloud.gsuiteaddons.v1.GetDeploymentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -799,7 +786,7 @@ public final class GSuiteAddOnsGrpc {
      * </pre>
      */
     public com.google.cloud.gsuiteaddons.v1.ListDeploymentsResponse listDeployments(com.google.cloud.gsuiteaddons.v1.ListDeploymentsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListDeploymentsMethod(), getCallOptions(), request);
     }
 
@@ -809,7 +796,7 @@ public final class GSuiteAddOnsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteDeployment(com.google.cloud.gsuiteaddons.v1.DeleteDeploymentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -821,7 +808,7 @@ public final class GSuiteAddOnsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty installDeployment(com.google.cloud.gsuiteaddons.v1.InstallDeploymentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getInstallDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -833,7 +820,7 @@ public final class GSuiteAddOnsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty uninstallDeployment(com.google.cloud.gsuiteaddons.v1.UninstallDeploymentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUninstallDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -843,7 +830,7 @@ public final class GSuiteAddOnsGrpc {
      * </pre>
      */
     public com.google.cloud.gsuiteaddons.v1.InstallStatus getInstallStatus(com.google.cloud.gsuiteaddons.v1.GetInstallStatusRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetInstallStatusMethod(), getCallOptions(), request);
     }
   }
@@ -895,7 +882,7 @@ public final class GSuiteAddOnsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.gsuiteaddons.v1.Authorization> getAuthorization(
         com.google.cloud.gsuiteaddons.v1.GetAuthorizationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetAuthorizationMethod(), getCallOptions()), request);
     }
 
@@ -906,7 +893,7 @@ public final class GSuiteAddOnsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.gsuiteaddons.v1.Deployment> createDeployment(
         com.google.cloud.gsuiteaddons.v1.CreateDeploymentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateDeploymentMethod(), getCallOptions()), request);
     }
 
@@ -917,7 +904,7 @@ public final class GSuiteAddOnsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.gsuiteaddons.v1.Deployment> replaceDeployment(
         com.google.cloud.gsuiteaddons.v1.ReplaceDeploymentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getReplaceDeploymentMethod(), getCallOptions()), request);
     }
 
@@ -928,7 +915,7 @@ public final class GSuiteAddOnsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.gsuiteaddons.v1.Deployment> getDeployment(
         com.google.cloud.gsuiteaddons.v1.GetDeploymentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetDeploymentMethod(), getCallOptions()), request);
     }
 
@@ -939,7 +926,7 @@ public final class GSuiteAddOnsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.gsuiteaddons.v1.ListDeploymentsResponse> listDeployments(
         com.google.cloud.gsuiteaddons.v1.ListDeploymentsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListDeploymentsMethod(), getCallOptions()), request);
     }
 
@@ -950,7 +937,7 @@ public final class GSuiteAddOnsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteDeployment(
         com.google.cloud.gsuiteaddons.v1.DeleteDeploymentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteDeploymentMethod(), getCallOptions()), request);
     }
 
@@ -963,7 +950,7 @@ public final class GSuiteAddOnsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> installDeployment(
         com.google.cloud.gsuiteaddons.v1.InstallDeploymentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getInstallDeploymentMethod(), getCallOptions()), request);
     }
 
@@ -976,7 +963,7 @@ public final class GSuiteAddOnsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> uninstallDeployment(
         com.google.cloud.gsuiteaddons.v1.UninstallDeploymentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUninstallDeploymentMethod(), getCallOptions()), request);
     }
 
@@ -987,7 +974,7 @@ public final class GSuiteAddOnsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.gsuiteaddons.v1.InstallStatus> getInstallStatus(
         com.google.cloud.gsuiteaddons.v1.GetInstallStatusRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetInstallStatusMethod(), getCallOptions()), request);
     }
   }

@@ -1,19 +1,6 @@
 package com.google.cloud.dialogflow.cx.v3beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -222,7 +209,7 @@ public final class SessionsGrpc {
      */
     public void detectIntent(com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getDetectIntentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDetectIntentMethod(), responseObserver);
     }
 
     /**
@@ -237,7 +224,7 @@ public final class SessionsGrpc {
      */
     public io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest> streamingDetectIntent(
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentResponse> responseObserver) {
-      return asyncUnimplementedStreamingCall(getStreamingDetectIntentMethod(), responseObserver);
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getStreamingDetectIntentMethod(), responseObserver);
     }
 
     /**
@@ -248,7 +235,7 @@ public final class SessionsGrpc {
      */
     public void matchIntent(com.google.cloud.dialogflow.cx.v3beta1.MatchIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getMatchIntentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMatchIntentMethod(), responseObserver);
     }
 
     /**
@@ -260,35 +247,35 @@ public final class SessionsGrpc {
      */
     public void fulfillIntent(com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getFulfillIntentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFulfillIntentMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getDetectIntentMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest,
                 com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse>(
                   this, METHODID_DETECT_INTENT)))
           .addMethod(
             getStreamingDetectIntentMethod(),
-            asyncBidiStreamingCall(
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
               new MethodHandlers<
                 com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest,
                 com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentResponse>(
                   this, METHODID_STREAMING_DETECT_INTENT)))
           .addMethod(
             getMatchIntentMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.dialogflow.cx.v3beta1.MatchIntentRequest,
                 com.google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse>(
                   this, METHODID_MATCH_INTENT)))
           .addMethod(
             getFulfillIntentMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentRequest,
                 com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentResponse>(
@@ -329,7 +316,7 @@ public final class SessionsGrpc {
      */
     public void detectIntent(com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDetectIntentMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -345,7 +332,7 @@ public final class SessionsGrpc {
      */
     public io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest> streamingDetectIntent(
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentResponse> responseObserver) {
-      return asyncBidiStreamingCall(
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
           getChannel().newCall(getStreamingDetectIntentMethod(), getCallOptions()), responseObserver);
     }
 
@@ -357,7 +344,7 @@ public final class SessionsGrpc {
      */
     public void matchIntent(com.google.cloud.dialogflow.cx.v3beta1.MatchIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMatchIntentMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -370,7 +357,7 @@ public final class SessionsGrpc {
      */
     public void fulfillIntent(com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getFulfillIntentMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -406,7 +393,7 @@ public final class SessionsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse detectIntent(com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDetectIntentMethod(), getCallOptions(), request);
     }
 
@@ -417,7 +404,7 @@ public final class SessionsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse matchIntent(com.google.cloud.dialogflow.cx.v3beta1.MatchIntentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMatchIntentMethod(), getCallOptions(), request);
     }
 
@@ -429,7 +416,7 @@ public final class SessionsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentResponse fulfillIntent(com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFulfillIntentMethod(), getCallOptions(), request);
     }
   }
@@ -466,7 +453,7 @@ public final class SessionsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse> detectIntent(
         com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDetectIntentMethod(), getCallOptions()), request);
     }
 
@@ -478,7 +465,7 @@ public final class SessionsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse> matchIntent(
         com.google.cloud.dialogflow.cx.v3beta1.MatchIntentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMatchIntentMethod(), getCallOptions()), request);
     }
 
@@ -491,7 +478,7 @@ public final class SessionsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentResponse> fulfillIntent(
         com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getFulfillIntentMethod(), getCallOptions()), request);
     }
   }

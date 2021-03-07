@@ -1,19 +1,6 @@
 package com.google.cloud.aiplatform.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  */
@@ -392,7 +379,7 @@ public final class DatasetServiceGrpc {
      */
     public void createDataset(com.google.cloud.aiplatform.v1.CreateDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateDatasetMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateDatasetMethod(), responseObserver);
     }
 
     /**
@@ -402,7 +389,7 @@ public final class DatasetServiceGrpc {
      */
     public void getDataset(com.google.cloud.aiplatform.v1.GetDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Dataset> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetDatasetMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetDatasetMethod(), responseObserver);
     }
 
     /**
@@ -412,7 +399,7 @@ public final class DatasetServiceGrpc {
      */
     public void updateDataset(com.google.cloud.aiplatform.v1.UpdateDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Dataset> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateDatasetMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateDatasetMethod(), responseObserver);
     }
 
     /**
@@ -422,7 +409,7 @@ public final class DatasetServiceGrpc {
      */
     public void listDatasets(com.google.cloud.aiplatform.v1.ListDatasetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListDatasetsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListDatasetsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListDatasetsMethod(), responseObserver);
     }
 
     /**
@@ -432,7 +419,7 @@ public final class DatasetServiceGrpc {
      */
     public void deleteDataset(com.google.cloud.aiplatform.v1.DeleteDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteDatasetMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteDatasetMethod(), responseObserver);
     }
 
     /**
@@ -442,7 +429,7 @@ public final class DatasetServiceGrpc {
      */
     public void importData(com.google.cloud.aiplatform.v1.ImportDataRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getImportDataMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getImportDataMethod(), responseObserver);
     }
 
     /**
@@ -452,7 +439,7 @@ public final class DatasetServiceGrpc {
      */
     public void exportData(com.google.cloud.aiplatform.v1.ExportDataRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getExportDataMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getExportDataMethod(), responseObserver);
     }
 
     /**
@@ -462,7 +449,7 @@ public final class DatasetServiceGrpc {
      */
     public void listDataItems(com.google.cloud.aiplatform.v1.ListDataItemsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListDataItemsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListDataItemsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListDataItemsMethod(), responseObserver);
     }
 
     /**
@@ -472,7 +459,7 @@ public final class DatasetServiceGrpc {
      */
     public void getAnnotationSpec(com.google.cloud.aiplatform.v1.GetAnnotationSpecRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.AnnotationSpec> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetAnnotationSpecMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAnnotationSpecMethod(), responseObserver);
     }
 
     /**
@@ -482,77 +469,77 @@ public final class DatasetServiceGrpc {
      */
     public void listAnnotations(com.google.cloud.aiplatform.v1.ListAnnotationsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListAnnotationsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListAnnotationsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListAnnotationsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getCreateDatasetMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.aiplatform.v1.CreateDatasetRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_CREATE_DATASET)))
           .addMethod(
             getGetDatasetMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.aiplatform.v1.GetDatasetRequest,
                 com.google.cloud.aiplatform.v1.Dataset>(
                   this, METHODID_GET_DATASET)))
           .addMethod(
             getUpdateDatasetMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.aiplatform.v1.UpdateDatasetRequest,
                 com.google.cloud.aiplatform.v1.Dataset>(
                   this, METHODID_UPDATE_DATASET)))
           .addMethod(
             getListDatasetsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.aiplatform.v1.ListDatasetsRequest,
                 com.google.cloud.aiplatform.v1.ListDatasetsResponse>(
                   this, METHODID_LIST_DATASETS)))
           .addMethod(
             getDeleteDatasetMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.aiplatform.v1.DeleteDatasetRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_DELETE_DATASET)))
           .addMethod(
             getImportDataMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.aiplatform.v1.ImportDataRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_IMPORT_DATA)))
           .addMethod(
             getExportDataMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.aiplatform.v1.ExportDataRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_EXPORT_DATA)))
           .addMethod(
             getListDataItemsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.aiplatform.v1.ListDataItemsRequest,
                 com.google.cloud.aiplatform.v1.ListDataItemsResponse>(
                   this, METHODID_LIST_DATA_ITEMS)))
           .addMethod(
             getGetAnnotationSpecMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.aiplatform.v1.GetAnnotationSpecRequest,
                 com.google.cloud.aiplatform.v1.AnnotationSpec>(
                   this, METHODID_GET_ANNOTATION_SPEC)))
           .addMethod(
             getListAnnotationsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.aiplatform.v1.ListAnnotationsRequest,
                 com.google.cloud.aiplatform.v1.ListAnnotationsResponse>(
@@ -582,7 +569,7 @@ public final class DatasetServiceGrpc {
      */
     public void createDataset(com.google.cloud.aiplatform.v1.CreateDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateDatasetMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -593,7 +580,7 @@ public final class DatasetServiceGrpc {
      */
     public void getDataset(com.google.cloud.aiplatform.v1.GetDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Dataset> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetDatasetMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -604,7 +591,7 @@ public final class DatasetServiceGrpc {
      */
     public void updateDataset(com.google.cloud.aiplatform.v1.UpdateDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Dataset> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateDatasetMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -615,7 +602,7 @@ public final class DatasetServiceGrpc {
      */
     public void listDatasets(com.google.cloud.aiplatform.v1.ListDatasetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListDatasetsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListDatasetsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -626,7 +613,7 @@ public final class DatasetServiceGrpc {
      */
     public void deleteDataset(com.google.cloud.aiplatform.v1.DeleteDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteDatasetMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -637,7 +624,7 @@ public final class DatasetServiceGrpc {
      */
     public void importData(com.google.cloud.aiplatform.v1.ImportDataRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getImportDataMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -648,7 +635,7 @@ public final class DatasetServiceGrpc {
      */
     public void exportData(com.google.cloud.aiplatform.v1.ExportDataRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getExportDataMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -659,7 +646,7 @@ public final class DatasetServiceGrpc {
      */
     public void listDataItems(com.google.cloud.aiplatform.v1.ListDataItemsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListDataItemsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListDataItemsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -670,7 +657,7 @@ public final class DatasetServiceGrpc {
      */
     public void getAnnotationSpec(com.google.cloud.aiplatform.v1.GetAnnotationSpecRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.AnnotationSpec> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetAnnotationSpecMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -681,7 +668,7 @@ public final class DatasetServiceGrpc {
      */
     public void listAnnotations(com.google.cloud.aiplatform.v1.ListAnnotationsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListAnnotationsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListAnnotationsMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -706,7 +693,7 @@ public final class DatasetServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createDataset(com.google.cloud.aiplatform.v1.CreateDatasetRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateDatasetMethod(), getCallOptions(), request);
     }
 
@@ -716,7 +703,7 @@ public final class DatasetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.Dataset getDataset(com.google.cloud.aiplatform.v1.GetDatasetRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetDatasetMethod(), getCallOptions(), request);
     }
 
@@ -726,7 +713,7 @@ public final class DatasetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.Dataset updateDataset(com.google.cloud.aiplatform.v1.UpdateDatasetRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateDatasetMethod(), getCallOptions(), request);
     }
 
@@ -736,7 +723,7 @@ public final class DatasetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListDatasetsResponse listDatasets(com.google.cloud.aiplatform.v1.ListDatasetsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListDatasetsMethod(), getCallOptions(), request);
     }
 
@@ -746,7 +733,7 @@ public final class DatasetServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteDataset(com.google.cloud.aiplatform.v1.DeleteDatasetRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteDatasetMethod(), getCallOptions(), request);
     }
 
@@ -756,7 +743,7 @@ public final class DatasetServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importData(com.google.cloud.aiplatform.v1.ImportDataRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getImportDataMethod(), getCallOptions(), request);
     }
 
@@ -766,7 +753,7 @@ public final class DatasetServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportData(com.google.cloud.aiplatform.v1.ExportDataRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getExportDataMethod(), getCallOptions(), request);
     }
 
@@ -776,7 +763,7 @@ public final class DatasetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListDataItemsResponse listDataItems(com.google.cloud.aiplatform.v1.ListDataItemsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListDataItemsMethod(), getCallOptions(), request);
     }
 
@@ -786,7 +773,7 @@ public final class DatasetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.AnnotationSpec getAnnotationSpec(com.google.cloud.aiplatform.v1.GetAnnotationSpecRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetAnnotationSpecMethod(), getCallOptions(), request);
     }
 
@@ -796,7 +783,7 @@ public final class DatasetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListAnnotationsResponse listAnnotations(com.google.cloud.aiplatform.v1.ListAnnotationsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListAnnotationsMethod(), getCallOptions(), request);
     }
   }
@@ -822,7 +809,7 @@ public final class DatasetServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> createDataset(
         com.google.cloud.aiplatform.v1.CreateDatasetRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateDatasetMethod(), getCallOptions()), request);
     }
 
@@ -833,7 +820,7 @@ public final class DatasetServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.aiplatform.v1.Dataset> getDataset(
         com.google.cloud.aiplatform.v1.GetDatasetRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetDatasetMethod(), getCallOptions()), request);
     }
 
@@ -844,7 +831,7 @@ public final class DatasetServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.aiplatform.v1.Dataset> updateDataset(
         com.google.cloud.aiplatform.v1.UpdateDatasetRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateDatasetMethod(), getCallOptions()), request);
     }
 
@@ -855,7 +842,7 @@ public final class DatasetServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.aiplatform.v1.ListDatasetsResponse> listDatasets(
         com.google.cloud.aiplatform.v1.ListDatasetsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListDatasetsMethod(), getCallOptions()), request);
     }
 
@@ -866,7 +853,7 @@ public final class DatasetServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> deleteDataset(
         com.google.cloud.aiplatform.v1.DeleteDatasetRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteDatasetMethod(), getCallOptions()), request);
     }
 
@@ -877,7 +864,7 @@ public final class DatasetServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> importData(
         com.google.cloud.aiplatform.v1.ImportDataRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getImportDataMethod(), getCallOptions()), request);
     }
 
@@ -888,7 +875,7 @@ public final class DatasetServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> exportData(
         com.google.cloud.aiplatform.v1.ExportDataRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getExportDataMethod(), getCallOptions()), request);
     }
 
@@ -899,7 +886,7 @@ public final class DatasetServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.aiplatform.v1.ListDataItemsResponse> listDataItems(
         com.google.cloud.aiplatform.v1.ListDataItemsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListDataItemsMethod(), getCallOptions()), request);
     }
 
@@ -910,7 +897,7 @@ public final class DatasetServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.aiplatform.v1.AnnotationSpec> getAnnotationSpec(
         com.google.cloud.aiplatform.v1.GetAnnotationSpecRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetAnnotationSpecMethod(), getCallOptions()), request);
     }
 
@@ -921,7 +908,7 @@ public final class DatasetServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.aiplatform.v1.ListAnnotationsResponse> listAnnotations(
         com.google.cloud.aiplatform.v1.ListAnnotationsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListAnnotationsMethod(), getCallOptions()), request);
     }
   }

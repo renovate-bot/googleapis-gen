@@ -1,19 +1,6 @@
 package com.google.cloud.memcache.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -327,7 +314,7 @@ public final class CloudMemcacheGrpc {
      */
     public void listInstances(com.google.cloud.memcache.v1.ListInstancesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.memcache.v1.ListInstancesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListInstancesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListInstancesMethod(), responseObserver);
     }
 
     /**
@@ -337,7 +324,7 @@ public final class CloudMemcacheGrpc {
      */
     public void getInstance(com.google.cloud.memcache.v1.GetInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.memcache.v1.Instance> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetInstanceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetInstanceMethod(), responseObserver);
     }
 
     /**
@@ -347,7 +334,7 @@ public final class CloudMemcacheGrpc {
      */
     public void createInstance(com.google.cloud.memcache.v1.CreateInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateInstanceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateInstanceMethod(), responseObserver);
     }
 
     /**
@@ -357,7 +344,7 @@ public final class CloudMemcacheGrpc {
      */
     public void updateInstance(com.google.cloud.memcache.v1.UpdateInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateInstanceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateInstanceMethod(), responseObserver);
     }
 
     /**
@@ -369,7 +356,7 @@ public final class CloudMemcacheGrpc {
      */
     public void updateParameters(com.google.cloud.memcache.v1.UpdateParametersRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateParametersMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateParametersMethod(), responseObserver);
     }
 
     /**
@@ -379,7 +366,7 @@ public final class CloudMemcacheGrpc {
      */
     public void deleteInstance(com.google.cloud.memcache.v1.DeleteInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteInstanceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteInstanceMethod(), responseObserver);
     }
 
     /**
@@ -390,56 +377,56 @@ public final class CloudMemcacheGrpc {
      */
     public void applyParameters(com.google.cloud.memcache.v1.ApplyParametersRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getApplyParametersMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getApplyParametersMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getListInstancesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.memcache.v1.ListInstancesRequest,
                 com.google.cloud.memcache.v1.ListInstancesResponse>(
                   this, METHODID_LIST_INSTANCES)))
           .addMethod(
             getGetInstanceMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.memcache.v1.GetInstanceRequest,
                 com.google.cloud.memcache.v1.Instance>(
                   this, METHODID_GET_INSTANCE)))
           .addMethod(
             getCreateInstanceMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.memcache.v1.CreateInstanceRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_CREATE_INSTANCE)))
           .addMethod(
             getUpdateInstanceMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.memcache.v1.UpdateInstanceRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_UPDATE_INSTANCE)))
           .addMethod(
             getUpdateParametersMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.memcache.v1.UpdateParametersRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_UPDATE_PARAMETERS)))
           .addMethod(
             getDeleteInstanceMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.memcache.v1.DeleteInstanceRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_DELETE_INSTANCE)))
           .addMethod(
             getApplyParametersMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.memcache.v1.ApplyParametersRequest,
                 com.google.longrunning.Operation>(
@@ -483,7 +470,7 @@ public final class CloudMemcacheGrpc {
      */
     public void listInstances(com.google.cloud.memcache.v1.ListInstancesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.memcache.v1.ListInstancesResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListInstancesMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -494,7 +481,7 @@ public final class CloudMemcacheGrpc {
      */
     public void getInstance(com.google.cloud.memcache.v1.GetInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.memcache.v1.Instance> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetInstanceMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -505,7 +492,7 @@ public final class CloudMemcacheGrpc {
      */
     public void createInstance(com.google.cloud.memcache.v1.CreateInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateInstanceMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -516,7 +503,7 @@ public final class CloudMemcacheGrpc {
      */
     public void updateInstance(com.google.cloud.memcache.v1.UpdateInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateInstanceMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -529,7 +516,7 @@ public final class CloudMemcacheGrpc {
      */
     public void updateParameters(com.google.cloud.memcache.v1.UpdateParametersRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateParametersMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -540,7 +527,7 @@ public final class CloudMemcacheGrpc {
      */
     public void deleteInstance(com.google.cloud.memcache.v1.DeleteInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteInstanceMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -552,7 +539,7 @@ public final class CloudMemcacheGrpc {
      */
     public void applyParameters(com.google.cloud.memcache.v1.ApplyParametersRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getApplyParametersMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -591,7 +578,7 @@ public final class CloudMemcacheGrpc {
      * </pre>
      */
     public com.google.cloud.memcache.v1.ListInstancesResponse listInstances(com.google.cloud.memcache.v1.ListInstancesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListInstancesMethod(), getCallOptions(), request);
     }
 
@@ -601,7 +588,7 @@ public final class CloudMemcacheGrpc {
      * </pre>
      */
     public com.google.cloud.memcache.v1.Instance getInstance(com.google.cloud.memcache.v1.GetInstanceRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetInstanceMethod(), getCallOptions(), request);
     }
 
@@ -611,7 +598,7 @@ public final class CloudMemcacheGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createInstance(com.google.cloud.memcache.v1.CreateInstanceRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateInstanceMethod(), getCallOptions(), request);
     }
 
@@ -621,7 +608,7 @@ public final class CloudMemcacheGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateInstance(com.google.cloud.memcache.v1.UpdateInstanceRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateInstanceMethod(), getCallOptions(), request);
     }
 
@@ -633,7 +620,7 @@ public final class CloudMemcacheGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateParameters(com.google.cloud.memcache.v1.UpdateParametersRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateParametersMethod(), getCallOptions(), request);
     }
 
@@ -643,7 +630,7 @@ public final class CloudMemcacheGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteInstance(com.google.cloud.memcache.v1.DeleteInstanceRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteInstanceMethod(), getCallOptions(), request);
     }
 
@@ -654,7 +641,7 @@ public final class CloudMemcacheGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation applyParameters(com.google.cloud.memcache.v1.ApplyParametersRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getApplyParametersMethod(), getCallOptions(), request);
     }
   }
@@ -694,7 +681,7 @@ public final class CloudMemcacheGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.memcache.v1.ListInstancesResponse> listInstances(
         com.google.cloud.memcache.v1.ListInstancesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListInstancesMethod(), getCallOptions()), request);
     }
 
@@ -705,7 +692,7 @@ public final class CloudMemcacheGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.memcache.v1.Instance> getInstance(
         com.google.cloud.memcache.v1.GetInstanceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetInstanceMethod(), getCallOptions()), request);
     }
 
@@ -716,7 +703,7 @@ public final class CloudMemcacheGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> createInstance(
         com.google.cloud.memcache.v1.CreateInstanceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateInstanceMethod(), getCallOptions()), request);
     }
 
@@ -727,7 +714,7 @@ public final class CloudMemcacheGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> updateInstance(
         com.google.cloud.memcache.v1.UpdateInstanceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateInstanceMethod(), getCallOptions()), request);
     }
 
@@ -740,7 +727,7 @@ public final class CloudMemcacheGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> updateParameters(
         com.google.cloud.memcache.v1.UpdateParametersRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateParametersMethod(), getCallOptions()), request);
     }
 
@@ -751,7 +738,7 @@ public final class CloudMemcacheGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> deleteInstance(
         com.google.cloud.memcache.v1.DeleteInstanceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteInstanceMethod(), getCallOptions()), request);
     }
 
@@ -763,7 +750,7 @@ public final class CloudMemcacheGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> applyParameters(
         com.google.cloud.memcache.v1.ApplyParametersRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getApplyParametersMethod(), getCallOptions()), request);
     }
   }

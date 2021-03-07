@@ -1,19 +1,6 @@
 package com.google.cloud.dataqna.v1alpha;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -242,14 +229,14 @@ public final class AutoSuggestionServiceGrpc {
      */
     public void suggestQueries(com.google.cloud.dataqna.v1alpha.SuggestQueriesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataqna.v1alpha.SuggestQueriesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getSuggestQueriesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSuggestQueriesMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getSuggestQueriesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.dataqna.v1alpha.SuggestQueriesRequest,
                 com.google.cloud.dataqna.v1alpha.SuggestQueriesResponse>(
@@ -344,7 +331,7 @@ public final class AutoSuggestionServiceGrpc {
      */
     public void suggestQueries(com.google.cloud.dataqna.v1alpha.SuggestQueriesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataqna.v1alpha.SuggestQueriesResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSuggestQueriesMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -434,7 +421,7 @@ public final class AutoSuggestionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataqna.v1alpha.SuggestQueriesResponse suggestQueries(com.google.cloud.dataqna.v1alpha.SuggestQueriesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSuggestQueriesMethod(), getCallOptions(), request);
     }
   }
@@ -525,7 +512,7 @@ public final class AutoSuggestionServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dataqna.v1alpha.SuggestQueriesResponse> suggestQueries(
         com.google.cloud.dataqna.v1alpha.SuggestQueriesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSuggestQueriesMethod(), getCallOptions()), request);
     }
   }

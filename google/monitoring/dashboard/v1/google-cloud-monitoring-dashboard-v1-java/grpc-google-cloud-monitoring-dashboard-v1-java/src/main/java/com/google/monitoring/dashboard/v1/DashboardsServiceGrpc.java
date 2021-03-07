@@ -1,19 +1,6 @@
 package com.google.monitoring.dashboard.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -248,7 +235,7 @@ public final class DashboardsServiceGrpc {
      */
     public void createDashboard(com.google.monitoring.dashboard.v1.CreateDashboardRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.dashboard.v1.Dashboard> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateDashboardMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateDashboardMethod(), responseObserver);
     }
 
     /**
@@ -261,7 +248,7 @@ public final class DashboardsServiceGrpc {
      */
     public void listDashboards(com.google.monitoring.dashboard.v1.ListDashboardsRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.dashboard.v1.ListDashboardsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListDashboardsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListDashboardsMethod(), responseObserver);
     }
 
     /**
@@ -274,7 +261,7 @@ public final class DashboardsServiceGrpc {
      */
     public void getDashboard(com.google.monitoring.dashboard.v1.GetDashboardRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.dashboard.v1.Dashboard> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetDashboardMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetDashboardMethod(), responseObserver);
     }
 
     /**
@@ -287,7 +274,7 @@ public final class DashboardsServiceGrpc {
      */
     public void deleteDashboard(com.google.monitoring.dashboard.v1.DeleteDashboardRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteDashboardMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteDashboardMethod(), responseObserver);
     }
 
     /**
@@ -300,42 +287,42 @@ public final class DashboardsServiceGrpc {
      */
     public void updateDashboard(com.google.monitoring.dashboard.v1.UpdateDashboardRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.dashboard.v1.Dashboard> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateDashboardMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateDashboardMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getCreateDashboardMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.monitoring.dashboard.v1.CreateDashboardRequest,
                 com.google.monitoring.dashboard.v1.Dashboard>(
                   this, METHODID_CREATE_DASHBOARD)))
           .addMethod(
             getListDashboardsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.monitoring.dashboard.v1.ListDashboardsRequest,
                 com.google.monitoring.dashboard.v1.ListDashboardsResponse>(
                   this, METHODID_LIST_DASHBOARDS)))
           .addMethod(
             getGetDashboardMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.monitoring.dashboard.v1.GetDashboardRequest,
                 com.google.monitoring.dashboard.v1.Dashboard>(
                   this, METHODID_GET_DASHBOARD)))
           .addMethod(
             getDeleteDashboardMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.monitoring.dashboard.v1.DeleteDashboardRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_DASHBOARD)))
           .addMethod(
             getUpdateDashboardMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.monitoring.dashboard.v1.UpdateDashboardRequest,
                 com.google.monitoring.dashboard.v1.Dashboard>(
@@ -372,7 +359,7 @@ public final class DashboardsServiceGrpc {
      */
     public void createDashboard(com.google.monitoring.dashboard.v1.CreateDashboardRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.dashboard.v1.Dashboard> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateDashboardMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -386,7 +373,7 @@ public final class DashboardsServiceGrpc {
      */
     public void listDashboards(com.google.monitoring.dashboard.v1.ListDashboardsRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.dashboard.v1.ListDashboardsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListDashboardsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -400,7 +387,7 @@ public final class DashboardsServiceGrpc {
      */
     public void getDashboard(com.google.monitoring.dashboard.v1.GetDashboardRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.dashboard.v1.Dashboard> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetDashboardMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -414,7 +401,7 @@ public final class DashboardsServiceGrpc {
      */
     public void deleteDashboard(com.google.monitoring.dashboard.v1.DeleteDashboardRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteDashboardMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -428,7 +415,7 @@ public final class DashboardsServiceGrpc {
      */
     public void updateDashboard(com.google.monitoring.dashboard.v1.UpdateDashboardRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.dashboard.v1.Dashboard> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateDashboardMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -460,7 +447,7 @@ public final class DashboardsServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.dashboard.v1.Dashboard createDashboard(com.google.monitoring.dashboard.v1.CreateDashboardRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateDashboardMethod(), getCallOptions(), request);
     }
 
@@ -473,7 +460,7 @@ public final class DashboardsServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.dashboard.v1.ListDashboardsResponse listDashboards(com.google.monitoring.dashboard.v1.ListDashboardsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListDashboardsMethod(), getCallOptions(), request);
     }
 
@@ -486,7 +473,7 @@ public final class DashboardsServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.dashboard.v1.Dashboard getDashboard(com.google.monitoring.dashboard.v1.GetDashboardRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetDashboardMethod(), getCallOptions(), request);
     }
 
@@ -499,7 +486,7 @@ public final class DashboardsServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteDashboard(com.google.monitoring.dashboard.v1.DeleteDashboardRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteDashboardMethod(), getCallOptions(), request);
     }
 
@@ -512,7 +499,7 @@ public final class DashboardsServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.dashboard.v1.Dashboard updateDashboard(com.google.monitoring.dashboard.v1.UpdateDashboardRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateDashboardMethod(), getCallOptions(), request);
     }
   }
@@ -545,7 +532,7 @@ public final class DashboardsServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.monitoring.dashboard.v1.Dashboard> createDashboard(
         com.google.monitoring.dashboard.v1.CreateDashboardRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateDashboardMethod(), getCallOptions()), request);
     }
 
@@ -559,7 +546,7 @@ public final class DashboardsServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.monitoring.dashboard.v1.ListDashboardsResponse> listDashboards(
         com.google.monitoring.dashboard.v1.ListDashboardsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListDashboardsMethod(), getCallOptions()), request);
     }
 
@@ -573,7 +560,7 @@ public final class DashboardsServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.monitoring.dashboard.v1.Dashboard> getDashboard(
         com.google.monitoring.dashboard.v1.GetDashboardRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetDashboardMethod(), getCallOptions()), request);
     }
 
@@ -587,7 +574,7 @@ public final class DashboardsServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteDashboard(
         com.google.monitoring.dashboard.v1.DeleteDashboardRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteDashboardMethod(), getCallOptions()), request);
     }
 
@@ -601,7 +588,7 @@ public final class DashboardsServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.monitoring.dashboard.v1.Dashboard> updateDashboard(
         com.google.monitoring.dashboard.v1.UpdateDashboardRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateDashboardMethod(), getCallOptions()), request);
     }
   }

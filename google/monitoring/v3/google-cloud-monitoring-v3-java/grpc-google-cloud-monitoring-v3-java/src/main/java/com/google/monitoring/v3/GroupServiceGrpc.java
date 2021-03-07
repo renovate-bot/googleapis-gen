@@ -1,19 +1,6 @@
 package com.google.monitoring.v3;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -294,7 +281,7 @@ public final class GroupServiceGrpc {
      */
     public void listGroups(com.google.monitoring.v3.ListGroupsRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.ListGroupsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListGroupsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListGroupsMethod(), responseObserver);
     }
 
     /**
@@ -304,7 +291,7 @@ public final class GroupServiceGrpc {
      */
     public void getGroup(com.google.monitoring.v3.GetGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.Group> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetGroupMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetGroupMethod(), responseObserver);
     }
 
     /**
@@ -314,7 +301,7 @@ public final class GroupServiceGrpc {
      */
     public void createGroup(com.google.monitoring.v3.CreateGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.Group> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateGroupMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateGroupMethod(), responseObserver);
     }
 
     /**
@@ -325,7 +312,7 @@ public final class GroupServiceGrpc {
      */
     public void updateGroup(com.google.monitoring.v3.UpdateGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.Group> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateGroupMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateGroupMethod(), responseObserver);
     }
 
     /**
@@ -335,7 +322,7 @@ public final class GroupServiceGrpc {
      */
     public void deleteGroup(com.google.monitoring.v3.DeleteGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteGroupMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteGroupMethod(), responseObserver);
     }
 
     /**
@@ -345,49 +332,49 @@ public final class GroupServiceGrpc {
      */
     public void listGroupMembers(com.google.monitoring.v3.ListGroupMembersRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.ListGroupMembersResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListGroupMembersMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListGroupMembersMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getListGroupsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.monitoring.v3.ListGroupsRequest,
                 com.google.monitoring.v3.ListGroupsResponse>(
                   this, METHODID_LIST_GROUPS)))
           .addMethod(
             getGetGroupMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.monitoring.v3.GetGroupRequest,
                 com.google.monitoring.v3.Group>(
                   this, METHODID_GET_GROUP)))
           .addMethod(
             getCreateGroupMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.monitoring.v3.CreateGroupRequest,
                 com.google.monitoring.v3.Group>(
                   this, METHODID_CREATE_GROUP)))
           .addMethod(
             getUpdateGroupMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.monitoring.v3.UpdateGroupRequest,
                 com.google.monitoring.v3.Group>(
                   this, METHODID_UPDATE_GROUP)))
           .addMethod(
             getDeleteGroupMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.monitoring.v3.DeleteGroupRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_GROUP)))
           .addMethod(
             getListGroupMembersMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.monitoring.v3.ListGroupMembersRequest,
                 com.google.monitoring.v3.ListGroupMembersResponse>(
@@ -430,7 +417,7 @@ public final class GroupServiceGrpc {
      */
     public void listGroups(com.google.monitoring.v3.ListGroupsRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.ListGroupsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListGroupsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -441,7 +428,7 @@ public final class GroupServiceGrpc {
      */
     public void getGroup(com.google.monitoring.v3.GetGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.Group> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetGroupMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -452,7 +439,7 @@ public final class GroupServiceGrpc {
      */
     public void createGroup(com.google.monitoring.v3.CreateGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.Group> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateGroupMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -464,7 +451,7 @@ public final class GroupServiceGrpc {
      */
     public void updateGroup(com.google.monitoring.v3.UpdateGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.Group> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateGroupMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -475,7 +462,7 @@ public final class GroupServiceGrpc {
      */
     public void deleteGroup(com.google.monitoring.v3.DeleteGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteGroupMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -486,7 +473,7 @@ public final class GroupServiceGrpc {
      */
     public void listGroupMembers(com.google.monitoring.v3.ListGroupMembersRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.ListGroupMembersResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListGroupMembersMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -524,7 +511,7 @@ public final class GroupServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.ListGroupsResponse listGroups(com.google.monitoring.v3.ListGroupsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListGroupsMethod(), getCallOptions(), request);
     }
 
@@ -534,7 +521,7 @@ public final class GroupServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.Group getGroup(com.google.monitoring.v3.GetGroupRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetGroupMethod(), getCallOptions(), request);
     }
 
@@ -544,7 +531,7 @@ public final class GroupServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.Group createGroup(com.google.monitoring.v3.CreateGroupRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateGroupMethod(), getCallOptions(), request);
     }
 
@@ -555,7 +542,7 @@ public final class GroupServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.Group updateGroup(com.google.monitoring.v3.UpdateGroupRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateGroupMethod(), getCallOptions(), request);
     }
 
@@ -565,7 +552,7 @@ public final class GroupServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteGroup(com.google.monitoring.v3.DeleteGroupRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteGroupMethod(), getCallOptions(), request);
     }
 
@@ -575,7 +562,7 @@ public final class GroupServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.ListGroupMembersResponse listGroupMembers(com.google.monitoring.v3.ListGroupMembersRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListGroupMembersMethod(), getCallOptions(), request);
     }
   }
@@ -614,7 +601,7 @@ public final class GroupServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.monitoring.v3.ListGroupsResponse> listGroups(
         com.google.monitoring.v3.ListGroupsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListGroupsMethod(), getCallOptions()), request);
     }
 
@@ -625,7 +612,7 @@ public final class GroupServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.monitoring.v3.Group> getGroup(
         com.google.monitoring.v3.GetGroupRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetGroupMethod(), getCallOptions()), request);
     }
 
@@ -636,7 +623,7 @@ public final class GroupServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.monitoring.v3.Group> createGroup(
         com.google.monitoring.v3.CreateGroupRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateGroupMethod(), getCallOptions()), request);
     }
 
@@ -648,7 +635,7 @@ public final class GroupServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.monitoring.v3.Group> updateGroup(
         com.google.monitoring.v3.UpdateGroupRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateGroupMethod(), getCallOptions()), request);
     }
 
@@ -659,7 +646,7 @@ public final class GroupServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteGroup(
         com.google.monitoring.v3.DeleteGroupRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteGroupMethod(), getCallOptions()), request);
     }
 
@@ -670,7 +657,7 @@ public final class GroupServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.monitoring.v3.ListGroupMembersResponse> listGroupMembers(
         com.google.monitoring.v3.ListGroupMembersRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListGroupMembersMethod(), getCallOptions()), request);
     }
   }

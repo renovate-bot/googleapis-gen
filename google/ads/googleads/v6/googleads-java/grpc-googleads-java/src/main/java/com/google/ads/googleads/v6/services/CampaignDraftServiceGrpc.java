@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v6.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -212,7 +199,7 @@ public final class CampaignDraftServiceGrpc {
      */
     public void getCampaignDraft(com.google.ads.googleads.v6.services.GetCampaignDraftRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.resources.CampaignDraft> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetCampaignDraftMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCampaignDraftMethod(), responseObserver);
     }
 
     /**
@@ -223,7 +210,7 @@ public final class CampaignDraftServiceGrpc {
      */
     public void mutateCampaignDrafts(com.google.ads.googleads.v6.services.MutateCampaignDraftsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.MutateCampaignDraftsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getMutateCampaignDraftsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMutateCampaignDraftsMethod(), responseObserver);
     }
 
     /**
@@ -240,7 +227,7 @@ public final class CampaignDraftServiceGrpc {
      */
     public void promoteCampaignDraft(com.google.ads.googleads.v6.services.PromoteCampaignDraftRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getPromoteCampaignDraftMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPromoteCampaignDraftMethod(), responseObserver);
     }
 
     /**
@@ -252,35 +239,35 @@ public final class CampaignDraftServiceGrpc {
      */
     public void listCampaignDraftAsyncErrors(com.google.ads.googleads.v6.services.ListCampaignDraftAsyncErrorsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.ListCampaignDraftAsyncErrorsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListCampaignDraftAsyncErrorsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListCampaignDraftAsyncErrorsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetCampaignDraftMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.GetCampaignDraftRequest,
                 com.google.ads.googleads.v6.resources.CampaignDraft>(
                   this, METHODID_GET_CAMPAIGN_DRAFT)))
           .addMethod(
             getMutateCampaignDraftsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.MutateCampaignDraftsRequest,
                 com.google.ads.googleads.v6.services.MutateCampaignDraftsResponse>(
                   this, METHODID_MUTATE_CAMPAIGN_DRAFTS)))
           .addMethod(
             getPromoteCampaignDraftMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.PromoteCampaignDraftRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_PROMOTE_CAMPAIGN_DRAFT)))
           .addMethod(
             getListCampaignDraftAsyncErrorsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.ListCampaignDraftAsyncErrorsRequest,
                 com.google.ads.googleads.v6.services.ListCampaignDraftAsyncErrorsResponse>(
@@ -313,7 +300,7 @@ public final class CampaignDraftServiceGrpc {
      */
     public void getCampaignDraft(com.google.ads.googleads.v6.services.GetCampaignDraftRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.resources.CampaignDraft> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetCampaignDraftMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -325,7 +312,7 @@ public final class CampaignDraftServiceGrpc {
      */
     public void mutateCampaignDrafts(com.google.ads.googleads.v6.services.MutateCampaignDraftsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.MutateCampaignDraftsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMutateCampaignDraftsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -343,7 +330,7 @@ public final class CampaignDraftServiceGrpc {
      */
     public void promoteCampaignDraft(com.google.ads.googleads.v6.services.PromoteCampaignDraftRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPromoteCampaignDraftMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -356,7 +343,7 @@ public final class CampaignDraftServiceGrpc {
      */
     public void listCampaignDraftAsyncErrors(com.google.ads.googleads.v6.services.ListCampaignDraftAsyncErrorsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.ListCampaignDraftAsyncErrorsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListCampaignDraftAsyncErrorsMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -384,7 +371,7 @@ public final class CampaignDraftServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.resources.CampaignDraft getCampaignDraft(com.google.ads.googleads.v6.services.GetCampaignDraftRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetCampaignDraftMethod(), getCallOptions(), request);
     }
 
@@ -395,7 +382,7 @@ public final class CampaignDraftServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.services.MutateCampaignDraftsResponse mutateCampaignDrafts(com.google.ads.googleads.v6.services.MutateCampaignDraftsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMutateCampaignDraftsMethod(), getCallOptions(), request);
     }
 
@@ -412,7 +399,7 @@ public final class CampaignDraftServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation promoteCampaignDraft(com.google.ads.googleads.v6.services.PromoteCampaignDraftRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPromoteCampaignDraftMethod(), getCallOptions(), request);
     }
 
@@ -424,7 +411,7 @@ public final class CampaignDraftServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.services.ListCampaignDraftAsyncErrorsResponse listCampaignDraftAsyncErrors(com.google.ads.googleads.v6.services.ListCampaignDraftAsyncErrorsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListCampaignDraftAsyncErrorsMethod(), getCallOptions(), request);
     }
   }
@@ -453,7 +440,7 @@ public final class CampaignDraftServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.resources.CampaignDraft> getCampaignDraft(
         com.google.ads.googleads.v6.services.GetCampaignDraftRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetCampaignDraftMethod(), getCallOptions()), request);
     }
 
@@ -465,7 +452,7 @@ public final class CampaignDraftServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.services.MutateCampaignDraftsResponse> mutateCampaignDrafts(
         com.google.ads.googleads.v6.services.MutateCampaignDraftsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMutateCampaignDraftsMethod(), getCallOptions()), request);
     }
 
@@ -483,7 +470,7 @@ public final class CampaignDraftServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> promoteCampaignDraft(
         com.google.ads.googleads.v6.services.PromoteCampaignDraftRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPromoteCampaignDraftMethod(), getCallOptions()), request);
     }
 
@@ -496,7 +483,7 @@ public final class CampaignDraftServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.services.ListCampaignDraftAsyncErrorsResponse> listCampaignDraftAsyncErrors(
         com.google.ads.googleads.v6.services.ListCampaignDraftAsyncErrorsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListCampaignDraftAsyncErrorsMethod(), getCallOptions()), request);
     }
   }

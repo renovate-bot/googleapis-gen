@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v5.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -150,7 +137,7 @@ public final class CustomerFeedServiceGrpc {
      */
     public void getCustomerFeed(com.google.ads.googleads.v5.services.GetCustomerFeedRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.resources.CustomerFeed> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetCustomerFeedMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCustomerFeedMethod(), responseObserver);
     }
 
     /**
@@ -161,21 +148,21 @@ public final class CustomerFeedServiceGrpc {
      */
     public void mutateCustomerFeeds(com.google.ads.googleads.v5.services.MutateCustomerFeedsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.services.MutateCustomerFeedsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getMutateCustomerFeedsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMutateCustomerFeedsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetCustomerFeedMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v5.services.GetCustomerFeedRequest,
                 com.google.ads.googleads.v5.resources.CustomerFeed>(
                   this, METHODID_GET_CUSTOMER_FEED)))
           .addMethod(
             getMutateCustomerFeedsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v5.services.MutateCustomerFeedsRequest,
                 com.google.ads.googleads.v5.services.MutateCustomerFeedsResponse>(
@@ -208,7 +195,7 @@ public final class CustomerFeedServiceGrpc {
      */
     public void getCustomerFeed(com.google.ads.googleads.v5.services.GetCustomerFeedRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.resources.CustomerFeed> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetCustomerFeedMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -220,7 +207,7 @@ public final class CustomerFeedServiceGrpc {
      */
     public void mutateCustomerFeeds(com.google.ads.googleads.v5.services.MutateCustomerFeedsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.services.MutateCustomerFeedsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMutateCustomerFeedsMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -248,7 +235,7 @@ public final class CustomerFeedServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v5.resources.CustomerFeed getCustomerFeed(com.google.ads.googleads.v5.services.GetCustomerFeedRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetCustomerFeedMethod(), getCallOptions(), request);
     }
 
@@ -259,7 +246,7 @@ public final class CustomerFeedServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v5.services.MutateCustomerFeedsResponse mutateCustomerFeeds(com.google.ads.googleads.v5.services.MutateCustomerFeedsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMutateCustomerFeedsMethod(), getCallOptions(), request);
     }
   }
@@ -288,7 +275,7 @@ public final class CustomerFeedServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v5.resources.CustomerFeed> getCustomerFeed(
         com.google.ads.googleads.v5.services.GetCustomerFeedRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetCustomerFeedMethod(), getCallOptions()), request);
     }
 
@@ -300,7 +287,7 @@ public final class CustomerFeedServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v5.services.MutateCustomerFeedsResponse> mutateCustomerFeeds(
         com.google.ads.googleads.v5.services.MutateCustomerFeedsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMutateCustomerFeedsMethod(), getCallOptions()), request);
     }
   }

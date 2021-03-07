@@ -21,16 +21,16 @@ compileJava.options.encoding = 'UTF-8'
 javadoc.options.encoding = 'UTF-8'
 
 dependencies {
-  compile 'com.google.api:gax:1.59.0'
-  testCompile 'com.google.api:gax:1.59.0:testlib'
-  compile 'com.google.api:gax-grpc:1.59.0'
-  testCompile 'com.google.api:gax-grpc:1.59.0:testlib'
-  testCompile 'io.grpc:grpc-netty-shaded:1.30.0'
-  testCompile 'junit:junit:4.13'
+  compile 'com.google.api:gax:1.62.0'
+  testCompile 'com.google.api:gax:1.62.0:testlib'
+  compile 'com.google.api:gax-grpc:1.62.0'
+  testCompile 'com.google.api:gax-grpc:1.62.0:testlib'
+  testCompile 'io.grpc:grpc-netty-shaded:1.36.0'
+  testCompile 'junit:junit:4.13.2'
   compile project(':proto-google-cloud-secretmanager-v1-java')
-  compile 'com.google.api.grpc:proto-google-iam-v1:0.13.0'
+  compile 'com.google.api.grpc:proto-google-iam-v1:1.0.9'
   testCompile project(':grpc-google-cloud-secretmanager-v1-java')
-  testCompile 'com.google.api.grpc:grpc-google-iam-v1:0.13.0'
+  testCompile 'com.google.api.grpc:grpc-google-iam-v1:1.0.9'
 }
 
 task smokeTest(type: Test) {

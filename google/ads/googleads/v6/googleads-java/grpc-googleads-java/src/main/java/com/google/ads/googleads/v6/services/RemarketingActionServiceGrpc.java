@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v6.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -150,7 +137,7 @@ public final class RemarketingActionServiceGrpc {
      */
     public void getRemarketingAction(com.google.ads.googleads.v6.services.GetRemarketingActionRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.resources.RemarketingAction> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetRemarketingActionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetRemarketingActionMethod(), responseObserver);
     }
 
     /**
@@ -160,21 +147,21 @@ public final class RemarketingActionServiceGrpc {
      */
     public void mutateRemarketingActions(com.google.ads.googleads.v6.services.MutateRemarketingActionsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.MutateRemarketingActionsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getMutateRemarketingActionsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMutateRemarketingActionsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetRemarketingActionMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.GetRemarketingActionRequest,
                 com.google.ads.googleads.v6.resources.RemarketingAction>(
                   this, METHODID_GET_REMARKETING_ACTION)))
           .addMethod(
             getMutateRemarketingActionsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.MutateRemarketingActionsRequest,
                 com.google.ads.googleads.v6.services.MutateRemarketingActionsResponse>(
@@ -207,7 +194,7 @@ public final class RemarketingActionServiceGrpc {
      */
     public void getRemarketingAction(com.google.ads.googleads.v6.services.GetRemarketingActionRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.resources.RemarketingAction> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetRemarketingActionMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -218,7 +205,7 @@ public final class RemarketingActionServiceGrpc {
      */
     public void mutateRemarketingActions(com.google.ads.googleads.v6.services.MutateRemarketingActionsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.MutateRemarketingActionsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMutateRemarketingActionsMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -246,7 +233,7 @@ public final class RemarketingActionServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.resources.RemarketingAction getRemarketingAction(com.google.ads.googleads.v6.services.GetRemarketingActionRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetRemarketingActionMethod(), getCallOptions(), request);
     }
 
@@ -256,7 +243,7 @@ public final class RemarketingActionServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.services.MutateRemarketingActionsResponse mutateRemarketingActions(com.google.ads.googleads.v6.services.MutateRemarketingActionsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMutateRemarketingActionsMethod(), getCallOptions(), request);
     }
   }
@@ -285,7 +272,7 @@ public final class RemarketingActionServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.resources.RemarketingAction> getRemarketingAction(
         com.google.ads.googleads.v6.services.GetRemarketingActionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetRemarketingActionMethod(), getCallOptions()), request);
     }
 
@@ -296,7 +283,7 @@ public final class RemarketingActionServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.services.MutateRemarketingActionsResponse> mutateRemarketingActions(
         com.google.ads.googleads.v6.services.MutateRemarketingActionsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMutateRemarketingActionsMethod(), getCallOptions()), request);
     }
   }

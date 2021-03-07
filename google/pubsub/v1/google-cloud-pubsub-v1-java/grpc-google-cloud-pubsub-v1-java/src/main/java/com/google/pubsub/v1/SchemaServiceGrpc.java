@@ -1,19 +1,6 @@
 package com.google.pubsub.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -274,7 +261,7 @@ public final class SchemaServiceGrpc {
      */
     public void createSchema(com.google.pubsub.v1.CreateSchemaRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.Schema> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateSchemaMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateSchemaMethod(), responseObserver);
     }
 
     /**
@@ -284,7 +271,7 @@ public final class SchemaServiceGrpc {
      */
     public void getSchema(com.google.pubsub.v1.GetSchemaRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.Schema> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetSchemaMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetSchemaMethod(), responseObserver);
     }
 
     /**
@@ -294,7 +281,7 @@ public final class SchemaServiceGrpc {
      */
     public void listSchemas(com.google.pubsub.v1.ListSchemasRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.ListSchemasResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListSchemasMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListSchemasMethod(), responseObserver);
     }
 
     /**
@@ -304,7 +291,7 @@ public final class SchemaServiceGrpc {
      */
     public void deleteSchema(com.google.pubsub.v1.DeleteSchemaRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteSchemaMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteSchemaMethod(), responseObserver);
     }
 
     /**
@@ -314,7 +301,7 @@ public final class SchemaServiceGrpc {
      */
     public void validateSchema(com.google.pubsub.v1.ValidateSchemaRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.ValidateSchemaResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getValidateSchemaMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getValidateSchemaMethod(), responseObserver);
     }
 
     /**
@@ -324,49 +311,49 @@ public final class SchemaServiceGrpc {
      */
     public void validateMessage(com.google.pubsub.v1.ValidateMessageRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.ValidateMessageResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getValidateMessageMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getValidateMessageMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getCreateSchemaMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.pubsub.v1.CreateSchemaRequest,
                 com.google.pubsub.v1.Schema>(
                   this, METHODID_CREATE_SCHEMA)))
           .addMethod(
             getGetSchemaMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.pubsub.v1.GetSchemaRequest,
                 com.google.pubsub.v1.Schema>(
                   this, METHODID_GET_SCHEMA)))
           .addMethod(
             getListSchemasMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.pubsub.v1.ListSchemasRequest,
                 com.google.pubsub.v1.ListSchemasResponse>(
                   this, METHODID_LIST_SCHEMAS)))
           .addMethod(
             getDeleteSchemaMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.pubsub.v1.DeleteSchemaRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_SCHEMA)))
           .addMethod(
             getValidateSchemaMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.pubsub.v1.ValidateSchemaRequest,
                 com.google.pubsub.v1.ValidateSchemaResponse>(
                   this, METHODID_VALIDATE_SCHEMA)))
           .addMethod(
             getValidateMessageMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.pubsub.v1.ValidateMessageRequest,
                 com.google.pubsub.v1.ValidateMessageResponse>(
@@ -399,7 +386,7 @@ public final class SchemaServiceGrpc {
      */
     public void createSchema(com.google.pubsub.v1.CreateSchemaRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.Schema> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateSchemaMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -410,7 +397,7 @@ public final class SchemaServiceGrpc {
      */
     public void getSchema(com.google.pubsub.v1.GetSchemaRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.Schema> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetSchemaMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -421,7 +408,7 @@ public final class SchemaServiceGrpc {
      */
     public void listSchemas(com.google.pubsub.v1.ListSchemasRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.ListSchemasResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListSchemasMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -432,7 +419,7 @@ public final class SchemaServiceGrpc {
      */
     public void deleteSchema(com.google.pubsub.v1.DeleteSchemaRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteSchemaMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -443,7 +430,7 @@ public final class SchemaServiceGrpc {
      */
     public void validateSchema(com.google.pubsub.v1.ValidateSchemaRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.ValidateSchemaResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getValidateSchemaMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -454,7 +441,7 @@ public final class SchemaServiceGrpc {
      */
     public void validateMessage(com.google.pubsub.v1.ValidateMessageRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.ValidateMessageResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getValidateMessageMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -482,7 +469,7 @@ public final class SchemaServiceGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.Schema createSchema(com.google.pubsub.v1.CreateSchemaRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateSchemaMethod(), getCallOptions(), request);
     }
 
@@ -492,7 +479,7 @@ public final class SchemaServiceGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.Schema getSchema(com.google.pubsub.v1.GetSchemaRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetSchemaMethod(), getCallOptions(), request);
     }
 
@@ -502,7 +489,7 @@ public final class SchemaServiceGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.ListSchemasResponse listSchemas(com.google.pubsub.v1.ListSchemasRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListSchemasMethod(), getCallOptions(), request);
     }
 
@@ -512,7 +499,7 @@ public final class SchemaServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteSchema(com.google.pubsub.v1.DeleteSchemaRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteSchemaMethod(), getCallOptions(), request);
     }
 
@@ -522,7 +509,7 @@ public final class SchemaServiceGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.ValidateSchemaResponse validateSchema(com.google.pubsub.v1.ValidateSchemaRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getValidateSchemaMethod(), getCallOptions(), request);
     }
 
@@ -532,7 +519,7 @@ public final class SchemaServiceGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.ValidateMessageResponse validateMessage(com.google.pubsub.v1.ValidateMessageRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getValidateMessageMethod(), getCallOptions(), request);
     }
   }
@@ -561,7 +548,7 @@ public final class SchemaServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.Schema> createSchema(
         com.google.pubsub.v1.CreateSchemaRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateSchemaMethod(), getCallOptions()), request);
     }
 
@@ -572,7 +559,7 @@ public final class SchemaServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.Schema> getSchema(
         com.google.pubsub.v1.GetSchemaRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetSchemaMethod(), getCallOptions()), request);
     }
 
@@ -583,7 +570,7 @@ public final class SchemaServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.ListSchemasResponse> listSchemas(
         com.google.pubsub.v1.ListSchemasRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListSchemasMethod(), getCallOptions()), request);
     }
 
@@ -594,7 +581,7 @@ public final class SchemaServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteSchema(
         com.google.pubsub.v1.DeleteSchemaRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteSchemaMethod(), getCallOptions()), request);
     }
 
@@ -605,7 +592,7 @@ public final class SchemaServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.ValidateSchemaResponse> validateSchema(
         com.google.pubsub.v1.ValidateSchemaRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getValidateSchemaMethod(), getCallOptions()), request);
     }
 
@@ -616,7 +603,7 @@ public final class SchemaServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.ValidateMessageResponse> validateMessage(
         com.google.pubsub.v1.ValidateMessageRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getValidateMessageMethod(), getCallOptions()), request);
     }
   }

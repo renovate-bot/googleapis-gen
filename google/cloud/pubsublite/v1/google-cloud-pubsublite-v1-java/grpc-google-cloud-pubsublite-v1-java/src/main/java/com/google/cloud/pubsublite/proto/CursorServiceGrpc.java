@@ -1,19 +1,6 @@
 package com.google.cloud.pubsublite.proto;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -185,7 +172,7 @@ public final class CursorServiceGrpc {
      */
     public io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.StreamingCommitCursorRequest> streamingCommitCursor(
         io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.StreamingCommitCursorResponse> responseObserver) {
-      return asyncUnimplementedStreamingCall(getStreamingCommitCursorMethod(), responseObserver);
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getStreamingCommitCursorMethod(), responseObserver);
     }
 
     /**
@@ -195,7 +182,7 @@ public final class CursorServiceGrpc {
      */
     public void commitCursor(com.google.cloud.pubsublite.proto.CommitCursorRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.CommitCursorResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getCommitCursorMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCommitCursorMethod(), responseObserver);
     }
 
     /**
@@ -205,28 +192,28 @@ public final class CursorServiceGrpc {
      */
     public void listPartitionCursors(com.google.cloud.pubsublite.proto.ListPartitionCursorsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.ListPartitionCursorsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListPartitionCursorsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListPartitionCursorsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getStreamingCommitCursorMethod(),
-            asyncBidiStreamingCall(
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
               new MethodHandlers<
                 com.google.cloud.pubsublite.proto.StreamingCommitCursorRequest,
                 com.google.cloud.pubsublite.proto.StreamingCommitCursorResponse>(
                   this, METHODID_STREAMING_COMMIT_CURSOR)))
           .addMethod(
             getCommitCursorMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.pubsublite.proto.CommitCursorRequest,
                 com.google.cloud.pubsublite.proto.CommitCursorResponse>(
                   this, METHODID_COMMIT_CURSOR)))
           .addMethod(
             getListPartitionCursorsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.pubsublite.proto.ListPartitionCursorsRequest,
                 com.google.cloud.pubsublite.proto.ListPartitionCursorsResponse>(
@@ -261,7 +248,7 @@ public final class CursorServiceGrpc {
      */
     public io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.StreamingCommitCursorRequest> streamingCommitCursor(
         io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.StreamingCommitCursorResponse> responseObserver) {
-      return asyncBidiStreamingCall(
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
           getChannel().newCall(getStreamingCommitCursorMethod(), getCallOptions()), responseObserver);
     }
 
@@ -272,7 +259,7 @@ public final class CursorServiceGrpc {
      */
     public void commitCursor(com.google.cloud.pubsublite.proto.CommitCursorRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.CommitCursorResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCommitCursorMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -283,7 +270,7 @@ public final class CursorServiceGrpc {
      */
     public void listPartitionCursors(com.google.cloud.pubsublite.proto.ListPartitionCursorsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.ListPartitionCursorsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListPartitionCursorsMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -313,7 +300,7 @@ public final class CursorServiceGrpc {
      * </pre>
      */
     public com.google.cloud.pubsublite.proto.CommitCursorResponse commitCursor(com.google.cloud.pubsublite.proto.CommitCursorRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCommitCursorMethod(), getCallOptions(), request);
     }
 
@@ -323,7 +310,7 @@ public final class CursorServiceGrpc {
      * </pre>
      */
     public com.google.cloud.pubsublite.proto.ListPartitionCursorsResponse listPartitionCursors(com.google.cloud.pubsublite.proto.ListPartitionCursorsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListPartitionCursorsMethod(), getCallOptions(), request);
     }
   }
@@ -354,7 +341,7 @@ public final class CursorServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.pubsublite.proto.CommitCursorResponse> commitCursor(
         com.google.cloud.pubsublite.proto.CommitCursorRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCommitCursorMethod(), getCallOptions()), request);
     }
 
@@ -365,7 +352,7 @@ public final class CursorServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.pubsublite.proto.ListPartitionCursorsResponse> listPartitionCursors(
         com.google.cloud.pubsublite.proto.ListPartitionCursorsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListPartitionCursorsMethod(), getCallOptions()), request);
     }
   }

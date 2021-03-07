@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v4.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -119,14 +106,14 @@ public final class AdGroupCriterionSimulationServiceGrpc {
      */
     public void getAdGroupCriterionSimulation(com.google.ads.googleads.v4.services.GetAdGroupCriterionSimulationRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.resources.AdGroupCriterionSimulation> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetAdGroupCriterionSimulationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAdGroupCriterionSimulationMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetAdGroupCriterionSimulationMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v4.services.GetAdGroupCriterionSimulationRequest,
                 com.google.ads.googleads.v4.resources.AdGroupCriterionSimulation>(
@@ -159,7 +146,7 @@ public final class AdGroupCriterionSimulationServiceGrpc {
      */
     public void getAdGroupCriterionSimulation(com.google.ads.googleads.v4.services.GetAdGroupCriterionSimulationRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.resources.AdGroupCriterionSimulation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetAdGroupCriterionSimulationMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -187,7 +174,7 @@ public final class AdGroupCriterionSimulationServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v4.resources.AdGroupCriterionSimulation getAdGroupCriterionSimulation(com.google.ads.googleads.v4.services.GetAdGroupCriterionSimulationRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetAdGroupCriterionSimulationMethod(), getCallOptions(), request);
     }
   }
@@ -216,7 +203,7 @@ public final class AdGroupCriterionSimulationServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v4.resources.AdGroupCriterionSimulation> getAdGroupCriterionSimulation(
         com.google.ads.googleads.v4.services.GetAdGroupCriterionSimulationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetAdGroupCriterionSimulationMethod(), getCallOptions()), request);
     }
   }

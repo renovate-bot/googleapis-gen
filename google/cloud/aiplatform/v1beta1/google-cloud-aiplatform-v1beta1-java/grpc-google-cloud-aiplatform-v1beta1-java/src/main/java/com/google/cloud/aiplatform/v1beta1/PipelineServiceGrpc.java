@@ -1,19 +1,6 @@
 package com.google.cloud.aiplatform.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -244,7 +231,7 @@ public final class PipelineServiceGrpc {
      */
     public void createTrainingPipeline(com.google.cloud.aiplatform.v1beta1.CreateTrainingPipelineRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.TrainingPipeline> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateTrainingPipelineMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateTrainingPipelineMethod(), responseObserver);
     }
 
     /**
@@ -254,7 +241,7 @@ public final class PipelineServiceGrpc {
      */
     public void getTrainingPipeline(com.google.cloud.aiplatform.v1beta1.GetTrainingPipelineRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.TrainingPipeline> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetTrainingPipelineMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetTrainingPipelineMethod(), responseObserver);
     }
 
     /**
@@ -264,7 +251,7 @@ public final class PipelineServiceGrpc {
      */
     public void listTrainingPipelines(com.google.cloud.aiplatform.v1beta1.ListTrainingPipelinesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListTrainingPipelinesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListTrainingPipelinesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListTrainingPipelinesMethod(), responseObserver);
     }
 
     /**
@@ -274,7 +261,7 @@ public final class PipelineServiceGrpc {
      */
     public void deleteTrainingPipeline(com.google.cloud.aiplatform.v1beta1.DeleteTrainingPipelineRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteTrainingPipelineMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteTrainingPipelineMethod(), responseObserver);
     }
 
     /**
@@ -293,42 +280,42 @@ public final class PipelineServiceGrpc {
      */
     public void cancelTrainingPipeline(com.google.cloud.aiplatform.v1beta1.CancelTrainingPipelineRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getCancelTrainingPipelineMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCancelTrainingPipelineMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getCreateTrainingPipelineMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.aiplatform.v1beta1.CreateTrainingPipelineRequest,
                 com.google.cloud.aiplatform.v1beta1.TrainingPipeline>(
                   this, METHODID_CREATE_TRAINING_PIPELINE)))
           .addMethod(
             getGetTrainingPipelineMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.aiplatform.v1beta1.GetTrainingPipelineRequest,
                 com.google.cloud.aiplatform.v1beta1.TrainingPipeline>(
                   this, METHODID_GET_TRAINING_PIPELINE)))
           .addMethod(
             getListTrainingPipelinesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.aiplatform.v1beta1.ListTrainingPipelinesRequest,
                 com.google.cloud.aiplatform.v1beta1.ListTrainingPipelinesResponse>(
                   this, METHODID_LIST_TRAINING_PIPELINES)))
           .addMethod(
             getDeleteTrainingPipelineMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.aiplatform.v1beta1.DeleteTrainingPipelineRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_DELETE_TRAINING_PIPELINE)))
           .addMethod(
             getCancelTrainingPipelineMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.aiplatform.v1beta1.CancelTrainingPipelineRequest,
                 com.google.protobuf.Empty>(
@@ -362,7 +349,7 @@ public final class PipelineServiceGrpc {
      */
     public void createTrainingPipeline(com.google.cloud.aiplatform.v1beta1.CreateTrainingPipelineRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.TrainingPipeline> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateTrainingPipelineMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -373,7 +360,7 @@ public final class PipelineServiceGrpc {
      */
     public void getTrainingPipeline(com.google.cloud.aiplatform.v1beta1.GetTrainingPipelineRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.TrainingPipeline> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetTrainingPipelineMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -384,7 +371,7 @@ public final class PipelineServiceGrpc {
      */
     public void listTrainingPipelines(com.google.cloud.aiplatform.v1beta1.ListTrainingPipelinesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListTrainingPipelinesResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListTrainingPipelinesMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -395,7 +382,7 @@ public final class PipelineServiceGrpc {
      */
     public void deleteTrainingPipeline(com.google.cloud.aiplatform.v1beta1.DeleteTrainingPipelineRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteTrainingPipelineMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -415,7 +402,7 @@ public final class PipelineServiceGrpc {
      */
     public void cancelTrainingPipeline(com.google.cloud.aiplatform.v1beta1.CancelTrainingPipelineRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCancelTrainingPipelineMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -444,7 +431,7 @@ public final class PipelineServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.TrainingPipeline createTrainingPipeline(com.google.cloud.aiplatform.v1beta1.CreateTrainingPipelineRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateTrainingPipelineMethod(), getCallOptions(), request);
     }
 
@@ -454,7 +441,7 @@ public final class PipelineServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.TrainingPipeline getTrainingPipeline(com.google.cloud.aiplatform.v1beta1.GetTrainingPipelineRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetTrainingPipelineMethod(), getCallOptions(), request);
     }
 
@@ -464,7 +451,7 @@ public final class PipelineServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ListTrainingPipelinesResponse listTrainingPipelines(com.google.cloud.aiplatform.v1beta1.ListTrainingPipelinesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListTrainingPipelinesMethod(), getCallOptions(), request);
     }
 
@@ -474,7 +461,7 @@ public final class PipelineServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteTrainingPipeline(com.google.cloud.aiplatform.v1beta1.DeleteTrainingPipelineRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteTrainingPipelineMethod(), getCallOptions(), request);
     }
 
@@ -493,7 +480,7 @@ public final class PipelineServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty cancelTrainingPipeline(com.google.cloud.aiplatform.v1beta1.CancelTrainingPipelineRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCancelTrainingPipelineMethod(), getCallOptions(), request);
     }
   }
@@ -523,7 +510,7 @@ public final class PipelineServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.aiplatform.v1beta1.TrainingPipeline> createTrainingPipeline(
         com.google.cloud.aiplatform.v1beta1.CreateTrainingPipelineRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateTrainingPipelineMethod(), getCallOptions()), request);
     }
 
@@ -534,7 +521,7 @@ public final class PipelineServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.aiplatform.v1beta1.TrainingPipeline> getTrainingPipeline(
         com.google.cloud.aiplatform.v1beta1.GetTrainingPipelineRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetTrainingPipelineMethod(), getCallOptions()), request);
     }
 
@@ -545,7 +532,7 @@ public final class PipelineServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.aiplatform.v1beta1.ListTrainingPipelinesResponse> listTrainingPipelines(
         com.google.cloud.aiplatform.v1beta1.ListTrainingPipelinesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListTrainingPipelinesMethod(), getCallOptions()), request);
     }
 
@@ -556,7 +543,7 @@ public final class PipelineServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> deleteTrainingPipeline(
         com.google.cloud.aiplatform.v1beta1.DeleteTrainingPipelineRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteTrainingPipelineMethod(), getCallOptions()), request);
     }
 
@@ -576,7 +563,7 @@ public final class PipelineServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> cancelTrainingPipeline(
         com.google.cloud.aiplatform.v1beta1.CancelTrainingPipelineRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCancelTrainingPipelineMethod(), getCallOptions()), request);
     }
   }

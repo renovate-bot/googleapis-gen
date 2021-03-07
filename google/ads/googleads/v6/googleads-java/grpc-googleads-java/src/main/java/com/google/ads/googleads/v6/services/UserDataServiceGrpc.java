@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v6.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -121,14 +108,14 @@ public final class UserDataServiceGrpc {
      */
     public void uploadUserData(com.google.ads.googleads.v6.services.UploadUserDataRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.UploadUserDataResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getUploadUserDataMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUploadUserDataMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getUploadUserDataMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.UploadUserDataRequest,
                 com.google.ads.googleads.v6.services.UploadUserDataResponse>(
@@ -162,7 +149,7 @@ public final class UserDataServiceGrpc {
      */
     public void uploadUserData(com.google.ads.googleads.v6.services.UploadUserDataRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.UploadUserDataResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUploadUserDataMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -191,7 +178,7 @@ public final class UserDataServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.services.UploadUserDataResponse uploadUserData(com.google.ads.googleads.v6.services.UploadUserDataRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUploadUserDataMethod(), getCallOptions(), request);
     }
   }
@@ -221,7 +208,7 @@ public final class UserDataServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.services.UploadUserDataResponse> uploadUserData(
         com.google.ads.googleads.v6.services.UploadUserDataRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUploadUserDataMethod(), getCallOptions()), request);
     }
   }

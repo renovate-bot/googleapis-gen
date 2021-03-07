@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v5.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -150,7 +137,7 @@ public final class AdGroupExtensionSettingServiceGrpc {
      */
     public void getAdGroupExtensionSetting(com.google.ads.googleads.v5.services.GetAdGroupExtensionSettingRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.resources.AdGroupExtensionSetting> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetAdGroupExtensionSettingMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAdGroupExtensionSettingMethod(), responseObserver);
     }
 
     /**
@@ -161,21 +148,21 @@ public final class AdGroupExtensionSettingServiceGrpc {
      */
     public void mutateAdGroupExtensionSettings(com.google.ads.googleads.v5.services.MutateAdGroupExtensionSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.services.MutateAdGroupExtensionSettingsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getMutateAdGroupExtensionSettingsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMutateAdGroupExtensionSettingsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetAdGroupExtensionSettingMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v5.services.GetAdGroupExtensionSettingRequest,
                 com.google.ads.googleads.v5.resources.AdGroupExtensionSetting>(
                   this, METHODID_GET_AD_GROUP_EXTENSION_SETTING)))
           .addMethod(
             getMutateAdGroupExtensionSettingsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v5.services.MutateAdGroupExtensionSettingsRequest,
                 com.google.ads.googleads.v5.services.MutateAdGroupExtensionSettingsResponse>(
@@ -208,7 +195,7 @@ public final class AdGroupExtensionSettingServiceGrpc {
      */
     public void getAdGroupExtensionSetting(com.google.ads.googleads.v5.services.GetAdGroupExtensionSettingRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.resources.AdGroupExtensionSetting> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetAdGroupExtensionSettingMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -220,7 +207,7 @@ public final class AdGroupExtensionSettingServiceGrpc {
      */
     public void mutateAdGroupExtensionSettings(com.google.ads.googleads.v5.services.MutateAdGroupExtensionSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.services.MutateAdGroupExtensionSettingsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMutateAdGroupExtensionSettingsMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -248,7 +235,7 @@ public final class AdGroupExtensionSettingServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v5.resources.AdGroupExtensionSetting getAdGroupExtensionSetting(com.google.ads.googleads.v5.services.GetAdGroupExtensionSettingRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetAdGroupExtensionSettingMethod(), getCallOptions(), request);
     }
 
@@ -259,7 +246,7 @@ public final class AdGroupExtensionSettingServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v5.services.MutateAdGroupExtensionSettingsResponse mutateAdGroupExtensionSettings(com.google.ads.googleads.v5.services.MutateAdGroupExtensionSettingsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMutateAdGroupExtensionSettingsMethod(), getCallOptions(), request);
     }
   }
@@ -288,7 +275,7 @@ public final class AdGroupExtensionSettingServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v5.resources.AdGroupExtensionSetting> getAdGroupExtensionSetting(
         com.google.ads.googleads.v5.services.GetAdGroupExtensionSettingRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetAdGroupExtensionSettingMethod(), getCallOptions()), request);
     }
 
@@ -300,7 +287,7 @@ public final class AdGroupExtensionSettingServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v5.services.MutateAdGroupExtensionSettingsResponse> mutateAdGroupExtensionSettings(
         com.google.ads.googleads.v5.services.MutateAdGroupExtensionSettingsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMutateAdGroupExtensionSettingsMethod(), getCallOptions()), request);
     }
   }

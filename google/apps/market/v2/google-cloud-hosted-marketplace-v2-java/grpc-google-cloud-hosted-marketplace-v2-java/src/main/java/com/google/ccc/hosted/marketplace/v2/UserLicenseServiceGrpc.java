@@ -1,19 +1,6 @@
 package com.google.ccc.hosted.marketplace.v2;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  */
@@ -113,14 +100,14 @@ public final class UserLicenseServiceGrpc {
      */
     public void get(com.google.ccc.hosted.marketplace.v2.UserLicenseGetRequest request,
         io.grpc.stub.StreamObserver<com.google.ccc.hosted.marketplace.v2.UserLicense> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ccc.hosted.marketplace.v2.UserLicenseGetRequest,
                 com.google.ccc.hosted.marketplace.v2.UserLicense>(
@@ -150,7 +137,7 @@ public final class UserLicenseServiceGrpc {
      */
     public void get(com.google.ccc.hosted.marketplace.v2.UserLicenseGetRequest request,
         io.grpc.stub.StreamObserver<com.google.ccc.hosted.marketplace.v2.UserLicense> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -175,7 +162,7 @@ public final class UserLicenseServiceGrpc {
      * </pre>
      */
     public com.google.ccc.hosted.marketplace.v2.UserLicense get(com.google.ccc.hosted.marketplace.v2.UserLicenseGetRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetMethod(), getCallOptions(), request);
     }
   }
@@ -201,7 +188,7 @@ public final class UserLicenseServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ccc.hosted.marketplace.v2.UserLicense> get(
         com.google.ccc.hosted.marketplace.v2.UserLicenseGetRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetMethod(), getCallOptions()), request);
     }
   }

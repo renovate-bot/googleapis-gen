@@ -1,19 +1,6 @@
 package com.google.firestore.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -517,7 +504,7 @@ public final class FirestoreGrpc {
      */
     public void getDocument(com.google.firestore.v1beta1.GetDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.Document> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetDocumentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetDocumentMethod(), responseObserver);
     }
 
     /**
@@ -527,7 +514,7 @@ public final class FirestoreGrpc {
      */
     public void listDocuments(com.google.firestore.v1beta1.ListDocumentsRequest request,
         io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.ListDocumentsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListDocumentsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListDocumentsMethod(), responseObserver);
     }
 
     /**
@@ -537,7 +524,7 @@ public final class FirestoreGrpc {
      */
     public void createDocument(com.google.firestore.v1beta1.CreateDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.Document> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateDocumentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateDocumentMethod(), responseObserver);
     }
 
     /**
@@ -547,7 +534,7 @@ public final class FirestoreGrpc {
      */
     public void updateDocument(com.google.firestore.v1beta1.UpdateDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.Document> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateDocumentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateDocumentMethod(), responseObserver);
     }
 
     /**
@@ -557,7 +544,7 @@ public final class FirestoreGrpc {
      */
     public void deleteDocument(com.google.firestore.v1beta1.DeleteDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteDocumentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteDocumentMethod(), responseObserver);
     }
 
     /**
@@ -569,7 +556,7 @@ public final class FirestoreGrpc {
      */
     public void batchGetDocuments(com.google.firestore.v1beta1.BatchGetDocumentsRequest request,
         io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.BatchGetDocumentsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchGetDocumentsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBatchGetDocumentsMethod(), responseObserver);
     }
 
     /**
@@ -579,7 +566,7 @@ public final class FirestoreGrpc {
      */
     public void beginTransaction(com.google.firestore.v1beta1.BeginTransactionRequest request,
         io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.BeginTransactionResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getBeginTransactionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBeginTransactionMethod(), responseObserver);
     }
 
     /**
@@ -589,7 +576,7 @@ public final class FirestoreGrpc {
      */
     public void commit(com.google.firestore.v1beta1.CommitRequest request,
         io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.CommitResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getCommitMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCommitMethod(), responseObserver);
     }
 
     /**
@@ -599,7 +586,7 @@ public final class FirestoreGrpc {
      */
     public void rollback(com.google.firestore.v1beta1.RollbackRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getRollbackMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRollbackMethod(), responseObserver);
     }
 
     /**
@@ -609,7 +596,7 @@ public final class FirestoreGrpc {
      */
     public void runQuery(com.google.firestore.v1beta1.RunQueryRequest request,
         io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.RunQueryResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getRunQueryMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRunQueryMethod(), responseObserver);
     }
 
     /**
@@ -619,7 +606,7 @@ public final class FirestoreGrpc {
      */
     public io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.WriteRequest> write(
         io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.WriteResponse> responseObserver) {
-      return asyncUnimplementedStreamingCall(getWriteMethod(), responseObserver);
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getWriteMethod(), responseObserver);
     }
 
     /**
@@ -629,7 +616,7 @@ public final class FirestoreGrpc {
      */
     public io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.ListenRequest> listen(
         io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.ListenResponse> responseObserver) {
-      return asyncUnimplementedStreamingCall(getListenMethod(), responseObserver);
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getListenMethod(), responseObserver);
     }
 
     /**
@@ -639,98 +626,98 @@ public final class FirestoreGrpc {
      */
     public void listCollectionIds(com.google.firestore.v1beta1.ListCollectionIdsRequest request,
         io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.ListCollectionIdsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListCollectionIdsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListCollectionIdsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetDocumentMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.firestore.v1beta1.GetDocumentRequest,
                 com.google.firestore.v1beta1.Document>(
                   this, METHODID_GET_DOCUMENT)))
           .addMethod(
             getListDocumentsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.firestore.v1beta1.ListDocumentsRequest,
                 com.google.firestore.v1beta1.ListDocumentsResponse>(
                   this, METHODID_LIST_DOCUMENTS)))
           .addMethod(
             getCreateDocumentMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.firestore.v1beta1.CreateDocumentRequest,
                 com.google.firestore.v1beta1.Document>(
                   this, METHODID_CREATE_DOCUMENT)))
           .addMethod(
             getUpdateDocumentMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.firestore.v1beta1.UpdateDocumentRequest,
                 com.google.firestore.v1beta1.Document>(
                   this, METHODID_UPDATE_DOCUMENT)))
           .addMethod(
             getDeleteDocumentMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.firestore.v1beta1.DeleteDocumentRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_DOCUMENT)))
           .addMethod(
             getBatchGetDocumentsMethod(),
-            asyncServerStreamingCall(
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
               new MethodHandlers<
                 com.google.firestore.v1beta1.BatchGetDocumentsRequest,
                 com.google.firestore.v1beta1.BatchGetDocumentsResponse>(
                   this, METHODID_BATCH_GET_DOCUMENTS)))
           .addMethod(
             getBeginTransactionMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.firestore.v1beta1.BeginTransactionRequest,
                 com.google.firestore.v1beta1.BeginTransactionResponse>(
                   this, METHODID_BEGIN_TRANSACTION)))
           .addMethod(
             getCommitMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.firestore.v1beta1.CommitRequest,
                 com.google.firestore.v1beta1.CommitResponse>(
                   this, METHODID_COMMIT)))
           .addMethod(
             getRollbackMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.firestore.v1beta1.RollbackRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_ROLLBACK)))
           .addMethod(
             getRunQueryMethod(),
-            asyncServerStreamingCall(
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
               new MethodHandlers<
                 com.google.firestore.v1beta1.RunQueryRequest,
                 com.google.firestore.v1beta1.RunQueryResponse>(
                   this, METHODID_RUN_QUERY)))
           .addMethod(
             getWriteMethod(),
-            asyncBidiStreamingCall(
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
               new MethodHandlers<
                 com.google.firestore.v1beta1.WriteRequest,
                 com.google.firestore.v1beta1.WriteResponse>(
                   this, METHODID_WRITE)))
           .addMethod(
             getListenMethod(),
-            asyncBidiStreamingCall(
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
               new MethodHandlers<
                 com.google.firestore.v1beta1.ListenRequest,
                 com.google.firestore.v1beta1.ListenResponse>(
                   this, METHODID_LISTEN)))
           .addMethod(
             getListCollectionIdsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.firestore.v1beta1.ListCollectionIdsRequest,
                 com.google.firestore.v1beta1.ListCollectionIdsResponse>(
@@ -776,7 +763,7 @@ public final class FirestoreGrpc {
      */
     public void getDocument(com.google.firestore.v1beta1.GetDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.Document> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetDocumentMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -787,7 +774,7 @@ public final class FirestoreGrpc {
      */
     public void listDocuments(com.google.firestore.v1beta1.ListDocumentsRequest request,
         io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.ListDocumentsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListDocumentsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -798,7 +785,7 @@ public final class FirestoreGrpc {
      */
     public void createDocument(com.google.firestore.v1beta1.CreateDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.Document> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateDocumentMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -809,7 +796,7 @@ public final class FirestoreGrpc {
      */
     public void updateDocument(com.google.firestore.v1beta1.UpdateDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.Document> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateDocumentMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -820,7 +807,7 @@ public final class FirestoreGrpc {
      */
     public void deleteDocument(com.google.firestore.v1beta1.DeleteDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteDocumentMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -833,7 +820,7 @@ public final class FirestoreGrpc {
      */
     public void batchGetDocuments(com.google.firestore.v1beta1.BatchGetDocumentsRequest request,
         io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.BatchGetDocumentsResponse> responseObserver) {
-      asyncServerStreamingCall(
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getBatchGetDocumentsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -844,7 +831,7 @@ public final class FirestoreGrpc {
      */
     public void beginTransaction(com.google.firestore.v1beta1.BeginTransactionRequest request,
         io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.BeginTransactionResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getBeginTransactionMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -855,7 +842,7 @@ public final class FirestoreGrpc {
      */
     public void commit(com.google.firestore.v1beta1.CommitRequest request,
         io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.CommitResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCommitMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -866,7 +853,7 @@ public final class FirestoreGrpc {
      */
     public void rollback(com.google.firestore.v1beta1.RollbackRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRollbackMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -877,7 +864,7 @@ public final class FirestoreGrpc {
      */
     public void runQuery(com.google.firestore.v1beta1.RunQueryRequest request,
         io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.RunQueryResponse> responseObserver) {
-      asyncServerStreamingCall(
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getRunQueryMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -888,7 +875,7 @@ public final class FirestoreGrpc {
      */
     public io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.WriteRequest> write(
         io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.WriteResponse> responseObserver) {
-      return asyncBidiStreamingCall(
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
           getChannel().newCall(getWriteMethod(), getCallOptions()), responseObserver);
     }
 
@@ -899,7 +886,7 @@ public final class FirestoreGrpc {
      */
     public io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.ListenRequest> listen(
         io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.ListenResponse> responseObserver) {
-      return asyncBidiStreamingCall(
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
           getChannel().newCall(getListenMethod(), getCallOptions()), responseObserver);
     }
 
@@ -910,7 +897,7 @@ public final class FirestoreGrpc {
      */
     public void listCollectionIds(com.google.firestore.v1beta1.ListCollectionIdsRequest request,
         io.grpc.stub.StreamObserver<com.google.firestore.v1beta1.ListCollectionIdsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListCollectionIdsMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -951,7 +938,7 @@ public final class FirestoreGrpc {
      * </pre>
      */
     public com.google.firestore.v1beta1.Document getDocument(com.google.firestore.v1beta1.GetDocumentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetDocumentMethod(), getCallOptions(), request);
     }
 
@@ -961,7 +948,7 @@ public final class FirestoreGrpc {
      * </pre>
      */
     public com.google.firestore.v1beta1.ListDocumentsResponse listDocuments(com.google.firestore.v1beta1.ListDocumentsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListDocumentsMethod(), getCallOptions(), request);
     }
 
@@ -971,7 +958,7 @@ public final class FirestoreGrpc {
      * </pre>
      */
     public com.google.firestore.v1beta1.Document createDocument(com.google.firestore.v1beta1.CreateDocumentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateDocumentMethod(), getCallOptions(), request);
     }
 
@@ -981,7 +968,7 @@ public final class FirestoreGrpc {
      * </pre>
      */
     public com.google.firestore.v1beta1.Document updateDocument(com.google.firestore.v1beta1.UpdateDocumentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateDocumentMethod(), getCallOptions(), request);
     }
 
@@ -991,7 +978,7 @@ public final class FirestoreGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteDocument(com.google.firestore.v1beta1.DeleteDocumentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteDocumentMethod(), getCallOptions(), request);
     }
 
@@ -1004,7 +991,7 @@ public final class FirestoreGrpc {
      */
     public java.util.Iterator<com.google.firestore.v1beta1.BatchGetDocumentsResponse> batchGetDocuments(
         com.google.firestore.v1beta1.BatchGetDocumentsRequest request) {
-      return blockingServerStreamingCall(
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getBatchGetDocumentsMethod(), getCallOptions(), request);
     }
 
@@ -1014,7 +1001,7 @@ public final class FirestoreGrpc {
      * </pre>
      */
     public com.google.firestore.v1beta1.BeginTransactionResponse beginTransaction(com.google.firestore.v1beta1.BeginTransactionRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBeginTransactionMethod(), getCallOptions(), request);
     }
 
@@ -1024,7 +1011,7 @@ public final class FirestoreGrpc {
      * </pre>
      */
     public com.google.firestore.v1beta1.CommitResponse commit(com.google.firestore.v1beta1.CommitRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCommitMethod(), getCallOptions(), request);
     }
 
@@ -1034,7 +1021,7 @@ public final class FirestoreGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty rollback(com.google.firestore.v1beta1.RollbackRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRollbackMethod(), getCallOptions(), request);
     }
 
@@ -1045,7 +1032,7 @@ public final class FirestoreGrpc {
      */
     public java.util.Iterator<com.google.firestore.v1beta1.RunQueryResponse> runQuery(
         com.google.firestore.v1beta1.RunQueryRequest request) {
-      return blockingServerStreamingCall(
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getRunQueryMethod(), getCallOptions(), request);
     }
 
@@ -1055,7 +1042,7 @@ public final class FirestoreGrpc {
      * </pre>
      */
     public com.google.firestore.v1beta1.ListCollectionIdsResponse listCollectionIds(com.google.firestore.v1beta1.ListCollectionIdsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListCollectionIdsMethod(), getCallOptions(), request);
     }
   }
@@ -1097,7 +1084,7 @@ public final class FirestoreGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.firestore.v1beta1.Document> getDocument(
         com.google.firestore.v1beta1.GetDocumentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetDocumentMethod(), getCallOptions()), request);
     }
 
@@ -1108,7 +1095,7 @@ public final class FirestoreGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.firestore.v1beta1.ListDocumentsResponse> listDocuments(
         com.google.firestore.v1beta1.ListDocumentsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListDocumentsMethod(), getCallOptions()), request);
     }
 
@@ -1119,7 +1106,7 @@ public final class FirestoreGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.firestore.v1beta1.Document> createDocument(
         com.google.firestore.v1beta1.CreateDocumentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateDocumentMethod(), getCallOptions()), request);
     }
 
@@ -1130,7 +1117,7 @@ public final class FirestoreGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.firestore.v1beta1.Document> updateDocument(
         com.google.firestore.v1beta1.UpdateDocumentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateDocumentMethod(), getCallOptions()), request);
     }
 
@@ -1141,7 +1128,7 @@ public final class FirestoreGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteDocument(
         com.google.firestore.v1beta1.DeleteDocumentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteDocumentMethod(), getCallOptions()), request);
     }
 
@@ -1152,7 +1139,7 @@ public final class FirestoreGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.firestore.v1beta1.BeginTransactionResponse> beginTransaction(
         com.google.firestore.v1beta1.BeginTransactionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBeginTransactionMethod(), getCallOptions()), request);
     }
 
@@ -1163,7 +1150,7 @@ public final class FirestoreGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.firestore.v1beta1.CommitResponse> commit(
         com.google.firestore.v1beta1.CommitRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCommitMethod(), getCallOptions()), request);
     }
 
@@ -1174,7 +1161,7 @@ public final class FirestoreGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> rollback(
         com.google.firestore.v1beta1.RollbackRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRollbackMethod(), getCallOptions()), request);
     }
 
@@ -1185,7 +1172,7 @@ public final class FirestoreGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.firestore.v1beta1.ListCollectionIdsResponse> listCollectionIds(
         com.google.firestore.v1beta1.ListCollectionIdsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListCollectionIdsMethod(), getCallOptions()), request);
     }
   }

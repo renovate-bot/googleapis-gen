@@ -1,19 +1,6 @@
 package com.google.datastore.admin.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -359,7 +346,7 @@ public final class DatastoreAdminGrpc {
      */
     public void exportEntities(com.google.datastore.admin.v1.ExportEntitiesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getExportEntitiesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getExportEntitiesMethod(), responseObserver);
     }
 
     /**
@@ -373,7 +360,7 @@ public final class DatastoreAdminGrpc {
      */
     public void importEntities(com.google.datastore.admin.v1.ImportEntitiesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getImportEntitiesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getImportEntitiesMethod(), responseObserver);
     }
 
     /**
@@ -394,7 +381,7 @@ public final class DatastoreAdminGrpc {
      */
     public void createIndex(com.google.datastore.admin.v1.CreateIndexRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateIndexMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateIndexMethod(), responseObserver);
     }
 
     /**
@@ -412,7 +399,7 @@ public final class DatastoreAdminGrpc {
      */
     public void deleteIndex(com.google.datastore.admin.v1.DeleteIndexRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteIndexMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteIndexMethod(), responseObserver);
     }
 
     /**
@@ -422,7 +409,7 @@ public final class DatastoreAdminGrpc {
      */
     public void getIndex(com.google.datastore.admin.v1.GetIndexRequest request,
         io.grpc.stub.StreamObserver<com.google.datastore.admin.v1.Index> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetIndexMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetIndexMethod(), responseObserver);
     }
 
     /**
@@ -434,49 +421,49 @@ public final class DatastoreAdminGrpc {
      */
     public void listIndexes(com.google.datastore.admin.v1.ListIndexesRequest request,
         io.grpc.stub.StreamObserver<com.google.datastore.admin.v1.ListIndexesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListIndexesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListIndexesMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getExportEntitiesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.datastore.admin.v1.ExportEntitiesRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_EXPORT_ENTITIES)))
           .addMethod(
             getImportEntitiesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.datastore.admin.v1.ImportEntitiesRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_IMPORT_ENTITIES)))
           .addMethod(
             getCreateIndexMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.datastore.admin.v1.CreateIndexRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_CREATE_INDEX)))
           .addMethod(
             getDeleteIndexMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.datastore.admin.v1.DeleteIndexRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_DELETE_INDEX)))
           .addMethod(
             getGetIndexMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.datastore.admin.v1.GetIndexRequest,
                 com.google.datastore.admin.v1.Index>(
                   this, METHODID_GET_INDEX)))
           .addMethod(
             getListIndexesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.datastore.admin.v1.ListIndexesRequest,
                 com.google.datastore.admin.v1.ListIndexesResponse>(
@@ -555,7 +542,7 @@ public final class DatastoreAdminGrpc {
      */
     public void exportEntities(com.google.datastore.admin.v1.ExportEntitiesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getExportEntitiesMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -570,7 +557,7 @@ public final class DatastoreAdminGrpc {
      */
     public void importEntities(com.google.datastore.admin.v1.ImportEntitiesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getImportEntitiesMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -592,7 +579,7 @@ public final class DatastoreAdminGrpc {
      */
     public void createIndex(com.google.datastore.admin.v1.CreateIndexRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateIndexMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -611,7 +598,7 @@ public final class DatastoreAdminGrpc {
      */
     public void deleteIndex(com.google.datastore.admin.v1.DeleteIndexRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteIndexMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -622,7 +609,7 @@ public final class DatastoreAdminGrpc {
      */
     public void getIndex(com.google.datastore.admin.v1.GetIndexRequest request,
         io.grpc.stub.StreamObserver<com.google.datastore.admin.v1.Index> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetIndexMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -635,7 +622,7 @@ public final class DatastoreAdminGrpc {
      */
     public void listIndexes(com.google.datastore.admin.v1.ListIndexesRequest request,
         io.grpc.stub.StreamObserver<com.google.datastore.admin.v1.ListIndexesResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListIndexesMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -709,7 +696,7 @@ public final class DatastoreAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportEntities(com.google.datastore.admin.v1.ExportEntitiesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getExportEntitiesMethod(), getCallOptions(), request);
     }
 
@@ -723,7 +710,7 @@ public final class DatastoreAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importEntities(com.google.datastore.admin.v1.ImportEntitiesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getImportEntitiesMethod(), getCallOptions(), request);
     }
 
@@ -744,7 +731,7 @@ public final class DatastoreAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createIndex(com.google.datastore.admin.v1.CreateIndexRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateIndexMethod(), getCallOptions(), request);
     }
 
@@ -762,7 +749,7 @@ public final class DatastoreAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteIndex(com.google.datastore.admin.v1.DeleteIndexRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteIndexMethod(), getCallOptions(), request);
     }
 
@@ -772,7 +759,7 @@ public final class DatastoreAdminGrpc {
      * </pre>
      */
     public com.google.datastore.admin.v1.Index getIndex(com.google.datastore.admin.v1.GetIndexRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetIndexMethod(), getCallOptions(), request);
     }
 
@@ -784,7 +771,7 @@ public final class DatastoreAdminGrpc {
      * </pre>
      */
     public com.google.datastore.admin.v1.ListIndexesResponse listIndexes(com.google.datastore.admin.v1.ListIndexesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListIndexesMethod(), getCallOptions(), request);
     }
   }
@@ -859,7 +846,7 @@ public final class DatastoreAdminGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> exportEntities(
         com.google.datastore.admin.v1.ExportEntitiesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getExportEntitiesMethod(), getCallOptions()), request);
     }
 
@@ -874,7 +861,7 @@ public final class DatastoreAdminGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> importEntities(
         com.google.datastore.admin.v1.ImportEntitiesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getImportEntitiesMethod(), getCallOptions()), request);
     }
 
@@ -896,7 +883,7 @@ public final class DatastoreAdminGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> createIndex(
         com.google.datastore.admin.v1.CreateIndexRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateIndexMethod(), getCallOptions()), request);
     }
 
@@ -915,7 +902,7 @@ public final class DatastoreAdminGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> deleteIndex(
         com.google.datastore.admin.v1.DeleteIndexRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteIndexMethod(), getCallOptions()), request);
     }
 
@@ -926,7 +913,7 @@ public final class DatastoreAdminGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.datastore.admin.v1.Index> getIndex(
         com.google.datastore.admin.v1.GetIndexRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetIndexMethod(), getCallOptions()), request);
     }
 
@@ -939,7 +926,7 @@ public final class DatastoreAdminGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.datastore.admin.v1.ListIndexesResponse> listIndexes(
         com.google.datastore.admin.v1.ListIndexesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListIndexesMethod(), getCallOptions()), request);
     }
   }

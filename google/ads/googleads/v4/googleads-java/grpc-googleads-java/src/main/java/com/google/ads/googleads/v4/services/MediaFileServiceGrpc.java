@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v4.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -150,7 +137,7 @@ public final class MediaFileServiceGrpc {
      */
     public void getMediaFile(com.google.ads.googleads.v4.services.GetMediaFileRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.resources.MediaFile> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetMediaFileMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetMediaFileMethod(), responseObserver);
     }
 
     /**
@@ -160,21 +147,21 @@ public final class MediaFileServiceGrpc {
      */
     public void mutateMediaFiles(com.google.ads.googleads.v4.services.MutateMediaFilesRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.services.MutateMediaFilesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getMutateMediaFilesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMutateMediaFilesMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetMediaFileMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v4.services.GetMediaFileRequest,
                 com.google.ads.googleads.v4.resources.MediaFile>(
                   this, METHODID_GET_MEDIA_FILE)))
           .addMethod(
             getMutateMediaFilesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v4.services.MutateMediaFilesRequest,
                 com.google.ads.googleads.v4.services.MutateMediaFilesResponse>(
@@ -207,7 +194,7 @@ public final class MediaFileServiceGrpc {
      */
     public void getMediaFile(com.google.ads.googleads.v4.services.GetMediaFileRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.resources.MediaFile> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetMediaFileMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -218,7 +205,7 @@ public final class MediaFileServiceGrpc {
      */
     public void mutateMediaFiles(com.google.ads.googleads.v4.services.MutateMediaFilesRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.services.MutateMediaFilesResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMutateMediaFilesMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -246,7 +233,7 @@ public final class MediaFileServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v4.resources.MediaFile getMediaFile(com.google.ads.googleads.v4.services.GetMediaFileRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetMediaFileMethod(), getCallOptions(), request);
     }
 
@@ -256,7 +243,7 @@ public final class MediaFileServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v4.services.MutateMediaFilesResponse mutateMediaFiles(com.google.ads.googleads.v4.services.MutateMediaFilesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMutateMediaFilesMethod(), getCallOptions(), request);
     }
   }
@@ -285,7 +272,7 @@ public final class MediaFileServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v4.resources.MediaFile> getMediaFile(
         com.google.ads.googleads.v4.services.GetMediaFileRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetMediaFileMethod(), getCallOptions()), request);
     }
 
@@ -296,7 +283,7 @@ public final class MediaFileServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v4.services.MutateMediaFilesResponse> mutateMediaFiles(
         com.google.ads.googleads.v4.services.MutateMediaFilesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMutateMediaFilesMethod(), getCallOptions()), request);
     }
   }

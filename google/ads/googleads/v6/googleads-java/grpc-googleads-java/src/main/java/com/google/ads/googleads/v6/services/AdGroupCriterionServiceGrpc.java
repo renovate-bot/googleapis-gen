@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v6.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -150,7 +137,7 @@ public final class AdGroupCriterionServiceGrpc {
      */
     public void getAdGroupCriterion(com.google.ads.googleads.v6.services.GetAdGroupCriterionRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.resources.AdGroupCriterion> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetAdGroupCriterionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAdGroupCriterionMethod(), responseObserver);
     }
 
     /**
@@ -160,21 +147,21 @@ public final class AdGroupCriterionServiceGrpc {
      */
     public void mutateAdGroupCriteria(com.google.ads.googleads.v6.services.MutateAdGroupCriteriaRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.MutateAdGroupCriteriaResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getMutateAdGroupCriteriaMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMutateAdGroupCriteriaMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetAdGroupCriterionMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.GetAdGroupCriterionRequest,
                 com.google.ads.googleads.v6.resources.AdGroupCriterion>(
                   this, METHODID_GET_AD_GROUP_CRITERION)))
           .addMethod(
             getMutateAdGroupCriteriaMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.MutateAdGroupCriteriaRequest,
                 com.google.ads.googleads.v6.services.MutateAdGroupCriteriaResponse>(
@@ -207,7 +194,7 @@ public final class AdGroupCriterionServiceGrpc {
      */
     public void getAdGroupCriterion(com.google.ads.googleads.v6.services.GetAdGroupCriterionRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.resources.AdGroupCriterion> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetAdGroupCriterionMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -218,7 +205,7 @@ public final class AdGroupCriterionServiceGrpc {
      */
     public void mutateAdGroupCriteria(com.google.ads.googleads.v6.services.MutateAdGroupCriteriaRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.MutateAdGroupCriteriaResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMutateAdGroupCriteriaMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -246,7 +233,7 @@ public final class AdGroupCriterionServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.resources.AdGroupCriterion getAdGroupCriterion(com.google.ads.googleads.v6.services.GetAdGroupCriterionRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetAdGroupCriterionMethod(), getCallOptions(), request);
     }
 
@@ -256,7 +243,7 @@ public final class AdGroupCriterionServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.services.MutateAdGroupCriteriaResponse mutateAdGroupCriteria(com.google.ads.googleads.v6.services.MutateAdGroupCriteriaRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMutateAdGroupCriteriaMethod(), getCallOptions(), request);
     }
   }
@@ -285,7 +272,7 @@ public final class AdGroupCriterionServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.resources.AdGroupCriterion> getAdGroupCriterion(
         com.google.ads.googleads.v6.services.GetAdGroupCriterionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetAdGroupCriterionMethod(), getCallOptions()), request);
     }
 
@@ -296,7 +283,7 @@ public final class AdGroupCriterionServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.services.MutateAdGroupCriteriaResponse> mutateAdGroupCriteria(
         com.google.ads.googleads.v6.services.MutateAdGroupCriteriaRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMutateAdGroupCriteriaMethod(), getCallOptions()), request);
     }
   }

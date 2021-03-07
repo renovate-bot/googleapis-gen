@@ -1,19 +1,6 @@
 package com.google.cloud.metastore.v1alpha;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -579,7 +566,7 @@ public final class DataprocMetastoreGrpc {
      */
     public void listServices(com.google.cloud.metastore.v1alpha.ListServicesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.metastore.v1alpha.ListServicesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListServicesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListServicesMethod(), responseObserver);
     }
 
     /**
@@ -589,7 +576,7 @@ public final class DataprocMetastoreGrpc {
      */
     public void getService(com.google.cloud.metastore.v1alpha.GetServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.metastore.v1alpha.Service> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetServiceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetServiceMethod(), responseObserver);
     }
 
     /**
@@ -599,7 +586,7 @@ public final class DataprocMetastoreGrpc {
      */
     public void createService(com.google.cloud.metastore.v1alpha.CreateServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateServiceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateServiceMethod(), responseObserver);
     }
 
     /**
@@ -609,7 +596,7 @@ public final class DataprocMetastoreGrpc {
      */
     public void updateService(com.google.cloud.metastore.v1alpha.UpdateServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateServiceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateServiceMethod(), responseObserver);
     }
 
     /**
@@ -619,7 +606,7 @@ public final class DataprocMetastoreGrpc {
      */
     public void deleteService(com.google.cloud.metastore.v1alpha.DeleteServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteServiceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteServiceMethod(), responseObserver);
     }
 
     /**
@@ -629,7 +616,7 @@ public final class DataprocMetastoreGrpc {
      */
     public void listMetadataImports(com.google.cloud.metastore.v1alpha.ListMetadataImportsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.metastore.v1alpha.ListMetadataImportsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListMetadataImportsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListMetadataImportsMethod(), responseObserver);
     }
 
     /**
@@ -639,7 +626,7 @@ public final class DataprocMetastoreGrpc {
      */
     public void getMetadataImport(com.google.cloud.metastore.v1alpha.GetMetadataImportRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.metastore.v1alpha.MetadataImport> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetMetadataImportMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetMetadataImportMethod(), responseObserver);
     }
 
     /**
@@ -649,7 +636,7 @@ public final class DataprocMetastoreGrpc {
      */
     public void createMetadataImport(com.google.cloud.metastore.v1alpha.CreateMetadataImportRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateMetadataImportMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateMetadataImportMethod(), responseObserver);
     }
 
     /**
@@ -660,7 +647,7 @@ public final class DataprocMetastoreGrpc {
      */
     public void updateMetadataImport(com.google.cloud.metastore.v1alpha.UpdateMetadataImportRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateMetadataImportMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateMetadataImportMethod(), responseObserver);
     }
 
     /**
@@ -670,7 +657,7 @@ public final class DataprocMetastoreGrpc {
      */
     public void exportMetadata(com.google.cloud.metastore.v1alpha.ExportMetadataRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getExportMetadataMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getExportMetadataMethod(), responseObserver);
     }
 
     /**
@@ -680,7 +667,7 @@ public final class DataprocMetastoreGrpc {
      */
     public void restoreService(com.google.cloud.metastore.v1alpha.RestoreServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getRestoreServiceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRestoreServiceMethod(), responseObserver);
     }
 
     /**
@@ -690,7 +677,7 @@ public final class DataprocMetastoreGrpc {
      */
     public void listBackups(com.google.cloud.metastore.v1alpha.ListBackupsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.metastore.v1alpha.ListBackupsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListBackupsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListBackupsMethod(), responseObserver);
     }
 
     /**
@@ -700,7 +687,7 @@ public final class DataprocMetastoreGrpc {
      */
     public void getBackup(com.google.cloud.metastore.v1alpha.GetBackupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.metastore.v1alpha.Backup> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetBackupMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetBackupMethod(), responseObserver);
     }
 
     /**
@@ -710,7 +697,7 @@ public final class DataprocMetastoreGrpc {
      */
     public void createBackup(com.google.cloud.metastore.v1alpha.CreateBackupRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateBackupMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateBackupMethod(), responseObserver);
     }
 
     /**
@@ -720,112 +707,112 @@ public final class DataprocMetastoreGrpc {
      */
     public void deleteBackup(com.google.cloud.metastore.v1alpha.DeleteBackupRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteBackupMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteBackupMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getListServicesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.metastore.v1alpha.ListServicesRequest,
                 com.google.cloud.metastore.v1alpha.ListServicesResponse>(
                   this, METHODID_LIST_SERVICES)))
           .addMethod(
             getGetServiceMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.metastore.v1alpha.GetServiceRequest,
                 com.google.cloud.metastore.v1alpha.Service>(
                   this, METHODID_GET_SERVICE)))
           .addMethod(
             getCreateServiceMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.metastore.v1alpha.CreateServiceRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_CREATE_SERVICE)))
           .addMethod(
             getUpdateServiceMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.metastore.v1alpha.UpdateServiceRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_UPDATE_SERVICE)))
           .addMethod(
             getDeleteServiceMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.metastore.v1alpha.DeleteServiceRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_DELETE_SERVICE)))
           .addMethod(
             getListMetadataImportsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.metastore.v1alpha.ListMetadataImportsRequest,
                 com.google.cloud.metastore.v1alpha.ListMetadataImportsResponse>(
                   this, METHODID_LIST_METADATA_IMPORTS)))
           .addMethod(
             getGetMetadataImportMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.metastore.v1alpha.GetMetadataImportRequest,
                 com.google.cloud.metastore.v1alpha.MetadataImport>(
                   this, METHODID_GET_METADATA_IMPORT)))
           .addMethod(
             getCreateMetadataImportMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.metastore.v1alpha.CreateMetadataImportRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_CREATE_METADATA_IMPORT)))
           .addMethod(
             getUpdateMetadataImportMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.metastore.v1alpha.UpdateMetadataImportRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_UPDATE_METADATA_IMPORT)))
           .addMethod(
             getExportMetadataMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.metastore.v1alpha.ExportMetadataRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_EXPORT_METADATA)))
           .addMethod(
             getRestoreServiceMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.metastore.v1alpha.RestoreServiceRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_RESTORE_SERVICE)))
           .addMethod(
             getListBackupsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.metastore.v1alpha.ListBackupsRequest,
                 com.google.cloud.metastore.v1alpha.ListBackupsResponse>(
                   this, METHODID_LIST_BACKUPS)))
           .addMethod(
             getGetBackupMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.metastore.v1alpha.GetBackupRequest,
                 com.google.cloud.metastore.v1alpha.Backup>(
                   this, METHODID_GET_BACKUP)))
           .addMethod(
             getCreateBackupMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.metastore.v1alpha.CreateBackupRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_CREATE_BACKUP)))
           .addMethod(
             getDeleteBackupMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.metastore.v1alpha.DeleteBackupRequest,
                 com.google.longrunning.Operation>(
@@ -871,7 +858,7 @@ public final class DataprocMetastoreGrpc {
      */
     public void listServices(com.google.cloud.metastore.v1alpha.ListServicesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.metastore.v1alpha.ListServicesResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListServicesMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -882,7 +869,7 @@ public final class DataprocMetastoreGrpc {
      */
     public void getService(com.google.cloud.metastore.v1alpha.GetServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.metastore.v1alpha.Service> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetServiceMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -893,7 +880,7 @@ public final class DataprocMetastoreGrpc {
      */
     public void createService(com.google.cloud.metastore.v1alpha.CreateServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateServiceMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -904,7 +891,7 @@ public final class DataprocMetastoreGrpc {
      */
     public void updateService(com.google.cloud.metastore.v1alpha.UpdateServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateServiceMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -915,7 +902,7 @@ public final class DataprocMetastoreGrpc {
      */
     public void deleteService(com.google.cloud.metastore.v1alpha.DeleteServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteServiceMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -926,7 +913,7 @@ public final class DataprocMetastoreGrpc {
      */
     public void listMetadataImports(com.google.cloud.metastore.v1alpha.ListMetadataImportsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.metastore.v1alpha.ListMetadataImportsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListMetadataImportsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -937,7 +924,7 @@ public final class DataprocMetastoreGrpc {
      */
     public void getMetadataImport(com.google.cloud.metastore.v1alpha.GetMetadataImportRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.metastore.v1alpha.MetadataImport> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetMetadataImportMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -948,7 +935,7 @@ public final class DataprocMetastoreGrpc {
      */
     public void createMetadataImport(com.google.cloud.metastore.v1alpha.CreateMetadataImportRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateMetadataImportMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -960,7 +947,7 @@ public final class DataprocMetastoreGrpc {
      */
     public void updateMetadataImport(com.google.cloud.metastore.v1alpha.UpdateMetadataImportRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateMetadataImportMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -971,7 +958,7 @@ public final class DataprocMetastoreGrpc {
      */
     public void exportMetadata(com.google.cloud.metastore.v1alpha.ExportMetadataRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getExportMetadataMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -982,7 +969,7 @@ public final class DataprocMetastoreGrpc {
      */
     public void restoreService(com.google.cloud.metastore.v1alpha.RestoreServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRestoreServiceMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -993,7 +980,7 @@ public final class DataprocMetastoreGrpc {
      */
     public void listBackups(com.google.cloud.metastore.v1alpha.ListBackupsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.metastore.v1alpha.ListBackupsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListBackupsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1004,7 +991,7 @@ public final class DataprocMetastoreGrpc {
      */
     public void getBackup(com.google.cloud.metastore.v1alpha.GetBackupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.metastore.v1alpha.Backup> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetBackupMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1015,7 +1002,7 @@ public final class DataprocMetastoreGrpc {
      */
     public void createBackup(com.google.cloud.metastore.v1alpha.CreateBackupRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateBackupMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1026,7 +1013,7 @@ public final class DataprocMetastoreGrpc {
      */
     public void deleteBackup(com.google.cloud.metastore.v1alpha.DeleteBackupRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteBackupMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -1067,7 +1054,7 @@ public final class DataprocMetastoreGrpc {
      * </pre>
      */
     public com.google.cloud.metastore.v1alpha.ListServicesResponse listServices(com.google.cloud.metastore.v1alpha.ListServicesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListServicesMethod(), getCallOptions(), request);
     }
 
@@ -1077,7 +1064,7 @@ public final class DataprocMetastoreGrpc {
      * </pre>
      */
     public com.google.cloud.metastore.v1alpha.Service getService(com.google.cloud.metastore.v1alpha.GetServiceRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetServiceMethod(), getCallOptions(), request);
     }
 
@@ -1087,7 +1074,7 @@ public final class DataprocMetastoreGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createService(com.google.cloud.metastore.v1alpha.CreateServiceRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateServiceMethod(), getCallOptions(), request);
     }
 
@@ -1097,7 +1084,7 @@ public final class DataprocMetastoreGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateService(com.google.cloud.metastore.v1alpha.UpdateServiceRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateServiceMethod(), getCallOptions(), request);
     }
 
@@ -1107,7 +1094,7 @@ public final class DataprocMetastoreGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteService(com.google.cloud.metastore.v1alpha.DeleteServiceRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteServiceMethod(), getCallOptions(), request);
     }
 
@@ -1117,7 +1104,7 @@ public final class DataprocMetastoreGrpc {
      * </pre>
      */
     public com.google.cloud.metastore.v1alpha.ListMetadataImportsResponse listMetadataImports(com.google.cloud.metastore.v1alpha.ListMetadataImportsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListMetadataImportsMethod(), getCallOptions(), request);
     }
 
@@ -1127,7 +1114,7 @@ public final class DataprocMetastoreGrpc {
      * </pre>
      */
     public com.google.cloud.metastore.v1alpha.MetadataImport getMetadataImport(com.google.cloud.metastore.v1alpha.GetMetadataImportRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetMetadataImportMethod(), getCallOptions(), request);
     }
 
@@ -1137,7 +1124,7 @@ public final class DataprocMetastoreGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createMetadataImport(com.google.cloud.metastore.v1alpha.CreateMetadataImportRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateMetadataImportMethod(), getCallOptions(), request);
     }
 
@@ -1148,7 +1135,7 @@ public final class DataprocMetastoreGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateMetadataImport(com.google.cloud.metastore.v1alpha.UpdateMetadataImportRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateMetadataImportMethod(), getCallOptions(), request);
     }
 
@@ -1158,7 +1145,7 @@ public final class DataprocMetastoreGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportMetadata(com.google.cloud.metastore.v1alpha.ExportMetadataRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getExportMetadataMethod(), getCallOptions(), request);
     }
 
@@ -1168,7 +1155,7 @@ public final class DataprocMetastoreGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation restoreService(com.google.cloud.metastore.v1alpha.RestoreServiceRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRestoreServiceMethod(), getCallOptions(), request);
     }
 
@@ -1178,7 +1165,7 @@ public final class DataprocMetastoreGrpc {
      * </pre>
      */
     public com.google.cloud.metastore.v1alpha.ListBackupsResponse listBackups(com.google.cloud.metastore.v1alpha.ListBackupsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListBackupsMethod(), getCallOptions(), request);
     }
 
@@ -1188,7 +1175,7 @@ public final class DataprocMetastoreGrpc {
      * </pre>
      */
     public com.google.cloud.metastore.v1alpha.Backup getBackup(com.google.cloud.metastore.v1alpha.GetBackupRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetBackupMethod(), getCallOptions(), request);
     }
 
@@ -1198,7 +1185,7 @@ public final class DataprocMetastoreGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createBackup(com.google.cloud.metastore.v1alpha.CreateBackupRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateBackupMethod(), getCallOptions(), request);
     }
 
@@ -1208,7 +1195,7 @@ public final class DataprocMetastoreGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteBackup(com.google.cloud.metastore.v1alpha.DeleteBackupRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteBackupMethod(), getCallOptions(), request);
     }
   }
@@ -1250,7 +1237,7 @@ public final class DataprocMetastoreGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.metastore.v1alpha.ListServicesResponse> listServices(
         com.google.cloud.metastore.v1alpha.ListServicesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListServicesMethod(), getCallOptions()), request);
     }
 
@@ -1261,7 +1248,7 @@ public final class DataprocMetastoreGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.metastore.v1alpha.Service> getService(
         com.google.cloud.metastore.v1alpha.GetServiceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetServiceMethod(), getCallOptions()), request);
     }
 
@@ -1272,7 +1259,7 @@ public final class DataprocMetastoreGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> createService(
         com.google.cloud.metastore.v1alpha.CreateServiceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateServiceMethod(), getCallOptions()), request);
     }
 
@@ -1283,7 +1270,7 @@ public final class DataprocMetastoreGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> updateService(
         com.google.cloud.metastore.v1alpha.UpdateServiceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateServiceMethod(), getCallOptions()), request);
     }
 
@@ -1294,7 +1281,7 @@ public final class DataprocMetastoreGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> deleteService(
         com.google.cloud.metastore.v1alpha.DeleteServiceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteServiceMethod(), getCallOptions()), request);
     }
 
@@ -1305,7 +1292,7 @@ public final class DataprocMetastoreGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.metastore.v1alpha.ListMetadataImportsResponse> listMetadataImports(
         com.google.cloud.metastore.v1alpha.ListMetadataImportsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListMetadataImportsMethod(), getCallOptions()), request);
     }
 
@@ -1316,7 +1303,7 @@ public final class DataprocMetastoreGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.metastore.v1alpha.MetadataImport> getMetadataImport(
         com.google.cloud.metastore.v1alpha.GetMetadataImportRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetMetadataImportMethod(), getCallOptions()), request);
     }
 
@@ -1327,7 +1314,7 @@ public final class DataprocMetastoreGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> createMetadataImport(
         com.google.cloud.metastore.v1alpha.CreateMetadataImportRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateMetadataImportMethod(), getCallOptions()), request);
     }
 
@@ -1339,7 +1326,7 @@ public final class DataprocMetastoreGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> updateMetadataImport(
         com.google.cloud.metastore.v1alpha.UpdateMetadataImportRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateMetadataImportMethod(), getCallOptions()), request);
     }
 
@@ -1350,7 +1337,7 @@ public final class DataprocMetastoreGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> exportMetadata(
         com.google.cloud.metastore.v1alpha.ExportMetadataRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getExportMetadataMethod(), getCallOptions()), request);
     }
 
@@ -1361,7 +1348,7 @@ public final class DataprocMetastoreGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> restoreService(
         com.google.cloud.metastore.v1alpha.RestoreServiceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRestoreServiceMethod(), getCallOptions()), request);
     }
 
@@ -1372,7 +1359,7 @@ public final class DataprocMetastoreGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.metastore.v1alpha.ListBackupsResponse> listBackups(
         com.google.cloud.metastore.v1alpha.ListBackupsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListBackupsMethod(), getCallOptions()), request);
     }
 
@@ -1383,7 +1370,7 @@ public final class DataprocMetastoreGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.metastore.v1alpha.Backup> getBackup(
         com.google.cloud.metastore.v1alpha.GetBackupRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetBackupMethod(), getCallOptions()), request);
     }
 
@@ -1394,7 +1381,7 @@ public final class DataprocMetastoreGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> createBackup(
         com.google.cloud.metastore.v1alpha.CreateBackupRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateBackupMethod(), getCallOptions()), request);
     }
 
@@ -1405,7 +1392,7 @@ public final class DataprocMetastoreGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> deleteBackup(
         com.google.cloud.metastore.v1alpha.DeleteBackupRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteBackupMethod(), getCallOptions()), request);
     }
   }

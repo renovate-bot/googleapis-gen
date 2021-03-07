@@ -1,19 +1,6 @@
 package com.google.maps.roads.v1op;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  */
@@ -146,7 +133,7 @@ public final class RoadsServiceGrpc {
      */
     public void snapToRoads(com.google.maps.roads.v1op.SnapToRoadsRequest request,
         io.grpc.stub.StreamObserver<com.google.maps.roads.v1op.SnapToRoadsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getSnapToRoadsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSnapToRoadsMethod(), responseObserver);
     }
 
     /**
@@ -157,21 +144,21 @@ public final class RoadsServiceGrpc {
      */
     public void listNearestRoads(com.google.maps.roads.v1op.ListNearestRoadsRequest request,
         io.grpc.stub.StreamObserver<com.google.maps.roads.v1op.ListNearestRoadsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListNearestRoadsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListNearestRoadsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getSnapToRoadsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.maps.roads.v1op.SnapToRoadsRequest,
                 com.google.maps.roads.v1op.SnapToRoadsResponse>(
                   this, METHODID_SNAP_TO_ROADS)))
           .addMethod(
             getListNearestRoadsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.maps.roads.v1op.ListNearestRoadsRequest,
                 com.google.maps.roads.v1op.ListNearestRoadsResponse>(
@@ -203,7 +190,7 @@ public final class RoadsServiceGrpc {
      */
     public void snapToRoads(com.google.maps.roads.v1op.SnapToRoadsRequest request,
         io.grpc.stub.StreamObserver<com.google.maps.roads.v1op.SnapToRoadsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSnapToRoadsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -215,7 +202,7 @@ public final class RoadsServiceGrpc {
      */
     public void listNearestRoads(com.google.maps.roads.v1op.ListNearestRoadsRequest request,
         io.grpc.stub.StreamObserver<com.google.maps.roads.v1op.ListNearestRoadsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListNearestRoadsMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -242,7 +229,7 @@ public final class RoadsServiceGrpc {
      * </pre>
      */
     public com.google.maps.roads.v1op.SnapToRoadsResponse snapToRoads(com.google.maps.roads.v1op.SnapToRoadsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSnapToRoadsMethod(), getCallOptions(), request);
     }
 
@@ -253,7 +240,7 @@ public final class RoadsServiceGrpc {
      * </pre>
      */
     public com.google.maps.roads.v1op.ListNearestRoadsResponse listNearestRoads(com.google.maps.roads.v1op.ListNearestRoadsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListNearestRoadsMethod(), getCallOptions(), request);
     }
   }
@@ -281,7 +268,7 @@ public final class RoadsServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.maps.roads.v1op.SnapToRoadsResponse> snapToRoads(
         com.google.maps.roads.v1op.SnapToRoadsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSnapToRoadsMethod(), getCallOptions()), request);
     }
 
@@ -293,7 +280,7 @@ public final class RoadsServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.maps.roads.v1op.ListNearestRoadsResponse> listNearestRoads(
         com.google.maps.roads.v1op.ListNearestRoadsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListNearestRoadsMethod(), getCallOptions()), request);
     }
   }

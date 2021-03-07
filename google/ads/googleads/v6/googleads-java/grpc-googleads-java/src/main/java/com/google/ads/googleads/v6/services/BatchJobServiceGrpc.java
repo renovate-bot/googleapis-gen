@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v6.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -243,7 +230,7 @@ public final class BatchJobServiceGrpc {
      */
     public void mutateBatchJob(com.google.ads.googleads.v6.services.MutateBatchJobRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.MutateBatchJobResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getMutateBatchJobMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMutateBatchJobMethod(), responseObserver);
     }
 
     /**
@@ -253,7 +240,7 @@ public final class BatchJobServiceGrpc {
      */
     public void getBatchJob(com.google.ads.googleads.v6.services.GetBatchJobRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.resources.BatchJob> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetBatchJobMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetBatchJobMethod(), responseObserver);
     }
 
     /**
@@ -264,7 +251,7 @@ public final class BatchJobServiceGrpc {
      */
     public void listBatchJobResults(com.google.ads.googleads.v6.services.ListBatchJobResultsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.ListBatchJobResultsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListBatchJobResultsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListBatchJobResultsMethod(), responseObserver);
     }
 
     /**
@@ -277,7 +264,7 @@ public final class BatchJobServiceGrpc {
      */
     public void runBatchJob(com.google.ads.googleads.v6.services.RunBatchJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getRunBatchJobMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRunBatchJobMethod(), responseObserver);
     }
 
     /**
@@ -287,42 +274,42 @@ public final class BatchJobServiceGrpc {
      */
     public void addBatchJobOperations(com.google.ads.googleads.v6.services.AddBatchJobOperationsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.AddBatchJobOperationsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getAddBatchJobOperationsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAddBatchJobOperationsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getMutateBatchJobMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.MutateBatchJobRequest,
                 com.google.ads.googleads.v6.services.MutateBatchJobResponse>(
                   this, METHODID_MUTATE_BATCH_JOB)))
           .addMethod(
             getGetBatchJobMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.GetBatchJobRequest,
                 com.google.ads.googleads.v6.resources.BatchJob>(
                   this, METHODID_GET_BATCH_JOB)))
           .addMethod(
             getListBatchJobResultsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.ListBatchJobResultsRequest,
                 com.google.ads.googleads.v6.services.ListBatchJobResultsResponse>(
                   this, METHODID_LIST_BATCH_JOB_RESULTS)))
           .addMethod(
             getRunBatchJobMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.RunBatchJobRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_RUN_BATCH_JOB)))
           .addMethod(
             getAddBatchJobOperationsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.AddBatchJobOperationsRequest,
                 com.google.ads.googleads.v6.services.AddBatchJobOperationsResponse>(
@@ -355,7 +342,7 @@ public final class BatchJobServiceGrpc {
      */
     public void mutateBatchJob(com.google.ads.googleads.v6.services.MutateBatchJobRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.MutateBatchJobResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMutateBatchJobMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -366,7 +353,7 @@ public final class BatchJobServiceGrpc {
      */
     public void getBatchJob(com.google.ads.googleads.v6.services.GetBatchJobRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.resources.BatchJob> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetBatchJobMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -378,7 +365,7 @@ public final class BatchJobServiceGrpc {
      */
     public void listBatchJobResults(com.google.ads.googleads.v6.services.ListBatchJobResultsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.ListBatchJobResultsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListBatchJobResultsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -392,7 +379,7 @@ public final class BatchJobServiceGrpc {
      */
     public void runBatchJob(com.google.ads.googleads.v6.services.RunBatchJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRunBatchJobMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -403,7 +390,7 @@ public final class BatchJobServiceGrpc {
      */
     public void addBatchJobOperations(com.google.ads.googleads.v6.services.AddBatchJobOperationsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.AddBatchJobOperationsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getAddBatchJobOperationsMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -431,7 +418,7 @@ public final class BatchJobServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.services.MutateBatchJobResponse mutateBatchJob(com.google.ads.googleads.v6.services.MutateBatchJobRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMutateBatchJobMethod(), getCallOptions(), request);
     }
 
@@ -441,7 +428,7 @@ public final class BatchJobServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.resources.BatchJob getBatchJob(com.google.ads.googleads.v6.services.GetBatchJobRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetBatchJobMethod(), getCallOptions(), request);
     }
 
@@ -452,7 +439,7 @@ public final class BatchJobServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.services.ListBatchJobResultsResponse listBatchJobResults(com.google.ads.googleads.v6.services.ListBatchJobResultsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListBatchJobResultsMethod(), getCallOptions(), request);
     }
 
@@ -465,7 +452,7 @@ public final class BatchJobServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation runBatchJob(com.google.ads.googleads.v6.services.RunBatchJobRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRunBatchJobMethod(), getCallOptions(), request);
     }
 
@@ -475,7 +462,7 @@ public final class BatchJobServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.services.AddBatchJobOperationsResponse addBatchJobOperations(com.google.ads.googleads.v6.services.AddBatchJobOperationsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getAddBatchJobOperationsMethod(), getCallOptions(), request);
     }
   }
@@ -504,7 +491,7 @@ public final class BatchJobServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.services.MutateBatchJobResponse> mutateBatchJob(
         com.google.ads.googleads.v6.services.MutateBatchJobRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMutateBatchJobMethod(), getCallOptions()), request);
     }
 
@@ -515,7 +502,7 @@ public final class BatchJobServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.resources.BatchJob> getBatchJob(
         com.google.ads.googleads.v6.services.GetBatchJobRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetBatchJobMethod(), getCallOptions()), request);
     }
 
@@ -527,7 +514,7 @@ public final class BatchJobServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.services.ListBatchJobResultsResponse> listBatchJobResults(
         com.google.ads.googleads.v6.services.ListBatchJobResultsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListBatchJobResultsMethod(), getCallOptions()), request);
     }
 
@@ -541,7 +528,7 @@ public final class BatchJobServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> runBatchJob(
         com.google.ads.googleads.v6.services.RunBatchJobRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRunBatchJobMethod(), getCallOptions()), request);
     }
 
@@ -552,7 +539,7 @@ public final class BatchJobServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.services.AddBatchJobOperationsResponse> addBatchJobOperations(
         com.google.ads.googleads.v6.services.AddBatchJobOperationsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getAddBatchJobOperationsMethod(), getCallOptions()), request);
     }
   }

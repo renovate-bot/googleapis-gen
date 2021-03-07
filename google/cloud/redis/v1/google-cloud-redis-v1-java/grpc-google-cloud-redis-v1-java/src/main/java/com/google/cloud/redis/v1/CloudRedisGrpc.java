@@ -1,19 +1,6 @@
 package com.google.cloud.redis.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -394,7 +381,7 @@ public final class CloudRedisGrpc {
      */
     public void listInstances(com.google.cloud.redis.v1.ListInstancesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.redis.v1.ListInstancesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListInstancesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListInstancesMethod(), responseObserver);
     }
 
     /**
@@ -404,7 +391,7 @@ public final class CloudRedisGrpc {
      */
     public void getInstance(com.google.cloud.redis.v1.GetInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.redis.v1.Instance> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetInstanceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetInstanceMethod(), responseObserver);
     }
 
     /**
@@ -422,7 +409,7 @@ public final class CloudRedisGrpc {
      */
     public void createInstance(com.google.cloud.redis.v1.CreateInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateInstanceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateInstanceMethod(), responseObserver);
     }
 
     /**
@@ -435,7 +422,7 @@ public final class CloudRedisGrpc {
      */
     public void updateInstance(com.google.cloud.redis.v1.UpdateInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateInstanceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateInstanceMethod(), responseObserver);
     }
 
     /**
@@ -446,7 +433,7 @@ public final class CloudRedisGrpc {
      */
     public void upgradeInstance(com.google.cloud.redis.v1.UpgradeInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpgradeInstanceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpgradeInstanceMethod(), responseObserver);
     }
 
     /**
@@ -461,7 +448,7 @@ public final class CloudRedisGrpc {
      */
     public void importInstance(com.google.cloud.redis.v1.ImportInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getImportInstanceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getImportInstanceMethod(), responseObserver);
     }
 
     /**
@@ -474,7 +461,7 @@ public final class CloudRedisGrpc {
      */
     public void exportInstance(com.google.cloud.redis.v1.ExportInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getExportInstanceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getExportInstanceMethod(), responseObserver);
     }
 
     /**
@@ -485,7 +472,7 @@ public final class CloudRedisGrpc {
      */
     public void failoverInstance(com.google.cloud.redis.v1.FailoverInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getFailoverInstanceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFailoverInstanceMethod(), responseObserver);
     }
 
     /**
@@ -496,70 +483,70 @@ public final class CloudRedisGrpc {
      */
     public void deleteInstance(com.google.cloud.redis.v1.DeleteInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteInstanceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteInstanceMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getListInstancesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.redis.v1.ListInstancesRequest,
                 com.google.cloud.redis.v1.ListInstancesResponse>(
                   this, METHODID_LIST_INSTANCES)))
           .addMethod(
             getGetInstanceMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.redis.v1.GetInstanceRequest,
                 com.google.cloud.redis.v1.Instance>(
                   this, METHODID_GET_INSTANCE)))
           .addMethod(
             getCreateInstanceMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.redis.v1.CreateInstanceRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_CREATE_INSTANCE)))
           .addMethod(
             getUpdateInstanceMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.redis.v1.UpdateInstanceRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_UPDATE_INSTANCE)))
           .addMethod(
             getUpgradeInstanceMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.redis.v1.UpgradeInstanceRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_UPGRADE_INSTANCE)))
           .addMethod(
             getImportInstanceMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.redis.v1.ImportInstanceRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_IMPORT_INSTANCE)))
           .addMethod(
             getExportInstanceMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.redis.v1.ExportInstanceRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_EXPORT_INSTANCE)))
           .addMethod(
             getFailoverInstanceMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.redis.v1.FailoverInstanceRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_FAILOVER_INSTANCE)))
           .addMethod(
             getDeleteInstanceMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.redis.v1.DeleteInstanceRequest,
                 com.google.longrunning.Operation>(
@@ -608,7 +595,7 @@ public final class CloudRedisGrpc {
      */
     public void listInstances(com.google.cloud.redis.v1.ListInstancesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.redis.v1.ListInstancesResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListInstancesMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -619,7 +606,7 @@ public final class CloudRedisGrpc {
      */
     public void getInstance(com.google.cloud.redis.v1.GetInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.redis.v1.Instance> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetInstanceMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -638,7 +625,7 @@ public final class CloudRedisGrpc {
      */
     public void createInstance(com.google.cloud.redis.v1.CreateInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateInstanceMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -652,7 +639,7 @@ public final class CloudRedisGrpc {
      */
     public void updateInstance(com.google.cloud.redis.v1.UpdateInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateInstanceMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -664,7 +651,7 @@ public final class CloudRedisGrpc {
      */
     public void upgradeInstance(com.google.cloud.redis.v1.UpgradeInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpgradeInstanceMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -680,7 +667,7 @@ public final class CloudRedisGrpc {
      */
     public void importInstance(com.google.cloud.redis.v1.ImportInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getImportInstanceMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -694,7 +681,7 @@ public final class CloudRedisGrpc {
      */
     public void exportInstance(com.google.cloud.redis.v1.ExportInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getExportInstanceMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -706,7 +693,7 @@ public final class CloudRedisGrpc {
      */
     public void failoverInstance(com.google.cloud.redis.v1.FailoverInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getFailoverInstanceMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -718,7 +705,7 @@ public final class CloudRedisGrpc {
      */
     public void deleteInstance(com.google.cloud.redis.v1.DeleteInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteInstanceMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -762,7 +749,7 @@ public final class CloudRedisGrpc {
      * </pre>
      */
     public com.google.cloud.redis.v1.ListInstancesResponse listInstances(com.google.cloud.redis.v1.ListInstancesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListInstancesMethod(), getCallOptions(), request);
     }
 
@@ -772,7 +759,7 @@ public final class CloudRedisGrpc {
      * </pre>
      */
     public com.google.cloud.redis.v1.Instance getInstance(com.google.cloud.redis.v1.GetInstanceRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetInstanceMethod(), getCallOptions(), request);
     }
 
@@ -790,7 +777,7 @@ public final class CloudRedisGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createInstance(com.google.cloud.redis.v1.CreateInstanceRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateInstanceMethod(), getCallOptions(), request);
     }
 
@@ -803,7 +790,7 @@ public final class CloudRedisGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateInstance(com.google.cloud.redis.v1.UpdateInstanceRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateInstanceMethod(), getCallOptions(), request);
     }
 
@@ -814,7 +801,7 @@ public final class CloudRedisGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation upgradeInstance(com.google.cloud.redis.v1.UpgradeInstanceRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpgradeInstanceMethod(), getCallOptions(), request);
     }
 
@@ -829,7 +816,7 @@ public final class CloudRedisGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importInstance(com.google.cloud.redis.v1.ImportInstanceRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getImportInstanceMethod(), getCallOptions(), request);
     }
 
@@ -842,7 +829,7 @@ public final class CloudRedisGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportInstance(com.google.cloud.redis.v1.ExportInstanceRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getExportInstanceMethod(), getCallOptions(), request);
     }
 
@@ -853,7 +840,7 @@ public final class CloudRedisGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation failoverInstance(com.google.cloud.redis.v1.FailoverInstanceRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFailoverInstanceMethod(), getCallOptions(), request);
     }
 
@@ -864,7 +851,7 @@ public final class CloudRedisGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteInstance(com.google.cloud.redis.v1.DeleteInstanceRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteInstanceMethod(), getCallOptions(), request);
     }
   }
@@ -909,7 +896,7 @@ public final class CloudRedisGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.redis.v1.ListInstancesResponse> listInstances(
         com.google.cloud.redis.v1.ListInstancesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListInstancesMethod(), getCallOptions()), request);
     }
 
@@ -920,7 +907,7 @@ public final class CloudRedisGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.redis.v1.Instance> getInstance(
         com.google.cloud.redis.v1.GetInstanceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetInstanceMethod(), getCallOptions()), request);
     }
 
@@ -939,7 +926,7 @@ public final class CloudRedisGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> createInstance(
         com.google.cloud.redis.v1.CreateInstanceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateInstanceMethod(), getCallOptions()), request);
     }
 
@@ -953,7 +940,7 @@ public final class CloudRedisGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> updateInstance(
         com.google.cloud.redis.v1.UpdateInstanceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateInstanceMethod(), getCallOptions()), request);
     }
 
@@ -965,7 +952,7 @@ public final class CloudRedisGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> upgradeInstance(
         com.google.cloud.redis.v1.UpgradeInstanceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpgradeInstanceMethod(), getCallOptions()), request);
     }
 
@@ -981,7 +968,7 @@ public final class CloudRedisGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> importInstance(
         com.google.cloud.redis.v1.ImportInstanceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getImportInstanceMethod(), getCallOptions()), request);
     }
 
@@ -995,7 +982,7 @@ public final class CloudRedisGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> exportInstance(
         com.google.cloud.redis.v1.ExportInstanceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getExportInstanceMethod(), getCallOptions()), request);
     }
 
@@ -1007,7 +994,7 @@ public final class CloudRedisGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> failoverInstance(
         com.google.cloud.redis.v1.FailoverInstanceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getFailoverInstanceMethod(), getCallOptions()), request);
     }
 
@@ -1019,7 +1006,7 @@ public final class CloudRedisGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> deleteInstance(
         com.google.cloud.redis.v1.DeleteInstanceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteInstanceMethod(), getCallOptions()), request);
     }
   }

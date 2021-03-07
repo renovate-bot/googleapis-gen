@@ -1,19 +1,6 @@
 package com.google.cloud.orgpolicy.v2;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -335,7 +322,7 @@ public final class OrgPolicyGrpc {
      */
     public void listConstraints(com.google.cloud.orgpolicy.v2.ListConstraintsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.orgpolicy.v2.ListConstraintsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListConstraintsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListConstraintsMethod(), responseObserver);
     }
 
     /**
@@ -345,7 +332,7 @@ public final class OrgPolicyGrpc {
      */
     public void listPolicies(com.google.cloud.orgpolicy.v2.ListPoliciesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.orgpolicy.v2.ListPoliciesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListPoliciesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListPoliciesMethod(), responseObserver);
     }
 
     /**
@@ -358,7 +345,7 @@ public final class OrgPolicyGrpc {
      */
     public void getPolicy(com.google.cloud.orgpolicy.v2.GetPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.orgpolicy.v2.Policy> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetPolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPolicyMethod(), responseObserver);
     }
 
     /**
@@ -373,7 +360,7 @@ public final class OrgPolicyGrpc {
      */
     public void getEffectivePolicy(com.google.cloud.orgpolicy.v2.GetEffectivePolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.orgpolicy.v2.Policy> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetEffectivePolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetEffectivePolicyMethod(), responseObserver);
     }
 
     /**
@@ -387,7 +374,7 @@ public final class OrgPolicyGrpc {
      */
     public void createPolicy(com.google.cloud.orgpolicy.v2.CreatePolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.orgpolicy.v2.Policy> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreatePolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreatePolicyMethod(), responseObserver);
     }
 
     /**
@@ -403,7 +390,7 @@ public final class OrgPolicyGrpc {
      */
     public void updatePolicy(com.google.cloud.orgpolicy.v2.UpdatePolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.orgpolicy.v2.Policy> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdatePolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdatePolicyMethod(), responseObserver);
     }
 
     /**
@@ -415,56 +402,56 @@ public final class OrgPolicyGrpc {
      */
     public void deletePolicy(com.google.cloud.orgpolicy.v2.DeletePolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeletePolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeletePolicyMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getListConstraintsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.orgpolicy.v2.ListConstraintsRequest,
                 com.google.cloud.orgpolicy.v2.ListConstraintsResponse>(
                   this, METHODID_LIST_CONSTRAINTS)))
           .addMethod(
             getListPoliciesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.orgpolicy.v2.ListPoliciesRequest,
                 com.google.cloud.orgpolicy.v2.ListPoliciesResponse>(
                   this, METHODID_LIST_POLICIES)))
           .addMethod(
             getGetPolicyMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.orgpolicy.v2.GetPolicyRequest,
                 com.google.cloud.orgpolicy.v2.Policy>(
                   this, METHODID_GET_POLICY)))
           .addMethod(
             getGetEffectivePolicyMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.orgpolicy.v2.GetEffectivePolicyRequest,
                 com.google.cloud.orgpolicy.v2.Policy>(
                   this, METHODID_GET_EFFECTIVE_POLICY)))
           .addMethod(
             getCreatePolicyMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.orgpolicy.v2.CreatePolicyRequest,
                 com.google.cloud.orgpolicy.v2.Policy>(
                   this, METHODID_CREATE_POLICY)))
           .addMethod(
             getUpdatePolicyMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.orgpolicy.v2.UpdatePolicyRequest,
                 com.google.cloud.orgpolicy.v2.Policy>(
                   this, METHODID_UPDATE_POLICY)))
           .addMethod(
             getDeletePolicyMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.orgpolicy.v2.DeletePolicyRequest,
                 com.google.protobuf.Empty>(
@@ -512,7 +499,7 @@ public final class OrgPolicyGrpc {
      */
     public void listConstraints(com.google.cloud.orgpolicy.v2.ListConstraintsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.orgpolicy.v2.ListConstraintsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListConstraintsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -523,7 +510,7 @@ public final class OrgPolicyGrpc {
      */
     public void listPolicies(com.google.cloud.orgpolicy.v2.ListPoliciesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.orgpolicy.v2.ListPoliciesResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListPoliciesMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -537,7 +524,7 @@ public final class OrgPolicyGrpc {
      */
     public void getPolicy(com.google.cloud.orgpolicy.v2.GetPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.orgpolicy.v2.Policy> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetPolicyMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -553,7 +540,7 @@ public final class OrgPolicyGrpc {
      */
     public void getEffectivePolicy(com.google.cloud.orgpolicy.v2.GetEffectivePolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.orgpolicy.v2.Policy> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetEffectivePolicyMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -568,7 +555,7 @@ public final class OrgPolicyGrpc {
      */
     public void createPolicy(com.google.cloud.orgpolicy.v2.CreatePolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.orgpolicy.v2.Policy> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreatePolicyMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -585,7 +572,7 @@ public final class OrgPolicyGrpc {
      */
     public void updatePolicy(com.google.cloud.orgpolicy.v2.UpdatePolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.orgpolicy.v2.Policy> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdatePolicyMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -598,7 +585,7 @@ public final class OrgPolicyGrpc {
      */
     public void deletePolicy(com.google.cloud.orgpolicy.v2.DeletePolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeletePolicyMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -641,7 +628,7 @@ public final class OrgPolicyGrpc {
      * </pre>
      */
     public com.google.cloud.orgpolicy.v2.ListConstraintsResponse listConstraints(com.google.cloud.orgpolicy.v2.ListConstraintsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListConstraintsMethod(), getCallOptions(), request);
     }
 
@@ -651,7 +638,7 @@ public final class OrgPolicyGrpc {
      * </pre>
      */
     public com.google.cloud.orgpolicy.v2.ListPoliciesResponse listPolicies(com.google.cloud.orgpolicy.v2.ListPoliciesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListPoliciesMethod(), getCallOptions(), request);
     }
 
@@ -664,7 +651,7 @@ public final class OrgPolicyGrpc {
      * </pre>
      */
     public com.google.cloud.orgpolicy.v2.Policy getPolicy(com.google.cloud.orgpolicy.v2.GetPolicyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetPolicyMethod(), getCallOptions(), request);
     }
 
@@ -679,7 +666,7 @@ public final class OrgPolicyGrpc {
      * </pre>
      */
     public com.google.cloud.orgpolicy.v2.Policy getEffectivePolicy(com.google.cloud.orgpolicy.v2.GetEffectivePolicyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetEffectivePolicyMethod(), getCallOptions(), request);
     }
 
@@ -693,7 +680,7 @@ public final class OrgPolicyGrpc {
      * </pre>
      */
     public com.google.cloud.orgpolicy.v2.Policy createPolicy(com.google.cloud.orgpolicy.v2.CreatePolicyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreatePolicyMethod(), getCallOptions(), request);
     }
 
@@ -709,7 +696,7 @@ public final class OrgPolicyGrpc {
      * </pre>
      */
     public com.google.cloud.orgpolicy.v2.Policy updatePolicy(com.google.cloud.orgpolicy.v2.UpdatePolicyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdatePolicyMethod(), getCallOptions(), request);
     }
 
@@ -721,7 +708,7 @@ public final class OrgPolicyGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deletePolicy(com.google.cloud.orgpolicy.v2.DeletePolicyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeletePolicyMethod(), getCallOptions(), request);
     }
   }
@@ -765,7 +752,7 @@ public final class OrgPolicyGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.orgpolicy.v2.ListConstraintsResponse> listConstraints(
         com.google.cloud.orgpolicy.v2.ListConstraintsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListConstraintsMethod(), getCallOptions()), request);
     }
 
@@ -776,7 +763,7 @@ public final class OrgPolicyGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.orgpolicy.v2.ListPoliciesResponse> listPolicies(
         com.google.cloud.orgpolicy.v2.ListPoliciesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListPoliciesMethod(), getCallOptions()), request);
     }
 
@@ -790,7 +777,7 @@ public final class OrgPolicyGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.orgpolicy.v2.Policy> getPolicy(
         com.google.cloud.orgpolicy.v2.GetPolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetPolicyMethod(), getCallOptions()), request);
     }
 
@@ -806,7 +793,7 @@ public final class OrgPolicyGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.orgpolicy.v2.Policy> getEffectivePolicy(
         com.google.cloud.orgpolicy.v2.GetEffectivePolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetEffectivePolicyMethod(), getCallOptions()), request);
     }
 
@@ -821,7 +808,7 @@ public final class OrgPolicyGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.orgpolicy.v2.Policy> createPolicy(
         com.google.cloud.orgpolicy.v2.CreatePolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreatePolicyMethod(), getCallOptions()), request);
     }
 
@@ -838,7 +825,7 @@ public final class OrgPolicyGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.orgpolicy.v2.Policy> updatePolicy(
         com.google.cloud.orgpolicy.v2.UpdatePolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdatePolicyMethod(), getCallOptions()), request);
     }
 
@@ -851,7 +838,7 @@ public final class OrgPolicyGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deletePolicy(
         com.google.cloud.orgpolicy.v2.DeletePolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeletePolicyMethod(), getCallOptions()), request);
     }
   }

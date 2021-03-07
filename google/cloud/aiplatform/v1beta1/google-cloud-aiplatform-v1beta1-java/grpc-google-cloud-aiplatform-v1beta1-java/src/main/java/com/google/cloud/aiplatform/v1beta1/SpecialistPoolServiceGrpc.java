@@ -1,19 +1,6 @@
 package com.google.cloud.aiplatform.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -253,7 +240,7 @@ public final class SpecialistPoolServiceGrpc {
      */
     public void createSpecialistPool(com.google.cloud.aiplatform.v1beta1.CreateSpecialistPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateSpecialistPoolMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateSpecialistPoolMethod(), responseObserver);
     }
 
     /**
@@ -263,7 +250,7 @@ public final class SpecialistPoolServiceGrpc {
      */
     public void getSpecialistPool(com.google.cloud.aiplatform.v1beta1.GetSpecialistPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.SpecialistPool> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetSpecialistPoolMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetSpecialistPoolMethod(), responseObserver);
     }
 
     /**
@@ -273,7 +260,7 @@ public final class SpecialistPoolServiceGrpc {
      */
     public void listSpecialistPools(com.google.cloud.aiplatform.v1beta1.ListSpecialistPoolsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListSpecialistPoolsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListSpecialistPoolsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListSpecialistPoolsMethod(), responseObserver);
     }
 
     /**
@@ -283,7 +270,7 @@ public final class SpecialistPoolServiceGrpc {
      */
     public void deleteSpecialistPool(com.google.cloud.aiplatform.v1beta1.DeleteSpecialistPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteSpecialistPoolMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteSpecialistPoolMethod(), responseObserver);
     }
 
     /**
@@ -293,42 +280,42 @@ public final class SpecialistPoolServiceGrpc {
      */
     public void updateSpecialistPool(com.google.cloud.aiplatform.v1beta1.UpdateSpecialistPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateSpecialistPoolMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateSpecialistPoolMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getCreateSpecialistPoolMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.aiplatform.v1beta1.CreateSpecialistPoolRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_CREATE_SPECIALIST_POOL)))
           .addMethod(
             getGetSpecialistPoolMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.aiplatform.v1beta1.GetSpecialistPoolRequest,
                 com.google.cloud.aiplatform.v1beta1.SpecialistPool>(
                   this, METHODID_GET_SPECIALIST_POOL)))
           .addMethod(
             getListSpecialistPoolsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.aiplatform.v1beta1.ListSpecialistPoolsRequest,
                 com.google.cloud.aiplatform.v1beta1.ListSpecialistPoolsResponse>(
                   this, METHODID_LIST_SPECIALIST_POOLS)))
           .addMethod(
             getDeleteSpecialistPoolMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.aiplatform.v1beta1.DeleteSpecialistPoolRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_DELETE_SPECIALIST_POOL)))
           .addMethod(
             getUpdateSpecialistPoolMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.aiplatform.v1beta1.UpdateSpecialistPoolRequest,
                 com.google.longrunning.Operation>(
@@ -366,7 +353,7 @@ public final class SpecialistPoolServiceGrpc {
      */
     public void createSpecialistPool(com.google.cloud.aiplatform.v1beta1.CreateSpecialistPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateSpecialistPoolMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -377,7 +364,7 @@ public final class SpecialistPoolServiceGrpc {
      */
     public void getSpecialistPool(com.google.cloud.aiplatform.v1beta1.GetSpecialistPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.SpecialistPool> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetSpecialistPoolMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -388,7 +375,7 @@ public final class SpecialistPoolServiceGrpc {
      */
     public void listSpecialistPools(com.google.cloud.aiplatform.v1beta1.ListSpecialistPoolsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListSpecialistPoolsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListSpecialistPoolsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -399,7 +386,7 @@ public final class SpecialistPoolServiceGrpc {
      */
     public void deleteSpecialistPool(com.google.cloud.aiplatform.v1beta1.DeleteSpecialistPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteSpecialistPoolMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -410,7 +397,7 @@ public final class SpecialistPoolServiceGrpc {
      */
     public void updateSpecialistPool(com.google.cloud.aiplatform.v1beta1.UpdateSpecialistPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateSpecialistPoolMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -443,7 +430,7 @@ public final class SpecialistPoolServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createSpecialistPool(com.google.cloud.aiplatform.v1beta1.CreateSpecialistPoolRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateSpecialistPoolMethod(), getCallOptions(), request);
     }
 
@@ -453,7 +440,7 @@ public final class SpecialistPoolServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.SpecialistPool getSpecialistPool(com.google.cloud.aiplatform.v1beta1.GetSpecialistPoolRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetSpecialistPoolMethod(), getCallOptions(), request);
     }
 
@@ -463,7 +450,7 @@ public final class SpecialistPoolServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ListSpecialistPoolsResponse listSpecialistPools(com.google.cloud.aiplatform.v1beta1.ListSpecialistPoolsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListSpecialistPoolsMethod(), getCallOptions(), request);
     }
 
@@ -473,7 +460,7 @@ public final class SpecialistPoolServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteSpecialistPool(com.google.cloud.aiplatform.v1beta1.DeleteSpecialistPoolRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteSpecialistPoolMethod(), getCallOptions(), request);
     }
 
@@ -483,7 +470,7 @@ public final class SpecialistPoolServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateSpecialistPool(com.google.cloud.aiplatform.v1beta1.UpdateSpecialistPoolRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateSpecialistPoolMethod(), getCallOptions(), request);
     }
   }
@@ -517,7 +504,7 @@ public final class SpecialistPoolServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> createSpecialistPool(
         com.google.cloud.aiplatform.v1beta1.CreateSpecialistPoolRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateSpecialistPoolMethod(), getCallOptions()), request);
     }
 
@@ -528,7 +515,7 @@ public final class SpecialistPoolServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.aiplatform.v1beta1.SpecialistPool> getSpecialistPool(
         com.google.cloud.aiplatform.v1beta1.GetSpecialistPoolRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetSpecialistPoolMethod(), getCallOptions()), request);
     }
 
@@ -539,7 +526,7 @@ public final class SpecialistPoolServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.aiplatform.v1beta1.ListSpecialistPoolsResponse> listSpecialistPools(
         com.google.cloud.aiplatform.v1beta1.ListSpecialistPoolsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListSpecialistPoolsMethod(), getCallOptions()), request);
     }
 
@@ -550,7 +537,7 @@ public final class SpecialistPoolServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> deleteSpecialistPool(
         com.google.cloud.aiplatform.v1beta1.DeleteSpecialistPoolRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteSpecialistPoolMethod(), getCallOptions()), request);
     }
 
@@ -561,7 +548,7 @@ public final class SpecialistPoolServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> updateSpecialistPool(
         com.google.cloud.aiplatform.v1beta1.UpdateSpecialistPoolRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateSpecialistPoolMethod(), getCallOptions()), request);
     }
   }

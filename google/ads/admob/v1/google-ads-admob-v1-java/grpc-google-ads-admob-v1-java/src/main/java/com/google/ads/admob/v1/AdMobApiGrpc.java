@@ -1,19 +1,6 @@
 package com.google.ads.admob.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -214,7 +201,7 @@ public final class AdMobApiGrpc {
      */
     public void getPublisherAccount(com.google.ads.admob.v1.AdMobApiProto.GetPublisherAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.admob.v1.AdMobResourcesProto.PublisherAccount> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetPublisherAccountMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPublisherAccountMethod(), responseObserver);
     }
 
     /**
@@ -225,7 +212,7 @@ public final class AdMobApiGrpc {
      */
     public void listPublisherAccounts(com.google.ads.admob.v1.AdMobApiProto.ListPublisherAccountsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.admob.v1.AdMobApiProto.ListPublisherAccountsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListPublisherAccountsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListPublisherAccountsMethod(), responseObserver);
     }
 
     /**
@@ -236,7 +223,7 @@ public final class AdMobApiGrpc {
      */
     public void generateNetworkReport(com.google.ads.admob.v1.AdMobApiProto.GenerateNetworkReportRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.admob.v1.AdMobApiProto.GenerateNetworkReportResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getGenerateNetworkReportMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGenerateNetworkReportMethod(), responseObserver);
     }
 
     /**
@@ -247,35 +234,35 @@ public final class AdMobApiGrpc {
      */
     public void generateMediationReport(com.google.ads.admob.v1.AdMobApiProto.GenerateMediationReportRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.admob.v1.AdMobApiProto.GenerateMediationReportResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getGenerateMediationReportMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGenerateMediationReportMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetPublisherAccountMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.admob.v1.AdMobApiProto.GetPublisherAccountRequest,
                 com.google.ads.admob.v1.AdMobResourcesProto.PublisherAccount>(
                   this, METHODID_GET_PUBLISHER_ACCOUNT)))
           .addMethod(
             getListPublisherAccountsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.admob.v1.AdMobApiProto.ListPublisherAccountsRequest,
                 com.google.ads.admob.v1.AdMobApiProto.ListPublisherAccountsResponse>(
                   this, METHODID_LIST_PUBLISHER_ACCOUNTS)))
           .addMethod(
             getGenerateNetworkReportMethod(),
-            asyncServerStreamingCall(
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
               new MethodHandlers<
                 com.google.ads.admob.v1.AdMobApiProto.GenerateNetworkReportRequest,
                 com.google.ads.admob.v1.AdMobApiProto.GenerateNetworkReportResponse>(
                   this, METHODID_GENERATE_NETWORK_REPORT)))
           .addMethod(
             getGenerateMediationReportMethod(),
-            asyncServerStreamingCall(
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
               new MethodHandlers<
                 com.google.ads.admob.v1.AdMobApiProto.GenerateMediationReportRequest,
                 com.google.ads.admob.v1.AdMobApiProto.GenerateMediationReportResponse>(
@@ -309,7 +296,7 @@ public final class AdMobApiGrpc {
      */
     public void getPublisherAccount(com.google.ads.admob.v1.AdMobApiProto.GetPublisherAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.admob.v1.AdMobResourcesProto.PublisherAccount> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetPublisherAccountMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -321,7 +308,7 @@ public final class AdMobApiGrpc {
      */
     public void listPublisherAccounts(com.google.ads.admob.v1.AdMobApiProto.ListPublisherAccountsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.admob.v1.AdMobApiProto.ListPublisherAccountsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListPublisherAccountsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -333,7 +320,7 @@ public final class AdMobApiGrpc {
      */
     public void generateNetworkReport(com.google.ads.admob.v1.AdMobApiProto.GenerateNetworkReportRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.admob.v1.AdMobApiProto.GenerateNetworkReportResponse> responseObserver) {
-      asyncServerStreamingCall(
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getGenerateNetworkReportMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -345,7 +332,7 @@ public final class AdMobApiGrpc {
      */
     public void generateMediationReport(com.google.ads.admob.v1.AdMobApiProto.GenerateMediationReportRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.admob.v1.AdMobApiProto.GenerateMediationReportResponse> responseObserver) {
-      asyncServerStreamingCall(
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getGenerateMediationReportMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -374,7 +361,7 @@ public final class AdMobApiGrpc {
      * </pre>
      */
     public com.google.ads.admob.v1.AdMobResourcesProto.PublisherAccount getPublisherAccount(com.google.ads.admob.v1.AdMobApiProto.GetPublisherAccountRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetPublisherAccountMethod(), getCallOptions(), request);
     }
 
@@ -385,7 +372,7 @@ public final class AdMobApiGrpc {
      * </pre>
      */
     public com.google.ads.admob.v1.AdMobApiProto.ListPublisherAccountsResponse listPublisherAccounts(com.google.ads.admob.v1.AdMobApiProto.ListPublisherAccountsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListPublisherAccountsMethod(), getCallOptions(), request);
     }
 
@@ -397,7 +384,7 @@ public final class AdMobApiGrpc {
      */
     public java.util.Iterator<com.google.ads.admob.v1.AdMobApiProto.GenerateNetworkReportResponse> generateNetworkReport(
         com.google.ads.admob.v1.AdMobApiProto.GenerateNetworkReportRequest request) {
-      return blockingServerStreamingCall(
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getGenerateNetworkReportMethod(), getCallOptions(), request);
     }
 
@@ -409,7 +396,7 @@ public final class AdMobApiGrpc {
      */
     public java.util.Iterator<com.google.ads.admob.v1.AdMobApiProto.GenerateMediationReportResponse> generateMediationReport(
         com.google.ads.admob.v1.AdMobApiProto.GenerateMediationReportRequest request) {
-      return blockingServerStreamingCall(
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getGenerateMediationReportMethod(), getCallOptions(), request);
     }
   }
@@ -439,7 +426,7 @@ public final class AdMobApiGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.admob.v1.AdMobResourcesProto.PublisherAccount> getPublisherAccount(
         com.google.ads.admob.v1.AdMobApiProto.GetPublisherAccountRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetPublisherAccountMethod(), getCallOptions()), request);
     }
 
@@ -451,7 +438,7 @@ public final class AdMobApiGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.admob.v1.AdMobApiProto.ListPublisherAccountsResponse> listPublisherAccounts(
         com.google.ads.admob.v1.AdMobApiProto.ListPublisherAccountsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListPublisherAccountsMethod(), getCallOptions()), request);
     }
   }

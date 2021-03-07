@@ -1,19 +1,6 @@
 package com.google.partner.aistreams.v1alpha1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -398,7 +385,7 @@ public final class AIStreamsGrpc {
      */
     public void listClusters(com.google.partner.aistreams.v1alpha1.ListClustersRequest request,
         io.grpc.stub.StreamObserver<com.google.partner.aistreams.v1alpha1.ListClustersResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListClustersMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListClustersMethod(), responseObserver);
     }
 
     /**
@@ -408,7 +395,7 @@ public final class AIStreamsGrpc {
      */
     public void getCluster(com.google.partner.aistreams.v1alpha1.GetClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.partner.aistreams.v1alpha1.Cluster> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetClusterMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetClusterMethod(), responseObserver);
     }
 
     /**
@@ -418,7 +405,7 @@ public final class AIStreamsGrpc {
      */
     public void createCluster(com.google.partner.aistreams.v1alpha1.CreateClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateClusterMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateClusterMethod(), responseObserver);
     }
 
     /**
@@ -428,7 +415,7 @@ public final class AIStreamsGrpc {
      */
     public void updateCluster(com.google.partner.aistreams.v1alpha1.UpdateClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateClusterMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateClusterMethod(), responseObserver);
     }
 
     /**
@@ -438,7 +425,7 @@ public final class AIStreamsGrpc {
      */
     public void deleteCluster(com.google.partner.aistreams.v1alpha1.DeleteClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteClusterMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteClusterMethod(), responseObserver);
     }
 
     /**
@@ -448,7 +435,7 @@ public final class AIStreamsGrpc {
      */
     public void listStreams(com.google.partner.aistreams.v1alpha1.ListStreamsRequest request,
         io.grpc.stub.StreamObserver<com.google.partner.aistreams.v1alpha1.ListStreamsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListStreamsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListStreamsMethod(), responseObserver);
     }
 
     /**
@@ -458,7 +445,7 @@ public final class AIStreamsGrpc {
      */
     public void getStream(com.google.partner.aistreams.v1alpha1.GetStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.partner.aistreams.v1alpha1.Stream> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetStreamMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetStreamMethod(), responseObserver);
     }
 
     /**
@@ -468,7 +455,7 @@ public final class AIStreamsGrpc {
      */
     public void createStream(com.google.partner.aistreams.v1alpha1.CreateStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateStreamMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateStreamMethod(), responseObserver);
     }
 
     /**
@@ -478,7 +465,7 @@ public final class AIStreamsGrpc {
      */
     public void updateStream(com.google.partner.aistreams.v1alpha1.UpdateStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateStreamMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateStreamMethod(), responseObserver);
     }
 
     /**
@@ -488,77 +475,77 @@ public final class AIStreamsGrpc {
      */
     public void deleteStream(com.google.partner.aistreams.v1alpha1.DeleteStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteStreamMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteStreamMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getListClustersMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.partner.aistreams.v1alpha1.ListClustersRequest,
                 com.google.partner.aistreams.v1alpha1.ListClustersResponse>(
                   this, METHODID_LIST_CLUSTERS)))
           .addMethod(
             getGetClusterMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.partner.aistreams.v1alpha1.GetClusterRequest,
                 com.google.partner.aistreams.v1alpha1.Cluster>(
                   this, METHODID_GET_CLUSTER)))
           .addMethod(
             getCreateClusterMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.partner.aistreams.v1alpha1.CreateClusterRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_CREATE_CLUSTER)))
           .addMethod(
             getUpdateClusterMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.partner.aistreams.v1alpha1.UpdateClusterRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_UPDATE_CLUSTER)))
           .addMethod(
             getDeleteClusterMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.partner.aistreams.v1alpha1.DeleteClusterRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_DELETE_CLUSTER)))
           .addMethod(
             getListStreamsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.partner.aistreams.v1alpha1.ListStreamsRequest,
                 com.google.partner.aistreams.v1alpha1.ListStreamsResponse>(
                   this, METHODID_LIST_STREAMS)))
           .addMethod(
             getGetStreamMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.partner.aistreams.v1alpha1.GetStreamRequest,
                 com.google.partner.aistreams.v1alpha1.Stream>(
                   this, METHODID_GET_STREAM)))
           .addMethod(
             getCreateStreamMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.partner.aistreams.v1alpha1.CreateStreamRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_CREATE_STREAM)))
           .addMethod(
             getUpdateStreamMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.partner.aistreams.v1alpha1.UpdateStreamRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_UPDATE_STREAM)))
           .addMethod(
             getDeleteStreamMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.partner.aistreams.v1alpha1.DeleteStreamRequest,
                 com.google.longrunning.Operation>(
@@ -591,7 +578,7 @@ public final class AIStreamsGrpc {
      */
     public void listClusters(com.google.partner.aistreams.v1alpha1.ListClustersRequest request,
         io.grpc.stub.StreamObserver<com.google.partner.aistreams.v1alpha1.ListClustersResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListClustersMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -602,7 +589,7 @@ public final class AIStreamsGrpc {
      */
     public void getCluster(com.google.partner.aistreams.v1alpha1.GetClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.partner.aistreams.v1alpha1.Cluster> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetClusterMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -613,7 +600,7 @@ public final class AIStreamsGrpc {
      */
     public void createCluster(com.google.partner.aistreams.v1alpha1.CreateClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateClusterMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -624,7 +611,7 @@ public final class AIStreamsGrpc {
      */
     public void updateCluster(com.google.partner.aistreams.v1alpha1.UpdateClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateClusterMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -635,7 +622,7 @@ public final class AIStreamsGrpc {
      */
     public void deleteCluster(com.google.partner.aistreams.v1alpha1.DeleteClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteClusterMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -646,7 +633,7 @@ public final class AIStreamsGrpc {
      */
     public void listStreams(com.google.partner.aistreams.v1alpha1.ListStreamsRequest request,
         io.grpc.stub.StreamObserver<com.google.partner.aistreams.v1alpha1.ListStreamsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListStreamsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -657,7 +644,7 @@ public final class AIStreamsGrpc {
      */
     public void getStream(com.google.partner.aistreams.v1alpha1.GetStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.partner.aistreams.v1alpha1.Stream> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetStreamMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -668,7 +655,7 @@ public final class AIStreamsGrpc {
      */
     public void createStream(com.google.partner.aistreams.v1alpha1.CreateStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateStreamMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -679,7 +666,7 @@ public final class AIStreamsGrpc {
      */
     public void updateStream(com.google.partner.aistreams.v1alpha1.UpdateStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateStreamMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -690,7 +677,7 @@ public final class AIStreamsGrpc {
      */
     public void deleteStream(com.google.partner.aistreams.v1alpha1.DeleteStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteStreamMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -718,7 +705,7 @@ public final class AIStreamsGrpc {
      * </pre>
      */
     public com.google.partner.aistreams.v1alpha1.ListClustersResponse listClusters(com.google.partner.aistreams.v1alpha1.ListClustersRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListClustersMethod(), getCallOptions(), request);
     }
 
@@ -728,7 +715,7 @@ public final class AIStreamsGrpc {
      * </pre>
      */
     public com.google.partner.aistreams.v1alpha1.Cluster getCluster(com.google.partner.aistreams.v1alpha1.GetClusterRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetClusterMethod(), getCallOptions(), request);
     }
 
@@ -738,7 +725,7 @@ public final class AIStreamsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createCluster(com.google.partner.aistreams.v1alpha1.CreateClusterRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateClusterMethod(), getCallOptions(), request);
     }
 
@@ -748,7 +735,7 @@ public final class AIStreamsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateCluster(com.google.partner.aistreams.v1alpha1.UpdateClusterRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateClusterMethod(), getCallOptions(), request);
     }
 
@@ -758,7 +745,7 @@ public final class AIStreamsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteCluster(com.google.partner.aistreams.v1alpha1.DeleteClusterRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteClusterMethod(), getCallOptions(), request);
     }
 
@@ -768,7 +755,7 @@ public final class AIStreamsGrpc {
      * </pre>
      */
     public com.google.partner.aistreams.v1alpha1.ListStreamsResponse listStreams(com.google.partner.aistreams.v1alpha1.ListStreamsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListStreamsMethod(), getCallOptions(), request);
     }
 
@@ -778,7 +765,7 @@ public final class AIStreamsGrpc {
      * </pre>
      */
     public com.google.partner.aistreams.v1alpha1.Stream getStream(com.google.partner.aistreams.v1alpha1.GetStreamRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetStreamMethod(), getCallOptions(), request);
     }
 
@@ -788,7 +775,7 @@ public final class AIStreamsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createStream(com.google.partner.aistreams.v1alpha1.CreateStreamRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateStreamMethod(), getCallOptions(), request);
     }
 
@@ -798,7 +785,7 @@ public final class AIStreamsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateStream(com.google.partner.aistreams.v1alpha1.UpdateStreamRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateStreamMethod(), getCallOptions(), request);
     }
 
@@ -808,7 +795,7 @@ public final class AIStreamsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteStream(com.google.partner.aistreams.v1alpha1.DeleteStreamRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteStreamMethod(), getCallOptions(), request);
     }
   }
@@ -837,7 +824,7 @@ public final class AIStreamsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.partner.aistreams.v1alpha1.ListClustersResponse> listClusters(
         com.google.partner.aistreams.v1alpha1.ListClustersRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListClustersMethod(), getCallOptions()), request);
     }
 
@@ -848,7 +835,7 @@ public final class AIStreamsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.partner.aistreams.v1alpha1.Cluster> getCluster(
         com.google.partner.aistreams.v1alpha1.GetClusterRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetClusterMethod(), getCallOptions()), request);
     }
 
@@ -859,7 +846,7 @@ public final class AIStreamsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> createCluster(
         com.google.partner.aistreams.v1alpha1.CreateClusterRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateClusterMethod(), getCallOptions()), request);
     }
 
@@ -870,7 +857,7 @@ public final class AIStreamsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> updateCluster(
         com.google.partner.aistreams.v1alpha1.UpdateClusterRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateClusterMethod(), getCallOptions()), request);
     }
 
@@ -881,7 +868,7 @@ public final class AIStreamsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> deleteCluster(
         com.google.partner.aistreams.v1alpha1.DeleteClusterRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteClusterMethod(), getCallOptions()), request);
     }
 
@@ -892,7 +879,7 @@ public final class AIStreamsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.partner.aistreams.v1alpha1.ListStreamsResponse> listStreams(
         com.google.partner.aistreams.v1alpha1.ListStreamsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListStreamsMethod(), getCallOptions()), request);
     }
 
@@ -903,7 +890,7 @@ public final class AIStreamsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.partner.aistreams.v1alpha1.Stream> getStream(
         com.google.partner.aistreams.v1alpha1.GetStreamRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetStreamMethod(), getCallOptions()), request);
     }
 
@@ -914,7 +901,7 @@ public final class AIStreamsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> createStream(
         com.google.partner.aistreams.v1alpha1.CreateStreamRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateStreamMethod(), getCallOptions()), request);
     }
 
@@ -925,7 +912,7 @@ public final class AIStreamsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> updateStream(
         com.google.partner.aistreams.v1alpha1.UpdateStreamRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateStreamMethod(), getCallOptions()), request);
     }
 
@@ -936,7 +923,7 @@ public final class AIStreamsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> deleteStream(
         com.google.partner.aistreams.v1alpha1.DeleteStreamRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteStreamMethod(), getCallOptions()), request);
     }
   }

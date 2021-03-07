@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v4.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -212,7 +199,7 @@ public final class CustomerServiceGrpc {
      */
     public void getCustomer(com.google.ads.googleads.v4.services.GetCustomerRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.resources.Customer> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetCustomerMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCustomerMethod(), responseObserver);
     }
 
     /**
@@ -222,7 +209,7 @@ public final class CustomerServiceGrpc {
      */
     public void mutateCustomer(com.google.ads.googleads.v4.services.MutateCustomerRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.services.MutateCustomerResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getMutateCustomerMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMutateCustomerMethod(), responseObserver);
     }
 
     /**
@@ -233,7 +220,7 @@ public final class CustomerServiceGrpc {
      */
     public void listAccessibleCustomers(com.google.ads.googleads.v4.services.ListAccessibleCustomersRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.services.ListAccessibleCustomersResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListAccessibleCustomersMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListAccessibleCustomersMethod(), responseObserver);
     }
 
     /**
@@ -243,35 +230,35 @@ public final class CustomerServiceGrpc {
      */
     public void createCustomerClient(com.google.ads.googleads.v4.services.CreateCustomerClientRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.services.CreateCustomerClientResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateCustomerClientMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateCustomerClientMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetCustomerMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v4.services.GetCustomerRequest,
                 com.google.ads.googleads.v4.resources.Customer>(
                   this, METHODID_GET_CUSTOMER)))
           .addMethod(
             getMutateCustomerMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v4.services.MutateCustomerRequest,
                 com.google.ads.googleads.v4.services.MutateCustomerResponse>(
                   this, METHODID_MUTATE_CUSTOMER)))
           .addMethod(
             getListAccessibleCustomersMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v4.services.ListAccessibleCustomersRequest,
                 com.google.ads.googleads.v4.services.ListAccessibleCustomersResponse>(
                   this, METHODID_LIST_ACCESSIBLE_CUSTOMERS)))
           .addMethod(
             getCreateCustomerClientMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v4.services.CreateCustomerClientRequest,
                 com.google.ads.googleads.v4.services.CreateCustomerClientResponse>(
@@ -304,7 +291,7 @@ public final class CustomerServiceGrpc {
      */
     public void getCustomer(com.google.ads.googleads.v4.services.GetCustomerRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.resources.Customer> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetCustomerMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -315,7 +302,7 @@ public final class CustomerServiceGrpc {
      */
     public void mutateCustomer(com.google.ads.googleads.v4.services.MutateCustomerRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.services.MutateCustomerResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMutateCustomerMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -327,7 +314,7 @@ public final class CustomerServiceGrpc {
      */
     public void listAccessibleCustomers(com.google.ads.googleads.v4.services.ListAccessibleCustomersRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.services.ListAccessibleCustomersResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListAccessibleCustomersMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -338,7 +325,7 @@ public final class CustomerServiceGrpc {
      */
     public void createCustomerClient(com.google.ads.googleads.v4.services.CreateCustomerClientRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.services.CreateCustomerClientResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateCustomerClientMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -366,7 +353,7 @@ public final class CustomerServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v4.resources.Customer getCustomer(com.google.ads.googleads.v4.services.GetCustomerRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetCustomerMethod(), getCallOptions(), request);
     }
 
@@ -376,7 +363,7 @@ public final class CustomerServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v4.services.MutateCustomerResponse mutateCustomer(com.google.ads.googleads.v4.services.MutateCustomerRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMutateCustomerMethod(), getCallOptions(), request);
     }
 
@@ -387,7 +374,7 @@ public final class CustomerServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v4.services.ListAccessibleCustomersResponse listAccessibleCustomers(com.google.ads.googleads.v4.services.ListAccessibleCustomersRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListAccessibleCustomersMethod(), getCallOptions(), request);
     }
 
@@ -397,7 +384,7 @@ public final class CustomerServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v4.services.CreateCustomerClientResponse createCustomerClient(com.google.ads.googleads.v4.services.CreateCustomerClientRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateCustomerClientMethod(), getCallOptions(), request);
     }
   }
@@ -426,7 +413,7 @@ public final class CustomerServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v4.resources.Customer> getCustomer(
         com.google.ads.googleads.v4.services.GetCustomerRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetCustomerMethod(), getCallOptions()), request);
     }
 
@@ -437,7 +424,7 @@ public final class CustomerServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v4.services.MutateCustomerResponse> mutateCustomer(
         com.google.ads.googleads.v4.services.MutateCustomerRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMutateCustomerMethod(), getCallOptions()), request);
     }
 
@@ -449,7 +436,7 @@ public final class CustomerServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v4.services.ListAccessibleCustomersResponse> listAccessibleCustomers(
         com.google.ads.googleads.v4.services.ListAccessibleCustomersRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListAccessibleCustomersMethod(), getCallOptions()), request);
     }
 
@@ -460,7 +447,7 @@ public final class CustomerServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v4.services.CreateCustomerClientResponse> createCustomerClient(
         com.google.ads.googleads.v4.services.CreateCustomerClientRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateCustomerClientMethod(), getCallOptions()), request);
     }
   }

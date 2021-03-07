@@ -1,19 +1,6 @@
 package com.google.cloud.dialogflow.v2beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -245,7 +232,7 @@ public final class KnowledgeBasesGrpc {
      */
     public void listKnowledgeBases(com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListKnowledgeBasesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListKnowledgeBasesMethod(), responseObserver);
     }
 
     /**
@@ -257,7 +244,7 @@ public final class KnowledgeBasesGrpc {
      */
     public void getKnowledgeBase(com.google.cloud.dialogflow.v2beta1.GetKnowledgeBaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.KnowledgeBase> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetKnowledgeBaseMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetKnowledgeBaseMethod(), responseObserver);
     }
 
     /**
@@ -269,7 +256,7 @@ public final class KnowledgeBasesGrpc {
      */
     public void createKnowledgeBase(com.google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.KnowledgeBase> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateKnowledgeBaseMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateKnowledgeBaseMethod(), responseObserver);
     }
 
     /**
@@ -281,7 +268,7 @@ public final class KnowledgeBasesGrpc {
      */
     public void deleteKnowledgeBase(com.google.cloud.dialogflow.v2beta1.DeleteKnowledgeBaseRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteKnowledgeBaseMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteKnowledgeBaseMethod(), responseObserver);
     }
 
     /**
@@ -293,42 +280,42 @@ public final class KnowledgeBasesGrpc {
      */
     public void updateKnowledgeBase(com.google.cloud.dialogflow.v2beta1.UpdateKnowledgeBaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.KnowledgeBase> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateKnowledgeBaseMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateKnowledgeBaseMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getListKnowledgeBasesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesRequest,
                 com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse>(
                   this, METHODID_LIST_KNOWLEDGE_BASES)))
           .addMethod(
             getGetKnowledgeBaseMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.dialogflow.v2beta1.GetKnowledgeBaseRequest,
                 com.google.cloud.dialogflow.v2beta1.KnowledgeBase>(
                   this, METHODID_GET_KNOWLEDGE_BASE)))
           .addMethod(
             getCreateKnowledgeBaseMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest,
                 com.google.cloud.dialogflow.v2beta1.KnowledgeBase>(
                   this, METHODID_CREATE_KNOWLEDGE_BASE)))
           .addMethod(
             getDeleteKnowledgeBaseMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.dialogflow.v2beta1.DeleteKnowledgeBaseRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_KNOWLEDGE_BASE)))
           .addMethod(
             getUpdateKnowledgeBaseMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.dialogflow.v2beta1.UpdateKnowledgeBaseRequest,
                 com.google.cloud.dialogflow.v2beta1.KnowledgeBase>(
@@ -363,7 +350,7 @@ public final class KnowledgeBasesGrpc {
      */
     public void listKnowledgeBases(com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListKnowledgeBasesMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -376,7 +363,7 @@ public final class KnowledgeBasesGrpc {
      */
     public void getKnowledgeBase(com.google.cloud.dialogflow.v2beta1.GetKnowledgeBaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.KnowledgeBase> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetKnowledgeBaseMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -389,7 +376,7 @@ public final class KnowledgeBasesGrpc {
      */
     public void createKnowledgeBase(com.google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.KnowledgeBase> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateKnowledgeBaseMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -402,7 +389,7 @@ public final class KnowledgeBasesGrpc {
      */
     public void deleteKnowledgeBase(com.google.cloud.dialogflow.v2beta1.DeleteKnowledgeBaseRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteKnowledgeBaseMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -415,7 +402,7 @@ public final class KnowledgeBasesGrpc {
      */
     public void updateKnowledgeBase(com.google.cloud.dialogflow.v2beta1.UpdateKnowledgeBaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.KnowledgeBase> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateKnowledgeBaseMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -445,7 +432,7 @@ public final class KnowledgeBasesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse listKnowledgeBases(com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListKnowledgeBasesMethod(), getCallOptions(), request);
     }
 
@@ -457,7 +444,7 @@ public final class KnowledgeBasesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.KnowledgeBase getKnowledgeBase(com.google.cloud.dialogflow.v2beta1.GetKnowledgeBaseRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetKnowledgeBaseMethod(), getCallOptions(), request);
     }
 
@@ -469,7 +456,7 @@ public final class KnowledgeBasesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.KnowledgeBase createKnowledgeBase(com.google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateKnowledgeBaseMethod(), getCallOptions(), request);
     }
 
@@ -481,7 +468,7 @@ public final class KnowledgeBasesGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteKnowledgeBase(com.google.cloud.dialogflow.v2beta1.DeleteKnowledgeBaseRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteKnowledgeBaseMethod(), getCallOptions(), request);
     }
 
@@ -493,7 +480,7 @@ public final class KnowledgeBasesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.KnowledgeBase updateKnowledgeBase(com.google.cloud.dialogflow.v2beta1.UpdateKnowledgeBaseRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateKnowledgeBaseMethod(), getCallOptions(), request);
     }
   }
@@ -524,7 +511,7 @@ public final class KnowledgeBasesGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse> listKnowledgeBases(
         com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListKnowledgeBasesMethod(), getCallOptions()), request);
     }
 
@@ -537,7 +524,7 @@ public final class KnowledgeBasesGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.v2beta1.KnowledgeBase> getKnowledgeBase(
         com.google.cloud.dialogflow.v2beta1.GetKnowledgeBaseRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetKnowledgeBaseMethod(), getCallOptions()), request);
     }
 
@@ -550,7 +537,7 @@ public final class KnowledgeBasesGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.v2beta1.KnowledgeBase> createKnowledgeBase(
         com.google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateKnowledgeBaseMethod(), getCallOptions()), request);
     }
 
@@ -563,7 +550,7 @@ public final class KnowledgeBasesGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteKnowledgeBase(
         com.google.cloud.dialogflow.v2beta1.DeleteKnowledgeBaseRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteKnowledgeBaseMethod(), getCallOptions()), request);
     }
 
@@ -576,7 +563,7 @@ public final class KnowledgeBasesGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.v2beta1.KnowledgeBase> updateKnowledgeBase(
         com.google.cloud.dialogflow.v2beta1.UpdateKnowledgeBaseRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateKnowledgeBaseMethod(), getCallOptions()), request);
     }
   }

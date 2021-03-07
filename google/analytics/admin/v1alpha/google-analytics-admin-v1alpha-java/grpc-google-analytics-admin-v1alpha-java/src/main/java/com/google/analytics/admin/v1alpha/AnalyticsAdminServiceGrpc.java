@@ -1,19 +1,6 @@
 package com.google.analytics.admin.v1alpha;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -1576,7 +1563,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void getAccount(com.google.analytics.admin.v1alpha.GetAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Account> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetAccountMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAccountMethod(), responseObserver);
     }
 
     /**
@@ -1589,7 +1576,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void listAccounts(com.google.analytics.admin.v1alpha.ListAccountsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListAccountsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListAccountsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListAccountsMethod(), responseObserver);
     }
 
     /**
@@ -1606,7 +1593,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void deleteAccount(com.google.analytics.admin.v1alpha.DeleteAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteAccountMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteAccountMethod(), responseObserver);
     }
 
     /**
@@ -1616,7 +1603,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void updateAccount(com.google.analytics.admin.v1alpha.UpdateAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Account> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateAccountMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateAccountMethod(), responseObserver);
     }
 
     /**
@@ -1626,7 +1613,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void provisionAccountTicket(com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getProvisionAccountTicketMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getProvisionAccountTicketMethod(), responseObserver);
     }
 
     /**
@@ -1636,7 +1623,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void listAccountSummaries(com.google.analytics.admin.v1alpha.ListAccountSummariesRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListAccountSummariesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListAccountSummariesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListAccountSummariesMethod(), responseObserver);
     }
 
     /**
@@ -1646,7 +1633,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void getProperty(com.google.analytics.admin.v1alpha.GetPropertyRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Property> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetPropertyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPropertyMethod(), responseObserver);
     }
 
     /**
@@ -1660,7 +1647,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void listProperties(com.google.analytics.admin.v1alpha.ListPropertiesRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListPropertiesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListPropertiesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListPropertiesMethod(), responseObserver);
     }
 
     /**
@@ -1670,7 +1657,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void createProperty(com.google.analytics.admin.v1alpha.CreatePropertyRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Property> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreatePropertyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreatePropertyMethod(), responseObserver);
     }
 
     /**
@@ -1687,7 +1674,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void deleteProperty(com.google.analytics.admin.v1alpha.DeletePropertyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeletePropertyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeletePropertyMethod(), responseObserver);
     }
 
     /**
@@ -1697,7 +1684,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void updateProperty(com.google.analytics.admin.v1alpha.UpdatePropertyRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Property> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdatePropertyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdatePropertyMethod(), responseObserver);
     }
 
     /**
@@ -1707,7 +1694,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void getUserLink(com.google.analytics.admin.v1alpha.GetUserLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.UserLink> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetUserLinkMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetUserLinkMethod(), responseObserver);
     }
 
     /**
@@ -1717,7 +1704,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void batchGetUserLinks(com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchGetUserLinksMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBatchGetUserLinksMethod(), responseObserver);
     }
 
     /**
@@ -1727,7 +1714,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void listUserLinks(com.google.analytics.admin.v1alpha.ListUserLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListUserLinksResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListUserLinksMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListUserLinksMethod(), responseObserver);
     }
 
     /**
@@ -1744,7 +1731,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void auditUserLinks(com.google.analytics.admin.v1alpha.AuditUserLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AuditUserLinksResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getAuditUserLinksMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAuditUserLinksMethod(), responseObserver);
     }
 
     /**
@@ -1757,7 +1744,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void createUserLink(com.google.analytics.admin.v1alpha.CreateUserLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.UserLink> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateUserLinkMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateUserLinkMethod(), responseObserver);
     }
 
     /**
@@ -1769,7 +1756,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void batchCreateUserLinks(com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchCreateUserLinksMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBatchCreateUserLinksMethod(), responseObserver);
     }
 
     /**
@@ -1779,7 +1766,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void updateUserLink(com.google.analytics.admin.v1alpha.UpdateUserLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.UserLink> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateUserLinkMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateUserLinkMethod(), responseObserver);
     }
 
     /**
@@ -1789,7 +1776,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void batchUpdateUserLinks(com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchUpdateUserLinksMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBatchUpdateUserLinksMethod(), responseObserver);
     }
 
     /**
@@ -1799,7 +1786,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void deleteUserLink(com.google.analytics.admin.v1alpha.DeleteUserLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteUserLinkMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteUserLinkMethod(), responseObserver);
     }
 
     /**
@@ -1809,7 +1796,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void batchDeleteUserLinks(com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchDeleteUserLinksMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBatchDeleteUserLinksMethod(), responseObserver);
     }
 
     /**
@@ -1819,7 +1806,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void getWebDataStream(com.google.analytics.admin.v1alpha.GetWebDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.WebDataStream> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetWebDataStreamMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetWebDataStreamMethod(), responseObserver);
     }
 
     /**
@@ -1829,7 +1816,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void deleteWebDataStream(com.google.analytics.admin.v1alpha.DeleteWebDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteWebDataStreamMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteWebDataStreamMethod(), responseObserver);
     }
 
     /**
@@ -1839,7 +1826,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void updateWebDataStream(com.google.analytics.admin.v1alpha.UpdateWebDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.WebDataStream> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateWebDataStreamMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateWebDataStreamMethod(), responseObserver);
     }
 
     /**
@@ -1849,7 +1836,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void createWebDataStream(com.google.analytics.admin.v1alpha.CreateWebDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.WebDataStream> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateWebDataStreamMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateWebDataStreamMethod(), responseObserver);
     }
 
     /**
@@ -1861,7 +1848,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void listWebDataStreams(com.google.analytics.admin.v1alpha.ListWebDataStreamsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListWebDataStreamsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListWebDataStreamsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListWebDataStreamsMethod(), responseObserver);
     }
 
     /**
@@ -1871,7 +1858,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void getIosAppDataStream(com.google.analytics.admin.v1alpha.GetIosAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.IosAppDataStream> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetIosAppDataStreamMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetIosAppDataStreamMethod(), responseObserver);
     }
 
     /**
@@ -1881,7 +1868,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void deleteIosAppDataStream(com.google.analytics.admin.v1alpha.DeleteIosAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteIosAppDataStreamMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteIosAppDataStreamMethod(), responseObserver);
     }
 
     /**
@@ -1891,7 +1878,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void updateIosAppDataStream(com.google.analytics.admin.v1alpha.UpdateIosAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.IosAppDataStream> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateIosAppDataStreamMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateIosAppDataStreamMethod(), responseObserver);
     }
 
     /**
@@ -1907,7 +1894,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void createIosAppDataStream(com.google.analytics.admin.v1alpha.CreateIosAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.IosAppDataStream> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateIosAppDataStreamMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateIosAppDataStreamMethod(), responseObserver);
     }
 
     /**
@@ -1919,7 +1906,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void listIosAppDataStreams(com.google.analytics.admin.v1alpha.ListIosAppDataStreamsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListIosAppDataStreamsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListIosAppDataStreamsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListIosAppDataStreamsMethod(), responseObserver);
     }
 
     /**
@@ -1929,7 +1916,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void getAndroidAppDataStream(com.google.analytics.admin.v1alpha.GetAndroidAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AndroidAppDataStream> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetAndroidAppDataStreamMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAndroidAppDataStreamMethod(), responseObserver);
     }
 
     /**
@@ -1939,7 +1926,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void deleteAndroidAppDataStream(com.google.analytics.admin.v1alpha.DeleteAndroidAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteAndroidAppDataStreamMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteAndroidAppDataStreamMethod(), responseObserver);
     }
 
     /**
@@ -1949,7 +1936,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void updateAndroidAppDataStream(com.google.analytics.admin.v1alpha.UpdateAndroidAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AndroidAppDataStream> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateAndroidAppDataStreamMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateAndroidAppDataStreamMethod(), responseObserver);
     }
 
     /**
@@ -1965,7 +1952,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void createAndroidAppDataStream(com.google.analytics.admin.v1alpha.CreateAndroidAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AndroidAppDataStream> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateAndroidAppDataStreamMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateAndroidAppDataStreamMethod(), responseObserver);
     }
 
     /**
@@ -1977,7 +1964,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void listAndroidAppDataStreams(com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListAndroidAppDataStreamsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListAndroidAppDataStreamsMethod(), responseObserver);
     }
 
     /**
@@ -1989,7 +1976,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void getEnhancedMeasurementSettings(com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetEnhancedMeasurementSettingsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetEnhancedMeasurementSettingsMethod(), responseObserver);
     }
 
     /**
@@ -2001,7 +1988,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void updateEnhancedMeasurementSettings(com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateEnhancedMeasurementSettingsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateEnhancedMeasurementSettingsMethod(), responseObserver);
     }
 
     /**
@@ -2012,7 +1999,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void createFirebaseLink(com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.FirebaseLink> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateFirebaseLinkMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateFirebaseLinkMethod(), responseObserver);
     }
 
     /**
@@ -2022,7 +2009,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void updateFirebaseLink(com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.FirebaseLink> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateFirebaseLinkMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateFirebaseLinkMethod(), responseObserver);
     }
 
     /**
@@ -2032,7 +2019,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void deleteFirebaseLink(com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteFirebaseLinkMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteFirebaseLinkMethod(), responseObserver);
     }
 
     /**
@@ -2043,7 +2030,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void listFirebaseLinks(com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListFirebaseLinksMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListFirebaseLinksMethod(), responseObserver);
     }
 
     /**
@@ -2054,7 +2041,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void getGlobalSiteTag(com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.GlobalSiteTag> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetGlobalSiteTagMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetGlobalSiteTagMethod(), responseObserver);
     }
 
     /**
@@ -2064,7 +2051,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void createGoogleAdsLink(com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.GoogleAdsLink> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateGoogleAdsLinkMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateGoogleAdsLinkMethod(), responseObserver);
     }
 
     /**
@@ -2074,7 +2061,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void updateGoogleAdsLink(com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.GoogleAdsLink> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateGoogleAdsLinkMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateGoogleAdsLinkMethod(), responseObserver);
     }
 
     /**
@@ -2084,7 +2071,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void deleteGoogleAdsLink(com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteGoogleAdsLinkMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteGoogleAdsLinkMethod(), responseObserver);
     }
 
     /**
@@ -2094,7 +2081,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void listGoogleAdsLinks(com.google.analytics.admin.v1alpha.ListGoogleAdsLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListGoogleAdsLinksResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListGoogleAdsLinksMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListGoogleAdsLinksMethod(), responseObserver);
     }
 
     /**
@@ -2105,343 +2092,343 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void getDataSharingSettings(com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.DataSharingSettings> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetDataSharingSettingsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetDataSharingSettingsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetAccountMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.GetAccountRequest,
                 com.google.analytics.admin.v1alpha.Account>(
                   this, METHODID_GET_ACCOUNT)))
           .addMethod(
             getListAccountsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.ListAccountsRequest,
                 com.google.analytics.admin.v1alpha.ListAccountsResponse>(
                   this, METHODID_LIST_ACCOUNTS)))
           .addMethod(
             getDeleteAccountMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.DeleteAccountRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_ACCOUNT)))
           .addMethod(
             getUpdateAccountMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.UpdateAccountRequest,
                 com.google.analytics.admin.v1alpha.Account>(
                   this, METHODID_UPDATE_ACCOUNT)))
           .addMethod(
             getProvisionAccountTicketMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest,
                 com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse>(
                   this, METHODID_PROVISION_ACCOUNT_TICKET)))
           .addMethod(
             getListAccountSummariesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.ListAccountSummariesRequest,
                 com.google.analytics.admin.v1alpha.ListAccountSummariesResponse>(
                   this, METHODID_LIST_ACCOUNT_SUMMARIES)))
           .addMethod(
             getGetPropertyMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.GetPropertyRequest,
                 com.google.analytics.admin.v1alpha.Property>(
                   this, METHODID_GET_PROPERTY)))
           .addMethod(
             getListPropertiesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.ListPropertiesRequest,
                 com.google.analytics.admin.v1alpha.ListPropertiesResponse>(
                   this, METHODID_LIST_PROPERTIES)))
           .addMethod(
             getCreatePropertyMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.CreatePropertyRequest,
                 com.google.analytics.admin.v1alpha.Property>(
                   this, METHODID_CREATE_PROPERTY)))
           .addMethod(
             getDeletePropertyMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.DeletePropertyRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_PROPERTY)))
           .addMethod(
             getUpdatePropertyMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.UpdatePropertyRequest,
                 com.google.analytics.admin.v1alpha.Property>(
                   this, METHODID_UPDATE_PROPERTY)))
           .addMethod(
             getGetUserLinkMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.GetUserLinkRequest,
                 com.google.analytics.admin.v1alpha.UserLink>(
                   this, METHODID_GET_USER_LINK)))
           .addMethod(
             getBatchGetUserLinksMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest,
                 com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse>(
                   this, METHODID_BATCH_GET_USER_LINKS)))
           .addMethod(
             getListUserLinksMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.ListUserLinksRequest,
                 com.google.analytics.admin.v1alpha.ListUserLinksResponse>(
                   this, METHODID_LIST_USER_LINKS)))
           .addMethod(
             getAuditUserLinksMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.AuditUserLinksRequest,
                 com.google.analytics.admin.v1alpha.AuditUserLinksResponse>(
                   this, METHODID_AUDIT_USER_LINKS)))
           .addMethod(
             getCreateUserLinkMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.CreateUserLinkRequest,
                 com.google.analytics.admin.v1alpha.UserLink>(
                   this, METHODID_CREATE_USER_LINK)))
           .addMethod(
             getBatchCreateUserLinksMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest,
                 com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse>(
                   this, METHODID_BATCH_CREATE_USER_LINKS)))
           .addMethod(
             getUpdateUserLinkMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.UpdateUserLinkRequest,
                 com.google.analytics.admin.v1alpha.UserLink>(
                   this, METHODID_UPDATE_USER_LINK)))
           .addMethod(
             getBatchUpdateUserLinksMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest,
                 com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse>(
                   this, METHODID_BATCH_UPDATE_USER_LINKS)))
           .addMethod(
             getDeleteUserLinkMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.DeleteUserLinkRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_USER_LINK)))
           .addMethod(
             getBatchDeleteUserLinksMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_BATCH_DELETE_USER_LINKS)))
           .addMethod(
             getGetWebDataStreamMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.GetWebDataStreamRequest,
                 com.google.analytics.admin.v1alpha.WebDataStream>(
                   this, METHODID_GET_WEB_DATA_STREAM)))
           .addMethod(
             getDeleteWebDataStreamMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.DeleteWebDataStreamRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_WEB_DATA_STREAM)))
           .addMethod(
             getUpdateWebDataStreamMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.UpdateWebDataStreamRequest,
                 com.google.analytics.admin.v1alpha.WebDataStream>(
                   this, METHODID_UPDATE_WEB_DATA_STREAM)))
           .addMethod(
             getCreateWebDataStreamMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.CreateWebDataStreamRequest,
                 com.google.analytics.admin.v1alpha.WebDataStream>(
                   this, METHODID_CREATE_WEB_DATA_STREAM)))
           .addMethod(
             getListWebDataStreamsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.ListWebDataStreamsRequest,
                 com.google.analytics.admin.v1alpha.ListWebDataStreamsResponse>(
                   this, METHODID_LIST_WEB_DATA_STREAMS)))
           .addMethod(
             getGetIosAppDataStreamMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.GetIosAppDataStreamRequest,
                 com.google.analytics.admin.v1alpha.IosAppDataStream>(
                   this, METHODID_GET_IOS_APP_DATA_STREAM)))
           .addMethod(
             getDeleteIosAppDataStreamMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.DeleteIosAppDataStreamRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_IOS_APP_DATA_STREAM)))
           .addMethod(
             getUpdateIosAppDataStreamMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.UpdateIosAppDataStreamRequest,
                 com.google.analytics.admin.v1alpha.IosAppDataStream>(
                   this, METHODID_UPDATE_IOS_APP_DATA_STREAM)))
           .addMethod(
             getCreateIosAppDataStreamMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.CreateIosAppDataStreamRequest,
                 com.google.analytics.admin.v1alpha.IosAppDataStream>(
                   this, METHODID_CREATE_IOS_APP_DATA_STREAM)))
           .addMethod(
             getListIosAppDataStreamsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.ListIosAppDataStreamsRequest,
                 com.google.analytics.admin.v1alpha.ListIosAppDataStreamsResponse>(
                   this, METHODID_LIST_IOS_APP_DATA_STREAMS)))
           .addMethod(
             getGetAndroidAppDataStreamMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.GetAndroidAppDataStreamRequest,
                 com.google.analytics.admin.v1alpha.AndroidAppDataStream>(
                   this, METHODID_GET_ANDROID_APP_DATA_STREAM)))
           .addMethod(
             getDeleteAndroidAppDataStreamMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.DeleteAndroidAppDataStreamRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_ANDROID_APP_DATA_STREAM)))
           .addMethod(
             getUpdateAndroidAppDataStreamMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.UpdateAndroidAppDataStreamRequest,
                 com.google.analytics.admin.v1alpha.AndroidAppDataStream>(
                   this, METHODID_UPDATE_ANDROID_APP_DATA_STREAM)))
           .addMethod(
             getCreateAndroidAppDataStreamMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.CreateAndroidAppDataStreamRequest,
                 com.google.analytics.admin.v1alpha.AndroidAppDataStream>(
                   this, METHODID_CREATE_ANDROID_APP_DATA_STREAM)))
           .addMethod(
             getListAndroidAppDataStreamsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsRequest,
                 com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsResponse>(
                   this, METHODID_LIST_ANDROID_APP_DATA_STREAMS)))
           .addMethod(
             getGetEnhancedMeasurementSettingsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest,
                 com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>(
                   this, METHODID_GET_ENHANCED_MEASUREMENT_SETTINGS)))
           .addMethod(
             getUpdateEnhancedMeasurementSettingsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest,
                 com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>(
                   this, METHODID_UPDATE_ENHANCED_MEASUREMENT_SETTINGS)))
           .addMethod(
             getCreateFirebaseLinkMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest,
                 com.google.analytics.admin.v1alpha.FirebaseLink>(
                   this, METHODID_CREATE_FIREBASE_LINK)))
           .addMethod(
             getUpdateFirebaseLinkMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest,
                 com.google.analytics.admin.v1alpha.FirebaseLink>(
                   this, METHODID_UPDATE_FIREBASE_LINK)))
           .addMethod(
             getDeleteFirebaseLinkMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_FIREBASE_LINK)))
           .addMethod(
             getListFirebaseLinksMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest,
                 com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse>(
                   this, METHODID_LIST_FIREBASE_LINKS)))
           .addMethod(
             getGetGlobalSiteTagMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest,
                 com.google.analytics.admin.v1alpha.GlobalSiteTag>(
                   this, METHODID_GET_GLOBAL_SITE_TAG)))
           .addMethod(
             getCreateGoogleAdsLinkMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest,
                 com.google.analytics.admin.v1alpha.GoogleAdsLink>(
                   this, METHODID_CREATE_GOOGLE_ADS_LINK)))
           .addMethod(
             getUpdateGoogleAdsLinkMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest,
                 com.google.analytics.admin.v1alpha.GoogleAdsLink>(
                   this, METHODID_UPDATE_GOOGLE_ADS_LINK)))
           .addMethod(
             getDeleteGoogleAdsLinkMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_GOOGLE_ADS_LINK)))
           .addMethod(
             getListGoogleAdsLinksMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.ListGoogleAdsLinksRequest,
                 com.google.analytics.admin.v1alpha.ListGoogleAdsLinksResponse>(
                   this, METHODID_LIST_GOOGLE_ADS_LINKS)))
           .addMethod(
             getGetDataSharingSettingsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest,
                 com.google.analytics.admin.v1alpha.DataSharingSettings>(
@@ -2474,7 +2461,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void getAccount(com.google.analytics.admin.v1alpha.GetAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Account> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetAccountMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2488,7 +2475,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void listAccounts(com.google.analytics.admin.v1alpha.ListAccountsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListAccountsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListAccountsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2506,7 +2493,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void deleteAccount(com.google.analytics.admin.v1alpha.DeleteAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteAccountMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2517,7 +2504,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void updateAccount(com.google.analytics.admin.v1alpha.UpdateAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Account> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateAccountMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2528,7 +2515,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void provisionAccountTicket(com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getProvisionAccountTicketMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2539,7 +2526,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void listAccountSummaries(com.google.analytics.admin.v1alpha.ListAccountSummariesRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListAccountSummariesResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListAccountSummariesMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2550,7 +2537,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void getProperty(com.google.analytics.admin.v1alpha.GetPropertyRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Property> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetPropertyMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2565,7 +2552,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void listProperties(com.google.analytics.admin.v1alpha.ListPropertiesRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListPropertiesResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListPropertiesMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2576,7 +2563,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void createProperty(com.google.analytics.admin.v1alpha.CreatePropertyRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Property> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreatePropertyMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2594,7 +2581,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void deleteProperty(com.google.analytics.admin.v1alpha.DeletePropertyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeletePropertyMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2605,7 +2592,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void updateProperty(com.google.analytics.admin.v1alpha.UpdatePropertyRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Property> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdatePropertyMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2616,7 +2603,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void getUserLink(com.google.analytics.admin.v1alpha.GetUserLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.UserLink> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetUserLinkMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2627,7 +2614,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void batchGetUserLinks(com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getBatchGetUserLinksMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2638,7 +2625,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void listUserLinks(com.google.analytics.admin.v1alpha.ListUserLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListUserLinksResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListUserLinksMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2656,7 +2643,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void auditUserLinks(com.google.analytics.admin.v1alpha.AuditUserLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AuditUserLinksResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getAuditUserLinksMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2670,7 +2657,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void createUserLink(com.google.analytics.admin.v1alpha.CreateUserLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.UserLink> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateUserLinkMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2683,7 +2670,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void batchCreateUserLinks(com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getBatchCreateUserLinksMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2694,7 +2681,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void updateUserLink(com.google.analytics.admin.v1alpha.UpdateUserLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.UserLink> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateUserLinkMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2705,7 +2692,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void batchUpdateUserLinks(com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getBatchUpdateUserLinksMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2716,7 +2703,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void deleteUserLink(com.google.analytics.admin.v1alpha.DeleteUserLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteUserLinkMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2727,7 +2714,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void batchDeleteUserLinks(com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getBatchDeleteUserLinksMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2738,7 +2725,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void getWebDataStream(com.google.analytics.admin.v1alpha.GetWebDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.WebDataStream> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetWebDataStreamMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2749,7 +2736,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void deleteWebDataStream(com.google.analytics.admin.v1alpha.DeleteWebDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteWebDataStreamMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2760,7 +2747,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void updateWebDataStream(com.google.analytics.admin.v1alpha.UpdateWebDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.WebDataStream> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateWebDataStreamMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2771,7 +2758,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void createWebDataStream(com.google.analytics.admin.v1alpha.CreateWebDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.WebDataStream> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateWebDataStreamMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2784,7 +2771,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void listWebDataStreams(com.google.analytics.admin.v1alpha.ListWebDataStreamsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListWebDataStreamsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListWebDataStreamsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2795,7 +2782,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void getIosAppDataStream(com.google.analytics.admin.v1alpha.GetIosAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.IosAppDataStream> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetIosAppDataStreamMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2806,7 +2793,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void deleteIosAppDataStream(com.google.analytics.admin.v1alpha.DeleteIosAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteIosAppDataStreamMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2817,7 +2804,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void updateIosAppDataStream(com.google.analytics.admin.v1alpha.UpdateIosAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.IosAppDataStream> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateIosAppDataStreamMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2834,7 +2821,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void createIosAppDataStream(com.google.analytics.admin.v1alpha.CreateIosAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.IosAppDataStream> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateIosAppDataStreamMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2847,7 +2834,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void listIosAppDataStreams(com.google.analytics.admin.v1alpha.ListIosAppDataStreamsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListIosAppDataStreamsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListIosAppDataStreamsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2858,7 +2845,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void getAndroidAppDataStream(com.google.analytics.admin.v1alpha.GetAndroidAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AndroidAppDataStream> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetAndroidAppDataStreamMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2869,7 +2856,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void deleteAndroidAppDataStream(com.google.analytics.admin.v1alpha.DeleteAndroidAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteAndroidAppDataStreamMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2880,7 +2867,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void updateAndroidAppDataStream(com.google.analytics.admin.v1alpha.UpdateAndroidAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AndroidAppDataStream> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateAndroidAppDataStreamMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2897,7 +2884,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void createAndroidAppDataStream(com.google.analytics.admin.v1alpha.CreateAndroidAppDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AndroidAppDataStream> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateAndroidAppDataStreamMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2910,7 +2897,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void listAndroidAppDataStreams(com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListAndroidAppDataStreamsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2923,7 +2910,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void getEnhancedMeasurementSettings(com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetEnhancedMeasurementSettingsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2936,7 +2923,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void updateEnhancedMeasurementSettings(com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateEnhancedMeasurementSettingsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2948,7 +2935,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void createFirebaseLink(com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.FirebaseLink> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateFirebaseLinkMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2959,7 +2946,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void updateFirebaseLink(com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.FirebaseLink> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateFirebaseLinkMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2970,7 +2957,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void deleteFirebaseLink(com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteFirebaseLinkMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2982,7 +2969,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void listFirebaseLinks(com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListFirebaseLinksMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2994,7 +2981,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void getGlobalSiteTag(com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.GlobalSiteTag> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetGlobalSiteTagMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3005,7 +2992,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void createGoogleAdsLink(com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.GoogleAdsLink> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateGoogleAdsLinkMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3016,7 +3003,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void updateGoogleAdsLink(com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.GoogleAdsLink> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateGoogleAdsLinkMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3027,7 +3014,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void deleteGoogleAdsLink(com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteGoogleAdsLinkMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3038,7 +3025,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void listGoogleAdsLinks(com.google.analytics.admin.v1alpha.ListGoogleAdsLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListGoogleAdsLinksResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListGoogleAdsLinksMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3050,7 +3037,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public void getDataSharingSettings(com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.DataSharingSettings> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetDataSharingSettingsMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -3078,7 +3065,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.Account getAccount(com.google.analytics.admin.v1alpha.GetAccountRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetAccountMethod(), getCallOptions(), request);
     }
 
@@ -3091,7 +3078,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ListAccountsResponse listAccounts(com.google.analytics.admin.v1alpha.ListAccountsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListAccountsMethod(), getCallOptions(), request);
     }
 
@@ -3108,7 +3095,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteAccount(com.google.analytics.admin.v1alpha.DeleteAccountRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteAccountMethod(), getCallOptions(), request);
     }
 
@@ -3118,7 +3105,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.Account updateAccount(com.google.analytics.admin.v1alpha.UpdateAccountRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateAccountMethod(), getCallOptions(), request);
     }
 
@@ -3128,7 +3115,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse provisionAccountTicket(com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getProvisionAccountTicketMethod(), getCallOptions(), request);
     }
 
@@ -3138,7 +3125,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ListAccountSummariesResponse listAccountSummaries(com.google.analytics.admin.v1alpha.ListAccountSummariesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListAccountSummariesMethod(), getCallOptions(), request);
     }
 
@@ -3148,7 +3135,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.Property getProperty(com.google.analytics.admin.v1alpha.GetPropertyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetPropertyMethod(), getCallOptions(), request);
     }
 
@@ -3162,7 +3149,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ListPropertiesResponse listProperties(com.google.analytics.admin.v1alpha.ListPropertiesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListPropertiesMethod(), getCallOptions(), request);
     }
 
@@ -3172,7 +3159,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.Property createProperty(com.google.analytics.admin.v1alpha.CreatePropertyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreatePropertyMethod(), getCallOptions(), request);
     }
 
@@ -3189,7 +3176,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteProperty(com.google.analytics.admin.v1alpha.DeletePropertyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeletePropertyMethod(), getCallOptions(), request);
     }
 
@@ -3199,7 +3186,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.Property updateProperty(com.google.analytics.admin.v1alpha.UpdatePropertyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdatePropertyMethod(), getCallOptions(), request);
     }
 
@@ -3209,7 +3196,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.UserLink getUserLink(com.google.analytics.admin.v1alpha.GetUserLinkRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetUserLinkMethod(), getCallOptions(), request);
     }
 
@@ -3219,7 +3206,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse batchGetUserLinks(com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBatchGetUserLinksMethod(), getCallOptions(), request);
     }
 
@@ -3229,7 +3216,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ListUserLinksResponse listUserLinks(com.google.analytics.admin.v1alpha.ListUserLinksRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListUserLinksMethod(), getCallOptions(), request);
     }
 
@@ -3246,7 +3233,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.AuditUserLinksResponse auditUserLinks(com.google.analytics.admin.v1alpha.AuditUserLinksRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getAuditUserLinksMethod(), getCallOptions(), request);
     }
 
@@ -3259,7 +3246,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.UserLink createUserLink(com.google.analytics.admin.v1alpha.CreateUserLinkRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateUserLinkMethod(), getCallOptions(), request);
     }
 
@@ -3271,7 +3258,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse batchCreateUserLinks(com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBatchCreateUserLinksMethod(), getCallOptions(), request);
     }
 
@@ -3281,7 +3268,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.UserLink updateUserLink(com.google.analytics.admin.v1alpha.UpdateUserLinkRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateUserLinkMethod(), getCallOptions(), request);
     }
 
@@ -3291,7 +3278,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse batchUpdateUserLinks(com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBatchUpdateUserLinksMethod(), getCallOptions(), request);
     }
 
@@ -3301,7 +3288,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteUserLink(com.google.analytics.admin.v1alpha.DeleteUserLinkRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteUserLinkMethod(), getCallOptions(), request);
     }
 
@@ -3311,7 +3298,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty batchDeleteUserLinks(com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBatchDeleteUserLinksMethod(), getCallOptions(), request);
     }
 
@@ -3321,7 +3308,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.WebDataStream getWebDataStream(com.google.analytics.admin.v1alpha.GetWebDataStreamRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetWebDataStreamMethod(), getCallOptions(), request);
     }
 
@@ -3331,7 +3318,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteWebDataStream(com.google.analytics.admin.v1alpha.DeleteWebDataStreamRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteWebDataStreamMethod(), getCallOptions(), request);
     }
 
@@ -3341,7 +3328,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.WebDataStream updateWebDataStream(com.google.analytics.admin.v1alpha.UpdateWebDataStreamRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateWebDataStreamMethod(), getCallOptions(), request);
     }
 
@@ -3351,7 +3338,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.WebDataStream createWebDataStream(com.google.analytics.admin.v1alpha.CreateWebDataStreamRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateWebDataStreamMethod(), getCallOptions(), request);
     }
 
@@ -3363,7 +3350,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ListWebDataStreamsResponse listWebDataStreams(com.google.analytics.admin.v1alpha.ListWebDataStreamsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListWebDataStreamsMethod(), getCallOptions(), request);
     }
 
@@ -3373,7 +3360,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.IosAppDataStream getIosAppDataStream(com.google.analytics.admin.v1alpha.GetIosAppDataStreamRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetIosAppDataStreamMethod(), getCallOptions(), request);
     }
 
@@ -3383,7 +3370,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteIosAppDataStream(com.google.analytics.admin.v1alpha.DeleteIosAppDataStreamRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteIosAppDataStreamMethod(), getCallOptions(), request);
     }
 
@@ -3393,7 +3380,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.IosAppDataStream updateIosAppDataStream(com.google.analytics.admin.v1alpha.UpdateIosAppDataStreamRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateIosAppDataStreamMethod(), getCallOptions(), request);
     }
 
@@ -3409,7 +3396,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.IosAppDataStream createIosAppDataStream(com.google.analytics.admin.v1alpha.CreateIosAppDataStreamRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateIosAppDataStreamMethod(), getCallOptions(), request);
     }
 
@@ -3421,7 +3408,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ListIosAppDataStreamsResponse listIosAppDataStreams(com.google.analytics.admin.v1alpha.ListIosAppDataStreamsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListIosAppDataStreamsMethod(), getCallOptions(), request);
     }
 
@@ -3431,7 +3418,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.AndroidAppDataStream getAndroidAppDataStream(com.google.analytics.admin.v1alpha.GetAndroidAppDataStreamRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetAndroidAppDataStreamMethod(), getCallOptions(), request);
     }
 
@@ -3441,7 +3428,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteAndroidAppDataStream(com.google.analytics.admin.v1alpha.DeleteAndroidAppDataStreamRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteAndroidAppDataStreamMethod(), getCallOptions(), request);
     }
 
@@ -3451,7 +3438,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.AndroidAppDataStream updateAndroidAppDataStream(com.google.analytics.admin.v1alpha.UpdateAndroidAppDataStreamRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateAndroidAppDataStreamMethod(), getCallOptions(), request);
     }
 
@@ -3467,7 +3454,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.AndroidAppDataStream createAndroidAppDataStream(com.google.analytics.admin.v1alpha.CreateAndroidAppDataStreamRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateAndroidAppDataStreamMethod(), getCallOptions(), request);
     }
 
@@ -3479,7 +3466,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsResponse listAndroidAppDataStreams(com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListAndroidAppDataStreamsMethod(), getCallOptions(), request);
     }
 
@@ -3491,7 +3478,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings getEnhancedMeasurementSettings(com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetEnhancedMeasurementSettingsMethod(), getCallOptions(), request);
     }
 
@@ -3503,7 +3490,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings updateEnhancedMeasurementSettings(com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateEnhancedMeasurementSettingsMethod(), getCallOptions(), request);
     }
 
@@ -3514,7 +3501,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.FirebaseLink createFirebaseLink(com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateFirebaseLinkMethod(), getCallOptions(), request);
     }
 
@@ -3524,7 +3511,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.FirebaseLink updateFirebaseLink(com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateFirebaseLinkMethod(), getCallOptions(), request);
     }
 
@@ -3534,7 +3521,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteFirebaseLink(com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteFirebaseLinkMethod(), getCallOptions(), request);
     }
 
@@ -3545,7 +3532,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse listFirebaseLinks(com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListFirebaseLinksMethod(), getCallOptions(), request);
     }
 
@@ -3556,7 +3543,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.GlobalSiteTag getGlobalSiteTag(com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetGlobalSiteTagMethod(), getCallOptions(), request);
     }
 
@@ -3566,7 +3553,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.GoogleAdsLink createGoogleAdsLink(com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateGoogleAdsLinkMethod(), getCallOptions(), request);
     }
 
@@ -3576,7 +3563,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.GoogleAdsLink updateGoogleAdsLink(com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateGoogleAdsLinkMethod(), getCallOptions(), request);
     }
 
@@ -3586,7 +3573,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteGoogleAdsLink(com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteGoogleAdsLinkMethod(), getCallOptions(), request);
     }
 
@@ -3596,7 +3583,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ListGoogleAdsLinksResponse listGoogleAdsLinks(com.google.analytics.admin.v1alpha.ListGoogleAdsLinksRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListGoogleAdsLinksMethod(), getCallOptions(), request);
     }
 
@@ -3607,7 +3594,7 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.DataSharingSettings getDataSharingSettings(com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetDataSharingSettingsMethod(), getCallOptions(), request);
     }
   }
@@ -3636,7 +3623,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.Account> getAccount(
         com.google.analytics.admin.v1alpha.GetAccountRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetAccountMethod(), getCallOptions()), request);
     }
 
@@ -3650,7 +3637,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.ListAccountsResponse> listAccounts(
         com.google.analytics.admin.v1alpha.ListAccountsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListAccountsMethod(), getCallOptions()), request);
     }
 
@@ -3668,7 +3655,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteAccount(
         com.google.analytics.admin.v1alpha.DeleteAccountRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteAccountMethod(), getCallOptions()), request);
     }
 
@@ -3679,7 +3666,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.Account> updateAccount(
         com.google.analytics.admin.v1alpha.UpdateAccountRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateAccountMethod(), getCallOptions()), request);
     }
 
@@ -3690,7 +3677,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse> provisionAccountTicket(
         com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getProvisionAccountTicketMethod(), getCallOptions()), request);
     }
 
@@ -3701,7 +3688,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.ListAccountSummariesResponse> listAccountSummaries(
         com.google.analytics.admin.v1alpha.ListAccountSummariesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListAccountSummariesMethod(), getCallOptions()), request);
     }
 
@@ -3712,7 +3699,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.Property> getProperty(
         com.google.analytics.admin.v1alpha.GetPropertyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetPropertyMethod(), getCallOptions()), request);
     }
 
@@ -3727,7 +3714,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.ListPropertiesResponse> listProperties(
         com.google.analytics.admin.v1alpha.ListPropertiesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListPropertiesMethod(), getCallOptions()), request);
     }
 
@@ -3738,7 +3725,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.Property> createProperty(
         com.google.analytics.admin.v1alpha.CreatePropertyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreatePropertyMethod(), getCallOptions()), request);
     }
 
@@ -3756,7 +3743,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteProperty(
         com.google.analytics.admin.v1alpha.DeletePropertyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeletePropertyMethod(), getCallOptions()), request);
     }
 
@@ -3767,7 +3754,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.Property> updateProperty(
         com.google.analytics.admin.v1alpha.UpdatePropertyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdatePropertyMethod(), getCallOptions()), request);
     }
 
@@ -3778,7 +3765,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.UserLink> getUserLink(
         com.google.analytics.admin.v1alpha.GetUserLinkRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetUserLinkMethod(), getCallOptions()), request);
     }
 
@@ -3789,7 +3776,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse> batchGetUserLinks(
         com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBatchGetUserLinksMethod(), getCallOptions()), request);
     }
 
@@ -3800,7 +3787,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.ListUserLinksResponse> listUserLinks(
         com.google.analytics.admin.v1alpha.ListUserLinksRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListUserLinksMethod(), getCallOptions()), request);
     }
 
@@ -3818,7 +3805,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.AuditUserLinksResponse> auditUserLinks(
         com.google.analytics.admin.v1alpha.AuditUserLinksRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getAuditUserLinksMethod(), getCallOptions()), request);
     }
 
@@ -3832,7 +3819,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.UserLink> createUserLink(
         com.google.analytics.admin.v1alpha.CreateUserLinkRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateUserLinkMethod(), getCallOptions()), request);
     }
 
@@ -3845,7 +3832,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse> batchCreateUserLinks(
         com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBatchCreateUserLinksMethod(), getCallOptions()), request);
     }
 
@@ -3856,7 +3843,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.UserLink> updateUserLink(
         com.google.analytics.admin.v1alpha.UpdateUserLinkRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateUserLinkMethod(), getCallOptions()), request);
     }
 
@@ -3867,7 +3854,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse> batchUpdateUserLinks(
         com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBatchUpdateUserLinksMethod(), getCallOptions()), request);
     }
 
@@ -3878,7 +3865,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteUserLink(
         com.google.analytics.admin.v1alpha.DeleteUserLinkRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteUserLinkMethod(), getCallOptions()), request);
     }
 
@@ -3889,7 +3876,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> batchDeleteUserLinks(
         com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBatchDeleteUserLinksMethod(), getCallOptions()), request);
     }
 
@@ -3900,7 +3887,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.WebDataStream> getWebDataStream(
         com.google.analytics.admin.v1alpha.GetWebDataStreamRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetWebDataStreamMethod(), getCallOptions()), request);
     }
 
@@ -3911,7 +3898,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteWebDataStream(
         com.google.analytics.admin.v1alpha.DeleteWebDataStreamRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteWebDataStreamMethod(), getCallOptions()), request);
     }
 
@@ -3922,7 +3909,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.WebDataStream> updateWebDataStream(
         com.google.analytics.admin.v1alpha.UpdateWebDataStreamRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateWebDataStreamMethod(), getCallOptions()), request);
     }
 
@@ -3933,7 +3920,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.WebDataStream> createWebDataStream(
         com.google.analytics.admin.v1alpha.CreateWebDataStreamRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateWebDataStreamMethod(), getCallOptions()), request);
     }
 
@@ -3946,7 +3933,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.ListWebDataStreamsResponse> listWebDataStreams(
         com.google.analytics.admin.v1alpha.ListWebDataStreamsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListWebDataStreamsMethod(), getCallOptions()), request);
     }
 
@@ -3957,7 +3944,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.IosAppDataStream> getIosAppDataStream(
         com.google.analytics.admin.v1alpha.GetIosAppDataStreamRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetIosAppDataStreamMethod(), getCallOptions()), request);
     }
 
@@ -3968,7 +3955,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteIosAppDataStream(
         com.google.analytics.admin.v1alpha.DeleteIosAppDataStreamRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteIosAppDataStreamMethod(), getCallOptions()), request);
     }
 
@@ -3979,7 +3966,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.IosAppDataStream> updateIosAppDataStream(
         com.google.analytics.admin.v1alpha.UpdateIosAppDataStreamRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateIosAppDataStreamMethod(), getCallOptions()), request);
     }
 
@@ -3996,7 +3983,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.IosAppDataStream> createIosAppDataStream(
         com.google.analytics.admin.v1alpha.CreateIosAppDataStreamRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateIosAppDataStreamMethod(), getCallOptions()), request);
     }
 
@@ -4009,7 +3996,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.ListIosAppDataStreamsResponse> listIosAppDataStreams(
         com.google.analytics.admin.v1alpha.ListIosAppDataStreamsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListIosAppDataStreamsMethod(), getCallOptions()), request);
     }
 
@@ -4020,7 +4007,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.AndroidAppDataStream> getAndroidAppDataStream(
         com.google.analytics.admin.v1alpha.GetAndroidAppDataStreamRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetAndroidAppDataStreamMethod(), getCallOptions()), request);
     }
 
@@ -4031,7 +4018,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteAndroidAppDataStream(
         com.google.analytics.admin.v1alpha.DeleteAndroidAppDataStreamRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteAndroidAppDataStreamMethod(), getCallOptions()), request);
     }
 
@@ -4042,7 +4029,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.AndroidAppDataStream> updateAndroidAppDataStream(
         com.google.analytics.admin.v1alpha.UpdateAndroidAppDataStreamRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateAndroidAppDataStreamMethod(), getCallOptions()), request);
     }
 
@@ -4059,7 +4046,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.AndroidAppDataStream> createAndroidAppDataStream(
         com.google.analytics.admin.v1alpha.CreateAndroidAppDataStreamRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateAndroidAppDataStreamMethod(), getCallOptions()), request);
     }
 
@@ -4072,7 +4059,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsResponse> listAndroidAppDataStreams(
         com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListAndroidAppDataStreamsMethod(), getCallOptions()), request);
     }
 
@@ -4085,7 +4072,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings> getEnhancedMeasurementSettings(
         com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetEnhancedMeasurementSettingsMethod(), getCallOptions()), request);
     }
 
@@ -4098,7 +4085,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings> updateEnhancedMeasurementSettings(
         com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateEnhancedMeasurementSettingsMethod(), getCallOptions()), request);
     }
 
@@ -4110,7 +4097,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.FirebaseLink> createFirebaseLink(
         com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateFirebaseLinkMethod(), getCallOptions()), request);
     }
 
@@ -4121,7 +4108,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.FirebaseLink> updateFirebaseLink(
         com.google.analytics.admin.v1alpha.UpdateFirebaseLinkRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateFirebaseLinkMethod(), getCallOptions()), request);
     }
 
@@ -4132,7 +4119,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteFirebaseLink(
         com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteFirebaseLinkMethod(), getCallOptions()), request);
     }
 
@@ -4144,7 +4131,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse> listFirebaseLinks(
         com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListFirebaseLinksMethod(), getCallOptions()), request);
     }
 
@@ -4156,7 +4143,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.GlobalSiteTag> getGlobalSiteTag(
         com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetGlobalSiteTagMethod(), getCallOptions()), request);
     }
 
@@ -4167,7 +4154,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.GoogleAdsLink> createGoogleAdsLink(
         com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateGoogleAdsLinkMethod(), getCallOptions()), request);
     }
 
@@ -4178,7 +4165,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.GoogleAdsLink> updateGoogleAdsLink(
         com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateGoogleAdsLinkMethod(), getCallOptions()), request);
     }
 
@@ -4189,7 +4176,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteGoogleAdsLink(
         com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteGoogleAdsLinkMethod(), getCallOptions()), request);
     }
 
@@ -4200,7 +4187,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.ListGoogleAdsLinksResponse> listGoogleAdsLinks(
         com.google.analytics.admin.v1alpha.ListGoogleAdsLinksRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListGoogleAdsLinksMethod(), getCallOptions()), request);
     }
 
@@ -4212,7 +4199,7 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.admin.v1alpha.DataSharingSettings> getDataSharingSettings(
         com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetDataSharingSettingsMethod(), getCallOptions()), request);
     }
   }

@@ -1,19 +1,6 @@
 package com.google.cloud.bigquery.storage.v1alpha2;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -276,7 +263,7 @@ public final class BigQueryWriteGrpc {
      */
     public void createWriteStream(com.google.cloud.bigquery.storage.v1alpha2.Storage.CreateWriteStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1alpha2.Stream.WriteStream> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateWriteStreamMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateWriteStreamMethod(), responseObserver);
     }
 
     /**
@@ -301,7 +288,7 @@ public final class BigQueryWriteGrpc {
      */
     public io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1alpha2.Storage.AppendRowsRequest> appendRows(
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1alpha2.Storage.AppendRowsResponse> responseObserver) {
-      return asyncUnimplementedStreamingCall(getAppendRowsMethod(), responseObserver);
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getAppendRowsMethod(), responseObserver);
     }
 
     /**
@@ -311,7 +298,7 @@ public final class BigQueryWriteGrpc {
      */
     public void getWriteStream(com.google.cloud.bigquery.storage.v1alpha2.Storage.GetWriteStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1alpha2.Stream.WriteStream> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetWriteStreamMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetWriteStreamMethod(), responseObserver);
     }
 
     /**
@@ -322,7 +309,7 @@ public final class BigQueryWriteGrpc {
      */
     public void finalizeWriteStream(com.google.cloud.bigquery.storage.v1alpha2.Storage.FinalizeWriteStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1alpha2.Storage.FinalizeWriteStreamResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getFinalizeWriteStreamMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFinalizeWriteStreamMethod(), responseObserver);
     }
 
     /**
@@ -336,7 +323,7 @@ public final class BigQueryWriteGrpc {
      */
     public void batchCommitWriteStreams(com.google.cloud.bigquery.storage.v1alpha2.Storage.BatchCommitWriteStreamsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1alpha2.Storage.BatchCommitWriteStreamsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchCommitWriteStreamsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBatchCommitWriteStreamsMethod(), responseObserver);
     }
 
     /**
@@ -350,49 +337,49 @@ public final class BigQueryWriteGrpc {
      */
     public void flushRows(com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getFlushRowsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFlushRowsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getCreateWriteStreamMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.bigquery.storage.v1alpha2.Storage.CreateWriteStreamRequest,
                 com.google.cloud.bigquery.storage.v1alpha2.Stream.WriteStream>(
                   this, METHODID_CREATE_WRITE_STREAM)))
           .addMethod(
             getAppendRowsMethod(),
-            asyncBidiStreamingCall(
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
               new MethodHandlers<
                 com.google.cloud.bigquery.storage.v1alpha2.Storage.AppendRowsRequest,
                 com.google.cloud.bigquery.storage.v1alpha2.Storage.AppendRowsResponse>(
                   this, METHODID_APPEND_ROWS)))
           .addMethod(
             getGetWriteStreamMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.bigquery.storage.v1alpha2.Storage.GetWriteStreamRequest,
                 com.google.cloud.bigquery.storage.v1alpha2.Stream.WriteStream>(
                   this, METHODID_GET_WRITE_STREAM)))
           .addMethod(
             getFinalizeWriteStreamMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.bigquery.storage.v1alpha2.Storage.FinalizeWriteStreamRequest,
                 com.google.cloud.bigquery.storage.v1alpha2.Storage.FinalizeWriteStreamResponse>(
                   this, METHODID_FINALIZE_WRITE_STREAM)))
           .addMethod(
             getBatchCommitWriteStreamsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.bigquery.storage.v1alpha2.Storage.BatchCommitWriteStreamsRequest,
                 com.google.cloud.bigquery.storage.v1alpha2.Storage.BatchCommitWriteStreamsResponse>(
                   this, METHODID_BATCH_COMMIT_WRITE_STREAMS)))
           .addMethod(
             getFlushRowsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest,
                 com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse>(
@@ -426,7 +413,7 @@ public final class BigQueryWriteGrpc {
      */
     public void createWriteStream(com.google.cloud.bigquery.storage.v1alpha2.Storage.CreateWriteStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1alpha2.Stream.WriteStream> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateWriteStreamMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -452,7 +439,7 @@ public final class BigQueryWriteGrpc {
      */
     public io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1alpha2.Storage.AppendRowsRequest> appendRows(
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1alpha2.Storage.AppendRowsResponse> responseObserver) {
-      return asyncBidiStreamingCall(
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
           getChannel().newCall(getAppendRowsMethod(), getCallOptions()), responseObserver);
     }
 
@@ -463,7 +450,7 @@ public final class BigQueryWriteGrpc {
      */
     public void getWriteStream(com.google.cloud.bigquery.storage.v1alpha2.Storage.GetWriteStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1alpha2.Stream.WriteStream> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetWriteStreamMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -475,7 +462,7 @@ public final class BigQueryWriteGrpc {
      */
     public void finalizeWriteStream(com.google.cloud.bigquery.storage.v1alpha2.Storage.FinalizeWriteStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1alpha2.Storage.FinalizeWriteStreamResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getFinalizeWriteStreamMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -490,7 +477,7 @@ public final class BigQueryWriteGrpc {
      */
     public void batchCommitWriteStreams(com.google.cloud.bigquery.storage.v1alpha2.Storage.BatchCommitWriteStreamsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1alpha2.Storage.BatchCommitWriteStreamsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getBatchCommitWriteStreamsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -505,7 +492,7 @@ public final class BigQueryWriteGrpc {
      */
     public void flushRows(com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getFlushRowsMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -534,7 +521,7 @@ public final class BigQueryWriteGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.storage.v1alpha2.Stream.WriteStream createWriteStream(com.google.cloud.bigquery.storage.v1alpha2.Storage.CreateWriteStreamRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateWriteStreamMethod(), getCallOptions(), request);
     }
 
@@ -544,7 +531,7 @@ public final class BigQueryWriteGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.storage.v1alpha2.Stream.WriteStream getWriteStream(com.google.cloud.bigquery.storage.v1alpha2.Storage.GetWriteStreamRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetWriteStreamMethod(), getCallOptions(), request);
     }
 
@@ -555,7 +542,7 @@ public final class BigQueryWriteGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.storage.v1alpha2.Storage.FinalizeWriteStreamResponse finalizeWriteStream(com.google.cloud.bigquery.storage.v1alpha2.Storage.FinalizeWriteStreamRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFinalizeWriteStreamMethod(), getCallOptions(), request);
     }
 
@@ -569,7 +556,7 @@ public final class BigQueryWriteGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.storage.v1alpha2.Storage.BatchCommitWriteStreamsResponse batchCommitWriteStreams(com.google.cloud.bigquery.storage.v1alpha2.Storage.BatchCommitWriteStreamsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBatchCommitWriteStreamsMethod(), getCallOptions(), request);
     }
 
@@ -583,7 +570,7 @@ public final class BigQueryWriteGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse flushRows(com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFlushRowsMethod(), getCallOptions(), request);
     }
   }
@@ -613,7 +600,7 @@ public final class BigQueryWriteGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.bigquery.storage.v1alpha2.Stream.WriteStream> createWriteStream(
         com.google.cloud.bigquery.storage.v1alpha2.Storage.CreateWriteStreamRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateWriteStreamMethod(), getCallOptions()), request);
     }
 
@@ -624,7 +611,7 @@ public final class BigQueryWriteGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.bigquery.storage.v1alpha2.Stream.WriteStream> getWriteStream(
         com.google.cloud.bigquery.storage.v1alpha2.Storage.GetWriteStreamRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetWriteStreamMethod(), getCallOptions()), request);
     }
 
@@ -636,7 +623,7 @@ public final class BigQueryWriteGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.bigquery.storage.v1alpha2.Storage.FinalizeWriteStreamResponse> finalizeWriteStream(
         com.google.cloud.bigquery.storage.v1alpha2.Storage.FinalizeWriteStreamRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getFinalizeWriteStreamMethod(), getCallOptions()), request);
     }
 
@@ -651,7 +638,7 @@ public final class BigQueryWriteGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.bigquery.storage.v1alpha2.Storage.BatchCommitWriteStreamsResponse> batchCommitWriteStreams(
         com.google.cloud.bigquery.storage.v1alpha2.Storage.BatchCommitWriteStreamsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBatchCommitWriteStreamsMethod(), getCallOptions()), request);
     }
 
@@ -666,7 +653,7 @@ public final class BigQueryWriteGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse> flushRows(
         com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getFlushRowsMethod(), getCallOptions()), request);
     }
   }

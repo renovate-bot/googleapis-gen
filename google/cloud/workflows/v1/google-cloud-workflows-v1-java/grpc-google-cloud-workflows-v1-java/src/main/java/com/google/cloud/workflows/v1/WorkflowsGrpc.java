@@ -1,19 +1,6 @@
 package com.google.cloud.workflows.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -248,7 +235,7 @@ public final class WorkflowsGrpc {
      */
     public void listWorkflows(com.google.cloud.workflows.v1.ListWorkflowsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.workflows.v1.ListWorkflowsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListWorkflowsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListWorkflowsMethod(), responseObserver);
     }
 
     /**
@@ -258,7 +245,7 @@ public final class WorkflowsGrpc {
      */
     public void getWorkflow(com.google.cloud.workflows.v1.GetWorkflowRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.workflows.v1.Workflow> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetWorkflowMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetWorkflowMethod(), responseObserver);
     }
 
     /**
@@ -270,7 +257,7 @@ public final class WorkflowsGrpc {
      */
     public void createWorkflow(com.google.cloud.workflows.v1.CreateWorkflowRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateWorkflowMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateWorkflowMethod(), responseObserver);
     }
 
     /**
@@ -282,7 +269,7 @@ public final class WorkflowsGrpc {
      */
     public void deleteWorkflow(com.google.cloud.workflows.v1.DeleteWorkflowRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteWorkflowMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteWorkflowMethod(), responseObserver);
     }
 
     /**
@@ -296,42 +283,42 @@ public final class WorkflowsGrpc {
      */
     public void updateWorkflow(com.google.cloud.workflows.v1.UpdateWorkflowRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateWorkflowMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateWorkflowMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getListWorkflowsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.workflows.v1.ListWorkflowsRequest,
                 com.google.cloud.workflows.v1.ListWorkflowsResponse>(
                   this, METHODID_LIST_WORKFLOWS)))
           .addMethod(
             getGetWorkflowMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.workflows.v1.GetWorkflowRequest,
                 com.google.cloud.workflows.v1.Workflow>(
                   this, METHODID_GET_WORKFLOW)))
           .addMethod(
             getCreateWorkflowMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.workflows.v1.CreateWorkflowRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_CREATE_WORKFLOW)))
           .addMethod(
             getDeleteWorkflowMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.workflows.v1.DeleteWorkflowRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_DELETE_WORKFLOW)))
           .addMethod(
             getUpdateWorkflowMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.workflows.v1.UpdateWorkflowRequest,
                 com.google.longrunning.Operation>(
@@ -367,7 +354,7 @@ public final class WorkflowsGrpc {
      */
     public void listWorkflows(com.google.cloud.workflows.v1.ListWorkflowsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.workflows.v1.ListWorkflowsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListWorkflowsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -378,7 +365,7 @@ public final class WorkflowsGrpc {
      */
     public void getWorkflow(com.google.cloud.workflows.v1.GetWorkflowRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.workflows.v1.Workflow> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetWorkflowMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -391,7 +378,7 @@ public final class WorkflowsGrpc {
      */
     public void createWorkflow(com.google.cloud.workflows.v1.CreateWorkflowRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateWorkflowMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -404,7 +391,7 @@ public final class WorkflowsGrpc {
      */
     public void deleteWorkflow(com.google.cloud.workflows.v1.DeleteWorkflowRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteWorkflowMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -419,7 +406,7 @@ public final class WorkflowsGrpc {
      */
     public void updateWorkflow(com.google.cloud.workflows.v1.UpdateWorkflowRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateWorkflowMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -450,7 +437,7 @@ public final class WorkflowsGrpc {
      * </pre>
      */
     public com.google.cloud.workflows.v1.ListWorkflowsResponse listWorkflows(com.google.cloud.workflows.v1.ListWorkflowsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListWorkflowsMethod(), getCallOptions(), request);
     }
 
@@ -460,7 +447,7 @@ public final class WorkflowsGrpc {
      * </pre>
      */
     public com.google.cloud.workflows.v1.Workflow getWorkflow(com.google.cloud.workflows.v1.GetWorkflowRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetWorkflowMethod(), getCallOptions(), request);
     }
 
@@ -472,7 +459,7 @@ public final class WorkflowsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createWorkflow(com.google.cloud.workflows.v1.CreateWorkflowRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateWorkflowMethod(), getCallOptions(), request);
     }
 
@@ -484,7 +471,7 @@ public final class WorkflowsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteWorkflow(com.google.cloud.workflows.v1.DeleteWorkflowRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteWorkflowMethod(), getCallOptions(), request);
     }
 
@@ -498,7 +485,7 @@ public final class WorkflowsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateWorkflow(com.google.cloud.workflows.v1.UpdateWorkflowRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateWorkflowMethod(), getCallOptions(), request);
     }
   }
@@ -530,7 +517,7 @@ public final class WorkflowsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.workflows.v1.ListWorkflowsResponse> listWorkflows(
         com.google.cloud.workflows.v1.ListWorkflowsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListWorkflowsMethod(), getCallOptions()), request);
     }
 
@@ -541,7 +528,7 @@ public final class WorkflowsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.workflows.v1.Workflow> getWorkflow(
         com.google.cloud.workflows.v1.GetWorkflowRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetWorkflowMethod(), getCallOptions()), request);
     }
 
@@ -554,7 +541,7 @@ public final class WorkflowsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> createWorkflow(
         com.google.cloud.workflows.v1.CreateWorkflowRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateWorkflowMethod(), getCallOptions()), request);
     }
 
@@ -567,7 +554,7 @@ public final class WorkflowsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> deleteWorkflow(
         com.google.cloud.workflows.v1.DeleteWorkflowRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteWorkflowMethod(), getCallOptions()), request);
     }
 
@@ -582,7 +569,7 @@ public final class WorkflowsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> updateWorkflow(
         com.google.cloud.workflows.v1.UpdateWorkflowRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateWorkflowMethod(), getCallOptions()), request);
     }
   }

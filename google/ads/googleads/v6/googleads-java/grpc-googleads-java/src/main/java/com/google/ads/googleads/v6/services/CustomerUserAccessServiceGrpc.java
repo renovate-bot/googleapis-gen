@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v6.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -150,7 +137,7 @@ public final class CustomerUserAccessServiceGrpc {
      */
     public void getCustomerUserAccess(com.google.ads.googleads.v6.services.GetCustomerUserAccessRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.resources.CustomerUserAccess> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetCustomerUserAccessMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCustomerUserAccessMethod(), responseObserver);
     }
 
     /**
@@ -161,21 +148,21 @@ public final class CustomerUserAccessServiceGrpc {
      */
     public void mutateCustomerUserAccess(com.google.ads.googleads.v6.services.MutateCustomerUserAccessRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.MutateCustomerUserAccessResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getMutateCustomerUserAccessMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMutateCustomerUserAccessMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetCustomerUserAccessMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.GetCustomerUserAccessRequest,
                 com.google.ads.googleads.v6.resources.CustomerUserAccess>(
                   this, METHODID_GET_CUSTOMER_USER_ACCESS)))
           .addMethod(
             getMutateCustomerUserAccessMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.MutateCustomerUserAccessRequest,
                 com.google.ads.googleads.v6.services.MutateCustomerUserAccessResponse>(
@@ -208,7 +195,7 @@ public final class CustomerUserAccessServiceGrpc {
      */
     public void getCustomerUserAccess(com.google.ads.googleads.v6.services.GetCustomerUserAccessRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.resources.CustomerUserAccess> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetCustomerUserAccessMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -220,7 +207,7 @@ public final class CustomerUserAccessServiceGrpc {
      */
     public void mutateCustomerUserAccess(com.google.ads.googleads.v6.services.MutateCustomerUserAccessRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.MutateCustomerUserAccessResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMutateCustomerUserAccessMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -248,7 +235,7 @@ public final class CustomerUserAccessServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.resources.CustomerUserAccess getCustomerUserAccess(com.google.ads.googleads.v6.services.GetCustomerUserAccessRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetCustomerUserAccessMethod(), getCallOptions(), request);
     }
 
@@ -259,7 +246,7 @@ public final class CustomerUserAccessServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.services.MutateCustomerUserAccessResponse mutateCustomerUserAccess(com.google.ads.googleads.v6.services.MutateCustomerUserAccessRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMutateCustomerUserAccessMethod(), getCallOptions(), request);
     }
   }
@@ -288,7 +275,7 @@ public final class CustomerUserAccessServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.resources.CustomerUserAccess> getCustomerUserAccess(
         com.google.ads.googleads.v6.services.GetCustomerUserAccessRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetCustomerUserAccessMethod(), getCallOptions()), request);
     }
 
@@ -300,7 +287,7 @@ public final class CustomerUserAccessServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.services.MutateCustomerUserAccessResponse> mutateCustomerUserAccess(
         com.google.ads.googleads.v6.services.MutateCustomerUserAccessRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMutateCustomerUserAccessMethod(), getCallOptions()), request);
     }
   }

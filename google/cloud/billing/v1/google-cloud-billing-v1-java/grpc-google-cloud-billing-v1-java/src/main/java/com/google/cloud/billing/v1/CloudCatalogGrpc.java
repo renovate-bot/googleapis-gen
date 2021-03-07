@@ -1,19 +1,6 @@
 package com.google.cloud.billing.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -154,7 +141,7 @@ public final class CloudCatalogGrpc {
      */
     public void listServices(com.google.cloud.billing.v1.ListServicesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.billing.v1.ListServicesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListServicesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListServicesMethod(), responseObserver);
     }
 
     /**
@@ -164,21 +151,21 @@ public final class CloudCatalogGrpc {
      */
     public void listSkus(com.google.cloud.billing.v1.ListSkusRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.billing.v1.ListSkusResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListSkusMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListSkusMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getListServicesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.billing.v1.ListServicesRequest,
                 com.google.cloud.billing.v1.ListServicesResponse>(
                   this, METHODID_LIST_SERVICES)))
           .addMethod(
             getListSkusMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.billing.v1.ListSkusRequest,
                 com.google.cloud.billing.v1.ListSkusResponse>(
@@ -213,7 +200,7 @@ public final class CloudCatalogGrpc {
      */
     public void listServices(com.google.cloud.billing.v1.ListServicesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.billing.v1.ListServicesResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListServicesMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -224,7 +211,7 @@ public final class CloudCatalogGrpc {
      */
     public void listSkus(com.google.cloud.billing.v1.ListSkusRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.billing.v1.ListSkusResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListSkusMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -254,7 +241,7 @@ public final class CloudCatalogGrpc {
      * </pre>
      */
     public com.google.cloud.billing.v1.ListServicesResponse listServices(com.google.cloud.billing.v1.ListServicesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListServicesMethod(), getCallOptions(), request);
     }
 
@@ -264,7 +251,7 @@ public final class CloudCatalogGrpc {
      * </pre>
      */
     public com.google.cloud.billing.v1.ListSkusResponse listSkus(com.google.cloud.billing.v1.ListSkusRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListSkusMethod(), getCallOptions(), request);
     }
   }
@@ -295,7 +282,7 @@ public final class CloudCatalogGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.billing.v1.ListServicesResponse> listServices(
         com.google.cloud.billing.v1.ListServicesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListServicesMethod(), getCallOptions()), request);
     }
 
@@ -306,7 +293,7 @@ public final class CloudCatalogGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.billing.v1.ListSkusResponse> listSkus(
         com.google.cloud.billing.v1.ListSkusRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListSkusMethod(), getCallOptions()), request);
     }
   }

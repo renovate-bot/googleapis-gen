@@ -1,19 +1,6 @@
 package com.google.analytics.data.v1beta;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -280,7 +267,7 @@ public final class BetaAnalyticsDataGrpc {
      */
     public void runReport(com.google.analytics.data.v1beta.RunReportRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.data.v1beta.RunReportResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getRunReportMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRunReportMethod(), responseObserver);
     }
 
     /**
@@ -294,7 +281,7 @@ public final class BetaAnalyticsDataGrpc {
      */
     public void runPivotReport(com.google.analytics.data.v1beta.RunPivotReportRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.data.v1beta.RunPivotReportResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getRunPivotReportMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRunPivotReportMethod(), responseObserver);
     }
 
     /**
@@ -305,7 +292,7 @@ public final class BetaAnalyticsDataGrpc {
      */
     public void batchRunReports(com.google.analytics.data.v1beta.BatchRunReportsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.data.v1beta.BatchRunReportsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchRunReportsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBatchRunReportsMethod(), responseObserver);
     }
 
     /**
@@ -316,7 +303,7 @@ public final class BetaAnalyticsDataGrpc {
      */
     public void batchRunPivotReports(com.google.analytics.data.v1beta.BatchRunPivotReportsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.data.v1beta.BatchRunPivotReportsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchRunPivotReportsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBatchRunPivotReportsMethod(), responseObserver);
     }
 
     /**
@@ -334,7 +321,7 @@ public final class BetaAnalyticsDataGrpc {
      */
     public void getMetadata(com.google.analytics.data.v1beta.GetMetadataRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.data.v1beta.Metadata> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetMetadataMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetMetadataMethod(), responseObserver);
     }
 
     /**
@@ -346,49 +333,49 @@ public final class BetaAnalyticsDataGrpc {
      */
     public void runRealtimeReport(com.google.analytics.data.v1beta.RunRealtimeReportRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.data.v1beta.RunRealtimeReportResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getRunRealtimeReportMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRunRealtimeReportMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getRunReportMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.data.v1beta.RunReportRequest,
                 com.google.analytics.data.v1beta.RunReportResponse>(
                   this, METHODID_RUN_REPORT)))
           .addMethod(
             getRunPivotReportMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.data.v1beta.RunPivotReportRequest,
                 com.google.analytics.data.v1beta.RunPivotReportResponse>(
                   this, METHODID_RUN_PIVOT_REPORT)))
           .addMethod(
             getBatchRunReportsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.data.v1beta.BatchRunReportsRequest,
                 com.google.analytics.data.v1beta.BatchRunReportsResponse>(
                   this, METHODID_BATCH_RUN_REPORTS)))
           .addMethod(
             getBatchRunPivotReportsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.data.v1beta.BatchRunPivotReportsRequest,
                 com.google.analytics.data.v1beta.BatchRunPivotReportsResponse>(
                   this, METHODID_BATCH_RUN_PIVOT_REPORTS)))
           .addMethod(
             getGetMetadataMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.data.v1beta.GetMetadataRequest,
                 com.google.analytics.data.v1beta.Metadata>(
                   this, METHODID_GET_METADATA)))
           .addMethod(
             getRunRealtimeReportMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.analytics.data.v1beta.RunRealtimeReportRequest,
                 com.google.analytics.data.v1beta.RunRealtimeReportResponse>(
@@ -427,7 +414,7 @@ public final class BetaAnalyticsDataGrpc {
      */
     public void runReport(com.google.analytics.data.v1beta.RunReportRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.data.v1beta.RunReportResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRunReportMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -442,7 +429,7 @@ public final class BetaAnalyticsDataGrpc {
      */
     public void runPivotReport(com.google.analytics.data.v1beta.RunPivotReportRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.data.v1beta.RunPivotReportResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRunPivotReportMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -454,7 +441,7 @@ public final class BetaAnalyticsDataGrpc {
      */
     public void batchRunReports(com.google.analytics.data.v1beta.BatchRunReportsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.data.v1beta.BatchRunReportsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getBatchRunReportsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -466,7 +453,7 @@ public final class BetaAnalyticsDataGrpc {
      */
     public void batchRunPivotReports(com.google.analytics.data.v1beta.BatchRunPivotReportsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.data.v1beta.BatchRunPivotReportsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getBatchRunPivotReportsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -485,7 +472,7 @@ public final class BetaAnalyticsDataGrpc {
      */
     public void getMetadata(com.google.analytics.data.v1beta.GetMetadataRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.data.v1beta.Metadata> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetMetadataMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -498,7 +485,7 @@ public final class BetaAnalyticsDataGrpc {
      */
     public void runRealtimeReport(com.google.analytics.data.v1beta.RunRealtimeReportRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.data.v1beta.RunRealtimeReportResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRunRealtimeReportMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -532,7 +519,7 @@ public final class BetaAnalyticsDataGrpc {
      * </pre>
      */
     public com.google.analytics.data.v1beta.RunReportResponse runReport(com.google.analytics.data.v1beta.RunReportRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRunReportMethod(), getCallOptions(), request);
     }
 
@@ -546,7 +533,7 @@ public final class BetaAnalyticsDataGrpc {
      * </pre>
      */
     public com.google.analytics.data.v1beta.RunPivotReportResponse runPivotReport(com.google.analytics.data.v1beta.RunPivotReportRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRunPivotReportMethod(), getCallOptions(), request);
     }
 
@@ -557,7 +544,7 @@ public final class BetaAnalyticsDataGrpc {
      * </pre>
      */
     public com.google.analytics.data.v1beta.BatchRunReportsResponse batchRunReports(com.google.analytics.data.v1beta.BatchRunReportsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBatchRunReportsMethod(), getCallOptions(), request);
     }
 
@@ -568,7 +555,7 @@ public final class BetaAnalyticsDataGrpc {
      * </pre>
      */
     public com.google.analytics.data.v1beta.BatchRunPivotReportsResponse batchRunPivotReports(com.google.analytics.data.v1beta.BatchRunPivotReportsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBatchRunPivotReportsMethod(), getCallOptions(), request);
     }
 
@@ -586,7 +573,7 @@ public final class BetaAnalyticsDataGrpc {
      * </pre>
      */
     public com.google.analytics.data.v1beta.Metadata getMetadata(com.google.analytics.data.v1beta.GetMetadataRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetMetadataMethod(), getCallOptions(), request);
     }
 
@@ -598,7 +585,7 @@ public final class BetaAnalyticsDataGrpc {
      * </pre>
      */
     public com.google.analytics.data.v1beta.RunRealtimeReportResponse runRealtimeReport(com.google.analytics.data.v1beta.RunRealtimeReportRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRunRealtimeReportMethod(), getCallOptions(), request);
     }
   }
@@ -633,7 +620,7 @@ public final class BetaAnalyticsDataGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.data.v1beta.RunReportResponse> runReport(
         com.google.analytics.data.v1beta.RunReportRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRunReportMethod(), getCallOptions()), request);
     }
 
@@ -648,7 +635,7 @@ public final class BetaAnalyticsDataGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.data.v1beta.RunPivotReportResponse> runPivotReport(
         com.google.analytics.data.v1beta.RunPivotReportRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRunPivotReportMethod(), getCallOptions()), request);
     }
 
@@ -660,7 +647,7 @@ public final class BetaAnalyticsDataGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.data.v1beta.BatchRunReportsResponse> batchRunReports(
         com.google.analytics.data.v1beta.BatchRunReportsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBatchRunReportsMethod(), getCallOptions()), request);
     }
 
@@ -672,7 +659,7 @@ public final class BetaAnalyticsDataGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.data.v1beta.BatchRunPivotReportsResponse> batchRunPivotReports(
         com.google.analytics.data.v1beta.BatchRunPivotReportsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBatchRunPivotReportsMethod(), getCallOptions()), request);
     }
 
@@ -691,7 +678,7 @@ public final class BetaAnalyticsDataGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.data.v1beta.Metadata> getMetadata(
         com.google.analytics.data.v1beta.GetMetadataRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetMetadataMethod(), getCallOptions()), request);
     }
 
@@ -704,7 +691,7 @@ public final class BetaAnalyticsDataGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.analytics.data.v1beta.RunRealtimeReportResponse> runRealtimeReport(
         com.google.analytics.data.v1beta.RunRealtimeReportRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRunRealtimeReportMethod(), getCallOptions()), request);
     }
   }

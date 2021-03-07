@@ -1,19 +1,6 @@
 package com.google.cloud.accessapproval.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -359,7 +346,7 @@ public final class AccessApprovalGrpc {
      */
     public void listApprovalRequests(com.google.cloud.accessapproval.v1.ListApprovalRequestsMessage request,
         io.grpc.stub.StreamObserver<com.google.cloud.accessapproval.v1.ListApprovalRequestsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListApprovalRequestsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListApprovalRequestsMethod(), responseObserver);
     }
 
     /**
@@ -369,7 +356,7 @@ public final class AccessApprovalGrpc {
      */
     public void getApprovalRequest(com.google.cloud.accessapproval.v1.GetApprovalRequestMessage request,
         io.grpc.stub.StreamObserver<com.google.cloud.accessapproval.v1.ApprovalRequest> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetApprovalRequestMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetApprovalRequestMethod(), responseObserver);
     }
 
     /**
@@ -381,7 +368,7 @@ public final class AccessApprovalGrpc {
      */
     public void approveApprovalRequest(com.google.cloud.accessapproval.v1.ApproveApprovalRequestMessage request,
         io.grpc.stub.StreamObserver<com.google.cloud.accessapproval.v1.ApprovalRequest> responseObserver) {
-      asyncUnimplementedUnaryCall(getApproveApprovalRequestMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getApproveApprovalRequestMethod(), responseObserver);
     }
 
     /**
@@ -397,7 +384,7 @@ public final class AccessApprovalGrpc {
      */
     public void dismissApprovalRequest(com.google.cloud.accessapproval.v1.DismissApprovalRequestMessage request,
         io.grpc.stub.StreamObserver<com.google.cloud.accessapproval.v1.ApprovalRequest> responseObserver) {
-      asyncUnimplementedUnaryCall(getDismissApprovalRequestMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDismissApprovalRequestMethod(), responseObserver);
     }
 
     /**
@@ -407,7 +394,7 @@ public final class AccessApprovalGrpc {
      */
     public void getAccessApprovalSettings(com.google.cloud.accessapproval.v1.GetAccessApprovalSettingsMessage request,
         io.grpc.stub.StreamObserver<com.google.cloud.accessapproval.v1.AccessApprovalSettings> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetAccessApprovalSettingsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAccessApprovalSettingsMethod(), responseObserver);
     }
 
     /**
@@ -418,7 +405,7 @@ public final class AccessApprovalGrpc {
      */
     public void updateAccessApprovalSettings(com.google.cloud.accessapproval.v1.UpdateAccessApprovalSettingsMessage request,
         io.grpc.stub.StreamObserver<com.google.cloud.accessapproval.v1.AccessApprovalSettings> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateAccessApprovalSettingsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateAccessApprovalSettingsMethod(), responseObserver);
     }
 
     /**
@@ -433,56 +420,56 @@ public final class AccessApprovalGrpc {
      */
     public void deleteAccessApprovalSettings(com.google.cloud.accessapproval.v1.DeleteAccessApprovalSettingsMessage request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteAccessApprovalSettingsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteAccessApprovalSettingsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getListApprovalRequestsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.accessapproval.v1.ListApprovalRequestsMessage,
                 com.google.cloud.accessapproval.v1.ListApprovalRequestsResponse>(
                   this, METHODID_LIST_APPROVAL_REQUESTS)))
           .addMethod(
             getGetApprovalRequestMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.accessapproval.v1.GetApprovalRequestMessage,
                 com.google.cloud.accessapproval.v1.ApprovalRequest>(
                   this, METHODID_GET_APPROVAL_REQUEST)))
           .addMethod(
             getApproveApprovalRequestMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.accessapproval.v1.ApproveApprovalRequestMessage,
                 com.google.cloud.accessapproval.v1.ApprovalRequest>(
                   this, METHODID_APPROVE_APPROVAL_REQUEST)))
           .addMethod(
             getDismissApprovalRequestMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.accessapproval.v1.DismissApprovalRequestMessage,
                 com.google.cloud.accessapproval.v1.ApprovalRequest>(
                   this, METHODID_DISMISS_APPROVAL_REQUEST)))
           .addMethod(
             getGetAccessApprovalSettingsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.accessapproval.v1.GetAccessApprovalSettingsMessage,
                 com.google.cloud.accessapproval.v1.AccessApprovalSettings>(
                   this, METHODID_GET_ACCESS_APPROVAL_SETTINGS)))
           .addMethod(
             getUpdateAccessApprovalSettingsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.accessapproval.v1.UpdateAccessApprovalSettingsMessage,
                 com.google.cloud.accessapproval.v1.AccessApprovalSettings>(
                   this, METHODID_UPDATE_ACCESS_APPROVAL_SETTINGS)))
           .addMethod(
             getDeleteAccessApprovalSettingsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.accessapproval.v1.DeleteAccessApprovalSettingsMessage,
                 com.google.protobuf.Empty>(
@@ -543,7 +530,7 @@ public final class AccessApprovalGrpc {
      */
     public void listApprovalRequests(com.google.cloud.accessapproval.v1.ListApprovalRequestsMessage request,
         io.grpc.stub.StreamObserver<com.google.cloud.accessapproval.v1.ListApprovalRequestsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListApprovalRequestsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -554,7 +541,7 @@ public final class AccessApprovalGrpc {
      */
     public void getApprovalRequest(com.google.cloud.accessapproval.v1.GetApprovalRequestMessage request,
         io.grpc.stub.StreamObserver<com.google.cloud.accessapproval.v1.ApprovalRequest> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetApprovalRequestMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -567,7 +554,7 @@ public final class AccessApprovalGrpc {
      */
     public void approveApprovalRequest(com.google.cloud.accessapproval.v1.ApproveApprovalRequestMessage request,
         io.grpc.stub.StreamObserver<com.google.cloud.accessapproval.v1.ApprovalRequest> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getApproveApprovalRequestMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -584,7 +571,7 @@ public final class AccessApprovalGrpc {
      */
     public void dismissApprovalRequest(com.google.cloud.accessapproval.v1.DismissApprovalRequestMessage request,
         io.grpc.stub.StreamObserver<com.google.cloud.accessapproval.v1.ApprovalRequest> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDismissApprovalRequestMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -595,7 +582,7 @@ public final class AccessApprovalGrpc {
      */
     public void getAccessApprovalSettings(com.google.cloud.accessapproval.v1.GetAccessApprovalSettingsMessage request,
         io.grpc.stub.StreamObserver<com.google.cloud.accessapproval.v1.AccessApprovalSettings> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetAccessApprovalSettingsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -607,7 +594,7 @@ public final class AccessApprovalGrpc {
      */
     public void updateAccessApprovalSettings(com.google.cloud.accessapproval.v1.UpdateAccessApprovalSettingsMessage request,
         io.grpc.stub.StreamObserver<com.google.cloud.accessapproval.v1.AccessApprovalSettings> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateAccessApprovalSettingsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -623,7 +610,7 @@ public final class AccessApprovalGrpc {
      */
     public void deleteAccessApprovalSettings(com.google.cloud.accessapproval.v1.DeleteAccessApprovalSettingsMessage request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteAccessApprovalSettingsMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -679,7 +666,7 @@ public final class AccessApprovalGrpc {
      * </pre>
      */
     public com.google.cloud.accessapproval.v1.ListApprovalRequestsResponse listApprovalRequests(com.google.cloud.accessapproval.v1.ListApprovalRequestsMessage request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListApprovalRequestsMethod(), getCallOptions(), request);
     }
 
@@ -689,7 +676,7 @@ public final class AccessApprovalGrpc {
      * </pre>
      */
     public com.google.cloud.accessapproval.v1.ApprovalRequest getApprovalRequest(com.google.cloud.accessapproval.v1.GetApprovalRequestMessage request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetApprovalRequestMethod(), getCallOptions(), request);
     }
 
@@ -701,7 +688,7 @@ public final class AccessApprovalGrpc {
      * </pre>
      */
     public com.google.cloud.accessapproval.v1.ApprovalRequest approveApprovalRequest(com.google.cloud.accessapproval.v1.ApproveApprovalRequestMessage request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getApproveApprovalRequestMethod(), getCallOptions(), request);
     }
 
@@ -717,7 +704,7 @@ public final class AccessApprovalGrpc {
      * </pre>
      */
     public com.google.cloud.accessapproval.v1.ApprovalRequest dismissApprovalRequest(com.google.cloud.accessapproval.v1.DismissApprovalRequestMessage request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDismissApprovalRequestMethod(), getCallOptions(), request);
     }
 
@@ -727,7 +714,7 @@ public final class AccessApprovalGrpc {
      * </pre>
      */
     public com.google.cloud.accessapproval.v1.AccessApprovalSettings getAccessApprovalSettings(com.google.cloud.accessapproval.v1.GetAccessApprovalSettingsMessage request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetAccessApprovalSettingsMethod(), getCallOptions(), request);
     }
 
@@ -738,7 +725,7 @@ public final class AccessApprovalGrpc {
      * </pre>
      */
     public com.google.cloud.accessapproval.v1.AccessApprovalSettings updateAccessApprovalSettings(com.google.cloud.accessapproval.v1.UpdateAccessApprovalSettingsMessage request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateAccessApprovalSettingsMethod(), getCallOptions(), request);
     }
 
@@ -753,7 +740,7 @@ public final class AccessApprovalGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteAccessApprovalSettings(com.google.cloud.accessapproval.v1.DeleteAccessApprovalSettingsMessage request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteAccessApprovalSettingsMethod(), getCallOptions(), request);
     }
   }
@@ -810,7 +797,7 @@ public final class AccessApprovalGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.accessapproval.v1.ListApprovalRequestsResponse> listApprovalRequests(
         com.google.cloud.accessapproval.v1.ListApprovalRequestsMessage request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListApprovalRequestsMethod(), getCallOptions()), request);
     }
 
@@ -821,7 +808,7 @@ public final class AccessApprovalGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.accessapproval.v1.ApprovalRequest> getApprovalRequest(
         com.google.cloud.accessapproval.v1.GetApprovalRequestMessage request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetApprovalRequestMethod(), getCallOptions()), request);
     }
 
@@ -834,7 +821,7 @@ public final class AccessApprovalGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.accessapproval.v1.ApprovalRequest> approveApprovalRequest(
         com.google.cloud.accessapproval.v1.ApproveApprovalRequestMessage request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getApproveApprovalRequestMethod(), getCallOptions()), request);
     }
 
@@ -851,7 +838,7 @@ public final class AccessApprovalGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.accessapproval.v1.ApprovalRequest> dismissApprovalRequest(
         com.google.cloud.accessapproval.v1.DismissApprovalRequestMessage request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDismissApprovalRequestMethod(), getCallOptions()), request);
     }
 
@@ -862,7 +849,7 @@ public final class AccessApprovalGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.accessapproval.v1.AccessApprovalSettings> getAccessApprovalSettings(
         com.google.cloud.accessapproval.v1.GetAccessApprovalSettingsMessage request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetAccessApprovalSettingsMethod(), getCallOptions()), request);
     }
 
@@ -874,7 +861,7 @@ public final class AccessApprovalGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.accessapproval.v1.AccessApprovalSettings> updateAccessApprovalSettings(
         com.google.cloud.accessapproval.v1.UpdateAccessApprovalSettingsMessage request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateAccessApprovalSettingsMethod(), getCallOptions()), request);
     }
 
@@ -890,7 +877,7 @@ public final class AccessApprovalGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteAccessApprovalSettings(
         com.google.cloud.accessapproval.v1.DeleteAccessApprovalSettingsMessage request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteAccessApprovalSettingsMethod(), getCallOptions()), request);
     }
   }

@@ -1,19 +1,6 @@
 package com.google.cloud.asset.v1p4beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -151,7 +138,7 @@ public final class AssetServiceGrpc {
      */
     public void analyzeIamPolicy(com.google.cloud.asset.v1p4beta1.AnalyzeIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.asset.v1p4beta1.AnalyzeIamPolicyResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getAnalyzeIamPolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAnalyzeIamPolicyMethod(), responseObserver);
     }
 
     /**
@@ -164,21 +151,21 @@ public final class AssetServiceGrpc {
      */
     public void exportIamPolicyAnalysis(com.google.cloud.asset.v1p4beta1.ExportIamPolicyAnalysisRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getExportIamPolicyAnalysisMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getExportIamPolicyAnalysisMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getAnalyzeIamPolicyMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.asset.v1p4beta1.AnalyzeIamPolicyRequest,
                 com.google.cloud.asset.v1p4beta1.AnalyzeIamPolicyResponse>(
                   this, METHODID_ANALYZE_IAM_POLICY)))
           .addMethod(
             getExportIamPolicyAnalysisMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.asset.v1p4beta1.ExportIamPolicyAnalysisRequest,
                 com.google.longrunning.Operation>(
@@ -212,7 +199,7 @@ public final class AssetServiceGrpc {
      */
     public void analyzeIamPolicy(com.google.cloud.asset.v1p4beta1.AnalyzeIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.asset.v1p4beta1.AnalyzeIamPolicyResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getAnalyzeIamPolicyMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -226,7 +213,7 @@ public final class AssetServiceGrpc {
      */
     public void exportIamPolicyAnalysis(com.google.cloud.asset.v1p4beta1.ExportIamPolicyAnalysisRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getExportIamPolicyAnalysisMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -255,7 +242,7 @@ public final class AssetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.asset.v1p4beta1.AnalyzeIamPolicyResponse analyzeIamPolicy(com.google.cloud.asset.v1p4beta1.AnalyzeIamPolicyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getAnalyzeIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -268,7 +255,7 @@ public final class AssetServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportIamPolicyAnalysis(com.google.cloud.asset.v1p4beta1.ExportIamPolicyAnalysisRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getExportIamPolicyAnalysisMethod(), getCallOptions(), request);
     }
   }
@@ -298,7 +285,7 @@ public final class AssetServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.asset.v1p4beta1.AnalyzeIamPolicyResponse> analyzeIamPolicy(
         com.google.cloud.asset.v1p4beta1.AnalyzeIamPolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getAnalyzeIamPolicyMethod(), getCallOptions()), request);
     }
 
@@ -312,7 +299,7 @@ public final class AssetServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> exportIamPolicyAnalysis(
         com.google.cloud.asset.v1p4beta1.ExportIamPolicyAnalysisRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getExportIamPolicyAnalysisMethod(), getCallOptions()), request);
     }
   }

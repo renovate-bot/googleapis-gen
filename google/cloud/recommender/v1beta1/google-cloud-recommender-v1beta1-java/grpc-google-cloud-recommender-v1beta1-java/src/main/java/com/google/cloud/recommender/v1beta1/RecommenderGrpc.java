@@ -1,19 +1,6 @@
 package com.google.cloud.recommender.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -343,7 +330,7 @@ public final class RecommenderGrpc {
      */
     public void listInsights(com.google.cloud.recommender.v1beta1.ListInsightsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.ListInsightsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListInsightsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListInsightsMethod(), responseObserver);
     }
 
     /**
@@ -354,7 +341,7 @@ public final class RecommenderGrpc {
      */
     public void getInsight(com.google.cloud.recommender.v1beta1.GetInsightRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.Insight> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetInsightMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetInsightMethod(), responseObserver);
     }
 
     /**
@@ -368,7 +355,7 @@ public final class RecommenderGrpc {
      */
     public void markInsightAccepted(com.google.cloud.recommender.v1beta1.MarkInsightAcceptedRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.Insight> responseObserver) {
-      asyncUnimplementedUnaryCall(getMarkInsightAcceptedMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMarkInsightAcceptedMethod(), responseObserver);
     }
 
     /**
@@ -379,7 +366,7 @@ public final class RecommenderGrpc {
      */
     public void listRecommendations(com.google.cloud.recommender.v1beta1.ListRecommendationsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.ListRecommendationsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListRecommendationsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListRecommendationsMethod(), responseObserver);
     }
 
     /**
@@ -390,7 +377,7 @@ public final class RecommenderGrpc {
      */
     public void getRecommendation(com.google.cloud.recommender.v1beta1.GetRecommendationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.Recommendation> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetRecommendationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetRecommendationMethod(), responseObserver);
     }
 
     /**
@@ -407,7 +394,7 @@ public final class RecommenderGrpc {
      */
     public void markRecommendationClaimed(com.google.cloud.recommender.v1beta1.MarkRecommendationClaimedRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.Recommendation> responseObserver) {
-      asyncUnimplementedUnaryCall(getMarkRecommendationClaimedMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMarkRecommendationClaimedMethod(), responseObserver);
     }
 
     /**
@@ -425,7 +412,7 @@ public final class RecommenderGrpc {
      */
     public void markRecommendationSucceeded(com.google.cloud.recommender.v1beta1.MarkRecommendationSucceededRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.Recommendation> responseObserver) {
-      asyncUnimplementedUnaryCall(getMarkRecommendationSucceededMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMarkRecommendationSucceededMethod(), responseObserver);
     }
 
     /**
@@ -443,63 +430,63 @@ public final class RecommenderGrpc {
      */
     public void markRecommendationFailed(com.google.cloud.recommender.v1beta1.MarkRecommendationFailedRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.Recommendation> responseObserver) {
-      asyncUnimplementedUnaryCall(getMarkRecommendationFailedMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMarkRecommendationFailedMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getListInsightsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.recommender.v1beta1.ListInsightsRequest,
                 com.google.cloud.recommender.v1beta1.ListInsightsResponse>(
                   this, METHODID_LIST_INSIGHTS)))
           .addMethod(
             getGetInsightMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.recommender.v1beta1.GetInsightRequest,
                 com.google.cloud.recommender.v1beta1.Insight>(
                   this, METHODID_GET_INSIGHT)))
           .addMethod(
             getMarkInsightAcceptedMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.recommender.v1beta1.MarkInsightAcceptedRequest,
                 com.google.cloud.recommender.v1beta1.Insight>(
                   this, METHODID_MARK_INSIGHT_ACCEPTED)))
           .addMethod(
             getListRecommendationsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.recommender.v1beta1.ListRecommendationsRequest,
                 com.google.cloud.recommender.v1beta1.ListRecommendationsResponse>(
                   this, METHODID_LIST_RECOMMENDATIONS)))
           .addMethod(
             getGetRecommendationMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.recommender.v1beta1.GetRecommendationRequest,
                 com.google.cloud.recommender.v1beta1.Recommendation>(
                   this, METHODID_GET_RECOMMENDATION)))
           .addMethod(
             getMarkRecommendationClaimedMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.recommender.v1beta1.MarkRecommendationClaimedRequest,
                 com.google.cloud.recommender.v1beta1.Recommendation>(
                   this, METHODID_MARK_RECOMMENDATION_CLAIMED)))
           .addMethod(
             getMarkRecommendationSucceededMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.recommender.v1beta1.MarkRecommendationSucceededRequest,
                 com.google.cloud.recommender.v1beta1.Recommendation>(
                   this, METHODID_MARK_RECOMMENDATION_SUCCEEDED)))
           .addMethod(
             getMarkRecommendationFailedMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.recommender.v1beta1.MarkRecommendationFailedRequest,
                 com.google.cloud.recommender.v1beta1.Recommendation>(
@@ -536,7 +523,7 @@ public final class RecommenderGrpc {
      */
     public void listInsights(com.google.cloud.recommender.v1beta1.ListInsightsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.ListInsightsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListInsightsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -548,7 +535,7 @@ public final class RecommenderGrpc {
      */
     public void getInsight(com.google.cloud.recommender.v1beta1.GetInsightRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.Insight> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetInsightMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -563,7 +550,7 @@ public final class RecommenderGrpc {
      */
     public void markInsightAccepted(com.google.cloud.recommender.v1beta1.MarkInsightAcceptedRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.Insight> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMarkInsightAcceptedMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -575,7 +562,7 @@ public final class RecommenderGrpc {
      */
     public void listRecommendations(com.google.cloud.recommender.v1beta1.ListRecommendationsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.ListRecommendationsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListRecommendationsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -587,7 +574,7 @@ public final class RecommenderGrpc {
      */
     public void getRecommendation(com.google.cloud.recommender.v1beta1.GetRecommendationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.Recommendation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetRecommendationMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -605,7 +592,7 @@ public final class RecommenderGrpc {
      */
     public void markRecommendationClaimed(com.google.cloud.recommender.v1beta1.MarkRecommendationClaimedRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.Recommendation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMarkRecommendationClaimedMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -624,7 +611,7 @@ public final class RecommenderGrpc {
      */
     public void markRecommendationSucceeded(com.google.cloud.recommender.v1beta1.MarkRecommendationSucceededRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.Recommendation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMarkRecommendationSucceededMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -643,7 +630,7 @@ public final class RecommenderGrpc {
      */
     public void markRecommendationFailed(com.google.cloud.recommender.v1beta1.MarkRecommendationFailedRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.Recommendation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMarkRecommendationFailedMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -675,7 +662,7 @@ public final class RecommenderGrpc {
      * </pre>
      */
     public com.google.cloud.recommender.v1beta1.ListInsightsResponse listInsights(com.google.cloud.recommender.v1beta1.ListInsightsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListInsightsMethod(), getCallOptions(), request);
     }
 
@@ -686,7 +673,7 @@ public final class RecommenderGrpc {
      * </pre>
      */
     public com.google.cloud.recommender.v1beta1.Insight getInsight(com.google.cloud.recommender.v1beta1.GetInsightRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetInsightMethod(), getCallOptions(), request);
     }
 
@@ -700,7 +687,7 @@ public final class RecommenderGrpc {
      * </pre>
      */
     public com.google.cloud.recommender.v1beta1.Insight markInsightAccepted(com.google.cloud.recommender.v1beta1.MarkInsightAcceptedRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMarkInsightAcceptedMethod(), getCallOptions(), request);
     }
 
@@ -711,7 +698,7 @@ public final class RecommenderGrpc {
      * </pre>
      */
     public com.google.cloud.recommender.v1beta1.ListRecommendationsResponse listRecommendations(com.google.cloud.recommender.v1beta1.ListRecommendationsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListRecommendationsMethod(), getCallOptions(), request);
     }
 
@@ -722,7 +709,7 @@ public final class RecommenderGrpc {
      * </pre>
      */
     public com.google.cloud.recommender.v1beta1.Recommendation getRecommendation(com.google.cloud.recommender.v1beta1.GetRecommendationRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetRecommendationMethod(), getCallOptions(), request);
     }
 
@@ -739,7 +726,7 @@ public final class RecommenderGrpc {
      * </pre>
      */
     public com.google.cloud.recommender.v1beta1.Recommendation markRecommendationClaimed(com.google.cloud.recommender.v1beta1.MarkRecommendationClaimedRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMarkRecommendationClaimedMethod(), getCallOptions(), request);
     }
 
@@ -757,7 +744,7 @@ public final class RecommenderGrpc {
      * </pre>
      */
     public com.google.cloud.recommender.v1beta1.Recommendation markRecommendationSucceeded(com.google.cloud.recommender.v1beta1.MarkRecommendationSucceededRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMarkRecommendationSucceededMethod(), getCallOptions(), request);
     }
 
@@ -775,7 +762,7 @@ public final class RecommenderGrpc {
      * </pre>
      */
     public com.google.cloud.recommender.v1beta1.Recommendation markRecommendationFailed(com.google.cloud.recommender.v1beta1.MarkRecommendationFailedRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMarkRecommendationFailedMethod(), getCallOptions(), request);
     }
   }
@@ -808,7 +795,7 @@ public final class RecommenderGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.recommender.v1beta1.ListInsightsResponse> listInsights(
         com.google.cloud.recommender.v1beta1.ListInsightsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListInsightsMethod(), getCallOptions()), request);
     }
 
@@ -820,7 +807,7 @@ public final class RecommenderGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.recommender.v1beta1.Insight> getInsight(
         com.google.cloud.recommender.v1beta1.GetInsightRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetInsightMethod(), getCallOptions()), request);
     }
 
@@ -835,7 +822,7 @@ public final class RecommenderGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.recommender.v1beta1.Insight> markInsightAccepted(
         com.google.cloud.recommender.v1beta1.MarkInsightAcceptedRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMarkInsightAcceptedMethod(), getCallOptions()), request);
     }
 
@@ -847,7 +834,7 @@ public final class RecommenderGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.recommender.v1beta1.ListRecommendationsResponse> listRecommendations(
         com.google.cloud.recommender.v1beta1.ListRecommendationsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListRecommendationsMethod(), getCallOptions()), request);
     }
 
@@ -859,7 +846,7 @@ public final class RecommenderGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.recommender.v1beta1.Recommendation> getRecommendation(
         com.google.cloud.recommender.v1beta1.GetRecommendationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetRecommendationMethod(), getCallOptions()), request);
     }
 
@@ -877,7 +864,7 @@ public final class RecommenderGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.recommender.v1beta1.Recommendation> markRecommendationClaimed(
         com.google.cloud.recommender.v1beta1.MarkRecommendationClaimedRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMarkRecommendationClaimedMethod(), getCallOptions()), request);
     }
 
@@ -896,7 +883,7 @@ public final class RecommenderGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.recommender.v1beta1.Recommendation> markRecommendationSucceeded(
         com.google.cloud.recommender.v1beta1.MarkRecommendationSucceededRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMarkRecommendationSucceededMethod(), getCallOptions()), request);
     }
 
@@ -915,7 +902,7 @@ public final class RecommenderGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.recommender.v1beta1.Recommendation> markRecommendationFailed(
         com.google.cloud.recommender.v1beta1.MarkRecommendationFailedRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMarkRecommendationFailedMethod(), getCallOptions()), request);
     }
   }

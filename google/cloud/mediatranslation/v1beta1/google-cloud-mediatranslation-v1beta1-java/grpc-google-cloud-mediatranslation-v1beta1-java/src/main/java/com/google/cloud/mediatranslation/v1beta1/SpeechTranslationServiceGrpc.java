@@ -1,19 +1,6 @@
 package com.google.cloud.mediatranslation.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -120,14 +107,14 @@ public final class SpeechTranslationServiceGrpc {
      */
     public io.grpc.stub.StreamObserver<com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechRequest> streamingTranslateSpeech(
         io.grpc.stub.StreamObserver<com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResponse> responseObserver) {
-      return asyncUnimplementedStreamingCall(getStreamingTranslateSpeechMethod(), responseObserver);
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getStreamingTranslateSpeechMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getStreamingTranslateSpeechMethod(),
-            asyncBidiStreamingCall(
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
               new MethodHandlers<
                 com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechRequest,
                 com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResponse>(
@@ -161,7 +148,7 @@ public final class SpeechTranslationServiceGrpc {
      */
     public io.grpc.stub.StreamObserver<com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechRequest> streamingTranslateSpeech(
         io.grpc.stub.StreamObserver<com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResponse> responseObserver) {
-      return asyncBidiStreamingCall(
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
           getChannel().newCall(getStreamingTranslateSpeechMethod(), getCallOptions()), responseObserver);
     }
   }

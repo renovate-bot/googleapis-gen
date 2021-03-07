@@ -1,19 +1,6 @@
 package com.google.cloud.dataqna.v1alpha;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -267,7 +254,7 @@ public final class QuestionServiceGrpc {
      */
     public void getQuestion(com.google.cloud.dataqna.v1alpha.GetQuestionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataqna.v1alpha.Question> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetQuestionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetQuestionMethod(), responseObserver);
     }
 
     /**
@@ -277,7 +264,7 @@ public final class QuestionServiceGrpc {
      */
     public void createQuestion(com.google.cloud.dataqna.v1alpha.CreateQuestionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataqna.v1alpha.Question> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateQuestionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateQuestionMethod(), responseObserver);
     }
 
     /**
@@ -287,7 +274,7 @@ public final class QuestionServiceGrpc {
      */
     public void executeQuestion(com.google.cloud.dataqna.v1alpha.ExecuteQuestionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataqna.v1alpha.Question> responseObserver) {
-      asyncUnimplementedUnaryCall(getExecuteQuestionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getExecuteQuestionMethod(), responseObserver);
     }
 
     /**
@@ -297,7 +284,7 @@ public final class QuestionServiceGrpc {
      */
     public void getUserFeedback(com.google.cloud.dataqna.v1alpha.GetUserFeedbackRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataqna.v1alpha.UserFeedback> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetUserFeedbackMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetUserFeedbackMethod(), responseObserver);
     }
 
     /**
@@ -308,42 +295,42 @@ public final class QuestionServiceGrpc {
      */
     public void updateUserFeedback(com.google.cloud.dataqna.v1alpha.UpdateUserFeedbackRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataqna.v1alpha.UserFeedback> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateUserFeedbackMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateUserFeedbackMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetQuestionMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.dataqna.v1alpha.GetQuestionRequest,
                 com.google.cloud.dataqna.v1alpha.Question>(
                   this, METHODID_GET_QUESTION)))
           .addMethod(
             getCreateQuestionMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.dataqna.v1alpha.CreateQuestionRequest,
                 com.google.cloud.dataqna.v1alpha.Question>(
                   this, METHODID_CREATE_QUESTION)))
           .addMethod(
             getExecuteQuestionMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.dataqna.v1alpha.ExecuteQuestionRequest,
                 com.google.cloud.dataqna.v1alpha.Question>(
                   this, METHODID_EXECUTE_QUESTION)))
           .addMethod(
             getGetUserFeedbackMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.dataqna.v1alpha.GetUserFeedbackRequest,
                 com.google.cloud.dataqna.v1alpha.UserFeedback>(
                   this, METHODID_GET_USER_FEEDBACK)))
           .addMethod(
             getUpdateUserFeedbackMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.dataqna.v1alpha.UpdateUserFeedbackRequest,
                 com.google.cloud.dataqna.v1alpha.UserFeedback>(
@@ -388,7 +375,7 @@ public final class QuestionServiceGrpc {
      */
     public void getQuestion(com.google.cloud.dataqna.v1alpha.GetQuestionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataqna.v1alpha.Question> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetQuestionMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -399,7 +386,7 @@ public final class QuestionServiceGrpc {
      */
     public void createQuestion(com.google.cloud.dataqna.v1alpha.CreateQuestionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataqna.v1alpha.Question> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateQuestionMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -410,7 +397,7 @@ public final class QuestionServiceGrpc {
      */
     public void executeQuestion(com.google.cloud.dataqna.v1alpha.ExecuteQuestionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataqna.v1alpha.Question> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getExecuteQuestionMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -421,7 +408,7 @@ public final class QuestionServiceGrpc {
      */
     public void getUserFeedback(com.google.cloud.dataqna.v1alpha.GetUserFeedbackRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataqna.v1alpha.UserFeedback> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetUserFeedbackMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -433,7 +420,7 @@ public final class QuestionServiceGrpc {
      */
     public void updateUserFeedback(com.google.cloud.dataqna.v1alpha.UpdateUserFeedbackRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataqna.v1alpha.UserFeedback> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateUserFeedbackMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -473,7 +460,7 @@ public final class QuestionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataqna.v1alpha.Question getQuestion(com.google.cloud.dataqna.v1alpha.GetQuestionRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetQuestionMethod(), getCallOptions(), request);
     }
 
@@ -483,7 +470,7 @@ public final class QuestionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataqna.v1alpha.Question createQuestion(com.google.cloud.dataqna.v1alpha.CreateQuestionRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateQuestionMethod(), getCallOptions(), request);
     }
 
@@ -493,7 +480,7 @@ public final class QuestionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataqna.v1alpha.Question executeQuestion(com.google.cloud.dataqna.v1alpha.ExecuteQuestionRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getExecuteQuestionMethod(), getCallOptions(), request);
     }
 
@@ -503,7 +490,7 @@ public final class QuestionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataqna.v1alpha.UserFeedback getUserFeedback(com.google.cloud.dataqna.v1alpha.GetUserFeedbackRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetUserFeedbackMethod(), getCallOptions(), request);
     }
 
@@ -514,7 +501,7 @@ public final class QuestionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataqna.v1alpha.UserFeedback updateUserFeedback(com.google.cloud.dataqna.v1alpha.UpdateUserFeedbackRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateUserFeedbackMethod(), getCallOptions(), request);
     }
   }
@@ -555,7 +542,7 @@ public final class QuestionServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dataqna.v1alpha.Question> getQuestion(
         com.google.cloud.dataqna.v1alpha.GetQuestionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetQuestionMethod(), getCallOptions()), request);
     }
 
@@ -566,7 +553,7 @@ public final class QuestionServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dataqna.v1alpha.Question> createQuestion(
         com.google.cloud.dataqna.v1alpha.CreateQuestionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateQuestionMethod(), getCallOptions()), request);
     }
 
@@ -577,7 +564,7 @@ public final class QuestionServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dataqna.v1alpha.Question> executeQuestion(
         com.google.cloud.dataqna.v1alpha.ExecuteQuestionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getExecuteQuestionMethod(), getCallOptions()), request);
     }
 
@@ -588,7 +575,7 @@ public final class QuestionServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dataqna.v1alpha.UserFeedback> getUserFeedback(
         com.google.cloud.dataqna.v1alpha.GetUserFeedbackRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetUserFeedbackMethod(), getCallOptions()), request);
     }
 
@@ -600,7 +587,7 @@ public final class QuestionServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dataqna.v1alpha.UserFeedback> updateUserFeedback(
         com.google.cloud.dataqna.v1alpha.UpdateUserFeedbackRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateUserFeedbackMethod(), getCallOptions()), request);
     }
   }

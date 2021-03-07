@@ -1,19 +1,6 @@
 package com.google.cloud.managedidentities.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  */
@@ -392,7 +379,7 @@ public final class ManagedIdentitiesServiceGrpc {
      */
     public void createMicrosoftAdDomain(com.google.cloud.managedidentities.v1beta1.CreateMicrosoftAdDomainRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateMicrosoftAdDomainMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateMicrosoftAdDomainMethod(), responseObserver);
     }
 
     /**
@@ -402,7 +389,7 @@ public final class ManagedIdentitiesServiceGrpc {
      */
     public void resetAdminPassword(com.google.cloud.managedidentities.v1beta1.ResetAdminPasswordRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.managedidentities.v1beta1.ResetAdminPasswordResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getResetAdminPasswordMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getResetAdminPasswordMethod(), responseObserver);
     }
 
     /**
@@ -412,7 +399,7 @@ public final class ManagedIdentitiesServiceGrpc {
      */
     public void listDomains(com.google.cloud.managedidentities.v1beta1.ListDomainsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.managedidentities.v1beta1.ListDomainsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListDomainsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListDomainsMethod(), responseObserver);
     }
 
     /**
@@ -422,7 +409,7 @@ public final class ManagedIdentitiesServiceGrpc {
      */
     public void getDomain(com.google.cloud.managedidentities.v1beta1.GetDomainRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.managedidentities.v1beta1.Domain> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetDomainMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetDomainMethod(), responseObserver);
     }
 
     /**
@@ -432,7 +419,7 @@ public final class ManagedIdentitiesServiceGrpc {
      */
     public void updateDomain(com.google.cloud.managedidentities.v1beta1.UpdateDomainRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateDomainMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateDomainMethod(), responseObserver);
     }
 
     /**
@@ -442,7 +429,7 @@ public final class ManagedIdentitiesServiceGrpc {
      */
     public void deleteDomain(com.google.cloud.managedidentities.v1beta1.DeleteDomainRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteDomainMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteDomainMethod(), responseObserver);
     }
 
     /**
@@ -452,7 +439,7 @@ public final class ManagedIdentitiesServiceGrpc {
      */
     public void attachTrust(com.google.cloud.managedidentities.v1beta1.AttachTrustRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getAttachTrustMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAttachTrustMethod(), responseObserver);
     }
 
     /**
@@ -462,7 +449,7 @@ public final class ManagedIdentitiesServiceGrpc {
      */
     public void reconfigureTrust(com.google.cloud.managedidentities.v1beta1.ReconfigureTrustRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getReconfigureTrustMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getReconfigureTrustMethod(), responseObserver);
     }
 
     /**
@@ -472,7 +459,7 @@ public final class ManagedIdentitiesServiceGrpc {
      */
     public void detachTrust(com.google.cloud.managedidentities.v1beta1.DetachTrustRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDetachTrustMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDetachTrustMethod(), responseObserver);
     }
 
     /**
@@ -483,77 +470,77 @@ public final class ManagedIdentitiesServiceGrpc {
      */
     public void validateTrust(com.google.cloud.managedidentities.v1beta1.ValidateTrustRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getValidateTrustMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getValidateTrustMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getCreateMicrosoftAdDomainMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.managedidentities.v1beta1.CreateMicrosoftAdDomainRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_CREATE_MICROSOFT_AD_DOMAIN)))
           .addMethod(
             getResetAdminPasswordMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.managedidentities.v1beta1.ResetAdminPasswordRequest,
                 com.google.cloud.managedidentities.v1beta1.ResetAdminPasswordResponse>(
                   this, METHODID_RESET_ADMIN_PASSWORD)))
           .addMethod(
             getListDomainsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.managedidentities.v1beta1.ListDomainsRequest,
                 com.google.cloud.managedidentities.v1beta1.ListDomainsResponse>(
                   this, METHODID_LIST_DOMAINS)))
           .addMethod(
             getGetDomainMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.managedidentities.v1beta1.GetDomainRequest,
                 com.google.cloud.managedidentities.v1beta1.Domain>(
                   this, METHODID_GET_DOMAIN)))
           .addMethod(
             getUpdateDomainMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.managedidentities.v1beta1.UpdateDomainRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_UPDATE_DOMAIN)))
           .addMethod(
             getDeleteDomainMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.managedidentities.v1beta1.DeleteDomainRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_DELETE_DOMAIN)))
           .addMethod(
             getAttachTrustMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.managedidentities.v1beta1.AttachTrustRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_ATTACH_TRUST)))
           .addMethod(
             getReconfigureTrustMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.managedidentities.v1beta1.ReconfigureTrustRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_RECONFIGURE_TRUST)))
           .addMethod(
             getDetachTrustMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.managedidentities.v1beta1.DetachTrustRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_DETACH_TRUST)))
           .addMethod(
             getValidateTrustMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.managedidentities.v1beta1.ValidateTrustRequest,
                 com.google.longrunning.Operation>(
@@ -583,7 +570,7 @@ public final class ManagedIdentitiesServiceGrpc {
      */
     public void createMicrosoftAdDomain(com.google.cloud.managedidentities.v1beta1.CreateMicrosoftAdDomainRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateMicrosoftAdDomainMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -594,7 +581,7 @@ public final class ManagedIdentitiesServiceGrpc {
      */
     public void resetAdminPassword(com.google.cloud.managedidentities.v1beta1.ResetAdminPasswordRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.managedidentities.v1beta1.ResetAdminPasswordResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getResetAdminPasswordMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -605,7 +592,7 @@ public final class ManagedIdentitiesServiceGrpc {
      */
     public void listDomains(com.google.cloud.managedidentities.v1beta1.ListDomainsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.managedidentities.v1beta1.ListDomainsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListDomainsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -616,7 +603,7 @@ public final class ManagedIdentitiesServiceGrpc {
      */
     public void getDomain(com.google.cloud.managedidentities.v1beta1.GetDomainRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.managedidentities.v1beta1.Domain> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetDomainMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -627,7 +614,7 @@ public final class ManagedIdentitiesServiceGrpc {
      */
     public void updateDomain(com.google.cloud.managedidentities.v1beta1.UpdateDomainRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateDomainMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -638,7 +625,7 @@ public final class ManagedIdentitiesServiceGrpc {
      */
     public void deleteDomain(com.google.cloud.managedidentities.v1beta1.DeleteDomainRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteDomainMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -649,7 +636,7 @@ public final class ManagedIdentitiesServiceGrpc {
      */
     public void attachTrust(com.google.cloud.managedidentities.v1beta1.AttachTrustRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getAttachTrustMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -660,7 +647,7 @@ public final class ManagedIdentitiesServiceGrpc {
      */
     public void reconfigureTrust(com.google.cloud.managedidentities.v1beta1.ReconfigureTrustRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getReconfigureTrustMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -671,7 +658,7 @@ public final class ManagedIdentitiesServiceGrpc {
      */
     public void detachTrust(com.google.cloud.managedidentities.v1beta1.DetachTrustRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDetachTrustMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -683,7 +670,7 @@ public final class ManagedIdentitiesServiceGrpc {
      */
     public void validateTrust(com.google.cloud.managedidentities.v1beta1.ValidateTrustRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getValidateTrustMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -708,7 +695,7 @@ public final class ManagedIdentitiesServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createMicrosoftAdDomain(com.google.cloud.managedidentities.v1beta1.CreateMicrosoftAdDomainRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateMicrosoftAdDomainMethod(), getCallOptions(), request);
     }
 
@@ -718,7 +705,7 @@ public final class ManagedIdentitiesServiceGrpc {
      * </pre>
      */
     public com.google.cloud.managedidentities.v1beta1.ResetAdminPasswordResponse resetAdminPassword(com.google.cloud.managedidentities.v1beta1.ResetAdminPasswordRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getResetAdminPasswordMethod(), getCallOptions(), request);
     }
 
@@ -728,7 +715,7 @@ public final class ManagedIdentitiesServiceGrpc {
      * </pre>
      */
     public com.google.cloud.managedidentities.v1beta1.ListDomainsResponse listDomains(com.google.cloud.managedidentities.v1beta1.ListDomainsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListDomainsMethod(), getCallOptions(), request);
     }
 
@@ -738,7 +725,7 @@ public final class ManagedIdentitiesServiceGrpc {
      * </pre>
      */
     public com.google.cloud.managedidentities.v1beta1.Domain getDomain(com.google.cloud.managedidentities.v1beta1.GetDomainRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetDomainMethod(), getCallOptions(), request);
     }
 
@@ -748,7 +735,7 @@ public final class ManagedIdentitiesServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateDomain(com.google.cloud.managedidentities.v1beta1.UpdateDomainRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateDomainMethod(), getCallOptions(), request);
     }
 
@@ -758,7 +745,7 @@ public final class ManagedIdentitiesServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteDomain(com.google.cloud.managedidentities.v1beta1.DeleteDomainRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteDomainMethod(), getCallOptions(), request);
     }
 
@@ -768,7 +755,7 @@ public final class ManagedIdentitiesServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation attachTrust(com.google.cloud.managedidentities.v1beta1.AttachTrustRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getAttachTrustMethod(), getCallOptions(), request);
     }
 
@@ -778,7 +765,7 @@ public final class ManagedIdentitiesServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation reconfigureTrust(com.google.cloud.managedidentities.v1beta1.ReconfigureTrustRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getReconfigureTrustMethod(), getCallOptions(), request);
     }
 
@@ -788,7 +775,7 @@ public final class ManagedIdentitiesServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation detachTrust(com.google.cloud.managedidentities.v1beta1.DetachTrustRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDetachTrustMethod(), getCallOptions(), request);
     }
 
@@ -799,7 +786,7 @@ public final class ManagedIdentitiesServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation validateTrust(com.google.cloud.managedidentities.v1beta1.ValidateTrustRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getValidateTrustMethod(), getCallOptions(), request);
     }
   }
@@ -825,7 +812,7 @@ public final class ManagedIdentitiesServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> createMicrosoftAdDomain(
         com.google.cloud.managedidentities.v1beta1.CreateMicrosoftAdDomainRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateMicrosoftAdDomainMethod(), getCallOptions()), request);
     }
 
@@ -836,7 +823,7 @@ public final class ManagedIdentitiesServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.managedidentities.v1beta1.ResetAdminPasswordResponse> resetAdminPassword(
         com.google.cloud.managedidentities.v1beta1.ResetAdminPasswordRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getResetAdminPasswordMethod(), getCallOptions()), request);
     }
 
@@ -847,7 +834,7 @@ public final class ManagedIdentitiesServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.managedidentities.v1beta1.ListDomainsResponse> listDomains(
         com.google.cloud.managedidentities.v1beta1.ListDomainsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListDomainsMethod(), getCallOptions()), request);
     }
 
@@ -858,7 +845,7 @@ public final class ManagedIdentitiesServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.managedidentities.v1beta1.Domain> getDomain(
         com.google.cloud.managedidentities.v1beta1.GetDomainRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetDomainMethod(), getCallOptions()), request);
     }
 
@@ -869,7 +856,7 @@ public final class ManagedIdentitiesServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> updateDomain(
         com.google.cloud.managedidentities.v1beta1.UpdateDomainRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateDomainMethod(), getCallOptions()), request);
     }
 
@@ -880,7 +867,7 @@ public final class ManagedIdentitiesServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> deleteDomain(
         com.google.cloud.managedidentities.v1beta1.DeleteDomainRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteDomainMethod(), getCallOptions()), request);
     }
 
@@ -891,7 +878,7 @@ public final class ManagedIdentitiesServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> attachTrust(
         com.google.cloud.managedidentities.v1beta1.AttachTrustRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getAttachTrustMethod(), getCallOptions()), request);
     }
 
@@ -902,7 +889,7 @@ public final class ManagedIdentitiesServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> reconfigureTrust(
         com.google.cloud.managedidentities.v1beta1.ReconfigureTrustRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getReconfigureTrustMethod(), getCallOptions()), request);
     }
 
@@ -913,7 +900,7 @@ public final class ManagedIdentitiesServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> detachTrust(
         com.google.cloud.managedidentities.v1beta1.DetachTrustRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDetachTrustMethod(), getCallOptions()), request);
     }
 
@@ -925,7 +912,7 @@ public final class ManagedIdentitiesServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> validateTrust(
         com.google.cloud.managedidentities.v1beta1.ValidateTrustRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getValidateTrustMethod(), getCallOptions()), request);
     }
   }

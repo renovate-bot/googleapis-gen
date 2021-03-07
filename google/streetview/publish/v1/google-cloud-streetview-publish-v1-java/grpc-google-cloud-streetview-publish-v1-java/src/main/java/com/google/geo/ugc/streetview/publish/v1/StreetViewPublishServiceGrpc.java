@@ -1,19 +1,6 @@
 package com.google.geo.ugc.streetview.publish.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -383,7 +370,7 @@ public final class StreetViewPublishServiceGrpc {
      */
     public void startUpload(com.google.protobuf.Empty request,
         io.grpc.stub.StreamObserver<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.UploadRef> responseObserver) {
-      asyncUnimplementedUnaryCall(getStartUploadMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStartUploadMethod(), responseObserver);
     }
 
     /**
@@ -409,7 +396,7 @@ public final class StreetViewPublishServiceGrpc {
      */
     public void createPhoto(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.CreatePhotoRequest request,
         io.grpc.stub.StreamObserver<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreatePhotoMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreatePhotoMethod(), responseObserver);
     }
 
     /**
@@ -429,7 +416,7 @@ public final class StreetViewPublishServiceGrpc {
      */
     public void getPhoto(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.GetPhotoRequest request,
         io.grpc.stub.StreamObserver<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetPhotoMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPhotoMethod(), responseObserver);
     }
 
     /**
@@ -453,7 +440,7 @@ public final class StreetViewPublishServiceGrpc {
      */
     public void batchGetPhotos(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.BatchGetPhotosRequest request,
         io.grpc.stub.StreamObserver<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.BatchGetPhotosResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchGetPhotosMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBatchGetPhotosMethod(), responseObserver);
     }
 
     /**
@@ -466,7 +453,7 @@ public final class StreetViewPublishServiceGrpc {
      */
     public void listPhotos(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.ListPhotosRequest request,
         io.grpc.stub.StreamObserver<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.ListPhotosResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListPhotosMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListPhotosMethod(), responseObserver);
     }
 
     /**
@@ -492,7 +479,7 @@ public final class StreetViewPublishServiceGrpc {
      */
     public void updatePhoto(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.UpdatePhotoRequest request,
         io.grpc.stub.StreamObserver<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdatePhotoMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdatePhotoMethod(), responseObserver);
     }
 
     /**
@@ -530,7 +517,7 @@ public final class StreetViewPublishServiceGrpc {
      */
     public void batchUpdatePhotos(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.BatchUpdatePhotosRequest request,
         io.grpc.stub.StreamObserver<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.BatchUpdatePhotosResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchUpdatePhotosMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBatchUpdatePhotosMethod(), responseObserver);
     }
 
     /**
@@ -545,7 +532,7 @@ public final class StreetViewPublishServiceGrpc {
      */
     public void deletePhoto(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.DeletePhotoRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeletePhotoMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeletePhotoMethod(), responseObserver);
     }
 
     /**
@@ -569,70 +556,70 @@ public final class StreetViewPublishServiceGrpc {
      */
     public void batchDeletePhotos(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.BatchDeletePhotosRequest request,
         io.grpc.stub.StreamObserver<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.BatchDeletePhotosResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchDeletePhotosMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBatchDeletePhotosMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getStartUploadMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.protobuf.Empty,
                 com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.UploadRef>(
                   this, METHODID_START_UPLOAD)))
           .addMethod(
             getCreatePhotoMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.CreatePhotoRequest,
                 com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo>(
                   this, METHODID_CREATE_PHOTO)))
           .addMethod(
             getGetPhotoMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.GetPhotoRequest,
                 com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo>(
                   this, METHODID_GET_PHOTO)))
           .addMethod(
             getBatchGetPhotosMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.BatchGetPhotosRequest,
                 com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.BatchGetPhotosResponse>(
                   this, METHODID_BATCH_GET_PHOTOS)))
           .addMethod(
             getListPhotosMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.ListPhotosRequest,
                 com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.ListPhotosResponse>(
                   this, METHODID_LIST_PHOTOS)))
           .addMethod(
             getUpdatePhotoMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.UpdatePhotoRequest,
                 com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo>(
                   this, METHODID_UPDATE_PHOTO)))
           .addMethod(
             getBatchUpdatePhotosMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.BatchUpdatePhotosRequest,
                 com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.BatchUpdatePhotosResponse>(
                   this, METHODID_BATCH_UPDATE_PHOTOS)))
           .addMethod(
             getDeletePhotoMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.DeletePhotoRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_PHOTO)))
           .addMethod(
             getBatchDeletePhotosMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.BatchDeletePhotosRequest,
                 com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.BatchDeletePhotosResponse>(
@@ -681,7 +668,7 @@ public final class StreetViewPublishServiceGrpc {
      */
     public void startUpload(com.google.protobuf.Empty request,
         io.grpc.stub.StreamObserver<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.UploadRef> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getStartUploadMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -708,7 +695,7 @@ public final class StreetViewPublishServiceGrpc {
      */
     public void createPhoto(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.CreatePhotoRequest request,
         io.grpc.stub.StreamObserver<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreatePhotoMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -729,7 +716,7 @@ public final class StreetViewPublishServiceGrpc {
      */
     public void getPhoto(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.GetPhotoRequest request,
         io.grpc.stub.StreamObserver<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetPhotoMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -754,7 +741,7 @@ public final class StreetViewPublishServiceGrpc {
      */
     public void batchGetPhotos(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.BatchGetPhotosRequest request,
         io.grpc.stub.StreamObserver<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.BatchGetPhotosResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getBatchGetPhotosMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -768,7 +755,7 @@ public final class StreetViewPublishServiceGrpc {
      */
     public void listPhotos(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.ListPhotosRequest request,
         io.grpc.stub.StreamObserver<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.ListPhotosResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListPhotosMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -795,7 +782,7 @@ public final class StreetViewPublishServiceGrpc {
      */
     public void updatePhoto(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.UpdatePhotoRequest request,
         io.grpc.stub.StreamObserver<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdatePhotoMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -834,7 +821,7 @@ public final class StreetViewPublishServiceGrpc {
      */
     public void batchUpdatePhotos(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.BatchUpdatePhotosRequest request,
         io.grpc.stub.StreamObserver<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.BatchUpdatePhotosResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getBatchUpdatePhotosMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -850,7 +837,7 @@ public final class StreetViewPublishServiceGrpc {
      */
     public void deletePhoto(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.DeletePhotoRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeletePhotoMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -875,7 +862,7 @@ public final class StreetViewPublishServiceGrpc {
      */
     public void batchDeletePhotos(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.BatchDeletePhotosRequest request,
         io.grpc.stub.StreamObserver<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.BatchDeletePhotosResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getBatchDeletePhotosMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -919,7 +906,7 @@ public final class StreetViewPublishServiceGrpc {
      * </pre>
      */
     public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.UploadRef startUpload(com.google.protobuf.Empty request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getStartUploadMethod(), getCallOptions(), request);
     }
 
@@ -945,7 +932,7 @@ public final class StreetViewPublishServiceGrpc {
      * </pre>
      */
     public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo createPhoto(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.CreatePhotoRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreatePhotoMethod(), getCallOptions(), request);
     }
 
@@ -965,7 +952,7 @@ public final class StreetViewPublishServiceGrpc {
      * </pre>
      */
     public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo getPhoto(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.GetPhotoRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetPhotoMethod(), getCallOptions(), request);
     }
 
@@ -989,7 +976,7 @@ public final class StreetViewPublishServiceGrpc {
      * </pre>
      */
     public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.BatchGetPhotosResponse batchGetPhotos(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.BatchGetPhotosRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBatchGetPhotosMethod(), getCallOptions(), request);
     }
 
@@ -1002,7 +989,7 @@ public final class StreetViewPublishServiceGrpc {
      * </pre>
      */
     public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.ListPhotosResponse listPhotos(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.ListPhotosRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListPhotosMethod(), getCallOptions(), request);
     }
 
@@ -1028,7 +1015,7 @@ public final class StreetViewPublishServiceGrpc {
      * </pre>
      */
     public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo updatePhoto(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.UpdatePhotoRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdatePhotoMethod(), getCallOptions(), request);
     }
 
@@ -1066,7 +1053,7 @@ public final class StreetViewPublishServiceGrpc {
      * </pre>
      */
     public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.BatchUpdatePhotosResponse batchUpdatePhotos(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.BatchUpdatePhotosRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBatchUpdatePhotosMethod(), getCallOptions(), request);
     }
 
@@ -1081,7 +1068,7 @@ public final class StreetViewPublishServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deletePhoto(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.DeletePhotoRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeletePhotoMethod(), getCallOptions(), request);
     }
 
@@ -1105,7 +1092,7 @@ public final class StreetViewPublishServiceGrpc {
      * </pre>
      */
     public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.BatchDeletePhotosResponse batchDeletePhotos(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.BatchDeletePhotosRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBatchDeletePhotosMethod(), getCallOptions(), request);
     }
   }
@@ -1150,7 +1137,7 @@ public final class StreetViewPublishServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.UploadRef> startUpload(
         com.google.protobuf.Empty request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getStartUploadMethod(), getCallOptions()), request);
     }
 
@@ -1177,7 +1164,7 @@ public final class StreetViewPublishServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo> createPhoto(
         com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.CreatePhotoRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreatePhotoMethod(), getCallOptions()), request);
     }
 
@@ -1198,7 +1185,7 @@ public final class StreetViewPublishServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo> getPhoto(
         com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.GetPhotoRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetPhotoMethod(), getCallOptions()), request);
     }
 
@@ -1223,7 +1210,7 @@ public final class StreetViewPublishServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.BatchGetPhotosResponse> batchGetPhotos(
         com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.BatchGetPhotosRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBatchGetPhotosMethod(), getCallOptions()), request);
     }
 
@@ -1237,7 +1224,7 @@ public final class StreetViewPublishServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.ListPhotosResponse> listPhotos(
         com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.ListPhotosRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListPhotosMethod(), getCallOptions()), request);
     }
 
@@ -1264,7 +1251,7 @@ public final class StreetViewPublishServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo> updatePhoto(
         com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.UpdatePhotoRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdatePhotoMethod(), getCallOptions()), request);
     }
 
@@ -1303,7 +1290,7 @@ public final class StreetViewPublishServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.BatchUpdatePhotosResponse> batchUpdatePhotos(
         com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.BatchUpdatePhotosRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBatchUpdatePhotosMethod(), getCallOptions()), request);
     }
 
@@ -1319,7 +1306,7 @@ public final class StreetViewPublishServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deletePhoto(
         com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.DeletePhotoRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeletePhotoMethod(), getCallOptions()), request);
     }
 
@@ -1344,7 +1331,7 @@ public final class StreetViewPublishServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.BatchDeletePhotosResponse> batchDeletePhotos(
         com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.BatchDeletePhotosRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBatchDeletePhotosMethod(), getCallOptions()), request);
     }
   }

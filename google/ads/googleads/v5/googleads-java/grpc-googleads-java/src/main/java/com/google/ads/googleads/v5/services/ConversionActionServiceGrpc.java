@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v5.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -150,7 +137,7 @@ public final class ConversionActionServiceGrpc {
      */
     public void getConversionAction(com.google.ads.googleads.v5.services.GetConversionActionRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.resources.ConversionAction> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetConversionActionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetConversionActionMethod(), responseObserver);
     }
 
     /**
@@ -161,21 +148,21 @@ public final class ConversionActionServiceGrpc {
      */
     public void mutateConversionActions(com.google.ads.googleads.v5.services.MutateConversionActionsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.services.MutateConversionActionsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getMutateConversionActionsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMutateConversionActionsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetConversionActionMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v5.services.GetConversionActionRequest,
                 com.google.ads.googleads.v5.resources.ConversionAction>(
                   this, METHODID_GET_CONVERSION_ACTION)))
           .addMethod(
             getMutateConversionActionsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v5.services.MutateConversionActionsRequest,
                 com.google.ads.googleads.v5.services.MutateConversionActionsResponse>(
@@ -208,7 +195,7 @@ public final class ConversionActionServiceGrpc {
      */
     public void getConversionAction(com.google.ads.googleads.v5.services.GetConversionActionRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.resources.ConversionAction> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetConversionActionMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -220,7 +207,7 @@ public final class ConversionActionServiceGrpc {
      */
     public void mutateConversionActions(com.google.ads.googleads.v5.services.MutateConversionActionsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.services.MutateConversionActionsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMutateConversionActionsMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -248,7 +235,7 @@ public final class ConversionActionServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v5.resources.ConversionAction getConversionAction(com.google.ads.googleads.v5.services.GetConversionActionRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetConversionActionMethod(), getCallOptions(), request);
     }
 
@@ -259,7 +246,7 @@ public final class ConversionActionServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v5.services.MutateConversionActionsResponse mutateConversionActions(com.google.ads.googleads.v5.services.MutateConversionActionsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMutateConversionActionsMethod(), getCallOptions(), request);
     }
   }
@@ -288,7 +275,7 @@ public final class ConversionActionServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v5.resources.ConversionAction> getConversionAction(
         com.google.ads.googleads.v5.services.GetConversionActionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetConversionActionMethod(), getCallOptions()), request);
     }
 
@@ -300,7 +287,7 @@ public final class ConversionActionServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v5.services.MutateConversionActionsResponse> mutateConversionActions(
         com.google.ads.googleads.v5.services.MutateConversionActionsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMutateConversionActionsMethod(), getCallOptions()), request);
     }
   }

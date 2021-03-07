@@ -1,19 +1,6 @@
 package com.google.cloud.tasks.v2beta2;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -711,7 +698,7 @@ public final class CloudTasksGrpc {
      */
     public void listQueues(com.google.cloud.tasks.v2beta2.ListQueuesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.ListQueuesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListQueuesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListQueuesMethod(), responseObserver);
     }
 
     /**
@@ -721,7 +708,7 @@ public final class CloudTasksGrpc {
      */
     public void getQueue(com.google.cloud.tasks.v2beta2.GetQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Queue> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetQueueMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetQueueMethod(), responseObserver);
     }
 
     /**
@@ -740,7 +727,7 @@ public final class CloudTasksGrpc {
      */
     public void createQueue(com.google.cloud.tasks.v2beta2.CreateQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Queue> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateQueueMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateQueueMethod(), responseObserver);
     }
 
     /**
@@ -761,7 +748,7 @@ public final class CloudTasksGrpc {
      */
     public void updateQueue(com.google.cloud.tasks.v2beta2.UpdateQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Queue> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateQueueMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateQueueMethod(), responseObserver);
     }
 
     /**
@@ -780,7 +767,7 @@ public final class CloudTasksGrpc {
      */
     public void deleteQueue(com.google.cloud.tasks.v2beta2.DeleteQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteQueueMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteQueueMethod(), responseObserver);
     }
 
     /**
@@ -793,7 +780,7 @@ public final class CloudTasksGrpc {
      */
     public void purgeQueue(com.google.cloud.tasks.v2beta2.PurgeQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Queue> responseObserver) {
-      asyncUnimplementedUnaryCall(getPurgeQueueMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPurgeQueueMethod(), responseObserver);
     }
 
     /**
@@ -808,7 +795,7 @@ public final class CloudTasksGrpc {
      */
     public void pauseQueue(com.google.cloud.tasks.v2beta2.PauseQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Queue> responseObserver) {
-      asyncUnimplementedUnaryCall(getPauseQueueMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPauseQueueMethod(), responseObserver);
     }
 
     /**
@@ -828,7 +815,7 @@ public final class CloudTasksGrpc {
      */
     public void resumeQueue(com.google.cloud.tasks.v2beta2.ResumeQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Queue> responseObserver) {
-      asyncUnimplementedUnaryCall(getResumeQueueMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getResumeQueueMethod(), responseObserver);
     }
 
     /**
@@ -844,7 +831,7 @@ public final class CloudTasksGrpc {
      */
     public void getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetIamPolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetIamPolicyMethod(), responseObserver);
     }
 
     /**
@@ -861,7 +848,7 @@ public final class CloudTasksGrpc {
      */
     public void setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnimplementedUnaryCall(getSetIamPolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSetIamPolicyMethod(), responseObserver);
     }
 
     /**
@@ -876,7 +863,7 @@ public final class CloudTasksGrpc {
      */
     public void testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getTestIamPermissionsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTestIamPermissionsMethod(), responseObserver);
     }
 
     /**
@@ -892,7 +879,7 @@ public final class CloudTasksGrpc {
      */
     public void listTasks(com.google.cloud.tasks.v2beta2.ListTasksRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.ListTasksResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListTasksMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListTasksMethod(), responseObserver);
     }
 
     /**
@@ -902,7 +889,7 @@ public final class CloudTasksGrpc {
      */
     public void getTask(com.google.cloud.tasks.v2beta2.GetTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Task> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetTaskMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetTaskMethod(), responseObserver);
     }
 
     /**
@@ -916,7 +903,7 @@ public final class CloudTasksGrpc {
      */
     public void createTask(com.google.cloud.tasks.v2beta2.CreateTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Task> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateTaskMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateTaskMethod(), responseObserver);
     }
 
     /**
@@ -929,7 +916,7 @@ public final class CloudTasksGrpc {
      */
     public void deleteTask(com.google.cloud.tasks.v2beta2.DeleteTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteTaskMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteTaskMethod(), responseObserver);
     }
 
     /**
@@ -957,7 +944,7 @@ public final class CloudTasksGrpc {
      */
     public void leaseTasks(com.google.cloud.tasks.v2beta2.LeaseTasksRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.LeaseTasksResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getLeaseTasksMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLeaseTasksMethod(), responseObserver);
     }
 
     /**
@@ -977,7 +964,7 @@ public final class CloudTasksGrpc {
      */
     public void acknowledgeTask(com.google.cloud.tasks.v2beta2.AcknowledgeTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getAcknowledgeTaskMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAcknowledgeTaskMethod(), responseObserver);
     }
 
     /**
@@ -990,7 +977,7 @@ public final class CloudTasksGrpc {
      */
     public void renewLease(com.google.cloud.tasks.v2beta2.RenewLeaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Task> responseObserver) {
-      asyncUnimplementedUnaryCall(getRenewLeaseMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRenewLeaseMethod(), responseObserver);
     }
 
     /**
@@ -1004,7 +991,7 @@ public final class CloudTasksGrpc {
      */
     public void cancelLease(com.google.cloud.tasks.v2beta2.CancelLeaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Task> responseObserver) {
-      asyncUnimplementedUnaryCall(getCancelLeaseMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCancelLeaseMethod(), responseObserver);
     }
 
     /**
@@ -1034,147 +1021,147 @@ public final class CloudTasksGrpc {
      */
     public void runTask(com.google.cloud.tasks.v2beta2.RunTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Task> responseObserver) {
-      asyncUnimplementedUnaryCall(getRunTaskMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRunTaskMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getListQueuesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.tasks.v2beta2.ListQueuesRequest,
                 com.google.cloud.tasks.v2beta2.ListQueuesResponse>(
                   this, METHODID_LIST_QUEUES)))
           .addMethod(
             getGetQueueMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.tasks.v2beta2.GetQueueRequest,
                 com.google.cloud.tasks.v2beta2.Queue>(
                   this, METHODID_GET_QUEUE)))
           .addMethod(
             getCreateQueueMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.tasks.v2beta2.CreateQueueRequest,
                 com.google.cloud.tasks.v2beta2.Queue>(
                   this, METHODID_CREATE_QUEUE)))
           .addMethod(
             getUpdateQueueMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.tasks.v2beta2.UpdateQueueRequest,
                 com.google.cloud.tasks.v2beta2.Queue>(
                   this, METHODID_UPDATE_QUEUE)))
           .addMethod(
             getDeleteQueueMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.tasks.v2beta2.DeleteQueueRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_QUEUE)))
           .addMethod(
             getPurgeQueueMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.tasks.v2beta2.PurgeQueueRequest,
                 com.google.cloud.tasks.v2beta2.Queue>(
                   this, METHODID_PURGE_QUEUE)))
           .addMethod(
             getPauseQueueMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.tasks.v2beta2.PauseQueueRequest,
                 com.google.cloud.tasks.v2beta2.Queue>(
                   this, METHODID_PAUSE_QUEUE)))
           .addMethod(
             getResumeQueueMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.tasks.v2beta2.ResumeQueueRequest,
                 com.google.cloud.tasks.v2beta2.Queue>(
                   this, METHODID_RESUME_QUEUE)))
           .addMethod(
             getGetIamPolicyMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.iam.v1.GetIamPolicyRequest,
                 com.google.iam.v1.Policy>(
                   this, METHODID_GET_IAM_POLICY)))
           .addMethod(
             getSetIamPolicyMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.iam.v1.SetIamPolicyRequest,
                 com.google.iam.v1.Policy>(
                   this, METHODID_SET_IAM_POLICY)))
           .addMethod(
             getTestIamPermissionsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.iam.v1.TestIamPermissionsRequest,
                 com.google.iam.v1.TestIamPermissionsResponse>(
                   this, METHODID_TEST_IAM_PERMISSIONS)))
           .addMethod(
             getListTasksMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.tasks.v2beta2.ListTasksRequest,
                 com.google.cloud.tasks.v2beta2.ListTasksResponse>(
                   this, METHODID_LIST_TASKS)))
           .addMethod(
             getGetTaskMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.tasks.v2beta2.GetTaskRequest,
                 com.google.cloud.tasks.v2beta2.Task>(
                   this, METHODID_GET_TASK)))
           .addMethod(
             getCreateTaskMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.tasks.v2beta2.CreateTaskRequest,
                 com.google.cloud.tasks.v2beta2.Task>(
                   this, METHODID_CREATE_TASK)))
           .addMethod(
             getDeleteTaskMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.tasks.v2beta2.DeleteTaskRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_TASK)))
           .addMethod(
             getLeaseTasksMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.tasks.v2beta2.LeaseTasksRequest,
                 com.google.cloud.tasks.v2beta2.LeaseTasksResponse>(
                   this, METHODID_LEASE_TASKS)))
           .addMethod(
             getAcknowledgeTaskMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.tasks.v2beta2.AcknowledgeTaskRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_ACKNOWLEDGE_TASK)))
           .addMethod(
             getRenewLeaseMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.tasks.v2beta2.RenewLeaseRequest,
                 com.google.cloud.tasks.v2beta2.Task>(
                   this, METHODID_RENEW_LEASE)))
           .addMethod(
             getCancelLeaseMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.tasks.v2beta2.CancelLeaseRequest,
                 com.google.cloud.tasks.v2beta2.Task>(
                   this, METHODID_CANCEL_LEASE)))
           .addMethod(
             getRunTaskMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.tasks.v2beta2.RunTaskRequest,
                 com.google.cloud.tasks.v2beta2.Task>(
@@ -1209,7 +1196,7 @@ public final class CloudTasksGrpc {
      */
     public void listQueues(com.google.cloud.tasks.v2beta2.ListQueuesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.ListQueuesResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListQueuesMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1220,7 +1207,7 @@ public final class CloudTasksGrpc {
      */
     public void getQueue(com.google.cloud.tasks.v2beta2.GetQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Queue> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetQueueMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1240,7 +1227,7 @@ public final class CloudTasksGrpc {
      */
     public void createQueue(com.google.cloud.tasks.v2beta2.CreateQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Queue> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateQueueMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1262,7 +1249,7 @@ public final class CloudTasksGrpc {
      */
     public void updateQueue(com.google.cloud.tasks.v2beta2.UpdateQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Queue> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateQueueMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1282,7 +1269,7 @@ public final class CloudTasksGrpc {
      */
     public void deleteQueue(com.google.cloud.tasks.v2beta2.DeleteQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteQueueMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1296,7 +1283,7 @@ public final class CloudTasksGrpc {
      */
     public void purgeQueue(com.google.cloud.tasks.v2beta2.PurgeQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Queue> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPurgeQueueMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1312,7 +1299,7 @@ public final class CloudTasksGrpc {
      */
     public void pauseQueue(com.google.cloud.tasks.v2beta2.PauseQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Queue> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPauseQueueMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1333,7 +1320,7 @@ public final class CloudTasksGrpc {
      */
     public void resumeQueue(com.google.cloud.tasks.v2beta2.ResumeQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Queue> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getResumeQueueMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1350,7 +1337,7 @@ public final class CloudTasksGrpc {
      */
     public void getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1368,7 +1355,7 @@ public final class CloudTasksGrpc {
      */
     public void setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1384,7 +1371,7 @@ public final class CloudTasksGrpc {
      */
     public void testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1401,7 +1388,7 @@ public final class CloudTasksGrpc {
      */
     public void listTasks(com.google.cloud.tasks.v2beta2.ListTasksRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.ListTasksResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListTasksMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1412,7 +1399,7 @@ public final class CloudTasksGrpc {
      */
     public void getTask(com.google.cloud.tasks.v2beta2.GetTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Task> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetTaskMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1427,7 +1414,7 @@ public final class CloudTasksGrpc {
      */
     public void createTask(com.google.cloud.tasks.v2beta2.CreateTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Task> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateTaskMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1441,7 +1428,7 @@ public final class CloudTasksGrpc {
      */
     public void deleteTask(com.google.cloud.tasks.v2beta2.DeleteTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteTaskMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1470,7 +1457,7 @@ public final class CloudTasksGrpc {
      */
     public void leaseTasks(com.google.cloud.tasks.v2beta2.LeaseTasksRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.LeaseTasksResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getLeaseTasksMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1491,7 +1478,7 @@ public final class CloudTasksGrpc {
      */
     public void acknowledgeTask(com.google.cloud.tasks.v2beta2.AcknowledgeTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getAcknowledgeTaskMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1505,7 +1492,7 @@ public final class CloudTasksGrpc {
      */
     public void renewLease(com.google.cloud.tasks.v2beta2.RenewLeaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Task> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRenewLeaseMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1520,7 +1507,7 @@ public final class CloudTasksGrpc {
      */
     public void cancelLease(com.google.cloud.tasks.v2beta2.CancelLeaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Task> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCancelLeaseMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1551,7 +1538,7 @@ public final class CloudTasksGrpc {
      */
     public void runTask(com.google.cloud.tasks.v2beta2.RunTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Task> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRunTaskMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -1581,7 +1568,7 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.cloud.tasks.v2beta2.ListQueuesResponse listQueues(com.google.cloud.tasks.v2beta2.ListQueuesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListQueuesMethod(), getCallOptions(), request);
     }
 
@@ -1591,7 +1578,7 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.cloud.tasks.v2beta2.Queue getQueue(com.google.cloud.tasks.v2beta2.GetQueueRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetQueueMethod(), getCallOptions(), request);
     }
 
@@ -1610,7 +1597,7 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.cloud.tasks.v2beta2.Queue createQueue(com.google.cloud.tasks.v2beta2.CreateQueueRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateQueueMethod(), getCallOptions(), request);
     }
 
@@ -1631,7 +1618,7 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.cloud.tasks.v2beta2.Queue updateQueue(com.google.cloud.tasks.v2beta2.UpdateQueueRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateQueueMethod(), getCallOptions(), request);
     }
 
@@ -1650,7 +1637,7 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteQueue(com.google.cloud.tasks.v2beta2.DeleteQueueRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteQueueMethod(), getCallOptions(), request);
     }
 
@@ -1663,7 +1650,7 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.cloud.tasks.v2beta2.Queue purgeQueue(com.google.cloud.tasks.v2beta2.PurgeQueueRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPurgeQueueMethod(), getCallOptions(), request);
     }
 
@@ -1678,7 +1665,7 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.cloud.tasks.v2beta2.Queue pauseQueue(com.google.cloud.tasks.v2beta2.PauseQueueRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPauseQueueMethod(), getCallOptions(), request);
     }
 
@@ -1698,7 +1685,7 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.cloud.tasks.v2beta2.Queue resumeQueue(com.google.cloud.tasks.v2beta2.ResumeQueueRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getResumeQueueMethod(), getCallOptions(), request);
     }
 
@@ -1714,7 +1701,7 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1731,7 +1718,7 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1746,7 +1733,7 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
 
@@ -1762,7 +1749,7 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.cloud.tasks.v2beta2.ListTasksResponse listTasks(com.google.cloud.tasks.v2beta2.ListTasksRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListTasksMethod(), getCallOptions(), request);
     }
 
@@ -1772,7 +1759,7 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.cloud.tasks.v2beta2.Task getTask(com.google.cloud.tasks.v2beta2.GetTaskRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetTaskMethod(), getCallOptions(), request);
     }
 
@@ -1786,7 +1773,7 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.cloud.tasks.v2beta2.Task createTask(com.google.cloud.tasks.v2beta2.CreateTaskRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateTaskMethod(), getCallOptions(), request);
     }
 
@@ -1799,7 +1786,7 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteTask(com.google.cloud.tasks.v2beta2.DeleteTaskRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteTaskMethod(), getCallOptions(), request);
     }
 
@@ -1827,7 +1814,7 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.cloud.tasks.v2beta2.LeaseTasksResponse leaseTasks(com.google.cloud.tasks.v2beta2.LeaseTasksRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getLeaseTasksMethod(), getCallOptions(), request);
     }
 
@@ -1847,7 +1834,7 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty acknowledgeTask(com.google.cloud.tasks.v2beta2.AcknowledgeTaskRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getAcknowledgeTaskMethod(), getCallOptions(), request);
     }
 
@@ -1860,7 +1847,7 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.cloud.tasks.v2beta2.Task renewLease(com.google.cloud.tasks.v2beta2.RenewLeaseRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRenewLeaseMethod(), getCallOptions(), request);
     }
 
@@ -1874,7 +1861,7 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.cloud.tasks.v2beta2.Task cancelLease(com.google.cloud.tasks.v2beta2.CancelLeaseRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCancelLeaseMethod(), getCallOptions(), request);
     }
 
@@ -1904,7 +1891,7 @@ public final class CloudTasksGrpc {
      * </pre>
      */
     public com.google.cloud.tasks.v2beta2.Task runTask(com.google.cloud.tasks.v2beta2.RunTaskRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRunTaskMethod(), getCallOptions(), request);
     }
   }
@@ -1935,7 +1922,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2beta2.ListQueuesResponse> listQueues(
         com.google.cloud.tasks.v2beta2.ListQueuesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListQueuesMethod(), getCallOptions()), request);
     }
 
@@ -1946,7 +1933,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2beta2.Queue> getQueue(
         com.google.cloud.tasks.v2beta2.GetQueueRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetQueueMethod(), getCallOptions()), request);
     }
 
@@ -1966,7 +1953,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2beta2.Queue> createQueue(
         com.google.cloud.tasks.v2beta2.CreateQueueRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateQueueMethod(), getCallOptions()), request);
     }
 
@@ -1988,7 +1975,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2beta2.Queue> updateQueue(
         com.google.cloud.tasks.v2beta2.UpdateQueueRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateQueueMethod(), getCallOptions()), request);
     }
 
@@ -2008,7 +1995,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteQueue(
         com.google.cloud.tasks.v2beta2.DeleteQueueRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteQueueMethod(), getCallOptions()), request);
     }
 
@@ -2022,7 +2009,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2beta2.Queue> purgeQueue(
         com.google.cloud.tasks.v2beta2.PurgeQueueRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPurgeQueueMethod(), getCallOptions()), request);
     }
 
@@ -2038,7 +2025,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2beta2.Queue> pauseQueue(
         com.google.cloud.tasks.v2beta2.PauseQueueRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPauseQueueMethod(), getCallOptions()), request);
     }
 
@@ -2059,7 +2046,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2beta2.Queue> resumeQueue(
         com.google.cloud.tasks.v2beta2.ResumeQueueRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getResumeQueueMethod(), getCallOptions()), request);
     }
 
@@ -2076,7 +2063,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy> getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()), request);
     }
 
@@ -2094,7 +2081,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy> setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()), request);
     }
 
@@ -2110,7 +2097,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.TestIamPermissionsResponse> testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()), request);
     }
 
@@ -2127,7 +2114,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2beta2.ListTasksResponse> listTasks(
         com.google.cloud.tasks.v2beta2.ListTasksRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListTasksMethod(), getCallOptions()), request);
     }
 
@@ -2138,7 +2125,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2beta2.Task> getTask(
         com.google.cloud.tasks.v2beta2.GetTaskRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetTaskMethod(), getCallOptions()), request);
     }
 
@@ -2153,7 +2140,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2beta2.Task> createTask(
         com.google.cloud.tasks.v2beta2.CreateTaskRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateTaskMethod(), getCallOptions()), request);
     }
 
@@ -2167,7 +2154,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteTask(
         com.google.cloud.tasks.v2beta2.DeleteTaskRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteTaskMethod(), getCallOptions()), request);
     }
 
@@ -2196,7 +2183,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2beta2.LeaseTasksResponse> leaseTasks(
         com.google.cloud.tasks.v2beta2.LeaseTasksRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getLeaseTasksMethod(), getCallOptions()), request);
     }
 
@@ -2217,7 +2204,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> acknowledgeTask(
         com.google.cloud.tasks.v2beta2.AcknowledgeTaskRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getAcknowledgeTaskMethod(), getCallOptions()), request);
     }
 
@@ -2231,7 +2218,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2beta2.Task> renewLease(
         com.google.cloud.tasks.v2beta2.RenewLeaseRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRenewLeaseMethod(), getCallOptions()), request);
     }
 
@@ -2246,7 +2233,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2beta2.Task> cancelLease(
         com.google.cloud.tasks.v2beta2.CancelLeaseRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCancelLeaseMethod(), getCallOptions()), request);
     }
 
@@ -2277,7 +2264,7 @@ public final class CloudTasksGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2beta2.Task> runTask(
         com.google.cloud.tasks.v2beta2.RunTaskRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRunTaskMethod(), getCallOptions()), request);
     }
   }

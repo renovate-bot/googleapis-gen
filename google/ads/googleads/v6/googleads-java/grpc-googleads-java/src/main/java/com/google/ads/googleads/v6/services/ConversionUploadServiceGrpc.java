@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v6.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -150,7 +137,7 @@ public final class ConversionUploadServiceGrpc {
      */
     public void uploadClickConversions(com.google.ads.googleads.v6.services.UploadClickConversionsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.UploadClickConversionsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getUploadClickConversionsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUploadClickConversionsMethod(), responseObserver);
     }
 
     /**
@@ -160,21 +147,21 @@ public final class ConversionUploadServiceGrpc {
      */
     public void uploadCallConversions(com.google.ads.googleads.v6.services.UploadCallConversionsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.UploadCallConversionsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getUploadCallConversionsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUploadCallConversionsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getUploadClickConversionsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.UploadClickConversionsRequest,
                 com.google.ads.googleads.v6.services.UploadClickConversionsResponse>(
                   this, METHODID_UPLOAD_CLICK_CONVERSIONS)))
           .addMethod(
             getUploadCallConversionsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.UploadCallConversionsRequest,
                 com.google.ads.googleads.v6.services.UploadCallConversionsResponse>(
@@ -207,7 +194,7 @@ public final class ConversionUploadServiceGrpc {
      */
     public void uploadClickConversions(com.google.ads.googleads.v6.services.UploadClickConversionsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.UploadClickConversionsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUploadClickConversionsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -218,7 +205,7 @@ public final class ConversionUploadServiceGrpc {
      */
     public void uploadCallConversions(com.google.ads.googleads.v6.services.UploadCallConversionsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.UploadCallConversionsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUploadCallConversionsMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -246,7 +233,7 @@ public final class ConversionUploadServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.services.UploadClickConversionsResponse uploadClickConversions(com.google.ads.googleads.v6.services.UploadClickConversionsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUploadClickConversionsMethod(), getCallOptions(), request);
     }
 
@@ -256,7 +243,7 @@ public final class ConversionUploadServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.services.UploadCallConversionsResponse uploadCallConversions(com.google.ads.googleads.v6.services.UploadCallConversionsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUploadCallConversionsMethod(), getCallOptions(), request);
     }
   }
@@ -285,7 +272,7 @@ public final class ConversionUploadServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.services.UploadClickConversionsResponse> uploadClickConversions(
         com.google.ads.googleads.v6.services.UploadClickConversionsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUploadClickConversionsMethod(), getCallOptions()), request);
     }
 
@@ -296,7 +283,7 @@ public final class ConversionUploadServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.services.UploadCallConversionsResponse> uploadCallConversions(
         com.google.ads.googleads.v6.services.UploadCallConversionsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUploadCallConversionsMethod(), getCallOptions()), request);
     }
   }

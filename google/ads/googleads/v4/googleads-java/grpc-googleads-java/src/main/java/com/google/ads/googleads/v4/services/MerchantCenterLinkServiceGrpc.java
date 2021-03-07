@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v4.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -183,7 +170,7 @@ public final class MerchantCenterLinkServiceGrpc {
      */
     public void listMerchantCenterLinks(com.google.ads.googleads.v4.services.ListMerchantCenterLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.services.ListMerchantCenterLinksResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListMerchantCenterLinksMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListMerchantCenterLinksMethod(), responseObserver);
     }
 
     /**
@@ -193,7 +180,7 @@ public final class MerchantCenterLinkServiceGrpc {
      */
     public void getMerchantCenterLink(com.google.ads.googleads.v4.services.GetMerchantCenterLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.resources.MerchantCenterLink> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetMerchantCenterLinkMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetMerchantCenterLinkMethod(), responseObserver);
     }
 
     /**
@@ -203,28 +190,28 @@ public final class MerchantCenterLinkServiceGrpc {
      */
     public void mutateMerchantCenterLink(com.google.ads.googleads.v4.services.MutateMerchantCenterLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.services.MutateMerchantCenterLinkResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getMutateMerchantCenterLinkMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMutateMerchantCenterLinkMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getListMerchantCenterLinksMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v4.services.ListMerchantCenterLinksRequest,
                 com.google.ads.googleads.v4.services.ListMerchantCenterLinksResponse>(
                   this, METHODID_LIST_MERCHANT_CENTER_LINKS)))
           .addMethod(
             getGetMerchantCenterLinkMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v4.services.GetMerchantCenterLinkRequest,
                 com.google.ads.googleads.v4.resources.MerchantCenterLink>(
                   this, METHODID_GET_MERCHANT_CENTER_LINK)))
           .addMethod(
             getMutateMerchantCenterLinkMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v4.services.MutateMerchantCenterLinkRequest,
                 com.google.ads.googleads.v4.services.MutateMerchantCenterLinkResponse>(
@@ -258,7 +245,7 @@ public final class MerchantCenterLinkServiceGrpc {
      */
     public void listMerchantCenterLinks(com.google.ads.googleads.v4.services.ListMerchantCenterLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.services.ListMerchantCenterLinksResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListMerchantCenterLinksMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -269,7 +256,7 @@ public final class MerchantCenterLinkServiceGrpc {
      */
     public void getMerchantCenterLink(com.google.ads.googleads.v4.services.GetMerchantCenterLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.resources.MerchantCenterLink> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetMerchantCenterLinkMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -280,7 +267,7 @@ public final class MerchantCenterLinkServiceGrpc {
      */
     public void mutateMerchantCenterLink(com.google.ads.googleads.v4.services.MutateMerchantCenterLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.services.MutateMerchantCenterLinkResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMutateMerchantCenterLinkMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -309,7 +296,7 @@ public final class MerchantCenterLinkServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v4.services.ListMerchantCenterLinksResponse listMerchantCenterLinks(com.google.ads.googleads.v4.services.ListMerchantCenterLinksRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListMerchantCenterLinksMethod(), getCallOptions(), request);
     }
 
@@ -319,7 +306,7 @@ public final class MerchantCenterLinkServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v4.resources.MerchantCenterLink getMerchantCenterLink(com.google.ads.googleads.v4.services.GetMerchantCenterLinkRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetMerchantCenterLinkMethod(), getCallOptions(), request);
     }
 
@@ -329,7 +316,7 @@ public final class MerchantCenterLinkServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v4.services.MutateMerchantCenterLinkResponse mutateMerchantCenterLink(com.google.ads.googleads.v4.services.MutateMerchantCenterLinkRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMutateMerchantCenterLinkMethod(), getCallOptions(), request);
     }
   }
@@ -359,7 +346,7 @@ public final class MerchantCenterLinkServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v4.services.ListMerchantCenterLinksResponse> listMerchantCenterLinks(
         com.google.ads.googleads.v4.services.ListMerchantCenterLinksRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListMerchantCenterLinksMethod(), getCallOptions()), request);
     }
 
@@ -370,7 +357,7 @@ public final class MerchantCenterLinkServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v4.resources.MerchantCenterLink> getMerchantCenterLink(
         com.google.ads.googleads.v4.services.GetMerchantCenterLinkRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetMerchantCenterLinkMethod(), getCallOptions()), request);
     }
 
@@ -381,7 +368,7 @@ public final class MerchantCenterLinkServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v4.services.MutateMerchantCenterLinkResponse> mutateMerchantCenterLink(
         com.google.ads.googleads.v4.services.MutateMerchantCenterLinkRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMutateMerchantCenterLinkMethod(), getCallOptions()), request);
     }
   }

@@ -1,19 +1,6 @@
 package com.google.datastore.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -315,7 +302,7 @@ public final class DatastoreGrpc {
      */
     public void lookup(com.google.datastore.v1.LookupRequest request,
         io.grpc.stub.StreamObserver<com.google.datastore.v1.LookupResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getLookupMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLookupMethod(), responseObserver);
     }
 
     /**
@@ -325,7 +312,7 @@ public final class DatastoreGrpc {
      */
     public void runQuery(com.google.datastore.v1.RunQueryRequest request,
         io.grpc.stub.StreamObserver<com.google.datastore.v1.RunQueryResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getRunQueryMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRunQueryMethod(), responseObserver);
     }
 
     /**
@@ -335,7 +322,7 @@ public final class DatastoreGrpc {
      */
     public void beginTransaction(com.google.datastore.v1.BeginTransactionRequest request,
         io.grpc.stub.StreamObserver<com.google.datastore.v1.BeginTransactionResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getBeginTransactionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBeginTransactionMethod(), responseObserver);
     }
 
     /**
@@ -346,7 +333,7 @@ public final class DatastoreGrpc {
      */
     public void commit(com.google.datastore.v1.CommitRequest request,
         io.grpc.stub.StreamObserver<com.google.datastore.v1.CommitResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getCommitMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCommitMethod(), responseObserver);
     }
 
     /**
@@ -356,7 +343,7 @@ public final class DatastoreGrpc {
      */
     public void rollback(com.google.datastore.v1.RollbackRequest request,
         io.grpc.stub.StreamObserver<com.google.datastore.v1.RollbackResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getRollbackMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRollbackMethod(), responseObserver);
     }
 
     /**
@@ -367,7 +354,7 @@ public final class DatastoreGrpc {
      */
     public void allocateIds(com.google.datastore.v1.AllocateIdsRequest request,
         io.grpc.stub.StreamObserver<com.google.datastore.v1.AllocateIdsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getAllocateIdsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAllocateIdsMethod(), responseObserver);
     }
 
     /**
@@ -378,56 +365,56 @@ public final class DatastoreGrpc {
      */
     public void reserveIds(com.google.datastore.v1.ReserveIdsRequest request,
         io.grpc.stub.StreamObserver<com.google.datastore.v1.ReserveIdsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getReserveIdsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getReserveIdsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getLookupMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.datastore.v1.LookupRequest,
                 com.google.datastore.v1.LookupResponse>(
                   this, METHODID_LOOKUP)))
           .addMethod(
             getRunQueryMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.datastore.v1.RunQueryRequest,
                 com.google.datastore.v1.RunQueryResponse>(
                   this, METHODID_RUN_QUERY)))
           .addMethod(
             getBeginTransactionMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.datastore.v1.BeginTransactionRequest,
                 com.google.datastore.v1.BeginTransactionResponse>(
                   this, METHODID_BEGIN_TRANSACTION)))
           .addMethod(
             getCommitMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.datastore.v1.CommitRequest,
                 com.google.datastore.v1.CommitResponse>(
                   this, METHODID_COMMIT)))
           .addMethod(
             getRollbackMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.datastore.v1.RollbackRequest,
                 com.google.datastore.v1.RollbackResponse>(
                   this, METHODID_ROLLBACK)))
           .addMethod(
             getAllocateIdsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.datastore.v1.AllocateIdsRequest,
                 com.google.datastore.v1.AllocateIdsResponse>(
                   this, METHODID_ALLOCATE_IDS)))
           .addMethod(
             getReserveIdsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.datastore.v1.ReserveIdsRequest,
                 com.google.datastore.v1.ReserveIdsResponse>(
@@ -465,7 +452,7 @@ public final class DatastoreGrpc {
      */
     public void lookup(com.google.datastore.v1.LookupRequest request,
         io.grpc.stub.StreamObserver<com.google.datastore.v1.LookupResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getLookupMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -476,7 +463,7 @@ public final class DatastoreGrpc {
      */
     public void runQuery(com.google.datastore.v1.RunQueryRequest request,
         io.grpc.stub.StreamObserver<com.google.datastore.v1.RunQueryResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRunQueryMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -487,7 +474,7 @@ public final class DatastoreGrpc {
      */
     public void beginTransaction(com.google.datastore.v1.BeginTransactionRequest request,
         io.grpc.stub.StreamObserver<com.google.datastore.v1.BeginTransactionResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getBeginTransactionMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -499,7 +486,7 @@ public final class DatastoreGrpc {
      */
     public void commit(com.google.datastore.v1.CommitRequest request,
         io.grpc.stub.StreamObserver<com.google.datastore.v1.CommitResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCommitMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -510,7 +497,7 @@ public final class DatastoreGrpc {
      */
     public void rollback(com.google.datastore.v1.RollbackRequest request,
         io.grpc.stub.StreamObserver<com.google.datastore.v1.RollbackResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRollbackMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -522,7 +509,7 @@ public final class DatastoreGrpc {
      */
     public void allocateIds(com.google.datastore.v1.AllocateIdsRequest request,
         io.grpc.stub.StreamObserver<com.google.datastore.v1.AllocateIdsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getAllocateIdsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -534,7 +521,7 @@ public final class DatastoreGrpc {
      */
     public void reserveIds(com.google.datastore.v1.ReserveIdsRequest request,
         io.grpc.stub.StreamObserver<com.google.datastore.v1.ReserveIdsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getReserveIdsMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -567,7 +554,7 @@ public final class DatastoreGrpc {
      * </pre>
      */
     public com.google.datastore.v1.LookupResponse lookup(com.google.datastore.v1.LookupRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getLookupMethod(), getCallOptions(), request);
     }
 
@@ -577,7 +564,7 @@ public final class DatastoreGrpc {
      * </pre>
      */
     public com.google.datastore.v1.RunQueryResponse runQuery(com.google.datastore.v1.RunQueryRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRunQueryMethod(), getCallOptions(), request);
     }
 
@@ -587,7 +574,7 @@ public final class DatastoreGrpc {
      * </pre>
      */
     public com.google.datastore.v1.BeginTransactionResponse beginTransaction(com.google.datastore.v1.BeginTransactionRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBeginTransactionMethod(), getCallOptions(), request);
     }
 
@@ -598,7 +585,7 @@ public final class DatastoreGrpc {
      * </pre>
      */
     public com.google.datastore.v1.CommitResponse commit(com.google.datastore.v1.CommitRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCommitMethod(), getCallOptions(), request);
     }
 
@@ -608,7 +595,7 @@ public final class DatastoreGrpc {
      * </pre>
      */
     public com.google.datastore.v1.RollbackResponse rollback(com.google.datastore.v1.RollbackRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRollbackMethod(), getCallOptions(), request);
     }
 
@@ -619,7 +606,7 @@ public final class DatastoreGrpc {
      * </pre>
      */
     public com.google.datastore.v1.AllocateIdsResponse allocateIds(com.google.datastore.v1.AllocateIdsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getAllocateIdsMethod(), getCallOptions(), request);
     }
 
@@ -630,7 +617,7 @@ public final class DatastoreGrpc {
      * </pre>
      */
     public com.google.datastore.v1.ReserveIdsResponse reserveIds(com.google.datastore.v1.ReserveIdsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getReserveIdsMethod(), getCallOptions(), request);
     }
   }
@@ -664,7 +651,7 @@ public final class DatastoreGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.datastore.v1.LookupResponse> lookup(
         com.google.datastore.v1.LookupRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getLookupMethod(), getCallOptions()), request);
     }
 
@@ -675,7 +662,7 @@ public final class DatastoreGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.datastore.v1.RunQueryResponse> runQuery(
         com.google.datastore.v1.RunQueryRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRunQueryMethod(), getCallOptions()), request);
     }
 
@@ -686,7 +673,7 @@ public final class DatastoreGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.datastore.v1.BeginTransactionResponse> beginTransaction(
         com.google.datastore.v1.BeginTransactionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBeginTransactionMethod(), getCallOptions()), request);
     }
 
@@ -698,7 +685,7 @@ public final class DatastoreGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.datastore.v1.CommitResponse> commit(
         com.google.datastore.v1.CommitRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCommitMethod(), getCallOptions()), request);
     }
 
@@ -709,7 +696,7 @@ public final class DatastoreGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.datastore.v1.RollbackResponse> rollback(
         com.google.datastore.v1.RollbackRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRollbackMethod(), getCallOptions()), request);
     }
 
@@ -721,7 +708,7 @@ public final class DatastoreGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.datastore.v1.AllocateIdsResponse> allocateIds(
         com.google.datastore.v1.AllocateIdsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getAllocateIdsMethod(), getCallOptions()), request);
     }
 
@@ -733,7 +720,7 @@ public final class DatastoreGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.datastore.v1.ReserveIdsResponse> reserveIds(
         com.google.datastore.v1.ReserveIdsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getReserveIdsMethod(), getCallOptions()), request);
     }
   }

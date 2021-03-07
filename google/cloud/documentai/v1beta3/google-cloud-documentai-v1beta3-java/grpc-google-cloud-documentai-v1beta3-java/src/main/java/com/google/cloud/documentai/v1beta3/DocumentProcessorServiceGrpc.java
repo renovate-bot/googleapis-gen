@@ -1,19 +1,6 @@
 package com.google.cloud.documentai.v1beta3;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -187,7 +174,7 @@ public final class DocumentProcessorServiceGrpc {
      */
     public void processDocument(com.google.cloud.documentai.v1beta3.ProcessRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.documentai.v1beta3.ProcessResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getProcessDocumentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getProcessDocumentMethod(), responseObserver);
     }
 
     /**
@@ -198,7 +185,7 @@ public final class DocumentProcessorServiceGrpc {
      */
     public void batchProcessDocuments(com.google.cloud.documentai.v1beta3.BatchProcessRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchProcessDocumentsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBatchProcessDocumentsMethod(), responseObserver);
     }
 
     /**
@@ -209,28 +196,28 @@ public final class DocumentProcessorServiceGrpc {
      */
     public void reviewDocument(com.google.cloud.documentai.v1beta3.ReviewDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getReviewDocumentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getReviewDocumentMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getProcessDocumentMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.documentai.v1beta3.ProcessRequest,
                 com.google.cloud.documentai.v1beta3.ProcessResponse>(
                   this, METHODID_PROCESS_DOCUMENT)))
           .addMethod(
             getBatchProcessDocumentsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.documentai.v1beta3.BatchProcessRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_BATCH_PROCESS_DOCUMENTS)))
           .addMethod(
             getReviewDocumentMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.documentai.v1beta3.ReviewDocumentRequest,
                 com.google.longrunning.Operation>(
@@ -266,7 +253,7 @@ public final class DocumentProcessorServiceGrpc {
      */
     public void processDocument(com.google.cloud.documentai.v1beta3.ProcessRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.documentai.v1beta3.ProcessResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getProcessDocumentMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -278,7 +265,7 @@ public final class DocumentProcessorServiceGrpc {
      */
     public void batchProcessDocuments(com.google.cloud.documentai.v1beta3.BatchProcessRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getBatchProcessDocumentsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -290,7 +277,7 @@ public final class DocumentProcessorServiceGrpc {
      */
     public void reviewDocument(com.google.cloud.documentai.v1beta3.ReviewDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getReviewDocumentMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -321,7 +308,7 @@ public final class DocumentProcessorServiceGrpc {
      * </pre>
      */
     public com.google.cloud.documentai.v1beta3.ProcessResponse processDocument(com.google.cloud.documentai.v1beta3.ProcessRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getProcessDocumentMethod(), getCallOptions(), request);
     }
 
@@ -332,7 +319,7 @@ public final class DocumentProcessorServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation batchProcessDocuments(com.google.cloud.documentai.v1beta3.BatchProcessRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBatchProcessDocumentsMethod(), getCallOptions(), request);
     }
 
@@ -343,7 +330,7 @@ public final class DocumentProcessorServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation reviewDocument(com.google.cloud.documentai.v1beta3.ReviewDocumentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getReviewDocumentMethod(), getCallOptions(), request);
     }
   }
@@ -375,7 +362,7 @@ public final class DocumentProcessorServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.documentai.v1beta3.ProcessResponse> processDocument(
         com.google.cloud.documentai.v1beta3.ProcessRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getProcessDocumentMethod(), getCallOptions()), request);
     }
 
@@ -387,7 +374,7 @@ public final class DocumentProcessorServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> batchProcessDocuments(
         com.google.cloud.documentai.v1beta3.BatchProcessRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBatchProcessDocumentsMethod(), getCallOptions()), request);
     }
 
@@ -399,7 +386,7 @@ public final class DocumentProcessorServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> reviewDocument(
         com.google.cloud.documentai.v1beta3.ReviewDocumentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getReviewDocumentMethod(), getCallOptions()), request);
     }
   }

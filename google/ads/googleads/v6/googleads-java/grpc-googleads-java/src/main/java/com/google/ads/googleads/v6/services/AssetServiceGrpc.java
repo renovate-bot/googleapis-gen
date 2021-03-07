@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v6.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -154,7 +141,7 @@ public final class AssetServiceGrpc {
      */
     public void getAsset(com.google.ads.googleads.v6.services.GetAssetRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.resources.Asset> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetAssetMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAssetMethod(), responseObserver);
     }
 
     /**
@@ -164,21 +151,21 @@ public final class AssetServiceGrpc {
      */
     public void mutateAssets(com.google.ads.googleads.v6.services.MutateAssetsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.MutateAssetsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getMutateAssetsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMutateAssetsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetAssetMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.GetAssetRequest,
                 com.google.ads.googleads.v6.resources.Asset>(
                   this, METHODID_GET_ASSET)))
           .addMethod(
             getMutateAssetsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.MutateAssetsRequest,
                 com.google.ads.googleads.v6.services.MutateAssetsResponse>(
@@ -213,7 +200,7 @@ public final class AssetServiceGrpc {
      */
     public void getAsset(com.google.ads.googleads.v6.services.GetAssetRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.resources.Asset> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetAssetMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -224,7 +211,7 @@ public final class AssetServiceGrpc {
      */
     public void mutateAssets(com.google.ads.googleads.v6.services.MutateAssetsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.MutateAssetsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMutateAssetsMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -254,7 +241,7 @@ public final class AssetServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.resources.Asset getAsset(com.google.ads.googleads.v6.services.GetAssetRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetAssetMethod(), getCallOptions(), request);
     }
 
@@ -264,7 +251,7 @@ public final class AssetServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.services.MutateAssetsResponse mutateAssets(com.google.ads.googleads.v6.services.MutateAssetsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMutateAssetsMethod(), getCallOptions(), request);
     }
   }
@@ -295,7 +282,7 @@ public final class AssetServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.resources.Asset> getAsset(
         com.google.ads.googleads.v6.services.GetAssetRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetAssetMethod(), getCallOptions()), request);
     }
 
@@ -306,7 +293,7 @@ public final class AssetServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.services.MutateAssetsResponse> mutateAssets(
         com.google.ads.googleads.v6.services.MutateAssetsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMutateAssetsMethod(), getCallOptions()), request);
     }
   }

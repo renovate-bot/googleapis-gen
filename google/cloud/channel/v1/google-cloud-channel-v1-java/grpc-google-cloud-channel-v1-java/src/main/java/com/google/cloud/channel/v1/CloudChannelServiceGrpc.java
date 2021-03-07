@@ -1,19 +1,6 @@
 package com.google.cloud.channel.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -1151,7 +1138,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void listCustomers(com.google.cloud.channel.v1.ListCustomersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListCustomersResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListCustomersMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListCustomersMethod(), responseObserver);
     }
 
     /**
@@ -1170,7 +1157,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void getCustomer(com.google.cloud.channel.v1.GetCustomerRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.Customer> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetCustomerMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCustomerMethod(), responseObserver);
     }
 
     /**
@@ -1192,7 +1179,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void checkCloudIdentityAccountsExist(com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getCheckCloudIdentityAccountsExistMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCheckCloudIdentityAccountsExistMethod(), responseObserver);
     }
 
     /**
@@ -1213,7 +1200,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void createCustomer(com.google.cloud.channel.v1.CreateCustomerRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.Customer> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateCustomerMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateCustomerMethod(), responseObserver);
     }
 
     /**
@@ -1234,7 +1221,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void updateCustomer(com.google.cloud.channel.v1.UpdateCustomerRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.Customer> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateCustomerMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateCustomerMethod(), responseObserver);
     }
 
     /**
@@ -1252,7 +1239,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void deleteCustomer(com.google.cloud.channel.v1.DeleteCustomerRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteCustomerMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteCustomerMethod(), responseObserver);
     }
 
     /**
@@ -1278,7 +1265,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void provisionCloudIdentity(com.google.cloud.channel.v1.ProvisionCloudIdentityRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getProvisionCloudIdentityMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getProvisionCloudIdentityMethod(), responseObserver);
     }
 
     /**
@@ -1294,7 +1281,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void listEntitlements(com.google.cloud.channel.v1.ListEntitlementsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListEntitlementsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListEntitlementsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListEntitlementsMethod(), responseObserver);
     }
 
     /**
@@ -1317,7 +1304,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void listTransferableSkus(com.google.cloud.channel.v1.ListTransferableSkusRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListTransferableSkusResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListTransferableSkusMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListTransferableSkusMethod(), responseObserver);
     }
 
     /**
@@ -1341,7 +1328,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void listTransferableOffers(com.google.cloud.channel.v1.ListTransferableOffersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListTransferableOffersResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListTransferableOffersMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListTransferableOffersMethod(), responseObserver);
     }
 
     /**
@@ -1359,7 +1346,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void getEntitlement(com.google.cloud.channel.v1.GetEntitlementRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.Entitlement> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetEntitlementMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetEntitlementMethod(), responseObserver);
     }
 
     /**
@@ -1403,7 +1390,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void createEntitlement(com.google.cloud.channel.v1.CreateEntitlementRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateEntitlementMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateEntitlementMethod(), responseObserver);
     }
 
     /**
@@ -1431,7 +1418,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void changeParameters(com.google.cloud.channel.v1.ChangeParametersRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getChangeParametersMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getChangeParametersMethod(), responseObserver);
     }
 
     /**
@@ -1459,7 +1446,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void changeRenewalSettings(com.google.cloud.channel.v1.ChangeRenewalSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getChangeRenewalSettingsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getChangeRenewalSettingsMethod(), responseObserver);
     }
 
     /**
@@ -1485,7 +1472,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void changeOffer(com.google.cloud.channel.v1.ChangeOfferRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getChangeOfferMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getChangeOfferMethod(), responseObserver);
     }
 
     /**
@@ -1514,7 +1501,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void startPaidService(com.google.cloud.channel.v1.StartPaidServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getStartPaidServiceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStartPaidServiceMethod(), responseObserver);
     }
 
     /**
@@ -1540,7 +1527,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void suspendEntitlement(com.google.cloud.channel.v1.SuspendEntitlementRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getSuspendEntitlementMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSuspendEntitlementMethod(), responseObserver);
     }
 
     /**
@@ -1572,7 +1559,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void cancelEntitlement(com.google.cloud.channel.v1.CancelEntitlementRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCancelEntitlementMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCancelEntitlementMethod(), responseObserver);
     }
 
     /**
@@ -1607,7 +1594,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void activateEntitlement(com.google.cloud.channel.v1.ActivateEntitlementRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getActivateEntitlementMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getActivateEntitlementMethod(), responseObserver);
     }
 
     /**
@@ -1643,7 +1630,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void transferEntitlements(com.google.cloud.channel.v1.TransferEntitlementsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getTransferEntitlementsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTransferEntitlementsMethod(), responseObserver);
     }
 
     /**
@@ -1679,7 +1666,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void transferEntitlementsToGoogle(com.google.cloud.channel.v1.TransferEntitlementsToGoogleRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getTransferEntitlementsToGoogleMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTransferEntitlementsToGoogleMethod(), responseObserver);
     }
 
     /**
@@ -1698,7 +1685,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void listChannelPartnerLinks(com.google.cloud.channel.v1.ListChannelPartnerLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListChannelPartnerLinksResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListChannelPartnerLinksMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListChannelPartnerLinksMethod(), responseObserver);
     }
 
     /**
@@ -1718,7 +1705,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void getChannelPartnerLink(com.google.cloud.channel.v1.GetChannelPartnerLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ChannelPartnerLink> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetChannelPartnerLinkMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetChannelPartnerLinkMethod(), responseObserver);
     }
 
     /**
@@ -1748,7 +1735,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void createChannelPartnerLink(com.google.cloud.channel.v1.CreateChannelPartnerLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ChannelPartnerLink> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateChannelPartnerLinkMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateChannelPartnerLinkMethod(), responseObserver);
     }
 
     /**
@@ -1776,7 +1763,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void updateChannelPartnerLink(com.google.cloud.channel.v1.UpdateChannelPartnerLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ChannelPartnerLink> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateChannelPartnerLinkMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateChannelPartnerLinkMethod(), responseObserver);
     }
 
     /**
@@ -1789,7 +1776,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void listProducts(com.google.cloud.channel.v1.ListProductsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListProductsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListProductsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListProductsMethod(), responseObserver);
     }
 
     /**
@@ -1802,7 +1789,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void listSkus(com.google.cloud.channel.v1.ListSkusRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListSkusResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListSkusMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListSkusMethod(), responseObserver);
     }
 
     /**
@@ -1815,7 +1802,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void listOffers(com.google.cloud.channel.v1.ListOffersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListOffersResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListOffersMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListOffersMethod(), responseObserver);
     }
 
     /**
@@ -1831,7 +1818,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void listPurchasableSkus(com.google.cloud.channel.v1.ListPurchasableSkusRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListPurchasableSkusResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListPurchasableSkusMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListPurchasableSkusMethod(), responseObserver);
     }
 
     /**
@@ -1847,7 +1834,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void listPurchasableOffers(com.google.cloud.channel.v1.ListPurchasableOffersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListPurchasableOffersResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListPurchasableOffersMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListPurchasableOffersMethod(), responseObserver);
     }
 
     /**
@@ -1872,7 +1859,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void registerSubscriber(com.google.cloud.channel.v1.RegisterSubscriberRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.RegisterSubscriberResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getRegisterSubscriberMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRegisterSubscriberMethod(), responseObserver);
     }
 
     /**
@@ -1900,7 +1887,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void unregisterSubscriber(com.google.cloud.channel.v1.UnregisterSubscriberRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.UnregisterSubscriberResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getUnregisterSubscriberMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUnregisterSubscriberMethod(), responseObserver);
     }
 
     /**
@@ -1925,238 +1912,238 @@ public final class CloudChannelServiceGrpc {
      */
     public void listSubscribers(com.google.cloud.channel.v1.ListSubscribersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListSubscribersResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListSubscribersMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListSubscribersMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getListCustomersMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.ListCustomersRequest,
                 com.google.cloud.channel.v1.ListCustomersResponse>(
                   this, METHODID_LIST_CUSTOMERS)))
           .addMethod(
             getGetCustomerMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.GetCustomerRequest,
                 com.google.cloud.channel.v1.Customer>(
                   this, METHODID_GET_CUSTOMER)))
           .addMethod(
             getCheckCloudIdentityAccountsExistMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistRequest,
                 com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistResponse>(
                   this, METHODID_CHECK_CLOUD_IDENTITY_ACCOUNTS_EXIST)))
           .addMethod(
             getCreateCustomerMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.CreateCustomerRequest,
                 com.google.cloud.channel.v1.Customer>(
                   this, METHODID_CREATE_CUSTOMER)))
           .addMethod(
             getUpdateCustomerMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.UpdateCustomerRequest,
                 com.google.cloud.channel.v1.Customer>(
                   this, METHODID_UPDATE_CUSTOMER)))
           .addMethod(
             getDeleteCustomerMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.DeleteCustomerRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_CUSTOMER)))
           .addMethod(
             getProvisionCloudIdentityMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.ProvisionCloudIdentityRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_PROVISION_CLOUD_IDENTITY)))
           .addMethod(
             getListEntitlementsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.ListEntitlementsRequest,
                 com.google.cloud.channel.v1.ListEntitlementsResponse>(
                   this, METHODID_LIST_ENTITLEMENTS)))
           .addMethod(
             getListTransferableSkusMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.ListTransferableSkusRequest,
                 com.google.cloud.channel.v1.ListTransferableSkusResponse>(
                   this, METHODID_LIST_TRANSFERABLE_SKUS)))
           .addMethod(
             getListTransferableOffersMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.ListTransferableOffersRequest,
                 com.google.cloud.channel.v1.ListTransferableOffersResponse>(
                   this, METHODID_LIST_TRANSFERABLE_OFFERS)))
           .addMethod(
             getGetEntitlementMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.GetEntitlementRequest,
                 com.google.cloud.channel.v1.Entitlement>(
                   this, METHODID_GET_ENTITLEMENT)))
           .addMethod(
             getCreateEntitlementMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.CreateEntitlementRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_CREATE_ENTITLEMENT)))
           .addMethod(
             getChangeParametersMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.ChangeParametersRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_CHANGE_PARAMETERS)))
           .addMethod(
             getChangeRenewalSettingsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.ChangeRenewalSettingsRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_CHANGE_RENEWAL_SETTINGS)))
           .addMethod(
             getChangeOfferMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.ChangeOfferRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_CHANGE_OFFER)))
           .addMethod(
             getStartPaidServiceMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.StartPaidServiceRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_START_PAID_SERVICE)))
           .addMethod(
             getSuspendEntitlementMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.SuspendEntitlementRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_SUSPEND_ENTITLEMENT)))
           .addMethod(
             getCancelEntitlementMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.CancelEntitlementRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_CANCEL_ENTITLEMENT)))
           .addMethod(
             getActivateEntitlementMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.ActivateEntitlementRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_ACTIVATE_ENTITLEMENT)))
           .addMethod(
             getTransferEntitlementsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.TransferEntitlementsRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_TRANSFER_ENTITLEMENTS)))
           .addMethod(
             getTransferEntitlementsToGoogleMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.TransferEntitlementsToGoogleRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_TRANSFER_ENTITLEMENTS_TO_GOOGLE)))
           .addMethod(
             getListChannelPartnerLinksMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.ListChannelPartnerLinksRequest,
                 com.google.cloud.channel.v1.ListChannelPartnerLinksResponse>(
                   this, METHODID_LIST_CHANNEL_PARTNER_LINKS)))
           .addMethod(
             getGetChannelPartnerLinkMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.GetChannelPartnerLinkRequest,
                 com.google.cloud.channel.v1.ChannelPartnerLink>(
                   this, METHODID_GET_CHANNEL_PARTNER_LINK)))
           .addMethod(
             getCreateChannelPartnerLinkMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.CreateChannelPartnerLinkRequest,
                 com.google.cloud.channel.v1.ChannelPartnerLink>(
                   this, METHODID_CREATE_CHANNEL_PARTNER_LINK)))
           .addMethod(
             getUpdateChannelPartnerLinkMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.UpdateChannelPartnerLinkRequest,
                 com.google.cloud.channel.v1.ChannelPartnerLink>(
                   this, METHODID_UPDATE_CHANNEL_PARTNER_LINK)))
           .addMethod(
             getListProductsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.ListProductsRequest,
                 com.google.cloud.channel.v1.ListProductsResponse>(
                   this, METHODID_LIST_PRODUCTS)))
           .addMethod(
             getListSkusMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.ListSkusRequest,
                 com.google.cloud.channel.v1.ListSkusResponse>(
                   this, METHODID_LIST_SKUS)))
           .addMethod(
             getListOffersMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.ListOffersRequest,
                 com.google.cloud.channel.v1.ListOffersResponse>(
                   this, METHODID_LIST_OFFERS)))
           .addMethod(
             getListPurchasableSkusMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.ListPurchasableSkusRequest,
                 com.google.cloud.channel.v1.ListPurchasableSkusResponse>(
                   this, METHODID_LIST_PURCHASABLE_SKUS)))
           .addMethod(
             getListPurchasableOffersMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.ListPurchasableOffersRequest,
                 com.google.cloud.channel.v1.ListPurchasableOffersResponse>(
                   this, METHODID_LIST_PURCHASABLE_OFFERS)))
           .addMethod(
             getRegisterSubscriberMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.RegisterSubscriberRequest,
                 com.google.cloud.channel.v1.RegisterSubscriberResponse>(
                   this, METHODID_REGISTER_SUBSCRIBER)))
           .addMethod(
             getUnregisterSubscriberMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.UnregisterSubscriberRequest,
                 com.google.cloud.channel.v1.UnregisterSubscriberResponse>(
                   this, METHODID_UNREGISTER_SUBSCRIBER)))
           .addMethod(
             getListSubscribersMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.channel.v1.ListSubscribersRequest,
                 com.google.cloud.channel.v1.ListSubscribersResponse>(
@@ -2213,7 +2200,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void listCustomers(com.google.cloud.channel.v1.ListCustomersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListCustomersResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListCustomersMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2233,7 +2220,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void getCustomer(com.google.cloud.channel.v1.GetCustomerRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.Customer> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetCustomerMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2256,7 +2243,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void checkCloudIdentityAccountsExist(com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCheckCloudIdentityAccountsExistMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2278,7 +2265,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void createCustomer(com.google.cloud.channel.v1.CreateCustomerRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.Customer> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateCustomerMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2300,7 +2287,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void updateCustomer(com.google.cloud.channel.v1.UpdateCustomerRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.Customer> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateCustomerMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2319,7 +2306,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void deleteCustomer(com.google.cloud.channel.v1.DeleteCustomerRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteCustomerMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2346,7 +2333,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void provisionCloudIdentity(com.google.cloud.channel.v1.ProvisionCloudIdentityRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getProvisionCloudIdentityMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2363,7 +2350,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void listEntitlements(com.google.cloud.channel.v1.ListEntitlementsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListEntitlementsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListEntitlementsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2387,7 +2374,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void listTransferableSkus(com.google.cloud.channel.v1.ListTransferableSkusRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListTransferableSkusResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListTransferableSkusMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2412,7 +2399,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void listTransferableOffers(com.google.cloud.channel.v1.ListTransferableOffersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListTransferableOffersResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListTransferableOffersMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2431,7 +2418,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void getEntitlement(com.google.cloud.channel.v1.GetEntitlementRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.Entitlement> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetEntitlementMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2476,7 +2463,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void createEntitlement(com.google.cloud.channel.v1.CreateEntitlementRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateEntitlementMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2505,7 +2492,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void changeParameters(com.google.cloud.channel.v1.ChangeParametersRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getChangeParametersMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2534,7 +2521,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void changeRenewalSettings(com.google.cloud.channel.v1.ChangeRenewalSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getChangeRenewalSettingsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2561,7 +2548,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void changeOffer(com.google.cloud.channel.v1.ChangeOfferRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getChangeOfferMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2591,7 +2578,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void startPaidService(com.google.cloud.channel.v1.StartPaidServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getStartPaidServiceMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2618,7 +2605,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void suspendEntitlement(com.google.cloud.channel.v1.SuspendEntitlementRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSuspendEntitlementMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2651,7 +2638,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void cancelEntitlement(com.google.cloud.channel.v1.CancelEntitlementRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCancelEntitlementMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2687,7 +2674,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void activateEntitlement(com.google.cloud.channel.v1.ActivateEntitlementRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getActivateEntitlementMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2724,7 +2711,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void transferEntitlements(com.google.cloud.channel.v1.TransferEntitlementsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getTransferEntitlementsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2761,7 +2748,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void transferEntitlementsToGoogle(com.google.cloud.channel.v1.TransferEntitlementsToGoogleRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getTransferEntitlementsToGoogleMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2781,7 +2768,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void listChannelPartnerLinks(com.google.cloud.channel.v1.ListChannelPartnerLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListChannelPartnerLinksResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListChannelPartnerLinksMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2802,7 +2789,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void getChannelPartnerLink(com.google.cloud.channel.v1.GetChannelPartnerLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ChannelPartnerLink> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetChannelPartnerLinkMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2833,7 +2820,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void createChannelPartnerLink(com.google.cloud.channel.v1.CreateChannelPartnerLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ChannelPartnerLink> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateChannelPartnerLinkMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2862,7 +2849,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void updateChannelPartnerLink(com.google.cloud.channel.v1.UpdateChannelPartnerLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ChannelPartnerLink> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateChannelPartnerLinkMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2876,7 +2863,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void listProducts(com.google.cloud.channel.v1.ListProductsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListProductsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListProductsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2890,7 +2877,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void listSkus(com.google.cloud.channel.v1.ListSkusRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListSkusResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListSkusMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2904,7 +2891,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void listOffers(com.google.cloud.channel.v1.ListOffersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListOffersResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListOffersMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2921,7 +2908,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void listPurchasableSkus(com.google.cloud.channel.v1.ListPurchasableSkusRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListPurchasableSkusResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListPurchasableSkusMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2938,7 +2925,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void listPurchasableOffers(com.google.cloud.channel.v1.ListPurchasableOffersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListPurchasableOffersResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListPurchasableOffersMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2964,7 +2951,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void registerSubscriber(com.google.cloud.channel.v1.RegisterSubscriberRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.RegisterSubscriberResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRegisterSubscriberMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2993,7 +2980,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void unregisterSubscriber(com.google.cloud.channel.v1.UnregisterSubscriberRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.UnregisterSubscriberResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUnregisterSubscriberMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3019,7 +3006,7 @@ public final class CloudChannelServiceGrpc {
      */
     public void listSubscribers(com.google.cloud.channel.v1.ListSubscribersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListSubscribersResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListSubscribersMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -3071,7 +3058,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.channel.v1.ListCustomersResponse listCustomers(com.google.cloud.channel.v1.ListCustomersRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListCustomersMethod(), getCallOptions(), request);
     }
 
@@ -3090,7 +3077,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.channel.v1.Customer getCustomer(com.google.cloud.channel.v1.GetCustomerRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetCustomerMethod(), getCallOptions(), request);
     }
 
@@ -3112,7 +3099,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistResponse checkCloudIdentityAccountsExist(com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCheckCloudIdentityAccountsExistMethod(), getCallOptions(), request);
     }
 
@@ -3133,7 +3120,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.channel.v1.Customer createCustomer(com.google.cloud.channel.v1.CreateCustomerRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateCustomerMethod(), getCallOptions(), request);
     }
 
@@ -3154,7 +3141,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.channel.v1.Customer updateCustomer(com.google.cloud.channel.v1.UpdateCustomerRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateCustomerMethod(), getCallOptions(), request);
     }
 
@@ -3172,7 +3159,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteCustomer(com.google.cloud.channel.v1.DeleteCustomerRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteCustomerMethod(), getCallOptions(), request);
     }
 
@@ -3198,7 +3185,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation provisionCloudIdentity(com.google.cloud.channel.v1.ProvisionCloudIdentityRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getProvisionCloudIdentityMethod(), getCallOptions(), request);
     }
 
@@ -3214,7 +3201,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.channel.v1.ListEntitlementsResponse listEntitlements(com.google.cloud.channel.v1.ListEntitlementsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListEntitlementsMethod(), getCallOptions(), request);
     }
 
@@ -3237,7 +3224,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.channel.v1.ListTransferableSkusResponse listTransferableSkus(com.google.cloud.channel.v1.ListTransferableSkusRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListTransferableSkusMethod(), getCallOptions(), request);
     }
 
@@ -3261,7 +3248,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.channel.v1.ListTransferableOffersResponse listTransferableOffers(com.google.cloud.channel.v1.ListTransferableOffersRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListTransferableOffersMethod(), getCallOptions(), request);
     }
 
@@ -3279,7 +3266,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.channel.v1.Entitlement getEntitlement(com.google.cloud.channel.v1.GetEntitlementRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetEntitlementMethod(), getCallOptions(), request);
     }
 
@@ -3323,7 +3310,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createEntitlement(com.google.cloud.channel.v1.CreateEntitlementRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateEntitlementMethod(), getCallOptions(), request);
     }
 
@@ -3351,7 +3338,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation changeParameters(com.google.cloud.channel.v1.ChangeParametersRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getChangeParametersMethod(), getCallOptions(), request);
     }
 
@@ -3379,7 +3366,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation changeRenewalSettings(com.google.cloud.channel.v1.ChangeRenewalSettingsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getChangeRenewalSettingsMethod(), getCallOptions(), request);
     }
 
@@ -3405,7 +3392,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation changeOffer(com.google.cloud.channel.v1.ChangeOfferRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getChangeOfferMethod(), getCallOptions(), request);
     }
 
@@ -3434,7 +3421,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation startPaidService(com.google.cloud.channel.v1.StartPaidServiceRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getStartPaidServiceMethod(), getCallOptions(), request);
     }
 
@@ -3460,7 +3447,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation suspendEntitlement(com.google.cloud.channel.v1.SuspendEntitlementRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSuspendEntitlementMethod(), getCallOptions(), request);
     }
 
@@ -3492,7 +3479,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation cancelEntitlement(com.google.cloud.channel.v1.CancelEntitlementRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCancelEntitlementMethod(), getCallOptions(), request);
     }
 
@@ -3527,7 +3514,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation activateEntitlement(com.google.cloud.channel.v1.ActivateEntitlementRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getActivateEntitlementMethod(), getCallOptions(), request);
     }
 
@@ -3563,7 +3550,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation transferEntitlements(com.google.cloud.channel.v1.TransferEntitlementsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTransferEntitlementsMethod(), getCallOptions(), request);
     }
 
@@ -3599,7 +3586,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation transferEntitlementsToGoogle(com.google.cloud.channel.v1.TransferEntitlementsToGoogleRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTransferEntitlementsToGoogleMethod(), getCallOptions(), request);
     }
 
@@ -3618,7 +3605,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.channel.v1.ListChannelPartnerLinksResponse listChannelPartnerLinks(com.google.cloud.channel.v1.ListChannelPartnerLinksRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListChannelPartnerLinksMethod(), getCallOptions(), request);
     }
 
@@ -3638,7 +3625,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.channel.v1.ChannelPartnerLink getChannelPartnerLink(com.google.cloud.channel.v1.GetChannelPartnerLinkRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetChannelPartnerLinkMethod(), getCallOptions(), request);
     }
 
@@ -3668,7 +3655,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.channel.v1.ChannelPartnerLink createChannelPartnerLink(com.google.cloud.channel.v1.CreateChannelPartnerLinkRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateChannelPartnerLinkMethod(), getCallOptions(), request);
     }
 
@@ -3696,7 +3683,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.channel.v1.ChannelPartnerLink updateChannelPartnerLink(com.google.cloud.channel.v1.UpdateChannelPartnerLinkRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateChannelPartnerLinkMethod(), getCallOptions(), request);
     }
 
@@ -3709,7 +3696,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.channel.v1.ListProductsResponse listProducts(com.google.cloud.channel.v1.ListProductsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListProductsMethod(), getCallOptions(), request);
     }
 
@@ -3722,7 +3709,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.channel.v1.ListSkusResponse listSkus(com.google.cloud.channel.v1.ListSkusRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListSkusMethod(), getCallOptions(), request);
     }
 
@@ -3735,7 +3722,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.channel.v1.ListOffersResponse listOffers(com.google.cloud.channel.v1.ListOffersRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListOffersMethod(), getCallOptions(), request);
     }
 
@@ -3751,7 +3738,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.channel.v1.ListPurchasableSkusResponse listPurchasableSkus(com.google.cloud.channel.v1.ListPurchasableSkusRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListPurchasableSkusMethod(), getCallOptions(), request);
     }
 
@@ -3767,7 +3754,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.channel.v1.ListPurchasableOffersResponse listPurchasableOffers(com.google.cloud.channel.v1.ListPurchasableOffersRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListPurchasableOffersMethod(), getCallOptions(), request);
     }
 
@@ -3792,7 +3779,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.channel.v1.RegisterSubscriberResponse registerSubscriber(com.google.cloud.channel.v1.RegisterSubscriberRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRegisterSubscriberMethod(), getCallOptions(), request);
     }
 
@@ -3820,7 +3807,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.channel.v1.UnregisterSubscriberResponse unregisterSubscriber(com.google.cloud.channel.v1.UnregisterSubscriberRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUnregisterSubscriberMethod(), getCallOptions(), request);
     }
 
@@ -3845,7 +3832,7 @@ public final class CloudChannelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.channel.v1.ListSubscribersResponse listSubscribers(com.google.cloud.channel.v1.ListSubscribersRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListSubscribersMethod(), getCallOptions(), request);
     }
   }
@@ -3898,7 +3885,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.channel.v1.ListCustomersResponse> listCustomers(
         com.google.cloud.channel.v1.ListCustomersRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListCustomersMethod(), getCallOptions()), request);
     }
 
@@ -3918,7 +3905,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.channel.v1.Customer> getCustomer(
         com.google.cloud.channel.v1.GetCustomerRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetCustomerMethod(), getCallOptions()), request);
     }
 
@@ -3941,7 +3928,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistResponse> checkCloudIdentityAccountsExist(
         com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCheckCloudIdentityAccountsExistMethod(), getCallOptions()), request);
     }
 
@@ -3963,7 +3950,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.channel.v1.Customer> createCustomer(
         com.google.cloud.channel.v1.CreateCustomerRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateCustomerMethod(), getCallOptions()), request);
     }
 
@@ -3985,7 +3972,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.channel.v1.Customer> updateCustomer(
         com.google.cloud.channel.v1.UpdateCustomerRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateCustomerMethod(), getCallOptions()), request);
     }
 
@@ -4004,7 +3991,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteCustomer(
         com.google.cloud.channel.v1.DeleteCustomerRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteCustomerMethod(), getCallOptions()), request);
     }
 
@@ -4031,7 +4018,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> provisionCloudIdentity(
         com.google.cloud.channel.v1.ProvisionCloudIdentityRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getProvisionCloudIdentityMethod(), getCallOptions()), request);
     }
 
@@ -4048,7 +4035,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.channel.v1.ListEntitlementsResponse> listEntitlements(
         com.google.cloud.channel.v1.ListEntitlementsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListEntitlementsMethod(), getCallOptions()), request);
     }
 
@@ -4072,7 +4059,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.channel.v1.ListTransferableSkusResponse> listTransferableSkus(
         com.google.cloud.channel.v1.ListTransferableSkusRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListTransferableSkusMethod(), getCallOptions()), request);
     }
 
@@ -4097,7 +4084,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.channel.v1.ListTransferableOffersResponse> listTransferableOffers(
         com.google.cloud.channel.v1.ListTransferableOffersRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListTransferableOffersMethod(), getCallOptions()), request);
     }
 
@@ -4116,7 +4103,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.channel.v1.Entitlement> getEntitlement(
         com.google.cloud.channel.v1.GetEntitlementRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetEntitlementMethod(), getCallOptions()), request);
     }
 
@@ -4161,7 +4148,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> createEntitlement(
         com.google.cloud.channel.v1.CreateEntitlementRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateEntitlementMethod(), getCallOptions()), request);
     }
 
@@ -4190,7 +4177,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> changeParameters(
         com.google.cloud.channel.v1.ChangeParametersRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getChangeParametersMethod(), getCallOptions()), request);
     }
 
@@ -4219,7 +4206,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> changeRenewalSettings(
         com.google.cloud.channel.v1.ChangeRenewalSettingsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getChangeRenewalSettingsMethod(), getCallOptions()), request);
     }
 
@@ -4246,7 +4233,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> changeOffer(
         com.google.cloud.channel.v1.ChangeOfferRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getChangeOfferMethod(), getCallOptions()), request);
     }
 
@@ -4276,7 +4263,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> startPaidService(
         com.google.cloud.channel.v1.StartPaidServiceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getStartPaidServiceMethod(), getCallOptions()), request);
     }
 
@@ -4303,7 +4290,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> suspendEntitlement(
         com.google.cloud.channel.v1.SuspendEntitlementRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSuspendEntitlementMethod(), getCallOptions()), request);
     }
 
@@ -4336,7 +4323,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> cancelEntitlement(
         com.google.cloud.channel.v1.CancelEntitlementRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCancelEntitlementMethod(), getCallOptions()), request);
     }
 
@@ -4372,7 +4359,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> activateEntitlement(
         com.google.cloud.channel.v1.ActivateEntitlementRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getActivateEntitlementMethod(), getCallOptions()), request);
     }
 
@@ -4409,7 +4396,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> transferEntitlements(
         com.google.cloud.channel.v1.TransferEntitlementsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTransferEntitlementsMethod(), getCallOptions()), request);
     }
 
@@ -4446,7 +4433,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> transferEntitlementsToGoogle(
         com.google.cloud.channel.v1.TransferEntitlementsToGoogleRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTransferEntitlementsToGoogleMethod(), getCallOptions()), request);
     }
 
@@ -4466,7 +4453,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.channel.v1.ListChannelPartnerLinksResponse> listChannelPartnerLinks(
         com.google.cloud.channel.v1.ListChannelPartnerLinksRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListChannelPartnerLinksMethod(), getCallOptions()), request);
     }
 
@@ -4487,7 +4474,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.channel.v1.ChannelPartnerLink> getChannelPartnerLink(
         com.google.cloud.channel.v1.GetChannelPartnerLinkRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetChannelPartnerLinkMethod(), getCallOptions()), request);
     }
 
@@ -4518,7 +4505,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.channel.v1.ChannelPartnerLink> createChannelPartnerLink(
         com.google.cloud.channel.v1.CreateChannelPartnerLinkRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateChannelPartnerLinkMethod(), getCallOptions()), request);
     }
 
@@ -4547,7 +4534,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.channel.v1.ChannelPartnerLink> updateChannelPartnerLink(
         com.google.cloud.channel.v1.UpdateChannelPartnerLinkRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateChannelPartnerLinkMethod(), getCallOptions()), request);
     }
 
@@ -4561,7 +4548,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.channel.v1.ListProductsResponse> listProducts(
         com.google.cloud.channel.v1.ListProductsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListProductsMethod(), getCallOptions()), request);
     }
 
@@ -4575,7 +4562,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.channel.v1.ListSkusResponse> listSkus(
         com.google.cloud.channel.v1.ListSkusRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListSkusMethod(), getCallOptions()), request);
     }
 
@@ -4589,7 +4576,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.channel.v1.ListOffersResponse> listOffers(
         com.google.cloud.channel.v1.ListOffersRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListOffersMethod(), getCallOptions()), request);
     }
 
@@ -4606,7 +4593,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.channel.v1.ListPurchasableSkusResponse> listPurchasableSkus(
         com.google.cloud.channel.v1.ListPurchasableSkusRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListPurchasableSkusMethod(), getCallOptions()), request);
     }
 
@@ -4623,7 +4610,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.channel.v1.ListPurchasableOffersResponse> listPurchasableOffers(
         com.google.cloud.channel.v1.ListPurchasableOffersRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListPurchasableOffersMethod(), getCallOptions()), request);
     }
 
@@ -4649,7 +4636,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.channel.v1.RegisterSubscriberResponse> registerSubscriber(
         com.google.cloud.channel.v1.RegisterSubscriberRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRegisterSubscriberMethod(), getCallOptions()), request);
     }
 
@@ -4678,7 +4665,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.channel.v1.UnregisterSubscriberResponse> unregisterSubscriber(
         com.google.cloud.channel.v1.UnregisterSubscriberRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUnregisterSubscriberMethod(), getCallOptions()), request);
     }
 
@@ -4704,7 +4691,7 @@ public final class CloudChannelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.channel.v1.ListSubscribersResponse> listSubscribers(
         com.google.cloud.channel.v1.ListSubscribersRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListSubscribersMethod(), getCallOptions()), request);
     }
   }

@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v6.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -150,7 +137,7 @@ public final class CustomerClientLinkServiceGrpc {
      */
     public void getCustomerClientLink(com.google.ads.googleads.v6.services.GetCustomerClientLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.resources.CustomerClientLink> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetCustomerClientLinkMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCustomerClientLinkMethod(), responseObserver);
     }
 
     /**
@@ -160,21 +147,21 @@ public final class CustomerClientLinkServiceGrpc {
      */
     public void mutateCustomerClientLink(com.google.ads.googleads.v6.services.MutateCustomerClientLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.MutateCustomerClientLinkResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getMutateCustomerClientLinkMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMutateCustomerClientLinkMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetCustomerClientLinkMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.GetCustomerClientLinkRequest,
                 com.google.ads.googleads.v6.resources.CustomerClientLink>(
                   this, METHODID_GET_CUSTOMER_CLIENT_LINK)))
           .addMethod(
             getMutateCustomerClientLinkMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.MutateCustomerClientLinkRequest,
                 com.google.ads.googleads.v6.services.MutateCustomerClientLinkResponse>(
@@ -207,7 +194,7 @@ public final class CustomerClientLinkServiceGrpc {
      */
     public void getCustomerClientLink(com.google.ads.googleads.v6.services.GetCustomerClientLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.resources.CustomerClientLink> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetCustomerClientLinkMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -218,7 +205,7 @@ public final class CustomerClientLinkServiceGrpc {
      */
     public void mutateCustomerClientLink(com.google.ads.googleads.v6.services.MutateCustomerClientLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.MutateCustomerClientLinkResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMutateCustomerClientLinkMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -246,7 +233,7 @@ public final class CustomerClientLinkServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.resources.CustomerClientLink getCustomerClientLink(com.google.ads.googleads.v6.services.GetCustomerClientLinkRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetCustomerClientLinkMethod(), getCallOptions(), request);
     }
 
@@ -256,7 +243,7 @@ public final class CustomerClientLinkServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.services.MutateCustomerClientLinkResponse mutateCustomerClientLink(com.google.ads.googleads.v6.services.MutateCustomerClientLinkRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMutateCustomerClientLinkMethod(), getCallOptions(), request);
     }
   }
@@ -285,7 +272,7 @@ public final class CustomerClientLinkServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.resources.CustomerClientLink> getCustomerClientLink(
         com.google.ads.googleads.v6.services.GetCustomerClientLinkRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetCustomerClientLinkMethod(), getCallOptions()), request);
     }
 
@@ -296,7 +283,7 @@ public final class CustomerClientLinkServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.services.MutateCustomerClientLinkResponse> mutateCustomerClientLink(
         com.google.ads.googleads.v6.services.MutateCustomerClientLinkRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMutateCustomerClientLinkMethod(), getCallOptions()), request);
     }
   }

@@ -1,19 +1,6 @@
 package com.google.home.graph.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -260,7 +247,7 @@ public final class HomeGraphApiServiceGrpc {
      */
     public void requestSyncDevices(com.google.home.graph.v1.HomeGraphApiServiceProto.RequestSyncDevicesRequest request,
         io.grpc.stub.StreamObserver<com.google.home.graph.v1.HomeGraphApiServiceProto.RequestSyncDevicesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getRequestSyncDevicesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRequestSyncDevicesMethod(), responseObserver);
     }
 
     /**
@@ -284,7 +271,7 @@ public final class HomeGraphApiServiceGrpc {
      */
     public void reportStateAndNotification(com.google.home.graph.v1.HomeGraphApiServiceProto.ReportStateAndNotificationRequest request,
         io.grpc.stub.StreamObserver<com.google.home.graph.v1.HomeGraphApiServiceProto.ReportStateAndNotificationResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getReportStateAndNotificationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getReportStateAndNotificationMethod(), responseObserver);
     }
 
     /**
@@ -303,7 +290,7 @@ public final class HomeGraphApiServiceGrpc {
      */
     public void deleteAgentUser(com.google.home.graph.v1.HomeGraphApiServiceProto.DeleteAgentUserRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteAgentUserMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteAgentUserMethod(), responseObserver);
     }
 
     /**
@@ -318,7 +305,7 @@ public final class HomeGraphApiServiceGrpc {
      */
     public void query(com.google.home.graph.v1.HomeGraphApiServiceProto.QueryRequest request,
         io.grpc.stub.StreamObserver<com.google.home.graph.v1.HomeGraphApiServiceProto.QueryResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getQueryMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getQueryMethod(), responseObserver);
     }
 
     /**
@@ -332,42 +319,42 @@ public final class HomeGraphApiServiceGrpc {
      */
     public void sync(com.google.home.graph.v1.HomeGraphApiServiceProto.SyncRequest request,
         io.grpc.stub.StreamObserver<com.google.home.graph.v1.HomeGraphApiServiceProto.SyncResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getSyncMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSyncMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getRequestSyncDevicesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.home.graph.v1.HomeGraphApiServiceProto.RequestSyncDevicesRequest,
                 com.google.home.graph.v1.HomeGraphApiServiceProto.RequestSyncDevicesResponse>(
                   this, METHODID_REQUEST_SYNC_DEVICES)))
           .addMethod(
             getReportStateAndNotificationMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.home.graph.v1.HomeGraphApiServiceProto.ReportStateAndNotificationRequest,
                 com.google.home.graph.v1.HomeGraphApiServiceProto.ReportStateAndNotificationResponse>(
                   this, METHODID_REPORT_STATE_AND_NOTIFICATION)))
           .addMethod(
             getDeleteAgentUserMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.home.graph.v1.HomeGraphApiServiceProto.DeleteAgentUserRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_AGENT_USER)))
           .addMethod(
             getQueryMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.home.graph.v1.HomeGraphApiServiceProto.QueryRequest,
                 com.google.home.graph.v1.HomeGraphApiServiceProto.QueryResponse>(
                   this, METHODID_QUERY)))
           .addMethod(
             getSyncMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.home.graph.v1.HomeGraphApiServiceProto.SyncRequest,
                 com.google.home.graph.v1.HomeGraphApiServiceProto.SyncResponse>(
@@ -412,7 +399,7 @@ public final class HomeGraphApiServiceGrpc {
      */
     public void requestSyncDevices(com.google.home.graph.v1.HomeGraphApiServiceProto.RequestSyncDevicesRequest request,
         io.grpc.stub.StreamObserver<com.google.home.graph.v1.HomeGraphApiServiceProto.RequestSyncDevicesResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRequestSyncDevicesMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -437,7 +424,7 @@ public final class HomeGraphApiServiceGrpc {
      */
     public void reportStateAndNotification(com.google.home.graph.v1.HomeGraphApiServiceProto.ReportStateAndNotificationRequest request,
         io.grpc.stub.StreamObserver<com.google.home.graph.v1.HomeGraphApiServiceProto.ReportStateAndNotificationResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getReportStateAndNotificationMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -457,7 +444,7 @@ public final class HomeGraphApiServiceGrpc {
      */
     public void deleteAgentUser(com.google.home.graph.v1.HomeGraphApiServiceProto.DeleteAgentUserRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteAgentUserMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -473,7 +460,7 @@ public final class HomeGraphApiServiceGrpc {
      */
     public void query(com.google.home.graph.v1.HomeGraphApiServiceProto.QueryRequest request,
         io.grpc.stub.StreamObserver<com.google.home.graph.v1.HomeGraphApiServiceProto.QueryResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getQueryMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -488,7 +475,7 @@ public final class HomeGraphApiServiceGrpc {
      */
     public void sync(com.google.home.graph.v1.HomeGraphApiServiceProto.SyncRequest request,
         io.grpc.stub.StreamObserver<com.google.home.graph.v1.HomeGraphApiServiceProto.SyncResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSyncMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -528,7 +515,7 @@ public final class HomeGraphApiServiceGrpc {
      * </pre>
      */
     public com.google.home.graph.v1.HomeGraphApiServiceProto.RequestSyncDevicesResponse requestSyncDevices(com.google.home.graph.v1.HomeGraphApiServiceProto.RequestSyncDevicesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRequestSyncDevicesMethod(), getCallOptions(), request);
     }
 
@@ -552,7 +539,7 @@ public final class HomeGraphApiServiceGrpc {
      * </pre>
      */
     public com.google.home.graph.v1.HomeGraphApiServiceProto.ReportStateAndNotificationResponse reportStateAndNotification(com.google.home.graph.v1.HomeGraphApiServiceProto.ReportStateAndNotificationRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getReportStateAndNotificationMethod(), getCallOptions(), request);
     }
 
@@ -571,7 +558,7 @@ public final class HomeGraphApiServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteAgentUser(com.google.home.graph.v1.HomeGraphApiServiceProto.DeleteAgentUserRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteAgentUserMethod(), getCallOptions(), request);
     }
 
@@ -586,7 +573,7 @@ public final class HomeGraphApiServiceGrpc {
      * </pre>
      */
     public com.google.home.graph.v1.HomeGraphApiServiceProto.QueryResponse query(com.google.home.graph.v1.HomeGraphApiServiceProto.QueryRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getQueryMethod(), getCallOptions(), request);
     }
 
@@ -600,7 +587,7 @@ public final class HomeGraphApiServiceGrpc {
      * </pre>
      */
     public com.google.home.graph.v1.HomeGraphApiServiceProto.SyncResponse sync(com.google.home.graph.v1.HomeGraphApiServiceProto.SyncRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSyncMethod(), getCallOptions(), request);
     }
   }
@@ -641,7 +628,7 @@ public final class HomeGraphApiServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.home.graph.v1.HomeGraphApiServiceProto.RequestSyncDevicesResponse> requestSyncDevices(
         com.google.home.graph.v1.HomeGraphApiServiceProto.RequestSyncDevicesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRequestSyncDevicesMethod(), getCallOptions()), request);
     }
 
@@ -666,7 +653,7 @@ public final class HomeGraphApiServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.home.graph.v1.HomeGraphApiServiceProto.ReportStateAndNotificationResponse> reportStateAndNotification(
         com.google.home.graph.v1.HomeGraphApiServiceProto.ReportStateAndNotificationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getReportStateAndNotificationMethod(), getCallOptions()), request);
     }
 
@@ -686,7 +673,7 @@ public final class HomeGraphApiServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteAgentUser(
         com.google.home.graph.v1.HomeGraphApiServiceProto.DeleteAgentUserRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteAgentUserMethod(), getCallOptions()), request);
     }
 
@@ -702,7 +689,7 @@ public final class HomeGraphApiServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.home.graph.v1.HomeGraphApiServiceProto.QueryResponse> query(
         com.google.home.graph.v1.HomeGraphApiServiceProto.QueryRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getQueryMethod(), getCallOptions()), request);
     }
 
@@ -717,7 +704,7 @@ public final class HomeGraphApiServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.home.graph.v1.HomeGraphApiServiceProto.SyncResponse> sync(
         com.google.home.graph.v1.HomeGraphApiServiceProto.SyncRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSyncMethod(), getCallOptions()), request);
     }
   }

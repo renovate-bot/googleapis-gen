@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v5.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -181,7 +168,7 @@ public final class GoogleAdsServiceGrpc {
      */
     public void search(com.google.ads.googleads.v5.services.SearchGoogleAdsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.services.SearchGoogleAdsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getSearchMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSearchMethod(), responseObserver);
     }
 
     /**
@@ -191,7 +178,7 @@ public final class GoogleAdsServiceGrpc {
      */
     public void searchStream(com.google.ads.googleads.v5.services.SearchGoogleAdsStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.services.SearchGoogleAdsStreamResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getSearchStreamMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSearchStreamMethod(), responseObserver);
     }
 
     /**
@@ -239,28 +226,28 @@ public final class GoogleAdsServiceGrpc {
      */
     public void mutate(com.google.ads.googleads.v5.services.MutateGoogleAdsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.services.MutateGoogleAdsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getMutateMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMutateMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getSearchMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v5.services.SearchGoogleAdsRequest,
                 com.google.ads.googleads.v5.services.SearchGoogleAdsResponse>(
                   this, METHODID_SEARCH)))
           .addMethod(
             getSearchStreamMethod(),
-            asyncServerStreamingCall(
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
               new MethodHandlers<
                 com.google.ads.googleads.v5.services.SearchGoogleAdsStreamRequest,
                 com.google.ads.googleads.v5.services.SearchGoogleAdsStreamResponse>(
                   this, METHODID_SEARCH_STREAM)))
           .addMethod(
             getMutateMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v5.services.MutateGoogleAdsRequest,
                 com.google.ads.googleads.v5.services.MutateGoogleAdsResponse>(
@@ -293,7 +280,7 @@ public final class GoogleAdsServiceGrpc {
      */
     public void search(com.google.ads.googleads.v5.services.SearchGoogleAdsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.services.SearchGoogleAdsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSearchMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -304,7 +291,7 @@ public final class GoogleAdsServiceGrpc {
      */
     public void searchStream(com.google.ads.googleads.v5.services.SearchGoogleAdsStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.services.SearchGoogleAdsStreamResponse> responseObserver) {
-      asyncServerStreamingCall(
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getSearchStreamMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -353,7 +340,7 @@ public final class GoogleAdsServiceGrpc {
      */
     public void mutate(com.google.ads.googleads.v5.services.MutateGoogleAdsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.services.MutateGoogleAdsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMutateMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -381,7 +368,7 @@ public final class GoogleAdsServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v5.services.SearchGoogleAdsResponse search(com.google.ads.googleads.v5.services.SearchGoogleAdsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSearchMethod(), getCallOptions(), request);
     }
 
@@ -392,7 +379,7 @@ public final class GoogleAdsServiceGrpc {
      */
     public java.util.Iterator<com.google.ads.googleads.v5.services.SearchGoogleAdsStreamResponse> searchStream(
         com.google.ads.googleads.v5.services.SearchGoogleAdsStreamRequest request) {
-      return blockingServerStreamingCall(
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getSearchStreamMethod(), getCallOptions(), request);
     }
 
@@ -440,7 +427,7 @@ public final class GoogleAdsServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v5.services.MutateGoogleAdsResponse mutate(com.google.ads.googleads.v5.services.MutateGoogleAdsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMutateMethod(), getCallOptions(), request);
     }
   }
@@ -469,7 +456,7 @@ public final class GoogleAdsServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v5.services.SearchGoogleAdsResponse> search(
         com.google.ads.googleads.v5.services.SearchGoogleAdsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSearchMethod(), getCallOptions()), request);
     }
 
@@ -518,7 +505,7 @@ public final class GoogleAdsServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v5.services.MutateGoogleAdsResponse> mutate(
         com.google.ads.googleads.v5.services.MutateGoogleAdsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMutateMethod(), getCallOptions()), request);
     }
   }

@@ -1,19 +1,6 @@
 package com.google.cloud.retail.v2;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -151,7 +138,7 @@ public final class CatalogServiceGrpc {
      */
     public void listCatalogs(com.google.cloud.retail.v2.ListCatalogsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2.ListCatalogsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListCatalogsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListCatalogsMethod(), responseObserver);
     }
 
     /**
@@ -161,21 +148,21 @@ public final class CatalogServiceGrpc {
      */
     public void updateCatalog(com.google.cloud.retail.v2.UpdateCatalogRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2.Catalog> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateCatalogMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateCatalogMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getListCatalogsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.retail.v2.ListCatalogsRequest,
                 com.google.cloud.retail.v2.ListCatalogsResponse>(
                   this, METHODID_LIST_CATALOGS)))
           .addMethod(
             getUpdateCatalogMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.retail.v2.UpdateCatalogRequest,
                 com.google.cloud.retail.v2.Catalog>(
@@ -209,7 +196,7 @@ public final class CatalogServiceGrpc {
      */
     public void listCatalogs(com.google.cloud.retail.v2.ListCatalogsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2.ListCatalogsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListCatalogsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -220,7 +207,7 @@ public final class CatalogServiceGrpc {
      */
     public void updateCatalog(com.google.cloud.retail.v2.UpdateCatalogRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2.Catalog> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateCatalogMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -249,7 +236,7 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2.ListCatalogsResponse listCatalogs(com.google.cloud.retail.v2.ListCatalogsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListCatalogsMethod(), getCallOptions(), request);
     }
 
@@ -259,7 +246,7 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2.Catalog updateCatalog(com.google.cloud.retail.v2.UpdateCatalogRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateCatalogMethod(), getCallOptions(), request);
     }
   }
@@ -289,7 +276,7 @@ public final class CatalogServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.retail.v2.ListCatalogsResponse> listCatalogs(
         com.google.cloud.retail.v2.ListCatalogsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListCatalogsMethod(), getCallOptions()), request);
     }
 
@@ -300,7 +287,7 @@ public final class CatalogServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.retail.v2.Catalog> updateCatalog(
         com.google.cloud.retail.v2.UpdateCatalogRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateCatalogMethod(), getCallOptions()), request);
     }
   }

@@ -1,19 +1,6 @@
 package com.google.cloud.dialogflow.v2beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -380,7 +367,7 @@ public final class ConversationsGrpc {
      */
     public void createConversation(com.google.cloud.dialogflow.v2beta1.CreateConversationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Conversation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateConversationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateConversationMethod(), responseObserver);
     }
 
     /**
@@ -390,7 +377,7 @@ public final class ConversationsGrpc {
      */
     public void listConversations(com.google.cloud.dialogflow.v2beta1.ListConversationsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListConversationsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListConversationsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListConversationsMethod(), responseObserver);
     }
 
     /**
@@ -400,7 +387,7 @@ public final class ConversationsGrpc {
      */
     public void getConversation(com.google.cloud.dialogflow.v2beta1.GetConversationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Conversation> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetConversationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetConversationMethod(), responseObserver);
     }
 
     /**
@@ -411,7 +398,7 @@ public final class ConversationsGrpc {
      */
     public void completeConversation(com.google.cloud.dialogflow.v2beta1.CompleteConversationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Conversation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCompleteConversationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCompleteConversationMethod(), responseObserver);
     }
 
     /**
@@ -422,7 +409,7 @@ public final class ConversationsGrpc {
      */
     public void createCallMatcher(com.google.cloud.dialogflow.v2beta1.CreateCallMatcherRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.CallMatcher> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateCallMatcherMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateCallMatcherMethod(), responseObserver);
     }
 
     /**
@@ -432,7 +419,7 @@ public final class ConversationsGrpc {
      */
     public void listCallMatchers(com.google.cloud.dialogflow.v2beta1.ListCallMatchersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListCallMatchersResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListCallMatchersMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListCallMatchersMethod(), responseObserver);
     }
 
     /**
@@ -442,7 +429,7 @@ public final class ConversationsGrpc {
      */
     public void deleteCallMatcher(com.google.cloud.dialogflow.v2beta1.DeleteCallMatcherRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteCallMatcherMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteCallMatcherMethod(), responseObserver);
     }
 
     /**
@@ -453,7 +440,7 @@ public final class ConversationsGrpc {
      */
     public void batchCreateMessages(com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchCreateMessagesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBatchCreateMessagesMethod(), responseObserver);
     }
 
     /**
@@ -467,70 +454,70 @@ public final class ConversationsGrpc {
      */
     public void listMessages(com.google.cloud.dialogflow.v2beta1.ListMessagesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListMessagesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListMessagesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListMessagesMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getCreateConversationMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.dialogflow.v2beta1.CreateConversationRequest,
                 com.google.cloud.dialogflow.v2beta1.Conversation>(
                   this, METHODID_CREATE_CONVERSATION)))
           .addMethod(
             getListConversationsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.dialogflow.v2beta1.ListConversationsRequest,
                 com.google.cloud.dialogflow.v2beta1.ListConversationsResponse>(
                   this, METHODID_LIST_CONVERSATIONS)))
           .addMethod(
             getGetConversationMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.dialogflow.v2beta1.GetConversationRequest,
                 com.google.cloud.dialogflow.v2beta1.Conversation>(
                   this, METHODID_GET_CONVERSATION)))
           .addMethod(
             getCompleteConversationMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.dialogflow.v2beta1.CompleteConversationRequest,
                 com.google.cloud.dialogflow.v2beta1.Conversation>(
                   this, METHODID_COMPLETE_CONVERSATION)))
           .addMethod(
             getCreateCallMatcherMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.dialogflow.v2beta1.CreateCallMatcherRequest,
                 com.google.cloud.dialogflow.v2beta1.CallMatcher>(
                   this, METHODID_CREATE_CALL_MATCHER)))
           .addMethod(
             getListCallMatchersMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.dialogflow.v2beta1.ListCallMatchersRequest,
                 com.google.cloud.dialogflow.v2beta1.ListCallMatchersResponse>(
                   this, METHODID_LIST_CALL_MATCHERS)))
           .addMethod(
             getDeleteCallMatcherMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.dialogflow.v2beta1.DeleteCallMatcherRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_CALL_MATCHER)))
           .addMethod(
             getBatchCreateMessagesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesRequest,
                 com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesResponse>(
                   this, METHODID_BATCH_CREATE_MESSAGES)))
           .addMethod(
             getListMessagesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.dialogflow.v2beta1.ListMessagesRequest,
                 com.google.cloud.dialogflow.v2beta1.ListMessagesResponse>(
@@ -576,7 +563,7 @@ public final class ConversationsGrpc {
      */
     public void createConversation(com.google.cloud.dialogflow.v2beta1.CreateConversationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Conversation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateConversationMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -587,7 +574,7 @@ public final class ConversationsGrpc {
      */
     public void listConversations(com.google.cloud.dialogflow.v2beta1.ListConversationsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListConversationsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListConversationsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -598,7 +585,7 @@ public final class ConversationsGrpc {
      */
     public void getConversation(com.google.cloud.dialogflow.v2beta1.GetConversationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Conversation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetConversationMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -610,7 +597,7 @@ public final class ConversationsGrpc {
      */
     public void completeConversation(com.google.cloud.dialogflow.v2beta1.CompleteConversationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Conversation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCompleteConversationMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -622,7 +609,7 @@ public final class ConversationsGrpc {
      */
     public void createCallMatcher(com.google.cloud.dialogflow.v2beta1.CreateCallMatcherRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.CallMatcher> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateCallMatcherMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -633,7 +620,7 @@ public final class ConversationsGrpc {
      */
     public void listCallMatchers(com.google.cloud.dialogflow.v2beta1.ListCallMatchersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListCallMatchersResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListCallMatchersMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -644,7 +631,7 @@ public final class ConversationsGrpc {
      */
     public void deleteCallMatcher(com.google.cloud.dialogflow.v2beta1.DeleteCallMatcherRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteCallMatcherMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -656,7 +643,7 @@ public final class ConversationsGrpc {
      */
     public void batchCreateMessages(com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getBatchCreateMessagesMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -671,7 +658,7 @@ public final class ConversationsGrpc {
      */
     public void listMessages(com.google.cloud.dialogflow.v2beta1.ListMessagesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListMessagesResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListMessagesMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -712,7 +699,7 @@ public final class ConversationsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.Conversation createConversation(com.google.cloud.dialogflow.v2beta1.CreateConversationRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateConversationMethod(), getCallOptions(), request);
     }
 
@@ -722,7 +709,7 @@ public final class ConversationsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.ListConversationsResponse listConversations(com.google.cloud.dialogflow.v2beta1.ListConversationsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListConversationsMethod(), getCallOptions(), request);
     }
 
@@ -732,7 +719,7 @@ public final class ConversationsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.Conversation getConversation(com.google.cloud.dialogflow.v2beta1.GetConversationRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetConversationMethod(), getCallOptions(), request);
     }
 
@@ -743,7 +730,7 @@ public final class ConversationsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.Conversation completeConversation(com.google.cloud.dialogflow.v2beta1.CompleteConversationRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCompleteConversationMethod(), getCallOptions(), request);
     }
 
@@ -754,7 +741,7 @@ public final class ConversationsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.CallMatcher createCallMatcher(com.google.cloud.dialogflow.v2beta1.CreateCallMatcherRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateCallMatcherMethod(), getCallOptions(), request);
     }
 
@@ -764,7 +751,7 @@ public final class ConversationsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.ListCallMatchersResponse listCallMatchers(com.google.cloud.dialogflow.v2beta1.ListCallMatchersRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListCallMatchersMethod(), getCallOptions(), request);
     }
 
@@ -774,7 +761,7 @@ public final class ConversationsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteCallMatcher(com.google.cloud.dialogflow.v2beta1.DeleteCallMatcherRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteCallMatcherMethod(), getCallOptions(), request);
     }
 
@@ -785,7 +772,7 @@ public final class ConversationsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesResponse batchCreateMessages(com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBatchCreateMessagesMethod(), getCallOptions(), request);
     }
 
@@ -799,7 +786,7 @@ public final class ConversationsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.ListMessagesResponse listMessages(com.google.cloud.dialogflow.v2beta1.ListMessagesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListMessagesMethod(), getCallOptions(), request);
     }
   }
@@ -841,7 +828,7 @@ public final class ConversationsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.v2beta1.Conversation> createConversation(
         com.google.cloud.dialogflow.v2beta1.CreateConversationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateConversationMethod(), getCallOptions()), request);
     }
 
@@ -852,7 +839,7 @@ public final class ConversationsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.v2beta1.ListConversationsResponse> listConversations(
         com.google.cloud.dialogflow.v2beta1.ListConversationsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListConversationsMethod(), getCallOptions()), request);
     }
 
@@ -863,7 +850,7 @@ public final class ConversationsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.v2beta1.Conversation> getConversation(
         com.google.cloud.dialogflow.v2beta1.GetConversationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetConversationMethod(), getCallOptions()), request);
     }
 
@@ -875,7 +862,7 @@ public final class ConversationsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.v2beta1.Conversation> completeConversation(
         com.google.cloud.dialogflow.v2beta1.CompleteConversationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCompleteConversationMethod(), getCallOptions()), request);
     }
 
@@ -887,7 +874,7 @@ public final class ConversationsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.v2beta1.CallMatcher> createCallMatcher(
         com.google.cloud.dialogflow.v2beta1.CreateCallMatcherRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateCallMatcherMethod(), getCallOptions()), request);
     }
 
@@ -898,7 +885,7 @@ public final class ConversationsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.v2beta1.ListCallMatchersResponse> listCallMatchers(
         com.google.cloud.dialogflow.v2beta1.ListCallMatchersRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListCallMatchersMethod(), getCallOptions()), request);
     }
 
@@ -909,7 +896,7 @@ public final class ConversationsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteCallMatcher(
         com.google.cloud.dialogflow.v2beta1.DeleteCallMatcherRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteCallMatcherMethod(), getCallOptions()), request);
     }
 
@@ -921,7 +908,7 @@ public final class ConversationsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesResponse> batchCreateMessages(
         com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBatchCreateMessagesMethod(), getCallOptions()), request);
     }
 
@@ -936,7 +923,7 @@ public final class ConversationsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.v2beta1.ListMessagesResponse> listMessages(
         com.google.cloud.dialogflow.v2beta1.ListMessagesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListMessagesMethod(), getCallOptions()), request);
     }
   }

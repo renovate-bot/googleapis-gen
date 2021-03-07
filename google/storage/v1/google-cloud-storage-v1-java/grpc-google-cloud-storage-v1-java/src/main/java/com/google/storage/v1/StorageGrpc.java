@@ -1,19 +1,6 @@
 package com.google.storage.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -1825,7 +1812,7 @@ public final class StorageGrpc {
      */
     public void deleteBucketAccessControl(com.google.storage.v1.DeleteBucketAccessControlRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteBucketAccessControlMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteBucketAccessControlMethod(), responseObserver);
     }
 
     /**
@@ -1835,7 +1822,7 @@ public final class StorageGrpc {
      */
     public void getBucketAccessControl(com.google.storage.v1.GetBucketAccessControlRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.BucketAccessControl> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetBucketAccessControlMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetBucketAccessControlMethod(), responseObserver);
     }
 
     /**
@@ -1845,7 +1832,7 @@ public final class StorageGrpc {
      */
     public void insertBucketAccessControl(com.google.storage.v1.InsertBucketAccessControlRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.BucketAccessControl> responseObserver) {
-      asyncUnimplementedUnaryCall(getInsertBucketAccessControlMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getInsertBucketAccessControlMethod(), responseObserver);
     }
 
     /**
@@ -1855,7 +1842,7 @@ public final class StorageGrpc {
      */
     public void listBucketAccessControls(com.google.storage.v1.ListBucketAccessControlsRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ListBucketAccessControlsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListBucketAccessControlsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListBucketAccessControlsMethod(), responseObserver);
     }
 
     /**
@@ -1867,7 +1854,7 @@ public final class StorageGrpc {
      */
     public void updateBucketAccessControl(com.google.storage.v1.UpdateBucketAccessControlRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.BucketAccessControl> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateBucketAccessControlMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateBucketAccessControlMethod(), responseObserver);
     }
 
     /**
@@ -1877,7 +1864,7 @@ public final class StorageGrpc {
      */
     public void patchBucketAccessControl(com.google.storage.v1.PatchBucketAccessControlRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.BucketAccessControl> responseObserver) {
-      asyncUnimplementedUnaryCall(getPatchBucketAccessControlMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPatchBucketAccessControlMethod(), responseObserver);
     }
 
     /**
@@ -1887,7 +1874,7 @@ public final class StorageGrpc {
      */
     public void deleteBucket(com.google.storage.v1.DeleteBucketRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteBucketMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteBucketMethod(), responseObserver);
     }
 
     /**
@@ -1897,7 +1884,7 @@ public final class StorageGrpc {
      */
     public void getBucket(com.google.storage.v1.GetBucketRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.Bucket> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetBucketMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetBucketMethod(), responseObserver);
     }
 
     /**
@@ -1907,7 +1894,7 @@ public final class StorageGrpc {
      */
     public void insertBucket(com.google.storage.v1.InsertBucketRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.Bucket> responseObserver) {
-      asyncUnimplementedUnaryCall(getInsertBucketMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getInsertBucketMethod(), responseObserver);
     }
 
     /**
@@ -1917,7 +1904,7 @@ public final class StorageGrpc {
      */
     public void listChannels(com.google.storage.v1.ListChannelsRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ListChannelsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListChannelsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListChannelsMethod(), responseObserver);
     }
 
     /**
@@ -1927,7 +1914,7 @@ public final class StorageGrpc {
      */
     public void listBuckets(com.google.storage.v1.ListBucketsRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ListBucketsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListBucketsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListBucketsMethod(), responseObserver);
     }
 
     /**
@@ -1937,7 +1924,7 @@ public final class StorageGrpc {
      */
     public void lockBucketRetentionPolicy(com.google.storage.v1.LockRetentionPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.Bucket> responseObserver) {
-      asyncUnimplementedUnaryCall(getLockBucketRetentionPolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLockBucketRetentionPolicyMethod(), responseObserver);
     }
 
     /**
@@ -1947,7 +1934,7 @@ public final class StorageGrpc {
      */
     public void getBucketIamPolicy(com.google.storage.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetBucketIamPolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetBucketIamPolicyMethod(), responseObserver);
     }
 
     /**
@@ -1957,7 +1944,7 @@ public final class StorageGrpc {
      */
     public void setBucketIamPolicy(com.google.storage.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnimplementedUnaryCall(getSetBucketIamPolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSetBucketIamPolicyMethod(), responseObserver);
     }
 
     /**
@@ -1968,7 +1955,7 @@ public final class StorageGrpc {
      */
     public void testBucketIamPermissions(com.google.storage.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getTestBucketIamPermissionsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTestBucketIamPermissionsMethod(), responseObserver);
     }
 
     /**
@@ -1979,7 +1966,7 @@ public final class StorageGrpc {
      */
     public void patchBucket(com.google.storage.v1.PatchBucketRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.Bucket> responseObserver) {
-      asyncUnimplementedUnaryCall(getPatchBucketMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPatchBucketMethod(), responseObserver);
     }
 
     /**
@@ -1993,7 +1980,7 @@ public final class StorageGrpc {
      */
     public void updateBucket(com.google.storage.v1.UpdateBucketRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.Bucket> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateBucketMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateBucketMethod(), responseObserver);
     }
 
     /**
@@ -2006,7 +1993,7 @@ public final class StorageGrpc {
      */
     public void stopChannel(com.google.storage.v1.StopChannelRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getStopChannelMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStopChannelMethod(), responseObserver);
     }
 
     /**
@@ -2017,7 +2004,7 @@ public final class StorageGrpc {
      */
     public void deleteDefaultObjectAccessControl(com.google.storage.v1.DeleteDefaultObjectAccessControlRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteDefaultObjectAccessControlMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteDefaultObjectAccessControlMethod(), responseObserver);
     }
 
     /**
@@ -2028,7 +2015,7 @@ public final class StorageGrpc {
      */
     public void getDefaultObjectAccessControl(com.google.storage.v1.GetDefaultObjectAccessControlRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ObjectAccessControl> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetDefaultObjectAccessControlMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetDefaultObjectAccessControlMethod(), responseObserver);
     }
 
     /**
@@ -2038,7 +2025,7 @@ public final class StorageGrpc {
      */
     public void insertDefaultObjectAccessControl(com.google.storage.v1.InsertDefaultObjectAccessControlRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ObjectAccessControl> responseObserver) {
-      asyncUnimplementedUnaryCall(getInsertDefaultObjectAccessControlMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getInsertDefaultObjectAccessControlMethod(), responseObserver);
     }
 
     /**
@@ -2048,7 +2035,7 @@ public final class StorageGrpc {
      */
     public void listDefaultObjectAccessControls(com.google.storage.v1.ListDefaultObjectAccessControlsRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ListObjectAccessControlsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListDefaultObjectAccessControlsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListDefaultObjectAccessControlsMethod(), responseObserver);
     }
 
     /**
@@ -2058,7 +2045,7 @@ public final class StorageGrpc {
      */
     public void patchDefaultObjectAccessControl(com.google.storage.v1.PatchDefaultObjectAccessControlRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ObjectAccessControl> responseObserver) {
-      asyncUnimplementedUnaryCall(getPatchDefaultObjectAccessControlMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPatchDefaultObjectAccessControlMethod(), responseObserver);
     }
 
     /**
@@ -2070,7 +2057,7 @@ public final class StorageGrpc {
      */
     public void updateDefaultObjectAccessControl(com.google.storage.v1.UpdateDefaultObjectAccessControlRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ObjectAccessControl> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateDefaultObjectAccessControlMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateDefaultObjectAccessControlMethod(), responseObserver);
     }
 
     /**
@@ -2082,7 +2069,7 @@ public final class StorageGrpc {
      */
     public void deleteNotification(com.google.storage.v1.DeleteNotificationRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteNotificationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteNotificationMethod(), responseObserver);
     }
 
     /**
@@ -2092,7 +2079,7 @@ public final class StorageGrpc {
      */
     public void getNotification(com.google.storage.v1.GetNotificationRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.Notification> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetNotificationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetNotificationMethod(), responseObserver);
     }
 
     /**
@@ -2105,7 +2092,7 @@ public final class StorageGrpc {
      */
     public void insertNotification(com.google.storage.v1.InsertNotificationRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.Notification> responseObserver) {
-      asyncUnimplementedUnaryCall(getInsertNotificationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getInsertNotificationMethod(), responseObserver);
     }
 
     /**
@@ -2115,7 +2102,7 @@ public final class StorageGrpc {
      */
     public void listNotifications(com.google.storage.v1.ListNotificationsRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ListNotificationsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListNotificationsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListNotificationsMethod(), responseObserver);
     }
 
     /**
@@ -2126,7 +2113,7 @@ public final class StorageGrpc {
      */
     public void deleteObjectAccessControl(com.google.storage.v1.DeleteObjectAccessControlRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteObjectAccessControlMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteObjectAccessControlMethod(), responseObserver);
     }
 
     /**
@@ -2136,7 +2123,7 @@ public final class StorageGrpc {
      */
     public void getObjectAccessControl(com.google.storage.v1.GetObjectAccessControlRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ObjectAccessControl> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetObjectAccessControlMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetObjectAccessControlMethod(), responseObserver);
     }
 
     /**
@@ -2146,7 +2133,7 @@ public final class StorageGrpc {
      */
     public void insertObjectAccessControl(com.google.storage.v1.InsertObjectAccessControlRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ObjectAccessControl> responseObserver) {
-      asyncUnimplementedUnaryCall(getInsertObjectAccessControlMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getInsertObjectAccessControlMethod(), responseObserver);
     }
 
     /**
@@ -2156,7 +2143,7 @@ public final class StorageGrpc {
      */
     public void listObjectAccessControls(com.google.storage.v1.ListObjectAccessControlsRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ListObjectAccessControlsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListObjectAccessControlsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListObjectAccessControlsMethod(), responseObserver);
     }
 
     /**
@@ -2168,7 +2155,7 @@ public final class StorageGrpc {
      */
     public void patchObjectAccessControl(com.google.storage.v1.PatchObjectAccessControlRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ObjectAccessControl> responseObserver) {
-      asyncUnimplementedUnaryCall(getPatchObjectAccessControlMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPatchObjectAccessControlMethod(), responseObserver);
     }
 
     /**
@@ -2178,7 +2165,7 @@ public final class StorageGrpc {
      */
     public void updateObjectAccessControl(com.google.storage.v1.UpdateObjectAccessControlRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ObjectAccessControl> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateObjectAccessControlMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateObjectAccessControlMethod(), responseObserver);
     }
 
     /**
@@ -2189,7 +2176,7 @@ public final class StorageGrpc {
      */
     public void composeObject(com.google.storage.v1.ComposeObjectRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.Object> responseObserver) {
-      asyncUnimplementedUnaryCall(getComposeObjectMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getComposeObjectMethod(), responseObserver);
     }
 
     /**
@@ -2200,7 +2187,7 @@ public final class StorageGrpc {
      */
     public void copyObject(com.google.storage.v1.CopyObjectRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.Object> responseObserver) {
-      asyncUnimplementedUnaryCall(getCopyObjectMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCopyObjectMethod(), responseObserver);
     }
 
     /**
@@ -2212,7 +2199,7 @@ public final class StorageGrpc {
      */
     public void deleteObject(com.google.storage.v1.DeleteObjectRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteObjectMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteObjectMethod(), responseObserver);
     }
 
     /**
@@ -2222,7 +2209,7 @@ public final class StorageGrpc {
      */
     public void getObject(com.google.storage.v1.GetObjectRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.Object> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetObjectMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetObjectMethod(), responseObserver);
     }
 
     /**
@@ -2232,7 +2219,7 @@ public final class StorageGrpc {
      */
     public void getObjectMedia(com.google.storage.v1.GetObjectMediaRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.GetObjectMediaResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetObjectMediaMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetObjectMediaMethod(), responseObserver);
     }
 
     /**
@@ -2262,7 +2249,7 @@ public final class StorageGrpc {
      */
     public io.grpc.stub.StreamObserver<com.google.storage.v1.InsertObjectRequest> insertObject(
         io.grpc.stub.StreamObserver<com.google.storage.v1.Object> responseObserver) {
-      return asyncUnimplementedStreamingCall(getInsertObjectMethod(), responseObserver);
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getInsertObjectMethod(), responseObserver);
     }
 
     /**
@@ -2272,7 +2259,7 @@ public final class StorageGrpc {
      */
     public void listObjects(com.google.storage.v1.ListObjectsRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ListObjectsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListObjectsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListObjectsMethod(), responseObserver);
     }
 
     /**
@@ -2283,7 +2270,7 @@ public final class StorageGrpc {
      */
     public void rewriteObject(com.google.storage.v1.RewriteObjectRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.RewriteResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getRewriteObjectMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRewriteObjectMethod(), responseObserver);
     }
 
     /**
@@ -2295,7 +2282,7 @@ public final class StorageGrpc {
      */
     public void startResumableWrite(com.google.storage.v1.StartResumableWriteRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.StartResumableWriteResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getStartResumableWriteMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStartResumableWriteMethod(), responseObserver);
     }
 
     /**
@@ -2315,7 +2302,7 @@ public final class StorageGrpc {
      */
     public void queryWriteStatus(com.google.storage.v1.QueryWriteStatusRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.QueryWriteStatusResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getQueryWriteStatusMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getQueryWriteStatusMethod(), responseObserver);
     }
 
     /**
@@ -2325,7 +2312,7 @@ public final class StorageGrpc {
      */
     public void patchObject(com.google.storage.v1.PatchObjectRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.Object> responseObserver) {
-      asyncUnimplementedUnaryCall(getPatchObjectMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPatchObjectMethod(), responseObserver);
     }
 
     /**
@@ -2337,7 +2324,7 @@ public final class StorageGrpc {
      */
     public void updateObject(com.google.storage.v1.UpdateObjectRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.Object> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateObjectMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateObjectMethod(), responseObserver);
     }
 
     /**
@@ -2347,7 +2334,7 @@ public final class StorageGrpc {
      */
     public void getObjectIamPolicy(com.google.storage.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetObjectIamPolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetObjectIamPolicyMethod(), responseObserver);
     }
 
     /**
@@ -2357,7 +2344,7 @@ public final class StorageGrpc {
      */
     public void setObjectIamPolicy(com.google.storage.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnimplementedUnaryCall(getSetObjectIamPolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSetObjectIamPolicyMethod(), responseObserver);
     }
 
     /**
@@ -2368,7 +2355,7 @@ public final class StorageGrpc {
      */
     public void testObjectIamPermissions(com.google.storage.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getTestObjectIamPermissionsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTestObjectIamPermissionsMethod(), responseObserver);
     }
 
     /**
@@ -2378,7 +2365,7 @@ public final class StorageGrpc {
      */
     public void watchAllObjects(com.google.storage.v1.WatchAllObjectsRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.Channel> responseObserver) {
-      asyncUnimplementedUnaryCall(getWatchAllObjectsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getWatchAllObjectsMethod(), responseObserver);
     }
 
     /**
@@ -2388,7 +2375,7 @@ public final class StorageGrpc {
      */
     public void getServiceAccount(com.google.storage.v1.GetProjectServiceAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ServiceAccount> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetServiceAccountMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetServiceAccountMethod(), responseObserver);
     }
 
     /**
@@ -2398,7 +2385,7 @@ public final class StorageGrpc {
      */
     public void createHmacKey(com.google.storage.v1.CreateHmacKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.CreateHmacKeyResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateHmacKeyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateHmacKeyMethod(), responseObserver);
     }
 
     /**
@@ -2408,7 +2395,7 @@ public final class StorageGrpc {
      */
     public void deleteHmacKey(com.google.storage.v1.DeleteHmacKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteHmacKeyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteHmacKeyMethod(), responseObserver);
     }
 
     /**
@@ -2418,7 +2405,7 @@ public final class StorageGrpc {
      */
     public void getHmacKey(com.google.storage.v1.GetHmacKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.HmacKeyMetadata> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetHmacKeyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetHmacKeyMethod(), responseObserver);
     }
 
     /**
@@ -2428,7 +2415,7 @@ public final class StorageGrpc {
      */
     public void listHmacKeys(com.google.storage.v1.ListHmacKeysRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ListHmacKeysResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListHmacKeysMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListHmacKeysMethod(), responseObserver);
     }
 
     /**
@@ -2438,399 +2425,399 @@ public final class StorageGrpc {
      */
     public void updateHmacKey(com.google.storage.v1.UpdateHmacKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.HmacKeyMetadata> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateHmacKeyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateHmacKeyMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getDeleteBucketAccessControlMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.DeleteBucketAccessControlRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_BUCKET_ACCESS_CONTROL)))
           .addMethod(
             getGetBucketAccessControlMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.GetBucketAccessControlRequest,
                 com.google.storage.v1.BucketAccessControl>(
                   this, METHODID_GET_BUCKET_ACCESS_CONTROL)))
           .addMethod(
             getInsertBucketAccessControlMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.InsertBucketAccessControlRequest,
                 com.google.storage.v1.BucketAccessControl>(
                   this, METHODID_INSERT_BUCKET_ACCESS_CONTROL)))
           .addMethod(
             getListBucketAccessControlsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.ListBucketAccessControlsRequest,
                 com.google.storage.v1.ListBucketAccessControlsResponse>(
                   this, METHODID_LIST_BUCKET_ACCESS_CONTROLS)))
           .addMethod(
             getUpdateBucketAccessControlMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.UpdateBucketAccessControlRequest,
                 com.google.storage.v1.BucketAccessControl>(
                   this, METHODID_UPDATE_BUCKET_ACCESS_CONTROL)))
           .addMethod(
             getPatchBucketAccessControlMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.PatchBucketAccessControlRequest,
                 com.google.storage.v1.BucketAccessControl>(
                   this, METHODID_PATCH_BUCKET_ACCESS_CONTROL)))
           .addMethod(
             getDeleteBucketMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.DeleteBucketRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_BUCKET)))
           .addMethod(
             getGetBucketMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.GetBucketRequest,
                 com.google.storage.v1.Bucket>(
                   this, METHODID_GET_BUCKET)))
           .addMethod(
             getInsertBucketMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.InsertBucketRequest,
                 com.google.storage.v1.Bucket>(
                   this, METHODID_INSERT_BUCKET)))
           .addMethod(
             getListChannelsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.ListChannelsRequest,
                 com.google.storage.v1.ListChannelsResponse>(
                   this, METHODID_LIST_CHANNELS)))
           .addMethod(
             getListBucketsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.ListBucketsRequest,
                 com.google.storage.v1.ListBucketsResponse>(
                   this, METHODID_LIST_BUCKETS)))
           .addMethod(
             getLockBucketRetentionPolicyMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.LockRetentionPolicyRequest,
                 com.google.storage.v1.Bucket>(
                   this, METHODID_LOCK_BUCKET_RETENTION_POLICY)))
           .addMethod(
             getGetBucketIamPolicyMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.GetIamPolicyRequest,
                 com.google.iam.v1.Policy>(
                   this, METHODID_GET_BUCKET_IAM_POLICY)))
           .addMethod(
             getSetBucketIamPolicyMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.SetIamPolicyRequest,
                 com.google.iam.v1.Policy>(
                   this, METHODID_SET_BUCKET_IAM_POLICY)))
           .addMethod(
             getTestBucketIamPermissionsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.TestIamPermissionsRequest,
                 com.google.iam.v1.TestIamPermissionsResponse>(
                   this, METHODID_TEST_BUCKET_IAM_PERMISSIONS)))
           .addMethod(
             getPatchBucketMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.PatchBucketRequest,
                 com.google.storage.v1.Bucket>(
                   this, METHODID_PATCH_BUCKET)))
           .addMethod(
             getUpdateBucketMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.UpdateBucketRequest,
                 com.google.storage.v1.Bucket>(
                   this, METHODID_UPDATE_BUCKET)))
           .addMethod(
             getStopChannelMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.StopChannelRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_STOP_CHANNEL)))
           .addMethod(
             getDeleteDefaultObjectAccessControlMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.DeleteDefaultObjectAccessControlRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_DEFAULT_OBJECT_ACCESS_CONTROL)))
           .addMethod(
             getGetDefaultObjectAccessControlMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.GetDefaultObjectAccessControlRequest,
                 com.google.storage.v1.ObjectAccessControl>(
                   this, METHODID_GET_DEFAULT_OBJECT_ACCESS_CONTROL)))
           .addMethod(
             getInsertDefaultObjectAccessControlMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.InsertDefaultObjectAccessControlRequest,
                 com.google.storage.v1.ObjectAccessControl>(
                   this, METHODID_INSERT_DEFAULT_OBJECT_ACCESS_CONTROL)))
           .addMethod(
             getListDefaultObjectAccessControlsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.ListDefaultObjectAccessControlsRequest,
                 com.google.storage.v1.ListObjectAccessControlsResponse>(
                   this, METHODID_LIST_DEFAULT_OBJECT_ACCESS_CONTROLS)))
           .addMethod(
             getPatchDefaultObjectAccessControlMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.PatchDefaultObjectAccessControlRequest,
                 com.google.storage.v1.ObjectAccessControl>(
                   this, METHODID_PATCH_DEFAULT_OBJECT_ACCESS_CONTROL)))
           .addMethod(
             getUpdateDefaultObjectAccessControlMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.UpdateDefaultObjectAccessControlRequest,
                 com.google.storage.v1.ObjectAccessControl>(
                   this, METHODID_UPDATE_DEFAULT_OBJECT_ACCESS_CONTROL)))
           .addMethod(
             getDeleteNotificationMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.DeleteNotificationRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_NOTIFICATION)))
           .addMethod(
             getGetNotificationMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.GetNotificationRequest,
                 com.google.storage.v1.Notification>(
                   this, METHODID_GET_NOTIFICATION)))
           .addMethod(
             getInsertNotificationMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.InsertNotificationRequest,
                 com.google.storage.v1.Notification>(
                   this, METHODID_INSERT_NOTIFICATION)))
           .addMethod(
             getListNotificationsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.ListNotificationsRequest,
                 com.google.storage.v1.ListNotificationsResponse>(
                   this, METHODID_LIST_NOTIFICATIONS)))
           .addMethod(
             getDeleteObjectAccessControlMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.DeleteObjectAccessControlRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_OBJECT_ACCESS_CONTROL)))
           .addMethod(
             getGetObjectAccessControlMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.GetObjectAccessControlRequest,
                 com.google.storage.v1.ObjectAccessControl>(
                   this, METHODID_GET_OBJECT_ACCESS_CONTROL)))
           .addMethod(
             getInsertObjectAccessControlMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.InsertObjectAccessControlRequest,
                 com.google.storage.v1.ObjectAccessControl>(
                   this, METHODID_INSERT_OBJECT_ACCESS_CONTROL)))
           .addMethod(
             getListObjectAccessControlsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.ListObjectAccessControlsRequest,
                 com.google.storage.v1.ListObjectAccessControlsResponse>(
                   this, METHODID_LIST_OBJECT_ACCESS_CONTROLS)))
           .addMethod(
             getPatchObjectAccessControlMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.PatchObjectAccessControlRequest,
                 com.google.storage.v1.ObjectAccessControl>(
                   this, METHODID_PATCH_OBJECT_ACCESS_CONTROL)))
           .addMethod(
             getUpdateObjectAccessControlMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.UpdateObjectAccessControlRequest,
                 com.google.storage.v1.ObjectAccessControl>(
                   this, METHODID_UPDATE_OBJECT_ACCESS_CONTROL)))
           .addMethod(
             getComposeObjectMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.ComposeObjectRequest,
                 com.google.storage.v1.Object>(
                   this, METHODID_COMPOSE_OBJECT)))
           .addMethod(
             getCopyObjectMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.CopyObjectRequest,
                 com.google.storage.v1.Object>(
                   this, METHODID_COPY_OBJECT)))
           .addMethod(
             getDeleteObjectMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.DeleteObjectRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_OBJECT)))
           .addMethod(
             getGetObjectMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.GetObjectRequest,
                 com.google.storage.v1.Object>(
                   this, METHODID_GET_OBJECT)))
           .addMethod(
             getGetObjectMediaMethod(),
-            asyncServerStreamingCall(
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
               new MethodHandlers<
                 com.google.storage.v1.GetObjectMediaRequest,
                 com.google.storage.v1.GetObjectMediaResponse>(
                   this, METHODID_GET_OBJECT_MEDIA)))
           .addMethod(
             getInsertObjectMethod(),
-            asyncClientStreamingCall(
+            io.grpc.stub.ServerCalls.asyncClientStreamingCall(
               new MethodHandlers<
                 com.google.storage.v1.InsertObjectRequest,
                 com.google.storage.v1.Object>(
                   this, METHODID_INSERT_OBJECT)))
           .addMethod(
             getListObjectsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.ListObjectsRequest,
                 com.google.storage.v1.ListObjectsResponse>(
                   this, METHODID_LIST_OBJECTS)))
           .addMethod(
             getRewriteObjectMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.RewriteObjectRequest,
                 com.google.storage.v1.RewriteResponse>(
                   this, METHODID_REWRITE_OBJECT)))
           .addMethod(
             getStartResumableWriteMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.StartResumableWriteRequest,
                 com.google.storage.v1.StartResumableWriteResponse>(
                   this, METHODID_START_RESUMABLE_WRITE)))
           .addMethod(
             getQueryWriteStatusMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.QueryWriteStatusRequest,
                 com.google.storage.v1.QueryWriteStatusResponse>(
                   this, METHODID_QUERY_WRITE_STATUS)))
           .addMethod(
             getPatchObjectMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.PatchObjectRequest,
                 com.google.storage.v1.Object>(
                   this, METHODID_PATCH_OBJECT)))
           .addMethod(
             getUpdateObjectMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.UpdateObjectRequest,
                 com.google.storage.v1.Object>(
                   this, METHODID_UPDATE_OBJECT)))
           .addMethod(
             getGetObjectIamPolicyMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.GetIamPolicyRequest,
                 com.google.iam.v1.Policy>(
                   this, METHODID_GET_OBJECT_IAM_POLICY)))
           .addMethod(
             getSetObjectIamPolicyMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.SetIamPolicyRequest,
                 com.google.iam.v1.Policy>(
                   this, METHODID_SET_OBJECT_IAM_POLICY)))
           .addMethod(
             getTestObjectIamPermissionsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.TestIamPermissionsRequest,
                 com.google.iam.v1.TestIamPermissionsResponse>(
                   this, METHODID_TEST_OBJECT_IAM_PERMISSIONS)))
           .addMethod(
             getWatchAllObjectsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.WatchAllObjectsRequest,
                 com.google.storage.v1.Channel>(
                   this, METHODID_WATCH_ALL_OBJECTS)))
           .addMethod(
             getGetServiceAccountMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.GetProjectServiceAccountRequest,
                 com.google.storage.v1.ServiceAccount>(
                   this, METHODID_GET_SERVICE_ACCOUNT)))
           .addMethod(
             getCreateHmacKeyMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.CreateHmacKeyRequest,
                 com.google.storage.v1.CreateHmacKeyResponse>(
                   this, METHODID_CREATE_HMAC_KEY)))
           .addMethod(
             getDeleteHmacKeyMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.DeleteHmacKeyRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_HMAC_KEY)))
           .addMethod(
             getGetHmacKeyMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.GetHmacKeyRequest,
                 com.google.storage.v1.HmacKeyMetadata>(
                   this, METHODID_GET_HMAC_KEY)))
           .addMethod(
             getListHmacKeysMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.ListHmacKeysRequest,
                 com.google.storage.v1.ListHmacKeysResponse>(
                   this, METHODID_LIST_HMAC_KEYS)))
           .addMethod(
             getUpdateHmacKeyMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.storage.v1.UpdateHmacKeyRequest,
                 com.google.storage.v1.HmacKeyMetadata>(
@@ -2864,7 +2851,7 @@ public final class StorageGrpc {
      */
     public void deleteBucketAccessControl(com.google.storage.v1.DeleteBucketAccessControlRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteBucketAccessControlMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2875,7 +2862,7 @@ public final class StorageGrpc {
      */
     public void getBucketAccessControl(com.google.storage.v1.GetBucketAccessControlRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.BucketAccessControl> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetBucketAccessControlMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2886,7 +2873,7 @@ public final class StorageGrpc {
      */
     public void insertBucketAccessControl(com.google.storage.v1.InsertBucketAccessControlRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.BucketAccessControl> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getInsertBucketAccessControlMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2897,7 +2884,7 @@ public final class StorageGrpc {
      */
     public void listBucketAccessControls(com.google.storage.v1.ListBucketAccessControlsRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ListBucketAccessControlsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListBucketAccessControlsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2910,7 +2897,7 @@ public final class StorageGrpc {
      */
     public void updateBucketAccessControl(com.google.storage.v1.UpdateBucketAccessControlRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.BucketAccessControl> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateBucketAccessControlMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2921,7 +2908,7 @@ public final class StorageGrpc {
      */
     public void patchBucketAccessControl(com.google.storage.v1.PatchBucketAccessControlRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.BucketAccessControl> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPatchBucketAccessControlMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2932,7 +2919,7 @@ public final class StorageGrpc {
      */
     public void deleteBucket(com.google.storage.v1.DeleteBucketRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteBucketMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2943,7 +2930,7 @@ public final class StorageGrpc {
      */
     public void getBucket(com.google.storage.v1.GetBucketRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.Bucket> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetBucketMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2954,7 +2941,7 @@ public final class StorageGrpc {
      */
     public void insertBucket(com.google.storage.v1.InsertBucketRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.Bucket> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getInsertBucketMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2965,7 +2952,7 @@ public final class StorageGrpc {
      */
     public void listChannels(com.google.storage.v1.ListChannelsRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ListChannelsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListChannelsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2976,7 +2963,7 @@ public final class StorageGrpc {
      */
     public void listBuckets(com.google.storage.v1.ListBucketsRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ListBucketsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListBucketsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2987,7 +2974,7 @@ public final class StorageGrpc {
      */
     public void lockBucketRetentionPolicy(com.google.storage.v1.LockRetentionPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.Bucket> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getLockBucketRetentionPolicyMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2998,7 +2985,7 @@ public final class StorageGrpc {
      */
     public void getBucketIamPolicy(com.google.storage.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetBucketIamPolicyMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3009,7 +2996,7 @@ public final class StorageGrpc {
      */
     public void setBucketIamPolicy(com.google.storage.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSetBucketIamPolicyMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3021,7 +3008,7 @@ public final class StorageGrpc {
      */
     public void testBucketIamPermissions(com.google.storage.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getTestBucketIamPermissionsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3033,7 +3020,7 @@ public final class StorageGrpc {
      */
     public void patchBucket(com.google.storage.v1.PatchBucketRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.Bucket> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPatchBucketMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3048,7 +3035,7 @@ public final class StorageGrpc {
      */
     public void updateBucket(com.google.storage.v1.UpdateBucketRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.Bucket> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateBucketMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3062,7 +3049,7 @@ public final class StorageGrpc {
      */
     public void stopChannel(com.google.storage.v1.StopChannelRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getStopChannelMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3074,7 +3061,7 @@ public final class StorageGrpc {
      */
     public void deleteDefaultObjectAccessControl(com.google.storage.v1.DeleteDefaultObjectAccessControlRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteDefaultObjectAccessControlMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3086,7 +3073,7 @@ public final class StorageGrpc {
      */
     public void getDefaultObjectAccessControl(com.google.storage.v1.GetDefaultObjectAccessControlRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ObjectAccessControl> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetDefaultObjectAccessControlMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3097,7 +3084,7 @@ public final class StorageGrpc {
      */
     public void insertDefaultObjectAccessControl(com.google.storage.v1.InsertDefaultObjectAccessControlRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ObjectAccessControl> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getInsertDefaultObjectAccessControlMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3108,7 +3095,7 @@ public final class StorageGrpc {
      */
     public void listDefaultObjectAccessControls(com.google.storage.v1.ListDefaultObjectAccessControlsRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ListObjectAccessControlsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListDefaultObjectAccessControlsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3119,7 +3106,7 @@ public final class StorageGrpc {
      */
     public void patchDefaultObjectAccessControl(com.google.storage.v1.PatchDefaultObjectAccessControlRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ObjectAccessControl> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPatchDefaultObjectAccessControlMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3132,7 +3119,7 @@ public final class StorageGrpc {
      */
     public void updateDefaultObjectAccessControl(com.google.storage.v1.UpdateDefaultObjectAccessControlRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ObjectAccessControl> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateDefaultObjectAccessControlMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3145,7 +3132,7 @@ public final class StorageGrpc {
      */
     public void deleteNotification(com.google.storage.v1.DeleteNotificationRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteNotificationMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3156,7 +3143,7 @@ public final class StorageGrpc {
      */
     public void getNotification(com.google.storage.v1.GetNotificationRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.Notification> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetNotificationMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3170,7 +3157,7 @@ public final class StorageGrpc {
      */
     public void insertNotification(com.google.storage.v1.InsertNotificationRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.Notification> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getInsertNotificationMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3181,7 +3168,7 @@ public final class StorageGrpc {
      */
     public void listNotifications(com.google.storage.v1.ListNotificationsRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ListNotificationsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListNotificationsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3193,7 +3180,7 @@ public final class StorageGrpc {
      */
     public void deleteObjectAccessControl(com.google.storage.v1.DeleteObjectAccessControlRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteObjectAccessControlMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3204,7 +3191,7 @@ public final class StorageGrpc {
      */
     public void getObjectAccessControl(com.google.storage.v1.GetObjectAccessControlRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ObjectAccessControl> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetObjectAccessControlMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3215,7 +3202,7 @@ public final class StorageGrpc {
      */
     public void insertObjectAccessControl(com.google.storage.v1.InsertObjectAccessControlRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ObjectAccessControl> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getInsertObjectAccessControlMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3226,7 +3213,7 @@ public final class StorageGrpc {
      */
     public void listObjectAccessControls(com.google.storage.v1.ListObjectAccessControlsRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ListObjectAccessControlsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListObjectAccessControlsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3239,7 +3226,7 @@ public final class StorageGrpc {
      */
     public void patchObjectAccessControl(com.google.storage.v1.PatchObjectAccessControlRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ObjectAccessControl> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPatchObjectAccessControlMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3250,7 +3237,7 @@ public final class StorageGrpc {
      */
     public void updateObjectAccessControl(com.google.storage.v1.UpdateObjectAccessControlRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ObjectAccessControl> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateObjectAccessControlMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3262,7 +3249,7 @@ public final class StorageGrpc {
      */
     public void composeObject(com.google.storage.v1.ComposeObjectRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.Object> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getComposeObjectMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3274,7 +3261,7 @@ public final class StorageGrpc {
      */
     public void copyObject(com.google.storage.v1.CopyObjectRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.Object> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCopyObjectMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3287,7 +3274,7 @@ public final class StorageGrpc {
      */
     public void deleteObject(com.google.storage.v1.DeleteObjectRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteObjectMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3298,7 +3285,7 @@ public final class StorageGrpc {
      */
     public void getObject(com.google.storage.v1.GetObjectRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.Object> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetObjectMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3309,7 +3296,7 @@ public final class StorageGrpc {
      */
     public void getObjectMedia(com.google.storage.v1.GetObjectMediaRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.GetObjectMediaResponse> responseObserver) {
-      asyncServerStreamingCall(
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getGetObjectMediaMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3340,7 +3327,7 @@ public final class StorageGrpc {
      */
     public io.grpc.stub.StreamObserver<com.google.storage.v1.InsertObjectRequest> insertObject(
         io.grpc.stub.StreamObserver<com.google.storage.v1.Object> responseObserver) {
-      return asyncClientStreamingCall(
+      return io.grpc.stub.ClientCalls.asyncClientStreamingCall(
           getChannel().newCall(getInsertObjectMethod(), getCallOptions()), responseObserver);
     }
 
@@ -3351,7 +3338,7 @@ public final class StorageGrpc {
      */
     public void listObjects(com.google.storage.v1.ListObjectsRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ListObjectsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListObjectsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3363,7 +3350,7 @@ public final class StorageGrpc {
      */
     public void rewriteObject(com.google.storage.v1.RewriteObjectRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.RewriteResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRewriteObjectMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3376,7 +3363,7 @@ public final class StorageGrpc {
      */
     public void startResumableWrite(com.google.storage.v1.StartResumableWriteRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.StartResumableWriteResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getStartResumableWriteMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3397,7 +3384,7 @@ public final class StorageGrpc {
      */
     public void queryWriteStatus(com.google.storage.v1.QueryWriteStatusRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.QueryWriteStatusResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getQueryWriteStatusMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3408,7 +3395,7 @@ public final class StorageGrpc {
      */
     public void patchObject(com.google.storage.v1.PatchObjectRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.Object> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPatchObjectMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3421,7 +3408,7 @@ public final class StorageGrpc {
      */
     public void updateObject(com.google.storage.v1.UpdateObjectRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.Object> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateObjectMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3432,7 +3419,7 @@ public final class StorageGrpc {
      */
     public void getObjectIamPolicy(com.google.storage.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetObjectIamPolicyMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3443,7 +3430,7 @@ public final class StorageGrpc {
      */
     public void setObjectIamPolicy(com.google.storage.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSetObjectIamPolicyMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3455,7 +3442,7 @@ public final class StorageGrpc {
      */
     public void testObjectIamPermissions(com.google.storage.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getTestObjectIamPermissionsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3466,7 +3453,7 @@ public final class StorageGrpc {
      */
     public void watchAllObjects(com.google.storage.v1.WatchAllObjectsRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.Channel> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getWatchAllObjectsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3477,7 +3464,7 @@ public final class StorageGrpc {
      */
     public void getServiceAccount(com.google.storage.v1.GetProjectServiceAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ServiceAccount> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetServiceAccountMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3488,7 +3475,7 @@ public final class StorageGrpc {
      */
     public void createHmacKey(com.google.storage.v1.CreateHmacKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.CreateHmacKeyResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateHmacKeyMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3499,7 +3486,7 @@ public final class StorageGrpc {
      */
     public void deleteHmacKey(com.google.storage.v1.DeleteHmacKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteHmacKeyMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3510,7 +3497,7 @@ public final class StorageGrpc {
      */
     public void getHmacKey(com.google.storage.v1.GetHmacKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.HmacKeyMetadata> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetHmacKeyMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3521,7 +3508,7 @@ public final class StorageGrpc {
      */
     public void listHmacKeys(com.google.storage.v1.ListHmacKeysRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.ListHmacKeysResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListHmacKeysMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -3532,7 +3519,7 @@ public final class StorageGrpc {
      */
     public void updateHmacKey(com.google.storage.v1.UpdateHmacKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.storage.v1.HmacKeyMetadata> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateHmacKeyMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -3561,7 +3548,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteBucketAccessControl(com.google.storage.v1.DeleteBucketAccessControlRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteBucketAccessControlMethod(), getCallOptions(), request);
     }
 
@@ -3571,7 +3558,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.BucketAccessControl getBucketAccessControl(com.google.storage.v1.GetBucketAccessControlRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetBucketAccessControlMethod(), getCallOptions(), request);
     }
 
@@ -3581,7 +3568,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.BucketAccessControl insertBucketAccessControl(com.google.storage.v1.InsertBucketAccessControlRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getInsertBucketAccessControlMethod(), getCallOptions(), request);
     }
 
@@ -3591,7 +3578,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.ListBucketAccessControlsResponse listBucketAccessControls(com.google.storage.v1.ListBucketAccessControlsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListBucketAccessControlsMethod(), getCallOptions(), request);
     }
 
@@ -3603,7 +3590,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.BucketAccessControl updateBucketAccessControl(com.google.storage.v1.UpdateBucketAccessControlRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateBucketAccessControlMethod(), getCallOptions(), request);
     }
 
@@ -3613,7 +3600,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.BucketAccessControl patchBucketAccessControl(com.google.storage.v1.PatchBucketAccessControlRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPatchBucketAccessControlMethod(), getCallOptions(), request);
     }
 
@@ -3623,7 +3610,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteBucket(com.google.storage.v1.DeleteBucketRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteBucketMethod(), getCallOptions(), request);
     }
 
@@ -3633,7 +3620,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.Bucket getBucket(com.google.storage.v1.GetBucketRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetBucketMethod(), getCallOptions(), request);
     }
 
@@ -3643,7 +3630,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.Bucket insertBucket(com.google.storage.v1.InsertBucketRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getInsertBucketMethod(), getCallOptions(), request);
     }
 
@@ -3653,7 +3640,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.ListChannelsResponse listChannels(com.google.storage.v1.ListChannelsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListChannelsMethod(), getCallOptions(), request);
     }
 
@@ -3663,7 +3650,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.ListBucketsResponse listBuckets(com.google.storage.v1.ListBucketsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListBucketsMethod(), getCallOptions(), request);
     }
 
@@ -3673,7 +3660,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.Bucket lockBucketRetentionPolicy(com.google.storage.v1.LockRetentionPolicyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getLockBucketRetentionPolicyMethod(), getCallOptions(), request);
     }
 
@@ -3683,7 +3670,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.iam.v1.Policy getBucketIamPolicy(com.google.storage.v1.GetIamPolicyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetBucketIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -3693,7 +3680,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.iam.v1.Policy setBucketIamPolicy(com.google.storage.v1.SetIamPolicyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSetBucketIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -3704,7 +3691,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testBucketIamPermissions(com.google.storage.v1.TestIamPermissionsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTestBucketIamPermissionsMethod(), getCallOptions(), request);
     }
 
@@ -3715,7 +3702,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.Bucket patchBucket(com.google.storage.v1.PatchBucketRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPatchBucketMethod(), getCallOptions(), request);
     }
 
@@ -3729,7 +3716,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.Bucket updateBucket(com.google.storage.v1.UpdateBucketRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateBucketMethod(), getCallOptions(), request);
     }
 
@@ -3742,7 +3729,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty stopChannel(com.google.storage.v1.StopChannelRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getStopChannelMethod(), getCallOptions(), request);
     }
 
@@ -3753,7 +3740,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteDefaultObjectAccessControl(com.google.storage.v1.DeleteDefaultObjectAccessControlRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteDefaultObjectAccessControlMethod(), getCallOptions(), request);
     }
 
@@ -3764,7 +3751,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.ObjectAccessControl getDefaultObjectAccessControl(com.google.storage.v1.GetDefaultObjectAccessControlRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetDefaultObjectAccessControlMethod(), getCallOptions(), request);
     }
 
@@ -3774,7 +3761,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.ObjectAccessControl insertDefaultObjectAccessControl(com.google.storage.v1.InsertDefaultObjectAccessControlRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getInsertDefaultObjectAccessControlMethod(), getCallOptions(), request);
     }
 
@@ -3784,7 +3771,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.ListObjectAccessControlsResponse listDefaultObjectAccessControls(com.google.storage.v1.ListDefaultObjectAccessControlsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListDefaultObjectAccessControlsMethod(), getCallOptions(), request);
     }
 
@@ -3794,7 +3781,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.ObjectAccessControl patchDefaultObjectAccessControl(com.google.storage.v1.PatchDefaultObjectAccessControlRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPatchDefaultObjectAccessControlMethod(), getCallOptions(), request);
     }
 
@@ -3806,7 +3793,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.ObjectAccessControl updateDefaultObjectAccessControl(com.google.storage.v1.UpdateDefaultObjectAccessControlRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateDefaultObjectAccessControlMethod(), getCallOptions(), request);
     }
 
@@ -3818,7 +3805,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteNotification(com.google.storage.v1.DeleteNotificationRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteNotificationMethod(), getCallOptions(), request);
     }
 
@@ -3828,7 +3815,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.Notification getNotification(com.google.storage.v1.GetNotificationRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetNotificationMethod(), getCallOptions(), request);
     }
 
@@ -3841,7 +3828,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.Notification insertNotification(com.google.storage.v1.InsertNotificationRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getInsertNotificationMethod(), getCallOptions(), request);
     }
 
@@ -3851,7 +3838,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.ListNotificationsResponse listNotifications(com.google.storage.v1.ListNotificationsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListNotificationsMethod(), getCallOptions(), request);
     }
 
@@ -3862,7 +3849,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteObjectAccessControl(com.google.storage.v1.DeleteObjectAccessControlRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteObjectAccessControlMethod(), getCallOptions(), request);
     }
 
@@ -3872,7 +3859,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.ObjectAccessControl getObjectAccessControl(com.google.storage.v1.GetObjectAccessControlRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetObjectAccessControlMethod(), getCallOptions(), request);
     }
 
@@ -3882,7 +3869,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.ObjectAccessControl insertObjectAccessControl(com.google.storage.v1.InsertObjectAccessControlRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getInsertObjectAccessControlMethod(), getCallOptions(), request);
     }
 
@@ -3892,7 +3879,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.ListObjectAccessControlsResponse listObjectAccessControls(com.google.storage.v1.ListObjectAccessControlsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListObjectAccessControlsMethod(), getCallOptions(), request);
     }
 
@@ -3904,7 +3891,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.ObjectAccessControl patchObjectAccessControl(com.google.storage.v1.PatchObjectAccessControlRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPatchObjectAccessControlMethod(), getCallOptions(), request);
     }
 
@@ -3914,7 +3901,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.ObjectAccessControl updateObjectAccessControl(com.google.storage.v1.UpdateObjectAccessControlRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateObjectAccessControlMethod(), getCallOptions(), request);
     }
 
@@ -3925,7 +3912,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.Object composeObject(com.google.storage.v1.ComposeObjectRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getComposeObjectMethod(), getCallOptions(), request);
     }
 
@@ -3936,7 +3923,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.Object copyObject(com.google.storage.v1.CopyObjectRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCopyObjectMethod(), getCallOptions(), request);
     }
 
@@ -3948,7 +3935,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteObject(com.google.storage.v1.DeleteObjectRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteObjectMethod(), getCallOptions(), request);
     }
 
@@ -3958,7 +3945,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.Object getObject(com.google.storage.v1.GetObjectRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetObjectMethod(), getCallOptions(), request);
     }
 
@@ -3969,7 +3956,7 @@ public final class StorageGrpc {
      */
     public java.util.Iterator<com.google.storage.v1.GetObjectMediaResponse> getObjectMedia(
         com.google.storage.v1.GetObjectMediaRequest request) {
-      return blockingServerStreamingCall(
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getGetObjectMediaMethod(), getCallOptions(), request);
     }
 
@@ -3979,7 +3966,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.ListObjectsResponse listObjects(com.google.storage.v1.ListObjectsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListObjectsMethod(), getCallOptions(), request);
     }
 
@@ -3990,7 +3977,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.RewriteResponse rewriteObject(com.google.storage.v1.RewriteObjectRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRewriteObjectMethod(), getCallOptions(), request);
     }
 
@@ -4002,7 +3989,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.StartResumableWriteResponse startResumableWrite(com.google.storage.v1.StartResumableWriteRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getStartResumableWriteMethod(), getCallOptions(), request);
     }
 
@@ -4022,7 +4009,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.QueryWriteStatusResponse queryWriteStatus(com.google.storage.v1.QueryWriteStatusRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getQueryWriteStatusMethod(), getCallOptions(), request);
     }
 
@@ -4032,7 +4019,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.Object patchObject(com.google.storage.v1.PatchObjectRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPatchObjectMethod(), getCallOptions(), request);
     }
 
@@ -4044,7 +4031,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.Object updateObject(com.google.storage.v1.UpdateObjectRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateObjectMethod(), getCallOptions(), request);
     }
 
@@ -4054,7 +4041,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.iam.v1.Policy getObjectIamPolicy(com.google.storage.v1.GetIamPolicyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetObjectIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -4064,7 +4051,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.iam.v1.Policy setObjectIamPolicy(com.google.storage.v1.SetIamPolicyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSetObjectIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -4075,7 +4062,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testObjectIamPermissions(com.google.storage.v1.TestIamPermissionsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTestObjectIamPermissionsMethod(), getCallOptions(), request);
     }
 
@@ -4085,7 +4072,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.Channel watchAllObjects(com.google.storage.v1.WatchAllObjectsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getWatchAllObjectsMethod(), getCallOptions(), request);
     }
 
@@ -4095,7 +4082,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.ServiceAccount getServiceAccount(com.google.storage.v1.GetProjectServiceAccountRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetServiceAccountMethod(), getCallOptions(), request);
     }
 
@@ -4105,7 +4092,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.CreateHmacKeyResponse createHmacKey(com.google.storage.v1.CreateHmacKeyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateHmacKeyMethod(), getCallOptions(), request);
     }
 
@@ -4115,7 +4102,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteHmacKey(com.google.storage.v1.DeleteHmacKeyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteHmacKeyMethod(), getCallOptions(), request);
     }
 
@@ -4125,7 +4112,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.HmacKeyMetadata getHmacKey(com.google.storage.v1.GetHmacKeyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetHmacKeyMethod(), getCallOptions(), request);
     }
 
@@ -4135,7 +4122,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.ListHmacKeysResponse listHmacKeys(com.google.storage.v1.ListHmacKeysRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListHmacKeysMethod(), getCallOptions(), request);
     }
 
@@ -4145,7 +4132,7 @@ public final class StorageGrpc {
      * </pre>
      */
     public com.google.storage.v1.HmacKeyMetadata updateHmacKey(com.google.storage.v1.UpdateHmacKeyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateHmacKeyMethod(), getCallOptions(), request);
     }
   }
@@ -4175,7 +4162,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteBucketAccessControl(
         com.google.storage.v1.DeleteBucketAccessControlRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteBucketAccessControlMethod(), getCallOptions()), request);
     }
 
@@ -4186,7 +4173,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.BucketAccessControl> getBucketAccessControl(
         com.google.storage.v1.GetBucketAccessControlRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetBucketAccessControlMethod(), getCallOptions()), request);
     }
 
@@ -4197,7 +4184,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.BucketAccessControl> insertBucketAccessControl(
         com.google.storage.v1.InsertBucketAccessControlRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getInsertBucketAccessControlMethod(), getCallOptions()), request);
     }
 
@@ -4208,7 +4195,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.ListBucketAccessControlsResponse> listBucketAccessControls(
         com.google.storage.v1.ListBucketAccessControlsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListBucketAccessControlsMethod(), getCallOptions()), request);
     }
 
@@ -4221,7 +4208,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.BucketAccessControl> updateBucketAccessControl(
         com.google.storage.v1.UpdateBucketAccessControlRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateBucketAccessControlMethod(), getCallOptions()), request);
     }
 
@@ -4232,7 +4219,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.BucketAccessControl> patchBucketAccessControl(
         com.google.storage.v1.PatchBucketAccessControlRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPatchBucketAccessControlMethod(), getCallOptions()), request);
     }
 
@@ -4243,7 +4230,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteBucket(
         com.google.storage.v1.DeleteBucketRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteBucketMethod(), getCallOptions()), request);
     }
 
@@ -4254,7 +4241,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.Bucket> getBucket(
         com.google.storage.v1.GetBucketRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetBucketMethod(), getCallOptions()), request);
     }
 
@@ -4265,7 +4252,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.Bucket> insertBucket(
         com.google.storage.v1.InsertBucketRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getInsertBucketMethod(), getCallOptions()), request);
     }
 
@@ -4276,7 +4263,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.ListChannelsResponse> listChannels(
         com.google.storage.v1.ListChannelsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListChannelsMethod(), getCallOptions()), request);
     }
 
@@ -4287,7 +4274,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.ListBucketsResponse> listBuckets(
         com.google.storage.v1.ListBucketsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListBucketsMethod(), getCallOptions()), request);
     }
 
@@ -4298,7 +4285,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.Bucket> lockBucketRetentionPolicy(
         com.google.storage.v1.LockRetentionPolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getLockBucketRetentionPolicyMethod(), getCallOptions()), request);
     }
 
@@ -4309,7 +4296,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy> getBucketIamPolicy(
         com.google.storage.v1.GetIamPolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetBucketIamPolicyMethod(), getCallOptions()), request);
     }
 
@@ -4320,7 +4307,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy> setBucketIamPolicy(
         com.google.storage.v1.SetIamPolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSetBucketIamPolicyMethod(), getCallOptions()), request);
     }
 
@@ -4332,7 +4319,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.TestIamPermissionsResponse> testBucketIamPermissions(
         com.google.storage.v1.TestIamPermissionsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTestBucketIamPermissionsMethod(), getCallOptions()), request);
     }
 
@@ -4344,7 +4331,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.Bucket> patchBucket(
         com.google.storage.v1.PatchBucketRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPatchBucketMethod(), getCallOptions()), request);
     }
 
@@ -4359,7 +4346,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.Bucket> updateBucket(
         com.google.storage.v1.UpdateBucketRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateBucketMethod(), getCallOptions()), request);
     }
 
@@ -4373,7 +4360,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> stopChannel(
         com.google.storage.v1.StopChannelRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getStopChannelMethod(), getCallOptions()), request);
     }
 
@@ -4385,7 +4372,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteDefaultObjectAccessControl(
         com.google.storage.v1.DeleteDefaultObjectAccessControlRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteDefaultObjectAccessControlMethod(), getCallOptions()), request);
     }
 
@@ -4397,7 +4384,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.ObjectAccessControl> getDefaultObjectAccessControl(
         com.google.storage.v1.GetDefaultObjectAccessControlRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetDefaultObjectAccessControlMethod(), getCallOptions()), request);
     }
 
@@ -4408,7 +4395,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.ObjectAccessControl> insertDefaultObjectAccessControl(
         com.google.storage.v1.InsertDefaultObjectAccessControlRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getInsertDefaultObjectAccessControlMethod(), getCallOptions()), request);
     }
 
@@ -4419,7 +4406,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.ListObjectAccessControlsResponse> listDefaultObjectAccessControls(
         com.google.storage.v1.ListDefaultObjectAccessControlsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListDefaultObjectAccessControlsMethod(), getCallOptions()), request);
     }
 
@@ -4430,7 +4417,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.ObjectAccessControl> patchDefaultObjectAccessControl(
         com.google.storage.v1.PatchDefaultObjectAccessControlRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPatchDefaultObjectAccessControlMethod(), getCallOptions()), request);
     }
 
@@ -4443,7 +4430,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.ObjectAccessControl> updateDefaultObjectAccessControl(
         com.google.storage.v1.UpdateDefaultObjectAccessControlRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateDefaultObjectAccessControlMethod(), getCallOptions()), request);
     }
 
@@ -4456,7 +4443,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteNotification(
         com.google.storage.v1.DeleteNotificationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteNotificationMethod(), getCallOptions()), request);
     }
 
@@ -4467,7 +4454,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.Notification> getNotification(
         com.google.storage.v1.GetNotificationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetNotificationMethod(), getCallOptions()), request);
     }
 
@@ -4481,7 +4468,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.Notification> insertNotification(
         com.google.storage.v1.InsertNotificationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getInsertNotificationMethod(), getCallOptions()), request);
     }
 
@@ -4492,7 +4479,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.ListNotificationsResponse> listNotifications(
         com.google.storage.v1.ListNotificationsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListNotificationsMethod(), getCallOptions()), request);
     }
 
@@ -4504,7 +4491,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteObjectAccessControl(
         com.google.storage.v1.DeleteObjectAccessControlRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteObjectAccessControlMethod(), getCallOptions()), request);
     }
 
@@ -4515,7 +4502,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.ObjectAccessControl> getObjectAccessControl(
         com.google.storage.v1.GetObjectAccessControlRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetObjectAccessControlMethod(), getCallOptions()), request);
     }
 
@@ -4526,7 +4513,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.ObjectAccessControl> insertObjectAccessControl(
         com.google.storage.v1.InsertObjectAccessControlRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getInsertObjectAccessControlMethod(), getCallOptions()), request);
     }
 
@@ -4537,7 +4524,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.ListObjectAccessControlsResponse> listObjectAccessControls(
         com.google.storage.v1.ListObjectAccessControlsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListObjectAccessControlsMethod(), getCallOptions()), request);
     }
 
@@ -4550,7 +4537,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.ObjectAccessControl> patchObjectAccessControl(
         com.google.storage.v1.PatchObjectAccessControlRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPatchObjectAccessControlMethod(), getCallOptions()), request);
     }
 
@@ -4561,7 +4548,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.ObjectAccessControl> updateObjectAccessControl(
         com.google.storage.v1.UpdateObjectAccessControlRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateObjectAccessControlMethod(), getCallOptions()), request);
     }
 
@@ -4573,7 +4560,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.Object> composeObject(
         com.google.storage.v1.ComposeObjectRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getComposeObjectMethod(), getCallOptions()), request);
     }
 
@@ -4585,7 +4572,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.Object> copyObject(
         com.google.storage.v1.CopyObjectRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCopyObjectMethod(), getCallOptions()), request);
     }
 
@@ -4598,7 +4585,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteObject(
         com.google.storage.v1.DeleteObjectRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteObjectMethod(), getCallOptions()), request);
     }
 
@@ -4609,7 +4596,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.Object> getObject(
         com.google.storage.v1.GetObjectRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetObjectMethod(), getCallOptions()), request);
     }
 
@@ -4620,7 +4607,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.ListObjectsResponse> listObjects(
         com.google.storage.v1.ListObjectsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListObjectsMethod(), getCallOptions()), request);
     }
 
@@ -4632,7 +4619,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.RewriteResponse> rewriteObject(
         com.google.storage.v1.RewriteObjectRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRewriteObjectMethod(), getCallOptions()), request);
     }
 
@@ -4645,7 +4632,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.StartResumableWriteResponse> startResumableWrite(
         com.google.storage.v1.StartResumableWriteRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getStartResumableWriteMethod(), getCallOptions()), request);
     }
 
@@ -4666,7 +4653,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.QueryWriteStatusResponse> queryWriteStatus(
         com.google.storage.v1.QueryWriteStatusRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getQueryWriteStatusMethod(), getCallOptions()), request);
     }
 
@@ -4677,7 +4664,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.Object> patchObject(
         com.google.storage.v1.PatchObjectRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPatchObjectMethod(), getCallOptions()), request);
     }
 
@@ -4690,7 +4677,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.Object> updateObject(
         com.google.storage.v1.UpdateObjectRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateObjectMethod(), getCallOptions()), request);
     }
 
@@ -4701,7 +4688,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy> getObjectIamPolicy(
         com.google.storage.v1.GetIamPolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetObjectIamPolicyMethod(), getCallOptions()), request);
     }
 
@@ -4712,7 +4699,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy> setObjectIamPolicy(
         com.google.storage.v1.SetIamPolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSetObjectIamPolicyMethod(), getCallOptions()), request);
     }
 
@@ -4724,7 +4711,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.TestIamPermissionsResponse> testObjectIamPermissions(
         com.google.storage.v1.TestIamPermissionsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTestObjectIamPermissionsMethod(), getCallOptions()), request);
     }
 
@@ -4735,7 +4722,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.Channel> watchAllObjects(
         com.google.storage.v1.WatchAllObjectsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getWatchAllObjectsMethod(), getCallOptions()), request);
     }
 
@@ -4746,7 +4733,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.ServiceAccount> getServiceAccount(
         com.google.storage.v1.GetProjectServiceAccountRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetServiceAccountMethod(), getCallOptions()), request);
     }
 
@@ -4757,7 +4744,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.CreateHmacKeyResponse> createHmacKey(
         com.google.storage.v1.CreateHmacKeyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateHmacKeyMethod(), getCallOptions()), request);
     }
 
@@ -4768,7 +4755,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteHmacKey(
         com.google.storage.v1.DeleteHmacKeyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteHmacKeyMethod(), getCallOptions()), request);
     }
 
@@ -4779,7 +4766,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.HmacKeyMetadata> getHmacKey(
         com.google.storage.v1.GetHmacKeyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetHmacKeyMethod(), getCallOptions()), request);
     }
 
@@ -4790,7 +4777,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.ListHmacKeysResponse> listHmacKeys(
         com.google.storage.v1.ListHmacKeysRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListHmacKeysMethod(), getCallOptions()), request);
     }
 
@@ -4801,7 +4788,7 @@ public final class StorageGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.storage.v1.HmacKeyMetadata> updateHmacKey(
         com.google.storage.v1.UpdateHmacKeyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateHmacKeyMethod(), getCallOptions()), request);
     }
   }

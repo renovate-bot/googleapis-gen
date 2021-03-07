@@ -1,19 +1,6 @@
 package com.google.example.library.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -441,7 +428,7 @@ public final class LibraryServiceGrpc {
      */
     public void createShelf(com.google.example.library.v1.CreateShelfRequest request,
         io.grpc.stub.StreamObserver<com.google.example.library.v1.Shelf> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateShelfMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateShelfMethod(), responseObserver);
     }
 
     /**
@@ -451,7 +438,7 @@ public final class LibraryServiceGrpc {
      */
     public void getShelf(com.google.example.library.v1.GetShelfRequest request,
         io.grpc.stub.StreamObserver<com.google.example.library.v1.Shelf> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetShelfMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetShelfMethod(), responseObserver);
     }
 
     /**
@@ -462,7 +449,7 @@ public final class LibraryServiceGrpc {
      */
     public void listShelves(com.google.example.library.v1.ListShelvesRequest request,
         io.grpc.stub.StreamObserver<com.google.example.library.v1.ListShelvesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListShelvesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListShelvesMethod(), responseObserver);
     }
 
     /**
@@ -472,7 +459,7 @@ public final class LibraryServiceGrpc {
      */
     public void deleteShelf(com.google.example.library.v1.DeleteShelfRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteShelfMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteShelfMethod(), responseObserver);
     }
 
     /**
@@ -487,7 +474,7 @@ public final class LibraryServiceGrpc {
      */
     public void mergeShelves(com.google.example.library.v1.MergeShelvesRequest request,
         io.grpc.stub.StreamObserver<com.google.example.library.v1.Shelf> responseObserver) {
-      asyncUnimplementedUnaryCall(getMergeShelvesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMergeShelvesMethod(), responseObserver);
     }
 
     /**
@@ -497,7 +484,7 @@ public final class LibraryServiceGrpc {
      */
     public void createBook(com.google.example.library.v1.CreateBookRequest request,
         io.grpc.stub.StreamObserver<com.google.example.library.v1.Book> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateBookMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateBookMethod(), responseObserver);
     }
 
     /**
@@ -507,7 +494,7 @@ public final class LibraryServiceGrpc {
      */
     public void getBook(com.google.example.library.v1.GetBookRequest request,
         io.grpc.stub.StreamObserver<com.google.example.library.v1.Book> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetBookMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetBookMethod(), responseObserver);
     }
 
     /**
@@ -519,7 +506,7 @@ public final class LibraryServiceGrpc {
      */
     public void listBooks(com.google.example.library.v1.ListBooksRequest request,
         io.grpc.stub.StreamObserver<com.google.example.library.v1.ListBooksResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListBooksMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListBooksMethod(), responseObserver);
     }
 
     /**
@@ -529,7 +516,7 @@ public final class LibraryServiceGrpc {
      */
     public void deleteBook(com.google.example.library.v1.DeleteBookRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteBookMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteBookMethod(), responseObserver);
     }
 
     /**
@@ -540,7 +527,7 @@ public final class LibraryServiceGrpc {
      */
     public void updateBook(com.google.example.library.v1.UpdateBookRequest request,
         io.grpc.stub.StreamObserver<com.google.example.library.v1.Book> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateBookMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateBookMethod(), responseObserver);
     }
 
     /**
@@ -551,84 +538,84 @@ public final class LibraryServiceGrpc {
      */
     public void moveBook(com.google.example.library.v1.MoveBookRequest request,
         io.grpc.stub.StreamObserver<com.google.example.library.v1.Book> responseObserver) {
-      asyncUnimplementedUnaryCall(getMoveBookMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMoveBookMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getCreateShelfMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.example.library.v1.CreateShelfRequest,
                 com.google.example.library.v1.Shelf>(
                   this, METHODID_CREATE_SHELF)))
           .addMethod(
             getGetShelfMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.example.library.v1.GetShelfRequest,
                 com.google.example.library.v1.Shelf>(
                   this, METHODID_GET_SHELF)))
           .addMethod(
             getListShelvesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.example.library.v1.ListShelvesRequest,
                 com.google.example.library.v1.ListShelvesResponse>(
                   this, METHODID_LIST_SHELVES)))
           .addMethod(
             getDeleteShelfMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.example.library.v1.DeleteShelfRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_SHELF)))
           .addMethod(
             getMergeShelvesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.example.library.v1.MergeShelvesRequest,
                 com.google.example.library.v1.Shelf>(
                   this, METHODID_MERGE_SHELVES)))
           .addMethod(
             getCreateBookMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.example.library.v1.CreateBookRequest,
                 com.google.example.library.v1.Book>(
                   this, METHODID_CREATE_BOOK)))
           .addMethod(
             getGetBookMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.example.library.v1.GetBookRequest,
                 com.google.example.library.v1.Book>(
                   this, METHODID_GET_BOOK)))
           .addMethod(
             getListBooksMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.example.library.v1.ListBooksRequest,
                 com.google.example.library.v1.ListBooksResponse>(
                   this, METHODID_LIST_BOOKS)))
           .addMethod(
             getDeleteBookMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.example.library.v1.DeleteBookRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_BOOK)))
           .addMethod(
             getUpdateBookMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.example.library.v1.UpdateBookRequest,
                 com.google.example.library.v1.Book>(
                   this, METHODID_UPDATE_BOOK)))
           .addMethod(
             getMoveBookMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.example.library.v1.MoveBookRequest,
                 com.google.example.library.v1.Book>(
@@ -667,7 +654,7 @@ public final class LibraryServiceGrpc {
      */
     public void createShelf(com.google.example.library.v1.CreateShelfRequest request,
         io.grpc.stub.StreamObserver<com.google.example.library.v1.Shelf> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateShelfMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -678,7 +665,7 @@ public final class LibraryServiceGrpc {
      */
     public void getShelf(com.google.example.library.v1.GetShelfRequest request,
         io.grpc.stub.StreamObserver<com.google.example.library.v1.Shelf> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetShelfMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -690,7 +677,7 @@ public final class LibraryServiceGrpc {
      */
     public void listShelves(com.google.example.library.v1.ListShelvesRequest request,
         io.grpc.stub.StreamObserver<com.google.example.library.v1.ListShelvesResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListShelvesMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -701,7 +688,7 @@ public final class LibraryServiceGrpc {
      */
     public void deleteShelf(com.google.example.library.v1.DeleteShelfRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteShelfMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -717,7 +704,7 @@ public final class LibraryServiceGrpc {
      */
     public void mergeShelves(com.google.example.library.v1.MergeShelvesRequest request,
         io.grpc.stub.StreamObserver<com.google.example.library.v1.Shelf> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMergeShelvesMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -728,7 +715,7 @@ public final class LibraryServiceGrpc {
      */
     public void createBook(com.google.example.library.v1.CreateBookRequest request,
         io.grpc.stub.StreamObserver<com.google.example.library.v1.Book> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateBookMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -739,7 +726,7 @@ public final class LibraryServiceGrpc {
      */
     public void getBook(com.google.example.library.v1.GetBookRequest request,
         io.grpc.stub.StreamObserver<com.google.example.library.v1.Book> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetBookMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -752,7 +739,7 @@ public final class LibraryServiceGrpc {
      */
     public void listBooks(com.google.example.library.v1.ListBooksRequest request,
         io.grpc.stub.StreamObserver<com.google.example.library.v1.ListBooksResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListBooksMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -763,7 +750,7 @@ public final class LibraryServiceGrpc {
      */
     public void deleteBook(com.google.example.library.v1.DeleteBookRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteBookMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -775,7 +762,7 @@ public final class LibraryServiceGrpc {
      */
     public void updateBook(com.google.example.library.v1.UpdateBookRequest request,
         io.grpc.stub.StreamObserver<com.google.example.library.v1.Book> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateBookMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -787,7 +774,7 @@ public final class LibraryServiceGrpc {
      */
     public void moveBook(com.google.example.library.v1.MoveBookRequest request,
         io.grpc.stub.StreamObserver<com.google.example.library.v1.Book> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMoveBookMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -821,7 +808,7 @@ public final class LibraryServiceGrpc {
      * </pre>
      */
     public com.google.example.library.v1.Shelf createShelf(com.google.example.library.v1.CreateShelfRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateShelfMethod(), getCallOptions(), request);
     }
 
@@ -831,7 +818,7 @@ public final class LibraryServiceGrpc {
      * </pre>
      */
     public com.google.example.library.v1.Shelf getShelf(com.google.example.library.v1.GetShelfRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetShelfMethod(), getCallOptions(), request);
     }
 
@@ -842,7 +829,7 @@ public final class LibraryServiceGrpc {
      * </pre>
      */
     public com.google.example.library.v1.ListShelvesResponse listShelves(com.google.example.library.v1.ListShelvesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListShelvesMethod(), getCallOptions(), request);
     }
 
@@ -852,7 +839,7 @@ public final class LibraryServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteShelf(com.google.example.library.v1.DeleteShelfRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteShelfMethod(), getCallOptions(), request);
     }
 
@@ -867,7 +854,7 @@ public final class LibraryServiceGrpc {
      * </pre>
      */
     public com.google.example.library.v1.Shelf mergeShelves(com.google.example.library.v1.MergeShelvesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMergeShelvesMethod(), getCallOptions(), request);
     }
 
@@ -877,7 +864,7 @@ public final class LibraryServiceGrpc {
      * </pre>
      */
     public com.google.example.library.v1.Book createBook(com.google.example.library.v1.CreateBookRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateBookMethod(), getCallOptions(), request);
     }
 
@@ -887,7 +874,7 @@ public final class LibraryServiceGrpc {
      * </pre>
      */
     public com.google.example.library.v1.Book getBook(com.google.example.library.v1.GetBookRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetBookMethod(), getCallOptions(), request);
     }
 
@@ -899,7 +886,7 @@ public final class LibraryServiceGrpc {
      * </pre>
      */
     public com.google.example.library.v1.ListBooksResponse listBooks(com.google.example.library.v1.ListBooksRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListBooksMethod(), getCallOptions(), request);
     }
 
@@ -909,7 +896,7 @@ public final class LibraryServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteBook(com.google.example.library.v1.DeleteBookRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteBookMethod(), getCallOptions(), request);
     }
 
@@ -920,7 +907,7 @@ public final class LibraryServiceGrpc {
      * </pre>
      */
     public com.google.example.library.v1.Book updateBook(com.google.example.library.v1.UpdateBookRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateBookMethod(), getCallOptions(), request);
     }
 
@@ -931,7 +918,7 @@ public final class LibraryServiceGrpc {
      * </pre>
      */
     public com.google.example.library.v1.Book moveBook(com.google.example.library.v1.MoveBookRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMoveBookMethod(), getCallOptions(), request);
     }
   }
@@ -966,7 +953,7 @@ public final class LibraryServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.example.library.v1.Shelf> createShelf(
         com.google.example.library.v1.CreateShelfRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateShelfMethod(), getCallOptions()), request);
     }
 
@@ -977,7 +964,7 @@ public final class LibraryServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.example.library.v1.Shelf> getShelf(
         com.google.example.library.v1.GetShelfRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetShelfMethod(), getCallOptions()), request);
     }
 
@@ -989,7 +976,7 @@ public final class LibraryServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.example.library.v1.ListShelvesResponse> listShelves(
         com.google.example.library.v1.ListShelvesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListShelvesMethod(), getCallOptions()), request);
     }
 
@@ -1000,7 +987,7 @@ public final class LibraryServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteShelf(
         com.google.example.library.v1.DeleteShelfRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteShelfMethod(), getCallOptions()), request);
     }
 
@@ -1016,7 +1003,7 @@ public final class LibraryServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.example.library.v1.Shelf> mergeShelves(
         com.google.example.library.v1.MergeShelvesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMergeShelvesMethod(), getCallOptions()), request);
     }
 
@@ -1027,7 +1014,7 @@ public final class LibraryServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.example.library.v1.Book> createBook(
         com.google.example.library.v1.CreateBookRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateBookMethod(), getCallOptions()), request);
     }
 
@@ -1038,7 +1025,7 @@ public final class LibraryServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.example.library.v1.Book> getBook(
         com.google.example.library.v1.GetBookRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetBookMethod(), getCallOptions()), request);
     }
 
@@ -1051,7 +1038,7 @@ public final class LibraryServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.example.library.v1.ListBooksResponse> listBooks(
         com.google.example.library.v1.ListBooksRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListBooksMethod(), getCallOptions()), request);
     }
 
@@ -1062,7 +1049,7 @@ public final class LibraryServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteBook(
         com.google.example.library.v1.DeleteBookRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteBookMethod(), getCallOptions()), request);
     }
 
@@ -1074,7 +1061,7 @@ public final class LibraryServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.example.library.v1.Book> updateBook(
         com.google.example.library.v1.UpdateBookRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateBookMethod(), getCallOptions()), request);
     }
 
@@ -1086,7 +1073,7 @@ public final class LibraryServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.example.library.v1.Book> moveBook(
         com.google.example.library.v1.MoveBookRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMoveBookMethod(), getCallOptions()), request);
     }
   }

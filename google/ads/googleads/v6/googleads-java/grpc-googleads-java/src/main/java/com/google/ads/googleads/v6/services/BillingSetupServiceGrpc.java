@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v6.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -162,7 +149,7 @@ public final class BillingSetupServiceGrpc {
      */
     public void getBillingSetup(com.google.ads.googleads.v6.services.GetBillingSetupRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.resources.BillingSetup> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetBillingSetupMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetBillingSetupMethod(), responseObserver);
     }
 
     /**
@@ -172,21 +159,21 @@ public final class BillingSetupServiceGrpc {
      */
     public void mutateBillingSetup(com.google.ads.googleads.v6.services.MutateBillingSetupRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.MutateBillingSetupResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getMutateBillingSetupMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMutateBillingSetupMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetBillingSetupMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.GetBillingSetupRequest,
                 com.google.ads.googleads.v6.resources.BillingSetup>(
                   this, METHODID_GET_BILLING_SETUP)))
           .addMethod(
             getMutateBillingSetupMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.MutateBillingSetupRequest,
                 com.google.ads.googleads.v6.services.MutateBillingSetupResponse>(
@@ -225,7 +212,7 @@ public final class BillingSetupServiceGrpc {
      */
     public void getBillingSetup(com.google.ads.googleads.v6.services.GetBillingSetupRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.resources.BillingSetup> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetBillingSetupMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -236,7 +223,7 @@ public final class BillingSetupServiceGrpc {
      */
     public void mutateBillingSetup(com.google.ads.googleads.v6.services.MutateBillingSetupRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.MutateBillingSetupResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMutateBillingSetupMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -270,7 +257,7 @@ public final class BillingSetupServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.resources.BillingSetup getBillingSetup(com.google.ads.googleads.v6.services.GetBillingSetupRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetBillingSetupMethod(), getCallOptions(), request);
     }
 
@@ -280,7 +267,7 @@ public final class BillingSetupServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.services.MutateBillingSetupResponse mutateBillingSetup(com.google.ads.googleads.v6.services.MutateBillingSetupRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMutateBillingSetupMethod(), getCallOptions(), request);
     }
   }
@@ -315,7 +302,7 @@ public final class BillingSetupServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.resources.BillingSetup> getBillingSetup(
         com.google.ads.googleads.v6.services.GetBillingSetupRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetBillingSetupMethod(), getCallOptions()), request);
     }
 
@@ -326,7 +313,7 @@ public final class BillingSetupServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.services.MutateBillingSetupResponse> mutateBillingSetup(
         com.google.ads.googleads.v6.services.MutateBillingSetupRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMutateBillingSetupMethod(), getCallOptions()), request);
     }
   }

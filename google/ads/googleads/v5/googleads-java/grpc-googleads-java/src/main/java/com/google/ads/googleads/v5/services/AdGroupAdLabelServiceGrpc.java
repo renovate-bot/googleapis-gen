@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v5.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -150,7 +137,7 @@ public final class AdGroupAdLabelServiceGrpc {
      */
     public void getAdGroupAdLabel(com.google.ads.googleads.v5.services.GetAdGroupAdLabelRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.resources.AdGroupAdLabel> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetAdGroupAdLabelMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAdGroupAdLabelMethod(), responseObserver);
     }
 
     /**
@@ -161,21 +148,21 @@ public final class AdGroupAdLabelServiceGrpc {
      */
     public void mutateAdGroupAdLabels(com.google.ads.googleads.v5.services.MutateAdGroupAdLabelsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.services.MutateAdGroupAdLabelsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getMutateAdGroupAdLabelsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMutateAdGroupAdLabelsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetAdGroupAdLabelMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v5.services.GetAdGroupAdLabelRequest,
                 com.google.ads.googleads.v5.resources.AdGroupAdLabel>(
                   this, METHODID_GET_AD_GROUP_AD_LABEL)))
           .addMethod(
             getMutateAdGroupAdLabelsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v5.services.MutateAdGroupAdLabelsRequest,
                 com.google.ads.googleads.v5.services.MutateAdGroupAdLabelsResponse>(
@@ -208,7 +195,7 @@ public final class AdGroupAdLabelServiceGrpc {
      */
     public void getAdGroupAdLabel(com.google.ads.googleads.v5.services.GetAdGroupAdLabelRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.resources.AdGroupAdLabel> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetAdGroupAdLabelMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -220,7 +207,7 @@ public final class AdGroupAdLabelServiceGrpc {
      */
     public void mutateAdGroupAdLabels(com.google.ads.googleads.v5.services.MutateAdGroupAdLabelsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.services.MutateAdGroupAdLabelsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMutateAdGroupAdLabelsMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -248,7 +235,7 @@ public final class AdGroupAdLabelServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v5.resources.AdGroupAdLabel getAdGroupAdLabel(com.google.ads.googleads.v5.services.GetAdGroupAdLabelRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetAdGroupAdLabelMethod(), getCallOptions(), request);
     }
 
@@ -259,7 +246,7 @@ public final class AdGroupAdLabelServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v5.services.MutateAdGroupAdLabelsResponse mutateAdGroupAdLabels(com.google.ads.googleads.v5.services.MutateAdGroupAdLabelsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMutateAdGroupAdLabelsMethod(), getCallOptions(), request);
     }
   }
@@ -288,7 +275,7 @@ public final class AdGroupAdLabelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v5.resources.AdGroupAdLabel> getAdGroupAdLabel(
         com.google.ads.googleads.v5.services.GetAdGroupAdLabelRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetAdGroupAdLabelMethod(), getCallOptions()), request);
     }
 
@@ -300,7 +287,7 @@ public final class AdGroupAdLabelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v5.services.MutateAdGroupAdLabelsResponse> mutateAdGroupAdLabels(
         com.google.ads.googleads.v5.services.MutateAdGroupAdLabelsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMutateAdGroupAdLabelsMethod(), getCallOptions()), request);
     }
   }

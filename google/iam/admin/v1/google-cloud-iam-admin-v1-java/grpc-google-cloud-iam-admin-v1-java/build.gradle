@@ -18,10 +18,10 @@ repositories {
 }
 
 dependencies {
-  compile 'io.grpc:grpc-stub:1.30.0'
-  compile 'io.grpc:grpc-protobuf:1.30.0'
+  compile 'io.grpc:grpc-stub:1.36.0'
+  compile 'io.grpc:grpc-protobuf:1.36.0'
   compile project(':proto-google-cloud-iam-admin-v1-java')
-  compile 'com.google.api.grpc:proto-google-iam-v1:0.13.0'
+  compile 'com.google.api.grpc:proto-google-iam-v1:1.0.9'
 }
 
 sourceSets {

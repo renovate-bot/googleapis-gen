@@ -1,19 +1,6 @@
 package com.google.cloud.osconfig.agentendpoint.v1beta;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -274,7 +261,7 @@ public final class AgentEndpointServiceGrpc {
      */
     public void receiveTaskNotification(com.google.cloud.osconfig.agentendpoint.v1beta.ReceiveTaskNotificationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.osconfig.agentendpoint.v1beta.ReceiveTaskNotificationResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getReceiveTaskNotificationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getReceiveTaskNotificationMethod(), responseObserver);
     }
 
     /**
@@ -284,7 +271,7 @@ public final class AgentEndpointServiceGrpc {
      */
     public void startNextTask(com.google.cloud.osconfig.agentendpoint.v1beta.StartNextTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.osconfig.agentendpoint.v1beta.StartNextTaskResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getStartNextTaskMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStartNextTaskMethod(), responseObserver);
     }
 
     /**
@@ -294,7 +281,7 @@ public final class AgentEndpointServiceGrpc {
      */
     public void reportTaskProgress(com.google.cloud.osconfig.agentendpoint.v1beta.ReportTaskProgressRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.osconfig.agentendpoint.v1beta.ReportTaskProgressResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getReportTaskProgressMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getReportTaskProgressMethod(), responseObserver);
     }
 
     /**
@@ -305,7 +292,7 @@ public final class AgentEndpointServiceGrpc {
      */
     public void reportTaskComplete(com.google.cloud.osconfig.agentendpoint.v1beta.ReportTaskCompleteRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.osconfig.agentendpoint.v1beta.ReportTaskCompleteResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getReportTaskCompleteMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getReportTaskCompleteMethod(), responseObserver);
     }
 
     /**
@@ -316,7 +303,7 @@ public final class AgentEndpointServiceGrpc {
      */
     public void lookupEffectiveGuestPolicy(com.google.cloud.osconfig.agentendpoint.v1beta.GuestPolicies.LookupEffectiveGuestPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.osconfig.agentendpoint.v1beta.GuestPolicies.EffectiveGuestPolicy> responseObserver) {
-      asyncUnimplementedUnaryCall(getLookupEffectiveGuestPolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLookupEffectiveGuestPolicyMethod(), responseObserver);
     }
 
     /**
@@ -326,49 +313,49 @@ public final class AgentEndpointServiceGrpc {
      */
     public void registerAgent(com.google.cloud.osconfig.agentendpoint.v1beta.RegisterAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.osconfig.agentendpoint.v1beta.RegisterAgentResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getRegisterAgentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRegisterAgentMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getReceiveTaskNotificationMethod(),
-            asyncServerStreamingCall(
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
               new MethodHandlers<
                 com.google.cloud.osconfig.agentendpoint.v1beta.ReceiveTaskNotificationRequest,
                 com.google.cloud.osconfig.agentendpoint.v1beta.ReceiveTaskNotificationResponse>(
                   this, METHODID_RECEIVE_TASK_NOTIFICATION)))
           .addMethod(
             getStartNextTaskMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.osconfig.agentendpoint.v1beta.StartNextTaskRequest,
                 com.google.cloud.osconfig.agentendpoint.v1beta.StartNextTaskResponse>(
                   this, METHODID_START_NEXT_TASK)))
           .addMethod(
             getReportTaskProgressMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.osconfig.agentendpoint.v1beta.ReportTaskProgressRequest,
                 com.google.cloud.osconfig.agentendpoint.v1beta.ReportTaskProgressResponse>(
                   this, METHODID_REPORT_TASK_PROGRESS)))
           .addMethod(
             getReportTaskCompleteMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.osconfig.agentendpoint.v1beta.ReportTaskCompleteRequest,
                 com.google.cloud.osconfig.agentendpoint.v1beta.ReportTaskCompleteResponse>(
                   this, METHODID_REPORT_TASK_COMPLETE)))
           .addMethod(
             getLookupEffectiveGuestPolicyMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.osconfig.agentendpoint.v1beta.GuestPolicies.LookupEffectiveGuestPolicyRequest,
                 com.google.cloud.osconfig.agentendpoint.v1beta.GuestPolicies.EffectiveGuestPolicy>(
                   this, METHODID_LOOKUP_EFFECTIVE_GUEST_POLICY)))
           .addMethod(
             getRegisterAgentMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.osconfig.agentendpoint.v1beta.RegisterAgentRequest,
                 com.google.cloud.osconfig.agentendpoint.v1beta.RegisterAgentResponse>(
@@ -401,7 +388,7 @@ public final class AgentEndpointServiceGrpc {
      */
     public void receiveTaskNotification(com.google.cloud.osconfig.agentendpoint.v1beta.ReceiveTaskNotificationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.osconfig.agentendpoint.v1beta.ReceiveTaskNotificationResponse> responseObserver) {
-      asyncServerStreamingCall(
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getReceiveTaskNotificationMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -412,7 +399,7 @@ public final class AgentEndpointServiceGrpc {
      */
     public void startNextTask(com.google.cloud.osconfig.agentendpoint.v1beta.StartNextTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.osconfig.agentendpoint.v1beta.StartNextTaskResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getStartNextTaskMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -423,7 +410,7 @@ public final class AgentEndpointServiceGrpc {
      */
     public void reportTaskProgress(com.google.cloud.osconfig.agentendpoint.v1beta.ReportTaskProgressRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.osconfig.agentendpoint.v1beta.ReportTaskProgressResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getReportTaskProgressMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -435,7 +422,7 @@ public final class AgentEndpointServiceGrpc {
      */
     public void reportTaskComplete(com.google.cloud.osconfig.agentendpoint.v1beta.ReportTaskCompleteRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.osconfig.agentendpoint.v1beta.ReportTaskCompleteResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getReportTaskCompleteMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -447,7 +434,7 @@ public final class AgentEndpointServiceGrpc {
      */
     public void lookupEffectiveGuestPolicy(com.google.cloud.osconfig.agentendpoint.v1beta.GuestPolicies.LookupEffectiveGuestPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.osconfig.agentendpoint.v1beta.GuestPolicies.EffectiveGuestPolicy> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getLookupEffectiveGuestPolicyMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -458,7 +445,7 @@ public final class AgentEndpointServiceGrpc {
      */
     public void registerAgent(com.google.cloud.osconfig.agentendpoint.v1beta.RegisterAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.osconfig.agentendpoint.v1beta.RegisterAgentResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRegisterAgentMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -487,7 +474,7 @@ public final class AgentEndpointServiceGrpc {
      */
     public java.util.Iterator<com.google.cloud.osconfig.agentendpoint.v1beta.ReceiveTaskNotificationResponse> receiveTaskNotification(
         com.google.cloud.osconfig.agentendpoint.v1beta.ReceiveTaskNotificationRequest request) {
-      return blockingServerStreamingCall(
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getReceiveTaskNotificationMethod(), getCallOptions(), request);
     }
 
@@ -497,7 +484,7 @@ public final class AgentEndpointServiceGrpc {
      * </pre>
      */
     public com.google.cloud.osconfig.agentendpoint.v1beta.StartNextTaskResponse startNextTask(com.google.cloud.osconfig.agentendpoint.v1beta.StartNextTaskRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getStartNextTaskMethod(), getCallOptions(), request);
     }
 
@@ -507,7 +494,7 @@ public final class AgentEndpointServiceGrpc {
      * </pre>
      */
     public com.google.cloud.osconfig.agentendpoint.v1beta.ReportTaskProgressResponse reportTaskProgress(com.google.cloud.osconfig.agentendpoint.v1beta.ReportTaskProgressRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getReportTaskProgressMethod(), getCallOptions(), request);
     }
 
@@ -518,7 +505,7 @@ public final class AgentEndpointServiceGrpc {
      * </pre>
      */
     public com.google.cloud.osconfig.agentendpoint.v1beta.ReportTaskCompleteResponse reportTaskComplete(com.google.cloud.osconfig.agentendpoint.v1beta.ReportTaskCompleteRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getReportTaskCompleteMethod(), getCallOptions(), request);
     }
 
@@ -529,7 +516,7 @@ public final class AgentEndpointServiceGrpc {
      * </pre>
      */
     public com.google.cloud.osconfig.agentendpoint.v1beta.GuestPolicies.EffectiveGuestPolicy lookupEffectiveGuestPolicy(com.google.cloud.osconfig.agentendpoint.v1beta.GuestPolicies.LookupEffectiveGuestPolicyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getLookupEffectiveGuestPolicyMethod(), getCallOptions(), request);
     }
 
@@ -539,7 +526,7 @@ public final class AgentEndpointServiceGrpc {
      * </pre>
      */
     public com.google.cloud.osconfig.agentendpoint.v1beta.RegisterAgentResponse registerAgent(com.google.cloud.osconfig.agentendpoint.v1beta.RegisterAgentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRegisterAgentMethod(), getCallOptions(), request);
     }
   }
@@ -568,7 +555,7 @@ public final class AgentEndpointServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.osconfig.agentendpoint.v1beta.StartNextTaskResponse> startNextTask(
         com.google.cloud.osconfig.agentendpoint.v1beta.StartNextTaskRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getStartNextTaskMethod(), getCallOptions()), request);
     }
 
@@ -579,7 +566,7 @@ public final class AgentEndpointServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.osconfig.agentendpoint.v1beta.ReportTaskProgressResponse> reportTaskProgress(
         com.google.cloud.osconfig.agentendpoint.v1beta.ReportTaskProgressRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getReportTaskProgressMethod(), getCallOptions()), request);
     }
 
@@ -591,7 +578,7 @@ public final class AgentEndpointServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.osconfig.agentendpoint.v1beta.ReportTaskCompleteResponse> reportTaskComplete(
         com.google.cloud.osconfig.agentendpoint.v1beta.ReportTaskCompleteRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getReportTaskCompleteMethod(), getCallOptions()), request);
     }
 
@@ -603,7 +590,7 @@ public final class AgentEndpointServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.osconfig.agentendpoint.v1beta.GuestPolicies.EffectiveGuestPolicy> lookupEffectiveGuestPolicy(
         com.google.cloud.osconfig.agentendpoint.v1beta.GuestPolicies.LookupEffectiveGuestPolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getLookupEffectiveGuestPolicyMethod(), getCallOptions()), request);
     }
 
@@ -614,7 +601,7 @@ public final class AgentEndpointServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.osconfig.agentendpoint.v1beta.RegisterAgentResponse> registerAgent(
         com.google.cloud.osconfig.agentendpoint.v1beta.RegisterAgentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRegisterAgentMethod(), getCallOptions()), request);
     }
   }

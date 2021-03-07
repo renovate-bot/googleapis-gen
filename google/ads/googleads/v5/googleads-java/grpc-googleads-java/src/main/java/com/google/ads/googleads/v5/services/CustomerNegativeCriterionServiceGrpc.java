@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v5.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -150,7 +137,7 @@ public final class CustomerNegativeCriterionServiceGrpc {
      */
     public void getCustomerNegativeCriterion(com.google.ads.googleads.v5.services.GetCustomerNegativeCriterionRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.resources.CustomerNegativeCriterion> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetCustomerNegativeCriterionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCustomerNegativeCriterionMethod(), responseObserver);
     }
 
     /**
@@ -160,21 +147,21 @@ public final class CustomerNegativeCriterionServiceGrpc {
      */
     public void mutateCustomerNegativeCriteria(com.google.ads.googleads.v5.services.MutateCustomerNegativeCriteriaRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.services.MutateCustomerNegativeCriteriaResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getMutateCustomerNegativeCriteriaMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMutateCustomerNegativeCriteriaMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetCustomerNegativeCriterionMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v5.services.GetCustomerNegativeCriterionRequest,
                 com.google.ads.googleads.v5.resources.CustomerNegativeCriterion>(
                   this, METHODID_GET_CUSTOMER_NEGATIVE_CRITERION)))
           .addMethod(
             getMutateCustomerNegativeCriteriaMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v5.services.MutateCustomerNegativeCriteriaRequest,
                 com.google.ads.googleads.v5.services.MutateCustomerNegativeCriteriaResponse>(
@@ -207,7 +194,7 @@ public final class CustomerNegativeCriterionServiceGrpc {
      */
     public void getCustomerNegativeCriterion(com.google.ads.googleads.v5.services.GetCustomerNegativeCriterionRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.resources.CustomerNegativeCriterion> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetCustomerNegativeCriterionMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -218,7 +205,7 @@ public final class CustomerNegativeCriterionServiceGrpc {
      */
     public void mutateCustomerNegativeCriteria(com.google.ads.googleads.v5.services.MutateCustomerNegativeCriteriaRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.services.MutateCustomerNegativeCriteriaResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMutateCustomerNegativeCriteriaMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -246,7 +233,7 @@ public final class CustomerNegativeCriterionServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v5.resources.CustomerNegativeCriterion getCustomerNegativeCriterion(com.google.ads.googleads.v5.services.GetCustomerNegativeCriterionRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetCustomerNegativeCriterionMethod(), getCallOptions(), request);
     }
 
@@ -256,7 +243,7 @@ public final class CustomerNegativeCriterionServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v5.services.MutateCustomerNegativeCriteriaResponse mutateCustomerNegativeCriteria(com.google.ads.googleads.v5.services.MutateCustomerNegativeCriteriaRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMutateCustomerNegativeCriteriaMethod(), getCallOptions(), request);
     }
   }
@@ -285,7 +272,7 @@ public final class CustomerNegativeCriterionServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v5.resources.CustomerNegativeCriterion> getCustomerNegativeCriterion(
         com.google.ads.googleads.v5.services.GetCustomerNegativeCriterionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetCustomerNegativeCriterionMethod(), getCallOptions()), request);
     }
 
@@ -296,7 +283,7 @@ public final class CustomerNegativeCriterionServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v5.services.MutateCustomerNegativeCriteriaResponse> mutateCustomerNegativeCriteria(
         com.google.ads.googleads.v5.services.MutateCustomerNegativeCriteriaRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMutateCustomerNegativeCriteriaMethod(), getCallOptions()), request);
     }
   }

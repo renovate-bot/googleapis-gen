@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v5.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -150,7 +137,7 @@ public final class BiddingStrategyServiceGrpc {
      */
     public void getBiddingStrategy(com.google.ads.googleads.v5.services.GetBiddingStrategyRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.resources.BiddingStrategy> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetBiddingStrategyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetBiddingStrategyMethod(), responseObserver);
     }
 
     /**
@@ -161,21 +148,21 @@ public final class BiddingStrategyServiceGrpc {
      */
     public void mutateBiddingStrategies(com.google.ads.googleads.v5.services.MutateBiddingStrategiesRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.services.MutateBiddingStrategiesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getMutateBiddingStrategiesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMutateBiddingStrategiesMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetBiddingStrategyMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v5.services.GetBiddingStrategyRequest,
                 com.google.ads.googleads.v5.resources.BiddingStrategy>(
                   this, METHODID_GET_BIDDING_STRATEGY)))
           .addMethod(
             getMutateBiddingStrategiesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v5.services.MutateBiddingStrategiesRequest,
                 com.google.ads.googleads.v5.services.MutateBiddingStrategiesResponse>(
@@ -208,7 +195,7 @@ public final class BiddingStrategyServiceGrpc {
      */
     public void getBiddingStrategy(com.google.ads.googleads.v5.services.GetBiddingStrategyRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.resources.BiddingStrategy> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetBiddingStrategyMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -220,7 +207,7 @@ public final class BiddingStrategyServiceGrpc {
      */
     public void mutateBiddingStrategies(com.google.ads.googleads.v5.services.MutateBiddingStrategiesRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.services.MutateBiddingStrategiesResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMutateBiddingStrategiesMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -248,7 +235,7 @@ public final class BiddingStrategyServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v5.resources.BiddingStrategy getBiddingStrategy(com.google.ads.googleads.v5.services.GetBiddingStrategyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetBiddingStrategyMethod(), getCallOptions(), request);
     }
 
@@ -259,7 +246,7 @@ public final class BiddingStrategyServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v5.services.MutateBiddingStrategiesResponse mutateBiddingStrategies(com.google.ads.googleads.v5.services.MutateBiddingStrategiesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMutateBiddingStrategiesMethod(), getCallOptions(), request);
     }
   }
@@ -288,7 +275,7 @@ public final class BiddingStrategyServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v5.resources.BiddingStrategy> getBiddingStrategy(
         com.google.ads.googleads.v5.services.GetBiddingStrategyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetBiddingStrategyMethod(), getCallOptions()), request);
     }
 
@@ -300,7 +287,7 @@ public final class BiddingStrategyServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v5.services.MutateBiddingStrategiesResponse> mutateBiddingStrategies(
         com.google.ads.googleads.v5.services.MutateBiddingStrategiesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMutateBiddingStrategiesMethod(), getCallOptions()), request);
     }
   }

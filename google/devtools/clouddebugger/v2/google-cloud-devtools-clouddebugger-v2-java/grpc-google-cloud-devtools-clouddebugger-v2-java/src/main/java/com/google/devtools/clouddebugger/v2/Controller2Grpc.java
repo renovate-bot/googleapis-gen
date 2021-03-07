@@ -1,19 +1,6 @@
 package com.google.devtools.clouddebugger.v2;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -220,7 +207,7 @@ public final class Controller2Grpc {
      */
     public void registerDebuggee(com.google.devtools.clouddebugger.v2.RegisterDebuggeeRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.clouddebugger.v2.RegisterDebuggeeResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getRegisterDebuggeeMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRegisterDebuggeeMethod(), responseObserver);
     }
 
     /**
@@ -240,7 +227,7 @@ public final class Controller2Grpc {
      */
     public void listActiveBreakpoints(com.google.devtools.clouddebugger.v2.ListActiveBreakpointsRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.clouddebugger.v2.ListActiveBreakpointsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListActiveBreakpointsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListActiveBreakpointsMethod(), responseObserver);
     }
 
     /**
@@ -256,28 +243,28 @@ public final class Controller2Grpc {
      */
     public void updateActiveBreakpoint(com.google.devtools.clouddebugger.v2.UpdateActiveBreakpointRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.clouddebugger.v2.UpdateActiveBreakpointResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateActiveBreakpointMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateActiveBreakpointMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getRegisterDebuggeeMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.devtools.clouddebugger.v2.RegisterDebuggeeRequest,
                 com.google.devtools.clouddebugger.v2.RegisterDebuggeeResponse>(
                   this, METHODID_REGISTER_DEBUGGEE)))
           .addMethod(
             getListActiveBreakpointsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.devtools.clouddebugger.v2.ListActiveBreakpointsRequest,
                 com.google.devtools.clouddebugger.v2.ListActiveBreakpointsResponse>(
                   this, METHODID_LIST_ACTIVE_BREAKPOINTS)))
           .addMethod(
             getUpdateActiveBreakpointMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.devtools.clouddebugger.v2.UpdateActiveBreakpointRequest,
                 com.google.devtools.clouddebugger.v2.UpdateActiveBreakpointResponse>(
@@ -333,7 +320,7 @@ public final class Controller2Grpc {
      */
     public void registerDebuggee(com.google.devtools.clouddebugger.v2.RegisterDebuggeeRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.clouddebugger.v2.RegisterDebuggeeResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRegisterDebuggeeMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -354,7 +341,7 @@ public final class Controller2Grpc {
      */
     public void listActiveBreakpoints(com.google.devtools.clouddebugger.v2.ListActiveBreakpointsRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.clouddebugger.v2.ListActiveBreakpointsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListActiveBreakpointsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -371,7 +358,7 @@ public final class Controller2Grpc {
      */
     public void updateActiveBreakpoint(com.google.devtools.clouddebugger.v2.UpdateActiveBreakpointRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.clouddebugger.v2.UpdateActiveBreakpointResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateActiveBreakpointMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -422,7 +409,7 @@ public final class Controller2Grpc {
      * </pre>
      */
     public com.google.devtools.clouddebugger.v2.RegisterDebuggeeResponse registerDebuggee(com.google.devtools.clouddebugger.v2.RegisterDebuggeeRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRegisterDebuggeeMethod(), getCallOptions(), request);
     }
 
@@ -442,7 +429,7 @@ public final class Controller2Grpc {
      * </pre>
      */
     public com.google.devtools.clouddebugger.v2.ListActiveBreakpointsResponse listActiveBreakpoints(com.google.devtools.clouddebugger.v2.ListActiveBreakpointsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListActiveBreakpointsMethod(), getCallOptions(), request);
     }
 
@@ -458,7 +445,7 @@ public final class Controller2Grpc {
      * </pre>
      */
     public com.google.devtools.clouddebugger.v2.UpdateActiveBreakpointResponse updateActiveBreakpoint(com.google.devtools.clouddebugger.v2.UpdateActiveBreakpointRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateActiveBreakpointMethod(), getCallOptions(), request);
     }
   }
@@ -510,7 +497,7 @@ public final class Controller2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.devtools.clouddebugger.v2.RegisterDebuggeeResponse> registerDebuggee(
         com.google.devtools.clouddebugger.v2.RegisterDebuggeeRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRegisterDebuggeeMethod(), getCallOptions()), request);
     }
 
@@ -531,7 +518,7 @@ public final class Controller2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.devtools.clouddebugger.v2.ListActiveBreakpointsResponse> listActiveBreakpoints(
         com.google.devtools.clouddebugger.v2.ListActiveBreakpointsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListActiveBreakpointsMethod(), getCallOptions()), request);
     }
 
@@ -548,7 +535,7 @@ public final class Controller2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.devtools.clouddebugger.v2.UpdateActiveBreakpointResponse> updateActiveBreakpoint(
         com.google.devtools.clouddebugger.v2.UpdateActiveBreakpointRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateActiveBreakpointMethod(), getCallOptions()), request);
     }
   }

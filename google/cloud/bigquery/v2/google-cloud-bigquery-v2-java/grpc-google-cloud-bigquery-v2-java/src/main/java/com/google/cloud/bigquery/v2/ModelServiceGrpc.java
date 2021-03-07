@@ -1,19 +1,6 @@
 package com.google.cloud.bigquery.v2;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  */
@@ -206,7 +193,7 @@ public final class ModelServiceGrpc {
      */
     public void getModel(com.google.cloud.bigquery.v2.ModelProto.GetModelRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.v2.ModelProto.Model> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetModelMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetModelMethod(), responseObserver);
     }
 
     /**
@@ -217,7 +204,7 @@ public final class ModelServiceGrpc {
      */
     public void listModels(com.google.cloud.bigquery.v2.ModelProto.ListModelsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.v2.ModelProto.ListModelsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListModelsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListModelsMethod(), responseObserver);
     }
 
     /**
@@ -227,7 +214,7 @@ public final class ModelServiceGrpc {
      */
     public void patchModel(com.google.cloud.bigquery.v2.ModelProto.PatchModelRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.v2.ModelProto.Model> responseObserver) {
-      asyncUnimplementedUnaryCall(getPatchModelMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPatchModelMethod(), responseObserver);
     }
 
     /**
@@ -237,35 +224,35 @@ public final class ModelServiceGrpc {
      */
     public void deleteModel(com.google.cloud.bigquery.v2.ModelProto.DeleteModelRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteModelMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteModelMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetModelMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.bigquery.v2.ModelProto.GetModelRequest,
                 com.google.cloud.bigquery.v2.ModelProto.Model>(
                   this, METHODID_GET_MODEL)))
           .addMethod(
             getListModelsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.bigquery.v2.ModelProto.ListModelsRequest,
                 com.google.cloud.bigquery.v2.ModelProto.ListModelsResponse>(
                   this, METHODID_LIST_MODELS)))
           .addMethod(
             getPatchModelMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.bigquery.v2.ModelProto.PatchModelRequest,
                 com.google.cloud.bigquery.v2.ModelProto.Model>(
                   this, METHODID_PATCH_MODEL)))
           .addMethod(
             getDeleteModelMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.bigquery.v2.ModelProto.DeleteModelRequest,
                 com.google.protobuf.Empty>(
@@ -295,7 +282,7 @@ public final class ModelServiceGrpc {
      */
     public void getModel(com.google.cloud.bigquery.v2.ModelProto.GetModelRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.v2.ModelProto.Model> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetModelMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -307,7 +294,7 @@ public final class ModelServiceGrpc {
      */
     public void listModels(com.google.cloud.bigquery.v2.ModelProto.ListModelsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.v2.ModelProto.ListModelsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListModelsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -318,7 +305,7 @@ public final class ModelServiceGrpc {
      */
     public void patchModel(com.google.cloud.bigquery.v2.ModelProto.PatchModelRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.v2.ModelProto.Model> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPatchModelMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -329,7 +316,7 @@ public final class ModelServiceGrpc {
      */
     public void deleteModel(com.google.cloud.bigquery.v2.ModelProto.DeleteModelRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteModelMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -354,7 +341,7 @@ public final class ModelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.v2.ModelProto.Model getModel(com.google.cloud.bigquery.v2.ModelProto.GetModelRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetModelMethod(), getCallOptions(), request);
     }
 
@@ -365,7 +352,7 @@ public final class ModelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.v2.ModelProto.ListModelsResponse listModels(com.google.cloud.bigquery.v2.ModelProto.ListModelsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListModelsMethod(), getCallOptions(), request);
     }
 
@@ -375,7 +362,7 @@ public final class ModelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.v2.ModelProto.Model patchModel(com.google.cloud.bigquery.v2.ModelProto.PatchModelRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPatchModelMethod(), getCallOptions(), request);
     }
 
@@ -385,7 +372,7 @@ public final class ModelServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteModel(com.google.cloud.bigquery.v2.ModelProto.DeleteModelRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteModelMethod(), getCallOptions(), request);
     }
   }
@@ -411,7 +398,7 @@ public final class ModelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.bigquery.v2.ModelProto.Model> getModel(
         com.google.cloud.bigquery.v2.ModelProto.GetModelRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetModelMethod(), getCallOptions()), request);
     }
 
@@ -423,7 +410,7 @@ public final class ModelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.bigquery.v2.ModelProto.ListModelsResponse> listModels(
         com.google.cloud.bigquery.v2.ModelProto.ListModelsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListModelsMethod(), getCallOptions()), request);
     }
 
@@ -434,7 +421,7 @@ public final class ModelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.bigquery.v2.ModelProto.Model> patchModel(
         com.google.cloud.bigquery.v2.ModelProto.PatchModelRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPatchModelMethod(), getCallOptions()), request);
     }
 
@@ -445,7 +432,7 @@ public final class ModelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteModel(
         com.google.cloud.bigquery.v2.ModelProto.DeleteModelRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteModelMethod(), getCallOptions()), request);
     }
   }

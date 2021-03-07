@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v6.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -150,7 +137,7 @@ public final class CustomAudienceServiceGrpc {
      */
     public void getCustomAudience(com.google.ads.googleads.v6.services.GetCustomAudienceRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.resources.CustomAudience> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetCustomAudienceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCustomAudienceMethod(), responseObserver);
     }
 
     /**
@@ -160,21 +147,21 @@ public final class CustomAudienceServiceGrpc {
      */
     public void mutateCustomAudiences(com.google.ads.googleads.v6.services.MutateCustomAudiencesRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.MutateCustomAudiencesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getMutateCustomAudiencesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMutateCustomAudiencesMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetCustomAudienceMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.GetCustomAudienceRequest,
                 com.google.ads.googleads.v6.resources.CustomAudience>(
                   this, METHODID_GET_CUSTOM_AUDIENCE)))
           .addMethod(
             getMutateCustomAudiencesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.MutateCustomAudiencesRequest,
                 com.google.ads.googleads.v6.services.MutateCustomAudiencesResponse>(
@@ -207,7 +194,7 @@ public final class CustomAudienceServiceGrpc {
      */
     public void getCustomAudience(com.google.ads.googleads.v6.services.GetCustomAudienceRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.resources.CustomAudience> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetCustomAudienceMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -218,7 +205,7 @@ public final class CustomAudienceServiceGrpc {
      */
     public void mutateCustomAudiences(com.google.ads.googleads.v6.services.MutateCustomAudiencesRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.MutateCustomAudiencesResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMutateCustomAudiencesMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -246,7 +233,7 @@ public final class CustomAudienceServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.resources.CustomAudience getCustomAudience(com.google.ads.googleads.v6.services.GetCustomAudienceRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetCustomAudienceMethod(), getCallOptions(), request);
     }
 
@@ -256,7 +243,7 @@ public final class CustomAudienceServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.services.MutateCustomAudiencesResponse mutateCustomAudiences(com.google.ads.googleads.v6.services.MutateCustomAudiencesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMutateCustomAudiencesMethod(), getCallOptions(), request);
     }
   }
@@ -285,7 +272,7 @@ public final class CustomAudienceServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.resources.CustomAudience> getCustomAudience(
         com.google.ads.googleads.v6.services.GetCustomAudienceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetCustomAudienceMethod(), getCallOptions()), request);
     }
 
@@ -296,7 +283,7 @@ public final class CustomAudienceServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.services.MutateCustomAudiencesResponse> mutateCustomAudiences(
         com.google.ads.googleads.v6.services.MutateCustomAudiencesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMutateCustomAudiencesMethod(), getCallOptions()), request);
     }
   }

@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v4.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -150,7 +137,7 @@ public final class GoogleAdsFieldServiceGrpc {
      */
     public void getGoogleAdsField(com.google.ads.googleads.v4.services.GetGoogleAdsFieldRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.resources.GoogleAdsField> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetGoogleAdsFieldMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetGoogleAdsFieldMethod(), responseObserver);
     }
 
     /**
@@ -160,21 +147,21 @@ public final class GoogleAdsFieldServiceGrpc {
      */
     public void searchGoogleAdsFields(com.google.ads.googleads.v4.services.SearchGoogleAdsFieldsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.services.SearchGoogleAdsFieldsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getSearchGoogleAdsFieldsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSearchGoogleAdsFieldsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetGoogleAdsFieldMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v4.services.GetGoogleAdsFieldRequest,
                 com.google.ads.googleads.v4.resources.GoogleAdsField>(
                   this, METHODID_GET_GOOGLE_ADS_FIELD)))
           .addMethod(
             getSearchGoogleAdsFieldsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v4.services.SearchGoogleAdsFieldsRequest,
                 com.google.ads.googleads.v4.services.SearchGoogleAdsFieldsResponse>(
@@ -207,7 +194,7 @@ public final class GoogleAdsFieldServiceGrpc {
      */
     public void getGoogleAdsField(com.google.ads.googleads.v4.services.GetGoogleAdsFieldRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.resources.GoogleAdsField> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetGoogleAdsFieldMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -218,7 +205,7 @@ public final class GoogleAdsFieldServiceGrpc {
      */
     public void searchGoogleAdsFields(com.google.ads.googleads.v4.services.SearchGoogleAdsFieldsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.services.SearchGoogleAdsFieldsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSearchGoogleAdsFieldsMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -246,7 +233,7 @@ public final class GoogleAdsFieldServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v4.resources.GoogleAdsField getGoogleAdsField(com.google.ads.googleads.v4.services.GetGoogleAdsFieldRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetGoogleAdsFieldMethod(), getCallOptions(), request);
     }
 
@@ -256,7 +243,7 @@ public final class GoogleAdsFieldServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v4.services.SearchGoogleAdsFieldsResponse searchGoogleAdsFields(com.google.ads.googleads.v4.services.SearchGoogleAdsFieldsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSearchGoogleAdsFieldsMethod(), getCallOptions(), request);
     }
   }
@@ -285,7 +272,7 @@ public final class GoogleAdsFieldServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v4.resources.GoogleAdsField> getGoogleAdsField(
         com.google.ads.googleads.v4.services.GetGoogleAdsFieldRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetGoogleAdsFieldMethod(), getCallOptions()), request);
     }
 
@@ -296,7 +283,7 @@ public final class GoogleAdsFieldServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v4.services.SearchGoogleAdsFieldsResponse> searchGoogleAdsFields(
         com.google.ads.googleads.v4.services.SearchGoogleAdsFieldsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSearchGoogleAdsFieldsMethod(), getCallOptions()), request);
     }
   }

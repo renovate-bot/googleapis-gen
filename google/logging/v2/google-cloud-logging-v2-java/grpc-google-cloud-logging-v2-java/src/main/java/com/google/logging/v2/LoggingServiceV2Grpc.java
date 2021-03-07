@@ -1,19 +1,6 @@
 package com.google.logging.v2;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -277,7 +264,7 @@ public final class LoggingServiceV2Grpc {
      */
     public void deleteLog(com.google.logging.v2.DeleteLogRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteLogMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteLogMethod(), responseObserver);
     }
 
     /**
@@ -293,7 +280,7 @@ public final class LoggingServiceV2Grpc {
      */
     public void writeLogEntries(com.google.logging.v2.WriteLogEntriesRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.WriteLogEntriesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getWriteLogEntriesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getWriteLogEntriesMethod(), responseObserver);
     }
 
     /**
@@ -306,7 +293,7 @@ public final class LoggingServiceV2Grpc {
      */
     public void listLogEntries(com.google.logging.v2.ListLogEntriesRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.ListLogEntriesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListLogEntriesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListLogEntriesMethod(), responseObserver);
     }
 
     /**
@@ -316,7 +303,7 @@ public final class LoggingServiceV2Grpc {
      */
     public void listMonitoredResourceDescriptors(com.google.logging.v2.ListMonitoredResourceDescriptorsRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.ListMonitoredResourceDescriptorsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListMonitoredResourceDescriptorsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListMonitoredResourceDescriptorsMethod(), responseObserver);
     }
 
     /**
@@ -327,7 +314,7 @@ public final class LoggingServiceV2Grpc {
      */
     public void listLogs(com.google.logging.v2.ListLogsRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.ListLogsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListLogsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListLogsMethod(), responseObserver);
     }
 
     /**
@@ -338,49 +325,49 @@ public final class LoggingServiceV2Grpc {
      */
     public io.grpc.stub.StreamObserver<com.google.logging.v2.TailLogEntriesRequest> tailLogEntries(
         io.grpc.stub.StreamObserver<com.google.logging.v2.TailLogEntriesResponse> responseObserver) {
-      return asyncUnimplementedStreamingCall(getTailLogEntriesMethod(), responseObserver);
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getTailLogEntriesMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getDeleteLogMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.logging.v2.DeleteLogRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_LOG)))
           .addMethod(
             getWriteLogEntriesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.logging.v2.WriteLogEntriesRequest,
                 com.google.logging.v2.WriteLogEntriesResponse>(
                   this, METHODID_WRITE_LOG_ENTRIES)))
           .addMethod(
             getListLogEntriesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.logging.v2.ListLogEntriesRequest,
                 com.google.logging.v2.ListLogEntriesResponse>(
                   this, METHODID_LIST_LOG_ENTRIES)))
           .addMethod(
             getListMonitoredResourceDescriptorsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.logging.v2.ListMonitoredResourceDescriptorsRequest,
                 com.google.logging.v2.ListMonitoredResourceDescriptorsResponse>(
                   this, METHODID_LIST_MONITORED_RESOURCE_DESCRIPTORS)))
           .addMethod(
             getListLogsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.logging.v2.ListLogsRequest,
                 com.google.logging.v2.ListLogsResponse>(
                   this, METHODID_LIST_LOGS)))
           .addMethod(
             getTailLogEntriesMethod(),
-            asyncBidiStreamingCall(
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
               new MethodHandlers<
                 com.google.logging.v2.TailLogEntriesRequest,
                 com.google.logging.v2.TailLogEntriesResponse>(
@@ -416,7 +403,7 @@ public final class LoggingServiceV2Grpc {
      */
     public void deleteLog(com.google.logging.v2.DeleteLogRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteLogMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -433,7 +420,7 @@ public final class LoggingServiceV2Grpc {
      */
     public void writeLogEntries(com.google.logging.v2.WriteLogEntriesRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.WriteLogEntriesResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getWriteLogEntriesMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -447,7 +434,7 @@ public final class LoggingServiceV2Grpc {
      */
     public void listLogEntries(com.google.logging.v2.ListLogEntriesRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.ListLogEntriesResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListLogEntriesMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -458,7 +445,7 @@ public final class LoggingServiceV2Grpc {
      */
     public void listMonitoredResourceDescriptors(com.google.logging.v2.ListMonitoredResourceDescriptorsRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.ListMonitoredResourceDescriptorsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListMonitoredResourceDescriptorsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -470,7 +457,7 @@ public final class LoggingServiceV2Grpc {
      */
     public void listLogs(com.google.logging.v2.ListLogsRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.ListLogsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListLogsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -482,7 +469,7 @@ public final class LoggingServiceV2Grpc {
      */
     public io.grpc.stub.StreamObserver<com.google.logging.v2.TailLogEntriesRequest> tailLogEntries(
         io.grpc.stub.StreamObserver<com.google.logging.v2.TailLogEntriesResponse> responseObserver) {
-      return asyncBidiStreamingCall(
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
           getChannel().newCall(getTailLogEntriesMethod(), getCallOptions()), responseObserver);
     }
   }
@@ -513,7 +500,7 @@ public final class LoggingServiceV2Grpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteLog(com.google.logging.v2.DeleteLogRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteLogMethod(), getCallOptions(), request);
     }
 
@@ -529,7 +516,7 @@ public final class LoggingServiceV2Grpc {
      * </pre>
      */
     public com.google.logging.v2.WriteLogEntriesResponse writeLogEntries(com.google.logging.v2.WriteLogEntriesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getWriteLogEntriesMethod(), getCallOptions(), request);
     }
 
@@ -542,7 +529,7 @@ public final class LoggingServiceV2Grpc {
      * </pre>
      */
     public com.google.logging.v2.ListLogEntriesResponse listLogEntries(com.google.logging.v2.ListLogEntriesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListLogEntriesMethod(), getCallOptions(), request);
     }
 
@@ -552,7 +539,7 @@ public final class LoggingServiceV2Grpc {
      * </pre>
      */
     public com.google.logging.v2.ListMonitoredResourceDescriptorsResponse listMonitoredResourceDescriptors(com.google.logging.v2.ListMonitoredResourceDescriptorsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListMonitoredResourceDescriptorsMethod(), getCallOptions(), request);
     }
 
@@ -563,7 +550,7 @@ public final class LoggingServiceV2Grpc {
      * </pre>
      */
     public com.google.logging.v2.ListLogsResponse listLogs(com.google.logging.v2.ListLogsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListLogsMethod(), getCallOptions(), request);
     }
   }
@@ -595,7 +582,7 @@ public final class LoggingServiceV2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteLog(
         com.google.logging.v2.DeleteLogRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteLogMethod(), getCallOptions()), request);
     }
 
@@ -612,7 +599,7 @@ public final class LoggingServiceV2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.WriteLogEntriesResponse> writeLogEntries(
         com.google.logging.v2.WriteLogEntriesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getWriteLogEntriesMethod(), getCallOptions()), request);
     }
 
@@ -626,7 +613,7 @@ public final class LoggingServiceV2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.ListLogEntriesResponse> listLogEntries(
         com.google.logging.v2.ListLogEntriesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListLogEntriesMethod(), getCallOptions()), request);
     }
 
@@ -637,7 +624,7 @@ public final class LoggingServiceV2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.ListMonitoredResourceDescriptorsResponse> listMonitoredResourceDescriptors(
         com.google.logging.v2.ListMonitoredResourceDescriptorsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListMonitoredResourceDescriptorsMethod(), getCallOptions()), request);
     }
 
@@ -649,7 +636,7 @@ public final class LoggingServiceV2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.ListLogsResponse> listLogs(
         com.google.logging.v2.ListLogsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListLogsMethod(), getCallOptions()), request);
     }
   }

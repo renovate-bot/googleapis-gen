@@ -1,19 +1,6 @@
 package com.google.devtools.remoteworkers.v1test2;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -196,7 +183,7 @@ public final class BotsGrpc {
      */
     public void createBotSession(com.google.devtools.remoteworkers.v1test2.CreateBotSessionRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.remoteworkers.v1test2.BotSession> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateBotSessionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateBotSessionMethod(), responseObserver);
     }
 
     /**
@@ -208,21 +195,21 @@ public final class BotsGrpc {
      */
     public void updateBotSession(com.google.devtools.remoteworkers.v1test2.UpdateBotSessionRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.remoteworkers.v1test2.BotSession> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateBotSessionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateBotSessionMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getCreateBotSessionMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.devtools.remoteworkers.v1test2.CreateBotSessionRequest,
                 com.google.devtools.remoteworkers.v1test2.BotSession>(
                   this, METHODID_CREATE_BOT_SESSION)))
           .addMethod(
             getUpdateBotSessionMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.devtools.remoteworkers.v1test2.UpdateBotSessionRequest,
                 com.google.devtools.remoteworkers.v1test2.BotSession>(
@@ -279,7 +266,7 @@ public final class BotsGrpc {
      */
     public void createBotSession(com.google.devtools.remoteworkers.v1test2.CreateBotSessionRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.remoteworkers.v1test2.BotSession> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateBotSessionMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -292,7 +279,7 @@ public final class BotsGrpc {
      */
     public void updateBotSession(com.google.devtools.remoteworkers.v1test2.UpdateBotSessionRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.remoteworkers.v1test2.BotSession> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateBotSessionMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -344,7 +331,7 @@ public final class BotsGrpc {
      * </pre>
      */
     public com.google.devtools.remoteworkers.v1test2.BotSession createBotSession(com.google.devtools.remoteworkers.v1test2.CreateBotSessionRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateBotSessionMethod(), getCallOptions(), request);
     }
 
@@ -356,7 +343,7 @@ public final class BotsGrpc {
      * </pre>
      */
     public com.google.devtools.remoteworkers.v1test2.BotSession updateBotSession(com.google.devtools.remoteworkers.v1test2.UpdateBotSessionRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateBotSessionMethod(), getCallOptions(), request);
     }
   }
@@ -409,7 +396,7 @@ public final class BotsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.devtools.remoteworkers.v1test2.BotSession> createBotSession(
         com.google.devtools.remoteworkers.v1test2.CreateBotSessionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateBotSessionMethod(), getCallOptions()), request);
     }
 
@@ -422,7 +409,7 @@ public final class BotsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.devtools.remoteworkers.v1test2.BotSession> updateBotSession(
         com.google.devtools.remoteworkers.v1test2.UpdateBotSessionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateBotSessionMethod(), getCallOptions()), request);
     }
   }

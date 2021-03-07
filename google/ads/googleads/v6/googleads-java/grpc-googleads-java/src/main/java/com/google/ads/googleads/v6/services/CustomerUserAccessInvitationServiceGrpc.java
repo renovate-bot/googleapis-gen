@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v6.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -152,7 +139,7 @@ public final class CustomerUserAccessInvitationServiceGrpc {
      */
     public void getCustomerUserAccessInvitation(com.google.ads.googleads.v6.services.GetCustomerUserAccessInvitationRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.resources.CustomerUserAccessInvitation> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetCustomerUserAccessInvitationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCustomerUserAccessInvitationMethod(), responseObserver);
     }
 
     /**
@@ -162,21 +149,21 @@ public final class CustomerUserAccessInvitationServiceGrpc {
      */
     public void mutateCustomerUserAccessInvitation(com.google.ads.googleads.v6.services.MutateCustomerUserAccessInvitationRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.MutateCustomerUserAccessInvitationResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getMutateCustomerUserAccessInvitationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMutateCustomerUserAccessInvitationMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetCustomerUserAccessInvitationMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.GetCustomerUserAccessInvitationRequest,
                 com.google.ads.googleads.v6.resources.CustomerUserAccessInvitation>(
                   this, METHODID_GET_CUSTOMER_USER_ACCESS_INVITATION)))
           .addMethod(
             getMutateCustomerUserAccessInvitationMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.MutateCustomerUserAccessInvitationRequest,
                 com.google.ads.googleads.v6.services.MutateCustomerUserAccessInvitationResponse>(
@@ -210,7 +197,7 @@ public final class CustomerUserAccessInvitationServiceGrpc {
      */
     public void getCustomerUserAccessInvitation(com.google.ads.googleads.v6.services.GetCustomerUserAccessInvitationRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.resources.CustomerUserAccessInvitation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetCustomerUserAccessInvitationMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -221,7 +208,7 @@ public final class CustomerUserAccessInvitationServiceGrpc {
      */
     public void mutateCustomerUserAccessInvitation(com.google.ads.googleads.v6.services.MutateCustomerUserAccessInvitationRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.MutateCustomerUserAccessInvitationResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMutateCustomerUserAccessInvitationMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -250,7 +237,7 @@ public final class CustomerUserAccessInvitationServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.resources.CustomerUserAccessInvitation getCustomerUserAccessInvitation(com.google.ads.googleads.v6.services.GetCustomerUserAccessInvitationRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetCustomerUserAccessInvitationMethod(), getCallOptions(), request);
     }
 
@@ -260,7 +247,7 @@ public final class CustomerUserAccessInvitationServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.services.MutateCustomerUserAccessInvitationResponse mutateCustomerUserAccessInvitation(com.google.ads.googleads.v6.services.MutateCustomerUserAccessInvitationRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMutateCustomerUserAccessInvitationMethod(), getCallOptions(), request);
     }
   }
@@ -290,7 +277,7 @@ public final class CustomerUserAccessInvitationServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.resources.CustomerUserAccessInvitation> getCustomerUserAccessInvitation(
         com.google.ads.googleads.v6.services.GetCustomerUserAccessInvitationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetCustomerUserAccessInvitationMethod(), getCallOptions()), request);
     }
 
@@ -301,7 +288,7 @@ public final class CustomerUserAccessInvitationServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.services.MutateCustomerUserAccessInvitationResponse> mutateCustomerUserAccessInvitation(
         com.google.ads.googleads.v6.services.MutateCustomerUserAccessInvitationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMutateCustomerUserAccessInvitationMethod(), getCallOptions()), request);
     }
   }

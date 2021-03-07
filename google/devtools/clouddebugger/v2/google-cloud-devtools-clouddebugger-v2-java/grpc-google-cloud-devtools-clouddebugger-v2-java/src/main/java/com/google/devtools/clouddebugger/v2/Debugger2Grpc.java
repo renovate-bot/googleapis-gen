@@ -1,19 +1,6 @@
 package com.google.devtools.clouddebugger.v2;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -261,7 +248,7 @@ public final class Debugger2Grpc {
      */
     public void setBreakpoint(com.google.devtools.clouddebugger.v2.SetBreakpointRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.clouddebugger.v2.SetBreakpointResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getSetBreakpointMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSetBreakpointMethod(), responseObserver);
     }
 
     /**
@@ -271,7 +258,7 @@ public final class Debugger2Grpc {
      */
     public void getBreakpoint(com.google.devtools.clouddebugger.v2.GetBreakpointRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.clouddebugger.v2.GetBreakpointResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetBreakpointMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetBreakpointMethod(), responseObserver);
     }
 
     /**
@@ -281,7 +268,7 @@ public final class Debugger2Grpc {
      */
     public void deleteBreakpoint(com.google.devtools.clouddebugger.v2.DeleteBreakpointRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteBreakpointMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteBreakpointMethod(), responseObserver);
     }
 
     /**
@@ -291,7 +278,7 @@ public final class Debugger2Grpc {
      */
     public void listBreakpoints(com.google.devtools.clouddebugger.v2.ListBreakpointsRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.clouddebugger.v2.ListBreakpointsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListBreakpointsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListBreakpointsMethod(), responseObserver);
     }
 
     /**
@@ -301,42 +288,42 @@ public final class Debugger2Grpc {
      */
     public void listDebuggees(com.google.devtools.clouddebugger.v2.ListDebuggeesRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.clouddebugger.v2.ListDebuggeesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListDebuggeesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListDebuggeesMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getSetBreakpointMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.devtools.clouddebugger.v2.SetBreakpointRequest,
                 com.google.devtools.clouddebugger.v2.SetBreakpointResponse>(
                   this, METHODID_SET_BREAKPOINT)))
           .addMethod(
             getGetBreakpointMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.devtools.clouddebugger.v2.GetBreakpointRequest,
                 com.google.devtools.clouddebugger.v2.GetBreakpointResponse>(
                   this, METHODID_GET_BREAKPOINT)))
           .addMethod(
             getDeleteBreakpointMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.devtools.clouddebugger.v2.DeleteBreakpointRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_BREAKPOINT)))
           .addMethod(
             getListBreakpointsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.devtools.clouddebugger.v2.ListBreakpointsRequest,
                 com.google.devtools.clouddebugger.v2.ListBreakpointsResponse>(
                   this, METHODID_LIST_BREAKPOINTS)))
           .addMethod(
             getListDebuggeesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.devtools.clouddebugger.v2.ListDebuggeesRequest,
                 com.google.devtools.clouddebugger.v2.ListDebuggeesResponse>(
@@ -378,7 +365,7 @@ public final class Debugger2Grpc {
      */
     public void setBreakpoint(com.google.devtools.clouddebugger.v2.SetBreakpointRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.clouddebugger.v2.SetBreakpointResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSetBreakpointMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -389,7 +376,7 @@ public final class Debugger2Grpc {
      */
     public void getBreakpoint(com.google.devtools.clouddebugger.v2.GetBreakpointRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.clouddebugger.v2.GetBreakpointResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetBreakpointMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -400,7 +387,7 @@ public final class Debugger2Grpc {
      */
     public void deleteBreakpoint(com.google.devtools.clouddebugger.v2.DeleteBreakpointRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteBreakpointMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -411,7 +398,7 @@ public final class Debugger2Grpc {
      */
     public void listBreakpoints(com.google.devtools.clouddebugger.v2.ListBreakpointsRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.clouddebugger.v2.ListBreakpointsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListBreakpointsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -422,7 +409,7 @@ public final class Debugger2Grpc {
      */
     public void listDebuggees(com.google.devtools.clouddebugger.v2.ListDebuggeesRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.clouddebugger.v2.ListDebuggeesResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListDebuggeesMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -459,7 +446,7 @@ public final class Debugger2Grpc {
      * </pre>
      */
     public com.google.devtools.clouddebugger.v2.SetBreakpointResponse setBreakpoint(com.google.devtools.clouddebugger.v2.SetBreakpointRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSetBreakpointMethod(), getCallOptions(), request);
     }
 
@@ -469,7 +456,7 @@ public final class Debugger2Grpc {
      * </pre>
      */
     public com.google.devtools.clouddebugger.v2.GetBreakpointResponse getBreakpoint(com.google.devtools.clouddebugger.v2.GetBreakpointRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetBreakpointMethod(), getCallOptions(), request);
     }
 
@@ -479,7 +466,7 @@ public final class Debugger2Grpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteBreakpoint(com.google.devtools.clouddebugger.v2.DeleteBreakpointRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteBreakpointMethod(), getCallOptions(), request);
     }
 
@@ -489,7 +476,7 @@ public final class Debugger2Grpc {
      * </pre>
      */
     public com.google.devtools.clouddebugger.v2.ListBreakpointsResponse listBreakpoints(com.google.devtools.clouddebugger.v2.ListBreakpointsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListBreakpointsMethod(), getCallOptions(), request);
     }
 
@@ -499,7 +486,7 @@ public final class Debugger2Grpc {
      * </pre>
      */
     public com.google.devtools.clouddebugger.v2.ListDebuggeesResponse listDebuggees(com.google.devtools.clouddebugger.v2.ListDebuggeesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListDebuggeesMethod(), getCallOptions(), request);
     }
   }
@@ -537,7 +524,7 @@ public final class Debugger2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.devtools.clouddebugger.v2.SetBreakpointResponse> setBreakpoint(
         com.google.devtools.clouddebugger.v2.SetBreakpointRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSetBreakpointMethod(), getCallOptions()), request);
     }
 
@@ -548,7 +535,7 @@ public final class Debugger2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.devtools.clouddebugger.v2.GetBreakpointResponse> getBreakpoint(
         com.google.devtools.clouddebugger.v2.GetBreakpointRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetBreakpointMethod(), getCallOptions()), request);
     }
 
@@ -559,7 +546,7 @@ public final class Debugger2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteBreakpoint(
         com.google.devtools.clouddebugger.v2.DeleteBreakpointRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteBreakpointMethod(), getCallOptions()), request);
     }
 
@@ -570,7 +557,7 @@ public final class Debugger2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.devtools.clouddebugger.v2.ListBreakpointsResponse> listBreakpoints(
         com.google.devtools.clouddebugger.v2.ListBreakpointsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListBreakpointsMethod(), getCallOptions()), request);
     }
 
@@ -581,7 +568,7 @@ public final class Debugger2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.devtools.clouddebugger.v2.ListDebuggeesResponse> listDebuggees(
         com.google.devtools.clouddebugger.v2.ListDebuggeesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListDebuggeesMethod(), getCallOptions()), request);
     }
   }

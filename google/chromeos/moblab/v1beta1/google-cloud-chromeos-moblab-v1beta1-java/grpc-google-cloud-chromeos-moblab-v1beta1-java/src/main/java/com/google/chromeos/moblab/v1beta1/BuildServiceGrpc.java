@@ -1,19 +1,6 @@
 package com.google.chromeos.moblab.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -182,7 +169,7 @@ public final class BuildServiceGrpc {
      */
     public void listBuilds(com.google.chromeos.moblab.v1beta1.ListBuildsRequest request,
         io.grpc.stub.StreamObserver<com.google.chromeos.moblab.v1beta1.ListBuildsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListBuildsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListBuildsMethod(), responseObserver);
     }
 
     /**
@@ -193,7 +180,7 @@ public final class BuildServiceGrpc {
      */
     public void checkBuildStageStatus(com.google.chromeos.moblab.v1beta1.CheckBuildStageStatusRequest request,
         io.grpc.stub.StreamObserver<com.google.chromeos.moblab.v1beta1.CheckBuildStageStatusResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getCheckBuildStageStatusMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCheckBuildStageStatusMethod(), responseObserver);
     }
 
     /**
@@ -207,28 +194,28 @@ public final class BuildServiceGrpc {
      */
     public void stageBuild(com.google.chromeos.moblab.v1beta1.StageBuildRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getStageBuildMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStageBuildMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getListBuildsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.chromeos.moblab.v1beta1.ListBuildsRequest,
                 com.google.chromeos.moblab.v1beta1.ListBuildsResponse>(
                   this, METHODID_LIST_BUILDS)))
           .addMethod(
             getCheckBuildStageStatusMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.chromeos.moblab.v1beta1.CheckBuildStageStatusRequest,
                 com.google.chromeos.moblab.v1beta1.CheckBuildStageStatusResponse>(
                   this, METHODID_CHECK_BUILD_STAGE_STATUS)))
           .addMethod(
             getStageBuildMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.chromeos.moblab.v1beta1.StageBuildRequest,
                 com.google.longrunning.Operation>(
@@ -262,7 +249,7 @@ public final class BuildServiceGrpc {
      */
     public void listBuilds(com.google.chromeos.moblab.v1beta1.ListBuildsRequest request,
         io.grpc.stub.StreamObserver<com.google.chromeos.moblab.v1beta1.ListBuildsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListBuildsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -274,7 +261,7 @@ public final class BuildServiceGrpc {
      */
     public void checkBuildStageStatus(com.google.chromeos.moblab.v1beta1.CheckBuildStageStatusRequest request,
         io.grpc.stub.StreamObserver<com.google.chromeos.moblab.v1beta1.CheckBuildStageStatusResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCheckBuildStageStatusMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -289,7 +276,7 @@ public final class BuildServiceGrpc {
      */
     public void stageBuild(com.google.chromeos.moblab.v1beta1.StageBuildRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getStageBuildMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -318,7 +305,7 @@ public final class BuildServiceGrpc {
      * </pre>
      */
     public com.google.chromeos.moblab.v1beta1.ListBuildsResponse listBuilds(com.google.chromeos.moblab.v1beta1.ListBuildsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListBuildsMethod(), getCallOptions(), request);
     }
 
@@ -329,7 +316,7 @@ public final class BuildServiceGrpc {
      * </pre>
      */
     public com.google.chromeos.moblab.v1beta1.CheckBuildStageStatusResponse checkBuildStageStatus(com.google.chromeos.moblab.v1beta1.CheckBuildStageStatusRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCheckBuildStageStatusMethod(), getCallOptions(), request);
     }
 
@@ -343,7 +330,7 @@ public final class BuildServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation stageBuild(com.google.chromeos.moblab.v1beta1.StageBuildRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getStageBuildMethod(), getCallOptions(), request);
     }
   }
@@ -373,7 +360,7 @@ public final class BuildServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.chromeos.moblab.v1beta1.ListBuildsResponse> listBuilds(
         com.google.chromeos.moblab.v1beta1.ListBuildsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListBuildsMethod(), getCallOptions()), request);
     }
 
@@ -385,7 +372,7 @@ public final class BuildServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.chromeos.moblab.v1beta1.CheckBuildStageStatusResponse> checkBuildStageStatus(
         com.google.chromeos.moblab.v1beta1.CheckBuildStageStatusRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCheckBuildStageStatusMethod(), getCallOptions()), request);
     }
 
@@ -400,7 +387,7 @@ public final class BuildServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> stageBuild(
         com.google.chromeos.moblab.v1beta1.StageBuildRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getStageBuildMethod(), getCallOptions()), request);
     }
   }

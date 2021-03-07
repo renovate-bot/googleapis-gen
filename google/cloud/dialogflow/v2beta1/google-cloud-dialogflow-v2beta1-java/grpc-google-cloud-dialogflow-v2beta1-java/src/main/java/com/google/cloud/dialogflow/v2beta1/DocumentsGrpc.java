@@ -1,19 +1,6 @@
 package com.google.cloud.dialogflow.v2beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -307,7 +294,7 @@ public final class DocumentsGrpc {
      */
     public void listDocuments(com.google.cloud.dialogflow.v2beta1.ListDocumentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListDocumentsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListDocumentsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListDocumentsMethod(), responseObserver);
     }
 
     /**
@@ -319,7 +306,7 @@ public final class DocumentsGrpc {
      */
     public void getDocument(com.google.cloud.dialogflow.v2beta1.GetDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Document> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetDocumentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetDocumentMethod(), responseObserver);
     }
 
     /**
@@ -331,7 +318,7 @@ public final class DocumentsGrpc {
      */
     public void createDocument(com.google.cloud.dialogflow.v2beta1.CreateDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateDocumentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateDocumentMethod(), responseObserver);
     }
 
     /**
@@ -341,7 +328,7 @@ public final class DocumentsGrpc {
      */
     public void importDocuments(com.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getImportDocumentsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getImportDocumentsMethod(), responseObserver);
     }
 
     /**
@@ -353,7 +340,7 @@ public final class DocumentsGrpc {
      */
     public void deleteDocument(com.google.cloud.dialogflow.v2beta1.DeleteDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteDocumentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteDocumentMethod(), responseObserver);
     }
 
     /**
@@ -365,7 +352,7 @@ public final class DocumentsGrpc {
      */
     public void updateDocument(com.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateDocumentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateDocumentMethod(), responseObserver);
     }
 
     /**
@@ -383,56 +370,56 @@ public final class DocumentsGrpc {
      */
     public void reloadDocument(com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getReloadDocumentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getReloadDocumentMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getListDocumentsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.dialogflow.v2beta1.ListDocumentsRequest,
                 com.google.cloud.dialogflow.v2beta1.ListDocumentsResponse>(
                   this, METHODID_LIST_DOCUMENTS)))
           .addMethod(
             getGetDocumentMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.dialogflow.v2beta1.GetDocumentRequest,
                 com.google.cloud.dialogflow.v2beta1.Document>(
                   this, METHODID_GET_DOCUMENT)))
           .addMethod(
             getCreateDocumentMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.dialogflow.v2beta1.CreateDocumentRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_CREATE_DOCUMENT)))
           .addMethod(
             getImportDocumentsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_IMPORT_DOCUMENTS)))
           .addMethod(
             getDeleteDocumentMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.dialogflow.v2beta1.DeleteDocumentRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_DELETE_DOCUMENT)))
           .addMethod(
             getUpdateDocumentMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_UPDATE_DOCUMENT)))
           .addMethod(
             getReloadDocumentMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest,
                 com.google.longrunning.Operation>(
@@ -467,7 +454,7 @@ public final class DocumentsGrpc {
      */
     public void listDocuments(com.google.cloud.dialogflow.v2beta1.ListDocumentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListDocumentsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListDocumentsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -480,7 +467,7 @@ public final class DocumentsGrpc {
      */
     public void getDocument(com.google.cloud.dialogflow.v2beta1.GetDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Document> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetDocumentMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -493,7 +480,7 @@ public final class DocumentsGrpc {
      */
     public void createDocument(com.google.cloud.dialogflow.v2beta1.CreateDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateDocumentMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -504,7 +491,7 @@ public final class DocumentsGrpc {
      */
     public void importDocuments(com.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getImportDocumentsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -517,7 +504,7 @@ public final class DocumentsGrpc {
      */
     public void deleteDocument(com.google.cloud.dialogflow.v2beta1.DeleteDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteDocumentMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -530,7 +517,7 @@ public final class DocumentsGrpc {
      */
     public void updateDocument(com.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateDocumentMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -549,7 +536,7 @@ public final class DocumentsGrpc {
      */
     public void reloadDocument(com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getReloadDocumentMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -579,7 +566,7 @@ public final class DocumentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.ListDocumentsResponse listDocuments(com.google.cloud.dialogflow.v2beta1.ListDocumentsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListDocumentsMethod(), getCallOptions(), request);
     }
 
@@ -591,7 +578,7 @@ public final class DocumentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.Document getDocument(com.google.cloud.dialogflow.v2beta1.GetDocumentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetDocumentMethod(), getCallOptions(), request);
     }
 
@@ -603,7 +590,7 @@ public final class DocumentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createDocument(com.google.cloud.dialogflow.v2beta1.CreateDocumentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateDocumentMethod(), getCallOptions(), request);
     }
 
@@ -613,7 +600,7 @@ public final class DocumentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importDocuments(com.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getImportDocumentsMethod(), getCallOptions(), request);
     }
 
@@ -625,7 +612,7 @@ public final class DocumentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteDocument(com.google.cloud.dialogflow.v2beta1.DeleteDocumentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteDocumentMethod(), getCallOptions(), request);
     }
 
@@ -637,7 +624,7 @@ public final class DocumentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateDocument(com.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateDocumentMethod(), getCallOptions(), request);
     }
 
@@ -655,7 +642,7 @@ public final class DocumentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation reloadDocument(com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getReloadDocumentMethod(), getCallOptions(), request);
     }
   }
@@ -686,7 +673,7 @@ public final class DocumentsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.v2beta1.ListDocumentsResponse> listDocuments(
         com.google.cloud.dialogflow.v2beta1.ListDocumentsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListDocumentsMethod(), getCallOptions()), request);
     }
 
@@ -699,7 +686,7 @@ public final class DocumentsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.v2beta1.Document> getDocument(
         com.google.cloud.dialogflow.v2beta1.GetDocumentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetDocumentMethod(), getCallOptions()), request);
     }
 
@@ -712,7 +699,7 @@ public final class DocumentsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> createDocument(
         com.google.cloud.dialogflow.v2beta1.CreateDocumentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateDocumentMethod(), getCallOptions()), request);
     }
 
@@ -723,7 +710,7 @@ public final class DocumentsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> importDocuments(
         com.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getImportDocumentsMethod(), getCallOptions()), request);
     }
 
@@ -736,7 +723,7 @@ public final class DocumentsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> deleteDocument(
         com.google.cloud.dialogflow.v2beta1.DeleteDocumentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteDocumentMethod(), getCallOptions()), request);
     }
 
@@ -749,7 +736,7 @@ public final class DocumentsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> updateDocument(
         com.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateDocumentMethod(), getCallOptions()), request);
     }
 
@@ -768,7 +755,7 @@ public final class DocumentsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> reloadDocument(
         com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getReloadDocumentMethod(), getCallOptions()), request);
     }
   }

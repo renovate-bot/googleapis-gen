@@ -1,19 +1,6 @@
 package com.google.maps.playablelocations.v3;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -184,7 +171,7 @@ public final class PlayableLocationsGrpc {
      */
     public void samplePlayableLocations(com.google.maps.playablelocations.v3.SamplePlayableLocationsRequest request,
         io.grpc.stub.StreamObserver<com.google.maps.playablelocations.v3.SamplePlayableLocationsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getSamplePlayableLocationsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSamplePlayableLocationsMethod(), responseObserver);
     }
 
     /**
@@ -196,7 +183,7 @@ public final class PlayableLocationsGrpc {
      */
     public void logPlayerReports(com.google.maps.playablelocations.v3.LogPlayerReportsRequest request,
         io.grpc.stub.StreamObserver<com.google.maps.playablelocations.v3.LogPlayerReportsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getLogPlayerReportsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLogPlayerReportsMethod(), responseObserver);
     }
 
     /**
@@ -209,28 +196,28 @@ public final class PlayableLocationsGrpc {
      */
     public void logImpressions(com.google.maps.playablelocations.v3.LogImpressionsRequest request,
         io.grpc.stub.StreamObserver<com.google.maps.playablelocations.v3.LogImpressionsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getLogImpressionsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLogImpressionsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getSamplePlayableLocationsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.maps.playablelocations.v3.SamplePlayableLocationsRequest,
                 com.google.maps.playablelocations.v3.SamplePlayableLocationsResponse>(
                   this, METHODID_SAMPLE_PLAYABLE_LOCATIONS)))
           .addMethod(
             getLogPlayerReportsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.maps.playablelocations.v3.LogPlayerReportsRequest,
                 com.google.maps.playablelocations.v3.LogPlayerReportsResponse>(
                   this, METHODID_LOG_PLAYER_REPORTS)))
           .addMethod(
             getLogImpressionsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.maps.playablelocations.v3.LogImpressionsRequest,
                 com.google.maps.playablelocations.v3.LogImpressionsResponse>(
@@ -266,7 +253,7 @@ public final class PlayableLocationsGrpc {
      */
     public void samplePlayableLocations(com.google.maps.playablelocations.v3.SamplePlayableLocationsRequest request,
         io.grpc.stub.StreamObserver<com.google.maps.playablelocations.v3.SamplePlayableLocationsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSamplePlayableLocationsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -279,7 +266,7 @@ public final class PlayableLocationsGrpc {
      */
     public void logPlayerReports(com.google.maps.playablelocations.v3.LogPlayerReportsRequest request,
         io.grpc.stub.StreamObserver<com.google.maps.playablelocations.v3.LogPlayerReportsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getLogPlayerReportsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -293,7 +280,7 @@ public final class PlayableLocationsGrpc {
      */
     public void logImpressions(com.google.maps.playablelocations.v3.LogImpressionsRequest request,
         io.grpc.stub.StreamObserver<com.google.maps.playablelocations.v3.LogImpressionsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getLogImpressionsMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -324,7 +311,7 @@ public final class PlayableLocationsGrpc {
      * </pre>
      */
     public com.google.maps.playablelocations.v3.SamplePlayableLocationsResponse samplePlayableLocations(com.google.maps.playablelocations.v3.SamplePlayableLocationsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSamplePlayableLocationsMethod(), getCallOptions(), request);
     }
 
@@ -336,7 +323,7 @@ public final class PlayableLocationsGrpc {
      * </pre>
      */
     public com.google.maps.playablelocations.v3.LogPlayerReportsResponse logPlayerReports(com.google.maps.playablelocations.v3.LogPlayerReportsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getLogPlayerReportsMethod(), getCallOptions(), request);
     }
 
@@ -349,7 +336,7 @@ public final class PlayableLocationsGrpc {
      * </pre>
      */
     public com.google.maps.playablelocations.v3.LogImpressionsResponse logImpressions(com.google.maps.playablelocations.v3.LogImpressionsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getLogImpressionsMethod(), getCallOptions(), request);
     }
   }
@@ -381,7 +368,7 @@ public final class PlayableLocationsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.maps.playablelocations.v3.SamplePlayableLocationsResponse> samplePlayableLocations(
         com.google.maps.playablelocations.v3.SamplePlayableLocationsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSamplePlayableLocationsMethod(), getCallOptions()), request);
     }
 
@@ -394,7 +381,7 @@ public final class PlayableLocationsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.maps.playablelocations.v3.LogPlayerReportsResponse> logPlayerReports(
         com.google.maps.playablelocations.v3.LogPlayerReportsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getLogPlayerReportsMethod(), getCallOptions()), request);
     }
 
@@ -408,7 +395,7 @@ public final class PlayableLocationsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.maps.playablelocations.v3.LogImpressionsResponse> logImpressions(
         com.google.maps.playablelocations.v3.LogImpressionsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getLogImpressionsMethod(), getCallOptions()), request);
     }
   }

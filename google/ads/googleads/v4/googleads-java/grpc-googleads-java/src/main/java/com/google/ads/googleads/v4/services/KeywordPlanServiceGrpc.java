@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v4.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -243,7 +230,7 @@ public final class KeywordPlanServiceGrpc {
      */
     public void getKeywordPlan(com.google.ads.googleads.v4.services.GetKeywordPlanRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.resources.KeywordPlan> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetKeywordPlanMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetKeywordPlanMethod(), responseObserver);
     }
 
     /**
@@ -254,7 +241,7 @@ public final class KeywordPlanServiceGrpc {
      */
     public void mutateKeywordPlans(com.google.ads.googleads.v4.services.MutateKeywordPlansRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.services.MutateKeywordPlansResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getMutateKeywordPlansMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMutateKeywordPlansMethod(), responseObserver);
     }
 
     /**
@@ -268,7 +255,7 @@ public final class KeywordPlanServiceGrpc {
      */
     public void generateForecastCurve(com.google.ads.googleads.v4.services.GenerateForecastCurveRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.services.GenerateForecastCurveResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getGenerateForecastCurveMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGenerateForecastCurveMethod(), responseObserver);
     }
 
     /**
@@ -278,7 +265,7 @@ public final class KeywordPlanServiceGrpc {
      */
     public void generateForecastMetrics(com.google.ads.googleads.v4.services.GenerateForecastMetricsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.services.GenerateForecastMetricsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getGenerateForecastMetricsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGenerateForecastMetricsMethod(), responseObserver);
     }
 
     /**
@@ -288,42 +275,42 @@ public final class KeywordPlanServiceGrpc {
      */
     public void generateHistoricalMetrics(com.google.ads.googleads.v4.services.GenerateHistoricalMetricsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.services.GenerateHistoricalMetricsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getGenerateHistoricalMetricsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGenerateHistoricalMetricsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetKeywordPlanMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v4.services.GetKeywordPlanRequest,
                 com.google.ads.googleads.v4.resources.KeywordPlan>(
                   this, METHODID_GET_KEYWORD_PLAN)))
           .addMethod(
             getMutateKeywordPlansMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v4.services.MutateKeywordPlansRequest,
                 com.google.ads.googleads.v4.services.MutateKeywordPlansResponse>(
                   this, METHODID_MUTATE_KEYWORD_PLANS)))
           .addMethod(
             getGenerateForecastCurveMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v4.services.GenerateForecastCurveRequest,
                 com.google.ads.googleads.v4.services.GenerateForecastCurveResponse>(
                   this, METHODID_GENERATE_FORECAST_CURVE)))
           .addMethod(
             getGenerateForecastMetricsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v4.services.GenerateForecastMetricsRequest,
                 com.google.ads.googleads.v4.services.GenerateForecastMetricsResponse>(
                   this, METHODID_GENERATE_FORECAST_METRICS)))
           .addMethod(
             getGenerateHistoricalMetricsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v4.services.GenerateHistoricalMetricsRequest,
                 com.google.ads.googleads.v4.services.GenerateHistoricalMetricsResponse>(
@@ -356,7 +343,7 @@ public final class KeywordPlanServiceGrpc {
      */
     public void getKeywordPlan(com.google.ads.googleads.v4.services.GetKeywordPlanRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.resources.KeywordPlan> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetKeywordPlanMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -368,7 +355,7 @@ public final class KeywordPlanServiceGrpc {
      */
     public void mutateKeywordPlans(com.google.ads.googleads.v4.services.MutateKeywordPlansRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.services.MutateKeywordPlansResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMutateKeywordPlansMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -383,7 +370,7 @@ public final class KeywordPlanServiceGrpc {
      */
     public void generateForecastCurve(com.google.ads.googleads.v4.services.GenerateForecastCurveRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.services.GenerateForecastCurveResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGenerateForecastCurveMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -394,7 +381,7 @@ public final class KeywordPlanServiceGrpc {
      */
     public void generateForecastMetrics(com.google.ads.googleads.v4.services.GenerateForecastMetricsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.services.GenerateForecastMetricsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGenerateForecastMetricsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -405,7 +392,7 @@ public final class KeywordPlanServiceGrpc {
      */
     public void generateHistoricalMetrics(com.google.ads.googleads.v4.services.GenerateHistoricalMetricsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.services.GenerateHistoricalMetricsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGenerateHistoricalMetricsMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -433,7 +420,7 @@ public final class KeywordPlanServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v4.resources.KeywordPlan getKeywordPlan(com.google.ads.googleads.v4.services.GetKeywordPlanRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetKeywordPlanMethod(), getCallOptions(), request);
     }
 
@@ -444,7 +431,7 @@ public final class KeywordPlanServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v4.services.MutateKeywordPlansResponse mutateKeywordPlans(com.google.ads.googleads.v4.services.MutateKeywordPlansRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMutateKeywordPlansMethod(), getCallOptions(), request);
     }
 
@@ -458,7 +445,7 @@ public final class KeywordPlanServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v4.services.GenerateForecastCurveResponse generateForecastCurve(com.google.ads.googleads.v4.services.GenerateForecastCurveRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGenerateForecastCurveMethod(), getCallOptions(), request);
     }
 
@@ -468,7 +455,7 @@ public final class KeywordPlanServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v4.services.GenerateForecastMetricsResponse generateForecastMetrics(com.google.ads.googleads.v4.services.GenerateForecastMetricsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGenerateForecastMetricsMethod(), getCallOptions(), request);
     }
 
@@ -478,7 +465,7 @@ public final class KeywordPlanServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v4.services.GenerateHistoricalMetricsResponse generateHistoricalMetrics(com.google.ads.googleads.v4.services.GenerateHistoricalMetricsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGenerateHistoricalMetricsMethod(), getCallOptions(), request);
     }
   }
@@ -507,7 +494,7 @@ public final class KeywordPlanServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v4.resources.KeywordPlan> getKeywordPlan(
         com.google.ads.googleads.v4.services.GetKeywordPlanRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetKeywordPlanMethod(), getCallOptions()), request);
     }
 
@@ -519,7 +506,7 @@ public final class KeywordPlanServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v4.services.MutateKeywordPlansResponse> mutateKeywordPlans(
         com.google.ads.googleads.v4.services.MutateKeywordPlansRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMutateKeywordPlansMethod(), getCallOptions()), request);
     }
 
@@ -534,7 +521,7 @@ public final class KeywordPlanServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v4.services.GenerateForecastCurveResponse> generateForecastCurve(
         com.google.ads.googleads.v4.services.GenerateForecastCurveRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGenerateForecastCurveMethod(), getCallOptions()), request);
     }
 
@@ -545,7 +532,7 @@ public final class KeywordPlanServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v4.services.GenerateForecastMetricsResponse> generateForecastMetrics(
         com.google.ads.googleads.v4.services.GenerateForecastMetricsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGenerateForecastMetricsMethod(), getCallOptions()), request);
     }
 
@@ -556,7 +543,7 @@ public final class KeywordPlanServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v4.services.GenerateHistoricalMetricsResponse> generateHistoricalMetrics(
         com.google.ads.googleads.v4.services.GenerateHistoricalMetricsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGenerateHistoricalMetricsMethod(), getCallOptions()), request);
     }
   }

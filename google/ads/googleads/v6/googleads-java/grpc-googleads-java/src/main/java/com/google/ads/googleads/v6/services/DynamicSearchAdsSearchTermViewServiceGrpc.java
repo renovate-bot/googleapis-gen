@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v6.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -119,14 +106,14 @@ public final class DynamicSearchAdsSearchTermViewServiceGrpc {
      */
     public void getDynamicSearchAdsSearchTermView(com.google.ads.googleads.v6.services.GetDynamicSearchAdsSearchTermViewRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.resources.DynamicSearchAdsSearchTermView> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetDynamicSearchAdsSearchTermViewMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetDynamicSearchAdsSearchTermViewMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetDynamicSearchAdsSearchTermViewMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.GetDynamicSearchAdsSearchTermViewRequest,
                 com.google.ads.googleads.v6.resources.DynamicSearchAdsSearchTermView>(
@@ -159,7 +146,7 @@ public final class DynamicSearchAdsSearchTermViewServiceGrpc {
      */
     public void getDynamicSearchAdsSearchTermView(com.google.ads.googleads.v6.services.GetDynamicSearchAdsSearchTermViewRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.resources.DynamicSearchAdsSearchTermView> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetDynamicSearchAdsSearchTermViewMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -187,7 +174,7 @@ public final class DynamicSearchAdsSearchTermViewServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.resources.DynamicSearchAdsSearchTermView getDynamicSearchAdsSearchTermView(com.google.ads.googleads.v6.services.GetDynamicSearchAdsSearchTermViewRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetDynamicSearchAdsSearchTermViewMethod(), getCallOptions(), request);
     }
   }
@@ -216,7 +203,7 @@ public final class DynamicSearchAdsSearchTermViewServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.resources.DynamicSearchAdsSearchTermView> getDynamicSearchAdsSearchTermView(
         com.google.ads.googleads.v6.services.GetDynamicSearchAdsSearchTermViewRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetDynamicSearchAdsSearchTermViewMethod(), getCallOptions()), request);
     }
   }

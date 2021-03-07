@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v4.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -181,7 +168,7 @@ public final class RecommendationServiceGrpc {
      */
     public void getRecommendation(com.google.ads.googleads.v4.services.GetRecommendationRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.resources.Recommendation> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetRecommendationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetRecommendationMethod(), responseObserver);
     }
 
     /**
@@ -191,7 +178,7 @@ public final class RecommendationServiceGrpc {
      */
     public void applyRecommendation(com.google.ads.googleads.v4.services.ApplyRecommendationRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.services.ApplyRecommendationResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getApplyRecommendationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getApplyRecommendationMethod(), responseObserver);
     }
 
     /**
@@ -201,28 +188,28 @@ public final class RecommendationServiceGrpc {
      */
     public void dismissRecommendation(com.google.ads.googleads.v4.services.DismissRecommendationRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.services.DismissRecommendationResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getDismissRecommendationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDismissRecommendationMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetRecommendationMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v4.services.GetRecommendationRequest,
                 com.google.ads.googleads.v4.resources.Recommendation>(
                   this, METHODID_GET_RECOMMENDATION)))
           .addMethod(
             getApplyRecommendationMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v4.services.ApplyRecommendationRequest,
                 com.google.ads.googleads.v4.services.ApplyRecommendationResponse>(
                   this, METHODID_APPLY_RECOMMENDATION)))
           .addMethod(
             getDismissRecommendationMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v4.services.DismissRecommendationRequest,
                 com.google.ads.googleads.v4.services.DismissRecommendationResponse>(
@@ -255,7 +242,7 @@ public final class RecommendationServiceGrpc {
      */
     public void getRecommendation(com.google.ads.googleads.v4.services.GetRecommendationRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.resources.Recommendation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetRecommendationMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -266,7 +253,7 @@ public final class RecommendationServiceGrpc {
      */
     public void applyRecommendation(com.google.ads.googleads.v4.services.ApplyRecommendationRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.services.ApplyRecommendationResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getApplyRecommendationMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -277,7 +264,7 @@ public final class RecommendationServiceGrpc {
      */
     public void dismissRecommendation(com.google.ads.googleads.v4.services.DismissRecommendationRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.services.DismissRecommendationResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDismissRecommendationMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -305,7 +292,7 @@ public final class RecommendationServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v4.resources.Recommendation getRecommendation(com.google.ads.googleads.v4.services.GetRecommendationRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetRecommendationMethod(), getCallOptions(), request);
     }
 
@@ -315,7 +302,7 @@ public final class RecommendationServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v4.services.ApplyRecommendationResponse applyRecommendation(com.google.ads.googleads.v4.services.ApplyRecommendationRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getApplyRecommendationMethod(), getCallOptions(), request);
     }
 
@@ -325,7 +312,7 @@ public final class RecommendationServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v4.services.DismissRecommendationResponse dismissRecommendation(com.google.ads.googleads.v4.services.DismissRecommendationRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDismissRecommendationMethod(), getCallOptions(), request);
     }
   }
@@ -354,7 +341,7 @@ public final class RecommendationServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v4.resources.Recommendation> getRecommendation(
         com.google.ads.googleads.v4.services.GetRecommendationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetRecommendationMethod(), getCallOptions()), request);
     }
 
@@ -365,7 +352,7 @@ public final class RecommendationServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v4.services.ApplyRecommendationResponse> applyRecommendation(
         com.google.ads.googleads.v4.services.ApplyRecommendationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getApplyRecommendationMethod(), getCallOptions()), request);
     }
 
@@ -376,7 +363,7 @@ public final class RecommendationServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v4.services.DismissRecommendationResponse> dismissRecommendation(
         com.google.ads.googleads.v4.services.DismissRecommendationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDismissRecommendationMethod(), getCallOptions()), request);
     }
   }

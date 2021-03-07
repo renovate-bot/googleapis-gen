@@ -1,19 +1,6 @@
 package com.google.pubsub.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -597,7 +584,7 @@ public final class SubscriberGrpc {
      */
     public void createSubscription(com.google.pubsub.v1.Subscription request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.Subscription> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateSubscriptionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateSubscriptionMethod(), responseObserver);
     }
 
     /**
@@ -607,7 +594,7 @@ public final class SubscriberGrpc {
      */
     public void getSubscription(com.google.pubsub.v1.GetSubscriptionRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.Subscription> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetSubscriptionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetSubscriptionMethod(), responseObserver);
     }
 
     /**
@@ -618,7 +605,7 @@ public final class SubscriberGrpc {
      */
     public void updateSubscription(com.google.pubsub.v1.UpdateSubscriptionRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.Subscription> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateSubscriptionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateSubscriptionMethod(), responseObserver);
     }
 
     /**
@@ -628,7 +615,7 @@ public final class SubscriberGrpc {
      */
     public void listSubscriptions(com.google.pubsub.v1.ListSubscriptionsRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.ListSubscriptionsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListSubscriptionsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListSubscriptionsMethod(), responseObserver);
     }
 
     /**
@@ -642,7 +629,7 @@ public final class SubscriberGrpc {
      */
     public void deleteSubscription(com.google.pubsub.v1.DeleteSubscriptionRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteSubscriptionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteSubscriptionMethod(), responseObserver);
     }
 
     /**
@@ -656,7 +643,7 @@ public final class SubscriberGrpc {
      */
     public void modifyAckDeadline(com.google.pubsub.v1.ModifyAckDeadlineRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getModifyAckDeadlineMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getModifyAckDeadlineMethod(), responseObserver);
     }
 
     /**
@@ -671,7 +658,7 @@ public final class SubscriberGrpc {
      */
     public void acknowledge(com.google.pubsub.v1.AcknowledgeRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getAcknowledgeMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAcknowledgeMethod(), responseObserver);
     }
 
     /**
@@ -683,7 +670,7 @@ public final class SubscriberGrpc {
      */
     public void pull(com.google.pubsub.v1.PullRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.PullResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getPullMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPullMethod(), responseObserver);
     }
 
     /**
@@ -699,7 +686,7 @@ public final class SubscriberGrpc {
      */
     public io.grpc.stub.StreamObserver<com.google.pubsub.v1.StreamingPullRequest> streamingPull(
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.StreamingPullResponse> responseObserver) {
-      return asyncUnimplementedStreamingCall(getStreamingPullMethod(), responseObserver);
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getStreamingPullMethod(), responseObserver);
     }
 
     /**
@@ -713,7 +700,7 @@ public final class SubscriberGrpc {
      */
     public void modifyPushConfig(com.google.pubsub.v1.ModifyPushConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getModifyPushConfigMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getModifyPushConfigMethod(), responseObserver);
     }
 
     /**
@@ -727,7 +714,7 @@ public final class SubscriberGrpc {
      */
     public void getSnapshot(com.google.pubsub.v1.GetSnapshotRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.Snapshot> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetSnapshotMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetSnapshotMethod(), responseObserver);
     }
 
     /**
@@ -741,7 +728,7 @@ public final class SubscriberGrpc {
      */
     public void listSnapshots(com.google.pubsub.v1.ListSnapshotsRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.ListSnapshotsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListSnapshotsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListSnapshotsMethod(), responseObserver);
     }
 
     /**
@@ -766,7 +753,7 @@ public final class SubscriberGrpc {
      */
     public void createSnapshot(com.google.pubsub.v1.CreateSnapshotRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.Snapshot> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateSnapshotMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateSnapshotMethod(), responseObserver);
     }
 
     /**
@@ -781,7 +768,7 @@ public final class SubscriberGrpc {
      */
     public void updateSnapshot(com.google.pubsub.v1.UpdateSnapshotRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.Snapshot> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateSnapshotMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateSnapshotMethod(), responseObserver);
     }
 
     /**
@@ -799,7 +786,7 @@ public final class SubscriberGrpc {
      */
     public void deleteSnapshot(com.google.pubsub.v1.DeleteSnapshotRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteSnapshotMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteSnapshotMethod(), responseObserver);
     }
 
     /**
@@ -815,119 +802,119 @@ public final class SubscriberGrpc {
      */
     public void seek(com.google.pubsub.v1.SeekRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.SeekResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getSeekMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSeekMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getCreateSubscriptionMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.pubsub.v1.Subscription,
                 com.google.pubsub.v1.Subscription>(
                   this, METHODID_CREATE_SUBSCRIPTION)))
           .addMethod(
             getGetSubscriptionMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.pubsub.v1.GetSubscriptionRequest,
                 com.google.pubsub.v1.Subscription>(
                   this, METHODID_GET_SUBSCRIPTION)))
           .addMethod(
             getUpdateSubscriptionMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.pubsub.v1.UpdateSubscriptionRequest,
                 com.google.pubsub.v1.Subscription>(
                   this, METHODID_UPDATE_SUBSCRIPTION)))
           .addMethod(
             getListSubscriptionsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.pubsub.v1.ListSubscriptionsRequest,
                 com.google.pubsub.v1.ListSubscriptionsResponse>(
                   this, METHODID_LIST_SUBSCRIPTIONS)))
           .addMethod(
             getDeleteSubscriptionMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.pubsub.v1.DeleteSubscriptionRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_SUBSCRIPTION)))
           .addMethod(
             getModifyAckDeadlineMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.pubsub.v1.ModifyAckDeadlineRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_MODIFY_ACK_DEADLINE)))
           .addMethod(
             getAcknowledgeMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.pubsub.v1.AcknowledgeRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_ACKNOWLEDGE)))
           .addMethod(
             getPullMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.pubsub.v1.PullRequest,
                 com.google.pubsub.v1.PullResponse>(
                   this, METHODID_PULL)))
           .addMethod(
             getStreamingPullMethod(),
-            asyncBidiStreamingCall(
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
               new MethodHandlers<
                 com.google.pubsub.v1.StreamingPullRequest,
                 com.google.pubsub.v1.StreamingPullResponse>(
                   this, METHODID_STREAMING_PULL)))
           .addMethod(
             getModifyPushConfigMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.pubsub.v1.ModifyPushConfigRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_MODIFY_PUSH_CONFIG)))
           .addMethod(
             getGetSnapshotMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.pubsub.v1.GetSnapshotRequest,
                 com.google.pubsub.v1.Snapshot>(
                   this, METHODID_GET_SNAPSHOT)))
           .addMethod(
             getListSnapshotsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.pubsub.v1.ListSnapshotsRequest,
                 com.google.pubsub.v1.ListSnapshotsResponse>(
                   this, METHODID_LIST_SNAPSHOTS)))
           .addMethod(
             getCreateSnapshotMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.pubsub.v1.CreateSnapshotRequest,
                 com.google.pubsub.v1.Snapshot>(
                   this, METHODID_CREATE_SNAPSHOT)))
           .addMethod(
             getUpdateSnapshotMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.pubsub.v1.UpdateSnapshotRequest,
                 com.google.pubsub.v1.Snapshot>(
                   this, METHODID_UPDATE_SNAPSHOT)))
           .addMethod(
             getDeleteSnapshotMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.pubsub.v1.DeleteSnapshotRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_SNAPSHOT)))
           .addMethod(
             getSeekMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.pubsub.v1.SeekRequest,
                 com.google.pubsub.v1.SeekResponse>(
@@ -971,7 +958,7 @@ public final class SubscriberGrpc {
      */
     public void createSubscription(com.google.pubsub.v1.Subscription request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.Subscription> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateSubscriptionMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -982,7 +969,7 @@ public final class SubscriberGrpc {
      */
     public void getSubscription(com.google.pubsub.v1.GetSubscriptionRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.Subscription> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetSubscriptionMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -994,7 +981,7 @@ public final class SubscriberGrpc {
      */
     public void updateSubscription(com.google.pubsub.v1.UpdateSubscriptionRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.Subscription> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateSubscriptionMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1005,7 +992,7 @@ public final class SubscriberGrpc {
      */
     public void listSubscriptions(com.google.pubsub.v1.ListSubscriptionsRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.ListSubscriptionsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListSubscriptionsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1020,7 +1007,7 @@ public final class SubscriberGrpc {
      */
     public void deleteSubscription(com.google.pubsub.v1.DeleteSubscriptionRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteSubscriptionMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1035,7 +1022,7 @@ public final class SubscriberGrpc {
      */
     public void modifyAckDeadline(com.google.pubsub.v1.ModifyAckDeadlineRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getModifyAckDeadlineMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1051,7 +1038,7 @@ public final class SubscriberGrpc {
      */
     public void acknowledge(com.google.pubsub.v1.AcknowledgeRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getAcknowledgeMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1064,7 +1051,7 @@ public final class SubscriberGrpc {
      */
     public void pull(com.google.pubsub.v1.PullRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.PullResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPullMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1081,7 +1068,7 @@ public final class SubscriberGrpc {
      */
     public io.grpc.stub.StreamObserver<com.google.pubsub.v1.StreamingPullRequest> streamingPull(
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.StreamingPullResponse> responseObserver) {
-      return asyncBidiStreamingCall(
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
           getChannel().newCall(getStreamingPullMethod(), getCallOptions()), responseObserver);
     }
 
@@ -1096,7 +1083,7 @@ public final class SubscriberGrpc {
      */
     public void modifyPushConfig(com.google.pubsub.v1.ModifyPushConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getModifyPushConfigMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1111,7 +1098,7 @@ public final class SubscriberGrpc {
      */
     public void getSnapshot(com.google.pubsub.v1.GetSnapshotRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.Snapshot> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetSnapshotMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1126,7 +1113,7 @@ public final class SubscriberGrpc {
      */
     public void listSnapshots(com.google.pubsub.v1.ListSnapshotsRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.ListSnapshotsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListSnapshotsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1152,7 +1139,7 @@ public final class SubscriberGrpc {
      */
     public void createSnapshot(com.google.pubsub.v1.CreateSnapshotRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.Snapshot> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateSnapshotMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1168,7 +1155,7 @@ public final class SubscriberGrpc {
      */
     public void updateSnapshot(com.google.pubsub.v1.UpdateSnapshotRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.Snapshot> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateSnapshotMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1187,7 +1174,7 @@ public final class SubscriberGrpc {
      */
     public void deleteSnapshot(com.google.pubsub.v1.DeleteSnapshotRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteSnapshotMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1204,7 +1191,7 @@ public final class SubscriberGrpc {
      */
     public void seek(com.google.pubsub.v1.SeekRequest request,
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.SeekResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSeekMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -1243,7 +1230,7 @@ public final class SubscriberGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.Subscription createSubscription(com.google.pubsub.v1.Subscription request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateSubscriptionMethod(), getCallOptions(), request);
     }
 
@@ -1253,7 +1240,7 @@ public final class SubscriberGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.Subscription getSubscription(com.google.pubsub.v1.GetSubscriptionRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetSubscriptionMethod(), getCallOptions(), request);
     }
 
@@ -1264,7 +1251,7 @@ public final class SubscriberGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.Subscription updateSubscription(com.google.pubsub.v1.UpdateSubscriptionRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateSubscriptionMethod(), getCallOptions(), request);
     }
 
@@ -1274,7 +1261,7 @@ public final class SubscriberGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.ListSubscriptionsResponse listSubscriptions(com.google.pubsub.v1.ListSubscriptionsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListSubscriptionsMethod(), getCallOptions(), request);
     }
 
@@ -1288,7 +1275,7 @@ public final class SubscriberGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteSubscription(com.google.pubsub.v1.DeleteSubscriptionRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteSubscriptionMethod(), getCallOptions(), request);
     }
 
@@ -1302,7 +1289,7 @@ public final class SubscriberGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty modifyAckDeadline(com.google.pubsub.v1.ModifyAckDeadlineRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getModifyAckDeadlineMethod(), getCallOptions(), request);
     }
 
@@ -1317,7 +1304,7 @@ public final class SubscriberGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty acknowledge(com.google.pubsub.v1.AcknowledgeRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getAcknowledgeMethod(), getCallOptions(), request);
     }
 
@@ -1329,7 +1316,7 @@ public final class SubscriberGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.PullResponse pull(com.google.pubsub.v1.PullRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPullMethod(), getCallOptions(), request);
     }
 
@@ -1343,7 +1330,7 @@ public final class SubscriberGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty modifyPushConfig(com.google.pubsub.v1.ModifyPushConfigRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getModifyPushConfigMethod(), getCallOptions(), request);
     }
 
@@ -1357,7 +1344,7 @@ public final class SubscriberGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.Snapshot getSnapshot(com.google.pubsub.v1.GetSnapshotRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetSnapshotMethod(), getCallOptions(), request);
     }
 
@@ -1371,7 +1358,7 @@ public final class SubscriberGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.ListSnapshotsResponse listSnapshots(com.google.pubsub.v1.ListSnapshotsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListSnapshotsMethod(), getCallOptions(), request);
     }
 
@@ -1396,7 +1383,7 @@ public final class SubscriberGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.Snapshot createSnapshot(com.google.pubsub.v1.CreateSnapshotRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateSnapshotMethod(), getCallOptions(), request);
     }
 
@@ -1411,7 +1398,7 @@ public final class SubscriberGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.Snapshot updateSnapshot(com.google.pubsub.v1.UpdateSnapshotRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateSnapshotMethod(), getCallOptions(), request);
     }
 
@@ -1429,7 +1416,7 @@ public final class SubscriberGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteSnapshot(com.google.pubsub.v1.DeleteSnapshotRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteSnapshotMethod(), getCallOptions(), request);
     }
 
@@ -1445,7 +1432,7 @@ public final class SubscriberGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.SeekResponse seek(com.google.pubsub.v1.SeekRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSeekMethod(), getCallOptions(), request);
     }
   }
@@ -1485,7 +1472,7 @@ public final class SubscriberGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.Subscription> createSubscription(
         com.google.pubsub.v1.Subscription request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateSubscriptionMethod(), getCallOptions()), request);
     }
 
@@ -1496,7 +1483,7 @@ public final class SubscriberGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.Subscription> getSubscription(
         com.google.pubsub.v1.GetSubscriptionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetSubscriptionMethod(), getCallOptions()), request);
     }
 
@@ -1508,7 +1495,7 @@ public final class SubscriberGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.Subscription> updateSubscription(
         com.google.pubsub.v1.UpdateSubscriptionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateSubscriptionMethod(), getCallOptions()), request);
     }
 
@@ -1519,7 +1506,7 @@ public final class SubscriberGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.ListSubscriptionsResponse> listSubscriptions(
         com.google.pubsub.v1.ListSubscriptionsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListSubscriptionsMethod(), getCallOptions()), request);
     }
 
@@ -1534,7 +1521,7 @@ public final class SubscriberGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteSubscription(
         com.google.pubsub.v1.DeleteSubscriptionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteSubscriptionMethod(), getCallOptions()), request);
     }
 
@@ -1549,7 +1536,7 @@ public final class SubscriberGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> modifyAckDeadline(
         com.google.pubsub.v1.ModifyAckDeadlineRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getModifyAckDeadlineMethod(), getCallOptions()), request);
     }
 
@@ -1565,7 +1552,7 @@ public final class SubscriberGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> acknowledge(
         com.google.pubsub.v1.AcknowledgeRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getAcknowledgeMethod(), getCallOptions()), request);
     }
 
@@ -1578,7 +1565,7 @@ public final class SubscriberGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.PullResponse> pull(
         com.google.pubsub.v1.PullRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPullMethod(), getCallOptions()), request);
     }
 
@@ -1593,7 +1580,7 @@ public final class SubscriberGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> modifyPushConfig(
         com.google.pubsub.v1.ModifyPushConfigRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getModifyPushConfigMethod(), getCallOptions()), request);
     }
 
@@ -1608,7 +1595,7 @@ public final class SubscriberGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.Snapshot> getSnapshot(
         com.google.pubsub.v1.GetSnapshotRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetSnapshotMethod(), getCallOptions()), request);
     }
 
@@ -1623,7 +1610,7 @@ public final class SubscriberGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.ListSnapshotsResponse> listSnapshots(
         com.google.pubsub.v1.ListSnapshotsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListSnapshotsMethod(), getCallOptions()), request);
     }
 
@@ -1649,7 +1636,7 @@ public final class SubscriberGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.Snapshot> createSnapshot(
         com.google.pubsub.v1.CreateSnapshotRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateSnapshotMethod(), getCallOptions()), request);
     }
 
@@ -1665,7 +1652,7 @@ public final class SubscriberGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.Snapshot> updateSnapshot(
         com.google.pubsub.v1.UpdateSnapshotRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateSnapshotMethod(), getCallOptions()), request);
     }
 
@@ -1684,7 +1671,7 @@ public final class SubscriberGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteSnapshot(
         com.google.pubsub.v1.DeleteSnapshotRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteSnapshotMethod(), getCallOptions()), request);
     }
 
@@ -1701,7 +1688,7 @@ public final class SubscriberGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.SeekResponse> seek(
         com.google.pubsub.v1.SeekRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSeekMethod(), getCallOptions()), request);
     }
   }

@@ -1,19 +1,6 @@
 package com.google.cloud.domains.v1alpha2;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -494,7 +481,7 @@ public final class DomainsGrpc {
      */
     public void searchDomains(com.google.cloud.domains.v1alpha2.SearchDomainsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.domains.v1alpha2.SearchDomainsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getSearchDomainsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSearchDomainsMethod(), responseObserver);
     }
 
     /**
@@ -505,7 +492,7 @@ public final class DomainsGrpc {
      */
     public void retrieveRegisterParameters(com.google.cloud.domains.v1alpha2.RetrieveRegisterParametersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.domains.v1alpha2.RetrieveRegisterParametersResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getRetrieveRegisterParametersMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRetrieveRegisterParametersMethod(), responseObserver);
     }
 
     /**
@@ -525,7 +512,7 @@ public final class DomainsGrpc {
      */
     public void registerDomain(com.google.cloud.domains.v1alpha2.RegisterDomainRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getRegisterDomainMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRegisterDomainMethod(), responseObserver);
     }
 
     /**
@@ -535,7 +522,7 @@ public final class DomainsGrpc {
      */
     public void listRegistrations(com.google.cloud.domains.v1alpha2.ListRegistrationsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.domains.v1alpha2.ListRegistrationsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListRegistrationsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListRegistrationsMethod(), responseObserver);
     }
 
     /**
@@ -545,7 +532,7 @@ public final class DomainsGrpc {
      */
     public void getRegistration(com.google.cloud.domains.v1alpha2.GetRegistrationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.domains.v1alpha2.Registration> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetRegistrationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetRegistrationMethod(), responseObserver);
     }
 
     /**
@@ -559,7 +546,7 @@ public final class DomainsGrpc {
      */
     public void updateRegistration(com.google.cloud.domains.v1alpha2.UpdateRegistrationRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateRegistrationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateRegistrationMethod(), responseObserver);
     }
 
     /**
@@ -569,7 +556,7 @@ public final class DomainsGrpc {
      */
     public void configureManagementSettings(com.google.cloud.domains.v1alpha2.ConfigureManagementSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getConfigureManagementSettingsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getConfigureManagementSettingsMethod(), responseObserver);
     }
 
     /**
@@ -579,7 +566,7 @@ public final class DomainsGrpc {
      */
     public void configureDnsSettings(com.google.cloud.domains.v1alpha2.ConfigureDnsSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getConfigureDnsSettingsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getConfigureDnsSettingsMethod(), responseObserver);
     }
 
     /**
@@ -590,7 +577,7 @@ public final class DomainsGrpc {
      */
     public void configureContactSettings(com.google.cloud.domains.v1alpha2.ConfigureContactSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getConfigureContactSettingsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getConfigureContactSettingsMethod(), responseObserver);
     }
 
     /**
@@ -611,7 +598,7 @@ public final class DomainsGrpc {
      */
     public void exportRegistration(com.google.cloud.domains.v1alpha2.ExportRegistrationRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getExportRegistrationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getExportRegistrationMethod(), responseObserver);
     }
 
     /**
@@ -624,7 +611,7 @@ public final class DomainsGrpc {
      */
     public void deleteRegistration(com.google.cloud.domains.v1alpha2.DeleteRegistrationRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteRegistrationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteRegistrationMethod(), responseObserver);
     }
 
     /**
@@ -637,7 +624,7 @@ public final class DomainsGrpc {
      */
     public void retrieveAuthorizationCode(com.google.cloud.domains.v1alpha2.RetrieveAuthorizationCodeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.domains.v1alpha2.AuthorizationCode> responseObserver) {
-      asyncUnimplementedUnaryCall(getRetrieveAuthorizationCodeMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRetrieveAuthorizationCodeMethod(), responseObserver);
     }
 
     /**
@@ -649,98 +636,98 @@ public final class DomainsGrpc {
      */
     public void resetAuthorizationCode(com.google.cloud.domains.v1alpha2.ResetAuthorizationCodeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.domains.v1alpha2.AuthorizationCode> responseObserver) {
-      asyncUnimplementedUnaryCall(getResetAuthorizationCodeMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getResetAuthorizationCodeMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getSearchDomainsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.domains.v1alpha2.SearchDomainsRequest,
                 com.google.cloud.domains.v1alpha2.SearchDomainsResponse>(
                   this, METHODID_SEARCH_DOMAINS)))
           .addMethod(
             getRetrieveRegisterParametersMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.domains.v1alpha2.RetrieveRegisterParametersRequest,
                 com.google.cloud.domains.v1alpha2.RetrieveRegisterParametersResponse>(
                   this, METHODID_RETRIEVE_REGISTER_PARAMETERS)))
           .addMethod(
             getRegisterDomainMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.domains.v1alpha2.RegisterDomainRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_REGISTER_DOMAIN)))
           .addMethod(
             getListRegistrationsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.domains.v1alpha2.ListRegistrationsRequest,
                 com.google.cloud.domains.v1alpha2.ListRegistrationsResponse>(
                   this, METHODID_LIST_REGISTRATIONS)))
           .addMethod(
             getGetRegistrationMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.domains.v1alpha2.GetRegistrationRequest,
                 com.google.cloud.domains.v1alpha2.Registration>(
                   this, METHODID_GET_REGISTRATION)))
           .addMethod(
             getUpdateRegistrationMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.domains.v1alpha2.UpdateRegistrationRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_UPDATE_REGISTRATION)))
           .addMethod(
             getConfigureManagementSettingsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.domains.v1alpha2.ConfigureManagementSettingsRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_CONFIGURE_MANAGEMENT_SETTINGS)))
           .addMethod(
             getConfigureDnsSettingsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.domains.v1alpha2.ConfigureDnsSettingsRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_CONFIGURE_DNS_SETTINGS)))
           .addMethod(
             getConfigureContactSettingsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.domains.v1alpha2.ConfigureContactSettingsRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_CONFIGURE_CONTACT_SETTINGS)))
           .addMethod(
             getExportRegistrationMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.domains.v1alpha2.ExportRegistrationRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_EXPORT_REGISTRATION)))
           .addMethod(
             getDeleteRegistrationMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.domains.v1alpha2.DeleteRegistrationRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_DELETE_REGISTRATION)))
           .addMethod(
             getRetrieveAuthorizationCodeMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.domains.v1alpha2.RetrieveAuthorizationCodeRequest,
                 com.google.cloud.domains.v1alpha2.AuthorizationCode>(
                   this, METHODID_RETRIEVE_AUTHORIZATION_CODE)))
           .addMethod(
             getResetAuthorizationCodeMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.domains.v1alpha2.ResetAuthorizationCodeRequest,
                 com.google.cloud.domains.v1alpha2.AuthorizationCode>(
@@ -776,7 +763,7 @@ public final class DomainsGrpc {
      */
     public void searchDomains(com.google.cloud.domains.v1alpha2.SearchDomainsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.domains.v1alpha2.SearchDomainsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSearchDomainsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -788,7 +775,7 @@ public final class DomainsGrpc {
      */
     public void retrieveRegisterParameters(com.google.cloud.domains.v1alpha2.RetrieveRegisterParametersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.domains.v1alpha2.RetrieveRegisterParametersResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRetrieveRegisterParametersMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -809,7 +796,7 @@ public final class DomainsGrpc {
      */
     public void registerDomain(com.google.cloud.domains.v1alpha2.RegisterDomainRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRegisterDomainMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -820,7 +807,7 @@ public final class DomainsGrpc {
      */
     public void listRegistrations(com.google.cloud.domains.v1alpha2.ListRegistrationsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.domains.v1alpha2.ListRegistrationsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListRegistrationsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -831,7 +818,7 @@ public final class DomainsGrpc {
      */
     public void getRegistration(com.google.cloud.domains.v1alpha2.GetRegistrationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.domains.v1alpha2.Registration> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetRegistrationMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -846,7 +833,7 @@ public final class DomainsGrpc {
      */
     public void updateRegistration(com.google.cloud.domains.v1alpha2.UpdateRegistrationRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateRegistrationMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -857,7 +844,7 @@ public final class DomainsGrpc {
      */
     public void configureManagementSettings(com.google.cloud.domains.v1alpha2.ConfigureManagementSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getConfigureManagementSettingsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -868,7 +855,7 @@ public final class DomainsGrpc {
      */
     public void configureDnsSettings(com.google.cloud.domains.v1alpha2.ConfigureDnsSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getConfigureDnsSettingsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -880,7 +867,7 @@ public final class DomainsGrpc {
      */
     public void configureContactSettings(com.google.cloud.domains.v1alpha2.ConfigureContactSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getConfigureContactSettingsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -902,7 +889,7 @@ public final class DomainsGrpc {
      */
     public void exportRegistration(com.google.cloud.domains.v1alpha2.ExportRegistrationRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getExportRegistrationMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -916,7 +903,7 @@ public final class DomainsGrpc {
      */
     public void deleteRegistration(com.google.cloud.domains.v1alpha2.DeleteRegistrationRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteRegistrationMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -930,7 +917,7 @@ public final class DomainsGrpc {
      */
     public void retrieveAuthorizationCode(com.google.cloud.domains.v1alpha2.RetrieveAuthorizationCodeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.domains.v1alpha2.AuthorizationCode> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRetrieveAuthorizationCodeMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -943,7 +930,7 @@ public final class DomainsGrpc {
      */
     public void resetAuthorizationCode(com.google.cloud.domains.v1alpha2.ResetAuthorizationCodeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.domains.v1alpha2.AuthorizationCode> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getResetAuthorizationCodeMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -974,7 +961,7 @@ public final class DomainsGrpc {
      * </pre>
      */
     public com.google.cloud.domains.v1alpha2.SearchDomainsResponse searchDomains(com.google.cloud.domains.v1alpha2.SearchDomainsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSearchDomainsMethod(), getCallOptions(), request);
     }
 
@@ -985,7 +972,7 @@ public final class DomainsGrpc {
      * </pre>
      */
     public com.google.cloud.domains.v1alpha2.RetrieveRegisterParametersResponse retrieveRegisterParameters(com.google.cloud.domains.v1alpha2.RetrieveRegisterParametersRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRetrieveRegisterParametersMethod(), getCallOptions(), request);
     }
 
@@ -1005,7 +992,7 @@ public final class DomainsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation registerDomain(com.google.cloud.domains.v1alpha2.RegisterDomainRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRegisterDomainMethod(), getCallOptions(), request);
     }
 
@@ -1015,7 +1002,7 @@ public final class DomainsGrpc {
      * </pre>
      */
     public com.google.cloud.domains.v1alpha2.ListRegistrationsResponse listRegistrations(com.google.cloud.domains.v1alpha2.ListRegistrationsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListRegistrationsMethod(), getCallOptions(), request);
     }
 
@@ -1025,7 +1012,7 @@ public final class DomainsGrpc {
      * </pre>
      */
     public com.google.cloud.domains.v1alpha2.Registration getRegistration(com.google.cloud.domains.v1alpha2.GetRegistrationRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetRegistrationMethod(), getCallOptions(), request);
     }
 
@@ -1039,7 +1026,7 @@ public final class DomainsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateRegistration(com.google.cloud.domains.v1alpha2.UpdateRegistrationRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateRegistrationMethod(), getCallOptions(), request);
     }
 
@@ -1049,7 +1036,7 @@ public final class DomainsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation configureManagementSettings(com.google.cloud.domains.v1alpha2.ConfigureManagementSettingsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getConfigureManagementSettingsMethod(), getCallOptions(), request);
     }
 
@@ -1059,7 +1046,7 @@ public final class DomainsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation configureDnsSettings(com.google.cloud.domains.v1alpha2.ConfigureDnsSettingsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getConfigureDnsSettingsMethod(), getCallOptions(), request);
     }
 
@@ -1070,7 +1057,7 @@ public final class DomainsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation configureContactSettings(com.google.cloud.domains.v1alpha2.ConfigureContactSettingsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getConfigureContactSettingsMethod(), getCallOptions(), request);
     }
 
@@ -1091,7 +1078,7 @@ public final class DomainsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportRegistration(com.google.cloud.domains.v1alpha2.ExportRegistrationRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getExportRegistrationMethod(), getCallOptions(), request);
     }
 
@@ -1104,7 +1091,7 @@ public final class DomainsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteRegistration(com.google.cloud.domains.v1alpha2.DeleteRegistrationRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteRegistrationMethod(), getCallOptions(), request);
     }
 
@@ -1117,7 +1104,7 @@ public final class DomainsGrpc {
      * </pre>
      */
     public com.google.cloud.domains.v1alpha2.AuthorizationCode retrieveAuthorizationCode(com.google.cloud.domains.v1alpha2.RetrieveAuthorizationCodeRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRetrieveAuthorizationCodeMethod(), getCallOptions(), request);
     }
 
@@ -1129,7 +1116,7 @@ public final class DomainsGrpc {
      * </pre>
      */
     public com.google.cloud.domains.v1alpha2.AuthorizationCode resetAuthorizationCode(com.google.cloud.domains.v1alpha2.ResetAuthorizationCodeRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getResetAuthorizationCodeMethod(), getCallOptions(), request);
     }
   }
@@ -1161,7 +1148,7 @@ public final class DomainsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.domains.v1alpha2.SearchDomainsResponse> searchDomains(
         com.google.cloud.domains.v1alpha2.SearchDomainsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSearchDomainsMethod(), getCallOptions()), request);
     }
 
@@ -1173,7 +1160,7 @@ public final class DomainsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.domains.v1alpha2.RetrieveRegisterParametersResponse> retrieveRegisterParameters(
         com.google.cloud.domains.v1alpha2.RetrieveRegisterParametersRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRetrieveRegisterParametersMethod(), getCallOptions()), request);
     }
 
@@ -1194,7 +1181,7 @@ public final class DomainsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> registerDomain(
         com.google.cloud.domains.v1alpha2.RegisterDomainRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRegisterDomainMethod(), getCallOptions()), request);
     }
 
@@ -1205,7 +1192,7 @@ public final class DomainsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.domains.v1alpha2.ListRegistrationsResponse> listRegistrations(
         com.google.cloud.domains.v1alpha2.ListRegistrationsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListRegistrationsMethod(), getCallOptions()), request);
     }
 
@@ -1216,7 +1203,7 @@ public final class DomainsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.domains.v1alpha2.Registration> getRegistration(
         com.google.cloud.domains.v1alpha2.GetRegistrationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetRegistrationMethod(), getCallOptions()), request);
     }
 
@@ -1231,7 +1218,7 @@ public final class DomainsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> updateRegistration(
         com.google.cloud.domains.v1alpha2.UpdateRegistrationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateRegistrationMethod(), getCallOptions()), request);
     }
 
@@ -1242,7 +1229,7 @@ public final class DomainsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> configureManagementSettings(
         com.google.cloud.domains.v1alpha2.ConfigureManagementSettingsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getConfigureManagementSettingsMethod(), getCallOptions()), request);
     }
 
@@ -1253,7 +1240,7 @@ public final class DomainsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> configureDnsSettings(
         com.google.cloud.domains.v1alpha2.ConfigureDnsSettingsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getConfigureDnsSettingsMethod(), getCallOptions()), request);
     }
 
@@ -1265,7 +1252,7 @@ public final class DomainsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> configureContactSettings(
         com.google.cloud.domains.v1alpha2.ConfigureContactSettingsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getConfigureContactSettingsMethod(), getCallOptions()), request);
     }
 
@@ -1287,7 +1274,7 @@ public final class DomainsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> exportRegistration(
         com.google.cloud.domains.v1alpha2.ExportRegistrationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getExportRegistrationMethod(), getCallOptions()), request);
     }
 
@@ -1301,7 +1288,7 @@ public final class DomainsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> deleteRegistration(
         com.google.cloud.domains.v1alpha2.DeleteRegistrationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteRegistrationMethod(), getCallOptions()), request);
     }
 
@@ -1315,7 +1302,7 @@ public final class DomainsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.domains.v1alpha2.AuthorizationCode> retrieveAuthorizationCode(
         com.google.cloud.domains.v1alpha2.RetrieveAuthorizationCodeRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRetrieveAuthorizationCodeMethod(), getCallOptions()), request);
     }
 
@@ -1328,7 +1315,7 @@ public final class DomainsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.domains.v1alpha2.AuthorizationCode> resetAuthorizationCode(
         com.google.cloud.domains.v1alpha2.ResetAuthorizationCodeRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getResetAuthorizationCodeMethod(), getCallOptions()), request);
     }
   }

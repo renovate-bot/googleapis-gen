@@ -1,19 +1,6 @@
 package com.google.cloud.pubsublite.proto;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -462,7 +449,7 @@ public final class AdminServiceGrpc {
      */
     public void createTopic(com.google.cloud.pubsublite.proto.CreateTopicRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.Topic> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateTopicMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateTopicMethod(), responseObserver);
     }
 
     /**
@@ -472,7 +459,7 @@ public final class AdminServiceGrpc {
      */
     public void getTopic(com.google.cloud.pubsublite.proto.GetTopicRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.Topic> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetTopicMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetTopicMethod(), responseObserver);
     }
 
     /**
@@ -482,7 +469,7 @@ public final class AdminServiceGrpc {
      */
     public void getTopicPartitions(com.google.cloud.pubsublite.proto.GetTopicPartitionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.TopicPartitions> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetTopicPartitionsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetTopicPartitionsMethod(), responseObserver);
     }
 
     /**
@@ -492,7 +479,7 @@ public final class AdminServiceGrpc {
      */
     public void listTopics(com.google.cloud.pubsublite.proto.ListTopicsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.ListTopicsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListTopicsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListTopicsMethod(), responseObserver);
     }
 
     /**
@@ -502,7 +489,7 @@ public final class AdminServiceGrpc {
      */
     public void updateTopic(com.google.cloud.pubsublite.proto.UpdateTopicRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.Topic> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateTopicMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateTopicMethod(), responseObserver);
     }
 
     /**
@@ -512,7 +499,7 @@ public final class AdminServiceGrpc {
      */
     public void deleteTopic(com.google.cloud.pubsublite.proto.DeleteTopicRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteTopicMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteTopicMethod(), responseObserver);
     }
 
     /**
@@ -522,7 +509,7 @@ public final class AdminServiceGrpc {
      */
     public void listTopicSubscriptions(com.google.cloud.pubsublite.proto.ListTopicSubscriptionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.ListTopicSubscriptionsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListTopicSubscriptionsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListTopicSubscriptionsMethod(), responseObserver);
     }
 
     /**
@@ -532,7 +519,7 @@ public final class AdminServiceGrpc {
      */
     public void createSubscription(com.google.cloud.pubsublite.proto.CreateSubscriptionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.Subscription> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateSubscriptionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateSubscriptionMethod(), responseObserver);
     }
 
     /**
@@ -542,7 +529,7 @@ public final class AdminServiceGrpc {
      */
     public void getSubscription(com.google.cloud.pubsublite.proto.GetSubscriptionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.Subscription> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetSubscriptionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetSubscriptionMethod(), responseObserver);
     }
 
     /**
@@ -552,7 +539,7 @@ public final class AdminServiceGrpc {
      */
     public void listSubscriptions(com.google.cloud.pubsublite.proto.ListSubscriptionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.ListSubscriptionsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListSubscriptionsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListSubscriptionsMethod(), responseObserver);
     }
 
     /**
@@ -562,7 +549,7 @@ public final class AdminServiceGrpc {
      */
     public void updateSubscription(com.google.cloud.pubsublite.proto.UpdateSubscriptionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.Subscription> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateSubscriptionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateSubscriptionMethod(), responseObserver);
     }
 
     /**
@@ -572,91 +559,91 @@ public final class AdminServiceGrpc {
      */
     public void deleteSubscription(com.google.cloud.pubsublite.proto.DeleteSubscriptionRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteSubscriptionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteSubscriptionMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getCreateTopicMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.pubsublite.proto.CreateTopicRequest,
                 com.google.cloud.pubsublite.proto.Topic>(
                   this, METHODID_CREATE_TOPIC)))
           .addMethod(
             getGetTopicMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.pubsublite.proto.GetTopicRequest,
                 com.google.cloud.pubsublite.proto.Topic>(
                   this, METHODID_GET_TOPIC)))
           .addMethod(
             getGetTopicPartitionsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.pubsublite.proto.GetTopicPartitionsRequest,
                 com.google.cloud.pubsublite.proto.TopicPartitions>(
                   this, METHODID_GET_TOPIC_PARTITIONS)))
           .addMethod(
             getListTopicsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.pubsublite.proto.ListTopicsRequest,
                 com.google.cloud.pubsublite.proto.ListTopicsResponse>(
                   this, METHODID_LIST_TOPICS)))
           .addMethod(
             getUpdateTopicMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.pubsublite.proto.UpdateTopicRequest,
                 com.google.cloud.pubsublite.proto.Topic>(
                   this, METHODID_UPDATE_TOPIC)))
           .addMethod(
             getDeleteTopicMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.pubsublite.proto.DeleteTopicRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_TOPIC)))
           .addMethod(
             getListTopicSubscriptionsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.pubsublite.proto.ListTopicSubscriptionsRequest,
                 com.google.cloud.pubsublite.proto.ListTopicSubscriptionsResponse>(
                   this, METHODID_LIST_TOPIC_SUBSCRIPTIONS)))
           .addMethod(
             getCreateSubscriptionMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.pubsublite.proto.CreateSubscriptionRequest,
                 com.google.cloud.pubsublite.proto.Subscription>(
                   this, METHODID_CREATE_SUBSCRIPTION)))
           .addMethod(
             getGetSubscriptionMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.pubsublite.proto.GetSubscriptionRequest,
                 com.google.cloud.pubsublite.proto.Subscription>(
                   this, METHODID_GET_SUBSCRIPTION)))
           .addMethod(
             getListSubscriptionsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.pubsublite.proto.ListSubscriptionsRequest,
                 com.google.cloud.pubsublite.proto.ListSubscriptionsResponse>(
                   this, METHODID_LIST_SUBSCRIPTIONS)))
           .addMethod(
             getUpdateSubscriptionMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.pubsublite.proto.UpdateSubscriptionRequest,
                 com.google.cloud.pubsublite.proto.Subscription>(
                   this, METHODID_UPDATE_SUBSCRIPTION)))
           .addMethod(
             getDeleteSubscriptionMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.pubsublite.proto.DeleteSubscriptionRequest,
                 com.google.protobuf.Empty>(
@@ -690,7 +677,7 @@ public final class AdminServiceGrpc {
      */
     public void createTopic(com.google.cloud.pubsublite.proto.CreateTopicRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.Topic> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateTopicMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -701,7 +688,7 @@ public final class AdminServiceGrpc {
      */
     public void getTopic(com.google.cloud.pubsublite.proto.GetTopicRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.Topic> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetTopicMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -712,7 +699,7 @@ public final class AdminServiceGrpc {
      */
     public void getTopicPartitions(com.google.cloud.pubsublite.proto.GetTopicPartitionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.TopicPartitions> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetTopicPartitionsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -723,7 +710,7 @@ public final class AdminServiceGrpc {
      */
     public void listTopics(com.google.cloud.pubsublite.proto.ListTopicsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.ListTopicsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListTopicsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -734,7 +721,7 @@ public final class AdminServiceGrpc {
      */
     public void updateTopic(com.google.cloud.pubsublite.proto.UpdateTopicRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.Topic> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateTopicMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -745,7 +732,7 @@ public final class AdminServiceGrpc {
      */
     public void deleteTopic(com.google.cloud.pubsublite.proto.DeleteTopicRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteTopicMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -756,7 +743,7 @@ public final class AdminServiceGrpc {
      */
     public void listTopicSubscriptions(com.google.cloud.pubsublite.proto.ListTopicSubscriptionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.ListTopicSubscriptionsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListTopicSubscriptionsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -767,7 +754,7 @@ public final class AdminServiceGrpc {
      */
     public void createSubscription(com.google.cloud.pubsublite.proto.CreateSubscriptionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.Subscription> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateSubscriptionMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -778,7 +765,7 @@ public final class AdminServiceGrpc {
      */
     public void getSubscription(com.google.cloud.pubsublite.proto.GetSubscriptionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.Subscription> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetSubscriptionMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -789,7 +776,7 @@ public final class AdminServiceGrpc {
      */
     public void listSubscriptions(com.google.cloud.pubsublite.proto.ListSubscriptionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.ListSubscriptionsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListSubscriptionsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -800,7 +787,7 @@ public final class AdminServiceGrpc {
      */
     public void updateSubscription(com.google.cloud.pubsublite.proto.UpdateSubscriptionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.Subscription> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateSubscriptionMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -811,7 +798,7 @@ public final class AdminServiceGrpc {
      */
     public void deleteSubscription(com.google.cloud.pubsublite.proto.DeleteSubscriptionRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteSubscriptionMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -840,7 +827,7 @@ public final class AdminServiceGrpc {
      * </pre>
      */
     public com.google.cloud.pubsublite.proto.Topic createTopic(com.google.cloud.pubsublite.proto.CreateTopicRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateTopicMethod(), getCallOptions(), request);
     }
 
@@ -850,7 +837,7 @@ public final class AdminServiceGrpc {
      * </pre>
      */
     public com.google.cloud.pubsublite.proto.Topic getTopic(com.google.cloud.pubsublite.proto.GetTopicRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetTopicMethod(), getCallOptions(), request);
     }
 
@@ -860,7 +847,7 @@ public final class AdminServiceGrpc {
      * </pre>
      */
     public com.google.cloud.pubsublite.proto.TopicPartitions getTopicPartitions(com.google.cloud.pubsublite.proto.GetTopicPartitionsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetTopicPartitionsMethod(), getCallOptions(), request);
     }
 
@@ -870,7 +857,7 @@ public final class AdminServiceGrpc {
      * </pre>
      */
     public com.google.cloud.pubsublite.proto.ListTopicsResponse listTopics(com.google.cloud.pubsublite.proto.ListTopicsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListTopicsMethod(), getCallOptions(), request);
     }
 
@@ -880,7 +867,7 @@ public final class AdminServiceGrpc {
      * </pre>
      */
     public com.google.cloud.pubsublite.proto.Topic updateTopic(com.google.cloud.pubsublite.proto.UpdateTopicRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateTopicMethod(), getCallOptions(), request);
     }
 
@@ -890,7 +877,7 @@ public final class AdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteTopic(com.google.cloud.pubsublite.proto.DeleteTopicRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteTopicMethod(), getCallOptions(), request);
     }
 
@@ -900,7 +887,7 @@ public final class AdminServiceGrpc {
      * </pre>
      */
     public com.google.cloud.pubsublite.proto.ListTopicSubscriptionsResponse listTopicSubscriptions(com.google.cloud.pubsublite.proto.ListTopicSubscriptionsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListTopicSubscriptionsMethod(), getCallOptions(), request);
     }
 
@@ -910,7 +897,7 @@ public final class AdminServiceGrpc {
      * </pre>
      */
     public com.google.cloud.pubsublite.proto.Subscription createSubscription(com.google.cloud.pubsublite.proto.CreateSubscriptionRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateSubscriptionMethod(), getCallOptions(), request);
     }
 
@@ -920,7 +907,7 @@ public final class AdminServiceGrpc {
      * </pre>
      */
     public com.google.cloud.pubsublite.proto.Subscription getSubscription(com.google.cloud.pubsublite.proto.GetSubscriptionRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetSubscriptionMethod(), getCallOptions(), request);
     }
 
@@ -930,7 +917,7 @@ public final class AdminServiceGrpc {
      * </pre>
      */
     public com.google.cloud.pubsublite.proto.ListSubscriptionsResponse listSubscriptions(com.google.cloud.pubsublite.proto.ListSubscriptionsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListSubscriptionsMethod(), getCallOptions(), request);
     }
 
@@ -940,7 +927,7 @@ public final class AdminServiceGrpc {
      * </pre>
      */
     public com.google.cloud.pubsublite.proto.Subscription updateSubscription(com.google.cloud.pubsublite.proto.UpdateSubscriptionRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateSubscriptionMethod(), getCallOptions(), request);
     }
 
@@ -950,7 +937,7 @@ public final class AdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteSubscription(com.google.cloud.pubsublite.proto.DeleteSubscriptionRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteSubscriptionMethod(), getCallOptions(), request);
     }
   }
@@ -980,7 +967,7 @@ public final class AdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.pubsublite.proto.Topic> createTopic(
         com.google.cloud.pubsublite.proto.CreateTopicRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateTopicMethod(), getCallOptions()), request);
     }
 
@@ -991,7 +978,7 @@ public final class AdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.pubsublite.proto.Topic> getTopic(
         com.google.cloud.pubsublite.proto.GetTopicRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetTopicMethod(), getCallOptions()), request);
     }
 
@@ -1002,7 +989,7 @@ public final class AdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.pubsublite.proto.TopicPartitions> getTopicPartitions(
         com.google.cloud.pubsublite.proto.GetTopicPartitionsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetTopicPartitionsMethod(), getCallOptions()), request);
     }
 
@@ -1013,7 +1000,7 @@ public final class AdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.pubsublite.proto.ListTopicsResponse> listTopics(
         com.google.cloud.pubsublite.proto.ListTopicsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListTopicsMethod(), getCallOptions()), request);
     }
 
@@ -1024,7 +1011,7 @@ public final class AdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.pubsublite.proto.Topic> updateTopic(
         com.google.cloud.pubsublite.proto.UpdateTopicRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateTopicMethod(), getCallOptions()), request);
     }
 
@@ -1035,7 +1022,7 @@ public final class AdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteTopic(
         com.google.cloud.pubsublite.proto.DeleteTopicRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteTopicMethod(), getCallOptions()), request);
     }
 
@@ -1046,7 +1033,7 @@ public final class AdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.pubsublite.proto.ListTopicSubscriptionsResponse> listTopicSubscriptions(
         com.google.cloud.pubsublite.proto.ListTopicSubscriptionsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListTopicSubscriptionsMethod(), getCallOptions()), request);
     }
 
@@ -1057,7 +1044,7 @@ public final class AdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.pubsublite.proto.Subscription> createSubscription(
         com.google.cloud.pubsublite.proto.CreateSubscriptionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateSubscriptionMethod(), getCallOptions()), request);
     }
 
@@ -1068,7 +1055,7 @@ public final class AdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.pubsublite.proto.Subscription> getSubscription(
         com.google.cloud.pubsublite.proto.GetSubscriptionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetSubscriptionMethod(), getCallOptions()), request);
     }
 
@@ -1079,7 +1066,7 @@ public final class AdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.pubsublite.proto.ListSubscriptionsResponse> listSubscriptions(
         com.google.cloud.pubsublite.proto.ListSubscriptionsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListSubscriptionsMethod(), getCallOptions()), request);
     }
 
@@ -1090,7 +1077,7 @@ public final class AdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.pubsublite.proto.Subscription> updateSubscription(
         com.google.cloud.pubsublite.proto.UpdateSubscriptionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateSubscriptionMethod(), getCallOptions()), request);
     }
 
@@ -1101,7 +1088,7 @@ public final class AdminServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteSubscription(
         com.google.cloud.pubsublite.proto.DeleteSubscriptionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteSubscriptionMethod(), getCallOptions()), request);
     }
   }

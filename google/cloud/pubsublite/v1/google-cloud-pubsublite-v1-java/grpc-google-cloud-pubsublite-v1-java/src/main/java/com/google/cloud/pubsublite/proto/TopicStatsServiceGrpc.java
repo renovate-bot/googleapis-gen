@@ -1,19 +1,6 @@
 package com.google.cloud.pubsublite.proto;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -151,7 +138,7 @@ public final class TopicStatsServiceGrpc {
      */
     public void computeMessageStats(com.google.cloud.pubsublite.proto.ComputeMessageStatsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.ComputeMessageStatsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getComputeMessageStatsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getComputeMessageStatsMethod(), responseObserver);
     }
 
     /**
@@ -166,21 +153,21 @@ public final class TopicStatsServiceGrpc {
      */
     public void computeHeadCursor(com.google.cloud.pubsublite.proto.ComputeHeadCursorRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.ComputeHeadCursorResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getComputeHeadCursorMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getComputeHeadCursorMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getComputeMessageStatsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.pubsublite.proto.ComputeMessageStatsRequest,
                 com.google.cloud.pubsublite.proto.ComputeMessageStatsResponse>(
                   this, METHODID_COMPUTE_MESSAGE_STATS)))
           .addMethod(
             getComputeHeadCursorMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.pubsublite.proto.ComputeHeadCursorRequest,
                 com.google.cloud.pubsublite.proto.ComputeHeadCursorResponse>(
@@ -214,7 +201,7 @@ public final class TopicStatsServiceGrpc {
      */
     public void computeMessageStats(com.google.cloud.pubsublite.proto.ComputeMessageStatsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.ComputeMessageStatsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getComputeMessageStatsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -230,7 +217,7 @@ public final class TopicStatsServiceGrpc {
      */
     public void computeHeadCursor(com.google.cloud.pubsublite.proto.ComputeHeadCursorRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.pubsublite.proto.ComputeHeadCursorResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getComputeHeadCursorMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -259,7 +246,7 @@ public final class TopicStatsServiceGrpc {
      * </pre>
      */
     public com.google.cloud.pubsublite.proto.ComputeMessageStatsResponse computeMessageStats(com.google.cloud.pubsublite.proto.ComputeMessageStatsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getComputeMessageStatsMethod(), getCallOptions(), request);
     }
 
@@ -274,7 +261,7 @@ public final class TopicStatsServiceGrpc {
      * </pre>
      */
     public com.google.cloud.pubsublite.proto.ComputeHeadCursorResponse computeHeadCursor(com.google.cloud.pubsublite.proto.ComputeHeadCursorRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getComputeHeadCursorMethod(), getCallOptions(), request);
     }
   }
@@ -304,7 +291,7 @@ public final class TopicStatsServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.pubsublite.proto.ComputeMessageStatsResponse> computeMessageStats(
         com.google.cloud.pubsublite.proto.ComputeMessageStatsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getComputeMessageStatsMethod(), getCallOptions()), request);
     }
 
@@ -320,7 +307,7 @@ public final class TopicStatsServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.pubsublite.proto.ComputeHeadCursorResponse> computeHeadCursor(
         com.google.cloud.pubsublite.proto.ComputeHeadCursorRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getComputeHeadCursorMethod(), getCallOptions()), request);
     }
   }

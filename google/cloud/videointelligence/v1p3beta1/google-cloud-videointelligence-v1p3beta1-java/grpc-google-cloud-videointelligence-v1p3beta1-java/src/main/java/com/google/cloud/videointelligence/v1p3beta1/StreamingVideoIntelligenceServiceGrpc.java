@@ -1,19 +1,6 @@
 package com.google.cloud.videointelligence.v1p3beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -121,14 +108,14 @@ public final class StreamingVideoIntelligenceServiceGrpc {
      */
     public io.grpc.stub.StreamObserver<com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest> streamingAnnotateVideo(
         io.grpc.stub.StreamObserver<com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoResponse> responseObserver) {
-      return asyncUnimplementedStreamingCall(getStreamingAnnotateVideoMethod(), responseObserver);
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getStreamingAnnotateVideoMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getStreamingAnnotateVideoMethod(),
-            asyncBidiStreamingCall(
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
               new MethodHandlers<
                 com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest,
                 com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoResponse>(
@@ -163,7 +150,7 @@ public final class StreamingVideoIntelligenceServiceGrpc {
      */
     public io.grpc.stub.StreamObserver<com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest> streamingAnnotateVideo(
         io.grpc.stub.StreamObserver<com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoResponse> responseObserver) {
-      return asyncBidiStreamingCall(
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
           getChannel().newCall(getStreamingAnnotateVideoMethod(), getCallOptions()), responseObserver);
     }
   }

@@ -1,19 +1,6 @@
 package com.google.home.enterprise.sdm.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -307,7 +294,7 @@ public final class SmartDeviceManagementServiceGrpc {
      */
     public void getDevice(com.google.home.enterprise.sdm.v1.GetDeviceRequest request,
         io.grpc.stub.StreamObserver<com.google.home.enterprise.sdm.v1.Device> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetDeviceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetDeviceMethod(), responseObserver);
     }
 
     /**
@@ -317,7 +304,7 @@ public final class SmartDeviceManagementServiceGrpc {
      */
     public void listDevices(com.google.home.enterprise.sdm.v1.ListDevicesRequest request,
         io.grpc.stub.StreamObserver<com.google.home.enterprise.sdm.v1.ListDevicesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListDevicesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListDevicesMethod(), responseObserver);
     }
 
     /**
@@ -327,7 +314,7 @@ public final class SmartDeviceManagementServiceGrpc {
      */
     public void executeDeviceCommand(com.google.home.enterprise.sdm.v1.ExecuteDeviceCommandRequest request,
         io.grpc.stub.StreamObserver<com.google.home.enterprise.sdm.v1.ExecuteDeviceCommandResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getExecuteDeviceCommandMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getExecuteDeviceCommandMethod(), responseObserver);
     }
 
     /**
@@ -337,7 +324,7 @@ public final class SmartDeviceManagementServiceGrpc {
      */
     public void getStructure(com.google.home.enterprise.sdm.v1.GetStructureRequest request,
         io.grpc.stub.StreamObserver<com.google.home.enterprise.sdm.v1.Structure> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetStructureMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetStructureMethod(), responseObserver);
     }
 
     /**
@@ -347,7 +334,7 @@ public final class SmartDeviceManagementServiceGrpc {
      */
     public void listStructures(com.google.home.enterprise.sdm.v1.ListStructuresRequest request,
         io.grpc.stub.StreamObserver<com.google.home.enterprise.sdm.v1.ListStructuresResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListStructuresMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListStructuresMethod(), responseObserver);
     }
 
     /**
@@ -357,7 +344,7 @@ public final class SmartDeviceManagementServiceGrpc {
      */
     public void getRoom(com.google.home.enterprise.sdm.v1.GetRoomRequest request,
         io.grpc.stub.StreamObserver<com.google.home.enterprise.sdm.v1.Room> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetRoomMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetRoomMethod(), responseObserver);
     }
 
     /**
@@ -367,56 +354,56 @@ public final class SmartDeviceManagementServiceGrpc {
      */
     public void listRooms(com.google.home.enterprise.sdm.v1.ListRoomsRequest request,
         io.grpc.stub.StreamObserver<com.google.home.enterprise.sdm.v1.ListRoomsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListRoomsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListRoomsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetDeviceMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.home.enterprise.sdm.v1.GetDeviceRequest,
                 com.google.home.enterprise.sdm.v1.Device>(
                   this, METHODID_GET_DEVICE)))
           .addMethod(
             getListDevicesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.home.enterprise.sdm.v1.ListDevicesRequest,
                 com.google.home.enterprise.sdm.v1.ListDevicesResponse>(
                   this, METHODID_LIST_DEVICES)))
           .addMethod(
             getExecuteDeviceCommandMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.home.enterprise.sdm.v1.ExecuteDeviceCommandRequest,
                 com.google.home.enterprise.sdm.v1.ExecuteDeviceCommandResponse>(
                   this, METHODID_EXECUTE_DEVICE_COMMAND)))
           .addMethod(
             getGetStructureMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.home.enterprise.sdm.v1.GetStructureRequest,
                 com.google.home.enterprise.sdm.v1.Structure>(
                   this, METHODID_GET_STRUCTURE)))
           .addMethod(
             getListStructuresMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.home.enterprise.sdm.v1.ListStructuresRequest,
                 com.google.home.enterprise.sdm.v1.ListStructuresResponse>(
                   this, METHODID_LIST_STRUCTURES)))
           .addMethod(
             getGetRoomMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.home.enterprise.sdm.v1.GetRoomRequest,
                 com.google.home.enterprise.sdm.v1.Room>(
                   this, METHODID_GET_ROOM)))
           .addMethod(
             getListRoomsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.home.enterprise.sdm.v1.ListRoomsRequest,
                 com.google.home.enterprise.sdm.v1.ListRoomsResponse>(
@@ -450,7 +437,7 @@ public final class SmartDeviceManagementServiceGrpc {
      */
     public void getDevice(com.google.home.enterprise.sdm.v1.GetDeviceRequest request,
         io.grpc.stub.StreamObserver<com.google.home.enterprise.sdm.v1.Device> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetDeviceMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -461,7 +448,7 @@ public final class SmartDeviceManagementServiceGrpc {
      */
     public void listDevices(com.google.home.enterprise.sdm.v1.ListDevicesRequest request,
         io.grpc.stub.StreamObserver<com.google.home.enterprise.sdm.v1.ListDevicesResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListDevicesMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -472,7 +459,7 @@ public final class SmartDeviceManagementServiceGrpc {
      */
     public void executeDeviceCommand(com.google.home.enterprise.sdm.v1.ExecuteDeviceCommandRequest request,
         io.grpc.stub.StreamObserver<com.google.home.enterprise.sdm.v1.ExecuteDeviceCommandResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getExecuteDeviceCommandMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -483,7 +470,7 @@ public final class SmartDeviceManagementServiceGrpc {
      */
     public void getStructure(com.google.home.enterprise.sdm.v1.GetStructureRequest request,
         io.grpc.stub.StreamObserver<com.google.home.enterprise.sdm.v1.Structure> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetStructureMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -494,7 +481,7 @@ public final class SmartDeviceManagementServiceGrpc {
      */
     public void listStructures(com.google.home.enterprise.sdm.v1.ListStructuresRequest request,
         io.grpc.stub.StreamObserver<com.google.home.enterprise.sdm.v1.ListStructuresResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListStructuresMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -505,7 +492,7 @@ public final class SmartDeviceManagementServiceGrpc {
      */
     public void getRoom(com.google.home.enterprise.sdm.v1.GetRoomRequest request,
         io.grpc.stub.StreamObserver<com.google.home.enterprise.sdm.v1.Room> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetRoomMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -516,7 +503,7 @@ public final class SmartDeviceManagementServiceGrpc {
      */
     public void listRooms(com.google.home.enterprise.sdm.v1.ListRoomsRequest request,
         io.grpc.stub.StreamObserver<com.google.home.enterprise.sdm.v1.ListRoomsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListRoomsMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -545,7 +532,7 @@ public final class SmartDeviceManagementServiceGrpc {
      * </pre>
      */
     public com.google.home.enterprise.sdm.v1.Device getDevice(com.google.home.enterprise.sdm.v1.GetDeviceRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetDeviceMethod(), getCallOptions(), request);
     }
 
@@ -555,7 +542,7 @@ public final class SmartDeviceManagementServiceGrpc {
      * </pre>
      */
     public com.google.home.enterprise.sdm.v1.ListDevicesResponse listDevices(com.google.home.enterprise.sdm.v1.ListDevicesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListDevicesMethod(), getCallOptions(), request);
     }
 
@@ -565,7 +552,7 @@ public final class SmartDeviceManagementServiceGrpc {
      * </pre>
      */
     public com.google.home.enterprise.sdm.v1.ExecuteDeviceCommandResponse executeDeviceCommand(com.google.home.enterprise.sdm.v1.ExecuteDeviceCommandRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getExecuteDeviceCommandMethod(), getCallOptions(), request);
     }
 
@@ -575,7 +562,7 @@ public final class SmartDeviceManagementServiceGrpc {
      * </pre>
      */
     public com.google.home.enterprise.sdm.v1.Structure getStructure(com.google.home.enterprise.sdm.v1.GetStructureRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetStructureMethod(), getCallOptions(), request);
     }
 
@@ -585,7 +572,7 @@ public final class SmartDeviceManagementServiceGrpc {
      * </pre>
      */
     public com.google.home.enterprise.sdm.v1.ListStructuresResponse listStructures(com.google.home.enterprise.sdm.v1.ListStructuresRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListStructuresMethod(), getCallOptions(), request);
     }
 
@@ -595,7 +582,7 @@ public final class SmartDeviceManagementServiceGrpc {
      * </pre>
      */
     public com.google.home.enterprise.sdm.v1.Room getRoom(com.google.home.enterprise.sdm.v1.GetRoomRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetRoomMethod(), getCallOptions(), request);
     }
 
@@ -605,7 +592,7 @@ public final class SmartDeviceManagementServiceGrpc {
      * </pre>
      */
     public com.google.home.enterprise.sdm.v1.ListRoomsResponse listRooms(com.google.home.enterprise.sdm.v1.ListRoomsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListRoomsMethod(), getCallOptions(), request);
     }
   }
@@ -635,7 +622,7 @@ public final class SmartDeviceManagementServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.home.enterprise.sdm.v1.Device> getDevice(
         com.google.home.enterprise.sdm.v1.GetDeviceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetDeviceMethod(), getCallOptions()), request);
     }
 
@@ -646,7 +633,7 @@ public final class SmartDeviceManagementServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.home.enterprise.sdm.v1.ListDevicesResponse> listDevices(
         com.google.home.enterprise.sdm.v1.ListDevicesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListDevicesMethod(), getCallOptions()), request);
     }
 
@@ -657,7 +644,7 @@ public final class SmartDeviceManagementServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.home.enterprise.sdm.v1.ExecuteDeviceCommandResponse> executeDeviceCommand(
         com.google.home.enterprise.sdm.v1.ExecuteDeviceCommandRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getExecuteDeviceCommandMethod(), getCallOptions()), request);
     }
 
@@ -668,7 +655,7 @@ public final class SmartDeviceManagementServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.home.enterprise.sdm.v1.Structure> getStructure(
         com.google.home.enterprise.sdm.v1.GetStructureRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetStructureMethod(), getCallOptions()), request);
     }
 
@@ -679,7 +666,7 @@ public final class SmartDeviceManagementServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.home.enterprise.sdm.v1.ListStructuresResponse> listStructures(
         com.google.home.enterprise.sdm.v1.ListStructuresRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListStructuresMethod(), getCallOptions()), request);
     }
 
@@ -690,7 +677,7 @@ public final class SmartDeviceManagementServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.home.enterprise.sdm.v1.Room> getRoom(
         com.google.home.enterprise.sdm.v1.GetRoomRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetRoomMethod(), getCallOptions()), request);
     }
 
@@ -701,7 +688,7 @@ public final class SmartDeviceManagementServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.home.enterprise.sdm.v1.ListRoomsResponse> listRooms(
         com.google.home.enterprise.sdm.v1.ListRoomsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListRoomsMethod(), getCallOptions()), request);
     }
   }

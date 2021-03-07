@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v4.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -119,14 +106,14 @@ public final class LanguageConstantServiceGrpc {
      */
     public void getLanguageConstant(com.google.ads.googleads.v4.services.GetLanguageConstantRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.resources.LanguageConstant> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetLanguageConstantMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetLanguageConstantMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetLanguageConstantMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v4.services.GetLanguageConstantRequest,
                 com.google.ads.googleads.v4.resources.LanguageConstant>(
@@ -159,7 +146,7 @@ public final class LanguageConstantServiceGrpc {
      */
     public void getLanguageConstant(com.google.ads.googleads.v4.services.GetLanguageConstantRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v4.resources.LanguageConstant> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetLanguageConstantMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -187,7 +174,7 @@ public final class LanguageConstantServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v4.resources.LanguageConstant getLanguageConstant(com.google.ads.googleads.v4.services.GetLanguageConstantRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetLanguageConstantMethod(), getCallOptions(), request);
     }
   }
@@ -216,7 +203,7 @@ public final class LanguageConstantServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v4.resources.LanguageConstant> getLanguageConstant(
         com.google.ads.googleads.v4.services.GetLanguageConstantRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetLanguageConstantMethod(), getCallOptions()), request);
     }
   }

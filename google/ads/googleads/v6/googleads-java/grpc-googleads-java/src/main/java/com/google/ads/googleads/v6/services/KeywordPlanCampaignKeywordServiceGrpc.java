@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v6.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -156,7 +143,7 @@ public final class KeywordPlanCampaignKeywordServiceGrpc {
      */
     public void getKeywordPlanCampaignKeyword(com.google.ads.googleads.v6.services.GetKeywordPlanCampaignKeywordRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.resources.KeywordPlanCampaignKeyword> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetKeywordPlanCampaignKeywordMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetKeywordPlanCampaignKeywordMethod(), responseObserver);
     }
 
     /**
@@ -167,21 +154,21 @@ public final class KeywordPlanCampaignKeywordServiceGrpc {
      */
     public void mutateKeywordPlanCampaignKeywords(com.google.ads.googleads.v6.services.MutateKeywordPlanCampaignKeywordsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.MutateKeywordPlanCampaignKeywordsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getMutateKeywordPlanCampaignKeywordsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMutateKeywordPlanCampaignKeywordsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetKeywordPlanCampaignKeywordMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.GetKeywordPlanCampaignKeywordRequest,
                 com.google.ads.googleads.v6.resources.KeywordPlanCampaignKeyword>(
                   this, METHODID_GET_KEYWORD_PLAN_CAMPAIGN_KEYWORD)))
           .addMethod(
             getMutateKeywordPlanCampaignKeywordsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.MutateKeywordPlanCampaignKeywordsRequest,
                 com.google.ads.googleads.v6.services.MutateKeywordPlanCampaignKeywordsResponse>(
@@ -217,7 +204,7 @@ public final class KeywordPlanCampaignKeywordServiceGrpc {
      */
     public void getKeywordPlanCampaignKeyword(com.google.ads.googleads.v6.services.GetKeywordPlanCampaignKeywordRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.resources.KeywordPlanCampaignKeyword> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetKeywordPlanCampaignKeywordMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -229,7 +216,7 @@ public final class KeywordPlanCampaignKeywordServiceGrpc {
      */
     public void mutateKeywordPlanCampaignKeywords(com.google.ads.googleads.v6.services.MutateKeywordPlanCampaignKeywordsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.MutateKeywordPlanCampaignKeywordsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMutateKeywordPlanCampaignKeywordsMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -260,7 +247,7 @@ public final class KeywordPlanCampaignKeywordServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.resources.KeywordPlanCampaignKeyword getKeywordPlanCampaignKeyword(com.google.ads.googleads.v6.services.GetKeywordPlanCampaignKeywordRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetKeywordPlanCampaignKeywordMethod(), getCallOptions(), request);
     }
 
@@ -271,7 +258,7 @@ public final class KeywordPlanCampaignKeywordServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.services.MutateKeywordPlanCampaignKeywordsResponse mutateKeywordPlanCampaignKeywords(com.google.ads.googleads.v6.services.MutateKeywordPlanCampaignKeywordsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMutateKeywordPlanCampaignKeywordsMethod(), getCallOptions(), request);
     }
   }
@@ -303,7 +290,7 @@ public final class KeywordPlanCampaignKeywordServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.resources.KeywordPlanCampaignKeyword> getKeywordPlanCampaignKeyword(
         com.google.ads.googleads.v6.services.GetKeywordPlanCampaignKeywordRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetKeywordPlanCampaignKeywordMethod(), getCallOptions()), request);
     }
 
@@ -315,7 +302,7 @@ public final class KeywordPlanCampaignKeywordServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.services.MutateKeywordPlanCampaignKeywordsResponse> mutateKeywordPlanCampaignKeywords(
         com.google.ads.googleads.v6.services.MutateKeywordPlanCampaignKeywordsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMutateKeywordPlanCampaignKeywordsMethod(), getCallOptions()), request);
     }
   }

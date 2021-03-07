@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v5.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -150,7 +137,7 @@ public final class CampaignExtensionSettingServiceGrpc {
      */
     public void getCampaignExtensionSetting(com.google.ads.googleads.v5.services.GetCampaignExtensionSettingRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.resources.CampaignExtensionSetting> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetCampaignExtensionSettingMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCampaignExtensionSettingMethod(), responseObserver);
     }
 
     /**
@@ -161,21 +148,21 @@ public final class CampaignExtensionSettingServiceGrpc {
      */
     public void mutateCampaignExtensionSettings(com.google.ads.googleads.v5.services.MutateCampaignExtensionSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.services.MutateCampaignExtensionSettingsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getMutateCampaignExtensionSettingsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMutateCampaignExtensionSettingsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetCampaignExtensionSettingMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v5.services.GetCampaignExtensionSettingRequest,
                 com.google.ads.googleads.v5.resources.CampaignExtensionSetting>(
                   this, METHODID_GET_CAMPAIGN_EXTENSION_SETTING)))
           .addMethod(
             getMutateCampaignExtensionSettingsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v5.services.MutateCampaignExtensionSettingsRequest,
                 com.google.ads.googleads.v5.services.MutateCampaignExtensionSettingsResponse>(
@@ -208,7 +195,7 @@ public final class CampaignExtensionSettingServiceGrpc {
      */
     public void getCampaignExtensionSetting(com.google.ads.googleads.v5.services.GetCampaignExtensionSettingRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.resources.CampaignExtensionSetting> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetCampaignExtensionSettingMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -220,7 +207,7 @@ public final class CampaignExtensionSettingServiceGrpc {
      */
     public void mutateCampaignExtensionSettings(com.google.ads.googleads.v5.services.MutateCampaignExtensionSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v5.services.MutateCampaignExtensionSettingsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMutateCampaignExtensionSettingsMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -248,7 +235,7 @@ public final class CampaignExtensionSettingServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v5.resources.CampaignExtensionSetting getCampaignExtensionSetting(com.google.ads.googleads.v5.services.GetCampaignExtensionSettingRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetCampaignExtensionSettingMethod(), getCallOptions(), request);
     }
 
@@ -259,7 +246,7 @@ public final class CampaignExtensionSettingServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v5.services.MutateCampaignExtensionSettingsResponse mutateCampaignExtensionSettings(com.google.ads.googleads.v5.services.MutateCampaignExtensionSettingsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMutateCampaignExtensionSettingsMethod(), getCallOptions(), request);
     }
   }
@@ -288,7 +275,7 @@ public final class CampaignExtensionSettingServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v5.resources.CampaignExtensionSetting> getCampaignExtensionSetting(
         com.google.ads.googleads.v5.services.GetCampaignExtensionSettingRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetCampaignExtensionSettingMethod(), getCallOptions()), request);
     }
 
@@ -300,7 +287,7 @@ public final class CampaignExtensionSettingServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v5.services.MutateCampaignExtensionSettingsResponse> mutateCampaignExtensionSettings(
         com.google.ads.googleads.v5.services.MutateCampaignExtensionSettingsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMutateCampaignExtensionSettingsMethod(), getCallOptions()), request);
     }
   }

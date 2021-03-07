@@ -1,19 +1,6 @@
 package com.google.devtools.build.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -181,7 +168,7 @@ public final class PublishBuildEventGrpc {
      */
     public void publishLifecycleEvent(com.google.devtools.build.v1.PublishLifecycleEventRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getPublishLifecycleEventMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPublishLifecycleEventMethod(), responseObserver);
     }
 
     /**
@@ -192,21 +179,21 @@ public final class PublishBuildEventGrpc {
      */
     public io.grpc.stub.StreamObserver<com.google.devtools.build.v1.PublishBuildToolEventStreamRequest> publishBuildToolEventStream(
         io.grpc.stub.StreamObserver<com.google.devtools.build.v1.PublishBuildToolEventStreamResponse> responseObserver) {
-      return asyncUnimplementedStreamingCall(getPublishBuildToolEventStreamMethod(), responseObserver);
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getPublishBuildToolEventStreamMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getPublishLifecycleEventMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.devtools.build.v1.PublishLifecycleEventRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_PUBLISH_LIFECYCLE_EVENT)))
           .addMethod(
             getPublishBuildToolEventStreamMethod(),
-            asyncBidiStreamingCall(
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
               new MethodHandlers<
                 com.google.devtools.build.v1.PublishBuildToolEventStreamRequest,
                 com.google.devtools.build.v1.PublishBuildToolEventStreamResponse>(
@@ -258,7 +245,7 @@ public final class PublishBuildEventGrpc {
      */
     public void publishLifecycleEvent(com.google.devtools.build.v1.PublishLifecycleEventRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPublishLifecycleEventMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -270,7 +257,7 @@ public final class PublishBuildEventGrpc {
      */
     public io.grpc.stub.StreamObserver<com.google.devtools.build.v1.PublishBuildToolEventStreamRequest> publishBuildToolEventStream(
         io.grpc.stub.StreamObserver<com.google.devtools.build.v1.PublishBuildToolEventStreamResponse> responseObserver) {
-      return asyncBidiStreamingCall(
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
           getChannel().newCall(getPublishBuildToolEventStreamMethod(), getCallOptions()), responseObserver);
     }
   }
@@ -317,7 +304,7 @@ public final class PublishBuildEventGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty publishLifecycleEvent(com.google.devtools.build.v1.PublishLifecycleEventRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPublishLifecycleEventMethod(), getCallOptions(), request);
     }
   }
@@ -365,7 +352,7 @@ public final class PublishBuildEventGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> publishLifecycleEvent(
         com.google.devtools.build.v1.PublishLifecycleEventRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPublishLifecycleEventMethod(), getCallOptions()), request);
     }
   }

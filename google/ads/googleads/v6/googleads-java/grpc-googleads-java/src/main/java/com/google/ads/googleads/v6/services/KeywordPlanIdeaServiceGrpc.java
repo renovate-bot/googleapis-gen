@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v6.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -119,14 +106,14 @@ public final class KeywordPlanIdeaServiceGrpc {
      */
     public void generateKeywordIdeas(com.google.ads.googleads.v6.services.GenerateKeywordIdeasRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.GenerateKeywordIdeaResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getGenerateKeywordIdeasMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGenerateKeywordIdeasMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGenerateKeywordIdeasMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.GenerateKeywordIdeasRequest,
                 com.google.ads.googleads.v6.services.GenerateKeywordIdeaResponse>(
@@ -159,7 +146,7 @@ public final class KeywordPlanIdeaServiceGrpc {
      */
     public void generateKeywordIdeas(com.google.ads.googleads.v6.services.GenerateKeywordIdeasRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.GenerateKeywordIdeaResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGenerateKeywordIdeasMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -187,7 +174,7 @@ public final class KeywordPlanIdeaServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.services.GenerateKeywordIdeaResponse generateKeywordIdeas(com.google.ads.googleads.v6.services.GenerateKeywordIdeasRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGenerateKeywordIdeasMethod(), getCallOptions(), request);
     }
   }
@@ -216,7 +203,7 @@ public final class KeywordPlanIdeaServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.services.GenerateKeywordIdeaResponse> generateKeywordIdeas(
         com.google.ads.googleads.v6.services.GenerateKeywordIdeasRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGenerateKeywordIdeasMethod(), getCallOptions()), request);
     }
   }

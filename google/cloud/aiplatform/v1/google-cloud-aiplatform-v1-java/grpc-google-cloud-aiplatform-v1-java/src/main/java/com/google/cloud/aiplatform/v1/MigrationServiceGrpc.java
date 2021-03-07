@@ -1,19 +1,6 @@
 package com.google.cloud.aiplatform.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -154,7 +141,7 @@ public final class MigrationServiceGrpc {
      */
     public void searchMigratableResources(com.google.cloud.aiplatform.v1.SearchMigratableResourcesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.SearchMigratableResourcesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getSearchMigratableResourcesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSearchMigratableResourcesMethod(), responseObserver);
     }
 
     /**
@@ -165,21 +152,21 @@ public final class MigrationServiceGrpc {
      */
     public void batchMigrateResources(com.google.cloud.aiplatform.v1.BatchMigrateResourcesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchMigrateResourcesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBatchMigrateResourcesMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getSearchMigratableResourcesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.aiplatform.v1.SearchMigratableResourcesRequest,
                 com.google.cloud.aiplatform.v1.SearchMigratableResourcesResponse>(
                   this, METHODID_SEARCH_MIGRATABLE_RESOURCES)))
           .addMethod(
             getBatchMigrateResourcesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.cloud.aiplatform.v1.BatchMigrateResourcesRequest,
                 com.google.longrunning.Operation>(
@@ -215,7 +202,7 @@ public final class MigrationServiceGrpc {
      */
     public void searchMigratableResources(com.google.cloud.aiplatform.v1.SearchMigratableResourcesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.SearchMigratableResourcesResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSearchMigratableResourcesMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -227,7 +214,7 @@ public final class MigrationServiceGrpc {
      */
     public void batchMigrateResources(com.google.cloud.aiplatform.v1.BatchMigrateResourcesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getBatchMigrateResourcesMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -258,7 +245,7 @@ public final class MigrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.SearchMigratableResourcesResponse searchMigratableResources(com.google.cloud.aiplatform.v1.SearchMigratableResourcesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSearchMigratableResourcesMethod(), getCallOptions(), request);
     }
 
@@ -269,7 +256,7 @@ public final class MigrationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation batchMigrateResources(com.google.cloud.aiplatform.v1.BatchMigrateResourcesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBatchMigrateResourcesMethod(), getCallOptions(), request);
     }
   }
@@ -301,7 +288,7 @@ public final class MigrationServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.aiplatform.v1.SearchMigratableResourcesResponse> searchMigratableResources(
         com.google.cloud.aiplatform.v1.SearchMigratableResourcesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSearchMigratableResourcesMethod(), getCallOptions()), request);
     }
 
@@ -313,7 +300,7 @@ public final class MigrationServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> batchMigrateResources(
         com.google.cloud.aiplatform.v1.BatchMigrateResourcesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBatchMigrateResourcesMethod(), getCallOptions()), request);
     }
   }

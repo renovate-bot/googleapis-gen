@@ -1,19 +1,6 @@
 package com.google.monitoring.v3;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -404,7 +391,7 @@ public final class ServiceMonitoringServiceGrpc {
      */
     public void createService(com.google.monitoring.v3.CreateServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.Service> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateServiceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateServiceMethod(), responseObserver);
     }
 
     /**
@@ -414,7 +401,7 @@ public final class ServiceMonitoringServiceGrpc {
      */
     public void getService(com.google.monitoring.v3.GetServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.Service> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetServiceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetServiceMethod(), responseObserver);
     }
 
     /**
@@ -424,7 +411,7 @@ public final class ServiceMonitoringServiceGrpc {
      */
     public void listServices(com.google.monitoring.v3.ListServicesRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.ListServicesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListServicesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListServicesMethod(), responseObserver);
     }
 
     /**
@@ -434,7 +421,7 @@ public final class ServiceMonitoringServiceGrpc {
      */
     public void updateService(com.google.monitoring.v3.UpdateServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.Service> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateServiceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateServiceMethod(), responseObserver);
     }
 
     /**
@@ -444,7 +431,7 @@ public final class ServiceMonitoringServiceGrpc {
      */
     public void deleteService(com.google.monitoring.v3.DeleteServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteServiceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteServiceMethod(), responseObserver);
     }
 
     /**
@@ -454,7 +441,7 @@ public final class ServiceMonitoringServiceGrpc {
      */
     public void createServiceLevelObjective(com.google.monitoring.v3.CreateServiceLevelObjectiveRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.ServiceLevelObjective> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateServiceLevelObjectiveMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateServiceLevelObjectiveMethod(), responseObserver);
     }
 
     /**
@@ -464,7 +451,7 @@ public final class ServiceMonitoringServiceGrpc {
      */
     public void getServiceLevelObjective(com.google.monitoring.v3.GetServiceLevelObjectiveRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.ServiceLevelObjective> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetServiceLevelObjectiveMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetServiceLevelObjectiveMethod(), responseObserver);
     }
 
     /**
@@ -474,7 +461,7 @@ public final class ServiceMonitoringServiceGrpc {
      */
     public void listServiceLevelObjectives(com.google.monitoring.v3.ListServiceLevelObjectivesRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.ListServiceLevelObjectivesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListServiceLevelObjectivesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListServiceLevelObjectivesMethod(), responseObserver);
     }
 
     /**
@@ -484,7 +471,7 @@ public final class ServiceMonitoringServiceGrpc {
      */
     public void updateServiceLevelObjective(com.google.monitoring.v3.UpdateServiceLevelObjectiveRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.ServiceLevelObjective> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateServiceLevelObjectiveMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateServiceLevelObjectiveMethod(), responseObserver);
     }
 
     /**
@@ -494,77 +481,77 @@ public final class ServiceMonitoringServiceGrpc {
      */
     public void deleteServiceLevelObjective(com.google.monitoring.v3.DeleteServiceLevelObjectiveRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteServiceLevelObjectiveMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteServiceLevelObjectiveMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getCreateServiceMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.monitoring.v3.CreateServiceRequest,
                 com.google.monitoring.v3.Service>(
                   this, METHODID_CREATE_SERVICE)))
           .addMethod(
             getGetServiceMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.monitoring.v3.GetServiceRequest,
                 com.google.monitoring.v3.Service>(
                   this, METHODID_GET_SERVICE)))
           .addMethod(
             getListServicesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.monitoring.v3.ListServicesRequest,
                 com.google.monitoring.v3.ListServicesResponse>(
                   this, METHODID_LIST_SERVICES)))
           .addMethod(
             getUpdateServiceMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.monitoring.v3.UpdateServiceRequest,
                 com.google.monitoring.v3.Service>(
                   this, METHODID_UPDATE_SERVICE)))
           .addMethod(
             getDeleteServiceMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.monitoring.v3.DeleteServiceRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_SERVICE)))
           .addMethod(
             getCreateServiceLevelObjectiveMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.monitoring.v3.CreateServiceLevelObjectiveRequest,
                 com.google.monitoring.v3.ServiceLevelObjective>(
                   this, METHODID_CREATE_SERVICE_LEVEL_OBJECTIVE)))
           .addMethod(
             getGetServiceLevelObjectiveMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.monitoring.v3.GetServiceLevelObjectiveRequest,
                 com.google.monitoring.v3.ServiceLevelObjective>(
                   this, METHODID_GET_SERVICE_LEVEL_OBJECTIVE)))
           .addMethod(
             getListServiceLevelObjectivesMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.monitoring.v3.ListServiceLevelObjectivesRequest,
                 com.google.monitoring.v3.ListServiceLevelObjectivesResponse>(
                   this, METHODID_LIST_SERVICE_LEVEL_OBJECTIVES)))
           .addMethod(
             getUpdateServiceLevelObjectiveMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.monitoring.v3.UpdateServiceLevelObjectiveRequest,
                 com.google.monitoring.v3.ServiceLevelObjective>(
                   this, METHODID_UPDATE_SERVICE_LEVEL_OBJECTIVE)))
           .addMethod(
             getDeleteServiceLevelObjectiveMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.monitoring.v3.DeleteServiceLevelObjectiveRequest,
                 com.google.protobuf.Empty>(
@@ -600,7 +587,7 @@ public final class ServiceMonitoringServiceGrpc {
      */
     public void createService(com.google.monitoring.v3.CreateServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.Service> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateServiceMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -611,7 +598,7 @@ public final class ServiceMonitoringServiceGrpc {
      */
     public void getService(com.google.monitoring.v3.GetServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.Service> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetServiceMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -622,7 +609,7 @@ public final class ServiceMonitoringServiceGrpc {
      */
     public void listServices(com.google.monitoring.v3.ListServicesRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.ListServicesResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListServicesMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -633,7 +620,7 @@ public final class ServiceMonitoringServiceGrpc {
      */
     public void updateService(com.google.monitoring.v3.UpdateServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.Service> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateServiceMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -644,7 +631,7 @@ public final class ServiceMonitoringServiceGrpc {
      */
     public void deleteService(com.google.monitoring.v3.DeleteServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteServiceMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -655,7 +642,7 @@ public final class ServiceMonitoringServiceGrpc {
      */
     public void createServiceLevelObjective(com.google.monitoring.v3.CreateServiceLevelObjectiveRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.ServiceLevelObjective> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateServiceLevelObjectiveMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -666,7 +653,7 @@ public final class ServiceMonitoringServiceGrpc {
      */
     public void getServiceLevelObjective(com.google.monitoring.v3.GetServiceLevelObjectiveRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.ServiceLevelObjective> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetServiceLevelObjectiveMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -677,7 +664,7 @@ public final class ServiceMonitoringServiceGrpc {
      */
     public void listServiceLevelObjectives(com.google.monitoring.v3.ListServiceLevelObjectivesRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.ListServiceLevelObjectivesResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListServiceLevelObjectivesMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -688,7 +675,7 @@ public final class ServiceMonitoringServiceGrpc {
      */
     public void updateServiceLevelObjective(com.google.monitoring.v3.UpdateServiceLevelObjectiveRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.ServiceLevelObjective> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateServiceLevelObjectiveMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -699,7 +686,7 @@ public final class ServiceMonitoringServiceGrpc {
      */
     public void deleteServiceLevelObjective(com.google.monitoring.v3.DeleteServiceLevelObjectiveRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteServiceLevelObjectiveMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -730,7 +717,7 @@ public final class ServiceMonitoringServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.Service createService(com.google.monitoring.v3.CreateServiceRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateServiceMethod(), getCallOptions(), request);
     }
 
@@ -740,7 +727,7 @@ public final class ServiceMonitoringServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.Service getService(com.google.monitoring.v3.GetServiceRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetServiceMethod(), getCallOptions(), request);
     }
 
@@ -750,7 +737,7 @@ public final class ServiceMonitoringServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.ListServicesResponse listServices(com.google.monitoring.v3.ListServicesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListServicesMethod(), getCallOptions(), request);
     }
 
@@ -760,7 +747,7 @@ public final class ServiceMonitoringServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.Service updateService(com.google.monitoring.v3.UpdateServiceRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateServiceMethod(), getCallOptions(), request);
     }
 
@@ -770,7 +757,7 @@ public final class ServiceMonitoringServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteService(com.google.monitoring.v3.DeleteServiceRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteServiceMethod(), getCallOptions(), request);
     }
 
@@ -780,7 +767,7 @@ public final class ServiceMonitoringServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.ServiceLevelObjective createServiceLevelObjective(com.google.monitoring.v3.CreateServiceLevelObjectiveRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateServiceLevelObjectiveMethod(), getCallOptions(), request);
     }
 
@@ -790,7 +777,7 @@ public final class ServiceMonitoringServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.ServiceLevelObjective getServiceLevelObjective(com.google.monitoring.v3.GetServiceLevelObjectiveRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetServiceLevelObjectiveMethod(), getCallOptions(), request);
     }
 
@@ -800,7 +787,7 @@ public final class ServiceMonitoringServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.ListServiceLevelObjectivesResponse listServiceLevelObjectives(com.google.monitoring.v3.ListServiceLevelObjectivesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListServiceLevelObjectivesMethod(), getCallOptions(), request);
     }
 
@@ -810,7 +797,7 @@ public final class ServiceMonitoringServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.ServiceLevelObjective updateServiceLevelObjective(com.google.monitoring.v3.UpdateServiceLevelObjectiveRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateServiceLevelObjectiveMethod(), getCallOptions(), request);
     }
 
@@ -820,7 +807,7 @@ public final class ServiceMonitoringServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteServiceLevelObjective(com.google.monitoring.v3.DeleteServiceLevelObjectiveRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteServiceLevelObjectiveMethod(), getCallOptions(), request);
     }
   }
@@ -852,7 +839,7 @@ public final class ServiceMonitoringServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.monitoring.v3.Service> createService(
         com.google.monitoring.v3.CreateServiceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateServiceMethod(), getCallOptions()), request);
     }
 
@@ -863,7 +850,7 @@ public final class ServiceMonitoringServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.monitoring.v3.Service> getService(
         com.google.monitoring.v3.GetServiceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetServiceMethod(), getCallOptions()), request);
     }
 
@@ -874,7 +861,7 @@ public final class ServiceMonitoringServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.monitoring.v3.ListServicesResponse> listServices(
         com.google.monitoring.v3.ListServicesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListServicesMethod(), getCallOptions()), request);
     }
 
@@ -885,7 +872,7 @@ public final class ServiceMonitoringServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.monitoring.v3.Service> updateService(
         com.google.monitoring.v3.UpdateServiceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateServiceMethod(), getCallOptions()), request);
     }
 
@@ -896,7 +883,7 @@ public final class ServiceMonitoringServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteService(
         com.google.monitoring.v3.DeleteServiceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteServiceMethod(), getCallOptions()), request);
     }
 
@@ -907,7 +894,7 @@ public final class ServiceMonitoringServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.monitoring.v3.ServiceLevelObjective> createServiceLevelObjective(
         com.google.monitoring.v3.CreateServiceLevelObjectiveRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateServiceLevelObjectiveMethod(), getCallOptions()), request);
     }
 
@@ -918,7 +905,7 @@ public final class ServiceMonitoringServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.monitoring.v3.ServiceLevelObjective> getServiceLevelObjective(
         com.google.monitoring.v3.GetServiceLevelObjectiveRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetServiceLevelObjectiveMethod(), getCallOptions()), request);
     }
 
@@ -929,7 +916,7 @@ public final class ServiceMonitoringServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.monitoring.v3.ListServiceLevelObjectivesResponse> listServiceLevelObjectives(
         com.google.monitoring.v3.ListServiceLevelObjectivesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListServiceLevelObjectivesMethod(), getCallOptions()), request);
     }
 
@@ -940,7 +927,7 @@ public final class ServiceMonitoringServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.monitoring.v3.ServiceLevelObjective> updateServiceLevelObjective(
         com.google.monitoring.v3.UpdateServiceLevelObjectiveRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateServiceLevelObjectiveMethod(), getCallOptions()), request);
     }
 
@@ -951,7 +938,7 @@ public final class ServiceMonitoringServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteServiceLevelObjective(
         com.google.monitoring.v3.DeleteServiceLevelObjectiveRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteServiceLevelObjectiveMethod(), getCallOptions()), request);
     }
   }

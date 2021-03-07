@@ -1,19 +1,6 @@
 package com.google.ads.googleads.v6.services;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -150,7 +137,7 @@ public final class FeedItemTargetServiceGrpc {
      */
     public void getFeedItemTarget(com.google.ads.googleads.v6.services.GetFeedItemTargetRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.resources.FeedItemTarget> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetFeedItemTargetMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetFeedItemTargetMethod(), responseObserver);
     }
 
     /**
@@ -160,21 +147,21 @@ public final class FeedItemTargetServiceGrpc {
      */
     public void mutateFeedItemTargets(com.google.ads.googleads.v6.services.MutateFeedItemTargetsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.MutateFeedItemTargetsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getMutateFeedItemTargetsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMutateFeedItemTargetsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetFeedItemTargetMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.GetFeedItemTargetRequest,
                 com.google.ads.googleads.v6.resources.FeedItemTarget>(
                   this, METHODID_GET_FEED_ITEM_TARGET)))
           .addMethod(
             getMutateFeedItemTargetsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.google.ads.googleads.v6.services.MutateFeedItemTargetsRequest,
                 com.google.ads.googleads.v6.services.MutateFeedItemTargetsResponse>(
@@ -207,7 +194,7 @@ public final class FeedItemTargetServiceGrpc {
      */
     public void getFeedItemTarget(com.google.ads.googleads.v6.services.GetFeedItemTargetRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.resources.FeedItemTarget> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetFeedItemTargetMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -218,7 +205,7 @@ public final class FeedItemTargetServiceGrpc {
      */
     public void mutateFeedItemTargets(com.google.ads.googleads.v6.services.MutateFeedItemTargetsRequest request,
         io.grpc.stub.StreamObserver<com.google.ads.googleads.v6.services.MutateFeedItemTargetsResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMutateFeedItemTargetsMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -246,7 +233,7 @@ public final class FeedItemTargetServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.resources.FeedItemTarget getFeedItemTarget(com.google.ads.googleads.v6.services.GetFeedItemTargetRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetFeedItemTargetMethod(), getCallOptions(), request);
     }
 
@@ -256,7 +243,7 @@ public final class FeedItemTargetServiceGrpc {
      * </pre>
      */
     public com.google.ads.googleads.v6.services.MutateFeedItemTargetsResponse mutateFeedItemTargets(com.google.ads.googleads.v6.services.MutateFeedItemTargetsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMutateFeedItemTargetsMethod(), getCallOptions(), request);
     }
   }
@@ -285,7 +272,7 @@ public final class FeedItemTargetServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.resources.FeedItemTarget> getFeedItemTarget(
         com.google.ads.googleads.v6.services.GetFeedItemTargetRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetFeedItemTargetMethod(), getCallOptions()), request);
     }
 
@@ -296,7 +283,7 @@ public final class FeedItemTargetServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.ads.googleads.v6.services.MutateFeedItemTargetsResponse> mutateFeedItemTargets(
         com.google.ads.googleads.v6.services.MutateFeedItemTargetsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMutateFeedItemTargetsMethod(), getCallOptions()), request);
     }
   }
