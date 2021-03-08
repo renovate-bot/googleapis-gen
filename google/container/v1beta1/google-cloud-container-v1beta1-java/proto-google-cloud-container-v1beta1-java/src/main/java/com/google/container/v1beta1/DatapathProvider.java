@@ -33,7 +33,7 @@ public enum DatapathProvider
    * <pre>
    * Use the eBPF based GKE Dataplane V2 with additional features. See the [GKE
    * Dataplane V2
-   * documentation](https://cloud.google.com/kubernetes-enginw/docs/how-to/dataplane-v2)
+   * documentation](https://cloud.google.com/kubernetes-engine/docs/how-to/dataplane-v2)
    * for more.
    * </pre>
    *
@@ -63,7 +63,7 @@ public enum DatapathProvider
    * <pre>
    * Use the eBPF based GKE Dataplane V2 with additional features. See the [GKE
    * Dataplane V2
-   * documentation](https://cloud.google.com/kubernetes-enginw/docs/how-to/dataplane-v2)
+   * documentation](https://cloud.google.com/kubernetes-engine/docs/how-to/dataplane-v2)
    * for more.
    * </pre>
    *
