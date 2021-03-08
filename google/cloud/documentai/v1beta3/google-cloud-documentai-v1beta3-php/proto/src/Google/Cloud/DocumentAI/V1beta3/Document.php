@@ -59,13 +59,6 @@ class Document extends \Google\Protobuf\Internal\Message
      */
     private $entity_relations;
     /**
-     * A list of translations on [Document.text][google.cloud.documentai.v1beta3.Document.text]. For document shards,
-     * translations in this list may cross shard boundaries.
-     *
-     * Generated from protobuf field <code>repeated .google.cloud.documentai.v1beta3.Document.Translation translations = 12;</code>
-     */
-    private $translations;
-    /**
      * A list of text corrections made to [Document.text].  This is usually
      * used for annotating corrections to OCR mistakes.  Text changes for a given
      * revision may not overlap with each other.
@@ -125,9 +118,6 @@ class Document extends \Google\Protobuf\Internal\Message
      *           entities in this list may cross shard boundaries.
      *     @type \Google\Cloud\DocumentAI\V1beta3\Document\EntityRelation[]|\Google\Protobuf\Internal\RepeatedField $entity_relations
      *           Relationship among [Document.entities][google.cloud.documentai.v1beta3.Document.entities].
-     *     @type \Google\Cloud\DocumentAI\V1beta3\Document\Translation[]|\Google\Protobuf\Internal\RepeatedField $translations
-     *           A list of translations on [Document.text][google.cloud.documentai.v1beta3.Document.text]. For document shards,
-     *           translations in this list may cross shard boundaries.
      *     @type \Google\Cloud\DocumentAI\V1beta3\Document\TextChange[]|\Google\Protobuf\Internal\RepeatedField $text_changes
      *           A list of text corrections made to [Document.text].  This is usually
      *           used for annotating corrections to OCR mistakes.  Text changes for a given
@@ -378,34 +368,6 @@ class Document extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Cloud\DocumentAI\V1beta3\Document\EntityRelation::class);
         $this->entity_relations = $arr;
-
-        return $this;
-    }
-
-    /**
-     * A list of translations on [Document.text][google.cloud.documentai.v1beta3.Document.text]. For document shards,
-     * translations in this list may cross shard boundaries.
-     *
-     * Generated from protobuf field <code>repeated .google.cloud.documentai.v1beta3.Document.Translation translations = 12;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getTranslations()
-    {
-        return $this->translations;
-    }
-
-    /**
-     * A list of translations on [Document.text][google.cloud.documentai.v1beta3.Document.text]. For document shards,
-     * translations in this list may cross shard boundaries.
-     *
-     * Generated from protobuf field <code>repeated .google.cloud.documentai.v1beta3.Document.Translation translations = 12;</code>
-     * @param \Google\Cloud\DocumentAI\V1beta3\Document\Translation[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setTranslations($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Cloud\DocumentAI\V1beta3\Document\Translation::class);
-        $this->translations = $arr;
 
         return $this;
     }
