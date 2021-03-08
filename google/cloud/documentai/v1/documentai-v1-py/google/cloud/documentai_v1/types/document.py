@@ -45,24 +45,24 @@ class Document(proto.Message):
 
     Attributes:
         uri (str):
-            Currently supports Google Cloud Storage URI of the form
-            ``gs://bucket_name/object_name``. Object versioning is not
-            supported. See `Google Cloud Storage Request
+            Optional. Currently supports Google Cloud Storage URI of the
+            form ``gs://bucket_name/object_name``. Object versioning is
+            not supported. See `Google Cloud Storage Request
             URIs <https://cloud.google.com/storage/docs/reference-uris>`__
             for more info.
         content (bytes):
-            Inline document content, represented as a stream of bytes.
-            Note: As with all ``bytes`` fields, protobuffers use a pure
-            binary representation, whereas JSON representations use
-            base64.
+            Optional. Inline document content, represented as a stream
+            of bytes. Note: As with all ``bytes`` fields, protobuffers
+            use a pure binary representation, whereas JSON
+            representations use base64.
         mime_type (str):
             An IANA published MIME type (also referred to
             as media type). For more information, see
             https://www.iana.org/assignments/media-
             types/media-types.xhtml.
         text (str):
-            UTF-8 encoded text in reading order from the
-            document.
+            Optional. UTF-8 encoded text in reading order
+            from the document.
         text_styles (Sequence[google.cloud.documentai_v1.types.Document.Style]):
             Styles for the
             [Document.text][google.cloud.documentai.v1.Document.text].
@@ -77,11 +77,6 @@ class Document(proto.Message):
         entity_relations (Sequence[google.cloud.documentai_v1.types.Document.EntityRelation]):
             Relationship among
             [Document.entities][google.cloud.documentai.v1.Document.entities].
-        translations (Sequence[google.cloud.documentai_v1.types.Document.Translation]):
-            A list of translations on
-            [Document.text][google.cloud.documentai.v1.Document.text].
-            For document shards, translations in this list may cross
-            shard boundaries.
         text_changes (Sequence[google.cloud.documentai_v1.types.Document.TextChange]):
             A list of text corrections made to [Document.text]. This is
             usually used for annotating corrections to OCR mistakes.
@@ -697,14 +692,16 @@ class Document(proto.Message):
 
         Attributes:
             text_anchor (google.cloud.documentai_v1.types.Document.TextAnchor):
-                Provenance of the entity. Text anchor indexing into the
+                Optional. Provenance of the entity. Text anchor indexing
+                into the
                 [Document.text][google.cloud.documentai.v1.Document.text].
             type_ (str):
                 Entity type from a schema e.g. ``Address``.
             mention_text (str):
-                Text value in the document e.g. ``1600 Amphitheatre Pkwy``.
+                Optional. Text value in the document e.g.
+                ``1600 Amphitheatre Pkwy``.
             mention_id (str):
-                Deprecated. Use ``id`` field instead.
+                Optional. Deprecated. Use ``id`` field instead.
             confidence (float):
                 Optional. Confidence of detected Schema entity. Range [0,
                 1].
@@ -836,38 +833,6 @@ class Document(proto.Message):
         object_id = proto.Field(proto.STRING, number=2)
 
         relation = proto.Field(proto.STRING, number=3)
-
-    class Translation(proto.Message):
-        r"""A translation of the text segment.
-
-        Attributes:
-            text_anchor (google.cloud.documentai_v1.types.Document.TextAnchor):
-                Provenance of the translation. Text anchor indexing into the
-                [Document.text][google.cloud.documentai.v1.Document.text].
-                There can only be a single ``TextAnchor.text_segments``
-                element. If the start and end index of the text segment are
-                the same, the text change is inserted before that index.
-            language_code (str):
-                The BCP-47 language code, such as "en-US" or "sr-Latn". For
-                more information, see
-                http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
-            translated_text (str):
-                Text translated into the target language.
-            provenance (Sequence[google.cloud.documentai_v1.types.Document.Provenance]):
-                The history of this annotation.
-        """
-
-        text_anchor = proto.Field(proto.MESSAGE, number=1,
-            message='Document.TextAnchor',
-        )
-
-        language_code = proto.Field(proto.STRING, number=2)
-
-        translated_text = proto.Field(proto.STRING, number=3)
-
-        provenance = proto.RepeatedField(proto.MESSAGE, number=4,
-            message='Document.Provenance',
-        )
 
     class TextAnchor(proto.Message):
         r"""Text reference indexing into the
@@ -1129,10 +1094,6 @@ class Document(proto.Message):
 
     entity_relations = proto.RepeatedField(proto.MESSAGE, number=8,
         message=EntityRelation,
-    )
-
-    translations = proto.RepeatedField(proto.MESSAGE, number=12,
-        message=Translation,
     )
 
     text_changes = proto.RepeatedField(proto.MESSAGE, number=14,

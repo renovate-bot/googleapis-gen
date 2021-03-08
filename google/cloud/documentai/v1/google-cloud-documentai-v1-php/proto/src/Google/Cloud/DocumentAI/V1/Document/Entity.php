@@ -17,10 +17,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class Entity extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Provenance of the entity.
+     * Optional. Provenance of the entity.
      * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
      *
-     * Generated from protobuf field <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
+     * Generated from protobuf field <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     protected $text_anchor = null;
     /**
@@ -30,15 +30,15 @@ class Entity extends \Google\Protobuf\Internal\Message
      */
     protected $type = '';
     /**
-     * Text value in the document e.g. `1600 Amphitheatre Pkwy`.
+     * Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`.
      *
-     * Generated from protobuf field <code>string mention_text = 3;</code>
+     * Generated from protobuf field <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     protected $mention_text = '';
     /**
-     * Deprecated.  Use `id` field instead.
+     * Optional. Deprecated.  Use `id` field instead.
      *
-     * Generated from protobuf field <code>string mention_id = 4;</code>
+     * Generated from protobuf field <code>string mention_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     protected $mention_id = '';
     /**
@@ -97,14 +97,14 @@ class Entity extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\DocumentAI\V1\Document\TextAnchor $text_anchor
-     *           Provenance of the entity.
+     *           Optional. Provenance of the entity.
      *           Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
      *     @type string $type
      *           Entity type from a schema e.g. `Address`.
      *     @type string $mention_text
-     *           Text value in the document e.g. `1600 Amphitheatre Pkwy`.
+     *           Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`.
      *     @type string $mention_id
-     *           Deprecated.  Use `id` field instead.
+     *           Optional. Deprecated.  Use `id` field instead.
      *     @type float $confidence
      *           Optional. Confidence of detected Schema entity. Range [0, 1].
      *     @type \Google\Cloud\DocumentAI\V1\Document\PageAnchor $page_anchor
@@ -133,10 +133,10 @@ class Entity extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Provenance of the entity.
+     * Optional. Provenance of the entity.
      * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
      *
-     * Generated from protobuf field <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
+     * Generated from protobuf field <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return \Google\Cloud\DocumentAI\V1\Document\TextAnchor|null
      */
     public function getTextAnchor()
@@ -155,10 +155,10 @@ class Entity extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Provenance of the entity.
+     * Optional. Provenance of the entity.
      * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
      *
-     * Generated from protobuf field <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
+     * Generated from protobuf field <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param \Google\Cloud\DocumentAI\V1\Document\TextAnchor $var
      * @return $this
      */
@@ -197,9 +197,9 @@ class Entity extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Text value in the document e.g. `1600 Amphitheatre Pkwy`.
+     * Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`.
      *
-     * Generated from protobuf field <code>string mention_text = 3;</code>
+     * Generated from protobuf field <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return string
      */
     public function getMentionText()
@@ -208,9 +208,9 @@ class Entity extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Text value in the document e.g. `1600 Amphitheatre Pkwy`.
+     * Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`.
      *
-     * Generated from protobuf field <code>string mention_text = 3;</code>
+     * Generated from protobuf field <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param string $var
      * @return $this
      */
@@ -223,9 +223,9 @@ class Entity extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Deprecated.  Use `id` field instead.
+     * Optional. Deprecated.  Use `id` field instead.
      *
-     * Generated from protobuf field <code>string mention_id = 4;</code>
+     * Generated from protobuf field <code>string mention_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return string
      */
     public function getMentionId()
@@ -234,9 +234,9 @@ class Entity extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Deprecated.  Use `id` field instead.
+     * Optional. Deprecated.  Use `id` field instead.
      *
-     * Generated from protobuf field <code>string mention_id = 4;</code>
+     * Generated from protobuf field <code>string mention_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param string $var
      * @return $this
      */
