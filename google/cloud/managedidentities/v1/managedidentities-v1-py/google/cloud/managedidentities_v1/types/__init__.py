@@ -15,40 +15,40 @@
 # limitations under the License.
 #
 
+from .managed_identities_service import (
+    AttachTrustRequest,
+    CreateMicrosoftAdDomainRequest,
+    DeleteDomainRequest,
+    DetachTrustRequest,
+    GetDomainRequest,
+    ListDomainsRequest,
+    ListDomainsResponse,
+    OpMetadata,
+    ReconfigureTrustRequest,
+    ResetAdminPasswordRequest,
+    ResetAdminPasswordResponse,
+    UpdateDomainRequest,
+    ValidateTrustRequest,
+)
 from .resource import (
     Domain,
     Trust,
 )
-from .managed_identities_service import (
-    OpMetadata,
-    CreateMicrosoftAdDomainRequest,
-    ResetAdminPasswordRequest,
-    ResetAdminPasswordResponse,
-    ListDomainsRequest,
-    ListDomainsResponse,
-    GetDomainRequest,
-    UpdateDomainRequest,
-    DeleteDomainRequest,
-    AttachTrustRequest,
-    ReconfigureTrustRequest,
-    DetachTrustRequest,
-    ValidateTrustRequest,
-)
 
 __all__ = (
-    'Domain',
-    'Trust',
-    'OpMetadata',
+    'AttachTrustRequest',
     'CreateMicrosoftAdDomainRequest',
-    'ResetAdminPasswordRequest',
-    'ResetAdminPasswordResponse',
+    'DeleteDomainRequest',
+    'DetachTrustRequest',
+    'GetDomainRequest',
     'ListDomainsRequest',
     'ListDomainsResponse',
-    'GetDomainRequest',
-    'UpdateDomainRequest',
-    'DeleteDomainRequest',
-    'AttachTrustRequest',
+    'OpMetadata',
     'ReconfigureTrustRequest',
-    'DetachTrustRequest',
+    'ResetAdminPasswordRequest',
+    'ResetAdminPasswordResponse',
+    'UpdateDomainRequest',
     'ValidateTrustRequest',
+    'Domain',
+    'Trust',
 )

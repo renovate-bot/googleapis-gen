@@ -15,9 +15,6 @@
 # limitations under the License.
 #
 
-from .security_marks import (
-    SecurityMarks,
-)
 from .asset import (
     Asset,
 )
@@ -30,8 +27,8 @@ from .organization_settings import (
 from .run_asset_discovery_response import (
     RunAssetDiscoveryResponse,
 )
-from .source import (
-    Source,
+from .security_marks import (
+    SecurityMarks,
 )
 from .securitycenter_service import (
     CreateFindingRequest,
@@ -43,27 +40,29 @@ from .securitycenter_service import (
     GroupFindingsRequest,
     GroupFindingsResponse,
     GroupResult,
-    ListSourcesRequest,
-    ListSourcesResponse,
     ListAssetsRequest,
     ListAssetsResponse,
     ListFindingsRequest,
     ListFindingsResponse,
-    SetFindingStateRequest,
+    ListSourcesRequest,
+    ListSourcesResponse,
     RunAssetDiscoveryRequest,
+    SetFindingStateRequest,
     UpdateFindingRequest,
     UpdateOrganizationSettingsRequest,
-    UpdateSourceRequest,
     UpdateSecurityMarksRequest,
+    UpdateSourceRequest,
+)
+from .source import (
+    Source,
 )
 
 __all__ = (
-    'SecurityMarks',
     'Asset',
     'Finding',
     'OrganizationSettings',
     'RunAssetDiscoveryResponse',
-    'Source',
+    'SecurityMarks',
     'CreateFindingRequest',
     'CreateSourceRequest',
     'GetOrganizationSettingsRequest',
@@ -73,16 +72,17 @@ __all__ = (
     'GroupFindingsRequest',
     'GroupFindingsResponse',
     'GroupResult',
-    'ListSourcesRequest',
-    'ListSourcesResponse',
     'ListAssetsRequest',
     'ListAssetsResponse',
     'ListFindingsRequest',
     'ListFindingsResponse',
-    'SetFindingStateRequest',
+    'ListSourcesRequest',
+    'ListSourcesResponse',
     'RunAssetDiscoveryRequest',
+    'SetFindingStateRequest',
     'UpdateFindingRequest',
     'UpdateOrganizationSettingsRequest',
-    'UpdateSourceRequest',
     'UpdateSecurityMarksRequest',
+    'UpdateSourceRequest',
+    'Source',
 )

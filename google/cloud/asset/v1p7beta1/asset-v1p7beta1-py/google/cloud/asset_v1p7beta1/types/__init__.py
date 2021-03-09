@@ -15,38 +15,38 @@
 # limitations under the License.
 #
 
-from .assets import (
-    Asset,
-    Resource,
-    RelatedAssets,
-    RelationshipAttributes,
-    RelatedAsset,
-)
 from .asset_service import (
+    BigQueryDestination,
     ExportAssetsRequest,
     ExportAssetsResponse,
+    GcsDestination,
+    GcsOutputResult,
     OutputConfig,
     OutputResult,
-    GcsOutputResult,
-    GcsDestination,
-    BigQueryDestination,
     PartitionSpec,
     ContentType,
 )
+from .assets import (
+    Asset,
+    RelatedAsset,
+    RelatedAssets,
+    RelationshipAttributes,
+    Resource,
+)
 
 __all__ = (
-    'Asset',
-    'Resource',
-    'RelatedAssets',
-    'RelationshipAttributes',
-    'RelatedAsset',
+    'BigQueryDestination',
     'ExportAssetsRequest',
     'ExportAssetsResponse',
+    'GcsDestination',
+    'GcsOutputResult',
     'OutputConfig',
     'OutputResult',
-    'GcsOutputResult',
-    'GcsDestination',
-    'BigQueryDestination',
     'PartitionSpec',
     'ContentType',
+    'Asset',
+    'RelatedAsset',
+    'RelatedAssets',
+    'RelationshipAttributes',
+    'Resource',
 )

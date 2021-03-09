@@ -16,10 +16,10 @@
 #
 
 from .trace import (
-    Span,
     AttributeValue,
-    StackTrace,
     Module,
+    Span,
+    StackTrace,
     TruncatableString,
 )
 from .tracing import (
@@ -27,10 +27,10 @@ from .tracing import (
 )
 
 __all__ = (
-    'Span',
     'AttributeValue',
-    'StackTrace',
     'Module',
+    'Span',
+    'StackTrace',
     'TruncatableString',
     'BatchWriteSpansRequest',
 )

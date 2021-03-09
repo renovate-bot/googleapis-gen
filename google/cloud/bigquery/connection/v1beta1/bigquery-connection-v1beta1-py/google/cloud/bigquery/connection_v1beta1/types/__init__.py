@@ -16,29 +16,29 @@
 #
 
 from .connection import (
+    CloudSqlCredential,
+    CloudSqlProperties,
+    Connection,
+    ConnectionCredential,
     CreateConnectionRequest,
+    DeleteConnectionRequest,
     GetConnectionRequest,
     ListConnectionsRequest,
     ListConnectionsResponse,
-    UpdateConnectionRequest,
     UpdateConnectionCredentialRequest,
-    DeleteConnectionRequest,
-    Connection,
-    ConnectionCredential,
-    CloudSqlProperties,
-    CloudSqlCredential,
+    UpdateConnectionRequest,
 )
 
 __all__ = (
+    'CloudSqlCredential',
+    'CloudSqlProperties',
+    'Connection',
+    'ConnectionCredential',
     'CreateConnectionRequest',
+    'DeleteConnectionRequest',
     'GetConnectionRequest',
     'ListConnectionsRequest',
     'ListConnectionsResponse',
-    'UpdateConnectionRequest',
     'UpdateConnectionCredentialRequest',
-    'DeleteConnectionRequest',
-    'Connection',
-    'ConnectionCredential',
-    'CloudSqlProperties',
-    'CloudSqlCredential',
+    'UpdateConnectionRequest',
 )

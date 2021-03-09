@@ -15,24 +15,24 @@
 # limitations under the License.
 #
 
+from .asset_service import (
+    AnalyzeIamPolicyRequest,
+    AnalyzeIamPolicyResponse,
+    ExportIamPolicyAnalysisRequest,
+    ExportIamPolicyAnalysisResponse,
+    IamPolicyAnalysisOutputConfig,
+    IamPolicyAnalysisQuery,
+)
 from .assets import (
     IamPolicyAnalysisResult,
 )
-from .asset_service import (
-    IamPolicyAnalysisQuery,
-    AnalyzeIamPolicyRequest,
-    AnalyzeIamPolicyResponse,
-    IamPolicyAnalysisOutputConfig,
-    ExportIamPolicyAnalysisRequest,
-    ExportIamPolicyAnalysisResponse,
-)
 
 __all__ = (
-    'IamPolicyAnalysisResult',
-    'IamPolicyAnalysisQuery',
     'AnalyzeIamPolicyRequest',
     'AnalyzeIamPolicyResponse',
-    'IamPolicyAnalysisOutputConfig',
     'ExportIamPolicyAnalysisRequest',
     'ExportIamPolicyAnalysisResponse',
+    'IamPolicyAnalysisOutputConfig',
+    'IamPolicyAnalysisQuery',
+    'IamPolicyAnalysisResult',
 )

@@ -15,24 +15,24 @@
 # limitations under the License.
 #
 
-from .explanations import (
-    AccessTuple,
-    ExplainedPolicy,
-    BindingExplanation,
-    AccessState,
-    HeuristicRelevance,
-)
 from .checker import (
     TroubleshootIamPolicyRequest,
     TroubleshootIamPolicyResponse,
 )
+from .explanations import (
+    AccessTuple,
+    BindingExplanation,
+    ExplainedPolicy,
+    AccessState,
+    HeuristicRelevance,
+)
 
 __all__ = (
-    'AccessTuple',
-    'ExplainedPolicy',
-    'BindingExplanation',
-    'AccessState',
-    'HeuristicRelevance',
     'TroubleshootIamPolicyRequest',
     'TroubleshootIamPolicyResponse',
+    'AccessTuple',
+    'BindingExplanation',
+    'ExplainedPolicy',
+    'AccessState',
+    'HeuristicRelevance',
 )

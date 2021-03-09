@@ -377,10 +377,13 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
         """
         # Create or coerce a protobuf request object.
 
-        # The request isn't a proto-plus wrapped type,
-        # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
+            # The request isn't a proto-plus wrapped type,
+            # so it must be constructed via keyword expansion.
             request = empty.Empty(**request)
+        elif not request:
+            # Null request, just make one.
+            request = empty.Empty()
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.

@@ -16,19 +16,19 @@
 #
 
 from .profiler import (
-    CreateProfileRequest,
     CreateOfflineProfileRequest,
-    UpdateProfileRequest,
-    Profile,
+    CreateProfileRequest,
     Deployment,
+    Profile,
+    UpdateProfileRequest,
     ProfileType,
 )
 
 __all__ = (
-    'CreateProfileRequest',
     'CreateOfflineProfileRequest',
-    'UpdateProfileRequest',
-    'Profile',
+    'CreateProfileRequest',
     'Deployment',
+    'Profile',
+    'UpdateProfileRequest',
     'ProfileType',
 )

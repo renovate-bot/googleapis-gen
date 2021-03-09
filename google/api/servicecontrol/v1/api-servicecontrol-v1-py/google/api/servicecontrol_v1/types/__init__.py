@@ -38,9 +38,9 @@ from .operation import (
 )
 from .quota_controller import (
     AllocateQuotaRequest,
-    QuotaOperation,
     AllocateQuotaResponse,
     QuotaError,
+    QuotaOperation,
 )
 from .service_controller import (
     CheckRequest,
@@ -60,9 +60,9 @@ __all__ = (
     'MetricValueSet',
     'Operation',
     'AllocateQuotaRequest',
-    'QuotaOperation',
     'AllocateQuotaResponse',
     'QuotaError',
+    'QuotaOperation',
     'CheckRequest',
     'CheckResponse',
     'ReportRequest',

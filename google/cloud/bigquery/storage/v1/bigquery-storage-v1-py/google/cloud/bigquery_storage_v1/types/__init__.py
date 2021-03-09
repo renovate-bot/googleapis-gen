@@ -16,41 +16,41 @@
 #
 
 from .arrow import (
-    ArrowSchema,
     ArrowRecordBatch,
+    ArrowSchema,
 )
 from .avro import (
-    AvroSchema,
     AvroRows,
+    AvroSchema,
+)
+from .storage import (
+    CreateReadSessionRequest,
+    ReadRowsRequest,
+    ReadRowsResponse,
+    SplitReadStreamRequest,
+    SplitReadStreamResponse,
+    StreamStats,
+    ThrottleState,
 )
 from .stream import (
     ReadSession,
     ReadStream,
     DataFormat,
 )
-from .storage import (
-    CreateReadSessionRequest,
-    ReadRowsRequest,
-    ThrottleState,
-    StreamStats,
-    ReadRowsResponse,
-    SplitReadStreamRequest,
-    SplitReadStreamResponse,
-)
 
 __all__ = (
-    'ArrowSchema',
     'ArrowRecordBatch',
-    'AvroSchema',
+    'ArrowSchema',
     'AvroRows',
-    'ReadSession',
-    'ReadStream',
-    'DataFormat',
+    'AvroSchema',
     'CreateReadSessionRequest',
     'ReadRowsRequest',
-    'ThrottleState',
-    'StreamStats',
     'ReadRowsResponse',
     'SplitReadStreamRequest',
     'SplitReadStreamResponse',
+    'StreamStats',
+    'ThrottleState',
+    'ReadSession',
+    'ReadStream',
+    'DataFormat',
 )

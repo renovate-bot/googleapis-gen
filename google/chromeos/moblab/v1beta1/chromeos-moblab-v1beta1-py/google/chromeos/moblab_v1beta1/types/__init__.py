@@ -15,34 +15,34 @@
 # limitations under the License.
 #
 
-from .resources import (
-    BuildTarget,
-    Model,
-    Milestone,
-    Build,
-    BuildArtifact,
-)
 from .build_service import (
-    ListBuildsRequest,
-    ListBuildsResponse,
     CheckBuildStageStatusRequest,
     CheckBuildStageStatusResponse,
+    ListBuildsRequest,
+    ListBuildsResponse,
+    StageBuildMetadata,
     StageBuildRequest,
     StageBuildResponse,
-    StageBuildMetadata,
+)
+from .resources import (
+    Build,
+    BuildArtifact,
+    BuildTarget,
+    Milestone,
+    Model,
 )
 
 __all__ = (
-    'BuildTarget',
-    'Model',
-    'Milestone',
-    'Build',
-    'BuildArtifact',
-    'ListBuildsRequest',
-    'ListBuildsResponse',
     'CheckBuildStageStatusRequest',
     'CheckBuildStageStatusResponse',
+    'ListBuildsRequest',
+    'ListBuildsResponse',
+    'StageBuildMetadata',
     'StageBuildRequest',
     'StageBuildResponse',
-    'StageBuildMetadata',
+    'Build',
+    'BuildArtifact',
+    'BuildTarget',
+    'Milestone',
+    'Model',
 )

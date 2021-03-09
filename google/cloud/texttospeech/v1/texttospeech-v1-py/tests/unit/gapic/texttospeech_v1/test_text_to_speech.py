@@ -631,7 +631,7 @@ def test_synthesize_speech_flattened():
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.synthesize_speech(
-            input_=cloud_tts.SynthesisInput(text='text_value'),
+            input=cloud_tts.SynthesisInput(text='text_value'),
             voice=cloud_tts.VoiceSelectionParams(language_code='language_code_value'),
             audio_config=cloud_tts.AudioConfig(audio_encoding=cloud_tts.AudioEncoding.LINEAR16),
         )
@@ -641,7 +641,7 @@ def test_synthesize_speech_flattened():
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
 
-        assert args[0].input_ == cloud_tts.SynthesisInput(text='text_value')
+        assert args[0].input == cloud_tts.SynthesisInput(text='text_value')
 
         assert args[0].voice == cloud_tts.VoiceSelectionParams(language_code='language_code_value')
 
@@ -658,7 +658,7 @@ def test_synthesize_speech_flattened_error():
     with pytest.raises(ValueError):
         client.synthesize_speech(
             cloud_tts.SynthesizeSpeechRequest(),
-            input_=cloud_tts.SynthesisInput(text='text_value'),
+            input=cloud_tts.SynthesisInput(text='text_value'),
             voice=cloud_tts.VoiceSelectionParams(language_code='language_code_value'),
             audio_config=cloud_tts.AudioConfig(audio_encoding=cloud_tts.AudioEncoding.LINEAR16),
         )
@@ -681,7 +681,7 @@ async def test_synthesize_speech_flattened_async():
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         response = await client.synthesize_speech(
-            input_=cloud_tts.SynthesisInput(text='text_value'),
+            input=cloud_tts.SynthesisInput(text='text_value'),
             voice=cloud_tts.VoiceSelectionParams(language_code='language_code_value'),
             audio_config=cloud_tts.AudioConfig(audio_encoding=cloud_tts.AudioEncoding.LINEAR16),
         )
@@ -691,7 +691,7 @@ async def test_synthesize_speech_flattened_async():
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
 
-        assert args[0].input_ == cloud_tts.SynthesisInput(text='text_value')
+        assert args[0].input == cloud_tts.SynthesisInput(text='text_value')
 
         assert args[0].voice == cloud_tts.VoiceSelectionParams(language_code='language_code_value')
 
@@ -709,7 +709,7 @@ async def test_synthesize_speech_flattened_error_async():
     with pytest.raises(ValueError):
         await client.synthesize_speech(
             cloud_tts.SynthesizeSpeechRequest(),
-            input_=cloud_tts.SynthesisInput(text='text_value'),
+            input=cloud_tts.SynthesisInput(text='text_value'),
             voice=cloud_tts.VoiceSelectionParams(language_code='language_code_value'),
             audio_config=cloud_tts.AudioConfig(audio_encoding=cloud_tts.AudioEncoding.LINEAR16),
         )

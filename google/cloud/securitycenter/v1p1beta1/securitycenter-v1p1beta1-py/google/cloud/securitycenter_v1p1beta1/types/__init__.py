@@ -15,9 +15,6 @@
 # limitations under the License.
 #
 
-from .security_marks import (
-    SecurityMarks,
-)
 from .asset import (
     Asset,
 )
@@ -27,20 +24,20 @@ from .finding import (
 from .notification_config import (
     NotificationConfig,
 )
-from .resource import (
-    Resource,
-)
 from .notification_message import (
     NotificationMessage,
 )
 from .organization_settings import (
     OrganizationSettings,
 )
+from .resource import (
+    Resource,
+)
 from .run_asset_discovery_response import (
     RunAssetDiscoveryResponse,
 )
-from .source import (
-    Source,
+from .security_marks import (
+    SecurityMarks,
 )
 from .securitycenter_service import (
     CreateFindingRequest,
@@ -55,33 +52,35 @@ from .securitycenter_service import (
     GroupFindingsRequest,
     GroupFindingsResponse,
     GroupResult,
-    ListNotificationConfigsRequest,
-    ListNotificationConfigsResponse,
-    ListSourcesRequest,
-    ListSourcesResponse,
     ListAssetsRequest,
     ListAssetsResponse,
     ListFindingsRequest,
     ListFindingsResponse,
-    SetFindingStateRequest,
+    ListNotificationConfigsRequest,
+    ListNotificationConfigsResponse,
+    ListSourcesRequest,
+    ListSourcesResponse,
     RunAssetDiscoveryRequest,
+    SetFindingStateRequest,
     UpdateFindingRequest,
     UpdateNotificationConfigRequest,
     UpdateOrganizationSettingsRequest,
-    UpdateSourceRequest,
     UpdateSecurityMarksRequest,
+    UpdateSourceRequest,
+)
+from .source import (
+    Source,
 )
 
 __all__ = (
-    'SecurityMarks',
     'Asset',
     'Finding',
     'NotificationConfig',
-    'Resource',
     'NotificationMessage',
     'OrganizationSettings',
+    'Resource',
     'RunAssetDiscoveryResponse',
-    'Source',
+    'SecurityMarks',
     'CreateFindingRequest',
     'CreateNotificationConfigRequest',
     'CreateSourceRequest',
@@ -94,19 +93,20 @@ __all__ = (
     'GroupFindingsRequest',
     'GroupFindingsResponse',
     'GroupResult',
-    'ListNotificationConfigsRequest',
-    'ListNotificationConfigsResponse',
-    'ListSourcesRequest',
-    'ListSourcesResponse',
     'ListAssetsRequest',
     'ListAssetsResponse',
     'ListFindingsRequest',
     'ListFindingsResponse',
-    'SetFindingStateRequest',
+    'ListNotificationConfigsRequest',
+    'ListNotificationConfigsResponse',
+    'ListSourcesRequest',
+    'ListSourcesResponse',
     'RunAssetDiscoveryRequest',
+    'SetFindingStateRequest',
     'UpdateFindingRequest',
     'UpdateNotificationConfigRequest',
     'UpdateOrganizationSettingsRequest',
-    'UpdateSourceRequest',
     'UpdateSecurityMarksRequest',
+    'UpdateSourceRequest',
+    'Source',
 )
