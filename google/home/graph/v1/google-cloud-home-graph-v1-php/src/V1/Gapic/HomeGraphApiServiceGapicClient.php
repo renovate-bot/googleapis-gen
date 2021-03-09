@@ -363,10 +363,7 @@ class HomeGraphApiServiceGapicClient
      *     @type string $eventId
      *          Unique identifier per event (for example, a doorbell press).
      *     @type string $followUpToken
-     *          Token to maintain state in the follow up notification response.
-     *          Deprecated. See the [notifications
-     *          guide](https://developers.google.com/assistant/smarthome/develop/notifications)
-     *          for details on implementing follow up notifications.
+     *          Deprecated.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array

@@ -114,10 +114,13 @@ class ReportStateAndNotificationRequest(proto.Message):
         agent_user_id (str):
             Required. Third-party user ID.
         follow_up_token (str):
-            Token to maintain state in the follow up notification
-            response. Deprecated. See the `notifications
-            guide <https://developers.google.com/assistant/smarthome/develop/notifications>`__
-            for details on implementing follow up notifications.
+            Deprecated.
+            (-- Token to maintain state in the follow up
+            notification response. See the notifications
+            guide at
+            https://developers.google.com/assistant/smarthome/develop/notifications
+            for details on implementing follow up
+            notifications --)
         payload (google.home.graph_v1.types.StateAndNotificationPayload):
             Required. State of devices to update and
             notification metadata for devices.

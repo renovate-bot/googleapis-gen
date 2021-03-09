@@ -407,10 +407,11 @@ export class HomeGraphApiServiceClient {
  * @param {string} request.agentUserId
  *   Required. Third-party user ID.
  * @param {string} request.followUpToken
- *   Token to maintain state in the follow up notification response.
- *   Deprecated. See the [notifications
- *   guide](https://developers.google.com/assistant/smarthome/develop/notifications)
- *   for details on implementing follow up notifications.
+ *   Deprecated.
+ *   (-- Token to maintain state in the follow up notification response. See the
+ *   notifications guide at
+ *   https://developers.google.com/assistant/smarthome/develop/notifications for
+ *   details on implementing follow up notifications --)
  * @param {google.home.graph.v1.StateAndNotificationPayload} request.payload
  *   Required. State of devices to update and notification metadata for devices.
  * @param {object} [options]

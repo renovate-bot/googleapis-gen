@@ -58,10 +58,11 @@ class ReportStateAndNotificationRequest extends \Google\Protobuf\Internal\Messag
      */
     protected $agent_user_id = '';
     /**
-     * Token to maintain state in the follow up notification response.
-     * Deprecated. See the [notifications
-     * guide](https://developers.google.com/assistant/smarthome/develop/notifications)
-     * for details on implementing follow up notifications.
+     * Deprecated.
+     * (-- Token to maintain state in the follow up notification response. See the
+     * notifications guide at
+     * https://developers.google.com/assistant/smarthome/develop/notifications for
+     * details on implementing follow up notifications --)
      *
      * Generated from protobuf field <code>string follow_up_token = 5 [deprecated = true];</code>
      * @deprecated
@@ -87,10 +88,11 @@ class ReportStateAndNotificationRequest extends \Google\Protobuf\Internal\Messag
      *     @type string $agent_user_id
      *           Required. Third-party user ID.
      *     @type string $follow_up_token
-     *           Token to maintain state in the follow up notification response.
-     *           Deprecated. See the [notifications
-     *           guide](https://developers.google.com/assistant/smarthome/develop/notifications)
-     *           for details on implementing follow up notifications.
+     *           Deprecated.
+     *           (-- Token to maintain state in the follow up notification response. See the
+     *           notifications guide at
+     *           https://developers.google.com/assistant/smarthome/develop/notifications for
+     *           details on implementing follow up notifications --)
      *     @type \Google\Home\Graph\V1\StateAndNotificationPayload $payload
      *           Required. State of devices to update and notification metadata for devices.
      * }
@@ -179,10 +181,11 @@ class ReportStateAndNotificationRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Token to maintain state in the follow up notification response.
-     * Deprecated. See the [notifications
-     * guide](https://developers.google.com/assistant/smarthome/develop/notifications)
-     * for details on implementing follow up notifications.
+     * Deprecated.
+     * (-- Token to maintain state in the follow up notification response. See the
+     * notifications guide at
+     * https://developers.google.com/assistant/smarthome/develop/notifications for
+     * details on implementing follow up notifications --)
      *
      * Generated from protobuf field <code>string follow_up_token = 5 [deprecated = true];</code>
      * @return string
@@ -195,10 +198,11 @@ class ReportStateAndNotificationRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Token to maintain state in the follow up notification response.
-     * Deprecated. See the [notifications
-     * guide](https://developers.google.com/assistant/smarthome/develop/notifications)
-     * for details on implementing follow up notifications.
+     * Deprecated.
+     * (-- Token to maintain state in the follow up notification response. See the
+     * notifications guide at
+     * https://developers.google.com/assistant/smarthome/develop/notifications for
+     * details on implementing follow up notifications --)
      *
      * Generated from protobuf field <code>string follow_up_token = 5 [deprecated = true];</code>
      * @param string $var

@@ -289,10 +289,7 @@ module Google
           # @param event_id [String]
           #   Unique identifier per event (for example, a doorbell press).
           # @param follow_up_token [String]
-          #   Token to maintain state in the follow up notification response.
-          #   Deprecated. See the [notifications
-          #   guide](https://developers.google.com/assistant/smarthome/develop/notifications)
-          #   for details on implementing follow up notifications.
+          #   Deprecated.
           # @param options [Google::Gax::CallOptions]
           #   Overrides the default settings for this call, e.g, timeout,
           #   retries, etc.

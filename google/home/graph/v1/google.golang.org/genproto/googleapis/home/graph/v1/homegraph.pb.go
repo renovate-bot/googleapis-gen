@@ -189,10 +189,11 @@ type ReportStateAndNotificationRequest struct {
 	EventId string `protobuf:"bytes,4,opt,name=event_id,json=eventId,proto3" json:"event_id,omitempty"`
 	// Required. Third-party user ID.
 	AgentUserId string `protobuf:"bytes,2,opt,name=agent_user_id,json=agentUserId,proto3" json:"agent_user_id,omitempty"`
-	// Token to maintain state in the follow up notification response.
-	// Deprecated. See the [notifications
-	// guide](https://developers.google.com/assistant/smarthome/develop/notifications)
-	// for details on implementing follow up notifications.
+	// Deprecated.
+	// (-- Token to maintain state in the follow up notification response. See the
+	// notifications guide at
+	// https://developers.google.com/assistant/smarthome/develop/notifications for
+	// details on implementing follow up notifications --)
 	//
 	// Deprecated: Do not use.
 	FollowUpToken string `protobuf:"bytes,5,opt,name=follow_up_token,json=followUpToken,proto3" json:"follow_up_token,omitempty"`

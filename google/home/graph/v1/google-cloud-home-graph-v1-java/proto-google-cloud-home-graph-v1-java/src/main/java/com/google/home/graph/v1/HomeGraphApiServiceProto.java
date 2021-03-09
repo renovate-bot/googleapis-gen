@@ -1231,10 +1231,11 @@ public final class HomeGraphApiServiceProto {
 
     /**
      * <pre>
-     * Token to maintain state in the follow up notification response.
-     * Deprecated. See the [notifications
-     * guide](https://developers.google.com/assistant/smarthome/develop/notifications)
-     * for details on implementing follow up notifications.
+     * Deprecated.
+     * (-- Token to maintain state in the follow up notification response. See the
+     * notifications guide at
+     * https://developers.google.com/assistant/smarthome/develop/notifications for
+     * details on implementing follow up notifications --)
      * </pre>
      *
      * <code>string follow_up_token = 5 [deprecated = true];</code>
@@ -1243,10 +1244,11 @@ public final class HomeGraphApiServiceProto {
     @java.lang.Deprecated java.lang.String getFollowUpToken();
     /**
      * <pre>
-     * Token to maintain state in the follow up notification response.
-     * Deprecated. See the [notifications
-     * guide](https://developers.google.com/assistant/smarthome/develop/notifications)
-     * for details on implementing follow up notifications.
+     * Deprecated.
+     * (-- Token to maintain state in the follow up notification response. See the
+     * notifications guide at
+     * https://developers.google.com/assistant/smarthome/develop/notifications for
+     * details on implementing follow up notifications --)
      * </pre>
      *
      * <code>string follow_up_token = 5 [deprecated = true];</code>
@@ -1570,10 +1572,11 @@ public final class HomeGraphApiServiceProto {
     private volatile java.lang.Object followUpToken_;
     /**
      * <pre>
-     * Token to maintain state in the follow up notification response.
-     * Deprecated. See the [notifications
-     * guide](https://developers.google.com/assistant/smarthome/develop/notifications)
-     * for details on implementing follow up notifications.
+     * Deprecated.
+     * (-- Token to maintain state in the follow up notification response. See the
+     * notifications guide at
+     * https://developers.google.com/assistant/smarthome/develop/notifications for
+     * details on implementing follow up notifications --)
      * </pre>
      *
      * <code>string follow_up_token = 5 [deprecated = true];</code>
@@ -1594,10 +1597,11 @@ public final class HomeGraphApiServiceProto {
     }
     /**
      * <pre>
-     * Token to maintain state in the follow up notification response.
-     * Deprecated. See the [notifications
-     * guide](https://developers.google.com/assistant/smarthome/develop/notifications)
-     * for details on implementing follow up notifications.
+     * Deprecated.
+     * (-- Token to maintain state in the follow up notification response. See the
+     * notifications guide at
+     * https://developers.google.com/assistant/smarthome/develop/notifications for
+     * details on implementing follow up notifications --)
      * </pre>
      *
      * <code>string follow_up_token = 5 [deprecated = true];</code>
@@ -2358,10 +2362,11 @@ public final class HomeGraphApiServiceProto {
       private java.lang.Object followUpToken_ = "";
       /**
        * <pre>
-       * Token to maintain state in the follow up notification response.
-       * Deprecated. See the [notifications
-       * guide](https://developers.google.com/assistant/smarthome/develop/notifications)
-       * for details on implementing follow up notifications.
+       * Deprecated.
+       * (-- Token to maintain state in the follow up notification response. See the
+       * notifications guide at
+       * https://developers.google.com/assistant/smarthome/develop/notifications for
+       * details on implementing follow up notifications --)
        * </pre>
        *
        * <code>string follow_up_token = 5 [deprecated = true];</code>
@@ -2381,10 +2386,11 @@ public final class HomeGraphApiServiceProto {
       }
       /**
        * <pre>
-       * Token to maintain state in the follow up notification response.
-       * Deprecated. See the [notifications
-       * guide](https://developers.google.com/assistant/smarthome/develop/notifications)
-       * for details on implementing follow up notifications.
+       * Deprecated.
+       * (-- Token to maintain state in the follow up notification response. See the
+       * notifications guide at
+       * https://developers.google.com/assistant/smarthome/develop/notifications for
+       * details on implementing follow up notifications --)
        * </pre>
        *
        * <code>string follow_up_token = 5 [deprecated = true];</code>
@@ -2405,10 +2411,11 @@ public final class HomeGraphApiServiceProto {
       }
       /**
        * <pre>
-       * Token to maintain state in the follow up notification response.
-       * Deprecated. See the [notifications
-       * guide](https://developers.google.com/assistant/smarthome/develop/notifications)
-       * for details on implementing follow up notifications.
+       * Deprecated.
+       * (-- Token to maintain state in the follow up notification response. See the
+       * notifications guide at
+       * https://developers.google.com/assistant/smarthome/develop/notifications for
+       * details on implementing follow up notifications --)
        * </pre>
        *
        * <code>string follow_up_token = 5 [deprecated = true];</code>
@@ -2427,10 +2434,11 @@ public final class HomeGraphApiServiceProto {
       }
       /**
        * <pre>
-       * Token to maintain state in the follow up notification response.
-       * Deprecated. See the [notifications
-       * guide](https://developers.google.com/assistant/smarthome/develop/notifications)
-       * for details on implementing follow up notifications.
+       * Deprecated.
+       * (-- Token to maintain state in the follow up notification response. See the
+       * notifications guide at
+       * https://developers.google.com/assistant/smarthome/develop/notifications for
+       * details on implementing follow up notifications --)
        * </pre>
        *
        * <code>string follow_up_token = 5 [deprecated = true];</code>
@@ -2444,10 +2452,11 @@ public final class HomeGraphApiServiceProto {
       }
       /**
        * <pre>
-       * Token to maintain state in the follow up notification response.
-       * Deprecated. See the [notifications
-       * guide](https://developers.google.com/assistant/smarthome/develop/notifications)
-       * for details on implementing follow up notifications.
+       * Deprecated.
+       * (-- Token to maintain state in the follow up notification response. See the
+       * notifications guide at
+       * https://developers.google.com/assistant/smarthome/develop/notifications for
+       * details on implementing follow up notifications --)
        * </pre>
        *
        * <code>string follow_up_token = 5 [deprecated = true];</code>

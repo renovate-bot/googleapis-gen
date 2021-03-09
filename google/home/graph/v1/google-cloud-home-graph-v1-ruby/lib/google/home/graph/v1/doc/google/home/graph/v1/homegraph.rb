@@ -74,10 +74,7 @@ module Google
         #     Required. Third-party user ID.
         # @!attribute [rw] follow_up_token
         #   @return [String]
-        #     Token to maintain state in the follow up notification response.
-        #     Deprecated. See the [notifications
-        #     guide](https://developers.google.com/assistant/smarthome/develop/notifications)
-        #     for details on implementing follow up notifications.
+        #     Deprecated.
         # @!attribute [rw] payload
         #   @return [Google::Home::Graph::V1::StateAndNotificationPayload]
         #     Required. State of devices to update and notification metadata for devices.
