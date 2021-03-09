@@ -28,6 +28,7 @@ private static final long serialVersionUID = 0L;
     artifactGcsUri_ = "";
     tier_ = 0;
     uid_ = "";
+    releaseChannel_ = 0;
   }
 
   @java.lang.Override
@@ -204,6 +205,12 @@ private static final long serialVersionUID = 0L;
               metadataManagementActivity_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 152: {
+            int rawValue = input.readEnum();
+
+            releaseChannel_ = rawValue;
             break;
           }
           default: {
@@ -633,6 +640,159 @@ private static final long serialVersionUID = 0L;
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.metastore.v1alpha.Service.Tier)
+  }
+
+  /**
+   * <pre>
+   * Release channels bundle features of varying levels of stability. Newer
+   * features may be introduced initially into less stable release channels and
+   * can be automatically promoted into more stable release channels.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.metastore.v1alpha.Service.ReleaseChannel}
+   */
+  public enum ReleaseChannel
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * Release channel is not specified.
+     * </pre>
+     *
+     * <code>RELEASE_CHANNEL_UNSPECIFIED = 0;</code>
+     */
+    RELEASE_CHANNEL_UNSPECIFIED(0),
+    /**
+     * <pre>
+     * The `CANARY` release channel contains the newest features, which may be
+     * unstable and subject to unresolved issues with no known workarounds.
+     * Services using the `CANARY` release channel are not subject to any SLAs.
+     * </pre>
+     *
+     * <code>CANARY = 1;</code>
+     */
+    CANARY(1),
+    /**
+     * <pre>
+     * The `STABLE` release channel contains features that are considered stable
+     * and have been validated for production use.
+     * </pre>
+     *
+     * <code>STABLE = 2;</code>
+     */
+    STABLE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * Release channel is not specified.
+     * </pre>
+     *
+     * <code>RELEASE_CHANNEL_UNSPECIFIED = 0;</code>
+     */
+    public static final int RELEASE_CHANNEL_UNSPECIFIED_VALUE = 0;
+    /**
+     * <pre>
+     * The `CANARY` release channel contains the newest features, which may be
+     * unstable and subject to unresolved issues with no known workarounds.
+     * Services using the `CANARY` release channel are not subject to any SLAs.
+     * </pre>
+     *
+     * <code>CANARY = 1;</code>
+     */
+    public static final int CANARY_VALUE = 1;
+    /**
+     * <pre>
+     * The `STABLE` release channel contains features that are considered stable
+     * and have been validated for production use.
+     * </pre>
+     *
+     * <code>STABLE = 2;</code>
+     */
+    public static final int STABLE_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ReleaseChannel valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ReleaseChannel forNumber(int value) {
+      switch (value) {
+        case 0: return RELEASE_CHANNEL_UNSPECIFIED;
+        case 1: return CANARY;
+        case 2: return STABLE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ReleaseChannel>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        ReleaseChannel> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<ReleaseChannel>() {
+            public ReleaseChannel findValueByNumber(int number) {
+              return ReleaseChannel.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.google.cloud.metastore.v1alpha.Service.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final ReleaseChannel[] VALUES = values();
+
+    public static ReleaseChannel valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ReleaseChannel(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.metastore.v1alpha.Service.ReleaseChannel)
   }
 
   private int metastoreConfigCase_ = 0;
@@ -1368,6 +1528,35 @@ private static final long serialVersionUID = 0L;
     return getMetadataManagementActivity();
   }
 
+  public static final int RELEASE_CHANNEL_FIELD_NUMBER = 19;
+  private int releaseChannel_;
+  /**
+   * <pre>
+   * Immutable. The release channel of the service.
+   * If unspecified, defaults to `STABLE`.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.Service.ReleaseChannel release_channel = 19 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return The enum numeric value on the wire for releaseChannel.
+   */
+  @java.lang.Override public int getReleaseChannelValue() {
+    return releaseChannel_;
+  }
+  /**
+   * <pre>
+   * Immutable. The release channel of the service.
+   * If unspecified, defaults to `STABLE`.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.Service.ReleaseChannel release_channel = 19 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return The releaseChannel.
+   */
+  @java.lang.Override public com.google.cloud.metastore.v1alpha.Service.ReleaseChannel getReleaseChannel() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.metastore.v1alpha.Service.ReleaseChannel result = com.google.cloud.metastore.v1alpha.Service.ReleaseChannel.valueOf(releaseChannel_);
+    return result == null ? com.google.cloud.metastore.v1alpha.Service.ReleaseChannel.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1432,6 +1621,9 @@ private static final long serialVersionUID = 0L;
     }
     if (metadataManagementActivity_ != null) {
       output.writeMessage(17, getMetadataManagementActivity());
+    }
+    if (releaseChannel_ != com.google.cloud.metastore.v1alpha.Service.ReleaseChannel.RELEASE_CHANNEL_UNSPECIFIED.getNumber()) {
+      output.writeEnum(19, releaseChannel_);
     }
     unknownFields.writeTo(output);
   }
@@ -1506,6 +1698,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(17, getMetadataManagementActivity());
     }
+    if (releaseChannel_ != com.google.cloud.metastore.v1alpha.Service.ReleaseChannel.RELEASE_CHANNEL_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(19, releaseChannel_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1564,6 +1760,7 @@ private static final long serialVersionUID = 0L;
       if (!getMetadataManagementActivity()
           .equals(other.getMetadataManagementActivity())) return false;
     }
+    if (releaseChannel_ != other.releaseChannel_) return false;
     if (!getMetastoreConfigCase().equals(other.getMetastoreConfigCase())) return false;
     switch (metastoreConfigCase_) {
       case 5:
@@ -1626,6 +1823,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + METADATA_MANAGEMENT_ACTIVITY_FIELD_NUMBER;
       hash = (53 * hash) + getMetadataManagementActivity().hashCode();
     }
+    hash = (37 * hash) + RELEASE_CHANNEL_FIELD_NUMBER;
+    hash = (53 * hash) + releaseChannel_;
     switch (metastoreConfigCase_) {
       case 5:
         hash = (37 * hash) + HIVE_METASTORE_CONFIG_FIELD_NUMBER;
@@ -1842,6 +2041,8 @@ private static final long serialVersionUID = 0L;
         metadataManagementActivity_ = null;
         metadataManagementActivityBuilder_ = null;
       }
+      releaseChannel_ = 0;
+
       metastoreConfigCase_ = 0;
       metastoreConfig_ = null;
       return this;
@@ -1914,6 +2115,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.metadataManagementActivity_ = metadataManagementActivityBuilder_.build();
       }
+      result.releaseChannel_ = releaseChannel_;
       result.metastoreConfigCase_ = metastoreConfigCase_;
       onBuilt();
       return result;
@@ -2012,6 +2214,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasMetadataManagementActivity()) {
         mergeMetadataManagementActivity(other.getMetadataManagementActivity());
+      }
+      if (other.releaseChannel_ != 0) {
+        setReleaseChannelValue(other.getReleaseChannelValue());
       }
       switch (other.getMetastoreConfigCase()) {
         case HIVE_METASTORE_CONFIG: {
@@ -3992,6 +4197,85 @@ private static final long serialVersionUID = 0L;
         metadataManagementActivity_ = null;
       }
       return metadataManagementActivityBuilder_;
+    }
+
+    private int releaseChannel_ = 0;
+    /**
+     * <pre>
+     * Immutable. The release channel of the service.
+     * If unspecified, defaults to `STABLE`.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.Service.ReleaseChannel release_channel = 19 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return The enum numeric value on the wire for releaseChannel.
+     */
+    @java.lang.Override public int getReleaseChannelValue() {
+      return releaseChannel_;
+    }
+    /**
+     * <pre>
+     * Immutable. The release channel of the service.
+     * If unspecified, defaults to `STABLE`.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.Service.ReleaseChannel release_channel = 19 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @param value The enum numeric value on the wire for releaseChannel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReleaseChannelValue(int value) {
+      
+      releaseChannel_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Immutable. The release channel of the service.
+     * If unspecified, defaults to `STABLE`.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.Service.ReleaseChannel release_channel = 19 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return The releaseChannel.
+     */
+    @java.lang.Override
+    public com.google.cloud.metastore.v1alpha.Service.ReleaseChannel getReleaseChannel() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.metastore.v1alpha.Service.ReleaseChannel result = com.google.cloud.metastore.v1alpha.Service.ReleaseChannel.valueOf(releaseChannel_);
+      return result == null ? com.google.cloud.metastore.v1alpha.Service.ReleaseChannel.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * Immutable. The release channel of the service.
+     * If unspecified, defaults to `STABLE`.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.Service.ReleaseChannel release_channel = 19 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @param value The releaseChannel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReleaseChannel(com.google.cloud.metastore.v1alpha.Service.ReleaseChannel value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      releaseChannel_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Immutable. The release channel of the service.
+     * If unspecified, defaults to `STABLE`.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.Service.ReleaseChannel release_channel = 19 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearReleaseChannel() {
+      
+      releaseChannel_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

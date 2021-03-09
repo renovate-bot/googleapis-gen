@@ -30,6 +30,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :maintenance_window, :message, 15, "google.cloud.metastore.v1alpha.MaintenanceWindow"
       optional :uid, :string, 16
       optional :metadata_management_activity, :message, 17, "google.cloud.metastore.v1alpha.MetadataManagementActivity"
+      optional :release_channel, :enum, 19, "google.cloud.metastore.v1alpha.Service.ReleaseChannel"
       oneof :metastore_config do
         optional :hive_metastore_config, :message, 5, "google.cloud.metastore.v1alpha.HiveMetastoreConfig"
       end
@@ -49,11 +50,16 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :DEVELOPER, 1
       value :ENTERPRISE, 3
     end
+    add_enum "google.cloud.metastore.v1alpha.Service.ReleaseChannel" do
+      value :RELEASE_CHANNEL_UNSPECIFIED, 0
+      value :CANARY, 1
+      value :STABLE, 2
+    end
     add_message "google.cloud.metastore.v1alpha.MetadataIntegration" do
       optional :data_catalog_config, :message, 1, "google.cloud.metastore.v1alpha.DataCatalogConfig"
     end
     add_message "google.cloud.metastore.v1alpha.DataCatalogConfig" do
-      optional :enabled, :bool, 1
+      optional :enabled, :bool, 2
     end
     add_message "google.cloud.metastore.v1alpha.MaintenanceWindow" do
       optional :hour_of_day, :message, 1, "google.protobuf.Int32Value"
@@ -283,6 +289,7 @@ module Google
         Service = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.metastore.v1alpha.Service").msgclass
         Service::State = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.metastore.v1alpha.Service.State").enummodule
         Service::Tier = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.metastore.v1alpha.Service.Tier").enummodule
+        Service::ReleaseChannel = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.metastore.v1alpha.Service.ReleaseChannel").enummodule
         MetadataIntegration = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.metastore.v1alpha.MetadataIntegration").msgclass
         DataCatalogConfig = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.metastore.v1alpha.DataCatalogConfig").msgclass
         MaintenanceWindow = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.metastore.v1alpha.MaintenanceWindow").msgclass

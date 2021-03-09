@@ -13,7 +13,7 @@ public interface DataCatalogConfigOrBuilder extends
    * The default value is to disable syncing metastore metadata to Data Catalog.
    * </pre>
    *
-   * <code>bool enabled = 1;</code>
+   * <code>bool enabled = 2;</code>
    * @return The enabled.
    */
   boolean getEnabled();

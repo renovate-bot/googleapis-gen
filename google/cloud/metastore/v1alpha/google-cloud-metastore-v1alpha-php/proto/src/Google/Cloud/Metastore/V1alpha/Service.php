@@ -112,6 +112,13 @@ class Service extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.MetadataManagementActivity metadata_management_activity = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $metadata_management_activity = null;
+    /**
+     * Immutable. The release channel of the service.
+     * If unspecified, defaults to `STABLE`.
+     *
+     * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.Service.ReleaseChannel release_channel = 19 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     */
+    protected $release_channel = 0;
     protected $metastore_config;
 
     /**
@@ -160,6 +167,9 @@ class Service extends \Google\Protobuf\Internal\Message
      *           Output only. The globally unique resource identifier of the metastore service.
      *     @type \Google\Cloud\Metastore\V1alpha\MetadataManagementActivity $metadata_management_activity
      *           Output only. The metadata management activities of the metastore service.
+     *     @type int $release_channel
+     *           Immutable. The release channel of the service.
+     *           If unspecified, defaults to `STABLE`.
      * }
      */
     public function __construct($data = NULL) {
@@ -650,6 +660,34 @@ class Service extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\Metastore\V1alpha\MetadataManagementActivity::class);
         $this->metadata_management_activity = $var;
+
+        return $this;
+    }
+
+    /**
+     * Immutable. The release channel of the service.
+     * If unspecified, defaults to `STABLE`.
+     *
+     * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.Service.ReleaseChannel release_channel = 19 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return int
+     */
+    public function getReleaseChannel()
+    {
+        return $this->release_channel;
+    }
+
+    /**
+     * Immutable. The release channel of the service.
+     * If unspecified, defaults to `STABLE`.
+     *
+     * Generated from protobuf field <code>.google.cloud.metastore.v1alpha.Service.ReleaseChannel release_channel = 19 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setReleaseChannel($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Cloud\Metastore\V1alpha\Service\ReleaseChannel::class);
+        $this->release_channel = $var;
 
         return $this;
     }

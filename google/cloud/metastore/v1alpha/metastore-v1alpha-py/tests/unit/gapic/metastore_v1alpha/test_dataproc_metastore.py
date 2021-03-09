@@ -827,6 +827,8 @@ def test_get_service(transport: str = 'grpc', request_type=metastore.GetServiceR
 
             uid='uid_value',
 
+            release_channel=metastore.Service.ReleaseChannel.CANARY,
+
             hive_metastore_config=metastore.HiveMetastoreConfig(version='version_value'),
         )
 
@@ -859,6 +861,8 @@ def test_get_service(transport: str = 'grpc', request_type=metastore.GetServiceR
     assert response.tier == metastore.Service.Tier.DEVELOPER
 
     assert response.uid == 'uid_value'
+
+    assert response.release_channel == metastore.Service.ReleaseChannel.CANARY
 
 
 def test_get_service_from_dict():
@@ -909,6 +913,7 @@ async def test_get_service_async(transport: str = 'grpc_asyncio', request_type=m
             artifact_gcs_uri='artifact_gcs_uri_value',
             tier=metastore.Service.Tier.DEVELOPER,
             uid='uid_value',
+            release_channel=metastore.Service.ReleaseChannel.CANARY,
         ))
 
         response = await client.get_service(request)
@@ -939,6 +944,8 @@ async def test_get_service_async(transport: str = 'grpc_asyncio', request_type=m
     assert response.tier == metastore.Service.Tier.DEVELOPER
 
     assert response.uid == 'uid_value'
+
+    assert response.release_channel == metastore.Service.ReleaseChannel.CANARY
 
 
 @pytest.mark.asyncio

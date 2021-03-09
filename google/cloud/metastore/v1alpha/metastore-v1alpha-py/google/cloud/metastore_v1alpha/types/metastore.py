@@ -126,6 +126,9 @@ class Service(proto.Message):
         metadata_management_activity (google.cloud.metastore_v1alpha.types.MetadataManagementActivity):
             Output only. The metadata management
             activities of the metastore service.
+        release_channel (google.cloud.metastore_v1alpha.types.Service.ReleaseChannel):
+            Immutable. The release channel of the service. If
+            unspecified, defaults to ``STABLE``.
     """
     class State(proto.Enum):
         r"""The current state of the metastore service."""
@@ -143,6 +146,16 @@ class Service(proto.Message):
         TIER_UNSPECIFIED = 0
         DEVELOPER = 1
         ENTERPRISE = 3
+
+    class ReleaseChannel(proto.Enum):
+        r"""Release channels bundle features of varying levels of
+        stability. Newer features may be introduced initially into less
+        stable release channels and can be automatically promoted into
+        more stable release channels.
+        """
+        RELEASE_CHANNEL_UNSPECIFIED = 0
+        CANARY = 1
+        STABLE = 2
 
     hive_metastore_config = proto.Field(proto.MESSAGE, number=5, oneof='metastore_config',
         message='HiveMetastoreConfig',
@@ -192,6 +205,10 @@ class Service(proto.Message):
         message='MetadataManagementActivity',
     )
 
+    release_channel = proto.Field(proto.ENUM, number=19,
+        enum=ReleaseChannel,
+    )
+
 
 class MetadataIntegration(proto.Message):
     r"""Specifies how metastore metadata should be integrated with
@@ -220,7 +237,7 @@ class DataCatalogConfig(proto.Message):
             Catalog.
     """
 
-    enabled = proto.Field(proto.BOOL, number=1)
+    enabled = proto.Field(proto.BOOL, number=2)
 
 
 class MaintenanceWindow(proto.Message):

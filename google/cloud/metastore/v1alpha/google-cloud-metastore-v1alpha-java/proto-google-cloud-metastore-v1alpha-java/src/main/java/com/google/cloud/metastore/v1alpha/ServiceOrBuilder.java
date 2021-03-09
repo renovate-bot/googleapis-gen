@@ -410,5 +410,26 @@ public interface ServiceOrBuilder extends
    */
   com.google.cloud.metastore.v1alpha.MetadataManagementActivityOrBuilder getMetadataManagementActivityOrBuilder();
 
+  /**
+   * <pre>
+   * Immutable. The release channel of the service.
+   * If unspecified, defaults to `STABLE`.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.Service.ReleaseChannel release_channel = 19 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return The enum numeric value on the wire for releaseChannel.
+   */
+  int getReleaseChannelValue();
+  /**
+   * <pre>
+   * Immutable. The release channel of the service.
+   * If unspecified, defaults to `STABLE`.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.Service.ReleaseChannel release_channel = 19 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return The releaseChannel.
+   */
+  com.google.cloud.metastore.v1alpha.Service.ReleaseChannel getReleaseChannel();
+
   public com.google.cloud.metastore.v1alpha.Service.MetastoreConfigCase getMetastoreConfigCase();
 }

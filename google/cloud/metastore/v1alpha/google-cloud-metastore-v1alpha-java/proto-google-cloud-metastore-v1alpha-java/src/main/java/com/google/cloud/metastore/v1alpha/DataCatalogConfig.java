@@ -53,7 +53,7 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
+          case 16: {
 
             enabled_ = input.readBool();
             break;
@@ -90,7 +90,7 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.metastore.v1alpha.DataCatalogConfig.class, com.google.cloud.metastore.v1alpha.DataCatalogConfig.Builder.class);
   }
 
-  public static final int ENABLED_FIELD_NUMBER = 1;
+  public static final int ENABLED_FIELD_NUMBER = 2;
   private boolean enabled_;
   /**
    * <pre>
@@ -98,7 +98,7 @@ private static final long serialVersionUID = 0L;
    * The default value is to disable syncing metastore metadata to Data Catalog.
    * </pre>
    *
-   * <code>bool enabled = 1;</code>
+   * <code>bool enabled = 2;</code>
    * @return The enabled.
    */
   @java.lang.Override
@@ -121,7 +121,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (enabled_ != false) {
-      output.writeBool(1, enabled_);
+      output.writeBool(2, enabled_);
     }
     unknownFields.writeTo(output);
   }
@@ -134,7 +134,7 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (enabled_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(1, enabled_);
+        .computeBoolSize(2, enabled_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -421,7 +421,7 @@ private static final long serialVersionUID = 0L;
      * The default value is to disable syncing metastore metadata to Data Catalog.
      * </pre>
      *
-     * <code>bool enabled = 1;</code>
+     * <code>bool enabled = 2;</code>
      * @return The enabled.
      */
     @java.lang.Override
@@ -434,7 +434,7 @@ private static final long serialVersionUID = 0L;
      * The default value is to disable syncing metastore metadata to Data Catalog.
      * </pre>
      *
-     * <code>bool enabled = 1;</code>
+     * <code>bool enabled = 2;</code>
      * @param value The enabled to set.
      * @return This builder for chaining.
      */
@@ -450,7 +450,7 @@ private static final long serialVersionUID = 0L;
      * The default value is to disable syncing metastore metadata to Data Catalog.
      * </pre>
      *
-     * <code>bool enabled = 1;</code>
+     * <code>bool enabled = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearEnabled() {

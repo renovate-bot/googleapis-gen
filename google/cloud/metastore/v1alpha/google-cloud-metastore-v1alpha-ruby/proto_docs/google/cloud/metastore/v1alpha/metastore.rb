@@ -80,6 +80,10 @@ module Google
         # @!attribute [r] metadata_management_activity
         #   @return [::Google::Cloud::Metastore::V1alpha::MetadataManagementActivity]
         #     Output only. The metadata management activities of the metastore service.
+        # @!attribute [rw] release_channel
+        #   @return [::Google::Cloud::Metastore::V1alpha::Service::ReleaseChannel]
+        #     Immutable. The release channel of the service.
+        #     If unspecified, defaults to `STABLE`.
         class Service
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -135,6 +139,23 @@ module Google
             # The enterprise tier provides multi-zone high availability, and sufficient
             # scalability for enterprise-level Dataproc Metastore workloads.
             ENTERPRISE = 3
+          end
+
+          # Release channels bundle features of varying levels of stability. Newer
+          # features may be introduced initially into less stable release channels and
+          # can be automatically promoted into more stable release channels.
+          module ReleaseChannel
+            # Release channel is not specified.
+            RELEASE_CHANNEL_UNSPECIFIED = 0
+
+            # The `CANARY` release channel contains the newest features, which may be
+            # unstable and subject to unresolved issues with no known workarounds.
+            # Services using the `CANARY` release channel are not subject to any SLAs.
+            CANARY = 1
+
+            # The `STABLE` release channel contains features that are considered stable
+            # and have been validated for production use.
+            STABLE = 2
           end
         end
 

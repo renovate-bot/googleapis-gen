@@ -20,7 +20,7 @@ class DataCatalogConfig extends \Google\Protobuf\Internal\Message
      * Defines whether the metastore metadata should be synced to Data Catalog.
      * The default value is to disable syncing metastore metadata to Data Catalog.
      *
-     * Generated from protobuf field <code>bool enabled = 1;</code>
+     * Generated from protobuf field <code>bool enabled = 2;</code>
      */
     protected $enabled = false;
 
@@ -44,7 +44,7 @@ class DataCatalogConfig extends \Google\Protobuf\Internal\Message
      * Defines whether the metastore metadata should be synced to Data Catalog.
      * The default value is to disable syncing metastore metadata to Data Catalog.
      *
-     * Generated from protobuf field <code>bool enabled = 1;</code>
+     * Generated from protobuf field <code>bool enabled = 2;</code>
      * @return bool
      */
     public function getEnabled()
@@ -56,7 +56,7 @@ class DataCatalogConfig extends \Google\Protobuf\Internal\Message
      * Defines whether the metastore metadata should be synced to Data Catalog.
      * The default value is to disable syncing metastore metadata to Data Catalog.
      *
-     * Generated from protobuf field <code>bool enabled = 1;</code>
+     * Generated from protobuf field <code>bool enabled = 2;</code>
      * @param bool $var
      * @return $this
      */
