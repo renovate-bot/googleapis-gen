@@ -106,7 +106,7 @@ class dialogflowcxCallTransformer(cst.CSTTransformer):
     'load_version': ('name', 'allow_override_agent_resources', ),
     'lookup_environment_history': ('name', 'page_size', 'page_token', ),
     'match_intent': ('session', 'query_input', 'query_params', ),
-    'restore_agent': ('name', 'agent_uri', 'agent_content', ),
+    'restore_agent': ('name', 'agent_uri', 'agent_content', 'restore_option', ),
     'run_test_case': ('name', 'environment', ),
     'start_experiment': ('name', ),
     'stop_experiment': ('name', ),

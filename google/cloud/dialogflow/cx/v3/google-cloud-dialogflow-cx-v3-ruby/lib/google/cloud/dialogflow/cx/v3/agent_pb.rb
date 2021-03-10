@@ -64,10 +64,16 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "google.cloud.dialogflow.cx.v3.RestoreAgentRequest" do
       optional :name, :string, 1
+      optional :restore_option, :enum, 5, "google.cloud.dialogflow.cx.v3.RestoreAgentRequest.RestoreOption"
       oneof :agent do
         optional :agent_uri, :string, 2
         optional :agent_content, :bytes, 3
       end
+    end
+    add_enum "google.cloud.dialogflow.cx.v3.RestoreAgentRequest.RestoreOption" do
+      value :RESTORE_OPTION_UNSPECIFIED, 0
+      value :KEEP, 1
+      value :FALLBACK, 2
     end
     add_message "google.cloud.dialogflow.cx.v3.ValidateAgentRequest" do
       optional :name, :string, 1
@@ -100,6 +106,7 @@ module Google
           ExportAgentRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.ExportAgentRequest").msgclass
           ExportAgentResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.ExportAgentResponse").msgclass
           RestoreAgentRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.RestoreAgentRequest").msgclass
+          RestoreAgentRequest::RestoreOption = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.RestoreAgentRequest.RestoreOption").enummodule
           ValidateAgentRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.ValidateAgentRequest").msgclass
           GetAgentValidationResultRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.GetAgentValidationResultRequest").msgclass
           AgentValidationResult = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.AgentValidationResult").msgclass

@@ -181,7 +181,25 @@ module Google
           # @!attribute [rw] agent_content
           #   @return [String]
           #     Uncompressed raw byte content for agent.
-          class RestoreAgentRequest; end
+          # @!attribute [rw] restore_option
+          #   @return [Google::Cloud::Dialogflow::Cx::V3::RestoreAgentRequest::RestoreOption]
+          #     Agent restore mode. If not specified, `KEEP` is assumed.
+          class RestoreAgentRequest
+            # Restore option.
+            module RestoreOption
+              # Unspecified. Treated as KEEP.
+              RESTORE_OPTION_UNSPECIFIED = 0
+
+              # Always respect the settings from the exported agent file. It may cause
+              # a restoration failure if some settings (e.g. model type) are not
+              # supported in the target agent.
+              KEEP = 1
+
+              # Fallback to default settings if some settings are not supported in the
+              # target agent.
+              FALLBACK = 2
+            end
+          end
 
           # The request message for {Google::Cloud::Dialogflow::Cx::V3::Agents::ValidateAgent Agents::ValidateAgent}.
           # @!attribute [rw] name

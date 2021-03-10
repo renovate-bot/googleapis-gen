@@ -22,6 +22,12 @@ class RestoreAgentRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
     protected $name = '';
+    /**
+     * Agent restore mode. If not specified, `KEEP` is assumed.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.RestoreOption restore_option = 5;</code>
+     */
+    protected $restore_option = 0;
     protected $agent;
 
     /**
@@ -39,6 +45,8 @@ class RestoreAgentRequest extends \Google\Protobuf\Internal\Message
      *           `gs://<bucket-name>/<object-name>`.
      *     @type string $agent_content
      *           Uncompressed raw byte content for agent.
+     *     @type int $restore_option
+     *           Agent restore mode. If not specified, `KEEP` is assumed.
      * }
      */
     public function __construct($data = NULL) {
@@ -136,6 +144,32 @@ class RestoreAgentRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, False);
         $this->writeOneof(3, $var);
+
+        return $this;
+    }
+
+    /**
+     * Agent restore mode. If not specified, `KEEP` is assumed.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.RestoreOption restore_option = 5;</code>
+     * @return int
+     */
+    public function getRestoreOption()
+    {
+        return $this->restore_option;
+    }
+
+    /**
+     * Agent restore mode. If not specified, `KEEP` is assumed.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.RestoreOption restore_option = 5;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRestoreOption($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Cloud\Dialogflow\Cx\V3\RestoreAgentRequest\RestoreOption::class);
+        $this->restore_option = $var;
 
         return $this;
     }

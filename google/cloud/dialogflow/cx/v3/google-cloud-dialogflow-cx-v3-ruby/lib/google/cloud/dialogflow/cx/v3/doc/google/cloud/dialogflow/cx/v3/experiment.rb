@@ -56,7 +56,9 @@ module Google
           #     Last update time of this experiment.
           # @!attribute [rw] experiment_length
           #   @return [Google::Protobuf::Duration]
-          #     Maximum number of days to run the experiment.
+          #     Maximum number of days to run the experiment/rollout. If auto-rollout is
+          #     not enabled, default value and maximum will be 30 days. If auto-rollout is
+          #     enabled, default value and maximum will be 6 days.
           # @!attribute [rw] variants_history
           #   @return [Array<Google::Cloud::Dialogflow::Cx::V3::VariantsHistory>]
           #     The history of updates to the experiment variants.
