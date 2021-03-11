@@ -37,9 +37,8 @@ public interface RecognitionAudioOrBuilder extends
    * Currently, only Google Cloud Storage URIs are
    * supported, which must be specified in the following format:
    * `gs://bucket_name/object_name` (other URI formats return
-   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]).
-   * For more information, see [Request
-   * URIs](https://cloud.google.com/storage/docs/reference-uris).
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
+   * [Request URIs](https://cloud.google.com/storage/docs/reference-uris).
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -53,9 +52,8 @@ public interface RecognitionAudioOrBuilder extends
    * Currently, only Google Cloud Storage URIs are
    * supported, which must be specified in the following format:
    * `gs://bucket_name/object_name` (other URI formats return
-   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]).
-   * For more information, see [Request
-   * URIs](https://cloud.google.com/storage/docs/reference-uris).
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
+   * [Request URIs](https://cloud.google.com/storage/docs/reference-uris).
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -69,9 +67,8 @@ public interface RecognitionAudioOrBuilder extends
    * Currently, only Google Cloud Storage URIs are
    * supported, which must be specified in the following format:
    * `gs://bucket_name/object_name` (other URI formats return
-   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]).
-   * For more information, see [Request
-   * URIs](https://cloud.google.com/storage/docs/reference-uris).
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
+   * [Request URIs](https://cloud.google.com/storage/docs/reference-uris).
    * </pre>
    *
    * <code>string uri = 2;</code>

@@ -237,7 +237,7 @@ private static final long serialVersionUID = 0L;
    * a lossless encoding (`FLAC` or `LINEAR16`). The accuracy of the speech
    * recognition can be reduced if lossy codecs are used to capture or transmit
    * audio, particularly if background noise is present. Lossy codecs include
-   * `MULAW`, `AMR`, `AMR_WB`, `OGG_OPUS`, `SPEEX_WITH_HEADER_BYTE`, and `MP3`.
+   * `MULAW`, `AMR`, `AMR_WB`, `OGG_OPUS`, `SPEEX_WITH_HEADER_BYTE`, `MP3`.
    * The `FLAC` and `WAV` audio file formats include a header that describes the
    * included audio content. You can request recognition for `WAV` files that
    * contain either `LINEAR16` or `MULAW` encoded audio.
@@ -247,8 +247,7 @@ private static final long serialVersionUID = 0L;
    * an `AudioEncoding` when you send  send `FLAC` or `WAV` audio, the
    * encoding configuration must match the encoding described in the audio
    * header; otherwise the request returns an
-   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error
-   * code.
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error code.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding}
@@ -543,8 +542,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Encoding of audio data sent in all `RecognitionAudio` messages.
    * This field is optional for `FLAC` and `WAV` audio files and required
-   * for all other audio formats. For details, see
-   * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+   * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -557,8 +555,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Encoding of audio data sent in all `RecognitionAudio` messages.
    * This field is optional for `FLAC` and `WAV` audio files and required
-   * for all other audio formats. For details, see
-   * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+   * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -580,8 +577,7 @@ private static final long serialVersionUID = 0L;
    * source to 16000 Hz. If that's not possible, use the native sample rate of
    * the audio source (instead of re-sampling).
    * This field is optional for FLAC and WAV audio files, but is
-   * required for all other audio formats. For details, see
-   * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+   * required for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>int32 sample_rate_hertz = 2;</code>
@@ -1988,8 +1984,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see
-     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -2002,8 +1997,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see
-     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -2020,8 +2014,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see
-     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -2037,8 +2030,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see
-     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -2058,8 +2050,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see
-     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -2081,8 +2072,7 @@ private static final long serialVersionUID = 0L;
      * source to 16000 Hz. If that's not possible, use the native sample rate of
      * the audio source (instead of re-sampling).
      * This field is optional for FLAC and WAV audio files, but is
-     * required for all other audio formats. For details, see
-     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * required for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -2100,8 +2090,7 @@ private static final long serialVersionUID = 0L;
      * source to 16000 Hz. If that's not possible, use the native sample rate of
      * the audio source (instead of re-sampling).
      * This field is optional for FLAC and WAV audio files, but is
-     * required for all other audio formats. For details, see
-     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * required for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -2122,8 +2111,7 @@ private static final long serialVersionUID = 0L;
      * source to 16000 Hz. If that's not possible, use the native sample rate of
      * the audio source (instead of re-sampling).
      * This field is optional for FLAC and WAV audio files, but is
-     * required for all other audio formats. For details, see
-     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * required for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>

@@ -33,6 +33,7 @@ from .types.cloud_speech import StreamingRecognitionConfig
 from .types.cloud_speech import StreamingRecognitionResult
 from .types.cloud_speech import StreamingRecognizeRequest
 from .types.cloud_speech import StreamingRecognizeResponse
+from .types.cloud_speech import TranscriptOutputConfig
 from .types.cloud_speech import WordInfo
 from .types.cloud_speech_adaptation import CreateCustomClassRequest
 from .types.cloud_speech_adaptation import CreatePhraseSetRequest
@@ -82,6 +83,7 @@ __all__ = (
     'StreamingRecognitionResult',
     'StreamingRecognizeRequest',
     'StreamingRecognizeResponse',
+    'TranscriptOutputConfig',
     'UpdateCustomClassRequest',
     'UpdatePhraseSetRequest',
     'WordInfo',

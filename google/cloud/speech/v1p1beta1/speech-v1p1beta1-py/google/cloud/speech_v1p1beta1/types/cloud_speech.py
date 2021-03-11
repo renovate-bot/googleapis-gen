@@ -29,6 +29,7 @@ __protobuf__ = proto.module(
     manifest={
         'RecognizeRequest',
         'LongRunningRecognizeRequest',
+        'TranscriptOutputConfig',
         'StreamingRecognizeRequest',
         'StreamingRecognitionConfig',
         'RecognitionConfig',
@@ -81,6 +82,9 @@ class LongRunningRecognizeRequest(proto.Message):
             request.
         audio (google.cloud.speech_v1p1beta1.types.RecognitionAudio):
             Required. The audio data to be recognized.
+        output_config (google.cloud.speech_v1p1beta1.types.TranscriptOutputConfig):
+            Optional. Specifies an optional destination
+            for the recognition results.
     """
 
     config = proto.Field(proto.MESSAGE, number=1,
@@ -90,6 +94,25 @@ class LongRunningRecognizeRequest(proto.Message):
     audio = proto.Field(proto.MESSAGE, number=2,
         message='RecognitionAudio',
     )
+
+    output_config = proto.Field(proto.MESSAGE, number=4,
+        message='TranscriptOutputConfig',
+    )
+
+
+class TranscriptOutputConfig(proto.Message):
+    r"""Specifies an optional destination for the recognition
+    results.
+
+    Attributes:
+        gcs_uri (str):
+            Specifies a Cloud Storage URI for the recognition results.
+            Must be specified in the format:
+            ``gs://bucket_name/object_name``, and the bucket must
+            already exist.
+    """
+
+    gcs_uri = proto.Field(proto.STRING, number=1, oneof='output_type')
 
 
 class StreamingRecognizeRequest(proto.Message):
@@ -364,7 +387,7 @@ class RecognitionConfig(proto.Message):
         The accuracy of the speech recognition can be reduced if lossy
         codecs are used to capture or transmit audio, particularly if
         background noise is present. Lossy codecs include ``MULAW``,
-        ``AMR``, ``AMR_WB``, ``OGG_OPUS``, ``SPEEX_WITH_HEADER_BYTE``, and
+        ``AMR``, ``AMR_WB``, ``OGG_OPUS``, ``SPEEX_WITH_HEADER_BYTE``,
         ``MP3``.
 
         The ``FLAC`` and ``WAV`` audio file formats include a header that

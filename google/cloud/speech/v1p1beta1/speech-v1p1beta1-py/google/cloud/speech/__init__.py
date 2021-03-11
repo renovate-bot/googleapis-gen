@@ -35,6 +35,7 @@ from google.cloud.speech_v1p1beta1.types.cloud_speech import StreamingRecognitio
 from google.cloud.speech_v1p1beta1.types.cloud_speech import StreamingRecognitionResult
 from google.cloud.speech_v1p1beta1.types.cloud_speech import StreamingRecognizeRequest
 from google.cloud.speech_v1p1beta1.types.cloud_speech import StreamingRecognizeResponse
+from google.cloud.speech_v1p1beta1.types.cloud_speech import TranscriptOutputConfig
 from google.cloud.speech_v1p1beta1.types.cloud_speech import WordInfo
 from google.cloud.speech_v1p1beta1.types.cloud_speech_adaptation import CreateCustomClassRequest
 from google.cloud.speech_v1p1beta1.types.cloud_speech_adaptation import CreatePhraseSetRequest
@@ -86,6 +87,7 @@ __all__ = (
     'StreamingRecognitionResult',
     'StreamingRecognizeRequest',
     'StreamingRecognizeResponse',
+    'TranscriptOutputConfig',
     'UpdateCustomClassRequest',
     'UpdatePhraseSetRequest',
     'WordInfo',

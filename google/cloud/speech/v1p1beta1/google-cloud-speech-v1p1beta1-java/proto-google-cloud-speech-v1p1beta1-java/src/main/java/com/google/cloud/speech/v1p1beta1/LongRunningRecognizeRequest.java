@@ -79,6 +79,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 34: {
+            com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig.Builder subBuilder = null;
+            if (outputConfig_ != null) {
+              subBuilder = outputConfig_.toBuilder();
+            }
+            outputConfig_ = input.readMessage(com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(outputConfig_);
+              outputConfig_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -190,6 +203,44 @@ private static final long serialVersionUID = 0L;
     return getAudio();
   }
 
+  public static final int OUTPUT_CONFIG_FIELD_NUMBER = 4;
+  private com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig outputConfig_;
+  /**
+   * <pre>
+   * Optional. Specifies an optional destination for the recognition results.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1p1beta1.TranscriptOutputConfig output_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the outputConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasOutputConfig() {
+    return outputConfig_ != null;
+  }
+  /**
+   * <pre>
+   * Optional. Specifies an optional destination for the recognition results.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1p1beta1.TranscriptOutputConfig output_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The outputConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig getOutputConfig() {
+    return outputConfig_ == null ? com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig.getDefaultInstance() : outputConfig_;
+  }
+  /**
+   * <pre>
+   * Optional. Specifies an optional destination for the recognition results.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1p1beta1.TranscriptOutputConfig output_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v1p1beta1.TranscriptOutputConfigOrBuilder getOutputConfigOrBuilder() {
+    return getOutputConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -210,6 +261,9 @@ private static final long serialVersionUID = 0L;
     if (audio_ != null) {
       output.writeMessage(2, getAudio());
     }
+    if (outputConfig_ != null) {
+      output.writeMessage(4, getOutputConfig());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -226,6 +280,10 @@ private static final long serialVersionUID = 0L;
     if (audio_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getAudio());
+    }
+    if (outputConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getOutputConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -252,6 +310,11 @@ private static final long serialVersionUID = 0L;
       if (!getAudio()
           .equals(other.getAudio())) return false;
     }
+    if (hasOutputConfig() != other.hasOutputConfig()) return false;
+    if (hasOutputConfig()) {
+      if (!getOutputConfig()
+          .equals(other.getOutputConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -270,6 +333,10 @@ private static final long serialVersionUID = 0L;
     if (hasAudio()) {
       hash = (37 * hash) + AUDIO_FIELD_NUMBER;
       hash = (53 * hash) + getAudio().hashCode();
+    }
+    if (hasOutputConfig()) {
+      hash = (37 * hash) + OUTPUT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getOutputConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -421,6 +488,12 @@ private static final long serialVersionUID = 0L;
         audio_ = null;
         audioBuilder_ = null;
       }
+      if (outputConfigBuilder_ == null) {
+        outputConfig_ = null;
+      } else {
+        outputConfig_ = null;
+        outputConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -456,6 +529,11 @@ private static final long serialVersionUID = 0L;
         result.audio_ = audio_;
       } else {
         result.audio_ = audioBuilder_.build();
+      }
+      if (outputConfigBuilder_ == null) {
+        result.outputConfig_ = outputConfig_;
+      } else {
+        result.outputConfig_ = outputConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -510,6 +588,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasAudio()) {
         mergeAudio(other.getAudio());
+      }
+      if (other.hasOutputConfig()) {
+        mergeOutputConfig(other.getOutputConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -857,6 +938,161 @@ private static final long serialVersionUID = 0L;
         audio_ = null;
       }
       return audioBuilder_;
+    }
+
+    private com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig outputConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig, com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig.Builder, com.google.cloud.speech.v1p1beta1.TranscriptOutputConfigOrBuilder> outputConfigBuilder_;
+    /**
+     * <pre>
+     * Optional. Specifies an optional destination for the recognition results.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.TranscriptOutputConfig output_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the outputConfig field is set.
+     */
+    public boolean hasOutputConfig() {
+      return outputConfigBuilder_ != null || outputConfig_ != null;
+    }
+    /**
+     * <pre>
+     * Optional. Specifies an optional destination for the recognition results.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.TranscriptOutputConfig output_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The outputConfig.
+     */
+    public com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig getOutputConfig() {
+      if (outputConfigBuilder_ == null) {
+        return outputConfig_ == null ? com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig.getDefaultInstance() : outputConfig_;
+      } else {
+        return outputConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Specifies an optional destination for the recognition results.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.TranscriptOutputConfig output_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setOutputConfig(com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig value) {
+      if (outputConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        outputConfig_ = value;
+        onChanged();
+      } else {
+        outputConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Specifies an optional destination for the recognition results.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.TranscriptOutputConfig output_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setOutputConfig(
+        com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig.Builder builderForValue) {
+      if (outputConfigBuilder_ == null) {
+        outputConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        outputConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Specifies an optional destination for the recognition results.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.TranscriptOutputConfig output_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder mergeOutputConfig(com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig value) {
+      if (outputConfigBuilder_ == null) {
+        if (outputConfig_ != null) {
+          outputConfig_ =
+            com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig.newBuilder(outputConfig_).mergeFrom(value).buildPartial();
+        } else {
+          outputConfig_ = value;
+        }
+        onChanged();
+      } else {
+        outputConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Specifies an optional destination for the recognition results.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.TranscriptOutputConfig output_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearOutputConfig() {
+      if (outputConfigBuilder_ == null) {
+        outputConfig_ = null;
+        onChanged();
+      } else {
+        outputConfig_ = null;
+        outputConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Specifies an optional destination for the recognition results.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.TranscriptOutputConfig output_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig.Builder getOutputConfigBuilder() {
+      
+      onChanged();
+      return getOutputConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Optional. Specifies an optional destination for the recognition results.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.TranscriptOutputConfig output_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.cloud.speech.v1p1beta1.TranscriptOutputConfigOrBuilder getOutputConfigOrBuilder() {
+      if (outputConfigBuilder_ != null) {
+        return outputConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return outputConfig_ == null ?
+            com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig.getDefaultInstance() : outputConfig_;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Specifies an optional destination for the recognition results.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.TranscriptOutputConfig output_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig, com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig.Builder, com.google.cloud.speech.v1p1beta1.TranscriptOutputConfigOrBuilder> 
+        getOutputConfigFieldBuilder() {
+      if (outputConfigBuilder_ == null) {
+        outputConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig, com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig.Builder, com.google.cloud.speech.v1p1beta1.TranscriptOutputConfigOrBuilder>(
+                getOutputConfig(),
+                getParentForChildren(),
+                isClean());
+        outputConfig_ = null;
+      }
+      return outputConfigBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
