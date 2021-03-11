@@ -505,7 +505,7 @@ func (c *ParticipantsClient) SuggestSmartReplies(ctx context.Context, req *dialo
 // This method should be used by human agent client software to fetch auto
 // generated suggestions in real-time, while the conversation with an end user
 // is in progress. The functionality is implemented in terms of the
-// list pagination (at /apis/design/design_patterns#list_pagination)
+// list pagination (at https://cloud.google.com/apis/design/design_patterns#list_pagination)
 // design pattern. The client app should use the next_page_token field
 // to fetch the next batch of suggestions. suggestions are sorted by
 // create_time in descending order.

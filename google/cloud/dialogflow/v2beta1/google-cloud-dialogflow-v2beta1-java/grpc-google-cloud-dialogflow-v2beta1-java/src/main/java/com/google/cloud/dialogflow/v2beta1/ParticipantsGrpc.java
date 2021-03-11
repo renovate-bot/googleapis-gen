@@ -532,7 +532,7 @@ public final class ParticipantsGrpc {
      * This method should be used by human agent client software to fetch auto
      * generated suggestions in real-time, while the conversation with an end user
      * is in progress. The functionality is implemented in terms of the
-     * [list pagination](/apis/design/design_patterns#list_pagination)
+     * [list pagination](https://cloud.google.com/apis/design/design_patterns#list_pagination)
      * design pattern. The client app should use the `next_page_token` field
      * to fetch the next batch of suggestions. `suggestions` are sorted by
      * `create_time` in descending order.
@@ -796,7 +796,7 @@ public final class ParticipantsGrpc {
      * This method should be used by human agent client software to fetch auto
      * generated suggestions in real-time, while the conversation with an end user
      * is in progress. The functionality is implemented in terms of the
-     * [list pagination](/apis/design/design_patterns#list_pagination)
+     * [list pagination](https://cloud.google.com/apis/design/design_patterns#list_pagination)
      * design pattern. The client app should use the `next_page_token` field
      * to fetch the next batch of suggestions. `suggestions` are sorted by
      * `create_time` in descending order.
@@ -949,7 +949,7 @@ public final class ParticipantsGrpc {
      * This method should be used by human agent client software to fetch auto
      * generated suggestions in real-time, while the conversation with an end user
      * is in progress. The functionality is implemented in terms of the
-     * [list pagination](/apis/design/design_patterns#list_pagination)
+     * [list pagination](https://cloud.google.com/apis/design/design_patterns#list_pagination)
      * design pattern. The client app should use the `next_page_token` field
      * to fetch the next batch of suggestions. `suggestions` are sorted by
      * `create_time` in descending order.
@@ -1108,7 +1108,7 @@ public final class ParticipantsGrpc {
      * This method should be used by human agent client software to fetch auto
      * generated suggestions in real-time, while the conversation with an end user
      * is in progress. The functionality is implemented in terms of the
-     * [list pagination](/apis/design/design_patterns#list_pagination)
+     * [list pagination](https://cloud.google.com/apis/design/design_patterns#list_pagination)
      * design pattern. The client app should use the `next_page_token` field
      * to fetch the next batch of suggestions. `suggestions` are sorted by
      * `create_time` in descending order.
