@@ -82,7 +82,9 @@ class Experiment extends \Google\Protobuf\Internal\Message
      */
     protected $last_update_time = null;
     /**
-     * Maximum number of days to run the experiment.
+     * Maximum number of days to run the experiment. If auto-rollout is
+     * not enabled, default value and maximum will be 30 days. If auto-rollout is
+     * enabled, default value and maximum will be 6 days.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration experiment_length = 11;</code>
      */
@@ -127,7 +129,9 @@ class Experiment extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $last_update_time
      *           Last update time of this experiment.
      *     @type \Google\Protobuf\Duration $experiment_length
-     *           Maximum number of days to run the experiment.
+     *           Maximum number of days to run the experiment. If auto-rollout is
+     *           not enabled, default value and maximum will be 30 days. If auto-rollout is
+     *           enabled, default value and maximum will be 6 days.
      *     @type \Google\Cloud\Dialogflow\Cx\V3beta1\VariantsHistory[]|\Google\Protobuf\Internal\RepeatedField $variants_history
      *           The history of updates to the experiment variants.
      * }
@@ -470,7 +474,9 @@ class Experiment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Maximum number of days to run the experiment.
+     * Maximum number of days to run the experiment. If auto-rollout is
+     * not enabled, default value and maximum will be 30 days. If auto-rollout is
+     * enabled, default value and maximum will be 6 days.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration experiment_length = 11;</code>
      * @return \Google\Protobuf\Duration|null
@@ -491,7 +497,9 @@ class Experiment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Maximum number of days to run the experiment.
+     * Maximum number of days to run the experiment. If auto-rollout is
+     * not enabled, default value and maximum will be 30 days. If auto-rollout is
+     * enabled, default value and maximum will be 6 days.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration experiment_length = 11;</code>
      * @param \Google\Protobuf\Duration $var

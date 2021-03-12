@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private RestoreAgentRequest() {
     name_ = "";
+    restoreOption_ = 0;
   }
 
   @java.lang.Override
@@ -70,6 +71,12 @@ private static final long serialVersionUID = 0L;
             agent_ = input.readBytes();
             break;
           }
+          case 40: {
+            int rawValue = input.readEnum();
+
+            restoreOption_ = rawValue;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -100,6 +107,157 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.dialogflow.cx.v3beta1.AgentProto.internal_static_google_cloud_dialogflow_cx_v3beta1_RestoreAgentRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.class, com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.Builder.class);
+  }
+
+  /**
+   * <pre>
+   * Restore option.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption}
+   */
+  public enum RestoreOption
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * Unspecified. Treated as KEEP.
+     * </pre>
+     *
+     * <code>RESTORE_OPTION_UNSPECIFIED = 0;</code>
+     */
+    RESTORE_OPTION_UNSPECIFIED(0),
+    /**
+     * <pre>
+     * Always respect the settings from the exported agent file. It may cause
+     * a restoration failure if some settings (e.g. model type) are not
+     * supported in the target agent.
+     * </pre>
+     *
+     * <code>KEEP = 1;</code>
+     */
+    KEEP(1),
+    /**
+     * <pre>
+     * Fallback to default settings if some settings are not supported in the
+     * target agent.
+     * </pre>
+     *
+     * <code>FALLBACK = 2;</code>
+     */
+    FALLBACK(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * Unspecified. Treated as KEEP.
+     * </pre>
+     *
+     * <code>RESTORE_OPTION_UNSPECIFIED = 0;</code>
+     */
+    public static final int RESTORE_OPTION_UNSPECIFIED_VALUE = 0;
+    /**
+     * <pre>
+     * Always respect the settings from the exported agent file. It may cause
+     * a restoration failure if some settings (e.g. model type) are not
+     * supported in the target agent.
+     * </pre>
+     *
+     * <code>KEEP = 1;</code>
+     */
+    public static final int KEEP_VALUE = 1;
+    /**
+     * <pre>
+     * Fallback to default settings if some settings are not supported in the
+     * target agent.
+     * </pre>
+     *
+     * <code>FALLBACK = 2;</code>
+     */
+    public static final int FALLBACK_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RestoreOption valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static RestoreOption forNumber(int value) {
+      switch (value) {
+        case 0: return RESTORE_OPTION_UNSPECIFIED;
+        case 1: return KEEP;
+        case 2: return FALLBACK;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<RestoreOption>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        RestoreOption> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<RestoreOption>() {
+            public RestoreOption findValueByNumber(int number) {
+              return RestoreOption.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final RestoreOption[] VALUES = values();
+
+    public static RestoreOption valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private RestoreOption(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption)
   }
 
   private int agentCase_ = 0;
@@ -290,6 +448,33 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.ByteString.EMPTY;
   }
 
+  public static final int RESTORE_OPTION_FIELD_NUMBER = 5;
+  private int restoreOption_;
+  /**
+   * <pre>
+   * Agent restore mode. If not specified, `KEEP` is assumed.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption restore_option = 5;</code>
+   * @return The enum numeric value on the wire for restoreOption.
+   */
+  @java.lang.Override public int getRestoreOptionValue() {
+    return restoreOption_;
+  }
+  /**
+   * <pre>
+   * Agent restore mode. If not specified, `KEEP` is assumed.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption restore_option = 5;</code>
+   * @return The restoreOption.
+   */
+  @java.lang.Override public com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption getRestoreOption() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption result = com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption.valueOf(restoreOption_);
+    return result == null ? com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -314,6 +499,9 @@ private static final long serialVersionUID = 0L;
       output.writeBytes(
           3, (com.google.protobuf.ByteString) agent_);
     }
+    if (restoreOption_ != com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption.RESTORE_OPTION_UNSPECIFIED.getNumber()) {
+      output.writeEnum(5, restoreOption_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -334,6 +522,10 @@ private static final long serialVersionUID = 0L;
         .computeBytesSize(
             3, (com.google.protobuf.ByteString) agent_);
     }
+    if (restoreOption_ != com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption.RESTORE_OPTION_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(5, restoreOption_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -351,6 +543,7 @@ private static final long serialVersionUID = 0L;
 
     if (!getName()
         .equals(other.getName())) return false;
+    if (restoreOption_ != other.restoreOption_) return false;
     if (!getAgentCase().equals(other.getAgentCase())) return false;
     switch (agentCase_) {
       case 2:
@@ -377,6 +570,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + RESTORE_OPTION_FIELD_NUMBER;
+    hash = (53 * hash) + restoreOption_;
     switch (agentCase_) {
       case 2:
         hash = (37 * hash) + AGENT_URI_FIELD_NUMBER;
@@ -528,6 +723,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       name_ = "";
 
+      restoreOption_ = 0;
+
       agentCase_ = 0;
       agent_ = null;
       return this;
@@ -563,6 +760,7 @@ private static final long serialVersionUID = 0L;
       if (agentCase_ == 3) {
         result.agent_ = agent_;
       }
+      result.restoreOption_ = restoreOption_;
       result.agentCase_ = agentCase_;
       onBuilt();
       return result;
@@ -615,6 +813,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
+      }
+      if (other.restoreOption_ != 0) {
+        setRestoreOptionValue(other.getRestoreOptionValue());
       }
       switch (other.getAgentCase()) {
         case AGENT_URI: {
@@ -966,6 +1167,80 @@ private static final long serialVersionUID = 0L;
         agent_ = null;
         onChanged();
       }
+      return this;
+    }
+
+    private int restoreOption_ = 0;
+    /**
+     * <pre>
+     * Agent restore mode. If not specified, `KEEP` is assumed.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption restore_option = 5;</code>
+     * @return The enum numeric value on the wire for restoreOption.
+     */
+    @java.lang.Override public int getRestoreOptionValue() {
+      return restoreOption_;
+    }
+    /**
+     * <pre>
+     * Agent restore mode. If not specified, `KEEP` is assumed.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption restore_option = 5;</code>
+     * @param value The enum numeric value on the wire for restoreOption to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRestoreOptionValue(int value) {
+      
+      restoreOption_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Agent restore mode. If not specified, `KEEP` is assumed.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption restore_option = 5;</code>
+     * @return The restoreOption.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption getRestoreOption() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption result = com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption.valueOf(restoreOption_);
+      return result == null ? com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * Agent restore mode. If not specified, `KEEP` is assumed.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption restore_option = 5;</code>
+     * @param value The restoreOption to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRestoreOption(com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      restoreOption_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Agent restore mode. If not specified, `KEEP` is assumed.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption restore_option = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRestoreOption() {
+      
+      restoreOption_ = 0;
+      onChanged();
       return this;
     }
     @java.lang.Override

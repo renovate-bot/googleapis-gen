@@ -640,6 +640,8 @@ module Google
             #   `gs://<bucket-name>/<object-name>`.
             # @param agent_content [String]
             #   Uncompressed raw byte content for agent.
+            # @param restore_option [Google::Cloud::Dialogflow::Cx::V3beta1::RestoreAgentRequest::RestoreOption]
+            #   Agent restore mode. If not specified, `KEEP` is assumed.
             # @param options [Google::Gax::CallOptions]
             #   Overrides the default settings for this call, e.g, timeout,
             #   retries, etc.
@@ -682,11 +684,13 @@ module Google
                 name,
                 agent_uri: nil,
                 agent_content: nil,
+                restore_option: nil,
                 options: nil
               req = {
                 name: name,
                 agent_uri: agent_uri,
-                agent_content: agent_content
+                agent_content: agent_content,
+                restore_option: restore_option
               }.delete_if { |_, v| v.nil? }
               req = Google::Gax::to_proto(req, Google::Cloud::Dialogflow::Cx::V3beta1::RestoreAgentRequest)
               operation = Google::Gax::Operation.new(

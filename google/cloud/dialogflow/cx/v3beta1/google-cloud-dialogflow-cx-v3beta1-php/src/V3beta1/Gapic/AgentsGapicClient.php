@@ -47,6 +47,7 @@ use Google\Cloud\Dialogflow\Cx\V3beta1\GetAgentValidationResultRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\ListAgentsRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\ListAgentsResponse;
 use Google\Cloud\Dialogflow\Cx\V3beta1\RestoreAgentRequest;
+use Google\Cloud\Dialogflow\Cx\V3beta1\RestoreAgentRequest\RestoreOption;
 use Google\Cloud\Dialogflow\Cx\V3beta1\UpdateAgentRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\ValidateAgentRequest;
 use Google\LongRunning\Operation;
@@ -881,6 +882,9 @@ class AgentsGapicClient
      *          `gs://<bucket-name>/<object-name>`.
      *     @type string $agentContent
      *          Uncompressed raw byte content for agent.
+     *     @type int $restoreOption
+     *          Agent restore mode. If not specified, `KEEP` is assumed.
+     *          For allowed values, use constants defined on {@see \Google\Cloud\Dialogflow\Cx\V3beta1\RestoreAgentRequest\RestoreOption}
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -902,6 +906,9 @@ class AgentsGapicClient
         }
         if (isset($optionalArgs['agentContent'])) {
             $request->setAgentContent($optionalArgs['agentContent']);
+        }
+        if (isset($optionalArgs['restoreOption'])) {
+            $request->setRestoreOption($optionalArgs['restoreOption']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([
