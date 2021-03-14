@@ -1,0 +1,2 @@
+recursive-include google/appengine *.py
+recursive-include google/appengine_v1 *.py
