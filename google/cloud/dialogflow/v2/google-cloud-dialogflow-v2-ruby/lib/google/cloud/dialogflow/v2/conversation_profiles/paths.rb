@@ -39,25 +39,6 @@ module Google
             end
 
             ##
-            # Create a fully-qualified ConversationModel resource string.
-            #
-            # The resource will be in the following format:
-            #
-            # `projects/{project}/locations/{location}/conversationModels/{conversation_model}`
-            #
-            # @param project [String]
-            # @param location [String]
-            # @param conversation_model [String]
-            #
-            # @return [::String]
-            def conversation_model_path project:, location:, conversation_model:
-              raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
-              raise ::ArgumentError, "location cannot contain /" if location.to_s.include? "/"
-
-              "projects/#{project}/locations/#{location}/conversationModels/#{conversation_model}"
-            end
-
-            ##
             # Create a fully-qualified ConversationProfile resource string.
             #
             # @overload conversation_profile_path(project:, conversation_profile:)

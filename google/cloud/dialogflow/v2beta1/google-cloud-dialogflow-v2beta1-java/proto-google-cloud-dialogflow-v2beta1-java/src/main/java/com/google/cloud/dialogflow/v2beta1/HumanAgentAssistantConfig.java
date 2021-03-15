@@ -8245,7 +8245,7 @@ private static final long serialVersionUID = 0L;
      * ID&gt;/conversationModels/&lt;Model ID&gt;`.
      * </pre>
      *
-     * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The model.
      */
     java.lang.String getModel();
@@ -8255,7 +8255,7 @@ private static final long serialVersionUID = 0L;
      * ID&gt;/conversationModels/&lt;Model ID&gt;`.
      * </pre>
      *
-     * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for model.
      */
     com.google.protobuf.ByteString
@@ -8358,7 +8358,7 @@ private static final long serialVersionUID = 0L;
      * ID&gt;/conversationModels/&lt;Model ID&gt;`.
      * </pre>
      *
-     * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The model.
      */
     @java.lang.Override
@@ -8380,7 +8380,7 @@ private static final long serialVersionUID = 0L;
      * ID&gt;/conversationModels/&lt;Model ID&gt;`.
      * </pre>
      *
-     * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for model.
      */
     @java.lang.Override
@@ -8712,7 +8712,7 @@ private static final long serialVersionUID = 0L;
        * ID&gt;/conversationModels/&lt;Model ID&gt;`.
        * </pre>
        *
-       * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+       * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return The model.
        */
       public java.lang.String getModel() {
@@ -8733,7 +8733,7 @@ private static final long serialVersionUID = 0L;
        * ID&gt;/conversationModels/&lt;Model ID&gt;`.
        * </pre>
        *
-       * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+       * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return The bytes for model.
        */
       public com.google.protobuf.ByteString
@@ -8755,7 +8755,7 @@ private static final long serialVersionUID = 0L;
        * ID&gt;/conversationModels/&lt;Model ID&gt;`.
        * </pre>
        *
-       * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+       * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @param value The model to set.
        * @return This builder for chaining.
        */
@@ -8775,7 +8775,7 @@ private static final long serialVersionUID = 0L;
        * ID&gt;/conversationModels/&lt;Model ID&gt;`.
        * </pre>
        *
-       * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+       * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return This builder for chaining.
        */
       public Builder clearModel() {
@@ -8790,7 +8790,7 @@ private static final long serialVersionUID = 0L;
        * ID&gt;/conversationModels/&lt;Model ID&gt;`.
        * </pre>
        *
-       * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+       * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @param value The bytes for model to set.
        * @return This builder for chaining.
        */
