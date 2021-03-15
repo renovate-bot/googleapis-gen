@@ -2,7 +2,7 @@
 // GENERATED CODE -- DO NOT EDIT!
 
 // Original file comments:
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -34,11 +34,8 @@ class DashboardsServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Creates a new custom dashboard.
-     *
-     * This method requires the `monitoring.dashboards.create` permission
-     * on the specified project. For more information, see
-     * [Google Cloud IAM](https://cloud.google.com/iam).
+     * Creates a new custom dashboard. For examples on how you can use this API to create dashboards, see [Managing dashboards by API](/monitoring/dashboards/api-dashboard).
+     * This method requires the `monitoring.dashboards.create` permission on the specified project. For more information about permissions, see [Cloud Identity and Access Management](/iam).
      * @param \Google\Monitoring\Dashboard\V1\CreateDashboardRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -57,7 +54,7 @@ class DashboardsServiceGrpcClient extends \Grpc\BaseStub {
      *
      * This method requires the `monitoring.dashboards.list` permission
      * on the specified project. For more information, see
-     * [Google Cloud IAM](https://cloud.google.com/iam).
+     * [Cloud Identity and Access Management](https://cloud.google.com/iam).
      * @param \Google\Monitoring\Dashboard\V1\ListDashboardsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -76,7 +73,7 @@ class DashboardsServiceGrpcClient extends \Grpc\BaseStub {
      *
      * This method requires the `monitoring.dashboards.get` permission
      * on the specified dashboard. For more information, see
-     * [Google Cloud IAM](https://cloud.google.com/iam).
+     * [Cloud Identity and Access Management](https://cloud.google.com/iam).
      * @param \Google\Monitoring\Dashboard\V1\GetDashboardRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -95,7 +92,7 @@ class DashboardsServiceGrpcClient extends \Grpc\BaseStub {
      *
      * This method requires the `monitoring.dashboards.delete` permission
      * on the specified dashboard. For more information, see
-     * [Google Cloud IAM](https://cloud.google.com/iam).
+     * [Cloud Identity and Access Management](https://cloud.google.com/iam).
      * @param \Google\Monitoring\Dashboard\V1\DeleteDashboardRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -114,7 +111,7 @@ class DashboardsServiceGrpcClient extends \Grpc\BaseStub {
      *
      * This method requires the `monitoring.dashboards.update` permission
      * on the specified dashboard. For more information, see
-     * [Google Cloud IAM](https://cloud.google.com/iam).
+     * [Cloud Identity and Access Management](https://cloud.google.com/iam).
      * @param \Google\Monitoring\Dashboard\V1\UpdateDashboardRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

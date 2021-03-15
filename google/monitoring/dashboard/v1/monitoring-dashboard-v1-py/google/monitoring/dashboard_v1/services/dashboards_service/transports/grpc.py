@@ -244,11 +244,12 @@ class DashboardsServiceGrpcTransport(DashboardsServiceTransport):
             dashboard.Dashboard]:
         r"""Return a callable for the create dashboard method over gRPC.
 
-        Creates a new custom dashboard.
-
-        This method requires the ``monitoring.dashboards.create``
-        permission on the specified project. For more information, see
-        `Google Cloud IAM <https://cloud.google.com/iam>`__.
+        Creates a new custom dashboard. For examples on how you can use
+        this API to create dashboards, see `Managing dashboards by
+        API </monitoring/dashboards/api-dashboard>`__. This method
+        requires the ``monitoring.dashboards.create`` permission on the
+        specified project. For more information about permissions, see
+        `Cloud Identity and Access Management </iam>`__.
 
         Returns:
             Callable[[~.CreateDashboardRequest],
@@ -278,7 +279,8 @@ class DashboardsServiceGrpcTransport(DashboardsServiceTransport):
 
         This method requires the ``monitoring.dashboards.list``
         permission on the specified project. For more information, see
-        `Google Cloud IAM <https://cloud.google.com/iam>`__.
+        `Cloud Identity and Access
+        Management <https://cloud.google.com/iam>`__.
 
         Returns:
             Callable[[~.ListDashboardsRequest],
@@ -308,7 +310,8 @@ class DashboardsServiceGrpcTransport(DashboardsServiceTransport):
 
         This method requires the ``monitoring.dashboards.get``
         permission on the specified dashboard. For more information, see
-        `Google Cloud IAM <https://cloud.google.com/iam>`__.
+        `Cloud Identity and Access
+        Management <https://cloud.google.com/iam>`__.
 
         Returns:
             Callable[[~.GetDashboardRequest],
@@ -338,7 +341,8 @@ class DashboardsServiceGrpcTransport(DashboardsServiceTransport):
 
         This method requires the ``monitoring.dashboards.delete``
         permission on the specified dashboard. For more information, see
-        `Google Cloud IAM <https://cloud.google.com/iam>`__.
+        `Cloud Identity and Access
+        Management <https://cloud.google.com/iam>`__.
 
         Returns:
             Callable[[~.DeleteDashboardRequest],
@@ -368,7 +372,8 @@ class DashboardsServiceGrpcTransport(DashboardsServiceTransport):
 
         This method requires the ``monitoring.dashboards.update``
         permission on the specified dashboard. For more information, see
-        `Google Cloud IAM <https://cloud.google.com/iam>`__.
+        `Cloud Identity and Access
+        Management <https://cloud.google.com/iam>`__.
 
         Returns:
             Callable[[~.UpdateDashboardRequest],

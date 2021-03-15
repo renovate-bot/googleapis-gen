@@ -317,11 +317,8 @@ export class DashboardsServiceClient {
           protos.google.monitoring.dashboard.v1.ICreateDashboardRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * Creates a new custom dashboard.
- *
- * This method requires the `monitoring.dashboards.create` permission
- * on the specified project. For more information, see
- * [Google Cloud IAM](https://cloud.google.com/iam).
+ * Creates a new custom dashboard. For examples on how you can use this API to create dashboards, see [Managing dashboards by API](/monitoring/dashboards/api-dashboard).
+ * This method requires the `monitoring.dashboards.create` permission on the specified project. For more information about permissions, see [Cloud Identity and Access Management](/iam).
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -402,7 +399,7 @@ export class DashboardsServiceClient {
  *
  * This method requires the `monitoring.dashboards.get` permission
  * on the specified dashboard. For more information, see
- * [Google Cloud IAM](https://cloud.google.com/iam).
+ * [Cloud Identity and Access Management](https://cloud.google.com/iam).
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -481,7 +478,7 @@ export class DashboardsServiceClient {
  *
  * This method requires the `monitoring.dashboards.delete` permission
  * on the specified dashboard. For more information, see
- * [Google Cloud IAM](https://cloud.google.com/iam).
+ * [Cloud Identity and Access Management](https://cloud.google.com/iam).
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -558,7 +555,7 @@ export class DashboardsServiceClient {
  *
  * This method requires the `monitoring.dashboards.update` permission
  * on the specified dashboard. For more information, see
- * [Google Cloud IAM](https://cloud.google.com/iam).
+ * [Cloud Identity and Access Management](https://cloud.google.com/iam).
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -635,7 +632,7 @@ export class DashboardsServiceClient {
  *
  * This method requires the `monitoring.dashboards.list` permission
  * on the specified project. For more information, see
- * [Google Cloud IAM](https://cloud.google.com/iam).
+ * [Cloud Identity and Access Management](https://cloud.google.com/iam).
  *
  * @param {Object} request
  *   The request object that will be sent.

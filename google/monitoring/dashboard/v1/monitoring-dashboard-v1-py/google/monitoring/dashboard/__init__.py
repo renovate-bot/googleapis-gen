@@ -29,6 +29,7 @@ from google.monitoring.dashboard_v1.types.dashboards_service import ListDashboar
 from google.monitoring.dashboard_v1.types.dashboards_service import UpdateDashboardRequest
 from google.monitoring.dashboard_v1.types.layouts import ColumnLayout
 from google.monitoring.dashboard_v1.types.layouts import GridLayout
+from google.monitoring.dashboard_v1.types.layouts import MosaicLayout
 from google.monitoring.dashboard_v1.types.layouts import RowLayout
 from google.monitoring.dashboard_v1.types.metrics import SparkChartType
 from google.monitoring.dashboard_v1.types.metrics import Threshold
@@ -54,6 +55,7 @@ __all__ = (
     'GridLayout',
     'ListDashboardsRequest',
     'ListDashboardsResponse',
+    'MosaicLayout',
     'PickTimeSeriesFilter',
     'RowLayout',
     'Scorecard',

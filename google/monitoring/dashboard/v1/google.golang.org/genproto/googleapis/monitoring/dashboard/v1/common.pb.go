@@ -1,4 +1,4 @@
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -614,6 +614,8 @@ type Aggregation struct {
 	// `ALIGN_NONE` is specified, this field is required or an error is returned.
 	// If no per-series aligner is specified, or the aligner `ALIGN_NONE` is
 	// specified, then this field is ignored.
+	//
+	// The maximum value of the `alignment_period` is 2 years, or 104 weeks.
 	AlignmentPeriod *durationpb.Duration `protobuf:"bytes,1,opt,name=alignment_period,json=alignmentPeriod,proto3" json:"alignment_period,omitempty"`
 	// An `Aligner` describes how to bring the data points in a single
 	// time series into temporal alignment. Except for `ALIGN_NONE`, all

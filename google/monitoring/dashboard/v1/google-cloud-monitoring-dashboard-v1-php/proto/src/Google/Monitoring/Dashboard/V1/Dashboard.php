@@ -63,6 +63,9 @@ class Dashboard extends \Google\Protobuf\Internal\Message
      *     @type \Google\Monitoring\Dashboard\V1\GridLayout $grid_layout
      *           Content is arranged with a basic layout that re-flows a simple list of
      *           informational elements like widgets or tiles.
+     *     @type \Google\Monitoring\Dashboard\V1\MosaicLayout $mosaic_layout
+     *           The content is arranged as a grid of tiles, with each content widget
+     *           occupying one or more grid blocks.
      *     @type \Google\Monitoring\Dashboard\V1\RowLayout $row_layout
      *           The content is divided into equally spaced rows and the widgets are
      *           arranged horizontally.
@@ -195,6 +198,39 @@ class Dashboard extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Monitoring\Dashboard\V1\GridLayout::class);
         $this->writeOneof(5, $var);
+
+        return $this;
+    }
+
+    /**
+     * The content is arranged as a grid of tiles, with each content widget
+     * occupying one or more grid blocks.
+     *
+     * Generated from protobuf field <code>.google.monitoring.dashboard.v1.MosaicLayout mosaic_layout = 6;</code>
+     * @return \Google\Monitoring\Dashboard\V1\MosaicLayout|null
+     */
+    public function getMosaicLayout()
+    {
+        return $this->readOneof(6);
+    }
+
+    public function hasMosaicLayout()
+    {
+        return $this->hasOneof(6);
+    }
+
+    /**
+     * The content is arranged as a grid of tiles, with each content widget
+     * occupying one or more grid blocks.
+     *
+     * Generated from protobuf field <code>.google.monitoring.dashboard.v1.MosaicLayout mosaic_layout = 6;</code>
+     * @param \Google\Monitoring\Dashboard\V1\MosaicLayout $var
+     * @return $this
+     */
+    public function setMosaicLayout($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Monitoring\Dashboard\V1\MosaicLayout::class);
+        $this->writeOneof(6, $var);
 
         return $this;
     }

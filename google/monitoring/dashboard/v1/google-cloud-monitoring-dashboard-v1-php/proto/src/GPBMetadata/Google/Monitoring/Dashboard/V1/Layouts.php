@@ -17,12 +17,21 @@ class Layouts
         \GPBMetadata\Google\Monitoring\Dashboard\V1\Widget::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ž
+ÿ
 ,google/monitoring/dashboard/v1/layouts.protogoogle.monitoring.dashboard.v1"V
 
 GridLayout
 columns (7
-widgets (2&.google.monitoring.dashboard.v1.Widget"˜
+widgets (2&.google.monitoring.dashboard.v1.Widget"Þ
+MosaicLayout
+columns (@
+tiles (21.google.monitoring.dashboard.v1.MosaicLayout.Tile{
+Tile
+x_pos (
+y_pos (
+width (
+height (6
+widget (2&.google.monitoring.dashboard.v1.Widget"˜
 	RowLayout;
 rows (2-.google.monitoring.dashboard.v1.RowLayout.RowN
 Row

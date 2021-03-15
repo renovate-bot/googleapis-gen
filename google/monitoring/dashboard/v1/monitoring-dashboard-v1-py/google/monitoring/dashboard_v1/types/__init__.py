@@ -34,6 +34,7 @@ from .dashboards_service import (
 from .layouts import (
     ColumnLayout,
     GridLayout,
+    MosaicLayout,
     RowLayout,
 )
 from .metrics import (
@@ -70,6 +71,7 @@ __all__ = (
     'UpdateDashboardRequest',
     'ColumnLayout',
     'GridLayout',
+    'MosaicLayout',
     'RowLayout',
     'Threshold',
     'TimeSeriesFilter',
