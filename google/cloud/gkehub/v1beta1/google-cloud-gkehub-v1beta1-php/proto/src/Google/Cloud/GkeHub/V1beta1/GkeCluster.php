@@ -17,7 +17,7 @@ class GkeCluster extends \Google\Protobuf\Internal\Message
 {
     /**
      * Immutable. Self-link of the GCP resource for the GKE cluster. For example:
-     *     //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
+     * > container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
      * Zonal clusters are also supported.
      *
      * Generated from protobuf field <code>string resource_link = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -32,7 +32,7 @@ class GkeCluster extends \Google\Protobuf\Internal\Message
      *
      *     @type string $resource_link
      *           Immutable. Self-link of the GCP resource for the GKE cluster. For example:
-     *               //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
+     *           > container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
      *           Zonal clusters are also supported.
      * }
      */
@@ -43,7 +43,7 @@ class GkeCluster extends \Google\Protobuf\Internal\Message
 
     /**
      * Immutable. Self-link of the GCP resource for the GKE cluster. For example:
-     *     //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
+     * > container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
      * Zonal clusters are also supported.
      *
      * Generated from protobuf field <code>string resource_link = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -56,7 +56,7 @@ class GkeCluster extends \Google\Protobuf\Internal\Message
 
     /**
      * Immutable. Self-link of the GCP resource for the GKE cluster. For example:
-     *     //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
+     * > container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
      * Zonal clusters are also supported.
      *
      * Generated from protobuf field <code>string resource_link = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
