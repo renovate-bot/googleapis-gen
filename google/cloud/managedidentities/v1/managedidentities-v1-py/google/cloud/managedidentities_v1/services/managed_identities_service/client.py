@@ -80,7 +80,6 @@ class ManagedIdentitiesServiceClientMeta(type):
 
 class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMeta):
     """API Overview
-    ------------
 
     The ``managedidentites.googleapis.com`` service implements the
     Google Cloud Managed Identites API for identity services (e.g.
@@ -92,7 +91,6 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
     add/remove VPC peering.
 
     Data Model
-    ----------
 
     The Managed Identities service exposes the following resources:
 

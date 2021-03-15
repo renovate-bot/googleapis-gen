@@ -40,7 +40,6 @@ class ManagedIdentitiesServiceGrpcAsyncIOTransport(ManagedIdentitiesServiceTrans
     """gRPC AsyncIO backend transport for ManagedIdentitiesService.
 
     API Overview
-    ------------
 
     The ``managedidentites.googleapis.com`` service implements the
     Google Cloud Managed Identites API for identity services (e.g.
@@ -52,7 +51,6 @@ class ManagedIdentitiesServiceGrpcAsyncIOTransport(ManagedIdentitiesServiceTrans
     add/remove VPC peering.
 
     Data Model
-    ----------
 
     The Managed Identities service exposes the following resources:
 

@@ -38,7 +38,6 @@ class ManagedIdentitiesServiceGrpcTransport(ManagedIdentitiesServiceTransport):
     """gRPC backend transport for ManagedIdentitiesService.
 
     API Overview
-    ------------
 
     The ``managedidentites.googleapis.com`` service implements the
     Google Cloud Managed Identites API for identity services (e.g.
@@ -50,7 +49,6 @@ class ManagedIdentitiesServiceGrpcTransport(ManagedIdentitiesServiceTransport):
     add/remove VPC peering.
 
     Data Model
-    ----------
 
     The Managed Identities service exposes the following resources:
 
