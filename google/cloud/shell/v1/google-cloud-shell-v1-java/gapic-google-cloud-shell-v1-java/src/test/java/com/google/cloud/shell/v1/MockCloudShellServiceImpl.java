@@ -62,7 +62,7 @@ public class MockCloudShellServiceImpl extends CloudShellServiceImplBase {
   @Override
   public void getEnvironment(
       GetEnvironmentRequest request, StreamObserver<Environment> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Environment) {
       requests.add(request);
       responseObserver.onNext(((Environment) response));
@@ -74,7 +74,7 @@ public class MockCloudShellServiceImpl extends CloudShellServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetEnvironment, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Environment.class.getName(),
                   Exception.class.getName())));
     }
@@ -83,7 +83,7 @@ public class MockCloudShellServiceImpl extends CloudShellServiceImplBase {
   @Override
   public void startEnvironment(
       StartEnvironmentRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -95,7 +95,7 @@ public class MockCloudShellServiceImpl extends CloudShellServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method StartEnvironment, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -104,7 +104,7 @@ public class MockCloudShellServiceImpl extends CloudShellServiceImplBase {
   @Override
   public void authorizeEnvironment(
       AuthorizeEnvironmentRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -116,7 +116,7 @@ public class MockCloudShellServiceImpl extends CloudShellServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method AuthorizeEnvironment, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -125,7 +125,7 @@ public class MockCloudShellServiceImpl extends CloudShellServiceImplBase {
   @Override
   public void addPublicKey(
       AddPublicKeyRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -137,7 +137,7 @@ public class MockCloudShellServiceImpl extends CloudShellServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method AddPublicKey, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -146,7 +146,7 @@ public class MockCloudShellServiceImpl extends CloudShellServiceImplBase {
   @Override
   public void removePublicKey(
       RemovePublicKeyRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -158,7 +158,7 @@ public class MockCloudShellServiceImpl extends CloudShellServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method RemovePublicKey, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }

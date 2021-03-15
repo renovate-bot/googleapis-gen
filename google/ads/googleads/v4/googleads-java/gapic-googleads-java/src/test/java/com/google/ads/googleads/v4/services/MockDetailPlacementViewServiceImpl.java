@@ -62,7 +62,7 @@ public class MockDetailPlacementViewServiceImpl extends DetailPlacementViewServi
   @Override
   public void getDetailPlacementView(
       GetDetailPlacementViewRequest request, StreamObserver<DetailPlacementView> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof DetailPlacementView) {
       requests.add(request);
       responseObserver.onNext(((DetailPlacementView) response));
@@ -74,7 +74,7 @@ public class MockDetailPlacementViewServiceImpl extends DetailPlacementViewServi
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetDetailPlacementView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   DetailPlacementView.class.getName(),
                   Exception.class.getName())));
     }

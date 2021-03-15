@@ -70,7 +70,7 @@ public class MockContainerAnalysisV1Beta1Impl extends ContainerAnalysisV1Beta1Im
 
   @Override
   public void setIamPolicy(SetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Policy) {
       requests.add(request);
       responseObserver.onNext(((Policy) response));
@@ -82,7 +82,7 @@ public class MockContainerAnalysisV1Beta1Impl extends ContainerAnalysisV1Beta1Im
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SetIamPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Policy.class.getName(),
                   Exception.class.getName())));
     }
@@ -90,7 +90,7 @@ public class MockContainerAnalysisV1Beta1Impl extends ContainerAnalysisV1Beta1Im
 
   @Override
   public void getIamPolicy(GetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Policy) {
       requests.add(request);
       responseObserver.onNext(((Policy) response));
@@ -102,7 +102,7 @@ public class MockContainerAnalysisV1Beta1Impl extends ContainerAnalysisV1Beta1Im
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetIamPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Policy.class.getName(),
                   Exception.class.getName())));
     }
@@ -112,7 +112,7 @@ public class MockContainerAnalysisV1Beta1Impl extends ContainerAnalysisV1Beta1Im
   public void testIamPermissions(
       TestIamPermissionsRequest request,
       StreamObserver<TestIamPermissionsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof TestIamPermissionsResponse) {
       requests.add(request);
       responseObserver.onNext(((TestIamPermissionsResponse) response));
@@ -124,7 +124,7 @@ public class MockContainerAnalysisV1Beta1Impl extends ContainerAnalysisV1Beta1Im
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method TestIamPermissions, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   TestIamPermissionsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -133,7 +133,7 @@ public class MockContainerAnalysisV1Beta1Impl extends ContainerAnalysisV1Beta1Im
   @Override
   public void getScanConfig(
       GetScanConfigRequest request, StreamObserver<ScanConfig> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ScanConfig) {
       requests.add(request);
       responseObserver.onNext(((ScanConfig) response));
@@ -145,7 +145,7 @@ public class MockContainerAnalysisV1Beta1Impl extends ContainerAnalysisV1Beta1Im
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetScanConfig, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ScanConfig.class.getName(),
                   Exception.class.getName())));
     }
@@ -154,7 +154,7 @@ public class MockContainerAnalysisV1Beta1Impl extends ContainerAnalysisV1Beta1Im
   @Override
   public void listScanConfigs(
       ListScanConfigsRequest request, StreamObserver<ListScanConfigsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListScanConfigsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListScanConfigsResponse) response));
@@ -166,7 +166,7 @@ public class MockContainerAnalysisV1Beta1Impl extends ContainerAnalysisV1Beta1Im
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListScanConfigs, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListScanConfigsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -175,7 +175,7 @@ public class MockContainerAnalysisV1Beta1Impl extends ContainerAnalysisV1Beta1Im
   @Override
   public void updateScanConfig(
       UpdateScanConfigRequest request, StreamObserver<ScanConfig> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ScanConfig) {
       requests.add(request);
       responseObserver.onNext(((ScanConfig) response));
@@ -187,7 +187,7 @@ public class MockContainerAnalysisV1Beta1Impl extends ContainerAnalysisV1Beta1Im
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateScanConfig, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ScanConfig.class.getName(),
                   Exception.class.getName())));
     }

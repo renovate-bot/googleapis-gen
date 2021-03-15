@@ -62,7 +62,7 @@ public class MockCustomAudienceServiceImpl extends CustomAudienceServiceImplBase
   @Override
   public void getCustomAudience(
       GetCustomAudienceRequest request, StreamObserver<CustomAudience> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CustomAudience) {
       requests.add(request);
       responseObserver.onNext(((CustomAudience) response));
@@ -74,7 +74,7 @@ public class MockCustomAudienceServiceImpl extends CustomAudienceServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetCustomAudience, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CustomAudience.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockCustomAudienceServiceImpl extends CustomAudienceServiceImplBase
   public void mutateCustomAudiences(
       MutateCustomAudiencesRequest request,
       StreamObserver<MutateCustomAudiencesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateCustomAudiencesResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateCustomAudiencesResponse) response));
@@ -96,7 +96,7 @@ public class MockCustomAudienceServiceImpl extends CustomAudienceServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateCustomAudiences, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateCustomAudiencesResponse.class.getName(),
                   Exception.class.getName())));
     }

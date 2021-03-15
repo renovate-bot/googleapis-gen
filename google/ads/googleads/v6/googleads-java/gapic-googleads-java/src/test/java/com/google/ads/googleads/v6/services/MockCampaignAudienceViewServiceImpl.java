@@ -63,7 +63,7 @@ public class MockCampaignAudienceViewServiceImpl extends CampaignAudienceViewSer
   public void getCampaignAudienceView(
       GetCampaignAudienceViewRequest request,
       StreamObserver<CampaignAudienceView> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CampaignAudienceView) {
       requests.add(request);
       responseObserver.onNext(((CampaignAudienceView) response));
@@ -75,7 +75,7 @@ public class MockCampaignAudienceViewServiceImpl extends CampaignAudienceViewSer
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetCampaignAudienceView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CampaignAudienceView.class.getName(),
                   Exception.class.getName())));
     }

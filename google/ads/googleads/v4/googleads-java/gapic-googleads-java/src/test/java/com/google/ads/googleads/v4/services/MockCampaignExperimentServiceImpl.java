@@ -64,7 +64,7 @@ public class MockCampaignExperimentServiceImpl extends CampaignExperimentService
   @Override
   public void getCampaignExperiment(
       GetCampaignExperimentRequest request, StreamObserver<CampaignExperiment> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CampaignExperiment) {
       requests.add(request);
       responseObserver.onNext(((CampaignExperiment) response));
@@ -76,7 +76,7 @@ public class MockCampaignExperimentServiceImpl extends CampaignExperimentService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetCampaignExperiment, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CampaignExperiment.class.getName(),
                   Exception.class.getName())));
     }
@@ -85,7 +85,7 @@ public class MockCampaignExperimentServiceImpl extends CampaignExperimentService
   @Override
   public void createCampaignExperiment(
       CreateCampaignExperimentRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -97,7 +97,7 @@ public class MockCampaignExperimentServiceImpl extends CampaignExperimentService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateCampaignExperiment, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -107,7 +107,7 @@ public class MockCampaignExperimentServiceImpl extends CampaignExperimentService
   public void mutateCampaignExperiments(
       MutateCampaignExperimentsRequest request,
       StreamObserver<MutateCampaignExperimentsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateCampaignExperimentsResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateCampaignExperimentsResponse) response));
@@ -119,7 +119,7 @@ public class MockCampaignExperimentServiceImpl extends CampaignExperimentService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateCampaignExperiments, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateCampaignExperimentsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -129,7 +129,7 @@ public class MockCampaignExperimentServiceImpl extends CampaignExperimentService
   public void graduateCampaignExperiment(
       GraduateCampaignExperimentRequest request,
       StreamObserver<GraduateCampaignExperimentResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof GraduateCampaignExperimentResponse) {
       requests.add(request);
       responseObserver.onNext(((GraduateCampaignExperimentResponse) response));
@@ -141,7 +141,7 @@ public class MockCampaignExperimentServiceImpl extends CampaignExperimentService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GraduateCampaignExperiment, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   GraduateCampaignExperimentResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -150,7 +150,7 @@ public class MockCampaignExperimentServiceImpl extends CampaignExperimentService
   @Override
   public void promoteCampaignExperiment(
       PromoteCampaignExperimentRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -162,7 +162,7 @@ public class MockCampaignExperimentServiceImpl extends CampaignExperimentService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method PromoteCampaignExperiment, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -171,7 +171,7 @@ public class MockCampaignExperimentServiceImpl extends CampaignExperimentService
   @Override
   public void endCampaignExperiment(
       EndCampaignExperimentRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -183,7 +183,7 @@ public class MockCampaignExperimentServiceImpl extends CampaignExperimentService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method EndCampaignExperiment, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -193,7 +193,7 @@ public class MockCampaignExperimentServiceImpl extends CampaignExperimentService
   public void listCampaignExperimentAsyncErrors(
       ListCampaignExperimentAsyncErrorsRequest request,
       StreamObserver<ListCampaignExperimentAsyncErrorsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListCampaignExperimentAsyncErrorsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListCampaignExperimentAsyncErrorsResponse) response));
@@ -205,7 +205,7 @@ public class MockCampaignExperimentServiceImpl extends CampaignExperimentService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListCampaignExperimentAsyncErrors, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListCampaignExperimentAsyncErrorsResponse.class.getName(),
                   Exception.class.getName())));
     }

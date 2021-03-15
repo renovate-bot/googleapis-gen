@@ -62,7 +62,7 @@ public class MockDomainCategoryServiceImpl extends DomainCategoryServiceImplBase
   @Override
   public void getDomainCategory(
       GetDomainCategoryRequest request, StreamObserver<DomainCategory> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof DomainCategory) {
       requests.add(request);
       responseObserver.onNext(((DomainCategory) response));
@@ -74,7 +74,7 @@ public class MockDomainCategoryServiceImpl extends DomainCategoryServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetDomainCategory, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   DomainCategory.class.getName(),
                   Exception.class.getName())));
     }

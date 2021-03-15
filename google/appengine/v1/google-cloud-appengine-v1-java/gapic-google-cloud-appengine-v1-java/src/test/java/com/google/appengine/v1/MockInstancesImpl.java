@@ -62,7 +62,7 @@ public class MockInstancesImpl extends InstancesImplBase {
   @Override
   public void listInstances(
       ListInstancesRequest request, StreamObserver<ListInstancesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListInstancesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListInstancesResponse) response));
@@ -74,7 +74,7 @@ public class MockInstancesImpl extends InstancesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListInstances, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListInstancesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -82,7 +82,7 @@ public class MockInstancesImpl extends InstancesImplBase {
 
   @Override
   public void getInstance(GetInstanceRequest request, StreamObserver<Instance> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Instance) {
       requests.add(request);
       responseObserver.onNext(((Instance) response));
@@ -94,7 +94,7 @@ public class MockInstancesImpl extends InstancesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetInstance, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Instance.class.getName(),
                   Exception.class.getName())));
     }
@@ -103,7 +103,7 @@ public class MockInstancesImpl extends InstancesImplBase {
   @Override
   public void deleteInstance(
       DeleteInstanceRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -115,7 +115,7 @@ public class MockInstancesImpl extends InstancesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteInstance, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -124,7 +124,7 @@ public class MockInstancesImpl extends InstancesImplBase {
   @Override
   public void debugInstance(
       DebugInstanceRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -136,7 +136,7 @@ public class MockInstancesImpl extends InstancesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DebugInstance, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }

@@ -96,7 +96,7 @@ public class MockIAMImpl extends IAMImplBase {
   public void listServiceAccounts(
       ListServiceAccountsRequest request,
       StreamObserver<ListServiceAccountsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListServiceAccountsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListServiceAccountsResponse) response));
@@ -108,7 +108,7 @@ public class MockIAMImpl extends IAMImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListServiceAccounts, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListServiceAccountsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -117,7 +117,7 @@ public class MockIAMImpl extends IAMImplBase {
   @Override
   public void getServiceAccount(
       GetServiceAccountRequest request, StreamObserver<ServiceAccount> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ServiceAccount) {
       requests.add(request);
       responseObserver.onNext(((ServiceAccount) response));
@@ -129,7 +129,7 @@ public class MockIAMImpl extends IAMImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetServiceAccount, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ServiceAccount.class.getName(),
                   Exception.class.getName())));
     }
@@ -138,7 +138,7 @@ public class MockIAMImpl extends IAMImplBase {
   @Override
   public void createServiceAccount(
       CreateServiceAccountRequest request, StreamObserver<ServiceAccount> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ServiceAccount) {
       requests.add(request);
       responseObserver.onNext(((ServiceAccount) response));
@@ -150,7 +150,7 @@ public class MockIAMImpl extends IAMImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateServiceAccount, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ServiceAccount.class.getName(),
                   Exception.class.getName())));
     }
@@ -159,7 +159,7 @@ public class MockIAMImpl extends IAMImplBase {
   @Override
   public void updateServiceAccount(
       ServiceAccount request, StreamObserver<ServiceAccount> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ServiceAccount) {
       requests.add(request);
       responseObserver.onNext(((ServiceAccount) response));
@@ -171,7 +171,7 @@ public class MockIAMImpl extends IAMImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateServiceAccount, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ServiceAccount.class.getName(),
                   Exception.class.getName())));
     }
@@ -180,7 +180,7 @@ public class MockIAMImpl extends IAMImplBase {
   @Override
   public void deleteServiceAccount(
       DeleteServiceAccountRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -192,7 +192,7 @@ public class MockIAMImpl extends IAMImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteServiceAccount, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -202,7 +202,7 @@ public class MockIAMImpl extends IAMImplBase {
   public void listServiceAccountKeys(
       ListServiceAccountKeysRequest request,
       StreamObserver<ListServiceAccountKeysResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListServiceAccountKeysResponse) {
       requests.add(request);
       responseObserver.onNext(((ListServiceAccountKeysResponse) response));
@@ -214,7 +214,7 @@ public class MockIAMImpl extends IAMImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListServiceAccountKeys, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListServiceAccountKeysResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -223,7 +223,7 @@ public class MockIAMImpl extends IAMImplBase {
   @Override
   public void getServiceAccountKey(
       GetServiceAccountKeyRequest request, StreamObserver<ServiceAccountKey> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ServiceAccountKey) {
       requests.add(request);
       responseObserver.onNext(((ServiceAccountKey) response));
@@ -235,7 +235,7 @@ public class MockIAMImpl extends IAMImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetServiceAccountKey, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ServiceAccountKey.class.getName(),
                   Exception.class.getName())));
     }
@@ -244,7 +244,7 @@ public class MockIAMImpl extends IAMImplBase {
   @Override
   public void createServiceAccountKey(
       CreateServiceAccountKeyRequest request, StreamObserver<ServiceAccountKey> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ServiceAccountKey) {
       requests.add(request);
       responseObserver.onNext(((ServiceAccountKey) response));
@@ -256,7 +256,7 @@ public class MockIAMImpl extends IAMImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateServiceAccountKey, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ServiceAccountKey.class.getName(),
                   Exception.class.getName())));
     }
@@ -265,7 +265,7 @@ public class MockIAMImpl extends IAMImplBase {
   @Override
   public void deleteServiceAccountKey(
       DeleteServiceAccountKeyRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -277,7 +277,7 @@ public class MockIAMImpl extends IAMImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteServiceAccountKey, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -285,7 +285,7 @@ public class MockIAMImpl extends IAMImplBase {
 
   @Override
   public void signBlob(SignBlobRequest request, StreamObserver<SignBlobResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SignBlobResponse) {
       requests.add(request);
       responseObserver.onNext(((SignBlobResponse) response));
@@ -297,7 +297,7 @@ public class MockIAMImpl extends IAMImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SignBlob, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SignBlobResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -305,7 +305,7 @@ public class MockIAMImpl extends IAMImplBase {
 
   @Override
   public void signJwt(SignJwtRequest request, StreamObserver<SignJwtResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SignJwtResponse) {
       requests.add(request);
       responseObserver.onNext(((SignJwtResponse) response));
@@ -317,7 +317,7 @@ public class MockIAMImpl extends IAMImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SignJwt, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SignJwtResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -325,7 +325,7 @@ public class MockIAMImpl extends IAMImplBase {
 
   @Override
   public void getIamPolicy(GetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Policy) {
       requests.add(request);
       responseObserver.onNext(((Policy) response));
@@ -337,7 +337,7 @@ public class MockIAMImpl extends IAMImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetIamPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Policy.class.getName(),
                   Exception.class.getName())));
     }
@@ -345,7 +345,7 @@ public class MockIAMImpl extends IAMImplBase {
 
   @Override
   public void setIamPolicy(SetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Policy) {
       requests.add(request);
       responseObserver.onNext(((Policy) response));
@@ -357,7 +357,7 @@ public class MockIAMImpl extends IAMImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SetIamPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Policy.class.getName(),
                   Exception.class.getName())));
     }
@@ -367,7 +367,7 @@ public class MockIAMImpl extends IAMImplBase {
   public void testIamPermissions(
       TestIamPermissionsRequest request,
       StreamObserver<TestIamPermissionsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof TestIamPermissionsResponse) {
       requests.add(request);
       responseObserver.onNext(((TestIamPermissionsResponse) response));
@@ -379,7 +379,7 @@ public class MockIAMImpl extends IAMImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method TestIamPermissions, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   TestIamPermissionsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -389,7 +389,7 @@ public class MockIAMImpl extends IAMImplBase {
   public void queryGrantableRoles(
       QueryGrantableRolesRequest request,
       StreamObserver<QueryGrantableRolesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof QueryGrantableRolesResponse) {
       requests.add(request);
       responseObserver.onNext(((QueryGrantableRolesResponse) response));
@@ -401,7 +401,7 @@ public class MockIAMImpl extends IAMImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method QueryGrantableRoles, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   QueryGrantableRolesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -410,7 +410,7 @@ public class MockIAMImpl extends IAMImplBase {
   @Override
   public void listRoles(
       ListRolesRequest request, StreamObserver<ListRolesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListRolesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListRolesResponse) response));
@@ -422,7 +422,7 @@ public class MockIAMImpl extends IAMImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListRoles, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListRolesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -430,7 +430,7 @@ public class MockIAMImpl extends IAMImplBase {
 
   @Override
   public void getRole(GetRoleRequest request, StreamObserver<Role> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Role) {
       requests.add(request);
       responseObserver.onNext(((Role) response));
@@ -442,13 +442,15 @@ public class MockIAMImpl extends IAMImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetRole, expected %s or %s",
-                  response.getClass().getName(), Role.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Role.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void createRole(CreateRoleRequest request, StreamObserver<Role> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Role) {
       requests.add(request);
       responseObserver.onNext(((Role) response));
@@ -460,13 +462,15 @@ public class MockIAMImpl extends IAMImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateRole, expected %s or %s",
-                  response.getClass().getName(), Role.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Role.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void updateRole(UpdateRoleRequest request, StreamObserver<Role> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Role) {
       requests.add(request);
       responseObserver.onNext(((Role) response));
@@ -478,13 +482,15 @@ public class MockIAMImpl extends IAMImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateRole, expected %s or %s",
-                  response.getClass().getName(), Role.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Role.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void deleteRole(DeleteRoleRequest request, StreamObserver<Role> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Role) {
       requests.add(request);
       responseObserver.onNext(((Role) response));
@@ -496,13 +502,15 @@ public class MockIAMImpl extends IAMImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteRole, expected %s or %s",
-                  response.getClass().getName(), Role.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Role.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void undeleteRole(UndeleteRoleRequest request, StreamObserver<Role> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Role) {
       requests.add(request);
       responseObserver.onNext(((Role) response));
@@ -514,7 +522,9 @@ public class MockIAMImpl extends IAMImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UndeleteRole, expected %s or %s",
-                  response.getClass().getName(), Role.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Role.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -522,7 +532,7 @@ public class MockIAMImpl extends IAMImplBase {
   public void queryTestablePermissions(
       QueryTestablePermissionsRequest request,
       StreamObserver<QueryTestablePermissionsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof QueryTestablePermissionsResponse) {
       requests.add(request);
       responseObserver.onNext(((QueryTestablePermissionsResponse) response));
@@ -534,7 +544,7 @@ public class MockIAMImpl extends IAMImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method QueryTestablePermissions, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   QueryTestablePermissionsResponse.class.getName(),
                   Exception.class.getName())));
     }

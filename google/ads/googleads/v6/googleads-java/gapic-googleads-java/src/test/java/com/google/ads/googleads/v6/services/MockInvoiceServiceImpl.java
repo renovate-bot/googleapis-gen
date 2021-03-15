@@ -61,7 +61,7 @@ public class MockInvoiceServiceImpl extends InvoiceServiceImplBase {
   @Override
   public void listInvoices(
       ListInvoicesRequest request, StreamObserver<ListInvoicesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListInvoicesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListInvoicesResponse) response));
@@ -73,7 +73,7 @@ public class MockInvoiceServiceImpl extends InvoiceServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListInvoices, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListInvoicesResponse.class.getName(),
                   Exception.class.getName())));
     }

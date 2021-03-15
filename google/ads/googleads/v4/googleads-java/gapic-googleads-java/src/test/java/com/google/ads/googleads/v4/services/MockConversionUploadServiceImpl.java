@@ -62,7 +62,7 @@ public class MockConversionUploadServiceImpl extends ConversionUploadServiceImpl
   public void uploadClickConversions(
       UploadClickConversionsRequest request,
       StreamObserver<UploadClickConversionsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof UploadClickConversionsResponse) {
       requests.add(request);
       responseObserver.onNext(((UploadClickConversionsResponse) response));
@@ -74,7 +74,7 @@ public class MockConversionUploadServiceImpl extends ConversionUploadServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UploadClickConversions, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   UploadClickConversionsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockConversionUploadServiceImpl extends ConversionUploadServiceImpl
   public void uploadCallConversions(
       UploadCallConversionsRequest request,
       StreamObserver<UploadCallConversionsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof UploadCallConversionsResponse) {
       requests.add(request);
       responseObserver.onNext(((UploadCallConversionsResponse) response));
@@ -96,7 +96,7 @@ public class MockConversionUploadServiceImpl extends ConversionUploadServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UploadCallConversions, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   UploadCallConversionsResponse.class.getName(),
                   Exception.class.getName())));
     }

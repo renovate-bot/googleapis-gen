@@ -63,7 +63,7 @@ public class MockAccountBudgetProposalServiceImpl extends AccountBudgetProposalS
   public void getAccountBudgetProposal(
       GetAccountBudgetProposalRequest request,
       StreamObserver<AccountBudgetProposal> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AccountBudgetProposal) {
       requests.add(request);
       responseObserver.onNext(((AccountBudgetProposal) response));
@@ -75,7 +75,7 @@ public class MockAccountBudgetProposalServiceImpl extends AccountBudgetProposalS
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetAccountBudgetProposal, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AccountBudgetProposal.class.getName(),
                   Exception.class.getName())));
     }
@@ -85,7 +85,7 @@ public class MockAccountBudgetProposalServiceImpl extends AccountBudgetProposalS
   public void mutateAccountBudgetProposal(
       MutateAccountBudgetProposalRequest request,
       StreamObserver<MutateAccountBudgetProposalResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateAccountBudgetProposalResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateAccountBudgetProposalResponse) response));
@@ -97,7 +97,7 @@ public class MockAccountBudgetProposalServiceImpl extends AccountBudgetProposalS
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateAccountBudgetProposal, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateAccountBudgetProposalResponse.class.getName(),
                   Exception.class.getName())));
     }

@@ -62,7 +62,7 @@ public class MockKeywordPlanServiceImpl extends KeywordPlanServiceImplBase {
   @Override
   public void getKeywordPlan(
       GetKeywordPlanRequest request, StreamObserver<KeywordPlan> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof KeywordPlan) {
       requests.add(request);
       responseObserver.onNext(((KeywordPlan) response));
@@ -74,7 +74,7 @@ public class MockKeywordPlanServiceImpl extends KeywordPlanServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetKeywordPlan, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   KeywordPlan.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockKeywordPlanServiceImpl extends KeywordPlanServiceImplBase {
   public void mutateKeywordPlans(
       MutateKeywordPlansRequest request,
       StreamObserver<MutateKeywordPlansResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateKeywordPlansResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateKeywordPlansResponse) response));
@@ -96,7 +96,7 @@ public class MockKeywordPlanServiceImpl extends KeywordPlanServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateKeywordPlans, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateKeywordPlansResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -106,7 +106,7 @@ public class MockKeywordPlanServiceImpl extends KeywordPlanServiceImplBase {
   public void generateForecastCurve(
       GenerateForecastCurveRequest request,
       StreamObserver<GenerateForecastCurveResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof GenerateForecastCurveResponse) {
       requests.add(request);
       responseObserver.onNext(((GenerateForecastCurveResponse) response));
@@ -118,7 +118,7 @@ public class MockKeywordPlanServiceImpl extends KeywordPlanServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GenerateForecastCurve, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   GenerateForecastCurveResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -128,7 +128,7 @@ public class MockKeywordPlanServiceImpl extends KeywordPlanServiceImplBase {
   public void generateForecastTimeSeries(
       GenerateForecastTimeSeriesRequest request,
       StreamObserver<GenerateForecastTimeSeriesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof GenerateForecastTimeSeriesResponse) {
       requests.add(request);
       responseObserver.onNext(((GenerateForecastTimeSeriesResponse) response));
@@ -140,7 +140,7 @@ public class MockKeywordPlanServiceImpl extends KeywordPlanServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GenerateForecastTimeSeries, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   GenerateForecastTimeSeriesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -150,7 +150,7 @@ public class MockKeywordPlanServiceImpl extends KeywordPlanServiceImplBase {
   public void generateForecastMetrics(
       GenerateForecastMetricsRequest request,
       StreamObserver<GenerateForecastMetricsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof GenerateForecastMetricsResponse) {
       requests.add(request);
       responseObserver.onNext(((GenerateForecastMetricsResponse) response));
@@ -162,7 +162,7 @@ public class MockKeywordPlanServiceImpl extends KeywordPlanServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GenerateForecastMetrics, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   GenerateForecastMetricsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -172,7 +172,7 @@ public class MockKeywordPlanServiceImpl extends KeywordPlanServiceImplBase {
   public void generateHistoricalMetrics(
       GenerateHistoricalMetricsRequest request,
       StreamObserver<GenerateHistoricalMetricsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof GenerateHistoricalMetricsResponse) {
       requests.add(request);
       responseObserver.onNext(((GenerateHistoricalMetricsResponse) response));
@@ -184,7 +184,7 @@ public class MockKeywordPlanServiceImpl extends KeywordPlanServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GenerateHistoricalMetrics, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   GenerateHistoricalMetricsResponse.class.getName(),
                   Exception.class.getName())));
     }

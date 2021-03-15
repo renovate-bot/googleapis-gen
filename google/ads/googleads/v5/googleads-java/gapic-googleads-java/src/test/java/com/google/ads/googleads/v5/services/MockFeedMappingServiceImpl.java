@@ -62,7 +62,7 @@ public class MockFeedMappingServiceImpl extends FeedMappingServiceImplBase {
   @Override
   public void getFeedMapping(
       GetFeedMappingRequest request, StreamObserver<FeedMapping> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof FeedMapping) {
       requests.add(request);
       responseObserver.onNext(((FeedMapping) response));
@@ -74,7 +74,7 @@ public class MockFeedMappingServiceImpl extends FeedMappingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetFeedMapping, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   FeedMapping.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockFeedMappingServiceImpl extends FeedMappingServiceImplBase {
   public void mutateFeedMappings(
       MutateFeedMappingsRequest request,
       StreamObserver<MutateFeedMappingsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateFeedMappingsResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateFeedMappingsResponse) response));
@@ -96,7 +96,7 @@ public class MockFeedMappingServiceImpl extends FeedMappingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateFeedMappings, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateFeedMappingsResponse.class.getName(),
                   Exception.class.getName())));
     }

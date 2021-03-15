@@ -62,7 +62,7 @@ public class MockCampaignBudgetServiceImpl extends CampaignBudgetServiceImplBase
   @Override
   public void getCampaignBudget(
       GetCampaignBudgetRequest request, StreamObserver<CampaignBudget> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CampaignBudget) {
       requests.add(request);
       responseObserver.onNext(((CampaignBudget) response));
@@ -74,7 +74,7 @@ public class MockCampaignBudgetServiceImpl extends CampaignBudgetServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetCampaignBudget, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CampaignBudget.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockCampaignBudgetServiceImpl extends CampaignBudgetServiceImplBase
   public void mutateCampaignBudgets(
       MutateCampaignBudgetsRequest request,
       StreamObserver<MutateCampaignBudgetsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateCampaignBudgetsResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateCampaignBudgetsResponse) response));
@@ -96,7 +96,7 @@ public class MockCampaignBudgetServiceImpl extends CampaignBudgetServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateCampaignBudgets, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateCampaignBudgetsResponse.class.getName(),
                   Exception.class.getName())));
     }

@@ -62,7 +62,7 @@ public class MockCurrencyConstantServiceImpl extends CurrencyConstantServiceImpl
   @Override
   public void getCurrencyConstant(
       GetCurrencyConstantRequest request, StreamObserver<CurrencyConstant> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CurrencyConstant) {
       requests.add(request);
       responseObserver.onNext(((CurrencyConstant) response));
@@ -74,7 +74,7 @@ public class MockCurrencyConstantServiceImpl extends CurrencyConstantServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetCurrencyConstant, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CurrencyConstant.class.getName(),
                   Exception.class.getName())));
     }

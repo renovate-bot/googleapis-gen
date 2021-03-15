@@ -64,7 +64,7 @@ public class MockOperatingSystemVersionConstantServiceImpl
   public void getOperatingSystemVersionConstant(
       GetOperatingSystemVersionConstantRequest request,
       StreamObserver<OperatingSystemVersionConstant> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof OperatingSystemVersionConstant) {
       requests.add(request);
       responseObserver.onNext(((OperatingSystemVersionConstant) response));
@@ -76,7 +76,7 @@ public class MockOperatingSystemVersionConstantServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetOperatingSystemVersionConstant, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   OperatingSystemVersionConstant.class.getName(),
                   Exception.class.getName())));
     }

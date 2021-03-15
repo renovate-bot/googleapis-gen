@@ -74,7 +74,7 @@ public class MockDatastoreImpl extends DatastoreImplBase {
 
   @Override
   public void lookup(LookupRequest request, StreamObserver<LookupResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof LookupResponse) {
       requests.add(request);
       responseObserver.onNext(((LookupResponse) response));
@@ -86,7 +86,7 @@ public class MockDatastoreImpl extends DatastoreImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method Lookup, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   LookupResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -94,7 +94,7 @@ public class MockDatastoreImpl extends DatastoreImplBase {
 
   @Override
   public void runQuery(RunQueryRequest request, StreamObserver<RunQueryResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof RunQueryResponse) {
       requests.add(request);
       responseObserver.onNext(((RunQueryResponse) response));
@@ -106,7 +106,7 @@ public class MockDatastoreImpl extends DatastoreImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method RunQuery, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   RunQueryResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -115,7 +115,7 @@ public class MockDatastoreImpl extends DatastoreImplBase {
   @Override
   public void beginTransaction(
       BeginTransactionRequest request, StreamObserver<BeginTransactionResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof BeginTransactionResponse) {
       requests.add(request);
       responseObserver.onNext(((BeginTransactionResponse) response));
@@ -127,7 +127,7 @@ public class MockDatastoreImpl extends DatastoreImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method BeginTransaction, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   BeginTransactionResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -135,7 +135,7 @@ public class MockDatastoreImpl extends DatastoreImplBase {
 
   @Override
   public void commit(CommitRequest request, StreamObserver<CommitResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CommitResponse) {
       requests.add(request);
       responseObserver.onNext(((CommitResponse) response));
@@ -147,7 +147,7 @@ public class MockDatastoreImpl extends DatastoreImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method Commit, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CommitResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -155,7 +155,7 @@ public class MockDatastoreImpl extends DatastoreImplBase {
 
   @Override
   public void rollback(RollbackRequest request, StreamObserver<RollbackResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof RollbackResponse) {
       requests.add(request);
       responseObserver.onNext(((RollbackResponse) response));
@@ -167,7 +167,7 @@ public class MockDatastoreImpl extends DatastoreImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method Rollback, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   RollbackResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -176,7 +176,7 @@ public class MockDatastoreImpl extends DatastoreImplBase {
   @Override
   public void allocateIds(
       AllocateIdsRequest request, StreamObserver<AllocateIdsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AllocateIdsResponse) {
       requests.add(request);
       responseObserver.onNext(((AllocateIdsResponse) response));
@@ -188,7 +188,7 @@ public class MockDatastoreImpl extends DatastoreImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method AllocateIds, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AllocateIdsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -197,7 +197,7 @@ public class MockDatastoreImpl extends DatastoreImplBase {
   @Override
   public void reserveIds(
       ReserveIdsRequest request, StreamObserver<ReserveIdsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ReserveIdsResponse) {
       requests.add(request);
       responseObserver.onNext(((ReserveIdsResponse) response));
@@ -209,7 +209,7 @@ public class MockDatastoreImpl extends DatastoreImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ReserveIds, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ReserveIdsResponse.class.getName(),
                   Exception.class.getName())));
     }

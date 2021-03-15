@@ -62,7 +62,7 @@ public class MockRecommendationServiceImpl extends RecommendationServiceImplBase
   @Override
   public void getRecommendation(
       GetRecommendationRequest request, StreamObserver<Recommendation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Recommendation) {
       requests.add(request);
       responseObserver.onNext(((Recommendation) response));
@@ -74,7 +74,7 @@ public class MockRecommendationServiceImpl extends RecommendationServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetRecommendation, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Recommendation.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockRecommendationServiceImpl extends RecommendationServiceImplBase
   public void applyRecommendation(
       ApplyRecommendationRequest request,
       StreamObserver<ApplyRecommendationResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ApplyRecommendationResponse) {
       requests.add(request);
       responseObserver.onNext(((ApplyRecommendationResponse) response));
@@ -96,7 +96,7 @@ public class MockRecommendationServiceImpl extends RecommendationServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ApplyRecommendation, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ApplyRecommendationResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -106,7 +106,7 @@ public class MockRecommendationServiceImpl extends RecommendationServiceImplBase
   public void dismissRecommendation(
       DismissRecommendationRequest request,
       StreamObserver<DismissRecommendationResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof DismissRecommendationResponse) {
       requests.add(request);
       responseObserver.onNext(((DismissRecommendationResponse) response));
@@ -118,7 +118,7 @@ public class MockRecommendationServiceImpl extends RecommendationServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DismissRecommendation, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   DismissRecommendationResponse.class.getName(),
                   Exception.class.getName())));
     }

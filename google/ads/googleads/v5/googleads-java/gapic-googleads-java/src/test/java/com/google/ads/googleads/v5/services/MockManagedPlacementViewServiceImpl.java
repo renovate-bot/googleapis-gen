@@ -63,7 +63,7 @@ public class MockManagedPlacementViewServiceImpl extends ManagedPlacementViewSer
   public void getManagedPlacementView(
       GetManagedPlacementViewRequest request,
       StreamObserver<ManagedPlacementView> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ManagedPlacementView) {
       requests.add(request);
       responseObserver.onNext(((ManagedPlacementView) response));
@@ -75,7 +75,7 @@ public class MockManagedPlacementViewServiceImpl extends ManagedPlacementViewSer
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetManagedPlacementView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ManagedPlacementView.class.getName(),
                   Exception.class.getName())));
     }

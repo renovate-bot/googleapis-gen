@@ -61,7 +61,7 @@ public class MockCustomerServiceImpl extends CustomerServiceImplBase {
 
   @Override
   public void getCustomer(GetCustomerRequest request, StreamObserver<Customer> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Customer) {
       requests.add(request);
       responseObserver.onNext(((Customer) response));
@@ -73,7 +73,7 @@ public class MockCustomerServiceImpl extends CustomerServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetCustomer, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Customer.class.getName(),
                   Exception.class.getName())));
     }
@@ -82,7 +82,7 @@ public class MockCustomerServiceImpl extends CustomerServiceImplBase {
   @Override
   public void mutateCustomer(
       MutateCustomerRequest request, StreamObserver<MutateCustomerResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateCustomerResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateCustomerResponse) response));
@@ -94,7 +94,7 @@ public class MockCustomerServiceImpl extends CustomerServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateCustomer, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateCustomerResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -104,7 +104,7 @@ public class MockCustomerServiceImpl extends CustomerServiceImplBase {
   public void listAccessibleCustomers(
       ListAccessibleCustomersRequest request,
       StreamObserver<ListAccessibleCustomersResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListAccessibleCustomersResponse) {
       requests.add(request);
       responseObserver.onNext(((ListAccessibleCustomersResponse) response));
@@ -116,7 +116,7 @@ public class MockCustomerServiceImpl extends CustomerServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListAccessibleCustomers, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListAccessibleCustomersResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -126,7 +126,7 @@ public class MockCustomerServiceImpl extends CustomerServiceImplBase {
   public void createCustomerClient(
       CreateCustomerClientRequest request,
       StreamObserver<CreateCustomerClientResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CreateCustomerClientResponse) {
       requests.add(request);
       responseObserver.onNext(((CreateCustomerClientResponse) response));
@@ -138,7 +138,7 @@ public class MockCustomerServiceImpl extends CustomerServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateCustomerClient, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CreateCustomerClientResponse.class.getName(),
                   Exception.class.getName())));
     }

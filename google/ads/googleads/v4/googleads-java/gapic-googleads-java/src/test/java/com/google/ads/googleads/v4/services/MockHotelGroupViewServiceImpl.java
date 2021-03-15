@@ -62,7 +62,7 @@ public class MockHotelGroupViewServiceImpl extends HotelGroupViewServiceImplBase
   @Override
   public void getHotelGroupView(
       GetHotelGroupViewRequest request, StreamObserver<HotelGroupView> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof HotelGroupView) {
       requests.add(request);
       responseObserver.onNext(((HotelGroupView) response));
@@ -74,7 +74,7 @@ public class MockHotelGroupViewServiceImpl extends HotelGroupViewServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetHotelGroupView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   HotelGroupView.class.getName(),
                   Exception.class.getName())));
     }

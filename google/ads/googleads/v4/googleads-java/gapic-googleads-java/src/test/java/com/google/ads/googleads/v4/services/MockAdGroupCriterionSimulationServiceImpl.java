@@ -64,7 +64,7 @@ public class MockAdGroupCriterionSimulationServiceImpl
   public void getAdGroupCriterionSimulation(
       GetAdGroupCriterionSimulationRequest request,
       StreamObserver<AdGroupCriterionSimulation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AdGroupCriterionSimulation) {
       requests.add(request);
       responseObserver.onNext(((AdGroupCriterionSimulation) response));
@@ -76,7 +76,7 @@ public class MockAdGroupCriterionSimulationServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetAdGroupCriterionSimulation, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AdGroupCriterionSimulation.class.getName(),
                   Exception.class.getName())));
     }

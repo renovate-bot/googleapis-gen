@@ -62,7 +62,7 @@ public class MockAdGroupSimulationServiceImpl extends AdGroupSimulationServiceIm
   @Override
   public void getAdGroupSimulation(
       GetAdGroupSimulationRequest request, StreamObserver<AdGroupSimulation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AdGroupSimulation) {
       requests.add(request);
       responseObserver.onNext(((AdGroupSimulation) response));
@@ -74,7 +74,7 @@ public class MockAdGroupSimulationServiceImpl extends AdGroupSimulationServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetAdGroupSimulation, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AdGroupSimulation.class.getName(),
                   Exception.class.getName())));
     }

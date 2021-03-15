@@ -63,7 +63,7 @@ public class MockDomainMappingsImpl extends DomainMappingsImplBase {
   public void listDomainMappings(
       ListDomainMappingsRequest request,
       StreamObserver<ListDomainMappingsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListDomainMappingsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListDomainMappingsResponse) response));
@@ -75,7 +75,7 @@ public class MockDomainMappingsImpl extends DomainMappingsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListDomainMappings, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListDomainMappingsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockDomainMappingsImpl extends DomainMappingsImplBase {
   @Override
   public void getDomainMapping(
       GetDomainMappingRequest request, StreamObserver<DomainMapping> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof DomainMapping) {
       requests.add(request);
       responseObserver.onNext(((DomainMapping) response));
@@ -96,7 +96,7 @@ public class MockDomainMappingsImpl extends DomainMappingsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetDomainMapping, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   DomainMapping.class.getName(),
                   Exception.class.getName())));
     }
@@ -105,7 +105,7 @@ public class MockDomainMappingsImpl extends DomainMappingsImplBase {
   @Override
   public void createDomainMapping(
       CreateDomainMappingRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -117,7 +117,7 @@ public class MockDomainMappingsImpl extends DomainMappingsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateDomainMapping, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -126,7 +126,7 @@ public class MockDomainMappingsImpl extends DomainMappingsImplBase {
   @Override
   public void updateDomainMapping(
       UpdateDomainMappingRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -138,7 +138,7 @@ public class MockDomainMappingsImpl extends DomainMappingsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateDomainMapping, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -147,7 +147,7 @@ public class MockDomainMappingsImpl extends DomainMappingsImplBase {
   @Override
   public void deleteDomainMapping(
       DeleteDomainMappingRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -159,7 +159,7 @@ public class MockDomainMappingsImpl extends DomainMappingsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteDomainMapping, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }

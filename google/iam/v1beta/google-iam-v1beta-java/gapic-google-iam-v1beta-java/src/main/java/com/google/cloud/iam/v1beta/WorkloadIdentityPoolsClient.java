@@ -321,6 +321,13 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * <pre>{@code
    * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
    *     WorkloadIdentityPoolsClient.create()) {
+   *   ListWorkloadIdentityPoolsRequest request =
+   *       ListWorkloadIdentityPoolsRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setShowDeleted(true)
+   *           .build();
    *   while (true) {
    *     ListWorkloadIdentityPoolsResponse response =
    *         workloadIdentityPoolsClient.listWorkloadIdentityPoolsCallable().call(request);
@@ -1219,6 +1226,15 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * <pre>{@code
    * try (WorkloadIdentityPoolsClient workloadIdentityPoolsClient =
    *     WorkloadIdentityPoolsClient.create()) {
+   *   ListWorkloadIdentityPoolProvidersRequest request =
+   *       ListWorkloadIdentityPoolProvidersRequest.newBuilder()
+   *           .setParent(
+   *               WorkloadIdentityPoolName.of("[PROJECT]", "[LOCATION]", "[WORKLOAD_IDENTITY_POOL]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setShowDeleted(true)
+   *           .build();
    *   while (true) {
    *     ListWorkloadIdentityPoolProvidersResponse response =
    *         workloadIdentityPoolsClient.listWorkloadIdentityPoolProvidersCallable().call(request);

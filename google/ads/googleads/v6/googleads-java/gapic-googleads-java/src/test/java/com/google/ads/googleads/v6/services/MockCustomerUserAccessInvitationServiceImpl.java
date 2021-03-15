@@ -64,7 +64,7 @@ public class MockCustomerUserAccessInvitationServiceImpl
   public void getCustomerUserAccessInvitation(
       GetCustomerUserAccessInvitationRequest request,
       StreamObserver<CustomerUserAccessInvitation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CustomerUserAccessInvitation) {
       requests.add(request);
       responseObserver.onNext(((CustomerUserAccessInvitation) response));
@@ -76,7 +76,7 @@ public class MockCustomerUserAccessInvitationServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetCustomerUserAccessInvitation, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CustomerUserAccessInvitation.class.getName(),
                   Exception.class.getName())));
     }
@@ -86,7 +86,7 @@ public class MockCustomerUserAccessInvitationServiceImpl
   public void mutateCustomerUserAccessInvitation(
       MutateCustomerUserAccessInvitationRequest request,
       StreamObserver<MutateCustomerUserAccessInvitationResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateCustomerUserAccessInvitationResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateCustomerUserAccessInvitationResponse) response));
@@ -98,7 +98,7 @@ public class MockCustomerUserAccessInvitationServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateCustomerUserAccessInvitation, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateCustomerUserAccessInvitationResponse.class.getName(),
                   Exception.class.getName())));
     }

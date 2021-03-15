@@ -626,6 +626,14 @@ public class CampaignDraftServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (CampaignDraftServiceClient campaignDraftServiceClient =
    *     CampaignDraftServiceClient.create()) {
+   *   ListCampaignDraftAsyncErrorsRequest request =
+   *       ListCampaignDraftAsyncErrorsRequest.newBuilder()
+   *           .setResourceName(
+   *               CampaignDraftName.of("[CUSTOMER_ID]", "[BASE_CAMPAIGN_ID]", "[DRAFT_ID]")
+   *                   .toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
    *   while (true) {
    *     ListCampaignDraftAsyncErrorsResponse response =
    *         campaignDraftServiceClient.listCampaignDraftAsyncErrorsCallable().call(request);

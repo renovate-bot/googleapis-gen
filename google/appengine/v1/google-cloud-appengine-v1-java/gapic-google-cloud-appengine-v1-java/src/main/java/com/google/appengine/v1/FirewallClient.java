@@ -224,6 +224,13 @@ public class FirewallClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (FirewallClient firewallClient = FirewallClient.create()) {
+   *   ListIngressRulesRequest request =
+   *       ListIngressRulesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setMatchingAddress("matchingAddress861962551")
+   *           .build();
    *   while (true) {
    *     ListIngressRulesResponse response = firewallClient.listIngressRulesCallable().call(request);
    *     for (FirewallRule element : response.getResponsesList()) {

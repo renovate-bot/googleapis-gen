@@ -228,6 +228,12 @@ public class DomainMappingsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DomainMappingsClient domainMappingsClient = DomainMappingsClient.create()) {
+   *   ListDomainMappingsRequest request =
+   *       ListDomainMappingsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListDomainMappingsResponse response =
    *         domainMappingsClient.listDomainMappingsCallable().call(request);

@@ -64,7 +64,7 @@ public class MockCampaignCriterionSimulationServiceImpl
   public void getCampaignCriterionSimulation(
       GetCampaignCriterionSimulationRequest request,
       StreamObserver<CampaignCriterionSimulation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CampaignCriterionSimulation) {
       requests.add(request);
       responseObserver.onNext(((CampaignCriterionSimulation) response));
@@ -76,7 +76,7 @@ public class MockCampaignCriterionSimulationServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetCampaignCriterionSimulation, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CampaignCriterionSimulation.class.getName(),
                   Exception.class.getName())));
     }

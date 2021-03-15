@@ -649,6 +649,12 @@ public class GSuiteAddOnsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (GSuiteAddOnsClient gSuiteAddOnsClient = GSuiteAddOnsClient.create()) {
+   *   ListDeploymentsRequest request =
+   *       ListDeploymentsRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListDeploymentsResponse response =
    *         gSuiteAddOnsClient.listDeploymentsCallable().call(request);

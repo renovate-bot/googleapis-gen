@@ -64,7 +64,7 @@ public class MockProductBiddingCategoryConstantServiceImpl
   public void getProductBiddingCategoryConstant(
       GetProductBiddingCategoryConstantRequest request,
       StreamObserver<ProductBiddingCategoryConstant> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ProductBiddingCategoryConstant) {
       requests.add(request);
       responseObserver.onNext(((ProductBiddingCategoryConstant) response));
@@ -76,7 +76,7 @@ public class MockProductBiddingCategoryConstantServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetProductBiddingCategoryConstant, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ProductBiddingCategoryConstant.class.getName(),
                   Exception.class.getName())));
     }

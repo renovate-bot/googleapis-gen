@@ -62,7 +62,7 @@ public class MockAgeRangeViewServiceImpl extends AgeRangeViewServiceImplBase {
   @Override
   public void getAgeRangeView(
       GetAgeRangeViewRequest request, StreamObserver<AgeRangeView> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AgeRangeView) {
       requests.add(request);
       responseObserver.onNext(((AgeRangeView) response));
@@ -74,7 +74,7 @@ public class MockAgeRangeViewServiceImpl extends AgeRangeViewServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetAgeRangeView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AgeRangeView.class.getName(),
                   Exception.class.getName())));
     }

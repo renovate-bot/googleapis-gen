@@ -70,7 +70,7 @@ public class MockDatastoreAdminImpl extends DatastoreAdminImplBase {
   @Override
   public void exportEntities(
       ExportEntitiesRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -82,7 +82,7 @@ public class MockDatastoreAdminImpl extends DatastoreAdminImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ExportEntities, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -91,7 +91,7 @@ public class MockDatastoreAdminImpl extends DatastoreAdminImplBase {
   @Override
   public void importEntities(
       ImportEntitiesRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -103,7 +103,7 @@ public class MockDatastoreAdminImpl extends DatastoreAdminImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ImportEntities, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -111,7 +111,7 @@ public class MockDatastoreAdminImpl extends DatastoreAdminImplBase {
 
   @Override
   public void createIndex(CreateIndexRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -123,7 +123,7 @@ public class MockDatastoreAdminImpl extends DatastoreAdminImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateIndex, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -131,7 +131,7 @@ public class MockDatastoreAdminImpl extends DatastoreAdminImplBase {
 
   @Override
   public void deleteIndex(DeleteIndexRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -143,7 +143,7 @@ public class MockDatastoreAdminImpl extends DatastoreAdminImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteIndex, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -151,7 +151,7 @@ public class MockDatastoreAdminImpl extends DatastoreAdminImplBase {
 
   @Override
   public void getIndex(GetIndexRequest request, StreamObserver<Index> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Index) {
       requests.add(request);
       responseObserver.onNext(((Index) response));
@@ -163,7 +163,7 @@ public class MockDatastoreAdminImpl extends DatastoreAdminImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetIndex, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Index.class.getName(),
                   Exception.class.getName())));
     }
@@ -172,7 +172,7 @@ public class MockDatastoreAdminImpl extends DatastoreAdminImplBase {
   @Override
   public void listIndexes(
       ListIndexesRequest request, StreamObserver<ListIndexesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListIndexesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListIndexesResponse) response));
@@ -184,7 +184,7 @@ public class MockDatastoreAdminImpl extends DatastoreAdminImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListIndexes, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListIndexesResponse.class.getName(),
                   Exception.class.getName())));
     }

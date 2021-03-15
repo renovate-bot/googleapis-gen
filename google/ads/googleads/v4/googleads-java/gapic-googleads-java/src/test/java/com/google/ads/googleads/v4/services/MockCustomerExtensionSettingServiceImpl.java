@@ -64,7 +64,7 @@ public class MockCustomerExtensionSettingServiceImpl
   public void getCustomerExtensionSetting(
       GetCustomerExtensionSettingRequest request,
       StreamObserver<CustomerExtensionSetting> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CustomerExtensionSetting) {
       requests.add(request);
       responseObserver.onNext(((CustomerExtensionSetting) response));
@@ -76,7 +76,7 @@ public class MockCustomerExtensionSettingServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetCustomerExtensionSetting, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CustomerExtensionSetting.class.getName(),
                   Exception.class.getName())));
     }
@@ -86,7 +86,7 @@ public class MockCustomerExtensionSettingServiceImpl
   public void mutateCustomerExtensionSettings(
       MutateCustomerExtensionSettingsRequest request,
       StreamObserver<MutateCustomerExtensionSettingsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateCustomerExtensionSettingsResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateCustomerExtensionSettingsResponse) response));
@@ -98,7 +98,7 @@ public class MockCustomerExtensionSettingServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateCustomerExtensionSettings, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateCustomerExtensionSettingsResponse.class.getName(),
                   Exception.class.getName())));
     }

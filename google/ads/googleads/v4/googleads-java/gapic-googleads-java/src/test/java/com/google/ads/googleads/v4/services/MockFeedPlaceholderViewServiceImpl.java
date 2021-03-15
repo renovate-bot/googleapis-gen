@@ -62,7 +62,7 @@ public class MockFeedPlaceholderViewServiceImpl extends FeedPlaceholderViewServi
   @Override
   public void getFeedPlaceholderView(
       GetFeedPlaceholderViewRequest request, StreamObserver<FeedPlaceholderView> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof FeedPlaceholderView) {
       requests.add(request);
       responseObserver.onNext(((FeedPlaceholderView) response));
@@ -74,7 +74,7 @@ public class MockFeedPlaceholderViewServiceImpl extends FeedPlaceholderViewServi
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetFeedPlaceholderView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   FeedPlaceholderView.class.getName(),
                   Exception.class.getName())));
     }

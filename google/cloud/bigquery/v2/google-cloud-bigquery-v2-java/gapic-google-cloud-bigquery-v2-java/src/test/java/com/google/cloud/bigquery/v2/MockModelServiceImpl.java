@@ -62,7 +62,7 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
   @Override
   public void getModel(
       ModelProto.GetModelRequest request, StreamObserver<ModelProto.Model> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ModelProto.Model) {
       requests.add(request);
       responseObserver.onNext(((ModelProto.Model) response));
@@ -74,7 +74,7 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetModel, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ModelProto.Model.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
   public void listModels(
       ModelProto.ListModelsRequest request,
       StreamObserver<ModelProto.ListModelsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ModelProto.ListModelsResponse) {
       requests.add(request);
       responseObserver.onNext(((ModelProto.ListModelsResponse) response));
@@ -96,7 +96,7 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListModels, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ModelProto.ListModelsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -105,7 +105,7 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
   @Override
   public void patchModel(
       ModelProto.PatchModelRequest request, StreamObserver<ModelProto.Model> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ModelProto.Model) {
       requests.add(request);
       responseObserver.onNext(((ModelProto.Model) response));
@@ -117,7 +117,7 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method PatchModel, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ModelProto.Model.class.getName(),
                   Exception.class.getName())));
     }
@@ -126,7 +126,7 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
   @Override
   public void deleteModel(
       ModelProto.DeleteModelRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -138,7 +138,7 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteModel, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }

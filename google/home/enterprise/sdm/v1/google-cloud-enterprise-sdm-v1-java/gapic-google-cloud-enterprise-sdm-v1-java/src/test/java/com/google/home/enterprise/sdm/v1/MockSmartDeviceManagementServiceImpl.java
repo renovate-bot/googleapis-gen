@@ -60,7 +60,7 @@ public class MockSmartDeviceManagementServiceImpl extends SmartDeviceManagementS
 
   @Override
   public void getDevice(GetDeviceRequest request, StreamObserver<Device> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Device) {
       requests.add(request);
       responseObserver.onNext(((Device) response));
@@ -72,7 +72,7 @@ public class MockSmartDeviceManagementServiceImpl extends SmartDeviceManagementS
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetDevice, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Device.class.getName(),
                   Exception.class.getName())));
     }
@@ -81,7 +81,7 @@ public class MockSmartDeviceManagementServiceImpl extends SmartDeviceManagementS
   @Override
   public void listDevices(
       ListDevicesRequest request, StreamObserver<ListDevicesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListDevicesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListDevicesResponse) response));
@@ -93,7 +93,7 @@ public class MockSmartDeviceManagementServiceImpl extends SmartDeviceManagementS
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListDevices, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListDevicesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -103,7 +103,7 @@ public class MockSmartDeviceManagementServiceImpl extends SmartDeviceManagementS
   public void executeDeviceCommand(
       ExecuteDeviceCommandRequest request,
       StreamObserver<ExecuteDeviceCommandResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ExecuteDeviceCommandResponse) {
       requests.add(request);
       responseObserver.onNext(((ExecuteDeviceCommandResponse) response));
@@ -115,7 +115,7 @@ public class MockSmartDeviceManagementServiceImpl extends SmartDeviceManagementS
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ExecuteDeviceCommand, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ExecuteDeviceCommandResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -124,7 +124,7 @@ public class MockSmartDeviceManagementServiceImpl extends SmartDeviceManagementS
   @Override
   public void getStructure(
       GetStructureRequest request, StreamObserver<Structure> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Structure) {
       requests.add(request);
       responseObserver.onNext(((Structure) response));
@@ -136,7 +136,7 @@ public class MockSmartDeviceManagementServiceImpl extends SmartDeviceManagementS
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetStructure, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Structure.class.getName(),
                   Exception.class.getName())));
     }
@@ -145,7 +145,7 @@ public class MockSmartDeviceManagementServiceImpl extends SmartDeviceManagementS
   @Override
   public void listStructures(
       ListStructuresRequest request, StreamObserver<ListStructuresResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListStructuresResponse) {
       requests.add(request);
       responseObserver.onNext(((ListStructuresResponse) response));
@@ -157,7 +157,7 @@ public class MockSmartDeviceManagementServiceImpl extends SmartDeviceManagementS
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListStructures, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListStructuresResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -165,7 +165,7 @@ public class MockSmartDeviceManagementServiceImpl extends SmartDeviceManagementS
 
   @Override
   public void getRoom(GetRoomRequest request, StreamObserver<Room> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Room) {
       requests.add(request);
       responseObserver.onNext(((Room) response));
@@ -177,14 +177,16 @@ public class MockSmartDeviceManagementServiceImpl extends SmartDeviceManagementS
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetRoom, expected %s or %s",
-                  response.getClass().getName(), Room.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Room.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void listRooms(
       ListRoomsRequest request, StreamObserver<ListRoomsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListRoomsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListRoomsResponse) response));
@@ -196,7 +198,7 @@ public class MockSmartDeviceManagementServiceImpl extends SmartDeviceManagementS
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListRooms, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListRoomsResponse.class.getName(),
                   Exception.class.getName())));
     }

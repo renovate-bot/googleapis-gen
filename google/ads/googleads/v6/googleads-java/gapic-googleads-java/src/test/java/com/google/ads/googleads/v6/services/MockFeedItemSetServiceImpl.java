@@ -62,7 +62,7 @@ public class MockFeedItemSetServiceImpl extends FeedItemSetServiceImplBase {
   @Override
   public void getFeedItemSet(
       GetFeedItemSetRequest request, StreamObserver<FeedItemSet> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof FeedItemSet) {
       requests.add(request);
       responseObserver.onNext(((FeedItemSet) response));
@@ -74,7 +74,7 @@ public class MockFeedItemSetServiceImpl extends FeedItemSetServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetFeedItemSet, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   FeedItemSet.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockFeedItemSetServiceImpl extends FeedItemSetServiceImplBase {
   public void mutateFeedItemSets(
       MutateFeedItemSetsRequest request,
       StreamObserver<MutateFeedItemSetsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateFeedItemSetsResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateFeedItemSetsResponse) response));
@@ -96,7 +96,7 @@ public class MockFeedItemSetServiceImpl extends FeedItemSetServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateFeedItemSets, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateFeedItemSetsResponse.class.getName(),
                   Exception.class.getName())));
     }

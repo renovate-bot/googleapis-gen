@@ -237,6 +237,15 @@ public class KeywordPlanIdeaServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (KeywordPlanIdeaServiceClient keywordPlanIdeaServiceClient =
    *     KeywordPlanIdeaServiceClient.create()) {
+   *   GenerateKeywordIdeasRequest request =
+   *       GenerateKeywordIdeasRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .setLanguage(StringValue.newBuilder().build())
+   *           .addAllGeoTargetConstants(new ArrayList<StringValue>())
+   *           .setIncludeAdultKeywords(true)
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
    *   while (true) {
    *     GenerateKeywordIdeaResponse response =
    *         keywordPlanIdeaServiceClient.generateKeywordIdeasCallable().call(request);

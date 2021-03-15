@@ -64,7 +64,7 @@ public class MockDynamicSearchAdsSearchTermViewServiceImpl
   public void getDynamicSearchAdsSearchTermView(
       GetDynamicSearchAdsSearchTermViewRequest request,
       StreamObserver<DynamicSearchAdsSearchTermView> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof DynamicSearchAdsSearchTermView) {
       requests.add(request);
       responseObserver.onNext(((DynamicSearchAdsSearchTermView) response));
@@ -76,7 +76,7 @@ public class MockDynamicSearchAdsSearchTermViewServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetDynamicSearchAdsSearchTermView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   DynamicSearchAdsSearchTermView.class.getName(),
                   Exception.class.getName())));
     }

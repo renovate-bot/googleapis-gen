@@ -247,6 +247,15 @@ public class GoogleAdsServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (GoogleAdsServiceClient googleAdsServiceClient = GoogleAdsServiceClient.create()) {
+   *   SearchGoogleAdsRequest request =
+   *       SearchGoogleAdsRequest.newBuilder()
+   *           .setCustomerId("customerId-1581184615")
+   *           .setQuery("query107944136")
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .setValidateOnly(true)
+   *           .setReturnTotalResultsCount(true)
+   *           .build();
    *   while (true) {
    *     SearchGoogleAdsResponse response = googleAdsServiceClient.searchCallable().call(request);
    *     for (GoogleAdsRow element : response.getResponsesList()) {

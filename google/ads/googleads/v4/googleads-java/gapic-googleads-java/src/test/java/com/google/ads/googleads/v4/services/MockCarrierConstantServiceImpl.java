@@ -62,7 +62,7 @@ public class MockCarrierConstantServiceImpl extends CarrierConstantServiceImplBa
   @Override
   public void getCarrierConstant(
       GetCarrierConstantRequest request, StreamObserver<CarrierConstant> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CarrierConstant) {
       requests.add(request);
       responseObserver.onNext(((CarrierConstant) response));
@@ -74,7 +74,7 @@ public class MockCarrierConstantServiceImpl extends CarrierConstantServiceImplBa
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetCarrierConstant, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CarrierConstant.class.getName(),
                   Exception.class.getName())));
     }

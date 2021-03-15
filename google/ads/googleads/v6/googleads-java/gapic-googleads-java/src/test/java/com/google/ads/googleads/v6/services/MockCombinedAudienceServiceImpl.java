@@ -62,7 +62,7 @@ public class MockCombinedAudienceServiceImpl extends CombinedAudienceServiceImpl
   @Override
   public void getCombinedAudience(
       GetCombinedAudienceRequest request, StreamObserver<CombinedAudience> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CombinedAudience) {
       requests.add(request);
       responseObserver.onNext(((CombinedAudience) response));
@@ -74,7 +74,7 @@ public class MockCombinedAudienceServiceImpl extends CombinedAudienceServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetCombinedAudience, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CombinedAudience.class.getName(),
                   Exception.class.getName())));
     }

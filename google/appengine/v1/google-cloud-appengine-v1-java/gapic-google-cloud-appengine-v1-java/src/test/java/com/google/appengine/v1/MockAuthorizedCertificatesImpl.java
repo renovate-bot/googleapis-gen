@@ -63,7 +63,7 @@ public class MockAuthorizedCertificatesImpl extends AuthorizedCertificatesImplBa
   public void listAuthorizedCertificates(
       ListAuthorizedCertificatesRequest request,
       StreamObserver<ListAuthorizedCertificatesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListAuthorizedCertificatesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListAuthorizedCertificatesResponse) response));
@@ -75,7 +75,7 @@ public class MockAuthorizedCertificatesImpl extends AuthorizedCertificatesImplBa
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListAuthorizedCertificates, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListAuthorizedCertificatesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -85,7 +85,7 @@ public class MockAuthorizedCertificatesImpl extends AuthorizedCertificatesImplBa
   public void getAuthorizedCertificate(
       GetAuthorizedCertificateRequest request,
       StreamObserver<AuthorizedCertificate> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AuthorizedCertificate) {
       requests.add(request);
       responseObserver.onNext(((AuthorizedCertificate) response));
@@ -97,7 +97,7 @@ public class MockAuthorizedCertificatesImpl extends AuthorizedCertificatesImplBa
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetAuthorizedCertificate, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AuthorizedCertificate.class.getName(),
                   Exception.class.getName())));
     }
@@ -107,7 +107,7 @@ public class MockAuthorizedCertificatesImpl extends AuthorizedCertificatesImplBa
   public void createAuthorizedCertificate(
       CreateAuthorizedCertificateRequest request,
       StreamObserver<AuthorizedCertificate> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AuthorizedCertificate) {
       requests.add(request);
       responseObserver.onNext(((AuthorizedCertificate) response));
@@ -119,7 +119,7 @@ public class MockAuthorizedCertificatesImpl extends AuthorizedCertificatesImplBa
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateAuthorizedCertificate, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AuthorizedCertificate.class.getName(),
                   Exception.class.getName())));
     }
@@ -129,7 +129,7 @@ public class MockAuthorizedCertificatesImpl extends AuthorizedCertificatesImplBa
   public void updateAuthorizedCertificate(
       UpdateAuthorizedCertificateRequest request,
       StreamObserver<AuthorizedCertificate> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AuthorizedCertificate) {
       requests.add(request);
       responseObserver.onNext(((AuthorizedCertificate) response));
@@ -141,7 +141,7 @@ public class MockAuthorizedCertificatesImpl extends AuthorizedCertificatesImplBa
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateAuthorizedCertificate, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AuthorizedCertificate.class.getName(),
                   Exception.class.getName())));
     }
@@ -150,7 +150,7 @@ public class MockAuthorizedCertificatesImpl extends AuthorizedCertificatesImplBa
   @Override
   public void deleteAuthorizedCertificate(
       DeleteAuthorizedCertificateRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -162,7 +162,7 @@ public class MockAuthorizedCertificatesImpl extends AuthorizedCertificatesImplBa
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteAuthorizedCertificate, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }

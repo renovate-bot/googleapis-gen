@@ -456,6 +456,12 @@ public class BatchJobServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (BatchJobServiceClient batchJobServiceClient = BatchJobServiceClient.create()) {
+   *   ListBatchJobResultsRequest request =
+   *       ListBatchJobResultsRequest.newBuilder()
+   *           .setResourceName(BatchJobName.of("[CUSTOMER]", "[BATCH_JOB]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
    *   while (true) {
    *     ListBatchJobResultsResponse response =
    *         batchJobServiceClient.listBatchJobResultsCallable().call(request);

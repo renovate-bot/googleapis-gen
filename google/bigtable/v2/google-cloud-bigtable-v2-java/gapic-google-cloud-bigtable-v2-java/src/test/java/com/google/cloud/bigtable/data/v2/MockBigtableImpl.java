@@ -72,7 +72,7 @@ public class MockBigtableImpl extends BigtableImplBase {
 
   @Override
   public void readRows(ReadRowsRequest request, StreamObserver<ReadRowsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ReadRowsResponse) {
       requests.add(request);
       responseObserver.onNext(((ReadRowsResponse) response));
@@ -84,7 +84,7 @@ public class MockBigtableImpl extends BigtableImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ReadRows, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ReadRowsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -93,7 +93,7 @@ public class MockBigtableImpl extends BigtableImplBase {
   @Override
   public void sampleRowKeys(
       SampleRowKeysRequest request, StreamObserver<SampleRowKeysResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SampleRowKeysResponse) {
       requests.add(request);
       responseObserver.onNext(((SampleRowKeysResponse) response));
@@ -105,7 +105,7 @@ public class MockBigtableImpl extends BigtableImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SampleRowKeys, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SampleRowKeysResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -114,7 +114,7 @@ public class MockBigtableImpl extends BigtableImplBase {
   @Override
   public void mutateRow(
       MutateRowRequest request, StreamObserver<MutateRowResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateRowResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateRowResponse) response));
@@ -126,7 +126,7 @@ public class MockBigtableImpl extends BigtableImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateRow, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateRowResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -135,7 +135,7 @@ public class MockBigtableImpl extends BigtableImplBase {
   @Override
   public void mutateRows(
       MutateRowsRequest request, StreamObserver<MutateRowsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateRowsResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateRowsResponse) response));
@@ -147,7 +147,7 @@ public class MockBigtableImpl extends BigtableImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateRows, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateRowsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -157,7 +157,7 @@ public class MockBigtableImpl extends BigtableImplBase {
   public void checkAndMutateRow(
       CheckAndMutateRowRequest request,
       StreamObserver<CheckAndMutateRowResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CheckAndMutateRowResponse) {
       requests.add(request);
       responseObserver.onNext(((CheckAndMutateRowResponse) response));
@@ -169,7 +169,7 @@ public class MockBigtableImpl extends BigtableImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CheckAndMutateRow, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CheckAndMutateRowResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -179,7 +179,7 @@ public class MockBigtableImpl extends BigtableImplBase {
   public void readModifyWriteRow(
       ReadModifyWriteRowRequest request,
       StreamObserver<ReadModifyWriteRowResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ReadModifyWriteRowResponse) {
       requests.add(request);
       responseObserver.onNext(((ReadModifyWriteRowResponse) response));
@@ -191,7 +191,7 @@ public class MockBigtableImpl extends BigtableImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ReadModifyWriteRow, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ReadModifyWriteRowResponse.class.getName(),
                   Exception.class.getName())));
     }

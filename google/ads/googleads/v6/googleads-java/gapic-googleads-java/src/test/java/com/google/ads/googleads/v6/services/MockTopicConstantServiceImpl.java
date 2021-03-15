@@ -62,7 +62,7 @@ public class MockTopicConstantServiceImpl extends TopicConstantServiceImplBase {
   @Override
   public void getTopicConstant(
       GetTopicConstantRequest request, StreamObserver<TopicConstant> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof TopicConstant) {
       requests.add(request);
       responseObserver.onNext(((TopicConstant) response));
@@ -74,7 +74,7 @@ public class MockTopicConstantServiceImpl extends TopicConstantServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetTopicConstant, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   TopicConstant.class.getName(),
                   Exception.class.getName())));
     }

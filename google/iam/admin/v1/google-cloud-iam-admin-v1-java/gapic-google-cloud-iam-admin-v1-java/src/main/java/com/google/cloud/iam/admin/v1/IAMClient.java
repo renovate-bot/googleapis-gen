@@ -315,6 +315,12 @@ public class IAMClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (IAMClient iAMClient = IAMClient.create()) {
+   *   ListServiceAccountsRequest request =
+   *       ListServiceAccountsRequest.newBuilder()
+   *           .setName(ProjectName.of("[PROJECT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListServiceAccountsResponse response =
    *         iAMClient.listServiceAccountsCallable().call(request);
@@ -1892,6 +1898,13 @@ public class IAMClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (IAMClient iAMClient = IAMClient.create()) {
+   *   QueryGrantableRolesRequest request =
+   *       QueryGrantableRolesRequest.newBuilder()
+   *           .setFullResourceName("fullResourceName-853732376")
+   *           .setView(RoleView.forNumber(0))
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     QueryGrantableRolesResponse response =
    *         iAMClient.queryGrantableRolesCallable().call(request);
@@ -1978,6 +1991,14 @@ public class IAMClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (IAMClient iAMClient = IAMClient.create()) {
+   *   ListRolesRequest request =
+   *       ListRolesRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setView(RoleView.forNumber(0))
+   *           .setShowDeleted(true)
+   *           .build();
    *   while (true) {
    *     ListRolesResponse response = iAMClient.listRolesCallable().call(request);
    *     for (Role element : response.getResponsesList()) {
@@ -2305,6 +2326,12 @@ public class IAMClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (IAMClient iAMClient = IAMClient.create()) {
+   *   QueryTestablePermissionsRequest request =
+   *       QueryTestablePermissionsRequest.newBuilder()
+   *           .setFullResourceName("fullResourceName-853732376")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     QueryTestablePermissionsResponse response =
    *         iAMClient.queryTestablePermissionsCallable().call(request);

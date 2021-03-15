@@ -232,6 +232,13 @@ public class AuthorizedCertificatesClient implements BackgroundResource {
    * <pre>{@code
    * try (AuthorizedCertificatesClient authorizedCertificatesClient =
    *     AuthorizedCertificatesClient.create()) {
+   *   ListAuthorizedCertificatesRequest request =
+   *       ListAuthorizedCertificatesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setView(AuthorizedCertificateView.forNumber(0))
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListAuthorizedCertificatesResponse response =
    *         authorizedCertificatesClient.listAuthorizedCertificatesCallable().call(request);

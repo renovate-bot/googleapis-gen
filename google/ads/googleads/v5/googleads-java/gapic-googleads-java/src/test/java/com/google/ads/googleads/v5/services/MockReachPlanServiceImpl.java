@@ -62,7 +62,7 @@ public class MockReachPlanServiceImpl extends ReachPlanServiceImplBase {
   public void listPlannableLocations(
       ListPlannableLocationsRequest request,
       StreamObserver<ListPlannableLocationsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListPlannableLocationsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListPlannableLocationsResponse) response));
@@ -74,7 +74,7 @@ public class MockReachPlanServiceImpl extends ReachPlanServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListPlannableLocations, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListPlannableLocationsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockReachPlanServiceImpl extends ReachPlanServiceImplBase {
   public void listPlannableProducts(
       ListPlannableProductsRequest request,
       StreamObserver<ListPlannableProductsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListPlannableProductsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListPlannableProductsResponse) response));
@@ -96,7 +96,7 @@ public class MockReachPlanServiceImpl extends ReachPlanServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListPlannableProducts, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListPlannableProductsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -106,7 +106,7 @@ public class MockReachPlanServiceImpl extends ReachPlanServiceImplBase {
   public void generateProductMixIdeas(
       GenerateProductMixIdeasRequest request,
       StreamObserver<GenerateProductMixIdeasResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof GenerateProductMixIdeasResponse) {
       requests.add(request);
       responseObserver.onNext(((GenerateProductMixIdeasResponse) response));
@@ -118,7 +118,7 @@ public class MockReachPlanServiceImpl extends ReachPlanServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GenerateProductMixIdeas, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   GenerateProductMixIdeasResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -128,7 +128,7 @@ public class MockReachPlanServiceImpl extends ReachPlanServiceImplBase {
   public void generateReachForecast(
       GenerateReachForecastRequest request,
       StreamObserver<GenerateReachForecastResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof GenerateReachForecastResponse) {
       requests.add(request);
       responseObserver.onNext(((GenerateReachForecastResponse) response));
@@ -140,7 +140,7 @@ public class MockReachPlanServiceImpl extends ReachPlanServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GenerateReachForecast, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   GenerateReachForecastResponse.class.getName(),
                   Exception.class.getName())));
     }

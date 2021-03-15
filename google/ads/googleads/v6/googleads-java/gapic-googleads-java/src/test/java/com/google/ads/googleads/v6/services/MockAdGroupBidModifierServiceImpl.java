@@ -62,7 +62,7 @@ public class MockAdGroupBidModifierServiceImpl extends AdGroupBidModifierService
   @Override
   public void getAdGroupBidModifier(
       GetAdGroupBidModifierRequest request, StreamObserver<AdGroupBidModifier> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AdGroupBidModifier) {
       requests.add(request);
       responseObserver.onNext(((AdGroupBidModifier) response));
@@ -74,7 +74,7 @@ public class MockAdGroupBidModifierServiceImpl extends AdGroupBidModifierService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetAdGroupBidModifier, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AdGroupBidModifier.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockAdGroupBidModifierServiceImpl extends AdGroupBidModifierService
   public void mutateAdGroupBidModifiers(
       MutateAdGroupBidModifiersRequest request,
       StreamObserver<MutateAdGroupBidModifiersResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateAdGroupBidModifiersResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateAdGroupBidModifiersResponse) response));
@@ -96,7 +96,7 @@ public class MockAdGroupBidModifierServiceImpl extends AdGroupBidModifierService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateAdGroupBidModifiers, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateAdGroupBidModifiersResponse.class.getName(),
                   Exception.class.getName())));
     }

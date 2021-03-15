@@ -62,7 +62,7 @@ public class MockCustomInterestServiceImpl extends CustomInterestServiceImplBase
   @Override
   public void getCustomInterest(
       GetCustomInterestRequest request, StreamObserver<CustomInterest> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CustomInterest) {
       requests.add(request);
       responseObserver.onNext(((CustomInterest) response));
@@ -74,7 +74,7 @@ public class MockCustomInterestServiceImpl extends CustomInterestServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetCustomInterest, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CustomInterest.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockCustomInterestServiceImpl extends CustomInterestServiceImplBase
   public void mutateCustomInterests(
       MutateCustomInterestsRequest request,
       StreamObserver<MutateCustomInterestsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateCustomInterestsResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateCustomInterestsResponse) response));
@@ -96,7 +96,7 @@ public class MockCustomInterestServiceImpl extends CustomInterestServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateCustomInterests, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateCustomInterestsResponse.class.getName(),
                   Exception.class.getName())));
     }

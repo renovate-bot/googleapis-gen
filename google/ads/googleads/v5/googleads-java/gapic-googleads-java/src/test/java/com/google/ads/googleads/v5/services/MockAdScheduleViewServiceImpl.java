@@ -62,7 +62,7 @@ public class MockAdScheduleViewServiceImpl extends AdScheduleViewServiceImplBase
   @Override
   public void getAdScheduleView(
       GetAdScheduleViewRequest request, StreamObserver<AdScheduleView> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AdScheduleView) {
       requests.add(request);
       responseObserver.onNext(((AdScheduleView) response));
@@ -74,7 +74,7 @@ public class MockAdScheduleViewServiceImpl extends AdScheduleViewServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetAdScheduleView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AdScheduleView.class.getName(),
                   Exception.class.getName())));
     }

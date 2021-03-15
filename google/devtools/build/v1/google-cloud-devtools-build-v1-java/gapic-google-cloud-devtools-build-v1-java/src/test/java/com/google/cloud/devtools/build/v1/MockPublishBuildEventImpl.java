@@ -65,7 +65,7 @@ public class MockPublishBuildEventImpl extends PublishBuildEventImplBase {
   @Override
   public void publishLifecycleEvent(
       PublishLifecycleEventRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -77,7 +77,7 @@ public class MockPublishBuildEventImpl extends PublishBuildEventImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method PublishLifecycleEvent, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -101,7 +101,7 @@ public class MockPublishBuildEventImpl extends PublishBuildEventImplBase {
                   new IllegalArgumentException(
                       String.format(
                           "Unrecognized response type %s for method PublishBuildToolEventStream, expected %s or %s",
-                          response.getClass().getName(),
+                          response == null ? "null" : response.getClass().getName(),
                           PublishBuildToolEventStreamResponse.class.getName(),
                           Exception.class.getName())));
             }

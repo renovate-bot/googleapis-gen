@@ -62,7 +62,7 @@ public class MockGoogleAdsFieldServiceImpl extends GoogleAdsFieldServiceImplBase
   @Override
   public void getGoogleAdsField(
       GetGoogleAdsFieldRequest request, StreamObserver<GoogleAdsField> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof GoogleAdsField) {
       requests.add(request);
       responseObserver.onNext(((GoogleAdsField) response));
@@ -74,7 +74,7 @@ public class MockGoogleAdsFieldServiceImpl extends GoogleAdsFieldServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetGoogleAdsField, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   GoogleAdsField.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockGoogleAdsFieldServiceImpl extends GoogleAdsFieldServiceImplBase
   public void searchGoogleAdsFields(
       SearchGoogleAdsFieldsRequest request,
       StreamObserver<SearchGoogleAdsFieldsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SearchGoogleAdsFieldsResponse) {
       requests.add(request);
       responseObserver.onNext(((SearchGoogleAdsFieldsResponse) response));
@@ -96,7 +96,7 @@ public class MockGoogleAdsFieldServiceImpl extends GoogleAdsFieldServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SearchGoogleAdsFields, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SearchGoogleAdsFieldsResponse.class.getName(),
                   Exception.class.getName())));
     }

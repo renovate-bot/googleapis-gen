@@ -310,6 +310,16 @@ public class FirestoreClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   ListDocumentsRequest request =
+   *       ListDocumentsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setCollectionId("collectionId1636075609")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setMask(DocumentMask.newBuilder().build())
+   *           .setShowMissing(true)
+   *           .build();
    *   while (true) {
    *     ListDocumentsResponse response = firestoreClient.listDocumentsCallable().call(request);
    *     for (Document element : response.getResponsesList()) {
@@ -943,6 +953,12 @@ public class FirestoreClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   ListCollectionIdsRequest request =
+   *       ListCollectionIdsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListCollectionIdsResponse response =
    *         firestoreClient.listCollectionIdsCallable().call(request);

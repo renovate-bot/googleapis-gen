@@ -60,7 +60,7 @@ public class MockQuestionServiceImpl extends QuestionServiceImplBase {
 
   @Override
   public void getQuestion(GetQuestionRequest request, StreamObserver<Question> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Question) {
       requests.add(request);
       responseObserver.onNext(((Question) response));
@@ -72,7 +72,7 @@ public class MockQuestionServiceImpl extends QuestionServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetQuestion, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Question.class.getName(),
                   Exception.class.getName())));
     }
@@ -81,7 +81,7 @@ public class MockQuestionServiceImpl extends QuestionServiceImplBase {
   @Override
   public void createQuestion(
       CreateQuestionRequest request, StreamObserver<Question> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Question) {
       requests.add(request);
       responseObserver.onNext(((Question) response));
@@ -93,7 +93,7 @@ public class MockQuestionServiceImpl extends QuestionServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateQuestion, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Question.class.getName(),
                   Exception.class.getName())));
     }
@@ -102,7 +102,7 @@ public class MockQuestionServiceImpl extends QuestionServiceImplBase {
   @Override
   public void executeQuestion(
       ExecuteQuestionRequest request, StreamObserver<Question> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Question) {
       requests.add(request);
       responseObserver.onNext(((Question) response));
@@ -114,7 +114,7 @@ public class MockQuestionServiceImpl extends QuestionServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ExecuteQuestion, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Question.class.getName(),
                   Exception.class.getName())));
     }
@@ -123,7 +123,7 @@ public class MockQuestionServiceImpl extends QuestionServiceImplBase {
   @Override
   public void getUserFeedback(
       GetUserFeedbackRequest request, StreamObserver<UserFeedback> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof UserFeedback) {
       requests.add(request);
       responseObserver.onNext(((UserFeedback) response));
@@ -135,7 +135,7 @@ public class MockQuestionServiceImpl extends QuestionServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetUserFeedback, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   UserFeedback.class.getName(),
                   Exception.class.getName())));
     }
@@ -144,7 +144,7 @@ public class MockQuestionServiceImpl extends QuestionServiceImplBase {
   @Override
   public void updateUserFeedback(
       UpdateUserFeedbackRequest request, StreamObserver<UserFeedback> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof UserFeedback) {
       requests.add(request);
       responseObserver.onNext(((UserFeedback) response));
@@ -156,7 +156,7 @@ public class MockQuestionServiceImpl extends QuestionServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateUserFeedback, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   UserFeedback.class.getName(),
                   Exception.class.getName())));
     }

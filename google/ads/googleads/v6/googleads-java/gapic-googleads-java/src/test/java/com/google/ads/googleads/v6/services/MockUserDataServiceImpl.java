@@ -61,7 +61,7 @@ public class MockUserDataServiceImpl extends UserDataServiceImplBase {
   @Override
   public void uploadUserData(
       UploadUserDataRequest request, StreamObserver<UploadUserDataResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof UploadUserDataResponse) {
       requests.add(request);
       responseObserver.onNext(((UploadUserDataResponse) response));
@@ -73,7 +73,7 @@ public class MockUserDataServiceImpl extends UserDataServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UploadUserData, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   UploadUserDataResponse.class.getName(),
                   Exception.class.getName())));
     }

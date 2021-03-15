@@ -71,7 +71,7 @@ public class MockDebugger2Impl extends Debugger2ImplBase {
   @Override
   public void setBreakpoint(
       SetBreakpointRequest request, StreamObserver<SetBreakpointResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SetBreakpointResponse) {
       requests.add(request);
       responseObserver.onNext(((SetBreakpointResponse) response));
@@ -83,7 +83,7 @@ public class MockDebugger2Impl extends Debugger2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SetBreakpoint, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SetBreakpointResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -92,7 +92,7 @@ public class MockDebugger2Impl extends Debugger2ImplBase {
   @Override
   public void getBreakpoint(
       GetBreakpointRequest request, StreamObserver<GetBreakpointResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof GetBreakpointResponse) {
       requests.add(request);
       responseObserver.onNext(((GetBreakpointResponse) response));
@@ -104,7 +104,7 @@ public class MockDebugger2Impl extends Debugger2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetBreakpoint, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   GetBreakpointResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -113,7 +113,7 @@ public class MockDebugger2Impl extends Debugger2ImplBase {
   @Override
   public void deleteBreakpoint(
       DeleteBreakpointRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -125,7 +125,7 @@ public class MockDebugger2Impl extends Debugger2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteBreakpoint, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -134,7 +134,7 @@ public class MockDebugger2Impl extends Debugger2ImplBase {
   @Override
   public void listBreakpoints(
       ListBreakpointsRequest request, StreamObserver<ListBreakpointsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListBreakpointsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListBreakpointsResponse) response));
@@ -146,7 +146,7 @@ public class MockDebugger2Impl extends Debugger2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListBreakpoints, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListBreakpointsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -155,7 +155,7 @@ public class MockDebugger2Impl extends Debugger2ImplBase {
   @Override
   public void listDebuggees(
       ListDebuggeesRequest request, StreamObserver<ListDebuggeesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListDebuggeesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListDebuggeesResponse) response));
@@ -167,7 +167,7 @@ public class MockDebugger2Impl extends Debugger2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListDebuggees, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListDebuggeesResponse.class.getName(),
                   Exception.class.getName())));
     }

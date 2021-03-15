@@ -62,7 +62,7 @@ public class MockRemarketingActionServiceImpl extends RemarketingActionServiceIm
   @Override
   public void getRemarketingAction(
       GetRemarketingActionRequest request, StreamObserver<RemarketingAction> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof RemarketingAction) {
       requests.add(request);
       responseObserver.onNext(((RemarketingAction) response));
@@ -74,7 +74,7 @@ public class MockRemarketingActionServiceImpl extends RemarketingActionServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetRemarketingAction, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   RemarketingAction.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockRemarketingActionServiceImpl extends RemarketingActionServiceIm
   public void mutateRemarketingActions(
       MutateRemarketingActionsRequest request,
       StreamObserver<MutateRemarketingActionsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateRemarketingActionsResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateRemarketingActionsResponse) response));
@@ -96,7 +96,7 @@ public class MockRemarketingActionServiceImpl extends RemarketingActionServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateRemarketingActions, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateRemarketingActionsResponse.class.getName(),
                   Exception.class.getName())));
     }

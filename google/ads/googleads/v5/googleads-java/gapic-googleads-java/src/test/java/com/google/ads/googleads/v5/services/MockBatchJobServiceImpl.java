@@ -63,7 +63,7 @@ public class MockBatchJobServiceImpl extends BatchJobServiceImplBase {
   @Override
   public void mutateBatchJob(
       MutateBatchJobRequest request, StreamObserver<MutateBatchJobResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateBatchJobResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateBatchJobResponse) response));
@@ -75,7 +75,7 @@ public class MockBatchJobServiceImpl extends BatchJobServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateBatchJob, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateBatchJobResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -83,7 +83,7 @@ public class MockBatchJobServiceImpl extends BatchJobServiceImplBase {
 
   @Override
   public void getBatchJob(GetBatchJobRequest request, StreamObserver<BatchJob> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof BatchJob) {
       requests.add(request);
       responseObserver.onNext(((BatchJob) response));
@@ -95,7 +95,7 @@ public class MockBatchJobServiceImpl extends BatchJobServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetBatchJob, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   BatchJob.class.getName(),
                   Exception.class.getName())));
     }
@@ -105,7 +105,7 @@ public class MockBatchJobServiceImpl extends BatchJobServiceImplBase {
   public void listBatchJobResults(
       ListBatchJobResultsRequest request,
       StreamObserver<ListBatchJobResultsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListBatchJobResultsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListBatchJobResultsResponse) response));
@@ -117,7 +117,7 @@ public class MockBatchJobServiceImpl extends BatchJobServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListBatchJobResults, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListBatchJobResultsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -125,7 +125,7 @@ public class MockBatchJobServiceImpl extends BatchJobServiceImplBase {
 
   @Override
   public void runBatchJob(RunBatchJobRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -137,7 +137,7 @@ public class MockBatchJobServiceImpl extends BatchJobServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method RunBatchJob, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -147,7 +147,7 @@ public class MockBatchJobServiceImpl extends BatchJobServiceImplBase {
   public void addBatchJobOperations(
       AddBatchJobOperationsRequest request,
       StreamObserver<AddBatchJobOperationsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AddBatchJobOperationsResponse) {
       requests.add(request);
       responseObserver.onNext(((AddBatchJobOperationsResponse) response));
@@ -159,7 +159,7 @@ public class MockBatchJobServiceImpl extends BatchJobServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method AddBatchJobOperations, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AddBatchJobOperationsResponse.class.getName(),
                   Exception.class.getName())));
     }

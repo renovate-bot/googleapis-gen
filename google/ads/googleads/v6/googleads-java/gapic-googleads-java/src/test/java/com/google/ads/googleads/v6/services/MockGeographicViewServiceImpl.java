@@ -62,7 +62,7 @@ public class MockGeographicViewServiceImpl extends GeographicViewServiceImplBase
   @Override
   public void getGeographicView(
       GetGeographicViewRequest request, StreamObserver<GeographicView> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof GeographicView) {
       requests.add(request);
       responseObserver.onNext(((GeographicView) response));
@@ -74,7 +74,7 @@ public class MockGeographicViewServiceImpl extends GeographicViewServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetGeographicView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   GeographicView.class.getName(),
                   Exception.class.getName())));
     }

@@ -60,7 +60,7 @@ public class MockUserLicenseServiceImpl extends UserLicenseServiceImplBase {
 
   @Override
   public void get(UserLicenseGetRequest request, StreamObserver<UserLicense> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof UserLicense) {
       requests.add(request);
       responseObserver.onNext(((UserLicense) response));
@@ -72,7 +72,7 @@ public class MockUserLicenseServiceImpl extends UserLicenseServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method Get, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   UserLicense.class.getName(),
                   Exception.class.getName())));
     }

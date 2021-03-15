@@ -62,7 +62,7 @@ public class MockDistanceViewServiceImpl extends DistanceViewServiceImplBase {
   @Override
   public void getDistanceView(
       GetDistanceViewRequest request, StreamObserver<DistanceView> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof DistanceView) {
       requests.add(request);
       responseObserver.onNext(((DistanceView) response));
@@ -74,7 +74,7 @@ public class MockDistanceViewServiceImpl extends DistanceViewServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetDistanceView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   DistanceView.class.getName(),
                   Exception.class.getName())));
     }

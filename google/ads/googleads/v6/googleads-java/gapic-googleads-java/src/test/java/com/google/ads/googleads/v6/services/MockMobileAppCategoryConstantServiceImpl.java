@@ -64,7 +64,7 @@ public class MockMobileAppCategoryConstantServiceImpl
   public void getMobileAppCategoryConstant(
       GetMobileAppCategoryConstantRequest request,
       StreamObserver<MobileAppCategoryConstant> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MobileAppCategoryConstant) {
       requests.add(request);
       responseObserver.onNext(((MobileAppCategoryConstant) response));
@@ -76,7 +76,7 @@ public class MockMobileAppCategoryConstantServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetMobileAppCategoryConstant, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MobileAppCategoryConstant.class.getName(),
                   Exception.class.getName())));
     }

@@ -62,7 +62,7 @@ public class MockBuildServiceImpl extends BuildServiceImplBase {
   @Override
   public void listBuilds(
       ListBuildsRequest request, StreamObserver<ListBuildsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListBuildsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListBuildsResponse) response));
@@ -74,7 +74,7 @@ public class MockBuildServiceImpl extends BuildServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListBuilds, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListBuildsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockBuildServiceImpl extends BuildServiceImplBase {
   public void checkBuildStageStatus(
       CheckBuildStageStatusRequest request,
       StreamObserver<CheckBuildStageStatusResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CheckBuildStageStatusResponse) {
       requests.add(request);
       responseObserver.onNext(((CheckBuildStageStatusResponse) response));
@@ -96,7 +96,7 @@ public class MockBuildServiceImpl extends BuildServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CheckBuildStageStatus, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CheckBuildStageStatusResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -104,7 +104,7 @@ public class MockBuildServiceImpl extends BuildServiceImplBase {
 
   @Override
   public void stageBuild(StageBuildRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -116,7 +116,7 @@ public class MockBuildServiceImpl extends BuildServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method StageBuild, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }

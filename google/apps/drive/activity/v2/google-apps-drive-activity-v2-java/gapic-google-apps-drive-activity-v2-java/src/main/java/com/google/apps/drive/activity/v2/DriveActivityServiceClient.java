@@ -232,6 +232,13 @@ public class DriveActivityServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (DriveActivityServiceClient driveActivityServiceClient =
    *     DriveActivityServiceClient.create()) {
+   *   QueryDriveActivityRequest request =
+   *       QueryDriveActivityRequest.newBuilder()
+   *           .setConsolidationStrategy(ConsolidationStrategy.newBuilder().build())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
    *   while (true) {
    *     QueryDriveActivityResponse response =
    *         driveActivityServiceClient.queryDriveActivityCallable().call(request);

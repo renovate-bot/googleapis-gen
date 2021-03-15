@@ -63,7 +63,7 @@ public class MockExpandedLandingPageViewServiceImpl extends ExpandedLandingPageV
   public void getExpandedLandingPageView(
       GetExpandedLandingPageViewRequest request,
       StreamObserver<ExpandedLandingPageView> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ExpandedLandingPageView) {
       requests.add(request);
       responseObserver.onNext(((ExpandedLandingPageView) response));
@@ -75,7 +75,7 @@ public class MockExpandedLandingPageViewServiceImpl extends ExpandedLandingPageV
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetExpandedLandingPageView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ExpandedLandingPageView.class.getName(),
                   Exception.class.getName())));
     }

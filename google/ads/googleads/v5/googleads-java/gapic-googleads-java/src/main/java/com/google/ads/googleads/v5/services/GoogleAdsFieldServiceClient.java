@@ -343,6 +343,12 @@ public class GoogleAdsFieldServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (GoogleAdsFieldServiceClient googleAdsFieldServiceClient =
    *     GoogleAdsFieldServiceClient.create()) {
+   *   SearchGoogleAdsFieldsRequest request =
+   *       SearchGoogleAdsFieldsRequest.newBuilder()
+   *           .setQuery("query107944136")
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
    *   while (true) {
    *     SearchGoogleAdsFieldsResponse response =
    *         googleAdsFieldServiceClient.searchGoogleAdsFieldsCallable().call(request);

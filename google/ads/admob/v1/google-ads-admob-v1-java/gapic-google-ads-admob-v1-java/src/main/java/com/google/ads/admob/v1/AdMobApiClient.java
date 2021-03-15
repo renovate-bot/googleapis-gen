@@ -282,6 +282,11 @@ public class AdMobApiClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AdMobApiClient adMobApiClient = AdMobApiClient.create()) {
+   *   AdMobApiProto.ListPublisherAccountsRequest request =
+   *       AdMobApiProto.ListPublisherAccountsRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     AdMobApiProto.ListPublisherAccountsResponse response =
    *         adMobApiClient.listPublisherAccountsCallable().call(request);

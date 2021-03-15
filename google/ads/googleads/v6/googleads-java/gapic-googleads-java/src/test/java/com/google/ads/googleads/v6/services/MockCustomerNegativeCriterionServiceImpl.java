@@ -64,7 +64,7 @@ public class MockCustomerNegativeCriterionServiceImpl
   public void getCustomerNegativeCriterion(
       GetCustomerNegativeCriterionRequest request,
       StreamObserver<CustomerNegativeCriterion> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CustomerNegativeCriterion) {
       requests.add(request);
       responseObserver.onNext(((CustomerNegativeCriterion) response));
@@ -76,7 +76,7 @@ public class MockCustomerNegativeCriterionServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetCustomerNegativeCriterion, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CustomerNegativeCriterion.class.getName(),
                   Exception.class.getName())));
     }
@@ -86,7 +86,7 @@ public class MockCustomerNegativeCriterionServiceImpl
   public void mutateCustomerNegativeCriteria(
       MutateCustomerNegativeCriteriaRequest request,
       StreamObserver<MutateCustomerNegativeCriteriaResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateCustomerNegativeCriteriaResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateCustomerNegativeCriteriaResponse) response));
@@ -98,7 +98,7 @@ public class MockCustomerNegativeCriterionServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateCustomerNegativeCriteria, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateCustomerNegativeCriteriaResponse.class.getName(),
                   Exception.class.getName())));
     }

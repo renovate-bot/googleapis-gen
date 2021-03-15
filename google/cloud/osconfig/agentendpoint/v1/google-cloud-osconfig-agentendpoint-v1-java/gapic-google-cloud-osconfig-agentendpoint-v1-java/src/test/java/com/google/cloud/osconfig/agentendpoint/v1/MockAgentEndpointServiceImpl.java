@@ -62,7 +62,7 @@ public class MockAgentEndpointServiceImpl extends AgentEndpointServiceImplBase {
   public void receiveTaskNotification(
       ReceiveTaskNotificationRequest request,
       StreamObserver<ReceiveTaskNotificationResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ReceiveTaskNotificationResponse) {
       requests.add(request);
       responseObserver.onNext(((ReceiveTaskNotificationResponse) response));
@@ -74,7 +74,7 @@ public class MockAgentEndpointServiceImpl extends AgentEndpointServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ReceiveTaskNotification, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ReceiveTaskNotificationResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -83,7 +83,7 @@ public class MockAgentEndpointServiceImpl extends AgentEndpointServiceImplBase {
   @Override
   public void startNextTask(
       StartNextTaskRequest request, StreamObserver<StartNextTaskResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof StartNextTaskResponse) {
       requests.add(request);
       responseObserver.onNext(((StartNextTaskResponse) response));
@@ -95,7 +95,7 @@ public class MockAgentEndpointServiceImpl extends AgentEndpointServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method StartNextTask, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   StartNextTaskResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -105,7 +105,7 @@ public class MockAgentEndpointServiceImpl extends AgentEndpointServiceImplBase {
   public void reportTaskProgress(
       ReportTaskProgressRequest request,
       StreamObserver<ReportTaskProgressResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ReportTaskProgressResponse) {
       requests.add(request);
       responseObserver.onNext(((ReportTaskProgressResponse) response));
@@ -117,7 +117,7 @@ public class MockAgentEndpointServiceImpl extends AgentEndpointServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ReportTaskProgress, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ReportTaskProgressResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -127,7 +127,7 @@ public class MockAgentEndpointServiceImpl extends AgentEndpointServiceImplBase {
   public void reportTaskComplete(
       ReportTaskCompleteRequest request,
       StreamObserver<ReportTaskCompleteResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ReportTaskCompleteResponse) {
       requests.add(request);
       responseObserver.onNext(((ReportTaskCompleteResponse) response));
@@ -139,7 +139,7 @@ public class MockAgentEndpointServiceImpl extends AgentEndpointServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ReportTaskComplete, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ReportTaskCompleteResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -148,7 +148,7 @@ public class MockAgentEndpointServiceImpl extends AgentEndpointServiceImplBase {
   @Override
   public void registerAgent(
       RegisterAgentRequest request, StreamObserver<RegisterAgentResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof RegisterAgentResponse) {
       requests.add(request);
       responseObserver.onNext(((RegisterAgentResponse) response));
@@ -160,7 +160,7 @@ public class MockAgentEndpointServiceImpl extends AgentEndpointServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method RegisterAgent, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   RegisterAgentResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -169,7 +169,7 @@ public class MockAgentEndpointServiceImpl extends AgentEndpointServiceImplBase {
   @Override
   public void reportInventory(
       ReportInventoryRequest request, StreamObserver<ReportInventoryResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ReportInventoryResponse) {
       requests.add(request);
       responseObserver.onNext(((ReportInventoryResponse) response));
@@ -181,7 +181,7 @@ public class MockAgentEndpointServiceImpl extends AgentEndpointServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ReportInventory, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ReportInventoryResponse.class.getName(),
                   Exception.class.getName())));
     }

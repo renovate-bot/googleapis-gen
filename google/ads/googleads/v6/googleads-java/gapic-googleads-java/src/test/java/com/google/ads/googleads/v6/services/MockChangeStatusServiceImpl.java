@@ -62,7 +62,7 @@ public class MockChangeStatusServiceImpl extends ChangeStatusServiceImplBase {
   @Override
   public void getChangeStatus(
       GetChangeStatusRequest request, StreamObserver<ChangeStatus> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ChangeStatus) {
       requests.add(request);
       responseObserver.onNext(((ChangeStatus) response));
@@ -74,7 +74,7 @@ public class MockChangeStatusServiceImpl extends ChangeStatusServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetChangeStatus, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ChangeStatus.class.getName(),
                   Exception.class.getName())));
     }

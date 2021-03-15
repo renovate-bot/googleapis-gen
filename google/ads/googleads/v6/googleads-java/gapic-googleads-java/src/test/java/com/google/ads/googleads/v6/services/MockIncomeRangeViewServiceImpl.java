@@ -62,7 +62,7 @@ public class MockIncomeRangeViewServiceImpl extends IncomeRangeViewServiceImplBa
   @Override
   public void getIncomeRangeView(
       GetIncomeRangeViewRequest request, StreamObserver<IncomeRangeView> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof IncomeRangeView) {
       requests.add(request);
       responseObserver.onNext(((IncomeRangeView) response));
@@ -74,7 +74,7 @@ public class MockIncomeRangeViewServiceImpl extends IncomeRangeViewServiceImplBa
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetIncomeRangeView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   IncomeRangeView.class.getName(),
                   Exception.class.getName())));
     }

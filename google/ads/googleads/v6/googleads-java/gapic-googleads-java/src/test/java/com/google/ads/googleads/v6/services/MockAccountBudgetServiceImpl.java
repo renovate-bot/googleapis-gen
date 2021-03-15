@@ -62,7 +62,7 @@ public class MockAccountBudgetServiceImpl extends AccountBudgetServiceImplBase {
   @Override
   public void getAccountBudget(
       GetAccountBudgetRequest request, StreamObserver<AccountBudget> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AccountBudget) {
       requests.add(request);
       responseObserver.onNext(((AccountBudget) response));
@@ -74,7 +74,7 @@ public class MockAccountBudgetServiceImpl extends AccountBudgetServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetAccountBudget, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AccountBudget.class.getName(),
                   Exception.class.getName())));
     }

@@ -278,6 +278,14 @@ public class AIStreamsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   ListClustersRequest request =
+   *       ListClustersRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     ListClustersResponse response = aIStreamsClient.listClustersCallable().call(request);
    *     for (Cluster element : response.getResponsesList()) {
@@ -861,6 +869,14 @@ public class AIStreamsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AIStreamsClient aIStreamsClient = AIStreamsClient.create()) {
+   *   ListStreamsRequest request =
+   *       ListStreamsRequest.newBuilder()
+   *           .setParent(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     ListStreamsResponse response = aIStreamsClient.listStreamsCallable().call(request);
    *     for (Stream element : response.getResponsesList()) {

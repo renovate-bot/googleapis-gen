@@ -232,6 +232,12 @@ public class InstancesClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   ListInstancesRequest request =
+   *       ListInstancesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListInstancesResponse response = instancesClient.listInstancesCallable().call(request);
    *     for (Instance element : response.getResponsesList()) {

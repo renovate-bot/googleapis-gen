@@ -840,6 +840,13 @@ public class DatastoreAdminClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
+   *   ListIndexesRequest request =
+   *       ListIndexesRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListIndexesResponse response = datastoreAdminClient.listIndexesCallable().call(request);
    *     for (Index element : response.getResponsesList()) {

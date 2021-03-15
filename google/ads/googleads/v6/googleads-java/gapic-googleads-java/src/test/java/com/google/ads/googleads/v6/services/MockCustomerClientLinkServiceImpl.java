@@ -62,7 +62,7 @@ public class MockCustomerClientLinkServiceImpl extends CustomerClientLinkService
   @Override
   public void getCustomerClientLink(
       GetCustomerClientLinkRequest request, StreamObserver<CustomerClientLink> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CustomerClientLink) {
       requests.add(request);
       responseObserver.onNext(((CustomerClientLink) response));
@@ -74,7 +74,7 @@ public class MockCustomerClientLinkServiceImpl extends CustomerClientLinkService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetCustomerClientLink, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CustomerClientLink.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockCustomerClientLinkServiceImpl extends CustomerClientLinkService
   public void mutateCustomerClientLink(
       MutateCustomerClientLinkRequest request,
       StreamObserver<MutateCustomerClientLinkResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateCustomerClientLinkResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateCustomerClientLinkResponse) response));
@@ -96,7 +96,7 @@ public class MockCustomerClientLinkServiceImpl extends CustomerClientLinkService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateCustomerClientLink, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateCustomerClientLinkResponse.class.getName(),
                   Exception.class.getName())));
     }

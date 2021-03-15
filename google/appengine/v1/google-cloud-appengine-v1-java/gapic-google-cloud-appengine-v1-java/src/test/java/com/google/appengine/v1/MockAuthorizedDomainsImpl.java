@@ -62,7 +62,7 @@ public class MockAuthorizedDomainsImpl extends AuthorizedDomainsImplBase {
   public void listAuthorizedDomains(
       ListAuthorizedDomainsRequest request,
       StreamObserver<ListAuthorizedDomainsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListAuthorizedDomainsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListAuthorizedDomainsResponse) response));
@@ -74,7 +74,7 @@ public class MockAuthorizedDomainsImpl extends AuthorizedDomainsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListAuthorizedDomains, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListAuthorizedDomainsResponse.class.getName(),
                   Exception.class.getName())));
     }

@@ -79,7 +79,7 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
   public void listWorkloadIdentityPools(
       ListWorkloadIdentityPoolsRequest request,
       StreamObserver<ListWorkloadIdentityPoolsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListWorkloadIdentityPoolsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListWorkloadIdentityPoolsResponse) response));
@@ -91,7 +91,7 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListWorkloadIdentityPools, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListWorkloadIdentityPoolsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -101,7 +101,7 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
   public void getWorkloadIdentityPool(
       GetWorkloadIdentityPoolRequest request,
       StreamObserver<WorkloadIdentityPool> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof WorkloadIdentityPool) {
       requests.add(request);
       responseObserver.onNext(((WorkloadIdentityPool) response));
@@ -113,7 +113,7 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetWorkloadIdentityPool, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   WorkloadIdentityPool.class.getName(),
                   Exception.class.getName())));
     }
@@ -122,7 +122,7 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
   @Override
   public void createWorkloadIdentityPool(
       CreateWorkloadIdentityPoolRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -134,7 +134,7 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateWorkloadIdentityPool, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -143,7 +143,7 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
   @Override
   public void updateWorkloadIdentityPool(
       UpdateWorkloadIdentityPoolRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -155,7 +155,7 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateWorkloadIdentityPool, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -164,7 +164,7 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
   @Override
   public void deleteWorkloadIdentityPool(
       DeleteWorkloadIdentityPoolRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -176,7 +176,7 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteWorkloadIdentityPool, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -185,7 +185,7 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
   @Override
   public void undeleteWorkloadIdentityPool(
       UndeleteWorkloadIdentityPoolRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -197,7 +197,7 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UndeleteWorkloadIdentityPool, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -207,7 +207,7 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
   public void listWorkloadIdentityPoolProviders(
       ListWorkloadIdentityPoolProvidersRequest request,
       StreamObserver<ListWorkloadIdentityPoolProvidersResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListWorkloadIdentityPoolProvidersResponse) {
       requests.add(request);
       responseObserver.onNext(((ListWorkloadIdentityPoolProvidersResponse) response));
@@ -219,7 +219,7 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListWorkloadIdentityPoolProviders, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListWorkloadIdentityPoolProvidersResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -229,7 +229,7 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
   public void getWorkloadIdentityPoolProvider(
       GetWorkloadIdentityPoolProviderRequest request,
       StreamObserver<WorkloadIdentityPoolProvider> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof WorkloadIdentityPoolProvider) {
       requests.add(request);
       responseObserver.onNext(((WorkloadIdentityPoolProvider) response));
@@ -241,7 +241,7 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetWorkloadIdentityPoolProvider, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   WorkloadIdentityPoolProvider.class.getName(),
                   Exception.class.getName())));
     }
@@ -251,7 +251,7 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
   public void createWorkloadIdentityPoolProvider(
       CreateWorkloadIdentityPoolProviderRequest request,
       StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -263,7 +263,7 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateWorkloadIdentityPoolProvider, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -273,7 +273,7 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
   public void updateWorkloadIdentityPoolProvider(
       UpdateWorkloadIdentityPoolProviderRequest request,
       StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -285,7 +285,7 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateWorkloadIdentityPoolProvider, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -295,7 +295,7 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
   public void deleteWorkloadIdentityPoolProvider(
       DeleteWorkloadIdentityPoolProviderRequest request,
       StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -307,7 +307,7 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteWorkloadIdentityPoolProvider, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -317,7 +317,7 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
   public void undeleteWorkloadIdentityPoolProvider(
       UndeleteWorkloadIdentityPoolProviderRequest request,
       StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -329,7 +329,7 @@ public class MockWorkloadIdentityPoolsImpl extends WorkloadIdentityPoolsImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UndeleteWorkloadIdentityPoolProvider, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }

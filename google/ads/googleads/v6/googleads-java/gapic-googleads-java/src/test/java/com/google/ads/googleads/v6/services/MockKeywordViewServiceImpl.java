@@ -62,7 +62,7 @@ public class MockKeywordViewServiceImpl extends KeywordViewServiceImplBase {
   @Override
   public void getKeywordView(
       GetKeywordViewRequest request, StreamObserver<KeywordView> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof KeywordView) {
       requests.add(request);
       responseObserver.onNext(((KeywordView) response));
@@ -74,7 +74,7 @@ public class MockKeywordViewServiceImpl extends KeywordViewServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetKeywordView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   KeywordView.class.getName(),
                   Exception.class.getName())));
     }

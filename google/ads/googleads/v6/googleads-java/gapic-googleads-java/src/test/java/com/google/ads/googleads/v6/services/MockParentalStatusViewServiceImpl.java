@@ -62,7 +62,7 @@ public class MockParentalStatusViewServiceImpl extends ParentalStatusViewService
   @Override
   public void getParentalStatusView(
       GetParentalStatusViewRequest request, StreamObserver<ParentalStatusView> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ParentalStatusView) {
       requests.add(request);
       responseObserver.onNext(((ParentalStatusView) response));
@@ -74,7 +74,7 @@ public class MockParentalStatusViewServiceImpl extends ParentalStatusViewService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetParentalStatusView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ParentalStatusView.class.getName(),
                   Exception.class.getName())));
     }

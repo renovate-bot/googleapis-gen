@@ -223,6 +223,12 @@ public class ServicesClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ServicesClient servicesClient = ServicesClient.create()) {
+   *   ListServicesRequest request =
+   *       ListServicesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListServicesResponse response = servicesClient.listServicesCallable().call(request);
    *     for (Service element : response.getResponsesList()) {

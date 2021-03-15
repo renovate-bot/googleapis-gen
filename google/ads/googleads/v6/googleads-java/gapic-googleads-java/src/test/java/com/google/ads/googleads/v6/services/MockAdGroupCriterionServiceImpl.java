@@ -62,7 +62,7 @@ public class MockAdGroupCriterionServiceImpl extends AdGroupCriterionServiceImpl
   @Override
   public void getAdGroupCriterion(
       GetAdGroupCriterionRequest request, StreamObserver<AdGroupCriterion> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AdGroupCriterion) {
       requests.add(request);
       responseObserver.onNext(((AdGroupCriterion) response));
@@ -74,7 +74,7 @@ public class MockAdGroupCriterionServiceImpl extends AdGroupCriterionServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetAdGroupCriterion, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AdGroupCriterion.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockAdGroupCriterionServiceImpl extends AdGroupCriterionServiceImpl
   public void mutateAdGroupCriteria(
       MutateAdGroupCriteriaRequest request,
       StreamObserver<MutateAdGroupCriteriaResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateAdGroupCriteriaResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateAdGroupCriteriaResponse) response));
@@ -96,7 +96,7 @@ public class MockAdGroupCriterionServiceImpl extends AdGroupCriterionServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateAdGroupCriteria, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateAdGroupCriteriaResponse.class.getName(),
                   Exception.class.getName())));
     }

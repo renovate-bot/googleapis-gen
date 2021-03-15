@@ -62,7 +62,7 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
   @Override
   public void listServices(
       ListServicesRequest request, StreamObserver<ListServicesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListServicesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListServicesResponse) response));
@@ -74,7 +74,7 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListServices, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListServicesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -82,7 +82,7 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
 
   @Override
   public void getService(GetServiceRequest request, StreamObserver<Service> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Service) {
       requests.add(request);
       responseObserver.onNext(((Service) response));
@@ -94,7 +94,7 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetService, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Service.class.getName(),
                   Exception.class.getName())));
     }
@@ -103,7 +103,7 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
   @Override
   public void createService(
       CreateServiceRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -115,7 +115,7 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateService, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -124,7 +124,7 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
   @Override
   public void updateService(
       UpdateServiceRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -136,7 +136,7 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateService, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -145,7 +145,7 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
   @Override
   public void deleteService(
       DeleteServiceRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -157,7 +157,7 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteService, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -167,7 +167,7 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
   public void listMetadataImports(
       ListMetadataImportsRequest request,
       StreamObserver<ListMetadataImportsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListMetadataImportsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListMetadataImportsResponse) response));
@@ -179,7 +179,7 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListMetadataImports, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListMetadataImportsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -188,7 +188,7 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
   @Override
   public void getMetadataImport(
       GetMetadataImportRequest request, StreamObserver<MetadataImport> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MetadataImport) {
       requests.add(request);
       responseObserver.onNext(((MetadataImport) response));
@@ -200,7 +200,7 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetMetadataImport, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MetadataImport.class.getName(),
                   Exception.class.getName())));
     }
@@ -209,7 +209,7 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
   @Override
   public void createMetadataImport(
       CreateMetadataImportRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -221,7 +221,7 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateMetadataImport, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -230,7 +230,7 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
   @Override
   public void updateMetadataImport(
       UpdateMetadataImportRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -242,7 +242,7 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateMetadataImport, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -251,7 +251,7 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
   @Override
   public void exportMetadata(
       ExportMetadataRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -263,7 +263,7 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ExportMetadata, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -272,7 +272,7 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
   @Override
   public void restoreService(
       RestoreServiceRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -284,7 +284,7 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method RestoreService, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -293,7 +293,7 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
   @Override
   public void listBackups(
       ListBackupsRequest request, StreamObserver<ListBackupsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListBackupsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListBackupsResponse) response));
@@ -305,7 +305,7 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListBackups, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListBackupsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -313,7 +313,7 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
 
   @Override
   public void getBackup(GetBackupRequest request, StreamObserver<Backup> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Backup) {
       requests.add(request);
       responseObserver.onNext(((Backup) response));
@@ -325,7 +325,7 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetBackup, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Backup.class.getName(),
                   Exception.class.getName())));
     }
@@ -334,7 +334,7 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
   @Override
   public void createBackup(
       CreateBackupRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -346,7 +346,7 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateBackup, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -355,7 +355,7 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
   @Override
   public void deleteBackup(
       DeleteBackupRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -367,7 +367,7 @@ public class MockDataprocMetastoreImpl extends DataprocMetastoreImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteBackup, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }

@@ -62,7 +62,7 @@ public class MockBillingSetupServiceImpl extends BillingSetupServiceImplBase {
   @Override
   public void getBillingSetup(
       GetBillingSetupRequest request, StreamObserver<BillingSetup> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof BillingSetup) {
       requests.add(request);
       responseObserver.onNext(((BillingSetup) response));
@@ -74,7 +74,7 @@ public class MockBillingSetupServiceImpl extends BillingSetupServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetBillingSetup, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   BillingSetup.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockBillingSetupServiceImpl extends BillingSetupServiceImplBase {
   public void mutateBillingSetup(
       MutateBillingSetupRequest request,
       StreamObserver<MutateBillingSetupResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateBillingSetupResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateBillingSetupResponse) response));
@@ -96,7 +96,7 @@ public class MockBillingSetupServiceImpl extends BillingSetupServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateBillingSetup, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateBillingSetupResponse.class.getName(),
                   Exception.class.getName())));
     }

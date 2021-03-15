@@ -291,6 +291,13 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    *
    * <pre>{@code
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   ListOccurrencesRequest request =
+   *       ListOccurrencesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListOccurrencesResponse response =
    *         grafeasV1Beta1Client.listOccurrencesCallable().call(request);
@@ -649,6 +656,13 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    *
    * <pre>{@code
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   ListNotesRequest request =
+   *       ListNotesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListNotesResponse response = grafeasV1Beta1Client.listNotesCallable().call(request);
    *     for (Note element : response.getResponsesList()) {
@@ -923,6 +937,13 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    *
    * <pre>{@code
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
+   *   ListNoteOccurrencesRequest request =
+   *       ListNoteOccurrencesRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListNoteOccurrencesResponse response =
    *         grafeasV1Beta1Client.listNoteOccurrencesCallable().call(request);

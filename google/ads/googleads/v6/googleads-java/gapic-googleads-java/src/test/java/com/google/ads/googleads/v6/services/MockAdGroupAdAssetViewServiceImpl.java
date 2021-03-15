@@ -62,7 +62,7 @@ public class MockAdGroupAdAssetViewServiceImpl extends AdGroupAdAssetViewService
   @Override
   public void getAdGroupAdAssetView(
       GetAdGroupAdAssetViewRequest request, StreamObserver<AdGroupAdAssetView> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AdGroupAdAssetView) {
       requests.add(request);
       responseObserver.onNext(((AdGroupAdAssetView) response));
@@ -74,7 +74,7 @@ public class MockAdGroupAdAssetViewServiceImpl extends AdGroupAdAssetViewService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetAdGroupAdAssetView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AdGroupAdAssetView.class.getName(),
                   Exception.class.getName())));
     }

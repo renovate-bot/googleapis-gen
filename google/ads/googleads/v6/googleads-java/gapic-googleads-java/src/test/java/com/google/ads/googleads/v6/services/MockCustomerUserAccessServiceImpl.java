@@ -62,7 +62,7 @@ public class MockCustomerUserAccessServiceImpl extends CustomerUserAccessService
   @Override
   public void getCustomerUserAccess(
       GetCustomerUserAccessRequest request, StreamObserver<CustomerUserAccess> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CustomerUserAccess) {
       requests.add(request);
       responseObserver.onNext(((CustomerUserAccess) response));
@@ -74,7 +74,7 @@ public class MockCustomerUserAccessServiceImpl extends CustomerUserAccessService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetCustomerUserAccess, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CustomerUserAccess.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockCustomerUserAccessServiceImpl extends CustomerUserAccessService
   public void mutateCustomerUserAccess(
       MutateCustomerUserAccessRequest request,
       StreamObserver<MutateCustomerUserAccessResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateCustomerUserAccessResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateCustomerUserAccessResponse) response));
@@ -96,7 +96,7 @@ public class MockCustomerUserAccessServiceImpl extends CustomerUserAccessService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateCustomerUserAccess, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateCustomerUserAccessResponse.class.getName(),
                   Exception.class.getName())));
     }

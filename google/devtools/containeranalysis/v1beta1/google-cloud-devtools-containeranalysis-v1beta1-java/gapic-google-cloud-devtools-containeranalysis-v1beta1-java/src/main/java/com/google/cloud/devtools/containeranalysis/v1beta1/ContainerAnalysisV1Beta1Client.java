@@ -785,6 +785,13 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    * <pre>{@code
    * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client =
    *     ContainerAnalysisV1Beta1Client.create()) {
+   *   ListScanConfigsRequest request =
+   *       ListScanConfigsRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListScanConfigsResponse response =
    *         containerAnalysisV1Beta1Client.listScanConfigsCallable().call(request);

@@ -137,7 +137,7 @@ public class MockStorageImpl extends StorageImplBase {
   @Override
   public void deleteBucketAccessControl(
       DeleteBucketAccessControlRequest request, StreamObserver<Empty> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -149,7 +149,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteBucketAccessControl, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -158,7 +158,7 @@ public class MockStorageImpl extends StorageImplBase {
   @Override
   public void getBucketAccessControl(
       GetBucketAccessControlRequest request, StreamObserver<BucketAccessControl> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof BucketAccessControl) {
       requests.add(request);
       responseObserver.onNext(((BucketAccessControl) response));
@@ -170,7 +170,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetBucketAccessControl, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   BucketAccessControl.class.getName(),
                   Exception.class.getName())));
     }
@@ -180,7 +180,7 @@ public class MockStorageImpl extends StorageImplBase {
   public void insertBucketAccessControl(
       InsertBucketAccessControlRequest request,
       StreamObserver<BucketAccessControl> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof BucketAccessControl) {
       requests.add(request);
       responseObserver.onNext(((BucketAccessControl) response));
@@ -192,7 +192,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method InsertBucketAccessControl, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   BucketAccessControl.class.getName(),
                   Exception.class.getName())));
     }
@@ -202,7 +202,7 @@ public class MockStorageImpl extends StorageImplBase {
   public void listBucketAccessControls(
       ListBucketAccessControlsRequest request,
       StreamObserver<ListBucketAccessControlsResponse> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof ListBucketAccessControlsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListBucketAccessControlsResponse) response));
@@ -214,7 +214,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListBucketAccessControls, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListBucketAccessControlsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -224,7 +224,7 @@ public class MockStorageImpl extends StorageImplBase {
   public void updateBucketAccessControl(
       UpdateBucketAccessControlRequest request,
       StreamObserver<BucketAccessControl> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof BucketAccessControl) {
       requests.add(request);
       responseObserver.onNext(((BucketAccessControl) response));
@@ -236,7 +236,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateBucketAccessControl, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   BucketAccessControl.class.getName(),
                   Exception.class.getName())));
     }
@@ -246,7 +246,7 @@ public class MockStorageImpl extends StorageImplBase {
   public void patchBucketAccessControl(
       PatchBucketAccessControlRequest request,
       StreamObserver<BucketAccessControl> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof BucketAccessControl) {
       requests.add(request);
       responseObserver.onNext(((BucketAccessControl) response));
@@ -258,7 +258,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method PatchBucketAccessControl, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   BucketAccessControl.class.getName(),
                   Exception.class.getName())));
     }
@@ -266,7 +266,7 @@ public class MockStorageImpl extends StorageImplBase {
 
   @Override
   public void deleteBucket(DeleteBucketRequest request, StreamObserver<Empty> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -278,7 +278,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteBucket, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -286,7 +286,7 @@ public class MockStorageImpl extends StorageImplBase {
 
   @Override
   public void getBucket(GetBucketRequest request, StreamObserver<Bucket> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof Bucket) {
       requests.add(request);
       responseObserver.onNext(((Bucket) response));
@@ -298,7 +298,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetBucket, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Bucket.class.getName(),
                   Exception.class.getName())));
     }
@@ -306,7 +306,7 @@ public class MockStorageImpl extends StorageImplBase {
 
   @Override
   public void insertBucket(InsertBucketRequest request, StreamObserver<Bucket> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof Bucket) {
       requests.add(request);
       responseObserver.onNext(((Bucket) response));
@@ -318,7 +318,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method InsertBucket, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Bucket.class.getName(),
                   Exception.class.getName())));
     }
@@ -327,7 +327,7 @@ public class MockStorageImpl extends StorageImplBase {
   @Override
   public void listChannels(
       ListChannelsRequest request, StreamObserver<ListChannelsResponse> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof ListChannelsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListChannelsResponse) response));
@@ -339,7 +339,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListChannels, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListChannelsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -348,7 +348,7 @@ public class MockStorageImpl extends StorageImplBase {
   @Override
   public void listBuckets(
       ListBucketsRequest request, StreamObserver<ListBucketsResponse> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof ListBucketsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListBucketsResponse) response));
@@ -360,7 +360,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListBuckets, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListBucketsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -369,7 +369,7 @@ public class MockStorageImpl extends StorageImplBase {
   @Override
   public void lockBucketRetentionPolicy(
       LockRetentionPolicyRequest request, StreamObserver<Bucket> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof Bucket) {
       requests.add(request);
       responseObserver.onNext(((Bucket) response));
@@ -381,7 +381,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method LockBucketRetentionPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Bucket.class.getName(),
                   Exception.class.getName())));
     }
@@ -390,7 +390,7 @@ public class MockStorageImpl extends StorageImplBase {
   @Override
   public void getBucketIamPolicy(
       GetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof Policy) {
       requests.add(request);
       responseObserver.onNext(((Policy) response));
@@ -402,7 +402,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetBucketIamPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Policy.class.getName(),
                   Exception.class.getName())));
     }
@@ -411,7 +411,7 @@ public class MockStorageImpl extends StorageImplBase {
   @Override
   public void setBucketIamPolicy(
       SetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof Policy) {
       requests.add(request);
       responseObserver.onNext(((Policy) response));
@@ -423,7 +423,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SetBucketIamPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Policy.class.getName(),
                   Exception.class.getName())));
     }
@@ -433,7 +433,7 @@ public class MockStorageImpl extends StorageImplBase {
   public void testBucketIamPermissions(
       TestIamPermissionsRequest request,
       StreamObserver<TestIamPermissionsResponse> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof TestIamPermissionsResponse) {
       requests.add(request);
       responseObserver.onNext(((TestIamPermissionsResponse) response));
@@ -445,7 +445,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method TestBucketIamPermissions, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   TestIamPermissionsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -453,7 +453,7 @@ public class MockStorageImpl extends StorageImplBase {
 
   @Override
   public void patchBucket(PatchBucketRequest request, StreamObserver<Bucket> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof Bucket) {
       requests.add(request);
       responseObserver.onNext(((Bucket) response));
@@ -465,7 +465,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method PatchBucket, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Bucket.class.getName(),
                   Exception.class.getName())));
     }
@@ -473,7 +473,7 @@ public class MockStorageImpl extends StorageImplBase {
 
   @Override
   public void updateBucket(UpdateBucketRequest request, StreamObserver<Bucket> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof Bucket) {
       requests.add(request);
       responseObserver.onNext(((Bucket) response));
@@ -485,7 +485,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateBucket, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Bucket.class.getName(),
                   Exception.class.getName())));
     }
@@ -493,7 +493,7 @@ public class MockStorageImpl extends StorageImplBase {
 
   @Override
   public void stopChannel(StopChannelRequest request, StreamObserver<Empty> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -505,7 +505,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method StopChannel, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -514,7 +514,7 @@ public class MockStorageImpl extends StorageImplBase {
   @Override
   public void deleteDefaultObjectAccessControl(
       DeleteDefaultObjectAccessControlRequest request, StreamObserver<Empty> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -526,7 +526,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteDefaultObjectAccessControl, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -536,7 +536,7 @@ public class MockStorageImpl extends StorageImplBase {
   public void getDefaultObjectAccessControl(
       GetDefaultObjectAccessControlRequest request,
       StreamObserver<ObjectAccessControl> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof ObjectAccessControl) {
       requests.add(request);
       responseObserver.onNext(((ObjectAccessControl) response));
@@ -548,7 +548,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetDefaultObjectAccessControl, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ObjectAccessControl.class.getName(),
                   Exception.class.getName())));
     }
@@ -558,7 +558,7 @@ public class MockStorageImpl extends StorageImplBase {
   public void insertDefaultObjectAccessControl(
       InsertDefaultObjectAccessControlRequest request,
       StreamObserver<ObjectAccessControl> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof ObjectAccessControl) {
       requests.add(request);
       responseObserver.onNext(((ObjectAccessControl) response));
@@ -570,7 +570,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method InsertDefaultObjectAccessControl, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ObjectAccessControl.class.getName(),
                   Exception.class.getName())));
     }
@@ -580,7 +580,7 @@ public class MockStorageImpl extends StorageImplBase {
   public void listDefaultObjectAccessControls(
       ListDefaultObjectAccessControlsRequest request,
       StreamObserver<ListObjectAccessControlsResponse> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof ListObjectAccessControlsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListObjectAccessControlsResponse) response));
@@ -592,7 +592,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListDefaultObjectAccessControls, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListObjectAccessControlsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -602,7 +602,7 @@ public class MockStorageImpl extends StorageImplBase {
   public void patchDefaultObjectAccessControl(
       PatchDefaultObjectAccessControlRequest request,
       StreamObserver<ObjectAccessControl> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof ObjectAccessControl) {
       requests.add(request);
       responseObserver.onNext(((ObjectAccessControl) response));
@@ -614,7 +614,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method PatchDefaultObjectAccessControl, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ObjectAccessControl.class.getName(),
                   Exception.class.getName())));
     }
@@ -624,7 +624,7 @@ public class MockStorageImpl extends StorageImplBase {
   public void updateDefaultObjectAccessControl(
       UpdateDefaultObjectAccessControlRequest request,
       StreamObserver<ObjectAccessControl> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof ObjectAccessControl) {
       requests.add(request);
       responseObserver.onNext(((ObjectAccessControl) response));
@@ -636,7 +636,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateDefaultObjectAccessControl, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ObjectAccessControl.class.getName(),
                   Exception.class.getName())));
     }
@@ -645,7 +645,7 @@ public class MockStorageImpl extends StorageImplBase {
   @Override
   public void deleteNotification(
       DeleteNotificationRequest request, StreamObserver<Empty> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -657,7 +657,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteNotification, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -666,7 +666,7 @@ public class MockStorageImpl extends StorageImplBase {
   @Override
   public void getNotification(
       GetNotificationRequest request, StreamObserver<Notification> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof Notification) {
       requests.add(request);
       responseObserver.onNext(((Notification) response));
@@ -678,7 +678,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetNotification, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Notification.class.getName(),
                   Exception.class.getName())));
     }
@@ -687,7 +687,7 @@ public class MockStorageImpl extends StorageImplBase {
   @Override
   public void insertNotification(
       InsertNotificationRequest request, StreamObserver<Notification> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof Notification) {
       requests.add(request);
       responseObserver.onNext(((Notification) response));
@@ -699,7 +699,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method InsertNotification, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Notification.class.getName(),
                   Exception.class.getName())));
     }
@@ -709,7 +709,7 @@ public class MockStorageImpl extends StorageImplBase {
   public void listNotifications(
       ListNotificationsRequest request,
       StreamObserver<ListNotificationsResponse> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof ListNotificationsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListNotificationsResponse) response));
@@ -721,7 +721,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListNotifications, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListNotificationsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -730,7 +730,7 @@ public class MockStorageImpl extends StorageImplBase {
   @Override
   public void deleteObjectAccessControl(
       DeleteObjectAccessControlRequest request, StreamObserver<Empty> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -742,7 +742,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteObjectAccessControl, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -751,7 +751,7 @@ public class MockStorageImpl extends StorageImplBase {
   @Override
   public void getObjectAccessControl(
       GetObjectAccessControlRequest request, StreamObserver<ObjectAccessControl> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof ObjectAccessControl) {
       requests.add(request);
       responseObserver.onNext(((ObjectAccessControl) response));
@@ -763,7 +763,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetObjectAccessControl, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ObjectAccessControl.class.getName(),
                   Exception.class.getName())));
     }
@@ -773,7 +773,7 @@ public class MockStorageImpl extends StorageImplBase {
   public void insertObjectAccessControl(
       InsertObjectAccessControlRequest request,
       StreamObserver<ObjectAccessControl> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof ObjectAccessControl) {
       requests.add(request);
       responseObserver.onNext(((ObjectAccessControl) response));
@@ -785,7 +785,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method InsertObjectAccessControl, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ObjectAccessControl.class.getName(),
                   Exception.class.getName())));
     }
@@ -795,7 +795,7 @@ public class MockStorageImpl extends StorageImplBase {
   public void listObjectAccessControls(
       ListObjectAccessControlsRequest request,
       StreamObserver<ListObjectAccessControlsResponse> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof ListObjectAccessControlsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListObjectAccessControlsResponse) response));
@@ -807,7 +807,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListObjectAccessControls, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListObjectAccessControlsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -817,7 +817,7 @@ public class MockStorageImpl extends StorageImplBase {
   public void patchObjectAccessControl(
       PatchObjectAccessControlRequest request,
       StreamObserver<ObjectAccessControl> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof ObjectAccessControl) {
       requests.add(request);
       responseObserver.onNext(((ObjectAccessControl) response));
@@ -829,7 +829,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method PatchObjectAccessControl, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ObjectAccessControl.class.getName(),
                   Exception.class.getName())));
     }
@@ -839,7 +839,7 @@ public class MockStorageImpl extends StorageImplBase {
   public void updateObjectAccessControl(
       UpdateObjectAccessControlRequest request,
       StreamObserver<ObjectAccessControl> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof ObjectAccessControl) {
       requests.add(request);
       responseObserver.onNext(((ObjectAccessControl) response));
@@ -851,7 +851,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateObjectAccessControl, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ObjectAccessControl.class.getName(),
                   Exception.class.getName())));
     }
@@ -859,7 +859,7 @@ public class MockStorageImpl extends StorageImplBase {
 
   @Override
   public void composeObject(ComposeObjectRequest request, StreamObserver<Object> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof Object) {
       requests.add(request);
       responseObserver.onNext(((Object) response));
@@ -871,7 +871,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ComposeObject, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Object.class.getName(),
                   Exception.class.getName())));
     }
@@ -879,7 +879,7 @@ public class MockStorageImpl extends StorageImplBase {
 
   @Override
   public void copyObject(CopyObjectRequest request, StreamObserver<Object> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof Object) {
       requests.add(request);
       responseObserver.onNext(((Object) response));
@@ -891,7 +891,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CopyObject, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Object.class.getName(),
                   Exception.class.getName())));
     }
@@ -899,7 +899,7 @@ public class MockStorageImpl extends StorageImplBase {
 
   @Override
   public void deleteObject(DeleteObjectRequest request, StreamObserver<Empty> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -911,7 +911,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteObject, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -919,7 +919,7 @@ public class MockStorageImpl extends StorageImplBase {
 
   @Override
   public void getObject(GetObjectRequest request, StreamObserver<Object> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof Object) {
       requests.add(request);
       responseObserver.onNext(((Object) response));
@@ -931,7 +931,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetObject, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Object.class.getName(),
                   Exception.class.getName())));
     }
@@ -940,7 +940,7 @@ public class MockStorageImpl extends StorageImplBase {
   @Override
   public void getObjectMedia(
       GetObjectMediaRequest request, StreamObserver<GetObjectMediaResponse> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof GetObjectMediaResponse) {
       requests.add(request);
       responseObserver.onNext(((GetObjectMediaResponse) response));
@@ -952,7 +952,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetObjectMedia, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   GetObjectMediaResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -976,7 +976,7 @@ public class MockStorageImpl extends StorageImplBase {
                   new IllegalArgumentException(
                       String.format(
                           "Unrecognized response type %s for method InsertObject, expected %s or %s",
-                          response.getClass().getName(),
+                          response == null ? "null" : response.getClass().getName(),
                           Object.class.getName(),
                           Exception.class.getName())));
             }
@@ -998,7 +998,7 @@ public class MockStorageImpl extends StorageImplBase {
   @Override
   public void listObjects(
       ListObjectsRequest request, StreamObserver<ListObjectsResponse> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof ListObjectsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListObjectsResponse) response));
@@ -1010,7 +1010,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListObjects, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListObjectsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -1019,7 +1019,7 @@ public class MockStorageImpl extends StorageImplBase {
   @Override
   public void rewriteObject(
       RewriteObjectRequest request, StreamObserver<RewriteResponse> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof RewriteResponse) {
       requests.add(request);
       responseObserver.onNext(((RewriteResponse) response));
@@ -1031,7 +1031,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method RewriteObject, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   RewriteResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -1041,7 +1041,7 @@ public class MockStorageImpl extends StorageImplBase {
   public void startResumableWrite(
       StartResumableWriteRequest request,
       StreamObserver<StartResumableWriteResponse> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof StartResumableWriteResponse) {
       requests.add(request);
       responseObserver.onNext(((StartResumableWriteResponse) response));
@@ -1053,7 +1053,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method StartResumableWrite, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   StartResumableWriteResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -1062,7 +1062,7 @@ public class MockStorageImpl extends StorageImplBase {
   @Override
   public void queryWriteStatus(
       QueryWriteStatusRequest request, StreamObserver<QueryWriteStatusResponse> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof QueryWriteStatusResponse) {
       requests.add(request);
       responseObserver.onNext(((QueryWriteStatusResponse) response));
@@ -1074,7 +1074,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method QueryWriteStatus, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   QueryWriteStatusResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -1082,7 +1082,7 @@ public class MockStorageImpl extends StorageImplBase {
 
   @Override
   public void patchObject(PatchObjectRequest request, StreamObserver<Object> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof Object) {
       requests.add(request);
       responseObserver.onNext(((Object) response));
@@ -1094,7 +1094,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method PatchObject, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Object.class.getName(),
                   Exception.class.getName())));
     }
@@ -1102,7 +1102,7 @@ public class MockStorageImpl extends StorageImplBase {
 
   @Override
   public void updateObject(UpdateObjectRequest request, StreamObserver<Object> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof Object) {
       requests.add(request);
       responseObserver.onNext(((Object) response));
@@ -1114,7 +1114,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateObject, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Object.class.getName(),
                   Exception.class.getName())));
     }
@@ -1123,7 +1123,7 @@ public class MockStorageImpl extends StorageImplBase {
   @Override
   public void getObjectIamPolicy(
       GetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof Policy) {
       requests.add(request);
       responseObserver.onNext(((Policy) response));
@@ -1135,7 +1135,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetObjectIamPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Policy.class.getName(),
                   Exception.class.getName())));
     }
@@ -1144,7 +1144,7 @@ public class MockStorageImpl extends StorageImplBase {
   @Override
   public void setObjectIamPolicy(
       SetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof Policy) {
       requests.add(request);
       responseObserver.onNext(((Policy) response));
@@ -1156,7 +1156,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SetObjectIamPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Policy.class.getName(),
                   Exception.class.getName())));
     }
@@ -1166,7 +1166,7 @@ public class MockStorageImpl extends StorageImplBase {
   public void testObjectIamPermissions(
       TestIamPermissionsRequest request,
       StreamObserver<TestIamPermissionsResponse> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof TestIamPermissionsResponse) {
       requests.add(request);
       responseObserver.onNext(((TestIamPermissionsResponse) response));
@@ -1178,7 +1178,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method TestObjectIamPermissions, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   TestIamPermissionsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -1187,7 +1187,7 @@ public class MockStorageImpl extends StorageImplBase {
   @Override
   public void watchAllObjects(
       WatchAllObjectsRequest request, StreamObserver<Channel> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof Channel) {
       requests.add(request);
       responseObserver.onNext(((Channel) response));
@@ -1199,7 +1199,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method WatchAllObjects, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Channel.class.getName(),
                   Exception.class.getName())));
     }
@@ -1208,7 +1208,7 @@ public class MockStorageImpl extends StorageImplBase {
   @Override
   public void getServiceAccount(
       GetProjectServiceAccountRequest request, StreamObserver<ServiceAccount> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof ServiceAccount) {
       requests.add(request);
       responseObserver.onNext(((ServiceAccount) response));
@@ -1220,7 +1220,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetServiceAccount, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ServiceAccount.class.getName(),
                   Exception.class.getName())));
     }
@@ -1229,7 +1229,7 @@ public class MockStorageImpl extends StorageImplBase {
   @Override
   public void createHmacKey(
       CreateHmacKeyRequest request, StreamObserver<CreateHmacKeyResponse> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof CreateHmacKeyResponse) {
       requests.add(request);
       responseObserver.onNext(((CreateHmacKeyResponse) response));
@@ -1241,7 +1241,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateHmacKey, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CreateHmacKeyResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -1249,7 +1249,7 @@ public class MockStorageImpl extends StorageImplBase {
 
   @Override
   public void deleteHmacKey(DeleteHmacKeyRequest request, StreamObserver<Empty> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -1261,7 +1261,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteHmacKey, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -1270,7 +1270,7 @@ public class MockStorageImpl extends StorageImplBase {
   @Override
   public void getHmacKey(
       GetHmacKeyRequest request, StreamObserver<HmacKeyMetadata> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof HmacKeyMetadata) {
       requests.add(request);
       responseObserver.onNext(((HmacKeyMetadata) response));
@@ -1282,7 +1282,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetHmacKey, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   HmacKeyMetadata.class.getName(),
                   Exception.class.getName())));
     }
@@ -1291,7 +1291,7 @@ public class MockStorageImpl extends StorageImplBase {
   @Override
   public void listHmacKeys(
       ListHmacKeysRequest request, StreamObserver<ListHmacKeysResponse> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof ListHmacKeysResponse) {
       requests.add(request);
       responseObserver.onNext(((ListHmacKeysResponse) response));
@@ -1303,7 +1303,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListHmacKeys, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListHmacKeysResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -1312,7 +1312,7 @@ public class MockStorageImpl extends StorageImplBase {
   @Override
   public void updateHmacKey(
       UpdateHmacKeyRequest request, StreamObserver<HmacKeyMetadata> responseObserver) {
-    java.lang.Object response = responses.remove();
+    java.lang.Object response = responses.poll();
     if (response instanceof HmacKeyMetadata) {
       requests.add(request);
       responseObserver.onNext(((HmacKeyMetadata) response));
@@ -1324,7 +1324,7 @@ public class MockStorageImpl extends StorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateHmacKey, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   HmacKeyMetadata.class.getName(),
                   Exception.class.getName())));
     }

@@ -62,7 +62,7 @@ public class MockAdMobApiImpl extends AdMobApiImplBase {
   public void getPublisherAccount(
       AdMobApiProto.GetPublisherAccountRequest request,
       StreamObserver<AdMobResourcesProto.PublisherAccount> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AdMobResourcesProto.PublisherAccount) {
       requests.add(request);
       responseObserver.onNext(((AdMobResourcesProto.PublisherAccount) response));
@@ -74,7 +74,7 @@ public class MockAdMobApiImpl extends AdMobApiImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetPublisherAccount, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AdMobResourcesProto.PublisherAccount.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockAdMobApiImpl extends AdMobApiImplBase {
   public void listPublisherAccounts(
       AdMobApiProto.ListPublisherAccountsRequest request,
       StreamObserver<AdMobApiProto.ListPublisherAccountsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AdMobApiProto.ListPublisherAccountsResponse) {
       requests.add(request);
       responseObserver.onNext(((AdMobApiProto.ListPublisherAccountsResponse) response));
@@ -96,7 +96,7 @@ public class MockAdMobApiImpl extends AdMobApiImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListPublisherAccounts, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AdMobApiProto.ListPublisherAccountsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -106,7 +106,7 @@ public class MockAdMobApiImpl extends AdMobApiImplBase {
   public void generateNetworkReport(
       AdMobApiProto.GenerateNetworkReportRequest request,
       StreamObserver<AdMobApiProto.GenerateNetworkReportResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AdMobApiProto.GenerateNetworkReportResponse) {
       requests.add(request);
       responseObserver.onNext(((AdMobApiProto.GenerateNetworkReportResponse) response));
@@ -118,7 +118,7 @@ public class MockAdMobApiImpl extends AdMobApiImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GenerateNetworkReport, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AdMobApiProto.GenerateNetworkReportResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -128,7 +128,7 @@ public class MockAdMobApiImpl extends AdMobApiImplBase {
   public void generateMediationReport(
       AdMobApiProto.GenerateMediationReportRequest request,
       StreamObserver<AdMobApiProto.GenerateMediationReportResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AdMobApiProto.GenerateMediationReportResponse) {
       requests.add(request);
       responseObserver.onNext(((AdMobApiProto.GenerateMediationReportResponse) response));
@@ -140,7 +140,7 @@ public class MockAdMobApiImpl extends AdMobApiImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GenerateMediationReport, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AdMobApiProto.GenerateMediationReportResponse.class.getName(),
                   Exception.class.getName())));
     }

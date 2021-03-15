@@ -62,7 +62,7 @@ public class MockAdGroupAdLabelServiceImpl extends AdGroupAdLabelServiceImplBase
   @Override
   public void getAdGroupAdLabel(
       GetAdGroupAdLabelRequest request, StreamObserver<AdGroupAdLabel> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AdGroupAdLabel) {
       requests.add(request);
       responseObserver.onNext(((AdGroupAdLabel) response));
@@ -74,7 +74,7 @@ public class MockAdGroupAdLabelServiceImpl extends AdGroupAdLabelServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetAdGroupAdLabel, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AdGroupAdLabel.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockAdGroupAdLabelServiceImpl extends AdGroupAdLabelServiceImplBase
   public void mutateAdGroupAdLabels(
       MutateAdGroupAdLabelsRequest request,
       StreamObserver<MutateAdGroupAdLabelsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateAdGroupAdLabelsResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateAdGroupAdLabelsResponse) response));
@@ -96,7 +96,7 @@ public class MockAdGroupAdLabelServiceImpl extends AdGroupAdLabelServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateAdGroupAdLabels, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateAdGroupAdLabelsResponse.class.getName(),
                   Exception.class.getName())));
     }

@@ -64,7 +64,7 @@ public class MockThirdPartyAppAnalyticsLinkServiceImpl
   public void getThirdPartyAppAnalyticsLink(
       GetThirdPartyAppAnalyticsLinkRequest request,
       StreamObserver<ThirdPartyAppAnalyticsLink> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ThirdPartyAppAnalyticsLink) {
       requests.add(request);
       responseObserver.onNext(((ThirdPartyAppAnalyticsLink) response));
@@ -76,7 +76,7 @@ public class MockThirdPartyAppAnalyticsLinkServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetThirdPartyAppAnalyticsLink, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ThirdPartyAppAnalyticsLink.class.getName(),
                   Exception.class.getName())));
     }
@@ -86,7 +86,7 @@ public class MockThirdPartyAppAnalyticsLinkServiceImpl
   public void regenerateShareableLinkId(
       RegenerateShareableLinkIdRequest request,
       StreamObserver<RegenerateShareableLinkIdResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof RegenerateShareableLinkIdResponse) {
       requests.add(request);
       responseObserver.onNext(((RegenerateShareableLinkIdResponse) response));
@@ -98,7 +98,7 @@ public class MockThirdPartyAppAnalyticsLinkServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method RegenerateShareableLinkId, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   RegenerateShareableLinkIdResponse.class.getName(),
                   Exception.class.getName())));
     }

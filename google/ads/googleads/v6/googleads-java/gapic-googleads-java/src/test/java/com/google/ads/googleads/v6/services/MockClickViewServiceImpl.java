@@ -62,7 +62,7 @@ public class MockClickViewServiceImpl extends ClickViewServiceImplBase {
   @Override
   public void getClickView(
       GetClickViewRequest request, StreamObserver<ClickView> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ClickView) {
       requests.add(request);
       responseObserver.onNext(((ClickView) response));
@@ -74,7 +74,7 @@ public class MockClickViewServiceImpl extends ClickViewServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetClickView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ClickView.class.getName(),
                   Exception.class.getName())));
     }

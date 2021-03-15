@@ -62,7 +62,7 @@ public class MockKeywordPlanCampaignServiceImpl extends KeywordPlanCampaignServi
   @Override
   public void getKeywordPlanCampaign(
       GetKeywordPlanCampaignRequest request, StreamObserver<KeywordPlanCampaign> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof KeywordPlanCampaign) {
       requests.add(request);
       responseObserver.onNext(((KeywordPlanCampaign) response));
@@ -74,7 +74,7 @@ public class MockKeywordPlanCampaignServiceImpl extends KeywordPlanCampaignServi
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetKeywordPlanCampaign, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   KeywordPlanCampaign.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockKeywordPlanCampaignServiceImpl extends KeywordPlanCampaignServi
   public void mutateKeywordPlanCampaigns(
       MutateKeywordPlanCampaignsRequest request,
       StreamObserver<MutateKeywordPlanCampaignsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateKeywordPlanCampaignsResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateKeywordPlanCampaignsResponse) response));
@@ -96,7 +96,7 @@ public class MockKeywordPlanCampaignServiceImpl extends KeywordPlanCampaignServi
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateKeywordPlanCampaigns, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateKeywordPlanCampaignsResponse.class.getName(),
                   Exception.class.getName())));
     }

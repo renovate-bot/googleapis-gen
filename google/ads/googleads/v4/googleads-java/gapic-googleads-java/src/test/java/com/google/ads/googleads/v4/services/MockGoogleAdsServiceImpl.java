@@ -61,7 +61,7 @@ public class MockGoogleAdsServiceImpl extends GoogleAdsServiceImplBase {
   @Override
   public void search(
       SearchGoogleAdsRequest request, StreamObserver<SearchGoogleAdsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SearchGoogleAdsResponse) {
       requests.add(request);
       responseObserver.onNext(((SearchGoogleAdsResponse) response));
@@ -73,7 +73,7 @@ public class MockGoogleAdsServiceImpl extends GoogleAdsServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method Search, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SearchGoogleAdsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -83,7 +83,7 @@ public class MockGoogleAdsServiceImpl extends GoogleAdsServiceImplBase {
   public void searchStream(
       SearchGoogleAdsStreamRequest request,
       StreamObserver<SearchGoogleAdsStreamResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SearchGoogleAdsStreamResponse) {
       requests.add(request);
       responseObserver.onNext(((SearchGoogleAdsStreamResponse) response));
@@ -95,7 +95,7 @@ public class MockGoogleAdsServiceImpl extends GoogleAdsServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SearchStream, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SearchGoogleAdsStreamResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -104,7 +104,7 @@ public class MockGoogleAdsServiceImpl extends GoogleAdsServiceImplBase {
   @Override
   public void mutate(
       MutateGoogleAdsRequest request, StreamObserver<MutateGoogleAdsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateGoogleAdsResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateGoogleAdsResponse) response));
@@ -116,7 +116,7 @@ public class MockGoogleAdsServiceImpl extends GoogleAdsServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method Mutate, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateGoogleAdsResponse.class.getName(),
                   Exception.class.getName())));
     }

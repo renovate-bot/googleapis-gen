@@ -62,7 +62,7 @@ public class MockDriveActivityServiceImpl extends DriveActivityServiceImplBase {
   public void queryDriveActivity(
       QueryDriveActivityRequest request,
       StreamObserver<QueryDriveActivityResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof QueryDriveActivityResponse) {
       requests.add(request);
       responseObserver.onNext(((QueryDriveActivityResponse) response));
@@ -74,7 +74,7 @@ public class MockDriveActivityServiceImpl extends DriveActivityServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method QueryDriveActivity, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   QueryDriveActivityResponse.class.getName(),
                   Exception.class.getName())));
     }

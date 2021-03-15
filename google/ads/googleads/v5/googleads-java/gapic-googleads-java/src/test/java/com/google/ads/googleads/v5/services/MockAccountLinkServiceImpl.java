@@ -62,7 +62,7 @@ public class MockAccountLinkServiceImpl extends AccountLinkServiceImplBase {
   @Override
   public void getAccountLink(
       GetAccountLinkRequest request, StreamObserver<AccountLink> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AccountLink) {
       requests.add(request);
       responseObserver.onNext(((AccountLink) response));
@@ -74,7 +74,7 @@ public class MockAccountLinkServiceImpl extends AccountLinkServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetAccountLink, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AccountLink.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockAccountLinkServiceImpl extends AccountLinkServiceImplBase {
   public void createAccountLink(
       CreateAccountLinkRequest request,
       StreamObserver<CreateAccountLinkResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CreateAccountLinkResponse) {
       requests.add(request);
       responseObserver.onNext(((CreateAccountLinkResponse) response));
@@ -96,7 +96,7 @@ public class MockAccountLinkServiceImpl extends AccountLinkServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateAccountLink, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CreateAccountLinkResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -106,7 +106,7 @@ public class MockAccountLinkServiceImpl extends AccountLinkServiceImplBase {
   public void mutateAccountLink(
       MutateAccountLinkRequest request,
       StreamObserver<MutateAccountLinkResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateAccountLinkResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateAccountLinkResponse) response));
@@ -118,7 +118,7 @@ public class MockAccountLinkServiceImpl extends AccountLinkServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateAccountLink, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateAccountLinkResponse.class.getName(),
                   Exception.class.getName())));
     }

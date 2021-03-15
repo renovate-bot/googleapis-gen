@@ -67,7 +67,7 @@ public class MockController2Impl extends Controller2ImplBase {
   @Override
   public void registerDebuggee(
       RegisterDebuggeeRequest request, StreamObserver<RegisterDebuggeeResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof RegisterDebuggeeResponse) {
       requests.add(request);
       responseObserver.onNext(((RegisterDebuggeeResponse) response));
@@ -79,7 +79,7 @@ public class MockController2Impl extends Controller2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method RegisterDebuggee, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   RegisterDebuggeeResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -89,7 +89,7 @@ public class MockController2Impl extends Controller2ImplBase {
   public void listActiveBreakpoints(
       ListActiveBreakpointsRequest request,
       StreamObserver<ListActiveBreakpointsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListActiveBreakpointsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListActiveBreakpointsResponse) response));
@@ -101,7 +101,7 @@ public class MockController2Impl extends Controller2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListActiveBreakpoints, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListActiveBreakpointsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -111,7 +111,7 @@ public class MockController2Impl extends Controller2ImplBase {
   public void updateActiveBreakpoint(
       UpdateActiveBreakpointRequest request,
       StreamObserver<UpdateActiveBreakpointResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof UpdateActiveBreakpointResponse) {
       requests.add(request);
       responseObserver.onNext(((UpdateActiveBreakpointResponse) response));
@@ -123,7 +123,7 @@ public class MockController2Impl extends Controller2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateActiveBreakpoint, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   UpdateActiveBreakpointResponse.class.getName(),
                   Exception.class.getName())));
     }

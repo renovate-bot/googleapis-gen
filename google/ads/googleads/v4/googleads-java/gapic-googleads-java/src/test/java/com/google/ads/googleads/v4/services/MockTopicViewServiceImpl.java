@@ -62,7 +62,7 @@ public class MockTopicViewServiceImpl extends TopicViewServiceImplBase {
   @Override
   public void getTopicView(
       GetTopicViewRequest request, StreamObserver<TopicView> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof TopicView) {
       requests.add(request);
       responseObserver.onNext(((TopicView) response));
@@ -74,7 +74,7 @@ public class MockTopicViewServiceImpl extends TopicViewServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetTopicView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   TopicView.class.getName(),
                   Exception.class.getName())));
     }

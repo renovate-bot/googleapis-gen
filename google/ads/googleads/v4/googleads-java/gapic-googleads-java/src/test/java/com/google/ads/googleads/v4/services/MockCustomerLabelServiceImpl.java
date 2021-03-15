@@ -62,7 +62,7 @@ public class MockCustomerLabelServiceImpl extends CustomerLabelServiceImplBase {
   @Override
   public void getCustomerLabel(
       GetCustomerLabelRequest request, StreamObserver<CustomerLabel> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CustomerLabel) {
       requests.add(request);
       responseObserver.onNext(((CustomerLabel) response));
@@ -74,7 +74,7 @@ public class MockCustomerLabelServiceImpl extends CustomerLabelServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetCustomerLabel, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CustomerLabel.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockCustomerLabelServiceImpl extends CustomerLabelServiceImplBase {
   public void mutateCustomerLabels(
       MutateCustomerLabelsRequest request,
       StreamObserver<MutateCustomerLabelsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateCustomerLabelsResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateCustomerLabelsResponse) response));
@@ -96,7 +96,7 @@ public class MockCustomerLabelServiceImpl extends CustomerLabelServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateCustomerLabels, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateCustomerLabelsResponse.class.getName(),
                   Exception.class.getName())));
     }

@@ -61,7 +61,7 @@ public class MockRoadsServiceImpl extends RoadsServiceImplBase {
   @Override
   public void snapToRoads(
       SnapToRoadsRequest request, StreamObserver<SnapToRoadsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SnapToRoadsResponse) {
       requests.add(request);
       responseObserver.onNext(((SnapToRoadsResponse) response));
@@ -73,7 +73,7 @@ public class MockRoadsServiceImpl extends RoadsServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SnapToRoads, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SnapToRoadsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -82,7 +82,7 @@ public class MockRoadsServiceImpl extends RoadsServiceImplBase {
   @Override
   public void listNearestRoads(
       ListNearestRoadsRequest request, StreamObserver<ListNearestRoadsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListNearestRoadsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListNearestRoadsResponse) response));
@@ -94,7 +94,7 @@ public class MockRoadsServiceImpl extends RoadsServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListNearestRoads, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListNearestRoadsResponse.class.getName(),
                   Exception.class.getName())));
     }

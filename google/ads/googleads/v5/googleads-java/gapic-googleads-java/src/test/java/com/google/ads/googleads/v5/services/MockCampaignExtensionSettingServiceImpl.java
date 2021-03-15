@@ -64,7 +64,7 @@ public class MockCampaignExtensionSettingServiceImpl
   public void getCampaignExtensionSetting(
       GetCampaignExtensionSettingRequest request,
       StreamObserver<CampaignExtensionSetting> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CampaignExtensionSetting) {
       requests.add(request);
       responseObserver.onNext(((CampaignExtensionSetting) response));
@@ -76,7 +76,7 @@ public class MockCampaignExtensionSettingServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetCampaignExtensionSetting, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CampaignExtensionSetting.class.getName(),
                   Exception.class.getName())));
     }
@@ -86,7 +86,7 @@ public class MockCampaignExtensionSettingServiceImpl
   public void mutateCampaignExtensionSettings(
       MutateCampaignExtensionSettingsRequest request,
       StreamObserver<MutateCampaignExtensionSettingsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateCampaignExtensionSettingsResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateCampaignExtensionSettingsResponse) response));
@@ -98,7 +98,7 @@ public class MockCampaignExtensionSettingServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateCampaignExtensionSettings, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateCampaignExtensionSettingsResponse.class.getName(),
                   Exception.class.getName())));
     }

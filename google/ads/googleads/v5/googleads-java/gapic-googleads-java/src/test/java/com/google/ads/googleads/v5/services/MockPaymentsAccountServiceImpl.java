@@ -62,7 +62,7 @@ public class MockPaymentsAccountServiceImpl extends PaymentsAccountServiceImplBa
   public void listPaymentsAccounts(
       ListPaymentsAccountsRequest request,
       StreamObserver<ListPaymentsAccountsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListPaymentsAccountsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListPaymentsAccountsResponse) response));
@@ -74,7 +74,7 @@ public class MockPaymentsAccountServiceImpl extends PaymentsAccountServiceImplBa
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListPaymentsAccounts, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListPaymentsAccountsResponse.class.getName(),
                   Exception.class.getName())));
     }

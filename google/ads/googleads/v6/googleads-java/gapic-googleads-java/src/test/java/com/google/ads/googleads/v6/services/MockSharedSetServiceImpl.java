@@ -62,7 +62,7 @@ public class MockSharedSetServiceImpl extends SharedSetServiceImplBase {
   @Override
   public void getSharedSet(
       GetSharedSetRequest request, StreamObserver<SharedSet> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SharedSet) {
       requests.add(request);
       responseObserver.onNext(((SharedSet) response));
@@ -74,7 +74,7 @@ public class MockSharedSetServiceImpl extends SharedSetServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetSharedSet, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SharedSet.class.getName(),
                   Exception.class.getName())));
     }
@@ -83,7 +83,7 @@ public class MockSharedSetServiceImpl extends SharedSetServiceImplBase {
   @Override
   public void mutateSharedSets(
       MutateSharedSetsRequest request, StreamObserver<MutateSharedSetsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateSharedSetsResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateSharedSetsResponse) response));
@@ -95,7 +95,7 @@ public class MockSharedSetServiceImpl extends SharedSetServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateSharedSets, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateSharedSetsResponse.class.getName(),
                   Exception.class.getName())));
     }

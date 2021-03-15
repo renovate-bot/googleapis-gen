@@ -62,7 +62,7 @@ public class MockGroupPlacementViewServiceImpl extends GroupPlacementViewService
   @Override
   public void getGroupPlacementView(
       GetGroupPlacementViewRequest request, StreamObserver<GroupPlacementView> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof GroupPlacementView) {
       requests.add(request);
       responseObserver.onNext(((GroupPlacementView) response));
@@ -74,7 +74,7 @@ public class MockGroupPlacementViewServiceImpl extends GroupPlacementViewService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetGroupPlacementView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   GroupPlacementView.class.getName(),
                   Exception.class.getName())));
     }

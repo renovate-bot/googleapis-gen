@@ -62,7 +62,7 @@ public class MockPlayableLocationsImpl extends PlayableLocationsImplBase {
   public void samplePlayableLocations(
       SamplePlayableLocationsRequest request,
       StreamObserver<SamplePlayableLocationsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SamplePlayableLocationsResponse) {
       requests.add(request);
       responseObserver.onNext(((SamplePlayableLocationsResponse) response));
@@ -74,7 +74,7 @@ public class MockPlayableLocationsImpl extends PlayableLocationsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SamplePlayableLocations, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SamplePlayableLocationsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -83,7 +83,7 @@ public class MockPlayableLocationsImpl extends PlayableLocationsImplBase {
   @Override
   public void logPlayerReports(
       LogPlayerReportsRequest request, StreamObserver<LogPlayerReportsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof LogPlayerReportsResponse) {
       requests.add(request);
       responseObserver.onNext(((LogPlayerReportsResponse) response));
@@ -95,7 +95,7 @@ public class MockPlayableLocationsImpl extends PlayableLocationsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method LogPlayerReports, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   LogPlayerReportsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -104,7 +104,7 @@ public class MockPlayableLocationsImpl extends PlayableLocationsImplBase {
   @Override
   public void logImpressions(
       LogImpressionsRequest request, StreamObserver<LogImpressionsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof LogImpressionsResponse) {
       requests.add(request);
       responseObserver.onNext(((LogImpressionsResponse) response));
@@ -116,7 +116,7 @@ public class MockPlayableLocationsImpl extends PlayableLocationsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method LogImpressions, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   LogImpressionsResponse.class.getName(),
                   Exception.class.getName())));
     }

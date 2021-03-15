@@ -62,7 +62,7 @@ public class MockCustomerFeedServiceImpl extends CustomerFeedServiceImplBase {
   @Override
   public void getCustomerFeed(
       GetCustomerFeedRequest request, StreamObserver<CustomerFeed> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CustomerFeed) {
       requests.add(request);
       responseObserver.onNext(((CustomerFeed) response));
@@ -74,7 +74,7 @@ public class MockCustomerFeedServiceImpl extends CustomerFeedServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetCustomerFeed, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CustomerFeed.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockCustomerFeedServiceImpl extends CustomerFeedServiceImplBase {
   public void mutateCustomerFeeds(
       MutateCustomerFeedsRequest request,
       StreamObserver<MutateCustomerFeedsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateCustomerFeedsResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateCustomerFeedsResponse) response));
@@ -96,7 +96,7 @@ public class MockCustomerFeedServiceImpl extends CustomerFeedServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateCustomerFeeds, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateCustomerFeedsResponse.class.getName(),
                   Exception.class.getName())));
     }

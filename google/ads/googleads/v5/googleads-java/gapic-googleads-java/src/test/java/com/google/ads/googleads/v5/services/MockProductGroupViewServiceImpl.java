@@ -62,7 +62,7 @@ public class MockProductGroupViewServiceImpl extends ProductGroupViewServiceImpl
   @Override
   public void getProductGroupView(
       GetProductGroupViewRequest request, StreamObserver<ProductGroupView> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ProductGroupView) {
       requests.add(request);
       responseObserver.onNext(((ProductGroupView) response));
@@ -74,7 +74,7 @@ public class MockProductGroupViewServiceImpl extends ProductGroupViewServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetProductGroupView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ProductGroupView.class.getName(),
                   Exception.class.getName())));
     }

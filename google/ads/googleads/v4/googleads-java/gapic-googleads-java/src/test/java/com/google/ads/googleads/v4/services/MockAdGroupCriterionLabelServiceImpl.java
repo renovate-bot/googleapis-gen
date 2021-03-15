@@ -63,7 +63,7 @@ public class MockAdGroupCriterionLabelServiceImpl extends AdGroupCriterionLabelS
   public void getAdGroupCriterionLabel(
       GetAdGroupCriterionLabelRequest request,
       StreamObserver<AdGroupCriterionLabel> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AdGroupCriterionLabel) {
       requests.add(request);
       responseObserver.onNext(((AdGroupCriterionLabel) response));
@@ -75,7 +75,7 @@ public class MockAdGroupCriterionLabelServiceImpl extends AdGroupCriterionLabelS
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetAdGroupCriterionLabel, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AdGroupCriterionLabel.class.getName(),
                   Exception.class.getName())));
     }
@@ -85,7 +85,7 @@ public class MockAdGroupCriterionLabelServiceImpl extends AdGroupCriterionLabelS
   public void mutateAdGroupCriterionLabels(
       MutateAdGroupCriterionLabelsRequest request,
       StreamObserver<MutateAdGroupCriterionLabelsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateAdGroupCriterionLabelsResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateAdGroupCriterionLabelsResponse) response));
@@ -97,7 +97,7 @@ public class MockAdGroupCriterionLabelServiceImpl extends AdGroupCriterionLabelS
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateAdGroupCriterionLabels, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateAdGroupCriterionLabelsResponse.class.getName(),
                   Exception.class.getName())));
     }

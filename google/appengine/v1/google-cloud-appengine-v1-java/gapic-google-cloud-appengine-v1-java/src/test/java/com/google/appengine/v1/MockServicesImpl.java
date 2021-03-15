@@ -62,7 +62,7 @@ public class MockServicesImpl extends ServicesImplBase {
   @Override
   public void listServices(
       ListServicesRequest request, StreamObserver<ListServicesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListServicesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListServicesResponse) response));
@@ -74,7 +74,7 @@ public class MockServicesImpl extends ServicesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListServices, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListServicesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -82,7 +82,7 @@ public class MockServicesImpl extends ServicesImplBase {
 
   @Override
   public void getService(GetServiceRequest request, StreamObserver<Service> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Service) {
       requests.add(request);
       responseObserver.onNext(((Service) response));
@@ -94,7 +94,7 @@ public class MockServicesImpl extends ServicesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetService, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Service.class.getName(),
                   Exception.class.getName())));
     }
@@ -103,7 +103,7 @@ public class MockServicesImpl extends ServicesImplBase {
   @Override
   public void updateService(
       UpdateServiceRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -115,7 +115,7 @@ public class MockServicesImpl extends ServicesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateService, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -124,7 +124,7 @@ public class MockServicesImpl extends ServicesImplBase {
   @Override
   public void deleteService(
       DeleteServiceRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -136,7 +136,7 @@ public class MockServicesImpl extends ServicesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteService, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }

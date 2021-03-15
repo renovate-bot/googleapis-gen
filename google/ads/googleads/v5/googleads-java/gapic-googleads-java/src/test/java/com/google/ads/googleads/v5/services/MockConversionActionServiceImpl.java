@@ -62,7 +62,7 @@ public class MockConversionActionServiceImpl extends ConversionActionServiceImpl
   @Override
   public void getConversionAction(
       GetConversionActionRequest request, StreamObserver<ConversionAction> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ConversionAction) {
       requests.add(request);
       responseObserver.onNext(((ConversionAction) response));
@@ -74,7 +74,7 @@ public class MockConversionActionServiceImpl extends ConversionActionServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetConversionAction, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ConversionAction.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockConversionActionServiceImpl extends ConversionActionServiceImpl
   public void mutateConversionActions(
       MutateConversionActionsRequest request,
       StreamObserver<MutateConversionActionsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateConversionActionsResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateConversionActionsResponse) response));
@@ -96,7 +96,7 @@ public class MockConversionActionServiceImpl extends ConversionActionServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateConversionActions, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateConversionActionsResponse.class.getName(),
                   Exception.class.getName())));
     }

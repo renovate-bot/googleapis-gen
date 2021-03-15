@@ -62,7 +62,7 @@ public class MockExtensionFeedItemServiceImpl extends ExtensionFeedItemServiceIm
   @Override
   public void getExtensionFeedItem(
       GetExtensionFeedItemRequest request, StreamObserver<ExtensionFeedItem> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ExtensionFeedItem) {
       requests.add(request);
       responseObserver.onNext(((ExtensionFeedItem) response));
@@ -74,7 +74,7 @@ public class MockExtensionFeedItemServiceImpl extends ExtensionFeedItemServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetExtensionFeedItem, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ExtensionFeedItem.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockExtensionFeedItemServiceImpl extends ExtensionFeedItemServiceIm
   public void mutateExtensionFeedItems(
       MutateExtensionFeedItemsRequest request,
       StreamObserver<MutateExtensionFeedItemsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateExtensionFeedItemsResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateExtensionFeedItemsResponse) response));
@@ -96,7 +96,7 @@ public class MockExtensionFeedItemServiceImpl extends ExtensionFeedItemServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateExtensionFeedItems, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateExtensionFeedItemsResponse.class.getName(),
                   Exception.class.getName())));
     }

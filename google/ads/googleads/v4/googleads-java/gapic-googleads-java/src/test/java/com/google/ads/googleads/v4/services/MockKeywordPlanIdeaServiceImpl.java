@@ -62,7 +62,7 @@ public class MockKeywordPlanIdeaServiceImpl extends KeywordPlanIdeaServiceImplBa
   public void generateKeywordIdeas(
       GenerateKeywordIdeasRequest request,
       StreamObserver<GenerateKeywordIdeaResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof GenerateKeywordIdeaResponse) {
       requests.add(request);
       responseObserver.onNext(((GenerateKeywordIdeaResponse) response));
@@ -74,7 +74,7 @@ public class MockKeywordPlanIdeaServiceImpl extends KeywordPlanIdeaServiceImplBa
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GenerateKeywordIdeas, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   GenerateKeywordIdeaResponse.class.getName(),
                   Exception.class.getName())));
     }

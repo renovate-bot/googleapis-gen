@@ -266,6 +266,13 @@ public class SmartDeviceManagementServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (SmartDeviceManagementServiceClient smartDeviceManagementServiceClient =
    *     SmartDeviceManagementServiceClient.create()) {
+   *   ListDevicesRequest request =
+   *       ListDevicesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
    *   while (true) {
    *     ListDevicesResponse response =
    *         smartDeviceManagementServiceClient.listDevicesCallable().call(request);
@@ -452,6 +459,13 @@ public class SmartDeviceManagementServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (SmartDeviceManagementServiceClient smartDeviceManagementServiceClient =
    *     SmartDeviceManagementServiceClient.create()) {
+   *   ListStructuresRequest request =
+   *       ListStructuresRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
    *   while (true) {
    *     ListStructuresResponse response =
    *         smartDeviceManagementServiceClient.listStructuresCallable().call(request);
@@ -580,6 +594,12 @@ public class SmartDeviceManagementServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (SmartDeviceManagementServiceClient smartDeviceManagementServiceClient =
    *     SmartDeviceManagementServiceClient.create()) {
+   *   ListRoomsRequest request =
+   *       ListRoomsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListRoomsResponse response =
    *         smartDeviceManagementServiceClient.listRoomsCallable().call(request);

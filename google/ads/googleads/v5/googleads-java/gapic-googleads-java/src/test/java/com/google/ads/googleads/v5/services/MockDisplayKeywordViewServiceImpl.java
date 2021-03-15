@@ -62,7 +62,7 @@ public class MockDisplayKeywordViewServiceImpl extends DisplayKeywordViewService
   @Override
   public void getDisplayKeywordView(
       GetDisplayKeywordViewRequest request, StreamObserver<DisplayKeywordView> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof DisplayKeywordView) {
       requests.add(request);
       responseObserver.onNext(((DisplayKeywordView) response));
@@ -74,7 +74,7 @@ public class MockDisplayKeywordViewServiceImpl extends DisplayKeywordViewService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetDisplayKeywordView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   DisplayKeywordView.class.getName(),
                   Exception.class.getName())));
     }

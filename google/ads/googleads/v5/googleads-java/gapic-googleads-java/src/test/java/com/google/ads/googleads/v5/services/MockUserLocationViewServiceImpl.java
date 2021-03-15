@@ -62,7 +62,7 @@ public class MockUserLocationViewServiceImpl extends UserLocationViewServiceImpl
   @Override
   public void getUserLocationView(
       GetUserLocationViewRequest request, StreamObserver<UserLocationView> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof UserLocationView) {
       requests.add(request);
       responseObserver.onNext(((UserLocationView) response));
@@ -74,7 +74,7 @@ public class MockUserLocationViewServiceImpl extends UserLocationViewServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetUserLocationView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   UserLocationView.class.getName(),
                   Exception.class.getName())));
     }

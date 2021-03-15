@@ -64,7 +64,7 @@ public class MockPaidOrganicSearchTermViewServiceImpl
   public void getPaidOrganicSearchTermView(
       GetPaidOrganicSearchTermViewRequest request,
       StreamObserver<PaidOrganicSearchTermView> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof PaidOrganicSearchTermView) {
       requests.add(request);
       responseObserver.onNext(((PaidOrganicSearchTermView) response));
@@ -76,7 +76,7 @@ public class MockPaidOrganicSearchTermViewServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetPaidOrganicSearchTermView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   PaidOrganicSearchTermView.class.getName(),
                   Exception.class.getName())));
     }

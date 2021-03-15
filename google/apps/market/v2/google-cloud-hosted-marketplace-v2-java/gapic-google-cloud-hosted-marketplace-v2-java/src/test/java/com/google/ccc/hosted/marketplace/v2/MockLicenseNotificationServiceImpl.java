@@ -62,7 +62,7 @@ public class MockLicenseNotificationServiceImpl extends LicenseNotificationServi
   public void list(
       LicenseNotificationListRequest request,
       StreamObserver<LicenseNotificationList> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof LicenseNotificationList) {
       requests.add(request);
       responseObserver.onNext(((LicenseNotificationList) response));
@@ -74,7 +74,7 @@ public class MockLicenseNotificationServiceImpl extends LicenseNotificationServi
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method List, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   LicenseNotificationList.class.getName(),
                   Exception.class.getName())));
     }

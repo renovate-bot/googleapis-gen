@@ -62,7 +62,7 @@ public class MockGenderViewServiceImpl extends GenderViewServiceImplBase {
   @Override
   public void getGenderView(
       GetGenderViewRequest request, StreamObserver<GenderView> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof GenderView) {
       requests.add(request);
       responseObserver.onNext(((GenderView) response));
@@ -74,7 +74,7 @@ public class MockGenderViewServiceImpl extends GenderViewServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetGenderView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   GenderView.class.getName(),
                   Exception.class.getName())));
     }

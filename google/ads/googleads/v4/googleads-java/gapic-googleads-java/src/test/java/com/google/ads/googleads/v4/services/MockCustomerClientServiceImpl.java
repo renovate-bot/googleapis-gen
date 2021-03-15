@@ -62,7 +62,7 @@ public class MockCustomerClientServiceImpl extends CustomerClientServiceImplBase
   @Override
   public void getCustomerClient(
       GetCustomerClientRequest request, StreamObserver<CustomerClient> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CustomerClient) {
       requests.add(request);
       responseObserver.onNext(((CustomerClient) response));
@@ -74,7 +74,7 @@ public class MockCustomerClientServiceImpl extends CustomerClientServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetCustomerClient, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CustomerClient.class.getName(),
                   Exception.class.getName())));
     }

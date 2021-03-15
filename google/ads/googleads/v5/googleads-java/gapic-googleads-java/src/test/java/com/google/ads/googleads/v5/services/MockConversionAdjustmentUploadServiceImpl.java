@@ -63,7 +63,7 @@ public class MockConversionAdjustmentUploadServiceImpl
   public void uploadConversionAdjustments(
       UploadConversionAdjustmentsRequest request,
       StreamObserver<UploadConversionAdjustmentsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof UploadConversionAdjustmentsResponse) {
       requests.add(request);
       responseObserver.onNext(((UploadConversionAdjustmentsResponse) response));
@@ -75,7 +75,7 @@ public class MockConversionAdjustmentUploadServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UploadConversionAdjustments, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   UploadConversionAdjustmentsResponse.class.getName(),
                   Exception.class.getName())));
     }

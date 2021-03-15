@@ -304,6 +304,14 @@ public class DataprocMetastoreClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   ListServicesRequest request =
+   *       ListServicesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     ListServicesResponse response =
    *         dataprocMetastoreClient.listServicesCallable().call(request);
@@ -926,6 +934,14 @@ public class DataprocMetastoreClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   ListMetadataImportsRequest request =
+   *       ListMetadataImportsRequest.newBuilder()
+   *           .setParent(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     ListMetadataImportsResponse response =
    *         dataprocMetastoreClient.listMetadataImportsCallable().call(request);
@@ -1727,6 +1743,14 @@ public class DataprocMetastoreClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   ListBackupsRequest request =
+   *       ListBackupsRequest.newBuilder()
+   *           .setParent(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     ListBackupsResponse response = dataprocMetastoreClient.listBackupsCallable().call(request);
    *     for (Backup element : response.getResponsesList()) {

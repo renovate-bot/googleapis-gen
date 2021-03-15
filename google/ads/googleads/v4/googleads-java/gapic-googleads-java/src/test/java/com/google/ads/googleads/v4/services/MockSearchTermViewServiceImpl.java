@@ -62,7 +62,7 @@ public class MockSearchTermViewServiceImpl extends SearchTermViewServiceImplBase
   @Override
   public void getSearchTermView(
       GetSearchTermViewRequest request, StreamObserver<SearchTermView> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SearchTermView) {
       requests.add(request);
       responseObserver.onNext(((SearchTermView) response));
@@ -74,7 +74,7 @@ public class MockSearchTermViewServiceImpl extends SearchTermViewServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetSearchTermView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SearchTermView.class.getName(),
                   Exception.class.getName())));
     }

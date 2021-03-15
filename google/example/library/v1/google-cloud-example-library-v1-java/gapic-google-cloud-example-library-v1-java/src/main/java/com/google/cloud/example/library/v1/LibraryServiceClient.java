@@ -382,6 +382,11 @@ public class LibraryServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (LibraryServiceClient libraryServiceClient = LibraryServiceClient.create()) {
+   *   ListShelvesRequest request =
+   *       ListShelvesRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListShelvesResponse response = libraryServiceClient.listShelvesCallable().call(request);
    *     for (Shelf element : response.getResponsesList()) {
@@ -967,6 +972,12 @@ public class LibraryServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (LibraryServiceClient libraryServiceClient = LibraryServiceClient.create()) {
+   *   ListBooksRequest request =
+   *       ListBooksRequest.newBuilder()
+   *           .setParent(ShelfName.of("[SHELF_ID]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListBooksResponse response = libraryServiceClient.listBooksCallable().call(request);
    *     for (Book element : response.getResponsesList()) {

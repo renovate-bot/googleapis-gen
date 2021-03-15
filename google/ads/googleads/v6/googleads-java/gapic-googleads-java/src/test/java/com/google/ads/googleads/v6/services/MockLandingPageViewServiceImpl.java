@@ -62,7 +62,7 @@ public class MockLandingPageViewServiceImpl extends LandingPageViewServiceImplBa
   @Override
   public void getLandingPageView(
       GetLandingPageViewRequest request, StreamObserver<LandingPageView> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof LandingPageView) {
       requests.add(request);
       responseObserver.onNext(((LandingPageView) response));
@@ -74,7 +74,7 @@ public class MockLandingPageViewServiceImpl extends LandingPageViewServiceImplBa
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetLandingPageView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   LandingPageView.class.getName(),
                   Exception.class.getName())));
     }

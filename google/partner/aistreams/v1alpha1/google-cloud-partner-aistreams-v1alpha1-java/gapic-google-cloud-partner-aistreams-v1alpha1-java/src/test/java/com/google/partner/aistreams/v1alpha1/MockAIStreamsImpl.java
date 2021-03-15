@@ -62,7 +62,7 @@ public class MockAIStreamsImpl extends AIStreamsImplBase {
   @Override
   public void listClusters(
       ListClustersRequest request, StreamObserver<ListClustersResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListClustersResponse) {
       requests.add(request);
       responseObserver.onNext(((ListClustersResponse) response));
@@ -74,7 +74,7 @@ public class MockAIStreamsImpl extends AIStreamsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListClusters, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListClustersResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -82,7 +82,7 @@ public class MockAIStreamsImpl extends AIStreamsImplBase {
 
   @Override
   public void getCluster(GetClusterRequest request, StreamObserver<Cluster> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Cluster) {
       requests.add(request);
       responseObserver.onNext(((Cluster) response));
@@ -94,7 +94,7 @@ public class MockAIStreamsImpl extends AIStreamsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetCluster, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Cluster.class.getName(),
                   Exception.class.getName())));
     }
@@ -103,7 +103,7 @@ public class MockAIStreamsImpl extends AIStreamsImplBase {
   @Override
   public void createCluster(
       CreateClusterRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -115,7 +115,7 @@ public class MockAIStreamsImpl extends AIStreamsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateCluster, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -124,7 +124,7 @@ public class MockAIStreamsImpl extends AIStreamsImplBase {
   @Override
   public void updateCluster(
       UpdateClusterRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -136,7 +136,7 @@ public class MockAIStreamsImpl extends AIStreamsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateCluster, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -145,7 +145,7 @@ public class MockAIStreamsImpl extends AIStreamsImplBase {
   @Override
   public void deleteCluster(
       DeleteClusterRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -157,7 +157,7 @@ public class MockAIStreamsImpl extends AIStreamsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteCluster, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -166,7 +166,7 @@ public class MockAIStreamsImpl extends AIStreamsImplBase {
   @Override
   public void listStreams(
       ListStreamsRequest request, StreamObserver<ListStreamsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListStreamsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListStreamsResponse) response));
@@ -178,7 +178,7 @@ public class MockAIStreamsImpl extends AIStreamsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListStreams, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListStreamsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -186,7 +186,7 @@ public class MockAIStreamsImpl extends AIStreamsImplBase {
 
   @Override
   public void getStream(GetStreamRequest request, StreamObserver<Stream> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Stream) {
       requests.add(request);
       responseObserver.onNext(((Stream) response));
@@ -198,7 +198,7 @@ public class MockAIStreamsImpl extends AIStreamsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetStream, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Stream.class.getName(),
                   Exception.class.getName())));
     }
@@ -207,7 +207,7 @@ public class MockAIStreamsImpl extends AIStreamsImplBase {
   @Override
   public void createStream(
       CreateStreamRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -219,7 +219,7 @@ public class MockAIStreamsImpl extends AIStreamsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateStream, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -228,7 +228,7 @@ public class MockAIStreamsImpl extends AIStreamsImplBase {
   @Override
   public void updateStream(
       UpdateStreamRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -240,7 +240,7 @@ public class MockAIStreamsImpl extends AIStreamsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateStream, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -249,7 +249,7 @@ public class MockAIStreamsImpl extends AIStreamsImplBase {
   @Override
   public void deleteStream(
       DeleteStreamRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -261,7 +261,7 @@ public class MockAIStreamsImpl extends AIStreamsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteStream, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }

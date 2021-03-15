@@ -62,7 +62,7 @@ public class MockUserInterestServiceImpl extends UserInterestServiceImplBase {
   @Override
   public void getUserInterest(
       GetUserInterestRequest request, StreamObserver<UserInterest> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof UserInterest) {
       requests.add(request);
       responseObserver.onNext(((UserInterest) response));
@@ -74,7 +74,7 @@ public class MockUserInterestServiceImpl extends UserInterestServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetUserInterest, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   UserInterest.class.getName(),
                   Exception.class.getName())));
     }

@@ -61,7 +61,7 @@ public class MockAutoSuggestionServiceImpl extends AutoSuggestionServiceImplBase
   @Override
   public void suggestQueries(
       SuggestQueriesRequest request, StreamObserver<SuggestQueriesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SuggestQueriesResponse) {
       requests.add(request);
       responseObserver.onNext(((SuggestQueriesResponse) response));
@@ -73,7 +73,7 @@ public class MockAutoSuggestionServiceImpl extends AutoSuggestionServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SuggestQueries, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SuggestQueriesResponse.class.getName(),
                   Exception.class.getName())));
     }

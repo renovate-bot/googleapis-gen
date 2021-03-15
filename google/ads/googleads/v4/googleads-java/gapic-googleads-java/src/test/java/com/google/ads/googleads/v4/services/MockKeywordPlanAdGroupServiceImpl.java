@@ -62,7 +62,7 @@ public class MockKeywordPlanAdGroupServiceImpl extends KeywordPlanAdGroupService
   @Override
   public void getKeywordPlanAdGroup(
       GetKeywordPlanAdGroupRequest request, StreamObserver<KeywordPlanAdGroup> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof KeywordPlanAdGroup) {
       requests.add(request);
       responseObserver.onNext(((KeywordPlanAdGroup) response));
@@ -74,7 +74,7 @@ public class MockKeywordPlanAdGroupServiceImpl extends KeywordPlanAdGroupService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetKeywordPlanAdGroup, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   KeywordPlanAdGroup.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockKeywordPlanAdGroupServiceImpl extends KeywordPlanAdGroupService
   public void mutateKeywordPlanAdGroups(
       MutateKeywordPlanAdGroupsRequest request,
       StreamObserver<MutateKeywordPlanAdGroupsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateKeywordPlanAdGroupsResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateKeywordPlanAdGroupsResponse) response));
@@ -96,7 +96,7 @@ public class MockKeywordPlanAdGroupServiceImpl extends KeywordPlanAdGroupService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateKeywordPlanAdGroups, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateKeywordPlanAdGroupsResponse.class.getName(),
                   Exception.class.getName())));
     }

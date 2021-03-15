@@ -65,7 +65,7 @@ public class MockRoutesPreferredImpl extends RoutesPreferredImplBase {
   @Override
   public void computeRoutes(
       ComputeRoutesRequest request, StreamObserver<ComputeRoutesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ComputeRoutesResponse) {
       requests.add(request);
       responseObserver.onNext(((ComputeRoutesResponse) response));
@@ -77,7 +77,7 @@ public class MockRoutesPreferredImpl extends RoutesPreferredImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ComputeRoutes, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ComputeRoutesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -86,7 +86,7 @@ public class MockRoutesPreferredImpl extends RoutesPreferredImplBase {
   @Override
   public void computeRouteMatrix(
       ComputeRouteMatrixRequest request, StreamObserver<RouteMatrixElement> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof RouteMatrixElement) {
       requests.add(request);
       responseObserver.onNext(((RouteMatrixElement) response));
@@ -98,7 +98,7 @@ public class MockRoutesPreferredImpl extends RoutesPreferredImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ComputeRouteMatrix, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   RouteMatrixElement.class.getName(),
                   Exception.class.getName())));
     }

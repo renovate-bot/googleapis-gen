@@ -225,6 +225,12 @@ public class AuthorizedDomainsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AuthorizedDomainsClient authorizedDomainsClient = AuthorizedDomainsClient.create()) {
+   *   ListAuthorizedDomainsRequest request =
+   *       ListAuthorizedDomainsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListAuthorizedDomainsResponse response =
    *         authorizedDomainsClient.listAuthorizedDomainsCallable().call(request);

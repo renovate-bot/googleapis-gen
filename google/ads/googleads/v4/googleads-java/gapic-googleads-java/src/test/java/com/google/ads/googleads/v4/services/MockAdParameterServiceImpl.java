@@ -62,7 +62,7 @@ public class MockAdParameterServiceImpl extends AdParameterServiceImplBase {
   @Override
   public void getAdParameter(
       GetAdParameterRequest request, StreamObserver<AdParameter> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AdParameter) {
       requests.add(request);
       responseObserver.onNext(((AdParameter) response));
@@ -74,7 +74,7 @@ public class MockAdParameterServiceImpl extends AdParameterServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetAdParameter, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AdParameter.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockAdParameterServiceImpl extends AdParameterServiceImplBase {
   public void mutateAdParameters(
       MutateAdParametersRequest request,
       StreamObserver<MutateAdParametersResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateAdParametersResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateAdParametersResponse) response));
@@ -96,7 +96,7 @@ public class MockAdParameterServiceImpl extends AdParameterServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateAdParameters, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateAdParametersResponse.class.getName(),
                   Exception.class.getName())));
     }

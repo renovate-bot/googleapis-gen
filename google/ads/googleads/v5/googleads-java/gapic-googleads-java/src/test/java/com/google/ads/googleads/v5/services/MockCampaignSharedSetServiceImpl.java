@@ -62,7 +62,7 @@ public class MockCampaignSharedSetServiceImpl extends CampaignSharedSetServiceIm
   @Override
   public void getCampaignSharedSet(
       GetCampaignSharedSetRequest request, StreamObserver<CampaignSharedSet> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CampaignSharedSet) {
       requests.add(request);
       responseObserver.onNext(((CampaignSharedSet) response));
@@ -74,7 +74,7 @@ public class MockCampaignSharedSetServiceImpl extends CampaignSharedSetServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetCampaignSharedSet, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CampaignSharedSet.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockCampaignSharedSetServiceImpl extends CampaignSharedSetServiceIm
   public void mutateCampaignSharedSets(
       MutateCampaignSharedSetsRequest request,
       StreamObserver<MutateCampaignSharedSetsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateCampaignSharedSetsResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateCampaignSharedSetsResponse) response));
@@ -96,7 +96,7 @@ public class MockCampaignSharedSetServiceImpl extends CampaignSharedSetServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateCampaignSharedSets, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateCampaignSharedSetsResponse.class.getName(),
                   Exception.class.getName())));
     }

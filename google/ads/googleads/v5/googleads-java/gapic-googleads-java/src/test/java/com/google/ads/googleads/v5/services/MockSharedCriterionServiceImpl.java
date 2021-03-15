@@ -62,7 +62,7 @@ public class MockSharedCriterionServiceImpl extends SharedCriterionServiceImplBa
   @Override
   public void getSharedCriterion(
       GetSharedCriterionRequest request, StreamObserver<SharedCriterion> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SharedCriterion) {
       requests.add(request);
       responseObserver.onNext(((SharedCriterion) response));
@@ -74,7 +74,7 @@ public class MockSharedCriterionServiceImpl extends SharedCriterionServiceImplBa
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetSharedCriterion, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SharedCriterion.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockSharedCriterionServiceImpl extends SharedCriterionServiceImplBa
   public void mutateSharedCriteria(
       MutateSharedCriteriaRequest request,
       StreamObserver<MutateSharedCriteriaResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateSharedCriteriaResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateSharedCriteriaResponse) response));
@@ -96,7 +96,7 @@ public class MockSharedCriterionServiceImpl extends SharedCriterionServiceImplBa
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateSharedCriteria, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateSharedCriteriaResponse.class.getName(),
                   Exception.class.getName())));
     }

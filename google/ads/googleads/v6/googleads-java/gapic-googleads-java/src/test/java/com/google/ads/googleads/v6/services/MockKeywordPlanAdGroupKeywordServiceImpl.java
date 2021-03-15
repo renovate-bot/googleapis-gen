@@ -64,7 +64,7 @@ public class MockKeywordPlanAdGroupKeywordServiceImpl
   public void getKeywordPlanAdGroupKeyword(
       GetKeywordPlanAdGroupKeywordRequest request,
       StreamObserver<KeywordPlanAdGroupKeyword> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof KeywordPlanAdGroupKeyword) {
       requests.add(request);
       responseObserver.onNext(((KeywordPlanAdGroupKeyword) response));
@@ -76,7 +76,7 @@ public class MockKeywordPlanAdGroupKeywordServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetKeywordPlanAdGroupKeyword, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   KeywordPlanAdGroupKeyword.class.getName(),
                   Exception.class.getName())));
     }
@@ -86,7 +86,7 @@ public class MockKeywordPlanAdGroupKeywordServiceImpl
   public void mutateKeywordPlanAdGroupKeywords(
       MutateKeywordPlanAdGroupKeywordsRequest request,
       StreamObserver<MutateKeywordPlanAdGroupKeywordsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateKeywordPlanAdGroupKeywordsResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateKeywordPlanAdGroupKeywordsResponse) response));
@@ -98,7 +98,7 @@ public class MockKeywordPlanAdGroupKeywordServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateKeywordPlanAdGroupKeywords, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateKeywordPlanAdGroupKeywordsResponse.class.getName(),
                   Exception.class.getName())));
     }

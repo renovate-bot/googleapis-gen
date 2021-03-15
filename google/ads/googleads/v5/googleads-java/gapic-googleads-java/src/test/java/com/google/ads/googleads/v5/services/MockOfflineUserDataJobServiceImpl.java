@@ -64,7 +64,7 @@ public class MockOfflineUserDataJobServiceImpl extends OfflineUserDataJobService
   public void createOfflineUserDataJob(
       CreateOfflineUserDataJobRequest request,
       StreamObserver<CreateOfflineUserDataJobResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CreateOfflineUserDataJobResponse) {
       requests.add(request);
       responseObserver.onNext(((CreateOfflineUserDataJobResponse) response));
@@ -76,7 +76,7 @@ public class MockOfflineUserDataJobServiceImpl extends OfflineUserDataJobService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateOfflineUserDataJob, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CreateOfflineUserDataJobResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -85,7 +85,7 @@ public class MockOfflineUserDataJobServiceImpl extends OfflineUserDataJobService
   @Override
   public void getOfflineUserDataJob(
       GetOfflineUserDataJobRequest request, StreamObserver<OfflineUserDataJob> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof OfflineUserDataJob) {
       requests.add(request);
       responseObserver.onNext(((OfflineUserDataJob) response));
@@ -97,7 +97,7 @@ public class MockOfflineUserDataJobServiceImpl extends OfflineUserDataJobService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetOfflineUserDataJob, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   OfflineUserDataJob.class.getName(),
                   Exception.class.getName())));
     }
@@ -107,7 +107,7 @@ public class MockOfflineUserDataJobServiceImpl extends OfflineUserDataJobService
   public void addOfflineUserDataJobOperations(
       AddOfflineUserDataJobOperationsRequest request,
       StreamObserver<AddOfflineUserDataJobOperationsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AddOfflineUserDataJobOperationsResponse) {
       requests.add(request);
       responseObserver.onNext(((AddOfflineUserDataJobOperationsResponse) response));
@@ -119,7 +119,7 @@ public class MockOfflineUserDataJobServiceImpl extends OfflineUserDataJobService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method AddOfflineUserDataJobOperations, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AddOfflineUserDataJobOperationsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -128,7 +128,7 @@ public class MockOfflineUserDataJobServiceImpl extends OfflineUserDataJobService
   @Override
   public void runOfflineUserDataJob(
       RunOfflineUserDataJobRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -140,7 +140,7 @@ public class MockOfflineUserDataJobServiceImpl extends OfflineUserDataJobService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method RunOfflineUserDataJob, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }

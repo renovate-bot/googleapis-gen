@@ -62,7 +62,7 @@ public class MockLanguageConstantServiceImpl extends LanguageConstantServiceImpl
   @Override
   public void getLanguageConstant(
       GetLanguageConstantRequest request, StreamObserver<LanguageConstant> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof LanguageConstant) {
       requests.add(request);
       responseObserver.onNext(((LanguageConstant) response));
@@ -74,7 +74,7 @@ public class MockLanguageConstantServiceImpl extends LanguageConstantServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetLanguageConstant, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   LanguageConstant.class.getName(),
                   Exception.class.getName())));
     }

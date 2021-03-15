@@ -62,7 +62,7 @@ public class MockBiddingStrategyServiceImpl extends BiddingStrategyServiceImplBa
   @Override
   public void getBiddingStrategy(
       GetBiddingStrategyRequest request, StreamObserver<BiddingStrategy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof BiddingStrategy) {
       requests.add(request);
       responseObserver.onNext(((BiddingStrategy) response));
@@ -74,7 +74,7 @@ public class MockBiddingStrategyServiceImpl extends BiddingStrategyServiceImplBa
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetBiddingStrategy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   BiddingStrategy.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockBiddingStrategyServiceImpl extends BiddingStrategyServiceImplBa
   public void mutateBiddingStrategies(
       MutateBiddingStrategiesRequest request,
       StreamObserver<MutateBiddingStrategiesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateBiddingStrategiesResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateBiddingStrategiesResponse) response));
@@ -96,7 +96,7 @@ public class MockBiddingStrategyServiceImpl extends BiddingStrategyServiceImplBa
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateBiddingStrategies, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateBiddingStrategiesResponse.class.getName(),
                   Exception.class.getName())));
     }

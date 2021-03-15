@@ -63,7 +63,7 @@ public class MockMobileDeviceConstantServiceImpl extends MobileDeviceConstantSer
   public void getMobileDeviceConstant(
       GetMobileDeviceConstantRequest request,
       StreamObserver<MobileDeviceConstant> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MobileDeviceConstant) {
       requests.add(request);
       responseObserver.onNext(((MobileDeviceConstant) response));
@@ -75,7 +75,7 @@ public class MockMobileDeviceConstantServiceImpl extends MobileDeviceConstantSer
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetMobileDeviceConstant, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MobileDeviceConstant.class.getName(),
                   Exception.class.getName())));
     }

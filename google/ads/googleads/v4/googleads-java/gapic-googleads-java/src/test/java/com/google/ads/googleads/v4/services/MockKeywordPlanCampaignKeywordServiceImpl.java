@@ -64,7 +64,7 @@ public class MockKeywordPlanCampaignKeywordServiceImpl
   public void getKeywordPlanCampaignKeyword(
       GetKeywordPlanCampaignKeywordRequest request,
       StreamObserver<KeywordPlanCampaignKeyword> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof KeywordPlanCampaignKeyword) {
       requests.add(request);
       responseObserver.onNext(((KeywordPlanCampaignKeyword) response));
@@ -76,7 +76,7 @@ public class MockKeywordPlanCampaignKeywordServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetKeywordPlanCampaignKeyword, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   KeywordPlanCampaignKeyword.class.getName(),
                   Exception.class.getName())));
     }
@@ -86,7 +86,7 @@ public class MockKeywordPlanCampaignKeywordServiceImpl
   public void mutateKeywordPlanCampaignKeywords(
       MutateKeywordPlanCampaignKeywordsRequest request,
       StreamObserver<MutateKeywordPlanCampaignKeywordsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateKeywordPlanCampaignKeywordsResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateKeywordPlanCampaignKeywordsResponse) response));
@@ -98,7 +98,7 @@ public class MockKeywordPlanCampaignKeywordServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateKeywordPlanCampaignKeywords, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateKeywordPlanCampaignKeywordsResponse.class.getName(),
                   Exception.class.getName())));
     }

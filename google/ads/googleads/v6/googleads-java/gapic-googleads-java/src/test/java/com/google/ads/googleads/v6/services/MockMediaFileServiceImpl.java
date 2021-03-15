@@ -62,7 +62,7 @@ public class MockMediaFileServiceImpl extends MediaFileServiceImplBase {
   @Override
   public void getMediaFile(
       GetMediaFileRequest request, StreamObserver<MediaFile> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MediaFile) {
       requests.add(request);
       responseObserver.onNext(((MediaFile) response));
@@ -74,7 +74,7 @@ public class MockMediaFileServiceImpl extends MediaFileServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetMediaFile, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MediaFile.class.getName(),
                   Exception.class.getName())));
     }
@@ -83,7 +83,7 @@ public class MockMediaFileServiceImpl extends MediaFileServiceImplBase {
   @Override
   public void mutateMediaFiles(
       MutateMediaFilesRequest request, StreamObserver<MutateMediaFilesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateMediaFilesResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateMediaFilesResponse) response));
@@ -95,7 +95,7 @@ public class MockMediaFileServiceImpl extends MediaFileServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateMediaFiles, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateMediaFilesResponse.class.getName(),
                   Exception.class.getName())));
     }

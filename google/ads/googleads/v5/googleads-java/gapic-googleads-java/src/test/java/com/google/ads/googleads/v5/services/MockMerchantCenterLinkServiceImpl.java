@@ -63,7 +63,7 @@ public class MockMerchantCenterLinkServiceImpl extends MerchantCenterLinkService
   public void listMerchantCenterLinks(
       ListMerchantCenterLinksRequest request,
       StreamObserver<ListMerchantCenterLinksResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListMerchantCenterLinksResponse) {
       requests.add(request);
       responseObserver.onNext(((ListMerchantCenterLinksResponse) response));
@@ -75,7 +75,7 @@ public class MockMerchantCenterLinkServiceImpl extends MerchantCenterLinkService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListMerchantCenterLinks, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListMerchantCenterLinksResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockMerchantCenterLinkServiceImpl extends MerchantCenterLinkService
   @Override
   public void getMerchantCenterLink(
       GetMerchantCenterLinkRequest request, StreamObserver<MerchantCenterLink> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MerchantCenterLink) {
       requests.add(request);
       responseObserver.onNext(((MerchantCenterLink) response));
@@ -96,7 +96,7 @@ public class MockMerchantCenterLinkServiceImpl extends MerchantCenterLinkService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetMerchantCenterLink, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MerchantCenterLink.class.getName(),
                   Exception.class.getName())));
     }
@@ -106,7 +106,7 @@ public class MockMerchantCenterLinkServiceImpl extends MerchantCenterLinkService
   public void mutateMerchantCenterLink(
       MutateMerchantCenterLinkRequest request,
       StreamObserver<MutateMerchantCenterLinkResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateMerchantCenterLinkResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateMerchantCenterLinkResponse) response));
@@ -118,7 +118,7 @@ public class MockMerchantCenterLinkServiceImpl extends MerchantCenterLinkService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateMerchantCenterLink, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateMerchantCenterLinkResponse.class.getName(),
                   Exception.class.getName())));
     }

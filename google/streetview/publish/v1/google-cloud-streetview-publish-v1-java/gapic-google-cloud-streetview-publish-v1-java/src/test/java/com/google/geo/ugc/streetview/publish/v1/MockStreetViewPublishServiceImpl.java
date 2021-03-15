@@ -62,7 +62,7 @@ public class MockStreetViewPublishServiceImpl extends StreetViewPublishServiceIm
   @Override
   public void startUpload(
       Empty request, StreamObserver<StreetViewPublishResources.UploadRef> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof StreetViewPublishResources.UploadRef) {
       requests.add(request);
       responseObserver.onNext(((StreetViewPublishResources.UploadRef) response));
@@ -74,7 +74,7 @@ public class MockStreetViewPublishServiceImpl extends StreetViewPublishServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method StartUpload, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   StreetViewPublishResources.UploadRef.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockStreetViewPublishServiceImpl extends StreetViewPublishServiceIm
   public void createPhoto(
       StreetViewPublishRpcMessages.CreatePhotoRequest request,
       StreamObserver<StreetViewPublishResources.Photo> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof StreetViewPublishResources.Photo) {
       requests.add(request);
       responseObserver.onNext(((StreetViewPublishResources.Photo) response));
@@ -96,7 +96,7 @@ public class MockStreetViewPublishServiceImpl extends StreetViewPublishServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreatePhoto, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   StreetViewPublishResources.Photo.class.getName(),
                   Exception.class.getName())));
     }
@@ -106,7 +106,7 @@ public class MockStreetViewPublishServiceImpl extends StreetViewPublishServiceIm
   public void getPhoto(
       StreetViewPublishRpcMessages.GetPhotoRequest request,
       StreamObserver<StreetViewPublishResources.Photo> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof StreetViewPublishResources.Photo) {
       requests.add(request);
       responseObserver.onNext(((StreetViewPublishResources.Photo) response));
@@ -118,7 +118,7 @@ public class MockStreetViewPublishServiceImpl extends StreetViewPublishServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetPhoto, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   StreetViewPublishResources.Photo.class.getName(),
                   Exception.class.getName())));
     }
@@ -128,7 +128,7 @@ public class MockStreetViewPublishServiceImpl extends StreetViewPublishServiceIm
   public void batchGetPhotos(
       StreetViewPublishRpcMessages.BatchGetPhotosRequest request,
       StreamObserver<StreetViewPublishRpcMessages.BatchGetPhotosResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof StreetViewPublishRpcMessages.BatchGetPhotosResponse) {
       requests.add(request);
       responseObserver.onNext(((StreetViewPublishRpcMessages.BatchGetPhotosResponse) response));
@@ -140,7 +140,7 @@ public class MockStreetViewPublishServiceImpl extends StreetViewPublishServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method BatchGetPhotos, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   StreetViewPublishRpcMessages.BatchGetPhotosResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -150,7 +150,7 @@ public class MockStreetViewPublishServiceImpl extends StreetViewPublishServiceIm
   public void listPhotos(
       StreetViewPublishRpcMessages.ListPhotosRequest request,
       StreamObserver<StreetViewPublishRpcMessages.ListPhotosResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof StreetViewPublishRpcMessages.ListPhotosResponse) {
       requests.add(request);
       responseObserver.onNext(((StreetViewPublishRpcMessages.ListPhotosResponse) response));
@@ -162,7 +162,7 @@ public class MockStreetViewPublishServiceImpl extends StreetViewPublishServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListPhotos, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   StreetViewPublishRpcMessages.ListPhotosResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -172,7 +172,7 @@ public class MockStreetViewPublishServiceImpl extends StreetViewPublishServiceIm
   public void updatePhoto(
       StreetViewPublishRpcMessages.UpdatePhotoRequest request,
       StreamObserver<StreetViewPublishResources.Photo> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof StreetViewPublishResources.Photo) {
       requests.add(request);
       responseObserver.onNext(((StreetViewPublishResources.Photo) response));
@@ -184,7 +184,7 @@ public class MockStreetViewPublishServiceImpl extends StreetViewPublishServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdatePhoto, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   StreetViewPublishResources.Photo.class.getName(),
                   Exception.class.getName())));
     }
@@ -194,7 +194,7 @@ public class MockStreetViewPublishServiceImpl extends StreetViewPublishServiceIm
   public void batchUpdatePhotos(
       StreetViewPublishRpcMessages.BatchUpdatePhotosRequest request,
       StreamObserver<StreetViewPublishRpcMessages.BatchUpdatePhotosResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof StreetViewPublishRpcMessages.BatchUpdatePhotosResponse) {
       requests.add(request);
       responseObserver.onNext(((StreetViewPublishRpcMessages.BatchUpdatePhotosResponse) response));
@@ -206,7 +206,7 @@ public class MockStreetViewPublishServiceImpl extends StreetViewPublishServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method BatchUpdatePhotos, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   StreetViewPublishRpcMessages.BatchUpdatePhotosResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -216,7 +216,7 @@ public class MockStreetViewPublishServiceImpl extends StreetViewPublishServiceIm
   public void deletePhoto(
       StreetViewPublishRpcMessages.DeletePhotoRequest request,
       StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -228,7 +228,7 @@ public class MockStreetViewPublishServiceImpl extends StreetViewPublishServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeletePhoto, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -238,7 +238,7 @@ public class MockStreetViewPublishServiceImpl extends StreetViewPublishServiceIm
   public void batchDeletePhotos(
       StreetViewPublishRpcMessages.BatchDeletePhotosRequest request,
       StreamObserver<StreetViewPublishRpcMessages.BatchDeletePhotosResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof StreetViewPublishRpcMessages.BatchDeletePhotosResponse) {
       requests.add(request);
       responseObserver.onNext(((StreetViewPublishRpcMessages.BatchDeletePhotosResponse) response));
@@ -250,7 +250,7 @@ public class MockStreetViewPublishServiceImpl extends StreetViewPublishServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method BatchDeletePhotos, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   StreetViewPublishRpcMessages.BatchDeletePhotosResponse.class.getName(),
                   Exception.class.getName())));
     }

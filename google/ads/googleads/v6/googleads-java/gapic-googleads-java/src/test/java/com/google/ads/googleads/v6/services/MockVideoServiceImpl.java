@@ -61,7 +61,7 @@ public class MockVideoServiceImpl extends VideoServiceImplBase {
 
   @Override
   public void getVideo(GetVideoRequest request, StreamObserver<Video> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Video) {
       requests.add(request);
       responseObserver.onNext(((Video) response));
@@ -73,7 +73,7 @@ public class MockVideoServiceImpl extends VideoServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetVideo, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Video.class.getName(),
                   Exception.class.getName())));
     }

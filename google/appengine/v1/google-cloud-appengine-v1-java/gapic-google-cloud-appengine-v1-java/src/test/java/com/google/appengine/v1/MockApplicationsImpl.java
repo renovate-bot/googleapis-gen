@@ -62,7 +62,7 @@ public class MockApplicationsImpl extends ApplicationsImplBase {
   @Override
   public void getApplication(
       GetApplicationRequest request, StreamObserver<Application> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Application) {
       requests.add(request);
       responseObserver.onNext(((Application) response));
@@ -74,7 +74,7 @@ public class MockApplicationsImpl extends ApplicationsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetApplication, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Application.class.getName(),
                   Exception.class.getName())));
     }
@@ -83,7 +83,7 @@ public class MockApplicationsImpl extends ApplicationsImplBase {
   @Override
   public void createApplication(
       CreateApplicationRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -95,7 +95,7 @@ public class MockApplicationsImpl extends ApplicationsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateApplication, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -104,7 +104,7 @@ public class MockApplicationsImpl extends ApplicationsImplBase {
   @Override
   public void updateApplication(
       UpdateApplicationRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -116,7 +116,7 @@ public class MockApplicationsImpl extends ApplicationsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateApplication, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -125,7 +125,7 @@ public class MockApplicationsImpl extends ApplicationsImplBase {
   @Override
   public void repairApplication(
       RepairApplicationRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -137,7 +137,7 @@ public class MockApplicationsImpl extends ApplicationsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method RepairApplication, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }

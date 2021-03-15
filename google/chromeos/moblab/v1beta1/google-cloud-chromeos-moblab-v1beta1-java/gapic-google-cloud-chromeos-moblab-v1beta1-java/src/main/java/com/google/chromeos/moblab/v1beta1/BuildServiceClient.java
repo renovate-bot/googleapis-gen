@@ -284,6 +284,15 @@ public class BuildServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (BuildServiceClient buildServiceClient = BuildServiceClient.create()) {
+   *   ListBuildsRequest request =
+   *       ListBuildsRequest.newBuilder()
+   *           .setParent(ModelName.of("[BUILD_TARGET]", "[MODEL]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .setGroupBy(FieldMask.newBuilder().build())
+   *           .build();
    *   while (true) {
    *     ListBuildsResponse response = buildServiceClient.listBuildsCallable().call(request);
    *     for (Build element : response.getResponsesList()) {

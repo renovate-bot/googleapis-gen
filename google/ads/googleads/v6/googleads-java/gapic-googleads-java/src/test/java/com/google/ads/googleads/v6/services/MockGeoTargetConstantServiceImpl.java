@@ -62,7 +62,7 @@ public class MockGeoTargetConstantServiceImpl extends GeoTargetConstantServiceIm
   @Override
   public void getGeoTargetConstant(
       GetGeoTargetConstantRequest request, StreamObserver<GeoTargetConstant> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof GeoTargetConstant) {
       requests.add(request);
       responseObserver.onNext(((GeoTargetConstant) response));
@@ -74,7 +74,7 @@ public class MockGeoTargetConstantServiceImpl extends GeoTargetConstantServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetGeoTargetConstant, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   GeoTargetConstant.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockGeoTargetConstantServiceImpl extends GeoTargetConstantServiceIm
   public void suggestGeoTargetConstants(
       SuggestGeoTargetConstantsRequest request,
       StreamObserver<SuggestGeoTargetConstantsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SuggestGeoTargetConstantsResponse) {
       requests.add(request);
       responseObserver.onNext(((SuggestGeoTargetConstantsResponse) response));
@@ -96,7 +96,7 @@ public class MockGeoTargetConstantServiceImpl extends GeoTargetConstantServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SuggestGeoTargetConstants, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SuggestGeoTargetConstantsResponse.class.getName(),
                   Exception.class.getName())));
     }

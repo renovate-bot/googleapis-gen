@@ -944,6 +944,13 @@ public class CampaignExperimentServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (CampaignExperimentServiceClient campaignExperimentServiceClient =
    *     CampaignExperimentServiceClient.create()) {
+   *   ListCampaignExperimentAsyncErrorsRequest request =
+   *       ListCampaignExperimentAsyncErrorsRequest.newBuilder()
+   *           .setResourceName(
+   *               CampaignExperimentName.of("[CUSTOMER]", "[CAMPAIGN_EXPERIMENT]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
    *   while (true) {
    *     ListCampaignExperimentAsyncErrorsResponse response =
    *         campaignExperimentServiceClient

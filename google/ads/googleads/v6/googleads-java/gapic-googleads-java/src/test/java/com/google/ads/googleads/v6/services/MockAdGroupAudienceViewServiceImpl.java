@@ -62,7 +62,7 @@ public class MockAdGroupAudienceViewServiceImpl extends AdGroupAudienceViewServi
   @Override
   public void getAdGroupAudienceView(
       GetAdGroupAudienceViewRequest request, StreamObserver<AdGroupAudienceView> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AdGroupAudienceView) {
       requests.add(request);
       responseObserver.onNext(((AdGroupAudienceView) response));
@@ -74,7 +74,7 @@ public class MockAdGroupAudienceViewServiceImpl extends AdGroupAudienceViewServi
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetAdGroupAudienceView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AdGroupAudienceView.class.getName(),
                   Exception.class.getName())));
     }

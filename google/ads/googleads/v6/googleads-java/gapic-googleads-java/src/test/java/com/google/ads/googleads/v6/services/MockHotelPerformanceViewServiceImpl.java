@@ -63,7 +63,7 @@ public class MockHotelPerformanceViewServiceImpl extends HotelPerformanceViewSer
   public void getHotelPerformanceView(
       GetHotelPerformanceViewRequest request,
       StreamObserver<HotelPerformanceView> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof HotelPerformanceView) {
       requests.add(request);
       responseObserver.onNext(((HotelPerformanceView) response));
@@ -75,7 +75,7 @@ public class MockHotelPerformanceViewServiceImpl extends HotelPerformanceViewSer
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetHotelPerformanceView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   HotelPerformanceView.class.getName(),
                   Exception.class.getName())));
     }

@@ -63,7 +63,7 @@ public class MockFirewallImpl extends FirewallImplBase {
   @Override
   public void listIngressRules(
       ListIngressRulesRequest request, StreamObserver<ListIngressRulesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListIngressRulesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListIngressRulesResponse) response));
@@ -75,7 +75,7 @@ public class MockFirewallImpl extends FirewallImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListIngressRules, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListIngressRulesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -85,7 +85,7 @@ public class MockFirewallImpl extends FirewallImplBase {
   public void batchUpdateIngressRules(
       BatchUpdateIngressRulesRequest request,
       StreamObserver<BatchUpdateIngressRulesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof BatchUpdateIngressRulesResponse) {
       requests.add(request);
       responseObserver.onNext(((BatchUpdateIngressRulesResponse) response));
@@ -97,7 +97,7 @@ public class MockFirewallImpl extends FirewallImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method BatchUpdateIngressRules, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   BatchUpdateIngressRulesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -106,7 +106,7 @@ public class MockFirewallImpl extends FirewallImplBase {
   @Override
   public void createIngressRule(
       CreateIngressRuleRequest request, StreamObserver<FirewallRule> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof FirewallRule) {
       requests.add(request);
       responseObserver.onNext(((FirewallRule) response));
@@ -118,7 +118,7 @@ public class MockFirewallImpl extends FirewallImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateIngressRule, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   FirewallRule.class.getName(),
                   Exception.class.getName())));
     }
@@ -127,7 +127,7 @@ public class MockFirewallImpl extends FirewallImplBase {
   @Override
   public void getIngressRule(
       GetIngressRuleRequest request, StreamObserver<FirewallRule> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof FirewallRule) {
       requests.add(request);
       responseObserver.onNext(((FirewallRule) response));
@@ -139,7 +139,7 @@ public class MockFirewallImpl extends FirewallImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetIngressRule, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   FirewallRule.class.getName(),
                   Exception.class.getName())));
     }
@@ -148,7 +148,7 @@ public class MockFirewallImpl extends FirewallImplBase {
   @Override
   public void updateIngressRule(
       UpdateIngressRuleRequest request, StreamObserver<FirewallRule> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof FirewallRule) {
       requests.add(request);
       responseObserver.onNext(((FirewallRule) response));
@@ -160,7 +160,7 @@ public class MockFirewallImpl extends FirewallImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateIngressRule, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   FirewallRule.class.getName(),
                   Exception.class.getName())));
     }
@@ -169,7 +169,7 @@ public class MockFirewallImpl extends FirewallImplBase {
   @Override
   public void deleteIngressRule(
       DeleteIngressRuleRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -181,7 +181,7 @@ public class MockFirewallImpl extends FirewallImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteIngressRule, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }

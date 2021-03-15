@@ -64,7 +64,7 @@ public class MockBotsImpl extends BotsImplBase {
   @Override
   public void createBotSession(
       CreateBotSessionRequest request, StreamObserver<BotSession> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof BotSession) {
       requests.add(request);
       responseObserver.onNext(((BotSession) response));
@@ -76,7 +76,7 @@ public class MockBotsImpl extends BotsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateBotSession, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   BotSession.class.getName(),
                   Exception.class.getName())));
     }
@@ -85,7 +85,7 @@ public class MockBotsImpl extends BotsImplBase {
   @Override
   public void updateBotSession(
       UpdateBotSessionRequest request, StreamObserver<BotSession> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof BotSession) {
       requests.add(request);
       responseObserver.onNext(((BotSession) response));
@@ -97,7 +97,7 @@ public class MockBotsImpl extends BotsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateBotSession, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   BotSession.class.getName(),
                   Exception.class.getName())));
     }

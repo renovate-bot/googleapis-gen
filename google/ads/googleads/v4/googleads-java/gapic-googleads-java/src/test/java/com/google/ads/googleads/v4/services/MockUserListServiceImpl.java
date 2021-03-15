@@ -61,7 +61,7 @@ public class MockUserListServiceImpl extends UserListServiceImplBase {
 
   @Override
   public void getUserList(GetUserListRequest request, StreamObserver<UserList> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof UserList) {
       requests.add(request);
       responseObserver.onNext(((UserList) response));
@@ -73,7 +73,7 @@ public class MockUserListServiceImpl extends UserListServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetUserList, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   UserList.class.getName(),
                   Exception.class.getName())));
     }
@@ -82,7 +82,7 @@ public class MockUserListServiceImpl extends UserListServiceImplBase {
   @Override
   public void mutateUserLists(
       MutateUserListsRequest request, StreamObserver<MutateUserListsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MutateUserListsResponse) {
       requests.add(request);
       responseObserver.onNext(((MutateUserListsResponse) response));
@@ -94,7 +94,7 @@ public class MockUserListServiceImpl extends UserListServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MutateUserLists, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MutateUserListsResponse.class.getName(),
                   Exception.class.getName())));
     }

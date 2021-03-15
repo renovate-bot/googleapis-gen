@@ -63,7 +63,7 @@ public class MockShoppingPerformanceViewServiceImpl extends ShoppingPerformanceV
   public void getShoppingPerformanceView(
       GetShoppingPerformanceViewRequest request,
       StreamObserver<ShoppingPerformanceView> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ShoppingPerformanceView) {
       requests.add(request);
       responseObserver.onNext(((ShoppingPerformanceView) response));
@@ -75,7 +75,7 @@ public class MockShoppingPerformanceViewServiceImpl extends ShoppingPerformanceV
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetShoppingPerformanceView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ShoppingPerformanceView.class.getName(),
                   Exception.class.getName())));
     }

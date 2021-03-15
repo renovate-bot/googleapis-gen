@@ -722,6 +722,13 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (StreetViewPublishServiceClient streetViewPublishServiceClient =
    *     StreetViewPublishServiceClient.create()) {
+   *   StreetViewPublishRpcMessages.ListPhotosRequest request =
+   *       StreetViewPublishRpcMessages.ListPhotosRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
    *   while (true) {
    *     StreetViewPublishRpcMessages.ListPhotosResponse response =
    *         streetViewPublishServiceClient.listPhotosCallable().call(request);
