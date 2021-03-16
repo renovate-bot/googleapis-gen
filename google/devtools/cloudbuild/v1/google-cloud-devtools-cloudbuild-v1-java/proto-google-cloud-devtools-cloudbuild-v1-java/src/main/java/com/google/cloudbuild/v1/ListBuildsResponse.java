@@ -170,6 +170,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Token to receive the next page of results.
+   * This will be absent if the end of the response list has been reached.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -191,6 +192,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Token to receive the next page of results.
+   * This will be absent if the end of the response list has been reached.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -890,6 +892,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Token to receive the next page of results.
+     * This will be absent if the end of the response list has been reached.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -910,6 +913,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Token to receive the next page of results.
+     * This will be absent if the end of the response list has been reached.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -931,6 +935,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Token to receive the next page of results.
+     * This will be absent if the end of the response list has been reached.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -950,6 +955,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Token to receive the next page of results.
+     * This will be absent if the end of the response list has been reached.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -964,6 +970,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Token to receive the next page of results.
+     * This will be absent if the end of the response list has been reached.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

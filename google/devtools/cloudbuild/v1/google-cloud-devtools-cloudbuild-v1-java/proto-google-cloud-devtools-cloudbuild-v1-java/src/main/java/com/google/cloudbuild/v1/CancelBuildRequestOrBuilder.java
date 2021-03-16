@@ -9,7 +9,7 @@ public interface CancelBuildRequestOrBuilder extends
 
   /**
    * <pre>
-   * The name of the `Build` to retrieve.
+   * The name of the `Build` to cancel.
    * Format: `projects/{project}/locations/{location}/builds/{build}`
    * </pre>
    *
@@ -19,7 +19,7 @@ public interface CancelBuildRequestOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * The name of the `Build` to retrieve.
+   * The name of the `Build` to cancel.
    * Format: `projects/{project}/locations/{location}/builds/{build}`
    * </pre>
    *

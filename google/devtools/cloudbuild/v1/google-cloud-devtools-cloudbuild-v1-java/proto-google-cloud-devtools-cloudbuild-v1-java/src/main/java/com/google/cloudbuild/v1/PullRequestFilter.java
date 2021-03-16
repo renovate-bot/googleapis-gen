@@ -129,6 +129,15 @@ private static final long serialVersionUID = 0L;
      * <code>COMMENTS_ENABLED = 1;</code>
      */
     COMMENTS_ENABLED(1),
+    /**
+     * <pre>
+     * Enforce that repository owners or collaborators must comment on external
+     * contributors' Pull Requests before builds are triggered.
+     * </pre>
+     *
+     * <code>COMMENTS_ENABLED_FOR_EXTERNAL_CONTRIBUTORS_ONLY = 2;</code>
+     */
+    COMMENTS_ENABLED_FOR_EXTERNAL_CONTRIBUTORS_ONLY(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -149,6 +158,15 @@ private static final long serialVersionUID = 0L;
      * <code>COMMENTS_ENABLED = 1;</code>
      */
     public static final int COMMENTS_ENABLED_VALUE = 1;
+    /**
+     * <pre>
+     * Enforce that repository owners or collaborators must comment on external
+     * contributors' Pull Requests before builds are triggered.
+     * </pre>
+     *
+     * <code>COMMENTS_ENABLED_FOR_EXTERNAL_CONTRIBUTORS_ONLY = 2;</code>
+     */
+    public static final int COMMENTS_ENABLED_FOR_EXTERNAL_CONTRIBUTORS_ONLY_VALUE = 2;
 
 
     public final int getNumber() {
@@ -177,6 +195,7 @@ private static final long serialVersionUID = 0L;
       switch (value) {
         case 0: return COMMENTS_DISABLED;
         case 1: return COMMENTS_ENABLED;
+        case 2: return COMMENTS_ENABLED_FOR_EXTERNAL_CONTRIBUTORS_ONLY;
         default: return null;
       }
     }

@@ -25,6 +25,7 @@ import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
 from google import auth
+from google.api import httpbody_pb2 as httpbody  # type: ignore
 from google.api_core import client_options
 from google.api_core import exceptions
 from google.api_core import future
@@ -42,6 +43,7 @@ from google.devtools.cloudbuild_v1.services.cloud_build import transports
 from google.devtools.cloudbuild_v1.types import cloudbuild
 from google.longrunning import operations_pb2
 from google.oauth2 import service_account
+from google.protobuf import any_pb2 as gp_any  # type: ignore
 from google.protobuf import duration_pb2 as duration  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
@@ -3025,6 +3027,95 @@ async def test_run_build_trigger_flattened_error_async():
         )
 
 
+def test_receive_trigger_webhook(transport: str = 'grpc', request_type=cloudbuild.ReceiveTriggerWebhookRequest):
+    client = CloudBuildClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.receive_trigger_webhook),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = cloudbuild.ReceiveTriggerWebhookResponse(
+        )
+
+        response = client.receive_trigger_webhook(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloudbuild.ReceiveTriggerWebhookRequest()
+
+    # Establish that the response is the type that we expect.
+
+    assert isinstance(response, cloudbuild.ReceiveTriggerWebhookResponse)
+
+
+def test_receive_trigger_webhook_from_dict():
+    test_receive_trigger_webhook(request_type=dict)
+
+
+def test_receive_trigger_webhook_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudBuildClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.receive_trigger_webhook),
+            '__call__') as call:
+        client.receive_trigger_webhook()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloudbuild.ReceiveTriggerWebhookRequest()
+
+@pytest.mark.asyncio
+async def test_receive_trigger_webhook_async(transport: str = 'grpc_asyncio', request_type=cloudbuild.ReceiveTriggerWebhookRequest):
+    client = CloudBuildAsyncClient(
+        credentials=credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.receive_trigger_webhook),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cloudbuild.ReceiveTriggerWebhookResponse(
+        ))
+
+        response = await client.receive_trigger_webhook(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloudbuild.ReceiveTriggerWebhookRequest()
+
+    # Establish that the response is the type that we expect.
+    assert isinstance(response, cloudbuild.ReceiveTriggerWebhookResponse)
+
+
+@pytest.mark.asyncio
+async def test_receive_trigger_webhook_async_from_dict():
+    await test_receive_trigger_webhook_async(request_type=dict)
+
+
 def test_create_worker_pool(transport: str = 'grpc', request_type=cloudbuild.CreateWorkerPoolRequest):
     client = CloudBuildClient(
         credentials=credentials.AnonymousCredentials(),
@@ -3703,6 +3794,7 @@ def test_cloud_build_base_transport():
         'delete_build_trigger',
         'update_build_trigger',
         'run_build_trigger',
+        'receive_trigger_webhook',
         'create_worker_pool',
         'get_worker_pool',
         'delete_worker_pool',
@@ -4017,9 +4109,57 @@ def test_parse_build_trigger_path():
     actual = CloudBuildClient.parse_build_trigger_path(path)
     assert expected == actual
 
-def test_service_account_path():
+def test_crypto_key_path():
     project = "winkle"
-    service_account = "nautilus"
+    location = "nautilus"
+    keyring = "scallop"
+    key = "abalone"
+
+    expected = "projects/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}".format(project=project, location=location, keyring=keyring, key=key, )
+    actual = CloudBuildClient.crypto_key_path(project, location, keyring, key)
+    assert expected == actual
+
+
+def test_parse_crypto_key_path():
+    expected = {
+    "project": "squid",
+    "location": "clam",
+    "keyring": "whelk",
+    "key": "octopus",
+
+    }
+    path = CloudBuildClient.crypto_key_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = CloudBuildClient.parse_crypto_key_path(path)
+    assert expected == actual
+
+def test_secret_version_path():
+    project = "oyster"
+    secret = "nudibranch"
+    version = "cuttlefish"
+
+    expected = "projects/{project}/secrets/{secret}/versions/{version}".format(project=project, secret=secret, version=version, )
+    actual = CloudBuildClient.secret_version_path(project, secret, version)
+    assert expected == actual
+
+
+def test_parse_secret_version_path():
+    expected = {
+    "project": "mussel",
+    "secret": "winkle",
+    "version": "nautilus",
+
+    }
+    path = CloudBuildClient.secret_version_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = CloudBuildClient.parse_secret_version_path(path)
+    assert expected == actual
+
+def test_service_account_path():
+    project = "scallop"
+    service_account = "abalone"
 
     expected = "projects/{project}/serviceAccounts/{service_account}".format(project=project, service_account=service_account, )
     actual = CloudBuildClient.service_account_path(project, service_account)
@@ -4028,8 +4168,8 @@ def test_service_account_path():
 
 def test_parse_service_account_path():
     expected = {
-    "project": "scallop",
-    "service_account": "abalone",
+    "project": "squid",
+    "service_account": "clam",
 
     }
     path = CloudBuildClient.service_account_path(**expected)
@@ -4039,7 +4179,7 @@ def test_parse_service_account_path():
     assert expected == actual
 
 def test_common_billing_account_path():
-    billing_account = "squid"
+    billing_account = "whelk"
 
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = CloudBuildClient.common_billing_account_path(billing_account)
@@ -4048,7 +4188,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "clam",
+    "billing_account": "octopus",
 
     }
     path = CloudBuildClient.common_billing_account_path(**expected)
@@ -4058,7 +4198,7 @@ def test_parse_common_billing_account_path():
     assert expected == actual
 
 def test_common_folder_path():
-    folder = "whelk"
+    folder = "oyster"
 
     expected = "folders/{folder}".format(folder=folder, )
     actual = CloudBuildClient.common_folder_path(folder)
@@ -4067,7 +4207,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "octopus",
+    "folder": "nudibranch",
 
     }
     path = CloudBuildClient.common_folder_path(**expected)
@@ -4077,7 +4217,7 @@ def test_parse_common_folder_path():
     assert expected == actual
 
 def test_common_organization_path():
-    organization = "oyster"
+    organization = "cuttlefish"
 
     expected = "organizations/{organization}".format(organization=organization, )
     actual = CloudBuildClient.common_organization_path(organization)
@@ -4086,7 +4226,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "nudibranch",
+    "organization": "mussel",
 
     }
     path = CloudBuildClient.common_organization_path(**expected)
@@ -4096,7 +4236,7 @@ def test_parse_common_organization_path():
     assert expected == actual
 
 def test_common_project_path():
-    project = "cuttlefish"
+    project = "winkle"
 
     expected = "projects/{project}".format(project=project, )
     actual = CloudBuildClient.common_project_path(project)
@@ -4105,7 +4245,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "mussel",
+    "project": "nautilus",
 
     }
     path = CloudBuildClient.common_project_path(**expected)
@@ -4115,8 +4255,8 @@ def test_parse_common_project_path():
     assert expected == actual
 
 def test_common_location_path():
-    project = "winkle"
-    location = "nautilus"
+    project = "scallop"
+    location = "abalone"
 
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = CloudBuildClient.common_location_path(project, location)
@@ -4125,8 +4265,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "scallop",
-    "location": "abalone",
+    "project": "squid",
+    "location": "clam",
 
     }
     path = CloudBuildClient.common_location_path(**expected)

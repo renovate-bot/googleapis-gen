@@ -5,31 +5,30 @@ package com.google.cloudbuild.v1;
 
 /**
  * <pre>
- * Request to cancel an ongoing build.
+ * Pairs a secret environment variable with a SecretVersion in Secret Manager.
  * </pre>
  *
- * Protobuf type {@code google.devtools.cloudbuild.v1.CancelBuildRequest}
+ * Protobuf type {@code google.devtools.cloudbuild.v1.SecretManagerSecret}
  */
-public final class CancelBuildRequest extends
+public final class SecretManagerSecret extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.CancelBuildRequest)
-    CancelBuildRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.SecretManagerSecret)
+    SecretManagerSecretOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use CancelBuildRequest.newBuilder() to construct.
-  private CancelBuildRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use SecretManagerSecret.newBuilder() to construct.
+  private SecretManagerSecret(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private CancelBuildRequest() {
-    name_ = "";
-    projectId_ = "";
-    id_ = "";
+  private SecretManagerSecret() {
+    versionName_ = "";
+    env_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new CancelBuildRequest();
+    return new SecretManagerSecret();
   }
 
   @java.lang.Override
@@ -37,7 +36,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private CancelBuildRequest(
+  private SecretManagerSecret(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -58,19 +57,13 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            projectId_ = s;
+            versionName_ = s;
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            id_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            name_ = s;
+            env_ = s;
             break;
           }
           default: {
@@ -94,151 +87,109 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.google.cloudbuild.v1.Cloudbuild.internal_static_google_devtools_cloudbuild_v1_CancelBuildRequest_descriptor;
+    return com.google.cloudbuild.v1.Cloudbuild.internal_static_google_devtools_cloudbuild_v1_SecretManagerSecret_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloudbuild.v1.Cloudbuild.internal_static_google_devtools_cloudbuild_v1_CancelBuildRequest_fieldAccessorTable
+    return com.google.cloudbuild.v1.Cloudbuild.internal_static_google_devtools_cloudbuild_v1_SecretManagerSecret_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloudbuild.v1.CancelBuildRequest.class, com.google.cloudbuild.v1.CancelBuildRequest.Builder.class);
+            com.google.cloudbuild.v1.SecretManagerSecret.class, com.google.cloudbuild.v1.SecretManagerSecret.Builder.class);
   }
 
-  public static final int NAME_FIELD_NUMBER = 4;
-  private volatile java.lang.Object name_;
+  public static final int VERSION_NAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object versionName_;
   /**
    * <pre>
-   * The name of the `Build` to cancel.
-   * Format: `projects/{project}/locations/{location}/builds/{build}`
+   * Resource name of the SecretVersion. In format:
+   * projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;
    * </pre>
    *
-   * <code>string name = 4 [(.google.api.resource_reference) = { ... }</code>
-   * @return The name.
+   * <code>string version_name = 1 [(.google.api.resource_reference) = { ... }</code>
+   * @return The versionName.
    */
   @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
+  public java.lang.String getVersionName() {
+    java.lang.Object ref = versionName_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      name_ = s;
+      versionName_ = s;
       return s;
     }
   }
   /**
    * <pre>
-   * The name of the `Build` to cancel.
-   * Format: `projects/{project}/locations/{location}/builds/{build}`
+   * Resource name of the SecretVersion. In format:
+   * projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;
    * </pre>
    *
-   * <code>string name = 4 [(.google.api.resource_reference) = { ... }</code>
-   * @return The bytes for name.
+   * <code>string version_name = 1 [(.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for versionName.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
+      getVersionNameBytes() {
+    java.lang.Object ref = versionName_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      name_ = b;
+      versionName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int PROJECT_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object projectId_;
+  public static final int ENV_FIELD_NUMBER = 2;
+  private volatile java.lang.Object env_;
   /**
    * <pre>
-   * Required. ID of the project.
+   * Environment variable name to associate with the secret.
+   * Secret environment variables must be unique across all of a build's
+   * secrets, and must be used by at least one build step.
    * </pre>
    *
-   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The projectId.
+   * <code>string env = 2;</code>
+   * @return The env.
    */
   @java.lang.Override
-  public java.lang.String getProjectId() {
-    java.lang.Object ref = projectId_;
+  public java.lang.String getEnv() {
+    java.lang.Object ref = env_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      projectId_ = s;
+      env_ = s;
       return s;
     }
   }
   /**
    * <pre>
-   * Required. ID of the project.
+   * Environment variable name to associate with the secret.
+   * Secret environment variables must be unique across all of a build's
+   * secrets, and must be used by at least one build step.
    * </pre>
    *
-   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The bytes for projectId.
+   * <code>string env = 2;</code>
+   * @return The bytes for env.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getProjectIdBytes() {
-    java.lang.Object ref = projectId_;
+      getEnvBytes() {
+    java.lang.Object ref = env_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      projectId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object id_;
-  /**
-   * <pre>
-   * Required. ID of the build.
-   * </pre>
-   *
-   * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The id.
-   */
-  @java.lang.Override
-  public java.lang.String getId() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      id_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Required. ID of the build.
-   * </pre>
-   *
-   * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The bytes for id.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getIdBytes() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      id_ = b;
+      env_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -259,14 +210,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getProjectIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
+    if (!getVersionNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, versionName_);
     }
-    if (!getIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
-    }
-    if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
+    if (!getEnvBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, env_);
     }
     unknownFields.writeTo(output);
   }
@@ -277,14 +225,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getProjectIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, projectId_);
+    if (!getVersionNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, versionName_);
     }
-    if (!getIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
-    }
-    if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
+    if (!getEnvBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, env_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -296,17 +241,15 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.google.cloudbuild.v1.CancelBuildRequest)) {
+    if (!(obj instanceof com.google.cloudbuild.v1.SecretManagerSecret)) {
       return super.equals(obj);
     }
-    com.google.cloudbuild.v1.CancelBuildRequest other = (com.google.cloudbuild.v1.CancelBuildRequest) obj;
+    com.google.cloudbuild.v1.SecretManagerSecret other = (com.google.cloudbuild.v1.SecretManagerSecret) obj;
 
-    if (!getName()
-        .equals(other.getName())) return false;
-    if (!getProjectId()
-        .equals(other.getProjectId())) return false;
-    if (!getId()
-        .equals(other.getId())) return false;
+    if (!getVersionName()
+        .equals(other.getVersionName())) return false;
+    if (!getEnv()
+        .equals(other.getEnv())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -318,80 +261,78 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getProjectId().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
+    hash = (37 * hash) + VERSION_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getVersionName().hashCode();
+    hash = (37 * hash) + ENV_FIELD_NUMBER;
+    hash = (53 * hash) + getEnv().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloudbuild.v1.CancelBuildRequest parseFrom(
+  public static com.google.cloudbuild.v1.SecretManagerSecret parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.cloudbuild.v1.CancelBuildRequest parseFrom(
+  public static com.google.cloudbuild.v1.SecretManagerSecret parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloudbuild.v1.CancelBuildRequest parseFrom(
+  public static com.google.cloudbuild.v1.SecretManagerSecret parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.cloudbuild.v1.CancelBuildRequest parseFrom(
+  public static com.google.cloudbuild.v1.SecretManagerSecret parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloudbuild.v1.CancelBuildRequest parseFrom(byte[] data)
+  public static com.google.cloudbuild.v1.SecretManagerSecret parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.cloudbuild.v1.CancelBuildRequest parseFrom(
+  public static com.google.cloudbuild.v1.SecretManagerSecret parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloudbuild.v1.CancelBuildRequest parseFrom(java.io.InputStream input)
+  public static com.google.cloudbuild.v1.SecretManagerSecret parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.cloudbuild.v1.CancelBuildRequest parseFrom(
+  public static com.google.cloudbuild.v1.SecretManagerSecret parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.cloudbuild.v1.CancelBuildRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.google.cloudbuild.v1.SecretManagerSecret parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.google.cloudbuild.v1.CancelBuildRequest parseDelimitedFrom(
+  public static com.google.cloudbuild.v1.SecretManagerSecret parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.cloudbuild.v1.CancelBuildRequest parseFrom(
+  public static com.google.cloudbuild.v1.SecretManagerSecret parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.cloudbuild.v1.CancelBuildRequest parseFrom(
+  public static com.google.cloudbuild.v1.SecretManagerSecret parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -404,7 +345,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloudbuild.v1.CancelBuildRequest prototype) {
+  public static Builder newBuilder(com.google.cloudbuild.v1.SecretManagerSecret prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -421,29 +362,29 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Request to cancel an ongoing build.
+   * Pairs a secret environment variable with a SecretVersion in Secret Manager.
    * </pre>
    *
-   * Protobuf type {@code google.devtools.cloudbuild.v1.CancelBuildRequest}
+   * Protobuf type {@code google.devtools.cloudbuild.v1.SecretManagerSecret}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:google.devtools.cloudbuild.v1.CancelBuildRequest)
-      com.google.cloudbuild.v1.CancelBuildRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.devtools.cloudbuild.v1.SecretManagerSecret)
+      com.google.cloudbuild.v1.SecretManagerSecretOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.google.cloudbuild.v1.Cloudbuild.internal_static_google_devtools_cloudbuild_v1_CancelBuildRequest_descriptor;
+      return com.google.cloudbuild.v1.Cloudbuild.internal_static_google_devtools_cloudbuild_v1_SecretManagerSecret_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloudbuild.v1.Cloudbuild.internal_static_google_devtools_cloudbuild_v1_CancelBuildRequest_fieldAccessorTable
+      return com.google.cloudbuild.v1.Cloudbuild.internal_static_google_devtools_cloudbuild_v1_SecretManagerSecret_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloudbuild.v1.CancelBuildRequest.class, com.google.cloudbuild.v1.CancelBuildRequest.Builder.class);
+              com.google.cloudbuild.v1.SecretManagerSecret.class, com.google.cloudbuild.v1.SecretManagerSecret.Builder.class);
     }
 
-    // Construct using com.google.cloudbuild.v1.CancelBuildRequest.newBuilder()
+    // Construct using com.google.cloudbuild.v1.SecretManagerSecret.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -461,11 +402,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      name_ = "";
+      versionName_ = "";
 
-      projectId_ = "";
-
-      id_ = "";
+      env_ = "";
 
       return this;
     }
@@ -473,17 +412,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.google.cloudbuild.v1.Cloudbuild.internal_static_google_devtools_cloudbuild_v1_CancelBuildRequest_descriptor;
+      return com.google.cloudbuild.v1.Cloudbuild.internal_static_google_devtools_cloudbuild_v1_SecretManagerSecret_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloudbuild.v1.CancelBuildRequest getDefaultInstanceForType() {
-      return com.google.cloudbuild.v1.CancelBuildRequest.getDefaultInstance();
+    public com.google.cloudbuild.v1.SecretManagerSecret getDefaultInstanceForType() {
+      return com.google.cloudbuild.v1.SecretManagerSecret.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloudbuild.v1.CancelBuildRequest build() {
-      com.google.cloudbuild.v1.CancelBuildRequest result = buildPartial();
+    public com.google.cloudbuild.v1.SecretManagerSecret build() {
+      com.google.cloudbuild.v1.SecretManagerSecret result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -491,11 +430,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.cloudbuild.v1.CancelBuildRequest buildPartial() {
-      com.google.cloudbuild.v1.CancelBuildRequest result = new com.google.cloudbuild.v1.CancelBuildRequest(this);
-      result.name_ = name_;
-      result.projectId_ = projectId_;
-      result.id_ = id_;
+    public com.google.cloudbuild.v1.SecretManagerSecret buildPartial() {
+      com.google.cloudbuild.v1.SecretManagerSecret result = new com.google.cloudbuild.v1.SecretManagerSecret(this);
+      result.versionName_ = versionName_;
+      result.env_ = env_;
       onBuilt();
       return result;
     }
@@ -534,26 +472,22 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloudbuild.v1.CancelBuildRequest) {
-        return mergeFrom((com.google.cloudbuild.v1.CancelBuildRequest)other);
+      if (other instanceof com.google.cloudbuild.v1.SecretManagerSecret) {
+        return mergeFrom((com.google.cloudbuild.v1.SecretManagerSecret)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloudbuild.v1.CancelBuildRequest other) {
-      if (other == com.google.cloudbuild.v1.CancelBuildRequest.getDefaultInstance()) return this;
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
+    public Builder mergeFrom(com.google.cloudbuild.v1.SecretManagerSecret other) {
+      if (other == com.google.cloudbuild.v1.SecretManagerSecret.getDefaultInstance()) return this;
+      if (!other.getVersionName().isEmpty()) {
+        versionName_ = other.versionName_;
         onChanged();
       }
-      if (!other.getProjectId().isEmpty()) {
-        projectId_ = other.projectId_;
-        onChanged();
-      }
-      if (!other.getId().isEmpty()) {
-        id_ = other.id_;
+      if (!other.getEnv().isEmpty()) {
+        env_ = other.env_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -571,11 +505,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloudbuild.v1.CancelBuildRequest parsedMessage = null;
+      com.google.cloudbuild.v1.SecretManagerSecret parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloudbuild.v1.CancelBuildRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.google.cloudbuild.v1.SecretManagerSecret) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -585,23 +519,23 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object name_ = "";
+    private java.lang.Object versionName_ = "";
     /**
      * <pre>
-     * The name of the `Build` to cancel.
-     * Format: `projects/{project}/locations/{location}/builds/{build}`
+     * Resource name of the SecretVersion. In format:
+     * projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;
      * </pre>
      *
-     * <code>string name = 4 [(.google.api.resource_reference) = { ... }</code>
-     * @return The name.
+     * <code>string version_name = 1 [(.google.api.resource_reference) = { ... }</code>
+     * @return The versionName.
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getVersionName() {
+      java.lang.Object ref = versionName_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        versionName_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -609,21 +543,21 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the `Build` to cancel.
-     * Format: `projects/{project}/locations/{location}/builds/{build}`
+     * Resource name of the SecretVersion. In format:
+     * projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;
      * </pre>
      *
-     * <code>string name = 4 [(.google.api.resource_reference) = { ... }</code>
-     * @return The bytes for name.
+     * <code>string version_name = 1 [(.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for versionName.
      */
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
+        getVersionNameBytes() {
+      java.lang.Object ref = versionName_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name_ = b;
+        versionName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -631,77 +565,79 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the `Build` to cancel.
-     * Format: `projects/{project}/locations/{location}/builds/{build}`
+     * Resource name of the SecretVersion. In format:
+     * projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;
      * </pre>
      *
-     * <code>string name = 4 [(.google.api.resource_reference) = { ... }</code>
-     * @param value The name to set.
+     * <code>string version_name = 1 [(.google.api.resource_reference) = { ... }</code>
+     * @param value The versionName to set.
      * @return This builder for chaining.
      */
-    public Builder setName(
+    public Builder setVersionName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      name_ = value;
+      versionName_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The name of the `Build` to cancel.
-     * Format: `projects/{project}/locations/{location}/builds/{build}`
+     * Resource name of the SecretVersion. In format:
+     * projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;
      * </pre>
      *
-     * <code>string name = 4 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string version_name = 1 [(.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder clearName() {
+    public Builder clearVersionName() {
       
-      name_ = getDefaultInstance().getName();
+      versionName_ = getDefaultInstance().getVersionName();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The name of the `Build` to cancel.
-     * Format: `projects/{project}/locations/{location}/builds/{build}`
+     * Resource name of the SecretVersion. In format:
+     * projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;
      * </pre>
      *
-     * <code>string name = 4 [(.google.api.resource_reference) = { ... }</code>
-     * @param value The bytes for name to set.
+     * <code>string version_name = 1 [(.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for versionName to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(
+    public Builder setVersionNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      name_ = value;
+      versionName_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object projectId_ = "";
+    private java.lang.Object env_ = "";
     /**
      * <pre>
-     * Required. ID of the project.
+     * Environment variable name to associate with the secret.
+     * Secret environment variables must be unique across all of a build's
+     * secrets, and must be used by at least one build step.
      * </pre>
      *
-     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return The projectId.
+     * <code>string env = 2;</code>
+     * @return The env.
      */
-    public java.lang.String getProjectId() {
-      java.lang.Object ref = projectId_;
+    public java.lang.String getEnv() {
+      java.lang.Object ref = env_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        projectId_ = s;
+        env_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -709,20 +645,22 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. ID of the project.
+     * Environment variable name to associate with the secret.
+     * Secret environment variables must be unique across all of a build's
+     * secrets, and must be used by at least one build step.
      * </pre>
      *
-     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return The bytes for projectId.
+     * <code>string env = 2;</code>
+     * @return The bytes for env.
      */
     public com.google.protobuf.ByteString
-        getProjectIdBytes() {
-      java.lang.Object ref = projectId_;
+        getEnvBytes() {
+      java.lang.Object ref = env_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        projectId_ = b;
+        env_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -730,150 +668,60 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. ID of the project.
+     * Environment variable name to associate with the secret.
+     * Secret environment variables must be unique across all of a build's
+     * secrets, and must be used by at least one build step.
      * </pre>
      *
-     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param value The projectId to set.
+     * <code>string env = 2;</code>
+     * @param value The env to set.
      * @return This builder for chaining.
      */
-    public Builder setProjectId(
+    public Builder setEnv(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      projectId_ = value;
+      env_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Required. ID of the project.
+     * Environment variable name to associate with the secret.
+     * Secret environment variables must be unique across all of a build's
+     * secrets, and must be used by at least one build step.
      * </pre>
      *
-     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string env = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearProjectId() {
+    public Builder clearEnv() {
       
-      projectId_ = getDefaultInstance().getProjectId();
+      env_ = getDefaultInstance().getEnv();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Required. ID of the project.
+     * Environment variable name to associate with the secret.
+     * Secret environment variables must be unique across all of a build's
+     * secrets, and must be used by at least one build step.
      * </pre>
      *
-     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param value The bytes for projectId to set.
+     * <code>string env = 2;</code>
+     * @param value The bytes for env to set.
      * @return This builder for chaining.
      */
-    public Builder setProjectIdBytes(
+    public Builder setEnvBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      projectId_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object id_ = "";
-    /**
-     * <pre>
-     * Required. ID of the build.
-     * </pre>
-     *
-     * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return The id.
-     */
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        id_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Required. ID of the build.
-     * </pre>
-     *
-     * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return The bytes for id.
-     */
-    public com.google.protobuf.ByteString
-        getIdBytes() {
-      java.lang.Object ref = id_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        id_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Required. ID of the build.
-     * </pre>
-     *
-     * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param value The id to set.
-     * @return This builder for chaining.
-     */
-    public Builder setId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      id_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Required. ID of the build.
-     * </pre>
-     *
-     * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearId() {
-      
-      id_ = getDefaultInstance().getId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Required. ID of the build.
-     * </pre>
-     *
-     * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param value The bytes for id to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      id_ = value;
+      env_ = value;
       onChanged();
       return this;
     }
@@ -890,41 +738,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:google.devtools.cloudbuild.v1.CancelBuildRequest)
+    // @@protoc_insertion_point(builder_scope:google.devtools.cloudbuild.v1.SecretManagerSecret)
   }
 
-  // @@protoc_insertion_point(class_scope:google.devtools.cloudbuild.v1.CancelBuildRequest)
-  private static final com.google.cloudbuild.v1.CancelBuildRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.devtools.cloudbuild.v1.SecretManagerSecret)
+  private static final com.google.cloudbuild.v1.SecretManagerSecret DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.google.cloudbuild.v1.CancelBuildRequest();
+    DEFAULT_INSTANCE = new com.google.cloudbuild.v1.SecretManagerSecret();
   }
 
-  public static com.google.cloudbuild.v1.CancelBuildRequest getDefaultInstance() {
+  public static com.google.cloudbuild.v1.SecretManagerSecret getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CancelBuildRequest>
-      PARSER = new com.google.protobuf.AbstractParser<CancelBuildRequest>() {
+  private static final com.google.protobuf.Parser<SecretManagerSecret>
+      PARSER = new com.google.protobuf.AbstractParser<SecretManagerSecret>() {
     @java.lang.Override
-    public CancelBuildRequest parsePartialFrom(
+    public SecretManagerSecret parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new CancelBuildRequest(input, extensionRegistry);
+      return new SecretManagerSecret(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<CancelBuildRequest> parser() {
+  public static com.google.protobuf.Parser<SecretManagerSecret> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<CancelBuildRequest> getParserForType() {
+  public com.google.protobuf.Parser<SecretManagerSecret> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloudbuild.v1.CancelBuildRequest getDefaultInstanceForType() {
+  public com.google.cloudbuild.v1.SecretManagerSecret getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

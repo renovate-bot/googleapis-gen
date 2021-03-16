@@ -207,10 +207,10 @@ private static final long serialVersionUID = 0L;
   private com.google.cloudbuild.v1.RepoSource source_;
   /**
    * <pre>
-   * Required. Source to build against this trigger.
+   * Source to build against this trigger.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
    * @return Whether the source field is set.
    */
   @java.lang.Override
@@ -219,10 +219,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Source to build against this trigger.
+   * Source to build against this trigger.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
    * @return The source.
    */
   @java.lang.Override
@@ -231,10 +231,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Source to build against this trigger.
+   * Source to build against this trigger.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
    */
   @java.lang.Override
   public com.google.cloudbuild.v1.RepoSourceOrBuilder getSourceOrBuilder() {
@@ -791,10 +791,10 @@ private static final long serialVersionUID = 0L;
         com.google.cloudbuild.v1.RepoSource, com.google.cloudbuild.v1.RepoSource.Builder, com.google.cloudbuild.v1.RepoSourceOrBuilder> sourceBuilder_;
     /**
      * <pre>
-     * Required. Source to build against this trigger.
+     * Source to build against this trigger.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
      * @return Whether the source field is set.
      */
     public boolean hasSource() {
@@ -802,10 +802,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Source to build against this trigger.
+     * Source to build against this trigger.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
      * @return The source.
      */
     public com.google.cloudbuild.v1.RepoSource getSource() {
@@ -817,10 +817,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Source to build against this trigger.
+     * Source to build against this trigger.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
      */
     public Builder setSource(com.google.cloudbuild.v1.RepoSource value) {
       if (sourceBuilder_ == null) {
@@ -837,10 +837,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Source to build against this trigger.
+     * Source to build against this trigger.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
      */
     public Builder setSource(
         com.google.cloudbuild.v1.RepoSource.Builder builderForValue) {
@@ -855,10 +855,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Source to build against this trigger.
+     * Source to build against this trigger.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
      */
     public Builder mergeSource(com.google.cloudbuild.v1.RepoSource value) {
       if (sourceBuilder_ == null) {
@@ -877,10 +877,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Source to build against this trigger.
+     * Source to build against this trigger.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
      */
     public Builder clearSource() {
       if (sourceBuilder_ == null) {
@@ -895,10 +895,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Source to build against this trigger.
+     * Source to build against this trigger.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
      */
     public com.google.cloudbuild.v1.RepoSource.Builder getSourceBuilder() {
       
@@ -907,10 +907,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Source to build against this trigger.
+     * Source to build against this trigger.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
      */
     public com.google.cloudbuild.v1.RepoSourceOrBuilder getSourceOrBuilder() {
       if (sourceBuilder_ != null) {
@@ -922,10 +922,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Source to build against this trigger.
+     * Source to build against this trigger.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloudbuild.v1.RepoSource, com.google.cloudbuild.v1.RepoSource.Builder, com.google.cloudbuild.v1.RepoSourceOrBuilder> 

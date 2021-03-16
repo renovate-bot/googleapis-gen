@@ -685,6 +685,10 @@ public interface BuildOrBuilder extends
   /**
    * <pre>
    * Secrets to decrypt using Cloud Key Management Service.
+   * Note: Secret Manager is the recommended technique
+   * for managing sensitive data with Cloud Build. Use `available_secrets` to
+   * configure builds to access secrets from Secret Manager. For instructions,
+   * see: https://cloud.google.com/cloud-build/docs/securing-builds/use-secrets
    * </pre>
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Secret secrets = 32;</code>
@@ -694,6 +698,10 @@ public interface BuildOrBuilder extends
   /**
    * <pre>
    * Secrets to decrypt using Cloud Key Management Service.
+   * Note: Secret Manager is the recommended technique
+   * for managing sensitive data with Cloud Build. Use `available_secrets` to
+   * configure builds to access secrets from Secret Manager. For instructions,
+   * see: https://cloud.google.com/cloud-build/docs/securing-builds/use-secrets
    * </pre>
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Secret secrets = 32;</code>
@@ -702,6 +710,10 @@ public interface BuildOrBuilder extends
   /**
    * <pre>
    * Secrets to decrypt using Cloud Key Management Service.
+   * Note: Secret Manager is the recommended technique
+   * for managing sensitive data with Cloud Build. Use `available_secrets` to
+   * configure builds to access secrets from Secret Manager. For instructions,
+   * see: https://cloud.google.com/cloud-build/docs/securing-builds/use-secrets
    * </pre>
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Secret secrets = 32;</code>
@@ -710,6 +722,10 @@ public interface BuildOrBuilder extends
   /**
    * <pre>
    * Secrets to decrypt using Cloud Key Management Service.
+   * Note: Secret Manager is the recommended technique
+   * for managing sensitive data with Cloud Build. Use `available_secrets` to
+   * configure builds to access secrets from Secret Manager. For instructions,
+   * see: https://cloud.google.com/cloud-build/docs/securing-builds/use-secrets
    * </pre>
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Secret secrets = 32;</code>
@@ -719,6 +735,10 @@ public interface BuildOrBuilder extends
   /**
    * <pre>
    * Secrets to decrypt using Cloud Key Management Service.
+   * Note: Secret Manager is the recommended technique
+   * for managing sensitive data with Cloud Build. Use `available_secrets` to
+   * configure builds to access secrets from Secret Manager. For instructions,
+   * see: https://cloud.google.com/cloud-build/docs/securing-builds/use-secrets
    * </pre>
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Secret secrets = 32;</code>
@@ -815,7 +835,7 @@ public interface BuildOrBuilder extends
    * IAM service account whose credentials will be used at build runtime.
    * Must be of the format `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
    * ACCOUNT can be email address or uniqueId of the service account.
-   * This field is in alpha and is not publicly available.
+   * This field is in beta.
    * </pre>
    *
    * <code>string service_account = 42 [(.google.api.resource_reference) = { ... }</code>
@@ -827,7 +847,7 @@ public interface BuildOrBuilder extends
    * IAM service account whose credentials will be used at build runtime.
    * Must be of the format `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
    * ACCOUNT can be email address or uniqueId of the service account.
-   * This field is in alpha and is not publicly available.
+   * This field is in beta.
    * </pre>
    *
    * <code>string service_account = 42 [(.google.api.resource_reference) = { ... }</code>
@@ -835,4 +855,31 @@ public interface BuildOrBuilder extends
    */
   com.google.protobuf.ByteString
       getServiceAccountBytes();
+
+  /**
+   * <pre>
+   * Secrets and secret environment variables.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.Secrets available_secrets = 47;</code>
+   * @return Whether the availableSecrets field is set.
+   */
+  boolean hasAvailableSecrets();
+  /**
+   * <pre>
+   * Secrets and secret environment variables.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.Secrets available_secrets = 47;</code>
+   * @return The availableSecrets.
+   */
+  com.google.cloudbuild.v1.Secrets getAvailableSecrets();
+  /**
+   * <pre>
+   * Secrets and secret environment variables.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.Secrets available_secrets = 47;</code>
+   */
+  com.google.cloudbuild.v1.SecretsOrBuilder getAvailableSecretsOrBuilder();
 }

@@ -49,28 +49,28 @@ public interface RunBuildTriggerRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. Source to build against this trigger.
+   * Source to build against this trigger.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
    * @return Whether the source field is set.
    */
   boolean hasSource();
   /**
    * <pre>
-   * Required. Source to build against this trigger.
+   * Source to build against this trigger.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
    * @return The source.
    */
   com.google.cloudbuild.v1.RepoSource getSource();
   /**
    * <pre>
-   * Required. Source to build against this trigger.
+   * Source to build against this trigger.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
    */
   com.google.cloudbuild.v1.RepoSourceOrBuilder getSourceOrBuilder();
 }

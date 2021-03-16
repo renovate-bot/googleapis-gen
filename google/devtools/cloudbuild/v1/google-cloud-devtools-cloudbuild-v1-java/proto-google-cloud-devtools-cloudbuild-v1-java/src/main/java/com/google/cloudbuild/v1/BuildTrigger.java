@@ -613,8 +613,8 @@ private static final long serialVersionUID = 0L;
   public static final int FILENAME_FIELD_NUMBER = 8;
   /**
    * <pre>
-   * Path, from the source root, to a file whose contents is used for the
-   * template.
+   * Path, from the source root, to the build configuration file
+   * (i.e. cloudbuild.yaml).
    * </pre>
    *
    * <code>string filename = 8;</code>
@@ -625,8 +625,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Path, from the source root, to a file whose contents is used for the
-   * template.
+   * Path, from the source root, to the build configuration file
+   * (i.e. cloudbuild.yaml).
    * </pre>
    *
    * <code>string filename = 8;</code>
@@ -651,8 +651,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Path, from the source root, to a file whose contents is used for the
-   * template.
+   * Path, from the source root, to the build configuration file
+   * (i.e. cloudbuild.yaml).
    * </pre>
    *
    * <code>string filename = 8;</code>
@@ -2661,8 +2661,8 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Path, from the source root, to a file whose contents is used for the
-     * template.
+     * Path, from the source root, to the build configuration file
+     * (i.e. cloudbuild.yaml).
      * </pre>
      *
      * <code>string filename = 8;</code>
@@ -2674,8 +2674,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Path, from the source root, to a file whose contents is used for the
-     * template.
+     * Path, from the source root, to the build configuration file
+     * (i.e. cloudbuild.yaml).
      * </pre>
      *
      * <code>string filename = 8;</code>
@@ -2701,8 +2701,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Path, from the source root, to a file whose contents is used for the
-     * template.
+     * Path, from the source root, to the build configuration file
+     * (i.e. cloudbuild.yaml).
      * </pre>
      *
      * <code>string filename = 8;</code>
@@ -2729,8 +2729,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Path, from the source root, to a file whose contents is used for the
-     * template.
+     * Path, from the source root, to the build configuration file
+     * (i.e. cloudbuild.yaml).
      * </pre>
      *
      * <code>string filename = 8;</code>
@@ -2749,8 +2749,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Path, from the source root, to a file whose contents is used for the
-     * template.
+     * Path, from the source root, to the build configuration file
+     * (i.e. cloudbuild.yaml).
      * </pre>
      *
      * <code>string filename = 8;</code>
@@ -2766,8 +2766,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Path, from the source root, to a file whose contents is used for the
-     * template.
+     * Path, from the source root, to the build configuration file
+     * (i.e. cloudbuild.yaml).
      * </pre>
      *
      * <code>string filename = 8;</code>

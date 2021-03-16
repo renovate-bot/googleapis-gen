@@ -249,7 +249,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object repoName_;
   /**
    * <pre>
-   * Required. Name of the Cloud Source Repository.
+   * Name of the Cloud Source Repository.
    * </pre>
    *
    * <code>string repo_name = 2;</code>
@@ -270,7 +270,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Name of the Cloud Source Repository.
+   * Name of the Cloud Source Repository.
    * </pre>
    *
    * <code>string repo_name = 2;</code>
@@ -1276,7 +1276,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object repoName_ = "";
     /**
      * <pre>
-     * Required. Name of the Cloud Source Repository.
+     * Name of the Cloud Source Repository.
      * </pre>
      *
      * <code>string repo_name = 2;</code>
@@ -1296,7 +1296,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Name of the Cloud Source Repository.
+     * Name of the Cloud Source Repository.
      * </pre>
      *
      * <code>string repo_name = 2;</code>
@@ -1317,7 +1317,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Name of the Cloud Source Repository.
+     * Name of the Cloud Source Repository.
      * </pre>
      *
      * <code>string repo_name = 2;</code>
@@ -1336,7 +1336,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Name of the Cloud Source Repository.
+     * Name of the Cloud Source Repository.
      * </pre>
      *
      * <code>string repo_name = 2;</code>
@@ -1350,7 +1350,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Name of the Cloud Source Repository.
+     * Name of the Cloud Source Repository.
      * </pre>
      *
      * <code>string repo_name = 2;</code>

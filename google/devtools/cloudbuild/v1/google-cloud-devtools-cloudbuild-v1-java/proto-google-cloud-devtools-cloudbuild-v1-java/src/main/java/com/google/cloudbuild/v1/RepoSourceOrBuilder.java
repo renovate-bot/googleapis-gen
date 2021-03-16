@@ -31,7 +31,7 @@ public interface RepoSourceOrBuilder extends
 
   /**
    * <pre>
-   * Required. Name of the Cloud Source Repository.
+   * Name of the Cloud Source Repository.
    * </pre>
    *
    * <code>string repo_name = 2;</code>
@@ -40,7 +40,7 @@ public interface RepoSourceOrBuilder extends
   java.lang.String getRepoName();
   /**
    * <pre>
-   * Required. Name of the Cloud Source Repository.
+   * Name of the Cloud Source Repository.
    * </pre>
    *
    * <code>string repo_name = 2;</code>
